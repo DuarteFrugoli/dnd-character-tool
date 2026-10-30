@@ -4,11 +4,11 @@
     "actions": {
       "fist": {
         "name": "Puño",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 5 (1d4 + 3) de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 5 (1d4 + 3) de daño contundente."
       },
       "rock": {
         "name": "Roca",
-        "description": "Tirada de ataque a distancia: +5, alcance 25/50 pies. Impacto: 10 (2d6 + 3) de daño contundente."
+        "description": "Tirada de ataque a distancia: +5, alcance {{distance:25/50ft}}. Impacto: 10 (2d6 + 3) de daño contundente."
       },
       "multiattack": {
         "name": "Ataque múltiple",
@@ -21,13 +21,13 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +1, alcance 5 pies. Impacto: 1 (1d4 - 1) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +1, alcance {{distance:5ft}}. Impacto: 1 (1d4 - 1) de daño perforante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "El babuino tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "El babuino tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       }
     }
   },
@@ -36,7 +36,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 1 de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 1 de daño perforante."
       }
     }
   },
@@ -45,7 +45,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 1 de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 1 de daño perforante."
       }
     }
   },
@@ -54,7 +54,7 @@
     "actions": {
       "rend": {
         "name": "Desgarrar",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 5 (1d6 + 2) de daño cortante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 5 (1d6 + 2) de daño cortante."
       },
       "multiattack": {
         "name": "Ataque múltiple",
@@ -67,13 +67,13 @@
     "actions": {
       "beak": {
         "name": "Pico",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 4 (1d4 + 2) de daño perforante, o 6 (1d8 + 2) de daño perforante si el objetivo está maltrecho."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 4 (1d4 + 2) de daño perforante, o 6 (1d8 + 2) de daño perforante si el objetivo está maltrecho."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "El halcón tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "El halcón tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       }
     }
   },
@@ -82,7 +82,7 @@
     "actions": {
       "gore": {
         "name": "Cornada",
-        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance 5 pies. Impacto: 4 (1d6 + 1) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña y el jabalí se ha movido 20 pies o más en línea recta hacia ella justo antes del impacto, el objetivo sufre 3 (1d6) de daño perforante adicional y queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance {{distance:5ft}}. Impacto: 4 (1d6 + 1) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña y el jabalí se ha movido {{distance:20+ft}} o más en línea recta hacia ella justo antes del impacto, el objetivo sufre 3 (1d6) de daño perforante adicional y queda derribado."
       }
     },
     "traits": {
@@ -97,11 +97,11 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 7 (1d8 + 3) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 7 (1d8 + 3) de daño perforante."
       },
       "claw": {
         "name": "Garra",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 5 (1d4 + 3) de daño cortante. Si el objetivo es una criatura Grande o más pequeña, queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 5 (1d4 + 3) de daño cortante. Si el objetivo es una criatura Grande o más pequeña, queda derribado."
       },
       "multiattack": {
         "name": "Ataque múltiple",
@@ -114,7 +114,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 4 (1d4 + 2) de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 4 (1d4 + 2) de daño contundente."
       }
     }
   },
@@ -123,7 +123,7 @@
     "actions": {
       "scratch": {
         "name": "Arañazo",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 1 de daño cortante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 1 de daño cortante."
       }
     },
     "traits": {
@@ -138,11 +138,11 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 6 (1d8 + 2) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 6 (1d8 + 2) de daño perforante."
       },
       "constrict": {
         "name": "Constreñir",
-        "description": "Tirada de salvación de Fuerza: CD 12, una criatura Mediana o más pequeña que la serpiente pueda ver a 5 pies o menos. Fallo: 7 (3d4) de daño contundente, y el objetivo queda agarrado (escapar CD 12)."
+        "description": "Tirada de salvación de Fuerza: CD 12, una criatura Mediana o más pequeña que la serpiente pueda ver a {{distance:5ft}} o menos. Fallo: 7 (3d4) de daño contundente, y el objetivo queda agarrado (escapar CD 12)."
       }
     }
   },
@@ -151,7 +151,7 @@
     "actions": {
       "claw": {
         "name": "Garra",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 1 de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 1 de daño contundente."
       }
     },
     "traits": {
@@ -166,7 +166,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 6 (1d8 + 2) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 12). Mientras está agarrado, el objetivo también está apresado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 6 (1d8 + 2) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 12). Mientras está agarrado, el objetivo también está apresado."
       }
     },
     "traits": {
@@ -181,7 +181,7 @@
     "actions": {
       "ram": {
         "name": "Embestida",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 2 (1d4) de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 2 (1d4) de daño contundente."
       }
     },
     "traits": {
@@ -196,13 +196,13 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 8 (1d10 + 3) de daño perforante. Si el objetivo es una criatura Grande o más pequeña, queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 8 (1d10 + 3) de daño perforante. Si el objetivo es una criatura Grande o más pequeña, queda derribado."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "El lobo tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "El lobo tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       }
     }
   },
@@ -211,7 +211,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +6, alcance 5 pies. Impacto: 6 (1d4 + 4) de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +6, alcance {{distance:5ft}}. Impacto: 6 (1d4 + 4) de daño contundente."
       }
     }
   },
@@ -220,7 +220,7 @@
     "actions": {
       "talons": {
         "name": "Zarpas",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 4 (1d4 + 2) de daño cortante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 4 (1d4 + 2) de daño cortante."
       }
     }
   },
@@ -229,7 +229,7 @@
     "actions": {
       "ram": {
         "name": "Embestida",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 6 (1d6 + 3) de daño contundente. Si el objetivo es una criatura Grande o más pequeña y el alce se ha movido 20 pies o más en línea recta hacia ella justo antes del impacto, el objetivo sufre 3 (1d6) de daño contundente adicional y queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 6 (1d6 + 3) de daño contundente. Si el objetivo es una criatura Grande o más pequeña y el alce se ha movido {{distance:20+ft}} o más en línea recta hacia ella justo antes del impacto, el objetivo sufre 3 (1d6) de daño contundente adicional y queda derribado."
       }
     }
   },
@@ -238,7 +238,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance 5 pies. Impacto: 1 de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance {{distance:5ft}}. Impacto: 1 de daño perforante."
       }
     },
     "traits": {
@@ -248,7 +248,7 @@
       },
       "standing_leap": {
         "name": "Salto sin carrerilla",
-        "description": "El salto de longitud de la rana es de hasta 10 pies y su salto de altura de hasta 5 pies, con o sin carrerilla."
+        "description": "El salto de longitud de la rana es de hasta {{distance:10ft}} y su salto de altura de hasta {{distance:5ft}}, con o sin carrerilla."
       }
     }
   },
@@ -257,7 +257,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance 5 pies. Impacto: 6 (2d4 + 1) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance {{distance:5ft}}. Impacto: 6 (2d4 + 1) de daño perforante."
       }
     }
   },
@@ -266,7 +266,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 6 (1d6 + 3) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 6 (1d6 + 3) de daño perforante."
       }
     }
   },
@@ -275,7 +275,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 4 (1d4 + 2) de daño perforante, y el objetivo queda envenenado hasta el comienzo del siguiente turno del ciempiés."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 4 (1d4 + 2) de daño perforante, y el objetivo queda envenenado hasta el comienzo del siguiente turno del ciempiés."
       }
     }
   },
@@ -284,7 +284,7 @@
     "actions": {
       "claw": {
         "name": "Garra",
-        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance 5 pies. Impacto: 4 (1d6 + 1) de daño contundente. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 11) por una de sus dos pinzas."
+        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance {{distance:5ft}}. Impacto: 4 (1d6 + 1) de daño contundente. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 11) por una de sus dos pinzas."
       }
     },
     "traits": {
@@ -299,13 +299,13 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +1, alcance 5 pies. Impacto: 1 de daño de fuego."
+        "description": "Tirada de ataque cuerpo a cuerpo: +1, alcance {{distance:5ft}}. Impacto: 1 de daño de fuego."
       }
     },
     "traits": {
       "illumination": {
         "name": "Iluminación",
-        "description": "El escarabajo emite luz brillante en un radio de 10 pies y luz tenue 10 pies más allá."
+        "description": "El escarabajo emite luz brillante en un radio de {{distance:10ft}} y luz tenue {{distance:10ft}} más allá."
       }
     }
   },
@@ -314,11 +314,11 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance 5 pies. Impacto: 5 (1d6 + 2) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 11)."
+        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance {{distance:5ft}}. Impacto: 5 (1d6 + 2) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 11)."
       },
       "swallow": {
         "name": "Tragar",
-        "description": "La rana se traga a un objetivo Pequeño o más pequeño al que esté agarrando. Mientras está tragado, el objetivo no está agarrado, pero está cegado y apresado, y tiene cobertura total contra ataques y otros efectos procedentes del exterior de la rana. Mientras tiene tragado al objetivo, la rana no puede usar Mordisco y, si la rana muere, el objetivo tragado deja de estar apresado y puede escapar del cadáver gastando 5 pies de movimiento, y sale derribado. Al final del siguiente turno de la rana, el objetivo tragado sufre 5 (2d4) de daño de ácido. Si ese daño no lo mata, la rana lo regurgita y el objetivo sale derribado."
+        "description": "La rana se traga a un objetivo Pequeño o más pequeño al que esté agarrando. Mientras está tragado, el objetivo no está agarrado, pero está cegado y apresado, y tiene cobertura total contra ataques y otros efectos procedentes del exterior de la rana. Mientras tiene tragado al objetivo, la rana no puede usar Mordisco y, si la rana muere, el objetivo tragado deja de estar apresado y puede escapar del cadáver gastando {{distance:5ft}} de movimiento, y sale derribado. Al final del siguiente turno de la rana, el objetivo tragado sufre 5 (2d4) de daño de ácido. Si ese daño no lo mata, la rana lo regurgita y el objetivo sale derribado."
       }
     },
     "traits": {
@@ -328,7 +328,7 @@
       },
       "standing_leap": {
         "name": "Salto sin carrerilla",
-        "description": "El salto de longitud de la rana es de hasta 20 pies y su salto de altura de hasta 10 pies, con o sin carrerilla."
+        "description": "El salto de longitud de la rana es de hasta {{distance:20ft}} y su salto de altura de hasta {{distance:10ft}}, con o sin carrerilla."
       }
     }
   },
@@ -337,7 +337,7 @@
     "actions": {
       "ram": {
         "name": "Embestida",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 6 (1d6 + 3) de daño contundente. Si el objetivo es una criatura Grande o más pequeña y la cabra se ha movido 20 pies o más en línea recta hacia ella justo antes del impacto, el objetivo sufre 5 (2d4) de daño contundente adicional y queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 6 (1d6 + 3) de daño contundente. Si el objetivo es una criatura Grande o más pequeña y la cabra se ha movido {{distance:20+ft}} o más en línea recta hacia ella justo antes del impacto, el objetivo sufre 5 (2d4) de daño contundente adicional y queda derribado."
       }
     }
   },
@@ -346,7 +346,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 10 (2d6 + 3) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 10 (2d6 + 3) de daño perforante."
       }
     },
     "bonusActions": {
@@ -361,7 +361,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 6 (1d8 + 2) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 6 (1d8 + 2) de daño perforante."
       }
     },
     "traits": {
@@ -376,7 +376,7 @@
     "actions": {
       "tentacles": {
         "name": "Tentáculos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 10 pies. Impacto: 10 (2d6 + 3) de daño contundente. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 13) por sus ocho tentáculos. Mientras está agarrado, el objetivo también está apresado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:10ft}}. Impacto: 10 (2d6 + 3) de daño contundente. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 13) por sus ocho tentáculos. Mientras está agarrado, el objetivo también está apresado."
       }
     },
     "traits": {
@@ -388,7 +388,7 @@
     "reactions": {
       "ink_cloud": {
         "name": "Nube de tinta",
-        "description": "Desencadenante: el pulpo recibe daño mientras está bajo el agua. Respuesta: el pulpo libera tinta que llena un cubo de 10 pies centrado en sí mismo y se mueve hasta su velocidad de nado. El cubo queda muy oscurecido durante 1 minuto o hasta que una corriente fuerte o un efecto similar disperse la tinta."
+        "description": "Desencadenante: el pulpo recibe daño mientras está bajo el agua. Respuesta: el pulpo libera tinta que llena un cubo de {{distance:10ft}} centrado en sí mismo y se mueve hasta su velocidad de nado. El cubo queda muy oscurecido durante 1 minuto o hasta que una corriente fuerte o un efecto similar disperse la tinta."
       }
     }
   },
@@ -397,13 +397,13 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 5 (1d4 + 3) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 5 (1d4 + 3) de daño perforante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "La rata tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "La rata tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       }
     }
   },
@@ -412,7 +412,7 @@
     "actions": {
       "ram": {
         "name": "Embestida",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 9 (2d6 + 2) de daño contundente, o 11 (2d8 + 2) de daño contundente si el caballito de mar se ha movido 20 pies o más en línea recta hacia el objetivo justo antes del impacto."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 9 (2d6 + 2) de daño contundente, o 11 (2d8 + 2) de daño contundente si el caballito de mar se ha movido {{distance:20+ft}} o más en línea recta hacia el objetivo justo antes del impacto."
       }
     },
     "traits": {
@@ -433,11 +433,11 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 7 (1d8 + 3) de daño perforante más 7 (2d6) de daño de veneno."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 7 (1d8 + 3) de daño perforante más 7 (2d6) de daño de veneno."
       },
       "web": {
         "name": "Telaraña",
-        "description": "Tirada de salvación de Destreza: CD 13, una criatura que la araña pueda ver a 60 pies o menos. Fallo: el objetivo queda apresado hasta que se destruya la telaraña (CA 10; PG 5; vulnerabilidad al daño de fuego; inmunidad al daño de veneno y psíquico)."
+        "description": "Tirada de salvación de Destreza: CD 13, una criatura que la araña pueda ver a {{distance:60ft}} o menos. Fallo: el objetivo queda apresado hasta que se destruya la telaraña (CA 10; PG 5; vulnerabilidad al daño de fuego; inmunidad al daño de veneno y psíquico)."
       }
     },
     "traits": {
@@ -456,11 +456,11 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 5 (1d6 + 2) de daño perforante más 5 (2d4) de daño de veneno. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 12)."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 5 (1d6 + 2) de daño perforante más 5 (2d4) de daño de veneno. Si el objetivo es una criatura Mediana o más pequeña, queda agarrado (escapar CD 12)."
       },
       "swallow": {
         "name": "Tragar",
-        "description": "El sapo se traga a un objetivo Mediano o más pequeño al que esté agarrando. Mientras está tragado, el objetivo no está agarrado, pero está cegado y apresado, y tiene cobertura total contra ataques y otros efectos procedentes del exterior del sapo. Además, el objetivo sufre 10 (3d6) de daño de ácido al final de cada turno del sapo. El sapo solo puede tener un objetivo tragado a la vez y no puede usar Mordisco mientras tenga un objetivo tragado. Si el sapo muere, la criatura tragada deja de estar apresada y puede escapar del cadáver gastando 5 pies de movimiento, y sale derribada."
+        "description": "El sapo se traga a un objetivo Mediano o más pequeño al que esté agarrando. Mientras está tragado, el objetivo no está agarrado, pero está cegado y apresado, y tiene cobertura total contra ataques y otros efectos procedentes del exterior del sapo. Además, el objetivo sufre 10 (3d6) de daño de ácido al final de cada turno del sapo. El sapo solo puede tener un objetivo tragado a la vez y no puede usar Mordisco mientras tenga un objetivo tragado. Si el sapo muere, la criatura tragada deja de estar apresada y puede escapar del cadáver gastando {{distance:5ft}} de movimiento, y sale derribada."
       }
     },
     "traits": {
@@ -470,7 +470,7 @@
       },
       "standing_leap": {
         "name": "Salto sin carrerilla",
-        "description": "El salto de longitud del sapo es de hasta 20 pies y su salto de altura de hasta 10 pies, con o sin carrerilla."
+        "description": "El salto de longitud del sapo es de hasta {{distance:20ft}} y su salto de altura de hasta {{distance:10ft}}, con o sin carrerilla."
       }
     }
   },
@@ -479,7 +479,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +6, alcance 10 pies. Impacto: 6 (1d4 + 4) de daño perforante más 4 (1d8) de daño de veneno."
+        "description": "Tirada de ataque cuerpo a cuerpo: +6, alcance {{distance:10ft}}. Impacto: 6 (1d4 + 4) de daño perforante más 4 (1d8) de daño de veneno."
       }
     }
   },
@@ -488,7 +488,7 @@
     "actions": {
       "sting": {
         "name": "Aguijón",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 5 (1d6 + 2) de daño perforante más 5 (2d4) de daño de veneno."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 5 (1d6 + 2) de daño perforante más 5 (2d4) de daño de veneno."
       }
     },
     "traits": {
@@ -503,7 +503,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 5 (1d4 + 3) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 5 (1d4 + 3) de daño perforante."
       }
     }
   },
@@ -512,7 +512,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 5 (1d4 + 3) de daño perforante más 5 (2d4) de daño de veneno."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 5 (1d4 + 3) de daño perforante más 5 (2d4) de daño de veneno."
       }
     },
     "traits": {
@@ -527,7 +527,7 @@
     "actions": {
       "ram": {
         "name": "Embestida",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 1 de daño contundente, o 2 (1d4) de daño contundente si la cabra se ha movido 20 pies o más en línea recta hacia el objetivo justo antes del impacto."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 1 de daño contundente, o 2 (1d4) de daño contundente si la cabra se ha movido {{distance:20+ft}} o más en línea recta hacia el objetivo justo antes del impacto."
       }
     }
   },
@@ -536,7 +536,7 @@
     "actions": {
       "talons": {
         "name": "Zarpas",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 1 de daño cortante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 1 de daño cortante."
       }
     }
   },
@@ -545,13 +545,13 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 3 (1d6) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 3 (1d6) de daño perforante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "La hiena tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "La hiena tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       }
     }
   },
@@ -560,7 +560,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +1, alcance 5 pies. Impacto: 1 (1d4 - 1) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +1, alcance {{distance:5ft}}. Impacto: 1 (1d4 - 1) de daño perforante."
       }
     }
   },
@@ -569,7 +569,7 @@
     "actions": {
       "rend": {
         "name": "Desgarrar",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 7 (1d8 + 3) de daño cortante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 7 (1d8 + 3) de daño cortante."
       },
       "multiattack": {
         "name": "Ataque múltiple",
@@ -577,17 +577,17 @@
       },
       "roar": {
         "name": "Rugido",
-        "description": "Tirada de salvación de Sabiduría: CD 11, una criatura a 15 pies o menos. Fallo: el objetivo queda asustado hasta el comienzo del siguiente turno del león."
+        "description": "Tirada de salvación de Sabiduría: CD 11, una criatura a {{distance:15ft}} o menos. Fallo: el objetivo queda asustado hasta el comienzo del siguiente turno del león."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "El león tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "El león tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       },
       "running_leap": {
         "name": "Salto con carrerilla",
-        "description": "Con una carrerilla de 10 pies, el león puede realizar un salto de longitud de hasta 25 pies."
+        "description": "Con una carrerilla de {{distance:10ft}}, el león puede realizar un salto de longitud de hasta {{distance:25ft}}."
       }
     }
   },
@@ -596,7 +596,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 1 de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 1 de daño perforante."
       }
     },
     "traits": {
@@ -611,7 +611,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance 5 pies. Impacto: 4 (1d6 + 1) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña, queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance {{distance:5ft}}. Impacto: 4 (1d6 + 1) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña, queda derribado."
       }
     }
   },
@@ -620,7 +620,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 4 (1d4 + 2) de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 4 (1d4 + 2) de daño contundente."
       }
     },
     "traits": {
@@ -635,13 +635,13 @@
     "actions": {
       "tentacles": {
         "name": "Tentáculos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 1 de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 1 de daño contundente."
       }
     },
     "traits": {
       "compression": {
         "name": "Compresión",
-        "description": "El pulpo puede moverse por un espacio de tan solo 1 pulgada de ancho sin gastar movimiento adicional para ello."
+        "description": "El pulpo puede moverse por un espacio de tan solo {{distance:1in}} de ancho sin gastar movimiento adicional para ello."
       },
       "water_breathing": {
         "name": "Respiración acuática",
@@ -651,7 +651,7 @@
     "reactions": {
       "ink_cloud": {
         "name": "Nube de tinta",
-        "description": "Desencadenante: una criatura termina su turno a 5 pies o menos del pulpo mientras este está bajo el agua. Respuesta: el pulpo libera tinta que llena un cubo de 5 pies centrado en sí mismo y se mueve hasta su velocidad de nado. El cubo queda muy oscurecido durante 1 minuto o hasta que una corriente fuerte o un efecto similar disperse la tinta."
+        "description": "Desencadenante: una criatura termina su turno a {{distance:5ft}} o menos del pulpo mientras este está bajo el agua. Respuesta: el pulpo libera tinta que llena un cubo de {{distance:5ft}} centrado en sí mismo y se mueve hasta su velocidad de nado. El cubo queda muy oscurecido durante 1 minuto o hasta que una corriente fuerte o un efecto similar disperse la tinta."
       }
     }
   },
@@ -660,7 +660,7 @@
     "actions": {
       "talons": {
         "name": "Zarpas",
-        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance 5 pies. Impacto: 1 de daño cortante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance {{distance:5ft}}. Impacto: 1 de daño cortante."
       }
     },
     "traits": {
@@ -675,7 +675,7 @@
     "actions": {
       "rend": {
         "name": "Desgarrar",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 6 (1d6 + 3) de daño cortante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 6 (1d6 + 3) de daño cortante."
       }
     },
     "bonusActions": {
@@ -690,7 +690,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5 (con ventaja si al objetivo le faltan puntos de golpe), alcance 5 pies. Impacto: 1 de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5 (con ventaja si al objetivo le faltan puntos de golpe), alcance {{distance:5ft}}. Impacto: 1 de daño perforante."
       }
     },
     "traits": {
@@ -705,7 +705,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 4 (1d4 + 2) de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 4 (1d4 + 2) de daño contundente."
       }
     }
   },
@@ -714,7 +714,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 6 (1d8 + 2) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 6 (1d8 + 2) de daño perforante."
       }
     },
     "traits": {
@@ -729,7 +729,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 1 de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 1 de daño perforante."
       }
     },
     "traits": {
@@ -744,7 +744,7 @@
     "actions": {
       "beak": {
         "name": "Pico",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 1 de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 1 de daño perforante."
       }
     },
     "traits": {
@@ -759,13 +759,13 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 7 (2d4 + 2) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 7 (2d4 + 2) de daño perforante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "El tiburón tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "El tiburón tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       },
       "water_breathing": {
         "name": "Respiración acuática",
@@ -778,7 +778,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 7 (1d8 + 3) de daño contundente."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 7 (1d8 + 3) de daño contundente."
       }
     }
   },
@@ -787,7 +787,7 @@
     "actions": {
       "sting": {
         "name": "Aguijón",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 1 de daño perforante más 3 (1d6) de daño de veneno."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 1 de daño perforante más 3 (1d6) de daño de veneno."
       }
     }
   },
@@ -811,7 +811,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 1 de daño perforante más 2 (1d4) de daño de veneno."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 1 de daño perforante más 2 (1d4) de daño de veneno."
       }
     },
     "traits": {
@@ -830,7 +830,7 @@
     "actions": {
       "bites": {
         "name": "Mordiscos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 5 (2d4) de daño perforante, o 2 (1d4) de daño perforante si el enjambre está maltrecho."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 5 (2d4) de daño perforante, o 2 (1d4) de daño perforante si el enjambre está maltrecho."
       }
     },
     "traits": {
@@ -845,7 +845,7 @@
     "actions": {
       "bites": {
         "name": "Mordiscos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance 5 pies. Impacto: 6 (2d4 + 1) de daño de veneno, o 3 (1d4 + 1) de daño de veneno si el enjambre está maltrecho."
+        "description": "Tirada de ataque cuerpo a cuerpo: +3, alcance {{distance:5ft}}. Impacto: 6 (2d4 + 1) de daño de veneno, o 3 (1d4 + 1) de daño de veneno si el enjambre está maltrecho."
       }
     },
     "traits": {
@@ -864,7 +864,7 @@
     "actions": {
       "bites": {
         "name": "Mordiscos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5 (con ventaja si al objetivo le faltan puntos de golpe), alcance 5 pies. Impacto: 8 (2d4 + 3) de daño perforante, o 5 (1d4 + 3) de daño perforante si el enjambre está maltrecho."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5 (con ventaja si al objetivo le faltan puntos de golpe), alcance {{distance:5ft}}. Impacto: 8 (2d4 + 3) de daño perforante, o 5 (1d4 + 3) de daño perforante si el enjambre está maltrecho."
       }
     },
     "traits": {
@@ -883,7 +883,7 @@
     "actions": {
       "bites": {
         "name": "Mordiscos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 5 (2d4) de daño perforante, o 2 (1d4) de daño perforante si el enjambre está maltrecho."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 5 (2d4) de daño perforante, o 2 (1d4) de daño perforante si el enjambre está maltrecho."
       }
     },
     "traits": {
@@ -898,7 +898,7 @@
     "actions": {
       "beaks": {
         "name": "Picotazos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 5 (1d6 + 2) de daño perforante, o 2 (1d4) de daño perforante si el enjambre está maltrecho."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 5 (1d6 + 2) de daño perforante, o 2 (1d4) de daño perforante si el enjambre está maltrecho."
       },
       "cacophony": {
         "name": "Cacofonía",
@@ -917,7 +917,7 @@
     "actions": {
       "rend": {
         "name": "Desgarrar",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 10 (2d6 + 3) de daño cortante. Si el objetivo es una criatura Grande o más pequeña, queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 10 (2d6 + 3) de daño cortante. Si el objetivo es una criatura Grande o más pequeña, queda derribado."
       }
     },
     "bonusActions": {
@@ -932,7 +932,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 4 (1d4 + 2) de daño perforante más 3 (1d6) de daño de veneno."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 4 (1d4 + 2) de daño perforante más 3 (1d6) de daño de veneno."
       }
     }
   },
@@ -941,13 +941,13 @@
     "actions": {
       "beak": {
         "name": "Pico",
-        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance 5 pies. Impacto: 2 (1d4) de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +2, alcance {{distance:5ft}}. Impacto: 2 (1d4) de daño perforante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "El buitre tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "El buitre tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       }
     }
   },
@@ -956,7 +956,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Tirada de ataque cuerpo a cuerpo: +6, alcance 5 pies. Impacto: 9 (2d4 + 4) de daño contundente. Si el objetivo es una criatura Grande o más pequeña y el caballo se ha movido 20 pies o más en línea recta hacia ella justo antes del impacto, el objetivo sufre 5 (2d4) de daño contundente adicional y queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +6, alcance {{distance:5ft}}. Impacto: 9 (2d4 + 4) de daño contundente. Si el objetivo es una criatura Grande o más pequeña y el caballo se ha movido {{distance:20+ft}} o más en línea recta hacia ella justo antes del impacto, el objetivo sufre 5 (2d4) de daño contundente adicional y queda derribado."
       }
     }
   },
@@ -965,7 +965,7 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance 5 pies. Impacto: 1 de daño perforante."
+        "description": "Tirada de ataque cuerpo a cuerpo: +5, alcance {{distance:5ft}}. Impacto: 1 de daño perforante."
       }
     }
   },
@@ -974,13 +974,13 @@
     "actions": {
       "bite": {
         "name": "Mordisco",
-        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance 5 pies. Impacto: 5 (1d6 + 2) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña, queda derribado."
+        "description": "Tirada de ataque cuerpo a cuerpo: +4, alcance {{distance:5ft}}. Impacto: 5 (1d6 + 2) de daño perforante. Si el objetivo es una criatura Mediana o más pequeña, queda derribado."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tácticas de manada",
-        "description": "El lobo tiene ventaja en las tiradas de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no tiene la condición incapacitado."
+        "description": "El lobo tiene ventaja en las tiradas de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no tiene la condición incapacitado."
       }
     }
   }

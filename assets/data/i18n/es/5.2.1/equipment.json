@@ -174,11 +174,11 @@
   },
   "Acid": {
     "name": "Ácido",
-    "description": "Sustituye un ataque lanzando un vial contra un objetivo a 20 pies o menos. Si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia), sufre 2d6 de daño de Ácido."
+    "description": "Sustituye un ataque lanzando un vial contra un objetivo a {{distance:20ft}} o menos. Si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia), sufre 2d6 de daño de Ácido."
   },
   "Alchemist's Fire": {
     "name": "Fuego de alquimista",
-    "description": "Sustituye un ataque lanzando un frasco contra un objetivo a 20 pies o menos. Si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia), sufre 1d4 de daño de Fuego y comienza a arder."
+    "description": "Sustituye un ataque lanzando un frasco contra un objetivo a {{distance:20ft}} o menos. Si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia), sufre 1d4 de daño de Fuego y comienza a arder."
   },
   "Antitoxin": {
     "name": "Antitoxina",
@@ -214,7 +214,7 @@
   },
   "Ball Bearings": {
     "name": "Canicas",
-    "description": "Espárcelas por un cuadrado llano de 10 pies a 10 pies o menos con la acción Utilizar. Las criaturas que entren deben superar una salvación de Destreza CD 10 o caer Derribadas. Recuperarlas lleva 10 minutos."
+    "description": "Espárcelas por un cuadrado llano de {{distance:10ft}} a {{distance:10ft}} o menos con la acción Utilizar. Las criaturas que entren deben superar una salvación de Destreza CD 10 o caer Derribadas. Recuperarlas lleva 10 minutos."
   },
   "Barrel": {
     "name": "Barril",
@@ -230,7 +230,7 @@
   },
   "Bell": {
     "name": "Campana",
-    "description": "Hacerla sonar con la acción Utilizar produce un sonido audible hasta a 60 pies."
+    "description": "Hacerla sonar con la acción Utilizar produce un sonido audible hasta a {{distance:60ft}}."
   },
   "Blanket": {
     "name": "Manta",
@@ -258,11 +258,11 @@
   },
   "Caltrops": {
     "name": "Abrojos",
-    "description": "Espárcelos en un cuadrado de 5 pies con la acción Utilizar. Una criatura que entre debe superar una salvación de Destreza CD 15 o sufrir 1 de daño Perforante y tener Velocidad 0 hasta su siguiente turno. Recuperarlos lleva 10 minutos."
+    "description": "Espárcelos en un cuadrado de {{distance:5ft}} con la acción Utilizar. Una criatura que entre debe superar una salvación de Destreza CD 15 o sufrir 1 de daño Perforante y tener Velocidad 0 hasta su siguiente turno. Recuperarlos lleva 10 minutos."
   },
   "Candle": {
     "name": "Vela",
-    "description": "Arde durante 1 hora e ilumina con Luz Brillante 5 pies y Luz Tenue otros 5 pies."
+    "description": "Arde durante 1 hora e ilumina con Luz Brillante {{distance:5ft}} y Luz Tenue otros {{distance:5ft}}."
   },
   "Case, Crossbow Bolt": {
     "name": "Estuche de virotes",
@@ -282,7 +282,7 @@
   },
   "Climber's Kit": {
     "name": "Equipo de escalada",
-    "description": "Incluye puntas para botas, guantes, pitones y arnés. Anclarte con la acción Utilizar limita la caída a 25 pies y el movimiento a 25 pies del anclaje."
+    "description": "Incluye puntas para botas, guantes, pitones y arnés. Anclarte con la acción Utilizar limita la caída a {{distance:25ft}} y el movimiento a {{distance:25ft}} del anclaje."
   },
   "Clothes, Fine": {
     "name": "Ropa elegante",
@@ -342,7 +342,7 @@
   },
   "Grappling Hook": {
     "name": "Garfio",
-    "description": "Lánzalo a un punto de sujeción a 50 pies o menos con la acción Utilizar. Una prueba de Destreza (Acrobacias) CD 13 lo asegura; después puede treparse por una Cuerda atada."
+    "description": "Lánzalo a un punto de sujeción a {{distance:50ft}} o menos con la acción Utilizar. Una prueba de Destreza (Acrobacias) CD 13 lo asegura; después puede treparse por una Cuerda atada."
   },
   "Healer's Kit": {
     "name": "Botiquín",
@@ -366,7 +366,7 @@
   },
   "Holy Water": {
     "name": "Agua bendita",
-    "description": "Sustituye un ataque lanzando un frasco contra una criatura a 20 pies o menos. Un Infernal o No Muerto que falle una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia) sufre 2d8 de daño Radiante."
+    "description": "Sustituye un ataque lanzando un frasco contra una criatura a {{distance:20ft}} o menos. Un Infernal o No Muerto que falle una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia) sufre 2d8 de daño Radiante."
   },
   "Hunting Trap": {
     "name": "Trampa de caza",
@@ -386,19 +386,19 @@
   },
   "Ladder": {
     "name": "Escalera",
-    "description": "Una escalera de 10 pies."
+    "description": "Una escalera de {{distance:10ft}}."
   },
   "Lamp": {
     "name": "Lámpara",
-    "description": "Quema Aceite y emite Luz Brillante 15 pies y Luz Tenue otros 30 pies."
+    "description": "Quema Aceite y emite Luz Brillante {{distance:15ft}} y Luz Tenue otros {{distance:30ft}}."
   },
   "Lantern, Bullseye": {
     "name": "Farol de ojo de buey",
-    "description": "Quema Aceite y emite Luz Brillante en un Cono de 60 pies y Luz Tenue otros 60 pies."
+    "description": "Quema Aceite y emite Luz Brillante en un Cono de {{distance:60ft}} y Luz Tenue otros {{distance:60ft}}."
   },
   "Lantern, Hooded": {
     "name": "Farol con capucha",
-    "description": "Quema Aceite y emite Luz Brillante 30 pies y Luz Tenue otros 30 pies. Bajando la capucha solo emite Luz Tenue 5 pies."
+    "description": "Quema Aceite y emite Luz Brillante {{distance:30ft}} y Luz Tenue otros {{distance:30ft}}. Bajando la capucha solo emite Luz Tenue {{distance:5ft}}."
   },
   "Lock": {
     "name": "Cerradura",
@@ -422,7 +422,7 @@
   },
   "Net": {
     "name": "Red",
-    "description": "Sustituye un ataque lanzándola contra una criatura a 15 pies o menos. Queda Apresada si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia); las criaturas Enormes o mayores superan automáticamente. Escapar requiere Fuerza (Atletismo) CD 10."
+    "description": "Sustituye un ataque lanzándola contra una criatura a {{distance:15ft}} o menos. Queda Apresada si falla una salvación de Destreza (CD 8 + modificador de Destreza + Bonificador por Competencia); las criaturas Enormes o mayores superan automáticamente. Escapar requiere Fuerza (Atletismo) CD 10."
   },
   "Oil": {
     "name": "Aceite",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Perfume",
-    "description": "Frasco de 4 onzas. Durante 1 hora tras aplicarlo, obtienes Ventaja en pruebas de Carisma (Persuasión) para influir en un Humanoide Indiferente a 5 pies o menos."
+    "description": "Frasco de 4 onzas. Durante 1 hora tras aplicarlo, obtienes Ventaja en pruebas de Carisma (Persuasión) para influir en un Humanoide Indiferente a {{distance:5ft}} o menos."
   },
   "Poison, Basic": {
     "name": "Veneno básico",
@@ -446,7 +446,7 @@
   },
   "Pole": {
     "name": "Pértiga",
-    "description": "Pértiga de 10 pies. Usarla para impulsarte concede Ventaja en una prueba de Fuerza (Atletismo) para Salto de Altura o Longitud."
+    "description": "Pértiga de {{distance:10ft}}. Usarla para impulsarte concede Ventaja en una prueba de Fuerza (Atletismo) para Salto de Altura o Longitud."
   },
   "Pot, Iron": {
     "name": "Olla de hierro",
@@ -490,11 +490,11 @@
   },
   "Shovel": {
     "name": "Pala",
-    "description": "Una hora cavando tierra o material similar crea un cubo de espacio de 5 pies de lado."
+    "description": "Una hora cavando tierra o material similar crea un cubo de espacio de {{distance:5ft}} de lado."
   },
   "Signal Whistle": {
     "name": "Silbato de señales",
-    "description": "Soplarlo con la acción Utilizar produce un sonido audible hasta a 600 pies."
+    "description": "Soplarlo con la acción Utilizar produce un sonido audible hasta a {{distance:600ft}}."
   },
   "Spellbook": {
     "name": "Libro de conjuros",
@@ -510,7 +510,7 @@
   },
   "String": {
     "name": "Cordel",
-    "description": "Un cordel de 10 pies; hacer un nudo es una acción Utilizar."
+    "description": "Un cordel de {{distance:10ft}}; hacer un nudo es una acción Utilizar."
   },
   "Tent": {
     "name": "Tienda",
@@ -522,7 +522,7 @@
   },
   "Torch": {
     "name": "Antorcha",
-    "description": "Arde durante 1 hora e ilumina con Luz Brillante 20 pies y Luz Tenue otros 20 pies. Puede usarse como arma Cuerpo a Cuerpo Simple que inflige 1 de daño de Fuego al impactar."
+    "description": "Arde durante 1 hora e ilumina con Luz Brillante {{distance:20ft}} y Luz Tenue otros {{distance:20ft}}. Puede usarse como arma Cuerpo a Cuerpo Simple que inflige 1 de daño de Fuego al impactar."
   },
   "Vial": {
     "name": "Vial",
@@ -535,7 +535,7 @@
   "weaponMasteries": {
     "cleave": {
       "name": "Tajo",
-      "description": "Una vez por turno, tras impactar con un ataque cuerpo a cuerpo, ataca con la misma arma a otra criatura a 5 pies o menos de la primera y dentro de tu alcance. Si impactas, inflige el daño del arma sin modificador de característica positivo."
+      "description": "Una vez por turno, tras impactar con un ataque cuerpo a cuerpo, ataca con la misma arma a otra criatura a {{distance:5ft}} o menos de la primera y dentro de tu alcance. Si impactas, inflige el daño del arma sin modificador de característica positivo."
     },
     "graze": {
       "name": "Rozar",
@@ -547,7 +547,7 @@
     },
     "push": {
       "name": "Empujar",
-      "description": "Si impactas, empuja a una criatura Grande o menor hasta 10 pies directamente alejándola de ti."
+      "description": "Si impactas, empuja a una criatura Grande o menor hasta {{distance:10ft}} directamente alejándola de ti."
     },
     "sap": {
       "name": "Debilitar",
@@ -555,7 +555,7 @@
     },
     "slow": {
       "name": "Ralentizar",
-      "description": "Si impactas e infliges daño, reduce la Velocidad del objetivo 10 pies hasta el inicio de tu siguiente turno. Varios impactos con Ralentizar no aumentan la reducción."
+      "description": "Si impactas e infliges daño, reduce la Velocidad del objetivo {{distance:10ft}} hasta el inicio de tu siguiente turno. Varios impactos con Ralentizar no aumentan la reducción."
     },
     "topple": {
       "name": "Derribar",

@@ -658,7 +658,7 @@ class ItemTile extends ConsumerWidget {
           ],
         ),
         subtitle: subtitleText != null
-            ? Text(
+            ? RulesText(
                 subtitleText,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,

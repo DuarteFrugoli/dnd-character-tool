@@ -94,7 +94,7 @@
     "category": "epic_boon",
     "prerequisite": {"minLevel": 19},
     "repeatable": false,
-    "description": "Increase one ability score by 1, to a maximum of 30. Immediately after taking the Attack or Magic action, you can teleport up to 30 feet to an unoccupied space you can see."
+    "description": "Increase one ability score by 1, to a maximum of 30. Immediately after taking the Attack or Magic action, you can teleport up to {{distance:30ft}} to an unoccupied space you can see."
   },
   {
     "id": "boon_of_fate",
@@ -102,7 +102,7 @@
     "category": "epic_boon",
     "prerequisite": {"minLevel": 19},
     "repeatable": false,
-    "description": "Increase one ability score by 1, to a maximum of 30. When you or a creature within 60 feet succeeds or fails a D20 Test, roll 2d4 and apply the total as a bonus or penalty to that roll. Recharge when you roll Initiative or finish a Short or Long Rest."
+    "description": "Increase one ability score by 1, to a maximum of 30. When you or a creature within {{distance:60ft}} succeeds or fails a D20 Test, roll 2d4 and apply the total as a bonus or penalty to that roll. Recharge when you roll Initiative or finish a Short or Long Rest."
   },
   {
     "id": "boon_of_irresistible_offense",
@@ -134,6 +134,6 @@
     "category": "epic_boon",
     "prerequisite": {"minLevel": 19},
     "repeatable": false,
-    "description": "Increase one ability score by 1, to a maximum of 30. Gain Truesight out to 60 feet."
+    "description": "Increase one ability score by 1, to a maximum of 30. Gain Truesight out to {{distance:60ft}}."
   }
 ]

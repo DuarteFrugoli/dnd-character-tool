@@ -125,7 +125,7 @@ void showItemDetailsSheet(
                 if (description != null && description.isNotEmpty)
                   _ItemDetailSection(
                     title: l10n.inventoryDetailDescription,
-                    child: Text(
+                    child: RulesText(
                       description,
                       style: const TextStyle(height: 1.6),
                     ),

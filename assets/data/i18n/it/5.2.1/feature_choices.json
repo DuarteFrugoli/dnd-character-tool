@@ -177,7 +177,7 @@
       },
       "distant_spell": {
         "name": "Incantesimo distante",
-        "description": "Spendi 1 punto stregoneria per raddoppiare la gittata di un incantesimo di almeno 1,5 metri, oppure portare a 9 metri la gittata a contatto."
+        "description": "Spendi 1 punto stregoneria per raddoppiare la gittata di un incantesimo di almeno {{distance:5ft}}, oppure portare a {{distance:30ft}} la gittata a contatto."
       },
       "empowered_spell": {
         "name": "Incantesimo potenziato",
@@ -370,7 +370,7 @@
     "giant_ancestries": {
       "cloud": {
         "name": "Passo delle nuvole",
-        "description": "Ti teletrasporti fino a 9 metri come Azione Bonus."
+        "description": "Ti teletrasporti fino a {{distance:30ft}} come Azione Bonus."
       },
       "fire": {
         "name": "Ardore del fuoco",
@@ -779,7 +779,7 @@
       },
       "devils_sight": {
         "name": "Vista del diavolo",
-        "description": "Vedi normalmente nella luce fioca e nell'oscurità, magica o non magica, entro 36 metri da te."
+        "description": "Vedi normalmente nella luce fioca e nell'oscurità, magica o non magica, entro {{distance:120ft}} da te."
       },
       "devouring_blade": {
         "name": "Lama divoratrice",
@@ -795,7 +795,7 @@
       },
       "eldritch_spear": {
         "name": "Lancia mistica",
-        "description": "Scegli un trucchetto da warlock che conosci, che infligge danni e ha una gittata di almeno 3 metri. Quando lo lanci, la gittata aumenta di 9 metri × il tuo livello da warlock."
+        "description": "Scegli un trucchetto da warlock che conosci, che infligge danni e ha una gittata di almeno {{distance:10+ft}}. Quando lo lanci, la gittata aumenta di {{distance:30ft}} × il tuo livello da warlock."
       },
       "fiendish_vigor": {
         "name": "Vigore immondo",
@@ -803,7 +803,7 @@
       },
       "gaze_of_two_minds": {
         "name": "Sguardo di due menti",
-        "description": "Come Azione Bonus, puoi toccare una creatura consenziente e percepire attraverso i suoi sensi fino alla fine del tuo turno successivo. Finché si trova sul tuo stesso piano di esistenza, puoi usare un'Azione Bonus nei turni seguenti per mantenere il collegamento, prolungandolo fino alla fine del turno successivo. Il collegamento termina se non lo mantieni in questo modo.\n\nMentre percepisci attraverso i sensi dell'altra creatura, benefici dei suoi sensi speciali e puoi lanciare incantesimi come se ti trovassi nel tuo spazio o nel suo, purché siate entro 18 metri l'uno dall'altra."
+        "description": "Come Azione Bonus, puoi toccare una creatura consenziente e percepire attraverso i suoi sensi fino alla fine del tuo turno successivo. Finché si trova sul tuo stesso piano di esistenza, puoi usare un'Azione Bonus nei turni seguenti per mantenere il collegamento, prolungandolo fino alla fine del turno successivo. Il collegamento termina se non lo mantieni in questo modo.\n\nMentre percepisci attraverso i sensi dell'altra creatura, benefici dei suoi sensi speciali e puoi lanciare incantesimi come se ti trovassi nel tuo spazio o nel suo, purché siate entro {{distance:60ft}} l'uno dall'altra."
       },
       "gift_of_the_depths": {
         "name": "Dono delle profondità",
@@ -815,7 +815,7 @@
       },
       "investment_of_the_chain_master": {
         "name": "Potere del signore della catena",
-        "description": "Quando lanci Trova Famiglio, infondi nel famiglio evocato parte del tuo potere occulto, conferendogli i seguenti benefici.\n\nAereo o acquatico. Il famiglio ottiene una Velocità di Volo o di Nuoto (a tua scelta) di 12 metri.\n\nAttacco rapido. Come Azione Bonus, puoi ordinare al famiglio di compiere l'azione Attaccare.\n\nDanni necrotici o radiosi. Quando il famiglio infligge danni contundenti, perforanti o taglienti, puoi fargli infliggere invece danni necrotici o radiosi.\n\nLa tua CD del tiro salvezza. Se il famiglio obbliga una creatura a effettuare un tiro salvezza, usa la CD dei tuoi incantesimi.\n\nResistenza. Quando il famiglio subisce danni, puoi usare una Reazione per conferirgli Resistenza a quei danni."
+        "description": "Quando lanci Trova Famiglio, infondi nel famiglio evocato parte del tuo potere occulto, conferendogli i seguenti benefici.\n\nAereo o acquatico. Il famiglio ottiene una Velocità di Volo o di Nuoto (a tua scelta) di {{distance:40ft}}.\n\nAttacco rapido. Come Azione Bonus, puoi ordinare al famiglio di compiere l'azione Attaccare.\n\nDanni necrotici o radiosi. Quando il famiglio infligge danni contundenti, perforanti o taglienti, puoi fargli infliggere invece danni necrotici o radiosi.\n\nLa tua CD del tiro salvezza. Se il famiglio obbliga una creatura a effettuare un tiro salvezza, usa la CD dei tuoi incantesimi.\n\nResistenza. Quando il famiglio subisce danni, puoi usare una Reazione per conferirgli Resistenza a quei danni."
       },
       "lessons_of_the_first_ones": {
         "name": "Lezioni dei Primi",
@@ -847,7 +847,7 @@
       },
       "pact_of_the_blade": {
         "name": "Patto della lama",
-        "description": "Come Azione Bonus, puoi evocare nella tua mano un'arma del patto, un'arma semplice o da guerra da mischia a tua scelta con cui stringi un legame, oppure legarti a un'arma magica che tocchi. Non puoi legarti a un'arma magica se qualcun altro è in sintonia con essa o se un altro warlock vi è legato. Finché il legame dura, hai competenza nell'arma e puoi usarla come Focus da Incantatore.\n\nQuando attacchi con l'arma legata, puoi usare il tuo modificatore di Carisma ai tiri per colpire e per i danni invece di Forza o Destrezza; puoi inoltre farle infliggere danni necrotici, psichici o radiosi invece del suo normale tipo di danno.\n\nIl legame termina se usi di nuovo l'Azione Bonus di questo privilegio, se l'arma resta a più di 1,5 metri da te per 1 minuto o più, oppure se muori. Un'arma evocata scompare quando termina il legame."
+        "description": "Come Azione Bonus, puoi evocare nella tua mano un'arma del patto, un'arma semplice o da guerra da mischia a tua scelta con cui stringi un legame, oppure legarti a un'arma magica che tocchi. Non puoi legarti a un'arma magica se qualcun altro è in sintonia con essa o se un altro warlock vi è legato. Finché il legame dura, hai competenza nell'arma e puoi usarla come Focus da Incantatore.\n\nQuando attacchi con l'arma legata, puoi usare il tuo modificatore di Carisma ai tiri per colpire e per i danni invece di Forza o Destrezza; puoi inoltre farle infliggere danni necrotici, psichici o radiosi invece del suo normale tipo di danno.\n\nIl legame termina se usi di nuovo l'Azione Bonus di questo privilegio, se l'arma resta a più di {{distance:5ft}} da te per 1 minuto o più, oppure se muori. Un'arma evocata scompare quando termina il legame."
       },
       "pact_of_the_chain": {
         "name": "Patto della catena",
@@ -859,7 +859,7 @@
       },
       "repelling_blast": {
         "name": "Deflagrazione respingente",
-        "description": "Scegli un trucchetto da warlock che conosci e che richiede un tiro per colpire. Quando colpisci una creatura di taglia Grande o inferiore con quel trucchetto, puoi spingerla direttamente lontano da te fino a 3 metri."
+        "description": "Scegli un trucchetto da warlock che conosci e che richiede un tiro per colpire. Quando colpisci una creatura di taglia Grande o inferiore con quel trucchetto, puoi spingerla direttamente lontano da te fino a {{distance:10ft}}."
       },
       "thirsting_blade": {
         "name": "Lama assetata",
@@ -875,7 +875,7 @@
       },
       "witch_sight": {
         "name": "Vista stregonesca",
-        "description": "Ottieni Vista Pura entro 9 metri."
+        "description": "Ottieni Vista Pura entro {{distance:30ft}}."
       }
     }
   },

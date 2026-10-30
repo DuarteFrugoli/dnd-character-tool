@@ -11,6 +11,8 @@ import '../../data/rulesets/ruleset_ids.dart';
 import '../../data/rulesets/srd_content_pack.dart';
 import '../../core/units/unit_formatter.dart';
 import '../../core/units/unit_system_provider.dart';
+import '../../core/units/rules_text_provider.dart';
+import '../../shared/widgets/rules_text.dart';
 
 // ── Spell Browser Sheet ───────────────────────────────────────────────────────
 
@@ -1013,6 +1015,7 @@ class SpellDetailSheet extends ConsumerWidget {
         SrdI18nService.englishForPack(SrdContentPackRegistry.forId(contentPackId));
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
+    final rules = ref.watch(rulesTextProvider);
     final roll = onRoll;
 
     return DraggableScrollableSheet(
@@ -1081,7 +1084,7 @@ class SpellDetailSheet extends ConsumerWidget {
             l10n.spellDetailDuration,
             i18n.spellDuration(spell.duration),
           ),
-          _StatRow(l10n.spellDetailComponents, _componentsStr(i18n)),
+          _StatRow(l10n.spellDetailComponents, rules(_componentsStr(i18n))),
           if (spell.concentration) ...[
             const SizedBox(height: 4),
             Row(
@@ -1119,7 +1122,7 @@ class SpellDetailSheet extends ConsumerWidget {
           const SizedBox(height: 12),
 
           // ── Description ───────────────────────────────────────────────────
-          Text(
+          RulesText(
             i18n.spellDescription(spell.name) ?? spell.description,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
@@ -1137,9 +1140,9 @@ class SpellDetailSheet extends ConsumerWidget {
                     ),
                   ),
                   TextSpan(
-                    text:
-                        i18n.spellHigherLevels(spell.name) ??
-                        spell.higherLevels!,
+                    text: rules(
+                      i18n.spellHigherLevels(spell.name) ?? spell.higherLevels!,
+                    ),
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ],

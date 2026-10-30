@@ -1,13 +1,15 @@
 import 'unit_system_provider.dart';
 
-/// Converts and formats distances stored internally as feet.
+/// Converts and formats distances stored internally as feet. Metric follows
+/// the official translations: 5 ft = 1.5 m.
 String formatDistance(int feet, UnitSystem system) {
   final value = feetToDisplayDistance(feet, system);
   switch (system) {
     case UnitSystem.imperial:
       return '$value ft';
     case UnitSystem.metric:
-      return '$value m';
+      final meters = feet * 3 / 10;
+      return '${meters % 1 == 0 ? meters.toInt() : meters.toStringAsFixed(1)} m';
     case UnitSystem.squares:
       return '$value sq';
   }
@@ -31,7 +33,7 @@ int feetToDisplayDistance(int feet, UnitSystem system) {
     case UnitSystem.imperial:
       return feet;
     case UnitSystem.metric:
-      return (feet * 0.3048).round();
+      return (feet * 0.3).round();
     case UnitSystem.squares:
       return (feet / 5).round();
   }
@@ -43,7 +45,7 @@ int displayDistanceToFeet(int value, UnitSystem system) {
     case UnitSystem.imperial:
       return value;
     case UnitSystem.metric:
-      return (value / 0.3048).round();
+      return (value / 0.3).round();
     case UnitSystem.squares:
       return value * 5;
   }

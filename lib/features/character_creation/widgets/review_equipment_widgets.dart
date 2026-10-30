@@ -1,3 +1,4 @@
+import '../../../shared/widgets/rules_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
@@ -134,7 +135,7 @@ class EquipmentPreviewTile extends StatelessWidget {
       title: Text(equipmentPreviewTitle(preview)),
       subtitle: subtitle == null
           ? null
-          : Text(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
+          : RulesText(subtitle, maxLines: 2, overflow: TextOverflow.ellipsis),
       trailing: onTap == null ? null : const Icon(Icons.info_outline, size: 18),
       onTap: onTap,
     );
@@ -170,7 +171,7 @@ class EquipmentDropdownOption extends StatelessWidget {
           style: const TextStyle(fontSize: 13),
         ),
         if (subtitle != null)
-          Text(
+          RulesText(
             subtitle,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -232,7 +233,7 @@ class ReviewEquipmentCheckboxTile extends StatelessWidget {
       title: Text(title, style: Theme.of(context).textTheme.bodyMedium),
       subtitle: subtitle == null
           ? null
-          : Text(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis),
+          : RulesText(subtitle, maxLines: 1, overflow: TextOverflow.ellipsis),
       secondary: secondary,
     );
   }
@@ -343,7 +344,7 @@ class ClassEquipmentOptionTile extends StatelessWidget {
                     ),
                     if (subtitles.isNotEmpty) ...[
                       const SizedBox(height: 2),
-                      Text(
+                      RulesText(
                         subtitles.join('  \u00b7  '),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,

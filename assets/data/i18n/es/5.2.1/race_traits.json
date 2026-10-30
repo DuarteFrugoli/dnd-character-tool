@@ -1,7 +1,7 @@
 {
   "Darkvision": {
     "name": "Visión en la Oscuridad",
-    "description": "Ves con Luz Tenue dentro del alcance del rasgo como si fuera Luz Brillante y en la Oscuridad como si fuera Luz Tenue, distinguiendo allí solo tonos de gris. El alcance es de 120 pies para enanos y orcos, 60 pies para las demás especies indicadas y 120 pies para elfos drow."
+    "description": "Ves con Luz Tenue dentro del alcance del rasgo como si fuera Luz Brillante y en la Oscuridad como si fuera Luz Tenue, distinguiendo allí solo tonos de gris. El alcance es de {{distance:120ft}} para enanos y orcos, {{distance:60ft}} para las demás especies indicadas y {{distance:120ft}} para elfos drow."
   },
   "Draconic Ancestry": {
     "name": "Ascendencia Dracónica",
@@ -9,7 +9,7 @@
   },
   "Breath Weapon": {
     "name": "Arma de Aliento",
-    "description": "Al realizar la acción Atacar, sustituye un ataque por un Cono de 15 pies o una Línea de 30 pies de largo y 5 pies de ancho. Las criaturas en la zona realizan una salvación de Destreza contra CD 8 + tu modificador de Constitución + Bonificador por Competencia; sufren daño del tipo de tu ascendencia si fallan, o la mitad si tienen éxito. El daño es 1d10, aumenta a 2d10 en el nivel 5 del personaje, 3d10 en el 11 y 4d10 en el 17. Usos iguales a tu Bonificador por Competencia por Descanso Largo."
+    "description": "Al realizar la acción Atacar, sustituye un ataque por un Cono de {{distance:15ft}} o una Línea de {{distance:30ft}} de largo y {{distance:5ft}} de ancho. Las criaturas en la zona realizan una salvación de Destreza contra CD 8 + tu modificador de Constitución + Bonificador por Competencia; sufren daño del tipo de tu ascendencia si fallan, o la mitad si tienen éxito. El daño es 1d10, aumenta a 2d10 en el nivel 5 del personaje, 3d10 en el 11 y 4d10 en el 17. Usos iguales a tu Bonificador por Competencia por Descanso Largo."
   },
   "Damage Resistance": {
     "name": "Resistencia al Daño",
@@ -29,7 +29,7 @@
   },
   "Stonecunning": {
     "name": "Afinidad con la Piedra",
-    "description": "Mientras tocas piedra o estás sobre ella, usa una Acción Adicional para obtener sentido de la vibración hasta 60 pies durante 10 minutos. Usos iguales a tu Bonificador por Competencia por Descanso Largo."
+    "description": "Mientras tocas piedra o estás sobre ella, usa una Acción Adicional para obtener sentido de la vibración hasta {{distance:60ft}} durante 10 minutos. Usos iguales a tu Bonificador por Competencia por Descanso Largo."
   },
   "Elven Lineage": {
     "name": "Linaje Élfico",
@@ -69,7 +69,7 @@
   },
   "Cloud's Jaunt": {
     "name": "Salto de la Nube",
-    "description": "Como Acción Adicional, teletranspórtate hasta 30 pies a un espacio desocupado que puedas ver."
+    "description": "Como Acción Adicional, teletranspórtate hasta {{distance:30ft}} a un espacio desocupado que puedas ver."
   },
   "Fire's Burn": {
     "name": "Quemadura del Fuego",
@@ -77,7 +77,7 @@
   },
   "Frost's Chill": {
     "name": "Frío de la Escarcha",
-    "description": "Cuando una tirada de ataque impacte e inflija daño, inflige 1d6 de daño de Frío adicional y reduce la Velocidad del objetivo en 10 pies hasta el inicio de tu siguiente turno."
+    "description": "Cuando una tirada de ataque impacte e inflija daño, inflige 1d6 de daño de Frío adicional y reduce la Velocidad del objetivo en {{distance:10ft}} hasta el inicio de tu siguiente turno."
   },
   "Hill's Tumble": {
     "name": "Derribo de la Colina",
@@ -89,11 +89,11 @@
   },
   "Storm's Thunder": {
     "name": "Trueno de la Tormenta",
-    "description": "Cuando una criatura a 60 pies o menos te inflija daño, usa una Reacción para infligirle 1d8 de daño de Trueno."
+    "description": "Cuando una criatura a {{distance:60ft}} o menos te inflija daño, usa una Reacción para infligirle 1d8 de daño de Trueno."
   },
   "Large Form": {
     "name": "Forma Grande",
-    "description": "Desde el nivel 5 del personaje, usa una Acción Adicional para volverte Grande durante un máximo de 10 minutos si hay espacio. Tienes Ventaja en pruebas de Fuerza y tu Velocidad aumenta 10 pies. Una vez por Descanso Largo."
+    "description": "Desde el nivel 5 del personaje, usa una Acción Adicional para volverte Grande durante un máximo de 10 minutos si hay espacio. Tienes Ventaja en pruebas de Fuerza y tu Velocidad aumenta {{distance:10ft}}. Una vez por Descanso Largo."
   },
   "Powerful Build": {
     "name": "Complexión Poderosa",

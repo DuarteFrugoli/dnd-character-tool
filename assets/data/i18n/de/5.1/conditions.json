@@ -33,7 +33,7 @@
   },
   "Paralyzed": {
     "name": "Gelähmt",
-    "description": "Eine gelähmte Kreatur ist handlungsunfähig und kann sich weder bewegen noch sprechen. Der Kreatur scheitern automatisch Kraft- und Geschicklichkeitsrettungswürfe. Angriffswürfe gegen die Kreatur haben einen Vorteil. Jeder Angriff, der die Kreatur trifft, ist ein kritischer Treffer, wenn sich der Angreifer innerhalb von 1,5 Metern von der Kreatur befindet."
+    "description": "Eine gelähmte Kreatur ist handlungsunfähig und kann sich weder bewegen noch sprechen. Der Kreatur scheitern automatisch Kraft- und Geschicklichkeitsrettungswürfe. Angriffswürfe gegen die Kreatur haben einen Vorteil. Jeder Angriff, der die Kreatur trifft, ist ein kritischer Treffer, wenn sich der Angreifer innerhalb von {{distance:5ft|dat}} von der Kreatur befindet."
   },
   "Petrified": {
     "name": "Versteinert",
@@ -45,7 +45,7 @@
   },
   "Prone": {
     "name": "Liegend",
-    "description": "Die einzige Bewegungsmöglichkeit einer anfälligen Kreatur ist das Kriechen, es sei denn, sie steht auf und beendet damit den Zustand. Die Kreatur hat einen Nachteil bei Angriffswürfen. Ein Angriffswurf gegen die Kreatur hat einen Vorteil, wenn sich der Angreifer innerhalb von 1,5 Metern von der Kreatur befindet. Ansonsten hat der Angriffswurf einen Nachteil."
+    "description": "Die einzige Bewegungsmöglichkeit einer anfälligen Kreatur ist das Kriechen, es sei denn, sie steht auf und beendet damit den Zustand. Die Kreatur hat einen Nachteil bei Angriffswürfen. Ein Angriffswurf gegen die Kreatur hat einen Vorteil, wenn sich der Angreifer innerhalb von {{distance:5ft|dat}} von der Kreatur befindet. Ansonsten hat der Angriffswurf einen Nachteil."
   },
   "Restrained": {
     "name": "Festgesetzt",
@@ -57,6 +57,6 @@
   },
   "Unconscious": {
     "name": "Bewusstlos",
-    "description": "Eine bewusstlose Kreatur ist handlungsunfähig, kann sich weder bewegen noch sprechen und nimmt ihre Umgebung nicht wahr. Die Kreatur lässt alles fallen, was sie in der Hand hält, und fällt hin. Der Kreatur scheitern automatisch Kraft- und Geschicklichkeitsrettungswürfe. Angriffswürfe gegen die Kreatur haben einen Vorteil. Jeder Angriff, der die Kreatur trifft, ist ein kritischer Treffer, wenn sich der Angreifer innerhalb von 1,5 Metern von der Kreatur befindet."
+    "description": "Eine bewusstlose Kreatur ist handlungsunfähig, kann sich weder bewegen noch sprechen und nimmt ihre Umgebung nicht wahr. Die Kreatur lässt alles fallen, was sie in der Hand hält, und fällt hin. Der Kreatur scheitern automatisch Kraft- und Geschicklichkeitsrettungswürfe. Angriffswürfe gegen die Kreatur haben einen Vorteil. Jeder Angriff, der die Kreatur trifft, ist ein kritischer Treffer, wenn sich der Angreifer innerhalb von {{distance:5ft|dat}} von der Kreatur befindet."
   }
 }

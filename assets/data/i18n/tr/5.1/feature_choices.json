@@ -5,17 +5,17 @@
       "disarming_attack": { "name": "Silahsızlandıran Saldırı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef, Kuvvet kurtulma atışında başarılı olmazsa elinde tuttuğu ve senin seçtiğin bir eşyayı düşürür." },
       "distracting_strike": { "name": "Dikkat Dağıtan Vuruş", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Bir sonraki turunun başlangıcından önce, senin dışındaki bir yaratığın hedefe yaptığı ilk saldırı atışı avantajlıdır." },
       "evasive_footwork": { "name": "Kaçamak Adımlar", "description": "Hareket ederken bir üstünlük zarı harcayıp zar sonucunu hareketin bitene kadar Zırh Sınıfına ekleyebilirsin." },
-      "feinting_attack": { "name": "Aldatma Saldırısı", "description": "5 fit içindeki bir yaratığa aldatma hareketi yapmak için bonus eylem ve bir üstünlük zarı harca. Bu tur ona yapacağın sonraki saldırıda avantaj kazanırsın; saldırı isabet ederse üstünlük zarını hasara ekle." },
+      "feinting_attack": { "name": "Aldatma Saldırısı", "description": "{{distance:5ft}} içindeki bir yaratığa aldatma hareketi yapmak için bonus eylem ve bir üstünlük zarı harca. Bu tur ona yapacağın sonraki saldırıda avantaj kazanırsın; saldırı isabet ederse üstünlük zarını hasara ekle." },
       "goading_attack": { "name": "Kışkırtan Saldırı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Bilgelik kurtulma atışında başarılı olmazsa bir sonraki turunun sonuna kadar senden başkalarına yaptığı saldırılarda dezavantajlı olur." },
-      "lunging_attack": { "name": "Hamle Saldırısı", "description": "Yakın dövüş silah saldırısı yaparken o saldırının erişimini 5 fit artırmak için bir üstünlük zarı harca. İsabet ederse üstünlük zarını hasara ekle." },
+      "lunging_attack": { "name": "Hamle Saldırısı", "description": "Yakın dövüş silah saldırısı yaparken o saldırının erişimini {{distance:5ft}} artırmak için bir üstünlük zarı harca. İsabet ederse üstünlük zarını hasara ekle." },
       "maneuvering_attack": { "name": "Yönlendiren Saldırı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Seni görebilen veya duyabilen bir müttefik seç; müttefik tepkisini kullanarak hedefin fırsat saldırılarını tetiklemeden hızının yarısına kadar hareket edebilir." },
       "menacing_attack": { "name": "Tehditkâr Saldırı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Bilgelik kurtulma atışında başarılı olmazsa bir sonraki turunun sonuna kadar senden korkar." },
       "parry": { "name": "Savuşturma", "description": "Başka bir yaratık yakın dövüş saldırısıyla sana hasar verdiğinde tepkini kullanıp bir üstünlük zarı harcayarak hasarı zar sonucu + Çeviklik değiştiricin kadar azalt." },
       "precision_attack": { "name": "Kesin Saldırı", "description": "Silah saldırısı atışı yaptığında bir üstünlük zarı harcayıp zar sonucunu atışa ekleyebilirsin." },
-      "pushing_attack": { "name": "İtme Saldırısı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Büyük veya daha küçükse Kuvvet kurtulma atışında başarılı olmazsa senden 15 fite kadar uzağa itilir." },
+      "pushing_attack": { "name": "İtme Saldırısı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Büyük veya daha küçükse Kuvvet kurtulma atışında başarılı olmazsa senden {{distance:15ft|dat}} kadar uzağa itilir." },
       "rally": { "name": "Moral Verme", "description": "Turunda bonus eylem ve bir üstünlük zarı harcayarak seni görebilen veya duyabilen bir müttefiğe zar sonucu + Karizma değiştiricin kadar geçici can puanı ver." },
       "riposte": { "name": "Karşılık Verme", "description": "Bir yaratık yakın dövüş saldırısıyla seni ıskaladığında tepkini kullanıp bir üstünlük zarı harcayarak ona yakın dövüş silah saldırısı yap. İsabet ederse üstünlük zarını hasara ekle." },
-      "sweeping_attack": { "name": "Süpürme Saldırısı", "description": "Yakın dövüş silah saldırın isabet ettiğinde, asıl hedefin 5 fit içindeki ve senin erişimindeki başka bir yaratığa hasar vermek için bir üstünlük zarı harca. İlk saldırı atışın ikinci yaratığa da isabet edecekse ona üstünlük zarı kadar hasar verirsin." },
+      "sweeping_attack": { "name": "Süpürme Saldırısı", "description": "Yakın dövüş silah saldırın isabet ettiğinde, asıl hedefin {{distance:5ft}} içindeki ve senin erişimindeki başka bir yaratığa hasar vermek için bir üstünlük zarı harca. İlk saldırı atışın ikinci yaratığa da isabet edecekse ona üstünlük zarı kadar hasar verirsin." },
       "trip_attack": { "name": "Çelme Saldırısı", "description": "Silah saldırın isabet ettiğinde bir üstünlük zarı harca ve zar sonucunu hasara ekle. Hedef Büyük veya daha küçükse Kuvvet kurtulma atışında başarılı olmazsa yere düşer." }
     },
     "fighting_styles_fighter": {
@@ -23,14 +23,14 @@
       "defense": { "name": "Savunma", "description": "Zırh giyerken Zırh Sınıfına +1 bonus kazanırsın." },
       "dueling": { "name": "Düello", "description": "Bir elinde yakın dövüş silahı tutarken başka silah tutmuyorsan o silahla yaptığın hasar atışlarına +2 bonus kazanırsın." },
       "great_weapon_fighting": { "name": "Büyük Silahla Dövüş", "description": "İki elle tuttuğun bir yakın dövüş silahının hasar zarında 1 veya 2 atarsan zarı yeniden atıp yeni sonucu kullanırsın. Silah iki elli veya çok yönlü olmalıdır." },
-      "protection": { "name": "Koruma", "description": "Bir yaratık 5 fit içindeki senden başka bir hedefe saldırdığında, tepkini kullanarak saldırı atışına dezavantaj verebilirsin. Kalkan tutuyor olmalısın." },
+      "protection": { "name": "Koruma", "description": "Bir yaratık {{distance:5ft}} içindeki senden başka bir hedefe saldırdığında, tepkini kullanarak saldırı atışına dezavantaj verebilirsin. Kalkan tutuyor olmalısın." },
       "two_weapon_fighting": { "name": "İki Silahla Dövüş", "description": "İki silahla dövüşürken ikinci silah saldırısının hasarına ilgili nitelik değiştiricini eklersin." }
     },
     "fighting_styles_paladin": {
       "defense": { "name": "Savunma", "description": "Zırh giyerken Zırh Sınıfına +1 bonus kazanırsın." },
       "dueling": { "name": "Düello", "description": "Bir elinde yakın dövüş silahı tutarken başka silah tutmuyorsan o silahla yaptığın hasar atışlarına +2 bonus kazanırsın." },
       "great_weapon_fighting": { "name": "Büyük Silahla Dövüş", "description": "İki elle tuttuğun bir yakın dövüş silahının hasar zarında 1 veya 2 atarsan zarı yeniden atıp yeni sonucu kullanırsın. Silah iki elli veya çok yönlü olmalıdır." },
-      "protection": { "name": "Koruma", "description": "Bir yaratık 5 fit içindeki senden başka bir hedefe saldırdığında, tepkini kullanarak saldırı atışına dezavantaj verebilirsin. Kalkan tutuyor olmalısın." }
+      "protection": { "name": "Koruma", "description": "Bir yaratık {{distance:5ft}} içindeki senden başka bir hedefe saldırdığında, tepkini kullanarak saldırı atışına dezavantaj verebilirsin. Kalkan tutuyor olmalısın." }
     },
     "fighting_styles_ranger": {
       "archery": { "name": "Okçuluk", "description": "Menzilli silahlarla yaptığın saldırı atışlarına +2 bonus kazanırsın." },
@@ -40,7 +40,7 @@
     },
     "metamagic_options": {
       "careful_spell": { "name": "Dikkatli Büyü", "description": "1 büyücülük puanı harcayıp Karizma değiştiricin kadar (en az 1) yaratık seç. Seçilen yaratıklar büyünün kurtulma atışında otomatik olarak başarılı olur." },
-      "distant_spell": { "name": "Uzak Büyü", "description": "Menzili 5 fit veya daha fazla olan bir büyünün menzilini ikiye katlamak için 1 büyücülük puanı harca. Büyünün menzili dokunmaysa menzili 30 fit olur." },
+      "distant_spell": { "name": "Uzak Büyü", "description": "Menzili {{distance:5ft}} veya daha fazla olan bir büyünün menzilini ikiye katlamak için 1 büyücülük puanı harca. Büyünün menzili dokunmaysa menzili {{distance:30ft}} olur." },
       "empowered_spell": { "name": "Güçlendirilmiş Büyü", "description": "1 büyücülük puanı harcayarak büyünün Karizma değiştiricin kadar (en az 1) hasar zarını yeniden at. Yeni sonuçları kullanmalısın." },
       "extended_spell": { "name": "Uzatılmış Büyü", "description": "En az 1 dakika süren bir büyünün süresini en fazla 24 saate kadar ikiye katlamak için 1 büyücülük puanı harca." },
       "heightened_spell": { "name": "Yükseltilmiş Büyü", "description": "Bir hedefin büyüye karşı ilk kurtulma atışına dezavantaj vermek için 3 büyücülük puanı harca." },
@@ -128,7 +128,7 @@
       } } } },
       "Multiattack": { "choices": { "multiattack": { "options": {
         "volley": { "name": "Ok Yağmuru", "description": "Eylemini kullanarak menzil içindeki küçük bir alanda bulunan istediğin sayıda yaratığa menzilli saldırı yap." },
-        "whirlwind_attack": { "name": "Kasırga Saldırısı", "description": "Eylemini kullanarak 5 fit içindeki istediğin sayıda yaratığa yakın dövüş saldırısı yap." }
+        "whirlwind_attack": { "name": "Kasırga Saldırısı", "description": "Eylemini kullanarak {{distance:5ft}} içindeki istediğin sayıda yaratığa yakın dövüş saldırısı yap." }
       } } } },
       "Superior Hunter's Defense": { "choices": { "superior_hunters_defense": { "options": {
         "evasion": { "name": "Sıyrılma", "description": "Normalde başarılı bir Çeviklik kurtulma atışında yarım hasar veren bir etkiden hiç hasar alma." },

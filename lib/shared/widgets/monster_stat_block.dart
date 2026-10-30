@@ -1,3 +1,4 @@
+import '../../core/units/rules_text_provider.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -126,6 +127,7 @@ class MonsterStatBlock extends ConsumerWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final units = ref.watch(unitSystemProvider);
+    final rules = ref.watch(rulesTextProvider);
     final senses = [
       for (final entry in monster.senses.entries)
         '${_senseName(l10n, entry.key)} ${formatDistance(entry.value, units)}',
@@ -248,8 +250,10 @@ class MonsterStatBlock extends ConsumerWidget {
                         ),
                       ),
                       TextSpan(
-                        text: i18n.monsterEntryDescription(monster.name, section, entry.id) ??
-                            entry.description,
+                        text: rules(
+                          i18n.monsterEntryDescription(monster.name, section, entry.id) ??
+                              entry.description,
+                        ),
                       ),
                     ],
                   ),

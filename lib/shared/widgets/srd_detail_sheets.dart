@@ -1,3 +1,4 @@
+import 'rules_text.dart';
 import 'package:dnd_character_tool/l10n/ability_l10n.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
@@ -153,7 +154,7 @@ class _FeatureTile extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
           child: Align(
             alignment: Alignment.centerLeft,
-            child: Text(
+            child: RulesText(
               description,
               style: Theme.of(context).textTheme.bodySmall,
             ),
@@ -330,7 +331,7 @@ class _ClassDetailSheetState extends ConsumerState<_ClassDetailSheet> {
                                   style: const TextStyle(fontSize: 14),
                                 ),
                                 subtitle: subDesc.isNotEmpty
-                                    ? Text(
+                                    ? RulesText(
                                         subDesc,
                                         style: Theme.of(
                                           context,
@@ -438,7 +439,7 @@ class _SubclassDetailSheetState extends ConsumerState<_SubclassDetailSheet> {
                   ),
                   if (subDesc.isNotEmpty) ...[
                     const SizedBox(height: 4),
-                    Text(
+                    RulesText(
                       subDesc,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: scheme.onSurfaceVariant,

@@ -14,6 +14,7 @@ import '../../l10n/ability_l10n.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_changes_dialog.dart';
+import '../../shared/widgets/rules_text.dart';
 import 'character_detail_provider.dart';
 import 'widgets/feature_choice_editor.dart';
 
@@ -465,7 +466,7 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
             RadioListTile<String>(
               value: subclass.name,
               title: Text(i18n.subclassName(plan.cls.name, subclass.name)),
-              subtitle: Text(
+              subtitle: RulesText(
                 i18n.subclassDescription(plan.cls.name, subclass.name) ?? subclass.description,
               ),
             ),
@@ -500,7 +501,7 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
                 RadioListTile<String>(
                   value: feat.name,
                   title: Text(i18n.featName(feat.name) ?? feat.name),
-                  subtitle: Text(
+                  subtitle: RulesText(
                     i18n.featDescription(feat.name) ?? feat.description,
                     maxLines: _feat == feat.name ? null : 2,
                     overflow: _feat == feat.name ? null : TextOverflow.ellipsis,

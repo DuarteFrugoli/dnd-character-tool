@@ -174,11 +174,11 @@
   },
   "Acid": {
     "name": "Asit",
-    "description": "Bir saldırının yerine 20 fit içindeki hedefe bir şişe fırlat. Hedef Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 2d6 Asit hasarı alır."
+    "description": "Bir saldırının yerine {{distance:20ft}} içindeki hedefe bir şişe fırlat. Hedef Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 2d6 Asit hasarı alır."
   },
   "Alchemist's Fire": {
     "name": "Simyacı Ateşi",
-    "description": "Bir saldırının yerine 20 fit içindeki hedefe bir matara fırlat. Hedef Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 1d4 Ateş hasarı alır ve yanmaya başlar."
+    "description": "Bir saldırının yerine {{distance:20ft}} içindeki hedefe bir matara fırlat. Hedef Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 1d4 Ateş hasarı alır ve yanmaya başlar."
   },
   "Antitoxin": {
     "name": "Antitoksin",
@@ -214,7 +214,7 @@
   },
   "Ball Bearings": {
     "name": "Metal Bilyeler",
-    "description": "Kullan eylemiyle 10 fit içinde düz bir 10 fitlik kareye saç. İçeri giren yaratıklar SG 10 Çeviklik kurtarma atışında başarısız olursa Yere Düşmüş olur. Toplamak 10 dakika sürer."
+    "description": "Kullan eylemiyle {{distance:10ft}} içinde düz bir {{distance:10ft|lik}} kareye saç. İçeri giren yaratıklar SG 10 Çeviklik kurtarma atışında başarısız olursa Yere Düşmüş olur. Toplamak 10 dakika sürer."
   },
   "Barrel": {
     "name": "Fıçı",
@@ -230,7 +230,7 @@
   },
   "Bell": {
     "name": "Çan",
-    "description": "Kullan eylemiyle çalındığında 60 fite kadar duyulan ses çıkarır."
+    "description": "Kullan eylemiyle çalındığında {{distance:60ft|dat}} kadar duyulan ses çıkarır."
   },
   "Blanket": {
     "name": "Battaniye",
@@ -258,11 +258,11 @@
   },
   "Caltrops": {
     "name": "Dikenli Tuzaklar",
-    "description": "Kullan eylemiyle 5 fitlik kareye saç. İçine giren yaratık SG 15 Çeviklik kurtarma atışında başarısız olursa 1 Delici hasar alır ve sonraki turuna kadar Hızı 0 olur. Toplamak 10 dakika sürer."
+    "description": "Kullan eylemiyle {{distance:5ft|lik}} kareye saç. İçine giren yaratık SG 15 Çeviklik kurtarma atışında başarısız olursa 1 Delici hasar alır ve sonraki turuna kadar Hızı 0 olur. Toplamak 10 dakika sürer."
   },
   "Candle": {
     "name": "Mum",
-    "description": "1 saat yanar; 5 fit Parlak Işık ve ek 5 fit Loş Işık verir."
+    "description": "1 saat yanar; {{distance:5ft}} Parlak Işık ve ek {{distance:5ft}} Loş Işık verir."
   },
   "Case, Crossbow Bolt": {
     "name": "Arbalet Oku Kutusu",
@@ -282,7 +282,7 @@
   },
   "Climber's Kit": {
     "name": "Tırmanış Takımı",
-    "description": "Bot uçları, eldiven, kazık ve koşum içerir. Kullan eylemiyle kendini sabitlemek düşüşünü 25 fitle, sabitleme noktasından uzaklaşmanı 25 fitle sınırlar."
+    "description": "Bot uçları, eldiven, kazık ve koşum içerir. Kullan eylemiyle kendini sabitlemek düşüşünü {{distance:25ft|ins}}, sabitleme noktasından uzaklaşmanı {{distance:25ft|ins}} sınırlar."
   },
   "Clothes, Fine": {
     "name": "Şık Giysi",
@@ -342,7 +342,7 @@
   },
   "Grappling Hook": {
     "name": "Kancalı Halat",
-    "description": "Kullan eylemiyle 50 fit içindeki tutunma noktasına at. SG 13 Çeviklik (Akrobasi) kontrolüyle sabitlenir; bağlanan Halat ardından tırmanılabilir."
+    "description": "Kullan eylemiyle {{distance:50ft}} içindeki tutunma noktasına at. SG 13 Çeviklik (Akrobasi) kontrolüyle sabitlenir; bağlanan Halat ardından tırmanılabilir."
   },
   "Healer's Kit": {
     "name": "Şifacı Çantası",
@@ -366,7 +366,7 @@
   },
   "Holy Water": {
     "name": "Kutsal Su",
-    "description": "Bir saldırının yerine 20 fit içindeki yaratığa matara fırlat. Bir İfrit veya Hortlak Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 2d8 Işınsal hasar alır."
+    "description": "Bir saldırının yerine {{distance:20ft}} içindeki yaratığa matara fırlat. Bir İfrit veya Hortlak Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa 2d8 Işınsal hasar alır."
   },
   "Hunting Trap": {
     "name": "Av Tuzağı",
@@ -386,19 +386,19 @@
   },
   "Ladder": {
     "name": "Merdiven",
-    "description": "10 fitlik merdiven."
+    "description": "{{distance:10ft|lik}} merdiven."
   },
   "Lamp": {
     "name": "Lamba",
-    "description": "Yağ yakar; 15 fit Parlak Işık ve ek 30 fit Loş Işık verir."
+    "description": "Yağ yakar; {{distance:15ft}} Parlak Işık ve ek {{distance:30ft}} Loş Işık verir."
   },
   "Lantern, Bullseye": {
     "name": "Yönlü Fener",
-    "description": "Yağ yakar; 60 fitlik Konide Parlak Işık ve ek 60 fit Loş Işık verir."
+    "description": "Yağ yakar; {{distance:60ft|lik}} Konide Parlak Işık ve ek {{distance:60ft}} Loş Işık verir."
   },
   "Lantern, Hooded": {
     "name": "Kapaklı Fener",
-    "description": "Yağ yakar; 30 fit Parlak Işık ve ek 30 fit Loş Işık verir. Kapağı indirmek ışığı 5 fit Loş Işıkla sınırlar."
+    "description": "Yağ yakar; {{distance:30ft}} Parlak Işık ve ek {{distance:30ft}} Loş Işık verir. Kapağı indirmek ışığı {{distance:5ft}} Loş Işıkla sınırlar."
   },
   "Lock": {
     "name": "Kilit",
@@ -422,7 +422,7 @@
   },
   "Net": {
     "name": "Ağ",
-    "description": "Bir saldırının yerine 15 fit içindeki yaratığa fırlat. Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa Kısıtlanmış olur; Devasa veya daha büyük yaratıklar otomatik başarılıdır. Kurtulmak SG 10 Güç (Atletizm) gerektirir."
+    "description": "Bir saldırının yerine {{distance:15ft}} içindeki yaratığa fırlat. Çeviklik kurtarma atışında (SG 8 + Çeviklik değiştiricisi + Yeterlilik Bonusu) başarısız olursa Kısıtlanmış olur; Devasa veya daha büyük yaratıklar otomatik başarılıdır. Kurtulmak SG 10 Güç (Atletizm) gerektirir."
   },
   "Oil": {
     "name": "Yağ",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Parfüm",
-    "description": "4 onsluk şişe. Sürdükten sonra 1 saat boyunca 5 fit içindeki İlgisiz bir İnsansıyı etkilemeye yönelik Karizma (İkna) kontrollerinde Avantaj kazan."
+    "description": "4 onsluk şişe. Sürdükten sonra 1 saat boyunca {{distance:5ft}} içindeki İlgisiz bir İnsansıyı etkilemeye yönelik Karizma (İkna) kontrollerinde Avantaj kazan."
   },
   "Poison, Basic": {
     "name": "Temel Zehir",
@@ -446,7 +446,7 @@
   },
   "Pole": {
     "name": "Sırık",
-    "description": "10 fitlik sırık. Onunla sıçramak, Yüksek veya Uzun Atlamada Güç (Atletizm) kontrolüne Avantaj verir."
+    "description": "{{distance:10ft|lik}} sırık. Onunla sıçramak, Yüksek veya Uzun Atlamada Güç (Atletizm) kontrolüne Avantaj verir."
   },
   "Pot, Iron": {
     "name": "Demir Tencere",
@@ -490,11 +490,11 @@
   },
   "Shovel": {
     "name": "Kürek",
-    "description": "Toprağı veya benzer malzemeyi bir saat kazmak, kenarı 5 fit olan küp kadar alan açar."
+    "description": "Toprağı veya benzer malzemeyi bir saat kazmak, kenarı {{distance:5ft}} olan küp kadar alan açar."
   },
   "Signal Whistle": {
     "name": "İşaret Düdüğü",
-    "description": "Kullan eylemiyle üflendiğinde 600 fite kadar duyulan ses çıkarır."
+    "description": "Kullan eylemiyle üflendiğinde {{distance:600ft|dat}} kadar duyulan ses çıkarır."
   },
   "Spellbook": {
     "name": "Büyü Kitabı",
@@ -510,7 +510,7 @@
   },
   "String": {
     "name": "İp",
-    "description": "10 fitlik ip; düğüm atmak Kullan eylemidir."
+    "description": "{{distance:10ft|lik}} ip; düğüm atmak Kullan eylemidir."
   },
   "Tent": {
     "name": "Çadır",
@@ -522,7 +522,7 @@
   },
   "Torch": {
     "name": "Meşale",
-    "description": "1 saat yanar; 20 fit Parlak Işık ve ek 20 fit Loş Işık verir. İsabette 1 Ateş hasarı veren Basit Yakın Dövüş silahı olarak kullanılabilir."
+    "description": "1 saat yanar; {{distance:20ft}} Parlak Işık ve ek {{distance:20ft}} Loş Işık verir. İsabette 1 Ateş hasarı veren Basit Yakın Dövüş silahı olarak kullanılabilir."
   },
   "Vial": {
     "name": "Küçük Şişe",
@@ -535,7 +535,7 @@
   "weaponMasteries": {
     "cleave": {
       "name": "Yarma",
-      "description": "Tur başına bir kez yakın dövüş saldırısıyla isabet ettikten sonra aynı silahla ilk hedefin 5 fit içindeki ve erişimindeki başka yaratığa saldır. İsabette pozitif nitelik değiştiricisi olmadan silah hasarı ver."
+      "description": "Tur başına bir kez yakın dövüş saldırısıyla isabet ettikten sonra aynı silahla ilk hedefin {{distance:5ft}} içindeki ve erişimindeki başka yaratığa saldır. İsabette pozitif nitelik değiştiricisi olmadan silah hasarı ver."
     },
     "graze": {
       "name": "Sıyırma",
@@ -547,7 +547,7 @@
     },
     "push": {
       "name": "İtme",
-      "description": "İsabette Büyük veya daha küçük yaratığı senden doğrudan uzağa 10 fite kadar it."
+      "description": "İsabette Büyük veya daha küçük yaratığı senden doğrudan uzağa {{distance:10ft|dat}} kadar it."
     },
     "sap": {
       "name": "Sersemletme",
@@ -555,7 +555,7 @@
     },
     "slow": {
       "name": "Yavaşlatma",
-      "description": "Hasar veren isabette hedefin Hızını sonraki turunun başına kadar 10 fit azalt. Birden çok isabet azaltmayı artırmaz."
+      "description": "Hasar veren isabette hedefin Hızını sonraki turunun başına kadar {{distance:10ft}} azalt. Birden çok isabet azaltmayı artırmaz."
     },
     "topple": {
       "name": "Devirme",

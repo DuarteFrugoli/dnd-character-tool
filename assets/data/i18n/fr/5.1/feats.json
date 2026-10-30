@@ -7,7 +7,7 @@
   "Athlete": {
     "name": "Athlète",
     "prerequisite": null,
-    "description": "Vous avez suivi un entraînement physique approfondi pour bénéficier des avantages suivants :\n• Augmentez votre score de Force ou de Dextérité de 1, jusqu'à un maximum de 20.\n• Lorsque vous êtes couché, vous lever n'utilise que 1,5 mètre de votre mouvement.\n• L'escalade ne vous coûte pas de mouvement supplémentaire.\n• Vous pouvez faire un saut en longueur ou un saut en hauteur en courant après avoir bougé de seulement 1,5 mètre à pied, au lieu de 3 mètres."
+    "description": "Vous avez suivi un entraînement physique approfondi pour bénéficier des avantages suivants :\n• Augmentez votre score de Force ou de Dextérité de 1, jusqu'à un maximum de 20.\n• Lorsque vous êtes couché, vous lever n'utilise que {{distance:5ft}} de votre mouvement.\n• L'escalade ne vous coûte pas de mouvement supplémentaire.\n• Vous pouvez faire un saut en longueur ou un saut en hauteur en courant après avoir bougé de seulement {{distance:5ft}} à pied, au lieu de {{distance:10ft}}."
   },
   "Actor": {
     "name": "Acteur",
@@ -17,12 +17,12 @@
   "Charger": {
     "name": "Chargeur",
     "prerequisite": null,
-    "description": "Lorsque vous utilisez votre action Dash, vous pouvez utiliser une action bonus pour effectuer une attaque au corps à corps avec une arme ou pour pousser une créature. Si vous vous déplacez d'au moins 3 mètres en ligne droite immédiatement avant d'effectuer cette action bonus, soit vous bénéficiez d'un bonus de +5 au jet de dégâts de l'attaque (si vous choisissez de faire une attaque au corps à corps et de toucher), soit vous poussez la cible jusqu'à 3 mètres de vous (si vous choisissez de la pousser et que vous réussissez)."
+    "description": "Lorsque vous utilisez votre action Dash, vous pouvez utiliser une action bonus pour effectuer une attaque au corps à corps avec une arme ou pour pousser une créature. Si vous vous déplacez d'au moins {{distance:10ft}} en ligne droite immédiatement avant d'effectuer cette action bonus, soit vous bénéficiez d'un bonus de +5 au jet de dégâts de l'attaque (si vous choisissez de faire une attaque au corps à corps et de toucher), soit vous poussez la cible jusqu'à {{distance:10ft}} de vous (si vous choisissez de la pousser et que vous réussissez)."
   },
   "Crossbow Expert": {
     "name": "Expert en arbalète",
     "prerequisite": null,
-    "description": "Grâce à une pratique approfondie de l'arbalète, vous bénéficiez des avantages suivants :\n• Vous ignorez la qualité de chargement des arbalètes que vous maîtrisez.\n• Être à moins de 1,50 mètre d'une créature hostile n'impose pas de désavantage à vos jets d'attaque à distance.\n• Lorsque vous utilisez l'action Attaque et attaquez avec une arme à une main, vous pouvez utiliser une action bonus pour attaquer avec une arbalète à main que vous tenez."
+    "description": "Grâce à une pratique approfondie de l'arbalète, vous bénéficiez des avantages suivants :\n• Vous ignorez la qualité de chargement des arbalètes que vous maîtrisez.\n• Être à moins de {{distance:5ft}} d'une créature hostile n'impose pas de désavantage à vos jets d'attaque à distance.\n• Lorsque vous utilisez l'action Attaque et attaquez avec une arme à une main, vous pouvez utiliser une action bonus pour attaquer avec une arbalète à main que vous tenez."
   },
   "Defensive Duelist": {
     "name": "Duelliste défensif",
@@ -77,7 +77,7 @@
   "Inspiring Leader": {
     "name": "Leader inspirant",
     "prerequisite": "Charisme 13 ou supérieur",
-    "description": "Vous pouvez passer 10 minutes à inspirer vos compagnons, renforçant ainsi leur détermination à se battre. Ce faisant, choisissez jusqu'à six créatures amies (qui peuvent vous inclure) à moins de 9 mètres de vous qui peuvent vous voir ou vous entendre et qui peuvent vous comprendre. Chaque créature peut gagner des points de vie temporaires égaux à votre niveau + votre modificateur de Charisme. Une créature ne peut plus gagner de points de vie temporaires grâce à ce don tant qu'elle n'a pas terminé un repos court ou long."
+    "description": "Vous pouvez passer 10 minutes à inspirer vos compagnons, renforçant ainsi leur détermination à se battre. Ce faisant, choisissez jusqu'à six créatures amies (qui peuvent vous inclure) à moins de {{distance:30ft}} de vous qui peuvent vous voir ou vous entendre et qui peuvent vous comprendre. Chaque créature peut gagner des points de vie temporaires égaux à votre niveau + votre modificateur de Charisme. Une créature ne peut plus gagner de points de vie temporaires grâce à ce don tant qu'elle n'a pas terminé un repos court ou long."
   },
   "Keen Mind": {
     "name": "Esprit vif",
@@ -102,7 +102,7 @@
   "Mage Slayer": {
     "name": "Tueur de mages",
     "prerequisite": null,
-    "description": "Vous avez pratiqué des techniques utiles dans les combats au corps à corps contre des lanceurs de sorts, bénéficiant des avantages suivants :\n• Lorsqu'une créature à moins de 1,50 mètre de vous lance un sort, vous pouvez utiliser votre réaction pour lancer une attaque de mêlée avec une arme contre cette créature.\n• Lorsque vous blessez une créature qui se concentre sur un sort, cette créature est désavantagée lors du jet de sauvegarde qu'elle effectue pour maintenir sa concentration.\n• Vous avez un avantage aux jets de sauvegarde contre les sorts lancés par des créatures situées à moins de 1,50 mètre de vous."
+    "description": "Vous avez pratiqué des techniques utiles dans les combats au corps à corps contre des lanceurs de sorts, bénéficiant des avantages suivants :\n• Lorsqu'une créature à moins de {{distance:5ft}} de vous lance un sort, vous pouvez utiliser votre réaction pour lancer une attaque de mêlée avec une arme contre cette créature.\n• Lorsque vous blessez une créature qui se concentre sur un sort, cette créature est désavantagée lors du jet de sauvegarde qu'elle effectue pour maintenir sa concentration.\n• Vous avez un avantage aux jets de sauvegarde contre les sorts lancés par des créatures situées à moins de {{distance:5ft}} de vous."
   },
   "Magic Initiate": {
     "name": "Initié magique",
@@ -122,7 +122,7 @@
   "Mobile": {
     "name": "Mobile",
     "prerequisite": null,
-    "description": "Vous êtes exceptionnellement rapide et agile. Vous bénéficiez des avantages suivants :\n• Votre vitesse augmente de 3 mètres.\n• Lorsque vous utilisez l'action Dash, un terrain difficile ne vous coûte pas de mouvement supplémentaire pendant ce tour.\n• Lorsque vous effectuez une attaque au corps à corps contre une créature, vous ne provoquez pas d'attaques d'opportunité de cette créature pour le reste du tour, que l'attaque touche ou non."
+    "description": "Vous êtes exceptionnellement rapide et agile. Vous bénéficiez des avantages suivants :\n• Votre vitesse augmente de {{distance:10ft}}.\n• Lorsque vous utilisez l'action Dash, un terrain difficile ne vous coûte pas de mouvement supplémentaire pendant ce tour.\n• Lorsque vous effectuez une attaque au corps à corps contre une créature, vous ne provoquez pas d'attaques d'opportunité de cette créature pour le reste du tour, que l'attaque touche ou non."
   },
   "Moderately Armored": {
     "name": "Modérément blindé",
@@ -162,7 +162,7 @@
   "Sentinel": {
     "name": "Sentinelle",
     "prerequisite": null,
-    "description": "Vous maîtrisez les techniques nécessaires pour profiter de chaque baisse de garde ennemie, bénéficiant ainsi des avantages suivants :\n• Lorsque vous touchez une créature avec une attaque d'opportunité, la vitesse de la créature devient 0 pour le reste du tour.\n• Les créatures provoquent des attaques d'opportunité de votre part même si elles effectuent l'action Désengagement avant de quitter votre portée.\n• Lorsqu'une créature à moins de 1,50 mètre de vous effectue une attaque contre une cible autre que vous (et que cette cible ne possède pas ce don), vous pouvez utiliser votre réaction pour lancer une attaque au corps à corps avec une arme contre la créature attaquante."
+    "description": "Vous maîtrisez les techniques nécessaires pour profiter de chaque baisse de garde ennemie, bénéficiant ainsi des avantages suivants :\n• Lorsque vous touchez une créature avec une attaque d'opportunité, la vitesse de la créature devient 0 pour le reste du tour.\n• Les créatures provoquent des attaques d'opportunité de votre part même si elles effectuent l'action Désengagement avant de quitter votre portée.\n• Lorsqu'une créature à moins de {{distance:5ft}} de vous effectue une attaque contre une cible autre que vous (et que cette cible ne possède pas ce don), vous pouvez utiliser votre réaction pour lancer une attaque au corps à corps avec une arme contre la créature attaquante."
   },
   "Sharpshooter": {
     "name": "Tireur d'élite",
@@ -172,7 +172,7 @@
   "Shield Master": {
     "name": "Maître du Bouclier",
     "prerequisite": null,
-    "description": "Vous utilisez des boucliers non seulement pour vous protéger mais aussi pour vous attaquer. Vous bénéficiez des avantages suivants lorsque vous utilisez un bouclier :\n• Si vous effectuez l'action Attaque à votre tour, vous pouvez utiliser une action bonus pour essayer de pousser une créature à moins de 1,50 mètre de vous avec votre bouclier.\n• Si vous n'êtes pas incapable d'agir, vous pouvez ajouter le bonus à la CA de votre bouclier à n'importe quel jet de sauvegarde de Dextérité que vous effectuez contre un sort ou tout autre effet néfaste qui ne cible que vous.\n• Si vous êtes soumis à un effet qui vous permet de faire un jet de sauvegarde de Dextérité pour ne subir que la moitié des dégâts, vous pouvez utiliser votre réaction pour ne subir aucun dégât si vous réussissez votre jet de sauvegarde, en interposant votre bouclier entre vous et la source de l'effet."
+    "description": "Vous utilisez des boucliers non seulement pour vous protéger mais aussi pour vous attaquer. Vous bénéficiez des avantages suivants lorsque vous utilisez un bouclier :\n• Si vous effectuez l'action Attaque à votre tour, vous pouvez utiliser une action bonus pour essayer de pousser une créature à moins de {{distance:5ft}} de vous avec votre bouclier.\n• Si vous n'êtes pas incapable d'agir, vous pouvez ajouter le bonus à la CA de votre bouclier à n'importe quel jet de sauvegarde de Dextérité que vous effectuez contre un sort ou tout autre effet néfaste qui ne cible que vous.\n• Si vous êtes soumis à un effet qui vous permet de faire un jet de sauvegarde de Dextérité pour ne subir que la moitié des dégâts, vous pouvez utiliser votre réaction pour ne subir aucun dégât si vous réussissez votre jet de sauvegarde, en interposant votre bouclier entre vous et la source de l'effet."
   },
   "Skilled": {
     "name": "Qualifié",

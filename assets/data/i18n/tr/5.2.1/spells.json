@@ -1,7 +1,7 @@
 {
   "Acid Splash": {
     "name": "Asit Sıçraması",
-    "description": "60 fit içindeki 5 fit yarıçaplı bir Kürede asit patlar. Alandaki yaratıklar Çeviklik kurtulma atışı yapar; başarısız olanlar 1d6 Asit hasarı alır. Hasar, karakter seviyesi 5, 11 ve 17'de sırasıyla 2d6, 3d6 ve 4d6 olur.",
+    "description": "{{distance:60ft}} içindeki {{distance:5ft}} yarıçaplı bir Kürede asit patlar. Alandaki yaratıklar Çeviklik kurtulma atışı yapar; başarısız olanlar 1d6 Asit hasarı alır. Hasar, karakter seviyesi 5, 11 ve 17'de sırasıyla 2d6, 3d6 ve 4d6 olur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık",
@@ -28,7 +28,7 @@
   },
   "Dancing Lights": {
     "name": "Dans Eden Işıklar",
-    "description": "Her biri 10 fit yarıçaplı alanı loş ışıkla aydınlatan en fazla dört süzülen ışık yarat veya bunları Orta boy insansı bir şekle dönüştür. Bonus Aksiyon olarak ışıkları 60 fite kadar hareket ettirebilirsin; birbirlerinden en fazla 20 fit uzaklaşabilirler.",
+    "description": "Her biri {{distance:10ft}} yarıçaplı alanı loş ışıkla aydınlatan en fazla dört süzülen ışık yarat veya bunları Orta boy insansı bir şekle dönüştür. Bonus Aksiyon olarak ışıkları {{distance:60ft|dat}} kadar hareket ettirebilirsin; birbirlerinden en fazla {{distance:20ft}} uzaklaşabilirler.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -58,7 +58,7 @@
   },
   "Elementalism": {
     "name": "Elementçilik",
-    "description": "30 fit içinde küçük bir element etkisi yarat: havayı veya tozu hareket ettir, kuma bir sözcük yazdır, zararsız duman veya köz oluştur ya da suyu kısa süreliğine biçimlendir, renklendir veya hareket ettir.",
+    "description": "{{distance:30ft}} içinde küçük bir element etkisi yarat: havayı veya tozu hareket ettir, kuma bir sözcük yazdır, zararsız duman veya köz oluştur ya da suyu kısa süreliğine biçimlendir, renklendir veya hareket ettir.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "Anlık"
@@ -87,7 +87,7 @@
   },
   "Light": {
     "name": "Işık",
-    "description": "Sahipsiz, Büyük veya daha küçük bir nesneye dokun. Nesne 1 saat boyunca 20 fit parlak ışık ve bunun ötesinde 20 fit loş ışık yayar; opak bir örtü ışığı engeller.",
+    "description": "Sahipsiz, Büyük veya daha küçük bir nesneye dokun. Nesne 1 saat boyunca {{distance:20ft}} parlak ışık ve bunun ötesinde {{distance:20ft}} loş ışık yayar; opak bir örtü ışığı engeller.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
     "duration": "1 saat",
@@ -102,7 +102,7 @@
   },
   "Mending": {
     "name": "Onarım",
-    "description": "Dokunduğun bir nesnedeki, 1 fiti aşmayan tek bir kırığı veya yırtığı onar. Büyülü bir eşyayı fiziksel olarak onarabilir, ancak büyüsünü geri getiremezsin.",
+    "description": "Dokunduğun bir nesnedeki, {{distance:1ft|acc}} aşmayan tek bir kırığı veya yırtığı onar. Büyülü bir eşyayı fiziksel olarak onarabilir, ancak büyüsünü geri getiremezsin.",
     "castingTime": "1 dakika",
     "range": "Dokunma",
     "duration": "Anlık",
@@ -110,7 +110,7 @@
   },
   "Message": {
     "name": "Mesaj",
-    "description": "120 fit içindeki bir yaratığa fısılda; seni yalnızca o duyar ve fısıldayarak yanıt verebilir. Hedefi tanıyorsan mesaj engellerden geçebilir; ancak büyülü sessizlik, yeterince kalın katı madde veya kurşun onu durdurur.",
+    "description": "{{distance:120ft}} içindeki bir yaratığa fısılda; seni yalnızca o duyar ve fısıldayarak yanıt verebilir. Hedefi tanıyorsan mesaj engellerden geçebilir; ancak büyülü sessizlik, yeterince kalın katı madde veya kurşun onu durdurur.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "1 tur",
@@ -118,7 +118,7 @@
   },
   "Minor Illusion": {
     "name": "Küçük Yanılsama",
-    "description": "1 dakika boyunca bir ses veya 5 fitlik bir Küpten büyük olmayan bir nesnenin görüntüsünü yarat. Görüntü ses, ışık, koku veya fiziksel etki oluşturamaz. Bir yaratık İnceleme Aksiyonu ve büyü kurtulma SG'ne karşı Araştırma kontrolüyle yanılsamayı anlayabilir.",
+    "description": "1 dakika boyunca bir ses veya {{distance:5ft|lik}} bir Küpten büyük olmayan bir nesnenin görüntüsünü yarat. Görüntü ses, ışık, koku veya fiziksel etki oluşturamaz. Bir yaratık İnceleme Aksiyonu ve büyü kurtulma SG'ne karşı Araştırma kontrolüyle yanılsamayı anlayabilir.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "1 dakika",
@@ -126,7 +126,7 @@
   },
   "Poison Spray": {
     "name": "Zehir Püskürtüsü",
-    "description": "30 fit içindeki bir yaratığa menzilli büyü saldırısı yap. İsabet 1d12 Zehir hasarı verir; bu hasar 5, 11 ve 17. seviyelerde sırasıyla 2d12, 3d12 ve 4d12 olur.",
+    "description": "{{distance:30ft}} içindeki bir yaratığa menzilli büyü saldırısı yap. İsabet 1d12 Zehir hasarı verir; bu hasar 5, 11 ve 17. seviyelerde sırasıyla 2d12, 3d12 ve 4d12 olur.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "Anlık",
@@ -141,14 +141,14 @@
   },
   "Prestidigitation": {
     "name": "Ufak Hüner",
-    "description": "10 fit içinde küçük bir büyülü etki yarat: zararsız bir duyusal etki oluştur, küçük bir alevi yak veya söndür, küçük bir nesneyi temizle veya kirlet, sıcaklığını ya da tadını değiştir, bir işaret bırak veya minicik bir süs eşyası yarat. Kalıcı etkilerden en fazla üçü aynı anda bulunabilir.",
+    "description": "{{distance:10ft}} içinde küçük bir büyülü etki yarat: zararsız bir duyusal etki oluştur, küçük bir alevi yak veya söndür, küçük bir nesneyi temizle veya kirlet, sıcaklığını ya da tadını değiştir, bir işaret bırak veya minicik bir süs eşyası yarat. Kalıcı etkilerden en fazla üçü aynı anda bulunabilir.",
     "castingTime": "Aksiyon",
     "range": "10 fit",
     "duration": "En fazla 1 saat"
   },
   "Produce Flame": {
     "name": "Alev Yaratma",
-    "description": "Bonus Aksiyon olarak 10 dakika boyunca 20 fit parlak ve ardından 20 fit loş ışık yayan bir alev yarat. Bu sürede bir Büyü Aksiyonu kullanarak alevi 60 fite kadar fırlatabilirsin; menzilli büyü saldırısı isabet ederse 1d8 Ateş hasarı verir. Hasar 5, 11 ve 17. seviyelerde artar.",
+    "description": "Bonus Aksiyon olarak 10 dakika boyunca {{distance:20ft}} parlak ve ardından {{distance:20ft}} loş ışık yayan bir alev yarat. Bu sürede bir Büyü Aksiyonu kullanarak alevi {{distance:60ft|dat}} kadar fırlatabilirsin; menzilli büyü saldırısı isabet ederse 1d8 Ateş hasarı verir. Hasar 5, 11 ve 17. seviyelerde artar.",
     "castingTime": "Bonus Aksiyon",
     "range": "Kendin",
     "duration": "10 dakika",
@@ -163,7 +163,7 @@
   },
   "Ray of Frost": {
     "name": "Ayaz Işını",
-    "description": "Menzilli büyü saldırısı yap. İsabet 1d8 Soğuk hasarı verir ve sonraki turunun başına kadar hedefin Hızını 10 fit azaltır. Hasar, 5, 11 ve 17. seviyelerde sırasıyla 2d8, 3d8 ve 4d8 olur.",
+    "description": "Menzilli büyü saldırısı yap. İsabet 1d8 Soğuk hasarı verir ve sonraki turunun başına kadar hedefin Hızını {{distance:10ft}} azaltır. Hasar, 5, 11 ve 17. seviyelerde sırasıyla 2d8, 3d8 ve 4d8 olur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık",
@@ -185,7 +185,7 @@
   },
   "Sacred Flame": {
     "name": "Kutsal Alev",
-    "description": "60 fit içindeki gördüğün bir yaratık Çeviklik kurtulma atışı yapar; başarısızsa 1d8 Işıma hasarı alır. Yarım ve Üç Çeyrek Siper bu atışa yardımcı olmaz. Hasar, 5, 11 ve 17. seviyelerde sırasıyla 2d8, 3d8 ve 4d8 olur.",
+    "description": "{{distance:60ft}} içindeki gördüğün bir yaratık Çeviklik kurtulma atışı yapar; başarısızsa 1d8 Işıma hasarı alır. Yarım ve Üç Çeyrek Siper bu atışa yardımcı olmaz. Hasar, 5, 11 ve 17. seviyelerde sırasıyla 2d8, 3d8 ve 4d8 olur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık",
@@ -227,14 +227,14 @@
   },
   "Spare the Dying": {
     "name": "Ölmekte Olanı Kurtarma",
-    "description": "Ölmüş olmayan ve 0 Can Puanına sahip bir yaratık Dengeli hâle gelir. Menzil 15 fittir; 5, 11 ve 17. seviyelerde iki katına çıkarak sırasıyla 30, 60 ve 120 fit olur.",
+    "description": "Ölmüş olmayan ve 0 Can Puanına sahip bir yaratık Dengeli hâle gelir. Menzil {{distance:15ft|cop}}; 5, 11 ve 17. seviyelerde iki katına çıkarak sırasıyla {{distance:30ft|num}}, {{distance:60ft|num}} ve {{distance:120ft}} olur.",
     "castingTime": "Aksiyon",
     "range": "15 fit",
     "duration": "Anlık"
   },
   "Starry Wisp": {
     "name": "Yıldız Parıltısı",
-    "description": "Menzilli büyü saldırısı yap. İsabet 1d8 Işıma hasarı verir; sonraki turunun sonuna kadar hedef 10 fit loş ışık yayar ve Görünmez durumundan yararlanamaz. Hasar, 5, 11 ve 17. seviyelerde sırasıyla 2d8, 3d8 ve 4d8 olur.",
+    "description": "Menzilli büyü saldırısı yap. İsabet 1d8 Işıma hasarı verir; sonraki turunun sonuna kadar hedef {{distance:10ft}} loş ışık yayar ve Görünmez durumundan yararlanamaz. Hasar, 5, 11 ve 17. seviyelerde sırasıyla 2d8, 3d8 ve 4d8 olur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık",
@@ -249,7 +249,7 @@
   },
   "Thaumaturgy": {
     "name": "Mucize",
-    "description": "30 fit içinde küçük bir mucize yarat: gözlerini değiştir, Gözdağı kontrollerinde Avantaj sağlayan gürleyen bir ses çıkar, alevlerin görünümünü değiştir, bir kapıyı açıp kapat, hayaletimsi bir ses veya sarsıntı oluştur. Kalıcı etkilerden en fazla üçü aynı anda bulunabilir.",
+    "description": "{{distance:30ft}} içinde küçük bir mucize yarat: gözlerini değiştir, Gözdağı kontrollerinde Avantaj sağlayan gürleyen bir ses çıkar, alevlerin görünümünü değiştir, bir kapıyı açıp kapat, hayaletimsi bir ses veya sarsıntı oluştur. Kalıcı etkilerden en fazla üçü aynı anda bulunabilir.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "En fazla 1 dakika"
@@ -264,7 +264,7 @@
   },
   "Vicious Mockery": {
     "name": "Acımasız Alay",
-    "description": "60 fit içinde gördüğün veya duyduğun bir yaratık Bilgelik kurtulma atışı yapar; başarısızsa 1d6 Psişik hasar alır ve sonraki turunun sonuna kadar yapacağı ilk saldırıda Dezavantajlı olur. Hasar, 5, 11 ve 17. seviyelerde sırasıyla 2d6, 3d6 ve 4d6 olur.",
+    "description": "{{distance:60ft}} içinde gördüğün veya duyduğun bir yaratık Bilgelik kurtulma atışı yapar; başarısızsa 1d6 Psişik hasar alır ve sonraki turunun sonuna kadar yapacağı ilk saldırıda Dezavantajlı olur. Hasar, 5, 11 ve 17. seviyelerde sırasıyla 2d6, 3d6 ve 4d6 olur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık",
@@ -276,7 +276,7 @@
   },
   "Alarm": {
     "name": "Alarm",
-    "description": "Bir kapıyı, pencereyi veya en fazla 20 fitlik bir Küpü kapsayan alanı 8 saat koru. Alarmı tetiklemeyecek yaratıkları ve bir davetsiz misafirin zihinsel uyarı mı yoksa duyulabilir zil sesi mi oluşturacağını seç.",
+    "description": "Bir kapıyı, pencereyi veya en fazla {{distance:20ft|lik}} bir Küpü kapsayan alanı 8 saat koru. Alarmı tetiklemeyecek yaratıkları ve bir davetsiz misafirin zihinsel uyarı mı yoksa duyulabilir zil sesi mi oluşturacağını seç.",
     "castingTime": "1 dakika veya Ritüel",
     "range": "30 fit",
     "duration": "8 saat",
@@ -311,7 +311,7 @@
   },
   "Burning Hands": {
     "name": "Yanan Eller",
-    "description": "Senden çıkan 15 fitlik bir Koni ateşle dolar. Yaratıklar Çeviklik kurtulma atışı yapar; başarısız olanlar 3d6 Ateş hasarı, başarılı olanlar yarısını alır. Sahipsiz yanıcı nesneler tutuşur; daha yüksek büyü yuvaları seviye başına 1d6 hasar ekler.",
+    "description": "Senden çıkan {{distance:15ft|lik}} bir Koni ateşle dolar. Yaratıklar Çeviklik kurtulma atışı yapar; başarısız olanlar 3d6 Ateş hasarı, başarılı olanlar yarısını alır. Sahipsiz yanıcı nesneler tutuşur; daha yüksek büyü yuvaları seviye başına 1d6 hasar ekler.",
     "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi 1d6 ekler.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
@@ -332,7 +332,7 @@
   },
   "Chromatic Orb": {
     "name": "Renkli Küre",
-    "description": "3d8 Asit, Soğuk, Ateş, Yıldırım, Zehir veya Gök Gürültüsü hasarı vermek için menzilli büyü saldırısı yap. Aynı sonucu gösteren hasar zarları, kürenin 30 fit içindeki başka bir hedefe sıçramasını sağlar. Daha yüksek büyü yuvasıyla 1d8 hasar ekle ve yuva seviyesi kadar sıçramaya izin ver. Aynı hedef iki kez vurulamaz.",
+    "description": "3d8 Asit, Soğuk, Ateş, Yıldırım, Zehir veya Gök Gürültüsü hasarı vermek için menzilli büyü saldırısı yap. Aynı sonucu gösteren hasar zarları, kürenin {{distance:30ft}} içindeki başka bir hedefe sıçramasını sağlar. Daha yüksek büyü yuvasıyla 1d8 hasar ekle ve yuva seviyesi kadar sıçramaya izin ver. Aynı hedef iki kez vurulamaz.",
     "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi 1d8 ekler.",
     "castingTime": "Aksiyon",
     "range": "90 fit",
@@ -349,7 +349,7 @@
   },
   "Color Spray": {
     "name": "Renk Yağmuru",
-    "description": "15 fitlik bir Konideki yaratıklar Dayanıklılık kurtulma atışı yapar. Başarısız olanlar sonraki turunun sonuna kadar Kör olur.",
+    "description": "{{distance:15ft|lik}} bir Konideki yaratıklar Dayanıklılık kurtulma atışı yapar. Başarısız olanlar sonraki turunun sonuna kadar Kör olur.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Anlık",
@@ -373,8 +373,8 @@
   },
   "Create or Destroy Water": {
     "name": "Su Yaratma veya Yok Etme",
-    "description": "Açık bir kapta 10 galona kadar su yarat veya yok et; alternatif olarak 30 fitlik bir Küpte yağmur oluştur ya da sisi dağıt. Daha yüksek büyü yuvaları 10 galon ekler veya Küpü büyütür.",
-    "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi 10 galon ekler veya Küpün bir kenarını 5 fit uzatır.",
+    "description": "Açık bir kapta 10 galona kadar su yarat veya yok et; alternatif olarak {{distance:30ft|lik}} bir Küpte yağmur oluştur ya da sisi dağıt. Daha yüksek büyü yuvaları 10 galon ekler veya Küpü büyütür.",
+    "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi 10 galon ekler veya Küpün bir kenarını {{distance:5ft}} uzatır.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "Anlık",
@@ -390,21 +390,21 @@
   },
   "Detect Evil and Good": {
     "name": "İyiliği ve Kötülüğü Algılama",
-    "description": "10 dakikaya kadar 30 fit içindeki yakın Aberasyonları, Gökselleri, Elementalleri, Perileri, İblisleri ve Ölümsüzleri, ayrıca buradaki etkin Hallow etkilerini algılarsın. Kalın engeller bu duyuyu engeller.",
+    "description": "10 dakikaya kadar {{distance:30ft}} içindeki yakın Aberasyonları, Gökselleri, Elementalleri, Perileri, İblisleri ve Ölümsüzleri, ayrıca buradaki etkin Hallow etkilerini algılarsın. Kalın engeller bu duyuyu engeller.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 10 dakika"
   },
   "Detect Magic": {
     "name": "Büyüyü Algılama",
-    "description": "10 dakikaya kadar 30 fit içindeki büyülü etkileri algılarsın. Bir Büyü Aksiyonu, görünür büyülü auraları ve büyünün okulunu açığa çıkarır; yeterince kalın engeller algılamayı engeller.",
+    "description": "10 dakikaya kadar {{distance:30ft}} içindeki büyülü etkileri algılarsın. Bir Büyü Aksiyonu, görünür büyülü auraları ve büyünün okulunu açığa çıkarır; yeterince kalın engeller algılamayı engeller.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 10 dakika"
   },
   "Detect Poison and Disease": {
     "name": "Zehri ve Hastalığı Algılama",
-    "description": "10 dakikaya kadar 30 fit içindeki zehirlerin, zehirli yaratıkların ve büyülü bulaşıcı hastalıkların yerini ve türünü algılarsın. Kalın engeller algılamayı engeller.",
+    "description": "10 dakikaya kadar {{distance:30ft}} içindeki zehirlerin, zehirli yaratıkların ve büyülü bulaşıcı hastalıkların yerini ve türünü algılarsın. Kalın engeller algılamayı engeller.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -455,7 +455,7 @@
   },
   "Entangle": {
     "name": "Dolaştırma",
-    "description": "Bitkiler 20 fitlik kare alanı 1 dakikaya kadar Zorlu Araziye dönüştürür. Büyü yapıldığında alandaki yaratıklar Kuvvet kurtulma atışı yapar; başarısız olanlar Kısıtlanmış olur ve kurtulmak için Aksiyon kullanabilir.",
+    "description": "Bitkiler {{distance:20ft|lik}} kare alanı 1 dakikaya kadar Zorlu Araziye dönüştürür. Büyü yapıldığında alandaki yaratıklar Kuvvet kurtulma atışı yapar; başarısız olanlar Kısıtlanmış olur ve kurtulmak için Aksiyon kullanabilir.",
     "castingTime": "Aksiyon",
     "range": "90 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika"
@@ -469,7 +469,7 @@
   },
   "Faerie Fire": {
     "name": "Peri Işığı",
-    "description": "20 fitlik Küpteki yaratıklar Çeviklik kurtulma atışında başarısız olursa 1 dakikaya kadar ışıldar. Görünmezlikten yararlanamazlar ve onları görebilen saldırganlar onlara karşı Avantajlıdır.",
+    "description": "{{distance:20ft|lik}} Küpteki yaratıklar Çeviklik kurtulma atışında başarısız olursa 1 dakikaya kadar ışıldar. Görünmezlikten yararlanamazlar ve onları görebilen saldırganlar onlara karşı Avantajlıdır.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika"
@@ -485,7 +485,7 @@
   },
   "Feather Fall": {
     "name": "Tüy Düşüşü",
-    "description": "Yaratıklar düşerken Tepki olarak en fazla beşinin düşüşünü 1 dakika boyunca tur başına 60 fite yavaşlat. Büyü bitmeden yere inerlerse düşme hasarı almazlar.",
+    "description": "Yaratıklar düşerken Tepki olarak en fazla beşinin düşüşünü 1 dakika boyunca tur başına {{distance:60ft|dat}} yavaşlat. Büyü bitmeden yere inerlerse düşme hasarı almazlar.",
     "castingTime": "Sen veya 60 fit içinde gördüğün bir yaratık düşerken kullanılan Tepki",
     "range": "60 fit",
     "duration": "1 dakika",
@@ -493,7 +493,7 @@
   },
   "Find Familiar": {
     "name": "Tanıdık Bulma",
-    "description": "Göksel, Peri veya İblis bir ruhu, Tehlike Derecesi 0 olan bir Hayvan biçiminde çağır. Bağımsız hareket eder ve saldıramaz. 100 fit içinde onunla telepatik iletişim kurabilir, duyularını kullanabilir veya Tepkisiyle dokunma menzilli büyünü iletmesini sağlayabilirsin. Onu gönderip yeniden çağırabilirsin.",
+    "description": "Göksel, Peri veya İblis bir ruhu, Tehlike Derecesi 0 olan bir Hayvan biçiminde çağır. Bağımsız hareket eder ve saldıramaz. {{distance:100ft}} içinde onunla telepatik iletişim kurabilir, duyularını kullanabilir veya Tepkisiyle dokunma menzilli büyünü iletmesini sağlayabilirsin. Onu gönderip yeniden çağırabilirsin.",
     "castingTime": "1 saat veya Ritüel",
     "range": "10 fit",
     "duration": "Anlık",
@@ -501,7 +501,7 @@
   },
   "Floating Disk": {
     "name": "Yüzen Disk",
-    "description": "1 saat boyunca en fazla 500 libre taşıyan, 3 fit çapında yüzen bir disk yarat. Ondan 20 fitten fazla uzaklaştığında seni takip eder.",
+    "description": "1 saat boyunca en fazla 500 libre taşıyan, {{distance:3ft}} çapında yüzen bir disk yarat. Ondan {{distance:20ft|abl}} fazla uzaklaştığında seni takip eder.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "30 fit",
     "duration": "1 saat",
@@ -509,8 +509,8 @@
   },
   "Fog Cloud": {
     "name": "Sis Bulutu",
-    "description": "1 saate kadar, 20 fit yarıçaplı ve görüşü yoğun biçimde engelleyen bir sis Küresi yarat. Kuvvetli rüzgâr sisi dağıtır; 1. seviyenin üzerindeki her büyü yuvası seviyesi yarıçapı 20 fit artırır.",
-    "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi sisin yarıçapını 20 fit artırır.",
+    "description": "1 saate kadar, {{distance:20ft}} yarıçaplı ve görüşü yoğun biçimde engelleyen bir sis Küresi yarat. Kuvvetli rüzgâr sisi dağıtır; 1. seviyenin üzerindeki her büyü yuvası seviyesi yarıçapı {{distance:20ft}} artırır.",
+    "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi sisin yarıçapını {{distance:20ft}} artırır.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 1 saat"
@@ -525,7 +525,7 @@
   },
   "Grease": {
     "name": "Kaygan Yağ",
-    "description": "10 fitlik kareyi 1 dakika boyunca yanıcı olmayan yağla kaplayıp Zorlu Araziye dönüştür. Yağ belirdiğinde orada bulunan, alana giren veya turunu orada bitiren yaratıklar Çeviklik kurtulma atışında başarısız olursa Yere Serilir.",
+    "description": "{{distance:10ft|lik}} kareyi 1 dakika boyunca yanıcı olmayan yağla kaplayıp Zorlu Araziye dönüştür. Yağ belirdiğinde orada bulunan, alana giren veya turunu orada bitiren yaratıklar Çeviklik kurtulma atışında başarısız olursa Yere Serilir.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "1 dakika",
@@ -549,7 +549,7 @@
   },
   "Healing Word": {
     "name": "Şifa Sözü",
-    "description": "60 fit içinde görebildiğin bir yaratık 2d4 artı büyü yapma niteliği değiştiricin kadar Can Puanı geri kazanır. 1. seviyenin üzerindeki her büyü yuvası seviyesi 2d4 iyileştirme ekler.",
+    "description": "{{distance:60ft}} içinde görebildiğin bir yaratık 2d4 artı büyü yapma niteliği değiştiricin kadar Can Puanı geri kazanır. 1. seviyenin üzerindeki her büyü yuvası seviyesi 2d4 iyileştirme ekler.",
     "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi 2d4 ekler.",
     "castingTime": "Bonus Aksiyon",
     "range": "60 fit",
@@ -557,7 +557,7 @@
   },
   "Hellish Rebuke": {
     "name": "Cehennem Azarı",
-    "description": "60 fit içinde gördüğün bir yaratık sana hasar verdikten sonra Tepki ver. Hedef Çeviklik kurtulma atışı yapar; başarısızsa 2d10 Ateş hasarı, başarılıysa yarısını alır. Daha yüksek büyü yuvaları 1d10 ekler.",
+    "description": "{{distance:60ft}} içinde gördüğün bir yaratık sana hasar verdikten sonra Tepki ver. Hedef Çeviklik kurtulma atışı yapar; başarısızsa 2d10 Ateş hasarı, başarılıysa yarısını alır. Daha yüksek büyü yuvaları 1d10 ekler.",
     "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi 1d10 ekler.",
     "castingTime": "60 fit içinde gördüğün bir yaratık sana hasar verdiğinde kullanılan Tepki",
     "range": "60 fit",
@@ -604,7 +604,7 @@
   },
   "Ice Knife": {
     "name": "Buz Bıçağı",
-    "description": "Bir yaratığa menzilli büyü saldırısı yap; isabet 1d10 Delici hasar verir. İsabet etse de etmese de buz parçası patlar; hedef ve 5 fit içindeki yaratıklar Çeviklik kurtulma atışında başarısız olursa 2d6 Soğuk hasarı alır. Daha yüksek büyü yuvaları Soğuk hasarını artırır.",
+    "description": "Bir yaratığa menzilli büyü saldırısı yap; isabet 1d10 Delici hasar verir. İsabet etse de etmese de buz parçası patlar; hedef ve {{distance:5ft}} içindeki yaratıklar Çeviklik kurtulma atışında başarısız olursa 2d6 Soğuk hasarı alır. Daha yüksek büyü yuvaları Soğuk hasarını artırır.",
     "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi 1d6 Soğuk hasarı ekler.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -653,7 +653,7 @@
   },
   "Jump": {
     "name": "Sıçrama",
-    "description": "Dokunduğun istekli bir yaratık, 1 dakika boyunca her turunda 10 fit hareket harcayarak bir kez 30 fite kadar sıçrayabilir. Daha yüksek büyü yuvaları seviye başına bir hedef ekler.",
+    "description": "Dokunduğun istekli bir yaratık, 1 dakika boyunca her turunda {{distance:10ft}} hareket harcayarak bir kez {{distance:30ft|dat}} kadar sıçrayabilir. Daha yüksek büyü yuvaları seviye başına bir hedef ekler.",
     "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi bir ek hedef sağlar.",
     "castingTime": "Bonus Aksiyon",
     "range": "Dokunma",
@@ -662,7 +662,7 @@
   },
   "Longstrider": {
     "name": "Uzun Adım",
-    "description": "Dokunduğun bir yaratığın Hızı 1 saat boyunca 10 fit artar. 1. seviyenin üzerindeki her büyü yuvası seviyesi bir hedef daha ekler.",
+    "description": "Dokunduğun bir yaratığın Hızı 1 saat boyunca {{distance:10ft}} artar. 1. seviyenin üzerindeki her büyü yuvası seviyesi bir hedef daha ekler.",
     "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi bir ek hedef sağlar.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
@@ -695,7 +695,7 @@
   },
   "Purify Food and Drink": {
     "name": "Yiyecek ve İçeceği Arıtma",
-    "description": "10 fit içindeki 5 fit yarıçaplı bir Kürede bulunan büyülü olmayan yiyecek ve içeceklerden zehri ve çürümeyi gider.",
+    "description": "{{distance:10ft}} içindeki {{distance:5ft}} yarıçaplı bir Kürede bulunan büyülü olmayan yiyecek ve içeceklerden zehri ve çürümeyi gider.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "10 fit",
     "duration": "Anlık"
@@ -741,7 +741,7 @@
   },
   "Shield of Faith": {
     "name": "İnanç Kalkanı",
-    "description": "60 fit içindeki bir yaratık, konsantrasyonunu sürdürdüğün 10 dakikaya kadar ZS'sine +2 kazanır.",
+    "description": "{{distance:60ft}} içindeki bir yaratık, konsantrasyonunu sürdürdüğün 10 dakikaya kadar ZS'sine +2 kazanır.",
     "castingTime": "Bonus Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -749,7 +749,7 @@
   },
   "Silent Image": {
     "name": "Sessiz Görüntü",
-    "description": "10 dakikaya kadar 15 fitlik bir Küpü aşmayan, yalnızca görülebilen bir görüntü yarat. Bir Büyü Aksiyonu ile hareket ettirebilirsin; fiziksel etkileşim yanılsamayı açığa çıkarır.",
+    "description": "10 dakikaya kadar {{distance:15ft|lik}} bir Küpü aşmayan, yalnızca görülebilen bir görüntü yarat. Bir Büyü Aksiyonu ile hareket ettirebilirsin; fiziksel etkileşim yanılsamayı açığa çıkarır.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -757,7 +757,7 @@
   },
   "Sleep": {
     "name": "Uyku",
-    "description": "5 fit yarıçaplı bir Küredeki seçtiğin yaratıklar Bilgelik kurtulma atışı yapar. Başarısızlık, sonraki turlarının sonuna kadar onları İş Göremez yapar; ikinci başarısız atış 1 dakikaya kadar Bilinçsiz bırakır. Hasar veya sarsma etkiyi bitirir; uyumayan yaratıklar atışta otomatik başarılı olur.",
+    "description": "{{distance:5ft}} yarıçaplı bir Küredeki seçtiğin yaratıklar Bilgelik kurtulma atışı yapar. Başarısızlık, sonraki turlarının sonuna kadar onları İş Göremez yapar; ikinci başarısız atış 1 dakikaya kadar Bilinçsiz bırakır. Hasar veya sarsma etkiyi bitirir; uyumayan yaratıklar atışta otomatik başarılı olur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -772,7 +772,7 @@
   },
   "Thunderwave": {
     "name": "Gök Gürültüsü Dalgası",
-    "description": "Senden 15 fitlik bir Gök Gürültüsü Küpü yayılır. Yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 2d8 Gök Gürültüsü hasarı alıp 10 fit itilir, başarılıysa hasarın yarısını alır. Daha yüksek büyü yuvaları 1d8 ekler.",
+    "description": "Senden {{distance:15ft|lik}} bir Gök Gürültüsü Küpü yayılır. Yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 2d8 Gök Gürültüsü hasarı alıp {{distance:10ft}} itilir, başarılıysa hasarın yarısını alır. Daha yüksek büyü yuvaları 1d8 ekler.",
     "higherLevels": "1. seviyenin üzerindeki her büyü yuvası seviyesi 1d8 ekler.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
@@ -802,7 +802,7 @@
   },
   "Aid": {
     "name": "Yardım",
-    "description": "30 fit içindeki en fazla üç yaratığın mevcut ve azami Can Puanı 8 saat boyunca 5 artar. 2. seviyenin üzerindeki her büyü yuvası seviyesi 5 Can Puanı daha ekler.",
+    "description": "{{distance:30ft}} içindeki en fazla üç yaratığın mevcut ve azami Can Puanı 8 saat boyunca 5 artar. 2. seviyenin üzerindeki her büyü yuvası seviyesi 5 Can Puanı daha ekler.",
     "higherLevels": "2. seviyenin üzerindeki her büyü yuvası seviyesi mevcut ve azami Can Puanını 5 artırır.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
@@ -818,7 +818,7 @@
   },
   "Animal Messenger": {
     "name": "Hayvan Haberci",
-    "description": "Karizma kurtulma atışında başarısız olan Minik, Tehlike Derecesi 0 bir Hayvan, ziyaret ettiğin bir yere en fazla 25 sözcüklük mesaj taşır. 24 saat boyunca günde yaklaşık 25 mil, uçuyorsa 50 mil yol alır; daha yüksek büyü yuvaları süreye 48'er saat ekler.",
+    "description": "Karizma kurtulma atışında başarısız olan Minik, Tehlike Derecesi 0 bir Hayvan, ziyaret ettiğin bir yere en fazla 25 sözcüklük mesaj taşır. 24 saat boyunca günde yaklaşık {{distance:25mi}}, uçuyorsa {{distance:50mi}} yol alır; daha yüksek büyü yuvaları süreye 48'er saat ekler.",
     "higherLevels": "2. seviyenin üzerindeki her büyü yuvası seviyesi süreyi 48 saat uzatır.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "30 fit",
@@ -874,14 +874,14 @@
   },
   "Calm Emotions": {
     "name": "Duyguları Yatıştırma",
-    "description": "20 fit yarıçaplı Küredeki İnsansılar Karizma kurtulma atışı yapar. Başarısız olanların Büyülenmiş veya Korkmuş durumunu bastırabilir ya da 1 dakikaya kadar düşman oldukları yaratıklara karşı Kayıtsız olmalarını sağlayabilirsin.",
+    "description": "{{distance:20ft}} yarıçaplı Küredeki İnsansılar Karizma kurtulma atışı yapar. Başarısız olanların Büyülenmiş veya Korkmuş durumunu bastırabilir ya da 1 dakikaya kadar düşman oldukları yaratıklara karşı Kayıtsız olmalarını sağlayabilirsin.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika"
   },
   "Continual Flame": {
     "name": "Sürekli Alev",
-    "description": "Bir nesnede ısı ve yakıt gerektirmeyen, bozulana kadar 20 fit parlak ve ardından 20 fit loş ışık yayan bir alev yarat. Büyü en az 50 altın para değerinde yakut tozu tüketir.",
+    "description": "Bir nesnede ısı ve yakıt gerektirmeyen, bozulana kadar {{distance:20ft}} parlak ve ardından {{distance:20ft}} loş ışık yayan bir alev yarat. Büyü en az 50 altın para değerinde yakut tozu tüketir.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
     "duration": "Büyü bozulana kadar",
@@ -889,7 +889,7 @@
   },
   "Darkness": {
     "name": "Karanlık",
-    "description": "10 dakikaya kadar 15 fit yarıçaplı büyülü bir Karanlık Küresi yarat veya merkezi sahipsiz bir nesneye yerleştir. Sıradan ışık onu aydınlatamaz, Karanlıkta Görüş onun içinden göremez.",
+    "description": "10 dakikaya kadar {{distance:15ft}} yarıçaplı büyülü bir Karanlık Küresi yarat veya merkezi sahipsiz bir nesneye yerleştir. Sıradan ışık onu aydınlatamaz, Karanlıkta Görüş onun içinden göremez.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -897,7 +897,7 @@
   },
   "Darkvision": {
     "name": "Karanlıkta Görüş",
-    "description": "Dokunduğun istekli yaratık 8 saat boyunca 150 fite kadar Karanlıkta Görüş kazanır.",
+    "description": "Dokunduğun istekli yaratık 8 saat boyunca {{distance:150ft|dat}} kadar Karanlıkta Görüş kazanır.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
     "duration": "8 saat",
@@ -913,7 +913,7 @@
   },
   "Dragon's Breath": {
     "name": "Ejderha Nefesi",
-    "description": "Dokunduğun istekli yaratık, Büyü Aksiyonu ile 15 fitlik Konide Asit, Soğuk, Ateş, Yıldırım veya Zehir püskürtebilir. Alandakiler Çeviklik kurtulma atışı yapar; başarısızsa 3d6 hasar, başarılıysa yarısını alır. Daha yüksek büyü yuvaları 1d6 ekler.",
+    "description": "Dokunduğun istekli yaratık, Büyü Aksiyonu ile {{distance:15ft|lik}} Konide Asit, Soğuk, Ateş, Yıldırım veya Zehir püskürtebilir. Alandakiler Çeviklik kurtulma atışı yapar; başarısızsa 3d6 hasar, başarılıysa yarısını alır. Daha yüksek büyü yuvaları 1d6 ekler.",
     "higherLevels": "2. seviyenin üzerindeki her büyü yuvası seviyesi 1d6 hasar ekler.",
     "castingTime": "Bonus Aksiyon",
     "range": "Dokunma",
@@ -951,7 +951,7 @@
   },
   "Find Steed": {
     "name": "Binek Bulma",
-    "description": "30 fit içindeki bir alana sadık, öte dünyalı bir binek çağır. Öte Dünyalı Binek istatistik bloğunu kullanır ve Göksel, Peri veya İblis biçiminde olabilir.",
+    "description": "{{distance:30ft}} içindeki bir alana sadık, öte dünyalı bir binek çağır. Öte Dünyalı Binek istatistik bloğunu kullanır ve Göksel, Peri veya İblis biçiminde olabilir.",
     "higherLevels": "Bineğin istatistikleri için kullanılan büyü yuvasının seviyesini kullan.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
@@ -959,7 +959,7 @@
   },
   "Find Traps": {
     "name": "Tuzakları Bulma",
-    "description": "120 fit içinde ve görüş hattında, bilerek kurulmuş bir tuzak olup olmadığını ve genel tehlikesini algıla; tam yerini öğrenmezsin.",
+    "description": "{{distance:120ft}} içinde ve görüş hattında, bilerek kurulmuş bir tuzak olup olmadığını ve genel tehlikesini algıla; tam yerini öğrenmezsin.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Anlık"
@@ -975,7 +975,7 @@
   },
   "Flaming Sphere": {
     "name": "Alev Küresi",
-    "description": "1 dakikaya kadar 5 fitlik bir ateş küresi yarat. Yakındaki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 2d6 Ateş hasarı, başarılıysa yarısını alır. Bonus Aksiyonla küreyi hareket ettirebilir ve başka bir kurtulma atışı zorlayabilirsin.",
+    "description": "1 dakikaya kadar {{distance:5ft|lik}} bir ateş küresi yarat. Yakındaki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 2d6 Ateş hasarı, başarılıysa yarısını alır. Bonus Aksiyonla küreyi hareket ettirebilir ve başka bir kurtulma atışı zorlayabilirsin.",
     "higherLevels": "2. seviyenin üzerindeki her büyü yuvası seviyesi 1d6 hasar ekler.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -997,7 +997,7 @@
   },
   "Gust of Wind": {
     "name": "Rüzgâr Esintisi",
-    "description": "60 fit uzunluğunda, 10 fit genişliğinde bir rüzgâr hattı, Kuvvet kurtulma atışında başarısız olan yaratıkları senden 15 fit uzağa iter ve 1 dakikaya kadar sana doğru hareketi zorlaştırır.",
+    "description": "{{distance:60ft}} uzunluğunda, {{distance:10ft}} genişliğinde bir rüzgâr hattı, Kuvvet kurtulma atışında başarısız olan yaratıkları senden {{distance:15ft}} uzağa iter ve 1 dakikaya kadar sana doğru hareketi zorlaştırır.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1037,7 +1037,7 @@
   },
   "Knock": {
     "name": "Tıkırtı",
-    "description": "60 fit içindeki gördüğün bir nesnenin kilidini veya sürgüsünü aç; büyülü kilit de kısa süreliğine bastırılır. Açılma, yakından duyulabilen yüksek bir tıklama çıkarır.",
+    "description": "{{distance:60ft}} içindeki gördüğün bir nesnenin kilidini veya sürgüsünü aç; büyülü kilit de kısa süreliğine bastırılır. Açılma, yakından duyulabilen yüksek bir tıklama çıkarır.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık"
@@ -1051,7 +1051,7 @@
   },
   "Levitate": {
     "name": "Havaya Kaldırma",
-    "description": "Görebildiğin bir yaratığı veya serbest nesneyi 10 dakikaya kadar 20 fit yükselt. İsteksiz yaratık Dayanıklılık kurtulma atışıyla direnebilir; hareket etmek için bir yüzeyden tutunup kendini çekmek gerekir.",
+    "description": "Görebildiğin bir yaratığı veya serbest nesneyi 10 dakikaya kadar {{distance:20ft}} yükselt. İsteksiz yaratık Dayanıklılık kurtulma atışıyla direnebilir; hareket etmek için bir yüzeyden tutunup kendini çekmek gerekir.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -1059,7 +1059,7 @@
   },
   "Locate Animals or Plants": {
     "name": "Hayvan veya Bitki Bulma",
-    "description": "Bir Hayvan, Bitki yaratığı veya büyülü olmayan bitki türü söyle; 5 mil içindeki en yakınının yönünü ve uzaklığını öğren.",
+    "description": "Bir Hayvan, Bitki yaratığı veya büyülü olmayan bitki türü söyle; {{distance:5mi}} içindeki en yakınının yönünü ve uzaklığını öğren.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "Kendin",
     "duration": "Anlık",
@@ -1067,7 +1067,7 @@
   },
   "Locate Object": {
     "name": "Nesne Bulma",
-    "description": "10 dakikaya kadar 1.000 fit içindeki tanıdık bir nesnenin yönünü, hareketi dahil algıla. Kalın kurşun engeller etkiyi durdurur.",
+    "description": "10 dakikaya kadar {{distance:1000ft}} içindeki tanıdık bir nesnenin yönünü, hareketi dahil algıla. Kalın kurşun engeller etkiyi durdurur.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -1111,14 +1111,14 @@
   },
   "Misty Step": {
     "name": "Sisli Adım",
-    "description": "Bonus Aksiyon olarak görebildiğin boş bir alana 30 fite kadar ışınlan.",
+    "description": "Bonus Aksiyon olarak görebildiğin boş bir alana {{distance:30ft|dat}} kadar ışınlan.",
     "castingTime": "Bonus Aksiyon",
     "range": "Kendin",
     "duration": "Anlık"
   },
   "Moonbeam": {
     "name": "Ay Işını",
-    "description": "5 fit yarıçaplı, 40 fit yüksekliğindeki ışık huzmesi 1 dakikaya kadar sürer ve Büyü Aksiyonu ile 60 fit hareket ettirilebilir. İçine giren veya turunu orada bitiren yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 2d10 Işıma hasarı, başarılıysa yarısını alır. Başarısız atış biçim değiştirmeyi de bitirir.",
+    "description": "{{distance:5ft}} yarıçaplı, {{distance:40ft}} yüksekliğindeki ışık huzmesi 1 dakikaya kadar sürer ve Büyü Aksiyonu ile {{distance:60ft}} hareket ettirilebilir. İçine giren veya turunu orada bitiren yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 2d10 Işıma hasarı, başarılıysa yarısını alır. Başarısız atış biçim değiştirmeyi de bitirir.",
     "higherLevels": "2. seviyenin üzerindeki her büyü yuvası seviyesi 1d10 hasar ekler.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -1132,7 +1132,7 @@
   },
   "Pass without Trace": {
     "name": "İz Bırakmadan Geçiş",
-    "description": "1 saate kadar 30 fitlik auran içinde seçtiğin yaratıklar Gizlilik kontrollerine +10 kazanır ve iz bırakmaz.",
+    "description": "1 saate kadar {{distance:30ft|lik}} auran içinde seçtiğin yaratıklar Gizlilik kontrollerine +10 kazanır ve iz bırakmaz.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 saat",
@@ -1140,7 +1140,7 @@
   },
   "Phantasmal Force": {
     "name": "Hayalî Kuvvet",
-    "description": "Zekâ kurtulma atışında başarısız olan bir yaratık, 1 dakikaya kadar 10 fitlik Küp boyutunda yalnızca kendisinin algıladığı bir yanılsama görür. Buna inanmamak için İnceleme Aksiyonu kullanabilir. Tehlikeli bir hayal, senin her turunda ona 2d8 Psişik hasar verebilir.",
+    "description": "Zekâ kurtulma atışında başarısız olan bir yaratık, 1 dakikaya kadar {{distance:10ft|lik}} Küp boyutunda yalnızca kendisinin algıladığı bir yanılsama görür. Buna inanmamak için İnceleme Aksiyonu kullanabilir. Tehlikeli bir hayal, senin her turunda ona 2d8 Psişik hasar verebilir.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1194,7 +1194,7 @@
   },
   "Shatter": {
     "name": "Parçalama",
-    "description": "10 fit yarıçaplı Küredeki yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 3d8 Gök Gürültüsü hasarı, başarılıysa yarısını alır. Yapılar bu atışta Dezavantajlıdır. Daha yüksek büyü yuvaları 1d8 ekler.",
+    "description": "{{distance:10ft}} yarıçaplı Küredeki yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 3d8 Gök Gürültüsü hasarı, başarılıysa yarısını alır. Yapılar bu atışta Dezavantajlıdır. Daha yüksek büyü yuvaları 1d8 ekler.",
     "higherLevels": "2. seviyenin üzerindeki her büyü yuvası seviyesi 1d8 hasar ekler.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -1216,7 +1216,7 @@
   },
   "Silence": {
     "name": "Sessizlik",
-    "description": "10 dakikaya kadar sesin geçmediği 20 fit yarıçaplı bir Küre yarat. Tamamen içeride olan yaratıklar Sağır olur, Gök Gürültüsü hasarına bağışık olur ve Sözel bileşenli büyü yapamaz.",
+    "description": "10 dakikaya kadar sesin geçmediği {{distance:20ft}} yarıçaplı bir Küre yarat. Tamamen içeride olan yaratıklar Sağır olur, Gök Gürültüsü hasarına bağışık olur ve Sözel bileşenli büyü yapamaz.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika"
@@ -1232,7 +1232,7 @@
   },
   "Spike Growth": {
     "name": "Dikenli Büyüme",
-    "description": "20 fit yarıçaplı alan, 10 dakikaya kadar gizlenmiş Zorlu Araziye dönüşür. İçinden geçen yaratık, katettiği her 5 fit için 2d4 Delici hasar alır.",
+    "description": "{{distance:20ft}} yarıçaplı alan, 10 dakikaya kadar gizlenmiş Zorlu Araziye dönüşür. İçinden geçen yaratık, katettiği her {{distance:5ft}} için 2d4 Delici hasar alır.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -1256,7 +1256,7 @@
   },
   "Warding Bond": {
     "name": "Koruyucu Bağ",
-    "description": "Gerekli platin yüzüklerden birini takan istekli yaratıkla bağ kur. 60 fit içinde kaldığı sürece ZS ve kurtulma atışlarına +1, tüm hasarlara direnç kazanır; ancak aldığı hasarın aynısını sen de alırsın.",
+    "description": "Gerekli platin yüzüklerden birini takan istekli yaratıkla bağ kur. {{distance:60ft}} içinde kaldığı sürece ZS ve kurtulma atışlarına +1, tüm hasarlara direnç kazanır; ancak aldığı hasarın aynısını sen de alırsın.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
     "duration": "1 saat",
@@ -1264,7 +1264,7 @@
   },
   "Web": {
     "name": "Ağ",
-    "description": "Yapışkan ağlar 1 saate kadar 20 fitlik Küpü doldurur; alan Zorlu Arazi olur ve görüşü hafifçe engeller. İçeri giren veya turuna orada başlayan yaratık Çeviklik kurtulma atışında başarısız olursa Kısıtlanmış olur; Kuvvet (Atletizm) Aksiyonuyla kurtulabilir. Yanan ağlar 2d4 Ateş hasarı verir.",
+    "description": "Yapışkan ağlar 1 saate kadar {{distance:20ft|lik}} Küpü doldurur; alan Zorlu Arazi olur ve görüşü hafifçe engeller. İçeri giren veya turuna orada başlayan yaratık Çeviklik kurtulma atışında başarısız olursa Kısıtlanmış olur; Kuvvet (Atletizm) Aksiyonuyla kurtulabilir. Yanan ağlar 2d4 Ateş hasarı verir.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 1 saat",
@@ -1272,14 +1272,14 @@
   },
   "Zone of Truth": {
     "name": "Gerçeklik Alanı",
-    "description": "10 dakika süren 15 fit yarıçaplı bir Küre yarat. İçeri giren veya turuna orada başlayan yaratıklar Karizma kurtulma atışı yapar; başarısız olanlar bilerek yalan söyleyemez. Her yaratığın kurtulma atışında başarılı olup olmadığını bilirsin.",
+    "description": "10 dakika süren {{distance:15ft}} yarıçaplı bir Küre yarat. İçeri giren veya turuna orada başlayan yaratıklar Karizma kurtulma atışı yapar; başarısız olanlar bilerek yalan söyleyemez. Her yaratığın kurtulma atışında başarılı olup olmadığını bilirsin.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "10 dakika"
   },
   "Animate Dead": {
     "name": "Ölüleri Canlandırma",
-    "description": "Orta veya Küçük boy İnsansı cesedini Zombiye, kemiklerini İskelete dönüştür. 60 fit içindeki ölümsüzlerine Bonus Aksiyonla komut ver; denetim 24 saat sürer ve bitmeden yenilenebilir.",
+    "description": "Orta veya Küçük boy İnsansı cesedini Zombiye, kemiklerini İskelete dönüştür. {{distance:60ft}} içindeki ölümsüzlerine Bonus Aksiyonla komut ver; denetim 24 saat sürer ve bitmeden yenilenebilir.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi iki ek ölümsüzü canlandırır veya denetimini yeniler.",
     "castingTime": "1 dakika",
     "range": "10 fit",
@@ -1288,7 +1288,7 @@
   },
   "Beacon of Hope": {
     "name": "Umut Işığı",
-    "description": "30 fit içinden istediğin sayıda yaratık seç. 1 dakikaya kadar Bilgelik ve Ölüm Kurtulma Atışlarında Avantajlı olurlar; iyileştirildiklerinde mümkün olan en yüksek Can Puanını geri kazanırlar.",
+    "description": "{{distance:30ft}} içinden istediğin sayıda yaratık seç. 1 dakikaya kadar Bilgelik ve Ölüm Kurtulma Atışlarında Avantajlı olurlar; iyileştirildiklerinde mümkün olan en yüksek Can Puanını geri kazanırlar.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika"
@@ -1303,14 +1303,14 @@
   },
   "Blink": {
     "name": "Göz Kırpma",
-    "description": "1 dakika boyunca her turunun sonunda 1d6 at. 4-6 gelirse sonraki turunun başına kadar Eterik Düzleme geçersin; ardından ayrıldığın yerin 10 fit içindeki boş bir alana dönersin.",
+    "description": "1 dakika boyunca her turunun sonunda 1d6 at. 4-6 gelirse sonraki turunun başına kadar Eterik Düzleme geçersin; ardından ayrıldığın yerin {{distance:10ft}} içindeki boş bir alana dönersin.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "1 dakika"
   },
   "Call Lightning": {
     "name": "Şimşek Çağırma",
-    "description": "Üstünde bir fırtına bulutu yarat. Büyüyü yaparken ve sonraki turlarda Büyü Aksiyonu ile bulutun altındaki noktaya şimşek çağır; 5 fit içindeki yaratıklar Çeviklik kurtulma atışı yapar, başarısızsa 3d10 Yıldırım hasarı, başarılıysa yarısını alır. Zaten var olan fırtına 1d10 ekler.",
+    "description": "Üstünde bir fırtına bulutu yarat. Büyüyü yaparken ve sonraki turlarda Büyü Aksiyonu ile bulutun altındaki noktaya şimşek çağır; {{distance:5ft}} içindeki yaratıklar Çeviklik kurtulma atışı yapar, başarısızsa 3d10 Yıldırım hasarı, başarılıysa yarısını alır. Zaten var olan fırtına 1d10 ekler.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d10 artırır.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -1323,7 +1323,7 @@
   },
   "Clairvoyance": {
     "name": "Durugörü",
-    "description": "1 mil içindeki tanıdık veya belirgin bir yere görünmez, hareketsiz bir duyu noktası yerleştir. 10 dakikaya kadar oradan gör veya duy; Bonus Aksiyonla duyular arasında geçiş yap.",
+    "description": "{{distance:1mi}} içindeki tanıdık veya belirgin bir yere görünmez, hareketsiz bir duyu noktası yerleştir. 10 dakikaya kadar oradan gör veya duy; Bonus Aksiyonla duyular arasında geçiş yap.",
     "castingTime": "10 dakika",
     "range": "1 mil",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -1331,7 +1331,7 @@
   },
   "Conjure Animals": {
     "name": "Hayvan Çağırma",
-    "description": "10 dakikaya kadar maddesiz, Büyük bir hayvan ruhları sürüsü çağır. Seninle birlikte 30 fit hareket edebilir, 5 fit içindeyken Kuvvet kurtulma atışlarına Avantaj verir ve tur başına bir kez 10 fit içindeki yaratıkları Çeviklik kurtulma atışına zorlayarak başarısız olanlara 3d10 Kesici hasar verebilir.",
+    "description": "10 dakikaya kadar maddesiz, Büyük bir hayvan ruhları sürüsü çağır. Seninle birlikte {{distance:30ft}} hareket edebilir, {{distance:5ft}} içindeyken Kuvvet kurtulma atışlarına Avantaj verir ve tur başına bir kez {{distance:10ft}} içindeki yaratıkları Çeviklik kurtulma atışına zorlayarak başarısız olanlara 3d10 Kesici hasar verebilir.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d10 artırır.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -1344,28 +1344,28 @@
   },
   "Counterspell": {
     "name": "Karşı Büyü",
-    "description": "60 fit içindeki bir yaratığın bileşenlerle büyü yaptığını gördüğünde Tepki ver. Büyücü Dayanıklılık kurtulma atışı yapar; başarısızsa büyüsünün etkisi olmaz ve büyü yapma Aksiyonu boşa gider, ancak büyü yuvası harcanmaz.",
+    "description": "{{distance:60ft}} içindeki bir yaratığın bileşenlerle büyü yaptığını gördüğünde Tepki ver. Büyücü Dayanıklılık kurtulma atışı yapar; başarısızsa büyüsünün etkisi olmaz ve büyü yapma Aksiyonu boşa gider, ancak büyü yuvası harcanmaz.",
     "castingTime": "60 fit içinde Sözel, Somatik veya Malzeme bileşenli büyü yapan bir yaratık gördüğünde kullanılan Tepki",
     "range": "60 fit",
     "duration": "Anlık"
   },
   "Create Food and Water": {
     "name": "Yiyecek ve Su Yaratma",
-    "description": "30 fit içinde 45 libre besleyici yiyecek ve 30 galon temiz su yarat. Yiyecek 24 saat sonra bozulur.",
+    "description": "{{distance:30ft}} içinde 45 libre besleyici yiyecek ve 30 galon temiz su yarat. Yiyecek 24 saat sonra bozulur.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "Anlık"
   },
   "Daylight": {
     "name": "Gün Işığı",
-    "description": "1 saat boyunca 60 fit yarıçaplı Küreyi güneş ışığıyla, sonraki 60 fiti Loş Işıkla doldur veya merkezi sahipsiz bir nesneye yerleştir. 3. veya daha düşük seviyeli büyülerin örtüşen büyülü Karanlığı bozulur.",
+    "description": "1 saat boyunca {{distance:60ft}} yarıçaplı Küreyi güneş ışığıyla, sonraki {{distance:60ft|acc}} Loş Işıkla doldur veya merkezi sahipsiz bir nesneye yerleştir. 3. veya daha düşük seviyeli büyülerin örtüşen büyülü Karanlığı bozulur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "1 saat"
   },
   "Dispel Magic": {
     "name": "Büyü Bozma",
-    "description": "120 fit içindeki bir yaratık, nesne veya büyülü etki üzerindeki tüm 3. veya daha düşük seviyeli büyüleri bitir. Daha yüksek seviyeli her büyü için, onun seviyesi artı 10 SG'ye karşı büyü yapma niteliği kontrolü yap.",
+    "description": "{{distance:120ft}} içindeki bir yaratık, nesne veya büyülü etki üzerindeki tüm 3. veya daha düşük seviyeli büyüleri bitir. Daha yüksek seviyeli her büyü için, onun seviyesi artı 10 SG'ye karşı büyü yapma niteliği kontrolü yap.",
     "higherLevels": "Daha yüksek büyü yuvası kullanmak, hedef üzerindeki o yuva seviyesini aşmayan büyüleri otomatik olarak sona erdirir.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -1373,7 +1373,7 @@
   },
   "Fear": {
     "name": "Korku",
-    "description": "30 fitlik Konideki yaratıklar Bilgelik kurtulma atışı yapar; başarısızsa ellerindekileri bırakır ve 1 dakikaya kadar Korkmuş olur. Yapabildikleri sürece senden uzağa Hızlanmak zorundadırlar; seni görmedikleri bir turun sonunda atışı yineleyebilirler.",
+    "description": "{{distance:30ft|lik}} Konideki yaratıklar Bilgelik kurtulma atışı yapar; başarısızsa ellerindekileri bırakır ve 1 dakikaya kadar Korkmuş olur. Yapabildikleri sürece senden uzağa Hızlanmak zorundadırlar; seni görmedikleri bir turun sonunda atışı yineleyebilirler.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1381,7 +1381,7 @@
   },
   "Fireball": {
     "name": "Ateş Topu",
-    "description": "150 fit içindeki bir nokta 20 fit yarıçaplı Küre hâlinde patlar. Yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 8d6 Ateş hasarı, başarılıysa yarısını alır. Sahipsiz yanıcı nesneler tutuşur.",
+    "description": "{{distance:150ft}} içindeki bir nokta {{distance:20ft}} yarıçaplı Küre hâlinde patlar. Yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 8d6 Ateş hasarı, başarılıysa yarısını alır. Sahipsiz yanıcı nesneler tutuşur.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d6 artırır.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
@@ -1395,7 +1395,7 @@
   },
   "Fly": {
     "name": "Uçuş",
-    "description": "Dokunduğun istekli yaratık 10 dakikaya kadar 60 fit Uçma Hızı kazanır ve havada asılı kalabilir. Büyü bittiğinde düşüşü engelleyemiyorsa düşer.",
+    "description": "Dokunduğun istekli yaratık 10 dakikaya kadar {{distance:60ft}} Uçma Hızı kazanır ve havada asılı kalabilir. Büyü bittiğinde düşüşü engelleyemiyorsa düşer.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi bir ek yaratığı hedefler.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
@@ -1404,7 +1404,7 @@
   },
   "Gaseous Form": {
     "name": "Gaz Biçimi",
-    "description": "Dokunduğun istekli yaratık 1 saate kadar sise dönüşür. 10 fit hızla uçar, dar açıklıklardan geçer, Ezici, Delici ve Kesici hasara direnç kazanır; saldıramaz, büyü yapamaz, konuşamaz veya nesneleri kullanamaz.",
+    "description": "Dokunduğun istekli yaratık 1 saate kadar sise dönüşür. {{distance:10ft}} hızla uçar, dar açıklıklardan geçer, Ezici, Delici ve Kesici hasara direnç kazanır; saldıramaz, büyü yapamaz, konuşamaz veya nesneleri kullanamaz.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi bir ek yaratığı hedefler.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
@@ -1413,7 +1413,7 @@
   },
   "Glyph of Warding": {
     "name": "Koruma Mührü",
-    "description": "Bir yüzeye veya kapanabilir nesneye gizli bir mühür çiz. Seçtiğin tetikleyici, 20 fit yarıçaplı Kürede 5d8 Asit, Soğuk, Ateş, Yıldırım veya Gök Gürültüsü hasarı veren bir patlama oluşturur (Çeviklik kurtulma atışıyla yarısı) ya da saklanmış bir büyüyü serbest bırakır. Mühür 10 fitten fazla taşınırsa bozulur.",
+    "description": "Bir yüzeye veya kapanabilir nesneye gizli bir mühür çiz. Seçtiğin tetikleyici, {{distance:20ft}} yarıçaplı Kürede 5d8 Asit, Soğuk, Ateş, Yıldırım veya Gök Gürültüsü hasarı veren bir patlama oluşturur (Çeviklik kurtulma atışıyla yarısı) ya da saklanmış bir büyüyü serbest bırakır. Mühür {{distance:10ft|abl}} fazla taşınırsa bozulur.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi patlama hasarını 1d8 artırır; saklanan büyü, mühür için kullanılan yuva seviyesine kadar olabilir.",
     "castingTime": "1 saat",
     "range": "Dokunma",
@@ -1430,7 +1430,7 @@
   },
   "Hypnotic Pattern": {
     "name": "Hipnotik Desen",
-    "description": "30 fitlik Küpteki deseni gören yaratıklar Bilgelik kurtulma atışı yapar; başarısızsa 1 dakikaya kadar Büyülenmiş, İş Göremez ve hareketsiz olur. Hasar almak veya başka bir yaratığın sarsma Aksiyonu etkiyi bitirir.",
+    "description": "{{distance:30ft|lik}} Küpteki deseni gören yaratıklar Bilgelik kurtulma atışı yapar; başarısızsa 1 dakikaya kadar Büyülenmiş, İş Göremez ve hareketsiz olur. Hasar almak veya başka bir yaratığın sarsma Aksiyonu etkiyi bitirir.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1438,7 +1438,7 @@
   },
   "Lightning Bolt": {
     "name": "Yıldırım Hattı",
-    "description": "Senden 100 fit uzunluğunda ve 5 fit genişliğinde bir Yıldırım Hattı çıkar. İçindeki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 8d6 Yıldırım hasarı, başarılıysa yarısını alır.",
+    "description": "Senden {{distance:100ft}} uzunluğunda ve {{distance:5ft}} genişliğinde bir Yıldırım Hattı çıkar. İçindeki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 8d6 Yıldırım hasarı, başarılıysa yarısını alır.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d6 artırır.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
@@ -1452,7 +1452,7 @@
   },
   "Magic Circle": {
     "name": "Büyülü Çember",
-    "description": "1 saat süren, 10 fit yarıçaplı ve 20 fit yüksekliğinde bir silindir yarat. Seçtiğin Gökseller, Elementaller, Periler, İblisler ve Ölümsüzler normalde içeri giremez; içeriye saldırılarda Dezavantajlıdır ve içeridekileri büyüleyemez, korkutamaz veya ele geçiremez. Bariyer bunun yerine onları içerde hapsedebilir.",
+    "description": "1 saat süren, {{distance:10ft}} yarıçaplı ve {{distance:20ft}} yüksekliğinde bir silindir yarat. Seçtiğin Gökseller, Elementaller, Periler, İblisler ve Ölümsüzler normalde içeri giremez; içeriye saldırılarda Dezavantajlıdır ve içeridekileri büyüleyemez, korkutamaz veya ele geçiremez. Bariyer bunun yerine onları içerde hapsedebilir.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi süreyi 1 saat artırır.",
     "castingTime": "1 dakika",
     "range": "10 fit",
@@ -1461,7 +1461,7 @@
   },
   "Major Image": {
     "name": "Büyük Yanılsama",
-    "description": "10 dakikaya kadar 20 fitlik Küpten büyük olmayan, inandırıcı görüntü, ses, koku ve sıcaklık yarat. Hasar veya durum veremez; fiziksel etkileşim yanılsamayı açığa çıkarır. Büyü Aksiyonu ile hareket ettirip değiştirebilirsin.",
+    "description": "10 dakikaya kadar {{distance:20ft|lik}} Küpten büyük olmayan, inandırıcı görüntü, ses, koku ve sıcaklık yarat. Hasar veya durum veremez; fiziksel etkileşim yanılsamayı açığa çıkarır. Büyü Aksiyonu ile hareket ettirip değiştirebilirsin.",
     "higherLevels": "4. veya daha yüksek seviyeli büyü yuvasıyla yanılsama bozulana kadar sürer ve konsantrasyon gerektirmez.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -1470,7 +1470,7 @@
   },
   "Mass Healing Word": {
     "name": "Toplu Şifa Sözü",
-    "description": "Bonus Aksiyon olarak, 60 fit içindeki gördüğün en fazla altı yaratığın her biri 2d4 artı büyü yapma niteliği değiştiricin kadar Can Puanı geri kazanır.",
+    "description": "Bonus Aksiyon olarak, {{distance:60ft}} içindeki gördüğün en fazla altı yaratığın her biri 2d4 artı büyü yapma niteliği değiştiricin kadar Can Puanı geri kazanır.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi iyileştirmeyi 1d4 artırır.",
     "castingTime": "Bonus Aksiyon",
     "range": "60 fit",
@@ -1478,14 +1478,14 @@
   },
   "Meld into Stone": {
     "name": "Taşla Bütünleşme",
-    "description": "Kendini ve ekipmanını 8 saate kadar yeterince büyük bir taş nesneyle bütünleştir. 5 fit hareket harcayarak çıkabilirsin; taşın hasar görmesi veya yok olması seni dışarı atıp yaralayabilir.",
+    "description": "Kendini ve ekipmanını 8 saate kadar yeterince büyük bir taş nesneyle bütünleştir. {{distance:5ft}} hareket harcayarak çıkabilirsin; taşın hasar görmesi veya yok olması seni dışarı atıp yaralayabilir.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "Dokunma",
     "duration": "8 saat"
   },
   "Nondetection": {
     "name": "Saptanamazlık",
-    "description": "8 saat boyunca istekli bir yaratık, yer veya 10 fitten büyük olmayan nesne Kehanet büyülerince hedef alınamaz ve büyülü gözetleme algılayıcılarınca görülemez.",
+    "description": "8 saat boyunca istekli bir yaratık, yer veya {{distance:10ft|abl}} büyük olmayan nesne Kehanet büyülerince hedef alınamaz ve büyülü gözetleme algılayıcılarınca görülemez.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
     "duration": "8 saat",
@@ -1493,14 +1493,14 @@
   },
   "Phantom Steed": {
     "name": "Hayalet Binek",
-    "description": "1 saat süren yarı gerçek bir binek at yarat. Hızı 100 fittir ve bir saatte 13 mil gidebilir. Büyü bittiğinde 1 dakika içinde silinir; hasar görürse daha erken kaybolur.",
+    "description": "1 saat süren yarı gerçek bir binek at yarat. Hızı {{distance:100ft|cop}} ve bir saatte {{distance:13mi}} gidebilir. Büyü bittiğinde 1 dakika içinde silinir; hasar görürse daha erken kaybolur.",
     "castingTime": "1 dakika veya Ritüel",
     "range": "30 fit",
     "duration": "1 saat"
   },
   "Plant Growth": {
     "name": "Bitki Büyümesi",
-    "description": "Aşırı Büyüme seçerek 100 fit yarıçaplı Küredeki sıradan bitkilerin, dışarıda bıraktığın alanlar hariç, gidilen her fit için 4 fit hareket gerektirmesini sağla. Alternatif olarak 8 saat harcayıp yarım mil yarıçaplı alandaki bitkileri zenginleştir; 365 gün boyunca hasatları iki katına çıkar.",
+    "description": "Aşırı Büyüme seçerek {{distance:100ft}} yarıçaplı Küredeki sıradan bitkilerin, dışarıda bıraktığın alanlar hariç, gidilen her {{distance:1ft}} için {{distance:4ft}} hareket gerektirmesini sağla. Alternatif olarak 8 saat harcayıp {{distance:0.5mi}} yarıçaplı alandaki bitkileri zenginleştir; 365 gün boyunca hasatları iki katına çıkar.",
     "castingTime": "Aksiyon (Aşırı Büyüme) veya 8 saat (Zenginleştirme)",
     "range": "150 fit",
     "duration": "Anlık"
@@ -1537,7 +1537,7 @@
   },
   "Sleet Storm": {
     "name": "Sulu Kar Fırtınası",
-    "description": "20 fit yarıçaplı, 40 fit yüksekliğindeki Silindir, 1 dakikaya kadar görüşü yoğun biçimde engeller ve Zorlu Arazi olur. İçeri giren veya turuna orada başlayan yaratıklar Çeviklik kurtulma atışında başarısızsa Yere Serilir ve Konsantrasyonunu kaybeder.",
+    "description": "{{distance:20ft}} yarıçaplı, {{distance:40ft}} yüksekliğindeki Silindir, 1 dakikaya kadar görüşü yoğun biçimde engeller ve Zorlu Arazi olur. İçeri giren veya turuna orada başlayan yaratıklar Çeviklik kurtulma atışında başarısızsa Yere Serilir ve Konsantrasyonunu kaybeder.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1545,7 +1545,7 @@
   },
   "Slow": {
     "name": "Yavaşlatma",
-    "description": "40 fitlik Küpteki en fazla altı yaratık Bilgelik kurtulma atışı yapar. Başarısız olanların Hızı yarıya iner, ZS ve Çeviklik kurtulma atışları -2 olur; Tepki veremez, en fazla bir saldırı yapar ve tur başına yalnızca Aksiyon veya Bonus Aksiyon kullanır. Somatik bileşenli büyüleri yüzde 25 olasılıkla başarısız olur. Her tur atışı yinelerler.",
+    "description": "{{distance:40ft|lik}} Küpteki en fazla altı yaratık Bilgelik kurtulma atışı yapar. Başarısız olanların Hızı yarıya iner, ZS ve Çeviklik kurtulma atışları -2 olur; Tepki veremez, en fazla bir saldırı yapar ve tur başına yalnızca Aksiyon veya Bonus Aksiyon kullanır. Somatik bileşenli büyüleri yüzde 25 olasılıkla başarısız olur. Her tur atışı yinelerler.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1561,14 +1561,14 @@
   },
   "Speak with Plants": {
     "name": "Bitkilerle Konuşma",
-    "description": "30 fitlik Yayılım içindeki bitkiler geçmiş gün hakkında bilgi verebilir ve 10 dakika basit komutları izleyebilir. Bitkilerle kaplı zemini Zorlu Araziye dönüştürebilir veya tersini yapabilir, Bitki yaratıklarıyla konuşabilirsin.",
+    "description": "{{distance:30ft|lik}} Yayılım içindeki bitkiler geçmiş gün hakkında bilgi verebilir ve 10 dakika basit komutları izleyebilir. Bitkilerle kaplı zemini Zorlu Araziye dönüştürebilir veya tersini yapabilir, Bitki yaratıklarıyla konuşabilirsin.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "10 dakika"
   },
   "Spirit Guardians": {
     "name": "Ruh Muhafızları",
-    "description": "Ruhlar 10 dakikaya kadar çevrendeki 15 fitlik Yayılımı doldurur. Etkilenmeyecek yaratıkları seç. Diğerlerinin buradaki Hızı yarıya iner. Yayılım onların alanına girdiğinde, onlar alana girdiğinde veya turunu orada bitirdiğinde Bilgelik kurtulma atışı yaparlar; başarısızsa 3d8 Işıma veya Nekrotik hasar, başarılıysa yarısını alırlar; tur başına bir kez.",
+    "description": "Ruhlar 10 dakikaya kadar çevrendeki {{distance:15ft|lik}} Yayılımı doldurur. Etkilenmeyecek yaratıkları seç. Diğerlerinin buradaki Hızı yarıya iner. Yayılım onların alanına girdiğinde, onlar alana girdiğinde veya turunu orada bitirdiğinde Bilgelik kurtulma atışı yaparlar; başarısızsa 3d8 Işıma veya Nekrotik hasar, başarılıysa yarısını alırlar; tur başına bir kez.",
     "higherLevels": "3. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
@@ -1577,7 +1577,7 @@
   },
   "Stinking Cloud": {
     "name": "Pis Kokulu Bulut",
-    "description": "1 dakikaya kadar görüşü yoğun biçimde engelleyen, 20 fit yarıçaplı bir gaz Küresi yarat. Turuna orada başlayan yaratık Dayanıklılık kurtulma atışında başarısızsa Zehirlenmiş olur ve o tur Aksiyon veya Bonus Aksiyon kullanamaz. Kuvvetli rüzgâr bulutu dağıtır.",
+    "description": "1 dakikaya kadar görüşü yoğun biçimde engelleyen, {{distance:20ft}} yarıçaplı bir gaz Küresi yarat. Turuna orada başlayan yaratık Dayanıklılık kurtulma atışında başarısızsa Zehirlenmiş olur ve o tur Aksiyon veya Bonus Aksiyon kullanamaz. Kuvvetli rüzgâr bulutu dağıtır.",
     "castingTime": "Aksiyon",
     "range": "90 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1585,7 +1585,7 @@
   },
   "Tiny Hut": {
     "name": "Küçük Kulübe",
-    "description": "8 saat süren, hareketsiz 10 fitlik Yayılım sığınağı yarat. Büyü yapıldığında içeride olan yaratıklar ve nesneler içinden geçebilir; diğerleri geçemez. 3. veya daha düşük seviyeli büyüler de içinden geçemez. Sen ayrılırsan veya yeniden yaparsan biter.",
+    "description": "8 saat süren, hareketsiz {{distance:10ft|lik}} Yayılım sığınağı yarat. Büyü yapıldığında içeride olan yaratıklar ve nesneler içinden geçebilir; diğerleri geçemez. 3. veya daha düşük seviyeli büyüler de içinden geçemez. Sen ayrılırsan veya yeniden yaparsan biter.",
     "castingTime": "1 dakika veya Ritüel",
     "range": "Kendin",
     "duration": "8 saat",
@@ -1617,7 +1617,7 @@
   },
   "Water Breathing": {
     "name": "Suda Nefes Alma",
-    "description": "30 fit içindeki en fazla on istekli yaratık, normal solunumlarını korurken 24 saat boyunca su altında nefes alabilir.",
+    "description": "{{distance:30ft}} içindeki en fazla on istekli yaratık, normal solunumlarını korurken 24 saat boyunca su altında nefes alabilir.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "30 fit",
     "duration": "24 saat",
@@ -1625,7 +1625,7 @@
   },
   "Water Walk": {
     "name": "Su Üzerinde Yürüme",
-    "description": "30 fit içindeki en fazla on istekli yaratık, 1 saat boyunca sıvı yüzeylerde katı zemin gibi yürüyebilir. Bonus Aksiyonla yüzey ile altındaki sıvı arasında geçiş yapabilirler.",
+    "description": "{{distance:30ft}} içindeki en fazla on istekli yaratık, 1 saat boyunca sıvı yüzeylerde katı zemin gibi yürüyebilir. Bonus Aksiyonla yüzey ile altındaki sıvı arasında geçiş yapabilirler.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "30 fit",
     "duration": "1 saat",
@@ -1633,7 +1633,7 @@
   },
   "Wind Wall": {
     "name": "Rüzgâr Duvarı",
-    "description": "1 dakikaya kadar 50 fit uzunluğunda, 15 fit yüksekliğinde, 1 fit kalınlığında bir rüzgâr duvarı yarat. Alanındaki yaratıklar Kuvvet kurtulma atışı yapar; başarısızsa 4d8 Ezici hasar, başarılıysa yarısını alır. Gazları, küçük uçan yaratıkları ve sıradan mermileri engeller.",
+    "description": "1 dakikaya kadar {{distance:50ft}} uzunluğunda, {{distance:15ft}} yüksekliğinde, {{distance:1ft}} kalınlığında bir rüzgâr duvarı yarat. Alanındaki yaratıklar Kuvvet kurtulma atışı yapar; başarısızsa 4d8 Ezici hasar, başarılıysa yarısını alır. Gazları, küçük uçan yaratıkları ve sıradan mermileri engeller.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1646,7 +1646,7 @@
   },
   "Arcane Eye": {
     "name": "Gizemli Göz",
-    "description": "1 saate kadar görünmez, zarar görmez, süzülen bir göz yarat. 30 fit Karanlıkta Görüş dahil her yöne onun aracılığıyla bakabilirsin. Bonus Aksiyonla 30 fit hareket ettir; en az 1 inç genişliğindeki açıklıklardan geçebilir.",
+    "description": "1 saate kadar görünmez, zarar görmez, süzülen bir göz yarat. {{distance:30ft}} Karanlıkta Görüş dahil her yöne onun aracılığıyla bakabilirsin. Bonus Aksiyonla {{distance:30ft}} hareket ettir; en az {{distance:1in}} genişliğindeki açıklıklardan geçebilir.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "Konsantrasyon, en fazla 1 saat",
@@ -1654,7 +1654,7 @@
   },
   "Aura of Life": {
     "name": "Yaşam Aurası",
-    "description": "10 dakikaya kadar çevrendeki 30 fitlik Yayılım, sana ve müttefiklerine Nekrotik hasara Direnç verir ve azami Can Puanlarının azalmasını önler. Orada turuna 0 Can Puanıyla başlayan müttefik 1 Can Puanı geri kazanır.",
+    "description": "10 dakikaya kadar çevrendeki {{distance:30ft|lik}} Yayılım, sana ve müttefiklerine Nekrotik hasara Direnç verir ve azami Can Puanlarının azalmasını önler. Orada turuna 0 Can Puanıyla başlayan müttefik 1 Can Puanı geri kazanır.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 10 dakika"
@@ -1670,7 +1670,7 @@
   },
   "Black Tentacles": {
     "name": "Kara Dokunaçlar",
-    "description": "20 fitlik kare alan 1 dakikaya kadar Zorlu Arazi olur. Oradaki yaratıklar Kuvvet kurtulma atışında başarısızsa 3d6 Ezici hasar alır ve Kısıtlanmış olur; alana girince veya turunu orada bitirince, tur başına bir kez atış yinelenir. Kısıtlanmış hedef Atletizm Aksiyonuyla kurtulabilir.",
+    "description": "{{distance:20ft|lik}} kare alan 1 dakikaya kadar Zorlu Arazi olur. Oradaki yaratıklar Kuvvet kurtulma atışında başarısızsa 3d6 Ezici hasar alır ve Kısıtlanmış olur; alana girince veya turunu orada bitirince, tur başına bir kez atış yinelenir. Kısıtlanmış hedef Atletizm Aksiyonuyla kurtulabilir.",
     "castingTime": "Aksiyon",
     "range": "90 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1683,7 +1683,7 @@
   },
   "Blight": {
     "name": "Kurutma",
-    "description": "30 fit içindeki görünür bir yaratık Dayanıklılık kurtulma atışı yapar; başarısızsa 8d8 Nekrotik hasar, başarılıysa yarısını alır. Bitkiler otomatik başarısız olur; sahipsiz ve büyülü olmayan bitki ise kuruyup ölür.",
+    "description": "{{distance:30ft}} içindeki görünür bir yaratık Dayanıklılık kurtulma atışı yapar; başarısızsa 8d8 Nekrotik hasar, başarılıysa yarısını alır. Bitkiler otomatik başarısız olur; sahipsiz ve büyülü olmayan bitki ise kuruyup ölür.",
     "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
@@ -1704,15 +1704,15 @@
   },
   "Compulsion": {
     "name": "Zorlama",
-    "description": "30 fit içindeki seçtiğin görünür yaratıklar Bilgelik kurtulma atışında başarısız olursa 1 dakikaya kadar Büyülenmiş olur. Bonus Aksiyonla yatay bir yön belirle; etkilenenler sonraki turlarında en güvenli yoldan o yöne gider, ardından atışı yineler.",
+    "description": "{{distance:30ft}} içindeki seçtiğin görünür yaratıklar Bilgelik kurtulma atışında başarısız olursa 1 dakikaya kadar Büyülenmiş olur. Bonus Aksiyonla yatay bir yön belirle; etkilenenler sonraki turlarında en güvenli yoldan o yöne gider, ardından atışı yineler.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika"
   },
   "Confusion": {
     "name": "Şaşkınlık",
-    "description": "10 fit yarıçaplı Küredeki yaratıklar Bilgelik kurtulma atışı yapar. Başarısız olanlar Bonus Aksiyon veya Tepki kullanamaz; her tur 1d10 atarak rastgele hareket edip etmeyeceklerini, hiçbir şey yapmayacaklarını, yakındaki rastgele yaratığa saldıracaklarını veya normal davranacaklarını belirler. Her tur atışı yinelerler.",
-    "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi Kürenin yarıçapını 5 fit artırır.",
+    "description": "{{distance:10ft}} yarıçaplı Küredeki yaratıklar Bilgelik kurtulma atışı yapar. Başarısız olanlar Bonus Aksiyon veya Tepki kullanamaz; her tur 1d10 atarak rastgele hareket edip etmeyeceklerini, hiçbir şey yapmayacaklarını, yakındaki rastgele yaratığa saldıracaklarını veya normal davranacaklarını belirler. Her tur atışı yinelerler.",
+    "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi Kürenin yarıçapını {{distance:5ft}} artırır.",
     "castingTime": "Aksiyon",
     "range": "90 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -1720,7 +1720,7 @@
   },
   "Conjure Minor Elementals": {
     "name": "Küçük Elementaller Çağırma",
-    "description": "10 dakikaya kadar ruhlar çevrendeki 15 fitlik Yayılımı doldurur. Düşmanlar bu zemini Zorlu Arazi sayar; alandaki bir yaratığa isabet ettirdiğin saldırılar ek 2d8 Asit, Soğuk, Ateş veya Yıldırım hasarı verir.",
+    "description": "10 dakikaya kadar ruhlar çevrendeki {{distance:15ft|lik}} Yayılımı doldurur. Düşmanlar bu zemini Zorlu Arazi sayar; alandaki bir yaratığa isabet ettirdiğin saldırılar ek 2d8 Asit, Soğuk, Ateş veya Yıldırım hasarı verir.",
     "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi ek hasarı 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
@@ -1728,7 +1728,7 @@
   },
   "Conjure Woodland Beings": {
     "name": "Orman Varlıkları Çağırma",
-    "description": "Doğa ruhları 10 dakikaya kadar çevrendeki 10 fitlik Yayılımı doldurur. Alana giren, turunu orada bitiren veya Yayılımın içine girdiği yaratıklar tur başına bir kez Bilgelik kurtulma atışına zorlanabilir; başarısızsa 5d8 Kuvvet hasarı, başarılıysa yarısını alır. Bonus Aksiyonla Sıyrılabilirsin.",
+    "description": "Doğa ruhları 10 dakikaya kadar çevrendeki {{distance:10ft|lik}} Yayılımı doldurur. Alana giren, turunu orada bitiren veya Yayılımın içine girdiği yaratıklar tur başına bir kez Bilgelik kurtulma atışına zorlanabilir; başarısızsa 5d8 Kuvvet hasarı, başarılıysa yarısını alır. Bonus Aksiyonla Sıyrılabilirsin.",
     "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
@@ -1741,7 +1741,7 @@
   },
   "Control Water": {
     "name": "Suyu Kontrol Etme",
-    "description": "Bir kenarı en fazla 100 fitlik Küpte bulunan suyu 10 dakikaya kadar kontrol et. Taşkın suyu yükseltir veya dalga gönderir; Suyu Ayırma geçit açar; Akışı Yönlendirme yönünü değiştirir; Girdap yaratıkları merkeze çeker ve 2d8 Ezici hasar verebilir.",
+    "description": "Bir kenarı en fazla {{distance:100ft|lik}} Küpte bulunan suyu 10 dakikaya kadar kontrol et. Taşkın suyu yükseltir veya dalga gönderir; Suyu Ayırma geçit açar; Akışı Yönlendirme yönünü değiştirir; Girdap yaratıkları merkeze çeker ve 2d8 Ezici hasar verebilir.",
     "castingTime": "Aksiyon",
     "range": "300 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -1756,7 +1756,7 @@
   },
   "Dimension Door": {
     "name": "Boyut Kapısı",
-    "description": "500 fit içindeki belirttiğin noktaya ışınlan; istersen 5 fit içindeki istekli bir yaratığı götür. Varış noktası doluysa ışınlanma başarısız olur ve her yolcu 4d6 Kuvvet hasarı alır.",
+    "description": "{{distance:500ft}} içindeki belirttiğin noktaya ışınlan; istersen {{distance:5ft}} içindeki istekli bir yaratığı götür. Varış noktası doluysa ışınlanma başarısız olur ve her yolcu 4d6 Kuvvet hasarı alır.",
     "castingTime": "Aksiyon",
     "range": "500 fit",
     "duration": "Anlık"
@@ -1786,7 +1786,7 @@
   },
   "Faithful Hound": {
     "name": "Sadık Tazı",
-    "description": "8 saat süren, görünmez ve zarar görmez bir bekçi köpeği çağır. Onaylamadığın yaratık 30 fit içine girince havlar, 30 fit Gerçek Görüşe sahiptir ve her turunun başında 5 fit içindeki bir düşmanı ısırır; Çeviklik kurtulma atışında başarısızsa 4d8 Kuvvet hasarı verir.",
+    "description": "8 saat süren, görünmez ve zarar görmez bir bekçi köpeği çağır. Onaylamadığın yaratık {{distance:30ft}} içine girince havlar, {{distance:30ft}} Gerçek Görüşe sahiptir ve her turunun başında {{distance:5ft}} içindeki bir düşmanı ısırır; Çeviklik kurtulma atışında başarısızsa 4d8 Kuvvet hasarı verir.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "8 saat",
@@ -1807,7 +1807,7 @@
   },
   "Freedom of Movement": {
     "name": "Hareket Özgürlüğü",
-    "description": "Dokunduğun istekli yaratık 1 saat boyunca Zorlu Araziyi ve Hızını azaltan veya Felçli ya da Kısıtlanmış duruma yol açan büyülü etkileri yok sayar. Hızına eşit Yüzme Hızı kazanır ve 5 fit hareket harcayarak büyülü olmayan bağlardan kurtulabilir.",
+    "description": "Dokunduğun istekli yaratık 1 saat boyunca Zorlu Araziyi ve Hızını azaltan veya Felçli ya da Kısıtlanmış duruma yol açan büyülü etkileri yok sayar. Hızına eşit Yüzme Hızı kazanır ve {{distance:5ft}} hareket harcayarak büyülü olmayan bağlardan kurtulabilir.",
     "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi bir ek yaratığı hedefler.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
@@ -1816,7 +1816,7 @@
   },
   "Giant Insect": {
     "name": "Dev Böcek",
-    "description": "60 fit içindeki bir alana 10 dakikaya kadar dev bir kırkayak, örümcek veya eşekarısı çağır. Turundan hemen sonra hareket eder, sözlü komutlarına uyar ve Dev Böcek istatistik bloğunu kullanır; biçimi yeteneklerini değiştirir.",
+    "description": "{{distance:60ft}} içindeki bir alana 10 dakikaya kadar dev bir kırkayak, örümcek veya eşekarısı çağır. Turundan hemen sonra hareket eder, sözlü komutlarına uyar ve Dev Böcek istatistik bloğunu kullanır; biçimi yeteneklerini değiştirir.",
     "higherLevels": "Çağrılan böceğin büyü seviyesi ve ölçeklenen istatistikleri için büyü yuvasının seviyesini kullan.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -1831,14 +1831,14 @@
   },
   "Guardian of Faith": {
     "name": "İnanç Muhafızı",
-    "description": "8 saate kadar zarar görmez, Büyük bir muhafız çağır. 10 fit içine giren veya turuna orada başlayan düşmanlar Çeviklik kurtulma atışı yapar; başarısızsa 20 Işıma hasarı, başarılıysa yarısını alır. Toplam 60 hasar verdikten sonra kaybolur.",
+    "description": "8 saate kadar zarar görmez, Büyük bir muhafız çağır. {{distance:10ft}} içine giren veya turuna orada başlayan düşmanlar Çeviklik kurtulma atışı yapar; başarısızsa 20 Işıma hasarı, başarılıysa yarısını alır. Toplam 60 hasar verdikten sonra kaybolur.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "8 saat"
   },
   "Hallucinatory Terrain": {
     "name": "Hayali Arazi",
-    "description": "150 fitlik Küp içindeki doğal araziyi 24 saat boyunca başka bir doğal arazi gibi göster, duyur ve kokut. Yapılar, ekipman ve yaratıklar değişmez; dokunma veya başarılı Araştırma kontrolü yanılsamayı ortaya çıkarabilir.",
+    "description": "{{distance:150ft|lik}} Küp içindeki doğal araziyi 24 saat boyunca başka bir doğal arazi gibi göster, duyur ve kokut. Yapılar, ekipman ve yaratıklar değişmez; dokunma veya başarılı Araştırma kontrolü yanılsamayı ortaya çıkarabilir.",
     "castingTime": "10 dakika",
     "range": "300 fit",
     "duration": "24 saat",
@@ -1846,7 +1846,7 @@
   },
   "Ice Storm": {
     "name": "Buz Fırtınası",
-    "description": "Dolu, 20 fit yarıçaplı ve 40 fit yüksekliğinde bir Silindire yağar. Yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 2d10 Ezici artı 4d6 Soğuk hasarı, başarılıysa yarısını alır. Zemin sonraki turunun sonuna kadar Zorlu Arazi olur.",
+    "description": "Dolu, {{distance:20ft}} yarıçaplı ve {{distance:40ft}} yüksekliğinde bir Silindire yağar. Yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 2d10 Ezici artı 4d6 Soğuk hasarı, başarılıysa yarısını alır. Zemin sonraki turunun sonuna kadar Zorlu Arazi olur.",
     "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi Ezici hasarı 1d10 artırır.",
     "castingTime": "Aksiyon",
     "range": "300 fit",
@@ -1855,7 +1855,7 @@
   },
   "Locate Creature": {
     "name": "Yaratık Bulma",
-    "description": "1 saate kadar 1.000 fit içindeki adını bildiğin tanıdık bir yaratığın veya yakından gördüğün türdeki en yakın yaratığın yönünü algıla. Biçim değiştirmesi veya kurşun engel bunu durdurur.",
+    "description": "1 saate kadar {{distance:1000ft}} içindeki adını bildiğin tanıdık bir yaratığın veya yakından gördüğün türdeki en yakın yaratığın yönünü algıla. Biçim değiştirmesi veya kurşun engel bunu durdurur.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 saat",
@@ -1884,8 +1884,8 @@
   },
   "Private Sanctum": {
     "name": "Özel Sığınak",
-    "description": "Bir kenarı 5 ila 100 fitlik Küpü 24 saat koru. Ses veya görüş, Kehanet algılayıcıları ve hedeflemesi, ışınlanma veya düzlemler arası yolculuğa karşı engeller seç. Aynı yerde 365 gün boyunca her gün yapılırsa kalıcı olur.",
-    "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi Küpün azami kenarını 100 fit artırır.",
+    "description": "Bir kenarı {{distance:5ft|num}} ila {{distance:100ft|lik}} Küpü 24 saat koru. Ses veya görüş, Kehanet algılayıcıları ve hedeflemesi, ışınlanma veya düzlemler arası yolculuğa karşı engeller seç. Aynı yerde 365 gün boyunca her gün yapılırsa kalıcı olur.",
+    "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi Küpün azami kenarını {{distance:100ft}} artırır.",
     "castingTime": "10 dakika",
     "range": "120 fit",
     "duration": "24 saat",
@@ -1901,15 +1901,15 @@
   },
   "Secret Chest": {
     "name": "Gizli Sandık",
-    "description": "Özel yapım, 3'e 2'ye 2 fitlik bir sandığı ve içindeki en fazla 12 fit küp eşyayı Eterik Düzlemde sakla. Küçük kopyasına Büyü Aksiyonu ile dokunarak sandığı geri çağır veya gönder. 60 günün ardından her gün büyünün bitmesi için birikimli yüzde 5 olasılık vardır.",
+    "description": "Özel yapım, {{distance:3ft|num}} × {{distance:2ft|num}} × {{distance:2ft|lik}} bir sandığı ve içindeki en fazla 12 fit küp eşyayı Eterik Düzlemde sakla. Küçük kopyasına Büyü Aksiyonu ile dokunarak sandığı geri çağır veya gönder. 60 günün ardından her gün büyünün bitmesi için birikimli yüzde 5 olasılık vardır.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
     "duration": "Büyü bozulana kadar",
-    "material": "nadir malzemelerden yapılmış, 3'e 2'ye 2 fit boyutlarında ve en az 5.000 altın para değerinde bir sandık; ayrıca aynı malzemelerden yapılmış, en az 50 altın para değerinde Minik kopyası"
+    "material": "nadir malzemelerden yapılmış, {{distance:3ft}} × {{distance:2ft}} × {{distance:2ft}} boyutlarında ve en az 5.000 altın para değerinde bir sandık; ayrıca aynı malzemelerden yapılmış, en az 50 altın para değerinde Minik kopyası"
   },
   "Stone Shape": {
     "name": "Taşı Şekillendirme",
-    "description": "Orta veya daha küçük bir taş nesneyi ya da genişliği 5 fiti geçmeyen taş bölümünü istediğin biçime sok. Basit bir açıklık, kapı veya kap yaratabilir; hassas makine oluşturamaz.",
+    "description": "Orta veya daha küçük bir taş nesneyi ya da genişliği {{distance:5ft|acc}} geçmeyen taş bölümünü istediğin biçime sok. Basit bir açıklık, kapı veya kap yaratabilir; hassas makine oluşturamaz.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
     "duration": "Anlık",
@@ -1925,7 +1925,7 @@
   },
   "Vitriolic Sphere": {
     "name": "Yakıcı Asit Küresi",
-    "description": "150 fit içinde 20 fit yarıçaplı bir Asit Küresi patlar. Yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa hemen 10d4 Asit hasarı ve sonraki turunun sonunda 5d4 daha alır, başarılıysa yalnızca ilk hasarın yarısını alır.",
+    "description": "{{distance:150ft}} içinde {{distance:20ft}} yarıçaplı bir Asit Küresi patlar. Yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa hemen 10d4 Asit hasarı ve sonraki turunun sonunda 5d4 daha alır, başarılıysa yalnızca ilk hasarın yarısını alır.",
     "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi ilk hasarı 2d4 artırır.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
@@ -1934,7 +1934,7 @@
   },
   "Wall of Fire": {
     "name": "Ateş Duvarı",
-    "description": "1 dakikaya kadar 60 fit uzunluğunda ve 20 fit yüksekliğinde bir ateş duvarı veya çapı 20 fiti geçmeyen bir halka yarat. Alanındaki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 5d8 Ateş hasarı, başarılıysa yarısını alır. Seçtiğin bir taraf, duvara giren veya 10 fit içinde turunu bitirenlere de 5d8 verir.",
+    "description": "1 dakikaya kadar {{distance:60ft}} uzunluğunda ve {{distance:20ft}} yüksekliğinde bir ateş duvarı veya çapı {{distance:20ft|acc}} geçmeyen bir halka yarat. Alanındaki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 5d8 Ateş hasarı, başarılıysa yarısını alır. Seçtiğin bir taraf, duvara giren veya {{distance:10ft}} içinde turunu bitirenlere de 5d8 verir.",
     "higherLevels": "4. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -1943,7 +1943,7 @@
   },
   "Animate Objects": {
     "name": "Nesneleri Canlandırma",
-    "description": "Büyü yapma niteliği değiştiricin kadar sahipsiz ve büyülü olmayan nesneyi canlandır; Orta veya küçük bir, Büyük iki, Devasa üç nesne sayılır. Her biri müttefik Yapı olur (ZS 15, boyuta göre 10/20/40 Can Puanı), senden sonra hareket eder ve 500 fit içindeyken Bonus Aksiyon komutlarına uyar. Yakın dövüş Darbesi büyü saldırısı bonusunu kullanır; Orta veya küçük için 1d4+3, Büyük için 2d6+3+büyü yapma değiştiricin, Devasa için 2d12+3+değiştiricin Kuvvet hasarı verir.",
+    "description": "Büyü yapma niteliği değiştiricin kadar sahipsiz ve büyülü olmayan nesneyi canlandır; Orta veya küçük bir, Büyük iki, Devasa üç nesne sayılır. Her biri müttefik Yapı olur (ZS 15, boyuta göre 10/20/40 Can Puanı), senden sonra hareket eder ve {{distance:500ft}} içindeyken Bonus Aksiyon komutlarına uyar. Yakın dövüş Darbesi büyü saldırısı bonusunu kullanır; Orta veya küçük için 1d4+3, Büyük için 2d6+3+büyü yapma değiştiricin, Devasa için 2d12+3+değiştiricin Kuvvet hasarı verir.",
     "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi Darbe hasarına Orta veya küçük nesnede 1d4, Büyükte 1d6, Devasada 1d12 ekler.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -1951,14 +1951,14 @@
   },
   "Antilife Shell": {
     "name": "Yaşam Karşıtı Kabuk",
-    "description": "Çevrendeki 10 fitlik Yayılım, 1 saate kadar Yapılar ve Ölümsüzler dışındaki yaratıkların içinden geçmesini veya içeri uzanmasını engeller. Yine de dışarıdan büyü yapabilir veya menzilli ya da Uzun Erişimli silahlarla saldırabilirler. Birini bariyerden zorla geçirmek büyüyü bitirir.",
+    "description": "Çevrendeki {{distance:10ft|lik}} Yayılım, 1 saate kadar Yapılar ve Ölümsüzler dışındaki yaratıkların içinden geçmesini veya içeri uzanmasını engeller. Yine de dışarıdan büyü yapabilir veya menzilli ya da Uzun Erişimli silahlarla saldırabilirler. Birini bariyerden zorla geçirmek büyüyü bitirir.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 saat"
   },
   "Arcane Hand": {
     "name": "Arkan El",
-    "description": "1 dakikaya kadar Büyük büyülü bir el yarat (ZS 20, seninki kadar Can Puanı). Yaratırken ve sonraki turlarda Bonus Aksiyonla 60 fit hareket ettir; ardından etki seç: 5d8 Kuvvet hasarlı yakın dövüş büyü saldırısı, itme, yakalayıp 4d6 artı büyü yapma değiştiricin kadar ezme veya Yarım Siper sağlama.",
+    "description": "1 dakikaya kadar Büyük büyülü bir el yarat (ZS 20, seninki kadar Can Puanı). Yaratırken ve sonraki turlarda Bonus Aksiyonla {{distance:60ft}} hareket ettir; ardından etki seç: 5d8 Kuvvet hasarlı yakın dövüş büyü saldırısı, itme, yakalayıp 4d6 artı büyü yapma değiştiricin kadar ezme veya Yarım Siper sağlama.",
     "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi Sıkılı Yumruk hasarına 2d8, Kavrayan El hasarına 2d6 ekler.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -1975,7 +1975,7 @@
   },
   "Cloudkill": {
     "name": "Öldürücü Bulut",
-    "description": "10 dakikaya kadar görüşü yoğun engelleyen, 20 fit yarıçaplı sis Küresi yarat; her tur senden uzağa 10 fit ilerler. Yaratıklar Küre belirdiğinde, Küre üzerlerinden geçtiğinde, içine girdiklerinde veya turunu orada bitirdiklerinde tur başına bir kez Dayanıklılık kurtulma atışı yapar; başarısızsa 5d8 Zehir hasarı, başarılıysa yarısını alır.",
+    "description": "10 dakikaya kadar görüşü yoğun engelleyen, {{distance:20ft}} yarıçaplı sis Küresi yarat; her tur senden uzağa {{distance:10ft}} ilerler. Yaratıklar Küre belirdiğinde, Küre üzerlerinden geçtiğinde, içine girdiklerinde veya turunu orada bitirdiklerinde tur başına bir kez Dayanıklılık kurtulma atışı yapar; başarısızsa 5d8 Zehir hasarı, başarılıysa yarısını alır.",
     "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -1996,14 +1996,14 @@
   },
   "Commune with Nature": {
     "name": "Doğayla İletişim",
-    "description": "Çevredeki doğal alan hakkında üç bilgi öğren: yerleşimler, düzlemsel geçitler, önemli bir öte dünyalı yaratık, baskın bitkiler/mineraller/Hayvanlar veya su kütleleri. Açık havada yarıçap 3 mil, yer altında 300 fittir; yapay alanlarda işe yaramaz.",
+    "description": "Çevredeki doğal alan hakkında üç bilgi öğren: yerleşimler, düzlemsel geçitler, önemli bir öte dünyalı yaratık, baskın bitkiler/mineraller/Hayvanlar veya su kütleleri. Açık havada yarıçap {{distance:3mi}}, yer altında {{distance:300ft|cop}}; yapay alanlarda işe yaramaz.",
     "castingTime": "1 dakika veya Ritüel",
     "range": "Kendin",
     "duration": "Anlık"
   },
   "Cone of Cold": {
     "name": "Soğuk Konisi",
-    "description": "60 fitlik Soğuk Konisi Dayanıklılık kurtulma atışına zorlar. Yaratıklar başarısızsa 8d8 Soğuk hasarı, başarılıysa yarısını alır; bu büyüyle ölenler çözülene kadar donar.",
+    "description": "{{distance:60ft|lik}} Soğuk Konisi Dayanıklılık kurtulma atışına zorlar. Yaratıklar başarısızsa 8d8 Soğuk hasarı, başarılıysa yarısını alır; bu büyüyle ölenler çözülene kadar donar.",
     "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
@@ -2044,8 +2044,8 @@
   },
   "Creation": {
     "name": "Yaratım",
-    "description": "Gördüğün gölge maddesinden 5 fitlik Küpe kadar nesne yarat. Bitkisel madde 24 saat, taş veya kristal 12 saat, değerli metal 1 saat, mücevher 10 dakika, adamantin veya mitral 1 dakika sürer. Nesne başka bir büyünün malzeme bileşeni olamaz.",
-    "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi azami Küpü 5 fit artırır.",
+    "description": "Gördüğün gölge maddesinden {{distance:5ft|lik}} Küpe kadar nesne yarat. Bitkisel madde 24 saat, taş veya kristal 12 saat, değerli metal 1 saat, mücevher 10 dakika, adamantin veya mitral 1 dakika sürer. Nesne başka bir büyünün malzeme bileşeni olamaz.",
+    "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi azami Küpü {{distance:5ft}} artırır.",
     "castingTime": "1 dakika",
     "range": "30 fit",
     "duration": "Özel",
@@ -2053,7 +2053,7 @@
   },
   "Dispel Evil and Good": {
     "name": "İyiliği ve Kötülüğü Uzaklaştırma",
-    "description": "1 dakikaya kadar Gökseller, Elementaller, Periler, İblisler ve Ölümsüzler sana saldırılarda Dezavantajlıdır. Büyüyü bitirerek dokunduğun yaratığı onların ele geçirme, büyüleme veya korkutmasından kurtarabilir ya da 5 fit içindekini Karizma kurtulma atışında başarısızsa kendi düzlemine gönderebilirsin.",
+    "description": "1 dakikaya kadar Gökseller, Elementaller, Periler, İblisler ve Ölümsüzler sana saldırılarda Dezavantajlıdır. Büyüyü bitirerek dokunduğun yaratığı onların ele geçirme, büyüleme veya korkutmasından kurtarabilir ya da {{distance:5ft}} içindekini Karizma kurtulma atışında başarısızsa kendi düzlemine gönderebilirsin.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -2077,7 +2077,7 @@
   },
   "Flame Strike": {
     "name": "Alev Darbesi",
-    "description": "10 fit yarıçaplı ve 40 fit yüksekliğinde bir Silindir Çeviklik kurtulma atışına zorlar. Yaratıklar başarısızsa 5d6 Ateş artı 5d6 Işıma hasarı, başarılıysa her ikisinin yarısını alır.",
+    "description": "{{distance:10ft}} yarıçaplı ve {{distance:40ft}} yüksekliğinde bir Silindir Çeviklik kurtulma atışına zorlar. Yaratıklar başarısızsa 5d6 Ateş artı 5d6 Işıma hasarı, başarılıysa her ikisinin yarısını alır.",
     "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi hem Ateş hem Işıma hasarını 1d6 artırır.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -2110,7 +2110,7 @@
   },
   "Hallow": {
     "name": "Kutsama Alanı",
-    "description": "60 fit yarıçapa kadar alanı bozulana dek koru. Seçtiğin Aberasyonlar, Gökseller, Elementaller, Periler, İblisler veya Ölümsüzler isteyerek giremez; onların ele geçirme, büyüleme ve korkutması içeride bastırılır. Işık, karanlık, sessizlik, direnç, kırılganlık, cesaret, korku, diller veya ışınlanmayı engelleme gibi ek etki seç.",
+    "description": "{{distance:60ft}} yarıçapa kadar alanı bozulana dek koru. Seçtiğin Aberasyonlar, Gökseller, Elementaller, Periler, İblisler veya Ölümsüzler isteyerek giremez; onların ele geçirme, büyüleme ve korkutması içeride bastırılır. Işık, karanlık, sessizlik, direnç, kırılganlık, cesaret, korku, diller veya ışınlanmayı engelleme gibi ek etki seç.",
     "castingTime": "24 saat",
     "range": "Dokunma",
     "duration": "Büyü bozulana kadar",
@@ -2127,7 +2127,7 @@
   },
   "Insect Plague": {
     "name": "Böcek İstilası",
-    "description": "Çekirgeler 10 dakikaya kadar 20 fit yarıçaplı Küreyi doldurur; görüşü hafifçe engeller ve Zorlu Arazi oluşturur. Yaratıklar Küre belirdiğinde, alana girdiklerinde veya turunu orada bitirdiklerinde tur başına bir kez Dayanıklılık kurtulma atışı yapar; başarısızsa 4d10 Delici hasar, başarılıysa yarısını alırlar.",
+    "description": "Çekirgeler 10 dakikaya kadar {{distance:20ft}} yarıçaplı Küreyi doldurur; görüşü hafifçe engeller ve Zorlu Arazi oluşturur. Yaratıklar Küre belirdiğinde, alana girdiklerinde veya turunu orada bitirdiklerinde tur başına bir kez Dayanıklılık kurtulma atışı yapar; başarısızsa 4d10 Delici hasar, başarılıysa yarısını alırlar.",
     "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d10 artırır.",
     "castingTime": "Aksiyon",
     "range": "300 fit",
@@ -2149,7 +2149,7 @@
   },
   "Mass Cure Wounds": {
     "name": "Toplu Yara İyileştirme",
-    "description": "60 fit içindeki görünür noktanın çevresindeki 30 fit yarıçaplı Küreden en fazla altı yaratık seç. Her biri 5d8 artı büyü yapma niteliği değiştiricin kadar Can Puanı geri kazanır.",
+    "description": "{{distance:60ft}} içindeki görünür noktanın çevresindeki {{distance:30ft}} yarıçaplı Küreden en fazla altı yaratık seç. Her biri 5d8 artı büyü yapma niteliği değiştiricin kadar Can Puanı geri kazanır.",
     "higherLevels": "5. seviyenin üzerindeki her büyü yuvası seviyesi iyileştirmeyi 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -2172,7 +2172,7 @@
   },
   "Passwall": {
     "name": "Duvardan Geçit",
-    "description": "30 fit içindeki ahşap, sıva veya taşta 1 saat süren, en fazla 5 fit genişliğinde, 8 fit yüksekliğinde ve 20 fit derinliğinde bir geçit aç. Kapanınca içeridekiler zarar görmeden dışarı çıkarılır.",
+    "description": "{{distance:30ft}} içindeki ahşap, sıva veya taşta 1 saat süren, en fazla {{distance:5ft}} genişliğinde, {{distance:8ft}} yüksekliğinde ve {{distance:20ft}} derinliğinde bir geçit aç. Kapanınca içeridekiler zarar görmeden dışarı çıkarılır.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "1 saat",
@@ -2180,7 +2180,7 @@
   },
   "Planar Binding": {
     "name": "Düzlemsel Bağlama",
-    "description": "1 saatlik büyü yapımı boyunca 60 fit içinde kalan bir Göksel, Elemental, Peri veya İblisi bağla. Karizma kurtulma atışında başarısızsa 24 saat sana hizmet eder; çağırma büyüsünün süresi de bağlanma kadar uzar.",
+    "description": "1 saatlik büyü yapımı boyunca {{distance:60ft}} içinde kalan bir Göksel, Elemental, Peri veya İblisi bağla. Karizma kurtulma atışında başarısızsa 24 saat sana hizmet eder; çağırma büyüsünün süresi de bağlanma kadar uzar.",
     "higherLevels": "6. seviye yuvayla süre 10 gün, 7. seviyede 30 gün, 8. seviyede 180 gün, 9. seviyede 366 gün olur.",
     "castingTime": "1 saat",
     "range": "60 fit",
@@ -2213,14 +2213,14 @@
   },
   "Seeming": {
     "name": "Görünüş Değiştirme",
-    "description": "30 fit içindeki gördüğün seçili yaratıklara 8 saatlik yanıltıcı görünüm ver. İsteksiz hedefler Karizma kurtulma atışı yapabilir. Fiziksel inceleme veya büyü kurtulma SG'ne karşı başarılı Araştırma kontrolü kılığı açığa çıkarır.",
+    "description": "{{distance:30ft}} içindeki gördüğün seçili yaratıklara 8 saatlik yanıltıcı görünüm ver. İsteksiz hedefler Karizma kurtulma atışı yapabilir. Fiziksel inceleme veya büyü kurtulma SG'ne karşı başarılı Araştırma kontrolü kılığı açığa çıkarır.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "8 saat"
   },
   "Summon Dragon": {
     "name": "Ejderha Çağırma",
-    "description": "1 saate kadar Ejderha Ruhu çağır. ZS'si 14 artı yuva seviyesi, Can Puanı 50 artı 5. seviyenin üzerindeki her yuva seviyesi için 10, Uçma Hızı 60 fittir; senden hemen sonra hareket eder. Büyü saldırısı bonusunla, yuva seviyesi / 2 kadar (aşağı yuvarla) Parçalama saldırısı yapar; her isabet 1d6+4+yuva seviyesi Delici hasar verir. 30 fitlik Koni nefesi, Çeviklik kurtulma atışıyla yarıya inen 2d6 Asit, Soğuk, Ateş, Yıldırım veya Zehir hasarı verir. Süre boyunca dirençlerinden birini paylaşmayı seç.",
+    "description": "1 saate kadar Ejderha Ruhu çağır. ZS'si 14 artı yuva seviyesi, Can Puanı 50 artı 5. seviyenin üzerindeki her yuva seviyesi için 10, Uçma Hızı {{distance:60ft|cop}}; senden hemen sonra hareket eder. Büyü saldırısı bonusunla, yuva seviyesi / 2 kadar (aşağı yuvarla) Parçalama saldırısı yapar; her isabet 1d6+4+yuva seviyesi Delici hasar verir. {{distance:30ft|lik}} Koni nefesi, Çeviklik kurtulma atışıyla yarıya inen 2d6 Asit, Soğuk, Ateş, Yıldırım veya Zehir hasarı verir. Süre boyunca dirençlerinden birini paylaşmayı seç.",
     "higherLevels": "Ruhun ZS'si, Can Puanı ve diğer ölçeklenen istatistikleri için yuva seviyesini kullan.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -2229,14 +2229,14 @@
   },
   "Telekinesis": {
     "name": "Telekinezi",
-    "description": "10 dakikaya kadar her tur Büyü Aksiyonu ile 60 fit içindeki Devasa veya daha küçük yaratığı ya da nesneyi hareket ettir veya kullan. Yaratık Kuvvet kurtulma atışında başarısızsa 30 fite kadar taşınır ve sonraki turunun sonuna kadar Kısıtlanmış olur.",
+    "description": "10 dakikaya kadar her tur Büyü Aksiyonu ile {{distance:60ft}} içindeki Devasa veya daha küçük yaratığı ya da nesneyi hareket ettir veya kullan. Yaratık Kuvvet kurtulma atışında başarısızsa {{distance:30ft|dat}} kadar taşınır ve sonraki turunun sonuna kadar Kısıtlanmış olur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika"
   },
   "Telepathic Bond": {
     "name": "Telepatik Bağ",
-    "description": "30 fit içindeki en fazla sekiz istekli yaratığı 1 saatliğine bağla. Ortak dil bilmeleri gerekmeksizin aynı düzlemde herhangi bir uzaklıktan telepatik iletişim kurarlar.",
+    "description": "{{distance:30ft}} içindeki en fazla sekiz istekli yaratığı 1 saatliğine bağla. Ortak dil bilmeleri gerekmeksizin aynı düzlemde herhangi bir uzaklıktan telepatik iletişim kurarlar.",
     "castingTime": "Aksiyon veya Ritüel",
     "range": "30 fit",
     "duration": "1 saat",
@@ -2244,7 +2244,7 @@
   },
   "Teleportation Circle": {
     "name": "Işınlanma Çemberi",
-    "description": "Simgelerini bildiğin, aynı düzlemdeki kalıcı çembere açılan, 5 fit yarıçaplı geçici geçit çiz. Sonraki turunun sonuna kadar açık kalır. Aynı yerde 365 gün boyunca her gün yapılırsa kalıcı çember oluşur.",
+    "description": "Simgelerini bildiğin, aynı düzlemdeki kalıcı çembere açılan, {{distance:5ft}} yarıçaplı geçici geçit çiz. Sonraki turunun sonuna kadar açık kalır. Aynı yerde 365 gün boyunca her gün yapılırsa kalıcı çember oluşur.",
     "castingTime": "1 dakika",
     "range": "10 fit",
     "duration": "1 tur",
@@ -2252,14 +2252,14 @@
   },
   "Tree Stride": {
     "name": "Ağaçtan Ağaca Geçiş",
-    "description": "1 dakikaya kadar canlı bir ağaca girip 500 fit içindeki aynı türden başka canlı ağaçtan çık; girmek için 5 fit, çıkmak için de 5 fit hareket harca. Tur başına bir kez yolculuk yap ve her turu ağacın dışında bitir.",
+    "description": "1 dakikaya kadar canlı bir ağaca girip {{distance:500ft}} içindeki aynı türden başka canlı ağaçtan çık; girmek için {{distance:5ft}}, çıkmak için de {{distance:5ft}} daha hareket harca. Tur başına bir kez yolculuk yap ve her turu ağacın dışında bitir.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 dakika"
   },
   "Wall of Force": {
     "name": "Kuvvet Duvarı",
-    "description": "10 dakikaya kadar bitişik on adet 10 fitlik panelden oluşan görünmez, zarar görmez duvar veya en fazla 10 fit yarıçaplı kubbe/küre yarat. Fiziksel hiçbir şey geçemez. Büyü Bozma bitiremez, ancak Parçalama yok eder.",
+    "description": "10 dakikaya kadar bitişik on adet {{distance:10ft|lik}} panelden oluşan görünmez, zarar görmez duvar veya en fazla {{distance:10ft}} yarıçaplı kubbe/küre yarat. Fiziksel hiçbir şey geçemez. Büyü Bozma bitiremez, ancak Parçalama yok eder.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -2267,7 +2267,7 @@
   },
   "Wall of Stone": {
     "name": "Taş Duvar",
-    "description": "Her biri 10 fit kare ve 6 inç kalınlığında ya da 10'a 20 fit ve 3 inç kalınlığında bitişik on taş panel yarat. Çevrelenen yaratık Çeviklik kurtulma atışıyla uzaklaşabilir. Her panelin ZS'si 15, her inç kalınlık için Can Puanı 30'dur; tüm 10 dakika konsantrasyon duvarı kalıcı yapar.",
+    "description": "Her biri {{distance:10ft|lik}} kare ve {{distance:6in}} kalınlığında ya da {{distance:10ft|num}} × {{distance:20ft|lik}} ve {{distance:3in}} kalınlığında bitişik on taş panel yarat. Çevrelenen yaratık Çeviklik kurtulma atışıyla uzaklaşabilir. Her panelin ZS'si 15, her inç kalınlık için Can Puanı 30'dur; tüm 10 dakika konsantrasyon duvarı kalıcı yapar.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -2275,7 +2275,7 @@
   },
   "Blade Barrier": {
     "name": "Bıçak Bariyeri",
-    "description": "10 dakikaya kadar 100 fit uzunluğunda ve 20 fit yüksekliğinde büyülü bıçak duvarı veya çapı 60 fitlik halka yarat. Alanı Zorlu Arazi olur ve Üç Çeyrek Siper sağlar. Yaratıklar duvar belirdiğinde, içeri girdiklerinde veya turunu orada bitirdiklerinde tur başına bir kez Çeviklik kurtulma atışı yapar; başarısızsa 6d10 Kuvvet hasarı, başarılıysa yarısını alırlar.",
+    "description": "10 dakikaya kadar {{distance:100ft}} uzunluğunda ve {{distance:20ft}} yüksekliğinde büyülü bıçak duvarı veya çapı {{distance:60ft|lik}} halka yarat. Alanı Zorlu Arazi olur ve Üç Çeyrek Siper sağlar. Yaratıklar duvar belirdiğinde, içeri girdiklerinde veya turunu orada bitirdiklerinde tur başına bir kez Çeviklik kurtulma atışı yapar; başarısızsa 6d10 Kuvvet hasarı, başarılıysa yarısını alırlar.",
     "castingTime": "Aksiyon",
     "range": "90 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika",
@@ -2287,7 +2287,7 @@
   },
   "Chain Lightning": {
     "name": "Zincir Yıldırım",
-    "description": "150 fit içindeki görünür hedefe yıldırım çarpar ve ondan 30 fit içindeki en fazla üç hedefe sıçrar. Her hedef Çeviklik kurtulma atışı yapar; başarısızsa 10d8 Yıldırım hasarı, başarılıysa yarısını alır. Hiçbir hedef iki kez vurulmaz.",
+    "description": "{{distance:150ft}} içindeki görünür hedefe yıldırım çarpar ve ondan {{distance:30ft}} içindeki en fazla üç hedefe sıçrar. Her hedef Çeviklik kurtulma atışı yapar; başarısızsa 10d8 Yıldırım hasarı, başarılıysa yarısını alır. Hiçbir hedef iki kez vurulmaz.",
     "higherLevels": "6. seviyenin üzerindeki her büyü yuvası seviyesi yeni bir hedefe bir ek yıldırım sıçratır.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
@@ -2301,7 +2301,7 @@
   },
   "Circle of Death": {
     "name": "Ölüm Çemberi",
-    "description": "60 fit yarıçaplı negatif enerji Küresi, Dayanıklılık kurtulma atışına zorlar; başarısız olanlar 8d8 Nekrotik hasar, başarılı olanlar yarısını alır.",
+    "description": "{{distance:60ft}} yarıçaplı negatif enerji Küresi, Dayanıklılık kurtulma atışına zorlar; başarısız olanlar 8d8 Nekrotik hasar, başarılı olanlar yarısını alır.",
     "higherLevels": "6. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 2d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
@@ -2315,7 +2315,7 @@
   },
   "Conjure Fey": {
     "name": "Peri Çağırma",
-    "description": "10 dakikaya kadar Orta boy bir Peri ruhu çağır. Belirdiğinde bulunduğu yerden yakın dövüş büyü saldırısı yap; isabet 3d12 artı büyü yapma niteliği değiştiricin kadar Psişik hasar verir ve hedefi sonraki turuna kadar Korkmuş yapar. Sonraki turlarda Bonus Aksiyonla ruhu 30 fit ışınlayıp saldırıyı yineleyebilirsin.",
+    "description": "10 dakikaya kadar Orta boy bir Peri ruhu çağır. Belirdiğinde bulunduğu yerden yakın dövüş büyü saldırısı yap; isabet 3d12 artı büyü yapma niteliği değiştiricin kadar Psişik hasar verir ve hedefi sonraki turuna kadar Korkmuş yapar. Sonraki turlarda Bonus Aksiyonla ruhu {{distance:30ft}} ışınlayıp saldırıyı yineleyebilirsin.",
     "higherLevels": "6. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d12 artırır.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -2331,7 +2331,7 @@
   },
   "Create Undead": {
     "name": "Ölümsüz Yaratma",
-    "description": "Yalnızca geceleri, en fazla üç Orta veya Küçük İnsansı cesedini Gula dönüştür; her ceset için en az 150 altın para değerinde siyah oniks kullan. 120 fit içindeyken Bonus Aksiyonla komut ver. Denetim 24 saat sürer ve bitmeden yenilenmelidir.",
+    "description": "Yalnızca geceleri, en fazla üç Orta veya Küçük İnsansı cesedini Gula dönüştür; her ceset için en az 150 altın para değerinde siyah oniks kullan. {{distance:120ft}} içindeyken Bonus Aksiyonla komut ver. Denetim 24 saat sürer ve bitmeden yenilenmelidir.",
     "higherLevels": "7. seviye yuva dört Gul, 8. seviye beş Gul veya iki Ghast/Wight, 9. seviye altı Gul, üç Ghast/Wight ya da iki Mumya denetler.",
     "castingTime": "1 dakika",
     "range": "10 fit",
@@ -2354,7 +2354,7 @@
   },
   "Eyebite": {
     "name": "Kem Göz",
-    "description": "1 dakikaya kadar 60 fit içindeki görünür yaratığı Bilgelik kurtulma atışına zorla; sonra Uyku (Bilinçsiz), Panik (Korkmuş ve kaçmaya zorlanmış) veya Hastalık (Zehirlenmiş) seç. Sonraki turlarda Büyü Aksiyonu ile bu kullanıma karşı henüz kurtulma atışı yapmamış başka yaratığı hedefleyebilirsin.",
+    "description": "1 dakikaya kadar {{distance:60ft}} içindeki görünür yaratığı Bilgelik kurtulma atışına zorla; sonra Uyku (Bilinçsiz), Panik (Korkmuş ve kaçmaya zorlanmış) veya Hastalık (Zehirlenmiş) seç. Sonraki turlarda Büyü Aksiyonu ile bu kullanıma karşı henüz kurtulma atışı yapmamış başka yaratığı hedefleyebilirsin.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 dakika"
@@ -2377,7 +2377,7 @@
   },
   "Forbiddance": {
     "name": "Yasak Bölge",
-    "description": "40.000 fit kareye kadar zemini ve onun 30 fit üstünü 1 gün ışınlanmaya ve düzlemler arası yolculuğa karşı koru. Seçtiğin Aberasyon, Göksel, Elemental, Peri, İblis veya Ölümsüzler, parolanı söylemezlerse alana girince veya turunu orada bitirince 5d10 Işıma veya Nekrotik hasar alır. 30 gün boyunca her gün yapılırsa kalıcı olur ve son kullanımda yakut tozu tüketilir.",
+    "description": "40.000 fit kareye kadar zemini ve onun {{distance:30ft}} üstünü 1 gün ışınlanmaya ve düzlemler arası yolculuğa karşı koru. Seçtiğin Aberasyon, Göksel, Elemental, Peri, İblis veya Ölümsüzler, parolanı söylemezlerse alana girince veya turunu orada bitirince 5d10 Işıma veya Nekrotik hasar alır. 30 gün boyunca her gün yapılırsa kalıcı olur ve son kullanımda yakut tozu tüketilir.",
     "castingTime": "10 dakika veya Ritüel",
     "range": "Dokunma",
     "duration": "1 gün",
@@ -2385,7 +2385,7 @@
   },
   "Freezing Sphere": {
     "name": "Dondurucu Küre",
-    "description": "60 fit yarıçaplı Küre Dayanıklılık kurtulma atışına zorlar; başarısız olanlar 10d6 Soğuk hasarı, başarılı olanlar yarısını alır. Vurduğu su donar ve yüzeyde yüzenleri Kısıtlayabilir. Bunun yerine küreyi 1 dakikaya kadar tutup daha sonra patlamadan önce fırlatabilirsin.",
+    "description": "{{distance:60ft}} yarıçaplı Küre Dayanıklılık kurtulma atışına zorlar; başarısız olanlar 10d6 Soğuk hasarı, başarılı olanlar yarısını alır. Vurduğu su donar ve yüzeyde yüzenleri Kısıtlayabilir. Bunun yerine küreyi 1 dakikaya kadar tutup daha sonra patlamadan önce fırlatabilirsin.",
     "higherLevels": "6. seviyenin üzerindeki her büyü yuvası seviyesi hasarı 1d6 artırır.",
     "castingTime": "Aksiyon",
     "range": "300 fit",
@@ -2399,7 +2399,7 @@
   },
   "Globe of Invulnerability": {
     "name": "Dokunulmazlık Küresi",
-    "description": "Çevrendeki hareketsiz 10 fitlik Yayılım, dışarıdan yapılan 5. veya daha düşük seviyeli büyülerin 1 dakikaya kadar içerideki herhangi bir şeyi etkilemesini engeller.",
+    "description": "Çevrendeki hareketsiz {{distance:10ft|lik}} Yayılım, dışarıdan yapılan 5. veya daha düşük seviyeli büyülerin 1 dakikaya kadar içerideki herhangi bir şeyi etkilemesini engeller.",
     "higherLevels": "6. seviyenin üzerindeki her büyü yuvası seviyesi engellenen en yüksek büyü seviyesini 1 artırır.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
@@ -2408,7 +2408,7 @@
   },
   "Guards and Wards": {
     "name": "Muhafızlar ve Korumalar",
-    "description": "2.500 fit kareye ve 20 fit yüksekliğe kadar alanı 24 saat koru. Muaf yaratıkları ve parolayı seç. Koridorlar görüşü engelleyen sisle dolar ve yolcuları yanıltabilir; kapılar Arkan Kilit alır, en fazla on kapı duvar gibi görünür, merdivenler yeniden büyüyen Ağla dolar. Belirlediğin yerlere Dans Eden Işıklar, Büyülü Ağız, Pis Kokulu Bulut, Rüzgâr Esintisi veya Telkin de yerleştir. 365 gün boyunca her gün yapılırsa kalıcı olur.",
+    "description": "2.500 fit kareye ve {{distance:20ft}} yüksekliğe kadar alanı 24 saat koru. Muaf yaratıkları ve parolayı seç. Koridorlar görüşü engelleyen sisle dolar ve yolcuları yanıltabilir; kapılar Arkan Kilit alır, en fazla on kapı duvar gibi görünür, merdivenler yeniden büyüyen Ağla dolar. Belirlediğin yerlere Dans Eden Işıklar, Büyülü Ağız, Pis Kokulu Bulut, Rüzgâr Esintisi veya Telkin de yerleştir. 365 gün boyunca her gün yapılırsa kalıcı olur.",
     "castingTime": "1 saat",
     "range": "Dokunma",
     "duration": "24 saat",
@@ -2428,7 +2428,7 @@
   },
   "Heal": {
     "name": "Şifa",
-    "description": "60 fit içindeki görünür yaratık 70 Can Puanı geri kazanır; Kör, Sağır ve Zehirlenmiş durumları biter.",
+    "description": "{{distance:60ft}} içindeki görünür yaratık 70 Can Puanı geri kazanır; Kör, Sağır ve Zehirlenmiş durumları biter.",
     "higherLevels": "6. seviyenin üzerindeki her büyü yuvası seviyesi iyileştirmeyi 10 Can Puanı artırır.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -2444,7 +2444,7 @@
   },
   "Instant Summons": {
     "name": "Anlık Çağırma",
-    "description": "En fazla 10 libre ağırlığında ve 6 fit uzunluğundaki nesneyi, en az 1.000 altın para değerinde safirle işaretle. Daha sonra Büyü Aksiyonu olarak safiri kır; nesne herhangi bir uzaklık veya düzlemden eline gelir. Başka yaratık onu tutuyorsa bunun yerine kim olduğunu ve nerede bulunduğunu öğrenirsin.",
+    "description": "En fazla 10 libre ağırlığında ve {{distance:6ft}} uzunluğundaki nesneyi, en az 1.000 altın para değerinde safirle işaretle. Daha sonra Büyü Aksiyonu olarak safiri kır; nesne herhangi bir uzaklık veya düzlemden eline gelir. Başka yaratık onu tutuyorsa bunun yerine kim olduğunu ve nerede bulunduğunu öğrenirsin.",
     "castingTime": "1 dakika veya Ritüel",
     "range": "Dokunma",
     "duration": "Büyü bozulana kadar",
@@ -2459,7 +2459,7 @@
   },
   "Magic Jar": {
     "name": "Ruh Kabı",
-    "description": "Ruhunu en az 500 altın para değerinde kaba koy; bedenin bilinçsiz ve tepkisiz kalır. Kaptan 100 fit içindeki görünür bir İnsansıyı ele geçirmeyi dene; Karizma kurtulma atışı yapar. Başarısızsa ruhu kaba hapsolurken bedenini sen yönetirsin. Bedeninin veya kabın yanlış zamanda yok olması seni ya da ev sahibini öldürebilir.",
+    "description": "Ruhunu en az 500 altın para değerinde kaba koy; bedenin bilinçsiz ve tepkisiz kalır. Kaptan {{distance:100ft}} içindeki görünür bir İnsansıyı ele geçirmeyi dene; Karizma kurtulma atışı yapar. Başarısızsa ruhu kaba hapsolurken bedenini sen yönetirsin. Bedeninin veya kabın yanlış zamanda yok olması seni ya da ev sahibini öldürebilir.",
     "castingTime": "1 dakika",
     "range": "Kendin",
     "duration": "Büyü bozulana kadar",
@@ -2467,7 +2467,7 @@
   },
   "Mass Suggestion": {
     "name": "Toplu Telkin",
-    "description": "60 fit içindeki seni anlayan en fazla on iki yaratığa, en fazla 25 sözcüklük makul ve zararsız eylem öner. Her biri Bilgelik kurtulma atışında başarısızsa Büyülenmiş olur ve 24 saate kadar öneriyi izler; iş tamamlanınca veya sen ya da müttefikin zarar verince erken biter.",
+    "description": "{{distance:60ft}} içindeki seni anlayan en fazla on iki yaratığa, en fazla 25 sözcüklük makul ve zararsız eylem öner. Her biri Bilgelik kurtulma atışında başarısızsa Büyülenmiş olur ve 24 saate kadar öneriyi izler; iş tamamlanınca veya sen ya da müttefikin zarar verince erken biter.",
     "higherLevels": "7. seviye yuvayla süre 10 gün, 8. seviyede 30 gün, 9. seviyede 366 gün olur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -2476,7 +2476,7 @@
   },
   "Move Earth": {
     "name": "Toprağı Hareket Ettirme",
-    "description": "Bir kenarı en fazla 40 fitlik toprak, kum veya killi alanı yeniden şekillendir. Her değişim 10 dakika sürer; araziyi yükseltip alçaltabilir, hendek açıp doldurabilir veya alanın en büyük boyutunun yarısına kadar duvar ve sütun yapabilirsin. 2 saate kadar her 10 dakikada yeni alan seç.",
+    "description": "Bir kenarı en fazla {{distance:40ft|lik}} toprak, kum veya killi alanı yeniden şekillendir. Her değişim 10 dakika sürer; araziyi yükseltip alçaltabilir, hendek açıp doldurabilir veya alanın en büyük boyutunun yarısına kadar duvar ve sütun yapabilirsin. 2 saate kadar her 10 dakikada yeni alan seç.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 2 saat",
@@ -2484,14 +2484,14 @@
   },
   "Planar Ally": {
     "name": "Düzlemsel Müttefik",
-    "description": "Öte dünyalı bir güçten Göksel, Elemental veya İblis iste. 60 fit içinde belirir ama yardım etmeye zorlanmaz; hizmet için pazarlık yap. Genellikle bedel dakika başına yaklaşık 100, saat başına 1.000 veya gün başına 10.000 altın paradır; DM karar verir.",
+    "description": "Öte dünyalı bir güçten Göksel, Elemental veya İblis iste. {{distance:60ft}} içinde belirir ama yardım etmeye zorlanmaz; hizmet için pazarlık yap. Genellikle bedel dakika başına yaklaşık 100, saat başına 1.000 veya gün başına 10.000 altın paradır; DM karar verir.",
     "castingTime": "10 dakika",
     "range": "60 fit",
     "duration": "Anlık"
   },
   "Programmed Illusion": {
     "name": "Programlanmış İllüzyon",
-    "description": "30 fitlik Küpten büyük olmayan gizli yanılsama yarat. 30 fit içindeki görsel veya işitsel tetikleyici, 5 dakikaya kadar süren önceden belirlenmiş görüntü ve sesi başlatır. 10 dakikalık duraklamadan sonra, bozulana kadar tekrar tetiklenebilir.",
+    "description": "{{distance:30ft|lik}} Küpten büyük olmayan gizli yanılsama yarat. {{distance:30ft}} içindeki görsel veya işitsel tetikleyici, 5 dakikaya kadar süren önceden belirlenmiş görüntü ve sesi başlatır. 10 dakikalık duraklamadan sonra, bozulana kadar tekrar tetiklenebilir.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Büyü bozulana kadar",
@@ -2499,7 +2499,7 @@
   },
   "Sunbeam": {
     "name": "Güneş Işını",
-    "description": "Kendinden 60 fit uzunluğunda, 5 fit genişliğinde güneş ışığı Hattı gönder. Yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 6d8 Işıma hasarı alır ve sonraki turuna kadar Kör olur; başarılıysa hasarın yarısını alır ve Kör olmaz. 1 dakikaya kadar her tur Büyü Aksiyonu ile yeniden ışın gönderebilirsin.",
+    "description": "Kendinden {{distance:60ft}} uzunluğunda, {{distance:5ft}} genişliğinde güneş ışığı Hattı gönder. Yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 6d8 Işıma hasarı alır ve sonraki turuna kadar Kör olur; başarılıysa hasarın yarısını alır ve Kör olmaz. 1 dakikaya kadar her tur Büyü Aksiyonu ile yeniden ışın gönderebilirsin.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -2512,14 +2512,14 @@
   },
   "Transport via Plants": {
     "name": "Bitkilerle Yolculuk",
-    "description": "10 fit içindeki Büyük veya daha büyük hareketsiz bir bitkiyi, aynı düzlemde gördüğün veya dokunduğun başka bitkiye herhangi bir mesafeden bağla. 1 dakika boyunca yaratıklar 5 fit hareket harcayıp ilk bitkiye girerek ikincisinden çıkabilir.",
+    "description": "{{distance:10ft}} içindeki Büyük veya daha büyük hareketsiz bir bitkiyi, aynı düzlemde gördüğün veya dokunduğun başka bitkiye herhangi bir mesafeden bağla. 1 dakika boyunca yaratıklar {{distance:5ft}} hareket harcayıp ilk bitkiye girerek ikincisinden çıkabilir.",
     "castingTime": "Aksiyon",
     "range": "10 fit",
     "duration": "1 dakika"
   },
   "True Seeing": {
     "name": "Gerçek Görüş",
-    "description": "Dokunduğun istekli yaratık 1 saat boyunca 120 fit Gerçek Görüş kazanır.",
+    "description": "Dokunduğun istekli yaratık 1 saat boyunca {{distance:120ft}} Gerçek Görüş kazanır.",
     "castingTime": "Aksiyon",
     "range": "Dokunma",
     "duration": "1 saat",
@@ -2527,7 +2527,7 @@
   },
   "Wall of Ice": {
     "name": "Buz Duvarı",
-    "description": "10 dakikaya kadar 1 fit kalınlığında, en fazla 10 fit yarıçaplı buz kubbesi/küresi veya bitişik on adet 10 fitlik panel yarat. Belirdiğinde yerinden edilen yaratık Çeviklik kurtulma atışında başarısızsa 10d6 Soğuk hasarı alır. Yok edilen paneller soğuk hava bırakır; içinden geçenler Dayanıklılık kurtulma atışında başarısızsa 5d6 Soğuk hasarı alır.",
+    "description": "10 dakikaya kadar {{distance:1ft}} kalınlığında, en fazla {{distance:10ft}} yarıçaplı buz kubbesi/küresi veya bitişik on adet {{distance:10ft|lik}} panel yarat. Belirdiğinde yerinden edilen yaratık Çeviklik kurtulma atışında başarısızsa 10d6 Soğuk hasarı alır. Yok edilen paneller soğuk hava bırakır; içinden geçenler Dayanıklılık kurtulma atışında başarısızsa 5d6 Soğuk hasarı alır.",
     "higherLevels": "6. seviyenin üzerindeki her büyü yuvası seviyesi belirme hasarını 2d6, soğuk hava hasarını 1d6 artırır.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -2536,7 +2536,7 @@
   },
   "Wall of Thorns": {
     "name": "Diken Duvarı",
-    "description": "10 dakikaya kadar 60 fit uzunluğunda, 10 fit yüksekliğinde diken duvarı veya çapı 20 fitlik halka yarat. Belirdiğinde alanındaki yaratıklar Çeviklik kurtulma atışında başarısızsa 7d8 Delici hasar alır. İçinden geçerken her fit için 4 fit hareket harcanır; içeri giren veya turunu orada bitiren yaratık tur başına bir kez Çeviklik kurtulma atışında başarısızsa 7d8 Kesici hasar alır.",
+    "description": "10 dakikaya kadar {{distance:60ft}} uzunluğunda, {{distance:10ft}} yüksekliğinde diken duvarı veya çapı {{distance:20ft|lik}} halka yarat. Belirdiğinde alanındaki yaratıklar Çeviklik kurtulma atışında başarısızsa 7d8 Delici hasar alır. İçinden geçerken her {{distance:1ft}} için {{distance:4ft}} hareket harcanır; içeri giren veya turunu orada bitiren yaratık tur başına bir kez Çeviklik kurtulma atışında başarısızsa 7d8 Kesici hasar alır.",
     "higherLevels": "6. seviyenin üzerindeki her büyü yuvası seviyesi her iki hasarı da 1d8 artırır.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
@@ -2545,7 +2545,7 @@
   },
   "Wind Walk": {
     "name": "Rüzgâr Yolculuğu",
-    "description": "Sen ve en fazla on istekli yaratık 8 saatliğine buluta dönüşür. 300 fit Uçma Hızı, havada asılı kalma, Yere Serilmeye bağışıklık ve Ezici, Delici ve Kesici hasara Direnç kazanır. Bulut biçiminde yalnızca Hızlanabilir veya 1 dakika süren normal biçime dönüşü başlatabilirsiniz; dönüş sırasında yaratık Sersemlemiş olur.",
+    "description": "Sen ve en fazla on istekli yaratık 8 saatliğine buluta dönüşür. {{distance:300ft}} Uçma Hızı, havada asılı kalma, Yere Serilmeye bağışıklık ve Ezici, Delici ve Kesici hasara Direnç kazanır. Bulut biçiminde yalnızca Hızlanabilir veya 1 dakika süren normal biçime dönüşü başlatabilirsiniz; dönüş sırasında yaratık Sersemlemiş olur.",
     "castingTime": "1 dakika",
     "range": "30 fit",
     "duration": "8 saat",
@@ -2553,14 +2553,14 @@
   },
   "Word of Recall": {
     "name": "Geri Çağırma Sözü",
-    "description": "Kendini ve 5 fit içindeki en fazla beş istekli yaratığı, daha önce bu büyüyü yaparak belirlediğin sığınağa ışınla. Önceden hazırlanmış sığınak yoksa büyü etkisizdir.",
+    "description": "Kendini ve {{distance:5ft}} içindeki en fazla beş istekli yaratığı, daha önce bu büyüyü yaparak belirlediğin sığınağa ışınla. Önceden hazırlanmış sığınak yoksa büyü etkisizdir.",
     "castingTime": "Aksiyon",
     "range": "5 fit",
     "duration": "Anlık"
   },
   "Arcane Sword": {
     "name": "Arkan Kılıç",
-    "description": "1 dakikaya kadar süzülen bir Kuvvet kılıcı yarat. Kılıcın 5 fit içindeki hedefe yakın dövüş büyü saldırısı yap; isabet 4d12 artı büyü yapma niteliği değiştiricin kadar Kuvvet hasarı verir. Sonraki turlarda Bonus Aksiyonla kılıcı 30 fit hareket ettirip yeniden saldır.",
+    "description": "1 dakikaya kadar süzülen bir Kuvvet kılıcı yarat. Kılıcın {{distance:5ft}} içindeki hedefe yakın dövüş büyü saldırısı yap; isabet 4d12 artı büyü yapma niteliği değiştiricin kadar Kuvvet hasarı verir. Sonraki turlarda Bonus Aksiyonla kılıcı {{distance:30ft}} hareket ettirip yeniden saldır.",
     "castingTime": "Aksiyon",
     "range": "90 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -2568,7 +2568,7 @@
   },
   "Conjure Celestial": {
     "name": "Göksel Çağırma",
-    "description": "Göksel bir varlık 10 dakikaya kadar 10 fit yarıçaplı, 40 fit yüksekliğinde bir Silindiri doldurur. İçindeki görünür yaratık 4d12 artı büyü yapma niteliği değiştiricin kadar iyileşebilir veya Çeviklik kurtulma atışı yapar; başarısızsa 6d12 Işıma hasarı, başarılıysa yarısını alır. Turunda hareket ettiğinde Silindir 30 fit ilerleyebilir. İçeri giren veya turunu orada bitirenler etkilenebilir; her yaratık tur başına yalnızca bir kez etkilenir.",
+    "description": "Göksel bir varlık 10 dakikaya kadar {{distance:10ft}} yarıçaplı, {{distance:40ft}} yüksekliğinde bir Silindiri doldurur. İçindeki görünür yaratık 4d12 artı büyü yapma niteliği değiştiricin kadar iyileşebilir veya Çeviklik kurtulma atışı yapar; başarısızsa 6d12 Işıma hasarı, başarılıysa yarısını alır. Turunda hareket ettiğinde Silindir {{distance:30ft}} ilerleyebilir. İçeri giren veya turunu orada bitirenler etkilenebilir; her yaratık tur başına yalnızca bir kez etkilenir.",
     "higherLevels": "7. seviyenin üzerindeki her büyü yuvası seviyesi iyileştirmeyi 1d12, hasarı 1d12 artırır.",
     "castingTime": "Aksiyon",
     "range": "90 fit",
@@ -2576,7 +2576,7 @@
   },
   "Delayed Blast Fireball": {
     "name": "Gecikmeli Ateş Topu",
-    "description": "Parlayan bir boncuk 150 fit içindeki noktada 1 dakikaya kadar bekler. Konsantrasyon bittiğinde 20 fit yarıçaplı Küredeki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 12d6 Ateş hasarı, başarılıysa yarısını alır. Konsantrasyon sürerken her turunun sonunda hasar 1d6 artar. Bir yaratık Çeviklik kurtulma atışıyla boncuğu alıp atabilir; başarısızlık onu patlatır.",
+    "description": "Parlayan bir boncuk {{distance:150ft}} içindeki noktada 1 dakikaya kadar bekler. Konsantrasyon bittiğinde {{distance:20ft}} yarıçaplı Küredeki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 12d6 Ateş hasarı, başarılıysa yarısını alır. Konsantrasyon sürerken her turunun sonunda hasar 1d6 artar. Bir yaratık Çeviklik kurtulma atışıyla boncuğu alıp atabilir; başarısızlık onu patlatır.",
     "higherLevels": "7. seviyenin üzerindeki her büyü yuvası seviyesi başlangıç hasarını 1d6 artırır.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
@@ -2590,7 +2590,7 @@
   },
   "Divine Word": {
     "name": "İlahi Söz",
-    "description": "30 fit içinde gördüğün yaratıkları seç; her biri Karizma kurtulma atışı yapar. Başarısız olanın Can Puanı 20 veya altındaysa ölür; 21-30 ise 1 saat Kör, Sağır ve Sersemlemiş; 31-40 ise 10 dakika Kör ve Sağır; 41-50 ise 1 dakika Sağır olur. Başarısız olan Göksel, Elemental, Peri veya İblis ayrıca en az 24 saatliğine kendi düzlemine sürgün edilir.",
+    "description": "{{distance:30ft}} içinde gördüğün yaratıkları seç; her biri Karizma kurtulma atışı yapar. Başarısız olanın Can Puanı 20 veya altındaysa ölür; 21-30 ise 1 saat Kör, Sağır ve Sersemlemiş; 31-40 ise 10 dakika Kör ve Sağır; 41-50 ise 1 dakika Sağır olur. Başarısız olan Göksel, Elemental, Peri veya İblis ayrıca en az 24 saatliğine kendi düzlemine sürgün edilir.",
     "castingTime": "Bonus Aksiyon",
     "range": "30 fit",
     "duration": "Anlık"
@@ -2598,14 +2598,14 @@
   "Etherealness": {
     "name": "Eterleşme",
     "description": "8 saate kadar Sınır Eterik'e gir. Maddi Düzlemdeki yaratıkların ve nesnelerin içinden geçebilirsin ancak onları etkileyemezsin. Büyü bitince en yakın boş alana dönersin; isteyerek erken bitirebilirsin.",
-    "higherLevels": "7. seviyenin üzerindeki her büyü yuvası seviyesi 10 fit içindeki üç ek istekli yaratığı götürmene izin verir.",
+    "higherLevels": "7. seviyenin üzerindeki her büyü yuvası seviyesi {{distance:10ft}} içindeki üç ek istekli yaratığı götürmene izin verir.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "En fazla 8 saat"
   },
   "Finger of Death": {
     "name": "Ölüm Parmağı",
-    "description": "60 fit içindeki görünür yaratık Dayanıklılık kurtulma atışı yapar; başarısızsa 7d8 + 30 Nekrotik hasar, başarılıysa yarısını alır. Bu büyünün öldürdüğü İnsansı, sonraki turunun başında Zombi olarak kalkar ve sözlü komutlarını izler.",
+    "description": "{{distance:60ft}} içindeki görünür yaratık Dayanıklılık kurtulma atışı yapar; başarısızsa 7d8 + 30 Nekrotik hasar, başarılıysa yarısını alır. Bu büyünün öldürdüğü İnsansı, sonraki turunun başında Zombi olarak kalkar ve sözlü komutlarını izler.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık",
@@ -2617,7 +2617,7 @@
   },
   "Fire Storm": {
     "name": "Ateş Fırtınası",
-    "description": "150 fit içinde bitişik en fazla on adet 10 fitlik ateş Küpü yarat. İçindeki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 7d10 Ateş hasarı, başarılıysa yarısını alır. Seçtiğin bitkileri koruyabilirsin.",
+    "description": "{{distance:150ft}} içinde bitişik en fazla on adet {{distance:10ft|lik}} ateş Küpü yarat. İçindeki yaratıklar Çeviklik kurtulma atışı yapar; başarısızsa 7d10 Ateş hasarı, başarılıysa yarısını alır. Seçtiğin bitkileri koruyabilirsin.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
     "duration": "Anlık",
@@ -2629,7 +2629,7 @@
   },
   "Forcecage": {
     "name": "Kuvvet Kafesi",
-    "description": "1 saate kadar konsantrasyonla yaratıkları, kenarı en fazla 20 fitlik Kuvvet kafesine veya kenarı en fazla 10 fitlik katı kutuya hapset. Hapsedilen büyülü olmayan yollarla çıkamaz; ışınlanma veya düzlemler arası yolculuk başarılı Karizma kurtulma atışı gerektirir. Büyü Bozma kafesi bitiremez.",
+    "description": "1 saate kadar konsantrasyonla yaratıkları, kenarı en fazla {{distance:20ft|lik}} Kuvvet kafesine veya kenarı en fazla {{distance:10ft|lik}} katı kutuya hapset. Hapsedilen büyülü olmayan yollarla çıkamaz; ışınlanma veya düzlemler arası yolculuk başarılı Karizma kurtulma atışı gerektirir. Büyü Bozma kafesi bitiremez.",
     "castingTime": "Aksiyon",
     "range": "100 fit",
     "duration": "Konsantrasyon, en fazla 1 saat",
@@ -2637,7 +2637,7 @@
   },
   "Magnificent Mansion": {
     "name": "Görkemli Malikâne",
-    "description": "300 fit içinde kapısı olan, 24 saat süren boyutlar ötesi konut yarat. En fazla elli adet 10 fitlik Küp, 100 misafire yiyecek ve 100 hizmetkâr içerir; yalnızca seçtiğin yaratıklar girebilir.",
+    "description": "{{distance:300ft}} içinde kapısı olan, 24 saat süren boyutlar ötesi konut yarat. En fazla elli adet {{distance:10ft|lik}} Küp, 100 misafire yiyecek ve 100 hizmetkâr içerir; yalnızca seçtiğin yaratıklar girebilir.",
     "castingTime": "1 dakika",
     "range": "300 fit",
     "duration": "24 saat",
@@ -2645,7 +2645,7 @@
   },
   "Mirage Arcane": {
     "name": "Gizemli Serap",
-    "description": "10 gün boyunca en fazla 1 mil kare arazinin görünümünü, sesini, kokusunu ve dokusunu değiştir. Yapı ekleyip değiştirebilir, araziyi geçmeyi zorlaştırıp kolaylaştırabilirsin; yaratıkları gizleyemez veya yaratamazsın. Gerçek Görüş, yanılsamanın fiziksel etkilerini kaldırmadan asıl araziyi gösterir.",
+    "description": "10 gün boyunca kenarı en fazla {{distance:1mi}} olan kare bir alandaki arazinin görünümünü, sesini, kokusunu ve dokusunu değiştir. Yapı ekleyip değiştirebilir, araziyi geçmeyi zorlaştırıp kolaylaştırabilirsin; yaratıkları gizleyemez veya yaratamazsın. Gerçek Görüş, yanılsamanın fiziksel etkilerini kaldırmadan asıl araziyi gösterir.",
     "castingTime": "10 dakika",
     "range": "Görüş",
     "duration": "10 gün"
@@ -2660,14 +2660,14 @@
   },
   "Prismatic Spray": {
     "name": "Prizmatik Püskürtme",
-    "description": "60 fitlik Konideki yaratıklar Çeviklik kurtulma atışı yapar; her hedef için ayrı 1d8 at. 1-5 sonuçları 12d6 Ateş, Asit, Yıldırım, Zehir veya Soğuk hasarı verir (başarılı kurtulmada yarısı); 6 Kısıtlar ve üç başarısız Dayanıklılık atışı Taşlaştırır; 7 Kör eder ve Bilgelik atışından sonra sürgün edebilir; 8 iki farklı ışınla vurur.",
+    "description": "{{distance:60ft|lik}} Konideki yaratıklar Çeviklik kurtulma atışı yapar; her hedef için ayrı 1d8 at. 1-5 sonuçları 12d6 Ateş, Asit, Yıldırım, Zehir veya Soğuk hasarı verir (başarılı kurtulmada yarısı); 6 Kısıtlar ve üç başarısız Dayanıklılık atışı Taşlaştırır; 7 Kör eder ve Bilgelik atışından sonra sürgün edebilir; 8 iki farklı ışınla vurur.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Anlık"
   },
   "Project Image": {
     "name": "Yansıtılan Görüntü",
-    "description": "1 güne kadar konsantrasyonla 500 mil uzakta yanıltıcı kopyanı yarat. Senin gibi görünür ve konuşur; onun aracılığıyla görüp duyabilir ve Büyü Aksiyonu ile 60 fit hareket ettirebilirsin. Fiziksel etkileşim veya başarılı Araştırma kontrolü yanılsamayı açığa çıkarır.",
+    "description": "1 güne kadar konsantrasyonla {{distance:500mi}} uzakta yanıltıcı kopyanı yarat. Senin gibi görünür ve konuşur; onun aracılığıyla görüp duyabilir ve Büyü Aksiyonu ile {{distance:60ft}} hareket ettirebilirsin. Fiziksel etkileşim veya başarılı Araştırma kontrolü yanılsamayı açığa çıkarır.",
     "castingTime": "Aksiyon",
     "range": "500 mil",
     "duration": "Konsantrasyon, en fazla 1 gün",
@@ -2691,7 +2691,7 @@
   },
   "Reverse Gravity": {
     "name": "Yerçekimini Tersine Çevirme",
-    "description": "50 fit yarıçaplı, 100 fit yüksekliğindeki Silindirde yerçekimini 1 dakikaya kadar ters çevir. Yaratıklar ve nesneler yukarı düşer; yaratık Çeviklik kurtulma atışında başarılıysa sabit bir şeye tutunabilir. Büyü bitince yeniden aşağı düşerler.",
+    "description": "{{distance:50ft}} yarıçaplı, {{distance:100ft}} yüksekliğindeki Silindirde yerçekimini 1 dakikaya kadar ters çevir. Yaratıklar ve nesneler yukarı düşer; yaratık Çeviklik kurtulma atışında başarılıysa sabit bir şeye tutunabilir. Büyü bitince yeniden aşağı düşerler.",
     "castingTime": "Aksiyon",
     "range": "100 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -2715,7 +2715,7 @@
   },
   "Symbol": {
     "name": "Sembol",
-    "description": "Tanımladığın tetikleyiciyle neredeyse görünmez mühür çiz. Tetiklenince 60 fit yarıçaplı Küredeki yaratıkları 10 dakika seçtiğin etkiyle etkiler: Ölüm (Dayanıklılık atışı, 10d10 Nekrotik hasar, başarıda yarısı), Uyuşmazlık, Korku, Acı, Uyku veya Sersemletme; her birinin kendi kurtulma atışı ve durumu vardır. Bir yaratık tur başına en fazla bir kez etkilenir.",
+    "description": "Tanımladığın tetikleyiciyle neredeyse görünmez mühür çiz. Tetiklenince {{distance:60ft}} yarıçaplı Küredeki yaratıkları 10 dakika seçtiğin etkiyle etkiler: Ölüm (Dayanıklılık atışı, 10d10 Nekrotik hasar, başarıda yarısı), Uyuşmazlık, Korku, Acı, Uyku veya Sersemletme; her birinin kendi kurtulma atışı ve durumu vardır. Bir yaratık tur başına en fazla bir kez etkilenir.",
     "castingTime": "1 dakika",
     "range": "Dokunma",
     "duration": "Büyü bozulana veya tetiklenene kadar",
@@ -2723,21 +2723,21 @@
   },
   "Teleport": {
     "name": "Işınlanma",
-    "description": "Kendini ve 10 fit içindeki en fazla sekiz istekli yaratığı veya Büyük ya da daha küçük tek nesneyi aynı düzlemde bilinen konuma ışınla. DM, aşinalığına göre d100 atar: kalıcı çember veya yeni bağlantılı nesne her zaman doğru hedefe varır; diğer yerler aksilik (3d10 Kuvvet hasarı ve yeniden atış), benzer alan veya hedef dışı varışa yol açabilir.",
+    "description": "Kendini ve {{distance:10ft}} içindeki en fazla sekiz istekli yaratığı veya Büyük ya da daha küçük tek nesneyi aynı düzlemde bilinen konuma ışınla. DM, aşinalığına göre d100 atar: kalıcı çember veya yeni bağlantılı nesne her zaman doğru hedefe varır; diğer yerler aksilik (3d10 Kuvvet hasarı ve yeniden atış), benzer alan veya hedef dışı varışa yol açabilir.",
     "castingTime": "Aksiyon",
     "range": "10 fit",
     "duration": "Anlık"
   },
   "Animal Shapes": {
     "name": "Hayvan Biçimleri",
-    "description": "30 fit içindeki gördüğün istediğin sayıda istekli yaratık 24 saatliğine Büyük veya daha küçük, Tehlike Derecesi 4 veya altı Hayvana dönüşür. Her biri Can Puanını, Can Zarlarını, zihinsel niteliklerini, iletişimini ve yaratık türünü korur; büyü yapamaz veya bedenine karışan ekipmanı kullanamaz. İlk biçimin Can Puanı kadar Geçici Can Puanı kazanır. Büyü Aksiyonu ile biçimlerini yeniden değiştirebilirsin; hedef Bonus Aksiyonla biçimini bitirebilir.",
+    "description": "{{distance:30ft}} içindeki gördüğün istediğin sayıda istekli yaratık 24 saatliğine Büyük veya daha küçük, Tehlike Derecesi 4 veya altı Hayvana dönüşür. Her biri Can Puanını, Can Zarlarını, zihinsel niteliklerini, iletişimini ve yaratık türünü korur; büyü yapamaz veya bedenine karışan ekipmanı kullanamaz. İlk biçimin Can Puanı kadar Geçici Can Puanı kazanır. Büyü Aksiyonu ile biçimlerini yeniden değiştirebilirsin; hedef Bonus Aksiyonla biçimini bitirebilir.",
     "castingTime": "Aksiyon",
     "range": "30 fit",
     "duration": "24 saat"
   },
   "Antimagic Field": {
     "name": "Büyü Karşıtı Alan",
-    "description": "Merkezi sende olan 10 fitlik Yayılım, 1 saate kadar konsantrasyonla büyüleri ve diğer büyülü etkileri bastırır. Alana veya alan içinde büyü yapılmasını ve büyülü yolculuğu önler, büyülü eşyaları bastırır, çoğu büyülü alanı ve çağrılmış yaratığı engeller; eserlerden veya tanrılardan gelen büyü etkilenmez.",
+    "description": "Merkezi sende olan {{distance:10ft|lik}} Yayılım, 1 saate kadar konsantrasyonla büyüleri ve diğer büyülü etkileri bastırır. Alana veya alan içinde büyü yapılmasını ve büyülü yolculuğu önler, büyülü eşyaları bastırır, çoğu büyülü alanı ve çağrılmış yaratığı engeller; eserlerden veya tanrılardan gelen büyü etkilenmez.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 saat",
@@ -2745,7 +2745,7 @@
   },
   "Antipathy/Sympathy": {
     "name": "İtme/Çekme",
-    "description": "10 gün boyunca bir yaratık veya nesnenin belirlediğin türdeki yaratıkları itmesini ya da çekmesini sağla. 120 fit içindeki bu türden yaratık Bilgelik kurtulma atışı yapar: İtme onu Korkmuş yapıp uzaklaştırır; Çekme onu Büyüleyip yaklaştırır. Yinelenen atışlar yaratık üzerindeki etkiyi bitirebilir.",
+    "description": "10 gün boyunca bir yaratık veya nesnenin belirlediğin türdeki yaratıkları itmesini ya da çekmesini sağla. {{distance:120ft}} içindeki bu türden yaratık Bilgelik kurtulma atışı yapar: İtme onu Korkmuş yapıp uzaklaştırır; Çekme onu Büyüleyip yaklaştırır. Yinelenen atışlar yaratık üzerindeki etkiyi bitirebilir.",
     "castingTime": "1 saat",
     "range": "60 fit",
     "duration": "10 gün",
@@ -2753,7 +2753,7 @@
   },
   "Befuddlement": {
     "name": "Zihin Bulandırma",
-    "description": "150 fit içindeki yaratık Zekâ kurtulma atışı yapar; başarısızsa 10d12 Psişik hasar, başarılıysa yarısını alır. Başarısızlık ayrıca büyü yapmasını ve Büyü Aksiyonu kullanmasını engeller. Her 30 günde atışı yineler; Üstün Onarım, Şifa veya Dilek etkiyi bitirebilir.",
+    "description": "{{distance:150ft}} içindeki yaratık Zekâ kurtulma atışı yapar; başarısızsa 10d12 Psişik hasar, başarılıysa yarısını alır. Başarısızlık ayrıca büyü yapmasını ve Büyü Aksiyonu kullanmasını engeller. Her 30 günde atışı yineler; Üstün Onarım, Şifa veya Dilek etkiyi bitirebilir.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
     "duration": "Anlık",
@@ -2774,7 +2774,7 @@
   },
   "Control Weather": {
     "name": "Havayı Kontrol Etme",
-    "description": "Açık havada 8 saate kadar konsantrasyonla 5 mil içindeki hava durumunu yönet. Yağışı, sıcaklığı ve rüzgârı her defasında bir kademe değiştirebilirsin; her ayarın etkisi 1d4 x 10 dakikada ortaya çıkar.",
+    "description": "Açık havada 8 saate kadar konsantrasyonla {{distance:5mi}} içindeki hava durumunu yönet. Yağışı, sıcaklığı ve rüzgârı her defasında bir kademe değiştirebilirsin; her ayarın etkisi 1d4 x 10 dakikada ortaya çıkar.",
     "castingTime": "10 dakika",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 8 saat",
@@ -2782,14 +2782,14 @@
   },
   "Demiplane": {
     "name": "Yarı Düzlem",
-    "description": "1 saat boyunca 30 fitlik küp boyutunda boyutlar ötesi odaya karanlık bir kapı aç. Yeni bir yarı düzleme, daha önce yarattığına veya yapısını ve içeriğini bildiğin başka bir yarı düzleme bağlayabilirsin.",
+    "description": "1 saat boyunca {{distance:30ft|lik}} küp boyutunda boyutlar ötesi odaya karanlık bir kapı aç. Yeni bir yarı düzleme, daha önce yarattığına veya yapısını ve içeriğini bildiğin başka bir yarı düzleme bağlayabilirsin.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "1 saat"
   },
   "Dominate Monster": {
     "name": "Yaratığa Hükmetme",
-    "description": "60 fit içindeki yaratık Bilgelik kurtulma atışında başarısızsa 1 saate kadar konsantrasyonla Büyülenmiş ve telepatik denetiminde olur. Komut verebilir ve doğrudan yönetebilirsin; hasar alınca büyüyü bitirmek için yeniden atış yapar.",
+    "description": "{{distance:60ft}} içindeki yaratık Bilgelik kurtulma atışında başarısızsa 1 saate kadar konsantrasyonla Büyülenmiş ve telepatik denetiminde olur. Komut verebilir ve doğrudan yönetebilirsin; hasar alınca büyüyü bitirmek için yeniden atış yapar.",
     "higherLevels": "9. seviye büyü yuvasıyla konsantrasyon 8 saate kadar sürebilir.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
@@ -2797,7 +2797,7 @@
   },
   "Earthquake": {
     "name": "Deprem",
-    "description": "1 dakikaya kadar sarsıntılar 100 fit yarıçaplı daireyi Zorlu Araziye çevirir. Oradaki yaratıklar büyü yapıldığında ve her tur Çeviklik kurtulma atışında başarısızsa Yere Serilir ve konsantrasyonu kaybeder. Büyü 1d6 yarık açar ve her tur yapılara 50 Ezici hasar verir; çöken yapı 12d6 Ezici hasar verebilir (Çeviklik atışıyla yarısı).",
+    "description": "1 dakikaya kadar sarsıntılar {{distance:100ft}} yarıçaplı daireyi Zorlu Araziye çevirir. Oradaki yaratıklar büyü yapıldığında ve her tur Çeviklik kurtulma atışında başarısızsa Yere Serilir ve konsantrasyonu kaybeder. Büyü 1d6 yarık açar ve her tur yapılara 50 Ezici hasar verir; çöken yapı 12d6 Ezici hasar verebilir (Çeviklik atışıyla yarısı).",
     "castingTime": "Aksiyon",
     "range": "500 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -2812,7 +2812,7 @@
   },
   "Holy Aura": {
     "name": "Kutsal Hale",
-    "description": "1 dakikaya kadar çevrendeki 30 fitlik Yayılımda seçtiğin yaratıklar tüm kurtulma atışlarında Avantajlıdır; diğer yaratıklar onlara karşı saldırılarda Dezavantajlıdır. Korunan yaratığa yakın dövüşte isabet eden İblis veya Ölümsüz, Dayanıklılık kurtulma atışında başarısızsa Kör olur.",
+    "description": "1 dakikaya kadar çevrendeki {{distance:30ft|lik}} Yayılımda seçtiğin yaratıklar tüm kurtulma atışlarında Avantajlıdır; diğer yaratıklar onlara karşı saldırılarda Dezavantajlıdır. Korunan yaratığa yakın dövüşte isabet eden İblis veya Ölümsüz, Dayanıklılık kurtulma atışında başarısızsa Kör olur.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -2820,7 +2820,7 @@
   },
   "Incendiary Cloud": {
     "name": "Yakıcı Bulut",
-    "description": "150 fit içinde görüşü yoğun engelleyen, 20 fit yarıçaplı duman Küresi belirir ve her tur senden uzağa 10 fit ilerler. Bulut belirdiğinde içindekiler, bulutun ulaştıkları, içeri girenler veya turunu orada bitirenler Çeviklik kurtulma atışı yapar; başarısızsa 10d8 Ateş hasarı, başarılıysa yarısını alır. Her yaratık tur başına bir kez atış yapar. Bulut 1 dakikaya kadar konsantrasyonla sürer.",
+    "description": "{{distance:150ft}} içinde görüşü yoğun engelleyen, {{distance:20ft}} yarıçaplı duman Küresi belirir ve her tur senden uzağa {{distance:10ft}} ilerler. Bulut belirdiğinde içindekiler, bulutun ulaştıkları, içeri girenler veya turunu orada bitirenler Çeviklik kurtulma atışı yapar; başarısızsa 10d8 Ateş hasarı, başarılıysa yarısını alır. Her yaratık tur başına bir kez atış yapar. Bulut 1 dakikaya kadar konsantrasyonla sürer.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -2832,7 +2832,7 @@
   },
   "Maze": {
     "name": "Labirent",
-    "description": "60 fit içindeki yaratığı ilk kurtulma atışı olmadan 10 dakikaya kadar konsantrasyonla labirente sürgün et. İnceleme Aksiyonu ile SG 20 Zekâ (Araştırma) kontrolünde başarılı olursa kaçar; değilse büyü bitince geri döner.",
+    "description": "{{distance:60ft}} içindeki yaratığı ilk kurtulma atışı olmadan 10 dakikaya kadar konsantrasyonla labirente sürgün et. İnceleme Aksiyonu ile SG 20 Zekâ (Araştırma) kontrolünde başarılı olursa kaçar; değilse büyü bitince geri döner.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 10 dakika"
@@ -2846,14 +2846,14 @@
   },
   "Power Word Stun": {
     "name": "Güç Sözü: Sersemletme",
-    "description": "60 fit içindeki gördüğün yaratığın Can Puanı 150 veya altındaysa Sersemlemiş olur; değilse sonraki turunun başına kadar Hızı 0 olur. Sersemlemiş hedef her turunun sonunda Dayanıklılık kurtulma atışını yineler; başarı etkiyi bitirir.",
+    "description": "{{distance:60ft}} içindeki gördüğün yaratığın Can Puanı 150 veya altındaysa Sersemlemiş olur; değilse sonraki turunun başına kadar Hızı 0 olur. Sersemlemiş hedef her turunun sonunda Dayanıklılık kurtulma atışını yineler; başarı etkiyi bitirir.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık"
   },
   "Sunburst": {
     "name": "Güneş Patlaması",
-    "description": "Güneş ışığı 150 fit içinde 60 fit yarıçaplı Küre hâlinde patlar. Yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 12d6 Işıma hasarı, başarılıysa yarısını alır. Başarısız olanlar ayrıca 1 dakika Kör olur ve her tur sonunda atışı yineler. Işık alandaki büyülü Karanlığı bozar.",
+    "description": "Güneş ışığı {{distance:150ft}} içinde {{distance:60ft}} yarıçaplı Küre hâlinde patlar. Yaratıklar Dayanıklılık kurtulma atışı yapar; başarısızsa 12d6 Işıma hasarı, başarılıysa yarısını alır. Başarısız olanlar ayrıca 1 dakika Kör olur ve her tur sonunda atışı yineler. Işık alandaki büyülü Karanlığı bozar.",
     "castingTime": "Aksiyon",
     "range": "150 fit",
     "duration": "Anlık",
@@ -2866,7 +2866,7 @@
   },
   "Tsunami": {
     "name": "Tsunami",
-    "description": "Altı tura kadar 300 fit uzunluğunda ve yüksekliğinde, 50 fit kalınlığında su duvarı yükselt. Alanındaki yaratıklar Kuvvet kurtulma atışı yapar; başarısızsa 6d10 Ezici hasar, başarılıysa yarısını alır. Her tur 50 fit ilerler; yakaladığı Devasa veya daha küçük yaratıklar 5d10 Ezici hasara karşı başka Kuvvet atışı yapar. Yüksekliği ve sonraki hasarı her tur azalır.",
+    "description": "Altı tura kadar {{distance:300ft}} uzunluğunda ve yüksekliğinde, {{distance:50ft}} kalınlığında su duvarı yükselt. Alanındaki yaratıklar Kuvvet kurtulma atışı yapar; başarısızsa 6d10 Ezici hasar, başarılıysa yarısını alır. Her tur {{distance:50ft}} ilerler; yakaladığı Devasa veya daha küçük yaratıklar 5d10 Ezici hasara karşı başka Kuvvet atışı yapar. Yüksekliği ve sonraki hasarı her tur azalır.",
     "castingTime": "1 dakika",
     "range": "1 mil",
     "duration": "Konsantrasyon, en fazla 6 tur"
@@ -2889,7 +2889,7 @@
   },
   "Gate": {
     "name": "Geçit",
-    "description": "Başka düzlemde kesin konuma açılan, çapı 5-20 fitlik geçidi 1 dakikaya kadar aç. Yaratıklar her iki düzlemden de geçidin ön yüzünden geçebilir. Açarken başka düzlemdeki belirli bir yaratığın adını söylersen onu hemen yanına taşırsın; üzerinde denetim kazanmazsın.",
+    "description": "Başka düzlemde kesin konuma açılan, çapı {{distance:5ft|num}}-{{distance:20ft|lik}} geçidi 1 dakikaya kadar aç. Yaratıklar her iki düzlemden de geçidin ön yüzünden geçebilir. Açarken başka düzlemdeki belirli bir yaratığın adını söylersen onu hemen yanına taşırsın; üzerinde denetim kazanmazsın.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika",
@@ -2897,7 +2897,7 @@
   },
   "Imprisonment": {
     "name": "Büyülü Hapis",
-    "description": "30 fit içindeki yaratık Bilgelik kurtulma atışında başarısızsa büyü bozulana veya belirlediğin tetikleyiciye kadar hapsedilir. Gömme, Zincirleme, Çevrili Hapis, Küçültülmüş Hapis veya Uyku seç. Yaşlanmaz, beslenmeye ihtiyaç duymaz, ışınlanamaz ve Kehanetle bulunamaz. Başarılı atış 24 saat bu büyüye bağışıklık verir; yalnızca 9. seviye Büyü Bozma erken bitirebilir.",
+    "description": "{{distance:30ft}} içindeki yaratık Bilgelik kurtulma atışında başarısızsa büyü bozulana veya belirlediğin tetikleyiciye kadar hapsedilir. Gömme, Zincirleme, Çevrili Hapis, Küçültülmüş Hapis veya Uyku seç. Yaşlanmaz, beslenmeye ihtiyaç duymaz, ışınlanamaz ve Kehanetle bulunamaz. Başarılı atış 24 saat bu büyüye bağışıklık verir; yalnızca 9. seviye Büyü Bozma erken bitirebilir.",
     "castingTime": "1 dakika",
     "range": "30 fit",
     "duration": "Büyü bozulana kadar",
@@ -2905,35 +2905,35 @@
   },
   "Mass Heal": {
     "name": "Toplu Şifa",
-    "description": "60 fit içinde gördüğün istediğin yaratıklar arasında toplam en fazla 700 Can Puanı iyileştirme paylaştır. İyileşenlerin Kör, Sağır ve Zehirlenmiş durumları da biter.",
+    "description": "{{distance:60ft}} içinde gördüğün istediğin yaratıklar arasında toplam en fazla 700 Can Puanı iyileştirme paylaştır. İyileşenlerin Kör, Sağır ve Zehirlenmiş durumları da biter.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık"
   },
   "Meteor Swarm": {
     "name": "Meteor Yağmuru",
-    "description": "1 mil içindeki dört ayrı noktaya meteor düşer. Her biri 40 fit yarıçaplı Küre oluşturur; içeridekiler Çeviklik kurtulma atışı yapar. Başarısızsa 20d6 Ateş artı 20d6 Ezici hasar, başarılıysa yarısını alırlar. Örtüşen alanlar aynı yaratığa yalnızca bir kez hasar verir.",
+    "description": "{{distance:1mi}} içindeki dört ayrı noktaya meteor düşer. Her biri {{distance:40ft}} yarıçaplı Küre oluşturur; içeridekiler Çeviklik kurtulma atışı yapar. Başarısızsa 20d6 Ateş artı 20d6 Ezici hasar, başarılıysa yarısını alırlar. Örtüşen alanlar aynı yaratığa yalnızca bir kez hasar verir.",
     "castingTime": "Aksiyon",
     "range": "1 mil",
     "duration": "Anlık"
   },
   "Power Word Heal": {
     "name": "Güç Sözü: Şifa",
-    "description": "60 fit içindeki bir yaratık tüm Can Puanlarını geri kazanır; Büyülenmiş, Korkmuş, Felçli, Zehirlenmiş ve Sersemlemiş durumları biter. Yere Serilmişse Tepkisini kullanıp ayağa kalkabilir.",
+    "description": "{{distance:60ft}} içindeki bir yaratık tüm Can Puanlarını geri kazanır; Büyülenmiş, Korkmuş, Felçli, Zehirlenmiş ve Sersemlemiş durumları biter. Yere Serilmişse Tepkisini kullanıp ayağa kalkabilir.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık"
   },
   "Power Word Kill": {
     "name": "Güç Sözü: Ölüm",
-    "description": "60 fit içindeki bir yaratığın Can Puanı 100 veya altındaysa ölür. 100'den fazlaysa bunun yerine 12d12 Psişik hasar alır. Kurtulma atışı yoktur.",
+    "description": "{{distance:60ft}} içindeki bir yaratığın Can Puanı 100 veya altındaysa ölür. 100'den fazlaysa bunun yerine 12d12 Psişik hasar alır. Kurtulma atışı yoktur.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "Anlık"
   },
   "Prismatic Wall": {
     "name": "Prizmatik Duvar",
-    "description": "10 dakikaya kadar yedi katmanlı, en fazla 90'a 30 fitlik bir duvar veya çapı en fazla 30 fitlik Küre yarat. Yakındaki korunmasız yaratıklar Kör olabilir; her katmanı geçmek Çeviklik kurtulma atışı gerektirir. İlk beş katman sırasıyla 12d6 Ateş, Asit, Yıldırım, Zehir veya Soğuk hasarı verir (başarıda yarısı); altıncısı Taşlaştırabilir, yedincisi sürgün edebilir. Her katmanın ayrı karşı önlemi vardır; Büyü Karşıtı Alan duvarı bastıramaz.",
+    "description": "10 dakikaya kadar yedi katmanlı, en fazla {{distance:90ft|num}} × {{distance:30ft|lik}} bir duvar veya çapı en fazla {{distance:30ft|lik}} Küre yarat. Yakındaki korunmasız yaratıklar Kör olabilir; her katmanı geçmek Çeviklik kurtulma atışı gerektirir. İlk beş katman sırasıyla 12d6 Ateş, Asit, Yıldırım, Zehir veya Soğuk hasarı verir (başarıda yarısı); altıncısı Taşlaştırabilir, yedincisi sürgün edebilir. Her katmanın ayrı karşı önlemi vardır; Büyü Karşıtı Alan duvarı bastıramaz.",
     "castingTime": "Aksiyon",
     "range": "60 fit",
     "duration": "10 dakika"
@@ -2948,14 +2948,14 @@
   },
   "Storm of Vengeance": {
     "name": "İntikam Fırtınası",
-    "description": "300 fit yarıçaplı fırtına 1 dakikaya kadar sürer. İlk anda altındakiler Dayanıklılık kurtulma atışında başarısızsa 2d6 Gök Gürültüsü hasarı alır ve Sağır olur. 2. tur 4d6 Asit, 3. tur altı ayrı 10d6 Yıldırım (Çeviklik atışıyla yarısı), 4. tur 2d6 Ezici, 5-10. turların her biri 1d6 Soğuk hasarı verir; alan görüşü yoğun biçimde engeller ve geçişi zorlaştırır.",
+    "description": "{{distance:300ft}} yarıçaplı fırtına 1 dakikaya kadar sürer. İlk anda altındakiler Dayanıklılık kurtulma atışında başarısızsa 2d6 Gök Gürültüsü hasarı alır ve Sağır olur. 2. tur 4d6 Asit, 3. tur altı ayrı 10d6 Yıldırım (Çeviklik atışıyla yarısı), 4. tur 2d6 Ezici, 5-10. turların her biri 1d6 Soğuk hasarı verir; alan görüşü yoğun biçimde engeller ve geçişi zorlaştırır.",
     "castingTime": "Aksiyon",
     "range": "1 mil",
     "duration": "Konsantrasyon, en fazla 1 dakika"
   },
   "Time Stop": {
     "name": "Zamanı Durdurma",
-    "description": "Diğer yaratıklar için zaman dururken 1d4 + 1 ek tur al. Başka yaratığı veya giydiği ya da taşıdığı bir şeyi etkilersen ya da büyüyü yaptığın yerden 1.000 fitten fazla uzaklaşırsan etki erken biter.",
+    "description": "Diğer yaratıklar için zaman dururken 1d4 + 1 ek tur al. Başka yaratığı veya giydiği ya da taşıdığı bir şeyi etkilersen ya da büyüyü yaptığın yerden {{distance:1000ft|abl}} fazla uzaklaşırsan etki erken biter.",
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Anlık"
@@ -2978,7 +2978,7 @@
   },
   "Weird": {
     "name": "Dehşet",
-    "description": "30 fit yarıçaplı Kürede seçtiğin yaratıklar Bilgelik kurtulma atışı yapar; başarısızsa 10d10 Psişik hasar, başarılıysa yarısını alır. Başarısız olanlar 1 dakikaya kadar Korkmuş olur ve her tur sonunda atışı yineler: başarısızsa 5d10 Psişik hasar daha alır, başarılıysa büyü onlar için biter.",
+    "description": "{{distance:30ft}} yarıçaplı Kürede seçtiğin yaratıklar Bilgelik kurtulma atışı yapar; başarısızsa 10d10 Psişik hasar, başarılıysa yarısını alır. Başarısız olanlar 1 dakikaya kadar Korkmuş olur ve her tur sonunda atışı yineler: başarısızsa 5d10 Psişik hasar daha alır, başarılıysa büyü onlar için biter.",
     "castingTime": "Aksiyon",
     "range": "120 fit",
     "duration": "Konsantrasyon, en fazla 1 dakika"

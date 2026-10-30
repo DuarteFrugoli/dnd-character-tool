@@ -1,7 +1,7 @@
 {
   "Darkvision": {
     "name": "Scurovisione",
-    "description": "Vedi nella Luce Fioca entro la gittata del tratto come se fosse Luce Intensa e nell'Oscurità come se fosse Luce Fioca, distinguendo lì solo sfumature di grigio. La gittata è 36 metri per Nani, Orchi ed Elfi drow e 18 metri per le altre specie indicate."
+    "description": "Vedi nella Luce Fioca entro la gittata del tratto come se fosse Luce Intensa e nell'Oscurità come se fosse Luce Fioca, distinguendo lì solo sfumature di grigio. La gittata è {{distance:120ft}} per Nani, Orchi ed Elfi drow e {{distance:60ft}} per le altre specie indicate."
   },
   "Draconic Ancestry": {
     "name": "Ascendenza Draconica",
@@ -9,7 +9,7 @@
   },
   "Breath Weapon": {
     "name": "Arma a Soffio",
-    "description": "Quando effettui l'azione Attaccare, sostituisci un attacco con un Cono di 4,5 metri o una Linea lunga 9 metri e larga 1,5 metri. Le creature nell'area effettuano un tiro salvezza su Destrezza contro CD 8 + il tuo modificatore di Costituzione + Bonus di Competenza; subiscono danni del tipo della tua ascendenza se falliscono o la metà se riescono. I danni sono 1d10, aumentano a 2d10 al livello 5 del personaggio, 3d10 all'11 e 4d10 al 17. Utilizzi pari al tuo Bonus di Competenza per Riposo Lungo."
+    "description": "Quando effettui l'azione Attaccare, sostituisci un attacco con un Cono di {{distance:15ft}} o una Linea lunga {{distance:30ft}} e larga {{distance:5ft}}. Le creature nell'area effettuano un tiro salvezza su Destrezza contro CD 8 + il tuo modificatore di Costituzione + Bonus di Competenza; subiscono danni del tipo della tua ascendenza se falliscono o la metà se riescono. I danni sono 1d10, aumentano a 2d10 al livello 5 del personaggio, 3d10 all'11 e 4d10 al 17. Utilizzi pari al tuo Bonus di Competenza per Riposo Lungo."
   },
   "Damage Resistance": {
     "name": "Resistenza ai Danni",
@@ -29,7 +29,7 @@
   },
   "Stonecunning": {
     "name": "Conoscenza della Pietra",
-    "description": "Mentre tocchi la pietra o vi stai sopra, usa un'Azione Bonus per ottenere percezione tellurica entro 18 metri per 10 minuti. Utilizzi pari al tuo Bonus di Competenza per Riposo Lungo."
+    "description": "Mentre tocchi la pietra o vi stai sopra, usa un'Azione Bonus per ottenere percezione tellurica entro {{distance:60ft}} per 10 minuti. Utilizzi pari al tuo Bonus di Competenza per Riposo Lungo."
   },
   "Elven Lineage": {
     "name": "Lignaggio Elfico",
@@ -69,7 +69,7 @@
   },
   "Cloud's Jaunt": {
     "name": "Balzo della Nuvola",
-    "description": "Con un'Azione Bonus, teletrasportati fino a 9 metri in uno spazio libero che puoi vedere."
+    "description": "Con un'Azione Bonus, teletrasportati fino a {{distance:30ft}} in uno spazio libero che puoi vedere."
   },
   "Fire's Burn": {
     "name": "Ustione del Fuoco",
@@ -77,7 +77,7 @@
   },
   "Frost's Chill": {
     "name": "Gelo del Freddo",
-    "description": "Quando un tiro per colpire colpisce e infligge danni, infliggi 1d6 danni da Freddo aggiuntivi e riduci la Velocità del bersaglio di 3 metri fino all'inizio del tuo prossimo turno."
+    "description": "Quando un tiro per colpire colpisce e infligge danni, infliggi 1d6 danni da Freddo aggiuntivi e riduci la Velocità del bersaglio di {{distance:10ft}} fino all'inizio del tuo prossimo turno."
   },
   "Hill's Tumble": {
     "name": "Caduta della Collina",
@@ -89,11 +89,11 @@
   },
   "Storm's Thunder": {
     "name": "Tuono della Tempesta",
-    "description": "Quando una creatura entro 18 metri ti infligge danni, usa una Reazione per infliggerle 1d8 danni da Tuono."
+    "description": "Quando una creatura entro {{distance:60ft}} ti infligge danni, usa una Reazione per infliggerle 1d8 danni da Tuono."
   },
   "Large Form": {
     "name": "Forma Grande",
-    "description": "Dal livello 5 del personaggio, usa un'Azione Bonus per diventare Grande per un massimo di 10 minuti, se lo spazio lo consente. Hai Vantaggio alle prove di Forza e la tua Velocità aumenta di 3 metri. Una volta per Riposo Lungo."
+    "description": "Dal livello 5 del personaggio, usa un'Azione Bonus per diventare Grande per un massimo di 10 minuti, se lo spazio lo consente. Hai Vantaggio alle prove di Forza e la tua Velocità aumenta di {{distance:10ft}}. Una volta per Riposo Lungo."
   },
   "Powerful Build": {
     "name": "Corporatura Possente",

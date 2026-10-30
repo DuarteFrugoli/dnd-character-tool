@@ -909,7 +909,8 @@ translation overlays are still being prepared; 5.2.1 is not bundled as a
 selectable ruleset yet.
 
 `tools/validate_srd_pack.py <pack>` checks English pack structure and basic
-references. The repository has no machine translation tools: overlays are
+references, the syntax of distance markers, and that every overlay string has
+the same distances as its English string. The repository has no machine translation tools: overlays are
 written and reviewed by hand, and a missing overlay entry falls back to the
 English text. IDs and mechanics remain in the English source.
 
@@ -1177,9 +1178,31 @@ Imported characters are assigned fresh IDs before saving.
 - Squares: grid-square distance labels.
 
 The selected unit system is persisted in `SharedPreferences`. It affects speed,
-inventory weights/capacities, and spell range/area display. Stored mechanical
-values remain canonical where needed; conversion happens at formatting or input
-boundaries.
+inventory weights/capacities, spell range/area display and every distance in
+rules text. Stored mechanical values remain canonical where needed; conversion
+happens at formatting or input boundaries. The default is the system of the
+official books of the device language (`officialUnitSystem`): metric for
+Portuguese, French, German and Italian, imperial otherwise. Metric uses the
+official factor, 5 ft = 1.5 m.
+
+### Distances in rules text
+
+SRD descriptions and their overlays write distances as markers, in the book's
+imperial units: `{{distance:30ft}}`, `{{distance:20/60ft}}`,
+`{{distance:10+ft}}`, with an optional form (`|adj`, `|short`, `|num`, or a
+grammatical case of one language such as German `|dat`, Russian `|gen`,
+Turkish `|abl` or Korean `|obj`). `core/units/distance_markup.dart` holds the
+words and plural rules of each language and renders a marker as imperial,
+metric (1 ft = 0.3 m, 1 in = 2.5 cm, 1 mi = 1.5 km, centimeters under a meter)
+or 5-ft squares; distances that are not whole squares use the language's
+official system.
+
+Rendering happens at display time, so copies saved on sheets (item and feature
+descriptions) keep their markers and follow later preference changes. Widgets
+show rules text with `RulesText` or `ref.watch(rulesTextProvider)`. Fields read
+as keys or parsed as data (`name`, `range`, `castingTime`, `breathShape`,
+`startingEquipment`, `id`) keep plain distances. Volumes, areas and dice
+distances ("1d3 feet") are not markers yet.
 
 ---
 

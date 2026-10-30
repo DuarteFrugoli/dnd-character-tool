@@ -4,11 +4,11 @@
     "actions": {
       "fist": {
         "name": "Yumruk",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 6 (1d6 + 3) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 6 (1d6 + 3) ezici hasar."
       },
       "rock": {
         "name": "Kaya",
-        "description": "Menzilli Silah Saldırısı: isabet için +5, menzil 25/50 fit, tek hedef. İsabet: 6 (1d6 + 3) ezici hasar."
+        "description": "Menzilli Silah Saldırısı: isabet için +5, menzil {{distance:25/50ft}}, tek hedef. İsabet: 6 (1d6 + 3) ezici hasar."
       },
       "multiattack": {
         "name": "Çoklu Saldırı",
@@ -21,7 +21,7 @@
     "actions": {
       "beak": {
         "name": "Gaga",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 6 (1d8 + 2) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 6 (1d8 + 2) kesici hasar."
       }
     }
   },
@@ -30,13 +30,13 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +1, erişim 5 fit, tek hedef. İsabet: 1 (1d4 - 1) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +1, erişim {{distance:5ft}}, tek hedef. İsabet: 1 (1d4 - 1) delici hasar."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Babunun en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, babun o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Babunun en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, babun o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       }
     }
   },
@@ -45,7 +45,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim 5 fit, tek hedef. İsabet: 1 delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim {{distance:5ft}}, tek hedef. İsabet: 1 delici hasar."
       }
     },
     "traits": {
@@ -60,7 +60,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim 5 fit, tek yaratık. İsabet: 1 delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim {{distance:5ft}}, tek yaratık. İsabet: 1 delici hasar."
       }
     },
     "traits": {
@@ -79,11 +79,11 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 5 (1d6 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 5 (1d6 + 2) delici hasar."
       },
       "claws": {
         "name": "Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 7 (2d4 + 2) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 7 (2d4 + 2) kesici hasar."
       },
       "multiattack": {
         "name": "Çoklu Saldırı",
@@ -102,7 +102,7 @@
     "actions": {
       "beak": {
         "name": "Gaga",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 4 (1d4 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d4 + 2) delici hasar."
       }
     },
     "traits": {
@@ -112,7 +112,7 @@
       },
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Şahinin en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, şahin o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Şahinin en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, şahin o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       }
     }
   },
@@ -121,13 +121,13 @@
     "actions": {
       "tusk": {
         "name": "Azı Dişi",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 4 (1d6 + 1) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d6 + 1) kesici hasar."
       }
     },
     "traits": {
       "charge": {
         "name": "Hücum",
-        "description": "Yaban domuzu bir hedefe doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona azı dişi saldırısıyla isabet ederse, hedef fazladan 3 (1d6) kesici hasar alır. Hedef bir yaratıksa ZD 11 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
+        "description": "Yaban domuzu bir hedefe doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona azı dişi saldırısıyla isabet ederse, hedef fazladan 3 (1d6) kesici hasar alır. Hedef bir yaratıksa ZD 11 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
       },
       "relentless": {
         "name": "Yılmaz",
@@ -140,11 +140,11 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim 5 fit, tek hedef. İsabet: 8 (1d8 + 4) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim {{distance:5ft}}, tek hedef. İsabet: 8 (1d8 + 4) delici hasar."
       },
       "claws": {
         "name": "Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim 5 fit, tek hedef. İsabet: 11 (2d6 + 4) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim {{distance:5ft}}, tek hedef. İsabet: 11 (2d6 + 4) kesici hasar."
       },
       "multiattack": {
         "name": "Çoklu Saldırı",
@@ -163,7 +163,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 2 (1d4) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 2 (1d4) ezici hasar."
       }
     }
   },
@@ -172,7 +172,7 @@
     "actions": {
       "claws": {
         "name": "Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim 5 fit, tek hedef. İsabet: 1 kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim {{distance:5ft}}, tek hedef. İsabet: 1 kesici hasar."
       }
     },
     "traits": {
@@ -187,11 +187,11 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek yaratık. İsabet: 5 (1d6 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek yaratık. İsabet: 5 (1d6 + 2) delici hasar."
       },
       "constrict": {
         "name": "Sıkma",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek yaratık. İsabet: 6 (1d8 + 2) ezici hasar ve hedef kavranır (kurtulma ZD 14). Bu kavrama sona erene kadar yaratık kısıtlanmış olur ve yılan başka bir hedefi sıkamaz."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek yaratık. İsabet: 6 (1d8 + 2) ezici hasar ve hedef kavranır (kurtulma ZD 14). Bu kavrama sona erene kadar yaratık kısıtlanmış olur ve yılan başka bir hedefi sıkamaz."
       }
     }
   },
@@ -200,7 +200,7 @@
     "actions": {
       "claw": {
         "name": "Pençe",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim 5 fit, tek hedef. İsabet: 1 ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim {{distance:5ft}}, tek hedef. İsabet: 1 ezici hasar."
       }
     },
     "traits": {
@@ -215,7 +215,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek yaratık. İsabet: 7 (1d10 + 2) delici hasar ve hedef kavranır (kurtulma ZD 12). Bu kavrama sona erene kadar hedef kısıtlanmış olur ve timsah başka bir hedefi ısıramaz."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek yaratık. İsabet: 7 (1d10 + 2) delici hasar ve hedef kavranır (kurtulma ZD 12). Bu kavrama sona erene kadar hedef kısıtlanmış olur ve timsah başka bir hedefi ısıramaz."
       }
     },
     "traits": {
@@ -230,7 +230,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim 5 fit, tek hedef. İsabet: 2 (1d4) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim {{distance:5ft}}, tek hedef. İsabet: 2 (1d4) delici hasar."
       }
     }
   },
@@ -239,7 +239,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 10 (2d6 + 3) delici hasar. Hedef bir yaratıksa ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 10 (2d6 + 3) delici hasar. Hedef bir yaratıksa ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
       }
     },
     "traits": {
@@ -249,7 +249,7 @@
       },
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Kurdun en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, kurt o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Kurdun en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, kurt o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       }
     }
   },
@@ -258,7 +258,7 @@
     "actions": {
       "hooves": {
         "name": "Toynaklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim 5 fit, tek hedef. İsabet: 9 (2d4 + 4) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim {{distance:5ft}}, tek hedef. İsabet: 9 (2d4 + 4) ezici hasar."
       }
     }
   },
@@ -267,7 +267,7 @@
     "actions": {
       "talons": {
         "name": "Kanca Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 4 (1d4 + 2) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d4 + 2) kesici hasar."
       }
     },
     "traits": {
@@ -282,17 +282,17 @@
     "actions": {
       "ram": {
         "name": "Toslama",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 6 (1d6 + 3) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 6 (1d6 + 3) ezici hasar."
       },
       "hooves": {
         "name": "Toynaklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, yerde yatan tek yaratık. İsabet: 8 (2d4 + 3) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, yerde yatan tek yaratık. İsabet: 8 (2d4 + 3) ezici hasar."
       }
     },
     "traits": {
       "charge": {
         "name": "Hücum",
-        "description": "Kızıl geyik bir hedefe doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona toslama saldırısıyla isabet ederse, hedef fazladan 7 (2d6) hasar alır. Hedef bir yaratıksa ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
+        "description": "Kızıl geyik bir hedefe doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona toslama saldırısıyla isabet ederse, hedef fazladan 7 (2d6) hasar alır. Hedef bir yaratıksa ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
       }
     }
   },
@@ -301,7 +301,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim 5 fit, tek hedef. İsabet: 1 delici hasar artı 7 (3d4) zehir hasarı."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim {{distance:5ft}}, tek hedef. İsabet: 1 delici hasar artı 7 (3d4) zehir hasarı."
       }
     },
     "traits": {
@@ -320,7 +320,7 @@
       },
       "standing_leap": {
         "name": "Durarak Sıçrama",
-        "description": "Kurbağanın uzun atlaması en fazla 10 fit, yüksek atlaması en fazla 5 fittir; hız alarak ya da almadan atlayabilir."
+        "description": "Kurbağanın uzun atlaması en fazla {{distance:10ft}}, yüksek atlaması en fazla {{distance:5ft|cop}}; hız alarak ya da almadan atlayabilir."
       }
     }
   },
@@ -329,11 +329,11 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 4 (1d6 + 1) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d6 + 1) delici hasar."
       },
       "claws": {
         "name": "Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 6 (2d4 + 1) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 6 (2d4 + 1) kesici hasar."
       },
       "multiattack": {
         "name": "Çoklu Saldırı",
@@ -352,7 +352,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek yaratık. İsabet: 5 (1d6 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek yaratık. İsabet: 5 (1d6 + 2) delici hasar."
       }
     },
     "traits": {
@@ -371,7 +371,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek yaratık. İsabet: 4 (1d4 + 2) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışında başarılı olmazsa 10 (3d6) zehir hasarı alır. Zehir hasarı hedefi 0 can puanına düşürürse hedef stabil olur, ancak can puanı geri kazansa bile 1 saat boyunca zehirlenmiş kalır ve bu şekilde zehirlendiği sürece felçlidir."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek yaratık. İsabet: 4 (1d4 + 2) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışında başarılı olmazsa 10 (3d6) zehir hasarı alır. Zehir hasarı hedefi 0 can puanına düşürürse hedef stabil olur, ancak can puanı geri kazansa bile 1 saat boyunca zehirlenmiş kalır ve bu şekilde zehirlendiği sürece felçlidir."
       }
     }
   },
@@ -380,7 +380,7 @@
     "actions": {
       "claw": {
         "name": "Pençe",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 4 (1d6 + 1) ezici hasar ve hedef kavranır (kurtulma ZD 11). Yengecin iki kıskacı vardır ve her biri yalnızca bir hedefi kavrayabilir."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d6 + 1) ezici hasar ve hedef kavranır (kurtulma ZD 11). Yengecin iki kıskacı vardır ve her biri yalnızca bir hedefi kavrayabilir."
       }
     },
     "traits": {
@@ -395,11 +395,11 @@
     "actions": {
       "beak": {
         "name": "Gaga",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 6 (1d6 + 3) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 6 (1d6 + 3) delici hasar."
       },
       "talons": {
         "name": "Kanca Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 10 (2d6 + 3) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 10 (2d6 + 3) kesici hasar."
       },
       "multiattack": {
         "name": "Çoklu Saldırı",
@@ -421,13 +421,13 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +1, erişim 5 fit, tek hedef. İsabet: 2 (1d6 - 1) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +1, erişim {{distance:5ft}}, tek hedef. İsabet: 2 (1d6 - 1) kesici hasar."
       }
     },
     "traits": {
       "illumination": {
         "name": "Aydınlatma",
-        "description": "Böcek 10 fit yarıçapında parlak ışık ve bunun ötesinde 10 fit daha loş ışık yayar."
+        "description": "Böcek {{distance:10ft}} yarıçapında parlak ışık ve bunun ötesinde {{distance:10ft}} daha loş ışık yayar."
       }
     }
   },
@@ -436,7 +436,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 4 (1d6 + 1) delici hasar ve hedef kavranır (kurtulma ZD 11). Bu kavrama sona erene kadar hedef kısıtlanmış olur ve kurbağa başka bir hedefi ısıramaz."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d6 + 1) delici hasar ve hedef kavranır (kurtulma ZD 11). Bu kavrama sona erene kadar hedef kısıtlanmış olur ve kurbağa başka bir hedefi ısıramaz."
       },
       "swallow": {
         "name": "Yutma",
@@ -450,7 +450,7 @@
       },
       "standing_leap": {
         "name": "Durarak Sıçrama",
-        "description": "Kurbağanın uzun atlaması en fazla 20 fit, yüksek atlaması en fazla 10 fittir; hız alarak ya da almadan atlayabilir."
+        "description": "Kurbağanın uzun atlaması en fazla {{distance:20ft}}, yüksek atlaması en fazla {{distance:10ft|cop}}; hız alarak ya da almadan atlayabilir."
       }
     }
   },
@@ -459,13 +459,13 @@
     "actions": {
       "ram": {
         "name": "Toslama",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 8 (2d4 + 3) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 8 (2d4 + 3) ezici hasar."
       }
     },
     "traits": {
       "charge": {
         "name": "Hücum",
-        "description": "Keçi bir hedefe doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona toslama saldırısıyla isabet ederse, hedef fazladan 5 (2d4) ezici hasar alır. Hedef bir yaratıksa ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
+        "description": "Keçi bir hedefe doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona toslama saldırısıyla isabet ederse, hedef fazladan 5 (2d4) ezici hasar alır. Hedef bir yaratıksa ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
       },
       "sure_footed": {
         "name": "Sağlam Basış",
@@ -478,7 +478,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 10 (2d6 + 3) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 10 (2d6 + 3) delici hasar."
       }
     },
     "traits": {
@@ -493,7 +493,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 6 (1d8 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 6 (1d8 + 2) delici hasar."
       }
     }
   },
@@ -502,11 +502,11 @@
     "actions": {
       "tentacles": {
         "name": "Dokunaçlar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 15 fit, tek hedef. İsabet: 10 (2d6 + 3) ezici hasar. Hedef bir yaratıksa kavranır (kurtulma ZD 16). Bu kavrama sona erene kadar hedef kısıtlanmış olur ve ahtapot dokunaçlarını başka bir hedefe karşı kullanamaz."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:15ft}}, tek hedef. İsabet: 10 (2d6 + 3) ezici hasar. Hedef bir yaratıksa kavranır (kurtulma ZD 16). Bu kavrama sona erene kadar hedef kısıtlanmış olur ve ahtapot dokunaçlarını başka bir hedefe karşı kullanamaz."
       },
       "ink_cloud": {
         "name": "Mürekkep Bulutu",
-        "description": "Ahtapot su altındaysa çevresinde 20 fit yarıçaplı bir mürekkep bulutu yayılır. Alan 1 dakika boyunca yoğun biçimde örtülür, ancak güçlü bir akıntı mürekkebi dağıtabilir. Mürekkebi saldıktan sonra ahtapot bonus eylem olarak Atılma eylemini kullanabilir."
+        "description": "Ahtapot su altındaysa çevresinde {{distance:20ft}} yarıçaplı bir mürekkep bulutu yayılır. Alan 1 dakika boyunca yoğun biçimde örtülür, ancak güçlü bir akıntı mürekkebi dağıtabilir. Mürekkebi saldıktan sonra ahtapot bonus eylem olarak Atılma eylemini kullanabilir."
       }
     },
     "traits": {
@@ -529,7 +529,7 @@
     "actions": {
       "talons": {
         "name": "Kanca Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 8 (2d6 + 1) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 8 (2d6 + 1) kesici hasar."
       }
     },
     "traits": {
@@ -551,7 +551,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim 10 fit, tek hedef. İsabet: 6 (1d4 + 4) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısız olursa 10 (3d6) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim {{distance:10ft}}, tek hedef. İsabet: 6 (1d4 + 4) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısız olursa 10 (3d6) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır."
       }
     }
   },
@@ -560,7 +560,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 4 (1d4 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d4 + 2) delici hasar."
       }
     },
     "traits": {
@@ -570,7 +570,7 @@
       },
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Sıçanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, sıçan o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Sıçanın en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, sıçan o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       }
     }
   },
@@ -579,13 +579,13 @@
     "actions": {
       "ram": {
         "name": "Toslama",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 4 (1d6 + 1) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d6 + 1) ezici hasar."
       }
     },
     "traits": {
       "charge": {
         "name": "Hücum",
-        "description": "Denizatı bir hedefe doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona toslama saldırısıyla isabet ederse, hedef fazladan 7 (2d6) ezici hasar alır. Hedef bir yaratıksa ZD 11 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
+        "description": "Denizatı bir hedefe doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona toslama saldırısıyla isabet ederse, hedef fazladan 7 (2d6) ezici hasar alır. Hedef bir yaratıksa ZD 11 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
       },
       "water_breathing": {
         "name": "Suda Nefes Alma",
@@ -598,11 +598,11 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek yaratık. İsabet: 7 (1d8 + 3) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısız olursa 9 (2d8) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır. Zehir hasarı hedefi 0 can puanına düşürürse hedef stabil olur, ancak can puanı geri kazansa bile 1 saat boyunca zehirlenmiş kalır ve bu şekilde zehirlendiği sürece felçlidir."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek yaratık. İsabet: 7 (1d8 + 3) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısız olursa 9 (2d8) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır. Zehir hasarı hedefi 0 can puanına düşürürse hedef stabil olur, ancak can puanı geri kazansa bile 1 saat boyunca zehirlenmiş kalır ve bu şekilde zehirlendiği sürece felçlidir."
       },
       "web": {
         "name": "Ağ",
-        "description": "Menzilli Silah Saldırısı: isabet için +5, menzil 30/60 fit, tek yaratık. İsabet: Hedef ağla kısıtlanır. Kısıtlanan hedef eylem olarak ZD 12 Kuvvet kontrolü yapabilir; başarılı olursa ağı parçalar. Ağa saldırılarak da yok edilebilir (ZS 10; 5 can puanı; ateş hasarına karşı zayıflık; ezici, zehir ve psişik hasara karşı bağışıklık)."
+        "description": "Menzilli Silah Saldırısı: isabet için +5, menzil {{distance:30/60ft}}, tek yaratık. İsabet: Hedef ağla kısıtlanır. Kısıtlanan hedef eylem olarak ZD 12 Kuvvet kontrolü yapabilir; başarılı olursa ağı parçalar. Ağa saldırılarak da yok edilebilir (ZS 10; 5 can puanı; ateş hasarına karşı zayıflık; ezici, zehir ve psişik hasara karşı bağışıklık)."
       }
     },
     "traits": {
@@ -625,7 +625,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 7 (1d10 + 2) delici hasar artı 5 (1d10) zehir hasarı ve hedef kavranır (kurtulma ZD 13). Bu kavrama sona erene kadar hedef kısıtlanmış olur ve karakurbağası başka bir hedefi ısıramaz."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 7 (1d10 + 2) delici hasar artı 5 (1d10) zehir hasarı ve hedef kavranır (kurtulma ZD 13). Bu kavrama sona erene kadar hedef kısıtlanmış olur ve karakurbağası başka bir hedefi ısıramaz."
       },
       "swallow": {
         "name": "Yutma",
@@ -639,7 +639,7 @@
       },
       "standing_leap": {
         "name": "Durarak Sıçrama",
-        "description": "Karakurbağasının uzun atlaması en fazla 20 fit, yüksek atlaması en fazla 10 fittir; hız alarak ya da almadan atlayabilir."
+        "description": "Karakurbağasının uzun atlaması en fazla {{distance:20ft}}, yüksek atlaması en fazla {{distance:10ft|cop}}; hız alarak ya da almadan atlayabilir."
       }
     }
   },
@@ -648,11 +648,11 @@
     "actions": {
       "beak": {
         "name": "Gaga",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 7 (2d4 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 7 (2d4 + 2) delici hasar."
       },
       "talons": {
         "name": "Kanca Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 9 (2d6 + 2) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 9 (2d6 + 2) kesici hasar."
       },
       "multiattack": {
         "name": "Çoklu Saldırı",
@@ -666,7 +666,7 @@
       },
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Akbabanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, akbaba o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Akbabanın en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, akbaba o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       }
     },
     "languages": [
@@ -678,7 +678,7 @@
     "actions": {
       "sting": {
         "name": "İğne",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek yaratık. İsabet: 5 (1d6 + 2) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısız olursa 10 (3d6) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır. Zehir hasarı hedefi 0 can puanına düşürürse hedef stabil olur, ancak can puanı geri kazansa bile 1 saat boyunca zehirlenmiş kalır ve bu şekilde zehirlendiği sürece felçlidir."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek yaratık. İsabet: 5 (1d6 + 2) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısız olursa 10 (3d6) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır. Zehir hasarı hedefi 0 can puanına düşürürse hedef stabil olur, ancak can puanı geri kazansa bile 1 saat boyunca zehirlenmiş kalır ve bu şekilde zehirlendiği sürece felçlidir."
       }
     }
   },
@@ -687,7 +687,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 5 (1d4 + 3) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 5 (1d4 + 3) delici hasar."
       }
     },
     "traits": {
@@ -702,7 +702,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek yaratık. İsabet: 4 (1d6 + 1) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısız olursa 7 (2d6) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır. Zehir hasarı hedefi 0 can puanına düşürürse hedef stabil olur, ancak can puanı geri kazansa bile 1 saat boyunca zehirlenmiş kalır ve bu şekilde zehirlendiği sürece felçlidir."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek yaratık. İsabet: 4 (1d6 + 1) delici hasar ve hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısız olursa 7 (2d6) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır. Zehir hasarı hedefi 0 can puanına düşürürse hedef stabil olur, ancak can puanı geri kazansa bile 1 saat boyunca zehirlenmiş kalır ve bu şekilde zehirlendiği sürece felçlidir."
       }
     },
     "traits": {
@@ -725,13 +725,13 @@
     "actions": {
       "ram": {
         "name": "Toslama",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 3 (1d4 + 1) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 3 (1d4 + 1) ezici hasar."
       }
     },
     "traits": {
       "charge": {
         "name": "Hücum",
-        "description": "Keçi bir hedefe doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona toslama saldırısıyla isabet ederse, hedef fazladan 2 (1d4) ezici hasar alır. Hedef bir yaratıksa ZD 10 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
+        "description": "Keçi bir hedefe doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona toslama saldırısıyla isabet ederse, hedef fazladan 2 (1d4) ezici hasar alır. Hedef bir yaratıksa ZD 10 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
       },
       "sure_footed": {
         "name": "Sağlam Basış",
@@ -744,7 +744,7 @@
     "actions": {
       "talons": {
         "name": "Kanca Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 1 kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 1 kesici hasar."
       }
     },
     "traits": {
@@ -759,13 +759,13 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim 5 fit, tek hedef. İsabet: 3 (1d6) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim {{distance:5ft}}, tek hedef. İsabet: 3 (1d6) delici hasar."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Sırtlanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, sırtlan o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Sırtlanın en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, sırtlan o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       }
     }
   },
@@ -774,7 +774,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +1, erişim 5 fit, tek hedef. İsabet: 1 (1d4 - 1) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +1, erişim {{distance:5ft}}, tek hedef. İsabet: 1 (1d4 - 1) delici hasar."
       }
     },
     "traits": {
@@ -784,7 +784,7 @@
       },
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Çakalın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, çakal o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Çakalın en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, çakal o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       }
     }
   },
@@ -793,11 +793,11 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 7 (1d8 + 3) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 7 (1d8 + 3) delici hasar."
       },
       "claw": {
         "name": "Pençe",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 6 (1d6 + 3) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 6 (1d6 + 3) kesici hasar."
       }
     },
     "traits": {
@@ -807,15 +807,15 @@
       },
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Aslanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, aslan o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Aslanın en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, aslan o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       },
       "pounce": {
         "name": "Üstüne Atılma",
-        "description": "Aslan bir yaratığa doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona pençe saldırısıyla isabet ederse, hedef ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer. Hedef yere düşmüşse aslan bonus eylem olarak ona karşı bir ısırık saldırısı yapabilir."
+        "description": "Aslan bir yaratığa doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona pençe saldırısıyla isabet ederse, hedef ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer. Hedef yere düşmüşse aslan bonus eylem olarak ona karşı bir ısırık saldırısı yapabilir."
       },
       "running_leap": {
         "name": "Koşarak Sıçrama",
-        "description": "Aslan 10 fit koşarak hız aldığında en fazla 25 fit uzun atlayabilir."
+        "description": "Aslan {{distance:10ft}} koşarak hız aldığında en fazla {{distance:25ft}} uzun atlayabilir."
       }
     }
   },
@@ -824,7 +824,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim 5 fit, tek hedef. İsabet: 1 delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim {{distance:5ft}}, tek hedef. İsabet: 1 delici hasar."
       }
     }
   },
@@ -833,7 +833,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 4 (1d6 + 1) delici hasar. Hedef bir yaratıksa ZD 11 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d6 + 1) delici hasar. Hedef bir yaratıksa ZD 11 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
       }
     },
     "traits": {
@@ -848,7 +848,7 @@
     "actions": {
       "hooves": {
         "name": "Toynaklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim 5 fit, tek hedef. İsabet: 4 (1d4 + 2) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d4 + 2) ezici hasar."
       }
     },
     "traits": {
@@ -867,11 +867,11 @@
     "actions": {
       "tentacles": {
         "name": "Dokunaçlar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 1 ezici hasar ve hedef kavranır (kurtulma ZD 10). Bu kavrama sona erene kadar ahtapot dokunaçlarını başka bir hedefe karşı kullanamaz."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 1 ezici hasar ve hedef kavranır (kurtulma ZD 10). Bu kavrama sona erene kadar ahtapot dokunaçlarını başka bir hedefe karşı kullanamaz."
       },
       "ink_cloud": {
         "name": "Mürekkep Bulutu",
-        "description": "Ahtapot su altındaysa çevresinde 5 fit yarıçaplı bir mürekkep bulutu yayılır. Alan 1 dakika boyunca yoğun biçimde örtülür, ancak güçlü bir akıntı mürekkebi dağıtabilir. Mürekkebi saldıktan sonra ahtapot bonus eylem olarak Atılma eylemini kullanabilir."
+        "description": "Ahtapot su altındaysa çevresinde {{distance:5ft}} yarıçaplı bir mürekkep bulutu yayılır. Alan 1 dakika boyunca yoğun biçimde örtülür, ancak güçlü bir akıntı mürekkebi dağıtabilir. Mürekkebi saldıktan sonra ahtapot bonus eylem olarak Atılma eylemini kullanabilir."
       }
     },
     "traits": {
@@ -894,7 +894,7 @@
     "actions": {
       "talons": {
         "name": "Kanca Pençeler",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 5 fit, tek hedef. İsabet: 1 kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:5ft}}, tek hedef. İsabet: 1 kesici hasar."
       }
     },
     "traits": {
@@ -913,11 +913,11 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 5 (1d6 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 5 (1d6 + 2) delici hasar."
       },
       "claw": {
         "name": "Pençe",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 4 (1d4 + 2) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 4 (1d4 + 2) kesici hasar."
       }
     },
     "traits": {
@@ -927,7 +927,7 @@
       },
       "pounce": {
         "name": "Üstüne Atılma",
-        "description": "Panter bir yaratığa doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona pençe saldırısıyla isabet ederse, hedef ZD 12 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer. Hedef yere düşmüşse panter bonus eylem olarak ona karşı bir ısırık saldırısı yapabilir."
+        "description": "Panter bir yaratığa doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona pençe saldırısıyla isabet ederse, hedef ZD 12 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer. Hedef yere düşmüşse panter bonus eylem olarak ona karşı bir ısırık saldırısı yapabilir."
       }
     }
   },
@@ -936,7 +936,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 1 delici hasar ve hedef ZD 10 Dayanıklılık kurtulma atışı yapar; başarısız olursa 5 (2d4) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 1 delici hasar ve hedef ZD 10 Dayanıklılık kurtulma atışı yapar; başarısız olursa 5 (2d4) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır."
       }
     }
   },
@@ -945,7 +945,7 @@
     "actions": {
       "hooves": {
         "name": "Toynaklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 7 (2d4 + 2) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 7 (2d4 + 2) ezici hasar."
       }
     }
   },
@@ -954,7 +954,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 1 delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 1 delici hasar."
       }
     },
     "traits": {
@@ -973,7 +973,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim 5 fit, tek hedef. İsabet: 1 delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +0, erişim {{distance:5ft}}, tek hedef. İsabet: 1 delici hasar."
       }
     },
     "traits": {
@@ -988,7 +988,7 @@
     "actions": {
       "beak": {
         "name": "Gaga",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 1 delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 1 delici hasar."
       }
     },
     "traits": {
@@ -1003,13 +1003,13 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 6 (1d8 + 2) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 6 (1d8 + 2) delici hasar."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Köpekbalığının en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, köpekbalığı o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Köpekbalığının en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, köpekbalığı o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       },
       "water_breathing": {
         "name": "Suda Nefes Alma",
@@ -1022,7 +1022,7 @@
     "actions": {
       "hooves": {
         "name": "Toynaklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 8 (2d4 + 3) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 8 (2d4 + 3) ezici hasar."
       }
     }
   },
@@ -1031,7 +1031,7 @@
     "actions": {
       "sting": {
         "name": "İğne",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim 5 fit, tek yaratık. İsabet: 1 delici hasar ve hedef ZD 9 Dayanıklılık kurtulma atışı yapar; başarısız olursa 4 (1d8) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim {{distance:5ft}}, tek yaratık. İsabet: 1 delici hasar ve hedef ZD 9 Dayanıklılık kurtulma atışı yapar; başarısız olursa 4 (1d8) zehir hasarı, başarılı olursa bunun yarısı kadar hasar alır."
       }
     }
   },
@@ -1049,7 +1049,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek yaratık. İsabet: 1 delici hasar ve hedef ZD 9 Dayanıklılık kurtulma atışında başarılı olmazsa 2 (1d4) zehir hasarı alır."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek yaratık. İsabet: 1 delici hasar ve hedef ZD 9 Dayanıklılık kurtulma atışında başarılı olmazsa 2 (1d4) zehir hasarı alır."
       }
     },
     "traits": {
@@ -1072,7 +1072,7 @@
     "actions": {
       "blood_drain": {
         "name": "Kan Emme",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek yaratık. İsabet: 5 (1d4 + 3) delici hasar ve stirge hedefe yapışır. Yapışıkken stirge saldırmaz. Bunun yerine, stirge'nin her turunun başında hedef kan kaybı nedeniyle 5 (1d4 + 3) can puanı kaybeder."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek yaratık. İsabet: 5 (1d4 + 3) delici hasar ve stirge hedefe yapışır. Yapışıkken stirge saldırmaz. Bunun yerine, stirge'nin her turunun başında hedef kan kaybı nedeniyle 5 (1d4 + 3) can puanı kaybeder."
       }
     }
   },
@@ -1081,7 +1081,7 @@
     "actions": {
       "bites": {
         "name": "Isırıklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 0 fit, sürünün alanındaki tek yaratık. İsabet: 5 (2d4) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 2 (1d4) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:0ft}}, sürünün alanındaki tek yaratık. İsabet: 5 (2d4) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 2 (1d4) delici hasar."
       }
     },
     "traits": {
@@ -1104,7 +1104,7 @@
     "actions": {
       "bites": {
         "name": "Isırıklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim 0 fit, sürünün alanındaki tek hedef. İsabet: 10 (4d4) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 5 (2d4) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +3, erişim {{distance:0ft}}, sürünün alanındaki tek hedef. İsabet: 10 (4d4) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 5 (2d4) delici hasar."
       }
     },
     "traits": {
@@ -1119,7 +1119,7 @@
     "actions": {
       "bites": {
         "name": "Isırıklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 0 fit, sürünün alanındaki tek yaratık. İsabet: 14 (4d6) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 7 (2d6) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:0ft}}, sürünün alanındaki tek yaratık. İsabet: 14 (4d6) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 7 (2d6) delici hasar."
       }
     },
     "traits": {
@@ -1142,7 +1142,7 @@
     "actions": {
       "bites": {
         "name": "Isırıklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim 0 fit, sürünün alanındaki tek hedef. İsabet: 7 (2d6) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 3 (1d6) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim {{distance:0ft}}, sürünün alanındaki tek hedef. İsabet: 7 (2d6) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 3 (1d6) delici hasar."
       }
     },
     "traits": {
@@ -1161,7 +1161,7 @@
     "actions": {
       "beaks": {
         "name": "Gagalar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, sürünün alanındaki tek hedef. İsabet: 7 (2d6) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 3 (1d6) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, sürünün alanındaki tek hedef. İsabet: 7 (2d6) delici hasar; sürünün can puanı yarısına veya daha azına inmişse 3 (1d6) delici hasar."
       }
     },
     "traits": {
@@ -1176,11 +1176,11 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 8 (1d10 + 3) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 8 (1d10 + 3) delici hasar."
       },
       "claw": {
         "name": "Pençe",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 7 (1d8 + 3) kesici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 7 (1d8 + 3) kesici hasar."
       }
     },
     "traits": {
@@ -1190,7 +1190,7 @@
       },
       "pounce": {
         "name": "Üstüne Atılma",
-        "description": "Kaplan bir yaratığa doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona pençe saldırısıyla isabet ederse, hedef ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer. Hedef yere düşmüşse kaplan bonus eylem olarak ona karşı bir ısırık saldırısı yapabilir."
+        "description": "Kaplan bir yaratığa doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona pençe saldırısıyla isabet ederse, hedef ZD 13 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer. Hedef yere düşmüşse kaplan bonus eylem olarak ona karşı bir ısırık saldırısı yapabilir."
       }
     }
   },
@@ -1199,7 +1199,7 @@
     "actions": {
       "beak": {
         "name": "Gaga",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim 5 fit, tek hedef. İsabet: 2 (1d4) delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +2, erişim {{distance:5ft}}, tek hedef. İsabet: 2 (1d4) delici hasar."
       }
     },
     "traits": {
@@ -1209,7 +1209,7 @@
       },
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Akbabanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, akbaba o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
+        "description": "Akbabanın en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, akbaba o yaratığa karşı yaptığı saldırı atışında avantajlıdır."
       }
     }
   },
@@ -1218,13 +1218,13 @@
     "actions": {
       "hooves": {
         "name": "Toynaklar",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim 5 fit, tek hedef. İsabet: 11 (2d6 + 4) ezici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +6, erişim {{distance:5ft}}, tek hedef. İsabet: 11 (2d6 + 4) ezici hasar."
       }
     },
     "traits": {
       "trampling_charge": {
         "name": "Çiğneyen Hücum",
-        "description": "At bir yaratığa doğru düz bir çizgide en az 20 fit hareket eder ve aynı turda ona toynak saldırısıyla isabet ederse, hedef ZD 14 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer. Hedef yere düşmüşse at bonus eylem olarak ona karşı toynaklarıyla bir saldırı daha yapabilir."
+        "description": "At bir yaratığa doğru düz bir çizgide en az {{distance:20ft}} hareket eder ve aynı turda ona toynak saldırısıyla isabet ederse, hedef ZD 14 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer. Hedef yere düşmüşse at bonus eylem olarak ona karşı toynaklarıyla bir saldırı daha yapabilir."
       }
     }
   },
@@ -1233,7 +1233,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim 5 fit, tek hedef. İsabet: 1 delici hasar."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +5, erişim {{distance:5ft}}, tek hedef. İsabet: 1 delici hasar."
       }
     },
     "traits": {
@@ -1248,7 +1248,7 @@
     "actions": {
       "bite": {
         "name": "Isırık",
-        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim 5 fit, tek hedef. İsabet: 7 (2d4 + 2) delici hasar. Hedef bir yaratıksa ZD 11 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
+        "description": "Yakın Dövüş Silah Saldırısı: isabet için +4, erişim {{distance:5ft}}, tek hedef. İsabet: 7 (2d4 + 2) delici hasar. Hedef bir yaratıksa ZD 11 Kuvvet kurtulma atışında başarılı olmalıdır, aksi halde yere düşer."
       }
     },
     "traits": {
@@ -1258,7 +1258,7 @@
       },
       "pack_tactics": {
         "name": "Sürü Taktikleri",
-        "description": "Kurdun en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik eylemsiz değilse, kurt o yaratığa karşı yaptığı saldırı atışlarında avantajlıdır."
+        "description": "Kurdun en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, kurt o yaratığa karşı yaptığı saldırı atışlarında avantajlıdır."
       }
     }
   }

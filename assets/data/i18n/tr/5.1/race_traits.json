@@ -1,11 +1,11 @@
 {
   "Darkvision": {
     "name": "Karanlıkta Görüş",
-    "description": "Yeraltı yaşamına alışkın olduğunuz için loş ışıkta ve karanlıkta üstün görüşünüz vardır. 60 fit yakınınızdaki loş ışığı parlak ışık, karanlığı ise loş ışık gibi görürsünüz. Karanlıkta renkleri değil, yalnızca gri tonlarını ayırt edebilirsiniz."
+    "description": "Yeraltı yaşamına alışkın olduğunuz için loş ışıkta ve karanlıkta üstün görüşünüz vardır. {{distance:60ft}} yakınınızdaki loş ışığı parlak ışık, karanlığı ise loş ışık gibi görürsünüz. Karanlıkta renkleri değil, yalnızca gri tonlarını ayırt edebilirsiniz."
   },
   "Superior Darkvision": {
     "name": "Üstün Karanlıkta Görüş",
-    "description": "Karanlıkta görüşünüzün menzili 120 fittir."
+    "description": "Karanlıkta görüşünüzün menzili {{distance:120ft|cop}}."
   },
   "Dwarven Resilience": {
     "name": "Cüce Dayanıklılığı",
@@ -65,7 +65,7 @@
   },
   "Fleet of Foot": {
     "name": "Hızlı Adımlar",
-    "description": "Temel yürüme hızınız 35 fite yükselir."
+    "description": "Temel yürüme hızınız {{distance:35ft|dat}} yükselir."
   },
   "Mask of the Wild": {
     "name": "Doğanın Örtüsü",

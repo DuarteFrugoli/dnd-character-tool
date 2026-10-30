@@ -1,11 +1,11 @@
 {
   "Darkvision": {
     "name": "黑暗视觉",
-    "description": "习惯了地下生活，您在黑暗和昏暗的条件下拥有出色的视力。在 60 英尺范围内的昏暗光线中，您可以看到如同明亮的光一样的东西，而在黑暗中，就好像它是昏暗的光一样的东西。在黑暗中你无法辨别颜色，只能辨别灰色阴影。"
+    "description": "习惯了地下生活，您在黑暗和昏暗的条件下拥有出色的视力。在 {{distance:60ft}}范围内的昏暗光线中，您可以看到如同明亮的光一样的东西，而在黑暗中，就好像它是昏暗的光一样的东西。在黑暗中你无法辨别颜色，只能辨别灰色阴影。"
   },
   "Superior Darkvision": {
     "name": "高级暗视觉",
-    "description": "你的黑暗视觉半径为 120 英尺。"
+    "description": "你的黑暗视觉半径为 {{distance:120ft}}。"
   },
   "Dwarven Resilience": {
     "name": "矮人的韧性",
@@ -65,7 +65,7 @@
   },
   "Fleet of Foot": {
     "name": "快速脚步",
-    "description": "您的基本步行速度增加至 35 英尺。"
+    "description": "您的基本步行速度增加至 {{distance:35ft}}。"
   },
   "Mask of the Wild": {
     "name": "狂野面具",

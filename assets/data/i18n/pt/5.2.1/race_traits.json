@@ -1,7 +1,7 @@
 {
   "Darkvision": {
     "name": "Visão no Escuro",
-    "description": "Você enxerga na Penumbra dentro do alcance desta característica como se fosse Luz Plena e na Escuridão como se fosse Penumbra, distinguindo apenas tons de cinza na escuridão. O alcance é 120 pés para anões e orcs, 60 pés para as demais espécies listadas e 120 pés para elfos drow."
+    "description": "Você enxerga na Penumbra dentro do alcance desta característica como se fosse Luz Plena e na Escuridão como se fosse Penumbra, distinguindo apenas tons de cinza na escuridão. O alcance é {{distance:120ft}} para anões e orcs, {{distance:60ft}} para as demais espécies listadas e {{distance:120ft}} para elfos drow."
   },
   "Draconic Ancestry": {
     "name": "Ancestralidade Dracônica",
@@ -9,7 +9,7 @@
   },
   "Breath Weapon": {
     "name": "Arma de Sopro",
-    "description": "Ao realizar a ação Atacar, substitua um ataque por um Cone de 15 pés ou uma Linha de 30 pés de comprimento por 5 pés de largura. Criaturas na área fazem um teste de resistência de Destreza contra CD 8 + seu modificador de Constituição + Bônus de Proficiência; sofrem dano do tipo da ancestralidade se falharem, ou metade se passarem. O dano é 1d10, aumentando para 2d10 no nível 5 de personagem, 3d10 no 11 e 4d10 no 17. Usos iguais ao seu Bônus de Proficiência por Descanso Longo."
+    "description": "Ao realizar a ação Atacar, substitua um ataque por um Cone de {{distance:15ft}} ou uma Linha de {{distance:30ft}} de comprimento por {{distance:5ft}} de largura. Criaturas na área fazem um teste de resistência de Destreza contra CD 8 + seu modificador de Constituição + Bônus de Proficiência; sofrem dano do tipo da ancestralidade se falharem, ou metade se passarem. O dano é 1d10, aumentando para 2d10 no nível 5 de personagem, 3d10 no 11 e 4d10 no 17. Usos iguais ao seu Bônus de Proficiência por Descanso Longo."
   },
   "Damage Resistance": {
     "name": "Resistência a Dano",
@@ -29,7 +29,7 @@
   },
   "Stonecunning": {
     "name": "Senso das Pedras",
-    "description": "Enquanto toca uma pedra ou está sobre ela, use uma Ação Bônus para ganhar Sentido Sísmico com alcance de 60 pés por 10 minutos. Usos iguais ao seu Bônus de Proficiência por Descanso Longo."
+    "description": "Enquanto toca uma pedra ou está sobre ela, use uma Ação Bônus para ganhar Sentido Sísmico com alcance de {{distance:60ft}} por 10 minutos. Usos iguais ao seu Bônus de Proficiência por Descanso Longo."
   },
   "Elven Lineage": {
     "name": "Linhagem Élfica",
@@ -69,7 +69,7 @@
   },
   "Cloud's Jaunt": {
     "name": "Passo da Nuvem",
-    "description": "Com uma Ação Bônus, teleporte-se até 30 pés para um espaço desocupado que consiga ver."
+    "description": "Com uma Ação Bônus, teleporte-se até {{distance:30ft}} para um espaço desocupado que consiga ver."
   },
   "Fire's Burn": {
     "name": "Queimadura do Fogo",
@@ -77,7 +77,7 @@
   },
   "Frost's Chill": {
     "name": "Frio da Geada",
-    "description": "Quando uma jogada de ataque acertar e causar dano, cause 1d6 de dano de Frio adicional e reduza o Deslocamento do alvo em 10 pés até o início do seu próximo turno."
+    "description": "Quando uma jogada de ataque acertar e causar dano, cause 1d6 de dano de Frio adicional e reduza o Deslocamento do alvo em {{distance:10ft}} até o início do seu próximo turno."
   },
   "Hill's Tumble": {
     "name": "Queda da Colina",
@@ -89,11 +89,11 @@
   },
   "Storm's Thunder": {
     "name": "Trovão da Tempestade",
-    "description": "Quando uma criatura a até 60 pés causar dano a você, use uma Reação para causar 1d8 de dano Trovejante a ela."
+    "description": "Quando uma criatura a até {{distance:60ft}} causar dano a você, use uma Reação para causar 1d8 de dano Trovejante a ela."
   },
   "Large Form": {
     "name": "Forma Grande",
-    "description": "A partir do nível 5 de personagem, use uma Ação Bônus para se tornar Grande por até 10 minutos, se houver espaço. Você tem Vantagem em testes de Força e seu Deslocamento aumenta em 10 pés. Uma vez por Descanso Longo."
+    "description": "A partir do nível 5 de personagem, use uma Ação Bônus para se tornar Grande por até 10 minutos, se houver espaço. Você tem Vantagem em testes de Força e seu Deslocamento aumenta em {{distance:10ft}}. Uma vez por Descanso Longo."
   },
   "Powerful Build": {
     "name": "Porte Poderoso",

@@ -30,7 +30,7 @@
     },
     "Fast Movement": {
       "name": "Movimento Rápido",
-      "description": "Seu deslocamento aumenta em 3 metros enquanto você não estiver usando armadura pesada."
+      "description": "Seu deslocamento aumenta em {{distance:10ft}} enquanto você não estiver usando armadura pesada."
     },
     "Feral Instinct": {
       "name": "Instinto Selvagem",
@@ -92,7 +92,7 @@
     },
     "Countercharm": {
       "name": "Contracanção",
-      "description": "Você ganha a habilidade de usar notas musicais ou palavras de poder para interromper efeitos que influenciam a mente. Como ação, você pode iniciar uma apresentação que dura até o fim do seu próximo turno. Durante esse tempo, você e quaisquer criaturas amigáveis a até 9 metros de você têm vantagem em testes de resistência contra ficar amedrontado ou enfeitiçado."
+      "description": "Você ganha a habilidade de usar notas musicais ou palavras de poder para interromper efeitos que influenciam a mente. Como ação, você pode iniciar uma apresentação que dura até o fim do seu próximo turno. Durante esse tempo, você e quaisquer criaturas amigáveis a até {{distance:30ft}} de você têm vantagem em testes de resistência contra ficar amedrontado ou enfeitiçado."
     },
     "Magical Secrets": {
       "name": "Segredos Mágicos",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimento sem Armadura",
-      "description": "Seu deslocamento aumenta enquanto você não estiver usando armadura nem empunhando um escudo: +3 metros no 2º nível de monge, +4,5 metros no 6º nível, +6 metros no 10º nível, +7,5 metros no 14º nível e +9 metros no 18º nível."
+      "description": "Seu deslocamento aumenta enquanto você não estiver usando armadura nem empunhando um escudo: +{{distance:10ft}} no 2º nível de monge, +{{distance:15ft}} no 6º nível, +{{distance:20ft}} no 10º nível, +{{distance:25ft}} no 14º nível e +{{distance:30ft}} no 18º nível."
     },
     "Monastic Tradition": {
       "name": "Tradição Monástica",
@@ -254,7 +254,7 @@
   "Paladin": {
     "Divine Sense": {
       "name": "Sentido Divino",
-      "description": "A presença de um mal poderoso é registrada por seus sentidos como um odor nocivo, e um bem poderoso soa como música celestial aos seus ouvidos. Como ação, você pode abrir sua percepção para detectar essas forças. Até o fim do seu próximo turno, você sabe a localização de qualquer celestial, ínfero ou morto-vivo a até 18 metros de você que não esteja atrás de cobertura total."
+      "description": "A presença de um mal poderoso é registrada por seus sentidos como um odor nocivo, e um bem poderoso soa como música celestial aos seus ouvidos. Como ação, você pode abrir sua percepção para detectar essas forças. Até o fim do seu próximo turno, você sabe a localização de qualquer celestial, ínfero ou morto-vivo a até {{distance:60ft}} de você que não esteja atrás de cobertura total."
     },
     "Lay on Hands": {
       "name": "Impor as Mãos",
@@ -290,11 +290,11 @@
     },
     "Aura of Protection": {
       "name": "Aura de Proteção",
-      "description": "Sempre que você ou uma criatura amigável a até 3 metros de você precisar fazer um teste de resistência, a criatura recebe um bônus no teste igual ao seu modificador de Carisma, com bônus mínimo de +1. Você deve estar consciente para conceder esse bônus."
+      "description": "Sempre que você ou uma criatura amigável a até {{distance:10ft}} de você precisar fazer um teste de resistência, a criatura recebe um bônus no teste igual ao seu modificador de Carisma, com bônus mínimo de +1. Você deve estar consciente para conceder esse bônus."
     },
     "Aura of Courage": {
       "name": "Aura de Coragem",
-      "description": "Você e criaturas amigáveis a até 3 metros de você não podem ficar amedrontados enquanto você estiver consciente."
+      "description": "Você e criaturas amigáveis a até {{distance:10ft}} de você não podem ficar amedrontados enquanto você estiver consciente."
     },
     "Cleansing Touch": {
       "name": "Toque Purificador",
@@ -324,7 +324,7 @@
     },
     "Primeval Awareness": {
       "name": "Consciência Primitiva",
-      "description": "Você pode usar sua ação e gastar um espaço de magia de patrulheiro para focar sua percepção na região ao seu redor. Por 1 minuto por nível do espaço de magia gasto, você pode sentir se aberrações, celestiais, dragões, elementais, fadas, ínferos ou mortos-vivos estão presentes a até 1,5 quilômetro de você."
+      "description": "Você pode usar sua ação e gastar um espaço de magia de patrulheiro para focar sua percepção na região ao seu redor. Por 1 minuto por nível do espaço de magia gasto, você pode sentir se aberrações, celestiais, dragões, elementais, fadas, ínferos ou mortos-vivos estão presentes a até {{distance:1mi}} de você."
     },
     "Ability Score Improvement": {
       "name": "Melhoria de Atributo",
@@ -362,7 +362,7 @@
     },
     "Sneak Attack": {
       "name": "Ataque Furtivo",
-      "description": "Você sabe como atacar sutilmente e explorar a distração de um inimigo. Uma vez por turno, você pode causar dano extra a uma criatura que atingir com um ataque se tiver vantagem na jogada de ataque. O ataque deve usar uma arma de acuidade ou uma arma à distância. Você não precisa ter vantagem se outro inimigo do alvo estiver a até 1,5 metro dele, esse inimigo não estiver incapacitado e você não tiver desvantagem. O dano extra é 1d6 nos níveis 1-2 de ladino e aumenta em +1d6 a cada dois níveis de ladino: 2d6 no nível 3, 3d6 no nível 5, 4d6 no nível 7, 5d6 no nível 9, 6d6 no nível 11, 7d6 no nível 13, 8d6 no nível 15, 9d6 no nível 17 e 10d6 no nível 19."
+      "description": "Você sabe como atacar sutilmente e explorar a distração de um inimigo. Uma vez por turno, você pode causar dano extra a uma criatura que atingir com um ataque se tiver vantagem na jogada de ataque. O ataque deve usar uma arma de acuidade ou uma arma à distância. Você não precisa ter vantagem se outro inimigo do alvo estiver a até {{distance:5ft}} dele, esse inimigo não estiver incapacitado e você não tiver desvantagem. O dano extra é 1d6 nos níveis 1-2 de ladino e aumenta em +1d6 a cada dois níveis de ladino: 2d6 no nível 3, 3d6 no nível 5, 4d6 no nível 7, 5d6 no nível 9, 6d6 no nível 11, 7d6 no nível 13, 8d6 no nível 15, 9d6 no nível 17 e 10d6 no nível 19."
     },
     "Thieves' Cant": {
       "name": "Gíria de Ladrão",
@@ -394,7 +394,7 @@
     },
     "Blindsense": {
       "name": "Sentido Cego",
-      "description": "Se você puder ouvir, fica ciente da localização de qualquer criatura escondida ou invisível a até 3 metros de você."
+      "description": "Se você puder ouvir, fica ciente da localização de qualquer criatura escondida ou invisível a até {{distance:10ft}} de você."
     },
     "Slippery Mind": {
       "name": "Mente Escorregadia",

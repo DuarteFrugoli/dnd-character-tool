@@ -4,11 +4,11 @@
     "actions": {
       "fist": {
         "name": "Pugno",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 6 (1d6 + 3) danni contundenti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 6 (1d6 + 3) danni contundenti."
       },
       "rock": {
         "name": "Roccia",
-        "description": "Attacco con arma a distanza: +5 al tiro per colpire, gittata 7,5/15 metri, un bersaglio. Colpito: 6 (1d6 + 3) danni contundenti."
+        "description": "Attacco con arma a distanza: +5 al tiro per colpire, gittata {{distance:25/50ft}}, un bersaglio. Colpito: 6 (1d6 + 3) danni contundenti."
       },
       "multiattack": {
         "name": "Multiattacco",
@@ -21,7 +21,7 @@
     "actions": {
       "beak": {
         "name": "Becco",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 6 (1d8 + 2) danni taglienti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 6 (1d8 + 2) danni taglienti."
       }
     }
   },
@@ -30,13 +30,13 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +1 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 (1d4 - 1) danno perforante."
+        "description": "Attacco con arma da mischia: +1 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 (1d4 - 1) danno perforante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "Il babbuino ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "Il babbuino ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
   },
@@ -45,7 +45,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno perforante."
+        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno perforante."
       }
     },
     "traits": {
@@ -60,7 +60,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 1 danno perforante."
+        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 1 danno perforante."
       }
     },
     "traits": {
@@ -79,11 +79,11 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 5 (1d6 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 5 (1d6 + 2) danni perforanti."
       },
       "claws": {
         "name": "Artigli",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 7 (2d4 + 2) danni taglienti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 7 (2d4 + 2) danni taglienti."
       },
       "multiattack": {
         "name": "Multiattacco",
@@ -102,7 +102,7 @@
     "actions": {
       "beak": {
         "name": "Becco",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d4 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d4 + 2) danni perforanti."
       }
     },
     "traits": {
@@ -112,7 +112,7 @@
       },
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "Il falco ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "Il falco ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
   },
@@ -121,13 +121,13 @@
     "actions": {
       "tusk": {
         "name": "Zanna",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d6 + 1) danni taglienti."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d6 + 1) danni taglienti."
       }
     },
     "traits": {
       "charge": {
         "name": "Carica",
-        "description": "Se il cinghiale si muove di almeno 6 metri in linea retta verso un bersaglio e poi lo colpisce con un attacco di zanna nello stesso turno, il bersaglio subisce 3 (1d6) danni taglienti extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 11 o cadere prono."
+        "description": "Se il cinghiale si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di zanna nello stesso turno, il bersaglio subisce 3 (1d6) danni taglienti extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 11 o cadere prono."
       },
       "relentless": {
         "name": "Implacabile",
@@ -140,11 +140,11 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 8 (1d8 + 4) danni perforanti."
+        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 8 (1d8 + 4) danni perforanti."
       },
       "claws": {
         "name": "Artigli",
-        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 11 (2d6 + 4) danni taglienti."
+        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 11 (2d6 + 4) danni taglienti."
       },
       "multiattack": {
         "name": "Multiattacco",
@@ -163,7 +163,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 2 (1d4) danni contundenti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 2 (1d4) danni contundenti."
       }
     }
   },
@@ -172,7 +172,7 @@
     "actions": {
       "claws": {
         "name": "Artigli",
-        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno tagliente."
+        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno tagliente."
       }
     },
     "traits": {
@@ -187,11 +187,11 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 5 (1d6 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 5 (1d6 + 2) danni perforanti."
       },
       "constrict": {
         "name": "Stritolare",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 6 (1d8 + 2) danni contundenti e il bersaglio è afferrato (CD 14 per sfuggire). Finché la presa non termina, la creatura è trattenuta e il serpente non può stritolare un altro bersaglio."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 6 (1d8 + 2) danni contundenti e il bersaglio è afferrato (CD 14 per sfuggire). Finché la presa non termina, la creatura è trattenuta e il serpente non può stritolare un altro bersaglio."
       }
     }
   },
@@ -200,7 +200,7 @@
     "actions": {
       "claw": {
         "name": "Artiglio",
-        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno contundente."
+        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno contundente."
       }
     },
     "traits": {
@@ -215,7 +215,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 7 (1d10 + 2) danni perforanti e il bersaglio è afferrato (CD 12 per sfuggire). Finché la presa non termina, il bersaglio è trattenuto e il coccodrillo non può mordere un altro bersaglio."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 7 (1d10 + 2) danni perforanti e il bersaglio è afferrato (CD 12 per sfuggire). Finché la presa non termina, il bersaglio è trattenuto e il coccodrillo non può mordere un altro bersaglio."
       }
     },
     "traits": {
@@ -230,7 +230,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 2 (1d4) danni perforanti."
+        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 2 (1d4) danni perforanti."
       }
     }
   },
@@ -239,7 +239,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 10 (2d6 + 3) danni perforanti. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 13 o cadere prono."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 10 (2d6 + 3) danni perforanti. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 13 o cadere prono."
       }
     },
     "traits": {
@@ -249,7 +249,7 @@
       },
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "Il lupo ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "Il lupo ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
   },
@@ -258,7 +258,7 @@
     "actions": {
       "hooves": {
         "name": "Zoccoli",
-        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 9 (2d4 + 4) danni contundenti."
+        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 9 (2d4 + 4) danni contundenti."
       }
     }
   },
@@ -267,7 +267,7 @@
     "actions": {
       "talons": {
         "name": "Grinfie",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d4 + 2) danni taglienti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d4 + 2) danni taglienti."
       }
     },
     "traits": {
@@ -282,17 +282,17 @@
     "actions": {
       "ram": {
         "name": "Testata",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 6 (1d6 + 3) danni contundenti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 6 (1d6 + 3) danni contundenti."
       },
       "hooves": {
         "name": "Zoccoli",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, una creatura prona. Colpito: 8 (2d4 + 3) danni contundenti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, una creatura prona. Colpito: 8 (2d4 + 3) danni contundenti."
       }
     },
     "traits": {
       "charge": {
         "name": "Carica",
-        "description": "Se l'alce si muove di almeno 6 metri in linea retta verso un bersaglio e poi lo colpisce con un attacco di Testata nello stesso turno, il bersaglio subisce 7 (2d6) danni extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 13 o cadere prono."
+        "description": "Se l'alce si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di Testata nello stesso turno, il bersaglio subisce 7 (2d6) danni extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 13 o cadere prono."
       }
     }
   },
@@ -301,7 +301,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno perforante più 7 (3d4) danni da veleno."
+        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno perforante più 7 (3d4) danni da veleno."
       }
     },
     "traits": {
@@ -320,7 +320,7 @@
       },
       "standing_leap": {
         "name": "Salto da fermo",
-        "description": "Il salto in lungo della rana arriva fino a 3 metri e il suo salto in alto fino a 1,5 metri, con o senza rincorsa."
+        "description": "Il salto in lungo della rana arriva fino a {{distance:10ft}} e il suo salto in alto fino a {{distance:5ft}}, con o senza rincorsa."
       }
     }
   },
@@ -329,11 +329,11 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d6 + 1) danni perforanti."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d6 + 1) danni perforanti."
       },
       "claws": {
         "name": "Artigli",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 6 (2d4 + 1) danni taglienti."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 6 (2d4 + 1) danni taglienti."
       },
       "multiattack": {
         "name": "Multiattacco",
@@ -352,7 +352,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 5 (1d6 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 5 (1d6 + 2) danni perforanti."
       }
     },
     "traits": {
@@ -371,7 +371,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 4 (1d4 + 2) danni perforanti e il bersaglio deve superare un tiro salvezza su Costituzione con CD 11 o subire 10 (3d6) danni da veleno. Se i danni da veleno riducono il bersaglio a 0 punti ferita, il bersaglio è stabile ma avvelenato per 1 ora, anche dopo aver recuperato punti ferita, ed è paralizzato finché è avvelenato in questo modo."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 4 (1d4 + 2) danni perforanti e il bersaglio deve superare un tiro salvezza su Costituzione con CD 11 o subire 10 (3d6) danni da veleno. Se i danni da veleno riducono il bersaglio a 0 punti ferita, il bersaglio è stabile ma avvelenato per 1 ora, anche dopo aver recuperato punti ferita, ed è paralizzato finché è avvelenato in questo modo."
       }
     }
   },
@@ -380,7 +380,7 @@
     "actions": {
       "claw": {
         "name": "Artiglio",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d6 + 1) danni contundenti e il bersaglio è afferrato (CD 11 per sfuggire). Il granchio ha due chele, ognuna delle quali può afferrare un solo bersaglio."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d6 + 1) danni contundenti e il bersaglio è afferrato (CD 11 per sfuggire). Il granchio ha due chele, ognuna delle quali può afferrare un solo bersaglio."
       }
     },
     "traits": {
@@ -395,11 +395,11 @@
     "actions": {
       "beak": {
         "name": "Becco",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 6 (1d6 + 3) danni perforanti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 6 (1d6 + 3) danni perforanti."
       },
       "talons": {
         "name": "Grinfie",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 10 (2d6 + 3) danni taglienti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 10 (2d6 + 3) danni taglienti."
       },
       "multiattack": {
         "name": "Multiattacco",
@@ -421,13 +421,13 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +1 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 2 (1d6 - 1) danni taglienti."
+        "description": "Attacco con arma da mischia: +1 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 2 (1d6 - 1) danni taglienti."
       }
     },
     "traits": {
       "illumination": {
         "name": "Illuminazione",
-        "description": "Lo scarabeo emette luce intensa in un raggio di 3 metri e luce fioca per altri 3 metri."
+        "description": "Lo scarabeo emette luce intensa in un raggio di {{distance:10ft}} e luce fioca per altri {{distance:10ft}}."
       }
     }
   },
@@ -436,7 +436,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d6 + 1) danni perforanti e il bersaglio è afferrato (CD 11 per sfuggire). Finché la presa non termina, il bersaglio è trattenuto e la rana non può mordere un altro bersaglio."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d6 + 1) danni perforanti e il bersaglio è afferrato (CD 11 per sfuggire). Finché la presa non termina, il bersaglio è trattenuto e la rana non può mordere un altro bersaglio."
       },
       "swallow": {
         "name": "Inghiottire",
@@ -450,7 +450,7 @@
       },
       "standing_leap": {
         "name": "Salto da fermo",
-        "description": "Il salto in lungo della rana arriva fino a 6 metri e il suo salto in alto fino a 3 metri, con o senza rincorsa."
+        "description": "Il salto in lungo della rana arriva fino a {{distance:20ft}} e il suo salto in alto fino a {{distance:10ft}}, con o senza rincorsa."
       }
     }
   },
@@ -459,13 +459,13 @@
     "actions": {
       "ram": {
         "name": "Testata",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 8 (2d4 + 3) danni contundenti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 8 (2d4 + 3) danni contundenti."
       }
     },
     "traits": {
       "charge": {
         "name": "Carica",
-        "description": "Se la capra si muove di almeno 6 metri in linea retta verso un bersaglio e poi lo colpisce con un attacco di Testata nello stesso turno, il bersaglio subisce 5 (2d4) danni contundenti extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 13 o cadere prono."
+        "description": "Se la capra si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di Testata nello stesso turno, il bersaglio subisce 5 (2d4) danni contundenti extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 13 o cadere prono."
       },
       "sure_footed": {
         "name": "Piede fermo",
@@ -478,7 +478,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 10 (2d6 + 3) danni perforanti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 10 (2d6 + 3) danni perforanti."
       }
     },
     "traits": {
@@ -493,7 +493,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 6 (1d8 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 6 (1d8 + 2) danni perforanti."
       }
     }
   },
@@ -502,11 +502,11 @@
     "actions": {
       "tentacles": {
         "name": "Tentacoli",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 4,5 metri, un bersaglio. Colpito: 10 (2d6 + 3) danni contundenti. Se il bersaglio è una creatura, è afferrato (CD 16 per sfuggire). Finché la presa non termina, il bersaglio è trattenuto e il polpo non può usare i tentacoli contro un altro bersaglio."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:15ft}}, un bersaglio. Colpito: 10 (2d6 + 3) danni contundenti. Se il bersaglio è una creatura, è afferrato (CD 16 per sfuggire). Finché la presa non termina, il bersaglio è trattenuto e il polpo non può usare i tentacoli contro un altro bersaglio."
       },
       "ink_cloud": {
         "name": "Nube d'inchiostro",
-        "description": "Se il polpo è sott'acqua, una nube d'inchiostro di raggio 6 metri si espande tutto intorno a lui. L'area è fortemente oscurata per 1 minuto, anche se una corrente significativa può disperdere l'inchiostro. Dopo aver rilasciato l'inchiostro, il polpo può usare l'azione Scatto come azione bonus."
+        "description": "Se il polpo è sott'acqua, una nube d'inchiostro di raggio {{distance:20ft}} si espande tutto intorno a lui. L'area è fortemente oscurata per 1 minuto, anche se una corrente significativa può disperdere l'inchiostro. Dopo aver rilasciato l'inchiostro, il polpo può usare l'azione Scatto come azione bonus."
       }
     },
     "traits": {
@@ -529,7 +529,7 @@
     "actions": {
       "talons": {
         "name": "Grinfie",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 8 (2d6 + 1) danni taglienti."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 8 (2d6 + 1) danni taglienti."
       }
     },
     "traits": {
@@ -551,7 +551,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata 3 metri, un bersaglio. Colpito: 6 (1d4 + 4) danni perforanti e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 11, subendo 10 (3d6) danni da veleno se lo fallisce, o la metà di quei danni se lo supera."
+        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata {{distance:10ft}}, un bersaglio. Colpito: 6 (1d4 + 4) danni perforanti e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 11, subendo 10 (3d6) danni da veleno se lo fallisce, o la metà di quei danni se lo supera."
       }
     }
   },
@@ -560,7 +560,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d4 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d4 + 2) danni perforanti."
       }
     },
     "traits": {
@@ -570,7 +570,7 @@
       },
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "Il ratto ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "Il ratto ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
   },
@@ -579,13 +579,13 @@
     "actions": {
       "ram": {
         "name": "Testata",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d6 + 1) danni contundenti."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d6 + 1) danni contundenti."
       }
     },
     "traits": {
       "charge": {
         "name": "Carica",
-        "description": "Se il cavalluccio marino si muove di almeno 6 metri in linea retta verso un bersaglio e poi lo colpisce con un attacco di Testata nello stesso turno, il bersaglio subisce 7 (2d6) danni contundenti extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 11 o cadere prono."
+        "description": "Se il cavalluccio marino si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di Testata nello stesso turno, il bersaglio subisce 7 (2d6) danni contundenti extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 11 o cadere prono."
       },
       "water_breathing": {
         "name": "Respirare sott'acqua",
@@ -598,11 +598,11 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 7 (1d8 + 3) danni perforanti e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 11, subendo 9 (2d8) danni da veleno se lo fallisce, o la metà di quei danni se lo supera. Se i danni da veleno riducono il bersaglio a 0 punti ferita, il bersaglio è stabile ma avvelenato per 1 ora, anche dopo aver recuperato punti ferita, ed è paralizzato finché è avvelenato in questo modo."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 7 (1d8 + 3) danni perforanti e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 11, subendo 9 (2d8) danni da veleno se lo fallisce, o la metà di quei danni se lo supera. Se i danni da veleno riducono il bersaglio a 0 punti ferita, il bersaglio è stabile ma avvelenato per 1 ora, anche dopo aver recuperato punti ferita, ed è paralizzato finché è avvelenato in questo modo."
       },
       "web": {
         "name": "Ragnatela",
-        "description": "Attacco con arma a distanza: +5 al tiro per colpire, gittata 9/18 metri, una creatura. Colpito: il bersaglio è trattenuto dalla ragnatela. Con un'azione, il bersaglio trattenuto può effettuare una prova di Forza con CD 12, liberandosi dalla ragnatela se la supera. La ragnatela può anche essere attaccata e distrutta (CA 10; pf 5; vulnerabilità ai danni da fuoco; immunità ai danni contundenti, da veleno e psichici)."
+        "description": "Attacco con arma a distanza: +5 al tiro per colpire, gittata {{distance:30/60ft}}, una creatura. Colpito: il bersaglio è trattenuto dalla ragnatela. Con un'azione, il bersaglio trattenuto può effettuare una prova di Forza con CD 12, liberandosi dalla ragnatela se la supera. La ragnatela può anche essere attaccata e distrutta (CA 10; pf 5; vulnerabilità ai danni da fuoco; immunità ai danni contundenti, da veleno e psichici)."
       }
     },
     "traits": {
@@ -625,7 +625,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 7 (1d10 + 2) danni perforanti più 5 (1d10) danni da veleno e il bersaglio è afferrato (CD 13 per sfuggire). Finché la presa non termina, il bersaglio è trattenuto e il rospo non può mordere un altro bersaglio."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 7 (1d10 + 2) danni perforanti più 5 (1d10) danni da veleno e il bersaglio è afferrato (CD 13 per sfuggire). Finché la presa non termina, il bersaglio è trattenuto e il rospo non può mordere un altro bersaglio."
       },
       "swallow": {
         "name": "Inghiottire",
@@ -639,7 +639,7 @@
       },
       "standing_leap": {
         "name": "Salto da fermo",
-        "description": "Il salto in lungo del rospo arriva fino a 6 metri e il suo salto in alto fino a 3 metri, con o senza rincorsa."
+        "description": "Il salto in lungo del rospo arriva fino a {{distance:20ft}} e il suo salto in alto fino a {{distance:10ft}}, con o senza rincorsa."
       }
     }
   },
@@ -648,11 +648,11 @@
     "actions": {
       "beak": {
         "name": "Becco",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 7 (2d4 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 7 (2d4 + 2) danni perforanti."
       },
       "talons": {
         "name": "Grinfie",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 9 (2d6 + 2) danni taglienti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 9 (2d6 + 2) danni taglienti."
       },
       "multiattack": {
         "name": "Multiattacco",
@@ -666,7 +666,7 @@
       },
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "L'avvoltoio ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "L'avvoltoio ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     },
     "languages": [
@@ -678,7 +678,7 @@
     "actions": {
       "sting": {
         "name": "Pungiglione",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 5 (1d6 + 2) danni perforanti e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 11, subendo 10 (3d6) danni da veleno se lo fallisce, o la metà di quei danni se lo supera. Se i danni da veleno riducono il bersaglio a 0 punti ferita, il bersaglio è stabile ma avvelenato per 1 ora, anche dopo aver recuperato punti ferita, ed è paralizzato finché è avvelenato in questo modo."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 5 (1d6 + 2) danni perforanti e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 11, subendo 10 (3d6) danni da veleno se lo fallisce, o la metà di quei danni se lo supera. Se i danni da veleno riducono il bersaglio a 0 punti ferita, il bersaglio è stabile ma avvelenato per 1 ora, anche dopo aver recuperato punti ferita, ed è paralizzato finché è avvelenato in questo modo."
       }
     }
   },
@@ -687,7 +687,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 5 (1d4 + 3) danni perforanti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 5 (1d4 + 3) danni perforanti."
       }
     },
     "traits": {
@@ -702,7 +702,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 4 (1d6 + 1) danni perforanti e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 11, subendo 7 (2d6) danni da veleno se lo fallisce, o la metà di quei danni se lo supera. Se i danni da veleno riducono il bersaglio a 0 punti ferita, il bersaglio è stabile ma avvelenato per 1 ora, anche dopo aver recuperato punti ferita, ed è paralizzato finché è avvelenato in questo modo."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 4 (1d6 + 1) danni perforanti e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 11, subendo 7 (2d6) danni da veleno se lo fallisce, o la metà di quei danni se lo supera. Se i danni da veleno riducono il bersaglio a 0 punti ferita, il bersaglio è stabile ma avvelenato per 1 ora, anche dopo aver recuperato punti ferita, ed è paralizzato finché è avvelenato in questo modo."
       }
     },
     "traits": {
@@ -725,13 +725,13 @@
     "actions": {
       "ram": {
         "name": "Testata",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 3 (1d4 + 1) danni contundenti."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 3 (1d4 + 1) danni contundenti."
       }
     },
     "traits": {
       "charge": {
         "name": "Carica",
-        "description": "Se la capra si muove di almeno 6 metri in linea retta verso un bersaglio e poi lo colpisce con un attacco di Testata nello stesso turno, il bersaglio subisce 2 (1d4) danni contundenti extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 10 o cadere prono."
+        "description": "Se la capra si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di Testata nello stesso turno, il bersaglio subisce 2 (1d4) danni contundenti extra. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 10 o cadere prono."
       },
       "sure_footed": {
         "name": "Piede fermo",
@@ -744,7 +744,7 @@
     "actions": {
       "talons": {
         "name": "Grinfie",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno tagliente."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno tagliente."
       }
     },
     "traits": {
@@ -759,13 +759,13 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 3 (1d6) danni perforanti."
+        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 3 (1d6) danni perforanti."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "La iena ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "La iena ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
   },
@@ -774,7 +774,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +1 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 (1d4 - 1) danno perforante."
+        "description": "Attacco con arma da mischia: +1 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 (1d4 - 1) danno perforante."
       }
     },
     "traits": {
@@ -784,7 +784,7 @@
       },
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "Lo sciacallo ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "Lo sciacallo ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
   },
@@ -793,11 +793,11 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 7 (1d8 + 3) danni perforanti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 7 (1d8 + 3) danni perforanti."
       },
       "claw": {
         "name": "Artiglio",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 6 (1d6 + 3) danni taglienti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 6 (1d6 + 3) danni taglienti."
       }
     },
     "traits": {
@@ -807,15 +807,15 @@
       },
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "Il leone ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "Il leone ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       },
       "pounce": {
         "name": "Balzo",
-        "description": "Se il leone si muove di almeno 6 metri in linea retta verso una creatura e poi la colpisce con un attacco di artiglio nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 13 o cadere prono. Se il bersaglio è prono, il leone può effettuare contro di esso un attacco con il morso come azione bonus."
+        "description": "Se il leone si muove di almeno {{distance:20ft}} in linea retta verso una creatura e poi la colpisce con un attacco di artiglio nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 13 o cadere prono. Se il bersaglio è prono, il leone può effettuare contro di esso un attacco con il morso come azione bonus."
       },
       "running_leap": {
         "name": "Salto con rincorsa",
-        "description": "Con una rincorsa di 3 metri, il leone può effettuare un salto in lungo fino a 7,5 metri."
+        "description": "Con una rincorsa di {{distance:10ft}}, il leone può effettuare un salto in lungo fino a {{distance:25ft}}."
       }
     }
   },
@@ -824,7 +824,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno perforante."
+        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno perforante."
       }
     }
   },
@@ -833,7 +833,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d6 + 1) danni perforanti. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 11 o cadere prono."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d6 + 1) danni perforanti. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 11 o cadere prono."
       }
     },
     "traits": {
@@ -848,7 +848,7 @@
     "actions": {
       "hooves": {
         "name": "Zoccoli",
-        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d4 + 2) danni contundenti."
+        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d4 + 2) danni contundenti."
       }
     },
     "traits": {
@@ -867,11 +867,11 @@
     "actions": {
       "tentacles": {
         "name": "Tentacoli",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno contundente e il bersaglio è afferrato (CD 10 per sfuggire). Finché la presa non termina, il polpo non può usare i tentacoli contro un altro bersaglio."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno contundente e il bersaglio è afferrato (CD 10 per sfuggire). Finché la presa non termina, il polpo non può usare i tentacoli contro un altro bersaglio."
       },
       "ink_cloud": {
         "name": "Nube d'inchiostro",
-        "description": "Se il polpo è sott'acqua, una nube d'inchiostro di raggio 1,5 metri si espande tutto intorno a lui. L'area è fortemente oscurata per 1 minuto, anche se una corrente significativa può disperdere l'inchiostro. Dopo aver rilasciato l'inchiostro, il polpo può usare l'azione Scatto come azione bonus."
+        "description": "Se il polpo è sott'acqua, una nube d'inchiostro di raggio {{distance:5ft}} si espande tutto intorno a lui. L'area è fortemente oscurata per 1 minuto, anche se una corrente significativa può disperdere l'inchiostro. Dopo aver rilasciato l'inchiostro, il polpo può usare l'azione Scatto come azione bonus."
       }
     },
     "traits": {
@@ -894,7 +894,7 @@
     "actions": {
       "talons": {
         "name": "Grinfie",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno tagliente."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno tagliente."
       }
     },
     "traits": {
@@ -913,11 +913,11 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 5 (1d6 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 5 (1d6 + 2) danni perforanti."
       },
       "claw": {
         "name": "Artiglio",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 4 (1d4 + 2) danni taglienti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 4 (1d4 + 2) danni taglienti."
       }
     },
     "traits": {
@@ -927,7 +927,7 @@
       },
       "pounce": {
         "name": "Balzo",
-        "description": "Se la pantera si muove di almeno 6 metri in linea retta verso una creatura e poi la colpisce con un attacco di artiglio nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 12 o cadere prono. Se il bersaglio è prono, la pantera può effettuare contro di esso un attacco con il morso come azione bonus."
+        "description": "Se la pantera si muove di almeno {{distance:20ft}} in linea retta verso una creatura e poi la colpisce con un attacco di artiglio nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 12 o cadere prono. Se il bersaglio è prono, la pantera può effettuare contro di esso un attacco con il morso come azione bonus."
       }
     }
   },
@@ -936,7 +936,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno perforante e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 10, subendo 5 (2d4) danni da veleno se lo fallisce, o la metà di quei danni se lo supera."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno perforante e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 10, subendo 5 (2d4) danni da veleno se lo fallisce, o la metà di quei danni se lo supera."
       }
     }
   },
@@ -945,7 +945,7 @@
     "actions": {
       "hooves": {
         "name": "Zoccoli",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 7 (2d4 + 2) danni contundenti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 7 (2d4 + 2) danni contundenti."
       }
     }
   },
@@ -954,7 +954,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno perforante."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno perforante."
       }
     },
     "traits": {
@@ -973,7 +973,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno perforante."
+        "description": "Attacco con arma da mischia: +0 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno perforante."
       }
     },
     "traits": {
@@ -988,7 +988,7 @@
     "actions": {
       "beak": {
         "name": "Becco",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno perforante."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno perforante."
       }
     },
     "traits": {
@@ -1003,13 +1003,13 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 6 (1d8 + 2) danni perforanti."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 6 (1d8 + 2) danni perforanti."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "Lo squalo ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "Lo squalo ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       },
       "water_breathing": {
         "name": "Respirare sott'acqua",
@@ -1022,7 +1022,7 @@
     "actions": {
       "hooves": {
         "name": "Zoccoli",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 8 (2d4 + 3) danni contundenti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 8 (2d4 + 3) danni contundenti."
       }
     }
   },
@@ -1031,7 +1031,7 @@
     "actions": {
       "sting": {
         "name": "Pungiglione",
-        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 1 danno perforante e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 9, subendo 4 (1d8) danni da veleno se lo fallisce, o la metà di quei danni se lo supera."
+        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 1 danno perforante e il bersaglio deve effettuare un tiro salvezza su Costituzione con CD 9, subendo 4 (1d8) danni da veleno se lo fallisce, o la metà di quei danni se lo supera."
       }
     }
   },
@@ -1049,7 +1049,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 1 danno perforante e il bersaglio deve superare un tiro salvezza su Costituzione con CD 9 o subire 2 (1d4) danni da veleno."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 1 danno perforante e il bersaglio deve superare un tiro salvezza su Costituzione con CD 9 o subire 2 (1d4) danni da veleno."
       }
     },
     "traits": {
@@ -1072,7 +1072,7 @@
     "actions": {
       "blood_drain": {
         "name": "Risucchio di sangue",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, una creatura. Colpito: 5 (1d4 + 3) danni perforanti e lo stirge si aggrappa al bersaglio. Mentre è aggrappato, lo stirge non effettua attacchi. Invece, all'inizio di ogni turno dello stirge, il bersaglio perde 5 (1d4 + 3) punti ferita a causa della perdita di sangue."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, una creatura. Colpito: 5 (1d4 + 3) danni perforanti e lo stirge si aggrappa al bersaglio. Mentre è aggrappato, lo stirge non effettua attacchi. Invece, all'inizio di ogni turno dello stirge, il bersaglio perde 5 (1d4 + 3) punti ferita a causa della perdita di sangue."
       }
     }
   },
@@ -1081,7 +1081,7 @@
     "actions": {
       "bites": {
         "name": "Morsi",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 0 metri, una creatura nello spazio dello sciame. Colpito: 5 (2d4) danni perforanti, o 2 (1d4) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:0ft}}, una creatura nello spazio dello sciame. Colpito: 5 (2d4) danni perforanti, o 2 (1d4) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
       }
     },
     "traits": {
@@ -1104,7 +1104,7 @@
     "actions": {
       "bites": {
         "name": "Morsi",
-        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata 0 metri, un bersaglio nello spazio dello sciame. Colpito: 10 (4d4) danni perforanti, o 5 (2d4) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
+        "description": "Attacco con arma da mischia: +3 al tiro per colpire, portata {{distance:0ft}}, un bersaglio nello spazio dello sciame. Colpito: 10 (4d4) danni perforanti, o 5 (2d4) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
       }
     },
     "traits": {
@@ -1119,7 +1119,7 @@
     "actions": {
       "bites": {
         "name": "Morsi",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 0 metri, una creatura nello spazio dello sciame. Colpito: 14 (4d6) danni perforanti, o 7 (2d6) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:0ft}}, una creatura nello spazio dello sciame. Colpito: 14 (4d6) danni perforanti, o 7 (2d6) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
       }
     },
     "traits": {
@@ -1142,7 +1142,7 @@
     "actions": {
       "bites": {
         "name": "Morsi",
-        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata 0 metri, un bersaglio nello spazio dello sciame. Colpito: 7 (2d6) danni perforanti, o 3 (1d6) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
+        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata {{distance:0ft}}, un bersaglio nello spazio dello sciame. Colpito: 7 (2d6) danni perforanti, o 3 (1d6) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
       }
     },
     "traits": {
@@ -1161,7 +1161,7 @@
     "actions": {
       "beaks": {
         "name": "Beccate",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio nello spazio dello sciame. Colpito: 7 (2d6) danni perforanti, o 3 (1d6) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio nello spazio dello sciame. Colpito: 7 (2d6) danni perforanti, o 3 (1d6) danni perforanti se lo sciame ha la metà dei suoi punti ferita o meno."
       }
     },
     "traits": {
@@ -1176,11 +1176,11 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 8 (1d10 + 3) danni perforanti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 8 (1d10 + 3) danni perforanti."
       },
       "claw": {
         "name": "Artiglio",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 7 (1d8 + 3) danni taglienti."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 7 (1d8 + 3) danni taglienti."
       }
     },
     "traits": {
@@ -1190,7 +1190,7 @@
       },
       "pounce": {
         "name": "Balzo",
-        "description": "Se la tigre si muove di almeno 6 metri in linea retta verso una creatura e poi la colpisce con un attacco di artiglio nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 13 o cadere prono. Se il bersaglio è prono, la tigre può effettuare contro di esso un attacco con il morso come azione bonus."
+        "description": "Se la tigre si muove di almeno {{distance:20ft}} in linea retta verso una creatura e poi la colpisce con un attacco di artiglio nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 13 o cadere prono. Se il bersaglio è prono, la tigre può effettuare contro di esso un attacco con il morso come azione bonus."
       }
     }
   },
@@ -1199,7 +1199,7 @@
     "actions": {
       "beak": {
         "name": "Becco",
-        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 2 (1d4) danni perforanti."
+        "description": "Attacco con arma da mischia: +2 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 2 (1d4) danni perforanti."
       }
     },
     "traits": {
@@ -1209,7 +1209,7 @@
       },
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "L'avvoltoio ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "L'avvoltoio ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
   },
@@ -1218,13 +1218,13 @@
     "actions": {
       "hooves": {
         "name": "Zoccoli",
-        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 11 (2d6 + 4) danni contundenti."
+        "description": "Attacco con arma da mischia: +6 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 11 (2d6 + 4) danni contundenti."
       }
     },
     "traits": {
       "trampling_charge": {
         "name": "Carica travolgente",
-        "description": "Se il cavallo si muove di almeno 6 metri in linea retta verso una creatura e poi la colpisce con un attacco di zoccoli nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 14 o cadere prono. Se il bersaglio è prono, il cavallo può effettuare contro di esso un altro attacco con gli zoccoli come azione bonus."
+        "description": "Se il cavallo si muove di almeno {{distance:20ft}} in linea retta verso una creatura e poi la colpisce con un attacco di zoccoli nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 14 o cadere prono. Se il bersaglio è prono, il cavallo può effettuare contro di esso un altro attacco con gli zoccoli come azione bonus."
       }
     }
   },
@@ -1233,7 +1233,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 1 danno perforante."
+        "description": "Attacco con arma da mischia: +5 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 1 danno perforante."
       }
     },
     "traits": {
@@ -1248,7 +1248,7 @@
     "actions": {
       "bite": {
         "name": "Morso",
-        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata 1,5 metri, un bersaglio. Colpito: 7 (2d4 + 2) danni perforanti. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 11 o cadere prono."
+        "description": "Attacco con arma da mischia: +4 al tiro per colpire, portata {{distance:5ft}}, un bersaglio. Colpito: 7 (2d4 + 2) danni perforanti. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 11 o cadere prono."
       }
     },
     "traits": {
@@ -1258,7 +1258,7 @@
       },
       "pack_tactics": {
         "name": "Tattiche del branco",
-        "description": "Il lupo ha vantaggio ai tiri per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e non è incapacitato."
+        "description": "Il lupo ha vantaggio ai tiri per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
   }

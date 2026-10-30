@@ -1,3 +1,4 @@
+import 'package:dnd_character_tool/shared/widgets/rules_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../data/custom_background.dart';
@@ -138,7 +139,7 @@ class _CustomBackground2024PageState extends State<_CustomBackground2024Page> {
                   RadioListTile<String>(
                     value: feat.name,
                     title: Text(i18n.featName(feat.name) ?? feat.name),
-                    subtitle: Text(
+                    subtitle: RulesText(
                       i18n.featDescription(feat.name) ?? feat.description,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,

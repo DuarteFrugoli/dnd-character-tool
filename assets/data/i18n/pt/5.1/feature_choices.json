@@ -19,7 +19,7 @@
       },
       "feinting_attack": {
         "name": "Ataque de Finta",
-        "description": "Gaste uma ação bônus e um dado de superioridade para fintar contra uma criatura a até 1,5 metro. Você tem vantagem em seu próximo ataque contra ela neste turno e, se esse ataque acertar, adicione o dado de superioridade ao dano."
+        "description": "Gaste uma ação bônus e um dado de superioridade para fintar contra uma criatura a até {{distance:5ft}}. Você tem vantagem em seu próximo ataque contra ela neste turno e, se esse ataque acertar, adicione o dado de superioridade ao dano."
       },
       "goading_attack": {
         "name": "Ataque Provocador",
@@ -27,7 +27,7 @@
       },
       "lunging_attack": {
         "name": "Ataque em Avanço",
-        "description": "Quando você fizer um ataque corpo a corpo com arma, gaste um dado de superioridade para aumentar seu alcance em 1,5 metro para esse ataque. Se o ataque acertar, adicione o dado de superioridade ao dano."
+        "description": "Quando você fizer um ataque corpo a corpo com arma, gaste um dado de superioridade para aumentar seu alcance em {{distance:5ft}} para esse ataque. Se o ataque acertar, adicione o dado de superioridade ao dano."
       },
       "maneuvering_attack": {
         "name": "Ataque de Manobra",
@@ -47,7 +47,7 @@
       },
       "pushing_attack": {
         "name": "Ataque de Empurrão",
-        "description": "Quando você acertar com um ataque com arma, gaste um dado de superioridade e adicione-o ao dano. Se o alvo for Grande ou menor, ele deverá fazer um teste de resistência de Força ou será empurrado até 4,5 metros de distância de você."
+        "description": "Quando você acertar com um ataque com arma, gaste um dado de superioridade e adicione-o ao dano. Se o alvo for Grande ou menor, ele deverá fazer um teste de resistência de Força ou será empurrado até {{distance:15ft}} de distância de você."
       },
       "rally": {
         "name": "Reagrupar",
@@ -59,7 +59,7 @@
       },
       "sweeping_attack": {
         "name": "Ataque em Varredura",
-        "description": "Quando você acertar um ataque com arma corpo a corpo, gaste um dado de superioridade para causar dano a outra criatura a até 1,5 metro do alvo original e ao seu alcance. Se a jogada de ataque original atingir a segunda criatura, ela sofre dano igual ao dado de superioridade."
+        "description": "Quando você acertar um ataque com arma corpo a corpo, gaste um dado de superioridade para causar dano a outra criatura a até {{distance:5ft}} do alvo original e ao seu alcance. Se a jogada de ataque original atingir a segunda criatura, ela sofre dano igual ao dado de superioridade."
       },
       "trip_attack": {
         "name": "Ataque Derrubador",
@@ -85,7 +85,7 @@
       },
       "protection": {
         "name": "Proteção",
-        "description": "Quando uma criatura ataca um alvo que não seja você a até 1,5 metro, você pode usar sua reação para impor desvantagem na jogada de ataque. Você deve estar empunhando um escudo."
+        "description": "Quando uma criatura ataca um alvo que não seja você a até {{distance:5ft}}, você pode usar sua reação para impor desvantagem na jogada de ataque. Você deve estar empunhando um escudo."
       },
       "two_weapon_fighting": {
         "name": "Combate com duas armas",
@@ -107,7 +107,7 @@
       },
       "protection": {
         "name": "Proteção",
-        "description": "Quando uma criatura ataca um alvo que não seja você a até 1,5 metro, você pode usar sua reação para impor desvantagem na jogada de ataque. Você deve estar empunhando um escudo."
+        "description": "Quando uma criatura ataca um alvo que não seja você a até {{distance:5ft}}, você pode usar sua reação para impor desvantagem na jogada de ataque. Você deve estar empunhando um escudo."
       }
     },
     "fighting_styles_ranger": {
@@ -135,7 +135,7 @@
       },
       "distant_spell": {
         "name": "Magia Distante",
-        "description": "Gaste 1 ponto de feitiçaria para dobrar o alcance de uma magia se ela tiver alcance de 1,5 metro ou mais. Se a magia tiver alcance de toque, seu alcance passa a 9 metros."
+        "description": "Gaste 1 ponto de feitiçaria para dobrar o alcance de uma magia se ela tiver alcance de {{distance:5ft}} ou mais. Se a magia tiver alcance de toque, seu alcance passa a {{distance:30ft}}."
       },
       "empowered_spell": {
         "name": "Magia Potencializada",
@@ -438,7 +438,7 @@
                 },
                 "whirlwind_attack": {
                   "name": "Ataque Redemoinho",
-                  "description": "Use sua ação para realizar ataques corpo a corpo contra qualquer número de criaturas a até 1,5 metro de você."
+                  "description": "Use sua ação para realizar ataques corpo a corpo contra qualquer número de criaturas a até {{distance:5ft}} de você."
                 }
               }
             }

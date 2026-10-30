@@ -8,6 +8,7 @@ import '../../../data/datasources/srd/srd_monster.dart';
 import '../../../data/feature_choice_engine.dart';
 import '../../../data/feature_choice_option_resolver.dart';
 import '../../../data/models/models.dart';
+import '../../../shared/widgets/rules_text.dart';
 import 'feature_choice_display_helpers.dart';
 
 typedef FeatureChoiceLabelBuilder =
@@ -272,7 +273,7 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
       subtitle: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          if (subtitle != null) Text(subtitle),
+          if (subtitle != null) RulesText(subtitle),
           if (instances.isNotEmpty)
             Wrap(
               spacing: 6,
@@ -332,7 +333,7 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
                 title: Text(target.name),
                 subtitle: target.description == null
                     ? null
-                    : Text(target.description!, maxLines: 2, overflow: TextOverflow.ellipsis),
+                    : RulesText(target.description!, maxLines: 2, overflow: TextOverflow.ellipsis),
                 onTap: () => Navigator.pop(sheetContext, target.id),
               ),
           ],
@@ -363,7 +364,7 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
       value: option.id,
       dense: true,
       title: Text(option.name),
-      subtitle: subtitle == null ? null : Text(subtitle),
+      subtitle: subtitle == null ? null : RulesText(subtitle),
     );
   }
 
@@ -384,7 +385,7 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
       dense: true,
       controlAffinity: ListTileControlAffinity.leading,
       title: Text(option.name),
-      subtitle: subtitle == null ? null : Text(subtitle),
+      subtitle: subtitle == null ? null : RulesText(subtitle),
       onChanged: (checked) {
         _toggle(request, option.id, checked ?? false);
       },

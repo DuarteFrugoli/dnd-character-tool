@@ -30,7 +30,7 @@
     },
     "Fast Movement": {
       "name": "Mouvement rapide",
-      "description": "Votre vitesse augmente de 3 mètres lorsque vous ne portez pas d'armure lourde."
+      "description": "Votre vitesse augmente de {{distance:10ft}} lorsque vous ne portez pas d'armure lourde."
     },
     "Feral Instinct": {
       "name": "Instinct sauvage",
@@ -92,7 +92,7 @@
     },
     "Countercharm": {
       "name": "Contre-charme",
-      "description": "Vous gagnez la capacité d'utiliser des notes de musique ou des mots de pouvoir pour perturber les effets d'influence mentale. Par une action, vous pouvez démarrer une représentation qui dure jusqu'à la fin de votre prochain tour. Pendant ce temps, vous et toutes les créatures amies à moins de 9 mètres de vous avez un avantage aux jets de sauvegarde contre l'effroi ou le charme."
+      "description": "Vous gagnez la capacité d'utiliser des notes de musique ou des mots de pouvoir pour perturber les effets d'influence mentale. Par une action, vous pouvez démarrer une représentation qui dure jusqu'à la fin de votre prochain tour. Pendant ce temps, vous et toutes les créatures amies à moins de {{distance:30ft}} de vous avez un avantage aux jets de sauvegarde contre l'effroi ou le charme."
     },
     "Magical Secrets": {
       "name": "Secrets magiques",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Mouvement sans armure",
-      "description": "Votre vitesse augmente lorsque vous ne portez pas d'armure ou ne brandissez pas de bouclier : +3 mètres au niveau de moine 2, +4,5 mètres au niveau 6, +6 mètres au niveau 10, +7,5 mètres au niveau 14 et +9 mètres au niveau 18."
+      "description": "Votre vitesse augmente lorsque vous ne portez pas d'armure ou ne brandissez pas de bouclier : +{{distance:10ft}} au niveau de moine 2, +{{distance:15ft}} au niveau 6, +{{distance:20ft}} au niveau 10, +{{distance:25ft}} au niveau 14 et +{{distance:30ft}} au niveau 18."
     },
     "Monastic Tradition": {
       "name": "Tradition monastique",
@@ -254,7 +254,7 @@
   "Paladin": {
     "Divine Sense": {
       "name": "Sens divin",
-      "description": "La présence d’un mal puissant s’enregistre sur vos sens comme une odeur nauséabonde, et un bien puissant résonne comme une musique céleste à vos oreilles. Par une action, vous pouvez ouvrir votre conscience pour détecter de telles forces. Jusqu'à la fin de votre prochain tour, vous connaissez l'emplacement de tout être céleste, démon ou mort-vivant dans un rayon de 20 mètres autour de vous et qui n'est pas à couvert."
+      "description": "La présence d’un mal puissant s’enregistre sur vos sens comme une odeur nauséabonde, et un bien puissant résonne comme une musique céleste à vos oreilles. Par une action, vous pouvez ouvrir votre conscience pour détecter de telles forces. Jusqu'à la fin de votre prochain tour, vous connaissez l'emplacement de tout être céleste, démon ou mort-vivant dans un rayon de {{distance:60ft}} autour de vous et qui n'est pas à couvert."
     },
     "Lay on Hands": {
       "name": "Imposer les mains",
@@ -290,11 +290,11 @@
     },
     "Aura of Protection": {
       "name": "Aura de protection",
-      "description": "Chaque fois que vous ou une créature amie à moins de 3 mètres de vous devez effectuer un jet de sauvegarde, la créature gagne un bonus au jet de sauvegarde égal à votre modificateur de Charisme (avec un bonus minimum de +1). Vous devez en être conscient pour accorder ce bonus."
+      "description": "Chaque fois que vous ou une créature amie à moins de {{distance:10ft}} de vous devez effectuer un jet de sauvegarde, la créature gagne un bonus au jet de sauvegarde égal à votre modificateur de Charisme (avec un bonus minimum de +1). Vous devez en être conscient pour accorder ce bonus."
     },
     "Aura of Courage": {
       "name": "Aura de courage",
-      "description": "Vous et les créatures amies situées à moins de 3 mètres de vous ne pouvez pas être effrayés tant que vous êtes conscient."
+      "description": "Vous et les créatures amies situées à moins de {{distance:10ft}} de vous ne pouvez pas être effrayés tant que vous êtes conscient."
     },
     "Cleansing Touch": {
       "name": "Touche Nettoyante",
@@ -324,7 +324,7 @@
     },
     "Primeval Awareness": {
       "name": "Conscience primitive",
-      "description": "Vous pouvez utiliser votre action et dépenser un emplacement de sort de rôdeur pour concentrer votre attention sur la région qui vous entoure. Pendant 1 minute par niveau d'emplacement de sort que vous dépensez, vous pouvez sentir si des aberrations, des célestes, des dragons, des élémentaires, des fées, des démons ou des morts-vivants sont présents à moins de 1,6 km de vous."
+      "description": "Vous pouvez utiliser votre action et dépenser un emplacement de sort de rôdeur pour concentrer votre attention sur la région qui vous entoure. Pendant 1 minute par niveau d'emplacement de sort que vous dépensez, vous pouvez sentir si des aberrations, des célestes, des dragons, des élémentaires, des fées, des démons ou des morts-vivants sont présents à {{distance:1mi}} ou moins de vous."
     },
     "Ability Score Improvement": {
       "name": "Amélioration de caractéristique",
@@ -362,7 +362,7 @@
     },
     "Sneak Attack": {
       "name": "Attaque sournoise",
-      "description": "Vous savez frapper subtilement et exploiter la distraction de l'ennemi. Une fois par tour, vous pouvez infliger des dégâts supplémentaires à une créature que vous frappez avec une attaque si vous avez un avantage au jet d'attaque. L'attaque doit utiliser une arme de finesse ou à distance. Vous n'avez pas besoin d'un avantage si un autre ennemi de la cible se trouve à moins de 1,50 mètre de celle-ci, cet ennemi n'est pas neutralisé et vous n'avez pas de désavantage. Les dégâts supplémentaires sont de 1d6 aux niveaux de voleur 1 et 2, puis augmentent de 1d6 tous les deux niveaux de voleur : 2d6 au niveau 3, 3d6 au niveau 5, 4d6 au niveau 7, 5d6 au niveau 9, 6d6 au niveau 11, 7d6 au niveau 13, 8d6 au niveau 15, 9d6 au niveau 17 et 10d6 au niveau 19."
+      "description": "Vous savez frapper subtilement et exploiter la distraction de l'ennemi. Une fois par tour, vous pouvez infliger des dégâts supplémentaires à une créature que vous frappez avec une attaque si vous avez un avantage au jet d'attaque. L'attaque doit utiliser une arme de finesse ou à distance. Vous n'avez pas besoin d'un avantage si un autre ennemi de la cible se trouve à moins de {{distance:5ft}} de celle-ci, cet ennemi n'est pas neutralisé et vous n'avez pas de désavantage. Les dégâts supplémentaires sont de 1d6 aux niveaux de voleur 1 et 2, puis augmentent de 1d6 tous les deux niveaux de voleur : 2d6 au niveau 3, 3d6 au niveau 5, 4d6 au niveau 7, 5d6 au niveau 9, 6d6 au niveau 11, 7d6 au niveau 13, 8d6 au niveau 15, 9d6 au niveau 17 et 10d6 au niveau 19."
     },
     "Thieves' Cant": {
       "name": "Les voleurs ne peuvent pas",
@@ -394,7 +394,7 @@
     },
     "Blindsense": {
       "name": "Sens aveugle",
-      "description": "Si vous êtes capable d'entendre, vous connaissez l'emplacement de toute créature cachée ou invisible à moins de 3 mètres de vous."
+      "description": "Si vous êtes capable d'entendre, vous connaissez l'emplacement de toute créature cachée ou invisible à moins de {{distance:10ft}} de vous."
     },
     "Slippery Mind": {
       "name": "Esprit glissant",

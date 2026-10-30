@@ -7,7 +7,7 @@
   "Athlete": {
     "name": "Atleta",
     "prerequisite": null,
-    "description": "Hai seguito un allenamento fisico approfondito per ottenere i seguenti benefici:\n• Aumenta il tuo punteggio di Forza o Destrezza di 1, fino a un massimo di 20.\n• Quando sei prono, alzarti utilizza solo 1,5 metri del tuo movimento.\n• Arrampicarsi non ti costa movimento extra.\n• È possibile eseguire un salto in lungo con corsa o un salto in alto con corsa dopo essersi mossi di soli 1,5 metri a piedi, anziché di 3 metri."
+    "description": "Hai seguito un allenamento fisico approfondito per ottenere i seguenti benefici:\n• Aumenta il tuo punteggio di Forza o Destrezza di 1, fino a un massimo di 20.\n• Quando sei prono, alzarti utilizza solo {{distance:5ft}} del tuo movimento.\n• Arrampicarsi non ti costa movimento extra.\n• È possibile eseguire un salto in lungo con corsa o un salto in alto con corsa dopo essersi mossi di soli {{distance:5ft}} a piedi, anziché di {{distance:10ft}}."
   },
   "Actor": {
     "name": "Attore",
@@ -17,12 +17,12 @@
   "Charger": {
     "name": "Caricabatterie",
     "prerequisite": null,
-    "description": "Quando usi la tua azione per Scattare, puoi usare un'azione bonus per effettuare un attacco con un'arma da mischia o per spingere una creatura. Se ti muovi di almeno 3 metri in linea retta immediatamente prima di eseguire questa azione bonus, ottieni bonus +5 al tiro per i danni dell'attacco (se scegli di effettuare un attacco in mischia e colpisci) o spingi il bersaglio fino a 3 metri lontano da te (se scegli di spingere e ci riesci)."
+    "description": "Quando usi la tua azione per Scattare, puoi usare un'azione bonus per effettuare un attacco con un'arma da mischia o per spingere una creatura. Se ti muovi di almeno {{distance:10ft}} in linea retta immediatamente prima di eseguire questa azione bonus, ottieni bonus +5 al tiro per i danni dell'attacco (se scegli di effettuare un attacco in mischia e colpisci) o spingi il bersaglio fino a {{distance:10ft}} lontano da te (se scegli di spingere e ci riesci)."
   },
   "Crossbow Expert": {
     "name": "Esperto di balestra",
     "prerequisite": null,
-    "description": "Grazie ad una pratica approfondita con la balestra, ottieni i seguenti vantaggi:\n• Ignori la qualità di caricamento delle balestre nelle quali sei competente.\n• Trovarsi entro 1,5 metri da una creatura ostile non impone svantaggio ai tiri per colpire a distanza.\n• Quando usi l'azione Attacco e attacchi con un'arma a una mano, puoi usare un'azione bonus per attaccare con la balestra a mano che stai impugnando."
+    "description": "Grazie ad una pratica approfondita con la balestra, ottieni i seguenti vantaggi:\n• Ignori la qualità di caricamento delle balestre nelle quali sei competente.\n• Trovarsi entro {{distance:5ft}} da una creatura ostile non impone svantaggio ai tiri per colpire a distanza.\n• Quando usi l'azione Attacco e attacchi con un'arma a una mano, puoi usare un'azione bonus per attaccare con la balestra a mano che stai impugnando."
   },
   "Defensive Duelist": {
     "name": "Duellante difensivo",
@@ -77,7 +77,7 @@
   "Inspiring Leader": {
     "name": "Leader ispiratore",
     "prerequisite": "Carisma 13 o superiore",
-    "description": "Puoi trascorrere 10 minuti a ispirare i tuoi compagni, rafforzando la loro determinazione a combattere. Quando lo fai, scegli fino a sei creature amichevoli (che puoi includere te stesso) entro 9 metri da te che possano vederti o sentirti e che possano capirti. Ogni creatura può guadagnare punti ferita temporanei pari al tuo livello + il tuo modificatore di Carisma. Una creatura non può guadagnare nuovamente punti ferita temporanei da questo talento finché non ha terminato un riposo breve o lungo."
+    "description": "Puoi trascorrere 10 minuti a ispirare i tuoi compagni, rafforzando la loro determinazione a combattere. Quando lo fai, scegli fino a sei creature amichevoli (che puoi includere te stesso) entro {{distance:30ft}} da te che possano vederti o sentirti e che possano capirti. Ogni creatura può guadagnare punti ferita temporanei pari al tuo livello + il tuo modificatore di Carisma. Una creatura non può guadagnare nuovamente punti ferita temporanei da questo talento finché non ha terminato un riposo breve o lungo."
   },
   "Keen Mind": {
     "name": "Mente acuta",
@@ -102,7 +102,7 @@
   "Mage Slayer": {
     "name": "Uccisore di maghi",
     "prerequisite": null,
-    "description": "Hai praticato tecniche utili nel combattimento corpo a corpo contro gli incantatori, ottenendo i seguenti benefici:\n• Quando una creatura entro 1,5 metri da te lancia un incantesimo, puoi usare la tua reazione per effettuare un attacco con arma da mischia contro quella creatura.\n• Quando danneggi una creatura che si sta concentrando su un incantesimo, quella creatura ha svantaggio al tiro salvezza che effettua per mantenere la concentrazione.\n• Hai vantaggio ai tiri salvezza contro gli incantesimi lanciati da creature entro 1,5 metri da te."
+    "description": "Hai praticato tecniche utili nel combattimento corpo a corpo contro gli incantatori, ottenendo i seguenti benefici:\n• Quando una creatura entro {{distance:5ft}} da te lancia un incantesimo, puoi usare la tua reazione per effettuare un attacco con arma da mischia contro quella creatura.\n• Quando danneggi una creatura che si sta concentrando su un incantesimo, quella creatura ha svantaggio al tiro salvezza che effettua per mantenere la concentrazione.\n• Hai vantaggio ai tiri salvezza contro gli incantesimi lanciati da creature entro {{distance:5ft}} da te."
   },
   "Magic Initiate": {
     "name": "Iniziato magico",
@@ -122,7 +122,7 @@
   "Mobile": {
     "name": "Mobile",
     "prerequisite": null,
-    "description": "Sei eccezionalmente veloce e agile. Ottieni i seguenti vantaggi:\n• La tua velocità aumenta di 3 metri.\n• Quando usi l'azione Scattare, il terreno difficile non ti costa movimento extra in quel turno.\n• Quando effettui un attacco in mischia contro una creatura, non provochi attacchi di opportunità da parte di quella creatura per il resto del turno, indipendentemente dal fatto che l'attacco vada a segno o meno."
+    "description": "Sei eccezionalmente veloce e agile. Ottieni i seguenti vantaggi:\n• La tua velocità aumenta di {{distance:10ft}}.\n• Quando usi l'azione Scattare, il terreno difficile non ti costa movimento extra in quel turno.\n• Quando effettui un attacco in mischia contro una creatura, non provochi attacchi di opportunità da parte di quella creatura per il resto del turno, indipendentemente dal fatto che l'attacco vada a segno o meno."
   },
   "Moderately Armored": {
     "name": "Moderatamente corazzato",
@@ -162,7 +162,7 @@
   "Sentinel": {
     "name": "Sentinella",
     "prerequisite": null,
-    "description": "Hai imparato le tecniche per sfruttare ogni calo della guardia del nemico, ottenendo i seguenti vantaggi:\n• Quando colpisci una creatura con un attacco di opportunità, la velocità della creatura diventa 0 per il resto del turno.\n• Le creature provocano attacchi di opportunità da parte tua anche se effettuano l'azione Disingaggio prima di lasciare la tua portata.\n• Quando una creatura entro 1,5 metri da te effettua un attacco contro un bersaglio diverso da te (e quel bersaglio non ha questo talento), puoi usare la tua reazione per effettuare un attacco con arma da mischia contro la creatura attaccante."
+    "description": "Hai imparato le tecniche per sfruttare ogni calo della guardia del nemico, ottenendo i seguenti vantaggi:\n• Quando colpisci una creatura con un attacco di opportunità, la velocità della creatura diventa 0 per il resto del turno.\n• Le creature provocano attacchi di opportunità da parte tua anche se effettuano l'azione Disingaggio prima di lasciare la tua portata.\n• Quando una creatura entro {{distance:5ft}} da te effettua un attacco contro un bersaglio diverso da te (e quel bersaglio non ha questo talento), puoi usare la tua reazione per effettuare un attacco con arma da mischia contro la creatura attaccante."
   },
   "Sharpshooter": {
     "name": "Tiratore scelto",
@@ -172,7 +172,7 @@
   "Shield Master": {
     "name": "Maestro dello scudo",
     "prerequisite": null,
-    "description": "Usi gli scudi non solo per protezione ma anche per offesa. Ottieni i seguenti benefici mentre impugni uno scudo:\n• Se effettui l'azione Attacco nel tuo turno, puoi utilizzare un'azione bonus per provare a spingere una creatura entro 1,5 metri da te con il tuo scudo.\n• Se non sei Incapacitato, puoi aggiungere il bonus alla CA del tuo scudo a qualsiasi tiro salvezza di Destrezza effettuato contro un incantesimo o altro effetto dannoso che prende di mira solo te.\n• Se sei soggetto a un effetto che ti consente di effettuare un tiro salvezza di Destrezza per subire solo la metà dei danni, puoi usare la tua reazione per non subire danni se superi il tiro salvezza, interponendo il tuo scudo tra te e la fonte dell'effetto."
+    "description": "Usi gli scudi non solo per protezione ma anche per offesa. Ottieni i seguenti benefici mentre impugni uno scudo:\n• Se effettui l'azione Attacco nel tuo turno, puoi utilizzare un'azione bonus per provare a spingere una creatura entro {{distance:5ft}} da te con il tuo scudo.\n• Se non sei Incapacitato, puoi aggiungere il bonus alla CA del tuo scudo a qualsiasi tiro salvezza di Destrezza effettuato contro un incantesimo o altro effetto dannoso che prende di mira solo te.\n• Se sei soggetto a un effetto che ti consente di effettuare un tiro salvezza di Destrezza per subire solo la metà dei danni, puoi usare la tua reazione per non subire danni se superi il tiro salvezza, interponendo il tuo scudo tra te e la fonte dell'effetto."
   },
   "Skilled": {
     "name": "Abile",

@@ -38,7 +38,7 @@
     },
     "Fast Movement": {
       "name": "Hızlı Hareket",
-      "description": "Ağır zırh giymiyorken Hızınız 10 fit artar."
+      "description": "Ağır zırh giymiyorken Hızınız {{distance:10ft}} artar."
     },
     "Feral Instinct": {
       "name": "Vahşi İçgüdü",
@@ -50,7 +50,7 @@
     },
     "Brutal Strike": {
       "name": "Acımasız Darbe",
-      "description": "Gözü Kara Saldırı kullanırken Dezavantajı olmayan Kuvvet temelli bir saldırının Avantajından vazgeçin. İsabet ederse saldırı türünde 1d10 hasar ekleyin ve bir Acımasız Darbe etkisi seçin: Kuvvetli Darbe hedefi 15 fit iter ve Fırsat Saldırıları tetiklemeden Hızınızın yarısına kadar peşinden gitmenizi sağlar; Sakatlayıcı Darbe hedefin Hızını sonraki turunuza kadar 15 fit azaltır."
+      "description": "Gözü Kara Saldırı kullanırken Dezavantajı olmayan Kuvvet temelli bir saldırının Avantajından vazgeçin. İsabet ederse saldırı türünde 1d10 hasar ekleyin ve bir Acımasız Darbe etkisi seçin: Kuvvetli Darbe hedefi {{distance:15ft}} iter ve Fırsat Saldırıları tetiklemeden Hızınızın yarısına kadar peşinden gitmenizi sağlar; Sakatlayıcı Darbe hedefin Hızını sonraki turunuza kadar {{distance:15ft}} azaltır."
     },
     "Relentless Rage": {
       "name": "Yılmaz Öfke",
@@ -80,7 +80,7 @@
   "Bard": {
     "Bardic Inspiration": {
       "name": "Ozan İlhamı",
-      "description": "Bonus eylemle sizi görebilen veya duyabilen 60 fit içindeki bir yaratığa Ozan İlhamı zarı verin. Yaratık 1 saat içinde bir D20 Testini başarısız geçerse zarı atıp sonuca ekleyebilir. Bir yaratık aynı anda yalnızca bir böyle zar taşıyabilir. Kullanım sayısı Karizma değiştiriciniz kadardır (en az 1) ve Uzun Dinlenmede yenilenir. Zar boyutu: seviye 1-4'te d6, 5-9'da d8, 10-14'te d10, 15 ve sonrasında d12."
+      "description": "Bonus eylemle sizi görebilen veya duyabilen {{distance:60ft}} içindeki bir yaratığa Ozan İlhamı zarı verin. Yaratık 1 saat içinde bir D20 Testini başarısız geçerse zarı atıp sonuca ekleyebilir. Bir yaratık aynı anda yalnızca bir böyle zar taşıyabilir. Kullanım sayısı Karizma değiştiriciniz kadardır (en az 1) ve Uzun Dinlenmede yenilenir. Zar boyutu: seviye 1-4'te d6, 5-9'da d8, 10-14'te d10, 15 ve sonrasında d12."
     },
     "Spellcasting": {
       "name": "Büyü Yapma",
@@ -108,7 +108,7 @@
     },
     "Countercharm": {
       "name": "Karşı Ezgi",
-      "description": "Siz veya 30 fit içindeki bir yaratık Büyülenmiş ya da Korkmuş durumuna karşı kurtarma atışında başarısız olursa Tepki olarak o atışı Avantajla yeniden yaptırın."
+      "description": "Siz veya {{distance:30ft}} içindeki bir yaratık Büyülenmiş ya da Korkmuş durumuna karşı kurtarma atışında başarısız olursa Tepki olarak o atışı Avantajla yeniden yaptırın."
     },
     "Magical Secrets": {
       "name": "Büyüsel Sırlar",
@@ -124,7 +124,7 @@
     },
     "Words of Creation": {
       "name": "Yaratılış Sözleri",
-      "description": "Güç Sözü: Şifa ve Güç Sözü: Ölüm her zaman hazırlanmıştır. Bunlardan birini yaptığınızda ilk hedeften 10 fit içindeki ikinci bir yaratığı da hedefleyebilirsiniz."
+      "description": "Güç Sözü: Şifa ve Güç Sözü: Ölüm her zaman hazırlanmıştır. Bunlardan birini yaptığınızda ilk hedeften {{distance:10ft}} içindeki ikinci bir yaratığı da hedefleyebilirsiniz."
     }
   },
   "Cleric": {
@@ -138,7 +138,7 @@
     },
     "Channel Divinity": {
       "name": "İlahi Gücü Yönlendirme",
-      "description": "İlahi Kıvılcım, Hortlakları Kov ve alt sınıf seçeneklerini kazanın. İlahi Gücü Yönlendirme kullanım sayısı: seviye 2'de iki, 6'da üç, 18'de dört; Kısa Dinlenmede bir, Uzun Dinlenmede tümü yenilenir. İlahi Kıvılcım Büyü eylemiyle 30 fit içindeki görebildiğiniz başka bir yaratığı 1d8 + Bilgelik değiştiricisi kadar iyileştirir ya da başarısız Dayanıklılık kurtarma atışında bu kadar Nekrotik veya Işıma hasarı verir (başarıda yarısı). Zar seviye 7'de 2d8, 13'te 3d8, 18'de 4d8 olur. Hortlakları Kov Büyü eylemiyle 30 fit içindeki seçtiğiniz hortlaklara Bilgelik kurtarma atışı yaptırır; başarısız olanlar 1 dakika Korkmuş ve Etkisiz olur, uzaklaşmaya çalışır. Hasar alırlarsa veya siz Etkisiz olur ya da ölürseniz etki biter."
+      "description": "İlahi Kıvılcım, Hortlakları Kov ve alt sınıf seçeneklerini kazanın. İlahi Gücü Yönlendirme kullanım sayısı: seviye 2'de iki, 6'da üç, 18'de dört; Kısa Dinlenmede bir, Uzun Dinlenmede tümü yenilenir. İlahi Kıvılcım Büyü eylemiyle {{distance:30ft}} içindeki görebildiğiniz başka bir yaratığı 1d8 + Bilgelik değiştiricisi kadar iyileştirir ya da başarısız Dayanıklılık kurtarma atışında bu kadar Nekrotik veya Işıma hasarı verir (başarıda yarısı). Zar seviye 7'de 2d8, 13'te 3d8, 18'de 4d8 olur. Hortlakları Kov Büyü eylemiyle {{distance:30ft}} içindeki seçtiğiniz hortlaklara Bilgelik kurtarma atışı yaptırır; başarısız olanlar 1 dakika Korkmuş ve Etkisiz olur, uzaklaşmaya çalışır. Hasar alırlarsa veya siz Etkisiz olur ya da ölürseniz etki biter."
     },
     "Cleric Subclass": {
       "name": "Rahip Alt Sınıfı",
@@ -162,7 +162,7 @@
     },
     "Improved Blessed Strikes": {
       "name": "Geliştirilmiş Kutsanmış Darbeler",
-      "description": "İlahi Darbenin ek hasarı 2d8 olur. Güçlü Büyü Yapmayı seçtiyseniz Rahip büyü numarasıyla bir yaratığa hasar verdiğinizde kendinize veya 60 fit içindeki bir müttefiğe Bilgelik değiştiricinizin iki katı Geçici HP verebilirsiniz."
+      "description": "İlahi Darbenin ek hasarı 2d8 olur. Güçlü Büyü Yapmayı seçtiyseniz Rahip büyü numarasıyla bir yaratığa hasar verdiğinizde kendinize veya {{distance:60ft}} içindeki bir müttefiğe Bilgelik değiştiricinizin iki katı Geçici HP verebilirsiniz."
     },
     "Epic Boon": {
       "name": "Destansı Lütuf",
@@ -212,7 +212,7 @@
     },
     "Improved Elemental Fury": {
       "name": "Geliştirilmiş Elemental Hiddet",
-      "description": "Güçlü Büyü Yapma, normalde en az 10 fit ulaşan Druid büyü numarasının menzilini 300 fit artırır. İlkel Darbenin ek hasarı 2d8 olur."
+      "description": "Güçlü Büyü Yapma, normalde en az {{distance:10ft}} ulaşan Druid büyü numarasının menzilini {{distance:300ft}} artırır. İlkel Darbenin ek hasarı 2d8 olur."
     },
     "Beast Spells": {
       "name": "Canavar Büyüleri",
@@ -304,7 +304,7 @@
     },
     "Unarmored Movement": {
       "name": "Zırhsız Hareket",
-      "description": "Zırh veya Kalkan olmadan Hızınız seviye 2-5'te 10 fit, 6-9'da 15 fit, 10-13'te 20 fit, 14-17'de 25 fit, 18 ve sonrasında 30 fit artar."
+      "description": "Zırh veya Kalkan olmadan Hızınız seviye 2-5'te {{distance:10ft}}, 6-9'da {{distance:15ft}}, 10-13'te {{distance:20ft}}, 14-17'de {{distance:25ft}}, 18 ve sonrasında {{distance:30ft}} artar."
     },
     "Uncanny Metabolism": {
       "name": "Olağanüstü Metabolizma",
@@ -312,7 +312,7 @@
     },
     "Deflect Attacks": {
       "name": "Saldırı Savuşturma",
-      "description": "Ezme, Delme veya Kesme hasarı içeren bir saldırı isabet ettiğinde Tepki olarak toplam hasarı 1d10 + Çeviklik değiştiricisi + Keşiş seviyesi kadar azaltın. Hasar 0'a inerse 1 Odak Puanı harcayıp yönünü değiştirebilirsiniz: yakın dövüş saldırısında 5 fit içindeki, menzilli saldırıda 60 fit içinde olup Tam Siper arkasında olmayan görünür bir yaratık Çeviklik kurtarma atışı yapar; başarısızsa saldırının türünde iki Dövüş Sanatları zarı + Çeviklik değiştiricisi kadar hasar alır."
+      "description": "Ezme, Delme veya Kesme hasarı içeren bir saldırı isabet ettiğinde Tepki olarak toplam hasarı 1d10 + Çeviklik değiştiricisi + Keşiş seviyesi kadar azaltın. Hasar 0'a inerse 1 Odak Puanı harcayıp yönünü değiştirebilirsiniz: yakın dövüş saldırısında {{distance:5ft}} içindeki, menzilli saldırıda {{distance:60ft}} içinde olup Tam Siper arkasında olmayan görünür bir yaratık Çeviklik kurtarma atışı yapar; başarısızsa saldırının türünde iki Dövüş Sanatları zarı + Çeviklik değiştiricisi kadar hasar alır."
     },
     "Monk Subclass": {
       "name": "Keşiş Alt Sınıfı",
@@ -348,7 +348,7 @@
     },
     "Heightened Focus": {
       "name": "Yükseltilmiş Odak",
-      "description": "1 Odak Puanı ile Darbe Yağmuru üç Silahsız Darbe yapar; Sabırlı Savunma ayrıca iki Dövüş Sanatları zarı kadar Geçici HP verir; Rüzgâr Adımı, 5 fit içindeki rızası olan Büyük veya daha küçük bir yaratığı Fırsat Saldırıları tetiklemeden taşıyabilir."
+      "description": "1 Odak Puanı ile Darbe Yağmuru üç Silahsız Darbe yapar; Sabırlı Savunma ayrıca iki Dövüş Sanatları zarı kadar Geçici HP verir; Rüzgâr Adımı, {{distance:5ft}} içindeki rızası olan Büyük veya daha küçük bir yaratığı Fırsat Saldırıları tetiklemeden taşıyabilir."
     },
     "Self-Restoration": {
       "name": "Kendini İyileştirme",
@@ -402,7 +402,7 @@
     },
     "Channel Divinity": {
       "name": "İlahi Gücü Yönlendirme",
-      "description": "İlahi Sezi ve alt sınıfın İlahi Gücü Yönlendirme seçeneklerini kazanın. İki kullanımla başlarsınız, Paladin seviyesi 11'de üçe çıkar; Kısa Dinlenmede bir, Uzun Dinlenmede tümü yenilenir. İlahi Sezi bonus eylemle 60 fit içindeki Göksel, İfrit ve Hortlakları, kutsanmış ya da lanetlenmiş yer ve nesneleri 10 dakika boyunca veya Etkisiz olana kadar açığa çıkarır."
+      "description": "İlahi Sezi ve alt sınıfın İlahi Gücü Yönlendirme seçeneklerini kazanın. İki kullanımla başlarsınız, Paladin seviyesi 11'de üçe çıkar; Kısa Dinlenmede bir, Uzun Dinlenmede tümü yenilenir. İlahi Sezi bonus eylemle {{distance:60ft}} içindeki Göksel, İfrit ve Hortlakları, kutsanmış ya da lanetlenmiş yer ve nesneleri 10 dakika boyunca veya Etkisiz olana kadar açığa çıkarır."
     },
     "Paladin Subclass": {
       "name": "Paladin Alt Sınıfı",
@@ -422,11 +422,11 @@
     },
     "Aura of Protection": {
       "name": "Koruma Aurası",
-      "description": "Etkisiz olmadığınız sürece siz ve 10 fitlik auranızdaki müttefikler, kurtarma atışlarına Karizma değiştiriciniz kadar (en az +1) bonus kazanır. Bir yaratık aynı anda yalnızca bir Paladinin Koruma Aurasından faydalanabilir."
+      "description": "Etkisiz olmadığınız sürece siz ve {{distance:10ft|lik}} auranızdaki müttefikler, kurtarma atışlarına Karizma değiştiriciniz kadar (en az +1) bonus kazanır. Bir yaratık aynı anda yalnızca bir Paladinin Koruma Aurasından faydalanabilir."
     },
     "Abjure Foes": {
       "name": "Düşmanları Kov",
-      "description": "Büyü eylemiyle İlahi Gücü Yönlendirme harcayıp 60 fit içindeki Karizma değiştiriciniz kadar (en az bir) yaratığı hedefleyin. Her biri Bilgelik kurtarma atışı yapar; başarısızsa 1 dakika veya hasar alana kadar Korkmuş olur. Kendi turunda hareket, eylem veya bonus eylemden yalnızca birini yapabilir."
+      "description": "Büyü eylemiyle İlahi Gücü Yönlendirme harcayıp {{distance:60ft}} içindeki Karizma değiştiriciniz kadar (en az bir) yaratığı hedefleyin. Her biri Bilgelik kurtarma atışı yapar; başarısızsa 1 dakika veya hasar alana kadar Korkmuş olur. Kendi turunda hareket, eylem veya bonus eylemden yalnızca birini yapabilir."
     },
     "Aura of Courage": {
       "name": "Cesaret Aurası",
@@ -442,7 +442,7 @@
     },
     "Aura Expansion": {
       "name": "Aura Genişlemesi",
-      "description": "Koruma Aurası 30 fitlik alana genişler."
+      "description": "Koruma Aurası {{distance:30ft|lik}} alana genişler."
     },
     "Epic Boon": {
       "name": "Destansı Lütuf",
@@ -484,7 +484,7 @@
     },
     "Roving": {
       "name": "Gezgin",
-      "description": "Ağır zırh giymiyorken Hızınız 10 fit artar. Hızınıza eşit Tırmanma ve Yüzme Hızları kazanın."
+      "description": "Ağır zırh giymiyorken Hızınız {{distance:10ft}} artar. Hızınıza eşit Tırmanma ve Yüzme Hızları kazanın."
     },
     "Expertise": {
       "name": "Uzmanlık",
@@ -508,7 +508,7 @@
     },
     "Feral Senses": {
       "name": "Vahşi Duyular",
-      "description": "30 fit menzilli Kör Görüş kazanırsınız."
+      "description": "{{distance:30ft}} menzilli Kör Görüş kazanırsınız."
     },
     "Epic Boon": {
       "name": "Destansı Lütuf",
@@ -526,7 +526,7 @@
     },
     "Sneak Attack": {
       "name": "Sinsi Saldırı",
-      "description": "Tur başına bir kez Avantajlı bir İnce veya Menzilli silah saldırısında ek hasar verin. Hedefin 5 fit içinde Etkisiz olmayan bir müttefik bulunuyor ve atışınızda Dezavantaj yoksa Avantaj gerekmez. Ek hasar seviye 1'de 1d6'dır; her tek Haydut seviyesinde 1d6 artarak seviye 19'da 10d6 olur."
+      "description": "Tur başına bir kez Avantajlı bir İnce veya Menzilli silah saldırısında ek hasar verin. Hedefin {{distance:5ft}} içinde Etkisiz olmayan bir müttefik bulunuyor ve atışınızda Dezavantaj yoksa Avantaj gerekmez. Ek hasar seviye 1'de 1d6'dır; her tek Haydut seviyesinde 1d6 artarak seviye 19'da 10d6 olur."
     },
     "Thieves' Cant": {
       "name": "Hırsız Argosu",

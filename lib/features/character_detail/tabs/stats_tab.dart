@@ -1291,7 +1291,7 @@ class _ConditionsSection extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                Text(description),
+                RulesText(description),
                 const SizedBox(height: 16),
                 SizedBox(
                   width: double.infinity,
@@ -1358,7 +1358,7 @@ class _ConditionsSection extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 12),
-                  Text(description),
+                  RulesText(description),
                   const SizedBox(height: 16),
                   Row(
                     children: [

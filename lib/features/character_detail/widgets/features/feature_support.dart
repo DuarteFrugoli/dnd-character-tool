@@ -317,7 +317,7 @@ void showFeatureChoiceValueDetails(
                   ),
                 ),
                 const SizedBox(height: 16),
-                Text(
+                RulesText(
                   description,
                   style: theme.textTheme.bodyMedium?.copyWith(height: 1.45),
                 ),

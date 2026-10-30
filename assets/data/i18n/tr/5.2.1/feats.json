@@ -45,11 +45,11 @@
   },
   "Boon of Dimensional Travel": {
     "name": "Boyutlar Arası Yolculuk Lütfu",
-    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. Saldırı veya Büyü eylemini tamamladıktan hemen sonra, görebildiğin boş bir alana 30 fit kadar ışınlanabilirsin."
+    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. Saldırı veya Büyü eylemini tamamladıktan hemen sonra, görebildiğin boş bir alana {{distance:30ft}} kadar ışınlanabilirsin."
   },
   "Boon of Fate": {
     "name": "Kader Lütfu",
-    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. Sen veya 60 fit içindeki bir yaratık bir D20 Testinde başarılı ya da başarısız olduğunda 2d4 at ve toplamı o atışa bonus veya ceza olarak uygula. İnisiyatif attığında veya Kısa ya da Uzun Dinlenmeyi bitirdiğinde kullanım hakkın yenilenir."
+    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. Sen veya {{distance:60ft}} içindeki bir yaratık bir D20 Testinde başarılı ya da başarısız olduğunda 2d4 at ve toplamı o atışa bonus veya ceza olarak uygula. İnisiyatif attığında veya Kısa ya da Uzun Dinlenmeyi bitirdiğinde kullanım hakkın yenilenir."
   },
   "Boon of Irresistible Offense": {
     "name": "Karşı Konulmaz Saldırı Lütfu",
@@ -65,6 +65,6 @@
   },
   "Boon of Truesight": {
     "name": "Gerçek Görüş Lütfu",
-    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. 60 fit menzilli Gerçek Görüş kazan."
+    "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. {{distance:60ft}} menzilli Gerçek Görüş kazan."
   }
 }

@@ -11,11 +11,11 @@
       },
       "Intimidating Presence": {
         "name": "Einschüchternde Präsenz",
-        "description": "Ab der 10. Stufe können Sie Ihre Aktion nutzen, um jemanden mit Ihrer bedrohlichen Präsenz zu erschrecken. Wählen Sie eine Kreatur aus, die Sie in einem Umkreis von 9 Metern um Sie sehen können. Wenn die Kreatur dich sehen oder hören kann, muss ihr ein Weisheitsrettungswurf gelingen (SG = 8 + dein Fähigkeitsbonus + dein Charisma-Modifikator), sonst hat sie bis zum Ende deines nächsten Zuges Angst vor dir. In den folgenden Zügen können Sie Ihre Aktion nutzen, um die Dauer bis zum Ende Ihres nächsten Zuges zu verlängern. Der Effekt endet, wenn die Kreatur ihren Zug außerhalb der Sichtlinie oder mehr als 18 Meter von Ihnen entfernt beendet."
+        "description": "Ab der 10. Stufe können Sie Ihre Aktion nutzen, um jemanden mit Ihrer bedrohlichen Präsenz zu erschrecken. Wählen Sie eine Kreatur aus, die Sie in einem Umkreis von {{distance:30ft|dat}} um Sie sehen können. Wenn die Kreatur dich sehen oder hören kann, muss ihr ein Weisheitsrettungswurf gelingen (SG = 8 + dein Fähigkeitsbonus + dein Charisma-Modifikator), sonst hat sie bis zum Ende deines nächsten Zuges Angst vor dir. In den folgenden Zügen können Sie Ihre Aktion nutzen, um die Dauer bis zum Ende Ihres nächsten Zuges zu verlängern. Der Effekt endet, wenn die Kreatur ihren Zug außerhalb der Sichtlinie oder mehr als {{distance:60ft}} von Ihnen entfernt beendet."
       },
       "Retaliation": {
         "name": "Vergeltung",
-        "description": "Wenn Sie ab der 14. Stufe Schaden von einer Kreatur erleiden, die sich in einem Umkreis von 1,5 Metern um Sie befindet, können Sie Ihre Reaktion nutzen, um einen Angriff mit einer Nahkampfwaffe gegen diese Kreatur durchzuführen."
+        "description": "Wenn Sie ab der 14. Stufe Schaden von einer Kreatur erleiden, die sich in einem Umkreis von {{distance:5ft|dat}} um Sie befindet, können Sie Ihre Reaktion nutzen, um einen Angriff mit einer Nahkampfwaffe gegen diese Kreatur durchzuführen."
       }
     },
     "Path of the Totem Warrior": {
@@ -25,11 +25,11 @@
       },
       "Totem Spirit": {
         "name": "Totemgeist",
-        "description": "Wählen Sie auf der 3. Stufe einen Totemgeist und erhalten Sie dessen Funktion. Bär: Während du tobst, hast du Widerstand gegen jeglichen Schaden außer psychischem Schaden. Adler: Während du tobst, haben andere Kreaturen einen Nachteil bei Gelegenheitsangriffswürfen gegen dich, und du kannst Sprinten als Bonusaktion verwenden. Wolf: Während du wütest, haben deine Freunde einen Vorteil bei Nahkampfangriffswürfen gegen alle Kreaturen im Umkreis von 1,5 Metern um dich, die dir feindlich gesinnt sind."
+        "description": "Wählen Sie auf der 3. Stufe einen Totemgeist und erhalten Sie dessen Funktion. Bär: Während du tobst, hast du Widerstand gegen jeglichen Schaden außer psychischem Schaden. Adler: Während du tobst, haben andere Kreaturen einen Nachteil bei Gelegenheitsangriffswürfen gegen dich, und du kannst Sprinten als Bonusaktion verwenden. Wolf: Während du wütest, haben deine Freunde einen Vorteil bei Nahkampfangriffswürfen gegen alle Kreaturen im Umkreis von {{distance:5ft|dat}} um dich, die dir feindlich gesinnt sind."
       },
       "Aspect of the Beast": {
         "name": "Aspekt des Tieres",
-        "description": "Abhängig vom gewählten Totemtier erhältst du einen magischen Vorteil. Bär: Deine Tragfähigkeit wird verdoppelt und du hast einen Vorteil bei Kraftproben, um Dinge zu schieben, zu ziehen, zu heben oder zu zerbrechen. Adler: Du kannst problemlos bis zu 1,5 Kilometer weit sehen, und schwaches Licht stellt keinen Nachteil für deine Wahrnehmungswürfe dar. Wolf: Sie können andere Kreaturen verfolgen, während Sie sich schnell bewegen, und Sie können sich heimlich bewegen, während Sie sich normal bewegen."
+        "description": "Abhängig vom gewählten Totemtier erhältst du einen magischen Vorteil. Bär: Deine Tragfähigkeit wird verdoppelt und du hast einen Vorteil bei Kraftproben, um Dinge zu schieben, zu ziehen, zu heben oder zu zerbrechen. Adler: Du kannst problemlos bis zu {{distance:1mi}} weit sehen, und schwaches Licht stellt keinen Nachteil für deine Wahrnehmungswürfe dar. Wolf: Sie können andere Kreaturen verfolgen, während Sie sich schnell bewegen, und Sie können sich heimlich bewegen, während Sie sich normal bewegen."
       },
       "Spirit Walker": {
         "name": "Geisterwanderer",
@@ -37,7 +37,7 @@
       },
       "Totemic Attunement": {
         "name": "Totem-Einstimmung",
-        "description": "Du erhältst einen magischen Vorteil basierend auf einem Totemtier deiner Wahl. Bär: Während er tobt, hat jede feindliche Kreatur im Umkreis von 1,5 Metern um dich einen Nachteil bei Angriffswürfen gegen andere Ziele als dich. Adler: Während du tobst, hast du eine Fluggeschwindigkeit, die deiner Gehgeschwindigkeit entspricht, aber du fällst, wenn du deinen Zug in der Luft beendest. Wolf: Während du tobst, kannst du eine Bonusaktion nutzen, um eine große oder kleinere Kreatur zu Boden zu werfen, wenn du sie mit einem Nahkampfwaffenangriff triffst."
+        "description": "Du erhältst einen magischen Vorteil basierend auf einem Totemtier deiner Wahl. Bär: Während er tobt, hat jede feindliche Kreatur im Umkreis von {{distance:5ft|dat}} um dich einen Nachteil bei Angriffswürfen gegen andere Ziele als dich. Adler: Während du tobst, hast du eine Fluggeschwindigkeit, die deiner Gehgeschwindigkeit entspricht, aber du fällst, wenn du deinen Zug in der Luft beendest. Wolf: Während du tobst, kannst du eine Bonusaktion nutzen, um eine große oder kleinere Kreatur zu Boden zu werfen, wenn du sie mit einem Nahkampfwaffenangriff triffst."
       }
     }
   },
@@ -49,7 +49,7 @@
       },
       "Cutting Words": {
         "name": "Wörter schneiden",
-        "description": "Wenn eine Kreatur, die du im Umkreis von 18 Metern sehen kannst, auf der 3. Stufe einen Angriffswurf, eine Fähigkeitsprüfung oder einen Schadenswurf durchführt, kannst du deine Reaktion nutzen, um eine Anwendung von Bardischer Inspiration zu verbrauchen, indem du den Würfel würfelst und die Zahl vom Würfelwurf der Kreatur abziehst. Die Kreatur ist immun, wenn sie dich nicht hören kann oder immun gegen Verzauberung ist."
+        "description": "Wenn eine Kreatur, die du im Umkreis von {{distance:60ft|dat}} sehen kannst, auf der 3. Stufe einen Angriffswurf, eine Fähigkeitsprüfung oder einen Schadenswurf durchführt, kannst du deine Reaktion nutzen, um eine Anwendung von Bardischer Inspiration zu verbrauchen, indem du den Würfel würfelst und die Zahl vom Würfelwurf der Kreatur abziehst. Die Kreatur ist immun, wenn sie dich nicht hören kann oder immun gegen Verzauberung ist."
       },
       "Additional Magical Secrets": {
         "name": "Zusätzliche magische Geheimnisse",
@@ -113,7 +113,7 @@
       },
       "Channel Divinity: Preserve Life": {
         "name": "Göttliche Macht fokussieren: Leben bewahren",
-        "description": "Ab der 2. Stufe präsentieren Sie als Aktion Ihr heiliges Symbol und rufen Heilenergie hervor, die eine Anzahl an Trefferpunkten wiederherstellen kann, die dem Fünffachen Ihrer Klerikerstufe entspricht. Wählen Sie beliebige Kreaturen in einem Umkreis von 9 Metern um Sie aus und teilen Sie diese Trefferpunkte unter ihnen auf. Mit dieser Funktion kann eine Kreatur höchstens die Hälfte ihrer maximalen Trefferpunkte wiederherstellen."
+        "description": "Ab der 2. Stufe präsentieren Sie als Aktion Ihr heiliges Symbol und rufen Heilenergie hervor, die eine Anzahl an Trefferpunkten wiederherstellen kann, die dem Fünffachen Ihrer Klerikerstufe entspricht. Wählen Sie beliebige Kreaturen in einem Umkreis von {{distance:30ft|dat}} um Sie aus und teilen Sie diese Trefferpunkte unter ihnen auf. Mit dieser Funktion kann eine Kreatur höchstens die Hälfte ihrer maximalen Trefferpunkte wiederherstellen."
       },
       "Blessed Healer": {
         "name": "Gesegneter Heiler",
@@ -135,15 +135,15 @@
       },
       "Warding Flare": {
         "name": "Abwehrsignal",
-        "description": "Wenn Sie auf der 1. Stufe außerdem von einer Kreatur in einem Umkreis von 9 Metern um Sie angegriffen werden, die Sie sehen können, können Sie Ihre Reaktion nutzen, um den Angriffswurf zu benachteiligen, sodass Licht vor dem Angreifer aufflackert. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Anwendungen wiedererlangen."
+        "description": "Wenn Sie auf der 1. Stufe außerdem von einer Kreatur in einem Umkreis von {{distance:30ft|dat}} um Sie angegriffen werden, die Sie sehen können, können Sie Ihre Reaktion nutzen, um den Angriffswurf zu benachteiligen, sodass Licht vor dem Angreifer aufflackert. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Anwendungen wiedererlangen."
       },
       "Channel Divinity: Radiance of the Dawn": {
         "name": "Göttliche Macht fokussieren: Glanz der Morgenröte",
-        "description": "Ab der 2. Stufe präsentierst du als Aktion dein heiliges Symbol und jegliche magische Dunkelheit im Umkreis von 9 Metern um dich wird vertrieben. Darüber hinaus muss jede feindliche Kreatur im Umkreis von 9 Metern einen Konstitutionsrettungswurf durchführen und bei einem fehlgeschlagenen Rettungswurf 2W10 + Strahlungsschaden Ihrer Klerikerstufe oder halb so viel bei einem Erfolg erleiden."
+        "description": "Ab der 2. Stufe präsentierst du als Aktion dein heiliges Symbol und jegliche magische Dunkelheit im Umkreis von {{distance:30ft|dat}} um dich wird vertrieben. Darüber hinaus muss jede feindliche Kreatur im Umkreis von {{distance:30ft|dat}} einen Konstitutionsrettungswurf durchführen und bei einem fehlgeschlagenen Rettungswurf 2W10 + Strahlungsschaden Ihrer Klerikerstufe oder halb so viel bei einem Erfolg erleiden."
       },
       "Improved Flare": {
         "name": "Verbessertes Leuchtsignal",
-        "description": "Ab der 6. Stufe können Sie Ihre Funktion „Warding Flare“ auch verwenden, wenn eine Kreatur, die Sie in einem Umkreis von 9 Metern um Sie sehen können, eine andere Kreatur als Sie angreift."
+        "description": "Ab der 6. Stufe können Sie Ihre Funktion „Warding Flare“ auch verwenden, wenn eine Kreatur, die Sie in einem Umkreis von {{distance:30ft|dat}} um Sie sehen können, eine andere Kreatur als Sie angreift."
       },
       "Potent Spellcasting": {
         "name": "Kraftvolle Zauberei",
@@ -151,7 +151,7 @@
       },
       "Corona of Light": {
         "name": "Korona des Lichts",
-        "description": "Ab der 17. Stufe können Sie mit Ihrer Aktion eine Aura aus Sonnenlicht aktivieren, die 1 Minute lang anhält oder bis Sie sie aufheben. Sie geben helles Licht in einem Radius von 18 Metern ab und gedämpftes Licht in einem Umkreis von 9 Metern darüber hinaus. Deine Feinde im hellen Licht haben bei Rettungswürfen gegen alle Zauber, die Feuer- oder Strahlungsschaden verursachen, einen Nachteil."
+        "description": "Ab der 17. Stufe können Sie mit Ihrer Aktion eine Aura aus Sonnenlicht aktivieren, die 1 Minute lang anhält oder bis Sie sie aufheben. Sie geben helles Licht in einem Radius von {{distance:60ft|dat}} ab und gedämpftes Licht in einem Umkreis von {{distance:30ft|dat}} darüber hinaus. Deine Feinde im hellen Licht haben bei Rettungswürfen gegen alle Zauber, die Feuer- oder Strahlungsschaden verursachen, einen Nachteil."
       }
     },
     "Nature Domain": {
@@ -165,11 +165,11 @@
       },
       "Channel Divinity: Charm Animals and Plants": {
         "name": "Göttliche Macht fokussieren: Bezaubere Tiere und Pflanzen",
-        "description": "Ab der 2. Ebene präsentieren Sie als Aktion Ihr heiliges Symbol und rufen den Namen Ihrer Gottheit an. Jedes Tier oder jede Pflanzenkreatur, die dich im Umkreis von 9 Metern sehen kann, muss einen Weisheitsrettungswurf machen. Wenn dies fehlschlägt, wird es 1 Minute lang oder bis es Schaden erleidet, von Ihnen verzaubert."
+        "description": "Ab der 2. Ebene präsentieren Sie als Aktion Ihr heiliges Symbol und rufen den Namen Ihrer Gottheit an. Jedes Tier oder jede Pflanzenkreatur, die dich im Umkreis von {{distance:30ft|dat}} sehen kann, muss einen Weisheitsrettungswurf machen. Wenn dies fehlschlägt, wird es 1 Minute lang oder bis es Schaden erleidet, von Ihnen verzaubert."
       },
       "Dampen Elements": {
         "name": "Elemente dämpfen",
-        "description": "Ab der 6. Stufe können Sie, wenn Sie oder eine Kreatur im Umkreis von 9 Metern um Sie Säure-, Kälte-, Feuer-, Blitz- oder Donnerschaden erleiden, Ihre Reaktion nutzen, um der Kreatur Widerstand gegen diesen Schadensfall zu verleihen."
+        "description": "Ab der 6. Stufe können Sie, wenn Sie oder eine Kreatur im Umkreis von {{distance:30ft|dat}} um Sie Säure-, Kälte-, Feuer-, Blitz- oder Donnerschaden erleiden, Ihre Reaktion nutzen, um der Kreatur Widerstand gegen diesen Schadensfall zu verleihen."
       },
       "Divine Strike": {
         "name": "Göttlicher Schlag",
@@ -187,7 +187,7 @@
       },
       "Wrath of the Storm": {
         "name": "Zorn des Sturms",
-        "description": "Auch auf der 1. Stufe können Sie, wenn eine Kreatur in einem Umkreis von 1,5 Metern um Sie herum, die Sie sehen können, Sie mit einem Angriff trifft, Ihre Reaktion nutzen, um die Kreatur zu einem Geschicklichkeitsrettungswurf zu veranlassen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 2W8 Blitz- oder Donnerschaden (Ihrer Wahl), bei einem Erfolg halb so viel. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Nutzungsmöglichkeiten wiedererlangen."
+        "description": "Auch auf der 1. Stufe können Sie, wenn eine Kreatur in einem Umkreis von {{distance:5ft|dat}} um Sie herum, die Sie sehen können, Sie mit einem Angriff trifft, Ihre Reaktion nutzen, um die Kreatur zu einem Geschicklichkeitsrettungswurf zu veranlassen. Bei einem fehlgeschlagenen Rettungswurf erleidet er 2W8 Blitz- oder Donnerschaden (Ihrer Wahl), bei einem Erfolg halb so viel. Sie können diese Funktion so oft verwenden, wie es Ihrem Weisheitsmodifikator entspricht (mindestens einmal), und bei einer langen Pause alle Nutzungsmöglichkeiten wiedererlangen."
       },
       "Channel Divinity: Destructive Wrath": {
         "name": "Göttliche Macht fokussieren: Zerstörerischer Zorn",
@@ -195,7 +195,7 @@
       },
       "Thunderbolt Strike": {
         "name": "Donnerschlag",
-        "description": "Wenn du auf der 6. Stufe einer großen oder kleineren Kreatur Blitzschaden zufügst, kannst du sie auch bis zu 3 Meter von dir wegschieben."
+        "description": "Wenn du auf der 6. Stufe einer großen oder kleineren Kreatur Blitzschaden zufügst, kannst du sie auch bis zu {{distance:10ft}} von dir wegschieben."
       },
       "Divine Strike": {
         "name": "Göttlicher Schlag",
@@ -213,7 +213,7 @@
       },
       "Channel Divinity: Invoke Duplicity": {
         "name": "Göttlichkeit kanalisieren: Duplizität hervorrufen",
-        "description": "Ab der 2. Stufe erstellen Sie als Aktion ein perfektes illusorisches Duplikat Ihrer selbst, das 1 Minute lang anhält. Die Illusion erscheint in einem unbesetzten Raum, den Sie in einem Umkreis von 9 Metern um Sie sehen können. Als Bonusaktion in Ihrem Zug können Sie die Illusion bis zu 9 Meter weit bewegen. Sie können Zauber wirken, als wären Sie im Raum der Illusion, müssen aber Ihre eigenen Sinne nutzen."
+        "description": "Ab der 2. Stufe erstellen Sie als Aktion ein perfektes illusorisches Duplikat Ihrer selbst, das 1 Minute lang anhält. Die Illusion erscheint in einem unbesetzten Raum, den Sie in einem Umkreis von {{distance:30ft|dat}} um Sie sehen können. Als Bonusaktion in Ihrem Zug können Sie die Illusion bis zu {{distance:30ft}} weit bewegen. Sie können Zauber wirken, als wären Sie im Raum der Illusion, müssen aber Ihre eigenen Sinne nutzen."
       },
       "Channel Divinity: Cloak of Shadows": {
         "name": "Göttliche Macht fokussieren: Umhang der Schatten",
@@ -225,7 +225,7 @@
       },
       "Improved Duplicity": {
         "name": "Verbesserte Duplizität",
-        "description": "Auf der 17. Stufe können Sie mit „Invoke Duplicity“ bis zu vier Duplikate von sich selbst anstelle von einem erstellen. Als Bonusaktion in Ihrem Zug können Sie eine beliebige Anzahl von ihnen bis zu 9 Meter weit bewegen, bis zu einer maximalen Reichweite von 36 Metern."
+        "description": "Auf der 17. Stufe können Sie mit „Invoke Duplicity“ bis zu vier Duplikate von sich selbst anstelle von einem erstellen. Als Bonusaktion in Ihrem Zug können Sie eine beliebige Anzahl von ihnen bis zu {{distance:30ft}} weit bewegen, bis zu einer maximalen Reichweite von {{distance:120ft|dat}}."
       }
     },
     "War Domain": {
@@ -243,7 +243,7 @@
       },
       "Channel Divinity: War God's Blessing": {
         "name": "Göttliche Macht fokussieren: Segen des Kriegsgottes",
-        "description": "Wenn auf der 6. Stufe eine Kreatur in einem Umkreis von 9 Metern um dich einen Angriffswurf ausführt, kannst du mithilfe deiner Reaktion dieser Kreatur mithilfe deiner Kanalgöttlichkeit einen Bonus von +10 auf den Wurf gewähren."
+        "description": "Wenn auf der 6. Stufe eine Kreatur in einem Umkreis von {{distance:30ft|dat}} um dich einen Angriffswurf ausführt, kannst du mithilfe deiner Reaktion dieser Kreatur mithilfe deiner Kanalgöttlichkeit einen Bonus von +10 auf den Wurf gewähren."
       },
       "Divine Strike": {
         "name": "Göttlicher Schlag",
@@ -309,7 +309,7 @@
       },
       "Remarkable Athlete": {
         "name": "Bemerkenswerter Athlet",
-        "description": "Ab der 7. Stufe können Sie die Hälfte Ihres Fähigkeitsbonus (aufgerundet) zu jeder Stärke-, Geschicklichkeits- oder Konstitutionsprüfung hinzufügen, die Sie durchführen und die Ihren Fähigkeitsbonus nicht bereits verwendet. Darüber hinaus erhöht sich die Entfernung, die Sie zurücklegen können, um 30 Zentimeter × Ihren Stärkemodifikator, wenn Sie einen weiten Laufsprung machen."
+        "description": "Ab der 7. Stufe können Sie die Hälfte Ihres Fähigkeitsbonus (aufgerundet) zu jeder Stärke-, Geschicklichkeits- oder Konstitutionsprüfung hinzufügen, die Sie durchführen und die Ihren Fähigkeitsbonus nicht bereits verwendet. Darüber hinaus erhöht sich die Entfernung, die Sie zurücklegen können, um {{distance:1ft}} × Ihren Stärkemodifikator, wenn Sie einen weiten Laufsprung machen."
       },
       "Additional Fighting Style": {
         "name": "Zusätzlicher Kampfstil",
@@ -365,7 +365,7 @@
       },
       "Arcane Charge": {
         "name": "Arkane Ladung",
-        "description": "Mit der 15. Stufe erhältst du die Fähigkeit, dich bis zu 9 Meter weit zu einem unbesetzten Raum zu teleportieren, den du sehen kannst, wenn du deinen Action Surge verwendest. Sie können sich vor oder nach der Zusatzaktion teleportieren."
+        "description": "Mit der 15. Stufe erhältst du die Fähigkeit, dich bis zu {{distance:30ft}} weit zu einem unbesetzten Raum zu teleportieren, den du sehen kannst, wenn du deinen Action Surge verwendest. Sie können sich vor oder nach der Zusatzaktion teleportieren."
       },
       "Improved War Magic": {
         "name": "Verbesserte Kriegsmagie",
@@ -377,7 +377,7 @@
     "Way of the Open Hand": {
       "Open Hand Technique": {
         "name": "Technik der offenen Hand",
-        "description": "Ab der 3. Stufe, wenn du diese Tradition wählst, kannst du jedes Mal, wenn du eine Kreatur mit einem der durch deinen Schlaghagel gewährten Angriffe triffst, einen der folgenden Effekte auferlegen: Die Kreatur muss einen Geschicklichkeitsrettungswurf bestehen, sonst wird sie zu Boden geworfen. Es muss einen kraftsparenden Wurf ausführen – wenn es fehlschlägt, können Sie es bis zu 4,5 Meter weit wegschieben; oder es kann bis zum Ende deines nächsten Zuges keine Reaktionen annehmen."
+        "description": "Ab der 3. Stufe, wenn du diese Tradition wählst, kannst du jedes Mal, wenn du eine Kreatur mit einem der durch deinen Schlaghagel gewährten Angriffe triffst, einen der folgenden Effekte auferlegen: Die Kreatur muss einen Geschicklichkeitsrettungswurf bestehen, sonst wird sie zu Boden geworfen. Es muss einen kraftsparenden Wurf ausführen – wenn es fehlschlägt, können Sie es bis zu {{distance:15ft}} weit wegschieben; oder es kann bis zum Ende deines nächsten Zuges keine Reaktionen annehmen."
       },
       "Wholeness of Body": {
         "name": "Ganzheit des Körpers",
@@ -399,7 +399,7 @@
       },
       "Shadow Step": {
         "name": "Schattenschritt",
-        "description": "Auf der 6. Stufe, wenn Sie sich in schwachem Licht oder Dunkelheit befinden, können Sie als Bonusaktion bis zu 18 Meter weit zu einem freien Raum teleportieren, den Sie sehen können und der sich ebenfalls in schwachem Licht oder Dunkelheit befindet. Sie haben dann einen Vorteil beim ersten Nahkampfangriff, den Sie vor dem Ende der Runde ausführen."
+        "description": "Auf der 6. Stufe, wenn Sie sich in schwachem Licht oder Dunkelheit befinden, können Sie als Bonusaktion bis zu {{distance:60ft}} weit zu einem freien Raum teleportieren, den Sie sehen können und der sich ebenfalls in schwachem Licht oder Dunkelheit befindet. Sie haben dann einen Vorteil beim ersten Nahkampfangriff, den Sie vor dem Ende der Runde ausführen."
       },
       "Cloak of Shadows": {
         "name": "Umhang der Schatten",
@@ -407,7 +407,7 @@
       },
       "Opportunist": {
         "name": "Opportunist",
-        "description": "Auf der 17. Stufe kannst du immer dann, wenn eine Kreatur in einem Umkreis von 1,5 Metern um dich von einem Angriff einer anderen Kreatur als dir getroffen wird, deine Reaktion nutzen, um einen Nahkampfangriff gegen diese Kreatur durchzuführen."
+        "description": "Auf der 17. Stufe kannst du immer dann, wenn eine Kreatur in einem Umkreis von {{distance:5ft|dat}} um dich von einem Angriff einer anderen Kreatur als dir getroffen wird, deine Reaktion nutzen, um einen Nahkampfangriff gegen diese Kreatur durchzuführen."
       }
     },
     "Way of the Four Elements": {
@@ -425,15 +425,15 @@
     "Oath of Devotion": {
       "Channel Divinity: Sacred Weapon": {
         "name": "Göttliche Macht fokussieren: Heilige Waffe",
-        "description": "Als Aktion kannst du eine Waffe, die du in der Hand hältst, mithilfe deiner Channel-Göttlichkeit mit positiver Energie erfüllen. 1 Minute lang addierst du deinen Charisma-Modifikator zu Angriffswürfen mit dieser Waffe (mindestens +1). Die Waffe strahlt außerdem helles Licht in einem Radius von 6 Metern und gedämpftes Licht in einem Radius von 6 Metern darüber hinaus aus. Wenn die Waffe nicht bereits magisch ist, wird sie für die Dauer magisch."
+        "description": "Als Aktion kannst du eine Waffe, die du in der Hand hältst, mithilfe deiner Channel-Göttlichkeit mit positiver Energie erfüllen. 1 Minute lang addierst du deinen Charisma-Modifikator zu Angriffswürfen mit dieser Waffe (mindestens +1). Die Waffe strahlt außerdem helles Licht in einem Radius von {{distance:20ft|dat}} und gedämpftes Licht in einem Radius von {{distance:20ft|dat}} darüber hinaus aus. Wenn die Waffe nicht bereits magisch ist, wird sie für die Dauer magisch."
       },
       "Channel Divinity: Turn the Unholy": {
         "name": "Göttliche Macht fokussieren: Verwandle das Unheilige",
-        "description": "Als Aktion präsentieren Sie Ihr heiliges Symbol und sprechen ein Gebet, in dem Sie Untote und Untote tadeln, indem Sie Ihre Kanalgöttlichkeit nutzen. Jeder Untote oder Untote, der dich im Umkreis von 9 Metern sehen oder hören kann, muss einen Weisheitsrettungswurf machen. Bei einem Fehlschlag wird die Kreatur für 1 Minute oder bis sie Schaden erleidet, gedreht."
+        "description": "Als Aktion präsentieren Sie Ihr heiliges Symbol und sprechen ein Gebet, in dem Sie Untote und Untote tadeln, indem Sie Ihre Kanalgöttlichkeit nutzen. Jeder Untote oder Untote, der dich im Umkreis von {{distance:30ft|dat}} sehen oder hören kann, muss einen Weisheitsrettungswurf machen. Bei einem Fehlschlag wird die Kreatur für 1 Minute oder bis sie Schaden erleidet, gedreht."
       },
       "Aura of Devotion": {
         "name": "Aura der Hingabe",
-        "description": "Ab der 7. Stufe können Sie und befreundete Kreaturen im Umkreis von 3 Metern um Sie herum nicht mehr verzaubert werden, solange Sie bei Bewusstsein sind. Mit der 18. Stufe erhöht sich die Reichweite dieser Aura auf 9 Meter."
+        "description": "Ab der 7. Stufe können Sie und befreundete Kreaturen im Umkreis von {{distance:10ft|dat}} um Sie herum nicht mehr verzaubert werden, solange Sie bei Bewusstsein sind. Mit der 18. Stufe erhöht sich die Reichweite dieser Aura auf {{distance:30ft}}."
       },
       "Purity of Spirit": {
         "name": "Reinheit des Geistes",
@@ -441,21 +441,21 @@
       },
       "Holy Nimbus": {
         "name": "Heiliger Nimbus",
-        "description": "Ab der 20. Stufe kannst du als Aktion eine Aura aus Sonnenlicht ausstrahlen. Eine Minute lang strahlt helles Licht in einem Radius von 9 Metern von Ihnen aus, und schwaches Licht strahlt in einem Umkreis von 9 Metern darüber hinaus. Immer wenn eine gegnerische Kreatur ihren Zug im hellen Licht beginnt, erleidet die Kreatur 10 Strahlungsschaden. Darüber hinaus haben Sie einen Vorteil bei Rettungswürfen gegen Zauber, die von Untoten oder Untoten gewirkt werden. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine lange Pause beendet haben."
+        "description": "Ab der 20. Stufe kannst du als Aktion eine Aura aus Sonnenlicht ausstrahlen. Eine Minute lang strahlt helles Licht in einem Radius von {{distance:30ft|dat}} von Ihnen aus, und schwaches Licht strahlt in einem Umkreis von {{distance:30ft|dat}} darüber hinaus. Immer wenn eine gegnerische Kreatur ihren Zug im hellen Licht beginnt, erleidet die Kreatur 10 Strahlungsschaden. Darüber hinaus haben Sie einen Vorteil bei Rettungswürfen gegen Zauber, die von Untoten oder Untoten gewirkt werden. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine lange Pause beendet haben."
       }
     },
     "Oath of the Ancients": {
       "Channel Divinity: Nature's Wrath": {
         "name": "Göttliche Macht fokussieren: Der Zorn der Natur",
-        "description": "Als Aktion kannst du Spektralranken aufsteigen lassen und nach einer Kreatur in einem Umkreis von 3 Metern um dich greifen, die du sehen kannst. Der Kreatur muss ein Kraft- oder Geschicklichkeitsrettungswurf (nach Wahl) gelingen oder sie wird zurückgehalten. Während die Kreatur von den Ranken zurückgehalten wird, wiederholt sie den Rettungswurf am Ende jedes ihrer Züge. Bei Erfolg befreit es sich und die Ranken verschwinden."
+        "description": "Als Aktion kannst du Spektralranken aufsteigen lassen und nach einer Kreatur in einem Umkreis von {{distance:10ft|dat}} um dich greifen, die du sehen kannst. Der Kreatur muss ein Kraft- oder Geschicklichkeitsrettungswurf (nach Wahl) gelingen oder sie wird zurückgehalten. Während die Kreatur von den Ranken zurückgehalten wird, wiederholt sie den Rettungswurf am Ende jedes ihrer Züge. Bei Erfolg befreit es sich und die Ranken verschwinden."
       },
       "Channel Divinity: Turn the Faithless": {
         "name": "Göttliche Macht fokussieren: Verwandle die Ungläubigen",
-        "description": "Als Aktion präsentierst du dein heiliges Symbol und jeder Fee oder Unhold im Umkreis von 9 Metern um dich, der dich hören kann, muss einen Weisheitsrettungswurf machen. Bei einem fehlgeschlagenen Rettungswurf wird die Kreatur für 1 Minute oder bis sie Schaden erleidet, umgedreht."
+        "description": "Als Aktion präsentierst du dein heiliges Symbol und jeder Fee oder Unhold im Umkreis von {{distance:30ft|dat}} um dich, der dich hören kann, muss einen Weisheitsrettungswurf machen. Bei einem fehlgeschlagenen Rettungswurf wird die Kreatur für 1 Minute oder bis sie Schaden erleidet, umgedreht."
       },
       "Aura of Warding": {
         "name": "Aura der Abwehr",
-        "description": "Ab der 7. Stufe lastet die uralte Magie so stark auf dir, dass sie einen unheimlichen Schutzzauber bildet. Du und befreundete Kreaturen im Umkreis von 3 Metern um dich herum sind resistent gegen Schaden durch Zauber. Mit der 18. Stufe erhöht sich die Reichweite dieser Aura auf 9 Meter."
+        "description": "Ab der 7. Stufe lastet die uralte Magie so stark auf dir, dass sie einen unheimlichen Schutzzauber bildet. Du und befreundete Kreaturen im Umkreis von {{distance:10ft|dat}} um dich herum sind resistent gegen Schaden durch Zauber. Mit der 18. Stufe erhöht sich die Reichweite dieser Aura auf {{distance:30ft}}."
       },
       "Undying Sentinel": {
         "name": "Unsterblicher Wächter",
@@ -463,17 +463,17 @@
       },
       "Elder Champion": {
         "name": "Älterer Champion",
-        "description": "Auf der 20. Stufe nimmst du als Aktion für 1 Minute die Gestalt einer uralten Naturgewalt an. Du erhältst folgende Vorteile: Zu Beginn jedes deiner Züge erhältst du 10 Trefferpunkte zurück; Immer wenn du einen Paladin-Zauber mit einer Zauberzeit von 1 Aktion wirkst, kannst du ihn stattdessen mit einer Bonusaktion wirken; Feindliche Kreaturen im Umkreis von 3 Metern um dich herum haben einen Nachteil bei Rettungswürfen gegen deine Paladin-Zauber und Göttliche Macht fokussieren-Optionen."
+        "description": "Auf der 20. Stufe nimmst du als Aktion für 1 Minute die Gestalt einer uralten Naturgewalt an. Du erhältst folgende Vorteile: Zu Beginn jedes deiner Züge erhältst du 10 Trefferpunkte zurück; Immer wenn du einen Paladin-Zauber mit einer Zauberzeit von 1 Aktion wirkst, kannst du ihn stattdessen mit einer Bonusaktion wirken; Feindliche Kreaturen im Umkreis von {{distance:10ft|dat}} um dich herum haben einen Nachteil bei Rettungswürfen gegen deine Paladin-Zauber und Göttliche Macht fokussieren-Optionen."
       }
     },
     "Oath of Vengeance": {
       "Channel Divinity: Abjure Enemy": {
         "name": "Göttliche Macht fokussieren: Feind abschwören",
-        "description": "Als Aktion präsentieren Sie Ihr heiliges Symbol und sprechen ein Denunziationsgebet, indem Sie Ihre Kanalgöttlichkeit nutzen. Wählen Sie eine Kreatur im Umkreis von 18 Metern um Sie aus, die Sie sehen können. Diese Kreatur muss einen Weisheitsrettungswurf machen. Unterweltler und Untote sind bei diesem Rettungswurf im Nachteil. Bei einem fehlgeschlagenen Rettungswurf ist die Kreatur 1 Minute lang oder bis sie Schaden erleidet, verängstigt. Während die Kreatur verängstigt ist, ist ihre Geschwindigkeit 0 und sie kann von keinem Geschwindigkeitsbonus profitieren."
+        "description": "Als Aktion präsentieren Sie Ihr heiliges Symbol und sprechen ein Denunziationsgebet, indem Sie Ihre Kanalgöttlichkeit nutzen. Wählen Sie eine Kreatur im Umkreis von {{distance:60ft|dat}} um Sie aus, die Sie sehen können. Diese Kreatur muss einen Weisheitsrettungswurf machen. Unterweltler und Untote sind bei diesem Rettungswurf im Nachteil. Bei einem fehlgeschlagenen Rettungswurf ist die Kreatur 1 Minute lang oder bis sie Schaden erleidet, verängstigt. Während die Kreatur verängstigt ist, ist ihre Geschwindigkeit 0 und sie kann von keinem Geschwindigkeitsbonus profitieren."
       },
       "Channel Divinity: Vow of Enmity": {
         "name": "Göttliche Macht fokussieren: Gelübde der Feindschaft",
-        "description": "Als Bonusaktion kannst du mithilfe deiner Kanalgöttlichkeit einen Feindschaftsschwur gegen eine Kreatur ablegen, die du in einem Umkreis von 3 Metern um dich herum sehen kannst. Du erhältst einen Vorteil bei Angriffswürfen gegen die Kreatur für 1 Minute oder bis sie auf 0 Trefferpunkte sinkt oder bewusstlos wird."
+        "description": "Als Bonusaktion kannst du mithilfe deiner Kanalgöttlichkeit einen Feindschaftsschwur gegen eine Kreatur ablegen, die du in einem Umkreis von {{distance:10ft|dat}} um dich herum sehen kannst. Du erhältst einen Vorteil bei Angriffswürfen gegen die Kreatur für 1 Minute oder bis sie auf 0 Trefferpunkte sinkt oder bewusstlos wird."
       },
       "Relentless Avenger": {
         "name": "Unerbittlicher Rächer",
@@ -485,7 +485,7 @@
       },
       "Avenging Angel": {
         "name": "Racheengel",
-        "description": "Auf der 20. Stufe nimmst du als Aktion 1 Minute lang die Gestalt eines engelhaften Rächers an. Flügel sprießen aus deinem Rücken und verleihen dir eine Fluggeschwindigkeit von 18 Metern. Du strahlst eine Aura der Bedrohung in einem Radius von 9 Metern aus – wenn eine gegnerische Kreatur zum ersten Mal die Aura betritt oder dort ihren Zug beginnt, muss ihr ein Weisheitsrettungswurf gelingen, sonst verspürt sie 1 Minute lang oder bis sie Schaden erleidet, Angst vor dir."
+        "description": "Auf der 20. Stufe nimmst du als Aktion 1 Minute lang die Gestalt eines engelhaften Rächers an. Flügel sprießen aus deinem Rücken und verleihen dir eine Fluggeschwindigkeit von {{distance:60ft|dat}}. Du strahlst eine Aura der Bedrohung in einem Radius von {{distance:30ft|dat}} aus – wenn eine gegnerische Kreatur zum ersten Mal die Aura betritt oder dort ihren Zug beginnt, muss ihr ein Weisheitsrettungswurf gelingen, sonst verspürt sie 1 Minute lang oder bis sie Schaden erleidet, Angst vor dir."
       }
     }
   },
@@ -493,7 +493,7 @@
     "Hunter": {
       "Hunter's Prey": {
         "name": "Jägerbeute",
-        "description": "Auf der 3. Stufe erhalten Sie eine der folgenden Funktionen Ihrer Wahl. Kolosstöter: Wenn du eine Kreatur mit einem Waffenangriff triffst, erleidet die Kreatur zusätzlich 1W8 Schaden, wenn sie unter ihrem maximalen Trefferpunkt liegt. Du kannst diesen zusätzlichen Schaden nur einmal pro Spielzug verursachen. Riesenkiller: Wenn eine große oder größere Kreatur in einem Umkreis von 1,5 m um Sie herum Sie mit einem Angriff trifft oder verfehlt, können Sie Ihre Reaktion nutzen, um diese Kreatur unmittelbar danach anzugreifen. Hordenbrecher: Einmal in jedem deiner Züge, wenn du einen Waffenangriff ausführst, kannst du einen weiteren Angriff mit derselben Waffe gegen eine andere Kreatur durchführen, die sich in einem Umkreis von 1,5 Metern um das ursprüngliche Ziel befindet."
+        "description": "Auf der 3. Stufe erhalten Sie eine der folgenden Funktionen Ihrer Wahl. Kolosstöter: Wenn du eine Kreatur mit einem Waffenangriff triffst, erleidet die Kreatur zusätzlich 1W8 Schaden, wenn sie unter ihrem maximalen Trefferpunkt liegt. Du kannst diesen zusätzlichen Schaden nur einmal pro Spielzug verursachen. Riesenkiller: Wenn eine große oder größere Kreatur in einem Umkreis von {{distance:5ft|short}} um Sie herum Sie mit einem Angriff trifft oder verfehlt, können Sie Ihre Reaktion nutzen, um diese Kreatur unmittelbar danach anzugreifen. Hordenbrecher: Einmal in jedem deiner Züge, wenn du einen Waffenangriff ausführst, kannst du einen weiteren Angriff mit derselben Waffe gegen eine andere Kreatur durchführen, die sich in einem Umkreis von {{distance:5ft|dat}} um das ursprüngliche Ziel befindet."
       },
       "Defensive Tactics": {
         "name": "Verteidigungstaktiken",
@@ -501,7 +501,7 @@
       },
       "Multiattack": {
         "name": "Multiattacke",
-        "description": "Mit der 11. Stufe erhalten Sie eine der folgenden Funktionen. Salve: Mit Ihrer Aktion können Sie einen Fernangriff gegen eine beliebige Anzahl von Kreaturen innerhalb von 3 Metern um einen Punkt ausführen, den Sie in der Reichweite Ihrer Waffe sehen können, wobei Sie für jedes Ziel einen separaten Angriffswurf ausführen. Wirbelwind-Angriff: Du kannst deine Aktion nutzen, um einen Nahkampfangriff gegen eine beliebige Anzahl von Kreaturen in einem Umkreis von 1,5 Metern um dich herum durchzuführen, mit einem separaten Angriffswurf für jedes Ziel."
+        "description": "Mit der 11. Stufe erhalten Sie eine der folgenden Funktionen. Salve: Mit Ihrer Aktion können Sie einen Fernangriff gegen eine beliebige Anzahl von Kreaturen innerhalb von {{distance:10ft|dat}} um einen Punkt ausführen, den Sie in der Reichweite Ihrer Waffe sehen können, wobei Sie für jedes Ziel einen separaten Angriffswurf ausführen. Wirbelwind-Angriff: Du kannst deine Aktion nutzen, um einen Nahkampfangriff gegen eine beliebige Anzahl von Kreaturen in einem Umkreis von {{distance:5ft|dat}} um dich herum durchzuführen, mit einem separaten Angriffswurf für jedes Ziel."
       },
       "Superior Hunter's Defense": {
         "name": "Überlegene Jägerverteidigung",
@@ -523,7 +523,7 @@
       },
       "Share Spells": {
         "name": "Zauber teilen",
-        "description": "Ab der 15. Stufe kannst du, wenn du einen Zauber gegen dich selbst wirkst, auch deinen Tiergefährten mit dem Zauber beeinflussen, wenn sich das Tier in einem Umkreis von 9 Metern um dich befindet."
+        "description": "Ab der 15. Stufe kannst du, wenn du einen Zauber gegen dich selbst wirkst, auch deinen Tiergefährten mit dem Zauber beeinflussen, wenn sich das Tier in einem Umkreis von {{distance:30ft|dat}} um dich befindet."
       }
     }
   },
@@ -535,7 +535,7 @@
       },
       "Second-Story Work": {
         "name": "Arbeit im zweiten Stock",
-        "description": "Wenn Sie diesen Archetyp auf der 3. Stufe wählen, kostet Sie das Klettern keine zusätzliche Bewegung mehr. Wenn Sie mit Anlauf springen, erhöht sich außerdem die zurückgelegte Distanz um 30 Zentimeter × Ihren Geschicklichkeitsmodifikator."
+        "description": "Wenn Sie diesen Archetyp auf der 3. Stufe wählen, kostet Sie das Klettern keine zusätzliche Bewegung mehr. Wenn Sie mit Anlauf springen, erhöht sich außerdem die zurückgelegte Distanz um {{distance:1ft}} × Ihren Geschicklichkeitsmodifikator."
       },
       "Supreme Sneak": {
         "name": "Höchster Sneak",
@@ -587,7 +587,7 @@
       },
       "Versatile Trickster": {
         "name": "Vielseitiger Trickster",
-        "description": "Auf der 13. Stufe kannst du als Bonusaktion in deinem Zug eine Kreatur im Umkreis von 1,5 Metern um die von der Magierhand geschaffene Spektralhand bestimmen. Dies verschafft dir bis zum Ende des Zuges einen Vorteil bei Angriffswürfen gegen diese Kreatur."
+        "description": "Auf der 13. Stufe kannst du als Bonusaktion in deinem Zug eine Kreatur im Umkreis von {{distance:5ft|dat}} um die von der Magierhand geschaffene Spektralhand bestimmen. Dies verschafft dir bis zum Ende des Zuges einen Vorteil bei Angriffswürfen gegen diese Kreatur."
       },
       "Spell Thief": {
         "name": "Zauberdieb",
@@ -615,7 +615,7 @@
       },
       "Draconic Presence": {
         "name": "Drakonische Präsenz",
-        "description": "Ab der 18. Stufe können Sie als Aktion 5 Zauberpunkte ausgeben, um eine Aura der Ehrfurcht oder Angst (Ihrer Wahl) über eine Entfernung von 18 Metern auszustrahlen. Für 1 Minute oder bis Sie Ihre Konzentration verlieren, muss jede feindliche Kreatur, die ihren Zug in dieser Aura beginnt, einen Weisheitsrettungswurf bestehen oder verzaubert (wenn Sie Ehrfurcht gewählt haben) oder verängstigt (wenn Sie Angst gewählt haben) sein, bis die Aura endet."
+        "description": "Ab der 18. Stufe können Sie als Aktion 5 Zauberpunkte ausgeben, um eine Aura der Ehrfurcht oder Angst (Ihrer Wahl) über eine Entfernung von {{distance:60ft|dat}} auszustrahlen. Für 1 Minute oder bis Sie Ihre Konzentration verlieren, muss jede feindliche Kreatur, die ihren Zug in dieser Aura beginnt, einen Weisheitsrettungswurf bestehen oder verzaubert (wenn Sie Ehrfurcht gewählt haben) oder verängstigt (wenn Sie Angst gewählt haben) sein, bis die Aura endet."
       }
     },
     "Wild Magic": {
@@ -645,11 +645,11 @@
     "The Archfey": {
       "Fey Presence": {
         "name": "Feenpräsenz",
-        "description": "Ab der 1. Stufe können Sie als Aktion jede Kreatur in einem von Ihnen stammenden 3-Meter-Würfel veranlassen, einen Weisheitsrettungswurf gegen Ihren Hexenmeister-Zauberwurf-SG durchzuführen. Die Kreaturen, die scheitern, werden alle bis zum Ende deines nächsten Zuges von dir verzaubert oder erschreckt (nach deiner Wahl). Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+        "description": "Ab der 1. Stufe können Sie als Aktion jede Kreatur in einem von Ihnen stammenden {{distance:10ft|adj}}-Würfel veranlassen, einen Weisheitsrettungswurf gegen Ihren Hexenmeister-Zauberwurf-SG durchzuführen. Die Kreaturen, die scheitern, werden alle bis zum Ende deines nächsten Zuges von dir verzaubert oder erschreckt (nach deiner Wahl). Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
       },
       "Misty Escape": {
         "name": "Neblige Flucht",
-        "description": "Ab der 6. Stufe können Sie, wenn Sie Schaden erleiden, Ihre Reaktion nutzen, um unsichtbar zu werden und sich bis zu 18 Meter weit an einen unbesetzten Ort zu teleportieren, den Sie sehen können. Du bleibst unsichtbar bis zum Beginn deines nächsten Zuges oder bis du angreifst oder einen Zauber wirkst. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+        "description": "Ab der 6. Stufe können Sie, wenn Sie Schaden erleiden, Ihre Reaktion nutzen, um unsichtbar zu werden und sich bis zu {{distance:60ft}} weit an einen unbesetzten Ort zu teleportieren, den Sie sehen können. Du bleibst unsichtbar bis zum Beginn deines nächsten Zuges oder bis du angreifst oder einen Zauber wirkst. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
       },
       "Beguiling Defenses": {
         "name": "Betörende Verteidigungen",
@@ -657,7 +657,7 @@
       },
       "Dark Delirium": {
         "name": "Dunkles Delirium",
-        "description": "Ab der 14. Stufe wählen Sie als Aktion eine Kreatur aus, die Sie im Umkreis von 18 Metern sehen können. Es muss einen Weisheitsrettungswurf machen oder von dir (nach deiner Wahl) für 1 Minute oder bis deine Konzentration unterbrochen wird, verzaubert oder erschreckt werden. Dieser Effekt endet vorzeitig, wenn die Kreatur Schaden erleidet. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
+        "description": "Ab der 14. Stufe wählen Sie als Aktion eine Kreatur aus, die Sie im Umkreis von {{distance:60ft|dat}} sehen können. Es muss einen Weisheitsrettungswurf machen oder von dir (nach deiner Wahl) für 1 Minute oder bis deine Konzentration unterbrochen wird, verzaubert oder erschreckt werden. Dieser Effekt endet vorzeitig, wenn die Kreatur Schaden erleidet. Sobald Sie diese Funktion verwenden, können Sie sie erst wieder verwenden, wenn Sie eine kurze oder lange Pause beendet haben."
       }
     },
     "The Fiend": {
@@ -681,7 +681,7 @@
     "The Great Old One": {
       "Awakened Mind": {
         "name": "Erwachter Geist",
-        "description": "Ab der 1. Stufe verleiht Ihnen Ihr Wissen über Außerirdische die Fähigkeit, die Gedanken anderer Kreaturen zu berühren. Sie können telepathisch mit jeder Kreatur kommunizieren, die Sie in einem Umkreis von 9 Metern um Sie sehen können. Sie müssen mit der Kreatur keine Sprache teilen, damit sie Ihre telepathischen Äußerungen versteht, aber die Kreatur muss mindestens eine Sprache verstehen können."
+        "description": "Ab der 1. Stufe verleiht Ihnen Ihr Wissen über Außerirdische die Fähigkeit, die Gedanken anderer Kreaturen zu berühren. Sie können telepathisch mit jeder Kreatur kommunizieren, die Sie in einem Umkreis von {{distance:30ft|dat}} um Sie sehen können. Sie müssen mit der Kreatur keine Sprache teilen, damit sie Ihre telepathischen Äußerungen versteht, aber die Kreatur muss mindestens eine Sprache verstehen können."
       },
       "Entropic Ward": {
         "name": "Entropischer Bezirk",
@@ -709,7 +709,7 @@
       },
       "Projected Ward": {
         "name": "Geplante Gemeinde",
-        "description": "Ab der 6. Stufe können Sie, wenn eine Kreatur, die Sie in einem Umkreis von 9 Metern um Sie sehen können, Schaden erleidet, Ihre Reaktion nutzen, um Ihren Arkanen Schutz dazu zu bringen, diesen Schaden zu absorbieren. Wenn dieser Schaden den Schutz auf 0 Trefferpunkte reduziert, erleidet die geschützte Kreatur den verbleibenden Schaden."
+        "description": "Ab der 6. Stufe können Sie, wenn eine Kreatur, die Sie in einem Umkreis von {{distance:30ft|dat}} um Sie sehen können, Schaden erleidet, Ihre Reaktion nutzen, um Ihren Arkanen Schutz dazu zu bringen, diesen Schaden zu absorbieren. Wenn dieser Schaden den Schutz auf 0 Trefferpunkte reduziert, erleidet die geschützte Kreatur den verbleibenden Schaden."
       },
       "Improved Abjuration": {
         "name": "Verbesserte Abschwörung",
@@ -727,11 +727,11 @@
       },
       "Minor Conjuration": {
         "name": "Kleinere Beschwörung",
-        "description": "Ab der 2. Stufe können Sie mit Ihrer Aktion ein lebloses Objekt in Ihrer Hand oder auf dem Boden an einem unbesetzten Ort im Umkreis von 3 Metern um Sie herum heraufbeschwören. Dieses Objekt darf nicht größer als 0,9 Meter auf einer Seite sein und nicht mehr als 10 Pfund wiegen, und seine Form muss die eines nichtmagischen Objekts sein, das Sie gesehen haben. Das Objekt ist sichtlich magisch. Das Objekt verschwindet nach 1 Stunde, wenn Sie diese Funktion erneut verwenden oder wenn es Schaden erleidet oder verursacht."
+        "description": "Ab der 2. Stufe können Sie mit Ihrer Aktion ein lebloses Objekt in Ihrer Hand oder auf dem Boden an einem unbesetzten Ort im Umkreis von {{distance:10ft|dat}} um Sie herum heraufbeschwören. Dieses Objekt darf nicht größer als {{distance:3ft}} pro Seite sein und nicht mehr als 10 Pfund wiegen, und seine Form muss die eines nichtmagischen Objekts sein, das Sie gesehen haben. Das Objekt ist sichtlich magisch. Das Objekt verschwindet nach 1 Stunde, wenn Sie diese Funktion erneut verwenden oder wenn es Schaden erleidet oder verursacht."
       },
       "Benign Transposition": {
         "name": "Gutartige Umsetzung",
-        "description": "Ab der 6. Stufe können Sie Ihre Aktion nutzen, um bis zu 9 Meter weit zu einem unbesetzten Feld zu teleportieren, das Sie sehen können oder von dem Sie sehen können, dass es von einer kleinen oder mittelgroßen Kreatur besetzt ist, die teleportiert werden möchte. Nachdem Sie diese Funktion verwendet haben, können Sie sie nicht erneut verwenden, bis Sie eine lange Pause beendet haben oder einen Beschwörungszauber der 1. Stufe oder höher gewirkt haben."
+        "description": "Ab der 6. Stufe können Sie Ihre Aktion nutzen, um bis zu {{distance:30ft}} weit zu einem unbesetzten Feld zu teleportieren, das Sie sehen können oder von dem Sie sehen können, dass es von einer kleinen oder mittelgroßen Kreatur besetzt ist, die teleportiert werden möchte. Nachdem Sie diese Funktion verwendet haben, können Sie sie nicht erneut verwenden, bis Sie eine lange Pause beendet haben oder einen Beschwörungszauber der 1. Stufe oder höher gewirkt haben."
       },
       "Focused Conjuration": {
         "name": "Fokussierte Beschwörung",
@@ -757,7 +757,7 @@
       },
       "The Third Eye": {
         "name": "Das Dritte Auge",
-        "description": "Ab der 10. Stufe können Sie durch Ihre Aktion Ihre Wahrnehmungsfähigkeit steigern. Wenn Sie dies tun, wählen Sie einen der folgenden Vorteile, der anhält, bis Sie handlungsunfähig werden oder eine kurze oder lange Pause einlegen: Dunkelsicht (18 Meter), Ätherische Sicht (in die Ätherebene sehen), Größeres Verständnis (lesen Sie eine beliebige Sprache) oder Unsichtbarkeit sehen."
+        "description": "Ab der 10. Stufe können Sie durch Ihre Aktion Ihre Wahrnehmungsfähigkeit steigern. Wenn Sie dies tun, wählen Sie einen der folgenden Vorteile, der anhält, bis Sie handlungsunfähig werden oder eine kurze oder lange Pause einlegen: Dunkelsicht ({{distance:60ft}}), Ätherische Sicht (in die Ätherebene sehen), Größeres Verständnis (lesen Sie eine beliebige Sprache) oder Unsichtbarkeit sehen."
       },
       "Greater Portent": {
         "name": "Größeres Vorzeichen",
@@ -771,11 +771,11 @@
       },
       "Hypnotic Gaze": {
         "name": "Hypnotischer Blick",
-        "description": "Ab der 2. Stufe wählen Sie als Aktion eine Kreatur aus, die Sie im Umkreis von 1,5 Metern um sich herum sehen können. Wenn das Ziel Sie sehen oder hören kann, muss ihm ein Weisheitsrettungswurf gegen den SG Ihres Zaubererzaubers gelingen, sonst wird es bis zum Ende Ihres nächsten Zuges von Ihnen verzaubert. Die Geschwindigkeit der verzauberten Kreatur sinkt auf 0 und sie ist handlungsunfähig und sichtlich benommen. In den folgenden Zügen können Sie Ihre Aktion nutzen, um diesen Effekt bis zum Ende Ihres nächsten Zuges aufrechtzuerhalten. Der Effekt endet, wenn du dich weiter als 1,50 m entfernst, wenn die Kreatur dich weder sehen noch hören kann oder wenn die Kreatur Schaden erleidet."
+        "description": "Ab der 2. Stufe wählen Sie als Aktion eine Kreatur aus, die Sie im Umkreis von {{distance:5ft|dat}} um sich herum sehen können. Wenn das Ziel Sie sehen oder hören kann, muss ihm ein Weisheitsrettungswurf gegen den SG Ihres Zaubererzaubers gelingen, sonst wird es bis zum Ende Ihres nächsten Zuges von Ihnen verzaubert. Die Geschwindigkeit der verzauberten Kreatur sinkt auf 0 und sie ist handlungsunfähig und sichtlich benommen. In den folgenden Zügen können Sie Ihre Aktion nutzen, um diesen Effekt bis zum Ende Ihres nächsten Zuges aufrechtzuerhalten. Der Effekt endet, wenn du dich weiter als {{distance:5ft|short}} entfernst, wenn die Kreatur dich weder sehen noch hören kann oder wenn die Kreatur Schaden erleidet."
       },
       "Instinctive Charm": {
         "name": "Instinktiver Charme",
-        "description": "Ab der 6. Stufe können Sie Ihre Reaktion nutzen, um den Angriff abzulenken, wenn eine Kreatur, die Sie in einem Umkreis von 9 Metern um Sie sehen können, einen Angriffswurf gegen Sie durchführt. Der Angreifer muss einen Weisheitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf muss der Angreifer die Kreatur anvisieren, die ihm am nächsten ist, dich selbst oder sich selbst nicht mitzählend. Sobald Sie diese Funktion verwendet haben, können Sie sie nicht mehr verwenden, bis Sie eine lange Pause beendet haben, es sei denn, Sie verbrauchen einen Zauberslot einer beliebigen Stufe, um sie erneut zu verwenden."
+        "description": "Ab der 6. Stufe können Sie Ihre Reaktion nutzen, um den Angriff abzulenken, wenn eine Kreatur, die Sie in einem Umkreis von {{distance:30ft|dat}} um Sie sehen können, einen Angriffswurf gegen Sie durchführt. Der Angreifer muss einen Weisheitsrettungswurf durchführen. Bei einem fehlgeschlagenen Rettungswurf muss der Angreifer die Kreatur anvisieren, die ihm am nächsten ist, dich selbst oder sich selbst nicht mitzählend. Sobald Sie diese Funktion verwendet haben, können Sie sie nicht mehr verwenden, bis Sie eine lange Pause beendet haben, es sei denn, Sie verbrauchen einen Zauberslot einer beliebigen Stufe, um sie erneut zu verwenden."
       },
       "Split Enchantment": {
         "name": "Geteilte Verzauberung",
@@ -849,7 +849,7 @@
       },
       "Command Undead": {
         "name": "Kommandiere die Untoten",
-        "description": "Ab der 14. Stufe können Sie als Aktion einen Untoten auswählen, den Sie im Umkreis von 18 Metern um sich herum sehen können. Diese Kreatur muss einen Charisma-Rettungswurf gegen deinen Zauberer-Zauberwurf-SG absolvieren. Wenn dies erfolgreich ist, können Sie diese Funktion nicht erneut verwenden. Wenn dies fehlschlägt, wird es freundlich zu Ihnen und gehorcht Ihren Befehlen, bis Sie diese Funktion erneut verwenden. Intelligente Untote sind schwerer zu kontrollieren und haben beim Rettungswurf einen Vorteil."
+        "description": "Ab der 14. Stufe können Sie als Aktion einen Untoten auswählen, den Sie im Umkreis von {{distance:60ft|dat}} um sich herum sehen können. Diese Kreatur muss einen Charisma-Rettungswurf gegen deinen Zauberer-Zauberwurf-SG absolvieren. Wenn dies erfolgreich ist, können Sie diese Funktion nicht erneut verwenden. Wenn dies fehlschlägt, wird es freundlich zu Ihnen und gehorcht Ihren Befehlen, bis Sie diese Funktion erneut verwenden. Intelligente Untote sind schwerer zu kontrollieren und haben beim Rettungswurf einen Vorteil."
       }
     },
     "School of Transmutation": {
@@ -863,7 +863,7 @@
       },
       "Transmuter's Stone": {
         "name": "Stein des Transmuters",
-        "description": "Ab der 6. Stufe können Sie 8 Stunden damit verbringen, einen Transmutationsstein herzustellen, der Transmutationsmagie speichert. Eine Kreatur erhält einen Vorteil Ihrer Wahl, solange sich der Stein in ihrem Besitz befindet: Dunkelsicht (18 Meter), um 3 Meter erhöhte Geschwindigkeit, Fertigkeit in konstitutionsrettenden Würfen oder Widerstand gegen Säure-, Kälte-, Feuer-, Blitz- oder Donnerschaden."
+        "description": "Ab der 6. Stufe können Sie 8 Stunden damit verbringen, einen Transmutationsstein herzustellen, der Transmutationsmagie speichert. Eine Kreatur erhält einen Vorteil Ihrer Wahl, solange sich der Stein in ihrem Besitz befindet: Dunkelsicht ({{distance:60ft}}), um {{distance:10ft}} erhöhte Geschwindigkeit, Fertigkeit in konstitutionsrettenden Würfen oder Widerstand gegen Säure-, Kälte-, Feuer-, Blitz- oder Donnerschaden."
       },
       "Shapechanger": {
         "name": "Gestaltwandler",

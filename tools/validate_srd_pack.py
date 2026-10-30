@@ -906,6 +906,117 @@ def eval_challenge(rating):
     return int(numerator) / int(denominator or 1)
 
 
+DISTANCE_MARKER = re.compile(
+    r"\{\{distance:(\d+(?:\.\d+)?(?:/\d+(?:\.\d+)?)?\+?(?:ft|in|mi))(?:\|([a-z]+))?\}\}"
+)
+# Forms understood by lib/core/units/distance_markup.dart.
+DISTANCE_FORMS = {
+    "num", "short", "adj", "shortadj", "cop", "dat", "acc", "gen", "inst", "prep",
+    "lik", "loc", "abl", "ins", "obj", "subj", "top", "dir", "and",
+}
+# Fields read as keys or parsed as data, which keep plain distances.
+PLAIN_DISTANCE_FIELDS = {"name", "range", "castingTime", "breathShape", "startingEquipment", "id"}
+
+
+def distance_markers(text, location, errors):
+    """Returns the marker values in text, reporting malformed markers."""
+    values = []
+    for match in DISTANCE_MARKER.finditer(text):
+        if match.group(2) is not None and match.group(2) not in DISTANCE_FORMS:
+            errors.append(f"{location}: unknown distance form {match.group(2)!r}")
+        values.append(match.group(1))
+    if text.count("{{") != len(values):
+        errors.append(f"{location}: malformed distance marker")
+    return sorted(values)
+
+
+def validate_distance_markers(pack, errors):
+    """Checks markers in the English pack and that every overlay string has
+    the same distances as its English string."""
+    source = ROOT / "assets" / "data" / "srd" / pack
+    english = {}
+    for filename in FILES:
+        path = source / f"{filename}.json"
+        if path.is_file():
+            english[filename] = json.loads(path.read_text(encoding="utf-8"))
+
+    def check_english(node, location, key=None):
+        if isinstance(node, dict):
+            for child_key, child in node.items():
+                check_english(child, f"{location}.{child_key}", child_key)
+        elif isinstance(node, list):
+            for index, child in enumerate(node):
+                check_english(child, f"{location}[{index}]", key)
+        elif isinstance(node, str):
+            markers = distance_markers(node, location, errors)
+            if markers and key in PLAIN_DISTANCE_FIELDS:
+                errors.append(f"{location}: {key} must keep plain distances")
+
+    for filename, value in english.items():
+        check_english(value, filename)
+
+    def counterpart(english_node, key):
+        if isinstance(english_node, dict):
+            for english_key, child in english_node.items():
+                if english_key.lower() == key.lower():
+                    return child
+        elif isinstance(english_node, list):
+            for child in english_node:
+                if isinstance(child, dict) and any(
+                    isinstance(child.get(field), str) and child[field].lower() == key.lower()
+                    for field in ("name", "id", "key")
+                ):
+                    return child
+        return None
+
+    def compare(overlay, english_node, location, key=None):
+        if isinstance(overlay, dict):
+            for child_key, child in overlay.items():
+                compare(child, counterpart(english_node, child_key), f"{location}.{child_key}", child_key)
+        elif isinstance(overlay, list):
+            for index, child in enumerate(overlay):
+                english_child = (
+                    english_node[index]
+                    if isinstance(english_node, list) and index < len(english_node)
+                    else None
+                )
+                compare(child, english_child, f"{location}[{index}]", key)
+        elif isinstance(overlay, str):
+            markers = distance_markers(overlay, location, errors)
+            if key in PLAIN_DISTANCE_FIELDS:
+                return
+            if isinstance(english_node, str):
+                expected = distance_markers(english_node, location, [])
+                if markers != expected:
+                    errors.append(f"{location}: distances {markers} differ from English {expected}")
+
+    for locale_dir in sorted((ROOT / "assets" / "data" / "i18n").iterdir()):
+        pack_dir = locale_dir / pack
+        if not pack_dir.is_dir():
+            continue
+        for path in sorted(pack_dir.glob("*.json")):
+            overlay = json.loads(path.read_text(encoding="utf-8"))
+            compare(overlay, by_feature_name(path.stem, english.get(path.stem)), f"i18n/{locale_dir.name}/{pack}/{path.stem}")
+
+
+def by_feature_name(filename, rows):
+    """Nests class and subclass feature rows like their overlays:
+    class -> (subclass ->) feature name -> feature."""
+    if filename not in ("class_features", "subclass_features") or not isinstance(rows, list):
+        return rows
+    nested = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        target = nested.setdefault(row.get("class"), {})
+        if filename == "subclass_features":
+            target = target.setdefault(row.get("subclass"), {})
+        for feature in row.get("features", []):
+            if isinstance(feature, dict):
+                target.setdefault(feature.get("name"), feature)
+    return nested
+
+
 def validate(pack, only=None):
     source = ROOT / "assets" / "data" / "srd" / pack
     errors = []
@@ -1100,6 +1211,8 @@ def validate(pack, only=None):
     validate_resource_refs(usages, "feature_usages")
 
     validate_manifest(pack, source, errors)
+    if only is None:
+        validate_distance_markers(pack, errors)
 
     if pack == "5.2.1":
         validate_2024_origins(data, errors)

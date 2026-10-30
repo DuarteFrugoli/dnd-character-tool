@@ -1,3 +1,4 @@
+import '../../../../core/units/rules_text_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -221,7 +222,7 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
                       text: '${note.title}. ',
                       style: const TextStyle(fontWeight: FontWeight.w700),
                     ),
-                    TextSpan(text: note.text),
+                    TextSpan(text: ref.watch(rulesTextProvider)(note.text)),
                   ],
                 ),
                 style: Theme.of(context).textTheme.bodyMedium,

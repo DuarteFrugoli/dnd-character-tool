@@ -182,7 +182,7 @@ class RacialTraitsSection extends ConsumerWidget {
                         characterId: characterId,
                         i18n: i18n,
                       ),
-                    Text(
+                    RulesText(
                       i18n.raceTraitDescription(trait) ?? desc,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: scheme.onSurfaceVariant,
@@ -247,7 +247,7 @@ class BackgroundFeatureSection extends ConsumerWidget {
         children: [
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-            child: Text(
+            child: RulesText(
               i18n.backgroundFeatureDescription(backgroundName) ??
                   featureDescription,
               style: Theme.of(context).textTheme.bodyMedium,
@@ -492,7 +492,7 @@ class FeatsSection extends ConsumerWidget {
               ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-              child: Text(
+              child: RulesText(
                 i18n.featDescription(f.name) ?? f.description,
                 style: Theme.of(context).textTheme.bodySmall,
               ),
@@ -732,7 +732,7 @@ class ExtraFeaturesSection extends ConsumerWidget {
               ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-              child: Text(
+              child: RulesText(
                 i18n.classFeatureDescription(sourceClass, f.name) ??
                     i18n.anySubclassFeatureDescription(sourceClass, f.name) ??
                     f.description,
@@ -926,7 +926,7 @@ class ClassFeaturesSection extends ConsumerWidget {
               ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-              child: Text(
+              child: RulesText(
                 i18n.classFeatureDescription(className, f.name) ??
                     f.description,
                 style: Theme.of(context).textTheme.bodyMedium,
@@ -1100,7 +1100,7 @@ class SubclassFeaturesSection extends ConsumerWidget {
               ),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-              child: Text(
+              child: RulesText(
                 i18n.subclassFeatureDescription(
                       className,
                       subclassName,

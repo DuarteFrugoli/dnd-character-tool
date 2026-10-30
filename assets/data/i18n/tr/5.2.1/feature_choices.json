@@ -177,7 +177,7 @@
       },
       "distant_spell": {
         "name": "Uzak Büyü",
-        "description": "1 Büyücülük Puanı harcayarak en az 5 fit menzilli bir büyünün menzilini ikiye katlayın veya Dokunma menzilini 30 fit yapın."
+        "description": "1 Büyücülük Puanı harcayarak en az {{distance:5ft}} menzilli bir büyünün menzilini ikiye katlayın veya Dokunma menzilini {{distance:30ft}} yapın."
       },
       "empowered_spell": {
         "name": "Güçlendirilmiş Büyü",
@@ -370,7 +370,7 @@
     "giant_ancestries": {
       "cloud": {
         "name": "Bulut Sıçrayışı",
-        "description": "Bonus eylem olarak 30 fite kadar ışınlanın."
+        "description": "Bonus eylem olarak {{distance:30ft|dat}} kadar ışınlanın."
       },
       "fire": {
         "name": "Ateş Yanığı",
@@ -779,7 +779,7 @@
       },
       "devils_sight": {
         "name": "Şeytan Görüşü",
-        "description": "Kendinizden 120 fit içinde büyülü veya büyüsüz Loş Işık ve Karanlıkta normal şekilde görebilirsiniz."
+        "description": "Kendinizden {{distance:120ft}} içinde büyülü veya büyüsüz Loş Işık ve Karanlıkta normal şekilde görebilirsiniz."
       },
       "devouring_blade": {
         "name": "Yutan Kılıç",
@@ -795,7 +795,7 @@
       },
       "eldritch_spear": {
         "name": "Esrarengiz Mızrak",
-        "description": "Hasar veren ve en az 10 fit menzilli, bildiğiniz bir Pakt Büyücüsü büyü numarasını seçin. Bu büyüyü yaptığınızda menzili, Pakt Büyücüsü seviyenizin 30 katı fit kadar artar."
+        "description": "Hasar veren ve en az {{distance:10+ft}} menzilli, bildiğiniz bir Pakt Büyücüsü büyü numarasını seçin. Bu büyüyü yaptığınızda menzili, {{distance:30ft}} × Pakt Büyücüsü seviyeniz kadar artar."
       },
       "fiendish_vigor": {
         "name": "Şeytani Dinçlik",
@@ -803,7 +803,7 @@
       },
       "gaze_of_two_minds": {
         "name": "İki Zihnin Bakışı",
-        "description": "Bonus eylem olarak rızası olan bir yaratığa dokunup bir sonraki turunuzun sonuna kadar onun duyularıyla algılayabilirsiniz. Yaratık sizinle aynı varoluş düzlemindeyken sonraki turlarda bonus eylem kullanarak bağlantıyı bir sonraki turunuzun sonuna kadar uzatabilirsiniz. Böyle sürdürmezseniz bağlantı biter.\n\nDiğer yaratığın duyularıyla algılarken onun özel duyularından yararlanırsınız. Birbirinizden en fazla 60 fit uzaktaysanız büyüleri kendi alanınızdan veya onun alanından yapıyormuş gibi yapabilirsiniz."
+        "description": "Bonus eylem olarak rızası olan bir yaratığa dokunup bir sonraki turunuzun sonuna kadar onun duyularıyla algılayabilirsiniz. Yaratık sizinle aynı varoluş düzlemindeyken sonraki turlarda bonus eylem kullanarak bağlantıyı bir sonraki turunuzun sonuna kadar uzatabilirsiniz. Böyle sürdürmezseniz bağlantı biter.\n\nDiğer yaratığın duyularıyla algılarken onun özel duyularından yararlanırsınız. Birbirinizden en fazla {{distance:60ft}} uzaktaysanız büyüleri kendi alanınızdan veya onun alanından yapıyormuş gibi yapabilirsiniz."
       },
       "gift_of_the_depths": {
         "name": "Derinliklerin Armağanı",
@@ -815,7 +815,7 @@
       },
       "investment_of_the_chain_master": {
         "name": "Zincir Efendisinin Güçlendirmesi",
-        "description": "Tanıdık Bulma büyüsünü yaptığınızda çağrılan familiyere esrarengiz gücünüzü aşılayarak şu faydaları verirsiniz.\n\nHava veya Su: Familiyer seçiminize göre 40 fit Uçuş veya Yüzme Hızı kazanır.\n\nHızlı Saldırı: Bonus eylemle familiyere Saldırı eylemini emredebilirsiniz.\n\nNekrotik veya Işıma Hasarı: Familiyerin verdiği Ezme, Delme veya Kesme hasarını Nekrotik veya Işıma hasarına çevirebilirsiniz.\n\nKurtarma SG'niz: Familiyer bir yaratığı kurtarma atışına zorlarsa sizin büyü kurtarma SG'nizi kullanır.\n\nDirenç: Familiyer hasar aldığında Tepki kullanarak ona bu hasara karşı Direnç verebilirsiniz."
+        "description": "Tanıdık Bulma büyüsünü yaptığınızda çağrılan familiyere esrarengiz gücünüzü aşılayarak şu faydaları verirsiniz.\n\nHava veya Su: Familiyer seçiminize göre {{distance:40ft}} Uçuş veya Yüzme Hızı kazanır.\n\nHızlı Saldırı: Bonus eylemle familiyere Saldırı eylemini emredebilirsiniz.\n\nNekrotik veya Işıma Hasarı: Familiyerin verdiği Ezme, Delme veya Kesme hasarını Nekrotik veya Işıma hasarına çevirebilirsiniz.\n\nKurtarma SG'niz: Familiyer bir yaratığı kurtarma atışına zorlarsa sizin büyü kurtarma SG'nizi kullanır.\n\nDirenç: Familiyer hasar aldığında Tepki kullanarak ona bu hasara karşı Direnç verebilirsiniz."
       },
       "lessons_of_the_first_ones": {
         "name": "İlklerin Dersleri",
@@ -847,7 +847,7 @@
       },
       "pact_of_the_blade": {
         "name": "Kılıç Paktı",
-        "description": "Bonus eylemle elinizde seçtiğiniz bir Basit veya Askerî Yakın Dövüş silahını pakt silahı olarak çağırıp ona bağlanabilir ya da dokunduğunuz sihirli silahla bağ kurabilirsiniz. Başka biri o sihirli silaha uyumlandıysa veya başka bir Pakt Büyücüsü ona bağlandıysa bağ kuramazsınız. Bağ sürdükçe silahta yetkinsiniz ve onu Büyü Odağı olarak kullanabilirsiniz.\n\nBağlı silahla saldırırken saldırı ve hasar atışlarında Kuvvet veya Çeviklik yerine Karizma değiştiricinizi kullanabilirsiniz; silahın hasarını Nekrotik, Psişik, Işıma veya normal türü olarak seçebilirsiniz.\n\nBu özelliğin bonus eylemini yeniden kullanırsanız, silah sizden 5 fitten fazla uzakta 1 dakika veya daha uzun kalırsa ya da ölürseniz bağ biter. Çağrılan silah bağ bitince kaybolur."
+        "description": "Bonus eylemle elinizde seçtiğiniz bir Basit veya Askerî Yakın Dövüş silahını pakt silahı olarak çağırıp ona bağlanabilir ya da dokunduğunuz sihirli silahla bağ kurabilirsiniz. Başka biri o sihirli silaha uyumlandıysa veya başka bir Pakt Büyücüsü ona bağlandıysa bağ kuramazsınız. Bağ sürdükçe silahta yetkinsiniz ve onu Büyü Odağı olarak kullanabilirsiniz.\n\nBağlı silahla saldırırken saldırı ve hasar atışlarında Kuvvet veya Çeviklik yerine Karizma değiştiricinizi kullanabilirsiniz; silahın hasarını Nekrotik, Psişik, Işıma veya normal türü olarak seçebilirsiniz.\n\nBu özelliğin bonus eylemini yeniden kullanırsanız, silah sizden {{distance:5ft|abl}} fazla uzakta 1 dakika veya daha uzun kalırsa ya da ölürseniz bağ biter. Çağrılan silah bağ bitince kaybolur."
       },
       "pact_of_the_chain": {
         "name": "Zincir Paktı",
@@ -859,7 +859,7 @@
       },
       "repelling_blast": {
         "name": "İten Patlama",
-        "description": "Saldırı atışı gerektiren, bildiğiniz bir Pakt Büyücüsü büyü numarasını seçin. Bununla Büyük veya daha küçük yaratığa isabet ettiğinizde yaratığı sizden doğrudan uzağa en fazla 10 fit itebilirsiniz."
+        "description": "Saldırı atışı gerektiren, bildiğiniz bir Pakt Büyücüsü büyü numarasını seçin. Bununla Büyük veya daha küçük yaratığa isabet ettiğinizde yaratığı sizden doğrudan uzağa en fazla {{distance:10ft}} itebilirsiniz."
       },
       "thirsting_blade": {
         "name": "Susamış Kılıç",
@@ -875,7 +875,7 @@
       },
       "witch_sight": {
         "name": "Cadı Görüşü",
-        "description": "30 fit menzilli Gerçek Görüş kazanırsınız."
+        "description": "{{distance:30ft}} menzilli Gerçek Görüş kazanırsınız."
       }
     }
   },

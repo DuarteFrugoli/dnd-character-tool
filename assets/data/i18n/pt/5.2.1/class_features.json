@@ -38,7 +38,7 @@
     },
     "Fast Movement": {
       "name": "Movimento Rápido",
-      "description": "Seu Deslocamento aumenta em 10 pés enquanto você não estiver usando armadura Pesada."
+      "description": "Seu Deslocamento aumenta em {{distance:10ft}} enquanto você não estiver usando armadura Pesada."
     },
     "Feral Instinct": {
       "name": "Instinto Selvagem",
@@ -50,7 +50,7 @@
     },
     "Brutal Strike": {
       "name": "Golpe Brutal",
-      "description": "Ao usar Ataque Descuidado, abra mão da Vantagem dele em um ataque baseado em Força que não tenha Desvantagem. Se acertar, adicione 1d10 de dano do mesmo tipo do ataque e escolha um efeito de Golpe Brutal: Golpe Impulsor empurra o alvo 15 pés e permite que você o siga por até metade do seu Deslocamento sem provocar Ataques de Oportunidade; Golpe Tendinoso reduz o Deslocamento do alvo em 15 pés até seu próximo turno."
+      "description": "Ao usar Ataque Descuidado, abra mão da Vantagem dele em um ataque baseado em Força que não tenha Desvantagem. Se acertar, adicione 1d10 de dano do mesmo tipo do ataque e escolha um efeito de Golpe Brutal: Golpe Impulsor empurra o alvo {{distance:15ft}} e permite que você o siga por até metade do seu Deslocamento sem provocar Ataques de Oportunidade; Golpe Tendinoso reduz o Deslocamento do alvo em {{distance:15ft}} até seu próximo turno."
     },
     "Relentless Rage": {
       "name": "Fúria Implacável",
@@ -80,7 +80,7 @@
   "Bard": {
     "Bardic Inspiration": {
       "name": "Inspiração de Bardo",
-      "description": "Como Ação Bônus, conceda um dado de Inspiração de Bardo a uma criatura a até 60 pés que possa ver ou ouvir você. Até 1 hora após falhar em um Teste de D20, ela pode rolar o dado e somá-lo ao teste. Uma criatura pode ter apenas um desses dados. O número de usos é igual ao seu modificador de Carisma (mínimo 1), recuperados após um Descanso Longo. Tamanho do dado: d6 nos níveis 1–4, d8 nos níveis 5–9, d10 nos níveis 10–14 e d12 a partir do nível 15."
+      "description": "Como Ação Bônus, conceda um dado de Inspiração de Bardo a uma criatura a até {{distance:60ft}} que possa ver ou ouvir você. Até 1 hora após falhar em um Teste de D20, ela pode rolar o dado e somá-lo ao teste. Uma criatura pode ter apenas um desses dados. O número de usos é igual ao seu modificador de Carisma (mínimo 1), recuperados após um Descanso Longo. Tamanho do dado: d6 nos níveis 1–4, d8 nos níveis 5–9, d10 nos níveis 10–14 e d12 a partir do nível 15."
     },
     "Spellcasting": {
       "name": "Conjuração",
@@ -108,7 +108,7 @@
     },
     "Countercharm": {
       "name": "Contracanção",
-      "description": "Como Reação, quando você ou uma criatura a até 30 pés falhar em um teste de resistência contra a condição Enfeitiçado ou Amedrontado, faça com que o teste seja repetido com Vantagem."
+      "description": "Como Reação, quando você ou uma criatura a até {{distance:30ft}} falhar em um teste de resistência contra a condição Enfeitiçado ou Amedrontado, faça com que o teste seja repetido com Vantagem."
     },
     "Magical Secrets": {
       "name": "Segredos Mágicos",
@@ -124,7 +124,7 @@
     },
     "Words of Creation": {
       "name": "Palavras de Criação",
-      "description": "Palavra de Poder: Curar e Palavra de Poder: Matar estão sempre preparadas. Ao lançar uma delas, você pode escolher uma segunda criatura a até 10 pés da primeira como alvo."
+      "description": "Palavra de Poder: Curar e Palavra de Poder: Matar estão sempre preparadas. Ao lançar uma delas, você pode escolher uma segunda criatura a até {{distance:10ft}} da primeira como alvo."
     }
   },
   "Cleric": {
@@ -138,7 +138,7 @@
     },
     "Channel Divinity": {
       "name": "Canalizar Divindade",
-      "description": "Receba Faísca Divina e Expulsar Mortos-Vivos, além de opções da sua subclasse. Use Canalizar Divindade duas vezes no nível 2, três no nível 6 e quatro no nível 18; recupere um uso após um Descanso Curto e todos após um Descanso Longo. Como ação de Magia, Faísca Divina cura outra criatura visível a até 30 pés em 1d8 + seu modificador de Sabedoria ou causa esse valor em dano Necrótico ou Radiante se ela falhar em um teste de resistência de Constituição (metade no sucesso); os dados aumentam para 2d8 no nível 7, 3d8 no 13 e 4d8 no 18. Como ação de Magia, Expulsar Mortos-Vivos obriga Mortos-Vivos escolhidos a até 30 pés a fazer testes de resistência de Sabedoria; em caso de falha, ficam Amedrontados e Incapacitados por 1 minuto e tentam se afastar. O efeito termina se sofrerem dano ou se você ficar Incapacitado ou morrer."
+      "description": "Receba Faísca Divina e Expulsar Mortos-Vivos, além de opções da sua subclasse. Use Canalizar Divindade duas vezes no nível 2, três no nível 6 e quatro no nível 18; recupere um uso após um Descanso Curto e todos após um Descanso Longo. Como ação de Magia, Faísca Divina cura outra criatura visível a até {{distance:30ft}} em 1d8 + seu modificador de Sabedoria ou causa esse valor em dano Necrótico ou Radiante se ela falhar em um teste de resistência de Constituição (metade no sucesso); os dados aumentam para 2d8 no nível 7, 3d8 no 13 e 4d8 no 18. Como ação de Magia, Expulsar Mortos-Vivos obriga Mortos-Vivos escolhidos a até {{distance:30ft}} a fazer testes de resistência de Sabedoria; em caso de falha, ficam Amedrontados e Incapacitados por 1 minuto e tentam se afastar. O efeito termina se sofrerem dano ou se você ficar Incapacitado ou morrer."
     },
     "Cleric Subclass": {
       "name": "Subclasse de Clérigo",
@@ -162,7 +162,7 @@
     },
     "Improved Blessed Strikes": {
       "name": "Golpes Abençoados Aprimorados",
-      "description": "O dano adicional de Golpe Divino passa a 2d8. Se você escolheu Conjuração Potente, causar dano a uma criatura com um truque de Clérigo pode conceder a você ou a um aliado a até 60 pés Pontos de Vida Temporários iguais ao dobro do seu modificador de Sabedoria."
+      "description": "O dano adicional de Golpe Divino passa a 2d8. Se você escolheu Conjuração Potente, causar dano a uma criatura com um truque de Clérigo pode conceder a você ou a um aliado a até {{distance:60ft}} Pontos de Vida Temporários iguais ao dobro do seu modificador de Sabedoria."
     },
     "Epic Boon": {
       "name": "Dádiva Épica",
@@ -212,7 +212,7 @@
     },
     "Improved Elemental Fury": {
       "name": "Fúria Elemental Aprimorada",
-      "description": "Conjuração Potente aumenta em 300 pés o alcance de um truque de Druida que normalmente alcance pelo menos 10 pés. O dano adicional de Golpe Primordial passa a 2d8."
+      "description": "Conjuração Potente aumenta em {{distance:300ft}} o alcance de um truque de Druida que normalmente alcance pelo menos {{distance:10ft}}. O dano adicional de Golpe Primordial passa a 2d8."
     },
     "Beast Spells": {
       "name": "Magias da Fera",
@@ -304,7 +304,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimento sem Armadura",
-      "description": "Sem armadura nem Escudo, seu Deslocamento aumenta em 10 pés nos níveis 2–5, 15 pés nos níveis 6–9, 20 pés nos níveis 10–13, 25 pés nos níveis 14–17 e 30 pés a partir do nível 18."
+      "description": "Sem armadura nem Escudo, seu Deslocamento aumenta em {{distance:10ft}} nos níveis 2–5, {{distance:15ft}} nos níveis 6–9, {{distance:20ft}} nos níveis 10–13, {{distance:25ft}} nos níveis 14–17 e {{distance:30ft}} a partir do nível 18."
     },
     "Uncanny Metabolism": {
       "name": "Metabolismo Sobrenatural",
@@ -312,7 +312,7 @@
     },
     "Deflect Attacks": {
       "name": "Desviar Ataques",
-      "description": "Como Reação, quando um ataque acertar você e incluir dano de Concussão, Perfurante ou Cortante, reduza o dano total em 1d10 + seu modificador de Destreza + seu nível de Monge. Se reduzi-lo a 0, gaste 1 Ponto de Foco para redirecioná-lo: uma criatura visível a até 5 pés, se o ataque foi corpo a corpo, ou a até 60 pés e sem Cobertura Total, se foi à distância, faz um teste de resistência de Destreza ou sofre dano do tipo do ataque igual a dois dados de Artes Marciais + seu modificador de Destreza."
+      "description": "Como Reação, quando um ataque acertar você e incluir dano de Concussão, Perfurante ou Cortante, reduza o dano total em 1d10 + seu modificador de Destreza + seu nível de Monge. Se reduzi-lo a 0, gaste 1 Ponto de Foco para redirecioná-lo: uma criatura visível a até {{distance:5ft}}, se o ataque foi corpo a corpo, ou a até {{distance:60ft}} e sem Cobertura Total, se foi à distância, faz um teste de resistência de Destreza ou sofre dano do tipo do ataque igual a dois dados de Artes Marciais + seu modificador de Destreza."
     },
     "Monk Subclass": {
       "name": "Subclasse de Monge",
@@ -348,7 +348,7 @@
     },
     "Heightened Focus": {
       "name": "Foco Elevado",
-      "description": "Por 1 Ponto de Foco, Rajada de Golpes realiza três Golpes Desarmados; Defesa Paciente também concede Pontos de Vida Temporários iguais a dois dados de Artes Marciais; Passo do Vento pode transportar uma criatura voluntária Grande ou menor a até 5 pés sem provocar Ataques de Oportunidade."
+      "description": "Por 1 Ponto de Foco, Rajada de Golpes realiza três Golpes Desarmados; Defesa Paciente também concede Pontos de Vida Temporários iguais a dois dados de Artes Marciais; Passo do Vento pode transportar uma criatura voluntária Grande ou menor a até {{distance:5ft}} sem provocar Ataques de Oportunidade."
     },
     "Self-Restoration": {
       "name": "Autorreparação",
@@ -402,7 +402,7 @@
     },
     "Channel Divinity": {
       "name": "Canalizar Divindade",
-      "description": "Receba Sentido Divino e as opções de Canalizar Divindade da sua subclasse. Você começa com dois usos, que aumentam para três no nível 11 de paladino; recupera um uso após um Descanso Curto e todos após um Descanso Longo. Sentido Divino é uma Ação Bônus que revela Celestiais, Ínferos, Mortos-Vivos e lugares ou objetos consagrados ou profanados a até 60 pés por 10 minutos, até que você fique Incapacitado."
+      "description": "Receba Sentido Divino e as opções de Canalizar Divindade da sua subclasse. Você começa com dois usos, que aumentam para três no nível 11 de paladino; recupera um uso após um Descanso Curto e todos após um Descanso Longo. Sentido Divino é uma Ação Bônus que revela Celestiais, Ínferos, Mortos-Vivos e lugares ou objetos consagrados ou profanados a até {{distance:60ft}} por 10 minutos, até que você fique Incapacitado."
     },
     "Paladin Subclass": {
       "name": "Subclasse de Paladino",
@@ -422,11 +422,11 @@
     },
     "Aura of Protection": {
       "name": "Aura de Proteção",
-      "description": "Você e aliados na sua emanação de 10 pés recebem um bônus nas salvaguardas igual ao seu modificador de Carisma (mínimo +1) enquanto você não estiver Incapacitado. Uma criatura se beneficia de apenas uma Aura de Proteção de paladino por vez."
+      "description": "Você e aliados na sua emanação de {{distance:10ft}} recebem um bônus nas salvaguardas igual ao seu modificador de Carisma (mínimo +1) enquanto você não estiver Incapacitado. Uma criatura se beneficia de apenas uma Aura de Proteção de paladino por vez."
     },
     "Abjure Foes": {
       "name": "Abjurar Inimigos",
-      "description": "Como ação Mágica, gaste um uso de Canalizar Divindade para escolher até um número de criaturas igual ao seu modificador de Carisma (mínimo uma) a até 60 pés. Cada uma faz uma salvaguarda de Sabedoria ou fica Amedrontada por 1 minuto ou até sofrer dano; em cada um de seus turnos, ela pode se mover, realizar uma ação ou realizar uma Ação Bônus, mas apenas uma dessas opções."
+      "description": "Como ação Mágica, gaste um uso de Canalizar Divindade para escolher até um número de criaturas igual ao seu modificador de Carisma (mínimo uma) a até {{distance:60ft}}. Cada uma faz uma salvaguarda de Sabedoria ou fica Amedrontada por 1 minuto ou até sofrer dano; em cada um de seus turnos, ela pode se mover, realizar uma ação ou realizar uma Ação Bônus, mas apenas uma dessas opções."
     },
     "Aura of Courage": {
       "name": "Aura de Coragem",
@@ -442,7 +442,7 @@
     },
     "Aura Expansion": {
       "name": "Expansão da Aura",
-      "description": "Sua Aura de Proteção passa a ser uma emanação de 30 pés."
+      "description": "Sua Aura de Proteção passa a ser uma emanação de {{distance:30ft}}."
     },
     "Epic Boon": {
       "name": "Dádiva Épica",
@@ -484,7 +484,7 @@
     },
     "Roving": {
       "name": "Andarilho",
-      "description": "Seu Deslocamento aumenta em 10 pés enquanto você não usar armadura Pesada. Você recebe Deslocamentos de Escalada e Natação iguais ao seu Deslocamento."
+      "description": "Seu Deslocamento aumenta em {{distance:10ft}} enquanto você não usar armadura Pesada. Você recebe Deslocamentos de Escalada e Natação iguais ao seu Deslocamento."
     },
     "Expertise": {
       "name": "Especialização",
@@ -508,7 +508,7 @@
     },
     "Feral Senses": {
       "name": "Sentidos Feral",
-      "description": "Você recebe Percepção às Cegas com alcance de 30 pés."
+      "description": "Você recebe Percepção às Cegas com alcance de {{distance:30ft}}."
     },
     "Epic Boon": {
       "name": "Dádiva Épica",
@@ -526,7 +526,7 @@
     },
     "Sneak Attack": {
       "name": "Ataque Furtivo",
-      "description": "Uma vez por turno, cause dano adicional com um ataque de arma com a propriedade Acuidade ou de arma de longo alcance quando tiver Vantagem no ataque. Você não precisa de Vantagem se um aliado estiver a até 5 pés do alvo, não estiver Incapacitado e sua jogada não tiver Desvantagem. O dano adicional é 1d6 no nível 1 e aumenta em 1d6 a cada nível ímpar de ladino, até chegar a 10d6 no nível 19."
+      "description": "Uma vez por turno, cause dano adicional com um ataque de arma com a propriedade Acuidade ou de arma de longo alcance quando tiver Vantagem no ataque. Você não precisa de Vantagem se um aliado estiver a até {{distance:5ft}} do alvo, não estiver Incapacitado e sua jogada não tiver Desvantagem. O dano adicional é 1d6 no nível 1 e aumenta em 1d6 a cada nível ímpar de ladino, até chegar a 10d6 no nível 19."
     },
     "Thieves' Cant": {
       "name": "Gíria de Ladrão",

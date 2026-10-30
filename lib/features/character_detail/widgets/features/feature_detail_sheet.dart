@@ -62,7 +62,7 @@ class FeatureDetailSheet extends StatelessWidget {
           const SizedBox(height: 12),
 
           // Description
-          Text(description, style: Theme.of(context).textTheme.bodyMedium),
+          RulesText(description, style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
     );

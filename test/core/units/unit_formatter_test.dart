@@ -5,11 +5,13 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('defaultUnitSystem', () {
-    test('uses imperial for English locales and metric otherwise', () {
+    test('uses the system of the official books of each language', () {
       expect(defaultUnitSystem(const Locale('en')), UnitSystem.imperial);
       expect(defaultUnitSystem(const Locale('en', 'US')), UnitSystem.imperial);
       expect(defaultUnitSystem(const Locale('pt', 'BR')), UnitSystem.metric);
-      expect(defaultUnitSystem(const Locale('es')), UnitSystem.metric);
+      expect(defaultUnitSystem(const Locale('de')), UnitSystem.metric);
+      expect(defaultUnitSystem(const Locale('es')), UnitSystem.imperial);
+      expect(defaultUnitSystem(const Locale('ja')), UnitSystem.imperial);
     });
   });
 
@@ -18,6 +20,8 @@ void main() {
       expect(formatDistance(30, UnitSystem.imperial), '30 ft');
       expect(formatDistance(30, UnitSystem.metric), '9 m');
       expect(formatDistance(30, UnitSystem.squares), '6 sq');
+      expect(formatDistance(5, UnitSystem.metric), '1.5 m');
+      expect(formatDistance(25, UnitSystem.metric), '7.5 m');
     });
 
     test('converts display input back to stored feet', () {

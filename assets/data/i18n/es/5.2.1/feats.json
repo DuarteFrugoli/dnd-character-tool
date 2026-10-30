@@ -45,11 +45,11 @@
   },
   "Boon of Dimensional Travel": {
     "name": "Don del Viaje Dimensional",
-    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Justo después de realizar la acción Atacar o Magia, puedes teletransportarte hasta 30 pies a un espacio desocupado que puedas ver."
+    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Justo después de realizar la acción Atacar o Magia, puedes teletransportarte hasta {{distance:30ft}} a un espacio desocupado que puedas ver."
   },
   "Boon of Fate": {
     "name": "Don del Destino",
-    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Cuando tú o una criatura a un máximo de 60 pies tenga éxito o falle en una Prueba de D20, tira 2d4 y aplica el total como bonificador o penalizador a la tirada. Recuperas el uso cuando tiras Iniciativa o terminas un Descanso Corto o Largo."
+    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Cuando tú o una criatura a un máximo de {{distance:60ft}} tenga éxito o falle en una Prueba de D20, tira 2d4 y aplica el total como bonificador o penalizador a la tirada. Recuperas el uso cuando tiras Iniciativa o terminas un Descanso Corto o Largo."
   },
   "Boon of Irresistible Offense": {
     "name": "Don de la Ofensiva Irresistible",
@@ -65,6 +65,6 @@
   },
   "Boon of Truesight": {
     "name": "Don de la Visión Verdadera",
-    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Obtienes Visión Verdadera hasta 60 pies."
+    "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Obtienes Visión Verdadera hasta {{distance:60ft}}."
   }
 }

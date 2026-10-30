@@ -11,11 +11,11 @@
       },
       "Retaliation": {
         "name": "Retaliação",
-        "description": "Quando uma criatura a até 5 pés lhe causar dano, você pode usar sua Reação para fazer um ataque corpo a corpo contra ela com uma arma ou Golpe Desarmado."
+        "description": "Quando uma criatura a até {{distance:5ft}} lhe causar dano, você pode usar sua Reação para fazer um ataque corpo a corpo contra ela com uma arma ou Golpe Desarmado."
       },
       "Intimidating Presence": {
         "name": "Presença Intimidadora",
-        "description": "Com uma Ação Bônus, criaturas à sua escolha em uma Emanação de 30 pés fazem um teste de resistência de Sabedoria (CD 8 + modificador de Força + Bônus de Proficiência) ou ficam Amedrontadas por 1 minuto; repetem o teste ao fim de cada turno. Uma vez por Descanso Longo, ou gaste um uso de Fúria para recuperar esta característica."
+        "description": "Com uma Ação Bônus, criaturas à sua escolha em uma Emanação de {{distance:30ft}} fazem um teste de resistência de Sabedoria (CD 8 + modificador de Força + Bônus de Proficiência) ou ficam Amedrontadas por 1 minuto; repetem o teste ao fim de cada turno. Uma vez por Descanso Longo, ou gaste um uso de Fúria para recuperar esta característica."
       }
     }
   },
@@ -27,7 +27,7 @@
       },
       "Cutting Words": {
         "name": "Palavras Cortantes",
-        "description": "Quando uma criatura que você possa ver a até 60 pés rolar dano ou obtiver sucesso em um teste de habilidade ou jogada de ataque, use sua Reação e uma Inspiração de Bardo. Subtraia uma rolagem do seu dado de Inspiração de Bardo do resultado, possivelmente transformando sucesso em falha."
+        "description": "Quando uma criatura que você possa ver a até {{distance:60ft}} rolar dano ou obtiver sucesso em um teste de habilidade ou jogada de ataque, use sua Reação e uma Inspiração de Bardo. Subtraia uma rolagem do seu dado de Inspiração de Bardo do resultado, possivelmente transformando sucesso em falha."
       },
       "Magical Discoveries": {
         "name": "Descobertas Mágicas",
@@ -51,7 +51,7 @@
       },
       "Preserve Life": {
         "name": "Preservar a Vida",
-        "description": "Com uma ação Magia, gaste Canalizar Divindade para restaurar um total de Pontos de Vida igual a 5 vezes seu nível de Clérigo, dividido entre criaturas Ensanguentadas a até 30 pés (inclusive você). Ninguém pode ser curado acima da metade de seus Pontos de Vida máximos dessa forma."
+        "description": "Com uma ação Magia, gaste Canalizar Divindade para restaurar um total de Pontos de Vida igual a 5 vezes seu nível de Clérigo, dividido entre criaturas Ensanguentadas a até {{distance:30ft}} (inclusive você). Ninguém pode ser curado acima da metade de seus Pontos de Vida máximos dessa forma."
       },
       "Blessed Healer": {
         "name": "Curandeiro Abençoado",
@@ -71,7 +71,7 @@
       },
       "Land's Aid": {
         "name": "Auxílio da Terra",
-        "description": "Com uma ação Magia, gaste Forma Selvagem para criar uma Esfera de 10 pés de raio a até 60 pés. Criaturas escolhidas na área fazem um teste de resistência de Constituição, sofrendo 2d6 de dano Necrótico se falharem ou metade se passarem; uma criatura na área também recupera 2d6 Pontos de Vida. Ambos os dados aumentam para 3d6 no nível 10 de Druida e 4d6 no nível 14."
+        "description": "Com uma ação Magia, gaste Forma Selvagem para criar uma Esfera de {{distance:10ft}} de raio a até {{distance:60ft}}. Criaturas escolhidas na área fazem um teste de resistência de Constituição, sofrendo 2d6 de dano Necrótico se falharem ou metade se passarem; uma criatura na área também recupera 2d6 Pontos de Vida. Ambos os dados aumentam para 3d6 no nível 10 de Druida e 4d6 no nível 14."
       },
       "Natural Recovery": {
         "name": "Recuperação Natural",
@@ -83,7 +83,7 @@
       },
       "Nature's Sanctuary": {
         "name": "Santuário da Natureza",
-        "description": "Com uma ação Magia, gaste Forma Selvagem para criar um Cubo de 15 pés no chão a até 120 pés por 1 minuto, terminando se você ficar Incapacitado ou morrer. Você e aliados nele têm Meia Cobertura; aliados também ganham sua Resistência da Proteção da Natureza. Com uma Ação Bônus, mova o Cubo até 60 pés para outro ponto no chão a até 120 pés."
+        "description": "Com uma ação Magia, gaste Forma Selvagem para criar um Cubo de {{distance:15ft}} no chão a até {{distance:120ft}} por 1 minuto, terminando se você ficar Incapacitado ou morrer. Você e aliados nele têm Meia Cobertura; aliados também ganham sua Resistência da Proteção da Natureza. Com uma Ação Bônus, mova o Cubo até {{distance:60ft}} para outro ponto no chão a até {{distance:120ft}}."
       }
     }
   },
@@ -119,7 +119,7 @@
     "Warrior of the Open Hand": {
       "Open Hand Technique": {
         "name": "Técnica da Mão Aberta",
-        "description": "Quando um ataque de Rajada de Golpes acertar, escolha um efeito: o alvo não pode fazer Ataques de Oportunidade até o próximo turno dele; ele é empurrado até 15 pés se falhar em um teste de resistência de Força; ou fica Caído se falhar em um teste de resistência de Destreza."
+        "description": "Quando um ataque de Rajada de Golpes acertar, escolha um efeito: o alvo não pode fazer Ataques de Oportunidade até o próximo turno dele; ele é empurrado até {{distance:15ft}} se falhar em um teste de resistência de Força; ou fica Caído se falhar em um teste de resistência de Destreza."
       },
       "Wholeness of Body": {
         "name": "Integridade Corporal",
@@ -143,7 +143,7 @@
       },
       "Sacred Weapon": {
         "name": "Arma Sagrada",
-        "description": "Ao realizar a ação Atacar, gaste Canalizar Divindade para fortalecer uma arma corpo a corpo que esteja segurando por 10 minutos. Adicione seu modificador de Carisma (mínimo +1) às jogadas de ataque; cada acerto pode causar o tipo normal de dano ou Radiante. Emite Luz Plena por 20 pés e Penumbra por mais 20 pés; o efeito termina se você deixar de carregá-la."
+        "description": "Ao realizar a ação Atacar, gaste Canalizar Divindade para fortalecer uma arma corpo a corpo que esteja segurando por 10 minutos. Adicione seu modificador de Carisma (mínimo +1) às jogadas de ataque; cada acerto pode causar o tipo normal de dano ou Radiante. Emite Luz Plena por {{distance:20ft}} e Penumbra por mais {{distance:20ft}}; o efeito termina se você deixar de carregá-la."
       },
       "Aura of Devotion": {
         "name": "Aura de Devoção",
@@ -167,7 +167,7 @@
       },
       "Hunter's Prey": {
         "name": "Presa do Caçador",
-        "description": "Escolha uma opção, que pode mudar após um Descanso Curto ou Longo. Matador de Colossos: uma vez por turno, um acerto com arma contra criatura com Pontos de Vida perdidos causa +1d8 de dano. Destruidor de Hordas: uma vez no seu turno ao atacar com arma, ataque outra criatura a até 5 pés do alvo original, no alcance e que você ainda não tenha atacado nesse turno."
+        "description": "Escolha uma opção, que pode mudar após um Descanso Curto ou Longo. Matador de Colossos: uma vez por turno, um acerto com arma contra criatura com Pontos de Vida perdidos causa +1d8 de dano. Destruidor de Hordas: uma vez no seu turno ao atacar com arma, ataque outra criatura a até {{distance:5ft}} do alvo original, no alcance e que você ainda não tenha atacado nesse turno."
       },
       "Defensive Tactics": {
         "name": "Táticas Defensivas",
@@ -175,7 +175,7 @@
       },
       "Superior Hunter's Prey": {
         "name": "Presa Superior do Caçador",
-        "description": "Uma vez por turno, quando você causar dano a uma criatura marcada por Marca do Caçador, cause o dano adicional da magia a outra criatura que possa ver a até 30 pés da criatura marcada."
+        "description": "Uma vez por turno, quando você causar dano a uma criatura marcada por Marca do Caçador, cause o dano adicional da magia a outra criatura que possa ver a até {{distance:30ft}} da criatura marcada."
       },
       "Superior Hunter's Defense": {
         "name": "Defesa Superior do Caçador",
@@ -223,7 +223,7 @@
       },
       "Dragon Wings": {
         "name": "Asas de Dragão",
-        "description": "Com uma Ação Bônus, ganhe asas e Deslocamento de Voo de 60 pés por 1 hora ou até dispensá-las. Uma vez por Descanso Longo, ou gaste 3 Pontos de Feitiçaria para recuperar o uso."
+        "description": "Com uma Ação Bônus, ganhe asas e Deslocamento de Voo de {{distance:60ft}} por 1 hora ou até dispensá-las. Uma vez por Descanso Longo, ou gaste 3 Pontos de Feitiçaria para recuperar o uso."
       },
       "Dragon Companion": {
         "name": "Companheiro Dragão",
@@ -235,7 +235,7 @@
     "Fiend Patron": {
       "Dark One's Blessing": {
         "name": "Bênção do Senhor das Trevas",
-        "description": "Ao reduzir um inimigo a 0 Pontos de Vida, ganhe Pontos de Vida Temporários iguais ao seu modificador de Carisma + nível de Bruxo (mínimo 1). Você também os ganha quando outra pessoa reduz um inimigo a até 10 pés de você a 0 Pontos de Vida."
+        "description": "Ao reduzir um inimigo a 0 Pontos de Vida, ganhe Pontos de Vida Temporários iguais ao seu modificador de Carisma + nível de Bruxo (mínimo 1). Você também os ganha quando outra pessoa reduz um inimigo a até {{distance:10ft}} de você a 0 Pontos de Vida."
       },
       "Fiend Spells": {
         "name": "Magias do Ínfero",

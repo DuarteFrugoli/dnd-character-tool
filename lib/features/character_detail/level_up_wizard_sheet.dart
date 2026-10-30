@@ -18,6 +18,7 @@ import '../../data/spellcasting_engine.dart';
 import '../../shared/providers/providers.dart';
 import 'application/level_up/level_up_wizard_state.dart';
 import 'character_detail_provider.dart';
+import '../../shared/widgets/rules_text.dart';
 import 'level_up_2024_sheet.dart';
 import 'spell_browser_sheet.dart';
 import 'widgets/feature_choice_editor.dart';
@@ -1332,7 +1333,7 @@ class _FeaturesPage extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-                    child: Text(
+                    child: RulesText(
                       i18n.classFeatureDescription(
                             srdClass?.name ?? '',
                             f.name,
@@ -1365,7 +1366,7 @@ class _FeaturesPage extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-                      child: Text(
+                      child: RulesText(
                         i18n.subclassFeatureDescription(
                               srdClass?.name ?? '',
                               subclassName ?? '',
@@ -1438,7 +1439,7 @@ class _SubclassPage extends StatelessWidget {
               return Card(
                 child: RadioListTile<String>(
                   title: Text(name),
-                  subtitle: Text(
+                  subtitle: RulesText(
                     i18n.subclassDescription(srdClass?.name ?? '', sc.name) ??
                         sc.description,
                     maxLines: 2,
@@ -1607,7 +1608,7 @@ class _AsiPage extends StatelessWidget {
                         padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
                         child: Align(
                           alignment: Alignment.centerLeft,
-                          child: Text(featDesc),
+                          child: RulesText(featDesc),
                         ),
                       ),
                     ],

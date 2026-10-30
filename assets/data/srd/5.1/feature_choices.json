@@ -24,7 +24,7 @@
       {
         "id": "feinting_attack",
         "name": "Feinting Attack",
-        "description": "Spend a bonus action and a superiority die to feint against a creature within 5 feet. You have advantage on your next attack against it this turn, and if that attack hits, add the superiority die to the damage."
+        "description": "Spend a bonus action and a superiority die to feint against a creature within {{distance:5ft}}. You have advantage on your next attack against it this turn, and if that attack hits, add the superiority die to the damage."
       },
       {
         "id": "goading_attack",
@@ -34,7 +34,7 @@
       {
         "id": "lunging_attack",
         "name": "Lunging Attack",
-        "description": "When you make a melee weapon attack, expend a superiority die to increase your reach by 5 feet for that attack. If the attack hits, add the superiority die to the damage."
+        "description": "When you make a melee weapon attack, expend a superiority die to increase your reach by {{distance:5ft}} for that attack. If the attack hits, add the superiority die to the damage."
       },
       {
         "id": "maneuvering_attack",
@@ -59,7 +59,7 @@
       {
         "id": "pushing_attack",
         "name": "Pushing Attack",
-        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. If the target is Large or smaller, it must make a Strength save or be pushed up to 15 feet away from you."
+        "description": "When you hit with a weapon attack, expend a superiority die and add it to the damage. If the target is Large or smaller, it must make a Strength save or be pushed up to {{distance:15ft}} away from you."
       },
       {
         "id": "rally",
@@ -74,7 +74,7 @@
       {
         "id": "sweeping_attack",
         "name": "Sweeping Attack",
-        "description": "When you hit with a melee weapon attack, expend a superiority die to damage another creature within 5 feet of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the superiority die."
+        "description": "When you hit with a melee weapon attack, expend a superiority die to damage another creature within {{distance:5ft}} of the original target and within your reach. If the original attack roll would hit the second creature, it takes damage equal to the superiority die."
       },
       {
         "id": "trip_attack",
@@ -87,14 +87,14 @@
       { "id": "defense", "name": "Defense", "description": "While you are wearing armor, you gain a +1 bonus to AC." },
       { "id": "dueling", "name": "Dueling", "description": "When you wield a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon." },
       { "id": "great_weapon_fighting", "name": "Great Weapon Fighting", "description": "When you roll a 1 or 2 on a damage die for a melee weapon held with two hands, reroll the die and use the new roll. The weapon must have the two-handed or versatile property." },
-      { "id": "protection", "name": "Protection", "description": "When a creature attacks a target other than you within 5 feet, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield." },
+      { "id": "protection", "name": "Protection", "description": "When a creature attacks a target other than you within {{distance:5ft}}, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield." },
       { "id": "two_weapon_fighting", "name": "Two-Weapon Fighting", "description": "Add your ability modifier to the damage of your second weapon attack when fighting with two weapons." }
     ],
     "fighting_styles_paladin": [
       { "id": "defense", "name": "Defense", "description": "While you are wearing armor, you gain a +1 bonus to AC." },
       { "id": "dueling", "name": "Dueling", "description": "When you wield a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon." },
       { "id": "great_weapon_fighting", "name": "Great Weapon Fighting", "description": "When you roll a 1 or 2 on a damage die for a melee weapon held with two hands, reroll the die and use the new roll. The weapon must have the two-handed or versatile property." },
-      { "id": "protection", "name": "Protection", "description": "When a creature attacks a target other than you within 5 feet, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield." }
+      { "id": "protection", "name": "Protection", "description": "When a creature attacks a target other than you within {{distance:5ft}}, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield." }
     ],
     "fighting_styles_ranger": [
       { "id": "archery", "name": "Archery", "description": "You gain a +2 bonus to attack rolls you make with ranged weapons." },
@@ -104,7 +104,7 @@
     ],
     "metamagic_options": [
       { "id": "careful_spell", "name": "Careful Spell", "description": "Spend 1 sorcery point and choose creatures up to your Charisma modifier (minimum 1). Chosen creatures automatically succeed on the spell's saving throw." },
-      { "id": "distant_spell", "name": "Distant Spell", "description": "Spend 1 sorcery point to double a spell's range if it has a range of 5 feet or greater. If the spell has a range of touch, its range becomes 30 feet." },
+      { "id": "distant_spell", "name": "Distant Spell", "description": "Spend 1 sorcery point to double a spell's range if it has a range of {{distance:5ft}} or greater. If the spell has a range of touch, its range becomes {{distance:30ft}}." },
       { "id": "empowered_spell", "name": "Empowered Spell", "description": "Spend 1 sorcery point to reroll a number of a spell's damage dice up to your Charisma modifier (minimum 1). You must use the new rolls." },
       { "id": "extended_spell", "name": "Extended Spell", "description": "Spend 1 sorcery point to double a spell's duration if it lasts 1 minute or longer, up to a maximum duration of 24 hours." },
       { "id": "heightened_spell", "name": "Heightened Spell", "description": "Spend 3 sorcery points to give one target disadvantage on its first saving throw against the spell." },
@@ -343,7 +343,7 @@
               "count": 1,
               "options": [
                 { "id": "volley", "name": "Volley", "description": "Use your action to make a ranged attack against any number of creatures within a small area in range." },
-                { "id": "whirlwind_attack", "name": "Whirlwind Attack", "description": "Use your action to make melee attacks against any number of creatures within 5 feet of you." }
+                { "id": "whirlwind_attack", "name": "Whirlwind Attack", "description": "Use your action to make melee attacks against any number of creatures within {{distance:5ft}} of you." }
               ]
             }
           ]

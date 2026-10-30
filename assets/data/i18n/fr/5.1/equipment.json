@@ -155,7 +155,7 @@
   },
   "Acid (vial)": {
     "name": "Acide (flacon)",
-    "description": "Par une action, vous pouvez éclabousser le contenu de cette fiole sur une créature dans un rayon de 1,50 mètre ou la lancer jusqu'à 6 mètres, la brisant à l'impact. Une créature subit 2d6 dégâts d'acide lors d'un coup."
+    "description": "Par une action, vous pouvez éclabousser le contenu de cette fiole sur une créature dans un rayon de {{distance:5ft}} ou la lancer jusqu'à {{distance:20ft}}, la brisant à l'impact. Une créature subit 2d6 dégâts d'acide lors d'un coup."
   },
   "Alchemist's Fire": {
     "name": "Feu de l'alchimiste",
@@ -255,11 +255,11 @@
   },
   "Caltrops (bag of 20)": {
     "name": "Chausse-trapes (sachet de 20)",
-    "description": "Dispersez-vous sur une zone de 1,5 mètre. Les créatures qui se déplacent doivent réussir un jet de Dextérité DD 15 ou s'arrêter et subir 1 dégât perforant (vitesse réduite de 3 mètres jusqu'à ce qu'elles soient guéries)."
+    "description": "Dispersez-vous sur une zone de {{distance:5ft}}. Les créatures qui se déplacent doivent réussir un jet de Dextérité DD 15 ou s'arrêter et subir 1 dégât perforant (vitesse réduite de {{distance:10ft}} jusqu'à ce qu'elles soient guéries)."
   },
   "Candle": {
     "name": "Bougie",
-    "description": "Illumine un rayon de 1,5 mètre de lumière vive et 1,5 mètre de lumière faible pendant 1 heure."
+    "description": "Illumine un rayon de {{distance:5ft}} de lumière vive et {{distance:5ft}} de lumière faible pendant 1 heure."
   },
   "Case, crossbow bolt": {
     "name": "Étui, carreau d'arbalète",
@@ -343,7 +343,7 @@
   },
   "Holy Water (flask)": {
     "name": "Eau bénite (flacon)",
-    "description": "Par une action, éclaboussez une créature dans un rayon de 1,50 mètre ou lancez-la jusqu'à 6 mètres. En cas de coup, un démon ou un mort-vivant subit 2d6 dégâts radiants."
+    "description": "Par une action, éclaboussez une créature dans un rayon de {{distance:5ft}} ou lancez-la jusqu'à {{distance:20ft}}. En cas de coup, un démon ou un mort-vivant subit 2d6 dégâts radiants."
   },
   "Hourglass": {
     "name": "Sablier",
@@ -375,19 +375,19 @@
   },
   "Ladder (10-foot)": {
     "name": "Échelle (3 mètres)",
-    "description": "Une échelle en bois de 3 mètres."
+    "description": "Une échelle en bois de {{distance:10ft}}."
   },
   "Lamp": {
     "name": "Lampe",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Projette une lumière vive dans un rayon de 4,5 mètres et une lumière tamisée sur 9 mètres supplémentaires."
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Projette une lumière vive dans un rayon de {{distance:15ft}} et une lumière tamisée sur {{distance:30ft}} supplémentaires."
   },
   "Lantern, bullseye": {
     "name": "Lanterne, cible",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Cône de 18 mètres de lumière vive, 18 mètres supplémentaires de lumière tamisée."
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Cône de {{distance:60ft}} de lumière vive, {{distance:60ft}} supplémentaires de lumière tamisée."
   },
   "Lantern, hooded": {
     "name": "Lanterne, à capuchon",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Lumière vive dans un rayon de 9 mètres, lumière faible supplémentaire de 9 mètres. Peut être recouvert d'une capuche pour réduire la lumière à 1,5 mètre."
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Lumière vive dans un rayon de {{distance:30ft}}, lumière faible supplémentaire de {{distance:30ft}}. Peut être recouvert d'une capuche pour réduire la lumière à {{distance:5ft}}."
   },
   "Lock": {
     "name": "Verrouillage",
@@ -439,7 +439,7 @@
   },
   "Pole (10-foot)": {
     "name": "Poteau (3 mètres)",
-    "description": "Un poteau en bois de 3 mètres."
+    "description": "Un poteau en bois de {{distance:10ft}}."
   },
   "Pot, iron": {
     "name": "Casserole, fer",
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "Sifflet de signalisation",
-    "description": "Un petit sifflet métallique audible jusqu'à 180 mètres de distance."
+    "description": "Un petit sifflet métallique audible jusqu'à {{distance:600ft}} de distance."
   },
   "Signet Ring": {
     "name": "Chevalière",
@@ -515,7 +515,7 @@
   },
   "String (10 feet)": {
     "name": "Corde (3 mètres)",
-    "description": "Une longueur de ficelle de 3 mètres."
+    "description": "Une longueur de ficelle de {{distance:10ft}}."
   },
   "Tent, two-person": {
     "name": "Tente, deux personnes",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "Torche",
-    "description": "Brûle 1 heure. Lumière vive dans un rayon de 6 mètres, lumière tamisée dans un rayon de 6 mètres supplémentaires. Peut être utilisé comme une arme improvisée (1d4 dégâts de feu)."
+    "description": "Brûle 1 heure. Lumière vive dans un rayon de {{distance:20ft}}, lumière tamisée dans un rayon de {{distance:20ft}} supplémentaires. Peut être utilisé comme une arme improvisée (1d4 dégâts de feu)."
   },
   "Vial": {
     "name": "Ampoule",

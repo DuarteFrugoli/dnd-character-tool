@@ -1,3 +1,4 @@
+import 'package:dnd_character_tool/shared/widgets/rules_text.dart';
 import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:dnd_character_tool/l10n/ability_l10n.dart';
@@ -235,7 +236,7 @@ class _SubclassSelector extends StatelessWidget {
                                   ?.copyWith(fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 2),
-                            Text(
+                            RulesText(
                               subDesc,
                               style: Theme.of(context).textTheme.bodySmall,
                             ),

@@ -38,7 +38,7 @@
     },
     "Fast Movement": {
       "name": "Movimiento rápido",
-      "description": "Tu velocidad aumenta 10 pies mientras no lleves armadura pesada."
+      "description": "Tu velocidad aumenta {{distance:10ft}} mientras no lleves armadura pesada."
     },
     "Feral Instinct": {
       "name": "Instinto salvaje",
@@ -50,7 +50,7 @@
     },
     "Brutal Strike": {
       "name": "Golpe brutal",
-      "description": "Al usar Ataque temerario, renuncia a la ventaja que te concede en un ataque basado en Fuerza que no tenga desventaja. Si impactas, añades 1d10 de daño del tipo del ataque y eliges un efecto de Golpe brutal: Golpe contundente empuja al objetivo 15 pies y te permite seguirlo hasta la mitad de tu velocidad sin provocar ataques de oportunidad; Golpe a los tendones reduce su velocidad 15 pies hasta tu siguiente turno."
+      "description": "Al usar Ataque temerario, renuncia a la ventaja que te concede en un ataque basado en Fuerza que no tenga desventaja. Si impactas, añades 1d10 de daño del tipo del ataque y eliges un efecto de Golpe brutal: Golpe contundente empuja al objetivo {{distance:15ft}} y te permite seguirlo hasta la mitad de tu velocidad sin provocar ataques de oportunidad; Golpe a los tendones reduce su velocidad {{distance:15ft}} hasta tu siguiente turno."
     },
     "Relentless Rage": {
       "name": "Furia implacable",
@@ -80,7 +80,7 @@
   "Bard": {
     "Bardic Inspiration": {
       "name": "Inspiración bárdica",
-      "description": "Como acción adicional, das un dado de Inspiración bárdica a una criatura a 60 pies o menos que pueda verte u oírte. Durante 1 hora, después de fallar una prueba de d20, puede tirar el dado y sumarlo a la prueba. Una criatura solo puede tener uno de estos dados. Tienes tantos usos como tu modificador de Carisma (mínimo 1), recuperados tras un descanso largo. Tamaño del dado: d6 en los niveles 1-4, d8 en los niveles 5-9, d10 en los niveles 10-14 y d12 a partir del nivel 15."
+      "description": "Como acción adicional, das un dado de Inspiración bárdica a una criatura a {{distance:60ft}} o menos que pueda verte u oírte. Durante 1 hora, después de fallar una prueba de d20, puede tirar el dado y sumarlo a la prueba. Una criatura solo puede tener uno de estos dados. Tienes tantos usos como tu modificador de Carisma (mínimo 1), recuperados tras un descanso largo. Tamaño del dado: d6 en los niveles 1-4, d8 en los niveles 5-9, d10 en los niveles 10-14 y d12 a partir del nivel 15."
     },
     "Spellcasting": {
       "name": "Lanzamiento de conjuros",
@@ -108,7 +108,7 @@
     },
     "Countercharm": {
       "name": "Contraencantamiento",
-      "description": "Como reacción cuando tú o una criatura a 30 pies o menos falléis una tirada de salvación contra el estado hechizado o asustado, haces que se repita con ventaja."
+      "description": "Como reacción cuando tú o una criatura a {{distance:30ft}} o menos falléis una tirada de salvación contra el estado hechizado o asustado, haces que se repita con ventaja."
     },
     "Magical Secrets": {
       "name": "Secretos mágicos",
@@ -124,7 +124,7 @@
     },
     "Words of Creation": {
       "name": "Palabras de creación",
-      "description": "Palabra de poder sanadora y Palabra de poder mortal están siempre preparados. Al lanzar cualquiera de los dos, puedes elegir un segundo objetivo a 10 pies o menos del primero."
+      "description": "Palabra de poder sanadora y Palabra de poder mortal están siempre preparados. Al lanzar cualquiera de los dos, puedes elegir un segundo objetivo a {{distance:10ft}} o menos del primero."
     }
   },
   "Cleric": {
@@ -138,7 +138,7 @@
     },
     "Channel Divinity": {
       "name": "Canalizar divinidad",
-      "description": "Obtienes Chispa divina y Expulsar muertos vivientes, además de las opciones de tu subclase. Puedes usar Canalizar divinidad dos veces en el nivel 2, tres veces en el nivel 6 y cuatro veces en el nivel 18; recuperas un uso tras un descanso corto y todos tras un descanso largo. Como acción mágica, Chispa divina cura a otra criatura que puedas ver a 30 pies o menos por 1d8 + tu modificador de Sabiduría, o le inflige esa cantidad de daño necrótico o radiante si falla una tirada de salvación de Constitución (la mitad si tiene éxito); los dados aumentan a 2d8 en el nivel 7, 3d8 en el 13 y 4d8 en el 18. Como acción mágica, Expulsar muertos vivientes obliga a los muertos vivientes elegidos a 30 pies o menos a hacer tiradas de salvación de Sabiduría o quedar asustados e incapacitados durante 1 minuto; intentan alejarse y el efecto termina si reciben daño o si quedas incapacitado o mueres."
+      "description": "Obtienes Chispa divina y Expulsar muertos vivientes, además de las opciones de tu subclase. Puedes usar Canalizar divinidad dos veces en el nivel 2, tres veces en el nivel 6 y cuatro veces en el nivel 18; recuperas un uso tras un descanso corto y todos tras un descanso largo. Como acción mágica, Chispa divina cura a otra criatura que puedas ver a {{distance:30ft}} o menos por 1d8 + tu modificador de Sabiduría, o le inflige esa cantidad de daño necrótico o radiante si falla una tirada de salvación de Constitución (la mitad si tiene éxito); los dados aumentan a 2d8 en el nivel 7, 3d8 en el 13 y 4d8 en el 18. Como acción mágica, Expulsar muertos vivientes obliga a los muertos vivientes elegidos a {{distance:30ft}} o menos a hacer tiradas de salvación de Sabiduría o quedar asustados e incapacitados durante 1 minuto; intentan alejarse y el efecto termina si reciben daño o si quedas incapacitado o mueres."
     },
     "Cleric Subclass": {
       "name": "Subclase de clérigo",
@@ -162,7 +162,7 @@
     },
     "Improved Blessed Strikes": {
       "name": "Golpes benditos mejorados",
-      "description": "El daño adicional de Golpe divino pasa a ser 2d8. Si elegiste Lanzamiento de conjuros potente, cuando causes daño a una criatura con un truco de clérigo podrás otorgar a ti o a un aliado a 60 pies o menos puntos de golpe temporales iguales al doble de tu modificador de Sabiduría."
+      "description": "El daño adicional de Golpe divino pasa a ser 2d8. Si elegiste Lanzamiento de conjuros potente, cuando causes daño a una criatura con un truco de clérigo podrás otorgar a ti o a un aliado a {{distance:60ft}} o menos puntos de golpe temporales iguales al doble de tu modificador de Sabiduría."
     },
     "Epic Boon": {
       "name": "Don épico",
@@ -212,7 +212,7 @@
     },
     "Improved Elemental Fury": {
       "name": "Furia elemental mejorada",
-      "description": "Lanzamiento de conjuros potente añade 300 pies al alcance de un truco de druida que normalmente tenga un alcance de al menos 10 pies. El daño adicional de Golpe primigenio pasa a ser 2d8."
+      "description": "Lanzamiento de conjuros potente añade {{distance:300ft}} al alcance de un truco de druida que normalmente tenga un alcance de al menos {{distance:10ft}}. El daño adicional de Golpe primigenio pasa a ser 2d8."
     },
     "Beast Spells": {
       "name": "Conjuros en forma de bestia",
@@ -304,7 +304,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimiento sin armadura",
-      "description": "Sin armadura ni escudo, tu velocidad aumenta 10 pies en los niveles 2-5, 15 pies en los niveles 6-9, 20 pies en los niveles 10-13, 25 pies en los niveles 14-17 y 30 pies a partir del nivel 18."
+      "description": "Sin armadura ni escudo, tu velocidad aumenta {{distance:10ft}} en los niveles 2-5, {{distance:15ft}} en los niveles 6-9, {{distance:20ft}} en los niveles 10-13, {{distance:25ft}} en los niveles 14-17 y {{distance:30ft}} a partir del nivel 18."
     },
     "Uncanny Metabolism": {
       "name": "Metabolismo extraordinario",
@@ -312,7 +312,7 @@
     },
     "Deflect Attacks": {
       "name": "Desviar ataques",
-      "description": "Como reacción cuando te impacta un ataque que incluye daño contundente, perforante o cortante, reduces el daño total en 1d10 + tu modificador de Destreza + tu nivel de monje. Si lo reduces a 0, gasta 1 punto de Enfoque para redirigirlo: una criatura visible a 5 pies o menos si el ataque era cuerpo a cuerpo, o a 60 pies o menos y que no esté tras cobertura total si era a distancia, hace una tirada de salvación de Destreza o recibe daño del tipo del ataque igual a dos dados de Artes marciales + tu modificador de Destreza."
+      "description": "Como reacción cuando te impacta un ataque que incluye daño contundente, perforante o cortante, reduces el daño total en 1d10 + tu modificador de Destreza + tu nivel de monje. Si lo reduces a 0, gasta 1 punto de Enfoque para redirigirlo: una criatura visible a {{distance:5ft}} o menos si el ataque era cuerpo a cuerpo, o a {{distance:60ft}} o menos y que no esté tras cobertura total si era a distancia, hace una tirada de salvación de Destreza o recibe daño del tipo del ataque igual a dos dados de Artes marciales + tu modificador de Destreza."
     },
     "Monk Subclass": {
       "name": "Subclase de monje",
@@ -348,7 +348,7 @@
     },
     "Heightened Focus": {
       "name": "Enfoque mejorado",
-      "description": "Por 1 punto de Enfoque, Ráfaga de golpes permite hacer tres golpes sin armas; Defensa paciente también te concede puntos de golpe temporales iguales a dos dados de Artes marciales; Paso del viento te permite transportar a una criatura voluntaria Grande o más pequeña que esté a 5 pies o menos sin provocar ataques de oportunidad."
+      "description": "Por 1 punto de Enfoque, Ráfaga de golpes permite hacer tres golpes sin armas; Defensa paciente también te concede puntos de golpe temporales iguales a dos dados de Artes marciales; Paso del viento te permite transportar a una criatura voluntaria Grande o más pequeña que esté a {{distance:5ft}} o menos sin provocar ataques de oportunidad."
     },
     "Self-Restoration": {
       "name": "Autorestauración",
@@ -402,7 +402,7 @@
     },
     "Channel Divinity": {
       "name": "Canalizar divinidad",
-      "description": "Obtienes Sentido divino y las opciones de Canalizar divinidad de tu subclase. Comienzas con dos usos, que aumentan a tres en el nivel 11 de paladín; recuperas uno tras un descanso corto y todos tras uno largo. Sentido divino es una acción adicional que revela celestiales, infernales, muertos vivientes y lugares u objetos consagrados o profanados a 60 pies o menos durante 10 minutos, hasta que quedes incapacitado."
+      "description": "Obtienes Sentido divino y las opciones de Canalizar divinidad de tu subclase. Comienzas con dos usos, que aumentan a tres en el nivel 11 de paladín; recuperas uno tras un descanso corto y todos tras uno largo. Sentido divino es una acción adicional que revela celestiales, infernales, muertos vivientes y lugares u objetos consagrados o profanados a {{distance:60ft}} o menos durante 10 minutos, hasta que quedes incapacitado."
     },
     "Paladin Subclass": {
       "name": "Subclase de paladín",
@@ -422,11 +422,11 @@
     },
     "Aura of Protection": {
       "name": "Aura de protección",
-      "description": "Tú y tus aliados dentro de tu emanación de 10 pies obtenéis un bonificador a las tiradas de salvación igual a tu modificador de Carisma (mínimo +1) mientras no estés incapacitado. Una criatura solo se beneficia del Aura de protección de un paladín a la vez."
+      "description": "Tú y tus aliados dentro de tu emanación de {{distance:10ft}} obtenéis un bonificador a las tiradas de salvación igual a tu modificador de Carisma (mínimo +1) mientras no estés incapacitado. Una criatura solo se beneficia del Aura de protección de un paladín a la vez."
     },
     "Abjure Foes": {
       "name": "Abjurar enemigos",
-      "description": "Como acción mágica, gasta un uso de Canalizar divinidad para elegir hasta tantas criaturas como tu modificador de Carisma (mínimo una) a 60 pies o menos. Cada una hace una tirada de salvación de Sabiduría o queda asustada durante 1 minuto o hasta recibir daño; en cada turno puede moverse, realizar una acción o una acción adicional, pero solo una de esas opciones."
+      "description": "Como acción mágica, gasta un uso de Canalizar divinidad para elegir hasta tantas criaturas como tu modificador de Carisma (mínimo una) a {{distance:60ft}} o menos. Cada una hace una tirada de salvación de Sabiduría o queda asustada durante 1 minuto o hasta recibir daño; en cada turno puede moverse, realizar una acción o una acción adicional, pero solo una de esas opciones."
     },
     "Aura of Courage": {
       "name": "Aura de valor",
@@ -442,7 +442,7 @@
     },
     "Aura Expansion": {
       "name": "Expansión del aura",
-      "description": "Tu Aura de protección se extiende a una emanación de 30 pies."
+      "description": "Tu Aura de protección se extiende a una emanación de {{distance:30ft}}."
     },
     "Epic Boon": {
       "name": "Don épico",
@@ -484,7 +484,7 @@
     },
     "Roving": {
       "name": "Andariego",
-      "description": "Tu velocidad aumenta 10 pies mientras no lleves armadura pesada. Obtienes velocidades de trepar y nadar iguales a tu velocidad."
+      "description": "Tu velocidad aumenta {{distance:10ft}} mientras no lleves armadura pesada. Obtienes velocidades de trepar y nadar iguales a tu velocidad."
     },
     "Expertise": {
       "name": "Pericia",
@@ -508,7 +508,7 @@
     },
     "Feral Senses": {
       "name": "Sentidos salvajes",
-      "description": "Obtienes visión ciega con un alcance de 30 pies."
+      "description": "Obtienes visión ciega con un alcance de {{distance:30ft}}."
     },
     "Epic Boon": {
       "name": "Don épico",
@@ -526,7 +526,7 @@
     },
     "Sneak Attack": {
       "name": "Ataque furtivo",
-      "description": "Una vez por turno, infliges daño adicional con un ataque de arma sutil o a distancia cuando tienes ventaja en el ataque. No necesitas ventaja si un aliado está a 5 pies o menos del objetivo, no está incapacitado y tu tirada no tiene desventaja. El daño adicional es 1d6 en el nivel 1 y aumenta en 1d6 en cada nivel impar de pícaro, hasta llegar a 10d6 en el nivel 19."
+      "description": "Una vez por turno, infliges daño adicional con un ataque de arma sutil o a distancia cuando tienes ventaja en el ataque. No necesitas ventaja si un aliado está a {{distance:5ft}} o menos del objetivo, no está incapacitado y tu tirada no tiene desventaja. El daño adicional es 1d6 en el nivel 1 y aumenta en 1d6 en cada nivel impar de pícaro, hasta llegar a 10d6 en el nivel 19."
     },
     "Thieves' Cant": {
       "name": "Jerga de ladrones",

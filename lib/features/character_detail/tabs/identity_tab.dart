@@ -344,7 +344,7 @@ class _IdentityTabState extends ConsumerState<IdentityTab>
                             return RadioListTile<String>(
                               title: Text(translatedName),
                               subtitle: translatedDesc != null
-                                  ? Text(
+                                  ? RulesText(
                                       translatedDesc,
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,

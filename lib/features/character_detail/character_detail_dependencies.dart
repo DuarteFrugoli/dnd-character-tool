@@ -4,6 +4,7 @@ export 'package:flutter/services.dart';
 export 'package:flutter_riverpod/flutter_riverpod.dart';
 export 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
+export '../../core/units/rules_text_provider.dart';
 export '../../core/units/unit_formatter.dart';
 export '../../core/units/unit_system_provider.dart';
 export '../../data/character_spellcasting_summary.dart';
@@ -25,6 +26,7 @@ export '../../shared/providers/providers.dart';
 export '../../shared/widgets/character_avatar.dart';
 export '../../shared/widgets/confirmation_dialog_styles.dart';
 export '../../shared/widgets/responsive_layout.dart';
+export '../../shared/widgets/rules_text.dart';
 export 'application/character_tab_view_models.dart';
 export 'character_detail_provider.dart';
 export 'inventory/inventory_search_catalog.dart';

@@ -1,3 +1,4 @@
+import 'package:dnd_character_tool/shared/widgets/rules_text.dart';
 import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -202,7 +203,7 @@ class _BackgroundCard extends StatelessWidget {
                     ),
                     if (isSelected) ...[
                       const SizedBox(height: 8),
-                      Text(
+                      RulesText(
                         featureDesc,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: scheme.onPrimaryContainer,

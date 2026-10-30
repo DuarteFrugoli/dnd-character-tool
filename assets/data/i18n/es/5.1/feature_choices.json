@@ -19,7 +19,7 @@
       },
       "feinting_attack": {
         "name": "Ataque de finta",
-        "description": "Gasta una acción adicional y un dado de superioridad para fintar contra una criatura a 5 pies. Tienes ventaja en tu próximo ataque contra él este turno, y si ese ataque impacta, suma el dado de superioridad al daño."
+        "description": "Gasta una acción adicional y un dado de superioridad para fintar contra una criatura a {{distance:5ft}}. Tienes ventaja en tu próximo ataque contra él este turno, y si ese ataque impacta, suma el dado de superioridad al daño."
       },
       "goading_attack": {
         "name": "Ataque de incitación",
@@ -27,7 +27,7 @@
       },
       "lunging_attack": {
         "name": "Ataque de acometida",
-        "description": "Cuando realices un ataque con arma cuerpo a cuerpo, gasta un dado de superioridad para aumentar tu alcance en 5 pies para ese ataque. Si el ataque impacta, suma el dado de superioridad al daño."
+        "description": "Cuando realices un ataque con arma cuerpo a cuerpo, gasta un dado de superioridad para aumentar tu alcance en {{distance:5ft}} para ese ataque. Si el ataque impacta, suma el dado de superioridad al daño."
       },
       "maneuvering_attack": {
         "name": "Ataque de maniobra",
@@ -47,7 +47,7 @@
       },
       "pushing_attack": {
         "name": "Ataque de empuje",
-        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. Si el objetivo es Grande o más pequeño, debe realizar una salvación de Fuerza o ser empujado hasta 15 pies de distancia de ti."
+        "description": "Cuando golpeas con un ataque con arma, gastas un dado de superioridad y lo sumas al daño. Si el objetivo es Grande o más pequeño, debe realizar una salvación de Fuerza o ser empujado hasta {{distance:15ft}} de distancia de ti."
       },
       "rally": {
         "name": "Reunión",
@@ -59,7 +59,7 @@
       },
       "sweeping_attack": {
         "name": "Ataque de barrido",
-        "description": "Cuando golpeas con un ataque con arma cuerpo a cuerpo, gasta un dado de superioridad para dañar a otra criatura dentro de 5 pies del objetivo original y dentro de tu alcance. Si la tirada de ataque original impactaría a la segunda criatura, sufrirá un daño igual al dado de superioridad."
+        "description": "Cuando golpeas con un ataque con arma cuerpo a cuerpo, gasta un dado de superioridad para dañar a otra criatura dentro de {{distance:5ft}} del objetivo original y dentro de tu alcance. Si la tirada de ataque original impactaría a la segunda criatura, sufrirá un daño igual al dado de superioridad."
       },
       "trip_attack": {
         "name": "Ataque de viaje",
@@ -85,7 +85,7 @@
       },
       "protection": {
         "name": "Protección",
-        "description": "Cuando una criatura ataca a un objetivo que no seas tú dentro de 5 pies, puedes usar tu reacción para imponer desventaja en la tirada de ataque. Debes estar empuñando un escudo."
+        "description": "Cuando una criatura ataca a un objetivo que no seas tú dentro de {{distance:5ft}}, puedes usar tu reacción para imponer desventaja en la tirada de ataque. Debes estar empuñando un escudo."
       },
       "two_weapon_fighting": {
         "name": "Lucha con dos armas",
@@ -107,7 +107,7 @@
       },
       "protection": {
         "name": "Protección",
-        "description": "Cuando una criatura ataca a un objetivo que no seas tú dentro de 5 pies, puedes usar tu reacción para imponer desventaja en la tirada de ataque. Debes estar empuñando un escudo."
+        "description": "Cuando una criatura ataca a un objetivo que no seas tú dentro de {{distance:5ft}}, puedes usar tu reacción para imponer desventaja en la tirada de ataque. Debes estar empuñando un escudo."
       }
     },
     "fighting_styles_ranger": {
@@ -135,7 +135,7 @@
       },
       "distant_spell": {
         "name": "Hechizo distante",
-        "description": "Gasta 1 punto de hechicería para duplicar el alcance de un hechizo si tiene un alcance de 5 pies o más. Si el hechizo tiene un alcance de tacto, su alcance pasa a ser de 30 pies."
+        "description": "Gasta 1 punto de hechicería para duplicar el alcance de un hechizo si tiene un alcance de {{distance:5ft}} o más. Si el hechizo tiene un alcance de tacto, su alcance pasa a ser de {{distance:30ft}}."
       },
       "empowered_spell": {
         "name": "Hechizo potenciado",
@@ -438,7 +438,7 @@
                 },
                 "whirlwind_attack": {
                   "name": "Ataque torbellino",
-                  "description": "Usa tu acción para realizar ataques cuerpo a cuerpo contra cualquier cantidad de criaturas dentro de un radio de 5 pies de ti."
+                  "description": "Usa tu acción para realizar ataques cuerpo a cuerpo contra cualquier cantidad de criaturas dentro de un radio de {{distance:5ft}} de ti."
                 }
               }
             }

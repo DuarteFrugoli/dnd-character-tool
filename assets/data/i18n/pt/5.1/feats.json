@@ -7,7 +7,7 @@
   "Athlete": {
     "name": "Atleta",
     "prerequisite": null,
-    "description": "Você passou por um extenso treinamento físico para obter os seguintes benefícios:\n• Aumente seu valor de Força ou Destreza em 1, até um máximo de 20.\n• Quando você está deitado, levantar-se utiliza apenas 1,5 metro do seu movimento.\n• Escalar não custa movimento extra.\n• Você pode dar um salto em distância com corrida ou um salto em altura depois de se mover apenas 1,5 metro a pé, em vez de 3 metros."
+    "description": "Você passou por um extenso treinamento físico para obter os seguintes benefícios:\n• Aumente seu valor de Força ou Destreza em 1, até um máximo de 20.\n• Quando você está deitado, levantar-se utiliza apenas {{distance:5ft}} do seu movimento.\n• Escalar não custa movimento extra.\n• Você pode dar um salto em distância com corrida ou um salto em altura depois de se mover apenas {{distance:5ft}} a pé, em vez de {{distance:10ft}}."
   },
   "Actor": {
     "name": "Ator",
@@ -17,12 +17,12 @@
   "Charger": {
     "name": "Investida",
     "prerequisite": null,
-    "description": "Quando você usa sua ação para Correr, você pode usar uma ação bônus para fazer um ataque corpo a corpo com arma ou empurrar uma criatura. Se você se mover pelo menos 3 metros em linha reta imediatamente antes de realizar esta ação bônus, você ganha +5 de bônus na jogada de dano do ataque (se você escolheu fazer um ataque corpo a corpo e acertar) ou empurra o alvo até 3 metros de distância de você (se você escolheu empurrar e tiver sucesso)."
+    "description": "Quando você usa sua ação para Correr, você pode usar uma ação bônus para fazer um ataque corpo a corpo com arma ou empurrar uma criatura. Se você se mover pelo menos {{distance:10ft}} em linha reta imediatamente antes de realizar esta ação bônus, você ganha +5 de bônus na jogada de dano do ataque (se você escolheu fazer um ataque corpo a corpo e acertar) ou empurra o alvo até {{distance:10ft}} de distância de você (se você escolheu empurrar e tiver sucesso)."
   },
   "Crossbow Expert": {
     "name": "Especialista em besta",
     "prerequisite": null,
-    "description": "Graças à prática extensiva com a besta, você obtém os seguintes benefícios:\n• Você ignora a qualidade de carregamento das bestas com as quais é proficiente.\n• Estar a até 1,5 metro de uma criatura hostil não impõe desvantagem em suas jogadas de ataque à distância.\n• Quando você usa a ação Atacar e ataca com uma arma de uma mão, você pode usar uma ação bônus para atacar com uma besta de mão que estiver segurando."
+    "description": "Graças à prática extensiva com a besta, você obtém os seguintes benefícios:\n• Você ignora a qualidade de carregamento das bestas com as quais é proficiente.\n• Estar a até {{distance:5ft}} de uma criatura hostil não impõe desvantagem em suas jogadas de ataque à distância.\n• Quando você usa a ação Atacar e ataca com uma arma de uma mão, você pode usar uma ação bônus para atacar com uma besta de mão que estiver segurando."
   },
   "Defensive Duelist": {
     "name": "Duelista Defensivo",
@@ -77,7 +77,7 @@
   "Inspiring Leader": {
     "name": "Líder inspirador",
     "prerequisite": "Carisma 13 ou superior",
-    "description": "Você pode passar 10 minutos inspirando seus companheiros, reforçando sua determinação de lutar. Ao fazer isso, escolha até seis criaturas amigáveis ​​(que podem incluir você) a até 9 metros de você que possam ver ou ouvir você e que possam entendê-lo. Cada criatura pode ganhar pontos de vida temporários iguais ao seu nível + seu modificador de Carisma. Uma criatura não pode ganhar pontos de vida temporários com este talento novamente até que termine um descanso curto ou longo."
+    "description": "Você pode passar 10 minutos inspirando seus companheiros, reforçando sua determinação de lutar. Ao fazer isso, escolha até seis criaturas amigáveis ​​(que podem incluir você) a até {{distance:30ft}} de você que possam ver ou ouvir você e que possam entendê-lo. Cada criatura pode ganhar pontos de vida temporários iguais ao seu nível + seu modificador de Carisma. Uma criatura não pode ganhar pontos de vida temporários com este talento novamente até que termine um descanso curto ou longo."
   },
   "Keen Mind": {
     "name": "Mente Aguçada",
@@ -102,7 +102,7 @@
   "Mage Slayer": {
     "name": "Matador de Magos",
     "prerequisite": null,
-    "description": "Você praticou técnicas úteis em combate corpo a corpo contra conjuradores, obtendo os seguintes benefícios:\n• Quando uma criatura a até 1,5 metro de você conjura uma magia, você pode usar sua reação para realizar um ataque corpo a corpo com arma contra aquela criatura.\n• Quando você causa dano a uma criatura que está se concentrando em uma mágica, aquela criatura tem desvantagem no teste de resistência que realiza para manter sua concentração.\n• Você tem vantagem em testes de resistência contra magias lançadas por criaturas a até 1,5 metro de você."
+    "description": "Você praticou técnicas úteis em combate corpo a corpo contra conjuradores, obtendo os seguintes benefícios:\n• Quando uma criatura a até {{distance:5ft}} de você conjura uma magia, você pode usar sua reação para realizar um ataque corpo a corpo com arma contra aquela criatura.\n• Quando você causa dano a uma criatura que está se concentrando em uma mágica, aquela criatura tem desvantagem no teste de resistência que realiza para manter sua concentração.\n• Você tem vantagem em testes de resistência contra magias lançadas por criaturas a até {{distance:5ft}} de você."
   },
   "Magic Initiate": {
     "name": "Iniciado Mágico",
@@ -122,7 +122,7 @@
   "Mobile": {
     "name": "Móvel",
     "prerequisite": null,
-    "description": "Você é excepcionalmente rápido e ágil. Você ganha os seguintes benefícios:\n• Sua velocidade aumenta em 3 metros.\n• Quando você usa a ação Correr, terreno difícil não custa movimento extra naquele turno.\n• Quando você realiza um ataque corpo a corpo contra uma criatura, você não provoca ataques de oportunidade daquela criatura pelo resto do turno, independentemente de o ataque acertar ou não."
+    "description": "Você é excepcionalmente rápido e ágil. Você ganha os seguintes benefícios:\n• Sua velocidade aumenta em {{distance:10ft}}.\n• Quando você usa a ação Correr, terreno difícil não custa movimento extra naquele turno.\n• Quando você realiza um ataque corpo a corpo contra uma criatura, você não provoca ataques de oportunidade daquela criatura pelo resto do turno, independentemente de o ataque acertar ou não."
   },
   "Moderately Armored": {
     "name": "Treinado em Armaduras Médias",
@@ -162,7 +162,7 @@
   "Sentinel": {
     "name": "Sentinela",
     "prerequisite": null,
-    "description": "Você dominou técnicas para aproveitar cada queda na guarda de qualquer inimigo, obtendo os seguintes benefícios:\n• Quando você atinge uma criatura com um ataque de oportunidade, o deslocamento da criatura se torna 0 pelo resto do turno.\n• As criaturas provocam ataques de oportunidade mesmo que realizem a ação Desengajar antes de saírem do seu alcance.\n• Quando uma criatura a até 1,5 metro de você ataca um alvo que não seja você (e esse alvo não possui esse talento), você pode usar sua reação para realizar um ataque corpo a corpo com arma contra a criatura atacante."
+    "description": "Você dominou técnicas para aproveitar cada queda na guarda de qualquer inimigo, obtendo os seguintes benefícios:\n• Quando você atinge uma criatura com um ataque de oportunidade, o deslocamento da criatura se torna 0 pelo resto do turno.\n• As criaturas provocam ataques de oportunidade mesmo que realizem a ação Desengajar antes de saírem do seu alcance.\n• Quando uma criatura a até {{distance:5ft}} de você ataca um alvo que não seja você (e esse alvo não possui esse talento), você pode usar sua reação para realizar um ataque corpo a corpo com arma contra a criatura atacante."
   },
   "Sharpshooter": {
     "name": "Atirador de elite",
@@ -172,7 +172,7 @@
   "Shield Master": {
     "name": "Mestre do Escudo",
     "prerequisite": null,
-    "description": "Você usa escudos não apenas para proteção, mas também para ataque. Você ganha os seguintes benefícios enquanto empunha um escudo:\n• Se você realizar a ação de Ataque no seu turno, você pode usar uma ação bônus para tentar empurrar uma criatura a até 1,5 metro de você com seu escudo.\n• Se você não estiver incapacitado, você pode adicionar o bônus de CA do seu escudo a qualquer teste de resistência de Destreza que você fizer contra uma magia ou outro efeito prejudicial que atinja apenas você.\n• Se você estiver sujeito a um efeito que lhe permita fazer um teste de resistência de Destreza para sofrer apenas metade do dano, você pode usar sua reação para não sofrer nenhum dano se tiver sucesso no teste de resistência, interpondo seu escudo entre você e a fonte do efeito."
+    "description": "Você usa escudos não apenas para proteção, mas também para ataque. Você ganha os seguintes benefícios enquanto empunha um escudo:\n• Se você realizar a ação de Ataque no seu turno, você pode usar uma ação bônus para tentar empurrar uma criatura a até {{distance:5ft}} de você com seu escudo.\n• Se você não estiver incapacitado, você pode adicionar o bônus de CA do seu escudo a qualquer teste de resistência de Destreza que você fizer contra uma magia ou outro efeito prejudicial que atinja apenas você.\n• Se você estiver sujeito a um efeito que lhe permita fazer um teste de resistência de Destreza para sofrer apenas metade do dano, você pode usar sua reação para não sofrer nenhum dano se tiver sucesso no teste de resistência, interpondo seu escudo entre você e a fonte do efeito."
   },
   "Skilled": {
     "name": "Habilidoso",

@@ -45,11 +45,11 @@
   },
   "Boon of Dimensional Travel": {
     "name": "Dádiva da Viagem Dimensional",
-    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Imediatamente após realizar a ação Atacar ou Magia, você pode se teleportar até 30 pés para um espaço desocupado que consiga ver."
+    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Imediatamente após realizar a ação Atacar ou Magia, você pode se teleportar até {{distance:30ft}} para um espaço desocupado que consiga ver."
   },
   "Boon of Fate": {
     "name": "Dádiva do Destino",
-    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Quando você ou uma criatura a até 60 pés obtiver sucesso ou falhar em um Teste de D20, role 2d4 e aplique o total como bônus ou penalidade à jogada. Recupere o uso ao rolar Iniciativa ou terminar um Descanso Curto ou Longo."
+    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Quando você ou uma criatura a até {{distance:60ft}} obtiver sucesso ou falhar em um Teste de D20, role 2d4 e aplique o total como bônus ou penalidade à jogada. Recupere o uso ao rolar Iniciativa ou terminar um Descanso Curto ou Longo."
   },
   "Boon of Irresistible Offense": {
     "name": "Dádiva da Ofensiva Irresistível",
@@ -65,6 +65,6 @@
   },
   "Boon of Truesight": {
     "name": "Dádiva da Visão Verdadeira",
-    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Ganhe Visão Verdadeira com alcance de 60 pés."
+    "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Ganhe Visão Verdadeira com alcance de {{distance:60ft}}."
   }
 }

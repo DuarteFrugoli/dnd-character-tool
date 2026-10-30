@@ -38,7 +38,7 @@
     },
     "Fast Movement": {
       "name": "Déplacement rapide",
-      "description": "Votre Vitesse augmente de 3 mètres tant que vous ne portez pas d'armure lourde."
+      "description": "Votre Vitesse augmente de {{distance:10ft}} tant que vous ne portez pas d'armure lourde."
     },
     "Feral Instinct": {
       "name": "Instinct sauvage",
@@ -50,7 +50,7 @@
     },
     "Brutal Strike": {
       "name": "Frappe brutale",
-      "description": "Quand vous utilisez Attaque téméraire, renoncez à l'Avantage qu'elle procure pour une attaque basée sur la Force et sans Désavantage. Si elle touche, ajoutez 1d10 dégâts du type de l'attaque et choisissez un effet de Frappe brutale : Coup puissant repousse la cible de 4,5 mètres et vous permet de la suivre sur une distance allant jusqu'à la moitié de votre Vitesse sans provoquer d'attaques d'opportunité ; Coup aux jarrets réduit sa Vitesse de 4,5 mètres jusqu'à votre prochain tour."
+      "description": "Quand vous utilisez Attaque téméraire, renoncez à l'Avantage qu'elle procure pour une attaque basée sur la Force et sans Désavantage. Si elle touche, ajoutez 1d10 dégâts du type de l'attaque et choisissez un effet de Frappe brutale : Coup puissant repousse la cible de {{distance:15ft}} et vous permet de la suivre sur une distance allant jusqu'à la moitié de votre Vitesse sans provoquer d'attaques d'opportunité ; Coup aux jarrets réduit sa Vitesse de {{distance:15ft}} jusqu'à votre prochain tour."
     },
     "Relentless Rage": {
       "name": "Rage implacable",
@@ -80,7 +80,7 @@
   "Bard": {
     "Bardic Inspiration": {
       "name": "Inspiration bardique",
-      "description": "Par une Action bonus, donnez un dé d'Inspiration bardique à une créature située à 18 mètres ou moins et capable de vous voir ou de vous entendre. Pendant 1 heure, après avoir raté un test de d20, elle peut lancer ce dé et l'ajouter au test. Une créature ne peut détenir qu'un tel dé. Votre nombre d'utilisations est égal à votre modificateur de Charisme (minimum 1), et vous les récupérez après un Repos long. Taille du dé : d6 aux niveaux 1-4, d8 aux niveaux 5-9, d10 aux niveaux 10-14 et d12 à partir du niveau 15."
+      "description": "Par une Action bonus, donnez un dé d'Inspiration bardique à une créature située à {{distance:60ft}} ou moins et capable de vous voir ou de vous entendre. Pendant 1 heure, après avoir raté un test de d20, elle peut lancer ce dé et l'ajouter au test. Une créature ne peut détenir qu'un tel dé. Votre nombre d'utilisations est égal à votre modificateur de Charisme (minimum 1), et vous les récupérez après un Repos long. Taille du dé : d6 aux niveaux 1-4, d8 aux niveaux 5-9, d10 aux niveaux 10-14 et d12 à partir du niveau 15."
     },
     "Spellcasting": {
       "name": "Incantation",
@@ -108,7 +108,7 @@
     },
     "Countercharm": {
       "name": "Contre-charme",
-      "description": "Par une Réaction, lorsque vous ou une créature à 9 mètres ou moins ratez une sauvegarde contre l'état Charmé ou Effrayé, vous pouvez faire relancer cette sauvegarde avec l'Avantage."
+      "description": "Par une Réaction, lorsque vous ou une créature à {{distance:30ft}} ou moins ratez une sauvegarde contre l'état Charmé ou Effrayé, vous pouvez faire relancer cette sauvegarde avec l'Avantage."
     },
     "Magical Secrets": {
       "name": "Secrets magiques",
@@ -124,7 +124,7 @@
     },
     "Words of Creation": {
       "name": "Paroles de création",
-      "description": "Mot de pouvoir guérisseur et Mot de pouvoir mortel sont toujours préparés. Lorsque vous lancez l'un ou l'autre, vous pouvez cibler une seconde créature à 3 mètres ou moins de la première."
+      "description": "Mot de pouvoir guérisseur et Mot de pouvoir mortel sont toujours préparés. Lorsque vous lancez l'un ou l'autre, vous pouvez cibler une seconde créature à {{distance:10ft}} ou moins de la première."
     }
   },
   "Cleric": {
@@ -138,7 +138,7 @@
     },
     "Channel Divinity": {
       "name": "Canalisation divine",
-      "description": "Vous obtenez Étincelle divine et Renvoi des morts-vivants, ainsi que les options de votre sous-classe. Vous pouvez utiliser la Canalisation divine deux fois au niveau 2, trois fois au niveau 6 et quatre fois au niveau 18 ; vous récupérez une utilisation après un Repos court et toutes après un Repos long. Par une action de Magie, Étincelle divine soigne une autre créature visible à 9 mètres ou moins de 1d8 + votre modificateur de Sagesse, ou lui inflige autant de dégâts nécrotiques ou radiants si elle rate une sauvegarde de Constitution (la moitié en cas de réussite) ; les dés passent à 2d8 au niveau 7, 3d8 au niveau 13 et 4d8 au niveau 18. Par une action de Magie, Renvoi des morts-vivants oblige les morts-vivants choisis à 9 mètres ou moins à effectuer une sauvegarde de Sagesse sous peine d'être Effrayés et Incapables d'agir pendant 1 minute ; ils cherchent à s'éloigner et l'effet prend fin s'ils subissent des dégâts ou si vous devenez Incapable d'agir ou mourez."
+      "description": "Vous obtenez Étincelle divine et Renvoi des morts-vivants, ainsi que les options de votre sous-classe. Vous pouvez utiliser la Canalisation divine deux fois au niveau 2, trois fois au niveau 6 et quatre fois au niveau 18 ; vous récupérez une utilisation après un Repos court et toutes après un Repos long. Par une action de Magie, Étincelle divine soigne une autre créature visible à {{distance:30ft}} ou moins de 1d8 + votre modificateur de Sagesse, ou lui inflige autant de dégâts nécrotiques ou radiants si elle rate une sauvegarde de Constitution (la moitié en cas de réussite) ; les dés passent à 2d8 au niveau 7, 3d8 au niveau 13 et 4d8 au niveau 18. Par une action de Magie, Renvoi des morts-vivants oblige les morts-vivants choisis à {{distance:30ft}} ou moins à effectuer une sauvegarde de Sagesse sous peine d'être Effrayés et Incapables d'agir pendant 1 minute ; ils cherchent à s'éloigner et l'effet prend fin s'ils subissent des dégâts ou si vous devenez Incapable d'agir ou mourez."
     },
     "Cleric Subclass": {
       "name": "Sous-classe de clerc",
@@ -162,7 +162,7 @@
     },
     "Improved Blessed Strikes": {
       "name": "Frappes bénies améliorées",
-      "description": "Les dégâts supplémentaires de Frappe divine passent à 2d8. Si vous avez choisi Incantation puissante, infliger des dégâts à une créature avec un tour de magie de clerc peut accorder à vous-même ou à un allié à 18 mètres ou moins des points de vie temporaires égaux au double de votre modificateur de Sagesse."
+      "description": "Les dégâts supplémentaires de Frappe divine passent à 2d8. Si vous avez choisi Incantation puissante, infliger des dégâts à une créature avec un tour de magie de clerc peut accorder à vous-même ou à un allié à {{distance:60ft}} ou moins des points de vie temporaires égaux au double de votre modificateur de Sagesse."
     },
     "Epic Boon": {
       "name": "Don épique",
@@ -212,7 +212,7 @@
     },
     "Improved Elemental Fury": {
       "name": "Fureur élémentaire améliorée",
-      "description": "Incantation puissante ajoute 90 mètres à la portée d'un tour de magie de druide qui atteint normalement au moins 3 mètres. Les dégâts supplémentaires de Frappe primordiale passent à 2d8."
+      "description": "Incantation puissante ajoute {{distance:300ft}} à la portée d'un tour de magie de druide qui atteint normalement au moins {{distance:10ft}}. Les dégâts supplémentaires de Frappe primordiale passent à 2d8."
     },
     "Beast Spells": {
       "name": "Sorts en forme de bête",
@@ -304,7 +304,7 @@
     },
     "Unarmored Movement": {
       "name": "Déplacement sans armure",
-      "description": "Sans armure ni bouclier, votre Vitesse augmente de 3 mètres aux niveaux 2-5, de 4,5 mètres aux niveaux 6-9, de 6 mètres aux niveaux 10-13, de 7,5 mètres aux niveaux 14-17 et de 9 mètres à partir du niveau 18."
+      "description": "Sans armure ni bouclier, votre Vitesse augmente de {{distance:10ft}} aux niveaux 2-5, de {{distance:15ft}} aux niveaux 6-9, de {{distance:20ft}} aux niveaux 10-13, de {{distance:25ft}} aux niveaux 14-17 et de {{distance:30ft}} à partir du niveau 18."
     },
     "Uncanny Metabolism": {
       "name": "Métabolisme extraordinaire",
@@ -312,7 +312,7 @@
     },
     "Deflect Attacks": {
       "name": "Déviation des attaques",
-      "description": "Par une Réaction lorsqu'une attaque vous touche et inflige des dégâts contondants, perforants ou tranchants, réduisez les dégâts totaux de 1d10 + votre modificateur de Dextérité + votre niveau de moine. S'ils sont réduits à 0, dépensez 1 point de focalisation pour les rediriger : une créature visible à 1,5 mètre ou moins pour une attaque de corps à corps, ou à 18 mètres ou moins sans abri total pour une attaque à distance, effectue une sauvegarde de Dextérité sous peine de subir des dégâts du type de l'attaque égaux à deux dés d'Arts martiaux + votre modificateur de Dextérité."
+      "description": "Par une Réaction lorsqu'une attaque vous touche et inflige des dégâts contondants, perforants ou tranchants, réduisez les dégâts totaux de 1d10 + votre modificateur de Dextérité + votre niveau de moine. S'ils sont réduits à 0, dépensez 1 point de focalisation pour les rediriger : une créature visible à {{distance:5ft}} ou moins pour une attaque de corps à corps, ou à {{distance:60ft}} ou moins sans abri total pour une attaque à distance, effectue une sauvegarde de Dextérité sous peine de subir des dégâts du type de l'attaque égaux à deux dés d'Arts martiaux + votre modificateur de Dextérité."
     },
     "Monk Subclass": {
       "name": "Sous-classe de moine",
@@ -348,7 +348,7 @@
     },
     "Heightened Focus": {
       "name": "Focalisation renforcée",
-      "description": "Pour 1 point de focalisation, Déluge de coups permet trois Frappes à mains nues ; Défense patiente accorde aussi des points de vie temporaires égaux à deux dés d'Arts martiaux ; Pas du vent peut transporter une créature consentante de taille G ou inférieure située à 1,5 mètre ou moins sans provoquer d'attaques d'opportunité."
+      "description": "Pour 1 point de focalisation, Déluge de coups permet trois Frappes à mains nues ; Défense patiente accorde aussi des points de vie temporaires égaux à deux dés d'Arts martiaux ; Pas du vent peut transporter une créature consentante de taille G ou inférieure située à {{distance:5ft}} ou moins sans provoquer d'attaques d'opportunité."
     },
     "Self-Restoration": {
       "name": "Restauration de soi",
@@ -402,7 +402,7 @@
     },
     "Channel Divinity": {
       "name": "Canalisation divine",
-      "description": "Vous obtenez Sens divin et les options de Canalisation divine de votre sous-classe. Vous commencez avec deux utilisations, qui passent à trois au niveau 11 de paladin ; vous en récupérez une après un Repos court et toutes après un Repos long. Sens divin est une Action bonus révélant pendant 10 minutes les célestes, fiélons, morts-vivants et lieux ou objets consacrés ou profanés à 18 mètres ou moins, jusqu'à ce que vous deveniez Incapable d'agir."
+      "description": "Vous obtenez Sens divin et les options de Canalisation divine de votre sous-classe. Vous commencez avec deux utilisations, qui passent à trois au niveau 11 de paladin ; vous en récupérez une après un Repos court et toutes après un Repos long. Sens divin est une Action bonus révélant pendant 10 minutes les célestes, fiélons, morts-vivants et lieux ou objets consacrés ou profanés à {{distance:60ft}} ou moins, jusqu'à ce que vous deveniez Incapable d'agir."
     },
     "Paladin Subclass": {
       "name": "Sous-classe de paladin",
@@ -422,11 +422,11 @@
     },
     "Aura of Protection": {
       "name": "Aura de protection",
-      "description": "Vous et vos alliés dans votre émanation de 3 mètres gagnez un bonus aux sauvegardes égal à votre modificateur de Charisme (minimum +1) tant que vous n'êtes pas Incapable d'agir. Une créature ne bénéficie que d'une seule Aura de protection de paladin à la fois."
+      "description": "Vous et vos alliés dans votre émanation de {{distance:10ft}} gagnez un bonus aux sauvegardes égal à votre modificateur de Charisme (minimum +1) tant que vous n'êtes pas Incapable d'agir. Une créature ne bénéficie que d'une seule Aura de protection de paladin à la fois."
     },
     "Abjure Foes": {
       "name": "Abjuration des ennemis",
-      "description": "Par une action de Magie, dépensez une utilisation de Canalisation divine pour cibler au plus autant de créatures que votre modificateur de Charisme (minimum une) à 18 mètres ou moins. Chacune effectue une sauvegarde de Sagesse sous peine d'être Effrayée pendant 1 minute ou jusqu'à subir des dégâts ; à chacun de ses tours, elle peut se déplacer, effectuer une action ou une Action bonus, mais une seule de ces options."
+      "description": "Par une action de Magie, dépensez une utilisation de Canalisation divine pour cibler au plus autant de créatures que votre modificateur de Charisme (minimum une) à {{distance:60ft}} ou moins. Chacune effectue une sauvegarde de Sagesse sous peine d'être Effrayée pendant 1 minute ou jusqu'à subir des dégâts ; à chacun de ses tours, elle peut se déplacer, effectuer une action ou une Action bonus, mais une seule de ces options."
     },
     "Aura of Courage": {
       "name": "Aura de courage",
@@ -442,7 +442,7 @@
     },
     "Aura Expansion": {
       "name": "Extension d'aura",
-      "description": "Votre Aura de protection devient une émanation de 9 mètres."
+      "description": "Votre Aura de protection devient une émanation de {{distance:30ft}}."
     },
     "Epic Boon": {
       "name": "Don épique",
@@ -484,7 +484,7 @@
     },
     "Roving": {
       "name": "Marcheur",
-      "description": "Votre Vitesse augmente de 3 mètres tant que vous ne portez pas d'armure lourde. Vous gagnez une Vitesse d'escalade et une Vitesse de nage égales à votre Vitesse."
+      "description": "Votre Vitesse augmente de {{distance:10ft}} tant que vous ne portez pas d'armure lourde. Vous gagnez une Vitesse d'escalade et une Vitesse de nage égales à votre Vitesse."
     },
     "Expertise": {
       "name": "Expertise",
@@ -508,7 +508,7 @@
     },
     "Feral Senses": {
       "name": "Sens sauvages",
-      "description": "Vous gagnez la Vision aveugle dans un rayon de 9 mètres."
+      "description": "Vous gagnez la Vision aveugle dans un rayon de {{distance:30ft}}."
     },
     "Epic Boon": {
       "name": "Don épique",
@@ -526,7 +526,7 @@
     },
     "Sneak Attack": {
       "name": "Attaque sournoise",
-      "description": "Une fois par tour, infligez des dégâts supplémentaires avec une attaque d'arme de Finesse ou à distance lorsque l'attaque a l'Avantage. L'Avantage n'est pas nécessaire si un allié se trouve à 1,5 mètre ou moins de la cible, n'est pas Incapable d'agir et que votre jet n'a pas le Désavantage. Les dégâts supplémentaires sont de 1d6 au niveau 1 et augmentent de 1d6 à chaque niveau impair de roublard, jusqu'à 10d6 au niveau 19."
+      "description": "Une fois par tour, infligez des dégâts supplémentaires avec une attaque d'arme de Finesse ou à distance lorsque l'attaque a l'Avantage. L'Avantage n'est pas nécessaire si un allié se trouve à {{distance:5ft}} ou moins de la cible, n'est pas Incapable d'agir et que votre jet n'a pas le Désavantage. Les dégâts supplémentaires sont de 1d6 au niveau 1 et augmentent de 1d6 à chaque niveau impair de roublard, jusqu'à 10d6 au niveau 19."
     },
     "Thieves' Cant": {
       "name": "Argot des voleurs",

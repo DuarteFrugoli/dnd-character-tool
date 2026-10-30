@@ -7,7 +7,7 @@
   "Athlete": {
     "name": "Athlet",
     "prerequisite": null,
-    "description": "Sie haben ein umfangreiches körperliches Training absolviert, um die folgenden Vorteile zu erzielen:\n• Erhöhen Sie Ihren Stärke- oder Geschicklichkeitswert um 1 auf maximal 20.\n• Wenn Sie in Bauchlage sind, beansprucht das Aufstehen nur 1,5 Meter Ihrer Bewegung.\n• Klettern kostet Sie keine zusätzliche Bewegung.\n• Sie können einen rennenden Weitsprung oder einen rennenden Hochsprung ausführen, nachdem Sie sich zu Fuß nur 5 Fuß statt 10 Fuß bewegt haben."
+    "description": "Sie haben ein umfangreiches körperliches Training absolviert, um die folgenden Vorteile zu erzielen:\n• Erhöhen Sie Ihren Stärke- oder Geschicklichkeitswert um 1 auf maximal 20.\n• Wenn Sie in Bauchlage sind, beansprucht das Aufstehen nur 1,5 Meter Ihrer Bewegung.\n• Klettern kostet Sie keine zusätzliche Bewegung.\n• Sie können einen rennenden Weitsprung oder einen rennenden Hochsprung ausführen, nachdem Sie sich zu Fuß nur 1,5 Meter statt 3 Meter bewegt haben."
   },
   "Actor": {
     "name": "Schauspieler",
@@ -17,12 +17,12 @@
   "Charger": {
     "name": "Ladegerät",
     "prerequisite": null,
-    "description": "Wenn Sie Ihre Aktion zum Sprinten verwenden, können Sie eine Bonusaktion verwenden, um einen Nahkampfwaffenangriff durchzuführen oder eine Kreatur zu stoßen. Wenn Sie sich unmittelbar vor dem Ausführen dieser Bonusaktion mindestens 10 Fuß in einer geraden Linie bewegen, erhalten Sie entweder einen Bonus von +5 auf den Schadenswurf des Angriffs (wenn Sie sich für einen Nahkampfangriff und einen Treffer entschieden haben) oder Sie stoßen das Ziel bis zu 10 Fuß von Ihnen weg (wenn Sie sich für einen Stoß entschieden haben und es gelingt)."
+    "description": "Wenn Sie Ihre Aktion zum Sprinten verwenden, können Sie eine Bonusaktion verwenden, um einen Nahkampfwaffenangriff durchzuführen oder eine Kreatur zu stoßen. Wenn Sie sich unmittelbar vor dem Ausführen dieser Bonusaktion mindestens 3 Meter in einer geraden Linie bewegen, erhalten Sie entweder einen Bonus von +5 auf den Schadenswurf des Angriffs (wenn Sie sich für einen Nahkampfangriff und einen Treffer entschieden haben) oder Sie stoßen das Ziel bis zu 3 Meter von Ihnen weg (wenn Sie sich für einen Stoß entschieden haben und es gelingt)."
   },
   "Crossbow Expert": {
     "name": "Armbrustexperte",
     "prerequisite": null,
-    "description": "Durch ausgiebiges Üben mit der Armbrust erzielen Sie folgende Vorteile:\n• Sie ignorieren die Ladequalität von Armbrüsten, mit denen Sie vertraut sind.\n• Wenn Sie sich in einem Umkreis von 5 Fuß um eine feindliche Kreatur aufhalten, bedeutet dies keinen Nachteil für Ihre Fernkampfangriffswürfe.\n• Wenn Sie die Angriffsaktion verwenden und mit einer Einhandwaffe angreifen, können Sie eine Bonusaktion verwenden, um mit einer Handarmbrust anzugreifen, die Sie in der Hand halten."
+    "description": "Durch ausgiebiges Üben mit der Armbrust erzielen Sie folgende Vorteile:\n• Sie ignorieren die Ladequalität von Armbrüsten, mit denen Sie vertraut sind.\n• Wenn Sie sich in einem Umkreis von 1,5 Metern um eine feindliche Kreatur aufhalten, bedeutet dies keinen Nachteil für Ihre Fernkampfangriffswürfe.\n• Wenn Sie die Angriffsaktion verwenden und mit einer Einhandwaffe angreifen, können Sie eine Bonusaktion verwenden, um mit einer Handarmbrust anzugreifen, die Sie in der Hand halten."
   },
   "Defensive Duelist": {
     "name": "Defensiver Duellant",
@@ -77,7 +77,7 @@
   "Inspiring Leader": {
     "name": "Inspirierender Anführer",
     "prerequisite": "Charisma 13 oder höher",
-    "description": "Sie können 10 Minuten damit verbringen, Ihre Gefährten zu inspirieren und ihre Kampfesentschlossenheit zu stärken. Wenn Sie dies tun, wählen Sie bis zu sechs freundliche Kreaturen (zu denen Sie selbst gehören können) im Umkreis von 30 Fuß um Sie aus, die Sie sehen oder hören und verstehen können. Jede Kreatur kann vorübergehende Trefferpunkte in Höhe deiner Stufe + deinem Charisma-Modifikator erhalten. Eine Kreatur kann durch dieses Talent keine temporären Trefferpunkte mehr erhalten, bis sie eine kurze oder lange Pause beendet hat."
+    "description": "Sie können 10 Minuten damit verbringen, Ihre Gefährten zu inspirieren und ihre Kampfesentschlossenheit zu stärken. Wenn Sie dies tun, wählen Sie bis zu sechs freundliche Kreaturen (zu denen Sie selbst gehören können) im Umkreis von 9 Metern um Sie aus, die Sie sehen oder hören und verstehen können. Jede Kreatur kann vorübergehende Trefferpunkte in Höhe deiner Stufe + deinem Charisma-Modifikator erhalten. Eine Kreatur kann durch dieses Talent keine temporären Trefferpunkte mehr erhalten, bis sie eine kurze oder lange Pause beendet hat."
   },
   "Keen Mind": {
     "name": "Scharfer Verstand",
@@ -102,7 +102,7 @@
   "Mage Slayer": {
     "name": "Magiertöter",
     "prerequisite": null,
-    "description": "Du hast Techniken geübt, die im Nahkampf gegen Zauberer nützlich sind, und dir dabei die folgenden Vorteile verschafft:\n• Wenn eine Kreatur in einem Umkreis von 5 Fuß um dich herum einen Zauber wirkt, kannst du deine Reaktion nutzen, um einen Nahkampfwaffenangriff gegen diese Kreatur durchzuführen.\n• Wenn du einer Kreatur Schaden zufügst, die sich auf einen Zauber konzentriert, hat diese Kreatur einen Nachteil bei dem Rettungswurf, den sie durchführt, um ihre Konzentration aufrechtzuerhalten.\n• Du hast einen Vorteil bei Rettungswürfen gegen Zauber, die von Kreaturen in einem Umkreis von 5 Fuß um dich gewirkt werden."
+    "description": "Du hast Techniken geübt, die im Nahkampf gegen Zauberer nützlich sind, und dir dabei die folgenden Vorteile verschafft:\n• Wenn eine Kreatur in einem Umkreis von 1,5 Metern um dich herum einen Zauber wirkt, kannst du deine Reaktion nutzen, um einen Nahkampfwaffenangriff gegen diese Kreatur durchzuführen.\n• Wenn du einer Kreatur Schaden zufügst, die sich auf einen Zauber konzentriert, hat diese Kreatur einen Nachteil bei dem Rettungswurf, den sie durchführt, um ihre Konzentration aufrechtzuerhalten.\n• Du hast einen Vorteil bei Rettungswürfen gegen Zauber, die von Kreaturen in einem Umkreis von 1,5 Metern um dich gewirkt werden."
   },
   "Magic Initiate": {
     "name": "Magischer Eingeweihter",
@@ -122,7 +122,7 @@
   "Mobile": {
     "name": "Mobile",
     "prerequisite": null,
-    "description": "Du bist außergewöhnlich schnell und wendig. Sie profitieren von folgenden Vorteilen:\n• Ihre Geschwindigkeit erhöht sich um 10 Fuß.\n• Wenn Sie die Sprint-Aktion verwenden, kostet Sie schwieriges Gelände in dieser Runde keine zusätzliche Bewegung.\n• Wenn du einen Nahkampfangriff gegen eine Kreatur ausführst, provozierst du für den Rest des Zuges keine Gelegenheitsangriffe dieser Kreatur, unabhängig davon, ob der Angriff trifft oder nicht."
+    "description": "Du bist außergewöhnlich schnell und wendig. Sie profitieren von folgenden Vorteilen:\n• Ihre Geschwindigkeit erhöht sich um 3 Meter.\n• Wenn Sie die Sprint-Aktion verwenden, kostet Sie schwieriges Gelände in dieser Runde keine zusätzliche Bewegung.\n• Wenn du einen Nahkampfangriff gegen eine Kreatur ausführst, provozierst du für den Rest des Zuges keine Gelegenheitsangriffe dieser Kreatur, unabhängig davon, ob der Angriff trifft oder nicht."
   },
   "Moderately Armored": {
     "name": "Mäßig gepanzert",
@@ -162,7 +162,7 @@
   "Sentinel": {
     "name": "Wächter",
     "prerequisite": null,
-    "description": "Sie beherrschen die Techniken, um jeden Verlust in der Abwehr eines Feindes auszunutzen und sich die folgenden Vorteile zu sichern:\n• Wenn du eine Kreatur mit einem Gelegenheitsangriff triffst, wird die Geschwindigkeit der Kreatur für den Rest der Runde auf 0 gesetzt.\n• Kreaturen provozieren Gelegenheitsangriffe von dir, selbst wenn sie die Aktion „Entfernen“ ausführen, bevor sie deine Reichweite verlassen.\n• Wenn eine Kreatur im Umkreis von 5 Fuß um dich herum einen Angriff gegen ein anderes Ziel als dich ausführt (und dieses Ziel nicht über dieses Talent verfügt), kannst du deine Reaktion nutzen, um einen Nahkampfwaffenangriff gegen die angreifende Kreatur durchzuführen."
+    "description": "Sie beherrschen die Techniken, um jeden Verlust in der Abwehr eines Feindes auszunutzen und sich die folgenden Vorteile zu sichern:\n• Wenn du eine Kreatur mit einem Gelegenheitsangriff triffst, wird die Geschwindigkeit der Kreatur für den Rest der Runde auf 0 gesetzt.\n• Kreaturen provozieren Gelegenheitsangriffe von dir, selbst wenn sie die Aktion „Entfernen“ ausführen, bevor sie deine Reichweite verlassen.\n• Wenn eine Kreatur im Umkreis von 1,5 Metern um dich herum einen Angriff gegen ein anderes Ziel als dich ausführt (und dieses Ziel nicht über dieses Talent verfügt), kannst du deine Reaktion nutzen, um einen Nahkampfwaffenangriff gegen die angreifende Kreatur durchzuführen."
   },
   "Sharpshooter": {
     "name": "Scharfschütze",
@@ -172,7 +172,7 @@
   "Shield Master": {
     "name": "Schildmeister",
     "prerequisite": null,
-    "description": "Sie verwenden Schilde nicht nur zum Schutz, sondern auch zum Angriff. Wenn Sie einen Schild tragen, erhalten Sie folgende Vorteile:\n• Wenn Sie in Ihrem Zug die Angriffsaktion ausführen, können Sie mit einer Bonusaktion versuchen, mit Ihrem Schild eine Kreatur in einem Umkreis von 5 Fuß um Sie herumzudrängen.\n• Wenn Sie nicht handlungsunfähig sind, können Sie den AC-Bonus Ihres Schildes zu jedem Geschicklichkeitsrettungswurf hinzufügen, den Sie gegen einen Zauber oder einen anderen schädlichen Effekt ausführen, der nur Sie als Ziel hat.\n• Wenn Sie einem Effekt ausgesetzt sind, der es Ihnen ermöglicht, bei einem Geschicklichkeitsrettungswurf nur den halben Schaden zu erleiden, können Sie Ihre Reaktion nutzen, um keinen Schaden zu erleiden, wenn Ihnen der Rettungswurf gelingt, indem Sie Ihren Schild zwischen sich und die Quelle des Effekts legen."
+    "description": "Sie verwenden Schilde nicht nur zum Schutz, sondern auch zum Angriff. Wenn Sie einen Schild tragen, erhalten Sie folgende Vorteile:\n• Wenn Sie in Ihrem Zug die Angriffsaktion ausführen, können Sie mit einer Bonusaktion versuchen, mit Ihrem Schild eine Kreatur in einem Umkreis von 1,5 Metern um Sie herumzudrängen.\n• Wenn Sie nicht handlungsunfähig sind, können Sie den AC-Bonus Ihres Schildes zu jedem Geschicklichkeitsrettungswurf hinzufügen, den Sie gegen einen Zauber oder einen anderen schädlichen Effekt ausführen, der nur Sie als Ziel hat.\n• Wenn Sie einem Effekt ausgesetzt sind, der es Ihnen ermöglicht, bei einem Geschicklichkeitsrettungswurf nur den halben Schaden zu erleiden, können Sie Ihre Reaktion nutzen, um keinen Schaden zu erleiden, wenn Ihnen der Rettungswurf gelingt, indem Sie Ihren Schild zwischen sich und die Quelle des Effekts legen."
   },
   "Skilled": {
     "name": "Geschickt",

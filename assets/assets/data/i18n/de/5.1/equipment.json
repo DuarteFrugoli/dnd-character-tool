@@ -255,7 +255,7 @@
   },
   "Caltrops (bag of 20)": {
     "name": "Krähenfüße (Beutel mit 20 Stück)",
-    "description": "Über eine Fläche von 1,50 m verteilen. Kreaturen, die sich hindurchbewegen, müssen einen Geschicklichkeitswurf gegen SG 15 schaffen oder anhalten und 1 Stichschaden erleiden (die Geschwindigkeit wird bis zur Heilung um 10 Fuß verringert)."
+    "description": "Über eine Fläche von 1,50 m verteilen. Kreaturen, die sich hindurchbewegen, müssen einen Geschicklichkeitswurf gegen SG 15 schaffen oder anhalten und 1 Stichschaden erleiden (die Geschwindigkeit wird bis zur Heilung um 3 Meter verringert)."
   },
   "Candle": {
     "name": "Kerze",
@@ -274,7 +274,7 @@
     "description": "Ein Gefäß, das zum Verbrennen von Weihrauch verwendet wurde."
   },
   "Chain (10 feet)": {
-    "name": "Kette (10 Fuß)",
+    "name": "Kette (3 Meter)",
     "description": "Hat 10 Trefferpunkte. Kann mit einem Stärkewurf von DC 20 gesprengt werden."
   },
   "Chalk (1 piece)": {
@@ -374,20 +374,20 @@
     "description": "Hält 1 Gallone Flüssigkeit."
   },
   "Ladder (10-foot)": {
-    "name": "Leiter (10 Fuß)",
-    "description": "Eine 10 Fuß lange Holzleiter."
+    "name": "Leiter (3 Meter)",
+    "description": "Eine 3 Meter lange Holzleiter."
   },
   "Lamp": {
     "name": "Lampe",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Spendet helles Licht in einem Radius von 15 Fuß und gedämpftes Licht für weitere 30 Fuß."
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Spendet helles Licht in einem Radius von 4,5 Metern und gedämpftes Licht für weitere 9 Meter."
   },
   "Lantern, bullseye": {
     "name": "Laterne, Volltreffer",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). 60-Fuß-Kegel aus hellem Licht, zusätzlich 60 Fuß gedämpftes Licht."
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). 18-Meter-Kegel aus hellem Licht, zusätzlich 18 Meter gedämpftes Licht."
   },
   "Lantern, hooded": {
     "name": "Laterne, mit Kapuze",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Helles Licht mit einem Radius von 30 Fuß, zusätzliches schwaches Licht mit einem Radius von 30 Fuß. Kann mit einer Haube abgedeckt werden, um das Licht auf 1,5 m zu reduzieren."
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Helles Licht mit einem Radius von 9 Metern, zusätzliches schwaches Licht mit einem Radius von 9 Metern. Kann mit einer Haube abgedeckt werden, um das Licht auf 1,5 m zu reduzieren."
   },
   "Lock": {
     "name": "Sperren",
@@ -438,8 +438,8 @@
     "description": "Auf eine Hieb- oder Stichwaffe auftragen. Einer getroffenen Kreatur muss ein Konstitutionswurf gegen SG 10 gelingen, sonst erleidet sie 1W4 Giftschaden. Nach 1 Minute verliert das Gift seine Wirksamkeit."
   },
   "Pole (10-foot)": {
-    "name": "Stange (10 Fuß)",
-    "description": "Eine 10 Fuß lange Holzstange."
+    "name": "Stange (3 Meter)",
+    "description": "Eine 3 Meter lange Holzstange."
   },
   "Pot, iron": {
     "name": "Topf, Eisen",
@@ -462,11 +462,11 @@
     "description": "Trockene Lebensmittel, die für längere Reisen geeignet sind, einschließlich Trockenfrüchte, Trockenfrüchte, Trockenfrüchte und Nüsse."
   },
   "Rope, hempen (50 feet)": {
-    "name": "Seil, Hanf (50 Fuß)",
+    "name": "Seil, Hanf (15 Meter)",
     "description": "Hat 2 Trefferpunkte und kann mit einem Stärkewurf von DC 17 gesprengt werden."
   },
   "Rope, silk (50 feet)": {
-    "name": "Seil, Seide (50 Fuß)",
+    "name": "Seil, Seide (15 Meter)",
     "description": "Hat 2 Trefferpunkte und kann mit einem Stärkewurf von DC 17 gesprengt werden."
   },
   "Sack": {
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "Signalpfeife",
-    "description": "Eine kleine Metallpfeife, die bis zu 600 Fuß entfernt hörbar ist."
+    "description": "Eine kleine Metallpfeife, die bis zu 180 Meter entfernt hörbar ist."
   },
   "Signet Ring": {
     "name": "Siegelring",
@@ -514,8 +514,8 @@
     "description": "Durch das Fernglas betrachtete Objekte werden auf das Doppelte ihrer Größe vergrößert."
   },
   "String (10 feet)": {
-    "name": "Schnur (10 Fuß)",
-    "description": "Eine 10 Fuß lange Schnur."
+    "name": "Schnur (3 Meter)",
+    "description": "Eine 3 Meter lange Schnur."
   },
   "Tent, two-person": {
     "name": "Zelt, zwei Personen",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "Fackel",
-    "description": "Brennt 1 Stunde. Helles Licht in einem Radius von 20 Fuß, gedämpftes Licht in weiteren 20 Fuß. Kann als improvisierte Waffe verwendet werden (1W4 Feuerschaden)."
+    "description": "Brennt 1 Stunde. Helles Licht in einem Radius von 6 Metern, gedämpftes Licht in weiteren 6 Meter. Kann als improvisierte Waffe verwendet werden (1W4 Feuerschaden)."
   },
   "Vial": {
     "name": "Phiole",

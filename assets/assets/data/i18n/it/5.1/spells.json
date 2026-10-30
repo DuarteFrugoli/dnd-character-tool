@@ -1270,7 +1270,7 @@
   },
   "Wall of Force": {
     "name": "Muro di forza",
-    "description": "Un invisibile muro di forza emerge in un punto a gittata scelto dall'incantatore. Il muro appare nell'orientamento scelto, come barriera orizzontale o verticale oppure ad angolo. Può galleggiare liberamente o appoggiarsi su una superficie solida. Puoi modellarlo in una cupola emisferica o in una sfera con un raggio massimo di 3 metri, oppure puoi modellare una superficie piana composta da dieci pannelli di 3 metri per 3 metri. Ogni pannello deve essere contiguo ad un altro pannello. In qualsiasi forma, il muro ha uno spessore di 1/4 di pollice. Dura per tutta la durata.",
+    "description": "Un invisibile muro di forza emerge in un punto a gittata scelto dall'incantatore. Il muro appare nell'orientamento scelto, come barriera orizzontale o verticale oppure ad angolo. Può galleggiare liberamente o appoggiarsi su una superficie solida. Puoi modellarlo in una cupola emisferica o in una sfera con un raggio massimo di 3 metri, oppure puoi modellare una superficie piana composta da dieci pannelli di 3 metri per 3 metri. Ogni pannello deve essere contiguo ad un altro pannello. In qualsiasi forma, il muro ha uno spessore di 6 millimetri. Dura per tutta la durata.",
     "higherLevels": null,
     "material": "un pizzico di polvere ottenuta frantumando una pietra preziosa trasparente"
   },

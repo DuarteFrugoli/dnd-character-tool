@@ -1,7 +1,7 @@
 {
   "Darkvision": {
     "name": "Vision dans le noir",
-    "description": "Vous voyez dans la Lumière faible à portée de ce trait comme s'il s'agissait de Lumière vive, et dans l'Obscurité comme s'il s'agissait de Lumière faible, mais seulement en nuances de gris. La portée est de 120 pieds pour les Nains, les Orques et les Elfes drows, et de 60 pieds pour les autres espèces indiquées."
+    "description": "Vous voyez dans la Lumière faible à portée de ce trait comme s'il s'agissait de Lumière vive, et dans l'Obscurité comme s'il s'agissait de Lumière faible, mais seulement en nuances de gris. La portée est de 36 mètres pour les Nains, les Orques et les Elfes drows, et de 18 mètres pour les autres espèces indiquées."
   },
   "Draconic Ancestry": {
     "name": "Ascendance draconique",
@@ -9,7 +9,7 @@
   },
   "Breath Weapon": {
     "name": "Souffle",
-    "description": "Lors de l'action Attaquer, remplacez une attaque par un Cône de 15 pieds ou une Ligne de 30 pieds sur 5 pieds. Les créatures dans la zone effectuent un jet de sauvegarde de Dextérité contre un DD de 8 + votre modificateur de Constitution + bonus de maîtrise. Elles subissent des dégâts du type de votre ascendance en cas d'échec, ou la moitié en cas de réussite. Les dégâts sont de 1d10, puis de 2d10 au niveau 5 du personnage, 3d10 au niveau 11 et 4d10 au niveau 17. Utilisations égales à votre bonus de maîtrise par Repos long."
+    "description": "Lors de l'action Attaquer, remplacez une attaque par un Cône de 4,5 mètres ou une Ligne de 9 mètres sur 1,5 mètre. Les créatures dans la zone effectuent un jet de sauvegarde de Dextérité contre un DD de 8 + votre modificateur de Constitution + bonus de maîtrise. Elles subissent des dégâts du type de votre ascendance en cas d'échec, ou la moitié en cas de réussite. Les dégâts sont de 1d10, puis de 2d10 au niveau 5 du personnage, 3d10 au niveau 11 et 4d10 au niveau 17. Utilisations égales à votre bonus de maîtrise par Repos long."
   },
   "Damage Resistance": {
     "name": "Résistance aux dégâts",
@@ -29,7 +29,7 @@
   },
   "Stonecunning": {
     "name": "Connaissance de la pierre",
-    "description": "En touchant une pierre ou en vous tenant dessus, utilisez une Action bonus pour obtenir la perception des vibrations sur 60 pieds pendant 10 minutes. Utilisations égales à votre bonus de maîtrise par Repos long."
+    "description": "En touchant une pierre ou en vous tenant dessus, utilisez une Action bonus pour obtenir la perception des vibrations sur 18 mètres pendant 10 minutes. Utilisations égales à votre bonus de maîtrise par Repos long."
   },
   "Elven Lineage": {
     "name": "Lignée elfique",
@@ -69,7 +69,7 @@
   },
   "Cloud's Jaunt": {
     "name": "Pas des nuages",
-    "description": "Par une Action bonus, téléportez-vous jusqu'à 30 pieds vers un espace inoccupé que vous voyez."
+    "description": "Par une Action bonus, téléportez-vous jusqu'à 9 mètres vers un espace inoccupé que vous voyez."
   },
   "Fire's Burn": {
     "name": "Brûlure du feu",
@@ -77,7 +77,7 @@
   },
   "Frost's Chill": {
     "name": "Froid du givre",
-    "description": "Quand un jet d'attaque touche et inflige des dégâts, infligez 1d6 dégâts de Froid supplémentaires et réduisez la Vitesse de la cible de 10 pieds jusqu'au début de votre prochain tour."
+    "description": "Quand un jet d'attaque touche et inflige des dégâts, infligez 1d6 dégâts de Froid supplémentaires et réduisez la Vitesse de la cible de 3 mètres jusqu'au début de votre prochain tour."
   },
   "Hill's Tumble": {
     "name": "Chute des collines",
@@ -89,11 +89,11 @@
   },
   "Storm's Thunder": {
     "name": "Tonnerre de la tempête",
-    "description": "Lorsqu'une créature à 60 pieds ou moins vous blesse, utilisez une Réaction pour lui infliger 1d8 dégâts de Tonnerre."
+    "description": "Lorsqu'une créature à 18 mètres ou moins vous blesse, utilisez une Réaction pour lui infliger 1d8 dégâts de Tonnerre."
   },
   "Large Form": {
     "name": "Grande forme",
-    "description": "À partir du niveau 5 du personnage, utilisez une Action bonus pour devenir de taille G pendant 10 minutes au maximum si l'espace le permet. Vous avez l'Avantage aux tests de Force et votre Vitesse augmente de 10 pieds. Une fois par Repos long."
+    "description": "À partir du niveau 5 du personnage, utilisez une Action bonus pour devenir de taille G pendant 10 minutes au maximum si l'espace le permet. Vous avez l'Avantage aux tests de Force et votre Vitesse augmente de 3 mètres. Une fois par Repos long."
   },
   "Powerful Build": {
     "name": "Carrure puissante",

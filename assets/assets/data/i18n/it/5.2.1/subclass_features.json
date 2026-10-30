@@ -11,11 +11,11 @@
       },
       "Retaliation": {
         "name": "Ritorsione",
-        "description": "Quando una creatura entro 5 piedi ti infligge danni, puoi usare la Reazione per effettuare contro di essa un attacco da mischia con un'arma o un Colpo Senz'Armi."
+        "description": "Quando una creatura entro 1,5 metri ti infligge danni, puoi usare la Reazione per effettuare contro di essa un attacco da mischia con un'arma o un Colpo Senz'Armi."
       },
       "Intimidating Presence": {
         "name": "Presenza Intimidatoria",
-        "description": "Con un'Azione Bonus, le creature scelte da te in un'Emanazione di 30 piedi effettuano un tiro salvezza su Saggezza (CD 8 + modificatore di Forza + Bonus di Competenza) o sono Spaventate per 1 minuto; ripetono il tiro alla fine di ogni turno. Una volta per Riposo Lungo, oppure spendi un uso di Ira per recuperare il privilegio."
+        "description": "Con un'Azione Bonus, le creature scelte da te in un'Emanazione di 9 metri effettuano un tiro salvezza su Saggezza (CD 8 + modificatore di Forza + Bonus di Competenza) o sono Spaventate per 1 minuto; ripetono il tiro alla fine di ogni turno. Una volta per Riposo Lungo, oppure spendi un uso di Ira per recuperare il privilegio."
       }
     }
   },
@@ -27,7 +27,7 @@
       },
       "Cutting Words": {
         "name": "Parole Taglienti",
-        "description": "Quando una creatura visibile entro 60 piedi tira danni o supera una prova di caratteristica o un tiro per colpire, usa la Reazione e un'Ispirazione Bardica. Sottrai il risultato del tuo dado di Ispirazione Bardica dal tiro, potendo trasformare un successo in fallimento."
+        "description": "Quando una creatura visibile entro 18 metri tira danni o supera una prova di caratteristica o un tiro per colpire, usa la Reazione e un'Ispirazione Bardica. Sottrai il risultato del tuo dado di Ispirazione Bardica dal tiro, potendo trasformare un successo in fallimento."
       },
       "Magical Discoveries": {
         "name": "Scoperte Magiche",
@@ -51,7 +51,7 @@
       },
       "Preserve Life": {
         "name": "Preservare la Vita",
-        "description": "Con l'azione Magia, spendi Incanalare Divinità per ripristinare Punti Ferita totali pari a 5 volte il tuo livello da Chierico, divisi tra creature Ferite entro 30 piedi (incluso te). Nessuna può essere curata oltre metà dei suoi Punti Ferita massimi in questo modo."
+        "description": "Con l'azione Magia, spendi Incanalare Divinità per ripristinare Punti Ferita totali pari a 5 volte il tuo livello da Chierico, divisi tra creature Ferite entro 9 metri (incluso te). Nessuna può essere curata oltre metà dei suoi Punti Ferita massimi in questo modo."
       },
       "Blessed Healer": {
         "name": "Guaritore Benedetto",
@@ -71,7 +71,7 @@
       },
       "Land's Aid": {
         "name": "Aiuto della Terra",
-        "description": "Con l'azione Magia, spendi Forma Selvatica per creare una Sfera di raggio 10 piedi entro 60 piedi. Le creature scelte lì effettuano un tiro salvezza su Costituzione: subiscono 2d6 danni Necrotici se falliscono o metà se riescono; una creatura lì recupera anche 2d6 Punti Ferita. Entrambi aumentano a 3d6 al livello 10 da Druido e 4d6 al 14."
+        "description": "Con l'azione Magia, spendi Forma Selvatica per creare una Sfera di raggio 3 metri entro 18 metri. Le creature scelte lì effettuano un tiro salvezza su Costituzione: subiscono 2d6 danni Necrotici se falliscono o metà se riescono; una creatura lì recupera anche 2d6 Punti Ferita. Entrambi aumentano a 3d6 al livello 10 da Druido e 4d6 al 14."
       },
       "Natural Recovery": {
         "name": "Recupero Naturale",
@@ -83,7 +83,7 @@
       },
       "Nature's Sanctuary": {
         "name": "Santuario della Natura",
-        "description": "Con l'azione Magia, spendi Forma Selvatica per creare a terra un Cubo di 15 piedi entro 120 piedi per 1 minuto; termina se diventi Incapacitato o muori. Tu e gli alleati al suo interno avete Mezza Copertura; gli alleati ottengono anche la Resistenza di Protezione della Natura. Con un'Azione Bonus muovi il Cubo fino a 60 piedi su terreno entro 120 piedi."
+        "description": "Con l'azione Magia, spendi Forma Selvatica per creare a terra un Cubo di 4,5 metri entro 36 metri per 1 minuto; termina se diventi Incapacitato o muori. Tu e gli alleati al suo interno avete Mezza Copertura; gli alleati ottengono anche la Resistenza di Protezione della Natura. Con un'Azione Bonus muovi il Cubo fino a 18 metri su terreno entro 36 metri."
       }
     }
   },
@@ -119,7 +119,7 @@
     "Warrior of the Open Hand": {
       "Open Hand Technique": {
         "name": "Tecnica della Mano Aperta",
-        "description": "Quando un attacco di Raffica di Colpi colpisce, scegli: impedire al bersaglio attacchi di opportunità fino al suo prossimo turno; spingerlo fino a 15 piedi se fallisce un tiro salvezza su Forza; oppure farlo cadere Prono se fallisce uno su Destrezza."
+        "description": "Quando un attacco di Raffica di Colpi colpisce, scegli: impedire al bersaglio attacchi di opportunità fino al suo prossimo turno; spingerlo fino a 4,5 metri se fallisce un tiro salvezza su Forza; oppure farlo cadere Prono se fallisce uno su Destrezza."
       },
       "Wholeness of Body": {
         "name": "Integrità del Corpo",
@@ -143,7 +143,7 @@
       },
       "Sacred Weapon": {
         "name": "Arma Sacra",
-        "description": "Quando esegui l'azione Attaccare, spendi Incanalare Divinità per potenziare per 10 minuti un'arma da mischia che impugni. Aggiungi il tuo modificatore di Carisma (minimo +1) ai tiri per colpire; ogni colpo può infliggere danni normali o Radiosi. Diffonde Luce Intensa per 20 piedi e Luce Fioca per altri 20; termina se smetti di portarla."
+        "description": "Quando esegui l'azione Attaccare, spendi Incanalare Divinità per potenziare per 10 minuti un'arma da mischia che impugni. Aggiungi il tuo modificatore di Carisma (minimo +1) ai tiri per colpire; ogni colpo può infliggere danni normali o Radiosi. Diffonde Luce Intensa per 6 metri e Luce Fioca per altri 20; termina se smetti di portarla."
       },
       "Aura of Devotion": {
         "name": "Aura di Devozione",
@@ -167,7 +167,7 @@
       },
       "Hunter's Prey": {
         "name": "Preda del Cacciatore",
-        "description": "Scegli un'opzione modificabile dopo Riposo Breve o Lungo. Uccisore di Colossi: una volta per turno, un colpo con arma contro una creatura che ha perso Punti Ferita infligge +1d8 danni. Spezzaorde: una volta nel tuo turno quando attacchi con arma, attacca una diversa creatura entro 5 piedi dal bersaglio originale, a portata e non ancora attaccata in quel turno."
+        "description": "Scegli un'opzione modificabile dopo Riposo Breve o Lungo. Uccisore di Colossi: una volta per turno, un colpo con arma contro una creatura che ha perso Punti Ferita infligge +1d8 danni. Spezzaorde: una volta nel tuo turno quando attacchi con arma, attacca una diversa creatura entro 1,5 metri dal bersaglio originale, a portata e non ancora attaccata in quel turno."
       },
       "Defensive Tactics": {
         "name": "Tattiche Difensive",
@@ -175,7 +175,7 @@
       },
       "Superior Hunter's Prey": {
         "name": "Preda Superiore del Cacciatore",
-        "description": "Una volta per turno quando danneggi una creatura marchiata da Marchio del Cacciatore, infliggi i danni extra dell'incantesimo a un'altra creatura visibile entro 30 piedi da quella marchiata."
+        "description": "Una volta per turno quando danneggi una creatura marchiata da Marchio del Cacciatore, infliggi i danni extra dell'incantesimo a un'altra creatura visibile entro 9 metri da quella marchiata."
       },
       "Superior Hunter's Defense": {
         "name": "Difesa Superiore del Cacciatore",
@@ -223,7 +223,7 @@
       },
       "Dragon Wings": {
         "name": "Ali di Drago",
-        "description": "Con un'Azione Bonus ottieni ali e Velocità di Volare di 60 piedi per 1 ora o finché non le congedi. Una volta per Riposo Lungo, o spendi 3 Punti Stregoneria per recuperare l'uso."
+        "description": "Con un'Azione Bonus ottieni ali e Velocità di Volare di 18 metri per 1 ora o finché non le congedi. Una volta per Riposo Lungo, o spendi 3 Punti Stregoneria per recuperare l'uso."
       },
       "Dragon Companion": {
         "name": "Compagno Drago",
@@ -235,7 +235,7 @@
     "Fiend Patron": {
       "Dark One's Blessing": {
         "name": "Benedizione dell'Oscuro",
-        "description": "Quando riduci un nemico a 0 Punti Ferita ottieni Punti Ferita Temporanei pari a modificatore di Carisma + livello da Warlock (minimo 1). Li ottieni anche se qualcun altro porta a 0 un nemico entro 10 piedi da te."
+        "description": "Quando riduci un nemico a 0 Punti Ferita ottieni Punti Ferita Temporanei pari a modificatore di Carisma + livello da Warlock (minimo 1). Li ottieni anche se qualcun altro porta a 0 un nemico entro 3 metri da te."
       },
       "Fiend Spells": {
         "name": "Incantesimi dell'Immondo",

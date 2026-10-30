@@ -3,10 +3,16 @@
     "name": "Scimmia",
     "actions": {
       "fist": {
-        "name": "Pugno"
+        "name": "Pugno",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 5 (1d4 + 3) danni contundenti."
       },
       "rock": {
-        "name": "Roccia"
+        "name": "Roccia",
+        "description": "Tiro per colpire a distanza: +5, gittata 7,5/15 metri. Colpito: 10 (2d6 + 3) danni contundenti."
+      },
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "La scimmia effettua due attacchi con il Pugno."
       }
     }
   },
@@ -14,7 +20,14 @@
     "name": "Babbuino",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +1, portata 1,5 metri. Colpito: 1 (1d4 - 1) danno perforante."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "Il babbuino ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
       }
     }
   },
@@ -22,7 +35,8 @@
     "name": "Tasso",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 1 danno perforante."
       }
     }
   },
@@ -30,7 +44,8 @@
     "name": "Pipistrello",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 1 danno perforante."
       }
     }
   },
@@ -38,7 +53,12 @@
     "name": "Orso nero",
     "actions": {
       "rend": {
-        "name": "Squarciare"
+        "name": "Squarciare",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 5 (1d6 + 2) danni taglienti."
+      },
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "L'orso effettua due attacchi con Squarciare."
       }
     }
   },
@@ -46,7 +66,14 @@
     "name": "Falco sanguinario",
     "actions": {
       "beak": {
-        "name": "Becco"
+        "name": "Becco",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 4 (1d4 + 2) danni perforanti, o 6 (1d8 + 2) danni perforanti se il bersaglio è Sanguinante."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "Il falco ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
       }
     }
   },
@@ -54,7 +81,14 @@
     "name": "Cinghiale",
     "actions": {
       "gore": {
-        "name": "Incornata"
+        "name": "Incornata",
+        "description": "Tiro per colpire in mischia: +3, portata 1,5 metri. Colpito: 4 (1d6 + 1) danni perforanti. Se il bersaglio è una creatura di taglia Media o inferiore e il cinghiale si è mosso di almeno 6 metri in linea retta verso di essa immediatamente prima del colpo, il bersaglio subisce 3 (1d6) danni perforanti extra e ha la condizione Prono."
+      }
+    },
+    "traits": {
+      "bloodied_fury": {
+        "name": "Furia del sangue",
+        "description": "Finché è Sanguinante, il cinghiale ha vantaggio ai tiri per colpire."
       }
     }
   },
@@ -62,10 +96,16 @@
     "name": "Orso bruno",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 7 (1d8 + 3) danni perforanti."
       },
       "claw": {
-        "name": "Artiglio"
+        "name": "Artiglio",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 5 (1d4 + 3) danni taglienti. Se il bersaglio è una creatura di taglia Grande o inferiore, ha la condizione Prono."
+      },
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "L'orso effettua un attacco con il Morso e uno con l'Artiglio."
       }
     }
   },
@@ -73,7 +113,8 @@
     "name": "Cammello",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 4 (1d4 + 2) danni contundenti."
       }
     }
   },
@@ -81,7 +122,14 @@
     "name": "Gatto",
     "actions": {
       "scratch": {
-        "name": "Graffio"
+        "name": "Graffio",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 1 danno tagliente."
+      }
+    },
+    "traits": {
+      "jumper": {
+        "name": "Saltatore",
+        "description": "La distanza di salto del gatto è determinata dalla sua Destrezza anziché dalla sua Forza."
       }
     }
   },
@@ -89,7 +137,12 @@
     "name": "Serpente costrittore",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 6 (1d8 + 2) danni perforanti."
+      },
+      "constrict": {
+        "name": "Stritolare",
+        "description": "Tiro salvezza su Forza: CD 12, una creatura di taglia Media o inferiore che il serpente può vedere entro 1,5 metri. Fallimento: 7 (3d4) danni contundenti e il bersaglio ha la condizione Afferrato (CD 12 per sfuggire)."
       }
     }
   },
@@ -97,7 +150,14 @@
     "name": "Granchio",
     "actions": {
       "claw": {
-        "name": "Artiglio"
+        "name": "Artiglio",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 1 danno contundente."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "Il granchio può respirare sia aria che acqua."
       }
     }
   },
@@ -105,7 +165,14 @@
     "name": "Coccodrillo",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 6 (1d8 + 2) danni perforanti. Se il bersaglio è una creatura di taglia Media o inferiore, ha la condizione Afferrato (CD 12 per sfuggire). Finché è Afferrato, il bersaglio ha la condizione Trattenuto."
+      }
+    },
+    "traits": {
+      "hold_breath": {
+        "name": "Trattenere il respiro",
+        "description": "Il coccodrillo può trattenere il respiro per 1 ora."
       }
     }
   },
@@ -113,7 +180,14 @@
     "name": "Cervo",
     "actions": {
       "ram": {
-        "name": "Carica"
+        "name": "Testata",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 2 (1d4) danni contundenti."
+      }
+    },
+    "traits": {
+      "agile": {
+        "name": "Agile",
+        "description": "Il cervo non provoca attacchi di opportunità quando esce dalla portata di un nemico."
       }
     }
   },
@@ -121,7 +195,14 @@
     "name": "Lupo crudele",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 8 (1d10 + 3) danni perforanti. Se il bersaglio è una creatura di taglia Grande o inferiore, ha la condizione Prono."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "Il lupo ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
       }
     }
   },
@@ -129,7 +210,8 @@
     "name": "Cavallo da tiro",
     "actions": {
       "hooves": {
-        "name": "Zoccoli"
+        "name": "Zoccoli",
+        "description": "Tiro per colpire in mischia: +6, portata 1,5 metri. Colpito: 6 (1d4 + 4) danni contundenti."
       }
     }
   },
@@ -137,7 +219,8 @@
     "name": "Aquila",
     "actions": {
       "talons": {
-        "name": "Grinfie"
+        "name": "Grinfie",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 4 (1d4 + 2) danni taglienti."
       }
     }
   },
@@ -145,7 +228,8 @@
     "name": "Alce",
     "actions": {
       "ram": {
-        "name": "Carica"
+        "name": "Testata",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 6 (1d6 + 3) danni contundenti. Se il bersaglio è una creatura di taglia Grande o inferiore e l'alce si è mosso di almeno 6 metri in linea retta verso di essa immediatamente prima del colpo, il bersaglio subisce 3 (1d6) danni contundenti extra e ha la condizione Prono."
       }
     }
   },
@@ -153,7 +237,18 @@
     "name": "Rana",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +3, portata 1,5 metri. Colpito: 1 danno perforante."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "La rana può respirare sia aria che acqua."
+      },
+      "standing_leap": {
+        "name": "Salto da fermo",
+        "description": "Il salto in lungo della rana arriva fino a 3 metri e il suo salto in alto fino a 1,5 metri, con o senza rincorsa."
       }
     }
   },
@@ -161,7 +256,8 @@
     "name": "Tasso gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +3, portata 1,5 metri. Colpito: 6 (2d4 + 1) danni perforanti."
       }
     }
   },
@@ -169,7 +265,8 @@
     "name": "Pipistrello gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 6 (1d6 + 3) danni perforanti."
       }
     }
   },
@@ -177,7 +274,8 @@
     "name": "Centopiedi gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 4 (1d4 + 2) danni perforanti e il bersaglio ha la condizione Avvelenato fino all'inizio del turno successivo del centopiedi."
       }
     }
   },
@@ -185,7 +283,14 @@
     "name": "Granchio gigante",
     "actions": {
       "claw": {
-        "name": "Artiglio"
+        "name": "Artiglio",
+        "description": "Tiro per colpire in mischia: +3, portata 1,5 metri. Colpito: 4 (1d6 + 1) danni contundenti. Se il bersaglio è una creatura di taglia Media o inferiore, ha la condizione Afferrato (CD 11 per sfuggire) da una delle due chele."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "Il granchio può respirare sia aria che acqua."
       }
     }
   },
@@ -193,7 +298,14 @@
     "name": "Scarabeo di fuoco gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +1, portata 1,5 metri. Colpito: 1 danno da fuoco."
+      }
+    },
+    "traits": {
+      "illumination": {
+        "name": "Illuminazione",
+        "description": "Lo scarabeo emette luce intensa in un raggio di 3 metri e luce fioca per altri 3 metri."
       }
     }
   },
@@ -201,7 +313,22 @@
     "name": "Rana gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +3, portata 1,5 metri. Colpito: 5 (1d6 + 2) danni perforanti. Se il bersaglio è una creatura di taglia Media o inferiore, ha la condizione Afferrato (CD 11 per sfuggire)."
+      },
+      "swallow": {
+        "name": "Inghiottire",
+        "description": "La rana inghiotte un bersaglio di taglia Piccola o inferiore che sta afferrando. Mentre è inghiottito, il bersaglio non è Afferrato ma ha le condizioni Accecato e Trattenuto, e ha copertura totale contro attacchi e altri effetti provenienti dall'esterno della rana. Finché tiene inghiottito il bersaglio, la rana non può usare il Morso e, se la rana muore, il bersaglio inghiottito non è più Trattenuto e può uscire dal cadavere spendendo 1,5 metri di movimento, uscendone con la condizione Prono. Alla fine del turno successivo della rana, il bersaglio inghiottito subisce 5 (2d4) danni da acido. Se quei danni non lo uccidono, la rana lo rigurgita e il bersaglio esce con la condizione Prono."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "La rana può respirare sia aria che acqua."
+      },
+      "standing_leap": {
+        "name": "Salto da fermo",
+        "description": "Il salto in lungo della rana arriva fino a 6 metri e il suo salto in alto fino a 3 metri, con o senza rincorsa."
       }
     }
   },
@@ -209,7 +336,8 @@
     "name": "Capra gigante",
     "actions": {
       "ram": {
-        "name": "Carica"
+        "name": "Testata",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 6 (1d6 + 3) danni contundenti. Se il bersaglio è una creatura di taglia Grande o inferiore e la capra si è mossa di almeno 6 metri in linea retta verso di essa immediatamente prima del colpo, il bersaglio subisce 5 (2d4) danni contundenti extra e ha la condizione Prono."
       }
     }
   },
@@ -217,7 +345,14 @@
     "name": "Iena gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 10 (2d6 + 3) danni perforanti."
+      }
+    },
+    "bonusActions": {
+      "rampage": {
+        "name": "Furia devastante",
+        "description": "Subito dopo aver inflitto danni a una creatura che era già Sanguinante, la iena può muoversi fino a metà della sua velocità ed effettua un attacco con il Morso."
       }
     }
   },
@@ -225,7 +360,14 @@
     "name": "Lucertola gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 6 (1d8 + 2) danni perforanti."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Movimenti del ragno",
+        "description": "La lucertola può arrampicarsi su superfici difficili, anche lungo i soffitti, senza dover effettuare una prova di caratteristica."
       }
     }
   },
@@ -233,7 +375,20 @@
     "name": "Polpo gigante",
     "actions": {
       "tentacles": {
-        "name": "Tentacoli"
+        "name": "Tentacoli",
+        "description": "Tiro per colpire in mischia: +5, portata 3 metri. Colpito: 10 (2d6 + 3) danni contundenti. Se il bersaglio è una creatura di taglia Media o inferiore, ha la condizione Afferrato (CD 13 per sfuggire) da tutti e otto i tentacoli. Finché è Afferrato, il bersaglio ha la condizione Trattenuto."
+      }
+    },
+    "traits": {
+      "water_breathing": {
+        "name": "Respirare sott'acqua",
+        "description": "Il polpo può respirare solo sott'acqua. Fuori dall'acqua può trattenere il respiro per 1 ora."
+      }
+    },
+    "reactions": {
+      "ink_cloud": {
+        "name": "Nube d'inchiostro",
+        "description": "Innesco: il polpo subisce danni mentre è sott'acqua. Risposta: il polpo rilascia inchiostro che riempie un cubo di 3 metri centrato su di sé e si muove fino alla sua velocità di nuoto. Il cubo è fortemente oscurato per 1 minuto o finché una corrente forte o un effetto simile non disperde l'inchiostro."
       }
     }
   },
@@ -241,7 +396,14 @@
     "name": "Ratto gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 5 (1d4 + 3) danni perforanti."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "Il ratto ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
       }
     }
   },
@@ -249,7 +411,20 @@
     "name": "Cavalluccio marino gigante",
     "actions": {
       "ram": {
-        "name": "Carica"
+        "name": "Testata",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 9 (2d6 + 2) danni contundenti, o 11 (2d8 + 2) danni contundenti se il cavalluccio marino si è mosso di almeno 6 metri in linea retta verso il bersaglio immediatamente prima del colpo."
+      }
+    },
+    "traits": {
+      "water_breathing": {
+        "name": "Respirare sott'acqua",
+        "description": "Il cavalluccio marino può respirare solo sott'acqua."
+      }
+    },
+    "bonusActions": {
+      "bubble_dash": {
+        "name": "Scatto tra le bolle",
+        "description": "Mentre è sott'acqua, il cavalluccio marino si muove fino a metà della sua velocità di nuoto senza provocare attacchi di opportunità."
       }
     }
   },
@@ -257,7 +432,22 @@
     "name": "Ragno gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 7 (1d8 + 3) danni perforanti più 7 (2d6) danni da veleno."
+      },
+      "web": {
+        "name": "Ragnatela",
+        "description": "Tiro salvezza su Destrezza: CD 13, una creatura che il ragno può vedere entro 18 metri. Fallimento: il bersaglio ha la condizione Trattenuto finché la ragnatela non viene distrutta (CA 10; PF 5; vulnerabilità ai danni da fuoco; immunità ai danni da veleno e psichici)."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Movimenti del ragno",
+        "description": "Il ragno può arrampicarsi su superfici difficili, anche lungo i soffitti, senza dover effettuare una prova di caratteristica."
+      },
+      "web_walker": {
+        "name": "Camminare sulle ragnatele",
+        "description": "Il ragno ignora le restrizioni al movimento causate dalle ragnatele e conosce la posizione di qualsiasi altra creatura a contatto con la stessa ragnatela."
       }
     }
   },
@@ -265,7 +455,22 @@
     "name": "Rospo gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 5 (1d6 + 2) danni perforanti più 5 (2d4) danni da veleno. Se il bersaglio è una creatura di taglia Media o inferiore, ha la condizione Afferrato (CD 12 per sfuggire)."
+      },
+      "swallow": {
+        "name": "Inghiottire",
+        "description": "Il rospo inghiotte un bersaglio di taglia Media o inferiore che sta afferrando. Mentre è inghiottito, il bersaglio non è Afferrato ma ha le condizioni Accecato e Trattenuto, e ha copertura totale contro attacchi e altri effetti provenienti dall'esterno del rospo. Inoltre, il bersaglio subisce 10 (3d6) danni da acido alla fine di ogni turno del rospo. Il rospo può avere inghiottito un solo bersaglio alla volta e non può usare il Morso finché ha un bersaglio inghiottito. Se il rospo muore, una creatura inghiottita non è più Trattenuta e può uscire dal cadavere spendendo 1,5 metri di movimento, uscendone con la condizione Prono."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "Il rospo può respirare sia aria che acqua."
+      },
+      "standing_leap": {
+        "name": "Salto da fermo",
+        "description": "Il salto in lungo del rospo arriva fino a 6 metri e il suo salto in alto fino a 3 metri, con o senza rincorsa."
       }
     }
   },
@@ -273,7 +478,8 @@
     "name": "Serpente velenoso gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +6, portata 3 metri. Colpito: 6 (1d4 + 4) danni perforanti più 4 (1d8) danni da veleno."
       }
     }
   },
@@ -281,7 +487,14 @@
     "name": "Vespa gigante",
     "actions": {
       "sting": {
-        "name": "Pungiglione"
+        "name": "Pungiglione",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 5 (1d6 + 2) danni perforanti più 5 (2d4) danni da veleno."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Volo radente",
+        "description": "La vespa non provoca attacchi di opportunità quando esce volando dalla portata di un nemico."
       }
     }
   },
@@ -289,7 +502,8 @@
     "name": "Donnola gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 5 (1d4 + 3) danni perforanti."
       }
     }
   },
@@ -297,7 +511,14 @@
     "name": "Ragno lupo gigante",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 5 (1d4 + 3) danni perforanti più 5 (2d4) danni da veleno."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Movimenti del ragno",
+        "description": "Il ragno può arrampicarsi su superfici difficili, anche lungo i soffitti, senza dover effettuare una prova di caratteristica."
       }
     }
   },
@@ -305,7 +526,8 @@
     "name": "Capra",
     "actions": {
       "ram": {
-        "name": "Carica"
+        "name": "Testata",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 1 danno contundente, o 2 (1d4) danni contundenti se la capra si è mossa di almeno 6 metri in linea retta verso il bersaglio immediatamente prima del colpo."
       }
     }
   },
@@ -313,7 +535,8 @@
     "name": "Falco",
     "actions": {
       "talons": {
-        "name": "Grinfie"
+        "name": "Grinfie",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 1 danno tagliente."
       }
     }
   },
@@ -321,7 +544,14 @@
     "name": "Iena",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 3 (1d6) danni perforanti."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "La iena ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
       }
     }
   },
@@ -329,7 +559,8 @@
     "name": "Sciacallo",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +1, portata 1,5 metri. Colpito: 1 (1d4 - 1) danno perforante."
       }
     }
   },
@@ -337,7 +568,26 @@
     "name": "Leone",
     "actions": {
       "rend": {
-        "name": "Squarciare"
+        "name": "Squarciare",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 7 (1d8 + 3) danni taglienti."
+      },
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "Il leone effettua due attacchi con Squarciare. Può sostituire un attacco con un uso di Ruggito."
+      },
+      "roar": {
+        "name": "Ruggito",
+        "description": "Tiro salvezza su Saggezza: CD 11, una creatura entro 4,5 metri. Fallimento: il bersaglio ha la condizione Spaventato fino all'inizio del turno successivo del leone."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "Il leone ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
+      },
+      "running_leap": {
+        "name": "Salto con rincorsa",
+        "description": "Con una rincorsa di 3 metri, il leone può effettuare un salto in lungo fino a 7,5 metri."
       }
     }
   },
@@ -345,7 +595,14 @@
     "name": "Lucertola",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 1 danno perforante."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Movimenti del ragno",
+        "description": "La lucertola può arrampicarsi su superfici difficili, anche lungo i soffitti, senza dover effettuare una prova di caratteristica."
       }
     }
   },
@@ -353,7 +610,8 @@
     "name": "Mastino",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +3, portata 1,5 metri. Colpito: 4 (1d6 + 1) danni perforanti. Se il bersaglio è una creatura di taglia Media o inferiore, ha la condizione Prono."
       }
     }
   },
@@ -361,7 +619,14 @@
     "name": "Mulo",
     "actions": {
       "hooves": {
-        "name": "Zoccoli"
+        "name": "Zoccoli",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 4 (1d4 + 2) danni contundenti."
+      }
+    },
+    "traits": {
+      "beast_of_burden": {
+        "name": "Bestia da soma",
+        "description": "Il mulo conta come se fosse di una taglia più grande ai fini della determinazione della sua capacità di trasporto."
       }
     }
   },
@@ -369,7 +634,24 @@
     "name": "Polpo",
     "actions": {
       "tentacles": {
-        "name": "Tentacoli"
+        "name": "Tentacoli",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 1 danno contundente."
+      }
+    },
+    "traits": {
+      "compression": {
+        "name": "Compressione",
+        "description": "Il polpo può muoversi attraverso uno spazio largo appena 2,5 centimetri senza spendere movimento extra per farlo."
+      },
+      "water_breathing": {
+        "name": "Respirare sott'acqua",
+        "description": "Il polpo può respirare solo sott'acqua."
+      }
+    },
+    "reactions": {
+      "ink_cloud": {
+        "name": "Nube d'inchiostro",
+        "description": "Innesco: una creatura termina il suo turno entro 1,5 metri dal polpo mentre questo è sott'acqua. Risposta: il polpo rilascia inchiostro che riempie un cubo di 1,5 metri centrato su di sé e si muove fino alla sua velocità di nuoto. Il cubo è fortemente oscurato per 1 minuto o finché una corrente forte o un effetto simile non disperde l'inchiostro."
       }
     }
   },
@@ -377,7 +659,14 @@
     "name": "Gufo",
     "actions": {
       "talons": {
-        "name": "Grinfie"
+        "name": "Grinfie",
+        "description": "Tiro per colpire in mischia: +3, portata 1,5 metri. Colpito: 1 danno tagliente."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Volo radente",
+        "description": "Il gufo non provoca attacchi di opportunità quando esce volando dalla portata di un nemico."
       }
     }
   },
@@ -385,7 +674,14 @@
     "name": "Pantera",
     "actions": {
       "rend": {
-        "name": "Squarciare"
+        "name": "Squarciare",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 6 (1d6 + 3) danni taglienti."
+      }
+    },
+    "bonusActions": {
+      "nimble_escape": {
+        "name": "Fuga agile",
+        "description": "La pantera compie l'azione Disimpegno o Nascondersi."
       }
     }
   },
@@ -393,7 +689,14 @@
     "name": "Piranha",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5 (con vantaggio se il bersaglio non ha tutti i suoi punti ferita), portata 1,5 metri. Colpito: 1 danno perforante."
+      }
+    },
+    "traits": {
+      "water_breathing": {
+        "name": "Respirare sott'acqua",
+        "description": "Il piranha può respirare solo sott'acqua."
       }
     }
   },
@@ -401,7 +704,8 @@
     "name": "Pony",
     "actions": {
       "hooves": {
-        "name": "Zoccoli"
+        "name": "Zoccoli",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 4 (1d4 + 2) danni contundenti."
       }
     }
   },
@@ -409,7 +713,14 @@
     "name": "Pteranodonte",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 6 (1d8 + 2) danni perforanti."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Volo radente",
+        "description": "Lo pteranodonte non provoca attacchi di opportunità quando esce volando dalla portata di un nemico."
       }
     }
   },
@@ -417,7 +728,14 @@
     "name": "Ratto",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 1 danno perforante."
+      }
+    },
+    "traits": {
+      "agile": {
+        "name": "Agile",
+        "description": "Il ratto non provoca attacchi di opportunità quando esce dalla portata di un nemico."
       }
     }
   },
@@ -425,7 +743,14 @@
     "name": "Corvo",
     "actions": {
       "beak": {
-        "name": "Becco"
+        "name": "Becco",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 1 danno perforante."
+      }
+    },
+    "traits": {
+      "mimicry": {
+        "name": "Imitazione",
+        "description": "Il corvo può imitare semplici suoni che ha udito, come un sussurro o uno squittio. Chi li sente può capire che si tratta di imitazioni superando una prova di Saggezza (Intuizione) con CD 10."
       }
     }
   },
@@ -433,7 +758,18 @@
     "name": "Squalo della barriera",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 7 (2d4 + 2) danni perforanti."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "Lo squalo ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
+      },
+      "water_breathing": {
+        "name": "Respirare sott'acqua",
+        "description": "Lo squalo può respirare solo sott'acqua."
       }
     }
   },
@@ -441,7 +777,8 @@
     "name": "Cavallo da sella",
     "actions": {
       "hooves": {
-        "name": "Zoccoli"
+        "name": "Zoccoli",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 7 (1d8 + 3) danni contundenti."
       }
     }
   },
@@ -449,18 +786,42 @@
     "name": "Scorpione",
     "actions": {
       "sting": {
-        "name": "Pungiglione"
+        "name": "Pungiglione",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 1 danno perforante più 3 (1d6) danni da veleno."
       }
     }
   },
   "Seahorse": {
-    "name": "Cavalluccio marino"
+    "name": "Cavalluccio marino",
+    "traits": {
+      "water_breathing": {
+        "name": "Respirare sott'acqua",
+        "description": "Il cavalluccio marino può respirare solo sott'acqua."
+      }
+    },
+    "actions": {
+      "bubble_dash": {
+        "name": "Scatto tra le bolle",
+        "description": "Mentre è sott'acqua, il cavalluccio marino si muove fino alla sua velocità di nuoto senza provocare attacchi di opportunità."
+      }
+    }
   },
   "Spider": {
     "name": "Ragno",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 1 danno perforante più 2 (1d4) danni da veleno."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Movimenti del ragno",
+        "description": "Il ragno può arrampicarsi su superfici difficili, anche lungo i soffitti, senza dover effettuare una prova di caratteristica."
+      },
+      "web_walker": {
+        "name": "Camminare sulle ragnatele",
+        "description": "Il ragno ignora le restrizioni al movimento causate dalle ragnatele e conosce la posizione di qualsiasi altra creatura a contatto con la stessa ragnatela."
       }
     }
   },
@@ -468,7 +829,14 @@
     "name": "Sciame di pipistrelli",
     "actions": {
       "bites": {
-        "name": "Morsi"
+        "name": "Morsi",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 5 (2d4) danni perforanti, o 2 (1d4) danni perforanti se lo sciame è Sanguinante."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Sciame",
+        "description": "Lo sciame può occupare lo spazio di un'altra creatura e viceversa, e può muoversi attraverso qualsiasi apertura abbastanza grande da far passare un pipistrello Minuscolo. Lo sciame non può recuperare punti ferita né ottenere punti ferita temporanei."
       }
     }
   },
@@ -476,7 +844,18 @@
     "name": "Sciame di insetti",
     "actions": {
       "bites": {
-        "name": "Morsi"
+        "name": "Morsi",
+        "description": "Tiro per colpire in mischia: +3, portata 1,5 metri. Colpito: 6 (2d4 + 1) danni da veleno, o 3 (1d4 + 1) danni da veleno se lo sciame è Sanguinante."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Movimenti del ragno",
+        "description": "Se lo sciame ha una velocità di scalata, può arrampicarsi su superfici difficili, anche lungo i soffitti, senza dover effettuare una prova di caratteristica."
+      },
+      "swarm": {
+        "name": "Sciame",
+        "description": "Lo sciame può occupare lo spazio di un'altra creatura e viceversa, e può muoversi attraverso qualsiasi apertura abbastanza grande da far passare un insetto Minuscolo. Lo sciame non può recuperare punti ferita né ottenere punti ferita temporanei."
       }
     }
   },
@@ -484,7 +863,18 @@
     "name": "Sciame di piranha",
     "actions": {
       "bites": {
-        "name": "Morsi"
+        "name": "Morsi",
+        "description": "Tiro per colpire in mischia: +5 (con vantaggio se il bersaglio non ha tutti i suoi punti ferita), portata 1,5 metri. Colpito: 8 (2d4 + 3) danni perforanti, o 5 (1d4 + 3) danni perforanti se lo sciame è Sanguinante."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Sciame",
+        "description": "Lo sciame può occupare lo spazio di un'altra creatura e viceversa, e può muoversi attraverso qualsiasi apertura abbastanza grande da far passare un piranha Minuscolo. Lo sciame non può recuperare punti ferita né ottenere punti ferita temporanei."
+      },
+      "water_breathing": {
+        "name": "Respirare sott'acqua",
+        "description": "Lo sciame può respirare solo sott'acqua."
       }
     }
   },
@@ -492,7 +882,14 @@
     "name": "Sciame di ratti",
     "actions": {
       "bites": {
-        "name": "Morsi"
+        "name": "Morsi",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 5 (2d4) danni perforanti, o 2 (1d4) danni perforanti se lo sciame è Sanguinante."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Sciame",
+        "description": "Lo sciame può occupare lo spazio di un'altra creatura e viceversa, e può muoversi attraverso qualsiasi apertura abbastanza grande da far passare un ratto Minuscolo. Lo sciame non può recuperare punti ferita né ottenere punti ferita temporanei."
       }
     }
   },
@@ -500,7 +897,18 @@
     "name": "Sciame di corvi",
     "actions": {
       "beaks": {
-        "name": "Beccate"
+        "name": "Beccate",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 5 (1d6 + 2) danni perforanti, o 2 (1d4) danni perforanti se lo sciame è Sanguinante."
+      },
+      "cacophony": {
+        "name": "Cacofonia",
+        "description": "Tiro salvezza su Saggezza: CD 10, una creatura nello spazio dello sciame. Fallimento: il bersaglio ha la condizione Assordato fino all'inizio del turno successivo dello sciame. Finché è Assordato, il bersaglio ha anche svantaggio alle prove di caratteristica e ai tiri per colpire."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Sciame",
+        "description": "Lo sciame può occupare lo spazio di un'altra creatura e viceversa, e può muoversi attraverso qualsiasi apertura abbastanza grande da far passare un corvo Minuscolo. Lo sciame non può recuperare punti ferita né ottenere punti ferita temporanei."
       }
     }
   },
@@ -508,7 +916,14 @@
     "name": "Tigre",
     "actions": {
       "rend": {
-        "name": "Squarciare"
+        "name": "Squarciare",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 10 (2d6 + 3) danni taglienti. Se il bersaglio è una creatura di taglia Grande o inferiore, ha la condizione Prono."
+      }
+    },
+    "bonusActions": {
+      "nimble_escape": {
+        "name": "Fuga agile",
+        "description": "La tigre compie l'azione Disimpegno o Nascondersi."
       }
     }
   },
@@ -516,7 +931,8 @@
     "name": "Serpente velenoso",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 4 (1d4 + 2) danni perforanti più 3 (1d6) danni da veleno."
       }
     }
   },
@@ -524,7 +940,14 @@
     "name": "Avvoltoio",
     "actions": {
       "beak": {
-        "name": "Becco"
+        "name": "Becco",
+        "description": "Tiro per colpire in mischia: +2, portata 1,5 metri. Colpito: 2 (1d4) danni perforanti."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "L'avvoltoio ha vantaggio a un tiro per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
       }
     }
   },
@@ -532,7 +955,8 @@
     "name": "Cavallo da guerra",
     "actions": {
       "hooves": {
-        "name": "Zoccoli"
+        "name": "Zoccoli",
+        "description": "Tiro per colpire in mischia: +6, portata 1,5 metri. Colpito: 9 (2d4 + 4) danni contundenti. Se il bersaglio è una creatura di taglia Grande o inferiore e il cavallo si è mosso di almeno 6 metri in linea retta verso di essa immediatamente prima del colpo, il bersaglio subisce 5 (2d4) danni contundenti extra e ha la condizione Prono."
       }
     }
   },
@@ -540,7 +964,8 @@
     "name": "Donnola",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +5, portata 1,5 metri. Colpito: 1 danno perforante."
       }
     }
   },
@@ -548,7 +973,14 @@
     "name": "Lupo",
     "actions": {
       "bite": {
-        "name": "Morso"
+        "name": "Morso",
+        "description": "Tiro per colpire in mischia: +4, portata 1,5 metri. Colpito: 5 (1d6 + 2) danni perforanti. Se il bersaglio è una creatura di taglia Media o inferiore, ha la condizione Prono."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tattiche del branco",
+        "description": "Il lupo ha vantaggio ai tiri per colpire contro una creatura se almeno uno dei suoi alleati si trova entro 1,5 metri dalla creatura e l'alleato non ha la condizione Incapacitato."
       }
     }
   }

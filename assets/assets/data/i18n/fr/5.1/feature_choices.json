@@ -47,7 +47,7 @@
       },
       "pushing_attack": {
         "name": "Attaque poussée",
-        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. Si la cible est de grande taille ou plus petite, elle doit effectuer une sauvegarde de Force ou être poussée jusqu'à 15 pieds de vous."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. Si la cible est de grande taille ou plus petite, elle doit effectuer une sauvegarde de Force ou être poussée jusqu'à 4,5 mètres de vous."
       },
       "rally": {
         "name": "Rallier",

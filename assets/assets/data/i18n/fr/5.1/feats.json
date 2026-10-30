@@ -7,7 +7,7 @@
   "Athlete": {
     "name": "Athlète",
     "prerequisite": null,
-    "description": "Vous avez suivi un entraînement physique approfondi pour bénéficier des avantages suivants :\n• Augmentez votre score de Force ou de Dextérité de 1, jusqu'à un maximum de 20.\n• Lorsque vous êtes couché, vous lever n'utilise que 5 pieds de votre mouvement.\n• L'escalade ne vous coûte pas de mouvement supplémentaire.\n• Vous pouvez faire un saut en longueur ou un saut en hauteur en courant après avoir bougé de seulement 5 pieds à pied, au lieu de 10 pieds."
+    "description": "Vous avez suivi un entraînement physique approfondi pour bénéficier des avantages suivants :\n• Augmentez votre score de Force ou de Dextérité de 1, jusqu'à un maximum de 20.\n• Lorsque vous êtes couché, vous lever n'utilise que 1,5 mètre de votre mouvement.\n• L'escalade ne vous coûte pas de mouvement supplémentaire.\n• Vous pouvez faire un saut en longueur ou un saut en hauteur en courant après avoir bougé de seulement 1,5 mètre à pied, au lieu de 3 mètres."
   },
   "Actor": {
     "name": "Acteur",
@@ -122,7 +122,7 @@
   "Mobile": {
     "name": "Mobile",
     "prerequisite": null,
-    "description": "Vous êtes exceptionnellement rapide et agile. Vous bénéficiez des avantages suivants :\n• Votre vitesse augmente de 10 pieds.\n• Lorsque vous utilisez l'action Dash, un terrain difficile ne vous coûte pas de mouvement supplémentaire pendant ce tour.\n• Lorsque vous effectuez une attaque au corps à corps contre une créature, vous ne provoquez pas d'attaques d'opportunité de cette créature pour le reste du tour, que l'attaque touche ou non."
+    "description": "Vous êtes exceptionnellement rapide et agile. Vous bénéficiez des avantages suivants :\n• Votre vitesse augmente de 3 mètres.\n• Lorsque vous utilisez l'action Dash, un terrain difficile ne vous coûte pas de mouvement supplémentaire pendant ce tour.\n• Lorsque vous effectuez une attaque au corps à corps contre une créature, vous ne provoquez pas d'attaques d'opportunité de cette créature pour le reste du tour, que l'attaque touche ou non."
   },
   "Moderately Armored": {
     "name": "Modérément blindé",

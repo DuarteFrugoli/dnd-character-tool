@@ -38,7 +38,7 @@
     },
     "Fast Movement": {
       "name": "Schnelle Bewegung",
-      "description": "Deine Bewegungsrate erhöht sich um 10 Fuß, solange du keine schwere Rüstung trägst."
+      "description": "Deine Bewegungsrate erhöht sich um 3 Meter, solange du keine schwere Rüstung trägst."
     },
     "Feral Instinct": {
       "name": "Wilder Instinkt",
@@ -50,7 +50,7 @@
     },
     "Brutal Strike": {
       "name": "Brutaler Schlag",
-      "description": "Wenn du Rücksichtsloser Angriff einsetzt, verzichte bei einem stärkebasierten Angriff ohne Nachteil auf den dadurch gewährten Vorteil. Triffst du, verursachst du zusätzlich 1d10 Schaden der Schadensart des Angriffs und wählst einen Effekt von Brutaler Schlag: Wuchtiger Schlag stößt das Ziel 15 Fuß weg und erlaubt dir, ihm bis zur Hälfte deiner Bewegungsrate ohne Gelegenheitsangriffe zu folgen; Sehnenschlag verringert seine Bewegungsrate bis zu deinem nächsten Zug um 15 Fuß."
+      "description": "Wenn du Rücksichtsloser Angriff einsetzt, verzichte bei einem stärkebasierten Angriff ohne Nachteil auf den dadurch gewährten Vorteil. Triffst du, verursachst du zusätzlich 1d10 Schaden der Schadensart des Angriffs und wählst einen Effekt von Brutaler Schlag: Wuchtiger Schlag stößt das Ziel 4,5 Meter weg und erlaubt dir, ihm bis zur Hälfte deiner Bewegungsrate ohne Gelegenheitsangriffe zu folgen; Sehnenschlag verringert seine Bewegungsrate bis zu deinem nächsten Zug um 4,5 Meter."
     },
     "Relentless Rage": {
       "name": "Unaufhaltsamer Kampfrausch",
@@ -80,7 +80,7 @@
   "Bard": {
     "Bardic Inspiration": {
       "name": "Bardische Inspiration",
-      "description": "Als Bonusaktion gibst du einer Kreatur innerhalb von 60 Fuß, die dich sehen oder hören kann, einen Würfel Bardischer Inspiration. Scheitert sie innerhalb von 1 Stunde bei einem W20-Test, kann sie den Würfel werfen und zum Ergebnis addieren. Eine Kreatur kann nur einen solchen Würfel besitzen. Du hast Anwendungen in Höhe deines Charismamodifikators (mindestens 1), die nach einer Langen Rast zurückkehren. Würfelgröße: d6 auf den Stufen 1-4, d8 auf 5-9, d10 auf 10-14 und d12 ab Stufe 15."
+      "description": "Als Bonusaktion gibst du einer Kreatur innerhalb von 18 Metern, die dich sehen oder hören kann, einen Würfel Bardischer Inspiration. Scheitert sie innerhalb von 1 Stunde bei einem W20-Test, kann sie den Würfel werfen und zum Ergebnis addieren. Eine Kreatur kann nur einen solchen Würfel besitzen. Du hast Anwendungen in Höhe deines Charismamodifikators (mindestens 1), die nach einer Langen Rast zurückkehren. Würfelgröße: d6 auf den Stufen 1-4, d8 auf 5-9, d10 auf 10-14 und d12 ab Stufe 15."
     },
     "Spellcasting": {
       "name": "Zauberwirken",
@@ -108,7 +108,7 @@
     },
     "Countercharm": {
       "name": "Gegenbezauberung",
-      "description": "Als Reaktion, wenn du oder eine Kreatur innerhalb von 30 Fuß einen Rettungswurf gegen Bezaubert oder Verängstigt nicht besteht, lässt du diesen Wurf mit Vorteil wiederholen."
+      "description": "Als Reaktion, wenn du oder eine Kreatur innerhalb von 9 Metern einen Rettungswurf gegen Bezaubert oder Verängstigt nicht besteht, lässt du diesen Wurf mit Vorteil wiederholen."
     },
     "Magical Secrets": {
       "name": "Magische Geheimnisse",
@@ -124,7 +124,7 @@
     },
     "Words of Creation": {
       "name": "Worte der Schöpfung",
-      "description": "Machtwort Heilung und Machtwort Tod sind stets vorbereitet. Wenn du einen dieser Zauber wirkst, kannst du eine zweite Kreatur innerhalb von 10 Fuß um das erste Ziel wählen."
+      "description": "Machtwort Heilung und Machtwort Tod sind stets vorbereitet. Wenn du einen dieser Zauber wirkst, kannst du eine zweite Kreatur innerhalb von 3 Metern um das erste Ziel wählen."
     }
   },
   "Cleric": {
@@ -138,7 +138,7 @@
     },
     "Channel Divinity": {
       "name": "Göttliche Macht fokussieren",
-      "description": "Du erhältst die Optionen Göttlicher Funke und Untote vertreiben sowie die Optionen deiner Unterklasse. Du kannst Göttliche Macht fokussieren auf Stufe 2 zweimal, auf Stufe 6 dreimal und auf Stufe 18 viermal einsetzen; nach einer Kurzen Rast erhältst du eine Anwendung zurück, nach einer Langen Rast alle. Als Magieaktion heilt Göttlicher Funke eine andere sichtbare Kreatur innerhalb von 30 Fuß um 1d8 + deinen Weisheitsmodifikator oder fügt ihr bei einem gescheiterten Konstitutionsrettungswurf dieselbe Menge nekrotischen oder gleißenden Schaden zu (bei Erfolg die Hälfte); die Würfel steigen auf 2d8 auf Stufe 7, 3d8 auf Stufe 13 und 4d8 auf Stufe 18. Als Magieaktion zwingt Untote vertreiben ausgewählte Untote innerhalb von 30 Fuß zu Weisheitsrettungswürfen; bei Misserfolg sind sie 1 Minute lang Verängstigt und Handlungsunfähig. Sie versuchen sich zu entfernen; der Effekt endet, wenn sie Schaden erleiden oder du Handlungsunfähig wirst oder stirbst."
+      "description": "Du erhältst die Optionen Göttlicher Funke und Untote vertreiben sowie die Optionen deiner Unterklasse. Du kannst Göttliche Macht fokussieren auf Stufe 2 zweimal, auf Stufe 6 dreimal und auf Stufe 18 viermal einsetzen; nach einer Kurzen Rast erhältst du eine Anwendung zurück, nach einer Langen Rast alle. Als Magieaktion heilt Göttlicher Funke eine andere sichtbare Kreatur innerhalb von 9 Metern um 1d8 + deinen Weisheitsmodifikator oder fügt ihr bei einem gescheiterten Konstitutionsrettungswurf dieselbe Menge nekrotischen oder gleißenden Schaden zu (bei Erfolg die Hälfte); die Würfel steigen auf 2d8 auf Stufe 7, 3d8 auf Stufe 13 und 4d8 auf Stufe 18. Als Magieaktion zwingt Untote vertreiben ausgewählte Untote innerhalb von 9 Metern zu Weisheitsrettungswürfen; bei Misserfolg sind sie 1 Minute lang Verängstigt und Handlungsunfähig. Sie versuchen sich zu entfernen; der Effekt endet, wenn sie Schaden erleiden oder du Handlungsunfähig wirst oder stirbst."
     },
     "Cleric Subclass": {
       "name": "Klerikerunterklasse",
@@ -162,7 +162,7 @@
     },
     "Improved Blessed Strikes": {
       "name": "Verbesserte gesegnete Schläge",
-      "description": "Der Zusatzschaden von Göttlicher Schlag steigt auf 2d8. Hast du stattdessen Mächtige Zauberei gewählt, kannst du durch Schaden mit einem Kleriker-Zaubertrick dir oder einem Verbündeten innerhalb von 60 Fuß temporäre Trefferpunkte in Höhe des Doppelten deines Weisheitsmodifikators gewähren."
+      "description": "Der Zusatzschaden von Göttlicher Schlag steigt auf 2d8. Hast du stattdessen Mächtige Zauberei gewählt, kannst du durch Schaden mit einem Kleriker-Zaubertrick dir oder einem Verbündeten innerhalb von 18 Metern temporäre Trefferpunkte in Höhe des Doppelten deines Weisheitsmodifikators gewähren."
     },
     "Epic Boon": {
       "name": "Epische Gabe",
@@ -212,7 +212,7 @@
     },
     "Improved Elemental Fury": {
       "name": "Verbesserte elementare Wut",
-      "description": "Mächtige Zauberei erhöht die Reichweite eines Druiden-Zaubertricks um 300 Fuß, sofern seine normale Reichweite mindestens 10 Fuß beträgt. Der Zusatzschaden von Ursprünglicher Schlag steigt auf 2d8."
+      "description": "Mächtige Zauberei erhöht die Reichweite eines Druiden-Zaubertricks um 90 Meter, sofern seine normale Reichweite mindestens 3 Meter beträgt. Der Zusatzschaden von Ursprünglicher Schlag steigt auf 2d8."
     },
     "Beast Spells": {
       "name": "Zauber in Tiergestalt",
@@ -304,7 +304,7 @@
     },
     "Unarmored Movement": {
       "name": "Bewegung ohne Rüstung",
-      "description": "Ohne Rüstung oder Schild steigt deine Bewegungsrate auf den Stufen 2-5 um 10 Fuß, auf 6-9 um 15 Fuß, auf 10-13 um 20 Fuß, auf 14-17 um 25 Fuß und ab Stufe 18 um 30 Fuß."
+      "description": "Ohne Rüstung oder Schild steigt deine Bewegungsrate auf den Stufen 2-5 um 3 Meter, auf 6-9 um 4,5 Meter, auf 10-13 um 6 Meter, auf 14-17 um 7,5 Meter und ab Stufe 18 um 9 Meter."
     },
     "Uncanny Metabolism": {
       "name": "Außergewöhnlicher Stoffwechsel",
@@ -312,7 +312,7 @@
     },
     "Deflect Attacks": {
       "name": "Angriffe ablenken",
-      "description": "Als Reaktion, wenn dich ein Angriff trifft, der Wucht-, Stich- oder Hiebschaden verursacht, verringerst du den Gesamtschaden um 1d10 + deinen Geschicklichkeitsmodifikator + deine Mönchsstufe. Sinkt er dadurch auf 0, kannst du 1 Fokuspunkt ausgeben, um ihn zurückzulenken: Eine sichtbare Kreatur innerhalb von 5 Fuß bei einem Nahkampfangriff oder innerhalb von 60 Fuß ohne vollständige Deckung bei einem Fernkampfangriff legt einen Geschicklichkeitsrettungswurf ab. Bei Misserfolg erleidet sie Schaden der Angriffsart in Höhe von zwei Kampfkunstwürfeln + deinem Geschicklichkeitsmodifikator."
+      "description": "Als Reaktion, wenn dich ein Angriff trifft, der Wucht-, Stich- oder Hiebschaden verursacht, verringerst du den Gesamtschaden um 1d10 + deinen Geschicklichkeitsmodifikator + deine Mönchsstufe. Sinkt er dadurch auf 0, kannst du 1 Fokuspunkt ausgeben, um ihn zurückzulenken: Eine sichtbare Kreatur innerhalb von 1,5 Metern bei einem Nahkampfangriff oder innerhalb von 18 Metern ohne vollständige Deckung bei einem Fernkampfangriff legt einen Geschicklichkeitsrettungswurf ab. Bei Misserfolg erleidet sie Schaden der Angriffsart in Höhe von zwei Kampfkunstwürfeln + deinem Geschicklichkeitsmodifikator."
     },
     "Monk Subclass": {
       "name": "Mönchsunterklasse",
@@ -348,7 +348,7 @@
     },
     "Heightened Focus": {
       "name": "Verstärkter Fokus",
-      "description": "Für 1 Fokuspunkt ermöglicht Schlaghagel drei waffenlose Angriffe; Geduldige Verteidigung gewährt zusätzlich temporäre Trefferpunkte in Höhe von zwei Kampfkunstwürfeln; Schritt des Windes kann eine bereitwillige große oder kleinere Kreatur innerhalb von 5 Fuß mitnehmen, ohne Gelegenheitsangriffe auszulösen."
+      "description": "Für 1 Fokuspunkt ermöglicht Schlaghagel drei waffenlose Angriffe; Geduldige Verteidigung gewährt zusätzlich temporäre Trefferpunkte in Höhe von zwei Kampfkunstwürfeln; Schritt des Windes kann eine bereitwillige große oder kleinere Kreatur innerhalb von 1,5 Metern mitnehmen, ohne Gelegenheitsangriffe auszulösen."
     },
     "Self-Restoration": {
       "name": "Selbstheilung",
@@ -402,7 +402,7 @@
     },
     "Channel Divinity": {
       "name": "Göttliche Macht fokussieren",
-      "description": "Du erhältst die Fähigkeit Göttlicher Sinn sowie die Optionen deiner Unterklasse für Göttliche Macht fokussieren. Du beginnst mit zwei Anwendungen; auf Paladinstufe 11 sind es drei. Nach einer Kurzen Rast erhältst du eine Anwendung zurück, nach einer Langen Rast alle. Göttlicher Sinn ist eine Bonusaktion, die 10 Minuten lang Himmlische, Unholde, Untote und geweihte oder entweihte Orte oder Gegenstände innerhalb von 60 Fuß offenbart, bis du Handlungsunfähig wirst."
+      "description": "Du erhältst die Fähigkeit Göttlicher Sinn sowie die Optionen deiner Unterklasse für Göttliche Macht fokussieren. Du beginnst mit zwei Anwendungen; auf Paladinstufe 11 sind es drei. Nach einer Kurzen Rast erhältst du eine Anwendung zurück, nach einer Langen Rast alle. Göttlicher Sinn ist eine Bonusaktion, die 10 Minuten lang Himmlische, Unholde, Untote und geweihte oder entweihte Orte oder Gegenstände innerhalb von 18 Metern offenbart, bis du Handlungsunfähig wirst."
     },
     "Paladin Subclass": {
       "name": "Paladinunterklasse",
@@ -422,11 +422,11 @@
     },
     "Aura of Protection": {
       "name": "Aura des Schutzes",
-      "description": "Du und Verbündete innerhalb deiner Aura mit 10 Fuß Reichweite erhalten einen Bonus auf Rettungswürfe in Höhe deines Charismamodifikators (mindestens +1), solange du nicht Handlungsunfähig bist. Eine Kreatur profitiert nur von einer Aura des Schutzes eines Paladins gleichzeitig."
+      "description": "Du und Verbündete innerhalb deiner Aura mit 3 Meter Reichweite erhalten einen Bonus auf Rettungswürfe in Höhe deines Charismamodifikators (mindestens +1), solange du nicht Handlungsunfähig bist. Eine Kreatur profitiert nur von einer Aura des Schutzes eines Paladins gleichzeitig."
     },
     "Abjure Foes": {
       "name": "Feinde bannen",
-      "description": "Als Magieaktion verbrauchst du eine Anwendung von Göttliche Macht fokussieren, um bis zu so viele Kreaturen wie deinen Charismamodifikator (mindestens eine) innerhalb von 60 Fuß zu wählen. Jede legt einen Weisheitsrettungswurf ab; bei Misserfolg ist sie 1 Minute lang oder bis sie Schaden erleidet Verängstigt. In jedem ihrer Züge kann sie sich bewegen, eine Aktion oder eine Bonusaktion ausführen, aber nur eines davon."
+      "description": "Als Magieaktion verbrauchst du eine Anwendung von Göttliche Macht fokussieren, um bis zu so viele Kreaturen wie deinen Charismamodifikator (mindestens eine) innerhalb von 18 Metern zu wählen. Jede legt einen Weisheitsrettungswurf ab; bei Misserfolg ist sie 1 Minute lang oder bis sie Schaden erleidet Verängstigt. In jedem ihrer Züge kann sie sich bewegen, eine Aktion oder eine Bonusaktion ausführen, aber nur eines davon."
     },
     "Aura of Courage": {
       "name": "Aura des Mutes",
@@ -442,7 +442,7 @@
     },
     "Aura Expansion": {
       "name": "Erweiterte Aura",
-      "description": "Deine Aura des Schutzes erstreckt sich auf 30 Fuß."
+      "description": "Deine Aura des Schutzes erstreckt sich auf 9 Meter."
     },
     "Epic Boon": {
       "name": "Epische Gabe",
@@ -484,7 +484,7 @@
     },
     "Roving": {
       "name": "Umherstreifen",
-      "description": "Deine Bewegungsrate erhöht sich um 10 Fuß, solange du keine schwere Rüstung trägst. Du erhältst eine Kletter- und eine Schwimmbewegungsrate in Höhe deiner Bewegungsrate."
+      "description": "Deine Bewegungsrate erhöht sich um 3 Meter, solange du keine schwere Rüstung trägst. Du erhältst eine Kletter- und eine Schwimmbewegungsrate in Höhe deiner Bewegungsrate."
     },
     "Expertise": {
       "name": "Expertise",
@@ -508,7 +508,7 @@
     },
     "Feral Senses": {
       "name": "Wilde Sinne",
-      "description": "Du erhältst Blindsicht mit einer Reichweite von 30 Fuß."
+      "description": "Du erhältst Blindsicht mit einer Reichweite von 9 Metern."
     },
     "Epic Boon": {
       "name": "Epische Gabe",
@@ -526,7 +526,7 @@
     },
     "Sneak Attack": {
       "name": "Hinterhältiger Angriff",
-      "description": "Einmal pro Zug verursachst du mit einem Angriff einer Finesse- oder Fernkampfwaffe zusätzlichen Schaden, wenn der Angriff Vorteil hat. Vorteil ist nicht nötig, wenn ein Verbündeter innerhalb von 5 Fuß um das Ziel steht, nicht Handlungsunfähig ist und dein Wurf keinen Nachteil hat. Der Zusatzschaden beträgt 1d6 auf Stufe 1 und steigt auf jeder ungeraden Schurkenstufe um 1d6 bis zu 10d6 auf Stufe 19."
+      "description": "Einmal pro Zug verursachst du mit einem Angriff einer Finesse- oder Fernkampfwaffe zusätzlichen Schaden, wenn der Angriff Vorteil hat. Vorteil ist nicht nötig, wenn ein Verbündeter innerhalb von 1,5 Metern um das Ziel steht, nicht Handlungsunfähig ist und dein Wurf keinen Nachteil hat. Der Zusatzschaden beträgt 1d6 auf Stufe 1 und steigt auf jeder ungeraden Schurkenstufe um 1d6 bis zu 10d6 auf Stufe 19."
     },
     "Thieves' Cant": {
       "name": "Diebessprache",

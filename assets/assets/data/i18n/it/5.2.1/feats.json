@@ -45,11 +45,11 @@
   },
   "Boon of Dimensional Travel": {
     "name": "Dono del Viaggio Dimensionale",
-    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Subito dopo aver effettuato l'azione Attaccare o Magia, puoi teletrasportarti fino a 30 piedi in uno spazio libero che riesci a vedere."
+    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Subito dopo aver effettuato l'azione Attaccare o Magia, puoi teletrasportarti fino a 9 metri in uno spazio libero che riesci a vedere."
   },
   "Boon of Fate": {
     "name": "Dono del Destino",
-    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Quando tu o una creatura entro 60 piedi superate o fallite una Prova di D20, tira 2d4 e applica il totale come bonus o penalità al tiro. Recuperi l'uso quando tiri l'Iniziativa o termini un Riposo Breve o Lungo."
+    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Quando tu o una creatura entro 18 metri superate o fallite una Prova di D20, tira 2d4 e applica il totale come bonus o penalità al tiro. Recuperi l'uso quando tiri l'Iniziativa o termini un Riposo Breve o Lungo."
   },
   "Boon of Irresistible Offense": {
     "name": "Dono dell'Offensiva Irresistibile",
@@ -65,6 +65,6 @@
   },
   "Boon of Truesight": {
     "name": "Dono della Vista Pura",
-    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Ottieni Vista Pura entro 60 piedi."
+    "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Ottieni Vista Pura entro 18 metri."
   }
 }

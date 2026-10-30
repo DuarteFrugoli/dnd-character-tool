@@ -3,10 +3,16 @@
     "name": "Simio",
     "actions": {
       "fist": {
-        "name": "Puño"
+        "name": "Puño",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 6 (1d6 + 3) de daño contundente."
       },
       "rock": {
-        "name": "Roca"
+        "name": "Roca",
+        "description": "Ataque con arma a distancia: +5 al impacto, alcance 25/50 pies, un objetivo. Impacto: 6 (1d6 + 3) de daño contundente."
+      },
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El simio realiza dos ataques de puño."
       }
     }
   },
@@ -14,7 +20,8 @@
     "name": "Picohacha",
     "actions": {
       "beak": {
-        "name": "Pico"
+        "name": "Pico",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 6 (1d8 + 2) de daño cortante."
       }
     }
   },
@@ -22,7 +29,14 @@
     "name": "Babuino",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +1 al impacto, alcance 5 pies, un objetivo. Impacto: 1 (1d4 - 1) de daño perforante."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El babuino tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
       }
     }
   },
@@ -30,7 +44,14 @@
     "name": "Tejón",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +2 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño perforante."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "El tejón tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
       }
     }
   },
@@ -38,7 +59,18 @@
     "name": "Murciélago",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +0 al impacto, alcance 5 pies, una criatura. Impacto: 1 de daño perforante."
+      }
+    },
+    "traits": {
+      "echolocation": {
+        "name": "Ecolocalización",
+        "description": "El murciélago no puede usar su vista ciega mientras esté ensordecido."
+      },
+      "keen_hearing": {
+        "name": "Oído agudo",
+        "description": "El murciélago tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído."
       }
     }
   },
@@ -46,10 +78,22 @@
     "name": "Oso negro",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 5 (1d6 + 2) de daño perforante."
       },
       "claws": {
-        "name": "Garras"
+        "name": "Garras",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 7 (2d4 + 2) de daño cortante."
+      },
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El oso realiza dos ataques: uno con su mordisco y otro con sus garras."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "El oso tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
       }
     }
   },
@@ -57,7 +101,18 @@
     "name": "Halcón sanguinario",
     "actions": {
       "beak": {
-        "name": "Pico"
+        "name": "Pico",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d4 + 2) de daño perforante."
+      }
+    },
+    "traits": {
+      "keen_sight": {
+        "name": "Vista aguda",
+        "description": "El halcón tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan de la vista."
+      },
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El halcón tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
       }
     }
   },
@@ -65,7 +120,18 @@
     "name": "Jabalí",
     "actions": {
       "tusk": {
-        "name": "Colmillo"
+        "name": "Colmillo",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d6 + 1) de daño cortante."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Carga",
+        "description": "Si el jabalí se mueve al menos 20 pies en línea recta hacia un objetivo y luego lo impacta con un ataque de colmillo en el mismo turno, el objetivo sufre 3 (1d6) de daño cortante adicional. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza de CD 11 o quedar derribado."
+      },
+      "relentless": {
+        "name": "Implacable",
+        "description": "Si el jabalí recibe 7 de daño o menos que lo reduciría a 0 puntos de golpe, en su lugar queda reducido a 1 punto de golpe."
       }
     }
   },
@@ -73,10 +139,22 @@
     "name": "Oso pardo",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 al impacto, alcance 5 pies, un objetivo. Impacto: 8 (1d8 + 4) de daño perforante."
       },
       "claws": {
-        "name": "Garras"
+        "name": "Garras",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 al impacto, alcance 5 pies, un objetivo. Impacto: 11 (2d6 + 4) de daño cortante."
+      },
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El oso realiza dos ataques: uno con su mordisco y otro con sus garras."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "El oso tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
       }
     }
   },
@@ -84,7 +162,8 @@
     "name": "Camello",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 2 (1d4) de daño contundente."
       }
     }
   },
@@ -92,7 +171,14 @@
     "name": "Gato",
     "actions": {
       "claws": {
-        "name": "Garras"
+        "name": "Garras",
+        "description": "Ataque con arma cuerpo a cuerpo: +0 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño cortante."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "El gato tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
       }
     }
   },
@@ -100,10 +186,12 @@
     "name": "Serpiente constrictora",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, una criatura. Impacto: 5 (1d6 + 2) de daño perforante."
       },
       "constrict": {
-        "name": "Constreñir"
+        "name": "Constreñir",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, una criatura. Impacto: 6 (1d8 + 2) de daño contundente, y el objetivo queda agarrado (escapar CD 14). Hasta que termine este agarre, la criatura está apresada y la serpiente no puede constreñir a otro objetivo."
       }
     }
   },
@@ -111,7 +199,14 @@
     "name": "Cangrejo",
     "actions": {
       "claw": {
-        "name": "Garra"
+        "name": "Garra",
+        "description": "Ataque con arma cuerpo a cuerpo: +0 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño contundente."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "El cangrejo puede respirar aire y agua."
       }
     }
   },
@@ -119,7 +214,14 @@
     "name": "Cocodrilo",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, una criatura. Impacto: 7 (1d10 + 2) de daño perforante, y el objetivo queda agarrado (escapar CD 12). Hasta que termine este agarre, el objetivo está apresado y el cocodrilo no puede morder a otro objetivo."
+      }
+    },
+    "traits": {
+      "hold_breath": {
+        "name": "Contener la respiración",
+        "description": "El cocodrilo puede contener la respiración durante 15 minutos."
       }
     }
   },
@@ -127,7 +229,8 @@
     "name": "Ciervo",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +2 al impacto, alcance 5 pies, un objetivo. Impacto: 2 (1d4) de daño perforante."
       }
     }
   },
@@ -135,7 +238,18 @@
     "name": "Lobo terrible",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 10 (2d6 + 3) de daño perforante. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza de CD 13 o quedar derribado."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Oído y olfato agudos",
+        "description": "El lobo tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o del olfato."
+      },
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El lobo tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
       }
     }
   },
@@ -143,7 +257,8 @@
     "name": "Caballo de tiro",
     "actions": {
       "hooves": {
-        "name": "Cascos"
+        "name": "Cascos",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 al impacto, alcance 5 pies, un objetivo. Impacto: 9 (2d4 + 4) de daño contundente."
       }
     }
   },
@@ -151,7 +266,14 @@
     "name": "Águila",
     "actions": {
       "talons": {
-        "name": "Zarpas"
+        "name": "Zarpas",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d4 + 2) de daño cortante."
+      }
+    },
+    "traits": {
+      "keen_sight": {
+        "name": "Vista aguda",
+        "description": "El águila tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan de la vista."
       }
     }
   },
@@ -159,10 +281,18 @@
     "name": "Alce",
     "actions": {
       "ram": {
-        "name": "Embestida"
+        "name": "Embestida",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 6 (1d6 + 3) de daño contundente."
       },
       "hooves": {
-        "name": "Cascos"
+        "name": "Cascos",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, una criatura derribada. Impacto: 8 (2d4 + 3) de daño contundente."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Carga",
+        "description": "Si el alce se mueve al menos 20 pies en línea recta hacia un objetivo y luego lo impacta con un ataque de embestida en el mismo turno, el objetivo sufre 7 (2d6) de daño adicional. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza de CD 13 o quedar derribado."
       }
     }
   },
@@ -170,21 +300,50 @@
     "name": "Serpiente voladora",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño perforante más 7 (3d4) de daño de veneno."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Vuelo rasante",
+        "description": "La serpiente no provoca ataques de oportunidad cuando sale volando del alcance de un enemigo."
       }
     }
   },
   "Frog": {
-    "name": "Rana"
+    "name": "Rana",
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "La rana puede respirar aire y agua."
+      },
+      "standing_leap": {
+        "name": "Salto sin carrerilla",
+        "description": "El salto de longitud de la rana es de hasta 10 pies y su salto de altura de hasta 5 pies, con o sin carrerilla."
+      }
+    }
   },
   "Giant Badger": {
     "name": "Tejón gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d6 + 1) de daño perforante."
       },
       "claws": {
-        "name": "Garras"
+        "name": "Garras",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 6 (2d4 + 1) de daño cortante."
+      },
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El tejón realiza dos ataques: uno con su mordisco y otro con sus garras."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "El tejón tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
       }
     }
   },
@@ -192,7 +351,18 @@
     "name": "Murciélago gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, una criatura. Impacto: 5 (1d6 + 2) de daño perforante."
+      }
+    },
+    "traits": {
+      "echolocation": {
+        "name": "Ecolocalización",
+        "description": "El murciélago no puede usar su vista ciega mientras esté ensordecido."
+      },
+      "keen_hearing": {
+        "name": "Oído agudo",
+        "description": "El murciélago tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído."
       }
     }
   },
@@ -200,7 +370,8 @@
     "name": "Ciempiés gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, una criatura. Impacto: 4 (1d4 + 2) de daño perforante, y el objetivo debe superar una tirada de salvación de Constitución de CD 11 o sufrir 10 (3d6) de daño de veneno. Si el daño de veneno reduce al objetivo a 0 puntos de golpe, el objetivo queda estable pero envenenado durante 1 hora, incluso después de recuperar puntos de golpe, y está paralizado mientras esté envenenado de este modo."
       }
     }
   },
@@ -208,7 +379,14 @@
     "name": "Cangrejo gigante",
     "actions": {
       "claw": {
-        "name": "Garra"
+        "name": "Garra",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d6 + 1) de daño contundente, y el objetivo queda agarrado (escapar CD 11). El cangrejo tiene dos pinzas, y cada una solo puede agarrar a un objetivo."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "El cangrejo puede respirar aire y agua."
       }
     }
   },
@@ -216,18 +394,40 @@
     "name": "Águila gigante",
     "actions": {
       "beak": {
-        "name": "Pico"
+        "name": "Pico",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 6 (1d6 + 3) de daño perforante."
       },
       "talons": {
-        "name": "Zarpas"
+        "name": "Zarpas",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 10 (2d6 + 3) de daño cortante."
+      },
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El águila realiza dos ataques: uno con su pico y otro con sus zarpas."
       }
-    }
+    },
+    "traits": {
+      "keen_sight": {
+        "name": "Vista aguda",
+        "description": "El águila tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan de la vista."
+      }
+    },
+    "languages": [
+      "Águila gigante; entiende Común y Aurano, pero no puede hablarlos"
+    ]
   },
   "Giant Fire Beetle": {
     "name": "Escarabajo de fuego gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +1 al impacto, alcance 5 pies, un objetivo. Impacto: 2 (1d6 - 1) de daño cortante."
+      }
+    },
+    "traits": {
+      "illumination": {
+        "name": "Iluminación",
+        "description": "El escarabajo emite luz brillante en un radio de 10 pies y luz tenue 10 pies más allá."
       }
     }
   },
@@ -235,7 +435,22 @@
     "name": "Rana gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d6 + 1) de daño perforante, y el objetivo queda agarrado (escapar CD 11). Hasta que termine este agarre, el objetivo está apresado y la rana no puede morder a otro objetivo."
+      },
+      "swallow": {
+        "name": "Tragar",
+        "description": "La rana realiza un ataque de mordisco contra un objetivo Pequeño o más pequeño al que esté agarrando. Si el ataque impacta, el objetivo es tragado y el agarre termina. El objetivo tragado está cegado y apresado, tiene cobertura total contra ataques y otros efectos procedentes del exterior de la rana, y sufre 5 (2d4) de daño de ácido al comienzo de cada turno de la rana. La rana solo puede tener un objetivo tragado a la vez."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "La rana puede respirar aire y agua."
+      },
+      "standing_leap": {
+        "name": "Salto sin carrerilla",
+        "description": "El salto de longitud de la rana es de hasta 20 pies y su salto de altura de hasta 10 pies, con o sin carrerilla."
       }
     }
   },
@@ -243,7 +458,18 @@
     "name": "Cabra gigante",
     "actions": {
       "ram": {
-        "name": "Embestida"
+        "name": "Embestida",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 8 (2d4 + 3) de daño contundente."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Carga",
+        "description": "Si la cabra se mueve al menos 20 pies en línea recta hacia un objetivo y luego lo impacta con un ataque de embestida en el mismo turno, el objetivo sufre 5 (2d4) de daño contundente adicional. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza de CD 13 o quedar derribado."
+      },
+      "sure_footed": {
+        "name": "Paso firme",
+        "description": "La cabra tiene ventaja en las tiradas de salvación de Fuerza y Destreza contra efectos que la derribarían."
       }
     }
   },
@@ -251,7 +477,14 @@
     "name": "Hiena gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 10 (2d6 + 3) de daño perforante."
+      }
+    },
+    "traits": {
+      "rampage": {
+        "name": "Desenfreno",
+        "description": "Cuando la hiena reduce a una criatura a 0 puntos de golpe con un ataque cuerpo a cuerpo en su turno, puede usar una acción adicional para moverse hasta la mitad de su velocidad y realizar un ataque de mordisco."
       }
     }
   },
@@ -259,7 +492,8 @@
     "name": "Lagarto gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 6 (1d8 + 2) de daño perforante."
       }
     }
   },
@@ -267,7 +501,26 @@
     "name": "Pulpo gigante",
     "actions": {
       "tentacles": {
-        "name": "Tentáculos"
+        "name": "Tentáculos",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 15 pies, un objetivo. Impacto: 10 (2d6 + 3) de daño contundente. Si el objetivo es una criatura, queda agarrado (escapar CD 16). Hasta que termine este agarre, el objetivo está apresado y el pulpo no puede usar sus tentáculos contra otro objetivo."
+      },
+      "ink_cloud": {
+        "name": "Nube de tinta",
+        "description": "Si el pulpo está bajo el agua, una nube de tinta de 20 pies de radio se extiende a su alrededor. El área queda muy oscurecida durante 1 minuto, aunque una corriente considerable puede dispersar la tinta. Tras liberar la tinta, el pulpo puede usar la acción de Correr como acción adicional."
+      }
+    },
+    "traits": {
+      "hold_breath": {
+        "name": "Contener la respiración",
+        "description": "Fuera del agua, el pulpo puede contener la respiración durante 1 hora."
+      },
+      "underwater_camouflage": {
+        "name": "Camuflaje subacuático",
+        "description": "El pulpo tiene ventaja en las pruebas de Destreza (Sigilo) que realice bajo el agua."
+      },
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El pulpo solo puede respirar bajo el agua."
       }
     }
   },
@@ -275,15 +528,30 @@
     "name": "Búho gigante",
     "actions": {
       "talons": {
-        "name": "Zarpas"
+        "name": "Zarpas",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 8 (2d6 + 1) de daño cortante."
       }
-    }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Vuelo rasante",
+        "description": "El búho no provoca ataques de oportunidad cuando sale volando del alcance de un enemigo."
+      },
+      "keen_hearing_and_sight": {
+        "name": "Oído y vista agudos",
+        "description": "El búho tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o de la vista."
+      }
+    },
+    "languages": [
+      "Búho gigante; entiende Común, Élfico y Selvático, pero no puede hablarlos"
+    ]
   },
   "Giant Poisonous Snake": {
     "name": "Serpiente venenosa gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 al impacto, alcance 10 pies, un objetivo. Impacto: 6 (1d4 + 4) de daño perforante, y el objetivo debe realizar una tirada de salvación de Constitución de CD 11; sufre 10 (3d6) de daño de veneno si falla, o la mitad de ese daño si tiene éxito."
       }
     }
   },
@@ -291,7 +559,18 @@
     "name": "Rata gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d4 + 2) de daño perforante."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "La rata tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
+      },
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "La rata tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
       }
     }
   },
@@ -299,7 +578,18 @@
     "name": "Caballito de mar gigante",
     "actions": {
       "ram": {
-        "name": "Embestida"
+        "name": "Embestida",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d6 + 1) de daño contundente."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Carga",
+        "description": "Si el caballito de mar se mueve al menos 20 pies en línea recta hacia un objetivo y luego lo impacta con un ataque de embestida en el mismo turno, el objetivo sufre 7 (2d6) de daño contundente adicional. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza de CD 11 o quedar derribado."
+      },
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El caballito de mar solo puede respirar bajo el agua."
       }
     }
   },
@@ -307,10 +597,26 @@
     "name": "Araña gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, una criatura. Impacto: 7 (1d8 + 3) de daño perforante, y el objetivo debe realizar una tirada de salvación de Constitución de CD 11; sufre 9 (2d8) de daño de veneno si falla, o la mitad de ese daño si tiene éxito. Si el daño de veneno reduce al objetivo a 0 puntos de golpe, el objetivo queda estable pero envenenado durante 1 hora, incluso después de recuperar puntos de golpe, y está paralizado mientras esté envenenado de este modo."
       },
       "web": {
-        "name": "Telaraña"
+        "name": "Telaraña",
+        "description": "Ataque con arma a distancia: +5 al impacto, alcance 30/60 pies, una criatura. Impacto: el objetivo queda apresado por la telaraña. Como acción, el objetivo apresado puede realizar una prueba de Fuerza de CD 12 y, si tiene éxito, rompe la telaraña. La telaraña también puede ser atacada y destruida (CA 10; PG 5; vulnerabilidad al daño de fuego; inmunidad al daño contundente, de veneno y psíquico)."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Trepar como una araña",
+        "description": "La araña puede trepar por superficies difíciles, incluso boca abajo por los techos, sin necesidad de hacer una prueba de característica."
+      },
+      "web_sense": {
+        "name": "Sentir telarañas",
+        "description": "Mientras está en contacto con una telaraña, la araña conoce la ubicación exacta de cualquier otra criatura que esté en contacto con la misma telaraña."
+      },
+      "web_walker": {
+        "name": "Caminante de telarañas",
+        "description": "La araña ignora las restricciones de movimiento causadas por las telarañas."
       }
     }
   },
@@ -318,7 +624,22 @@
     "name": "Sapo gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 7 (1d10 + 2) de daño perforante más 5 (1d10) de daño de veneno, y el objetivo queda agarrado (escapar CD 13). Hasta que termine este agarre, el objetivo está apresado y el sapo no puede morder a otro objetivo."
+      },
+      "swallow": {
+        "name": "Tragar",
+        "description": "El sapo realiza un ataque de mordisco contra un objetivo Mediano o más pequeño al que esté agarrando. Si el ataque impacta, el objetivo es tragado y el agarre termina. El objetivo tragado está cegado y apresado, tiene cobertura total contra ataques y otros efectos procedentes del exterior del sapo, y sufre 10 (3d6) de daño de ácido al comienzo de cada turno del sapo. El sapo solo puede tener un objetivo tragado a la vez."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Anfibio",
+        "description": "El sapo puede respirar aire y agua."
+      },
+      "standing_leap": {
+        "name": "Salto sin carrerilla",
+        "description": "El salto de longitud del sapo es de hasta 20 pies y su salto de altura de hasta 10 pies, con o sin carrerilla."
       }
     }
   },
@@ -326,18 +647,38 @@
     "name": "Buitre gigante",
     "actions": {
       "beak": {
-        "name": "Pico"
+        "name": "Pico",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 7 (2d4 + 2) de daño perforante."
       },
       "talons": {
-        "name": "Zarpas"
+        "name": "Zarpas",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 9 (2d6 + 2) de daño cortante."
+      },
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El buitre realiza dos ataques: uno con su pico y otro con sus zarpas."
       }
-    }
+    },
+    "traits": {
+      "keen_sight_and_smell": {
+        "name": "Vista y olfato agudos",
+        "description": "El buitre tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan de la vista o del olfato."
+      },
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El buitre tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
+      }
+    },
+    "languages": [
+      "entiende Común, pero no puede hablarlo"
+    ]
   },
   "Giant Wasp": {
     "name": "Avispa gigante",
     "actions": {
       "sting": {
-        "name": "Aguijón"
+        "name": "Aguijón",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, una criatura. Impacto: 5 (1d6 + 2) de daño perforante, y el objetivo debe realizar una tirada de salvación de Constitución de CD 11; sufre 10 (3d6) de daño de veneno si falla, o la mitad de ese daño si tiene éxito. Si el daño de veneno reduce al objetivo a 0 puntos de golpe, el objetivo queda estable pero envenenado durante 1 hora, incluso después de recuperar puntos de golpe, y está paralizado mientras esté envenenado de este modo."
       }
     }
   },
@@ -345,7 +686,14 @@
     "name": "Comadreja gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 5 (1d4 + 3) de daño perforante."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Oído y olfato agudos",
+        "description": "La comadreja tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o del olfato."
       }
     }
   },
@@ -353,7 +701,22 @@
     "name": "Araña lobo gigante",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, una criatura. Impacto: 4 (1d6 + 1) de daño perforante, y el objetivo debe realizar una tirada de salvación de Constitución de CD 11; sufre 7 (2d6) de daño de veneno si falla, o la mitad de ese daño si tiene éxito. Si el daño de veneno reduce al objetivo a 0 puntos de golpe, el objetivo queda estable pero envenenado durante 1 hora, incluso después de recuperar puntos de golpe, y está paralizado mientras esté envenenado de este modo."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Trepar como una araña",
+        "description": "La araña puede trepar por superficies difíciles, incluso boca abajo por los techos, sin necesidad de hacer una prueba de característica."
+      },
+      "web_sense": {
+        "name": "Sentir telarañas",
+        "description": "Mientras está en contacto con una telaraña, la araña conoce la ubicación exacta de cualquier otra criatura que esté en contacto con la misma telaraña."
+      },
+      "web_walker": {
+        "name": "Caminante de telarañas",
+        "description": "La araña ignora las restricciones de movimiento causadas por las telarañas."
       }
     }
   },
@@ -361,7 +724,18 @@
     "name": "Cabra",
     "actions": {
       "ram": {
-        "name": "Embestida"
+        "name": "Embestida",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 3 (1d4 + 1) de daño contundente."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Carga",
+        "description": "Si la cabra se mueve al menos 20 pies en línea recta hacia un objetivo y luego lo impacta con un ataque de embestida en el mismo turno, el objetivo sufre 2 (1d4) de daño contundente adicional. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza de CD 10 o quedar derribado."
+      },
+      "sure_footed": {
+        "name": "Paso firme",
+        "description": "La cabra tiene ventaja en las tiradas de salvación de Fuerza y Destreza contra efectos que la derribarían."
       }
     }
   },
@@ -369,7 +743,14 @@
     "name": "Halcón",
     "actions": {
       "talons": {
-        "name": "Zarpas"
+        "name": "Zarpas",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño cortante."
+      }
+    },
+    "traits": {
+      "keen_sight": {
+        "name": "Vista aguda",
+        "description": "El halcón tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan de la vista."
       }
     }
   },
@@ -377,7 +758,14 @@
     "name": "Hiena",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +2 al impacto, alcance 5 pies, un objetivo. Impacto: 3 (1d6) de daño perforante."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "La hiena tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
       }
     }
   },
@@ -385,7 +773,18 @@
     "name": "Chacal",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +1 al impacto, alcance 5 pies, un objetivo. Impacto: 1 (1d4 - 1) de daño perforante."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Oído y olfato agudos",
+        "description": "El chacal tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o del olfato."
+      },
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El chacal tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
       }
     }
   },
@@ -393,10 +792,30 @@
     "name": "León",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 7 (1d8 + 3) de daño perforante."
       },
       "claw": {
-        "name": "Garra"
+        "name": "Garra",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 6 (1d6 + 3) de daño cortante."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "El león tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
+      },
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El león tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
+      },
+      "pounce": {
+        "name": "Abalanzarse",
+        "description": "Si el león se mueve al menos 20 pies en línea recta hacia una criatura y luego la impacta con un ataque de garra en el mismo turno, el objetivo debe superar una tirada de salvación de Fuerza de CD 13 o quedar derribado. Si el objetivo está derribado, el león puede realizar un ataque de mordisco contra él como acción adicional."
+      },
+      "running_leap": {
+        "name": "Salto con carrerilla",
+        "description": "Con una carrerilla de 10 pies, el león puede realizar un salto de longitud de hasta 25 pies."
       }
     }
   },
@@ -404,7 +823,8 @@
     "name": "Lagarto",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +0 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño perforante."
       }
     }
   },
@@ -412,7 +832,14 @@
     "name": "Mastín",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d6 + 1) de daño perforante. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza de CD 11 o quedar derribado."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Oído y olfato agudos",
+        "description": "El mastín tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o del olfato."
       }
     }
   },
@@ -420,7 +847,18 @@
     "name": "Mula",
     "actions": {
       "hooves": {
-        "name": "Cascos"
+        "name": "Cascos",
+        "description": "Ataque con arma cuerpo a cuerpo: +2 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d4 + 2) de daño contundente."
+      }
+    },
+    "traits": {
+      "beast_of_burden": {
+        "name": "Bestia de carga",
+        "description": "La mula se considera un animal Grande a efectos de determinar su capacidad de carga."
+      },
+      "sure_footed": {
+        "name": "Paso firme",
+        "description": "La mula tiene ventaja en las tiradas de salvación de Fuerza y Destreza contra efectos que la derribarían."
       }
     }
   },
@@ -428,7 +866,26 @@
     "name": "Pulpo",
     "actions": {
       "tentacles": {
-        "name": "Tentáculos"
+        "name": "Tentáculos",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño contundente, y el objetivo queda agarrado (escapar CD 10). Hasta que termine este agarre, el pulpo no puede usar sus tentáculos contra otro objetivo."
+      },
+      "ink_cloud": {
+        "name": "Nube de tinta",
+        "description": "Si el pulpo está bajo el agua, una nube de tinta de 5 pies de radio se extiende a su alrededor. El área queda muy oscurecida durante 1 minuto, aunque una corriente considerable puede dispersar la tinta. Tras liberar la tinta, el pulpo puede usar la acción de Correr como acción adicional."
+      }
+    },
+    "traits": {
+      "hold_breath": {
+        "name": "Contener la respiración",
+        "description": "Fuera del agua, el pulpo puede contener la respiración durante 30 minutos."
+      },
+      "underwater_camouflage": {
+        "name": "Camuflaje subacuático",
+        "description": "El pulpo tiene ventaja en las pruebas de Destreza (Sigilo) que realice bajo el agua."
+      },
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El pulpo solo puede respirar bajo el agua."
       }
     }
   },
@@ -436,7 +893,18 @@
     "name": "Búho",
     "actions": {
       "talons": {
-        "name": "Zarpas"
+        "name": "Zarpas",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño cortante."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Vuelo rasante",
+        "description": "El búho no provoca ataques de oportunidad cuando sale volando del alcance de un enemigo."
+      },
+      "keen_hearing_and_sight": {
+        "name": "Oído y vista agudos",
+        "description": "El búho tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o de la vista."
       }
     }
   },
@@ -444,10 +912,22 @@
     "name": "Pantera",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 5 (1d6 + 2) de daño perforante."
       },
       "claw": {
-        "name": "Garra"
+        "name": "Garra",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 4 (1d4 + 2) de daño cortante."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "La pantera tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
+      },
+      "pounce": {
+        "name": "Abalanzarse",
+        "description": "Si la pantera se mueve al menos 20 pies en línea recta hacia una criatura y luego la impacta con un ataque de garra en el mismo turno, el objetivo debe superar una tirada de salvación de Fuerza de CD 12 o quedar derribado. Si el objetivo está derribado, la pantera puede realizar un ataque de mordisco contra él como acción adicional."
       }
     }
   },
@@ -455,7 +935,8 @@
     "name": "Serpiente venenosa",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño perforante, y el objetivo debe realizar una tirada de salvación de Constitución de CD 10; sufre 5 (2d4) de daño de veneno si falla, o la mitad de ese daño si tiene éxito."
       }
     }
   },
@@ -463,7 +944,8 @@
     "name": "Poni",
     "actions": {
       "hooves": {
-        "name": "Cascos"
+        "name": "Cascos",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 7 (2d4 + 2) de daño contundente."
       }
     }
   },
@@ -471,7 +953,18 @@
     "name": "Quipper",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño perforante."
+      }
+    },
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frenesí sanguinario",
+        "description": "El quipper tiene ventaja en las tiradas de ataque cuerpo a cuerpo contra cualquier criatura a la que le falten puntos de golpe."
+      },
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El quipper solo puede respirar bajo el agua."
       }
     }
   },
@@ -479,7 +972,14 @@
     "name": "Rata",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +0 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño perforante."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "La rata tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
       }
     }
   },
@@ -487,7 +987,14 @@
     "name": "Cuervo",
     "actions": {
       "beak": {
-        "name": "Pico"
+        "name": "Pico",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño perforante."
+      }
+    },
+    "traits": {
+      "mimicry": {
+        "name": "Imitación",
+        "description": "El cuervo puede imitar sonidos sencillos que haya oído, como el susurro de una persona, el llanto de un bebé o el chillido de un animal. Una criatura que oiga los sonidos puede darse cuenta de que son imitaciones si supera una prueba de Sabiduría (Perspicacia) de CD 10."
       }
     }
   },
@@ -495,7 +1002,18 @@
     "name": "Tiburón de arrecife",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 6 (1d8 + 2) de daño perforante."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El tiburón tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
+      },
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El tiburón solo puede respirar bajo el agua."
       }
     }
   },
@@ -503,7 +1021,8 @@
     "name": "Caballo de monta",
     "actions": {
       "hooves": {
-        "name": "Cascos"
+        "name": "Cascos",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 8 (2d4 + 3) de daño contundente."
       }
     }
   },
@@ -511,18 +1030,40 @@
     "name": "Escorpión",
     "actions": {
       "sting": {
-        "name": "Aguijón"
+        "name": "Aguijón",
+        "description": "Ataque con arma cuerpo a cuerpo: +2 al impacto, alcance 5 pies, una criatura. Impacto: 1 de daño perforante, y el objetivo debe realizar una tirada de salvación de Constitución de CD 9; sufre 4 (1d8) de daño de veneno si falla, o la mitad de ese daño si tiene éxito."
       }
     }
   },
   "Sea Horse": {
-    "name": "Caballito de mar"
+    "name": "Caballito de mar",
+    "traits": {
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El caballito de mar solo puede respirar bajo el agua."
+      }
+    }
   },
   "Spider": {
     "name": "Araña",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, una criatura. Impacto: 1 de daño perforante, y el objetivo debe superar una tirada de salvación de Constitución de CD 9 o sufrir 2 (1d4) de daño de veneno."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Trepar como una araña",
+        "description": "La araña puede trepar por superficies difíciles, incluso boca abajo por los techos, sin necesidad de hacer una prueba de característica."
+      },
+      "web_sense": {
+        "name": "Sentir telarañas",
+        "description": "Mientras está en contacto con una telaraña, la araña conoce la ubicación exacta de cualquier otra criatura que esté en contacto con la misma telaraña."
+      },
+      "web_walker": {
+        "name": "Caminante de telarañas",
+        "description": "La araña ignora las restricciones de movimiento causadas por las telarañas."
       }
     }
   },
@@ -530,7 +1071,8 @@
     "name": "Estirge",
     "actions": {
       "blood_drain": {
-        "name": "Drenar sangre"
+        "name": "Drenar sangre",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, una criatura. Impacto: 5 (1d4 + 3) de daño perforante, y el estirge se adhiere al objetivo. Mientras está adherido, el estirge no ataca. En su lugar, al comienzo de cada turno del estirge, el objetivo pierde 5 (1d4 + 3) puntos de golpe debido a la pérdida de sangre."
       }
     }
   },
@@ -538,7 +1080,22 @@
     "name": "Enjambre de murciélagos",
     "actions": {
       "bites": {
-        "name": "Mordiscos"
+        "name": "Mordiscos",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 0 pies, una criatura en el espacio del enjambre. Impacto: 5 (2d4) de daño perforante, o 2 (1d4) de daño perforante si al enjambre le queda la mitad de sus puntos de golpe o menos."
+      }
+    },
+    "traits": {
+      "echolocation": {
+        "name": "Ecolocalización",
+        "description": "El enjambre no puede usar su vista ciega mientras esté ensordecido."
+      },
+      "keen_hearing": {
+        "name": "Oído agudo",
+        "description": "El enjambre tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído."
+      },
+      "swarm": {
+        "name": "Enjambre",
+        "description": "El enjambre puede ocupar el espacio de otra criatura y viceversa, y puede moverse a través de cualquier abertura lo bastante grande para un murciélago Diminuto. El enjambre no puede recuperar puntos de golpe ni obtener puntos de golpe temporales."
       }
     }
   },
@@ -546,7 +1103,14 @@
     "name": "Enjambre de insectos",
     "actions": {
       "bites": {
-        "name": "Mordiscos"
+        "name": "Mordiscos",
+        "description": "Ataque con arma cuerpo a cuerpo: +3 al impacto, alcance 0 pies, un objetivo en el espacio del enjambre. Impacto: 10 (4d4) de daño perforante, o 5 (2d4) de daño perforante si al enjambre le queda la mitad de sus puntos de golpe o menos."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Enjambre",
+        "description": "El enjambre puede ocupar el espacio de otra criatura y viceversa, y puede moverse a través de cualquier abertura lo bastante grande para un insecto Diminuto. El enjambre no puede recuperar puntos de golpe ni obtener puntos de golpe temporales."
       }
     }
   },
@@ -554,7 +1118,22 @@
     "name": "Enjambre de quippers",
     "actions": {
       "bites": {
-        "name": "Mordiscos"
+        "name": "Mordiscos",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 0 pies, una criatura en el espacio del enjambre. Impacto: 14 (4d6) de daño perforante, o 7 (2d6) de daño perforante si al enjambre le queda la mitad de sus puntos de golpe o menos."
+      }
+    },
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frenesí sanguinario",
+        "description": "El enjambre tiene ventaja en las tiradas de ataque cuerpo a cuerpo contra cualquier criatura a la que le falten puntos de golpe."
+      },
+      "swarm": {
+        "name": "Enjambre",
+        "description": "El enjambre puede ocupar el espacio de otra criatura y viceversa, y puede moverse a través de cualquier abertura lo bastante grande para un quipper Diminuto. El enjambre no puede recuperar puntos de golpe ni obtener puntos de golpe temporales."
+      },
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El enjambre solo puede respirar bajo el agua."
       }
     }
   },
@@ -562,7 +1141,18 @@
     "name": "Enjambre de ratas",
     "actions": {
       "bites": {
-        "name": "Mordiscos"
+        "name": "Mordiscos",
+        "description": "Ataque con arma cuerpo a cuerpo: +2 al impacto, alcance 0 pies, un objetivo en el espacio del enjambre. Impacto: 7 (2d6) de daño perforante, o 3 (1d6) de daño perforante si al enjambre le queda la mitad de sus puntos de golpe o menos."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "El enjambre tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
+      },
+      "swarm": {
+        "name": "Enjambre",
+        "description": "El enjambre puede ocupar el espacio de otra criatura y viceversa, y puede moverse a través de cualquier abertura lo bastante grande para una rata Diminuta. El enjambre no puede recuperar puntos de golpe ni obtener puntos de golpe temporales."
       }
     }
   },
@@ -570,7 +1160,14 @@
     "name": "Enjambre de cuervos",
     "actions": {
       "beaks": {
-        "name": "Picotazos"
+        "name": "Picotazos",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo en el espacio del enjambre. Impacto: 7 (2d6) de daño perforante, o 3 (1d6) de daño perforante si al enjambre le queda la mitad de sus puntos de golpe o menos."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Enjambre",
+        "description": "El enjambre puede ocupar el espacio de otra criatura y viceversa, y puede moverse a través de cualquier abertura lo bastante grande para un cuervo Diminuto. El enjambre no puede recuperar puntos de golpe ni obtener puntos de golpe temporales."
       }
     }
   },
@@ -578,10 +1175,22 @@
     "name": "Tigre",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 8 (1d10 + 3) de daño perforante."
       },
       "claw": {
-        "name": "Garra"
+        "name": "Garra",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 7 (1d8 + 3) de daño cortante."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "El tigre tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
+      },
+      "pounce": {
+        "name": "Abalanzarse",
+        "description": "Si el tigre se mueve al menos 20 pies en línea recta hacia una criatura y luego la impacta con un ataque de garra en el mismo turno, el objetivo debe superar una tirada de salvación de Fuerza de CD 13 o quedar derribado. Si el objetivo está derribado, el tigre puede realizar un ataque de mordisco contra él como acción adicional."
       }
     }
   },
@@ -589,7 +1198,18 @@
     "name": "Buitre",
     "actions": {
       "beak": {
-        "name": "Pico"
+        "name": "Pico",
+        "description": "Ataque con arma cuerpo a cuerpo: +2 al impacto, alcance 5 pies, un objetivo. Impacto: 2 (1d4) de daño perforante."
+      }
+    },
+    "traits": {
+      "keen_sight_and_smell": {
+        "name": "Vista y olfato agudos",
+        "description": "El buitre tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan de la vista o del olfato."
+      },
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El buitre tiene ventaja en una tirada de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
       }
     }
   },
@@ -597,7 +1217,14 @@
     "name": "Caballo de guerra",
     "actions": {
       "hooves": {
-        "name": "Cascos"
+        "name": "Cascos",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 al impacto, alcance 5 pies, un objetivo. Impacto: 11 (2d6 + 4) de daño contundente."
+      }
+    },
+    "traits": {
+      "trampling_charge": {
+        "name": "Carga arrolladora",
+        "description": "Si el caballo se mueve al menos 20 pies en línea recta hacia una criatura y luego la impacta con un ataque de cascos en el mismo turno, el objetivo debe superar una tirada de salvación de Fuerza de CD 14 o quedar derribado. Si el objetivo está derribado, el caballo puede realizar otro ataque con sus cascos contra él como acción adicional."
       }
     }
   },
@@ -605,7 +1232,14 @@
     "name": "Comadreja",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 al impacto, alcance 5 pies, un objetivo. Impacto: 1 de daño perforante."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Oído y olfato agudos",
+        "description": "La comadreja tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o del olfato."
       }
     }
   },
@@ -613,7 +1247,18 @@
     "name": "Lobo",
     "actions": {
       "bite": {
-        "name": "Mordisco"
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 al impacto, alcance 5 pies, un objetivo. Impacto: 7 (2d4 + 2) de daño perforante. Si el objetivo es una criatura, debe superar una tirada de salvación de Fuerza de CD 11 o quedar derribado."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Oído y olfato agudos",
+        "description": "El lobo tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído o del olfato."
+      },
+      "pack_tactics": {
+        "name": "Tácticas de manada",
+        "description": "El lobo tiene ventaja en las tiradas de ataque contra una criatura si al menos uno de sus aliados está a 5 pies o menos de ella y ese aliado no está incapacitado."
       }
     }
   }

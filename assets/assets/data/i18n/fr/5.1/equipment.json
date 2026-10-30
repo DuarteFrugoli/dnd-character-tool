@@ -183,7 +183,7 @@
   },
   "Backpack": {
     "name": "Sac à dos",
-    "description": "Peut contenir 30 lb/1 pied cube."
+    "description": "Peut contenir 30 lb/28 litres."
   },
   "Burglar's Pack": {
     "name": "Pack du cambrioleur",
@@ -219,11 +219,11 @@
   },
   "Barrel": {
     "name": "Baril",
-    "description": "Peut contenir 40 gallons de liquide ou 4 pieds cubes de solide."
+    "description": "Peut contenir 40 gallons de liquide ou 113 litres de solide."
   },
   "Basket": {
     "name": "Panier",
-    "description": "Peut contenir 2 pieds cubes/40 lb."
+    "description": "Peut contenir 57 litres/40 lb."
   },
   "Bedroll": {
     "name": "Sac de couchage",
@@ -255,11 +255,11 @@
   },
   "Caltrops (bag of 20)": {
     "name": "Chausse-trapes (sachet de 20)",
-    "description": "Dispersez-vous sur une zone de 5 pieds. Les créatures qui se déplacent doivent réussir un jet de Dextérité DD 15 ou s'arrêter et subir 1 dégât perforant (vitesse réduite de 10 pieds jusqu'à ce qu'elles soient guéries)."
+    "description": "Dispersez-vous sur une zone de 1,5 mètre. Les créatures qui se déplacent doivent réussir un jet de Dextérité DD 15 ou s'arrêter et subir 1 dégât perforant (vitesse réduite de 3 mètres jusqu'à ce qu'elles soient guéries)."
   },
   "Candle": {
     "name": "Bougie",
-    "description": "Illumine un rayon de 5 pieds de lumière vive et 5 pieds de lumière faible pendant 1 heure."
+    "description": "Illumine un rayon de 1,5 mètre de lumière vive et 1,5 mètre de lumière faible pendant 1 heure."
   },
   "Case, crossbow bolt": {
     "name": "Étui, carreau d'arbalète",
@@ -274,7 +274,7 @@
     "description": "Un récipient utilisé pour brûler de l'encens."
   },
   "Chain (10 feet)": {
-    "name": "Chaîne (10 pieds)",
+    "name": "Chaîne (3 mètres)",
     "description": "A 10 points de vie. Peut être éclaté avec un test de Force DD 20."
   },
   "Chalk (1 piece)": {
@@ -283,7 +283,7 @@
   },
   "Chest": {
     "name": "Poitrine",
-    "description": "Peut contenir 12 pieds cubes/300 lb."
+    "description": "Peut contenir 340 litres/300 lb."
   },
   "Climber's Kit": {
     "name": "Kit du grimpeur",
@@ -343,7 +343,7 @@
   },
   "Holy Water (flask)": {
     "name": "Eau bénite (flacon)",
-    "description": "Par une action, éclaboussez une créature dans un rayon de 1,50 mètre ou lancez-la jusqu'à 20 pieds. En cas de coup, un démon ou un mort-vivant subit 2d6 dégâts radiants."
+    "description": "Par une action, éclaboussez une créature dans un rayon de 1,50 mètre ou lancez-la jusqu'à 6 mètres. En cas de coup, un démon ou un mort-vivant subit 2d6 dégâts radiants."
   },
   "Hourglass": {
     "name": "Sablier",
@@ -374,20 +374,20 @@
     "description": "Peut contenir 1 gallon de liquide."
   },
   "Ladder (10-foot)": {
-    "name": "Échelle (10 pieds)",
-    "description": "Une échelle en bois de 10 pieds."
+    "name": "Échelle (3 mètres)",
+    "description": "Une échelle en bois de 3 mètres."
   },
   "Lamp": {
     "name": "Lampe",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Projette une lumière vive dans un rayon de 15 pieds et une lumière tamisée sur 30 pieds supplémentaires."
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Projette une lumière vive dans un rayon de 4,5 mètres et une lumière tamisée sur 9 mètres supplémentaires."
   },
   "Lantern, bullseye": {
     "name": "Lanterne, cible",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Cône de 60 pieds de lumière vive, 60 pieds supplémentaires de lumière tamisée."
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Cône de 18 mètres de lumière vive, 18 mètres supplémentaires de lumière tamisée."
   },
   "Lantern, hooded": {
     "name": "Lanterne, à capuchon",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Lumière vive dans un rayon de 30 pieds, lumière faible supplémentaire de 30 pieds. Peut être recouvert d'une capuche pour réduire la lumière à 5 pieds."
+    "description": "Brûle de l'huile (1 pinte = 6 heures). Lumière vive dans un rayon de 9 mètres, lumière faible supplémentaire de 9 mètres. Peut être recouvert d'une capuche pour réduire la lumière à 1,5 mètre."
   },
   "Lock": {
     "name": "Verrouillage",
@@ -438,8 +438,8 @@
     "description": "Appliquer sur une arme tranchante ou perçante. Une créature touchée doit réussir un jet de Constitution DD 10 ou subir 1d4 dégâts de poison. Après 1 minute, le poison perd de son efficacité."
   },
   "Pole (10-foot)": {
-    "name": "Poteau (10 pieds)",
-    "description": "Un poteau en bois de 10 pieds."
+    "name": "Poteau (3 mètres)",
+    "description": "Un poteau en bois de 3 mètres."
   },
   "Pot, iron": {
     "name": "Casserole, fer",
@@ -447,7 +447,7 @@
   },
   "Pouch": {
     "name": "Poche",
-    "description": "Peut contenir jusqu'à 20 balles de fronde ou 50 aiguilles de sarbacane, ou 6 lb / 1/5 pied cube d'équipement."
+    "description": "Peut contenir jusqu'à 20 balles de fronde ou 50 aiguilles de sarbacane, ou 6 lb / 6 litres d'équipement."
   },
   "Quiver": {
     "name": "Frémir",
@@ -462,16 +462,16 @@
     "description": "Aliments secs adaptés aux voyages prolongés, notamment la viande séchée, les fruits secs, les fruits secs et les noix."
   },
   "Rope, hempen (50 feet)": {
-    "name": "Corde, chanvre (50 pieds)",
+    "name": "Corde, chanvre (15 mètres)",
     "description": "A 2 points de vie et peut être éclaté avec un test de Force DD 17."
   },
   "Rope, silk (50 feet)": {
-    "name": "Corde, soie (50 pieds)",
+    "name": "Corde, soie (15 mètres)",
     "description": "A 2 points de vie et peut être éclaté avec un test de Force DD 17."
   },
   "Sack": {
     "name": "Sac",
-    "description": "Peut contenir 1 pied cube/30 lb."
+    "description": "Peut contenir 28 litres/30 lb."
   },
   "Sand (small bag)": {
     "name": "Sable (petit sac)",
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "Sifflet de signalisation",
-    "description": "Un petit sifflet métallique audible jusqu'à 600 pieds de distance."
+    "description": "Un petit sifflet métallique audible jusqu'à 180 mètres de distance."
   },
   "Signet Ring": {
     "name": "Chevalière",
@@ -514,8 +514,8 @@
     "description": "Les objets observés à travers la lunette sont agrandis jusqu'à deux fois leur taille."
   },
   "String (10 feet)": {
-    "name": "Corde (10 pieds)",
-    "description": "Une longueur de ficelle de 10 pieds."
+    "name": "Corde (3 mètres)",
+    "description": "Une longueur de ficelle de 3 mètres."
   },
   "Tent, two-person": {
     "name": "Tente, deux personnes",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "Torche",
-    "description": "Brûle 1 heure. Lumière vive dans un rayon de 20 pieds, lumière tamisée dans un rayon de 20 pieds supplémentaires. Peut être utilisé comme une arme improvisée (1d4 dégâts de feu)."
+    "description": "Brûle 1 heure. Lumière vive dans un rayon de 6 mètres, lumière tamisée dans un rayon de 6 mètres supplémentaires. Peut être utilisé comme une arme improvisée (1d4 dégâts de feu)."
   },
   "Vial": {
     "name": "Ampoule",

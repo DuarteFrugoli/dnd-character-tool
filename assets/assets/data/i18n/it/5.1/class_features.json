@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimento senza armatura",
-      "description": "La tua velocità aumenta mentre non indossi un'armatura o non impugni uno scudo: +10 piedi al livello monaco 2, +15 piedi al livello 6, +20 piedi al livello 10, +25 piedi al livello 14 e +9 metri al livello 18."
+      "description": "La tua velocità aumenta mentre non indossi un'armatura o non impugni uno scudo: +3 metri al livello monaco 2, +4,5 metri al livello 6, +6 metri al livello 10, +7,5 metri al livello 14 e +9 metri al livello 18."
     },
     "Monastic Tradition": {
       "name": "Tradizione monastica",
@@ -324,7 +324,7 @@
     },
     "Primeval Awareness": {
       "name": "Consapevolezza primordiale",
-      "description": "Puoi usare la tua azione e spendere uno slot incantesimo da ranger per focalizzare la tua consapevolezza sulla regione intorno a te. Per 1 minuto per livello dello slot incantesimo speso, puoi percepire se sono presenti aberrazioni, celestiali, draghi, elementali, folletti, immondi o non morti entro 1 miglio da te."
+      "description": "Puoi usare la tua azione e spendere uno slot incantesimo da ranger per focalizzare la tua consapevolezza sulla regione intorno a te. Per 1 minuto per livello dello slot incantesimo speso, puoi percepire se sono presenti aberrazioni, celestiali, draghi, elementali, folletti, immondi o non morti entro 1,5 chilometri da te."
     },
     "Ability Score Improvement": {
       "name": "Aumento dei punteggi di caratteristica",

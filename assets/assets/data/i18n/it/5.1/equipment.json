@@ -183,7 +183,7 @@
   },
   "Backpack": {
     "name": "Zaino",
-    "description": "Contiene 30 libbre/1 piede cubo."
+    "description": "Contiene 30 libbre/28 litri."
   },
   "Burglar's Pack": {
     "name": "Dotazione da scassinatore",
@@ -219,11 +219,11 @@
   },
   "Barrel": {
     "name": "Barile",
-    "description": "Contiene 40 galloni liquidi o 4 piedi cubi solidi."
+    "description": "Contiene 40 galloni liquidi o 113 litri solidi."
   },
   "Basket": {
     "name": "Cestino",
-    "description": "Contiene 2 piedi cubi/40 libbre."
+    "description": "Contiene 57 litri/40 libbre."
   },
   "Bedroll": {
     "name": "Lettino",
@@ -255,7 +255,7 @@
   },
   "Caltrops (bag of 20)": {
     "name": "Triboli (sacchetto da 20)",
-    "description": "Spargi su un'area di 5 piedi. Le creature che si muovono attraverso devono effettuare un tiro salvezza su Destrezza con CD 15 o fermarsi e subire 1 danno perforante (velocità ridotta di 3 metri finché non vengono guarite)."
+    "description": "Spargi su un'area di 1,5 metri. Le creature che si muovono attraverso devono effettuare un tiro salvezza su Destrezza con CD 15 o fermarsi e subire 1 danno perforante (velocità ridotta di 3 metri finché non vengono guarite)."
   },
   "Candle": {
     "name": "Candela",
@@ -274,7 +274,7 @@
     "description": "Vaso usato per bruciare l'incenso."
   },
   "Chain (10 feet)": {
-    "name": "Catena (10 piedi)",
+    "name": "Catena (3 metri)",
     "description": "Ha 10 punti ferita. Può essere fatto esplodere con una prova di Forza con CD 20."
   },
   "Chalk (1 piece)": {
@@ -283,7 +283,7 @@
   },
   "Chest": {
     "name": "Petto",
-    "description": "Contiene 12 piedi cubi/300 libbre."
+    "description": "Contiene 340 litri/300 libbre."
   },
   "Climber's Kit": {
     "name": "Kit da scalatore",
@@ -374,8 +374,8 @@
     "description": "Contiene 1 litro di liquido."
   },
   "Ladder (10-foot)": {
-    "name": "Scala (10 piedi)",
-    "description": "Una scala di legno di 10 piedi."
+    "name": "Scala (3 metri)",
+    "description": "Una scala di legno di 3 metri."
   },
   "Lamp": {
     "name": "Lampada",
@@ -383,11 +383,11 @@
   },
   "Lantern, bullseye": {
     "name": "Lanterna, bersaglio",
-    "description": "Brucia olio (1 pinta = 6 ore). Cono di luce intensa di 60 piedi, ulteriori 60 piedi di luce fioca."
+    "description": "Brucia olio (1 pinta = 6 ore). Cono di luce intensa di 18 metri, ulteriori 18 metri di luce fioca."
   },
   "Lantern, hooded": {
     "name": "Lanterna, con cappuccio",
-    "description": "Brucia olio (1 pinta = 6 ore). Luce intensa con raggio di 9 metri, luce fioca aggiuntiva di 9 metri. Può essere incappucciato per ridurre la luce fioca a 5 piedi."
+    "description": "Brucia olio (1 pinta = 6 ore). Luce intensa con raggio di 9 metri, luce fioca aggiuntiva di 9 metri. Può essere incappucciato per ridurre la luce fioca a 1,5 metri."
   },
   "Lock": {
     "name": "Serratura",
@@ -438,8 +438,8 @@
     "description": "Si applica a un'arma tagliente o perforante. Una creatura colpita deve superare un tiro salvezza su Costituzione con CD 10 o subire 1d4 danni da veleno. Dopo 1 minuto il veleno perde efficacia."
   },
   "Pole (10-foot)": {
-    "name": "Palo (10 piedi)",
-    "description": "Un palo di legno di 10 piedi."
+    "name": "Palo (3 metri)",
+    "description": "Un palo di legno di 3 metri."
   },
   "Pot, iron": {
     "name": "Pentola, ferro",
@@ -447,7 +447,7 @@
   },
   "Pouch": {
     "name": "Custodia",
-    "description": "Può contenere fino a 20 proiettili per fionda o 50 aghi per cerbottana o 6 libbre / 1/5 piede cubo di attrezzatura."
+    "description": "Può contenere fino a 20 proiettili per fionda o 50 aghi per cerbottana o 6 libbre / 6 litri di attrezzatura."
   },
   "Quiver": {
     "name": "Faretra",
@@ -462,16 +462,16 @@
     "description": "Alimenti secchi adatti a viaggi prolungati, tra cui carne secca, frutta secca, gallette e noci."
   },
   "Rope, hempen (50 feet)": {
-    "name": "Corda, canapa (50 piedi)",
+    "name": "Corda, canapa (15 metri)",
     "description": "Ha 2 punti ferita e può essere fatto esplodere con una prova di Forza con CD 17."
   },
   "Rope, silk (50 feet)": {
-    "name": "Corda, seta (50 piedi)",
+    "name": "Corda, seta (15 metri)",
     "description": "Ha 2 punti ferita e può essere fatto esplodere con una prova di Forza con CD 17."
   },
   "Sack": {
     "name": "Sacco",
-    "description": "Contiene 1 piede cubo / 30 libbre."
+    "description": "Contiene 28 litri / 30 libbre."
   },
   "Sand (small bag)": {
     "name": "Sabbia (borsa piccola)",
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "Fischio di segnale",
-    "description": "Un piccolo fischio metallico udibile fino a 600 piedi di distanza."
+    "description": "Un piccolo fischio metallico udibile fino a 180 metri di distanza."
   },
   "Signet Ring": {
     "name": "Anello con sigillo",
@@ -514,8 +514,8 @@
     "description": "Gli oggetti visti attraverso il cannocchiale vengono ingranditi fino al doppio della loro dimensione."
   },
   "String (10 feet)": {
-    "name": "Corda (10 piedi)",
-    "description": "Una corda lunga 10 piedi."
+    "name": "Corda (3 metri)",
+    "description": "Una corda lunga 3 metri."
   },
   "Tent, two-person": {
     "name": "Tenda, due persone",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "Torcia",
-    "description": "Brucia 1 ora. Luce intensa nel raggio di 20 piedi, luce fioca in ulteriori 20 piedi. Può essere usato come arma improvvisata (1d4 danni da fuoco)."
+    "description": "Brucia 1 ora. Luce intensa nel raggio di 6 metri, luce fioca in ulteriori 6 metri. Può essere usato come arma improvvisata (1d4 danni da fuoco)."
   },
   "Vial": {
     "name": "Fiala",

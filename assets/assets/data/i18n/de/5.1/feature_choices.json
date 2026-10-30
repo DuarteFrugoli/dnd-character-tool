@@ -19,7 +19,7 @@
       },
       "feinting_attack": {
         "name": "Finting-Angriff",
-        "description": "Geben Sie eine Bonusaktion und einen Überlegenheitswürfel aus, um eine Finte gegen eine Kreatur innerhalb von 5 Fuß durchzuführen. Du hast in diesem Zug bei deinem nächsten Angriff dagegen einen Vorteil, und wenn dieser Angriff trifft, addiere den Überlegenheitswürfel zum Schaden."
+        "description": "Geben Sie eine Bonusaktion und einen Überlegenheitswürfel aus, um eine Finte gegen eine Kreatur innerhalb von 1,5 Metern durchzuführen. Du hast in diesem Zug bei deinem nächsten Angriff dagegen einen Vorteil, und wenn dieser Angriff trifft, addiere den Überlegenheitswürfel zum Schaden."
       },
       "goading_attack": {
         "name": "Anspornender Angriff",
@@ -27,7 +27,7 @@
       },
       "lunging_attack": {
         "name": "Ausfallangriff",
-        "description": "Wenn Sie einen Nahkampfwaffenangriff ausführen, geben Sie einen Überlegenheitswürfel aus, um Ihre Reichweite für diesen Angriff um 5 Fuß zu erhöhen. Wenn der Angriff trifft, addiere den Überlegenheitswürfel zum Schaden."
+        "description": "Wenn Sie einen Nahkampfwaffenangriff ausführen, geben Sie einen Überlegenheitswürfel aus, um Ihre Reichweite für diesen Angriff um 1,5 Meter zu erhöhen. Wenn der Angriff trifft, addiere den Überlegenheitswürfel zum Schaden."
       },
       "maneuvering_attack": {
         "name": "Manövrierangriff",
@@ -47,7 +47,7 @@
       },
       "pushing_attack": {
         "name": "Push-Angriff",
-        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Wenn das Ziel groß oder kleiner ist, muss es einen Kraftwurf machen oder bis zu 15 Fuß von Ihnen entfernt werden."
+        "description": "Wenn Sie mit einem Waffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus und addieren ihn zum Schaden. Wenn das Ziel groß oder kleiner ist, muss es einen Kraftwurf machen oder bis zu 4,5 Meter von Ihnen entfernt werden."
       },
       "rally": {
         "name": "Rallye",
@@ -59,7 +59,7 @@
       },
       "sweeping_attack": {
         "name": "Durchgreifender Angriff",
-        "description": "Wenn Sie mit einem Nahkampfwaffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus, um einer anderen Kreatur innerhalb von 5 Fuß um das ursprüngliche Ziel und in Ihrer Reichweite Schaden zuzufügen. Wenn der ursprüngliche Angriffswurf die zweite Kreatur treffen würde, erleidet sie Schaden in Höhe des Überlegenheitswürfels."
+        "description": "Wenn Sie mit einem Nahkampfwaffenangriff zuschlagen, geben Sie einen Überlegenheitswürfel aus, um einer anderen Kreatur innerhalb von 1,5 Metern um das ursprüngliche Ziel und in Ihrer Reichweite Schaden zuzufügen. Wenn der ursprüngliche Angriffswurf die zweite Kreatur treffen würde, erleidet sie Schaden in Höhe des Überlegenheitswürfels."
       },
       "trip_attack": {
         "name": "Trip Attack",
@@ -85,7 +85,7 @@
       },
       "protection": {
         "name": "Schutz",
-        "description": "Wenn eine Kreatur ein anderes Ziel als dich im Umkreis von 5 Fuß angreift, kannst du deine Reaktion nutzen, um dem Angriffswurf einen Nachteil zu verschaffen. Du musst einen Schild tragen."
+        "description": "Wenn eine Kreatur ein anderes Ziel als dich im Umkreis von 1,5 Metern angreift, kannst du deine Reaktion nutzen, um dem Angriffswurf einen Nachteil zu verschaffen. Du musst einen Schild tragen."
       },
       "two_weapon_fighting": {
         "name": "Zwei-Waffen-Kampf",
@@ -107,7 +107,7 @@
       },
       "protection": {
         "name": "Schutz",
-        "description": "Wenn eine Kreatur ein anderes Ziel als dich im Umkreis von 5 Fuß angreift, kannst du deine Reaktion nutzen, um dem Angriffswurf einen Nachteil zu verschaffen. Du musst einen Schild tragen."
+        "description": "Wenn eine Kreatur ein anderes Ziel als dich im Umkreis von 1,5 Metern angreift, kannst du deine Reaktion nutzen, um dem Angriffswurf einen Nachteil zu verschaffen. Du musst einen Schild tragen."
       }
     },
     "fighting_styles_ranger": {
@@ -135,7 +135,7 @@
       },
       "distant_spell": {
         "name": "Fernzauber",
-        "description": "Geben Sie 1 Zauberpunkt aus, um die Reichweite eines Zaubers zu verdoppeln, wenn er eine Reichweite von 5 Fuß oder mehr hat. Wenn der Zauber eine Berührungsreichweite hat, beträgt seine Reichweite 30 Fuß."
+        "description": "Geben Sie 1 Zauberpunkt aus, um die Reichweite eines Zaubers zu verdoppeln, wenn er eine Reichweite von 1,5 Metern oder mehr hat. Wenn der Zauber eine Berührungsreichweite hat, beträgt seine Reichweite 9 Meter."
       },
       "empowered_spell": {
         "name": "Machtvoller Zauber",
@@ -438,7 +438,7 @@
                 },
                 "whirlwind_attack": {
                   "name": "Wirbelwind-Angriff",
-                  "description": "Nutze deine Aktion, um Nahkampfangriffe gegen eine beliebige Anzahl von Kreaturen in einem Umkreis von 5 Fuß um dich herum durchzuführen."
+                  "description": "Nutze deine Aktion, um Nahkampfangriffe gegen eine beliebige Anzahl von Kreaturen in einem Umkreis von 1,5 Metern um dich herum durchzuführen."
                 }
               }
             }

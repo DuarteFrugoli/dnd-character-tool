@@ -159,7 +159,7 @@
   "Potion of Flying": {"name":"비행 물약","description":"마시면 1시간 동안 보행 속도와 같은 비행 속도를 얻고 제자리에서 떠 있을 수 있습니다. 효과가 끝날 때 공중에 있다면 다른 수단이 없는 한 추락합니다. 투명한 액체는 병 위에 떠 있고 뿌연 흰 불순물이 흐릅니다."},
   "Ring of Animal Influence": {"name":"동물 영향의 반지","description":"이 반지는 3회 충전되어 있으며 매일 새벽 소모한 충전을 1d3회 회복합니다. 착용 중 행동으로 1회를 소비해 동물의 우정(DC 13), 두려움(DC 13, 지능 3 이하의 야수만 대상), 동물과 대화 중 하나를 시전할 수 있습니다."},
   "Arrow-Catching Shield": {"name":"화살 받이 방패","description":"기본 아이템: 방패. 이 방패를 사용하면 일반적인 방패의 AC 보너스에 더해 원거리 공격에 대한 AC에 +2 보너스를 받습니다. 공격자가 당신의 5피트 이내 목표를 원거리 공격할 때 반응 행동으로 공격 대상을 당신으로 바꿀 수 있습니다."},
-  "Manual of Gainful Exercise": {"name":"유익한 운동 지침서","description":"이 마법 책은 체력 운동을 설명합니다. 6일 이내에 총 48시간 공부하고 실천하면 근력 수치와 그 최대치가 2 증가합니다. 책은 마법을 잃지만 1세기 뒤 되찾습니다."},
+  "Manual of Gainful Exercise": {"name":"유익한 운동 지침서","description":"이 마법 책은 히트 포인트 운동을 설명합니다. 6일 이내에 총 48시간 공부하고 실천하면 근력 수치와 그 최대치가 2 증가합니다. 책은 마법을 잃지만 1세기 뒤 되찾습니다."},
   "Bowl of Commanding Water Elementals": {"name":"물 정령 조종 그릇","description":"그릇에 물이 차 있는 동안 행동으로 명령어를 말해 정령 창조 주문을 시전한 것처럼 물 정령을 소환할 수 있습니다. 다음 새벽까지 다시 사용할 수 없습니다. 지름 약 1피트, 깊이는 그 절반이고 무게는 3파운드이며 약 3갤런을 담습니다."},
   "Manual of Bodily Health": {"name":"건강한 몸 지침서","description":"이 마법 책에는 건강과 식단 조언이 담겼습니다. 6일 이내에 총 48시간 공부하고 실천하면 건강 수치와 그 최대치가 2 증가합니다. 책은 마법을 잃지만 1세기 뒤 되찾습니다."},
   "Censer of Controlling Air Elementals": {"name":"공기 정령 조종 향로","description":"향로에서 향이 타는 동안 행동으로 명령어를 말해 정령 창조 주문을 시전한 것처럼 공기 정령을 소환할 수 있습니다. 다음 새벽까지 다시 사용할 수 없습니다. 장식 뚜껑이 있는 그릇으로 너비 6인치, 높이 1피트, 무게 1파운드입니다."},
@@ -246,19 +246,19 @@
   "Amulet of Proof against Detection and Location": {"name":"탐지와 위치 추적 방지 아뮬렛","description":"이 아뮬렛을 착용하는 동안 당신은 예지 마법에 탐지되지 않습니다. 그러한 마법의 목표가 되거나 마법적인 원격 관찰 감지기에 포착되지 않습니다."},
   "Potion of Healing": {
     "name": "치유의 물약",
-    "description": "이 물약을 마시면 2d4 + 2 체력을 회복합니다."
+    "description": "이 물약을 마시면 2d4 + 2 히트 포인트를 회복합니다."
   },
   "Potion of Greater Healing": {
     "name": "상급 치유의 물약",
-    "description": "이 물약을 마시면 4d4 + 4 체력을 회복합니다."
+    "description": "이 물약을 마시면 4d4 + 4 히트 포인트를 회복합니다."
   },
   "Potion of Superior Healing": {
     "name": "최상급 치유의 물약",
-    "description": "이 물약을 마시면 8d4 + 8 체력을 회복합니다."
+    "description": "이 물약을 마시면 8d4 + 8 히트 포인트를 회복합니다."
   },
   "Potion of Supreme Healing": {
     "name": "최고의 치유 물약",
-    "description": "이 물약을 마시면 10d4 + 20 체력을 회복합니다."
+    "description": "이 물약을 마시면 10d4 + 20 히트 포인트를 회복합니다."
   },
   "Bag of Holding": {
     "name": "보유 가방",

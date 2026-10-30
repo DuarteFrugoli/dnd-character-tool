@@ -49,7 +49,7 @@
       },
       "Cutting Words": {
         "name": "Couper les mots",
-        "description": "Également au niveau 3, lorsqu'une créature que vous pouvez voir dans un rayon de 60 pieds effectue un jet d'attaque, un test de caractéristique ou un jet de dégâts, vous pouvez utiliser votre réaction pour dépenser une utilisation d'Inspiration bardique, en lançant le dé et en soustrayant le nombre du jet de la créature. La créature est immunisée si elle ne peut pas vous entendre ou si elle est immunisée contre les charmes."
+        "description": "Également au niveau 3, lorsqu'une créature que vous pouvez voir dans un rayon de 18 mètres effectue un jet d'attaque, un test de caractéristique ou un jet de dégâts, vous pouvez utiliser votre réaction pour dépenser une utilisation d'Inspiration bardique, en lançant le dé et en soustrayant le nombre du jet de la créature. La créature est immunisée si elle ne peut pas vous entendre ou si elle est immunisée contre les charmes."
       },
       "Additional Magical Secrets": {
         "name": "Secrets magiques supplémentaires",
@@ -151,7 +151,7 @@
       },
       "Corona of Light": {
         "name": "Couronne de Lumière",
-        "description": "À partir du niveau 17, vous pouvez utiliser votre action pour activer une aura de soleil qui dure 1 minute ou jusqu'à ce que vous la dissipiez. Vous émettez une lumière vive dans un rayon de 60 pieds et une lumière tamisée 30 pieds au-delà. Vos ennemis dans la lumière vive ont un désavantage aux jets de sauvegarde contre tout sort qui inflige des dégâts de feu ou de rayonnement."
+        "description": "À partir du niveau 17, vous pouvez utiliser votre action pour activer une aura de soleil qui dure 1 minute ou jusqu'à ce que vous la dissipiez. Vous émettez une lumière vive dans un rayon de 18 mètres et une lumière tamisée 9 mètres au-delà. Vos ennemis dans la lumière vive ont un désavantage aux jets de sauvegarde contre tout sort qui inflige des dégâts de feu ou de rayonnement."
       }
     },
     "Nature Domain": {
@@ -225,7 +225,7 @@
       },
       "Improved Duplicity": {
         "name": "Duplicité améliorée",
-        "description": "Au niveau 17, vous pouvez créer jusqu'à quatre doubles de vous-même, au lieu d'un, lorsque vous utilisez Invoquer la duplicité. Par une action bonus pendant votre tour, vous pouvez déplacer n'importe quel nombre d'entre eux jusqu'à 9 mètres, pour une portée maximale de 120 pieds."
+        "description": "Au niveau 17, vous pouvez créer jusqu'à quatre doubles de vous-même, au lieu d'un, lorsque vous utilisez Invoquer la duplicité. Par une action bonus pendant votre tour, vous pouvez déplacer n'importe quel nombre d'entre eux jusqu'à 9 mètres, pour une portée maximale de 36 mètres."
       }
     },
     "War Domain": {
@@ -309,7 +309,7 @@
       },
       "Remarkable Athlete": {
         "name": "Athlète remarquable",
-        "description": "À partir du niveau 7, vous pouvez ajouter la moitié de votre bonus de maîtrise (arrondi au supérieur) à tout test de Force, de Dextérité ou de Constitution que vous effectuez et qui n'utilise pas déjà votre bonus de maîtrise. De plus, lorsque vous effectuez un saut en longueur en courant, la distance que vous pouvez parcourir augmente d'un nombre de pieds égal à votre modificateur de Force."
+        "description": "À partir du niveau 7, vous pouvez ajouter la moitié de votre bonus de maîtrise (arrondi au supérieur) à tout test de Force, de Dextérité ou de Constitution que vous effectuez et qui n'utilise pas déjà votre bonus de maîtrise. De plus, lorsque vous effectuez un saut en longueur en courant, la distance que vous pouvez parcourir augmente de 30 centimètres × votre modificateur de Force."
       },
       "Additional Fighting Style": {
         "name": "Style de combat supplémentaire",
@@ -377,7 +377,7 @@
     "Way of the Open Hand": {
       "Open Hand Technique": {
         "name": "Technique de la main ouverte",
-        "description": "À partir du choix de cette tradition au niveau 3, chaque fois que vous touchez une créature avec l'une des attaques accordées par votre Déluge de coups, vous pouvez lui imposer l'un des effets suivants : elle doit réussir un jet de sauvegarde de Dextérité sous peine d'être mise à terre ; il doit effectuer un jet de sauvegarde de Force – s'il échoue, vous pouvez le pousser jusqu'à 15 pieds ; ou il ne peut pas réagir avant la fin de votre prochain tour."
+        "description": "À partir du choix de cette tradition au niveau 3, chaque fois que vous touchez une créature avec l'une des attaques accordées par votre Déluge de coups, vous pouvez lui imposer l'un des effets suivants : elle doit réussir un jet de sauvegarde de Dextérité sous peine d'être mise à terre ; il doit effectuer un jet de sauvegarde de Force – s'il échoue, vous pouvez le pousser jusqu'à 4,5 mètres ; ou il ne peut pas réagir avant la fin de votre prochain tour."
       },
       "Wholeness of Body": {
         "name": "Intégrité du corps",
@@ -399,7 +399,7 @@
       },
       "Shadow Step": {
         "name": "Étape de l'ombre",
-        "description": "Au niveau 6, lorsque vous êtes dans une faible lumière ou dans l'obscurité, par une action bonus, vous pouvez vous téléporter jusqu'à 60 pieds dans un espace inoccupé que vous pouvez voir et qui est également dans une faible lumière ou dans l'obscurité. Vous avez alors l'avantage sur la première attaque de mêlée que vous effectuez avant la fin du tour."
+        "description": "Au niveau 6, lorsque vous êtes dans une faible lumière ou dans l'obscurité, par une action bonus, vous pouvez vous téléporter jusqu'à 18 mètres dans un espace inoccupé que vous pouvez voir et qui est également dans une faible lumière ou dans l'obscurité. Vous avez alors l'avantage sur la première attaque de mêlée que vous effectuez avant la fin du tour."
       },
       "Cloak of Shadows": {
         "name": "Cape des ombres",
@@ -425,7 +425,7 @@
     "Oath of Devotion": {
       "Channel Divinity: Sacred Weapon": {
         "name": "Canalisation divine : Arme sacrée",
-        "description": "Par une action, vous pouvez imprégner une arme que vous tenez d’énergie positive, en utilisant votre Canalisation divine. Pendant 1 minute, vous ajoutez votre modificateur de Charisme aux jets d'attaque effectués avec cette arme (minimum +1). L'arme émet également une lumière vive dans un rayon de 20 pieds et une lumière faible 20 pieds au-delà. Si l’arme n’est pas déjà magique, elle le devient pour la durée."
+        "description": "Par une action, vous pouvez imprégner une arme que vous tenez d’énergie positive, en utilisant votre Canalisation divine. Pendant 1 minute, vous ajoutez votre modificateur de Charisme aux jets d'attaque effectués avec cette arme (minimum +1). L'arme émet également une lumière vive dans un rayon de 6 mètres et une lumière faible 6 mètres au-delà. Si l’arme n’est pas déjà magique, elle le devient pour la durée."
       },
       "Channel Divinity: Turn the Unholy": {
         "name": "Canalisation divine : Transformez l'Impie",
@@ -469,7 +469,7 @@
     "Oath of Vengeance": {
       "Channel Divinity: Abjure Enemy": {
         "name": "Canalisation divine : abjurer l'ennemi",
-        "description": "En guise d'action, vous présentez votre symbole sacré et prononcez une prière de dénonciation, en utilisant votre Divinité Canal. Choisissez une créature à moins de 60 pieds de vous et que vous pouvez voir. Cette créature doit réussir un jet de sauvegarde de Sagesse. Les démons et les morts-vivants sont désavantagés lors de ce jet de sauvegarde. En cas d'échec, la créature est effrayée pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts. Tant qu'elle est effrayée, la vitesse de la créature est de 0 et elle ne peut bénéficier d'aucun bonus à sa vitesse."
+        "description": "En guise d'action, vous présentez votre symbole sacré et prononcez une prière de dénonciation, en utilisant votre Divinité Canal. Choisissez une créature à moins de 18 mètres de vous et que vous pouvez voir. Cette créature doit réussir un jet de sauvegarde de Sagesse. Les démons et les morts-vivants sont désavantagés lors de ce jet de sauvegarde. En cas d'échec, la créature est effrayée pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts. Tant qu'elle est effrayée, la vitesse de la créature est de 0 et elle ne peut bénéficier d'aucun bonus à sa vitesse."
       },
       "Channel Divinity: Vow of Enmity": {
         "name": "Canalisation divine : Vœu d'inimitié",
@@ -485,7 +485,7 @@
       },
       "Avenging Angel": {
         "name": "Ange vengeur",
-        "description": "Au niveau 20, par une action, vous prenez la forme d'un vengeur angélique pendant 1 minute. Des ailes poussent dans votre dos et vous confèrent une vitesse de vol de 60 pieds. Vous dégagez une aura de menace dans un rayon de 9 mètres. La première fois qu'une créature ennemie entre dans l'aura ou y commence son tour, elle doit réussir un jet de sauvegarde de Sagesse ou avoir peur de vous pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts."
+        "description": "Au niveau 20, par une action, vous prenez la forme d'un vengeur angélique pendant 1 minute. Des ailes poussent dans votre dos et vous confèrent une vitesse de vol de 18 mètres. Vous dégagez une aura de menace dans un rayon de 9 mètres. La première fois qu'une créature ennemie entre dans l'aura ou y commence son tour, elle doit réussir un jet de sauvegarde de Sagesse ou avoir peur de vous pendant 1 minute ou jusqu'à ce qu'elle subisse des dégâts."
       }
     }
   },
@@ -501,7 +501,7 @@
       },
       "Multiattack": {
         "name": "Multi-attaque",
-        "description": "Au niveau 11, vous bénéficiez de l'une des fonctionnalités suivantes. Volée : vous pouvez utiliser votre action pour effectuer une attaque à distance contre n'importe quel nombre de créatures à moins de 10 pieds d'un point que vous pouvez voir à portée de votre arme, en effectuant un jet d'attaque distinct pour chaque cible. Attaque tourbillonnante : vous pouvez utiliser votre action pour effectuer une attaque au corps à corps contre n'importe quel nombre de créatures à moins de 1,50 mètre de vous, avec un jet d'attaque distinct pour chaque cible."
+        "description": "Au niveau 11, vous bénéficiez de l'une des fonctionnalités suivantes. Volée : vous pouvez utiliser votre action pour effectuer une attaque à distance contre n'importe quel nombre de créatures à moins de 3 mètres d'un point que vous pouvez voir à portée de votre arme, en effectuant un jet d'attaque distinct pour chaque cible. Attaque tourbillonnante : vous pouvez utiliser votre action pour effectuer une attaque au corps à corps contre n'importe quel nombre de créatures à moins de 1,50 mètre de vous, avec un jet d'attaque distinct pour chaque cible."
       },
       "Superior Hunter's Defense": {
         "name": "Défense supérieure du chasseur",
@@ -535,7 +535,7 @@
       },
       "Second-Story Work": {
         "name": "Travail au deuxième étage",
-        "description": "Lorsque vous choisissez cet archétype au niveau 3, l'escalade ne vous coûte plus de mouvement supplémentaire. De plus, lorsque vous effectuez un saut en courant, la distance que vous parcourez augmente d'un nombre de pieds égal à votre modificateur de Dextérité."
+        "description": "Lorsque vous choisissez cet archétype au niveau 3, l'escalade ne vous coûte plus de mouvement supplémentaire. De plus, lorsque vous effectuez un saut en courant, la distance que vous parcourez augmente de 30 centimètres × votre modificateur de Dextérité."
       },
       "Supreme Sneak": {
         "name": "Furtivité suprême",
@@ -615,7 +615,7 @@
       },
       "Draconic Presence": {
         "name": "Présence draconique",
-        "description": "À partir du niveau 18, par une action, vous pouvez dépenser 5 points de sorcellerie pour dégager une aura de crainte ou de peur (au choix) jusqu'à une distance de 60 pieds. Pendant 1 minute ou jusqu'à ce que vous perdiez votre concentration, chaque créature hostile qui commence son tour dans cette aura doit réussir un jet de sauvegarde de Sagesse ou être charmée (si vous avez choisi la crainte) ou effrayée (si vous avez choisi la peur) jusqu'à la fin de l'aura."
+        "description": "À partir du niveau 18, par une action, vous pouvez dépenser 5 points de sorcellerie pour dégager une aura de crainte ou de peur (au choix) jusqu'à une distance de 18 mètres. Pendant 1 minute ou jusqu'à ce que vous perdiez votre concentration, chaque créature hostile qui commence son tour dans cette aura doit réussir un jet de sauvegarde de Sagesse ou être charmée (si vous avez choisi la crainte) ou effrayée (si vous avez choisi la peur) jusqu'à la fin de l'aura."
       }
     },
     "Wild Magic": {
@@ -645,11 +645,11 @@
     "The Archfey": {
       "Fey Presence": {
         "name": "Présence féerique",
-        "description": "À partir du niveau 1, par une action, vous pouvez amener chaque créature d'un cube de 10 pieds provenant de vous à effectuer un jet de sauvegarde de Sagesse contre le DD de sauvegarde de vos sorts de démoniste. Les créatures qui échouent sont toutes charmées ou effrayées par vous (votre choix) jusqu'à la fin de votre prochain tour. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+        "description": "À partir du niveau 1, par une action, vous pouvez amener chaque créature d'un cube de 3 mètres provenant de vous à effectuer un jet de sauvegarde de Sagesse contre le DD de sauvegarde de vos sorts de démoniste. Les créatures qui échouent sont toutes charmées ou effrayées par vous (votre choix) jusqu'à la fin de votre prochain tour. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
       },
       "Misty Escape": {
         "name": "Évasion brumeuse",
-        "description": "À partir du niveau 6, lorsque vous subissez des dégâts, vous pouvez utiliser votre réaction pour devenir invisible et vous téléporter jusqu'à 60 pieds dans un espace inoccupé que vous pouvez voir. Vous restez invisible jusqu'au début de votre prochain tour ou jusqu'à ce que vous attaquiez ou lanciez un sort. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+        "description": "À partir du niveau 6, lorsque vous subissez des dégâts, vous pouvez utiliser votre réaction pour devenir invisible et vous téléporter jusqu'à 18 mètres dans un espace inoccupé que vous pouvez voir. Vous restez invisible jusqu'au début de votre prochain tour ou jusqu'à ce que vous attaquiez ou lanciez un sort. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
       },
       "Beguiling Defenses": {
         "name": "Défenses séduisantes",
@@ -657,7 +657,7 @@
       },
       "Dark Delirium": {
         "name": "Délire sombre",
-        "description": "À partir du niveau 14, par une action, choisissez une créature que vous pouvez voir dans un rayon de 60 pieds. Il doit réussir un jet de sauvegarde de Sagesse ou être charmé ou effrayé par vous (au choix) pendant 1 minute ou jusqu'à ce que votre concentration soit brisée. Cet effet se termine plus tôt si la créature subit des dégâts. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
+        "description": "À partir du niveau 14, par une action, choisissez une créature que vous pouvez voir dans un rayon de 18 mètres. Il doit réussir un jet de sauvegarde de Sagesse ou être charmé ou effrayé par vous (au choix) pendant 1 minute ou jusqu'à ce que votre concentration soit brisée. Cet effet se termine plus tôt si la créature subit des dégâts. Une fois que vous utilisez cette fonctionnalité, vous ne pouvez plus l'utiliser tant que vous n'avez pas terminé un repos court ou long."
       }
     },
     "The Fiend": {
@@ -727,7 +727,7 @@
       },
       "Minor Conjuration": {
         "name": "Conjuration mineure",
-        "description": "À partir du niveau 2, vous pouvez utiliser votre action pour invoquer un objet inanimé dans votre main ou au sol dans un espace inoccupé à moins de 3 mètres de vous. Cet objet ne peut pas mesurer plus de 3 pieds de côté et peser pas plus de 10 livres, et sa forme doit être celle d'un objet non magique que vous avez vu. L'objet est visiblement magique. L'objet disparaît après 1 heure, lorsque vous utilisez à nouveau cette fonctionnalité, ou s'il subit ou inflige des dégâts."
+        "description": "À partir du niveau 2, vous pouvez utiliser votre action pour invoquer un objet inanimé dans votre main ou au sol dans un espace inoccupé à moins de 3 mètres de vous. Cet objet ne peut pas mesurer plus de 0,9 mètre de côté et peser pas plus de 10 livres, et sa forme doit être celle d'un objet non magique que vous avez vu. L'objet est visiblement magique. L'objet disparaît après 1 heure, lorsque vous utilisez à nouveau cette fonctionnalité, ou s'il subit ou inflige des dégâts."
       },
       "Benign Transposition": {
         "name": "Transposition bénigne",
@@ -757,7 +757,7 @@
       },
       "The Third Eye": {
         "name": "Le troisième œil",
-        "description": "À partir du niveau 10, vous pouvez utiliser votre action pour augmenter vos pouvoirs de perception. Ce faisant, choisissez l'un des avantages suivants, qui perdurent jusqu'à ce que vous soyez frappé d'incapacité ou que vous preniez un repos court ou long : Vision dans le noir (60 pieds), Vue éthérée (voir dans le plan éthéré), Grande compréhension (lire n'importe quelle langue) ou Voir l'invisibilité."
+        "description": "À partir du niveau 10, vous pouvez utiliser votre action pour augmenter vos pouvoirs de perception. Ce faisant, choisissez l'un des avantages suivants, qui perdurent jusqu'à ce que vous soyez frappé d'incapacité ou que vous preniez un repos court ou long : Vision dans le noir (18 mètres), Vue éthérée (voir dans le plan éthéré), Grande compréhension (lire n'importe quelle langue) ou Voir l'invisibilité."
       },
       "Greater Portent": {
         "name": "Un plus grand présage",
@@ -859,11 +859,11 @@
       },
       "Minor Alchemy": {
         "name": "Alchimie mineure",
-        "description": "À partir du niveau 2, vous pouvez modifier temporairement les propriétés physiques d'un objet non magique, en le transformant d'une substance en une autre. Vous effectuez une procédure alchimique spéciale sur un objet entièrement composé de bois, de pierre (mais pas de pierre précieuse), de fer, de cuivre ou d'argent. Pour chaque tranche de 10 minutes que vous passez à effectuer la procédure, vous pouvez transformer jusqu'à 1 pied cube de matériau. Après 1 heure, ou jusqu'à ce que vous perdiez votre concentration, le matériau retrouve sa substance d'origine."
+        "description": "À partir du niveau 2, vous pouvez modifier temporairement les propriétés physiques d'un objet non magique, en le transformant d'une substance en une autre. Vous effectuez une procédure alchimique spéciale sur un objet entièrement composé de bois, de pierre (mais pas de pierre précieuse), de fer, de cuivre ou d'argent. Pour chaque tranche de 10 minutes que vous passez à effectuer la procédure, vous pouvez transformer jusqu'à 28 litres de matériau. Après 1 heure, ou jusqu'à ce que vous perdiez votre concentration, le matériau retrouve sa substance d'origine."
       },
       "Transmuter's Stone": {
         "name": "Pierre du Transmutateur",
-        "description": "À partir du niveau 6, vous pouvez passer 8 heures à créer une pierre de transmutation qui stocke la magie de transmutation. Une créature bénéficie d'un avantage de votre choix tant que la pierre est en sa possession : vision dans le noir (60 pieds), vitesse augmentée de 10 pieds, maîtrise des jets de sauvegarde de Constitution ou résistance aux dégâts de l'acide, du froid, du feu, de la foudre ou du tonnerre."
+        "description": "À partir du niveau 6, vous pouvez passer 8 heures à créer une pierre de transmutation qui stocke la magie de transmutation. Une créature bénéficie d'un avantage de votre choix tant que la pierre est en sa possession : vision dans le noir (18 mètres), vitesse augmentée de 3 mètres, maîtrise des jets de sauvegarde de Constitution ou résistance aux dégâts de l'acide, du froid, du feu, de la foudre ou du tonnerre."
       },
       "Shapechanger": {
         "name": "Changeur de forme",

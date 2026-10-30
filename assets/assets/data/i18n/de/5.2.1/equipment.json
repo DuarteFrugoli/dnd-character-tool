@@ -174,11 +174,11 @@
   },
   "Acid": {
     "name": "Säure",
-    "description": "Ersetze einen Angriff durch den Wurf einer Phiole auf ein Ziel innerhalb von 20 Fuß. Misslingt sein Geschicklichkeitsrettungswurf (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet es 2W6 Säureschaden."
+    "description": "Ersetze einen Angriff durch den Wurf einer Phiole auf ein Ziel innerhalb von 6 Metern. Misslingt sein Geschicklichkeitsrettungswurf (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet es 2W6 Säureschaden."
   },
   "Alchemist's Fire": {
     "name": "Alchemistenfeuer",
-    "description": "Ersetze einen Angriff durch den Wurf einer Flasche auf ein Ziel innerhalb von 20 Fuß. Misslingt sein Geschicklichkeitsrettungswurf (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet es 1W4 Feuerschaden und beginnt zu brennen."
+    "description": "Ersetze einen Angriff durch den Wurf einer Flasche auf ein Ziel innerhalb von 6 Metern. Misslingt sein Geschicklichkeitsrettungswurf (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet es 1W4 Feuerschaden und beginnt zu brennen."
   },
   "Antitoxin": {
     "name": "Gegengift",
@@ -214,7 +214,7 @@
   },
   "Ball Bearings": {
     "name": "Kugellager",
-    "description": "Verteile sie mit der Aktion Benutzen innerhalb von 10 Fuß auf einem ebenen Quadrat von 10 Fuß Kantenlänge. Eintretende Kreaturen müssen einen Geschicklichkeitsrettungswurf SG 10 schaffen oder werden Liegend. Das Aufsammeln dauert 10 Minuten."
+    "description": "Verteile sie mit der Aktion Benutzen innerhalb von 3 Metern auf einem ebenen Quadrat von 3 Metern Kantenlänge. Eintretende Kreaturen müssen einen Geschicklichkeitsrettungswurf SG 10 schaffen oder werden Liegend. Das Aufsammeln dauert 10 Minuten."
   },
   "Barrel": {
     "name": "Fass",
@@ -230,7 +230,7 @@
   },
   "Bell": {
     "name": "Glocke",
-    "description": "Mit der Aktion Benutzen geläutet, ist sie bis zu 60 Fuß weit hörbar."
+    "description": "Mit der Aktion Benutzen geläutet, ist sie bis zu 18 Meter weit hörbar."
   },
   "Blanket": {
     "name": "Decke",
@@ -258,11 +258,11 @@
   },
   "Caltrops": {
     "name": "Krähenfüße",
-    "description": "Verteile sie mit der Aktion Benutzen auf einem Quadrat von 5 Fuß Kantenlänge. Eintretende Kreaturen müssen einen Geschicklichkeitsrettungswurf SG 15 schaffen oder erleiden 1 Stichschaden und haben bis zu ihrem nächsten Zug Bewegungsrate 0. Das Aufsammeln dauert 10 Minuten."
+    "description": "Verteile sie mit der Aktion Benutzen auf einem Quadrat von 1,5 Metern Kantenlänge. Eintretende Kreaturen müssen einen Geschicklichkeitsrettungswurf SG 15 schaffen oder erleiden 1 Stichschaden und haben bis zu ihrem nächsten Zug Bewegungsrate 0. Das Aufsammeln dauert 10 Minuten."
   },
   "Candle": {
     "name": "Kerze",
-    "description": "Brennt 1 Stunde und spendet 5 Fuß helles Licht und weitere 5 Fuß dämmriges Licht."
+    "description": "Brennt 1 Stunde und spendet 1,5 Meter helles Licht und weitere 1,5 Meter dämmriges Licht."
   },
   "Case, Crossbow Bolt": {
     "name": "Bolzenbehälter",
@@ -282,7 +282,7 @@
   },
   "Climber's Kit": {
     "name": "Kletterausrüstung",
-    "description": "Enthält Stiefelspitzen, Handschuhe, Kletterhaken und Gurt. Das Sichern mit der Aktion Benutzen begrenzt einen Sturz auf 25 Fuß und die Entfernung vom Anker auf 25 Fuß."
+    "description": "Enthält Stiefelspitzen, Handschuhe, Kletterhaken und Gurt. Das Sichern mit der Aktion Benutzen begrenzt einen Sturz auf 7,5 Meter und die Entfernung vom Anker auf 7,5 Meter."
   },
   "Clothes, Fine": {
     "name": "Feine Kleidung",
@@ -342,7 +342,7 @@
   },
   "Grappling Hook": {
     "name": "Wurfhaken",
-    "description": "Wirf ihn mit der Aktion Benutzen an einen Halt innerhalb von 50 Fuß. Mit Geschicklichkeit (Akrobatik) SG 13 wird er befestigt; ein daran gebundenes Seil kann dann erklettert werden."
+    "description": "Wirf ihn mit der Aktion Benutzen an einen Halt innerhalb von 15 Metern. Mit Geschicklichkeit (Akrobatik) SG 13 wird er befestigt; ein daran gebundenes Seil kann dann erklettert werden."
   },
   "Healer's Kit": {
     "name": "Heilerausrüstung",
@@ -366,7 +366,7 @@
   },
   "Holy Water": {
     "name": "Weihwasser",
-    "description": "Ersetze einen Angriff durch den Wurf einer Flasche auf eine Kreatur innerhalb von 20 Fuß. Ein Unhold oder Untoter, dessen Geschicklichkeitsrettungswurf misslingt (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet 2W8 gleißenden Schaden."
+    "description": "Ersetze einen Angriff durch den Wurf einer Flasche auf eine Kreatur innerhalb von 6 Metern. Ein Unhold oder Untoter, dessen Geschicklichkeitsrettungswurf misslingt (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus), erleidet 2W8 gleißenden Schaden."
   },
   "Hunting Trap": {
     "name": "Jagdfalle",
@@ -386,19 +386,19 @@
   },
   "Ladder": {
     "name": "Leiter",
-    "description": "Eine 10 Fuß lange Leiter."
+    "description": "Eine 3 Meter lange Leiter."
   },
   "Lamp": {
     "name": "Lampe",
-    "description": "Verbrennt Öl und spendet 15 Fuß helles Licht und weitere 30 Fuß dämmriges Licht."
+    "description": "Verbrennt Öl und spendet 4,5 Meter helles Licht und weitere 9 Meter dämmriges Licht."
   },
   "Lantern, Bullseye": {
     "name": "Bullaugenlaterne",
-    "description": "Verbrennt Öl und spendet in einem 60-Fuß-Kegel helles Licht und weitere 60 Fuß dämmriges Licht."
+    "description": "Verbrennt Öl und spendet in einem 18-Meter-Kegel helles Licht und weitere 18 Meter dämmriges Licht."
   },
   "Lantern, Hooded": {
     "name": "Abblendlaterne",
-    "description": "Verbrennt Öl und spendet 30 Fuß helles Licht und weitere 30 Fuß dämmriges Licht. Mit geschlossener Blende spendet sie nur 5 Fuß dämmriges Licht."
+    "description": "Verbrennt Öl und spendet 9 Meter helles Licht und weitere 9 Meter dämmriges Licht. Mit geschlossener Blende spendet sie nur 1,5 Meter dämmriges Licht."
   },
   "Lock": {
     "name": "Schloss",
@@ -422,7 +422,7 @@
   },
   "Net": {
     "name": "Netz",
-    "description": "Ersetze einen Angriff durch einen Wurf auf eine Kreatur innerhalb von 15 Fuß. Sie wird bei misslungenem Geschicklichkeitsrettungswurf festgesetzt (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus); riesige oder größere Kreaturen bestehen automatisch. Entkommen erfordert Stärke (Athletik) SG 10."
+    "description": "Ersetze einen Angriff durch einen Wurf auf eine Kreatur innerhalb von 4,5 Metern. Sie wird bei misslungenem Geschicklichkeitsrettungswurf festgesetzt (SG 8 + Geschicklichkeitsmodifikator + Übungsbonus); riesige oder größere Kreaturen bestehen automatisch. Entkommen erfordert Stärke (Athletik) SG 10."
   },
   "Oil": {
     "name": "Öl",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Parfüm",
-    "description": "Phiole mit 4 Unzen. Nach dem Auftragen hast du 1 Stunde Vorteil auf Charismaproben (Überzeugen), um einen gleichgültigen Humanoiden innerhalb von 5 Fuß zu beeinflussen."
+    "description": "Phiole mit 4 Unzen. Nach dem Auftragen hast du 1 Stunde Vorteil auf Charismaproben (Überzeugen), um einen gleichgültigen Humanoiden innerhalb von 1,5 Metern zu beeinflussen."
   },
   "Poison, Basic": {
     "name": "Einfaches Gift",
@@ -446,7 +446,7 @@
   },
   "Pole": {
     "name": "Stange",
-    "description": "Eine 10 Fuß lange Stange. Beim Stabhochsprung gewährt sie Vorteil auf Stärkeproben (Athletik) für Hoch- oder Weitsprünge."
+    "description": "Eine 3 Meter lange Stange. Beim Stabhochsprung gewährt sie Vorteil auf Stärkeproben (Athletik) für Hoch- oder Weitsprünge."
   },
   "Pot, Iron": {
     "name": "Eisentopf",
@@ -490,11 +490,11 @@
   },
   "Shovel": {
     "name": "Schaufel",
-    "description": "Eine Stunde Graben in Erde oder ähnlichem Material schafft einen freien Würfel mit 5 Fuß Kantenlänge."
+    "description": "Eine Stunde Graben in Erde oder ähnlichem Material schafft einen freien Würfel mit 1,5 Meter Kantenlänge."
   },
   "Signal Whistle": {
     "name": "Signalpfeife",
-    "description": "Mit der Aktion Benutzen hineingeblasen, ist der Ton bis zu 600 Fuß weit hörbar."
+    "description": "Mit der Aktion Benutzen hineingeblasen, ist der Ton bis zu 180 Meter weit hörbar."
   },
   "Spellbook": {
     "name": "Zauberbuch",
@@ -510,7 +510,7 @@
   },
   "String": {
     "name": "Schnur",
-    "description": "10 Fuß lange Schnur; einen Knoten zu machen ist eine Aktion Benutzen."
+    "description": "3 Meter lange Schnur; einen Knoten zu machen ist eine Aktion Benutzen."
   },
   "Tent": {
     "name": "Zelt",
@@ -522,7 +522,7 @@
   },
   "Torch": {
     "name": "Fackel",
-    "description": "Brennt 1 Stunde, spendet 20 Fuß helles Licht und weitere 20 Fuß dämmriges Licht. Kann als einfache Nahkampfwaffe bei Treffer 1 Feuerschaden verursachen."
+    "description": "Brennt 1 Stunde, spendet 6 Meter helles Licht und weitere 6 Meter dämmriges Licht. Kann als einfache Nahkampfwaffe bei Treffer 1 Feuerschaden verursachen."
   },
   "Vial": {
     "name": "Phiole",
@@ -535,7 +535,7 @@
   "weaponMasteries": {
     "cleave": {
       "name": "Spalten",
-      "description": "Einmal pro Zug nach einem Nahkampftreffer greifst du mit derselben Waffe eine andere Kreatur innerhalb von 5 Fuß zum ersten Ziel und in deiner Reichweite an. Bei Treffer verursachst du den Waffenschaden ohne positiven Attributsmodifikator."
+      "description": "Einmal pro Zug nach einem Nahkampftreffer greifst du mit derselben Waffe eine andere Kreatur innerhalb von 1,5 Metern zum ersten Ziel und in deiner Reichweite an. Bei Treffer verursachst du den Waffenschaden ohne positiven Attributsmodifikator."
     },
     "graze": {
       "name": "Streifen",
@@ -547,7 +547,7 @@
     },
     "push": {
       "name": "Stoßen",
-      "description": "Bei Treffer schiebst du eine große oder kleinere Kreatur bis zu 10 Fuß gerade von dir weg."
+      "description": "Bei Treffer schiebst du eine große oder kleinere Kreatur bis zu 3 Meter gerade von dir weg."
     },
     "sap": {
       "name": "Schwächen",
@@ -555,7 +555,7 @@
     },
     "slow": {
       "name": "Verlangsamen",
-      "description": "Bei einem schadenverursachenden Treffer verringerst du die Bewegungsrate des Ziels bis zum Beginn deines nächsten Zuges um 10 Fuß. Mehrere Treffer addieren sich nicht."
+      "description": "Bei einem schadenverursachenden Treffer verringerst du die Bewegungsrate des Ziels bis zum Beginn deines nächsten Zuges um 3 Meter. Mehrere Treffer addieren sich nicht."
     },
     "topple": {
       "name": "Niederwerfen",

@@ -11,7 +11,7 @@
       },
       "Intimidating Presence": {
         "name": "Presenza intimidatoria",
-        "description": "A partire dal 10° livello, puoi usare la tua azione per spaventare qualcuno con la tua presenza minacciosa. Scegli una creatura che puoi vedere entro 9 metri da te. Se la creatura può vederti o sentirti, deve riuscire un tiro salvezza su Saggezza (CD = 8 + il tuo bonus di competenza + il tuo modificatore di Carisma) o avere paura di te fino alla fine del tuo turno successivo. Nei turni successivi, puoi usare la tua azione per estendere la durata fino alla fine del tuo turno successivo. L'effetto termina se la creatura termina il suo turno fuori dalla linea di vista o a più di 60 piedi di distanza da te."
+        "description": "A partire dal 10° livello, puoi usare la tua azione per spaventare qualcuno con la tua presenza minacciosa. Scegli una creatura che puoi vedere entro 9 metri da te. Se la creatura può vederti o sentirti, deve riuscire un tiro salvezza su Saggezza (CD = 8 + il tuo bonus di competenza + il tuo modificatore di Carisma) o avere paura di te fino alla fine del tuo turno successivo. Nei turni successivi, puoi usare la tua azione per estendere la durata fino alla fine del tuo turno successivo. L'effetto termina se la creatura termina il suo turno fuori dalla linea di vista o a più di 18 metri di distanza da te."
       },
       "Retaliation": {
         "name": "Ritorsione",
@@ -29,7 +29,7 @@
       },
       "Aspect of the Beast": {
         "name": "Aspetto della Bestia",
-        "description": "Ottieni un beneficio magico in base all'animale totem scelto. Orso: la tua capacità di carico è raddoppiata e hai vantaggio alle prove di Forza per spingere, tirare, sollevare o rompere oggetti. Aquila: Puoi vedere fino a 1 miglio di distanza senza difficoltà, e la luce fioca non impone svantaggio alle tue prove di Percezione. Lupo: Puoi seguire le tracce di altre creature mentre viaggi a un ritmo veloce e puoi muoverti furtivamente mentre viaggi a un ritmo normale."
+        "description": "Ottieni un beneficio magico in base all'animale totem scelto. Orso: la tua capacità di carico è raddoppiata e hai vantaggio alle prove di Forza per spingere, tirare, sollevare o rompere oggetti. Aquila: Puoi vedere fino a 1,5 chilometri di distanza senza difficoltà, e la luce fioca non impone svantaggio alle tue prove di Percezione. Lupo: Puoi seguire le tracce di altre creature mentre viaggi a un ritmo veloce e puoi muoverti furtivamente mentre viaggi a un ritmo normale."
       },
       "Spirit Walker": {
         "name": "Spirito Camminatore",
@@ -225,7 +225,7 @@
       },
       "Improved Duplicity": {
         "name": "Duplicità migliorata",
-        "description": "Al 17° livello, puoi creare fino a quattro duplicati di te stesso, invece di uno, quando usi Invoca Duplicità. Come azione bonus nel tuo turno, puoi spostarne un numero qualsiasi fino a 9 metri, fino a un raggio massimo di 120 piedi."
+        "description": "Al 17° livello, puoi creare fino a quattro duplicati di te stesso, invece di uno, quando usi Invoca Duplicità. Come azione bonus nel tuo turno, puoi spostarne un numero qualsiasi fino a 9 metri, fino a un raggio massimo di 36 metri."
       }
     },
     "War Domain": {
@@ -309,7 +309,7 @@
       },
       "Remarkable Athlete": {
         "name": "Atleta notevole",
-        "description": "A partire dal 7° livello, puoi aggiungere metà del tuo bonus di competenza (arrotondato per eccesso) a qualsiasi prova di Forza, Destrezza o Costituzione effettuata che non utilizzi già il tuo bonus di competenza. Inoltre, quando effettui un salto in lungo con corsa, la distanza che puoi coprire aumenta di un numero di piedi pari al tuo modificatore di Forza."
+        "description": "A partire dal 7° livello, puoi aggiungere metà del tuo bonus di competenza (arrotondato per eccesso) a qualsiasi prova di Forza, Destrezza o Costituzione effettuata che non utilizzi già il tuo bonus di competenza. Inoltre, quando effettui un salto in lungo con corsa, la distanza che puoi coprire aumenta di 30 centimetri × il tuo modificatore di Forza."
       },
       "Additional Fighting Style": {
         "name": "Stile di combattimento aggiuntivo",
@@ -377,7 +377,7 @@
     "Way of the Open Hand": {
       "Open Hand Technique": {
         "name": "Tecnica della mano aperta",
-        "description": "A partire da quando scegli questa tradizione al 3° livello, ogni volta che colpisci una creatura con uno degli attacchi concessi dalla tua Raffica di Colpi, puoi imporre uno dei seguenti effetti: deve superare un tiro salvezza su Destrezza o cadere prono; deve effettuare un tiro salvezza su Forza: se fallisce, puoi spingerlo fino a 15 piedi di distanza; oppure non può effettuare reazioni fino alla fine del tuo prossimo turno."
+        "description": "A partire da quando scegli questa tradizione al 3° livello, ogni volta che colpisci una creatura con uno degli attacchi concessi dalla tua Raffica di Colpi, puoi imporre uno dei seguenti effetti: deve superare un tiro salvezza su Destrezza o cadere prono; deve effettuare un tiro salvezza su Forza: se fallisce, puoi spingerlo fino a 4,5 metri di distanza; oppure non può effettuare reazioni fino alla fine del tuo prossimo turno."
       },
       "Wholeness of Body": {
         "name": "Interezza del corpo",
@@ -469,7 +469,7 @@
     "Oath of Vengeance": {
       "Channel Divinity: Abjure Enemy": {
         "name": "Incanalare Divinità: Abiurare il Nemico",
-        "description": "Come azione, presenti il ​​tuo simbolo sacro e pronunci una preghiera di denuncia, usando il tuo Canale Divinità. Scegli una creatura entro 60 piedi da te che puoi vedere. Quella creatura deve effettuare un tiro salvezza su Saggezza. Immondi e non morti hanno svantaggio in questo tiro salvezza. Se fallisce il Tiro Salvezza, la creatura è spaventata per 1 minuto o finché non subisce danni. Mentre è spaventata, la velocità della creatura è 0 e non può beneficiare di alcun bonus alla sua velocità."
+        "description": "Come azione, presenti il ​​tuo simbolo sacro e pronunci una preghiera di denuncia, usando il tuo Canale Divinità. Scegli una creatura entro 18 metri da te che puoi vedere. Quella creatura deve effettuare un tiro salvezza su Saggezza. Immondi e non morti hanno svantaggio in questo tiro salvezza. Se fallisce il Tiro Salvezza, la creatura è spaventata per 1 minuto o finché non subisce danni. Mentre è spaventata, la velocità della creatura è 0 e non può beneficiare di alcun bonus alla sua velocità."
       },
       "Channel Divinity: Vow of Enmity": {
         "name": "Incanalare Divinità: Voto di Inimicizia",
@@ -535,7 +535,7 @@
       },
       "Second-Story Work": {
         "name": "Lavoro del secondo piano",
-        "description": "Quando scegli questo archetipo al 3° livello, scalare non ti costa più movimento extra. Inoltre, quando effettui un salto in corsa, la distanza che percorri aumenta di un numero di piedi pari al tuo modificatore di Destrezza."
+        "description": "Quando scegli questo archetipo al 3° livello, scalare non ti costa più movimento extra. Inoltre, quando effettui un salto in corsa, la distanza che percorri aumenta di 30 centimetri × il tuo modificatore di Destrezza."
       },
       "Supreme Sneak": {
         "name": "Sgancio supremo",
@@ -859,7 +859,7 @@
       },
       "Minor Alchemy": {
         "name": "Alchimia minore",
-        "description": "A partire dal 2° livello, puoi alterare temporaneamente le proprietà fisiche di un oggetto non magico, trasformandolo da una sostanza a un'altra. Esegui una speciale procedura alchemica su un oggetto composto interamente di legno, pietra (ma non pietra preziosa), ferro, rame o argento. Per ogni 10 minuti trascorsi nell'esecuzione della procedura, puoi trasformare fino a 1 piede cubo di materiale. Dopo 1 ora, o finché non si perde la concentrazione, il materiale ritorna alla sua sostanza originale."
+        "description": "A partire dal 2° livello, puoi alterare temporaneamente le proprietà fisiche di un oggetto non magico, trasformandolo da una sostanza a un'altra. Esegui una speciale procedura alchemica su un oggetto composto interamente di legno, pietra (ma non pietra preziosa), ferro, rame o argento. Per ogni 10 minuti trascorsi nell'esecuzione della procedura, puoi trasformare fino a 28 litri di materiale. Dopo 1 ora, o finché non si perde la concentrazione, il materiale ritorna alla sua sostanza originale."
       },
       "Transmuter's Stone": {
         "name": "Pietra del Trasmutatore",

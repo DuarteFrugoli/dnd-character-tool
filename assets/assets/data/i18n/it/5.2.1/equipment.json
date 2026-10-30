@@ -174,11 +174,11 @@
   },
   "Acid": {
     "name": "Acido",
-    "description": "Sostituisci un attacco lanciando una fiala contro un bersaglio entro 20 piedi. Se fallisce un tiro salvezza su Destrezza (CD 8 + modificatore di Destrezza + Bonus di Competenza), subisce 2d6 danni da Acido."
+    "description": "Sostituisci un attacco lanciando una fiala contro un bersaglio entro 6 metri. Se fallisce un tiro salvezza su Destrezza (CD 8 + modificatore di Destrezza + Bonus di Competenza), subisce 2d6 danni da Acido."
   },
   "Alchemist's Fire": {
     "name": "Fuoco dell'Alchimista",
-    "description": "Sostituisci un attacco lanciando una fiaschetta contro un bersaglio entro 20 piedi. Se fallisce un tiro salvezza su Destrezza (CD 8 + modificatore di Destrezza + Bonus di Competenza), subisce 1d4 danni da Fuoco e inizia a bruciare."
+    "description": "Sostituisci un attacco lanciando una fiaschetta contro un bersaglio entro 6 metri. Se fallisce un tiro salvezza su Destrezza (CD 8 + modificatore di Destrezza + Bonus di Competenza), subisce 1d4 danni da Fuoco e inizia a bruciare."
   },
   "Antitoxin": {
     "name": "Antitossina",
@@ -210,19 +210,19 @@
   },
   "Backpack": {
     "name": "Zaino",
-    "description": "Contiene fino a 30 libbre in 1 piede cubo; può servire anche da bisaccia."
+    "description": "Contiene fino a 30 libbre in 28 litri; può servire anche da bisaccia."
   },
   "Ball Bearings": {
     "name": "Sfere di Metallo",
-    "description": "Disperdile su un quadrato piano di 10 piedi entro 10 piedi con l'azione Utilizzare. Chi entra deve superare un tiro salvezza su Destrezza CD 10 o cadere Prono. Recuperarle richiede 10 minuti."
+    "description": "Disperdile su un quadrato piano di 3 metri entro 3 metri con l'azione Utilizzare. Chi entra deve superare un tiro salvezza su Destrezza CD 10 o cadere Prono. Recuperarle richiede 10 minuti."
   },
   "Barrel": {
     "name": "Barile",
-    "description": "Contiene fino a 40 galloni di liquido o 4 piedi cubi di merci secche."
+    "description": "Contiene fino a 40 galloni di liquido o 113 litri di merci secche."
   },
   "Basket": {
     "name": "Cesto",
-    "description": "Contiene fino a 40 libbre in 2 piedi cubi."
+    "description": "Contiene fino a 40 libbre in 57 litri."
   },
   "Bedroll": {
     "name": "Giaciglio",
@@ -230,7 +230,7 @@
   },
   "Bell": {
     "name": "Campanella",
-    "description": "Suonarla con l'azione Utilizzare produce un suono udibile fino a 60 piedi."
+    "description": "Suonarla con l'azione Utilizzare produce un suono udibile fino a 18 metri."
   },
   "Blanket": {
     "name": "Coperta",
@@ -250,7 +250,7 @@
   },
   "Bucket": {
     "name": "Secchio",
-    "description": "Contiene fino a mezzo piede cubo."
+    "description": "Contiene fino a 14 litri."
   },
   "Burglar's Pack": {
     "name": "Dotazione da Scassinatore",
@@ -258,11 +258,11 @@
   },
   "Caltrops": {
     "name": "Triboli",
-    "description": "Spargili su un quadrato di 5 piedi con l'azione Utilizzare. Chi vi entra deve superare un tiro salvezza su Destrezza CD 15 o subire 1 danno Perforante e avere Velocità 0 fino al suo prossimo turno. Recuperarli richiede 10 minuti."
+    "description": "Spargili su un quadrato di 1,5 metri con l'azione Utilizzare. Chi vi entra deve superare un tiro salvezza su Destrezza CD 15 o subire 1 danno Perforante e avere Velocità 0 fino al suo prossimo turno. Recuperarli richiede 10 minuti."
   },
   "Candle": {
     "name": "Candela",
-    "description": "Brucia per 1 ora, emettendo Luce Intensa per 5 piedi e Luce Fioca per altri 5 piedi."
+    "description": "Brucia per 1 ora, emettendo Luce Intensa per 1,5 metri e Luce Fioca per altri 1,5 metri."
   },
   "Case, Crossbow Bolt": {
     "name": "Custodia per Quadrelli",
@@ -278,11 +278,11 @@
   },
   "Chest": {
     "name": "Forziere",
-    "description": "Contiene fino a 12 piedi cubi."
+    "description": "Contiene fino a 340 litri."
   },
   "Climber's Kit": {
     "name": "Attrezzatura da Scalatore",
-    "description": "Include punte per stivali, guanti, chiodi da roccia e imbracatura. Ancorarsi con l'azione Utilizzare limita una caduta a 25 piedi e lo spostamento a 25 piedi dall'ancora."
+    "description": "Include punte per stivali, guanti, chiodi da roccia e imbracatura. Ancorarsi con l'azione Utilizzare limita una caduta a 7,5 metri e lo spostamento a 7,5 metri dall'ancora."
   },
   "Clothes, Fine": {
     "name": "Abiti Eleganti",
@@ -342,7 +342,7 @@
   },
   "Grappling Hook": {
     "name": "Rampino",
-    "description": "Lancialo verso un punto d'appiglio entro 50 piedi con l'azione Utilizzare. Una prova di Destrezza (Acrobazia) CD 13 lo fissa; si può poi scalare una Corda legata."
+    "description": "Lancialo verso un punto d'appiglio entro 15 metri con l'azione Utilizzare. Una prova di Destrezza (Acrobazia) CD 13 lo fissa; si può poi scalare una Corda legata."
   },
   "Healer's Kit": {
     "name": "Borsa da Guaritore",
@@ -366,7 +366,7 @@
   },
   "Holy Water": {
     "name": "Acqua Santa",
-    "description": "Sostituisci un attacco lanciando una fiaschetta contro una creatura entro 20 piedi. Un Immondo o Non Morto che fallisce un tiro salvezza su Destrezza (CD 8 + modificatore di Destrezza + Bonus di Competenza) subisce 2d8 danni Radiosi."
+    "description": "Sostituisci un attacco lanciando una fiaschetta contro una creatura entro 6 metri. Un Immondo o Non Morto che fallisce un tiro salvezza su Destrezza (CD 8 + modificatore di Destrezza + Bonus di Competenza) subisce 2d8 danni Radiosi."
   },
   "Hunting Trap": {
     "name": "Tagliola",
@@ -386,19 +386,19 @@
   },
   "Ladder": {
     "name": "Scala",
-    "description": "Scala lunga 10 piedi."
+    "description": "Scala lunga 3 metri."
   },
   "Lamp": {
     "name": "Lampada",
-    "description": "Brucia Olio e diffonde Luce Intensa per 15 piedi e Luce Fioca per altri 30 piedi."
+    "description": "Brucia Olio e diffonde Luce Intensa per 4,5 metri e Luce Fioca per altri 9 metri."
   },
   "Lantern, Bullseye": {
     "name": "Lanterna a Fascio",
-    "description": "Brucia Olio e diffonde Luce Intensa in un Cono di 60 piedi e Luce Fioca per altri 60 piedi."
+    "description": "Brucia Olio e diffonde Luce Intensa in un Cono di 18 metri e Luce Fioca per altri 18 metri."
   },
   "Lantern, Hooded": {
     "name": "Lanterna Schermabile",
-    "description": "Brucia Olio e diffonde Luce Intensa per 30 piedi e Luce Fioca per altri 30 piedi. Abbassare il cappuccio limita la Luce Fioca a 5 piedi."
+    "description": "Brucia Olio e diffonde Luce Intensa per 9 metri e Luce Fioca per altri 9 metri. Abbassare il cappuccio limita la Luce Fioca a 1,5 metri."
   },
   "Lock": {
     "name": "Lucchetto",
@@ -422,7 +422,7 @@
   },
   "Net": {
     "name": "Rete",
-    "description": "Sostituisci un attacco lanciandola contro una creatura entro 15 piedi. Diventa Trattenuta se fallisce un tiro salvezza su Destrezza (CD 8 + modificatore di Destrezza + Bonus di Competenza); le creature Enormi o più grandi riescono automaticamente. Fuggire richiede Forza (Atletica) CD 10."
+    "description": "Sostituisci un attacco lanciandola contro una creatura entro 4,5 metri. Diventa Trattenuta se fallisce un tiro salvezza su Destrezza (CD 8 + modificatore di Destrezza + Bonus di Competenza); le creature Enormi o più grandi riescono automaticamente. Fuggire richiede Forza (Atletica) CD 10."
   },
   "Oil": {
     "name": "Olio",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Profumo",
-    "description": "Fiala da 4 once. Per 1 ora dopo l'applicazione ottieni Vantaggio alle prove di Carisma (Persuasione) per influenzare un Umanoide Indifferente entro 5 piedi."
+    "description": "Fiala da 4 once. Per 1 ora dopo l'applicazione ottieni Vantaggio alle prove di Carisma (Persuasione) per influenzare un Umanoide Indifferente entro 1,5 metri."
   },
   "Poison, Basic": {
     "name": "Veleno Base",
@@ -446,7 +446,7 @@
   },
   "Pole": {
     "name": "Pertica",
-    "description": "Pertica lunga 10 piedi. Usarla per darsi slancio concede Vantaggio a una prova di Forza (Atletica) per un salto in alto o in lungo."
+    "description": "Pertica lunga 3 metri. Usarla per darsi slancio concede Vantaggio a una prova di Forza (Atletica) per un salto in alto o in lungo."
   },
   "Pot, Iron": {
     "name": "Pentola di Ferro",
@@ -454,7 +454,7 @@
   },
   "Pouch": {
     "name": "Borsello",
-    "description": "Contiene fino a 6 libbre in un quinto di piede cubo."
+    "description": "Contiene fino a 6 libbre in 6 litri."
   },
   "Priest's Pack": {
     "name": "Dotazione da Sacerdote",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "Sacco",
-    "description": "Contiene fino a 30 libbre in 1 piede cubo."
+    "description": "Contiene fino a 30 libbre in 28 litri."
   },
   "Scholar's Pack": {
     "name": "Dotazione da Studioso",
@@ -490,11 +490,11 @@
   },
   "Shovel": {
     "name": "Pala",
-    "description": "Un'ora di scavo nel terreno o materiale simile crea uno spazio cubico con lato di 5 piedi."
+    "description": "Un'ora di scavo nel terreno o materiale simile crea uno spazio cubico con lato di 1,5 metri."
   },
   "Signal Whistle": {
     "name": "Fischietto",
-    "description": "Soffiarvi con l'azione Utilizzare produce un suono udibile fino a 600 piedi."
+    "description": "Soffiarvi con l'azione Utilizzare produce un suono udibile fino a 180 metri."
   },
   "Spellbook": {
     "name": "Libro degli Incantesimi",
@@ -510,7 +510,7 @@
   },
   "String": {
     "name": "Spago",
-    "description": "Spago lungo 10 piedi; fare un nodo è un'azione Utilizzare."
+    "description": "Spago lungo 3 metri; fare un nodo è un'azione Utilizzare."
   },
   "Tent": {
     "name": "Tenda",
@@ -522,7 +522,7 @@
   },
   "Torch": {
     "name": "Torcia",
-    "description": "Brucia per 1 ora, emettendo Luce Intensa per 20 piedi e Luce Fioca per altri 20 piedi. Può essere usata come arma da Mischia Semplice che infligge 1 danno da Fuoco se colpisce."
+    "description": "Brucia per 1 ora, emettendo Luce Intensa per 6 metri e Luce Fioca per altri 6 metri. Può essere usata come arma da Mischia Semplice che infligge 1 danno da Fuoco se colpisce."
   },
   "Vial": {
     "name": "Fiala",
@@ -535,7 +535,7 @@
   "weaponMasteries": {
     "cleave": {
       "name": "Fendere",
-      "description": "Una volta per turno dopo aver colpito in mischia, attacca con la stessa arma un'altra creatura entro 5 piedi dalla prima e nella tua portata. Se colpisci, infliggi il danno dell'arma senza modificatore positivo di caratteristica."
+      "description": "Una volta per turno dopo aver colpito in mischia, attacca con la stessa arma un'altra creatura entro 1,5 metri dalla prima e nella tua portata. Se colpisci, infliggi il danno dell'arma senza modificatore positivo di caratteristica."
     },
     "graze": {
       "name": "Sfiorare",
@@ -547,7 +547,7 @@
     },
     "push": {
       "name": "Spingere",
-      "description": "Se colpisci, spingi una creatura Grande o più piccola fino a 10 piedi direttamente lontano da te."
+      "description": "Se colpisci, spingi una creatura Grande o più piccola fino a 3 metri direttamente lontano da te."
     },
     "sap": {
       "name": "Indebolire",
@@ -555,7 +555,7 @@
     },
     "slow": {
       "name": "Rallentare",
-      "description": "Se colpisci e infliggi danni, riduci la Velocità del bersaglio di 10 piedi fino all'inizio del tuo turno successivo. Più colpi non aumentano la riduzione."
+      "description": "Se colpisci e infliggi danni, riduci la Velocità del bersaglio di 3 metri fino all'inizio del tuo turno successivo. Più colpi non aumentano la riduzione."
     },
     "topple": {
       "name": "Atterrare",

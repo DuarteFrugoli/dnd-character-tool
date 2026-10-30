@@ -575,6 +575,20 @@ class Creation2024Draft {
         ...List<int>.filled(8, 0),
       ]),
       hitDicePools: [CharacterHitDiePool(dieSize: cls.hitDie, total: 1, sourceClass: cls.name, sourceClassEntryId: 'primary')],
+      levelHistory: [
+        CharacterLevelRecord(
+          characterLevel: 1,
+          classEntryId: 'primary',
+          className: cls.name,
+          classLevel: 1,
+          hitPointsGained: hp,
+          hitPointMethod: HitPointGainMethod.maximum,
+          baseAbilityScores: {
+            for (final ability in creation2024Abilities)
+              ability: baseAbilities[ability] ?? 10,
+          },
+        ),
+      ],
       features: [for (final tool in toolsGranted) 'Tool Proficiency: $tool'],
       extraFeatures: extraFeatures,
       featureChoices: classChoices,

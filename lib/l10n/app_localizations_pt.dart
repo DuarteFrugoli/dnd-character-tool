@@ -636,6 +636,44 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '+2 em um atributo ou +1 em dois atributos (máximo $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '+$increase em um atributo (máximo $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className: $cantrips truques e $prepared magias preparadas até o nível $level. Escolha-as na aba de Magias.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return 'Voltar ao nível 1 como $className? Níveis, subclasse, talentos, escolhas e magias obtidos depois do nível 1 são desfeitos pelo histórico de níveis salvo. Origem, edições manuais de atributos, inventário, notas e história são mantidos.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return 'Truques: $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return 'Grimório: $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'Escolha a classe desta magia';
+
+  @override
   String get concentrationBannerLabel => 'Concentrado em:';
 
   @override

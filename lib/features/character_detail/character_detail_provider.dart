@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/review/app_review_service.dart';
 import '../../data/character_progression/character_progression.dart';
+import '../../data/character_progression/progression_2024_engine.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_usage_engine.dart';
 import '../../data/json_helpers.dart';
@@ -479,6 +480,57 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     );
   }
 
+  /// SRD 5.2.1 data with this sheet's species traits.
+  Future<Rules2024Data> rules2024Data() async {
+    final c = state.valueOrNull;
+    if (c == null) throw StateError('Character not loaded.');
+    return _rules2024Data(c);
+  }
+
+  Future<Rules2024Data> _rules2024Data(Character c) async {
+    final data = await ref.read(srd2024RulesDataProvider.future);
+    return data.withSpeciesTraits(await _raceTraits(c));
+  }
+
+  /// Applies a 2024 level gained through [LevelUp2024Result].
+  Future<void> levelUp2024(LevelUp2024Result result) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    var updated = Progression2024Engine.applyLevelUp(
+      c,
+      await _rules2024Data(c),
+      result,
+    );
+    if (c.xpTrackingEnabled && c.experiencePoints < levelToMinXp(updated.totalLevel)) {
+      updated = updated.copyWith(
+        experiencePoints: levelToMinXp(updated.totalLevel),
+      );
+    }
+    await _save(updated);
+    unawaited(
+      ref
+          .read(appReviewServiceProvider)
+          .recordMilestoneAndMaybeRequest(
+            milestone: ReviewMilestone.levelUpCompleted,
+            characterCount: 1,
+          ),
+    );
+  }
+
+  /// Returns a 2024 sheet to level 1 in its starting class.
+  Future<void> resetLevels2024() async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    var reset = Progression2024Engine.resetToLevelOne(
+      c,
+      await _rules2024Data(c),
+    );
+    if (c.xpTrackingEnabled) {
+      reset = reset.copyWith(experiencePoints: levelToMinXp(1));
+    }
+    await _save(reset);
+  }
+
   /// Resets class progression to a new level 1 starting class.
   Future<void> resetLevels(CharacterLevelResetResult result) async {
     final c = state.valueOrNull;
@@ -719,7 +771,19 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   ) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(c.copyWith(featureChoices: choices));
+    await _save(await _withSubclassSpells(c.copyWith(featureChoices: choices)));
+  }
+
+  /// 2024 subclass spells can depend on a choice, e.g. the Circle of the Land
+  /// terrain, so they are refreshed whenever choices change.
+  Future<Character> _withSubclassSpells(Character c) async {
+    if (c.rulesetId != RulesetId.dnd2024) return c;
+    return c.copyWith(
+      spells: Progression2024Engine.syncSubclassSpells(
+        c,
+        await _rules2024Data(c),
+      ),
+    );
   }
 
   Future<void> upsertFeatureChoices(
@@ -728,10 +792,12 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(
-      c.copyWith(
-        featureChoices: FeatureChoiceEngine.upsertChoices(
-          c.featureChoices,
-          choices,
+      await _withSubclassSpells(
+        c.copyWith(
+          featureChoices: FeatureChoiceEngine.upsertChoices(
+            c.featureChoices,
+            choices,
+          ),
         ),
       ),
     );

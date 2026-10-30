@@ -635,6 +635,44 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '+2 к одной характеристике или +1 к двум (максимум $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '+$increase к одной характеристике (максимум $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className: $cantrips заговоров и $prepared подготовленных заклинаний до $level-го уровня. Выберите их во вкладке заклинаний.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return 'Вернуться на 1-й уровень как $className? Уровни, подкласс, черты, выборы и заклинания, полученные после 1-го уровня, отменяются по сохранённой истории уровней. Происхождение, ручные правки характеристик, инвентарь, заметки и история сохраняются.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return 'Заговоры: $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return 'Книга заклинаний: $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'Выберите класс для этого заклинания';
+
+  @override
   String get concentrationBannerLabel => 'Концентрация на:';
 
   @override

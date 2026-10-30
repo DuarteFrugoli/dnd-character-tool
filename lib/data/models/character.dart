@@ -8,6 +8,7 @@ import 'character_class_entry.dart';
 import 'character_extra_feature.dart';
 import 'character_feature_choice.dart';
 import 'character_hit_die_pool.dart';
+import 'character_level_record.dart';
 import 'character_note.dart';
 import 'character_personality.dart';
 import 'character_sheet_preferences.dart';
@@ -27,6 +28,15 @@ CharacterSheetPreferences _characterSheetPreferencesFromJson(Object? json) =>
 Map<String, dynamic> _characterSheetPreferencesToJson(
   CharacterSheetPreferences value,
 ) => value.toJson();
+
+List<CharacterLevelRecord> _levelHistoryFromJson(Object? json) => [
+  for (final entry in json is List ? json : const [])
+    if (entry is Map) CharacterLevelRecord.fromJson(entry.cast<String, dynamic>()),
+];
+
+List<Map<String, dynamic>> _levelHistoryToJson(
+  List<CharacterLevelRecord> value,
+) => [for (final record in value) record.toJson()];
 
 int _exhaustionLevelFromJson(Object? json) =>
     json is num ? json.toInt().clamp(0, 6).toInt() : 0;
@@ -120,6 +130,11 @@ class Character {
   /// entry in [activeConditions].
   @JsonKey(fromJson: _exhaustionLevelFromJson)
   final int exhaustionLevel;
+
+  /// 2024 progression history, one record per gained level. Empty on 2014
+  /// sheets and on 2024 sheets created before history was recorded.
+  @JsonKey(fromJson: _levelHistoryFromJson, toJson: _levelHistoryToJson)
+  final List<CharacterLevelRecord> levelHistory;
   final String? concentrationSpell;
 
   const Character({
@@ -176,6 +191,7 @@ class Character {
     this.weightTrackingEnabled = false,
     this.activeConditions = const [],
     this.exhaustionLevel = 0,
+    this.levelHistory = const [],
     this.concentrationSpell,
   });
 
@@ -330,6 +346,7 @@ class Character {
     bool? weightTrackingEnabled,
     List<String>? activeConditions,
     int? exhaustionLevel,
+    List<CharacterLevelRecord>? levelHistory,
     Object? concentrationSpell = _keep,
   }) {
     return Character(
@@ -388,6 +405,7 @@ class Character {
           weightTrackingEnabled ?? this.weightTrackingEnabled,
       activeConditions: activeConditions ?? this.activeConditions,
       exhaustionLevel: exhaustionLevel ?? this.exhaustionLevel,
+      levelHistory: levelHistory ?? this.levelHistory,
       concentrationSpell: concentrationSpell == _keep
           ? this.concentrationSpell
           : concentrationSpell as String?,

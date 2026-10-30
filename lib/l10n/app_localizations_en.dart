@@ -629,6 +629,44 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '+2 to one ability or +1 to two abilities (maximum $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '+$increase to one ability (maximum $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className: $cantrips cantrips and $prepared prepared spells up to level $level. Choose them in the Spells tab.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return 'Return to level 1 as $className? Levels, subclass, feats, choices and spells gained after level 1 are undone from the saved level history. Origin, manual ability edits, inventory, notes and story are kept.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return 'Cantrips: $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return 'Spellbook: $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'Choose the class for this spell';
+
+  @override
   String get concentrationBannerLabel => 'Concentrating on:';
 
   @override

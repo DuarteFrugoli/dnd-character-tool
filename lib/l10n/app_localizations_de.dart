@@ -637,6 +637,44 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '+2 auf ein Attribut oder +1 auf zwei Attribute (maximal $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '+$increase auf ein Attribut (maximal $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className: $cantrips Zaubertricks und $prepared vorbereitete Zauber bis Grad $level. Wähle sie im Zauber-Tab.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return 'Zurück zu Stufe 1 als $className? Stufen, Unterklasse, Talente, Auswahlen und Zauber nach Stufe 1 werden anhand des gespeicherten Stufenverlaufs rückgängig gemacht. Herkunft, manuelle Attributänderungen, Inventar, Notizen und Geschichte bleiben erhalten.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return 'Zaubertricks: $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return 'Zauberbuch: $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'Wähle die Klasse für diesen Zauber';
+
+  @override
   String get concentrationBannerLabel => 'Konzentration auf:';
 
   @override

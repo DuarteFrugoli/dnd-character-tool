@@ -303,6 +303,7 @@ Important persisted fields on `Character`:
 | `featureResources` | Remaining uses/points for trackable feature resources, keyed by resource ID. Missing values mean "full". |
 | `spellSlots` / `pactMagicSlots` | Standard multiclass spell slots and Warlock Pact Magic slots, tracked separately. |
 | `imagePath` | Native file name/path or web image reference such as `indexeddb:image:<id>`. Export formats embed image bytes separately. |
+| `levelHistory` | 2024 only: one `CharacterLevelRecord` per gained level (class entry, hit points and method, subclass, feat and ability increases; level 1 also keeps the pre-background ability scores). Empty on 2014 sheets. |
 | `sheetPreferences` | Per-character sheet display preferences, such as skill organization and spell level shortcut visibility. |
 | `sortOrder` | Character-list order inside the pinned or unpinned group. |
 
@@ -457,6 +458,48 @@ The progression package contains the pure rule entry points:
 
 The old raw level editor is intentionally not part of the UI anymore. Level
 changes should happen through level up or through the reset/rebuild flow.
+
+### 2024 Progression
+
+2024 sheets never use `level_up_rules.dart` or `CharacterProgressionEngine`.
+`data/character_progression/progression_2024_engine.dart` reads the SRD 5.2.1
+class tables through `Rules2024Data` (classes, subclasses, subclass features,
+feats, feature choices, spells, skills, tools, languages and the sheet's
+species traits, loaded by `srd2024RulesDataProvider`).
+
+- `plan()` describes one gained level: target class entry or a new class,
+  features from the class table row, subclass requirement, and whether the
+  row grants Ability Score Improvement or Epic Boon.
+- `missingMulticlassAbilities()` checks 13 in the primary abilities of every
+  current class and the new one (`primaryAbilityMode: "any"` marks Fighter).
+- `eligibleFeats()` offers General, Origin and Fighting Style feats, plus Epic
+  Boons at level 19, filtered by structured prerequisites and repeatability.
+  Ability increases use the feat's `ability_score_increase`/`ability` choice
+  metadata (`patterns`, `increase`, `maximum`).
+- `requestsFor()` reuses `FeatureChoiceEngine` for the new class level and
+  subclass features, prefixes feat choices with `level-N` so repeated feats
+  keep separate answers, and adds multiclass skill/tool choices.
+- `applyLevelUp()` updates class entries, hit points (Constitution changes
+  apply retroactively), hit dice, proficiency bonus, feats, choices and their
+  skill/tool/language/spell effects, spell slots, subclass always-prepared
+  spells and `levelHistory`, then recalculates AC.
+- `slotsFor()` uses the class table for a single caster and the full-caster
+  table for multiclass casters, adding half the Paladin and Ranger levels
+  rounded up; Warlock Pact Magic stays separate.
+- `spellcastingFor()` gives each class entry its own cantrip, prepared and
+  maximum spell level limits; the 2024 Spells tab uses it per class.
+- `resetToLevelOne()` rebuilds level 1 in the starting class from
+  `levelHistory`, removing later increases, feats, choices and their effects.
+  It is offered only when the history covers every level.
+
+Subclass always-prepared spells are structured in
+`assets/data/srd/5.2.1/subclasses.json` (`alwaysPreparedSpells`, or
+`alwaysPreparedSpellsByChoice` for the Circle of the Land terrain) and are
+refreshed whenever 2024 feature choices change.
+
+The UI lives in `features/character_detail/level_up_2024_sheet.dart`;
+`openLevelUpWizardSheet()` and `openLevelResetSheet()` dispatch 2024 sheets to
+it and to `CharacterDetailNotifier.resetLevels2024()`.
 
 ### Level Reset
 
@@ -1066,6 +1109,7 @@ the affected files before committing.
 | Level-up thresholds/ASI/subclass unlocks | `data/constants/level_up_rules.dart` |
 | Level-up/multiclass application | `data/character_progression/character_progression_engine.dart`, `features/character_detail/level_up_wizard_sheet.dart` |
 | Multiclass prerequisites | `data/character_progression/multiclass_prerequisites.dart`, `data/constants/level_up_rules.dart` |
+| 2024 level up, multiclass and reset | `data/character_progression/progression_2024_engine.dart`, `features/character_detail/level_up_2024_sheet.dart`, `assets/data/srd/5.2.1/classes.json` |
 | Level reset/rebuild | `data/character_progression/character_level_reset_engine.dart`, `features/character_detail/level_reset_sheet.dart` |
 | Spellcasting slots/known/prepared/cantrips | `data/spellcasting_engine.dart` |
 | Dice parser/roller | `data/dice/`, `features/character_detail/widgets/dice/dice_roller_sheet.dart` |

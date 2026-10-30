@@ -641,6 +641,44 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '+2 à une caractéristique ou +1 à deux caractéristiques (maximum $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '+$increase à une caractéristique (maximum $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className : $cantrips sorts mineurs et $prepared sorts préparés jusqu\'au niveau $level. Choisissez-les dans l\'onglet Sorts.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return 'Revenir au niveau 1 en tant que $className ? Les niveaux, la sous-classe, les dons, les choix et les sorts obtenus après le niveau 1 sont annulés grâce à l\'historique de niveaux enregistré. L\'origine, les modifications manuelles de caractéristiques, l\'inventaire, les notes et l\'histoire sont conservés.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return 'Sorts mineurs : $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return 'Grimoire : $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'Choisissez la classe de ce sort';
+
+  @override
   String get concentrationBannerLabel => 'Concentration sur :';
 
   @override

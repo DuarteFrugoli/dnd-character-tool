@@ -1,4 +1,5 @@
 import '../../character_detail_dependencies.dart';
+import '../../../../data/character_progression/progression_2024_engine.dart';
 import 'inventory_display_helpers.dart';
 import 'inventory_item_tile.dart';
 import 'item_detail_sheet.dart';
@@ -26,11 +27,12 @@ class ContainerContentsSheet extends ConsumerWidget {
     final srdClasses = character.rulesetId == RulesetId.dnd2014
         ? ref.watch(srdClassesProvider).valueOrNull
         : null;
-    final weaponProficiencies = character.rulesetId == RulesetId.dnd2024
+    final classes2024 = character.rulesetId == RulesetId.dnd2024
         ? ref.watch(srd2024ClassesProvider).valueOrNull
-            ?.where((entry) => entry.name == character.primaryClassName)
-            .firstOrNull?.weaponProficiencies
         : null;
+    final weaponProficiencies = classes2024 == null
+        ? null
+        : Progression2024Engine.weaponProficiencies(character, classes2024);
     final unitSystem = ref.watch(unitSystemProvider);
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;

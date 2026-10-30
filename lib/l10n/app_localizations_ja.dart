@@ -617,6 +617,44 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '1つの能力値に+2、または2つの能力値に+1（最大$max）。';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '1つの能力値に+$increase（最大$max）。';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className：初級呪文$cantrips個、$levelレベルまでの準備呪文$prepared個。呪文タブで選んでください。';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return '$classNameとしてレベル1に戻しますか？レベル1以降に得たレベル、サブクラス、特技、選択、呪文は保存されたレベル履歴から取り消されます。出自、手動の能力値編集、所持品、メモ、背景ストーリーは保持されます。';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return '初級呪文：$count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return '呪文書：$count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'この呪文のクラスを選択';
+
+  @override
   String get concentrationBannerLabel => '集中中の魔法：';
 
   @override

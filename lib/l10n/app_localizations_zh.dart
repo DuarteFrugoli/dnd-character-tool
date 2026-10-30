@@ -607,6 +607,44 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '一项属性+2，或两项属性各+1（上限$max）。';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '一项属性+$increase（上限$max）。';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className：$cantrips个戏法，$prepared个已准备法术，最高$level环。请在法术标签页中选择。';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return '以$className回到1级？1级之后获得的等级、子职业、专长、选择和法术将根据已保存的等级记录撤销。出身、手动属性修改、物品、笔记和背景故事会保留。';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return '戏法：$count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return '法术书：$count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => '选择此法术所属的职业';
+
+  @override
   String get concentrationBannerLabel => '正在专注于：';
 
   @override

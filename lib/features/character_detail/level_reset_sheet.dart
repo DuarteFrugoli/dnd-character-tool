@@ -11,6 +11,7 @@ import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/models/models.dart';
+import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
@@ -23,6 +24,9 @@ Future<void> openLevelResetSheet(
   Character character,
   String characterId,
 ) async {
+  if (character.rulesetId == RulesetId.dnd2024) {
+    return _resetLevels2024(context, character, characterId);
+  }
   final confirmed = await showDialog<bool>(
     context: context,
     builder: (context) => const _ResetLevelsConfirmDialog(),
@@ -50,8 +54,35 @@ Future<void> openLevelResetSheet(
   );
 }
 
+/// 2024 sheets return to level 1 from their saved level history.
+Future<void> _resetLevels2024(
+  BuildContext context,
+  Character character,
+  String characterId,
+) async {
+  final l10n = AppLocalizations.of(context)!;
+  final i18n = await ProviderScope.containerOf(
+    context,
+  ).read(srdI18nForPackProvider(character.contentPackId).future);
+  if (!context.mounted) return;
+  final confirmed = await showDialog<bool>(
+    context: context,
+    builder: (context) => _ResetLevelsConfirmDialog(
+      body: l10n.resetLevels2024Body(i18n.className(character.primaryClassName)),
+    ),
+  );
+  if (confirmed != true || !context.mounted) return;
+  final messenger = ScaffoldMessenger.of(context);
+  await ProviderScope.containerOf(
+    context,
+  ).read(characterDetailProvider(characterId).notifier).resetLevels2024();
+  messenger.showSnackBar(SnackBar(content: Text(l10n.resetLevelsApplied)));
+}
+
 class _ResetLevelsConfirmDialog extends StatefulWidget {
-  const _ResetLevelsConfirmDialog();
+  const _ResetLevelsConfirmDialog({this.body});
+
+  final String? body;
 
   @override
   State<_ResetLevelsConfirmDialog> createState() =>
@@ -87,7 +118,7 @@ class _ResetLevelsConfirmDialogState extends State<_ResetLevelsConfirmDialog> {
     final l10n = AppLocalizations.of(context)!;
     return AlertDialog(
       title: Text(l10n.resetLevelsTitle),
-      content: Text(l10n.resetLevelsConfirmBody),
+      content: Text(widget.body ?? l10n.resetLevelsConfirmBody),
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),

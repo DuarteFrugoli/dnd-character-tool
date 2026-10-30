@@ -1,4 +1,5 @@
 import '../character_detail_dependencies.dart';
+import '../../../data/character_progression/progression_2024_engine.dart';
 import '../widgets/inventory/add_item_sheet.dart';
 import '../widgets/inventory/container_contents_sheet.dart';
 import '../widgets/inventory/inventory_display_helpers.dart';
@@ -99,11 +100,12 @@ class _InventoryTabState extends ConsumerState<InventoryTab>
     final srdClasses = character.rulesetId == RulesetId.dnd2014
         ? ref.watch(srdClassesProvider).valueOrNull
         : null;
-    final weaponProficiencies = character.rulesetId == RulesetId.dnd2024
+    final classes2024 = character.rulesetId == RulesetId.dnd2024
         ? ref.watch(srd2024ClassesProvider).valueOrNull
-            ?.where((entry) => entry.name == character.primaryClassName)
-            .firstOrNull?.weaponProficiencies
         : null;
+    final weaponProficiencies = classes2024 == null
+        ? null
+        : Progression2024Engine.weaponProficiencies(character, classes2024);
     final coinLabels = {
       'cp': l10n.coinCopper,
       'sp': l10n.coinSilver,

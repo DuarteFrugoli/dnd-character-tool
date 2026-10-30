@@ -704,6 +704,13 @@
   "exhaustionEffects": "D20 Testlerinde {penalty} · Hız −{distance}",
   "exhaustionLethal": "6. seviyede karakter ölür.",
   "rollExhaustionApplied": "Bitkinlik {modifier} d20'ye uygulandı.",
+  "levelUp2024AsiHint": "Bir yeteneğe +2 veya iki yeteneğe +1 (en fazla {max}).",
+  "levelUp2024AbilityHint": "Bir yeteneğe +{increase} (en fazla {max}).",
+  "levelUp2024SpellLimits": "{className}: {cantrips} cantrip ve {level}. seviyeye kadar {prepared} hazırlanmış büyü. Bunları Büyüler sekmesinde seç.",
+  "resetLevels2024Body": "{className} olarak 1. seviyeye dönülsün mü? 1. seviyeden sonra kazanılan seviyeler, alt sınıf, yetenekler (feat), seçimler ve büyüler kayıtlı seviye geçmişine göre geri alınır. Köken, elle yapılan yetenek değişiklikleri, envanter, notlar ve hikâye korunur.",
+  "spells2024Cantrips": "Cantripler: {count} / {max}",
+  "spells2024Spellbook": "Büyü kitabı: {count} / {max}",
+  "spells2024ChooseClass": "Bu büyünün sınıfını seç",
   "@shortRestNoDice": {
     "description": "Short rest: no HD available message."
   },

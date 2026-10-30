@@ -1250,6 +1250,53 @@ abstract class AppLocalizations {
   /// **'Exhaustion {modifier} applied to the d20.'**
   String rollExhaustionApplied(String modifier);
 
+  /// 2024 Ability Score Improvement feat rule.
+  ///
+  /// In en, this message translates to:
+  /// **'+2 to one ability or +1 to two abilities (maximum {max}).'**
+  String levelUp2024AsiHint(int max);
+
+  /// 2024 feat that raises one ability.
+  ///
+  /// In en, this message translates to:
+  /// **'+{increase} to one ability (maximum {max}).'**
+  String levelUp2024AbilityHint(int increase, int max);
+
+  /// 2024 level up summary of spell limits for a class.
+  ///
+  /// In en, this message translates to:
+  /// **'{className}: {cantrips} cantrips and {prepared} prepared spells up to level {level}. Choose them in the Spells tab.'**
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  );
+
+  /// 2024 level reset confirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Return to level 1 as {className}? Levels, subclass, feats, choices and spells gained after level 1 are undone from the saved level history. Origin, manual ability edits, inventory, notes and story are kept.'**
+  String resetLevels2024Body(String className);
+
+  /// 2024 Spells tab cantrip count per class.
+  ///
+  /// In en, this message translates to:
+  /// **'Cantrips: {count} / {max}'**
+  String spells2024Cantrips(int count, int max);
+
+  /// 2024 Spells tab Wizard spellbook count.
+  ///
+  /// In en, this message translates to:
+  /// **'Spellbook: {count} / {max}'**
+  String spells2024Spellbook(int count, int max);
+
+  /// 2024 Spells tab: pick the class a new spell belongs to.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the class for this spell'**
+  String get spells2024ChooseClass;
+
   /// Concentration banner prefix label.
   ///
   /// In en, this message translates to:

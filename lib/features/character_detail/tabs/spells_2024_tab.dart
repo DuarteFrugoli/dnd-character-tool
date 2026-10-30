@@ -1,5 +1,5 @@
 import '../character_detail_dependencies.dart';
-import '../../../data/datasources/srd/srd_2024_creation_catalog.dart';
+import '../../../data/character_progression/progression_2024_engine.dart';
 import '../../../data/rulesets/ruleset_ids.dart';
 import '../widgets/spells/spell_widgets.dart';
 import '../widgets/dice/contextual_roll_sheet.dart';
@@ -38,17 +38,7 @@ class Spells2024Tab extends ConsumerWidget {
         final level = a.level.compareTo(b.level);
         return level != 0 ? level : i18n.spellName(a.name).compareTo(i18n.spellName(b.name));
       });
-    final classData = classes.where((entry) => entry.name == character.primaryClassName).firstOrNull;
-    final castingAbility = classData?.spellcastingAbility;
-    final spellAttack = castingAbility == null
-        ? null
-        : ((character.abilityScores[castingAbility] - 10) / 2).floor() +
-              character.proficiencyBonus;
-    final preparedLimit = (classData?.levelOne['preparedSpells'] as num?)?.toInt() ?? 0;
-    final preparedCount = character.spells.where(
-      (spell) => spell.level > 0 && spell.isPrepared && !spell.isAlwaysPrepared &&
-          spell.sourceClass == character.primaryClassName,
-    ).length;
+    final castings = Progression2024Engine.spellcastingFor(character, classes);
     final slots = character.spellSlots;
     final pactSlots = character.pactMagicSlots;
 
@@ -57,20 +47,13 @@ class Spells2024Tab extends ConsumerWidget {
         key: PageStorageKey('spells-2024-$characterId'),
         padding: EdgeInsets.fromLTRB(16, 12, 16, 96 + MediaQuery.viewPaddingOf(context).bottom),
         children: [
-          if (spellAttack != null) ...[
-            ListTile(
-              title: Text(l10n.spellsSpellcasting),
-              subtitle: Text(abilityName(l10n, castingAbility!)),
+          for (final casting in castings)
+            _CastingSummary(
+              casting: casting,
+              character: character,
+              showClass: castings.length > 1,
+              i18n: i18n,
             ),
-            ListTile(
-              title: Text(l10n.spellsAttack),
-              trailing: Text(spellAttack >= 0 ? '+$spellAttack' : '$spellAttack'),
-            ),
-            ListTile(
-              title: Text(l10n.spellsSaveDC),
-              trailing: Text('${8 + spellAttack}'),
-            ),
-          ],
           for (final (label, pool, pact) in [
             (l10n.spellsSlots, slots, false),
             (l10n.spellsPactMagicSlots, pactSlots, true),
@@ -99,11 +82,6 @@ class Spells2024Tab extends ConsumerWidget {
               padding: const EdgeInsets.all(16),
               child: Text(l10n.spellsEmpty),
             ),
-          if (preparedLimit > 0)
-            Padding(
-              padding: const EdgeInsets.only(top: 12),
-              child: Text('${l10n.spellsPrepared}: $preparedCount / $preparedLimit'),
-            ),
           for (var spellIndex = 0; spellIndex < known.length; spellIndex++) ...[
             if (spellIndex == 0 || known[spellIndex - 1].level != known[spellIndex].level)
               Padding(
@@ -117,9 +95,7 @@ class Spells2024Tab extends ConsumerWidget {
               spell: known[spellIndex],
               data: spellIndexByName[known[spellIndex].name.toLowerCase()],
               character: character,
-              classData: classData,
-              preparedCount: preparedCount,
-              preparedLimit: preparedLimit,
+              casting: _castingFor(castings, known[spellIndex]),
               characterId: characterId,
               contentPackId: packId,
               i18n: i18n,
@@ -127,24 +103,141 @@ class Spells2024Tab extends ConsumerWidget {
           ],
         ],
       ),
-      floatingActionButton: classData == null
+      floatingActionButton: castings.isEmpty
           ? null
           : FloatingActionButton(
               tooltip: l10n.spellsTooltipAdd,
-              onPressed: () => showModalBottomSheet<void>(
-                context: context,
-                isScrollControlled: true,
-                useSafeArea: true,
-                builder: (_) => _Add2024SpellSheet(
-                  character: character,
-                  characterId: characterId,
-                  classData: classData,
-                  spells: spells,
-                  i18n: i18n,
-                ),
-              ),
+              onPressed: () async {
+                final casting = castings.length == 1
+                    ? castings.single
+                    : await _pickCasting(context, castings, i18n);
+                if (casting == null || !context.mounted) return;
+                await showModalBottomSheet<void>(
+                  context: context,
+                  isScrollControlled: true,
+                  useSafeArea: true,
+                  builder: (_) => _Add2024SpellSheet(
+                    characterId: characterId,
+                    casting: casting,
+                    spells: spells,
+                    i18n: i18n,
+                  ),
+                );
+              },
               child: const Icon(Icons.add),
             ),
+    );
+  }
+
+  static ClassSpellcasting2024? _castingFor(
+    List<ClassSpellcasting2024> castings,
+    KnownSpell spell,
+  ) {
+    return castings.firstWhereOrNull((c) => c.entry.id == spell.sourceClassEntryId) ??
+        castings.firstWhereOrNull((c) => c.cls.name == spell.sourceClass);
+  }
+
+  Future<ClassSpellcasting2024?> _pickCasting(
+    BuildContext context,
+    List<ClassSpellcasting2024> castings,
+    SrdI18nService i18n,
+  ) {
+    return showModalBottomSheet<ClassSpellcasting2024>(
+      context: context,
+      useSafeArea: true,
+      builder: (sheetContext) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Text(
+                AppLocalizations.of(sheetContext)!.spells2024ChooseClass,
+                style: Theme.of(sheetContext).textTheme.titleMedium,
+              ),
+            ),
+            for (final casting in castings)
+              ListTile(
+                title: Text('${i18n.className(casting.cls.name)} ${casting.entry.level}'),
+                onTap: () => Navigator.pop(sheetContext, casting),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/// Counts of class-table spells for one class entry.
+({int cantrips, int spells, int prepared}) _classSpellCounts(
+  Character character,
+  CharacterClassEntry entry,
+) {
+  var cantrips = 0;
+  var spells = 0;
+  var prepared = 0;
+  for (final spell in character.spells) {
+    if (!Progression2024Engine.countsAgainstClassLimits(spell, entry)) continue;
+    if (spell.level == 0) {
+      cantrips++;
+    } else {
+      spells++;
+      if (spell.isPrepared) prepared++;
+    }
+  }
+  return (cantrips: cantrips, spells: spells, prepared: prepared);
+}
+
+int _modifier(int score) => ((score - 10) / 2).floor();
+
+class _CastingSummary extends StatelessWidget {
+  const _CastingSummary({
+    required this.casting,
+    required this.character,
+    required this.showClass,
+    required this.i18n,
+  });
+
+  final ClassSpellcasting2024 casting;
+  final Character character;
+  final bool showClass;
+  final SrdI18nService i18n;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final attack = _modifier(character.abilityScores[casting.ability]) +
+        character.proficiencyBonus;
+    final counts = _classSpellCounts(character, casting.entry);
+    final spellbook = casting.spellbookSize;
+    return Card(
+      elevation: 0,
+      margin: const EdgeInsets.only(bottom: 8),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              showClass
+                  ? '${i18n.className(casting.cls.name)} ${casting.entry.level} · ${abilityName(l10n, casting.ability)}'
+                  : '${l10n.spellsSpellcasting}: ${abilityName(l10n, casting.ability)}',
+              style: Theme.of(context).textTheme.titleSmall,
+            ),
+            const SizedBox(height: 4),
+            Text(
+              '${l10n.spellsAttack} ${attack >= 0 ? '+$attack' : '$attack'} · '
+              '${l10n.spellsSaveDC} ${8 + attack}',
+            ),
+            if (casting.cantripsKnown > 0)
+              Text(l10n.spells2024Cantrips(counts.cantrips, casting.cantripsKnown)),
+            if (spellbook != null)
+              Text(l10n.spells2024Spellbook(counts.spells, spellbook)),
+            if (casting.preparedSpells > 0)
+              Text('${l10n.spellsPrepared}: ${spellbook == null ? counts.spells : counts.prepared} / ${casting.preparedSpells}'),
+          ],
+        ),
+      ),
     );
   }
 }
@@ -154,9 +247,7 @@ class _Known2024SpellTile extends ConsumerWidget {
     required this.spell,
     required this.data,
     required this.character,
-    required this.classData,
-    required this.preparedCount,
-    required this.preparedLimit,
+    required this.casting,
     required this.characterId,
     required this.contentPackId,
     required this.i18n,
@@ -165,9 +256,7 @@ class _Known2024SpellTile extends ConsumerWidget {
   final KnownSpell spell;
   final SrdSpell? data;
   final Character character;
-  final Creation2024Class? classData;
-  final int preparedCount;
-  final int preparedLimit;
+  final ClassSpellcasting2024? casting;
   final String characterId;
   final ContentPackId contentPackId;
   final SrdI18nService i18n;
@@ -183,13 +272,10 @@ class _Known2024SpellTile extends ConsumerWidget {
             .firstOrNull
             ?.values.firstOrNull
         : null;
-    final castingAbility = magicInitiateAbility ??
-        (spell.sourceClass == classData?.name
-            ? classData?.spellcastingAbility
-            : null);
+    final castingAbility = magicInitiateAbility ?? this.casting?.ability;
     final attackBonus = castingAbility == null
         ? null
-        : ((character.abilityScores[castingAbility] - 10) / 2).floor() +
+        : _modifier(character.abilityScores[castingAbility]) +
               character.proficiencyBonus;
     final availableLevels = <int>{
       for (var index = 0; index < character.spellSlots.total.length; index++)
@@ -211,14 +297,25 @@ class _Known2024SpellTile extends ConsumerWidget {
             spellAttackBonus: attackBonus,
             availableSlotLevels: availableLevels,
           );
+    final casting = this.casting;
+    final countsAgainstLimit = casting != null &&
+        Progression2024Engine.countsAgainstClassLimits(spell, casting.entry);
+    // Only Wizards keep unprepared spells (their spellbook); other classes
+    // prepare every spell they learn from the class table.
+    final canTogglePrepared = countsAgainstLimit &&
+        spell.level > 0 &&
+        casting.spellbookSize != null;
+    final preparedFull = casting != null &&
+        _classSpellCounts(character, casting.entry).prepared >=
+            casting.preparedSpells;
     return ListTile(
       title: Text(i18n.spellName(spell.name)),
       subtitle: spell.level > 0 && spell.isPrepared ? Text(l10n.spellsPrepared) : null,
-      trailing: spell.isAlwaysPrepared || spell.level == 0
+      trailing: !canTogglePrepared
           ? null
           : IconButton(
               tooltip: spell.isPrepared ? l10n.spellActionPrepared : l10n.spellActionPrepare,
-              onPressed: !spell.isPrepared && preparedCount >= preparedLimit
+              onPressed: !spell.isPrepared && preparedFull
                   ? null
                   : () => ref.read(characterDetailProvider(characterId).notifier).togglePrepared(spell.name),
               icon: Icon(spell.isPrepared ? Icons.bookmark : Icons.bookmark_border),
@@ -251,16 +348,14 @@ class _Known2024SpellTile extends ConsumerWidget {
 
 class _Add2024SpellSheet extends ConsumerStatefulWidget {
   const _Add2024SpellSheet({
-    required this.character,
     required this.characterId,
-    required this.classData,
+    required this.casting,
     required this.spells,
     required this.i18n,
   });
 
-  final Character character;
   final String characterId;
-  final Creation2024Class classData;
+  final ClassSpellcasting2024 casting;
   final List<SrdSpell> spells;
   final SrdI18nService i18n;
 
@@ -280,25 +375,20 @@ class _Add2024SpellSheetState extends ConsumerState<_Add2024SpellSheet> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final current = ref.watch(characterDetailProvider(widget.characterId)).valueOrNull ?? widget.character;
-    final className = widget.classData.name.toLowerCase();
-    final maxLevel = [
-      for (var index = 0; index < current.spellSlots.total.length; index++)
-        if (current.spellSlots.total[index] > 0) index + 1,
-      for (var index = 0; index < current.pactMagicSlots.total.length; index++)
-        if (current.pactMagicSlots.total[index] > 0) index + 1,
-    ].fold<int>(0, (max, level) => level > max ? level : max);
-    final cantripLimit = (widget.classData.levelOne['cantripsKnown'] as num?)?.toInt() ?? 0;
-    final spellLimit = widget.classData.name == 'Wizard'
-        ? 6
-        : (widget.classData.levelOne['preparedSpells'] as num?)?.toInt() ?? 0;
-    final classSpells = current.spells.where((spell) => spell.sourceClass?.toLowerCase() == className).toList();
-    final cantripCount = classSpells.where((spell) => spell.level == 0).length;
-    final spellCount = classSpells.where((spell) => spell.level > 0 && !spell.isAlwaysPrepared).length;
+    final current = ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
+    if (current == null) return const SizedBox.shrink();
+    final casting = widget.casting;
+    final className = casting.cls.name.toLowerCase();
+    final spellLimit = casting.spellbookSize ?? casting.preparedSpells;
+    final counts = _classSpellCounts(current, casting.entry);
     final names = current.spells.map((spell) => spell.name.toLowerCase()).toSet();
     final matches = widget.spells.where((spell) {
       if (!spell.classes.contains(className) || names.contains(spell.name.toLowerCase())) return false;
-      if (spell.level == 0 ? cantripCount >= cantripLimit : spell.level > maxLevel || spellCount >= spellLimit) return false;
+      if (spell.level == 0
+          ? counts.cantrips >= casting.cantripsKnown
+          : spell.level > casting.maxSpellLevel || counts.spells >= spellLimit) {
+        return false;
+      }
       return widget.i18n.spellName(spell.name).toLowerCase().contains(_search.text.trim().toLowerCase());
     }).toList()
       ..sort((a, b) {
@@ -349,10 +439,10 @@ class _Add2024SpellSheetState extends ConsumerState<_Add2024SpellSheet> {
                       await ref.read(characterDetailProvider(widget.characterId).notifier).addSpell(KnownSpell(
                         name: spell.name,
                         level: spell.level,
-                        isPrepared: widget.classData.name != 'Wizard' || spell.level == 0,
+                        isPrepared: casting.spellbookSize == null || spell.level == 0,
                         sourceType: 'class',
-                        sourceClass: widget.classData.name,
-                        sourceClassEntryId: current.primaryClass.id,
+                        sourceClass: casting.cls.name,
+                        sourceClassEntryId: casting.entry.id,
                       ));
                       if (mounted) setState(() {});
                     },

@@ -632,6 +632,44 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return 'Bir yeteneğe +2 veya iki yeteneğe +1 (en fazla $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return 'Bir yeteneğe +$increase (en fazla $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className: $cantrips cantrip ve $level. seviyeye kadar $prepared hazırlanmış büyü. Bunları Büyüler sekmesinde seç.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return '$className olarak 1. seviyeye dönülsün mü? 1. seviyeden sonra kazanılan seviyeler, alt sınıf, yetenekler (feat), seçimler ve büyüler kayıtlı seviye geçmişine göre geri alınır. Köken, elle yapılan yetenek değişiklikleri, envanter, notlar ve hikâye korunur.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return 'Cantripler: $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return 'Büyü kitabı: $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'Bu büyünün sınıfını seç';
+
+  @override
   String get concentrationBannerLabel => 'Konsantre olunan:';
 
   @override

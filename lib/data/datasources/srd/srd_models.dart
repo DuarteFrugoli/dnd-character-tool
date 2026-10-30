@@ -986,6 +986,13 @@ class SrdFeatureChoiceRequirement {
   final bool ritualOnly;
   final bool excludePreparedSpells;
 
+  /// Ability choices of 2024 feats: points added per pick and the score cap.
+  final int increase;
+  final int? maximum;
+
+  /// `ability_score_increase` splits, e.g. `[[2], [1, 1]]`.
+  final List<List<int>> patterns;
+
   const SrdFeatureChoiceRequirement({
     required this.id,
     required this.type,
@@ -1007,6 +1014,9 @@ class SrdFeatureChoiceRequirement {
     this.allowThievesTools = false,
     this.ritualOnly = false,
     this.excludePreparedSpells = false,
+    this.increase = 1,
+    this.maximum,
+    this.patterns = const [],
   });
 
   factory SrdFeatureChoiceRequirement.fromJson(Map<String, dynamic> json) {
@@ -1038,6 +1048,13 @@ class SrdFeatureChoiceRequirement {
       allowThievesTools: readBool(json['allowThievesTools']),
       ritualOnly: readBool(json['ritualOnly']),
       excludePreparedSpells: readBool(json['excludePreparedSpells']),
+      increase: (json['increase'] as num?)?.toInt() ?? 1,
+      maximum: (json['maximum'] as num?)?.toInt(),
+      patterns: [
+        for (final pattern in json['patterns'] as List<dynamic>? ?? const [])
+          if (pattern is List)
+            [for (final value in pattern) if (value is num) value.toInt()],
+      ],
     );
   }
 

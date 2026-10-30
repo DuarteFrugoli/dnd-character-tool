@@ -148,6 +148,7 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
           .toList() ??
       const [],
   exhaustionLevel: _exhaustionLevelFromJson(json['exhaustionLevel']),
+  levelHistory: _levelHistoryFromJson(json['levelHistory']),
   concentrationSpell: json['concentrationSpell'] as String?,
 );
 
@@ -205,6 +206,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'weightTrackingEnabled': instance.weightTrackingEnabled,
   'activeConditions': instance.activeConditions,
   'exhaustionLevel': instance.exhaustionLevel,
+  'levelHistory': _levelHistoryToJson(instance.levelHistory),
   'concentrationSpell': instance.concentrationSpell,
 };
 

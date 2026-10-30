@@ -4,6 +4,7 @@ import 'package:dnd_character_tool/data/datasources/srd/srd_data_source.dart';
 import 'package:dnd_character_tool/data/rulesets/srd_content_pack.dart';
 import 'package:dnd_character_tool/data/feature_choice_option_resolver.dart';
 import 'package:dnd_character_tool/data/models/character.dart';
+import 'package:dnd_character_tool/data/models/character_level_record.dart';
 import 'package:dnd_character_tool/data/datasources/srd/srd_2024_creation_catalog.dart';
 import 'package:dnd_character_tool/features/character_creation/creation_2024_draft.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -121,6 +122,13 @@ void main() {
     expect(restored.contentPackId, ContentPackId.srd521);
     expect(restored.featureChoices.singleWhere((choice) => choice.choiceId == 'ability_scores').values,
         abilityOrigin.values);
+    final levelOne = restored.levelHistory.single;
+    expect(levelOne.characterLevel, 1);
+    expect(levelOne.className, 'Monk');
+    expect(levelOne.hitPointsGained, 10);
+    expect(levelOne.hitPointMethod, HitPointGainMethod.maximum);
+    expect(levelOne.baseAbilityScores['dexterity'], 15);
+    expect(levelOne.baseAbilityScores['constitution'], 14);
   });
 
   test('Acolyte Magic Initiate keeps the Cleric spell list fixed', () {

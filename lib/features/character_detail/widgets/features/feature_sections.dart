@@ -1,4 +1,6 @@
 import '../../character_detail_dependencies.dart';
+import '../../../../data/character_progression/progression_2024_engine.dart';
+import '../../../../data/rulesets/ruleset_ids.dart';
 import 'feature_support.dart';
 
 PageStorageKey<String> _featureExpansionKey(String scope, List<Object?> parts) {
@@ -390,12 +392,34 @@ class FeatsSection extends ConsumerWidget {
     final notifier = ref.read(characterDetailProvider(characterId).notifier);
     final l10n = AppLocalizations.of(context)!;
 
+    final is2024 = character.rulesetId == RulesetId.dnd2024;
+
     Widget buildFeat(CharacterExtraFeature f) {
-      final requests = FeatureChoiceEngine.requestsForFeat(
-        catalog: data.featureChoiceCatalog,
-        featName: f.name,
-        level: character.totalLevel,
-      );
+      // 2024 feats keep their choices per origin (background, species or
+      // level), so repeated feats do not share answers. Ability increases
+      // belong to the level history and are not edited here.
+      final requests = [
+        for (final request in FeatureChoiceEngine.requestsForFeat(
+          catalog: data.featureChoiceCatalog,
+          featName: f.name,
+          level: character.totalLevel,
+        ))
+          if (!is2024)
+            request
+          else if (request.requirement.type != 'ability_score_increase' &&
+              request.requirement.type != 'ability')
+            FeatureChoiceRequest(
+              sourceType: request.sourceType,
+              sourceClassEntryId: f.sourceClassEntryId,
+              sourceName: request.sourceName,
+              featureName: request.featureName,
+              level: request.level,
+              requirement: request.requirement,
+              requiredCount: request.requiredCount,
+            ),
+      ];
+      final fromLevel =
+          is2024 && Progression2024Engine.isLevelFeatSource(f.sourceClassEntryId);
       final usageViews = FeatureUsageEngine.viewsForRef(
         catalog: data.featureUsageCatalog,
         character: character,
@@ -421,7 +445,7 @@ class FeatsSection extends ConsumerWidget {
               context,
             ).textTheme.bodySmall?.copyWith(color: scheme.tertiary),
           ),
-          trailing: IconButton(
+          trailing: fromLevel ? null : IconButton(
             icon: const Icon(Icons.delete_outline, size: 18),
             color: scheme.error,
             tooltip: l10n.featuresTooltipRemove,

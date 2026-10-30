@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/display/keep_screen_on_provider.dart';
 import '../../core/platform/keep_screen_on.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
+import '../../data/character_progression/progression_2024_engine.dart';
 import '../../data/models/models.dart';
 import '../../data/rest/rest_policy.dart';
 import '../../data/rest/short_rest_recovery.dart';
@@ -408,8 +409,10 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           tabs: _tabs,
           onBack: _handleBack,
           onRollDice: () => openDiceRollerSheet(context, characterId: widget.characterId),
-          onLevelUp: null,
-          onResetLevels: null,
+          onLevelUp: _openLevelUpForCurrentCharacter,
+          onResetLevels: Progression2024Engine.canResetToLevelOne(character)
+              ? _openLevelResetForCurrentCharacter
+              : null,
           onRest: _showRestPickerForCurrentCharacter,
           onImageChanged: (path) => ref.read(characterDetailProvider(widget.characterId).notifier).updateImage(path),
           children: [

@@ -620,6 +620,44 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '능력치 하나에 +2 또는 두 개에 +1 (최대 $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '능력치 하나에 +$increase (최대 $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className: 소마법 $cantrips개, $level레벨까지 준비 주문 $prepared개. 주문 탭에서 선택하세요.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return '$className(으)로 1레벨로 돌아갈까요? 1레벨 이후 얻은 레벨, 하위 클래스, 재주, 선택, 주문은 저장된 레벨 기록으로 되돌려집니다. 출신, 수동 능력치 수정, 소지품, 메모, 이야기는 유지됩니다.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return '소마법: $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return '주문책: $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => '이 주문의 클래스를 선택하세요';
+
+  @override
   String get concentrationBannerLabel => '집중 중:';
 
   @override

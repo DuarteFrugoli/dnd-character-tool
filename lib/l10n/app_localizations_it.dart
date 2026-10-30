@@ -636,6 +636,44 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '+2 a una caratteristica o +1 a due caratteristiche (massimo $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '+$increase a una caratteristica (massimo $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className: $cantrips trucchetti e $prepared incantesimi preparati fino al livello $level. Sceglili nella scheda Incantesimi.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return 'Tornare al livello 1 come $className? Livelli, sottoclasse, talenti, scelte e incantesimi ottenuti dopo il livello 1 vengono annullati usando la cronologia dei livelli salvata. Origine, modifiche manuali alle caratteristiche, inventario, note e storia vengono mantenuti.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return 'Trucchetti: $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return 'Libro degli incantesimi: $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'Scegli la classe di questo incantesimo';
+
+  @override
   String get concentrationBannerLabel => 'Concentrazione su:';
 
   @override

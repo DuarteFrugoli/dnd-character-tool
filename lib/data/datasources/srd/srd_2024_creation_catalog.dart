@@ -54,8 +54,57 @@ class Creation2024Equipment {
   );
 }
 
+class Creation2024MulticlassProficiencies {
+  const Creation2024MulticlassProficiencies({
+    this.armor = const [],
+    this.weapons = const [],
+    this.tools = const [],
+    this.toolChoice,
+    this.skillChoice,
+  });
+
+  final List<String> armor;
+  final List<String> weapons;
+  final List<String> tools;
+  final Creation2024ToolChoice? toolChoice;
+  final SrdSkillChoice? skillChoice;
+
+  factory Creation2024MulticlassProficiencies.fromJson(Map<String, dynamic>? json) {
+    if (json == null) return const Creation2024MulticlassProficiencies();
+    final toolChoices = json['toolChoices'] as List<dynamic>? ?? const [];
+    return Creation2024MulticlassProficiencies(
+      armor: List<String>.from(json['armor'] as List? ?? const []),
+      weapons: List<String>.from(json['weapons'] as List? ?? const []),
+      tools: List<String>.from(json['tools'] as List? ?? const []),
+      toolChoice: toolChoices.isEmpty
+          ? null
+          : Creation2024ToolChoice.fromJson(toolChoices.first as Map<String, dynamic>),
+      skillChoice: json['skills'] is Map<String, dynamic>
+          ? SrdSkillChoice.fromJson(json['skills'] as Map<String, dynamic>)
+          : null,
+    );
+  }
+}
+
 class Creation2024Class {
-  const Creation2024Class({required this.name, required this.hitDie, required this.savingThrows, required this.skillChoices, required this.weaponProficiencies, required this.toolProficiencies, required this.toolChoice, required this.equipmentChoices, required this.levelOne, this.spellcastingAbility});
+  const Creation2024Class({
+    required this.name,
+    required this.hitDie,
+    required this.savingThrows,
+    required this.skillChoices,
+    required this.weaponProficiencies,
+    required this.toolProficiencies,
+    required this.toolChoice,
+    required this.equipmentChoices,
+    required this.levelOne,
+    this.spellcastingAbility,
+    this.spellcastingType,
+    this.primaryAbilities = const [],
+    this.primaryAbilityAny = false,
+    this.subclassLevel = 3,
+    this.progression = const [],
+    this.multiclass = const Creation2024MulticlassProficiencies(),
+  });
 
   final String name;
   final int hitDie;
@@ -63,25 +112,116 @@ class Creation2024Class {
   final SrdSkillChoice skillChoices;
   final List<String> weaponProficiencies;
   final String? spellcastingAbility;
+
+  /// `full`, `half`, `warlock` or null.
+  final String? spellcastingType;
+  final List<String> primaryAbilities;
+
+  /// True when any one primary ability is enough (Fighter); otherwise all are
+  /// required, e.g. for multiclass prerequisites.
+  final bool primaryAbilityAny;
+  final int subclassLevel;
   final List<String> toolProficiencies;
   final Creation2024ToolChoice? toolChoice;
   final List<Creation2024Equipment> equipmentChoices;
   final Map<String, dynamic> levelOne;
 
-  factory Creation2024Class.fromJson(Map<String, dynamic> json) => Creation2024Class(
-    name: json['name'] as String,
-    hitDie: json['hitDie'] as int,
-    savingThrows: List<String>.from(json['savingThrows'] as List),
-    skillChoices: SrdSkillChoice.fromJson(json['skillChoices'] as Map<String, dynamic>),
-    weaponProficiencies: List<String>.from(json['weaponProficiencies'] as List),
-    spellcastingAbility: json['spellcastingAbility'] as String?,
-    toolProficiencies: List<String>.from(json['toolProficiencies'] as List),
-    toolChoice: (json['toolProficiencyChoices'] as List<dynamic>? ?? const []).isEmpty
-        ? null
-        : Creation2024ToolChoice.fromJson((json['toolProficiencyChoices'] as List<dynamic>).first as Map<String, dynamic>),
-    equipmentChoices: (json['equipmentChoices'] as List<dynamic>).map((choice) => Creation2024Equipment.fromJson(choice as Map<String, dynamic>)).toList(),
-    levelOne: (json['progression'] as List<dynamic>).first as Map<String, dynamic>,
-  );
+  /// Rows of the class table, index 0 = class level 1.
+  final List<Map<String, dynamic>> progression;
+  final Creation2024MulticlassProficiencies multiclass;
+
+  Map<String, dynamic> rowAt(int classLevel) {
+    if (progression.isEmpty) return levelOne;
+    return progression[(classLevel - 1).clamp(0, progression.length - 1)];
+  }
+
+  List<String> featuresAt(int classLevel) =>
+      List<String>.from(rowAt(classLevel)['features'] as List? ?? const []);
+
+  factory Creation2024Class.fromJson(Map<String, dynamic> json) {
+    final progression = (json['progression'] as List<dynamic>).cast<Map<String, dynamic>>();
+    return Creation2024Class(
+      name: json['name'] as String,
+      hitDie: json['hitDie'] as int,
+      savingThrows: List<String>.from(json['savingThrows'] as List),
+      skillChoices: SrdSkillChoice.fromJson(json['skillChoices'] as Map<String, dynamic>),
+      weaponProficiencies: List<String>.from(json['weaponProficiencies'] as List),
+      spellcastingAbility: json['spellcastingAbility'] as String?,
+      spellcastingType: json['spellcastingType'] as String?,
+      primaryAbilities: List<String>.from(json['primaryAbility'] as List? ?? const []),
+      primaryAbilityAny: json['primaryAbilityMode'] == 'any',
+      subclassLevel: (json['subclassLevel'] as num?)?.toInt() ?? 3,
+      toolProficiencies: List<String>.from(json['toolProficiencies'] as List),
+      toolChoice: (json['toolProficiencyChoices'] as List<dynamic>? ?? const []).isEmpty
+          ? null
+          : Creation2024ToolChoice.fromJson((json['toolProficiencyChoices'] as List<dynamic>).first as Map<String, dynamic>),
+      equipmentChoices: (json['equipmentChoices'] as List<dynamic>).map((choice) => Creation2024Equipment.fromJson(choice as Map<String, dynamic>)).toList(),
+      levelOne: progression.first,
+      progression: progression,
+      multiclass: Creation2024MulticlassProficiencies.fromJson(
+        json['multiclassProficiencies'] as Map<String, dynamic>?,
+      ),
+    );
+  }
+}
+
+class Creation2024Subclass {
+  const Creation2024Subclass({
+    required this.className,
+    required this.name,
+    required this.description,
+    this.alwaysPreparedSpells = const {},
+    this.spellsByChoice,
+  });
+
+  final String className;
+  final String name;
+  final String description;
+
+  /// Spells always prepared from a class level on, keyed by class level.
+  final Map<int, List<String>> alwaysPreparedSpells;
+
+  /// Spells that depend on a feature choice (Circle of the Land terrain).
+  final Creation2024SubclassChoiceSpells? spellsByChoice;
+
+  factory Creation2024Subclass.fromJson(String className, Map<String, dynamic> json) {
+    final byChoice = json['alwaysPreparedSpellsByChoice'] as Map<String, dynamic>?;
+    return Creation2024Subclass(
+      className: className,
+      name: json['name'] as String,
+      description: json['description'] as String? ?? '',
+      alwaysPreparedSpells: _spellLevels(json['alwaysPreparedSpells']),
+      spellsByChoice: byChoice == null
+          ? null
+          : Creation2024SubclassChoiceSpells(
+              featureName: byChoice['feature'] as String,
+              choiceId: byChoice['choiceId'] as String,
+              options: {
+                for (final entry in (byChoice['options'] as Map<String, dynamic>).entries)
+                  entry.key: _spellLevels(entry.value),
+              },
+            ),
+    );
+  }
+
+  static Map<int, List<String>> _spellLevels(Object? json) => json is Map
+      ? {
+          for (final entry in json.entries)
+            int.parse(entry.key.toString()): List<String>.from(entry.value as List),
+        }
+      : const {};
+}
+
+class Creation2024SubclassChoiceSpells {
+  const Creation2024SubclassChoiceSpells({
+    required this.featureName,
+    required this.choiceId,
+    required this.options,
+  });
+
+  final String featureName;
+  final String choiceId;
+  final Map<String, Map<int, List<String>>> options;
 }
 
 class Creation2024Species {
@@ -154,6 +294,19 @@ class Creation2024Catalog {
     return (jsonDecode(raw) as List<dynamic>)
         .map((entry) => Creation2024Class.fromJson(entry as Map<String, dynamic>))
         .toList();
+  }
+
+  static Future<Map<String, List<Creation2024Subclass>>> loadSubclasses() async {
+    final raw = await rootBundle.loadString(
+      SrdContentPackRegistry.srd521.srdAsset('subclasses'),
+    );
+    return {
+      for (final entry in (jsonDecode(raw) as Map<String, dynamic>).entries)
+        entry.key: [
+          for (final subclass in entry.value as List<dynamic>)
+            Creation2024Subclass.fromJson(entry.key, subclass as Map<String, dynamic>),
+        ],
+    };
   }
 
   static Future<List<Creation2024Species>> loadSpecies() async {

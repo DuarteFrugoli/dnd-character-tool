@@ -5,6 +5,7 @@ export 'character_class_entry.dart';
 export 'character_extra_feature.dart';
 export 'character_feature_choice.dart';
 export 'character_hit_die_pool.dart';
+export 'character_level_record.dart';
 export 'character_note.dart';
 export 'character_personality.dart';
 export 'character_sheet_preferences.dart';

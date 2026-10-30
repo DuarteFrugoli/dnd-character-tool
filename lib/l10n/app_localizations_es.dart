@@ -635,6 +635,44 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String levelUp2024AsiHint(int max) {
+    return '+2 a una característica o +1 a dos características (máximo $max).';
+  }
+
+  @override
+  String levelUp2024AbilityHint(int increase, int max) {
+    return '+$increase a una característica (máximo $max).';
+  }
+
+  @override
+  String levelUp2024SpellLimits(
+    String className,
+    int cantrips,
+    int prepared,
+    int level,
+  ) {
+    return '$className: $cantrips trucos y $prepared conjuros preparados hasta el nivel $level. Elígelos en la pestaña de Conjuros.';
+  }
+
+  @override
+  String resetLevels2024Body(String className) {
+    return '¿Volver al nivel 1 como $className? Los niveles, la subclase, las dotes, las elecciones y los conjuros obtenidos después del nivel 1 se deshacen con el historial de niveles guardado. Se conservan el origen, los cambios manuales de características, el inventario, las notas y la historia.';
+  }
+
+  @override
+  String spells2024Cantrips(int count, int max) {
+    return 'Trucos: $count / $max';
+  }
+
+  @override
+  String spells2024Spellbook(int count, int max) {
+    return 'Libro de conjuros: $count / $max';
+  }
+
+  @override
+  String get spells2024ChooseClass => 'Elige la clase de este conjuro';
+
+  @override
   String get concentrationBannerLabel => 'Concentrado en:';
 
   @override

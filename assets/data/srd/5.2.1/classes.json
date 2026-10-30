@@ -1780,6 +1780,7 @@
       "strength",
       "dexterity"
     ],
+    "primaryAbilityMode": "any",
     "savingThrows": [
       "strength",
       "constitution"

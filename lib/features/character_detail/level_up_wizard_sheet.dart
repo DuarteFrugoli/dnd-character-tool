@@ -13,10 +13,12 @@ import '../../data/datasources/srd/srd_models.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_choice_option_resolver.dart';
 import '../../data/models/models.dart';
+import '../../data/rulesets/ruleset_ids.dart';
 import '../../data/spellcasting_engine.dart';
 import '../../shared/providers/providers.dart';
 import 'application/level_up/level_up_wizard_state.dart';
 import 'character_detail_provider.dart';
+import 'level_up_2024_sheet.dart';
 import 'spell_browser_sheet.dart';
 import 'widgets/feature_choice_editor.dart';
 
@@ -56,6 +58,13 @@ Future<LevelUpResult?> openLevelUpWizardSheet(
   String characterId, {
   bool applyOnConfirm = true,
 }) {
+  if (character.rulesetId == RulesetId.dnd2024) {
+    return openLevelUp2024Sheet(
+      context,
+      character,
+      characterId,
+    ).then((_) => null);
+  }
   final newLevel = character.totalLevel + 1;
   if (newLevel > 20) {
     ScaffoldMessenger.of(context).showSnackBar(

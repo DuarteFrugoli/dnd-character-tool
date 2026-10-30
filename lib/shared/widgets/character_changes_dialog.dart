@@ -85,6 +85,8 @@ class _ChangeTile extends StatelessWidget {
     CharacterChangeKind.feats => l10n.featuresSectionFeats,
     CharacterChangeKind.spells => l10n.detailTabSpells,
     CharacterChangeKind.experience => l10n.changesKindExperience,
+    CharacterChangeKind.wildShapeKnownForms => l10n.changesKindWildShapeForms,
+    CharacterChangeKind.wildShapeEnds => l10n.wildShapeTitle,
   };
 
   String _name(AppLocalizations l10n, String value) => switch (change.kind) {
@@ -119,6 +121,8 @@ class _ChangeTile extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(_title(l10n), style: theme.textTheme.titleSmall),
+          if (change.kind == CharacterChangeKind.wildShapeEnds)
+            Text(l10n.changesWildShapeEnds),
           if (valueChange)
             Text(
               change.kind == CharacterChangeKind.classes

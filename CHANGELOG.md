@@ -24,6 +24,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Alert**: o talento soma +5 a Iniciativa em 2014 e o bonus de proficiencia em 2024.
 - **Revisao de mudancas**: o reinicio de niveis mostra cada mudanca antes de salvar, nas duas edicoes.
 - **Reinicio 2024**: volta ao nivel 1 em qualquer classe e pode reconstruir ate o nivel anterior.
+- **Forma Selvagem**: Druidas assumem formas de Fera pela ficha, com confirmacao do que muda, CA, deslocamento, atributos fisicos, ataques rolaveis e o bloco de estatisticas completo. Em 2014, qualquer Fera permitida pela tabela, com PV proprios da forma e dano excedente passando para o Druida; em 2024, formas conhecidas escolhidas no level up (4/6/8) e PV temporarios iguais ao nivel de Druida.
+- **Catalogo de feras**: blocos de estatisticas do SRD 5.1 e do SRD 5.2.1 para as Feras ate ND 1, com ataques, dano, testes de resistencia e recargas estruturados para o futuro tabuleiro.
 
 ### Changed
 - **Reinicio de niveis 2014**: desfaz o que as escolhas removidas concediam, remove proficiencias de multiclasse e so zera o XP com o rastreio ligado; com historico completo, tambem desfaz aumentos de atributo e troca as pericias da classe.
@@ -37,6 +39,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Subida de nivel 2014**: escolhas como Especializacao do Ladino e do Bardo agora aplicam as pericias escolhidas.
 
 ### Internal
+- **Ferramentas de tradução removidas**: `translate_i18n.py`, `check_srd_i18n.py`, `check_feature_choices_i18n.py`, `reuse_pack_translations.py` e `patch_spell_material.py` sairam do repositorio; overlays passam a ser escritos e revisados manualmente.
+- **Importacao de monstros**: `tools/import_srd_monsters.py` gera `monsters.json` a partir dos PDFs oficiais, e o validador do pack confere os blocos de estatisticas.
 - **Atualizacao de personagens**: versao de dados 11 grava o historico do nivel 1 e as pericias da classe de fichas 2024 antigas; fichas 2014 recebem apenas a nova versao. A atualizacao continua explicita, com backup antes.
 - **Historico de niveis**: novas fichas e cada subida de nivel registram classe, PV, subclasse, talento e aumentos, usados para reiniciar niveis.
 - **Pacotes de regras**: dados SRD e traducoes separados por versao; catalogos SRD 5.2.1 completos em ingles e traducoes nos idiomas do app, ainda em revisao linguistica.

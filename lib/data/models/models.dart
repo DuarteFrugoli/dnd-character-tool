@@ -1,4 +1,5 @@
 export 'ability_scores.dart';
+export 'active_wild_shape.dart';
 export 'character.dart';
 export 'character_appearance.dart';
 export 'character_class_entry.dart';

@@ -174,6 +174,8 @@ class CharacterLevelResetEngine {
       disabledFeatures: const [],
       disabledSpells: const [],
       concentrationSpell: null,
+      // Level 1 Druids have no Wild Shape.
+      wildShape: null,
       levelHistory: [
         CharacterLevelRecord(
           characterLevel: 1,

@@ -72,6 +72,284 @@ class AppLocalizationsEs extends AppLocalizations {
   String get customBackgroundSave => 'Usar este trasfondo';
 
   @override
+  String get wildShapeTitle => 'Forma Salvaje';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return 'Usos: $current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => 'Usos: ilimitados';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return 'Formas hasta VD $cr';
+  }
+
+  @override
+  String get wildShapeNoFly => 'sin velocidad de vuelo';
+
+  @override
+  String get wildShapeNoSwim => 'sin velocidad de nado';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return 'VD $cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return 'Formas conocidas: $count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms =>
+      'Elige tus formas conocidas en Forma Salvaje, en la pestaña Rasgos.';
+
+  @override
+  String get wildShapeAssume => 'Adoptar una forma';
+
+  @override
+  String get wildShapeLeave => 'Salir de la forma';
+
+  @override
+  String get wildShapeNoUsesLeft =>
+      'No quedan usos de Forma Salvaje. Un descanso los recupera.';
+
+  @override
+  String get wildShapeSearch => 'Buscar bestias';
+
+  @override
+  String get wildShapeSeenNote => 'Elige una bestia que hayas visto antes.';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return '¿Adoptar la forma de $name?';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return 'Gasta 1 uso de Forma Salvaje: $current → $after de $max.';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited =>
+      'Forma Salvaje no tiene límite de usos en tu nivel.';
+
+  @override
+  String get wildShapeConfirmReplace => 'Esto reemplaza tu forma actual.';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return 'La forma tiene $amount puntos de golpe. Al llegar a 0 vuelves a tu forma normal y el daño sobrante pasa a ti.';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return 'Obtienes $amount puntos de golpe temporales.';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return 'Conservas tus $current puntos de golpe temporales; los $gain de la forma no se suman.';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours horas',
+      one: '1 hora',
+    );
+    return 'Dura hasta $_temp0 o hasta que termine antes.';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      'Conservas tus puntos de golpe, Dados de Golpe, Inteligencia, Sabiduría, Carisma, rasgos de clase, idiomas, dotes y competencias. No puedes lanzar conjuros, pero la Concentración continúa.';
+
+  @override
+  String get wildShapeConfirmKeeps2014 =>
+      'Conservas tu Inteligencia, Sabiduría, Carisma, alineamiento, personalidad y competencias. No puedes lanzar conjuros, pero la Concentración continúa.';
+
+  @override
+  String get wildShapeConfirm => 'Adoptar forma';
+
+  @override
+  String wildShapeActive(String name) {
+    return 'En forma de $name';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return 'PG de la forma $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote =>
+      'FUE, DES y CON vienen de la forma; INT, SAB y CAR son tuyos.';
+
+  @override
+  String get wildShapeAttacks => 'Ataques de la forma';
+
+  @override
+  String get wildShapeAttackRoll => 'Tirada de ataque';
+
+  @override
+  String get wildShapeStatBlock => 'Bloque de estadísticas';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return '¿Salir de la forma de $name?';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 =>
+      'Vuelves a tu forma normal. El uso de Forma Salvaje no se devuelve.';
+
+  @override
+  String get wildShapeLeaveBody2014 =>
+      'Vuelves a tu forma normal con los puntos de golpe que tenías antes. Se pierden los puntos de golpe restantes de la forma y el uso de Forma Salvaje.';
+
+  @override
+  String get wildShapeDamageToForm =>
+      'El daño y la curación van primero a tu forma de Forma Salvaje.';
+
+  @override
+  String get changesKindWildShapeForms => 'Formas conocidas de Forma Salvaje';
+
+  @override
+  String get changesWildShapeEnds => 'La forma activa termina.';
+
+  @override
+  String get monsterSizeTiny => 'Diminuto';
+
+  @override
+  String get monsterSizeSmall => 'Pequeño';
+
+  @override
+  String get monsterSizeMedium => 'Mediano';
+
+  @override
+  String get monsterSizeLarge => 'Grande';
+
+  @override
+  String get monsterSizeHuge => 'Enorme';
+
+  @override
+  String get monsterSizeGargantuan => 'Gargantuesco';
+
+  @override
+  String get monsterSizeOr => ' o ';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$type de tamaño $size';
+  }
+
+  @override
+  String get monsterTypeBeast => 'Bestia';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return 'Enjambre de bestias (tamaño $size)';
+  }
+
+  @override
+  String get monsterSpeedBurrow => 'Excavar';
+
+  @override
+  String get monsterSpeedClimb => 'Trepar';
+
+  @override
+  String get monsterSpeedFly => 'Volar';
+
+  @override
+  String get monsterSpeedSwim => 'Nadar';
+
+  @override
+  String get monsterSpeedHover => '(levitar)';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$first o $second $distance (a elección del DM)';
+  }
+
+  @override
+  String get monsterSavingThrows => 'Tiradas de salvación';
+
+  @override
+  String get monsterSkills => 'Habilidades';
+
+  @override
+  String get monsterVulnerabilities => 'Vulnerabilidades';
+
+  @override
+  String get monsterResistances => 'Resistencias';
+
+  @override
+  String get monsterImmunities => 'Inmunidades';
+
+  @override
+  String get monsterConditionImmunities => 'Inmunidades a estados';
+
+  @override
+  String get monsterSenses => 'Sentidos';
+
+  @override
+  String get monsterSenseBlindsight => 'Vista ciega';
+
+  @override
+  String get monsterSenseDarkvision => 'Visión en la oscuridad';
+
+  @override
+  String get monsterSenseTremorsense => 'Sentido sísmico';
+
+  @override
+  String get monsterSenseTruesight => 'Visión verdadera';
+
+  @override
+  String get monsterLanguages => 'Idiomas';
+
+  @override
+  String get monsterLanguagesNone => 'Ninguno';
+
+  @override
+  String get monsterChallenge => 'Valor de desafío';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr (PX $xp; BC +$pb)';
+  }
+
+  @override
+  String get monsterTraits => 'Rasgos';
+
+  @override
+  String get monsterActions => 'Acciones';
+
+  @override
+  String get monsterBonusActions => 'Acciones adicionales';
+
+  @override
+  String get monsterReactions => 'Reacciones';
+
+  @override
+  String get monsterLegendaryActions => 'Acciones legendarias';
+
+  @override
+  String monsterRecharge(int min) {
+    return 'Recarga $min–6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return '$uses/día';
+  }
+
+  @override
   String get creation2024Species => 'Especie';
 
   @override

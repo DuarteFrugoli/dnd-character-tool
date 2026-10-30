@@ -16,6 +16,9 @@ String? featureChoiceOptionSubtitle({
   if (description == null || description.isEmpty) return null;
 
   final type = request.requirement.type;
+  if (type == 'beast_form') {
+    return AppLocalizations.of(context)!.wildShapeChallengeRating(description);
+  }
   if (_isSkillOption(type, option.id)) {
     return _abilitySubtitle(context, description);
   }

@@ -1,0 +1,555 @@
+{
+  "Ape": {
+    "name": "Singe",
+    "actions": {
+      "fist": {
+        "name": "Poing"
+      },
+      "rock": {
+        "name": "Rocher"
+      }
+    }
+  },
+  "Baboon": {
+    "name": "Babouin",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Badger": {
+    "name": "Blaireau",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Bat": {
+    "name": "Chauve-souris",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Black Bear": {
+    "name": "Ours noir",
+    "actions": {
+      "rend": {
+        "name": "Lacération"
+      }
+    }
+  },
+  "Blood Hawk": {
+    "name": "Faucon de sang",
+    "actions": {
+      "beak": {
+        "name": "Bec"
+      }
+    }
+  },
+  "Boar": {
+    "name": "Sanglier",
+    "actions": {
+      "gore": {
+        "name": "Coup de corne"
+      }
+    }
+  },
+  "Brown Bear": {
+    "name": "Ours brun",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      },
+      "claw": {
+        "name": "Griffe"
+      }
+    }
+  },
+  "Camel": {
+    "name": "Chameau",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Cat": {
+    "name": "Chat",
+    "actions": {
+      "scratch": {
+        "name": "Griffure"
+      }
+    }
+  },
+  "Constrictor Snake": {
+    "name": "Serpent constricteur",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Crab": {
+    "name": "Crabe",
+    "actions": {
+      "claw": {
+        "name": "Griffe"
+      }
+    }
+  },
+  "Crocodile": {
+    "name": "Crocodile",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Deer": {
+    "name": "Cerf",
+    "actions": {
+      "ram": {
+        "name": "Charge"
+      }
+    }
+  },
+  "Dire Wolf": {
+    "name": "Loup sanguinaire",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Draft Horse": {
+    "name": "Cheval de trait",
+    "actions": {
+      "hooves": {
+        "name": "Sabots"
+      }
+    }
+  },
+  "Eagle": {
+    "name": "Aigle",
+    "actions": {
+      "talons": {
+        "name": "Serres"
+      }
+    }
+  },
+  "Elk": {
+    "name": "Élan",
+    "actions": {
+      "ram": {
+        "name": "Charge"
+      }
+    }
+  },
+  "Frog": {
+    "name": "Grenouille",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Badger": {
+    "name": "Blaireau géant",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Bat": {
+    "name": "Chauve-souris géante",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Centipede": {
+    "name": "Mille-pattes géant",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Crab": {
+    "name": "Crabe géant",
+    "actions": {
+      "claw": {
+        "name": "Griffe"
+      }
+    }
+  },
+  "Giant Fire Beetle": {
+    "name": "Scarabée de feu géant",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Frog": {
+    "name": "Grenouille géante",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Goat": {
+    "name": "Chèvre géante",
+    "actions": {
+      "ram": {
+        "name": "Charge"
+      }
+    }
+  },
+  "Giant Hyena": {
+    "name": "Hyène géante",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Lizard": {
+    "name": "Lézard géant",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Octopus": {
+    "name": "Pieuvre géante",
+    "actions": {
+      "tentacles": {
+        "name": "Tentacules"
+      }
+    }
+  },
+  "Giant Rat": {
+    "name": "Rat géant",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Seahorse": {
+    "name": "Hippocampe géant",
+    "actions": {
+      "ram": {
+        "name": "Charge"
+      }
+    }
+  },
+  "Giant Spider": {
+    "name": "Araignée géante",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Toad": {
+    "name": "Crapaud géant",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Venomous Snake": {
+    "name": "Serpent venimeux géant",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Wasp": {
+    "name": "Guêpe géante",
+    "actions": {
+      "sting": {
+        "name": "Dard"
+      }
+    }
+  },
+  "Giant Weasel": {
+    "name": "Belette géante",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Giant Wolf Spider": {
+    "name": "Araignée-loup géante",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Goat": {
+    "name": "Chèvre",
+    "actions": {
+      "ram": {
+        "name": "Charge"
+      }
+    }
+  },
+  "Hawk": {
+    "name": "Faucon",
+    "actions": {
+      "talons": {
+        "name": "Serres"
+      }
+    }
+  },
+  "Hyena": {
+    "name": "Hyène",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Jackal": {
+    "name": "Chacal",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Lion": {
+    "name": "Lion",
+    "actions": {
+      "rend": {
+        "name": "Lacération"
+      }
+    }
+  },
+  "Lizard": {
+    "name": "Lézard",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Mastiff": {
+    "name": "Molosse",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Mule": {
+    "name": "Mule",
+    "actions": {
+      "hooves": {
+        "name": "Sabots"
+      }
+    }
+  },
+  "Octopus": {
+    "name": "Pieuvre",
+    "actions": {
+      "tentacles": {
+        "name": "Tentacules"
+      }
+    }
+  },
+  "Owl": {
+    "name": "Chouette",
+    "actions": {
+      "talons": {
+        "name": "Serres"
+      }
+    }
+  },
+  "Panther": {
+    "name": "Panthère",
+    "actions": {
+      "rend": {
+        "name": "Lacération"
+      }
+    }
+  },
+  "Piranha": {
+    "name": "Piranha",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Pony": {
+    "name": "Poney",
+    "actions": {
+      "hooves": {
+        "name": "Sabots"
+      }
+    }
+  },
+  "Pteranodon": {
+    "name": "Ptéranodon",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Rat": {
+    "name": "Rat",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Raven": {
+    "name": "Corbeau",
+    "actions": {
+      "beak": {
+        "name": "Bec"
+      }
+    }
+  },
+  "Reef Shark": {
+    "name": "Requin de récif",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Riding Horse": {
+    "name": "Cheval de selle",
+    "actions": {
+      "hooves": {
+        "name": "Sabots"
+      }
+    }
+  },
+  "Scorpion": {
+    "name": "Scorpion",
+    "actions": {
+      "sting": {
+        "name": "Dard"
+      }
+    }
+  },
+  "Seahorse": {
+    "name": "Hippocampe"
+  },
+  "Spider": {
+    "name": "Araignée",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Swarm of Bats": {
+    "name": "Nuée de chauves-souris",
+    "actions": {
+      "bites": {
+        "name": "Morsures"
+      }
+    }
+  },
+  "Swarm of Insects": {
+    "name": "Nuée d'insectes",
+    "actions": {
+      "bites": {
+        "name": "Morsures"
+      }
+    }
+  },
+  "Swarm of Piranhas": {
+    "name": "Nuée de piranhas",
+    "actions": {
+      "bites": {
+        "name": "Morsures"
+      }
+    }
+  },
+  "Swarm of Rats": {
+    "name": "Nuée de rats",
+    "actions": {
+      "bites": {
+        "name": "Morsures"
+      }
+    }
+  },
+  "Swarm of Ravens": {
+    "name": "Nuée de corbeaux",
+    "actions": {
+      "beaks": {
+        "name": "Coups de bec"
+      }
+    }
+  },
+  "Tiger": {
+    "name": "Tigre",
+    "actions": {
+      "rend": {
+        "name": "Lacération"
+      }
+    }
+  },
+  "Venomous Snake": {
+    "name": "Serpent venimeux",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Vulture": {
+    "name": "Vautour",
+    "actions": {
+      "beak": {
+        "name": "Bec"
+      }
+    }
+  },
+  "Warhorse": {
+    "name": "Cheval de guerre",
+    "actions": {
+      "hooves": {
+        "name": "Sabots"
+      }
+    }
+  },
+  "Weasel": {
+    "name": "Belette",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  },
+  "Wolf": {
+    "name": "Loup",
+    "actions": {
+      "bite": {
+        "name": "Morsure"
+      }
+    }
+  }
+}

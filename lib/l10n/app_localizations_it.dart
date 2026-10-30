@@ -72,6 +72,285 @@ class AppLocalizationsIt extends AppLocalizations {
   String get customBackgroundSave => 'Usa questo background';
 
   @override
+  String get wildShapeTitle => 'Forma Selvatica';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return 'Usi: $current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => 'Usi: illimitati';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return 'Forme fino a GS $cr';
+  }
+
+  @override
+  String get wildShapeNoFly => 'senza velocità di volo';
+
+  @override
+  String get wildShapeNoSwim => 'senza velocità di nuoto';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return 'GS $cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return 'Forme conosciute: $count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms =>
+      'Scegli le tue forme conosciute in Forma Selvatica, nella scheda Privilegi.';
+
+  @override
+  String get wildShapeAssume => 'Assumi una forma';
+
+  @override
+  String get wildShapeLeave => 'Lascia la forma';
+
+  @override
+  String get wildShapeNoUsesLeft =>
+      'Nessun uso di Forma Selvatica rimasto. Un riposo li ripristina.';
+
+  @override
+  String get wildShapeSearch => 'Cerca bestie';
+
+  @override
+  String get wildShapeSeenNote => 'Scegli una bestia che hai già visto.';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return 'Assumere la forma di $name?';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return 'Spende 1 uso di Forma Selvatica: $current → $after su $max.';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited =>
+      'Forma Selvatica non ha limite di usi al tuo livello.';
+
+  @override
+  String get wildShapeConfirmReplace =>
+      'Questa sostituisce la tua forma attuale.';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return 'La forma ha $amount punti ferita. A 0 torni alla tua forma normale e i danni in eccesso passano a te.';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return 'Ottieni $amount punti ferita temporanei.';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return 'Mantieni i tuoi $current punti ferita temporanei; i $gain della forma non si sommano.';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours ore',
+      one: '1 ora',
+    );
+    return 'Dura fino a $_temp0 o finché non termina prima.';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      'Mantieni punti ferita, Dadi Vita, Intelligenza, Saggezza, Carisma, privilegi di classe, lingue, talenti e competenze. Non puoi lanciare incantesimi, ma la Concentrazione continua.';
+
+  @override
+  String get wildShapeConfirmKeeps2014 =>
+      'Mantieni Intelligenza, Saggezza, Carisma, allineamento, personalità e competenze. Non puoi lanciare incantesimi, ma la Concentrazione continua.';
+
+  @override
+  String get wildShapeConfirm => 'Assumi la forma';
+
+  @override
+  String wildShapeActive(String name) {
+    return 'In forma di $name';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return 'PF della forma $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote =>
+      'FOR, DES e COS vengono dalla forma; INT, SAG e CAR sono tuoi.';
+
+  @override
+  String get wildShapeAttacks => 'Attacchi della forma';
+
+  @override
+  String get wildShapeAttackRoll => 'Tiro per colpire';
+
+  @override
+  String get wildShapeStatBlock => 'Statistiche';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return 'Lasciare la forma di $name?';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 =>
+      'Torni alla tua forma normale. L\'uso di Forma Selvatica non viene restituito.';
+
+  @override
+  String get wildShapeLeaveBody2014 =>
+      'Torni alla tua forma normale con i punti ferita che avevi prima. I punti ferita rimasti alla forma e l\'uso di Forma Selvatica vanno persi.';
+
+  @override
+  String get wildShapeDamageToForm =>
+      'Danni e cure si applicano prima alla tua Forma Selvatica.';
+
+  @override
+  String get changesKindWildShapeForms => 'Forme conosciute di Forma Selvatica';
+
+  @override
+  String get changesWildShapeEnds => 'La forma attiva termina.';
+
+  @override
+  String get monsterSizeTiny => 'Minuscola';
+
+  @override
+  String get monsterSizeSmall => 'Piccola';
+
+  @override
+  String get monsterSizeMedium => 'Media';
+
+  @override
+  String get monsterSizeLarge => 'Grande';
+
+  @override
+  String get monsterSizeHuge => 'Enorme';
+
+  @override
+  String get monsterSizeGargantuan => 'Mastodontica';
+
+  @override
+  String get monsterSizeOr => ' o ';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$type di taglia $size';
+  }
+
+  @override
+  String get monsterTypeBeast => 'Bestia';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return 'Sciame di bestie (taglia $size)';
+  }
+
+  @override
+  String get monsterSpeedBurrow => 'Scavare';
+
+  @override
+  String get monsterSpeedClimb => 'Scalare';
+
+  @override
+  String get monsterSpeedFly => 'Volare';
+
+  @override
+  String get monsterSpeedSwim => 'Nuotare';
+
+  @override
+  String get monsterSpeedHover => '(fluttuare)';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$first o $second $distance (a scelta del DM)';
+  }
+
+  @override
+  String get monsterSavingThrows => 'Tiri salvezza';
+
+  @override
+  String get monsterSkills => 'Abilità';
+
+  @override
+  String get monsterVulnerabilities => 'Vulnerabilità';
+
+  @override
+  String get monsterResistances => 'Resistenze';
+
+  @override
+  String get monsterImmunities => 'Immunità';
+
+  @override
+  String get monsterConditionImmunities => 'Immunità alle condizioni';
+
+  @override
+  String get monsterSenses => 'Sensi';
+
+  @override
+  String get monsterSenseBlindsight => 'Vista cieca';
+
+  @override
+  String get monsterSenseDarkvision => 'Scurovisione';
+
+  @override
+  String get monsterSenseTremorsense => 'Percezione tellurica';
+
+  @override
+  String get monsterSenseTruesight => 'Vista pura';
+
+  @override
+  String get monsterLanguages => 'Lingue';
+
+  @override
+  String get monsterLanguagesNone => 'Nessuna';
+
+  @override
+  String get monsterChallenge => 'Grado di sfida';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr (PE $xp; BC +$pb)';
+  }
+
+  @override
+  String get monsterTraits => 'Tratti';
+
+  @override
+  String get monsterActions => 'Azioni';
+
+  @override
+  String get monsterBonusActions => 'Azioni bonus';
+
+  @override
+  String get monsterReactions => 'Reazioni';
+
+  @override
+  String get monsterLegendaryActions => 'Azioni leggendarie';
+
+  @override
+  String monsterRecharge(int min) {
+    return 'Ricarica $min–6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return '$uses/giorno';
+  }
+
+  @override
   String get creation2024Species => 'Specie';
 
   @override

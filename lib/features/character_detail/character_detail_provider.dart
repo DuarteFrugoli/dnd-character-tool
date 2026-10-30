@@ -14,6 +14,8 @@ import '../../data/json_helpers.dart';
 import '../../data/constants/armor_class.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_models.dart';
+import '../../data/datasources/srd/srd_monster.dart';
+import '../../data/hit_point_changes.dart';
 import '../../data/inventory/inventory_operations.dart' as inventory_ops;
 import '../../data/models/models.dart';
 import '../../data/conditions/exhaustion_rules.dart';
@@ -21,6 +23,7 @@ import '../../data/rest/rest_policy.dart';
 import '../../data/rest/short_rest_recovery.dart';
 import '../../data/rulesets/character_rules_context.dart';
 import '../../data/rulesets/ruleset_ids.dart';
+import '../../data/wild_shape/wild_shape_engine.dart';
 import '../../shared/providers/providers.dart';
 import '../character_list/character_list_provider.dart';
 
@@ -62,34 +65,23 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   Future<void> adjustHp(int delta) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    final hp = c.hitPoints;
-    int newTemp = hp.temporary;
-    int newCurrent = hp.current;
-    if (delta < 0) {
-      // Damage: drain temp HP first
-      final damage = -delta;
-      if (newTemp >= damage) {
-        newTemp -= damage;
-      } else {
-        newCurrent = (newCurrent - (damage - newTemp)).clamp(0, hp.maximum);
-        newTemp = 0;
-      }
-    } else {
-      // Heal: only affects real HP
-      newCurrent = (newCurrent + delta).clamp(0, hp.maximum);
-    }
-    // When recovering from 0 HP, reset death saves
-    final resetDeathSaves = hp.isDead && (newCurrent > 0 || newTemp > 0);
-    await _save(
-      c.copyWith(
-        hitPoints: hp.copyWith(
-          current: newCurrent,
-          temporary: newTemp,
-          deathSaveSuccesses: resetDeathSaves ? 0 : null,
-          deathSaveFailures: resetDeathSaves ? 0 : null,
-        ),
-      ),
-    );
+    await _save(HitPointChanges.apply(c, delta));
+  }
+
+  /// Spends a Wild Shape use and takes [form].
+  Future<void> assumeWildShape(SrdMonster form) async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final srd = ref.read(srdDataSourceForPackProvider(c.contentPackId));
+    final monsters = await srd.getMonsters();
+    final usages = await srd.getFeatureUsageCatalog();
+    await _save(WildShapeEngine.assume(c, form, monsters, usages));
+  }
+
+  Future<void> leaveWildShape() async {
+    final c = state.valueOrNull;
+    if (c?.wildShape == null) return;
+    await _save(WildShapeEngine.leave(c!));
   }
 
   Future<void> updateDeathSaves({

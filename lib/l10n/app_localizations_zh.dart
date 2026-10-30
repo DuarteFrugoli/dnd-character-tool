@@ -70,6 +70,276 @@ class AppLocalizationsZh extends AppLocalizations {
   String get customBackgroundSave => '使用此背景';
 
   @override
+  String get wildShapeTitle => '荒野形态';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return '使用次数：$current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => '使用次数：无限';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return '形态最高挑战等级 $cr';
+  }
+
+  @override
+  String get wildShapeNoFly => '无飞行速度';
+
+  @override
+  String get wildShapeNoSwim => '无游泳速度';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return '挑战等级 $cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return '已知形态：$count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms => '请在“特性”标签页的荒野形态中选择你的已知形态。';
+
+  @override
+  String get wildShapeAssume => '变为一种形态';
+
+  @override
+  String get wildShapeLeave => '解除形态';
+
+  @override
+  String get wildShapeNoUsesLeft => '荒野形态没有剩余次数。休息可以恢复。';
+
+  @override
+  String get wildShapeSearch => '搜索野兽';
+
+  @override
+  String get wildShapeSeenNote => '选择一种你以前见过的野兽。';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return '变为$name形态？';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return '消耗1次荒野形态：$current → $after（共$max）。';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited => '在你的等级，荒野形态没有次数限制。';
+
+  @override
+  String get wildShapeConfirmReplace => '这将替换你当前的形态。';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return '该形态有$amount点生命值。降至0时你会恢复原形，多余的伤害由你承受。';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return '你获得$amount点临时生命值。';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return '你保留现有的$current点临时生命值；形态给予的$gain点不会叠加。';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours小时',
+      one: '1小时',
+    );
+    return '最多持续$_temp0，或提前结束。';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      '你保留生命值、生命骰、智力、感知、魅力、职业特性、语言、专长和熟练项。你无法施法，但专注会持续。';
+
+  @override
+  String get wildShapeConfirmKeeps2014 => '你保留智力、感知、魅力、阵营、个性和熟练项。你无法施法，但专注会持续。';
+
+  @override
+  String get wildShapeConfirm => '变为形态';
+
+  @override
+  String wildShapeActive(String name) {
+    return '$name形态';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return '形态生命值 $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote => '力量、敏捷和体质来自形态；智力、感知和魅力是你自己的。';
+
+  @override
+  String get wildShapeAttacks => '形态攻击';
+
+  @override
+  String get wildShapeAttackRoll => '攻击检定';
+
+  @override
+  String get wildShapeStatBlock => '数据卡';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return '解除$name形态？';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 => '你恢复原形。已使用的荒野形态次数不会返还。';
+
+  @override
+  String get wildShapeLeaveBody2014 => '你以变身前的生命值恢复原形。形态剩余的生命值和荒野形态次数都会失去。';
+
+  @override
+  String get wildShapeDamageToForm => '伤害和治疗会先作用于你的荒野形态。';
+
+  @override
+  String get changesKindWildShapeForms => '荒野形态的已知形态';
+
+  @override
+  String get changesWildShapeEnds => '当前形态结束。';
+
+  @override
+  String get monsterSizeTiny => '微型';
+
+  @override
+  String get monsterSizeSmall => '小型';
+
+  @override
+  String get monsterSizeMedium => '中型';
+
+  @override
+  String get monsterSizeLarge => '大型';
+
+  @override
+  String get monsterSizeHuge => '巨型';
+
+  @override
+  String get monsterSizeGargantuan => '超巨型';
+
+  @override
+  String get monsterSizeOr => '或';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$size$type';
+  }
+
+  @override
+  String get monsterTypeBeast => '野兽';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return '野兽集群（个体$size）';
+  }
+
+  @override
+  String get monsterSpeedBurrow => '掘穴';
+
+  @override
+  String get monsterSpeedClimb => '攀爬';
+
+  @override
+  String get monsterSpeedFly => '飞行';
+
+  @override
+  String get monsterSpeedSwim => '游泳';
+
+  @override
+  String get monsterSpeedHover => '（悬浮）';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$first或$second $distance（由DM选择）';
+  }
+
+  @override
+  String get monsterSavingThrows => '豁免检定';
+
+  @override
+  String get monsterSkills => '技能';
+
+  @override
+  String get monsterVulnerabilities => '易伤';
+
+  @override
+  String get monsterResistances => '抗性';
+
+  @override
+  String get monsterImmunities => '免疫';
+
+  @override
+  String get monsterConditionImmunities => '状态免疫';
+
+  @override
+  String get monsterSenses => '感官';
+
+  @override
+  String get monsterSenseBlindsight => '盲视';
+
+  @override
+  String get monsterSenseDarkvision => '黑暗视觉';
+
+  @override
+  String get monsterSenseTremorsense => '震颤感知';
+
+  @override
+  String get monsterSenseTruesight => '真实视觉';
+
+  @override
+  String get monsterLanguages => '语言';
+
+  @override
+  String get monsterLanguagesNone => '无';
+
+  @override
+  String get monsterChallenge => '挑战等级';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr（经验值 $xp；熟练加值 +$pb）';
+  }
+
+  @override
+  String get monsterTraits => '特性';
+
+  @override
+  String get monsterActions => '动作';
+
+  @override
+  String get monsterBonusActions => '附赠动作';
+
+  @override
+  String get monsterReactions => '反应';
+
+  @override
+  String get monsterLegendaryActions => '传奇动作';
+
+  @override
+  String monsterRecharge(int min) {
+    return '充能 $min–6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return '每日$uses次';
+  }
+
+  @override
   String get creation2024Species => '物种';
 
   @override

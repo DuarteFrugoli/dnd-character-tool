@@ -2,8 +2,11 @@ import 'package:collection/collection.dart';
 
 import 'datasources/srd/srd_i18n_service.dart';
 import 'datasources/srd/srd_models.dart';
+import 'datasources/srd/srd_monster.dart';
 import 'feature_choice_engine.dart';
 import 'models/models.dart';
+import 'rulesets/ruleset_ids.dart';
+import 'rulesets/wild_shape_rules.dart';
 
 /// Values of options that need a target are saved as `option@target`, e.g.
 /// `agonizing_blast@Eldritch Blast`, so each instance is a distinct value.
@@ -34,6 +37,7 @@ class FeatureChoiceOptionResolver {
     required this.languages,
     required this.weapons,
     required this.feats,
+    this.monsters = const [],
     this.character,
     this.relatedRequests = const [],
     this.choices = const [],
@@ -48,6 +52,9 @@ class FeatureChoiceOptionResolver {
   final List<SrdLanguage> languages;
   final List<SrdWeapon> weapons;
   final List<SrdFeat> feats;
+
+  /// Stat blocks for `beast_form` choices such as 2024 Wild Shape forms.
+  final List<SrdMonster> monsters;
   final Character? character;
   final List<FeatureChoiceRequest> relatedRequests;
   final List<CharacterFeatureChoice> choices;
@@ -155,6 +162,8 @@ class FeatureChoiceOptionResolver {
       case 'cantrip':
       case 'spell':
         return _spellOptions();
+      case 'beast_form':
+        return _beastFormOptions();
       case 'weapon':
         return weapons
             .map(
@@ -168,6 +177,23 @@ class FeatureChoiceOptionResolver {
       default:
         return const [];
     }
+  }
+
+  /// Beasts the Beast Shapes table allows at the request's Druid level. The
+  /// description carries the challenge rating for the subtitle.
+  List<SrdFeatureChoiceOption> _beastFormOptions() {
+    final rules = WildShapeRules.forRuleset(character?.rulesetId ?? RulesetId.dnd2024);
+    final limits = rules.limitsAt(request.level);
+    if (limits == null) return const [];
+    return [
+      for (final monster in monsters)
+        if (limits.allows(monster))
+          SrdFeatureChoiceOption(
+            id: monster.id,
+            name: i18n.monsterName(monster.name),
+            description: monster.challengeRating,
+          ),
+    ];
   }
 
   List<SrdFeatureChoiceOption> _featureOptions(

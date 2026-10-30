@@ -1,0 +1,620 @@
+{
+  "Ape": {
+    "name": "類人猿",
+    "actions": {
+      "fist": {
+        "name": "拳"
+      },
+      "rock": {
+        "name": "投石"
+      }
+    }
+  },
+  "Axe Beak": {
+    "name": "アックス・ビーク",
+    "actions": {
+      "beak": {
+        "name": "くちばし"
+      }
+    }
+  },
+  "Baboon": {
+    "name": "ヒヒ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Badger": {
+    "name": "アナグマ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Bat": {
+    "name": "コウモリ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Black Bear": {
+    "name": "クロクマ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      },
+      "claws": {
+        "name": "鉤爪"
+      }
+    }
+  },
+  "Blood Hawk": {
+    "name": "ブラッド・ホーク",
+    "actions": {
+      "beak": {
+        "name": "くちばし"
+      }
+    }
+  },
+  "Boar": {
+    "name": "イノシシ",
+    "actions": {
+      "tusk": {
+        "name": "牙"
+      }
+    }
+  },
+  "Brown Bear": {
+    "name": "ヒグマ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      },
+      "claws": {
+        "name": "鉤爪"
+      }
+    }
+  },
+  "Camel": {
+    "name": "ラクダ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Cat": {
+    "name": "ネコ",
+    "actions": {
+      "claws": {
+        "name": "鉤爪"
+      }
+    }
+  },
+  "Constrictor Snake": {
+    "name": "締めつけヘビ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      },
+      "constrict": {
+        "name": "締めつけ"
+      }
+    }
+  },
+  "Crab": {
+    "name": "カニ",
+    "actions": {
+      "claw": {
+        "name": "爪"
+      }
+    }
+  },
+  "Crocodile": {
+    "name": "ワニ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Deer": {
+    "name": "シカ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Dire Wolf": {
+    "name": "ダイア・ウルフ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Draft Horse": {
+    "name": "荷馬",
+    "actions": {
+      "hooves": {
+        "name": "蹄"
+      }
+    }
+  },
+  "Eagle": {
+    "name": "ワシ",
+    "actions": {
+      "talons": {
+        "name": "猛禽の爪"
+      }
+    }
+  },
+  "Elk": {
+    "name": "ヘラジカ",
+    "actions": {
+      "ram": {
+        "name": "体当たり"
+      },
+      "hooves": {
+        "name": "蹄"
+      }
+    }
+  },
+  "Flying Snake": {
+    "name": "空飛ぶヘビ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Frog": {
+    "name": "カエル"
+  },
+  "Giant Badger": {
+    "name": "巨大アナグマ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      },
+      "claws": {
+        "name": "鉤爪"
+      }
+    }
+  },
+  "Giant Bat": {
+    "name": "巨大コウモリ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Centipede": {
+    "name": "巨大ムカデ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Crab": {
+    "name": "巨大ガニ",
+    "actions": {
+      "claw": {
+        "name": "爪"
+      }
+    }
+  },
+  "Giant Eagle": {
+    "name": "巨大ワシ",
+    "actions": {
+      "beak": {
+        "name": "くちばし"
+      },
+      "talons": {
+        "name": "猛禽の爪"
+      }
+    }
+  },
+  "Giant Fire Beetle": {
+    "name": "巨大ファイアー・ビートル",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Frog": {
+    "name": "巨大ガエル",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Goat": {
+    "name": "巨大ヤギ",
+    "actions": {
+      "ram": {
+        "name": "体当たり"
+      }
+    }
+  },
+  "Giant Hyena": {
+    "name": "巨大ハイエナ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Lizard": {
+    "name": "巨大トカゲ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Octopus": {
+    "name": "巨大ダコ",
+    "actions": {
+      "tentacles": {
+        "name": "触手"
+      }
+    }
+  },
+  "Giant Owl": {
+    "name": "巨大フクロウ",
+    "actions": {
+      "talons": {
+        "name": "猛禽の爪"
+      }
+    }
+  },
+  "Giant Poisonous Snake": {
+    "name": "巨大毒ヘビ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Rat": {
+    "name": "巨大ネズミ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Sea Horse": {
+    "name": "巨大タツノオトシゴ",
+    "actions": {
+      "ram": {
+        "name": "体当たり"
+      }
+    }
+  },
+  "Giant Spider": {
+    "name": "巨大グモ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      },
+      "web": {
+        "name": "蜘蛛の糸"
+      }
+    }
+  },
+  "Giant Toad": {
+    "name": "巨大ヒキガエル",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Vulture": {
+    "name": "巨大ハゲワシ",
+    "actions": {
+      "beak": {
+        "name": "くちばし"
+      },
+      "talons": {
+        "name": "猛禽の爪"
+      }
+    }
+  },
+  "Giant Wasp": {
+    "name": "巨大スズメバチ",
+    "actions": {
+      "sting": {
+        "name": "針"
+      }
+    }
+  },
+  "Giant Weasel": {
+    "name": "巨大イタチ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Giant Wolf Spider": {
+    "name": "巨大コモリグモ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Goat": {
+    "name": "ヤギ",
+    "actions": {
+      "ram": {
+        "name": "体当たり"
+      }
+    }
+  },
+  "Hawk": {
+    "name": "タカ",
+    "actions": {
+      "talons": {
+        "name": "猛禽の爪"
+      }
+    }
+  },
+  "Hyena": {
+    "name": "ハイエナ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Jackal": {
+    "name": "ジャッカル",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Lion": {
+    "name": "ライオン",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      },
+      "claw": {
+        "name": "爪"
+      }
+    }
+  },
+  "Lizard": {
+    "name": "トカゲ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Mastiff": {
+    "name": "マスティフ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Mule": {
+    "name": "ラバ",
+    "actions": {
+      "hooves": {
+        "name": "蹄"
+      }
+    }
+  },
+  "Octopus": {
+    "name": "タコ",
+    "actions": {
+      "tentacles": {
+        "name": "触手"
+      }
+    }
+  },
+  "Owl": {
+    "name": "フクロウ",
+    "actions": {
+      "talons": {
+        "name": "猛禽の爪"
+      }
+    }
+  },
+  "Panther": {
+    "name": "ヒョウ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      },
+      "claw": {
+        "name": "爪"
+      }
+    }
+  },
+  "Poisonous Snake": {
+    "name": "毒ヘビ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Pony": {
+    "name": "ポニー",
+    "actions": {
+      "hooves": {
+        "name": "蹄"
+      }
+    }
+  },
+  "Quipper": {
+    "name": "クイッパー",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Rat": {
+    "name": "ネズミ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Raven": {
+    "name": "ワタリガラス",
+    "actions": {
+      "beak": {
+        "name": "くちばし"
+      }
+    }
+  },
+  "Reef Shark": {
+    "name": "リーフ・シャーク",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Riding Horse": {
+    "name": "乗用馬",
+    "actions": {
+      "hooves": {
+        "name": "蹄"
+      }
+    }
+  },
+  "Scorpion": {
+    "name": "サソリ",
+    "actions": {
+      "sting": {
+        "name": "針"
+      }
+    }
+  },
+  "Sea Horse": {
+    "name": "タツノオトシゴ"
+  },
+  "Spider": {
+    "name": "クモ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Stirge": {
+    "name": "スタージ",
+    "actions": {
+      "blood_drain": {
+        "name": "吸血"
+      }
+    }
+  },
+  "Swarm of Bats": {
+    "name": "コウモリの群れ",
+    "actions": {
+      "bites": {
+        "name": "群れの噛みつき"
+      }
+    }
+  },
+  "Swarm of Insects": {
+    "name": "虫の群れ",
+    "actions": {
+      "bites": {
+        "name": "群れの噛みつき"
+      }
+    }
+  },
+  "Swarm of Quippers": {
+    "name": "クイッパーの群れ",
+    "actions": {
+      "bites": {
+        "name": "群れの噛みつき"
+      }
+    }
+  },
+  "Swarm of Rats": {
+    "name": "ネズミの群れ",
+    "actions": {
+      "bites": {
+        "name": "群れの噛みつき"
+      }
+    }
+  },
+  "Swarm of Ravens": {
+    "name": "ワタリガラスの群れ",
+    "actions": {
+      "beaks": {
+        "name": "つつき"
+      }
+    }
+  },
+  "Tiger": {
+    "name": "トラ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      },
+      "claw": {
+        "name": "爪"
+      }
+    }
+  },
+  "Vulture": {
+    "name": "ハゲワシ",
+    "actions": {
+      "beak": {
+        "name": "くちばし"
+      }
+    }
+  },
+  "Warhorse": {
+    "name": "軍馬",
+    "actions": {
+      "hooves": {
+        "name": "蹄"
+      }
+    }
+  },
+  "Weasel": {
+    "name": "イタチ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  },
+  "Wolf": {
+    "name": "オオカミ",
+    "actions": {
+      "bite": {
+        "name": "噛みつき"
+      }
+    }
+  }
+}

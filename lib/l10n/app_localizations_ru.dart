@@ -72,6 +72,284 @@ class AppLocalizationsRu extends AppLocalizations {
   String get customBackgroundSave => 'Использовать эту предысторию';
 
   @override
+  String get wildShapeTitle => 'Дикий облик';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return 'Использования: $current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => 'Использования: без ограничений';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return 'Облики до ПО $cr';
+  }
+
+  @override
+  String get wildShapeNoFly => 'без скорости полёта';
+
+  @override
+  String get wildShapeNoSwim => 'без скорости плавания';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return 'ПО $cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return 'Известные облики: $count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms =>
+      'Выберите известные облики в «Диком облике» на вкладке «Умения».';
+
+  @override
+  String get wildShapeAssume => 'Принять облик';
+
+  @override
+  String get wildShapeLeave => 'Покинуть облик';
+
+  @override
+  String get wildShapeNoUsesLeft =>
+      'Не осталось использований Дикого облика. Отдых их восстанавливает.';
+
+  @override
+  String get wildShapeSearch => 'Поиск зверей';
+
+  @override
+  String get wildShapeSeenNote => 'Выберите зверя, которого вы уже видели.';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return 'Принять облик: $name?';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return 'Тратит 1 использование Дикого облика: $current → $after из $max.';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited =>
+      'На вашем уровне у Дикого облика нет ограничения использований.';
+
+  @override
+  String get wildShapeConfirmReplace => 'Это заменяет ваш текущий облик.';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return 'У облика $amount хитов. При 0 вы возвращаетесь в обычный облик, а лишний урон переходит на вас.';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return 'Вы получаете $amount временных хитов.';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return 'Вы сохраняете свои $current временных хитов; $gain от облика с ними не складываются.';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours ч.',
+      one: '1 часа',
+    );
+    return 'Длится до $_temp0 или пока не закончится раньше.';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      'Вы сохраняете хиты, Кости хитов, Интеллект, Мудрость, Харизму, классовые умения, языки, черты и владения. Вы не можете накладывать заклинания, но Концентрация сохраняется.';
+
+  @override
+  String get wildShapeConfirmKeeps2014 =>
+      'Вы сохраняете Интеллект, Мудрость, Харизму, мировоззрение, характер и владения. Вы не можете накладывать заклинания, но Концентрация сохраняется.';
+
+  @override
+  String get wildShapeConfirm => 'Принять облик';
+
+  @override
+  String wildShapeActive(String name) {
+    return 'В облике: $name';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return 'Хиты облика $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote =>
+      'СИЛ, ЛОВ и ТЕЛ берутся из облика; ИНТ, МДР и ХАР — ваши.';
+
+  @override
+  String get wildShapeAttacks => 'Атаки облика';
+
+  @override
+  String get wildShapeAttackRoll => 'Бросок атаки';
+
+  @override
+  String get wildShapeStatBlock => 'Статблок';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return 'Покинуть облик: $name?';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 =>
+      'Вы возвращаетесь в обычный облик. Использование Дикого облика не возвращается.';
+
+  @override
+  String get wildShapeLeaveBody2014 =>
+      'Вы возвращаетесь в обычный облик с прежними хитами. Оставшиеся хиты облика и использование Дикого облика теряются.';
+
+  @override
+  String get wildShapeDamageToForm =>
+      'Урон и лечение сначала применяются к вашему Дикому облику.';
+
+  @override
+  String get changesKindWildShapeForms => 'Известные облики Дикого облика';
+
+  @override
+  String get changesWildShapeEnds => 'Текущий облик заканчивается.';
+
+  @override
+  String get monsterSizeTiny => 'крошечный';
+
+  @override
+  String get monsterSizeSmall => 'маленький';
+
+  @override
+  String get monsterSizeMedium => 'средний';
+
+  @override
+  String get monsterSizeLarge => 'большой';
+
+  @override
+  String get monsterSizeHuge => 'огромный';
+
+  @override
+  String get monsterSizeGargantuan => 'громадный';
+
+  @override
+  String get monsterSizeOr => ' или ';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$type, $size';
+  }
+
+  @override
+  String get monsterTypeBeast => 'Зверь';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return 'Стая зверей (размер: $size)';
+  }
+
+  @override
+  String get monsterSpeedBurrow => 'Копание';
+
+  @override
+  String get monsterSpeedClimb => 'Лазание';
+
+  @override
+  String get monsterSpeedFly => 'Полёт';
+
+  @override
+  String get monsterSpeedSwim => 'Плавание';
+
+  @override
+  String get monsterSpeedHover => '(парение)';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$first или $second $distance (на выбор Мастера)';
+  }
+
+  @override
+  String get monsterSavingThrows => 'Спасброски';
+
+  @override
+  String get monsterSkills => 'Навыки';
+
+  @override
+  String get monsterVulnerabilities => 'Уязвимости';
+
+  @override
+  String get monsterResistances => 'Сопротивления';
+
+  @override
+  String get monsterImmunities => 'Иммунитеты';
+
+  @override
+  String get monsterConditionImmunities => 'Иммунитет к состояниям';
+
+  @override
+  String get monsterSenses => 'Чувства';
+
+  @override
+  String get monsterSenseBlindsight => 'Слепое зрение';
+
+  @override
+  String get monsterSenseDarkvision => 'Тёмное зрение';
+
+  @override
+  String get monsterSenseTremorsense => 'Чувство вибрации';
+
+  @override
+  String get monsterSenseTruesight => 'Истинное зрение';
+
+  @override
+  String get monsterLanguages => 'Языки';
+
+  @override
+  String get monsterLanguagesNone => 'Нет';
+
+  @override
+  String get monsterChallenge => 'Опасность';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr (опыт $xp; БМ +$pb)';
+  }
+
+  @override
+  String get monsterTraits => 'Особенности';
+
+  @override
+  String get monsterActions => 'Действия';
+
+  @override
+  String get monsterBonusActions => 'Бонусные действия';
+
+  @override
+  String get monsterReactions => 'Реакции';
+
+  @override
+  String get monsterLegendaryActions => 'Легендарные действия';
+
+  @override
+  String monsterRecharge(int min) {
+    return 'Перезарядка $min–6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return '$uses/день';
+  }
+
+  @override
   String get creation2024Species => 'Вид';
 
   @override

@@ -70,6 +70,279 @@ class AppLocalizationsJa extends AppLocalizations {
   String get customBackgroundSave => 'この背景を使う';
 
   @override
+  String get wildShapeTitle => '自然の化身';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return '使用回数：$current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => '使用回数：無制限';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return '脅威度$crまでの姿';
+  }
+
+  @override
+  String get wildShapeNoFly => '飛行移動速度なし';
+
+  @override
+  String get wildShapeNoSwim => '水泳移動速度なし';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return '脅威度$cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return '既知の姿：$count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms => '「特徴」タブの「自然の化身」で既知の姿を選んでください。';
+
+  @override
+  String get wildShapeAssume => '姿をとる';
+
+  @override
+  String get wildShapeLeave => '姿を解く';
+
+  @override
+  String get wildShapeNoUsesLeft => '自然の化身の使用回数が残っていません。休憩で回復します。';
+
+  @override
+  String get wildShapeSearch => '野獣を検索';
+
+  @override
+  String get wildShapeSeenNote => '以前に見たことのある野獣を選んでください。';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return '$nameの姿をとりますか？';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return '自然の化身を1回使用します：$current → $max回中$after回。';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited => 'あなたのレベルでは自然の化身に使用回数の制限はありません。';
+
+  @override
+  String get wildShapeConfirmReplace => '現在の姿と置き換わります。';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return 'この姿は$amountヒット・ポイントを持ちます。0になると通常の姿に戻り、超過したダメージはあなたが受けます。';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return '一時的ヒット・ポイントを$amount得ます。';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return '現在の一時的ヒット・ポイント$currentを維持します。姿による$gainとは累積しません。';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours時間',
+      one: '1時間',
+    );
+    return '最大$_temp0、または早く終わるまで持続します。';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      'ヒット・ポイント、ヒット・ダイス、【知力】【判断力】【魅力】、クラスの特徴、言語、特技、習熟を維持します。呪文は発動できませんが、集中は続きます。';
+
+  @override
+  String get wildShapeConfirmKeeps2014 =>
+      '【知力】【判断力】【魅力】、属性、性格、習熟を維持します。呪文は発動できませんが、集中は続きます。';
+
+  @override
+  String get wildShapeConfirm => '姿をとる';
+
+  @override
+  String wildShapeActive(String name) {
+    return '$nameの姿';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return '姿のHP $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote =>
+      '【筋力】【敏捷力】【耐久力】は姿のもの、【知力】【判断力】【魅力】はあなたのものです。';
+
+  @override
+  String get wildShapeAttacks => '姿の攻撃';
+
+  @override
+  String get wildShapeAttackRoll => '攻撃ロール';
+
+  @override
+  String get wildShapeStatBlock => 'データ';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return '$nameの姿を解きますか？';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 => '通常の姿に戻ります。自然の化身の使用回数は戻りません。';
+
+  @override
+  String get wildShapeLeaveBody2014 =>
+      '変身前のヒット・ポイントで通常の姿に戻ります。姿の残りヒット・ポイントと自然の化身の使用回数は失われます。';
+
+  @override
+  String get wildShapeDamageToForm => 'ダメージと回復はまず自然の化身の姿に適用されます。';
+
+  @override
+  String get changesKindWildShapeForms => '自然の化身の既知の姿';
+
+  @override
+  String get changesWildShapeEnds => '現在の姿が終了します。';
+
+  @override
+  String get monsterSizeTiny => '超小型';
+
+  @override
+  String get monsterSizeSmall => '小型';
+
+  @override
+  String get monsterSizeMedium => '中型';
+
+  @override
+  String get monsterSizeLarge => '大型';
+
+  @override
+  String get monsterSizeHuge => '超大型';
+
+  @override
+  String get monsterSizeGargantuan => '巨大';
+
+  @override
+  String get monsterSizeOr => 'または';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$sizeサイズの$type';
+  }
+
+  @override
+  String get monsterTypeBeast => '野獣';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return '野獣の群れ（各$size）';
+  }
+
+  @override
+  String get monsterSpeedBurrow => '穴掘り';
+
+  @override
+  String get monsterSpeedClimb => '登攀';
+
+  @override
+  String get monsterSpeedFly => '飛行';
+
+  @override
+  String get monsterSpeedSwim => '水泳';
+
+  @override
+  String get monsterSpeedHover => '（ホバリング）';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$firstまたは$second $distance（DMが選択）';
+  }
+
+  @override
+  String get monsterSavingThrows => 'セーヴィング・スロー';
+
+  @override
+  String get monsterSkills => '技能';
+
+  @override
+  String get monsterVulnerabilities => '脆弱性';
+
+  @override
+  String get monsterResistances => '抵抗';
+
+  @override
+  String get monsterImmunities => '完全耐性';
+
+  @override
+  String get monsterConditionImmunities => '状態完全耐性';
+
+  @override
+  String get monsterSenses => '感覚';
+
+  @override
+  String get monsterSenseBlindsight => '擬似視覚';
+
+  @override
+  String get monsterSenseDarkvision => '暗視';
+
+  @override
+  String get monsterSenseTremorsense => '振動感知';
+
+  @override
+  String get monsterSenseTruesight => '真視';
+
+  @override
+  String get monsterLanguages => '言語';
+
+  @override
+  String get monsterLanguagesNone => 'なし';
+
+  @override
+  String get monsterChallenge => '脅威度';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr（XP $xp、習熟ボーナス+$pb）';
+  }
+
+  @override
+  String get monsterTraits => '特徴';
+
+  @override
+  String get monsterActions => 'アクション';
+
+  @override
+  String get monsterBonusActions => 'ボーナス・アクション';
+
+  @override
+  String get monsterReactions => 'リアクション';
+
+  @override
+  String get monsterLegendaryActions => '伝説的アクション';
+
+  @override
+  String monsterRecharge(int min) {
+    return '再チャージ$min～6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return '1日$uses回';
+  }
+
+  @override
   String get creation2024Species => '種族';
 
   @override

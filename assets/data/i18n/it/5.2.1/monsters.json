@@ -1,0 +1,555 @@
+{
+  "Ape": {
+    "name": "Scimmia",
+    "actions": {
+      "fist": {
+        "name": "Pugno"
+      },
+      "rock": {
+        "name": "Roccia"
+      }
+    }
+  },
+  "Baboon": {
+    "name": "Babbuino",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Badger": {
+    "name": "Tasso",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Bat": {
+    "name": "Pipistrello",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Black Bear": {
+    "name": "Orso nero",
+    "actions": {
+      "rend": {
+        "name": "Squarciare"
+      }
+    }
+  },
+  "Blood Hawk": {
+    "name": "Falco sanguinario",
+    "actions": {
+      "beak": {
+        "name": "Becco"
+      }
+    }
+  },
+  "Boar": {
+    "name": "Cinghiale",
+    "actions": {
+      "gore": {
+        "name": "Incornata"
+      }
+    }
+  },
+  "Brown Bear": {
+    "name": "Orso bruno",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      },
+      "claw": {
+        "name": "Artiglio"
+      }
+    }
+  },
+  "Camel": {
+    "name": "Cammello",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Cat": {
+    "name": "Gatto",
+    "actions": {
+      "scratch": {
+        "name": "Graffio"
+      }
+    }
+  },
+  "Constrictor Snake": {
+    "name": "Serpente costrittore",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Crab": {
+    "name": "Granchio",
+    "actions": {
+      "claw": {
+        "name": "Artiglio"
+      }
+    }
+  },
+  "Crocodile": {
+    "name": "Coccodrillo",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Deer": {
+    "name": "Cervo",
+    "actions": {
+      "ram": {
+        "name": "Carica"
+      }
+    }
+  },
+  "Dire Wolf": {
+    "name": "Lupo crudele",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Draft Horse": {
+    "name": "Cavallo da tiro",
+    "actions": {
+      "hooves": {
+        "name": "Zoccoli"
+      }
+    }
+  },
+  "Eagle": {
+    "name": "Aquila",
+    "actions": {
+      "talons": {
+        "name": "Grinfie"
+      }
+    }
+  },
+  "Elk": {
+    "name": "Alce",
+    "actions": {
+      "ram": {
+        "name": "Carica"
+      }
+    }
+  },
+  "Frog": {
+    "name": "Rana",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Badger": {
+    "name": "Tasso gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Bat": {
+    "name": "Pipistrello gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Centipede": {
+    "name": "Centopiedi gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Crab": {
+    "name": "Granchio gigante",
+    "actions": {
+      "claw": {
+        "name": "Artiglio"
+      }
+    }
+  },
+  "Giant Fire Beetle": {
+    "name": "Scarabeo di fuoco gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Frog": {
+    "name": "Rana gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Goat": {
+    "name": "Capra gigante",
+    "actions": {
+      "ram": {
+        "name": "Carica"
+      }
+    }
+  },
+  "Giant Hyena": {
+    "name": "Iena gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Lizard": {
+    "name": "Lucertola gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Octopus": {
+    "name": "Polpo gigante",
+    "actions": {
+      "tentacles": {
+        "name": "Tentacoli"
+      }
+    }
+  },
+  "Giant Rat": {
+    "name": "Ratto gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Seahorse": {
+    "name": "Cavalluccio marino gigante",
+    "actions": {
+      "ram": {
+        "name": "Carica"
+      }
+    }
+  },
+  "Giant Spider": {
+    "name": "Ragno gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Toad": {
+    "name": "Rospo gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Venomous Snake": {
+    "name": "Serpente velenoso gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Wasp": {
+    "name": "Vespa gigante",
+    "actions": {
+      "sting": {
+        "name": "Pungiglione"
+      }
+    }
+  },
+  "Giant Weasel": {
+    "name": "Donnola gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Giant Wolf Spider": {
+    "name": "Ragno lupo gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Goat": {
+    "name": "Capra",
+    "actions": {
+      "ram": {
+        "name": "Carica"
+      }
+    }
+  },
+  "Hawk": {
+    "name": "Falco",
+    "actions": {
+      "talons": {
+        "name": "Grinfie"
+      }
+    }
+  },
+  "Hyena": {
+    "name": "Iena",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Jackal": {
+    "name": "Sciacallo",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Lion": {
+    "name": "Leone",
+    "actions": {
+      "rend": {
+        "name": "Squarciare"
+      }
+    }
+  },
+  "Lizard": {
+    "name": "Lucertola",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Mastiff": {
+    "name": "Mastino",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Mule": {
+    "name": "Mulo",
+    "actions": {
+      "hooves": {
+        "name": "Zoccoli"
+      }
+    }
+  },
+  "Octopus": {
+    "name": "Polpo",
+    "actions": {
+      "tentacles": {
+        "name": "Tentacoli"
+      }
+    }
+  },
+  "Owl": {
+    "name": "Gufo",
+    "actions": {
+      "talons": {
+        "name": "Grinfie"
+      }
+    }
+  },
+  "Panther": {
+    "name": "Pantera",
+    "actions": {
+      "rend": {
+        "name": "Squarciare"
+      }
+    }
+  },
+  "Piranha": {
+    "name": "Piranha",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Pony": {
+    "name": "Pony",
+    "actions": {
+      "hooves": {
+        "name": "Zoccoli"
+      }
+    }
+  },
+  "Pteranodon": {
+    "name": "Pteranodonte",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Rat": {
+    "name": "Ratto",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Raven": {
+    "name": "Corvo",
+    "actions": {
+      "beak": {
+        "name": "Becco"
+      }
+    }
+  },
+  "Reef Shark": {
+    "name": "Squalo della barriera",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Riding Horse": {
+    "name": "Cavallo da sella",
+    "actions": {
+      "hooves": {
+        "name": "Zoccoli"
+      }
+    }
+  },
+  "Scorpion": {
+    "name": "Scorpione",
+    "actions": {
+      "sting": {
+        "name": "Pungiglione"
+      }
+    }
+  },
+  "Seahorse": {
+    "name": "Cavalluccio marino"
+  },
+  "Spider": {
+    "name": "Ragno",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Swarm of Bats": {
+    "name": "Sciame di pipistrelli",
+    "actions": {
+      "bites": {
+        "name": "Morsi"
+      }
+    }
+  },
+  "Swarm of Insects": {
+    "name": "Sciame di insetti",
+    "actions": {
+      "bites": {
+        "name": "Morsi"
+      }
+    }
+  },
+  "Swarm of Piranhas": {
+    "name": "Sciame di piranha",
+    "actions": {
+      "bites": {
+        "name": "Morsi"
+      }
+    }
+  },
+  "Swarm of Rats": {
+    "name": "Sciame di ratti",
+    "actions": {
+      "bites": {
+        "name": "Morsi"
+      }
+    }
+  },
+  "Swarm of Ravens": {
+    "name": "Sciame di corvi",
+    "actions": {
+      "beaks": {
+        "name": "Beccate"
+      }
+    }
+  },
+  "Tiger": {
+    "name": "Tigre",
+    "actions": {
+      "rend": {
+        "name": "Squarciare"
+      }
+    }
+  },
+  "Venomous Snake": {
+    "name": "Serpente velenoso",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Vulture": {
+    "name": "Avvoltoio",
+    "actions": {
+      "beak": {
+        "name": "Becco"
+      }
+    }
+  },
+  "Warhorse": {
+    "name": "Cavallo da guerra",
+    "actions": {
+      "hooves": {
+        "name": "Zoccoli"
+      }
+    }
+  },
+  "Weasel": {
+    "name": "Donnola",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  },
+  "Wolf": {
+    "name": "Lupo",
+    "actions": {
+      "bite": {
+        "name": "Morso"
+      }
+    }
+  }
+}

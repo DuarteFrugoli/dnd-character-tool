@@ -218,6 +218,456 @@ abstract class AppLocalizations {
   /// **'Use this background'**
   String get customBackgroundSave;
 
+  /// Druid Wild Shape section title.
+  ///
+  /// In en, this message translates to:
+  /// **'Wild Shape'**
+  String get wildShapeTitle;
+
+  /// Remaining Wild Shape uses.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses: {current}/{max}'**
+  String wildShapeUses(int current, int max);
+
+  /// Wild Shape without a use limit (2014 Archdruid).
+  ///
+  /// In en, this message translates to:
+  /// **'Uses: unlimited'**
+  String get wildShapeUsesUnlimited;
+
+  /// Highest challenge rating of Wild Shape forms.
+  ///
+  /// In en, this message translates to:
+  /// **'Forms up to CR {cr}'**
+  String wildShapeLimits(String cr);
+
+  /// Wild Shape forms cannot have a Fly Speed yet.
+  ///
+  /// In en, this message translates to:
+  /// **'no Fly Speed'**
+  String get wildShapeNoFly;
+
+  /// 2014 Wild Shape forms cannot have a Swim Speed yet.
+  ///
+  /// In en, this message translates to:
+  /// **'no Swim Speed'**
+  String get wildShapeNoSwim;
+
+  /// Challenge rating of a Beast.
+  ///
+  /// In en, this message translates to:
+  /// **'CR {cr}'**
+  String wildShapeChallengeRating(String cr);
+
+  /// 2024 known forms chosen out of the maximum.
+  ///
+  /// In en, this message translates to:
+  /// **'Known forms: {count}/{max}'**
+  String wildShapeKnownForms(int count, int max);
+
+  /// 2024 Wild Shape without known forms.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose your known forms in Wild Shape on the Features tab.'**
+  String get wildShapeChooseForms;
+
+  /// Button and sheet title to take a Beast form.
+  ///
+  /// In en, this message translates to:
+  /// **'Assume a form'**
+  String get wildShapeAssume;
+
+  /// Button to return to the normal form.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave form'**
+  String get wildShapeLeave;
+
+  /// Wild Shape has no uses left.
+  ///
+  /// In en, this message translates to:
+  /// **'No Wild Shape uses left. A rest restores them.'**
+  String get wildShapeNoUsesLeft;
+
+  /// Search field of the 2014 Beast list.
+  ///
+  /// In en, this message translates to:
+  /// **'Search Beasts'**
+  String get wildShapeSearch;
+
+  /// 2014 rule: only Beasts the Druid has seen.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a Beast you have seen before.'**
+  String get wildShapeSeenNote;
+
+  /// Confirmation title before taking a form.
+  ///
+  /// In en, this message translates to:
+  /// **'Assume the {name} form?'**
+  String wildShapeConfirmTitle(String name);
+
+  /// Confirmation: the use spent.
+  ///
+  /// In en, this message translates to:
+  /// **'Spends 1 Wild Shape use: {current} → {after} of {max}.'**
+  String wildShapeConfirmUse(int current, int after, int max);
+
+  /// Confirmation: no use is spent.
+  ///
+  /// In en, this message translates to:
+  /// **'Wild Shape has no use limit at your level.'**
+  String get wildShapeConfirmUnlimited;
+
+  /// Confirmation: the new form replaces the active one.
+  ///
+  /// In en, this message translates to:
+  /// **'This replaces your current form.'**
+  String get wildShapeConfirmReplace;
+
+  /// 2014 confirmation: the form's own hit points.
+  ///
+  /// In en, this message translates to:
+  /// **'The form has {amount} hit points. At 0 you return to your normal form and the extra damage carries over to you.'**
+  String wildShapeConfirmFormHp(int amount);
+
+  /// 2024 confirmation: Temporary Hit Points gained.
+  ///
+  /// In en, this message translates to:
+  /// **'You gain {amount} Temporary Hit Points.'**
+  String wildShapeConfirmTempHp(int amount);
+
+  /// 2024 confirmation: current Temporary Hit Points are higher.
+  ///
+  /// In en, this message translates to:
+  /// **'You keep your {current} Temporary Hit Points; the {gain} from the form don\'t stack with them.'**
+  String wildShapeConfirmTempHpKept(int current, int gain);
+
+  /// Confirmation: how long the form lasts.
+  ///
+  /// In en, this message translates to:
+  /// **'Lasts up to {hours, plural, =1{1 hour} other{{hours} hours}} or until it ends early.'**
+  String wildShapeConfirmDuration(int hours);
+
+  /// 2024 confirmation: what the Druid keeps.
+  ///
+  /// In en, this message translates to:
+  /// **'You keep your hit points, Hit Point Dice, Intelligence, Wisdom, Charisma, class features, languages, feats and proficiencies. You can\'t cast spells, but Concentration continues.'**
+  String get wildShapeConfirmKeeps2024;
+
+  /// 2014 confirmation: what the Druid keeps.
+  ///
+  /// In en, this message translates to:
+  /// **'You keep your Intelligence, Wisdom, Charisma, alignment, personality and proficiencies. You can\'t cast spells, but Concentration continues.'**
+  String get wildShapeConfirmKeeps2014;
+
+  /// Confirm taking the form.
+  ///
+  /// In en, this message translates to:
+  /// **'Assume form'**
+  String get wildShapeConfirm;
+
+  /// Active Wild Shape form.
+  ///
+  /// In en, this message translates to:
+  /// **'In {name} form'**
+  String wildShapeActive(String name);
+
+  /// 2014 form hit points.
+  ///
+  /// In en, this message translates to:
+  /// **'Form HP {current}/{max}'**
+  String wildShapeFormHp(int current, int max);
+
+  /// Which ability scores come from the form.
+  ///
+  /// In en, this message translates to:
+  /// **'STR, DEX and CON come from the form; INT, WIS and CHA are yours.'**
+  String get wildShapeScoresNote;
+
+  /// Attacks of the active form.
+  ///
+  /// In en, this message translates to:
+  /// **'Form attacks'**
+  String get wildShapeAttacks;
+
+  /// d20 part of a form attack roll.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack roll'**
+  String get wildShapeAttackRoll;
+
+  /// Opens a Beast stat block.
+  ///
+  /// In en, this message translates to:
+  /// **'Stat block'**
+  String get wildShapeStatBlock;
+
+  /// Confirmation title before leaving a form.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave the {name} form?'**
+  String wildShapeLeaveTitle(String name);
+
+  /// 2024: leaving a form.
+  ///
+  /// In en, this message translates to:
+  /// **'You return to your normal form. The Wild Shape use is not returned.'**
+  String get wildShapeLeaveBody2024;
+
+  /// 2014: leaving a form.
+  ///
+  /// In en, this message translates to:
+  /// **'You return to your normal form with the hit points you had before. The form\'s remaining hit points and the Wild Shape use are lost.'**
+  String get wildShapeLeaveBody2014;
+
+  /// Hit point section note while a 2014 form is active.
+  ///
+  /// In en, this message translates to:
+  /// **'Damage and healing go to your Wild Shape form first.'**
+  String get wildShapeDamageToForm;
+
+  /// Change review: number of 2024 Wild Shape known forms.
+  ///
+  /// In en, this message translates to:
+  /// **'Wild Shape known forms'**
+  String get changesKindWildShapeForms;
+
+  /// Change review: the active Wild Shape form ends.
+  ///
+  /// In en, this message translates to:
+  /// **'The active form ends.'**
+  String get changesWildShapeEnds;
+
+  /// Creature size.
+  ///
+  /// In en, this message translates to:
+  /// **'Tiny'**
+  String get monsterSizeTiny;
+
+  /// Creature size.
+  ///
+  /// In en, this message translates to:
+  /// **'Small'**
+  String get monsterSizeSmall;
+
+  /// Creature size.
+  ///
+  /// In en, this message translates to:
+  /// **'Medium'**
+  String get monsterSizeMedium;
+
+  /// Creature size.
+  ///
+  /// In en, this message translates to:
+  /// **'Large'**
+  String get monsterSizeLarge;
+
+  /// Creature size.
+  ///
+  /// In en, this message translates to:
+  /// **'Huge'**
+  String get monsterSizeHuge;
+
+  /// Creature size.
+  ///
+  /// In en, this message translates to:
+  /// **'Gargantuan'**
+  String get monsterSizeGargantuan;
+
+  /// Joins two sizes a stat block offers, with spaces.
+  ///
+  /// In en, this message translates to:
+  /// **' or '**
+  String get monsterSizeOr;
+
+  /// Stat block size and type line.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} {type}'**
+  String monsterSizeType(String size, String type);
+
+  /// Creature type Beast.
+  ///
+  /// In en, this message translates to:
+  /// **'Beast'**
+  String get monsterTypeBeast;
+
+  /// Swarm type; size is each creature's size.
+  ///
+  /// In en, this message translates to:
+  /// **'Swarm of {size} Beasts'**
+  String monsterSwarmOfBeasts(String size);
+
+  /// Speed mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Burrow'**
+  String get monsterSpeedBurrow;
+
+  /// Speed mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Climb'**
+  String get monsterSpeedClimb;
+
+  /// Speed mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Fly'**
+  String get monsterSpeedFly;
+
+  /// Speed mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Swim'**
+  String get monsterSpeedSwim;
+
+  /// Fly speed that hovers.
+  ///
+  /// In en, this message translates to:
+  /// **'(hover)'**
+  String get monsterSpeedHover;
+
+  /// Speed where the GM picks one of two modes.
+  ///
+  /// In en, this message translates to:
+  /// **'{first} or {second} {distance} (GM\'s choice)'**
+  String monsterSpeedChoice(String first, String second, String distance);
+
+  /// Stat block line.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving Throws'**
+  String get monsterSavingThrows;
+
+  /// Stat block line.
+  ///
+  /// In en, this message translates to:
+  /// **'Skills'**
+  String get monsterSkills;
+
+  /// Stat block line: damage vulnerabilities.
+  ///
+  /// In en, this message translates to:
+  /// **'Vulnerabilities'**
+  String get monsterVulnerabilities;
+
+  /// Stat block line: damage resistances.
+  ///
+  /// In en, this message translates to:
+  /// **'Resistances'**
+  String get monsterResistances;
+
+  /// Stat block line: damage immunities.
+  ///
+  /// In en, this message translates to:
+  /// **'Immunities'**
+  String get monsterImmunities;
+
+  /// Stat block line.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition Immunities'**
+  String get monsterConditionImmunities;
+
+  /// Stat block line.
+  ///
+  /// In en, this message translates to:
+  /// **'Senses'**
+  String get monsterSenses;
+
+  /// Sense.
+  ///
+  /// In en, this message translates to:
+  /// **'Blindsight'**
+  String get monsterSenseBlindsight;
+
+  /// Sense.
+  ///
+  /// In en, this message translates to:
+  /// **'Darkvision'**
+  String get monsterSenseDarkvision;
+
+  /// Sense.
+  ///
+  /// In en, this message translates to:
+  /// **'Tremorsense'**
+  String get monsterSenseTremorsense;
+
+  /// Sense.
+  ///
+  /// In en, this message translates to:
+  /// **'Truesight'**
+  String get monsterSenseTruesight;
+
+  /// Stat block line.
+  ///
+  /// In en, this message translates to:
+  /// **'Languages'**
+  String get monsterLanguages;
+
+  /// Stat block without languages.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get monsterLanguagesNone;
+
+  /// Stat block line: challenge rating.
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge'**
+  String get monsterChallenge;
+
+  /// Challenge rating, experience and proficiency bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'{cr} (XP {xp}; PB +{pb})'**
+  String monsterChallengeValue(String cr, String xp, int pb);
+
+  /// Stat block section.
+  ///
+  /// In en, this message translates to:
+  /// **'Traits'**
+  String get monsterTraits;
+
+  /// Stat block section.
+  ///
+  /// In en, this message translates to:
+  /// **'Actions'**
+  String get monsterActions;
+
+  /// Stat block section.
+  ///
+  /// In en, this message translates to:
+  /// **'Bonus Actions'**
+  String get monsterBonusActions;
+
+  /// Stat block section.
+  ///
+  /// In en, this message translates to:
+  /// **'Reactions'**
+  String get monsterReactions;
+
+  /// Stat block section.
+  ///
+  /// In en, this message translates to:
+  /// **'Legendary Actions'**
+  String get monsterLegendaryActions;
+
+  /// Recharge on a d6 roll of min or higher.
+  ///
+  /// In en, this message translates to:
+  /// **'Recharge {min}–6'**
+  String monsterRecharge(int min);
+
+  /// Uses per day.
+  ///
+  /// In en, this message translates to:
+  /// **'{uses}/Day'**
+  String monsterPerDay(int uses);
+
   /// Species step and review label in 2024 creation.
   ///
   /// In en, this message translates to:

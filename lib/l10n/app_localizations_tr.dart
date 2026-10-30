@@ -72,6 +72,284 @@ class AppLocalizationsTr extends AppLocalizations {
   String get customBackgroundSave => 'Bu geçmişi kullan';
 
   @override
+  String get wildShapeTitle => 'Vahşi Biçim';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return 'Kullanım: $current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => 'Kullanım: sınırsız';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return 'ZD $cr değerine kadar biçimler';
+  }
+
+  @override
+  String get wildShapeNoFly => 'Uçma Hızı olmadan';
+
+  @override
+  String get wildShapeNoSwim => 'Yüzme Hızı olmadan';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return 'ZD $cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return 'Bilinen biçimler: $count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms =>
+      'Bilinen biçimlerini Özellikler sekmesindeki Vahşi Biçim\'den seç.';
+
+  @override
+  String get wildShapeAssume => 'Bir biçime gir';
+
+  @override
+  String get wildShapeLeave => 'Biçimden çık';
+
+  @override
+  String get wildShapeNoUsesLeft =>
+      'Vahşi Biçim kullanımı kalmadı. Bir dinlenme onları yeniler.';
+
+  @override
+  String get wildShapeSearch => 'Hayvan ara';
+
+  @override
+  String get wildShapeSeenNote => 'Daha önce gördüğün bir hayvan seç.';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return '$name biçimine girilsin mi?';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return '1 Vahşi Biçim kullanımı harcar: $current → $after / $max.';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited =>
+      'Seviyende Vahşi Biçim\'in kullanım sınırı yok.';
+
+  @override
+  String get wildShapeConfirmReplace => 'Bu, mevcut biçiminin yerini alır.';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return 'Biçimin $amount can puanı var. 0\'a düşünce normal biçimine dönersin ve artan hasar sana geçer.';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return '$amount Geçici Can Puanı kazanırsın.';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return '$current Geçici Can Puanını korursun; biçimden gelen $gain bunlara eklenmez.';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours saat',
+      one: '1 saat',
+    );
+    return 'En fazla $_temp0 ya da daha erken bitene kadar sürer.';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      'Can puanlarını, Can Zarlarını, Zekâ, Bilgelik, Karizma değerlerini, sınıf özelliklerini, dillerini, yeteneklerini ve uzmanlıklarını korursun. Büyü yapamazsın ama Konsantrasyon sürer.';
+
+  @override
+  String get wildShapeConfirmKeeps2014 =>
+      'Zekâ, Bilgelik, Karizma değerlerini, yönelimini, kişiliğini ve uzmanlıklarını korursun. Büyü yapamazsın ama Konsantrasyon sürer.';
+
+  @override
+  String get wildShapeConfirm => 'Biçime gir';
+
+  @override
+  String wildShapeActive(String name) {
+    return '$name biçiminde';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return 'Biçim CP $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote =>
+      'GÜÇ, ÇEV ve DAY biçimden gelir; ZEK, BİL ve KAR senindir.';
+
+  @override
+  String get wildShapeAttacks => 'Biçimin saldırıları';
+
+  @override
+  String get wildShapeAttackRoll => 'Saldırı zarı';
+
+  @override
+  String get wildShapeStatBlock => 'İstatistik bloğu';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return '$name biçiminden çıkılsın mı?';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 =>
+      'Normal biçimine dönersin. Vahşi Biçim kullanımı geri verilmez.';
+
+  @override
+  String get wildShapeLeaveBody2014 =>
+      'Önceki can puanlarınla normal biçimine dönersin. Biçimin kalan can puanları ve Vahşi Biçim kullanımı kaybolur.';
+
+  @override
+  String get wildShapeDamageToForm =>
+      'Hasar ve iyileştirme önce Vahşi Biçim\'ine uygulanır.';
+
+  @override
+  String get changesKindWildShapeForms => 'Vahşi Biçim bilinen biçimleri';
+
+  @override
+  String get changesWildShapeEnds => 'Etkin biçim sona erer.';
+
+  @override
+  String get monsterSizeTiny => 'Minik';
+
+  @override
+  String get monsterSizeSmall => 'Küçük';
+
+  @override
+  String get monsterSizeMedium => 'Orta';
+
+  @override
+  String get monsterSizeLarge => 'Büyük';
+
+  @override
+  String get monsterSizeHuge => 'Devasa';
+
+  @override
+  String get monsterSizeGargantuan => 'Dev';
+
+  @override
+  String get monsterSizeOr => ' veya ';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$size $type';
+  }
+
+  @override
+  String get monsterTypeBeast => 'Hayvan';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return 'Hayvan sürüsü (boyut $size)';
+  }
+
+  @override
+  String get monsterSpeedBurrow => 'Kazma';
+
+  @override
+  String get monsterSpeedClimb => 'Tırmanma';
+
+  @override
+  String get monsterSpeedFly => 'Uçma';
+
+  @override
+  String get monsterSpeedSwim => 'Yüzme';
+
+  @override
+  String get monsterSpeedHover => '(havada asılı)';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$first veya $second $distance (OY seçer)';
+  }
+
+  @override
+  String get monsterSavingThrows => 'Kurtarma Zarları';
+
+  @override
+  String get monsterSkills => 'Beceriler';
+
+  @override
+  String get monsterVulnerabilities => 'Zayıflıklar';
+
+  @override
+  String get monsterResistances => 'Dirençler';
+
+  @override
+  String get monsterImmunities => 'Bağışıklıklar';
+
+  @override
+  String get monsterConditionImmunities => 'Durum Bağışıklıkları';
+
+  @override
+  String get monsterSenses => 'Duyular';
+
+  @override
+  String get monsterSenseBlindsight => 'Kör Görüş';
+
+  @override
+  String get monsterSenseDarkvision => 'Karanlık Görüş';
+
+  @override
+  String get monsterSenseTremorsense => 'Titreşim Algısı';
+
+  @override
+  String get monsterSenseTruesight => 'Gerçek Görüş';
+
+  @override
+  String get monsterLanguages => 'Diller';
+
+  @override
+  String get monsterLanguagesNone => 'Yok';
+
+  @override
+  String get monsterChallenge => 'Zorluk Derecesi';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr (TP $xp; UB +$pb)';
+  }
+
+  @override
+  String get monsterTraits => 'Özellikler';
+
+  @override
+  String get monsterActions => 'Eylemler';
+
+  @override
+  String get monsterBonusActions => 'Bonus Eylemler';
+
+  @override
+  String get monsterReactions => 'Tepkiler';
+
+  @override
+  String get monsterLegendaryActions => 'Efsanevi Eylemler';
+
+  @override
+  String monsterRecharge(int min) {
+    return 'Yenilenme $min–6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return 'Günde $uses';
+  }
+
+  @override
   String get creation2024Species => 'Tür';
 
   @override

@@ -1,5 +1,6 @@
 import 'feature_choice_engine.dart';
 import 'models/models.dart';
+import 'wild_shape/wild_shape_engine.dart';
 
 enum CharacterChangeKind {
   level,
@@ -14,6 +15,10 @@ enum CharacterChangeKind {
   feats,
   spells,
   experience,
+  wildShapeKnownForms,
+
+  /// The active Wild Shape form ends; it has no before/after values.
+  wildShapeEnds,
 }
 
 /// One difference between two states of a character: a value that changed
@@ -113,6 +118,14 @@ class CharacterChangeSummary {
       after.spells.map((s) => s.name),
     );
     value(CharacterChangeKind.experience, before.experiencePoints, after.experiencePoints);
+    value(
+      CharacterChangeKind.wildShapeKnownForms,
+      WildShapeEngine.knownFormIds(before).length,
+      WildShapeEngine.knownFormIds(after).length,
+    );
+    if (before.wildShape != null && after.wildShape == null) {
+      changes.add(const CharacterChange(kind: CharacterChangeKind.wildShapeEnds));
+    }
     return changes;
   }
 

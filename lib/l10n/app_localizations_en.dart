@@ -72,6 +72,284 @@ class AppLocalizationsEn extends AppLocalizations {
   String get customBackgroundSave => 'Use this background';
 
   @override
+  String get wildShapeTitle => 'Wild Shape';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return 'Uses: $current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => 'Uses: unlimited';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return 'Forms up to CR $cr';
+  }
+
+  @override
+  String get wildShapeNoFly => 'no Fly Speed';
+
+  @override
+  String get wildShapeNoSwim => 'no Swim Speed';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return 'CR $cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return 'Known forms: $count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms =>
+      'Choose your known forms in Wild Shape on the Features tab.';
+
+  @override
+  String get wildShapeAssume => 'Assume a form';
+
+  @override
+  String get wildShapeLeave => 'Leave form';
+
+  @override
+  String get wildShapeNoUsesLeft =>
+      'No Wild Shape uses left. A rest restores them.';
+
+  @override
+  String get wildShapeSearch => 'Search Beasts';
+
+  @override
+  String get wildShapeSeenNote => 'Choose a Beast you have seen before.';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return 'Assume the $name form?';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return 'Spends 1 Wild Shape use: $current → $after of $max.';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited =>
+      'Wild Shape has no use limit at your level.';
+
+  @override
+  String get wildShapeConfirmReplace => 'This replaces your current form.';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return 'The form has $amount hit points. At 0 you return to your normal form and the extra damage carries over to you.';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return 'You gain $amount Temporary Hit Points.';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return 'You keep your $current Temporary Hit Points; the $gain from the form don\'t stack with them.';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours hours',
+      one: '1 hour',
+    );
+    return 'Lasts up to $_temp0 or until it ends early.';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      'You keep your hit points, Hit Point Dice, Intelligence, Wisdom, Charisma, class features, languages, feats and proficiencies. You can\'t cast spells, but Concentration continues.';
+
+  @override
+  String get wildShapeConfirmKeeps2014 =>
+      'You keep your Intelligence, Wisdom, Charisma, alignment, personality and proficiencies. You can\'t cast spells, but Concentration continues.';
+
+  @override
+  String get wildShapeConfirm => 'Assume form';
+
+  @override
+  String wildShapeActive(String name) {
+    return 'In $name form';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return 'Form HP $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote =>
+      'STR, DEX and CON come from the form; INT, WIS and CHA are yours.';
+
+  @override
+  String get wildShapeAttacks => 'Form attacks';
+
+  @override
+  String get wildShapeAttackRoll => 'Attack roll';
+
+  @override
+  String get wildShapeStatBlock => 'Stat block';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return 'Leave the $name form?';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 =>
+      'You return to your normal form. The Wild Shape use is not returned.';
+
+  @override
+  String get wildShapeLeaveBody2014 =>
+      'You return to your normal form with the hit points you had before. The form\'s remaining hit points and the Wild Shape use are lost.';
+
+  @override
+  String get wildShapeDamageToForm =>
+      'Damage and healing go to your Wild Shape form first.';
+
+  @override
+  String get changesKindWildShapeForms => 'Wild Shape known forms';
+
+  @override
+  String get changesWildShapeEnds => 'The active form ends.';
+
+  @override
+  String get monsterSizeTiny => 'Tiny';
+
+  @override
+  String get monsterSizeSmall => 'Small';
+
+  @override
+  String get monsterSizeMedium => 'Medium';
+
+  @override
+  String get monsterSizeLarge => 'Large';
+
+  @override
+  String get monsterSizeHuge => 'Huge';
+
+  @override
+  String get monsterSizeGargantuan => 'Gargantuan';
+
+  @override
+  String get monsterSizeOr => ' or ';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$size $type';
+  }
+
+  @override
+  String get monsterTypeBeast => 'Beast';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return 'Swarm of $size Beasts';
+  }
+
+  @override
+  String get monsterSpeedBurrow => 'Burrow';
+
+  @override
+  String get monsterSpeedClimb => 'Climb';
+
+  @override
+  String get monsterSpeedFly => 'Fly';
+
+  @override
+  String get monsterSpeedSwim => 'Swim';
+
+  @override
+  String get monsterSpeedHover => '(hover)';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$first or $second $distance (GM\'s choice)';
+  }
+
+  @override
+  String get monsterSavingThrows => 'Saving Throws';
+
+  @override
+  String get monsterSkills => 'Skills';
+
+  @override
+  String get monsterVulnerabilities => 'Vulnerabilities';
+
+  @override
+  String get monsterResistances => 'Resistances';
+
+  @override
+  String get monsterImmunities => 'Immunities';
+
+  @override
+  String get monsterConditionImmunities => 'Condition Immunities';
+
+  @override
+  String get monsterSenses => 'Senses';
+
+  @override
+  String get monsterSenseBlindsight => 'Blindsight';
+
+  @override
+  String get monsterSenseDarkvision => 'Darkvision';
+
+  @override
+  String get monsterSenseTremorsense => 'Tremorsense';
+
+  @override
+  String get monsterSenseTruesight => 'Truesight';
+
+  @override
+  String get monsterLanguages => 'Languages';
+
+  @override
+  String get monsterLanguagesNone => 'None';
+
+  @override
+  String get monsterChallenge => 'Challenge';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr (XP $xp; PB +$pb)';
+  }
+
+  @override
+  String get monsterTraits => 'Traits';
+
+  @override
+  String get monsterActions => 'Actions';
+
+  @override
+  String get monsterBonusActions => 'Bonus Actions';
+
+  @override
+  String get monsterReactions => 'Reactions';
+
+  @override
+  String get monsterLegendaryActions => 'Legendary Actions';
+
+  @override
+  String monsterRecharge(int min) {
+    return 'Recharge $min–6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return '$uses/Day';
+  }
+
+  @override
   String get creation2024Species => 'Species';
 
   @override

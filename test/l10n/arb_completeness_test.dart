@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dnd_character_tool/core/locale/locale_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 /// Reads all non-@ keys from an ARB file.
@@ -13,12 +14,26 @@ Set<String> _arbKeys(String path) {
 void main() {
   // Project root = cwd when running `flutter test`.
   const arbDir = 'lib/l10n';
-  const locales = ['pt', 'de', 'es', 'fr', 'it', 'ja', 'ko', 'ru', 'tr', 'zh'];
+  // Every language the app offers, so a new one cannot ship without its ARB.
+  final locales = [
+    for (final locale in supportedLocales)
+      if (locale.languageCode != 'en') locale.languageCode,
+  ];
 
   late Set<String> enKeys;
 
   setUpAll(() {
     enKeys = _arbKeys('$arbDir/app_en.arb');
+  });
+
+  test('every ARB file belongs to a supported locale', () {
+    final supported = {for (final locale in supportedLocales) locale.languageCode};
+    final arbLocales = {
+      for (final file in Directory(arbDir).listSync())
+        if (RegExp(r'app_(\w+)\.arb$').firstMatch(file.path) case final match?)
+          match.group(1)!,
+    };
+    expect(arbLocales, supported);
   });
 
   for (final locale in locales) {

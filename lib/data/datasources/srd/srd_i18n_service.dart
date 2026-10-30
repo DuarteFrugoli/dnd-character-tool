@@ -64,6 +64,7 @@ class SrdI18nService {
     'feature_usages',
     'languages',
     'magic_items',
+    'monsters',
     'races',
     'race_traits',
     'skills',
@@ -402,6 +403,29 @@ class SrdI18nService {
 
   String? conditionDescription(String en) =>
       _str('conditions', en, 'description');
+
+  // ── Monsters ───────────────────────────────────────────────────────────────
+
+  String monsterName(String en) => _str('monsters', en, 'name') ?? en;
+
+  /// Name of a trait or action; [section] is `traits`, `actions`,
+  /// `bonusActions`, `reactions` or `legendaryActions`.
+  String? monsterEntryName(String monster, String section, String entryId) =>
+      _nested3('monsters', monster, section, entryId, 'name');
+
+  String? monsterEntryDescription(
+    String monster,
+    String section,
+    String entryId,
+  ) => _nested3('monsters', monster, section, entryId, 'description');
+
+  String? monsterLanguage(String monster, int index) {
+    final entry = _data['monsters']?[monster.toLowerCase()];
+    final languages = entry is Map ? entry['languages'] : null;
+    return languages is List && index < languages.length
+        ? languages[index] as String?
+        : null;
+  }
 
   // ── Equipment ──────────────────────────────────────────────────────────────
 

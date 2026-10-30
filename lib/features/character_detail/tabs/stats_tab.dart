@@ -5,6 +5,7 @@ import '../../../data/rulesets/speed_rules.dart';
 import '../../../data/rulesets/ruleset_ids.dart';
 import '../../../data/rulesets/srd_content_pack.dart';
 import '../widgets/dice/contextual_roll_sheet.dart';
+import '../widgets/wild_shape/wild_shape_section.dart';
 import '../../../data/json_helpers.dart';
 import '../../../shared/utils/character_display.dart';
 
@@ -408,6 +409,10 @@ class _StatsTabState extends ConsumerState<StatsTab>
           key: PageStorageKey('stats-${widget.characterId}'),
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 192),
           children: [
+            if (showsWildShape(character)) ...[
+              WildShapeSection(characterId: widget.characterId, character: character),
+              const SizedBox(height: 12),
+            ],
             ResponsiveTwoColumn(
               leading: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -415,6 +420,9 @@ class _StatsTabState extends ConsumerState<StatsTab>
                   // ── HP Tracker ───────────────────────────────────────────
                   DetailSection(
                     title: l10n.sectionHitPoints,
+                    subtitle: character.wildShape?.hitPoints != null
+                        ? l10n.wildShapeDamageToForm
+                        : null,
                     icon: Icons.favorite_border,
                     accentColor: isDead ? scheme.error : scheme.primary,
                     child: Column(

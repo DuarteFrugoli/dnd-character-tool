@@ -150,6 +150,7 @@ Character _$CharacterFromJson(Map<String, dynamic> json) => Character(
   exhaustionLevel: _exhaustionLevelFromJson(json['exhaustionLevel']),
   levelHistory: _levelHistoryFromJson(json['levelHistory']),
   concentrationSpell: json['concentrationSpell'] as String?,
+  wildShape: _wildShapeFromJson(json['wildShape']),
 );
 
 Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
@@ -208,6 +209,7 @@ Map<String, dynamic> _$CharacterToJson(Character instance) => <String, dynamic>{
   'exhaustionLevel': instance.exhaustionLevel,
   'levelHistory': _levelHistoryToJson(instance.levelHistory),
   'concentrationSpell': instance.concentrationSpell,
+  'wildShape': _wildShapeToJson(instance.wildShape),
 };
 
 const _$CreationModeEnumMap = {

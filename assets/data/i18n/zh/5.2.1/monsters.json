@@ -1,0 +1,555 @@
+{
+  "Ape": {
+    "name": "猿",
+    "actions": {
+      "fist": {
+        "name": "拳击"
+      },
+      "rock": {
+        "name": "投石"
+      }
+    }
+  },
+  "Baboon": {
+    "name": "狒狒",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Badger": {
+    "name": "獾",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Bat": {
+    "name": "蝙蝠",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Black Bear": {
+    "name": "黑熊",
+    "actions": {
+      "rend": {
+        "name": "撕裂"
+      }
+    }
+  },
+  "Blood Hawk": {
+    "name": "血鹰",
+    "actions": {
+      "beak": {
+        "name": "喙"
+      }
+    }
+  },
+  "Boar": {
+    "name": "野猪",
+    "actions": {
+      "gore": {
+        "name": "顶撞"
+      }
+    }
+  },
+  "Brown Bear": {
+    "name": "棕熊",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      },
+      "claw": {
+        "name": "爪"
+      }
+    }
+  },
+  "Camel": {
+    "name": "骆驼",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Cat": {
+    "name": "猫",
+    "actions": {
+      "scratch": {
+        "name": "抓挠"
+      }
+    }
+  },
+  "Constrictor Snake": {
+    "name": "绞蛇",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Crab": {
+    "name": "蟹",
+    "actions": {
+      "claw": {
+        "name": "爪"
+      }
+    }
+  },
+  "Crocodile": {
+    "name": "鳄鱼",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Deer": {
+    "name": "鹿",
+    "actions": {
+      "ram": {
+        "name": "冲撞"
+      }
+    }
+  },
+  "Dire Wolf": {
+    "name": "恐狼",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Draft Horse": {
+    "name": "挽马",
+    "actions": {
+      "hooves": {
+        "name": "蹄踢"
+      }
+    }
+  },
+  "Eagle": {
+    "name": "雕",
+    "actions": {
+      "talons": {
+        "name": "利爪"
+      }
+    }
+  },
+  "Elk": {
+    "name": "麋鹿",
+    "actions": {
+      "ram": {
+        "name": "冲撞"
+      }
+    }
+  },
+  "Frog": {
+    "name": "青蛙",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Badger": {
+    "name": "巨獾",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Bat": {
+    "name": "巨蝙蝠",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Centipede": {
+    "name": "巨蜈蚣",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Crab": {
+    "name": "巨蟹",
+    "actions": {
+      "claw": {
+        "name": "爪"
+      }
+    }
+  },
+  "Giant Fire Beetle": {
+    "name": "巨火甲虫",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Frog": {
+    "name": "巨蛙",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Goat": {
+    "name": "巨山羊",
+    "actions": {
+      "ram": {
+        "name": "冲撞"
+      }
+    }
+  },
+  "Giant Hyena": {
+    "name": "巨鬣狗",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Lizard": {
+    "name": "巨蜥蜴",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Octopus": {
+    "name": "巨章鱼",
+    "actions": {
+      "tentacles": {
+        "name": "触手"
+      }
+    }
+  },
+  "Giant Rat": {
+    "name": "巨鼠",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Seahorse": {
+    "name": "巨海马",
+    "actions": {
+      "ram": {
+        "name": "冲撞"
+      }
+    }
+  },
+  "Giant Spider": {
+    "name": "巨蜘蛛",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Toad": {
+    "name": "巨蟾蜍",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Venomous Snake": {
+    "name": "巨毒蛇",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Wasp": {
+    "name": "巨黄蜂",
+    "actions": {
+      "sting": {
+        "name": "蜇刺"
+      }
+    }
+  },
+  "Giant Weasel": {
+    "name": "巨鼬",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Giant Wolf Spider": {
+    "name": "巨狼蛛",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Goat": {
+    "name": "山羊",
+    "actions": {
+      "ram": {
+        "name": "冲撞"
+      }
+    }
+  },
+  "Hawk": {
+    "name": "鹰",
+    "actions": {
+      "talons": {
+        "name": "利爪"
+      }
+    }
+  },
+  "Hyena": {
+    "name": "鬣狗",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Jackal": {
+    "name": "豺",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Lion": {
+    "name": "狮子",
+    "actions": {
+      "rend": {
+        "name": "撕裂"
+      }
+    }
+  },
+  "Lizard": {
+    "name": "蜥蜴",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Mastiff": {
+    "name": "獒犬",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Mule": {
+    "name": "骡",
+    "actions": {
+      "hooves": {
+        "name": "蹄踢"
+      }
+    }
+  },
+  "Octopus": {
+    "name": "章鱼",
+    "actions": {
+      "tentacles": {
+        "name": "触手"
+      }
+    }
+  },
+  "Owl": {
+    "name": "猫头鹰",
+    "actions": {
+      "talons": {
+        "name": "利爪"
+      }
+    }
+  },
+  "Panther": {
+    "name": "黑豹",
+    "actions": {
+      "rend": {
+        "name": "撕裂"
+      }
+    }
+  },
+  "Piranha": {
+    "name": "食人鱼",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Pony": {
+    "name": "矮种马",
+    "actions": {
+      "hooves": {
+        "name": "蹄踢"
+      }
+    }
+  },
+  "Pteranodon": {
+    "name": "无齿翼龙",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Rat": {
+    "name": "鼠",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Raven": {
+    "name": "渡鸦",
+    "actions": {
+      "beak": {
+        "name": "喙"
+      }
+    }
+  },
+  "Reef Shark": {
+    "name": "礁鲨",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Riding Horse": {
+    "name": "骑乘马",
+    "actions": {
+      "hooves": {
+        "name": "蹄踢"
+      }
+    }
+  },
+  "Scorpion": {
+    "name": "蝎子",
+    "actions": {
+      "sting": {
+        "name": "蜇刺"
+      }
+    }
+  },
+  "Seahorse": {
+    "name": "海马"
+  },
+  "Spider": {
+    "name": "蜘蛛",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Swarm of Bats": {
+    "name": "蝙蝠群",
+    "actions": {
+      "bites": {
+        "name": "群咬"
+      }
+    }
+  },
+  "Swarm of Insects": {
+    "name": "虫群",
+    "actions": {
+      "bites": {
+        "name": "群咬"
+      }
+    }
+  },
+  "Swarm of Piranhas": {
+    "name": "食人鱼群",
+    "actions": {
+      "bites": {
+        "name": "群咬"
+      }
+    }
+  },
+  "Swarm of Rats": {
+    "name": "鼠群",
+    "actions": {
+      "bites": {
+        "name": "群咬"
+      }
+    }
+  },
+  "Swarm of Ravens": {
+    "name": "渡鸦群",
+    "actions": {
+      "beaks": {
+        "name": "群啄"
+      }
+    }
+  },
+  "Tiger": {
+    "name": "老虎",
+    "actions": {
+      "rend": {
+        "name": "撕裂"
+      }
+    }
+  },
+  "Venomous Snake": {
+    "name": "毒蛇",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Vulture": {
+    "name": "秃鹫",
+    "actions": {
+      "beak": {
+        "name": "喙"
+      }
+    }
+  },
+  "Warhorse": {
+    "name": "战马",
+    "actions": {
+      "hooves": {
+        "name": "蹄踢"
+      }
+    }
+  },
+  "Weasel": {
+    "name": "鼬",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  },
+  "Wolf": {
+    "name": "狼",
+    "actions": {
+      "bite": {
+        "name": "啮咬"
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ import '../../data/feature_usage_engine.dart';
 import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/datasources/srd/srd_models.dart';
+import '../../data/datasources/srd/srd_monster.dart';
 import '../../data/datasources/srd/srd_2024_creation_catalog.dart';
 import '../../data/repositories/character_repository.dart';
 import '../../data/rulesets/ruleset_ids.dart';
@@ -95,6 +96,10 @@ final srdToolsForPackProvider = FutureProvider.family<List<SrdTool>, ContentPack
 
 final srdFeatsForPackProvider = FutureProvider.family<List<SrdFeat>, ContentPackId>(
   (ref, packId) => ref.watch(srdDataSourceForPackProvider(packId)).getFeats(),
+);
+
+final srdMonstersForPackProvider = FutureProvider.family<List<SrdMonster>, ContentPackId>(
+  (ref, packId) => ref.watch(srdDataSourceForPackProvider(packId)).getMonsters(),
 );
 
 final srdRaceTraitsForPackProvider = FutureProvider.family<

@@ -70,6 +70,278 @@ class AppLocalizationsKo extends AppLocalizations {
   String get customBackgroundSave => '이 배경 사용';
 
   @override
+  String get wildShapeTitle => '야생 변신';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return '사용 횟수: $current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => '사용 횟수: 무제한';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return '도전 지수 $cr까지의 형태';
+  }
+
+  @override
+  String get wildShapeNoFly => '비행 속도 없음';
+
+  @override
+  String get wildShapeNoSwim => '수영 속도 없음';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return '도전 지수 $cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return '알고 있는 형태: $count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms => '특성 탭의 야생 변신에서 알고 있는 형태를 고르세요.';
+
+  @override
+  String get wildShapeAssume => '형태 취하기';
+
+  @override
+  String get wildShapeLeave => '형태 해제';
+
+  @override
+  String get wildShapeNoUsesLeft => '남은 야생 변신 사용 횟수가 없습니다. 휴식으로 회복됩니다.';
+
+  @override
+  String get wildShapeSearch => '야수 검색';
+
+  @override
+  String get wildShapeSeenNote => '이전에 본 적 있는 야수를 고르세요.';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return '$name 형태를 취할까요?';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return '야생 변신 1회 사용: $max회 중 $current → $after.';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited => '현재 레벨에서는 야생 변신 사용 횟수 제한이 없습니다.';
+
+  @override
+  String get wildShapeConfirmReplace => '현재 형태를 대체합니다.';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return '이 형태는 히트 포인트가 $amount입니다. 0이 되면 원래 모습으로 돌아오고 남은 피해는 당신이 받습니다.';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return '임시 히트 포인트 $amount을 얻습니다.';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return '현재 임시 히트 포인트 $current을 유지합니다. 형태의 $gain과 합쳐지지 않습니다.';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours시간',
+      one: '1시간',
+    );
+    return '최대 $_temp0 또는 더 일찍 끝날 때까지 지속됩니다.';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      '히트 포인트, 히트 다이스, 지능, 지혜, 매력, 클래스 특성, 언어, 재주, 숙련을 유지합니다. 주문은 시전할 수 없지만 집중은 계속됩니다.';
+
+  @override
+  String get wildShapeConfirmKeeps2014 =>
+      '지능, 지혜, 매력, 성향, 성격, 숙련을 유지합니다. 주문은 시전할 수 없지만 집중은 계속됩니다.';
+
+  @override
+  String get wildShapeConfirm => '형태 취하기';
+
+  @override
+  String wildShapeActive(String name) {
+    return '$name 형태';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return '형태 HP $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote => '근력, 민첩, 건강은 형태의 값이고 지능, 지혜, 매력은 당신의 값입니다.';
+
+  @override
+  String get wildShapeAttacks => '형태의 공격';
+
+  @override
+  String get wildShapeAttackRoll => '명중 굴림';
+
+  @override
+  String get wildShapeStatBlock => '능력치 블록';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return '$name 형태를 해제할까요?';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 => '원래 모습으로 돌아옵니다. 야생 변신 사용 횟수는 돌려받지 못합니다.';
+
+  @override
+  String get wildShapeLeaveBody2014 =>
+      '변신 전의 히트 포인트로 원래 모습으로 돌아옵니다. 형태의 남은 히트 포인트와 야생 변신 사용 횟수는 사라집니다.';
+
+  @override
+  String get wildShapeDamageToForm => '피해와 치유는 먼저 야생 변신 형태에 적용됩니다.';
+
+  @override
+  String get changesKindWildShapeForms => '야생 변신의 알고 있는 형태';
+
+  @override
+  String get changesWildShapeEnds => '현재 형태가 끝납니다.';
+
+  @override
+  String get monsterSizeTiny => '초소형';
+
+  @override
+  String get monsterSizeSmall => '소형';
+
+  @override
+  String get monsterSizeMedium => '중형';
+
+  @override
+  String get monsterSizeLarge => '대형';
+
+  @override
+  String get monsterSizeHuge => '초대형';
+
+  @override
+  String get monsterSizeGargantuan => '거대형';
+
+  @override
+  String get monsterSizeOr => ' 또는 ';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$size $type';
+  }
+
+  @override
+  String get monsterTypeBeast => '야수';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return '야수 무리 (개체 $size)';
+  }
+
+  @override
+  String get monsterSpeedBurrow => '굴착';
+
+  @override
+  String get monsterSpeedClimb => '등반';
+
+  @override
+  String get monsterSpeedFly => '비행';
+
+  @override
+  String get monsterSpeedSwim => '수영';
+
+  @override
+  String get monsterSpeedHover => '(부양)';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$first 또는 $second $distance (DM 선택)';
+  }
+
+  @override
+  String get monsterSavingThrows => '내성 굴림';
+
+  @override
+  String get monsterSkills => '기술';
+
+  @override
+  String get monsterVulnerabilities => '취약';
+
+  @override
+  String get monsterResistances => '저항';
+
+  @override
+  String get monsterImmunities => '면역';
+
+  @override
+  String get monsterConditionImmunities => '상태 면역';
+
+  @override
+  String get monsterSenses => '감각';
+
+  @override
+  String get monsterSenseBlindsight => '맹안시야';
+
+  @override
+  String get monsterSenseDarkvision => '암시야';
+
+  @override
+  String get monsterSenseTremorsense => '진동감지';
+
+  @override
+  String get monsterSenseTruesight => '진시야';
+
+  @override
+  String get monsterLanguages => '언어';
+
+  @override
+  String get monsterLanguagesNone => '없음';
+
+  @override
+  String get monsterChallenge => '도전 지수';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr (XP $xp; 숙련 보너스 +$pb)';
+  }
+
+  @override
+  String get monsterTraits => '특징';
+
+  @override
+  String get monsterActions => '행동';
+
+  @override
+  String get monsterBonusActions => '추가 행동';
+
+  @override
+  String get monsterReactions => '반응';
+
+  @override
+  String get monsterLegendaryActions => '전설적 행동';
+
+  @override
+  String monsterRecharge(int min) {
+    return '재충전 $min–6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return '하루 $uses회';
+  }
+
+  @override
   String get creation2024Species => '종족';
 
   @override

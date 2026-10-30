@@ -1,0 +1,555 @@
+{
+  "Ape": {
+    "name": "유인원",
+    "actions": {
+      "fist": {
+        "name": "주먹"
+      },
+      "rock": {
+        "name": "바위 던지기"
+      }
+    }
+  },
+  "Baboon": {
+    "name": "개코원숭이",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Badger": {
+    "name": "오소리",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Bat": {
+    "name": "박쥐",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Black Bear": {
+    "name": "흑곰",
+    "actions": {
+      "rend": {
+        "name": "찢기"
+      }
+    }
+  },
+  "Blood Hawk": {
+    "name": "피매",
+    "actions": {
+      "beak": {
+        "name": "부리"
+      }
+    }
+  },
+  "Boar": {
+    "name": "멧돼지",
+    "actions": {
+      "gore": {
+        "name": "뿔 찌르기"
+      }
+    }
+  },
+  "Brown Bear": {
+    "name": "불곰",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      },
+      "claw": {
+        "name": "발톱"
+      }
+    }
+  },
+  "Camel": {
+    "name": "낙타",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Cat": {
+    "name": "고양이",
+    "actions": {
+      "scratch": {
+        "name": "할퀴기"
+      }
+    }
+  },
+  "Constrictor Snake": {
+    "name": "조임뱀",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Crab": {
+    "name": "게",
+    "actions": {
+      "claw": {
+        "name": "발톱"
+      }
+    }
+  },
+  "Crocodile": {
+    "name": "악어",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Deer": {
+    "name": "사슴",
+    "actions": {
+      "ram": {
+        "name": "돌진"
+      }
+    }
+  },
+  "Dire Wolf": {
+    "name": "다이어 울프",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Draft Horse": {
+    "name": "짐말",
+    "actions": {
+      "hooves": {
+        "name": "발굽"
+      }
+    }
+  },
+  "Eagle": {
+    "name": "독수리",
+    "actions": {
+      "talons": {
+        "name": "갈고리발톱"
+      }
+    }
+  },
+  "Elk": {
+    "name": "엘크",
+    "actions": {
+      "ram": {
+        "name": "돌진"
+      }
+    }
+  },
+  "Frog": {
+    "name": "개구리",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Badger": {
+    "name": "거대 오소리",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Bat": {
+    "name": "거대 박쥐",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Centipede": {
+    "name": "거대 지네",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Crab": {
+    "name": "거대 게",
+    "actions": {
+      "claw": {
+        "name": "발톱"
+      }
+    }
+  },
+  "Giant Fire Beetle": {
+    "name": "거대 불딱정벌레",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Frog": {
+    "name": "거대 개구리",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Goat": {
+    "name": "거대 염소",
+    "actions": {
+      "ram": {
+        "name": "돌진"
+      }
+    }
+  },
+  "Giant Hyena": {
+    "name": "거대 하이에나",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Lizard": {
+    "name": "거대 도마뱀",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Octopus": {
+    "name": "거대 문어",
+    "actions": {
+      "tentacles": {
+        "name": "촉수"
+      }
+    }
+  },
+  "Giant Rat": {
+    "name": "거대 쥐",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Seahorse": {
+    "name": "거대 해마",
+    "actions": {
+      "ram": {
+        "name": "돌진"
+      }
+    }
+  },
+  "Giant Spider": {
+    "name": "거대 거미",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Toad": {
+    "name": "거대 두꺼비",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Venomous Snake": {
+    "name": "거대 독사",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Wasp": {
+    "name": "거대 말벌",
+    "actions": {
+      "sting": {
+        "name": "침"
+      }
+    }
+  },
+  "Giant Weasel": {
+    "name": "거대 족제비",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Giant Wolf Spider": {
+    "name": "거대 늑대거미",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Goat": {
+    "name": "염소",
+    "actions": {
+      "ram": {
+        "name": "돌진"
+      }
+    }
+  },
+  "Hawk": {
+    "name": "매",
+    "actions": {
+      "talons": {
+        "name": "갈고리발톱"
+      }
+    }
+  },
+  "Hyena": {
+    "name": "하이에나",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Jackal": {
+    "name": "자칼",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Lion": {
+    "name": "사자",
+    "actions": {
+      "rend": {
+        "name": "찢기"
+      }
+    }
+  },
+  "Lizard": {
+    "name": "도마뱀",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Mastiff": {
+    "name": "마스티프",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Mule": {
+    "name": "노새",
+    "actions": {
+      "hooves": {
+        "name": "발굽"
+      }
+    }
+  },
+  "Octopus": {
+    "name": "문어",
+    "actions": {
+      "tentacles": {
+        "name": "촉수"
+      }
+    }
+  },
+  "Owl": {
+    "name": "올빼미",
+    "actions": {
+      "talons": {
+        "name": "갈고리발톱"
+      }
+    }
+  },
+  "Panther": {
+    "name": "표범",
+    "actions": {
+      "rend": {
+        "name": "찢기"
+      }
+    }
+  },
+  "Piranha": {
+    "name": "피라냐",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Pony": {
+    "name": "조랑말",
+    "actions": {
+      "hooves": {
+        "name": "발굽"
+      }
+    }
+  },
+  "Pteranodon": {
+    "name": "프테라노돈",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Rat": {
+    "name": "쥐",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Raven": {
+    "name": "까마귀",
+    "actions": {
+      "beak": {
+        "name": "부리"
+      }
+    }
+  },
+  "Reef Shark": {
+    "name": "암초상어",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Riding Horse": {
+    "name": "승용마",
+    "actions": {
+      "hooves": {
+        "name": "발굽"
+      }
+    }
+  },
+  "Scorpion": {
+    "name": "전갈",
+    "actions": {
+      "sting": {
+        "name": "침"
+      }
+    }
+  },
+  "Seahorse": {
+    "name": "해마"
+  },
+  "Spider": {
+    "name": "거미",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Swarm of Bats": {
+    "name": "박쥐 떼",
+    "actions": {
+      "bites": {
+        "name": "연속 물기"
+      }
+    }
+  },
+  "Swarm of Insects": {
+    "name": "벌레 떼",
+    "actions": {
+      "bites": {
+        "name": "연속 물기"
+      }
+    }
+  },
+  "Swarm of Piranhas": {
+    "name": "피라냐 떼",
+    "actions": {
+      "bites": {
+        "name": "연속 물기"
+      }
+    }
+  },
+  "Swarm of Rats": {
+    "name": "쥐 떼",
+    "actions": {
+      "bites": {
+        "name": "연속 물기"
+      }
+    }
+  },
+  "Swarm of Ravens": {
+    "name": "까마귀 떼",
+    "actions": {
+      "beaks": {
+        "name": "쪼기"
+      }
+    }
+  },
+  "Tiger": {
+    "name": "호랑이",
+    "actions": {
+      "rend": {
+        "name": "찢기"
+      }
+    }
+  },
+  "Venomous Snake": {
+    "name": "독사",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Vulture": {
+    "name": "대머리독수리",
+    "actions": {
+      "beak": {
+        "name": "부리"
+      }
+    }
+  },
+  "Warhorse": {
+    "name": "군마",
+    "actions": {
+      "hooves": {
+        "name": "발굽"
+      }
+    }
+  },
+  "Weasel": {
+    "name": "족제비",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  },
+  "Wolf": {
+    "name": "늑대",
+    "actions": {
+      "bite": {
+        "name": "물기"
+      }
+    }
+  }
+}

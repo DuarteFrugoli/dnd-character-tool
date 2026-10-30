@@ -172,6 +172,7 @@ List<Widget> featureChoiceWidgets({
       languages: data.languages,
       weapons: data.weapons,
       feats: data.srdFeats,
+      monsters: data.monsters,
       character: character,
       relatedRequests: requests,
       choices: character.featureChoices,
@@ -386,6 +387,7 @@ void openFeatureChoiceEditorSheet({
                         languages: data.languages,
                         weapons: data.weapons,
                         feats: data.srdFeats,
+                        monsters: data.monsters,
                         featureLabelBuilder: (request) =>
                             featureChoiceRequestFeatureLabel(request, i18n),
                         onChanged: (choices) {
@@ -478,6 +480,7 @@ class FeaturesData {
   final List<SrdLanguage> languages;
   final List<SrdWeapon> weapons;
   final List<SrdFeat> srdFeats;
+  final List<SrdMonster> monsters;
 
   const FeaturesData({
     required this.classSections,
@@ -494,5 +497,6 @@ class FeaturesData {
     required this.languages,
     required this.weapons,
     required this.srdFeats,
+    this.monsters = const [],
   });
 }

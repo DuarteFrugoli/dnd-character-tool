@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
+import '../../../data/datasources/srd/srd_monster.dart';
 import '../../../data/feature_choice_engine.dart';
 import '../../../data/feature_choice_option_resolver.dart';
 import '../../../data/models/models.dart';
@@ -26,6 +27,7 @@ class FeatureChoiceEditor extends StatefulWidget {
     required this.languages,
     required this.weapons,
     required this.feats,
+    this.monsters = const [],
     required this.onChanged,
     this.featureLabelBuilder,
   });
@@ -41,6 +43,9 @@ class FeatureChoiceEditor extends StatefulWidget {
   final List<SrdLanguage> languages;
   final List<SrdWeapon> weapons;
   final List<SrdFeat> feats;
+
+  /// Stat blocks for Wild Shape form choices.
+  final List<SrdMonster> monsters;
   final ValueChanged<List<CharacterFeatureChoice>> onChanged;
   final FeatureChoiceLabelBuilder? featureLabelBuilder;
 
@@ -232,6 +237,7 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
       languages: widget.languages,
       weapons: widget.weapons,
       feats: widget.feats,
+      monsters: widget.monsters,
       character: widget.character,
       relatedRequests: widget.requests,
       choices: _currentChoices,

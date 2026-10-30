@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Validate an English SRD pack before generating translated overlays."""
+"""Validate the structure and references of an English SRD pack."""
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 
@@ -18,6 +19,7 @@ FILES = {
     "feature_usages": dict,
     "languages": list,
     "magic_items": list,
+    "monsters": list,
     "race_traits": dict,
     "races": list,
     "skills": list,
@@ -680,6 +682,183 @@ def validate_2024_origins(data, errors):
                 )
 
 
+MONSTER_SIZES = {"tiny", "small", "medium", "large", "huge", "gargantuan"}
+MONSTER_ABILITIES = ("strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma")
+MONSTER_SKILLS = {
+    "acrobatics", "animal handling", "arcana", "athletics", "deception", "history", "insight",
+    "intimidation", "investigation", "medicine", "nature", "perception", "performance",
+    "persuasion", "religion", "sleight of hand", "stealth", "survival",
+}
+MONSTER_DAMAGE_TYPES = {
+    "acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing",
+    "poison", "psychic", "radiant", "slashing", "thunder",
+}
+MONSTER_SPEEDS = {"walk", "burrow", "climb", "fly", "swim"}
+MONSTER_SENSES = {"blindsight", "darkvision", "tremorsense", "truesight"}
+MONSTER_SECTIONS = ("traits", "actions", "bonusActions", "reactions", "legendaryActions")
+CHALLENGE_RATINGS = ["0", "1/8", "1/4", "1/2"] + [str(value) for value in range(1, 31)]
+
+
+def dice_average(formula):
+    """Average of a formula such as `2d6+3`, or None when it is not one."""
+    if not isinstance(formula, str) or not re.fullmatch(r"\d+(?:d\d+)?(?:[+-]\d+(?:d\d+)?)*", formula):
+        return None
+    total = 0.0
+    for sign, count, sides, flat in re.findall(r"([+-]?)(?:(\d+)d(\d+)|(\d+))", formula):
+        value = int(count) * (int(sides) + 1) / 2 if sides else int(flat)
+        total += -value if sign == "-" else value
+    return int(total)
+
+
+def is_int(value, minimum=None, maximum=None):
+    return (
+        isinstance(value, int)
+        and not isinstance(value, bool)
+        and (minimum is None or value >= minimum)
+        and (maximum is None or value <= maximum)
+    )
+
+
+def validate_damage(damage, location, errors):
+    if not isinstance(damage, list) or not damage:
+        errors.append(f"{location}: expected damage list")
+        return
+    for index, term in enumerate(damage):
+        if not isinstance(term, dict) or term.get("type") not in MONSTER_DAMAGE_TYPES:
+            errors.append(f"{location}[{index}]: invalid damage type")
+        elif dice_average(term.get("formula")) != term.get("average"):
+            errors.append(f"{location}[{index}]: average does not match formula")
+
+
+def validate_monsters(monsters, conditions, pack, errors):
+    """Stat blocks keep the structure a tabletop needs; see docs/ARCHITECTURE.md."""
+    ids = set()
+    for index, monster in enumerate(monsters):
+        location = f"monsters[{index}]"
+        if not isinstance(monster, dict):
+            errors.append(f"{location}: expected object")
+            continue
+        location = f"monsters.{monster.get('name')}"
+        monster_id = monster.get("id")
+        expected_id = re.sub(r"[^a-z0-9]+", "_", str(monster.get("name", "")).lower()).strip("_")
+        if monster_id != expected_id:
+            errors.append(f"{location}: id must be {expected_id!r}")
+        if monster_id in ids:
+            errors.append(f"{location}: duplicate id")
+        ids.add(monster_id)
+        sizes = monster.get("size")
+        if not isinstance(sizes, list) or not sizes or not set(sizes) <= MONSTER_SIZES:
+            errors.append(f"{location}: invalid size")
+        for key in ("type", "alignment"):
+            if not isinstance(monster.get(key), str) or not monster[key]:
+                errors.append(f"{location}: missing {key}")
+        if not isinstance(monster.get("tags"), list):
+            errors.append(f"{location}: tags must be a list")
+        swarm = monster.get("swarm")
+        if swarm is not None and (not isinstance(swarm, dict) or swarm.get("memberSize") not in MONSTER_SIZES):
+            errors.append(f"{location}: invalid swarm")
+        if not is_int((monster.get("armorClass") or {}).get("value"), 1, 30):
+            errors.append(f"{location}: invalid armor class")
+        hit_points = monster.get("hitPoints") or {}
+        if not is_int(hit_points.get("average"), 1) or dice_average(hit_points.get("formula")) != hit_points["average"]:
+            errors.append(f"{location}: hit point average does not match formula")
+        speed = monster.get("speed")
+        if not isinstance(speed, dict) or "walk" not in speed:
+            errors.append(f"{location}: speed needs a walk value")
+        else:
+            for key, value in speed.items():
+                if key == "hover":
+                    valid = value is True
+                elif key == "oneOf":
+                    valid = isinstance(value, list) and len(value) > 1 and set(value) <= set(speed) & MONSTER_SPEEDS
+                else:
+                    valid = key in MONSTER_SPEEDS and is_int(value, 0)
+                if not valid:
+                    errors.append(f"{location}: invalid speed {key!r}")
+        abilities = monster.get("abilities")
+        if not isinstance(abilities, dict) or set(abilities) != set(MONSTER_ABILITIES) or not all(
+            is_int(value, 1, 30) for value in abilities.values()
+        ):
+            errors.append(f"{location}: invalid abilities")
+        for key, known in (("savingThrows", set(MONSTER_ABILITIES)), ("skills", MONSTER_SKILLS)):
+            values = monster.get(key, {})
+            if not isinstance(values, dict) or not set(values) <= known or not all(is_int(v) for v in values.values()):
+                errors.append(f"{location}: invalid {key}")
+        for key, known in (
+            ("damageVulnerabilities", MONSTER_DAMAGE_TYPES),
+            ("damageResistances", MONSTER_DAMAGE_TYPES),
+            ("damageImmunities", MONSTER_DAMAGE_TYPES),
+            ("conditionImmunities", conditions),
+        ):
+            values = monster.get(key, [])
+            if not isinstance(values, list) or not set(values) <= known:
+                errors.append(f"{location}: invalid {key}")
+        senses = monster.get("senses")
+        if not isinstance(senses, dict) or not is_int(senses.get("passivePerception"), 1) or not all(
+            key in MONSTER_SENSES and is_int(value, 0) for key, value in senses.items() if key != "passivePerception"
+        ):
+            errors.append(f"{location}: invalid senses")
+        languages = monster.get("languages")
+        if not isinstance(languages, list) or not all(isinstance(v, str) and v.strip() for v in languages):
+            errors.append(f"{location}: invalid languages")
+        rating = monster.get("challengeRating")
+        if rating not in CHALLENGE_RATINGS or not is_int(monster.get("experience"), 0):
+            errors.append(f"{location}: invalid challenge")
+        else:
+            value = eval_challenge(rating)
+            expected_bonus = 2 if value < 1 else 2 + (int(value) - 1) // 4
+            if monster.get("proficiencyBonus") != expected_bonus:
+                errors.append(f"{location}: proficiency bonus does not match challenge")
+        if pack == "5.2.1":
+            initiative = monster.get("initiative") or {}
+            if not is_int(initiative.get("modifier")) or initiative.get("score") != 10 + initiative["modifier"]:
+                errors.append(f"{location}: invalid initiative")
+        if not any(monster.get(section) for section in MONSTER_SECTIONS if section != "traits") and not monster.get("traits"):
+            errors.append(f"{location}: stat block has no traits or actions")
+        for section in MONSTER_SECTIONS:
+            entries = monster.get(section, [])
+            if not isinstance(entries, list):
+                errors.append(f"{location}.{section}: expected list")
+                continue
+            entry_ids = set()
+            for entry in entries:
+                entry_location = f"{location}.{section}.{entry.get('id') if isinstance(entry, dict) else '?'}"
+                if not isinstance(entry, dict) or not entry.get("id") or not entry.get("name") or not str(
+                    entry.get("description", "")
+                ).strip():
+                    errors.append(f"{entry_location}: needs id, name and description")
+                    continue
+                if entry["id"] in entry_ids:
+                    errors.append(f"{entry_location}: duplicate id")
+                entry_ids.add(entry["id"])
+                attack = entry.get("attack")
+                if attack is not None:
+                    if attack.get("kind") not in ("melee", "ranged", "melee_or_ranged") or not is_int(attack.get("bonus")):
+                        errors.append(f"{entry_location}: invalid attack")
+                    if "reach" not in attack and "range" not in attack:
+                        errors.append(f"{entry_location}: attack needs reach or range")
+                if "damage" in entry:
+                    validate_damage(entry["damage"], f"{entry_location}.damage", errors)
+                save = entry.get("save")
+                if save is not None:
+                    if save.get("ability") not in MONSTER_ABILITIES or not is_int(save.get("dc"), 1):
+                        errors.append(f"{entry_location}: invalid save")
+                    if "damage" in save:
+                        validate_damage(save["damage"], f"{entry_location}.save.damage", errors)
+                usage = entry.get("usage")
+                if usage is not None and not (
+                    usage.get("type") == "recharge" and is_int(usage.get("min"), 2, 6)
+                    or usage.get("type") == "per_day" and is_int(usage.get("uses"), 1)
+                    or usage.get("type") == "per_rest"
+                ):
+                    errors.append(f"{entry_location}: invalid usage")
+
+
+def eval_challenge(rating):
+    numerator, _, denominator = rating.partition("/")
+    return int(numerator) / int(denominator or 1)
+
+
 def validate(pack, only=None):
     source = ROOT / "assets" / "data" / "srd" / pack
     errors = []
@@ -803,6 +982,14 @@ def validate(pack, only=None):
                                 name = item.get("name")
                                 if name and not item.get("choiceFrom") and name not in known_items:
                                     errors.append(f"{filename}.{row.get('name')}: unknown equipment {name!r}")
+
+    if "monsters" in data:
+        conditions = {
+            condition["name"].lower()
+            for condition in data.get("conditions", [])
+            if isinstance(condition, dict) and isinstance(condition.get("name"), str)
+        }
+        validate_monsters(data["monsters"], conditions, pack, errors)
 
     if "magic_items" in data:
         magic_items = data["magic_items"]

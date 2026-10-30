@@ -40,6 +40,7 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
         final languagesState = ref.watch(srdLanguagesForPackProvider(packId));
         final weaponsState = ref.watch(srdWeaponsForPackProvider(packId));
         final featsState = ref.watch(srdFeatsForPackProvider(packId));
+        final monstersState = ref.watch(srdMonstersForPackProvider(packId));
 
         final pendingState = _featuresDataPendingState([
           ...classFeatureStates.values,
@@ -56,6 +57,7 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
           languagesState,
           weaponsState,
           featsState,
+          monstersState,
         ]);
         if (pendingState != null) return pendingState;
 
@@ -72,6 +74,7 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
         final languages = languagesState.valueOrNull!;
         final weapons = weaponsState.valueOrNull!;
         final srdFeats = featsState.valueOrNull!;
+        final monsters = monstersState.valueOrNull!;
 
         final race = races?.where((r) => r.name == character.race).firstOrNull;
         final speciesEntry = species?.where((r) => r.name == character.race).firstOrNull;
@@ -117,6 +120,7 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
             languages: languages,
             weapons: weapons,
             srdFeats: srdFeats,
+            monsters: monsters,
           ),
         );
       },

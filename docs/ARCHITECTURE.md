@@ -743,6 +743,34 @@ The Features tab renders usage controls next to any feature/trait/feat that has
 an active usage reference. It asks the engine for the current/max/spend view
 instead of duplicating formulas in UI code.
 
+### Wild Shape
+
+`data/rulesets/wild_shape_rules.dart` holds the Beast Shapes table of each
+edition. `WildShape2014Rules` lets a Druid become any Beast the table allows
+(CR 1/4 without Swim or Fly Speed at level 2, CR 1/2 without Fly Speed at
+level 4, CR 1 at level 8); the form has its own hit points.
+`WildShape2024Rules` uses known forms (4/6/8 at levels 2/4/8, CR 1/4, 1/2
+and 1, Fly Speed from level 8); the form keeps the Druid's hit points and
+grants Temporary Hit Points equal to the Druid level. A swarm whose speed is
+"Climb or Fly" counts as having a Fly Speed.
+
+2024 known forms are the feature choice `Druid / Wild Shape / known_forms` of
+type `beast_form` (`countByLevel` in `feature_choices.json`), so level up asks
+for them and the Features tab edits them like any other choice.
+`FeatureChoiceOptionResolver` lists the Beasts the table allows at the
+request's Druid level, and `Progression2024Engine` rejects ineligible forms.
+
+`data/wild_shape/wild_shape_engine.dart` assumes and leaves forms. Assuming
+spends one use of the Druid's Wild Shape usage resource (2014 Archdruid has
+unlimited uses) and saves `Character.wildShape` (`ActiveWildShape`: monster ID
+and, in 2014, the form's current and maximum hit points). The Stats tab shows
+`WildShapeSection`: uses, limits, a confirmation that lists what the form
+changes, the form's AC, speed and physical scores, attack rolls through the
+contextual roll sheet, and the full stat block. `data/hit_point_changes.dart`
+applies damage and healing: with a 2014 form, damage drains Temporary Hit
+Points, then the form's hit points, and at 0 the Druid reverts with the excess
+damage carried over. Level resets end the form and the change review says so.
+
 ---
 
 ## SRD Data And Translation Data
@@ -765,6 +793,8 @@ Important SRD files:
 - `feats.json`, `conditions.json`, `skills.json`
 - `languages.json`
 - `feature_choices.json`, `feature_usages.json`
+- `monsters.json` (both packs): stat blocks, for now the Beasts up to CR 1
+  that Wild Shape can use
 
 `getItems()` builds a normalized item lookup used by creation and inventory. It
 adds aliases for common starting-equipment strings, such as stripped ammunition
@@ -782,6 +812,22 @@ and descriptions, but saved characters keep the stable IDs.
 `feature_usages.json` stores resource definitions and mappings from
 features/traits/feats to resources. UI labels are localized through
 `SrdI18nService.featureUsageResourceName()`.
+
+`monsters.json` is generated from the official PDFs by
+`tools/import_srd_monsters.py` and parsed into `SrdMonster`
+(`data/datasources/srd/srd_monster.dart`). Each stat block keeps what a future
+tabletop needs: sizes, type, tags, swarm member size, armor class, hit points
+with formula, speeds (with hover and GM-choice modes), abilities, saving
+throws, skills, damage and condition defenses, senses with passive
+Perception, languages, challenge rating, XP, proficiency bonus, 2024
+initiative, and traits/actions/bonus actions/reactions/legendary actions.
+Entries keep the published text plus structured `attack` (kind, bonus, reach,
+range), `damage` (average, formula, type), `save` (ability, DC, damage on a
+failure, half on success) and `usage` (recharge, per day). The import notes
+values that differ from the usual math and keeps them as published.
+Overlays translate names, entry names and descriptions, and language text,
+keyed by entry ID; numbers stay in the English file. The 5.2.1 manifest lists
+`monsters` as partial until other creatures are imported.
 
 ### UI strings
 
@@ -808,17 +854,10 @@ The bundled 5.1 overlays include Turkish. The 5.2.1 English catalogs and
 translation overlays are still being prepared; 5.2.1 is not bundled as a
 selectable ruleset yet.
 
-`tools/validate_srd_pack.py 5.1` checks English pack structure and basic
-references. `tools/translate_i18n.py` can use a configured translation
-provider for initial overlays and defaults to pack 5.1. `--pack 5.2.1`
-selects the 2024 catalog;
-`--merge` fills missing text without replacing reviewed translations, and
-`--dry-run` reports the remaining work without network access. The translation
-can be resumed by rerunning `--merge`, while `tools/check_srd_i18n.py` checks
-text coverage per pack. `tools/reuse_pack_translations.py` reuses 5.1 overlays
-only when the entire English source record matches the 5.2.1 record. IDs and
-mechanics remain in the English source;
-translated overlays still require human review.
+`tools/validate_srd_pack.py <pack>` checks English pack structure and basic
+references. The repository has no machine translation tools: overlays are
+written and reviewed by hand, and a missing overlay entry falls back to the
+English text. IDs and mechanics remain in the English source.
 
 This split is intentional: ARB handles app chrome and controls; JSON overlays
 handle game data that mirrors SRD asset structure.

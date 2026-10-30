@@ -12,6 +12,7 @@ export '../../data/constants/level_up_rules.dart';
 export '../../data/dice/dice.dart';
 export '../../data/datasources/srd/srd_i18n_service.dart';
 export '../../data/datasources/srd/srd_models.dart';
+export '../../data/datasources/srd/srd_monster.dart';
 export '../../data/feature_choice_engine.dart';
 export '../../data/feature_choice_option_resolver.dart';
 export '../../data/feature_usage_engine.dart';

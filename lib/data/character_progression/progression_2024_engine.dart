@@ -4,12 +4,14 @@ import '../constants/armor_class.dart';
 import '../datasources/srd/srd_2024_creation_catalog.dart';
 import '../datasources/srd/srd_data_source.dart';
 import '../datasources/srd/srd_models.dart';
+import '../datasources/srd/srd_monster.dart';
 import '../dice/dice.dart';
 import '../feature_choice_engine.dart';
 import '../feature_choice_option_resolver.dart';
 import '../models/models.dart';
 import '../rulesets/ruleset_ids.dart';
 import '../rulesets/srd_content_pack.dart';
+import '../rulesets/wild_shape_rules.dart';
 import 'choice_effects.dart';
 
 /// SRD 5.2.1 content the 2024 progression rules read.
@@ -26,6 +28,7 @@ class Rules2024Data implements ChoiceEffectsData {
     required this.languages,
     required this.speciesTraits,
     this.backgrounds = const [],
+    this.monsters = const [],
   });
 
   final List<Creation2024Class> classes;
@@ -40,6 +43,9 @@ class Rules2024Data implements ChoiceEffectsData {
   final List<SrdTool> tools;
   final List<SrdLanguage> languages;
   final List<Creation2024Background> backgrounds;
+
+  /// Stat blocks for Wild Shape forms.
+  final List<SrdMonster> monsters;
 
   /// Trait names of the character's species.
   final List<String> speciesTraits;
@@ -61,6 +67,7 @@ class Rules2024Data implements ChoiceEffectsData {
       tools: await srd.getTools(),
       languages: await srd.getLanguages(),
       backgrounds: await Creation2024Catalog.loadBackgrounds(),
+      monsters: await srd.getMonsters(),
       speciesTraits: const [],
     );
   }
@@ -76,6 +83,7 @@ class Rules2024Data implements ChoiceEffectsData {
     tools: tools,
     languages: languages,
     backgrounds: backgrounds,
+    monsters: monsters,
     speciesTraits: traits,
   );
 
@@ -738,6 +746,17 @@ class Progression2024Engine {
       final allowed = request.requirement.replaceOneOnLevelUp ? 1 : 0;
       if (removed > allowed) {
         throw ArgumentError('Only $allowed earlier ${request.choiceId} can change.');
+      }
+      if (request.requirement.type == 'beast_form') {
+        final limits = const WildShape2024Rules().limitsAt(request.level);
+        final eligible = {
+          for (final monster in data.monsters)
+            if (limits != null && limits.allows(monster)) monster.id,
+        };
+        if (!eligible.containsAll(after) || after.length > request.requiredCount) {
+          throw ArgumentError('Wild Shape forms must be eligible Beasts.');
+        }
+        continue;
       }
       final source = request.requirement.optionsSource;
       final options = {
@@ -1574,6 +1593,8 @@ class Progression2024Engine {
           ),
       ],
       concentrationSpell: null,
+      // Level 1 Druids have no Wild Shape.
+      wildShape: null,
     );
     reset = ChoiceEffects.apply(
       base,

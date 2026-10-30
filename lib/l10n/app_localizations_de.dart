@@ -72,6 +72,284 @@ class AppLocalizationsDe extends AppLocalizations {
   String get customBackgroundSave => 'Diesen Hintergrund verwenden';
 
   @override
+  String get wildShapeTitle => 'Tiergestalt';
+
+  @override
+  String wildShapeUses(int current, int max) {
+    return 'Anwendungen: $current/$max';
+  }
+
+  @override
+  String get wildShapeUsesUnlimited => 'Anwendungen: unbegrenzt';
+
+  @override
+  String wildShapeLimits(String cr) {
+    return 'Gestalten bis HG $cr';
+  }
+
+  @override
+  String get wildShapeNoFly => 'ohne Flugbewegungsrate';
+
+  @override
+  String get wildShapeNoSwim => 'ohne Schwimmbewegungsrate';
+
+  @override
+  String wildShapeChallengeRating(String cr) {
+    return 'HG $cr';
+  }
+
+  @override
+  String wildShapeKnownForms(int count, int max) {
+    return 'Bekannte Gestalten: $count/$max';
+  }
+
+  @override
+  String get wildShapeChooseForms =>
+      'Wähle deine bekannten Gestalten unter Tiergestalt im Tab Merkmale.';
+
+  @override
+  String get wildShapeAssume => 'Gestalt annehmen';
+
+  @override
+  String get wildShapeLeave => 'Gestalt verlassen';
+
+  @override
+  String get wildShapeNoUsesLeft =>
+      'Keine Anwendungen von Tiergestalt übrig. Eine Rast stellt sie wieder her.';
+
+  @override
+  String get wildShapeSearch => 'Tiere suchen';
+
+  @override
+  String get wildShapeSeenNote => 'Wähle ein Tier, das du schon gesehen hast.';
+
+  @override
+  String wildShapeConfirmTitle(String name) {
+    return 'Gestalt von $name annehmen?';
+  }
+
+  @override
+  String wildShapeConfirmUse(int current, int after, int max) {
+    return 'Verbraucht 1 Anwendung von Tiergestalt: $current → $after von $max.';
+  }
+
+  @override
+  String get wildShapeConfirmUnlimited =>
+      'Tiergestalt hat auf deiner Stufe kein Anwendungslimit.';
+
+  @override
+  String get wildShapeConfirmReplace => 'Das ersetzt deine aktuelle Gestalt.';
+
+  @override
+  String wildShapeConfirmFormHp(int amount) {
+    return 'Die Gestalt hat $amount Trefferpunkte. Bei 0 kehrst du in deine normale Gestalt zurück und überschüssiger Schaden geht auf dich über.';
+  }
+
+  @override
+  String wildShapeConfirmTempHp(int amount) {
+    return 'Du erhältst $amount temporäre Trefferpunkte.';
+  }
+
+  @override
+  String wildShapeConfirmTempHpKept(int current, int gain) {
+    return 'Du behältst deine $current temporären Trefferpunkte; die $gain der Gestalt addieren sich nicht.';
+  }
+
+  @override
+  String wildShapeConfirmDuration(int hours) {
+    String _temp0 = intl.Intl.pluralLogic(
+      hours,
+      locale: localeName,
+      other: '$hours Stunden',
+      one: '1 Stunde',
+    );
+    return 'Hält bis zu $_temp0 oder bis sie früher endet.';
+  }
+
+  @override
+  String get wildShapeConfirmKeeps2024 =>
+      'Du behältst Trefferpunkte, Trefferwürfel, Intelligenz, Weisheit, Charisma, Klassenmerkmale, Sprachen, Talente und Übungen. Du kannst keine Zauber wirken, aber Konzentration bleibt bestehen.';
+
+  @override
+  String get wildShapeConfirmKeeps2014 =>
+      'Du behältst Intelligenz, Weisheit, Charisma, Gesinnung, Persönlichkeit und Übungen. Du kannst keine Zauber wirken, aber Konzentration bleibt bestehen.';
+
+  @override
+  String get wildShapeConfirm => 'Gestalt annehmen';
+
+  @override
+  String wildShapeActive(String name) {
+    return 'In Gestalt von $name';
+  }
+
+  @override
+  String wildShapeFormHp(int current, int max) {
+    return 'TP der Gestalt $current/$max';
+  }
+
+  @override
+  String get wildShapeScoresNote =>
+      'ST, GE und KO stammen von der Gestalt; IN, WE und CH sind deine.';
+
+  @override
+  String get wildShapeAttacks => 'Angriffe der Gestalt';
+
+  @override
+  String get wildShapeAttackRoll => 'Angriffswurf';
+
+  @override
+  String get wildShapeStatBlock => 'Spielwerte';
+
+  @override
+  String wildShapeLeaveTitle(String name) {
+    return 'Gestalt von $name verlassen?';
+  }
+
+  @override
+  String get wildShapeLeaveBody2024 =>
+      'Du kehrst in deine normale Gestalt zurück. Die Anwendung von Tiergestalt wird nicht zurückgegeben.';
+
+  @override
+  String get wildShapeLeaveBody2014 =>
+      'Du kehrst mit den Trefferpunkten von vorher in deine normale Gestalt zurück. Die übrigen Trefferpunkte der Gestalt und die Anwendung von Tiergestalt gehen verloren.';
+
+  @override
+  String get wildShapeDamageToForm =>
+      'Schaden und Heilung gehen zuerst auf deine Tiergestalt.';
+
+  @override
+  String get changesKindWildShapeForms => 'Bekannte Gestalten der Tiergestalt';
+
+  @override
+  String get changesWildShapeEnds => 'Die aktive Gestalt endet.';
+
+  @override
+  String get monsterSizeTiny => 'winzig';
+
+  @override
+  String get monsterSizeSmall => 'klein';
+
+  @override
+  String get monsterSizeMedium => 'mittelgroß';
+
+  @override
+  String get monsterSizeLarge => 'groß';
+
+  @override
+  String get monsterSizeHuge => 'riesig';
+
+  @override
+  String get monsterSizeGargantuan => 'gigantisch';
+
+  @override
+  String get monsterSizeOr => ' oder ';
+
+  @override
+  String monsterSizeType(String size, String type) {
+    return '$type, $size';
+  }
+
+  @override
+  String get monsterTypeBeast => 'Tier';
+
+  @override
+  String monsterSwarmOfBeasts(String size) {
+    return 'Schwarm von Tieren (Größe $size)';
+  }
+
+  @override
+  String get monsterSpeedBurrow => 'Graben';
+
+  @override
+  String get monsterSpeedClimb => 'Klettern';
+
+  @override
+  String get monsterSpeedFly => 'Fliegen';
+
+  @override
+  String get monsterSpeedSwim => 'Schwimmen';
+
+  @override
+  String get monsterSpeedHover => '(schwebend)';
+
+  @override
+  String monsterSpeedChoice(String first, String second, String distance) {
+    return '$first oder $second $distance (Wahl der SL)';
+  }
+
+  @override
+  String get monsterSavingThrows => 'Rettungswürfe';
+
+  @override
+  String get monsterSkills => 'Fertigkeiten';
+
+  @override
+  String get monsterVulnerabilities => 'Verwundbarkeiten';
+
+  @override
+  String get monsterResistances => 'Resistenzen';
+
+  @override
+  String get monsterImmunities => 'Immunitäten';
+
+  @override
+  String get monsterConditionImmunities => 'Zustandsimmunitäten';
+
+  @override
+  String get monsterSenses => 'Sinne';
+
+  @override
+  String get monsterSenseBlindsight => 'Blindsicht';
+
+  @override
+  String get monsterSenseDarkvision => 'Dunkelsicht';
+
+  @override
+  String get monsterSenseTremorsense => 'Erschütterungssinn';
+
+  @override
+  String get monsterSenseTruesight => 'Wahrsicht';
+
+  @override
+  String get monsterLanguages => 'Sprachen';
+
+  @override
+  String get monsterLanguagesNone => 'Keine';
+
+  @override
+  String get monsterChallenge => 'Herausforderungsgrad';
+
+  @override
+  String monsterChallengeValue(String cr, String xp, int pb) {
+    return '$cr (EP $xp; ÜB +$pb)';
+  }
+
+  @override
+  String get monsterTraits => 'Merkmale';
+
+  @override
+  String get monsterActions => 'Aktionen';
+
+  @override
+  String get monsterBonusActions => 'Bonusaktionen';
+
+  @override
+  String get monsterReactions => 'Reaktionen';
+
+  @override
+  String get monsterLegendaryActions => 'Legendäre Aktionen';
+
+  @override
+  String monsterRecharge(int min) {
+    return 'Aufladung $min–6';
+  }
+
+  @override
+  String monsterPerDay(int uses) {
+    return '$uses/Tag';
+  }
+
+  @override
   String get creation2024Species => 'Spezies';
 
   @override

@@ -305,6 +305,7 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
           languages: data.languages,
           weapons: _weapons,
           feats: data.feats,
+          monsters: data.monsters,
           featureLabelBuilder: (request) => _requestLabel(request, i18n),
           onChanged: (choices) => setState(() => _choices = choices),
         ),
@@ -1054,6 +1055,7 @@ class _LevelReset2024FlowState extends ConsumerState<_LevelReset2024Flow> {
               languages: data.languages,
               weapons: _weapons,
               feats: data.feats,
+              monsters: data.monsters,
               featureLabelBuilder: (request) =>
                   i18n.classFeatureName(request.sourceClass, request.featureName) ??
                   request.featureName,

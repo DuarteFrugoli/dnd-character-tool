@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import '../json_helpers.dart';
 import '../rulesets/ruleset_ids.dart';
 import 'ability_scores.dart';
+import 'active_wild_shape.dart';
 import 'character_appearance.dart';
 import 'character_class_entry.dart';
 import 'character_extra_feature.dart';
@@ -40,6 +41,13 @@ List<Map<String, dynamic>> _levelHistoryToJson(
 
 int _exhaustionLevelFromJson(Object? json) =>
     json is num ? json.toInt().clamp(0, 6).toInt() : 0;
+
+ActiveWildShape? _wildShapeFromJson(Object? json) => json is Map
+    ? ActiveWildShape.fromJson(json.cast<String, dynamic>())
+    : null;
+
+Map<String, dynamic>? _wildShapeToJson(ActiveWildShape? value) =>
+    value?.toJson();
 
 enum CreationMode { random, semiRandom, guided, manual }
 
@@ -137,6 +145,10 @@ class Character {
   final List<CharacterLevelRecord> levelHistory;
   final String? concentrationSpell;
 
+  /// Druid Beast form in use, if any.
+  @JsonKey(fromJson: _wildShapeFromJson, toJson: _wildShapeToJson)
+  final ActiveWildShape? wildShape;
+
   const Character({
     required this.id,
     this.dataVersion = currentCharacterDataVersion,
@@ -193,6 +205,7 @@ class Character {
     this.exhaustionLevel = 0,
     this.levelHistory = const [],
     this.concentrationSpell,
+    this.wildShape,
   });
 
   /// Passive perception = 10 + perception modifier
@@ -348,6 +361,7 @@ class Character {
     int? exhaustionLevel,
     List<CharacterLevelRecord>? levelHistory,
     Object? concentrationSpell = _keep,
+    Object? wildShape = _keep,
   }) {
     return Character(
       id: id ?? this.id,
@@ -409,6 +423,9 @@ class Character {
       concentrationSpell: concentrationSpell == _keep
           ? this.concentrationSpell
           : concentrationSpell as String?,
+      wildShape: wildShape == _keep
+          ? this.wildShape
+          : wildShape as ActiveWildShape?,
     );
   }
 

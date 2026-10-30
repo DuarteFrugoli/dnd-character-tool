@@ -1,0 +1,620 @@
+{
+  "Ape": {
+    "name": "İnsansı Maymun",
+    "actions": {
+      "fist": {
+        "name": "Yumruk"
+      },
+      "rock": {
+        "name": "Kaya"
+      }
+    }
+  },
+  "Axe Beak": {
+    "name": "Balta Gaga",
+    "actions": {
+      "beak": {
+        "name": "Gaga"
+      }
+    }
+  },
+  "Baboon": {
+    "name": "Babun",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Badger": {
+    "name": "Porsuk",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Bat": {
+    "name": "Yarasa",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Black Bear": {
+    "name": "Kara Ayı",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      },
+      "claws": {
+        "name": "Pençeler"
+      }
+    }
+  },
+  "Blood Hawk": {
+    "name": "Kan Şahini",
+    "actions": {
+      "beak": {
+        "name": "Gaga"
+      }
+    }
+  },
+  "Boar": {
+    "name": "Yaban Domuzu",
+    "actions": {
+      "tusk": {
+        "name": "Azı Dişi"
+      }
+    }
+  },
+  "Brown Bear": {
+    "name": "Boz Ayı",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      },
+      "claws": {
+        "name": "Pençeler"
+      }
+    }
+  },
+  "Camel": {
+    "name": "Deve",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Cat": {
+    "name": "Kedi",
+    "actions": {
+      "claws": {
+        "name": "Pençeler"
+      }
+    }
+  },
+  "Constrictor Snake": {
+    "name": "Boğucu Yılan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      },
+      "constrict": {
+        "name": "Sıkma"
+      }
+    }
+  },
+  "Crab": {
+    "name": "Yengeç",
+    "actions": {
+      "claw": {
+        "name": "Pençe"
+      }
+    }
+  },
+  "Crocodile": {
+    "name": "Timsah",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Deer": {
+    "name": "Geyik",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Dire Wolf": {
+    "name": "Dehşet Kurdu",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Draft Horse": {
+    "name": "Yük Atı",
+    "actions": {
+      "hooves": {
+        "name": "Toynaklar"
+      }
+    }
+  },
+  "Eagle": {
+    "name": "Kartal",
+    "actions": {
+      "talons": {
+        "name": "Kanca Pençeler"
+      }
+    }
+  },
+  "Elk": {
+    "name": "Kızıl Geyik",
+    "actions": {
+      "ram": {
+        "name": "Toslama"
+      },
+      "hooves": {
+        "name": "Toynaklar"
+      }
+    }
+  },
+  "Flying Snake": {
+    "name": "Uçan Yılan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Frog": {
+    "name": "Kurbağa"
+  },
+  "Giant Badger": {
+    "name": "Dev Porsuk",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      },
+      "claws": {
+        "name": "Pençeler"
+      }
+    }
+  },
+  "Giant Bat": {
+    "name": "Dev Yarasa",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Centipede": {
+    "name": "Dev Kırkayak",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Crab": {
+    "name": "Dev Yengeç",
+    "actions": {
+      "claw": {
+        "name": "Pençe"
+      }
+    }
+  },
+  "Giant Eagle": {
+    "name": "Dev Kartal",
+    "actions": {
+      "beak": {
+        "name": "Gaga"
+      },
+      "talons": {
+        "name": "Kanca Pençeler"
+      }
+    }
+  },
+  "Giant Fire Beetle": {
+    "name": "Dev Ateş Böceği",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Frog": {
+    "name": "Dev Kurbağa",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Goat": {
+    "name": "Dev Keçi",
+    "actions": {
+      "ram": {
+        "name": "Toslama"
+      }
+    }
+  },
+  "Giant Hyena": {
+    "name": "Dev Sırtlan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Lizard": {
+    "name": "Dev Kertenkele",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Octopus": {
+    "name": "Dev Ahtapot",
+    "actions": {
+      "tentacles": {
+        "name": "Dokunaçlar"
+      }
+    }
+  },
+  "Giant Owl": {
+    "name": "Dev Baykuş",
+    "actions": {
+      "talons": {
+        "name": "Kanca Pençeler"
+      }
+    }
+  },
+  "Giant Poisonous Snake": {
+    "name": "Dev Zehirli Yılan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Rat": {
+    "name": "Dev Sıçan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Sea Horse": {
+    "name": "Dev Denizatı",
+    "actions": {
+      "ram": {
+        "name": "Toslama"
+      }
+    }
+  },
+  "Giant Spider": {
+    "name": "Dev Örümcek",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      },
+      "web": {
+        "name": "Ağ"
+      }
+    }
+  },
+  "Giant Toad": {
+    "name": "Dev Karakurbağası",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Vulture": {
+    "name": "Dev Akbaba",
+    "actions": {
+      "beak": {
+        "name": "Gaga"
+      },
+      "talons": {
+        "name": "Kanca Pençeler"
+      }
+    }
+  },
+  "Giant Wasp": {
+    "name": "Dev Eşekarısı",
+    "actions": {
+      "sting": {
+        "name": "İğne"
+      }
+    }
+  },
+  "Giant Weasel": {
+    "name": "Dev Gelincik",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Giant Wolf Spider": {
+    "name": "Dev Kurt Örümceği",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Goat": {
+    "name": "Keçi",
+    "actions": {
+      "ram": {
+        "name": "Toslama"
+      }
+    }
+  },
+  "Hawk": {
+    "name": "Şahin",
+    "actions": {
+      "talons": {
+        "name": "Kanca Pençeler"
+      }
+    }
+  },
+  "Hyena": {
+    "name": "Sırtlan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Jackal": {
+    "name": "Çakal",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Lion": {
+    "name": "Aslan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      },
+      "claw": {
+        "name": "Pençe"
+      }
+    }
+  },
+  "Lizard": {
+    "name": "Kertenkele",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Mastiff": {
+    "name": "Mastiff",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Mule": {
+    "name": "Katır",
+    "actions": {
+      "hooves": {
+        "name": "Toynaklar"
+      }
+    }
+  },
+  "Octopus": {
+    "name": "Ahtapot",
+    "actions": {
+      "tentacles": {
+        "name": "Dokunaçlar"
+      }
+    }
+  },
+  "Owl": {
+    "name": "Baykuş",
+    "actions": {
+      "talons": {
+        "name": "Kanca Pençeler"
+      }
+    }
+  },
+  "Panther": {
+    "name": "Panter",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      },
+      "claw": {
+        "name": "Pençe"
+      }
+    }
+  },
+  "Poisonous Snake": {
+    "name": "Zehirli Yılan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Pony": {
+    "name": "Midilli",
+    "actions": {
+      "hooves": {
+        "name": "Toynaklar"
+      }
+    }
+  },
+  "Quipper": {
+    "name": "Quipper",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Rat": {
+    "name": "Sıçan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Raven": {
+    "name": "Kuzgun",
+    "actions": {
+      "beak": {
+        "name": "Gaga"
+      }
+    }
+  },
+  "Reef Shark": {
+    "name": "Resif Köpekbalığı",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Riding Horse": {
+    "name": "Binek Atı",
+    "actions": {
+      "hooves": {
+        "name": "Toynaklar"
+      }
+    }
+  },
+  "Scorpion": {
+    "name": "Akrep",
+    "actions": {
+      "sting": {
+        "name": "İğne"
+      }
+    }
+  },
+  "Sea Horse": {
+    "name": "Denizatı"
+  },
+  "Spider": {
+    "name": "Örümcek",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Stirge": {
+    "name": "Stirge",
+    "actions": {
+      "blood_drain": {
+        "name": "Kan Emme"
+      }
+    }
+  },
+  "Swarm of Bats": {
+    "name": "Yarasa Sürüsü",
+    "actions": {
+      "bites": {
+        "name": "Isırıklar"
+      }
+    }
+  },
+  "Swarm of Insects": {
+    "name": "Böcek Sürüsü",
+    "actions": {
+      "bites": {
+        "name": "Isırıklar"
+      }
+    }
+  },
+  "Swarm of Quippers": {
+    "name": "Quipper Sürüsü",
+    "actions": {
+      "bites": {
+        "name": "Isırıklar"
+      }
+    }
+  },
+  "Swarm of Rats": {
+    "name": "Sıçan Sürüsü",
+    "actions": {
+      "bites": {
+        "name": "Isırıklar"
+      }
+    }
+  },
+  "Swarm of Ravens": {
+    "name": "Kuzgun Sürüsü",
+    "actions": {
+      "beaks": {
+        "name": "Gagalar"
+      }
+    }
+  },
+  "Tiger": {
+    "name": "Kaplan",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      },
+      "claw": {
+        "name": "Pençe"
+      }
+    }
+  },
+  "Vulture": {
+    "name": "Akbaba",
+    "actions": {
+      "beak": {
+        "name": "Gaga"
+      }
+    }
+  },
+  "Warhorse": {
+    "name": "Savaş Atı",
+    "actions": {
+      "hooves": {
+        "name": "Toynaklar"
+      }
+    }
+  },
+  "Weasel": {
+    "name": "Gelincik",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  },
+  "Wolf": {
+    "name": "Kurt",
+    "actions": {
+      "bite": {
+        "name": "Isırık"
+      }
+    }
+  }
+}

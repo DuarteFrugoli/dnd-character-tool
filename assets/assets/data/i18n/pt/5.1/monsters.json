@@ -1,0 +1,620 @@
+{
+  "Ape": {
+    "name": "Macaco",
+    "actions": {
+      "fist": {
+        "name": "Punho"
+      },
+      "rock": {
+        "name": "Pedra"
+      }
+    }
+  },
+  "Axe Beak": {
+    "name": "Bico-de-Machado",
+    "actions": {
+      "beak": {
+        "name": "Bico"
+      }
+    }
+  },
+  "Baboon": {
+    "name": "Babuíno",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Badger": {
+    "name": "Texugo",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Bat": {
+    "name": "Morcego",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Black Bear": {
+    "name": "Urso-Negro",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      },
+      "claws": {
+        "name": "Garras"
+      }
+    }
+  },
+  "Blood Hawk": {
+    "name": "Falcão Sangrento",
+    "actions": {
+      "beak": {
+        "name": "Bico"
+      }
+    }
+  },
+  "Boar": {
+    "name": "Javali",
+    "actions": {
+      "tusk": {
+        "name": "Presa"
+      }
+    }
+  },
+  "Brown Bear": {
+    "name": "Urso-Pardo",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      },
+      "claws": {
+        "name": "Garras"
+      }
+    }
+  },
+  "Camel": {
+    "name": "Camelo",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Cat": {
+    "name": "Gato",
+    "actions": {
+      "claws": {
+        "name": "Garras"
+      }
+    }
+  },
+  "Constrictor Snake": {
+    "name": "Cobra Constritora",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      },
+      "constrict": {
+        "name": "Constrição"
+      }
+    }
+  },
+  "Crab": {
+    "name": "Caranguejo",
+    "actions": {
+      "claw": {
+        "name": "Garra"
+      }
+    }
+  },
+  "Crocodile": {
+    "name": "Crocodilo",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Deer": {
+    "name": "Cervo",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Dire Wolf": {
+    "name": "Lobo Atroz",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Draft Horse": {
+    "name": "Cavalo de Tração",
+    "actions": {
+      "hooves": {
+        "name": "Cascos"
+      }
+    }
+  },
+  "Eagle": {
+    "name": "Águia",
+    "actions": {
+      "talons": {
+        "name": "Garras Afiadas"
+      }
+    }
+  },
+  "Elk": {
+    "name": "Alce",
+    "actions": {
+      "ram": {
+        "name": "Investida"
+      },
+      "hooves": {
+        "name": "Cascos"
+      }
+    }
+  },
+  "Flying Snake": {
+    "name": "Cobra Voadora",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Frog": {
+    "name": "Rã"
+  },
+  "Giant Badger": {
+    "name": "Texugo Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      },
+      "claws": {
+        "name": "Garras"
+      }
+    }
+  },
+  "Giant Bat": {
+    "name": "Morcego Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Centipede": {
+    "name": "Centopeia Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Crab": {
+    "name": "Caranguejo Gigante",
+    "actions": {
+      "claw": {
+        "name": "Garra"
+      }
+    }
+  },
+  "Giant Eagle": {
+    "name": "Águia Gigante",
+    "actions": {
+      "beak": {
+        "name": "Bico"
+      },
+      "talons": {
+        "name": "Garras Afiadas"
+      }
+    }
+  },
+  "Giant Fire Beetle": {
+    "name": "Besouro de Fogo Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Frog": {
+    "name": "Rã Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Goat": {
+    "name": "Bode Gigante",
+    "actions": {
+      "ram": {
+        "name": "Investida"
+      }
+    }
+  },
+  "Giant Hyena": {
+    "name": "Hiena Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Lizard": {
+    "name": "Lagarto Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Octopus": {
+    "name": "Polvo Gigante",
+    "actions": {
+      "tentacles": {
+        "name": "Tentáculos"
+      }
+    }
+  },
+  "Giant Owl": {
+    "name": "Coruja Gigante",
+    "actions": {
+      "talons": {
+        "name": "Garras Afiadas"
+      }
+    }
+  },
+  "Giant Poisonous Snake": {
+    "name": "Cobra Venenosa Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Rat": {
+    "name": "Rato Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Sea Horse": {
+    "name": "Cavalo-Marinho Gigante",
+    "actions": {
+      "ram": {
+        "name": "Investida"
+      }
+    }
+  },
+  "Giant Spider": {
+    "name": "Aranha Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      },
+      "web": {
+        "name": "Teia"
+      }
+    }
+  },
+  "Giant Toad": {
+    "name": "Sapo Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Vulture": {
+    "name": "Abutre Gigante",
+    "actions": {
+      "beak": {
+        "name": "Bico"
+      },
+      "talons": {
+        "name": "Garras Afiadas"
+      }
+    }
+  },
+  "Giant Wasp": {
+    "name": "Vespa Gigante",
+    "actions": {
+      "sting": {
+        "name": "Ferrão"
+      }
+    }
+  },
+  "Giant Weasel": {
+    "name": "Doninha Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Giant Wolf Spider": {
+    "name": "Aranha-Lobo Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Goat": {
+    "name": "Bode",
+    "actions": {
+      "ram": {
+        "name": "Investida"
+      }
+    }
+  },
+  "Hawk": {
+    "name": "Falcão",
+    "actions": {
+      "talons": {
+        "name": "Garras Afiadas"
+      }
+    }
+  },
+  "Hyena": {
+    "name": "Hiena",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Jackal": {
+    "name": "Chacal",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Lion": {
+    "name": "Leão",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      },
+      "claw": {
+        "name": "Garra"
+      }
+    }
+  },
+  "Lizard": {
+    "name": "Lagarto",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Mastiff": {
+    "name": "Mastim",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Mule": {
+    "name": "Mula",
+    "actions": {
+      "hooves": {
+        "name": "Cascos"
+      }
+    }
+  },
+  "Octopus": {
+    "name": "Polvo",
+    "actions": {
+      "tentacles": {
+        "name": "Tentáculos"
+      }
+    }
+  },
+  "Owl": {
+    "name": "Coruja",
+    "actions": {
+      "talons": {
+        "name": "Garras Afiadas"
+      }
+    }
+  },
+  "Panther": {
+    "name": "Pantera",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      },
+      "claw": {
+        "name": "Garra"
+      }
+    }
+  },
+  "Poisonous Snake": {
+    "name": "Cobra Venenosa",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Pony": {
+    "name": "Pônei",
+    "actions": {
+      "hooves": {
+        "name": "Cascos"
+      }
+    }
+  },
+  "Quipper": {
+    "name": "Quipper",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Rat": {
+    "name": "Rato",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Raven": {
+    "name": "Corvo",
+    "actions": {
+      "beak": {
+        "name": "Bico"
+      }
+    }
+  },
+  "Reef Shark": {
+    "name": "Tubarão-de-Recife",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Riding Horse": {
+    "name": "Cavalo de Montaria",
+    "actions": {
+      "hooves": {
+        "name": "Cascos"
+      }
+    }
+  },
+  "Scorpion": {
+    "name": "Escorpião",
+    "actions": {
+      "sting": {
+        "name": "Ferrão"
+      }
+    }
+  },
+  "Sea Horse": {
+    "name": "Cavalo-Marinho"
+  },
+  "Spider": {
+    "name": "Aranha",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Stirge": {
+    "name": "Estirge",
+    "actions": {
+      "blood_drain": {
+        "name": "Drenar Sangue"
+      }
+    }
+  },
+  "Swarm of Bats": {
+    "name": "Enxame de Morcegos",
+    "actions": {
+      "bites": {
+        "name": "Mordidas"
+      }
+    }
+  },
+  "Swarm of Insects": {
+    "name": "Enxame de Insetos",
+    "actions": {
+      "bites": {
+        "name": "Mordidas"
+      }
+    }
+  },
+  "Swarm of Quippers": {
+    "name": "Enxame de Quippers",
+    "actions": {
+      "bites": {
+        "name": "Mordidas"
+      }
+    }
+  },
+  "Swarm of Rats": {
+    "name": "Enxame de Ratos",
+    "actions": {
+      "bites": {
+        "name": "Mordidas"
+      }
+    }
+  },
+  "Swarm of Ravens": {
+    "name": "Enxame de Corvos",
+    "actions": {
+      "beaks": {
+        "name": "Bicadas"
+      }
+    }
+  },
+  "Tiger": {
+    "name": "Tigre",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      },
+      "claw": {
+        "name": "Garra"
+      }
+    }
+  },
+  "Vulture": {
+    "name": "Abutre",
+    "actions": {
+      "beak": {
+        "name": "Bico"
+      }
+    }
+  },
+  "Warhorse": {
+    "name": "Cavalo de Guerra",
+    "actions": {
+      "hooves": {
+        "name": "Cascos"
+      }
+    }
+  },
+  "Weasel": {
+    "name": "Doninha",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  },
+  "Wolf": {
+    "name": "Lobo",
+    "actions": {
+      "bite": {
+        "name": "Mordida"
+      }
+    }
+  }
+}

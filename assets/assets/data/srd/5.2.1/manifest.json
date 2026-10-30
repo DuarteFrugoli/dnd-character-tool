@@ -16,10 +16,14 @@
     "conditions": [177, 190],
     "classesAndSubclasses": [28, 82],
     "spells": [107, 175],
-    "magicItems": [209, 254]
+    "magicItems": [209, 254],
+    "animals": [343, 364]
   },
   "completeCatalogs": ["backgrounds", "class_features", "classes", "conditions", "equipment", "feats", "languages", "magic_items", "race_traits", "races", "skills", "spells", "subclass_features", "subclasses", "tools"],
-  "pendingCatalogs": ["feature_choices", "feature_usages"],
+  "pendingCatalogs": ["feature_choices", "feature_usages", "monsters"],
+  "partialCatalogs": {
+    "monsters": "Beasts up to CR 1, the Wild Shape forms. Other creatures will be imported for the tabletop."
+  },
   "license": "CC-BY-4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",
   "attribution": "This work includes material from the System Reference Document 5.2.1 (\"SRD 5.2.1\") by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode."

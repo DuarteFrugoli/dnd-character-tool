@@ -1,0 +1,555 @@
+{
+  "Ape": {
+    "name": "Человекообразная обезьяна",
+    "actions": {
+      "fist": {
+        "name": "Кулак"
+      },
+      "rock": {
+        "name": "Камень"
+      }
+    }
+  },
+  "Baboon": {
+    "name": "Бабуин",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Badger": {
+    "name": "Барсук",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Bat": {
+    "name": "Летучая мышь",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Black Bear": {
+    "name": "Чёрный медведь",
+    "actions": {
+      "rend": {
+        "name": "Разрывание"
+      }
+    }
+  },
+  "Blood Hawk": {
+    "name": "Кровавый ястреб",
+    "actions": {
+      "beak": {
+        "name": "Клюв"
+      }
+    }
+  },
+  "Boar": {
+    "name": "Кабан",
+    "actions": {
+      "gore": {
+        "name": "Бодание"
+      }
+    }
+  },
+  "Brown Bear": {
+    "name": "Бурый медведь",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      },
+      "claw": {
+        "name": "Коготь"
+      }
+    }
+  },
+  "Camel": {
+    "name": "Верблюд",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Cat": {
+    "name": "Кошка",
+    "actions": {
+      "scratch": {
+        "name": "Царапина"
+      }
+    }
+  },
+  "Constrictor Snake": {
+    "name": "Удав",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Crab": {
+    "name": "Краб",
+    "actions": {
+      "claw": {
+        "name": "Коготь"
+      }
+    }
+  },
+  "Crocodile": {
+    "name": "Крокодил",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Deer": {
+    "name": "Олень",
+    "actions": {
+      "ram": {
+        "name": "Таран"
+      }
+    }
+  },
+  "Dire Wolf": {
+    "name": "Лютоволк",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Draft Horse": {
+    "name": "Тягловая лошадь",
+    "actions": {
+      "hooves": {
+        "name": "Копыта"
+      }
+    }
+  },
+  "Eagle": {
+    "name": "Орёл",
+    "actions": {
+      "talons": {
+        "name": "Цепкие когти"
+      }
+    }
+  },
+  "Elk": {
+    "name": "Лось",
+    "actions": {
+      "ram": {
+        "name": "Таран"
+      }
+    }
+  },
+  "Frog": {
+    "name": "Лягушка",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Badger": {
+    "name": "Гигантский барсук",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Bat": {
+    "name": "Гигантская летучая мышь",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Centipede": {
+    "name": "Гигантская многоножка",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Crab": {
+    "name": "Гигантский краб",
+    "actions": {
+      "claw": {
+        "name": "Коготь"
+      }
+    }
+  },
+  "Giant Fire Beetle": {
+    "name": "Гигантский огненный жук",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Frog": {
+    "name": "Гигантская лягушка",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Goat": {
+    "name": "Гигантский козёл",
+    "actions": {
+      "ram": {
+        "name": "Таран"
+      }
+    }
+  },
+  "Giant Hyena": {
+    "name": "Гигантская гиена",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Lizard": {
+    "name": "Гигантская ящерица",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Octopus": {
+    "name": "Гигантский осьминог",
+    "actions": {
+      "tentacles": {
+        "name": "Щупальца"
+      }
+    }
+  },
+  "Giant Rat": {
+    "name": "Гигантская крыса",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Seahorse": {
+    "name": "Гигантский морской конёк",
+    "actions": {
+      "ram": {
+        "name": "Таран"
+      }
+    }
+  },
+  "Giant Spider": {
+    "name": "Гигантский паук",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Toad": {
+    "name": "Гигантская жаба",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Venomous Snake": {
+    "name": "Гигантская ядовитая змея",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Wasp": {
+    "name": "Гигантская оса",
+    "actions": {
+      "sting": {
+        "name": "Жало"
+      }
+    }
+  },
+  "Giant Weasel": {
+    "name": "Гигантская ласка",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Giant Wolf Spider": {
+    "name": "Гигантский паук-волк",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Goat": {
+    "name": "Козёл",
+    "actions": {
+      "ram": {
+        "name": "Таран"
+      }
+    }
+  },
+  "Hawk": {
+    "name": "Ястреб",
+    "actions": {
+      "talons": {
+        "name": "Цепкие когти"
+      }
+    }
+  },
+  "Hyena": {
+    "name": "Гиена",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Jackal": {
+    "name": "Шакал",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Lion": {
+    "name": "Лев",
+    "actions": {
+      "rend": {
+        "name": "Разрывание"
+      }
+    }
+  },
+  "Lizard": {
+    "name": "Ящерица",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Mastiff": {
+    "name": "Мастиф",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Mule": {
+    "name": "Мул",
+    "actions": {
+      "hooves": {
+        "name": "Копыта"
+      }
+    }
+  },
+  "Octopus": {
+    "name": "Осьминог",
+    "actions": {
+      "tentacles": {
+        "name": "Щупальца"
+      }
+    }
+  },
+  "Owl": {
+    "name": "Сова",
+    "actions": {
+      "talons": {
+        "name": "Цепкие когти"
+      }
+    }
+  },
+  "Panther": {
+    "name": "Пантера",
+    "actions": {
+      "rend": {
+        "name": "Разрывание"
+      }
+    }
+  },
+  "Piranha": {
+    "name": "Пиранья",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Pony": {
+    "name": "Пони",
+    "actions": {
+      "hooves": {
+        "name": "Копыта"
+      }
+    }
+  },
+  "Pteranodon": {
+    "name": "Птеранодон",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Rat": {
+    "name": "Крыса",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Raven": {
+    "name": "Ворон",
+    "actions": {
+      "beak": {
+        "name": "Клюв"
+      }
+    }
+  },
+  "Reef Shark": {
+    "name": "Рифовая акула",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Riding Horse": {
+    "name": "Ездовая лошадь",
+    "actions": {
+      "hooves": {
+        "name": "Копыта"
+      }
+    }
+  },
+  "Scorpion": {
+    "name": "Скорпион",
+    "actions": {
+      "sting": {
+        "name": "Жало"
+      }
+    }
+  },
+  "Seahorse": {
+    "name": "Морской конёк"
+  },
+  "Spider": {
+    "name": "Паук",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Swarm of Bats": {
+    "name": "Стая летучих мышей",
+    "actions": {
+      "bites": {
+        "name": "Укусы"
+      }
+    }
+  },
+  "Swarm of Insects": {
+    "name": "Рой насекомых",
+    "actions": {
+      "bites": {
+        "name": "Укусы"
+      }
+    }
+  },
+  "Swarm of Piranhas": {
+    "name": "Стая пираний",
+    "actions": {
+      "bites": {
+        "name": "Укусы"
+      }
+    }
+  },
+  "Swarm of Rats": {
+    "name": "Стая крыс",
+    "actions": {
+      "bites": {
+        "name": "Укусы"
+      }
+    }
+  },
+  "Swarm of Ravens": {
+    "name": "Стая воронов",
+    "actions": {
+      "beaks": {
+        "name": "Клевки"
+      }
+    }
+  },
+  "Tiger": {
+    "name": "Тигр",
+    "actions": {
+      "rend": {
+        "name": "Разрывание"
+      }
+    }
+  },
+  "Venomous Snake": {
+    "name": "Ядовитая змея",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Vulture": {
+    "name": "Стервятник",
+    "actions": {
+      "beak": {
+        "name": "Клюв"
+      }
+    }
+  },
+  "Warhorse": {
+    "name": "Боевой конь",
+    "actions": {
+      "hooves": {
+        "name": "Копыта"
+      }
+    }
+  },
+  "Weasel": {
+    "name": "Ласка",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  },
+  "Wolf": {
+    "name": "Волк",
+    "actions": {
+      "bite": {
+        "name": "Укус"
+      }
+    }
+  }
+}

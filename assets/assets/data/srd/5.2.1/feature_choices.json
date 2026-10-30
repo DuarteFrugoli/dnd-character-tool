@@ -1235,6 +1235,19 @@
           }
         ]
       },
+      "Wild Shape": {
+        "choices": [
+          {
+            "id": "known_forms",
+            "type": "beast_form",
+            "countByLevel": {
+              "2": 4,
+              "4": 2,
+              "8": 2
+            }
+          }
+        ]
+      },
       "Elemental Fury": {
         "choices": [
           {

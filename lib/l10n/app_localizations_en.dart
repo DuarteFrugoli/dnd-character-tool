@@ -839,6 +839,69 @@ class AppLocalizationsEn extends AppLocalizations {
   String get characterActionResetLevels => 'Reset levels';
 
   @override
+  String get characterActionConvert2024 => 'Convert to D&D 2024';
+
+  @override
+  String get convert2024Title => 'Convert to D&D 2024';
+
+  @override
+  String convert2024Intro(String name) {
+    return 'This creates a new D&D 2024 (5.5e) sheet from $name. The 2014 sheet stays as it is.';
+  }
+
+  @override
+  String get convert2024Kept =>
+      'Kept: name, appearance, personality, story, notes, inventory, money and experience.';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return 'Chosen again with the 2024 rules: species, background with its ability increases and Origin feat, and the choices of each level, rebuilt one level at a time up to $classes.';
+  }
+
+  @override
+  String get convert2024Reset =>
+      'The new sheet starts with full hit points and no conditions.';
+
+  @override
+  String get convert2024Start => 'Start conversion';
+
+  @override
+  String get convert2024ScoresFromSheet => '2014 sheet';
+
+  @override
+  String get convert2024ScoresHint =>
+      'Scores of the 2014 sheet without racial bonuses and recorded level increases. The 2024 background adds its increases below, and the level up asks for feats again.';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      'Some increases could not be identified (racial bonuses you chose, or levels gained before the level history). Check these scores.';
+
+  @override
+  String get convert2024InventoryKept =>
+      'The inventory and money of the 2014 sheet are kept instead of the starting equipment.';
+
+  @override
+  String get convert2024Confirm => 'Convert';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name was converted to D&D 2024.';
+  }
+
+  @override
+  String get convert2024Cancelled => 'Conversion cancelled. Nothing was saved.';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$race has no D&D 2024 species. Choose the one closest to your character.';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$background is not a D&D 2024 background. Choose one or build a custom background.';
+  }
+
+  @override
   String get diceExpressionLabel => 'Expression';
 
   @override

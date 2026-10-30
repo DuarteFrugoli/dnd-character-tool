@@ -544,10 +544,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     return _rules2024Data(c);
   }
 
-  Future<Rules2024Data> _rules2024Data(Character c) async {
-    final data = await ref.read(srd2024RulesDataProvider.future);
-    return data.withSpeciesTraits(await _raceTraits(c));
-  }
+  Future<Rules2024Data> _rules2024Data(Character c) =>
+      ref.read(srd2024RulesForSpeciesProvider(c.race).future);
 
   /// Applies a 2024 level gained through [LevelUp2024Result].
   Future<void> levelUp2024(LevelUp2024Result result) async {

@@ -842,6 +842,69 @@ class AppLocalizationsRu extends AppLocalizations {
   String get characterActionResetLevels => 'Сбросить уровни';
 
   @override
+  String get characterActionConvert2024 => 'Перевести в D&D 2024';
+
+  @override
+  String get convert2024Title => 'Перевести в D&D 2024';
+
+  @override
+  String convert2024Intro(String name) {
+    return 'Будет создан новый лист D&D 2024 (5.5e) на основе $name. Лист 2014 останется без изменений.';
+  }
+
+  @override
+  String get convert2024Kept =>
+      'Сохраняется: имя, внешность, характер, история, заметки, снаряжение, деньги и опыт.';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return 'Выбирается заново по правилам 2024: вид, предыстория с её увеличением характеристик и чертой происхождения, а также выборы каждого уровня — уровень за уровнем до $classes.';
+  }
+
+  @override
+  String get convert2024Reset =>
+      'Новый лист начинается с полными хитами и без состояний.';
+
+  @override
+  String get convert2024Start => 'Начать перевод';
+
+  @override
+  String get convert2024ScoresFromSheet => 'Лист 2014';
+
+  @override
+  String get convert2024ScoresHint =>
+      'Значения листа 2014 без расовых бонусов и записанных увеличений за уровни. Предыстория 2024 добавляет свои увеличения ниже, а повышение уровня снова предложит черты.';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      'Некоторые увеличения определить не удалось (выбранные расовые бонусы или уровни до истории уровней). Проверьте эти значения.';
+
+  @override
+  String get convert2024InventoryKept =>
+      'Снаряжение и деньги листа 2014 сохраняются вместо стартового снаряжения.';
+
+  @override
+  String get convert2024Confirm => 'Перевести';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name: лист переведён в D&D 2024.';
+  }
+
+  @override
+  String get convert2024Cancelled => 'Перевод отменён. Ничего не сохранено.';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return 'Для «$race» нет вида в D&D 2024. Выберите самый близкий к вашему персонажу.';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '«$background» — не предыстория D&D 2024. Выберите другую или создайте свою предысторию.';
+  }
+
+  @override
   String get diceExpressionLabel => 'Выражение';
 
   @override

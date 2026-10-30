@@ -88,9 +88,8 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
 
   Future<void> _load() async {
     try {
-      final notifier = ref.read(characterDetailProvider(widget.characterId).notifier);
-      final data = await notifier.rules2024Data();
       final character = _character;
+      final data = await ref.read(srd2024RulesForSpeciesProvider(character.race).future);
       final weapons = await ref.read(
         srdWeaponsForPackProvider(character.contentPackId).future,
       );
@@ -825,6 +824,44 @@ class _AbilityIncreaseRow extends StatelessWidget {
   }
 }
 
+/// Runs the level up wizard in memory from [levelOne] up to [targetLevel]
+/// (a reset being rebuilt, or a 2014 sheet being converted). Nothing is
+/// saved; returns null when the player cancels any step.
+Future<Character?> rebuildLevels2024(
+  BuildContext context,
+  Character levelOne,
+  int targetLevel,
+  Rules2024Data data, {
+  bool keepExperience = false,
+}) async {
+  final messenger = ScaffoldMessenger.of(context);
+  var current = levelOne;
+  while (current.totalLevel < targetLevel) {
+    final l10n = AppLocalizations.of(context)!;
+    messenger
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          duration: const Duration(seconds: 2),
+          content: Text(l10n.resetLevelsRebuildStep(current.totalLevel + 1, targetLevel)),
+        ),
+      );
+    final result = await openLevelUp2024Sheet(
+      context,
+      current,
+      current.id,
+      applyOnConfirm: false,
+    );
+    if (!context.mounted || result == null) return null;
+    current = Progression2024Engine.applyLevelUp(current, data, result);
+    if (current.xpTrackingEnabled && !keepExperience) {
+      current = current.copyWith(experiencePoints: levelToMinXp(current.totalLevel));
+    }
+  }
+  messenger.hideCurrentSnackBar();
+  return current;
+}
+
 /// Opens the 2024 level reset: pick the level 1 class (the current starting
 /// class by default) and its level 1 choices, then rebuild the sheet.
 Future<bool?> openLevelReset2024Sheet(BuildContext context, String characterId) {
@@ -858,40 +895,8 @@ class _LevelReset2024FlowState extends ConsumerState<_LevelReset2024Flow> {
   Character get _character =>
       ref.read(characterDetailProvider(widget.characterId)).requireValue;
 
-  /// Runs the level up wizard in memory from level 2 back to the original
-  /// level. Returns null when the player cancels any step.
-  Future<Character?> _rebuildLevels(Character levelOne, int targetLevel) async {
-    final messenger = ScaffoldMessenger.of(context);
-    var current = levelOne;
-    while (current.totalLevel < targetLevel) {
-      final l10n = AppLocalizations.of(context)!;
-      messenger
-        ..hideCurrentSnackBar()
-        ..showSnackBar(
-          SnackBar(
-            duration: const Duration(seconds: 2),
-            content: Text(
-              l10n.resetLevelsRebuildStep(current.totalLevel + 1, targetLevel),
-            ),
-          ),
-        );
-      final result = await openLevelUp2024Sheet(
-        context,
-        current,
-        widget.characterId,
-        applyOnConfirm: false,
-      );
-      if (!mounted || result == null) return null;
-      current = Progression2024Engine.applyLevelUp(current, _data!, result);
-      if (current.xpTrackingEnabled) {
-        current = current.copyWith(
-          experiencePoints: levelToMinXp(current.totalLevel),
-        );
-      }
-    }
-    messenger.hideCurrentSnackBar();
-    return current;
-  }
+  Future<Character?> _rebuildLevels(Character levelOne, int targetLevel) =>
+      rebuildLevels2024(context, levelOne, targetLevel, _data!);
 
   @override
   void initState() {

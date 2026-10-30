@@ -15,6 +15,7 @@ class CharacterDetailShell extends StatelessWidget {
     required this.onRollDice,
     required this.onLevelUp,
     required this.onResetLevels,
+    this.onConvert2024,
     required this.onRest,
     required this.onImageChanged,
   });
@@ -27,6 +28,9 @@ class CharacterDetailShell extends StatelessWidget {
   final VoidCallback onRollDice;
   final VoidCallback? onLevelUp;
   final VoidCallback? onResetLevels;
+
+  /// Converts a 2014 sheet into a new 2024 sheet.
+  final VoidCallback? onConvert2024;
   final VoidCallback? onRest;
   final ValueChanged<String?> onImageChanged;
 
@@ -44,6 +48,7 @@ class CharacterDetailShell extends StatelessWidget {
             onRollDice: onRollDice,
             onLevelUp: onLevelUp,
             onResetLevels: onResetLevels,
+            onConvert2024: onConvert2024,
             onRest: onRest,
             onImageChanged: onImageChanged,
           ),

@@ -53,6 +53,18 @@ final srd2024RulesDataProvider = FutureProvider<Rules2024Data>(
   ),
 );
 
+/// 2024 rules with the traits of [species]; works for sheets not saved yet,
+/// such as a 2014 sheet being converted.
+final srd2024RulesForSpeciesProvider = FutureProvider.family<Rules2024Data, String>(
+  (ref, species) async {
+    final data = await ref.watch(srd2024RulesDataProvider.future);
+    final all = await ref.watch(srd2024SpeciesProvider.future);
+    return data.withSpeciesTraits(
+      all.where((entry) => entry.name == species).firstOrNull?.traits ?? const [],
+    );
+  },
+);
+
 final srd2024CreationCatalogProvider = FutureProvider<Creation2024Catalog>(
   (ref) async => Creation2024Catalog.load(
     source: ref.watch(srdDataSourceForPackProvider(ContentPackId.srd521)),

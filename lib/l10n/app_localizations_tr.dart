@@ -841,6 +841,70 @@ class AppLocalizationsTr extends AppLocalizations {
   String get characterActionResetLevels => 'Seviyeleri sıfırla';
 
   @override
+  String get characterActionConvert2024 => 'D&D 2024\'e dönüştür';
+
+  @override
+  String get convert2024Title => 'D&D 2024\'e dönüştür';
+
+  @override
+  String convert2024Intro(String name) {
+    return '$name temel alınarak yeni bir D&D 2024 (5.5e) sayfası oluşturulur. 2014 sayfası olduğu gibi kalır.';
+  }
+
+  @override
+  String get convert2024Kept =>
+      'Korunanlar: ad, görünüş, kişilik, hikâye, notlar, envanter, para ve deneyim.';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return '2024 kurallarıyla yeniden seçilenler: tür, yetenek artışları ve köken yeteneğiyle geçmiş ve her seviyenin seçimleri; $classes seviyesine kadar seviye seviye yeniden kurulur.';
+  }
+
+  @override
+  String get convert2024Reset =>
+      'Yeni sayfa tam can puanıyla ve durum olmadan başlar.';
+
+  @override
+  String get convert2024Start => 'Dönüştürmeyi başlat';
+
+  @override
+  String get convert2024ScoresFromSheet => '2014 sayfası';
+
+  @override
+  String get convert2024ScoresHint =>
+      '2014 sayfasındaki değerlerden ırk bonusları ve kaydedilmiş seviye artışları çıkarılmıştır. 2024 geçmişi artışlarını aşağıda ekler; seviye atlama yetenekleri yeniden sorar.';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      'Bazı artışlar belirlenemedi (senin seçtiğin ırk bonusları veya seviye geçmişinden önce kazanılan seviyeler). Bu değerleri kontrol et.';
+
+  @override
+  String get convert2024InventoryKept =>
+      'Başlangıç ekipmanı yerine 2014 sayfasının envanteri ve parası korunur.';
+
+  @override
+  String get convert2024Confirm => 'Dönüştür';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name D&D 2024\'e dönüştürüldü.';
+  }
+
+  @override
+  String get convert2024Cancelled =>
+      'Dönüştürme iptal edildi. Hiçbir şey kaydedilmedi.';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$race için D&D 2024\'te bir tür yok. Karakterine en yakın olanı seç.';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$background bir D&D 2024 geçmişi değil. Birini seç veya özel bir geçmiş oluştur.';
+  }
+
+  @override
   String get diceExpressionLabel => 'İfade';
 
   @override

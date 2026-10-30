@@ -824,6 +824,66 @@ class AppLocalizationsKo extends AppLocalizations {
   String get characterActionResetLevels => '레벨 초기화';
 
   @override
+  String get characterActionConvert2024 => 'D&D 2024로 변환';
+
+  @override
+  String get convert2024Title => 'D&D 2024로 변환';
+
+  @override
+  String convert2024Intro(String name) {
+    return '$name을(를) 바탕으로 새 D&D 2024(5.5e) 시트를 만듭니다. 2014 시트는 그대로 남습니다.';
+  }
+
+  @override
+  String get convert2024Kept => '유지: 이름, 외모, 성격, 배경 이야기, 메모, 소지품, 돈, 경험치.';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return '2024 규칙으로 다시 선택: 종족, 능력치 상승과 출신 재주가 있는 배경, 각 레벨의 선택. $classes까지 한 레벨씩 다시 구성합니다.';
+  }
+
+  @override
+  String get convert2024Reset => '새 시트는 히트 포인트가 가득 찬 상태로, 상태 이상 없이 시작합니다.';
+
+  @override
+  String get convert2024Start => '변환 시작';
+
+  @override
+  String get convert2024ScoresFromSheet => '2014 시트';
+
+  @override
+  String get convert2024ScoresHint =>
+      '2014 시트의 값에서 종족 보너스와 기록된 레벨 상승을 뺀 값입니다. 2024 배경의 상승은 아래에서 더하고, 재주는 레벨업에서 다시 고릅니다.';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      '일부 상승을 확인할 수 없습니다(직접 고른 종족 보너스 또는 레벨 기록 이전에 얻은 레벨). 이 값을 확인하세요.';
+
+  @override
+  String get convert2024InventoryKept => '시작 장비 대신 2014 시트의 소지품과 돈을 유지합니다.';
+
+  @override
+  String get convert2024Confirm => '변환';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name이(가) D&D 2024로 변환되었습니다.';
+  }
+
+  @override
+  String get convert2024Cancelled => '변환이 취소되었습니다. 아무것도 저장되지 않았습니다.';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$race에 해당하는 D&D 2024 종족이 없습니다. 캐릭터와 가장 가까운 종족을 고르세요.';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$background은(는) D&D 2024 배경이 아닙니다. 배경을 고르거나 사용자 지정 배경을 만드세요.';
+  }
+
+  @override
   String get diceExpressionLabel => '식';
 
   @override

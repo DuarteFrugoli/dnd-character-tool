@@ -843,6 +843,69 @@ class AppLocalizationsPt extends AppLocalizations {
   String get characterActionResetLevels => 'Reiniciar níveis';
 
   @override
+  String get characterActionConvert2024 => 'Converter para D&D 2024';
+
+  @override
+  String get convert2024Title => 'Converter para D&D 2024';
+
+  @override
+  String convert2024Intro(String name) {
+    return 'Isso cria uma nova ficha de D&D 2024 (5.5e) a partir de $name. A ficha 2014 continua como está.';
+  }
+
+  @override
+  String get convert2024Kept =>
+      'Mantidos: nome, aparência, personalidade, história, notas, inventário, dinheiro e experiência.';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return 'Escolhidos de novo pelas regras de 2024: espécie, antecedente com seus aumentos de atributo e talento de Origem, e as escolhas de cada nível, reconstruídas nível a nível até $classes.';
+  }
+
+  @override
+  String get convert2024Reset =>
+      'A nova ficha começa com os pontos de vida cheios e sem condições.';
+
+  @override
+  String get convert2024Start => 'Começar conversão';
+
+  @override
+  String get convert2024ScoresFromSheet => 'Ficha 2014';
+
+  @override
+  String get convert2024ScoresHint =>
+      'Valores da ficha 2014 sem os bônus raciais e os aumentos de nível registrados. O antecedente 2024 soma seus aumentos abaixo, e o level up pede os talentos de novo.';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      'Alguns aumentos não puderam ser identificados (bônus raciais escolhidos ou níveis ganhos antes do histórico de níveis). Confira estes valores.';
+
+  @override
+  String get convert2024InventoryKept =>
+      'O inventário e o dinheiro da ficha 2014 são mantidos no lugar do equipamento inicial.';
+
+  @override
+  String get convert2024Confirm => 'Converter';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name foi convertido para D&D 2024.';
+  }
+
+  @override
+  String get convert2024Cancelled => 'Conversão cancelada. Nada foi salvo.';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$race não tem espécie em D&D 2024. Escolha a mais próxima do seu personagem.';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$background não é um antecedente de D&D 2024. Escolha um ou monte um antecedente personalizado.';
+  }
+
+  @override
   String get diceExpressionLabel => 'Expressão';
 
   @override

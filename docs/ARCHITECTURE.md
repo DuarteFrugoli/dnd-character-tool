@@ -544,6 +544,29 @@ wizard in memory (`openLevelUp2024Sheet(applyOnConfirm: false)` returns each
 `LevelUp2024Result` without saving), shows the change review for the final
 result and saves it once with `CharacterDetailNotifier.saveLevelReset2024()`.
 
+### 2014 to 2024 Conversion
+
+`data/conversion/edition_conversion_2024.dart` turns a 2014 sheet into a new
+2024 sheet; the 2014 sheet is never changed. `prefill()` suggests the starting
+class, the 2024 species (Variant Human becomes Human; Half-Elf and Half-Orc
+have none), the background when it exists in 2024, class skills and
+languages, and base ability scores: the 2014 scores minus racial increases
+and the increases recorded in the level history. It flags the result when
+free racial picks or levels without history may still be included.
+
+The 2014 sheet menu opens `/convert/2024/:id`, which is
+`Creation2024Screen(convertFromId:)` with a draft from
+`Creation2024Draft.forConversion()`: the "2014 sheet" ability method keeps
+editable scores, and `keepInventory` replaces the starting equipment with the
+old inventory. On finish, `carryOver()` copies identity, story, notes,
+inventory (refreshed with 2024 item data such as weapon mastery), money,
+experience and preferences; `rebuildLevels2024()` (shared with the 2024
+level reset) runs the level up wizard in memory up to the original level;
+`showCharacterChangesDialog` lists every difference; and
+`CharacterRepository.saveConversion()` saves the new sheet with its own copy
+of the image. The level up wizard loads rules through
+`srd2024RulesForSpeciesProvider`, so it works before the sheet is saved.
+
 ### Level Reset
 
 `features/character_detail/level_reset_sheet.dart` owns the user-facing reset

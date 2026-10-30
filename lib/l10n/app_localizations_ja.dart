@@ -822,6 +822,66 @@ class AppLocalizationsJa extends AppLocalizations {
   String get characterActionResetLevels => 'レベルをリセット';
 
   @override
+  String get characterActionConvert2024 => 'D&D 2024に変換';
+
+  @override
+  String get convert2024Title => 'D&D 2024に変換';
+
+  @override
+  String convert2024Intro(String name) {
+    return '$nameから新しいD&D 2024（5.5e）のシートを作成します。2014のシートはそのまま残ります。';
+  }
+
+  @override
+  String get convert2024Kept => '引き継ぐもの：名前、外見、人格、経歴、メモ、所持品、所持金、経験点。';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return '2024のルールで選び直すもの：種族、能力値上昇と出自特技を持つ背景、各レベルの選択。$classesまで1レベルずつ再構築します。';
+  }
+
+  @override
+  String get convert2024Reset => '新しいシートはヒット・ポイント最大、状態なしで始まります。';
+
+  @override
+  String get convert2024Start => '変換を開始';
+
+  @override
+  String get convert2024ScoresFromSheet => '2014のシート';
+
+  @override
+  String get convert2024ScoresHint =>
+      '2014のシートの値から種族ボーナスと記録済みのレベル上昇を除いたものです。2024の背景による上昇は下で加え、特技はレベルアップで選び直します。';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      '一部の上昇を特定できませんでした（自分で選んだ種族ボーナス、またはレベル履歴より前に得たレベル）。値を確認してください。';
+
+  @override
+  String get convert2024InventoryKept => '開始時の装備の代わりに、2014のシートの所持品と所持金を引き継ぎます。';
+
+  @override
+  String get convert2024Confirm => '変換';
+
+  @override
+  String convert2024Done(String name) {
+    return '$nameをD&D 2024に変換しました。';
+  }
+
+  @override
+  String get convert2024Cancelled => '変換をキャンセルしました。何も保存されていません。';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$raceにはD&D 2024の種族がありません。キャラクターに最も近いものを選んでください。';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$backgroundはD&D 2024の背景ではありません。背景を選ぶか、カスタム背景を作成してください。';
+  }
+
+  @override
   String get diceExpressionLabel => '式';
 
   @override

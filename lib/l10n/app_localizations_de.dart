@@ -847,6 +847,70 @@ class AppLocalizationsDe extends AppLocalizations {
   String get characterActionResetLevels => 'Stufen zurücksetzen';
 
   @override
+  String get characterActionConvert2024 => 'In D&D 2024 umwandeln';
+
+  @override
+  String get convert2024Title => 'In D&D 2024 umwandeln';
+
+  @override
+  String convert2024Intro(String name) {
+    return 'Damit wird aus $name ein neuer D&D-2024-Bogen (5.5e) erstellt. Der 2014-Bogen bleibt unverändert.';
+  }
+
+  @override
+  String get convert2024Kept =>
+      'Übernommen: Name, Aussehen, Persönlichkeit, Hintergrundgeschichte, Notizen, Inventar, Geld und Erfahrung.';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return 'Nach den Regeln von 2024 neu gewählt: Spezies, Hintergrund mit seinen Attributserhöhungen und dem Herkunftstalent sowie die Entscheidungen jeder Stufe, Stufe für Stufe neu aufgebaut bis $classes.';
+  }
+
+  @override
+  String get convert2024Reset =>
+      'Der neue Bogen beginnt mit vollen Trefferpunkten und ohne Zustände.';
+
+  @override
+  String get convert2024Start => 'Umwandlung starten';
+
+  @override
+  String get convert2024ScoresFromSheet => '2014-Bogen';
+
+  @override
+  String get convert2024ScoresHint =>
+      'Werte des 2014-Bogens ohne Volksboni und ohne erfasste Stufenerhöhungen. Der 2024-Hintergrund addiert unten seine Erhöhungen, und der Stufenaufstieg fragt die Talente erneut ab.';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      'Einige Erhöhungen konnten nicht erkannt werden (selbst gewählte Volksboni oder Stufen vor dem Stufenverlauf). Prüfe diese Werte.';
+
+  @override
+  String get convert2024InventoryKept =>
+      'Inventar und Geld des 2014-Bogens bleiben anstelle der Startausrüstung erhalten.';
+
+  @override
+  String get convert2024Confirm => 'Umwandeln';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name wurde in D&D 2024 umgewandelt.';
+  }
+
+  @override
+  String get convert2024Cancelled =>
+      'Umwandlung abgebrochen. Es wurde nichts gespeichert.';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$race hat keine Spezies in D&D 2024. Wähle die, die deinem Charakter am nächsten kommt.';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$background ist kein D&D-2024-Hintergrund. Wähle einen oder erstelle einen eigenen Hintergrund.';
+  }
+
+  @override
   String get diceExpressionLabel => 'Ausdruck';
 
   @override

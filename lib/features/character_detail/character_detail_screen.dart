@@ -250,6 +250,52 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     openLevelResetSheet(context, character, widget.characterId);
   }
 
+  /// Says what the conversion keeps and what is chosen again, then opens the
+  /// 2024 creation flow prefilled from this 2014 sheet.
+  Future<void> _confirmConvert2024() async {
+    final character = _currentCharacter();
+    if (character == null) return;
+    final l10n = AppLocalizations.of(context)!;
+    final i18n = ref.read(srdI18nForPackProvider(character.contentPackId)).valueOrNull;
+    final classes = character.classEntries
+        .map((entry) => '${i18n?.className(entry.className) ?? entry.className} ${entry.level}')
+        .join(' / ');
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.convert2024Title),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(l10n.convert2024Intro(character.name)),
+              const SizedBox(height: 12),
+              Text('• ${l10n.convert2024Kept}'),
+              const SizedBox(height: 8),
+              Text('• ${l10n.convert2024Chosen(classes)}'),
+              const SizedBox(height: 8),
+              Text('• ${l10n.convert2024Reset}'),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(MaterialLocalizations.of(dialogContext).cancelButtonLabel),
+          ),
+          FilledButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: Text(l10n.convert2024Start),
+          ),
+        ],
+      ),
+    );
+    if (confirmed == true && mounted) {
+      context.push('/convert/2024/${widget.characterId}');
+    }
+  }
+
   void _showRestPickerForCurrentCharacter() {
     final character = _currentCharacter();
     if (character == null) return;
@@ -328,6 +374,7 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
           openDiceRollerSheet(context, characterId: widget.characterId),
       onLevelUp: _openLevelUpForCurrentCharacter,
       onResetLevels: _openLevelResetForCurrentCharacter,
+      onConvert2024: _confirmConvert2024,
       onRest: _showRestPickerForCurrentCharacter,
       onImageChanged: (path) {
         ref

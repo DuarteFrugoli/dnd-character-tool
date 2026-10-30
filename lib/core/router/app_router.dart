@@ -40,6 +40,11 @@ final appRouter = GoRouter(
       builder: (context, state) => const Creation2024Screen(),
     ),
     GoRoute(
+      path: '/convert/2024/:id',
+      builder: (context, state) =>
+          Creation2024Screen(convertFromId: state.pathParameters['id']!),
+    ),
+    GoRoute(
       path: '/settings',
       builder: (context, state) => const SettingsScreen(),
     ),

@@ -549,6 +549,22 @@
     "description": "Character header action menu item that opens the dice roller."
   },
   "characterActionResetLevels": "Seviyeleri sıfırla",
+  "characterActionConvert2024": "D&D 2024'e dönüştür",
+  "convert2024Title": "D&D 2024'e dönüştür",
+  "convert2024Intro": "{name} temel alınarak yeni bir D&D 2024 (5.5e) sayfası oluşturulur. 2014 sayfası olduğu gibi kalır.",
+  "convert2024Kept": "Korunanlar: ad, görünüş, kişilik, hikâye, notlar, envanter, para ve deneyim.",
+  "convert2024Chosen": "2024 kurallarıyla yeniden seçilenler: tür, yetenek artışları ve köken yeteneğiyle geçmiş ve her seviyenin seçimleri; {classes} seviyesine kadar seviye seviye yeniden kurulur.",
+  "convert2024Reset": "Yeni sayfa tam can puanıyla ve durum olmadan başlar.",
+  "convert2024Start": "Dönüştürmeyi başlat",
+  "convert2024ScoresFromSheet": "2014 sayfası",
+  "convert2024ScoresHint": "2014 sayfasındaki değerlerden ırk bonusları ve kaydedilmiş seviye artışları çıkarılmıştır. 2024 geçmişi artışlarını aşağıda ekler; seviye atlama yetenekleri yeniden sorar.",
+  "convert2024ScoresUnknown": "Bazı artışlar belirlenemedi (senin seçtiğin ırk bonusları veya seviye geçmişinden önce kazanılan seviyeler). Bu değerleri kontrol et.",
+  "convert2024InventoryKept": "Başlangıç ekipmanı yerine 2014 sayfasının envanteri ve parası korunur.",
+  "convert2024Confirm": "Dönüştür",
+  "convert2024Done": "{name} D&D 2024'e dönüştürüldü.",
+  "convert2024Cancelled": "Dönüştürme iptal edildi. Hiçbir şey kaydedilmedi.",
+  "convert2024ChooseSpecies": "{race} için D&D 2024'te bir tür yok. Karakterine en yakın olanı seç.",
+  "convert2024ChooseBackground": "{background} bir D&D 2024 geçmişi değil. Birini seç veya özel bir geçmiş oluştur.",
   "@characterActionResetLevels": {
     "description": "Character header action menu item that opens the level reset flow."
   },

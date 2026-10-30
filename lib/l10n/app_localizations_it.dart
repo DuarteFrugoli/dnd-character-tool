@@ -844,6 +844,70 @@ class AppLocalizationsIt extends AppLocalizations {
   String get characterActionResetLevels => 'Reimposta livelli';
 
   @override
+  String get characterActionConvert2024 => 'Converti in D&D 2024';
+
+  @override
+  String get convert2024Title => 'Converti in D&D 2024';
+
+  @override
+  String convert2024Intro(String name) {
+    return 'Così viene creata una nuova scheda D&D 2024 (5.5e) a partire da $name. La scheda 2014 resta com\'è.';
+  }
+
+  @override
+  String get convert2024Kept =>
+      'Mantenuti: nome, aspetto, personalità, storia, note, inventario, denaro ed esperienza.';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return 'Scelti di nuovo con le regole 2024: specie, background con i suoi aumenti di caratteristica e il talento di origine, e le scelte di ogni livello, ricostruite livello per livello fino a $classes.';
+  }
+
+  @override
+  String get convert2024Reset =>
+      'La nuova scheda parte con tutti i punti ferita e senza condizioni.';
+
+  @override
+  String get convert2024Start => 'Avvia conversione';
+
+  @override
+  String get convert2024ScoresFromSheet => 'Scheda 2014';
+
+  @override
+  String get convert2024ScoresHint =>
+      'Valori della scheda 2014 senza i bonus razziali né gli aumenti di livello registrati. Il background 2024 aggiunge sotto i suoi aumenti, e il passaggio di livello richiede di nuovo i talenti.';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      'Alcuni aumenti non sono stati identificati (bonus razziali scelti o livelli ottenuti prima dello storico dei livelli). Controlla questi valori.';
+
+  @override
+  String get convert2024InventoryKept =>
+      'L\'inventario e il denaro della scheda 2014 vengono mantenuti al posto dell\'equipaggiamento iniziale.';
+
+  @override
+  String get convert2024Confirm => 'Converti';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name è stato convertito in D&D 2024.';
+  }
+
+  @override
+  String get convert2024Cancelled =>
+      'Conversione annullata. Non è stato salvato nulla.';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$race non ha una specie in D&D 2024. Scegli quella più vicina al tuo personaggio.';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$background non è un background di D&D 2024. Scegline uno o crea un background personalizzato.';
+  }
+
+  @override
   String get diceExpressionLabel => 'Espressione';
 
   @override

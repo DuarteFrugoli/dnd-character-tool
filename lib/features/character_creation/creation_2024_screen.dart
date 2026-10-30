@@ -10,12 +10,15 @@ import 'package:go_router/go_router.dart';
 import '../../core/review/app_review_service.dart';
 import '../../core/units/unit_formatter.dart';
 import '../../core/units/unit_system_provider.dart';
+import '../../data/conversion/edition_conversion_2024.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/models/models.dart';
 import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
+import '../../shared/widgets/character_changes_dialog.dart';
+import '../character_detail/level_up_2024_sheet.dart';
 import '../character_detail/widgets/feature_choice_editor.dart';
 import '../character_list/character_list_provider.dart';
 import '../../data/datasources/srd/srd_2024_creation_catalog.dart';
@@ -24,15 +27,25 @@ import 'widgets/step_indicator.dart';
 import 'custom_background_2024_page.dart';
 
 class Creation2024Screen extends ConsumerStatefulWidget {
-  const Creation2024Screen({super.key});
+  const Creation2024Screen({super.key, this.convertFromId});
+
+  /// A 2014 sheet to convert: the flow starts prefilled from it, keeps its
+  /// inventory and saves a new 2024 sheet next to it.
+  final String? convertFromId;
 
   @override
   ConsumerState<Creation2024Screen> createState() => _Creation2024ScreenState();
 }
 
 class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
-  final draft = Creation2024Draft();
+  Creation2024Draft draft = Creation2024Draft();
   late final Future<Creation2024Catalog> _catalogFuture;
+
+  /// The 2014 sheet being converted and what it suggested.
+  Character? _source;
+  Conversion2024Prefill? _prefill;
+
+  bool get _converting => widget.convertFromId != null;
   int _step = 0;
   bool _saving = false;
   bool _splitBonus = true;
@@ -40,7 +53,25 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
   @override
   void initState() {
     super.initState();
-    _catalogFuture = ref.read(srd2024CreationCatalogProvider.future);
+    _catalogFuture = _load();
+  }
+
+  Future<Creation2024Catalog> _load() async {
+    final catalog = await ref.read(srd2024CreationCatalogProvider.future);
+    final id = widget.convertFromId;
+    if (id == null) return catalog;
+    final source = await ref.read(characterRepositoryProvider).getById(id);
+    if (source == null) throw StateError('Character not found');
+    final races = await ref
+        .read(srdDataSourceForPackProvider(source.contentPackId))
+        .getRaces();
+    final prefill = EditionConversion2024.prefill(source, races2014: races, catalog: catalog);
+    _source = source;
+    _prefill = prefill;
+    draft = Creation2024Draft.forConversion(prefill, catalog)
+      ..name = source.name
+      ..playerName = source.playerName;
+    return catalog;
   }
 
   bool _valid(Creation2024Catalog catalog) => switch (_step) {
@@ -78,10 +109,16 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
         ],
       ),
     );
-    if (discard == true && mounted) context.go('/');
+    if (discard != true || !mounted) return;
+    if (_converting && context.canPop()) {
+      context.pop();
+    } else {
+      context.go('/');
+    }
   }
 
   Future<void> _finish(Creation2024Catalog catalog) async {
+    if (_converting) return _finishConversion(catalog);
     if (_saving || !_valid(catalog)) return;
     setState(() => _saving = true);
     try {
@@ -107,6 +144,62 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
     }
   }
 
+  /// Builds level 1, carries the 2014 sheet over, rebuilds the remaining
+  /// levels in memory and shows every change before saving the new sheet.
+  Future<void> _finishConversion(Creation2024Catalog catalog) async {
+    final source = _source;
+    if (_saving || !_valid(catalog) || source == null) return;
+    final l10n = AppLocalizations.of(context)!;
+    final messenger = ScaffoldMessenger.of(context);
+    setState(() => _saving = true);
+    try {
+      final levelOne = EditionConversion2024.carryOver(
+        source,
+        draft.build(catalog, fallbackName: source.name),
+        items: catalog.items,
+      );
+      var converted = levelOne;
+      if (source.totalLevel > 1) {
+        final data = await ref.read(srd2024RulesForSpeciesProvider(levelOne.race).future);
+        if (!mounted) return;
+        final rebuilt = await rebuildLevels2024(
+          context,
+          levelOne,
+          source.totalLevel,
+          data,
+          keepExperience: true,
+        );
+        if (!mounted) return;
+        if (rebuilt == null) {
+          messenger.showSnackBar(SnackBar(content: Text(l10n.convert2024Cancelled)));
+          return;
+        }
+        converted = rebuilt;
+      }
+      final i18n = await ref.read(srdI18nForPackProvider(ContentPackId.srd521).future);
+      if (!mounted) return;
+      final confirmed = await showCharacterChangesDialog(
+        context,
+        before: source,
+        after: converted,
+        i18n: i18n,
+        notes: [l10n.convert2024Kept, l10n.convert2024Reset],
+      );
+      if (!confirmed || !mounted) return;
+      final saved = await ref.read(characterRepositoryProvider).saveConversion(source, converted);
+      await ref.read(characterListProvider.notifier).updateSingle(saved);
+      if (!mounted) return;
+      messenger.showSnackBar(SnackBar(content: Text(l10n.convert2024Done(saved.name))));
+      context.go('/character/${saved.id}');
+    } catch (_) {
+      if (mounted) {
+        messenger.showSnackBar(SnackBar(content: Text(l10n.featuresLoadError)));
+      }
+    } finally {
+      if (mounted) setState(() => _saving = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -123,7 +216,7 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
     ];
     return Scaffold(
       appBar: AppBar(
-        title: Text(titles[_step]),
+        title: Text(_converting ? '${l10n.convert2024Title}: ${titles[_step]}' : titles[_step]),
         leading: IconButton(
           icon: const Icon(Icons.close),
           tooltip: l10n.creationTooltipCancel,
@@ -176,7 +269,9 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
                               if (_step == 4) draft.reconcileChoices(catalog);
                               _step++;
                             }),
-                  child: Text(_step == 7 ? l10n.creationCreateCharacter : l10n.dialogContinue),
+                  child: Text(_step == 7
+                      ? (_converting ? l10n.convert2024Confirm : l10n.creationCreateCharacter)
+                      : l10n.dialogContinue),
                 ),
               ]),
             ),
@@ -223,9 +318,12 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
   }
 
   Widget _speciesStep(Creation2024Catalog catalog, SrdI18nService i18n, AppLocalizations l10n) {
+    final source = _source;
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        if (source != null && _prefill?.speciesName == null)
+          _conversionHint(l10n.convert2024ChooseSpecies(i18n.raceName(source.race))),
         for (final species in catalog.species)
           Card(
             child: Column(children: [
@@ -267,9 +365,12 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
 
   Widget _backgroundStep(Creation2024Catalog catalog, SrdI18nService i18n, AppLocalizations l10n) {
     final custom = draft.background?.isCustom == true ? draft.background : null;
+    final source = _source;
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        if (source != null && _prefill?.backgroundName == null && source.background.isNotEmpty)
+          _conversionHint(l10n.convert2024ChooseBackground(source.background)),
         Card(
           child: ListTile(
             selected: custom != null,
@@ -330,6 +431,8 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
         const SizedBox(height: 8),
         SegmentedButton<Creation2024AbilityMethod>(
           segments: [
+            if (_converting)
+              ButtonSegment(value: Creation2024AbilityMethod.fromSheet, label: Text(l10n.convert2024ScoresFromSheet)),
             ButtonSegment(value: Creation2024AbilityMethod.standardArray, label: Text(l10n.stepStandardArray)),
             ButtonSegment(value: Creation2024AbilityMethod.pointBuy, label: Text(l10n.stepPointBuy)),
             ButtonSegment(value: Creation2024AbilityMethod.rolledDice, label: Text(l10n.stepRoll4d6)),
@@ -345,10 +448,49 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
                 draft.baseAbilities[ability] = 8;
               }
             }
+            if (draft.abilityMethod == Creation2024AbilityMethod.fromSheet) {
+              draft.baseAbilities.addAll(_prefill?.baseAbilities ?? const {});
+            }
           }),
         ),
         const SizedBox(height: 12),
-        if (draft.abilityMethod == Creation2024AbilityMethod.standardArray) ...[
+        if (draft.abilityMethod == Creation2024AbilityMethod.fromSheet) ...[
+          Text(l10n.convert2024ScoresHint),
+          if (_prefill?.abilityIncreasesUnknown ?? false) ...[
+            const SizedBox(height: 8),
+            Text(
+              l10n.convert2024ScoresUnknown,
+              style: TextStyle(color: Theme.of(context).colorScheme.error),
+            ),
+          ],
+          const SizedBox(height: 8),
+          for (final ability in creation2024Abilities)
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(abilityName(l10n, ability)),
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.remove),
+                    onPressed: (draft.baseAbilities[ability] ?? 10) > 1
+                        ? () => setState(() => draft.baseAbilities[ability] = (draft.baseAbilities[ability] ?? 10) - 1)
+                        : null,
+                  ),
+                  SizedBox(
+                    width: 32,
+                    child: Text('${draft.baseAbilities[ability] ?? 10}', textAlign: TextAlign.center),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.add),
+                    onPressed: (draft.baseAbilities[ability] ?? 10) < 20
+                        ? () => setState(() => draft.baseAbilities[ability] = (draft.baseAbilities[ability] ?? 10) + 1)
+                        : null,
+                  ),
+                ],
+              ),
+            ),
+        ] else if (draft.abilityMethod == Creation2024AbilityMethod.standardArray) ...[
           Text(l10n.creation2024StandardArray),
           const SizedBox(height: 8),
           for (final ability in creation2024Abilities)
@@ -626,7 +768,25 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
     );
   }
 
+  Widget _conversionHint(String text) => Card(
+    color: Theme.of(context).colorScheme.secondaryContainer,
+    child: ListTile(leading: const Icon(Icons.info_outline), title: Text(text)),
+  );
+
   Widget _equipmentStep(Creation2024Catalog catalog, SrdI18nService i18n, AppLocalizations l10n) {
+    if (draft.keepInventory) {
+      return ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          Card(
+            child: ListTile(
+              leading: const Icon(Icons.inventory_2_outlined),
+              title: Text(l10n.convert2024InventoryKept),
+            ),
+          ),
+        ],
+      );
+    }
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
@@ -791,6 +951,12 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
               .map(i18n.spellName)
               .join(', ')),
         ),
+      if (draft.keepInventory)
+        ListTile(
+          title: Text(l10n.reviewStartingEquipment),
+          subtitle: Text(l10n.convert2024InventoryKept),
+        )
+      else
       ListTile(
         title: Text(l10n.reviewStartingEquipment),
         subtitle: Text([

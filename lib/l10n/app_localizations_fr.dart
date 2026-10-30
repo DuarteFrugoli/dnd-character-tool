@@ -845,6 +845,70 @@ class AppLocalizationsFr extends AppLocalizations {
   String get characterActionResetLevels => 'Réinitialiser les niveaux';
 
   @override
+  String get characterActionConvert2024 => 'Convertir en D&D 2024';
+
+  @override
+  String get convert2024Title => 'Convertir en D&D 2024';
+
+  @override
+  String convert2024Intro(String name) {
+    return 'Cela crée une nouvelle fiche D&D 2024 (5.5e) à partir de $name. La fiche 2014 reste telle quelle.';
+  }
+
+  @override
+  String get convert2024Kept =>
+      'Conservés : nom, apparence, personnalité, histoire, notes, inventaire, argent et expérience.';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return 'Choisis de nouveau avec les règles 2024 : espèce, historique avec ses augmentations de caractéristique et son don d\'origine, et les choix de chaque niveau, reconstruits niveau par niveau jusqu\'à $classes.';
+  }
+
+  @override
+  String get convert2024Reset =>
+      'La nouvelle fiche commence avec tous ses points de vie et sans état.';
+
+  @override
+  String get convert2024Start => 'Commencer la conversion';
+
+  @override
+  String get convert2024ScoresFromSheet => 'Fiche 2014';
+
+  @override
+  String get convert2024ScoresHint =>
+      'Valeurs de la fiche 2014 sans les bonus raciaux ni les augmentations de niveau enregistrées. L\'historique 2024 ajoute ses augmentations ci-dessous, et la montée de niveau redemande les dons.';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      'Certaines augmentations n\'ont pas pu être identifiées (bonus raciaux choisis ou niveaux gagnés avant l\'historique des niveaux). Vérifiez ces valeurs.';
+
+  @override
+  String get convert2024InventoryKept =>
+      'L\'inventaire et l\'argent de la fiche 2014 sont conservés à la place de l\'équipement de départ.';
+
+  @override
+  String get convert2024Confirm => 'Convertir';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name a été converti en D&D 2024.';
+  }
+
+  @override
+  String get convert2024Cancelled =>
+      'Conversion annulée. Rien n\'a été enregistré.';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$race n\'a pas d\'espèce en D&D 2024. Choisissez la plus proche de votre personnage.';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$background n\'est pas un historique D&D 2024. Choisissez-en un ou créez un historique personnalisé.';
+  }
+
+  @override
   String get diceExpressionLabel => 'Expression';
 
   @override

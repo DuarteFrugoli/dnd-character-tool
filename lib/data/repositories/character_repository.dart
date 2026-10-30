@@ -44,6 +44,21 @@ class CharacterRepository {
     return updated;
   }
 
+  /// Saves [converted], a new sheet built from [source] (e.g. its 2024
+  /// version), with its own copy of the source image.
+  Future<Character> saveConversion(Character source, Character converted) async {
+    final copiedImagePath = await _local.copyImageForCharacter(
+      source,
+      imageOwnerId: converted.id,
+    );
+    return save(
+      converted.copyWith(
+        imagePath: copiedImagePath,
+        clearImagePath: copiedImagePath == null,
+      ),
+    );
+  }
+
   Future<void> delete(String id) async {
     final character = await _local.loadById(id);
     await _local.delete(id);

@@ -1520,6 +1520,102 @@ abstract class AppLocalizations {
   /// **'Reset levels'**
   String get characterActionResetLevels;
 
+  /// Sheet menu action that converts a 2014 sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'Convert to D&D 2024'**
+  String get characterActionConvert2024;
+
+  /// Title of the 2014 to 2024 conversion.
+  ///
+  /// In en, this message translates to:
+  /// **'Convert to D&D 2024'**
+  String get convert2024Title;
+
+  /// Conversion confirmation intro.
+  ///
+  /// In en, this message translates to:
+  /// **'This creates a new D&D 2024 (5.5e) sheet from {name}. The 2014 sheet stays as it is.'**
+  String convert2024Intro(String name);
+
+  /// What the conversion keeps.
+  ///
+  /// In en, this message translates to:
+  /// **'Kept: name, appearance, personality, story, notes, inventory, money and experience.'**
+  String get convert2024Kept;
+
+  /// What is chosen again; classes is the 2014 class summary.
+  ///
+  /// In en, this message translates to:
+  /// **'Chosen again with the 2024 rules: species, background with its ability increases and Origin feat, and the choices of each level, rebuilt one level at a time up to {classes}.'**
+  String convert2024Chosen(String classes);
+
+  /// What starts fresh on the converted sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'The new sheet starts with full hit points and no conditions.'**
+  String get convert2024Reset;
+
+  /// Button that starts the conversion.
+  ///
+  /// In en, this message translates to:
+  /// **'Start conversion'**
+  String get convert2024Start;
+
+  /// Ability method: scores carried from the 2014 sheet.
+  ///
+  /// In en, this message translates to:
+  /// **'2014 sheet'**
+  String get convert2024ScoresFromSheet;
+
+  /// How the carried scores were computed.
+  ///
+  /// In en, this message translates to:
+  /// **'Scores of the 2014 sheet without racial bonuses and recorded level increases. The 2024 background adds its increases below, and the level up asks for feats again.'**
+  String get convert2024ScoresHint;
+
+  /// Warning when some increases could not be identified.
+  ///
+  /// In en, this message translates to:
+  /// **'Some increases could not be identified (racial bonuses you chose, or levels gained before the level history). Check these scores.'**
+  String get convert2024ScoresUnknown;
+
+  /// Equipment step during a conversion.
+  ///
+  /// In en, this message translates to:
+  /// **'The inventory and money of the 2014 sheet are kept instead of the starting equipment.'**
+  String get convert2024InventoryKept;
+
+  /// Final button of the conversion.
+  ///
+  /// In en, this message translates to:
+  /// **'Convert'**
+  String get convert2024Confirm;
+
+  /// Snackbar after converting.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} was converted to D&D 2024.'**
+  String convert2024Done(String name);
+
+  /// Snackbar when the level rebuild is cancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Conversion cancelled. Nothing was saved.'**
+  String get convert2024Cancelled;
+
+  /// The 2014 race has no 2024 species.
+  ///
+  /// In en, this message translates to:
+  /// **'{race} has no D&D 2024 species. Choose the one closest to your character.'**
+  String convert2024ChooseSpecies(String race);
+
+  /// The 2014 background has no 2024 version.
+  ///
+  /// In en, this message translates to:
+  /// **'{background} is not a D&D 2024 background. Choose one or build a custom background.'**
+  String convert2024ChooseBackground(String background);
+
   /// Dice roller expression text field label.
   ///
   /// In en, this message translates to:

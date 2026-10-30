@@ -3,6 +3,7 @@ import 'package:uuid/uuid.dart';
 import '../../data/character_progression/choice_effects.dart';
 import '../../data/character_progression/progression_2024_engine.dart';
 import '../../data/constants/armor_class.dart';
+import '../../data/conversion/edition_conversion_2024.dart';
 import '../../data/custom_background.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/feature_choice_engine.dart';
@@ -15,7 +16,14 @@ const creation2024Abilities = <String>[
   'strength', 'dexterity', 'constitution', 'intelligence', 'wisdom', 'charisma',
 ];
 
-enum Creation2024AbilityMethod { standardArray, pointBuy, rolledDice }
+enum Creation2024AbilityMethod {
+  standardArray,
+  pointBuy,
+  rolledDice,
+
+  /// Scores carried from a 2014 sheet being converted, edited freely.
+  fromSheet,
+}
 
 const _pointBuyCosts = <int, int>{8: 0, 9: 1, 10: 2, 11: 3, 12: 4, 13: 5, 14: 7, 15: 9};
 
@@ -45,6 +53,32 @@ class Creation2024Draft {
   String? backgroundEquipmentId;
   final Map<String, String> specificEquipment = {};
   List<CharacterFeatureChoice> featureChoices = [];
+
+  /// Converting a 2014 sheet keeps its inventory and money instead of the
+  /// 2024 starting equipment.
+  bool keepInventory = false;
+
+  Creation2024Draft();
+
+  /// A draft prefilled from a 2014 sheet; every value stays editable.
+  factory Creation2024Draft.forConversion(
+    Conversion2024Prefill prefill,
+    Creation2024Catalog catalog,
+  ) {
+    final draft = Creation2024Draft()
+      ..keepInventory = true
+      ..abilityMethod = Creation2024AbilityMethod.fromSheet;
+    final cls = catalog.classes.where((c) => c.name == prefill.className).firstOrNull;
+    final species = catalog.species.where((s) => s.name == prefill.speciesName).firstOrNull;
+    final background = catalog.backgrounds.where((b) => b.name == prefill.backgroundName).firstOrNull;
+    if (cls != null) draft.selectClass(cls);
+    if (species != null) draft.selectSpecies(species);
+    if (background != null) draft.selectBackground(background);
+    draft.baseAbilities.addAll(prefill.baseAbilities);
+    draft.skills.addAll(prefill.skills);
+    draft.languages.addAll(prefill.languages);
+    return draft;
+  }
 
   void selectClass(Creation2024Class value) {
     characterClass = value;
@@ -91,6 +125,8 @@ class Creation2024Draft {
       Creation2024AbilityMethod.pointBuy =>
         baseAbilities.values.every(_pointBuyCosts.containsKey) &&
             baseAbilities.values.map((score) => _pointBuyCosts[score]!).reduce((a, b) => a + b) <= 27,
+      Creation2024AbilityMethod.fromSheet =>
+        baseAbilities.values.every((score) => score >= 1 && score <= 20),
       Creation2024AbilityMethod.rolledDice =>
         rolledScores.length == 6 && assignedRolls.length == 6 &&
             assignedRolls.values.toSet().length == 6 &&
@@ -128,6 +164,7 @@ class Creation2024Draft {
     final cls = characterClass;
     final bg = background;
     if (cls == null || bg == null) return false;
+    if (keepInventory) return true;
     final classChoice = cls.equipmentChoices.where((value) => value.id == classEquipmentId).firstOrNull;
     final backgroundChoice = bg.equipmentChoices.where((value) => value.id == backgroundEquipmentId).firstOrNull;
     if (classChoice == null || backgroundChoice == null) return false;
@@ -322,8 +359,12 @@ class Creation2024Draft {
     }
     final cls = characterClass!;
     final bg = background!;
-    final selectedClassEquipment = cls.equipmentChoices.firstWhere((choice) => choice.id == classEquipmentId);
-    final selectedBackgroundEquipment = bg.equipmentChoices.firstWhere((choice) => choice.id == backgroundEquipmentId);
+    final selectedClassEquipment = keepInventory
+        ? null
+        : cls.equipmentChoices.firstWhere((choice) => choice.id == classEquipmentId);
+    final selectedBackgroundEquipment = keepInventory
+        ? null
+        : bg.equipmentChoices.firstWhere((choice) => choice.id == backgroundEquipmentId);
     final equipment = <EquipmentItem>[];
     void addItem(String name, int quantity, {String? variant}) {
       final data = catalog.items[name.toLowerCase()];
@@ -347,7 +388,10 @@ class Creation2024Draft {
         },
       ));
     }
-    for (final (source, option) in [('class', selectedClassEquipment), ('background', selectedBackgroundEquipment)]) {
+    for (final (source, option) in [
+      if (selectedClassEquipment != null) ('class', selectedClassEquipment),
+      if (selectedBackgroundEquipment != null) ('background', selectedBackgroundEquipment),
+    ]) {
       for (var index = 0; index < option.items.length; index++) {
         final item = option.items[index];
         final name = item.choiceFrom == 'toolProficiencyChoices'
@@ -533,21 +577,23 @@ class Creation2024Draft {
         choiceId: 'languages',
         values: languages.map(FeatureChoiceOptionResolver.idFromName).toList(),
       ),
-      CharacterFeatureChoice(
-        sourceType: FeatureChoiceSourceType.background,
-        sourceName: bg.name,
-        featureName: 'Starting Equipment',
-        choiceId: 'equipment',
-        values: [backgroundEquipmentId!],
-      ),
-      CharacterFeatureChoice(
-        sourceType: FeatureChoiceSourceType.classFeature,
-        sourceClass: cls.name,
-        sourceClassEntryId: 'primary',
-        featureName: 'Starting Equipment',
-        choiceId: 'equipment',
-        values: [classEquipmentId!],
-      ),
+      if (!keepInventory) ...[
+        CharacterFeatureChoice(
+          sourceType: FeatureChoiceSourceType.background,
+          sourceName: bg.name,
+          featureName: 'Starting Equipment',
+          choiceId: 'equipment',
+          values: [backgroundEquipmentId!],
+        ),
+        CharacterFeatureChoice(
+          sourceType: FeatureChoiceSourceType.classFeature,
+          sourceClass: cls.name,
+          sourceClassEntryId: 'primary',
+          featureName: 'Starting Equipment',
+          choiceId: 'equipment',
+          values: [classEquipmentId!],
+        ),
+      ],
       CharacterFeatureChoice(
         sourceType: FeatureChoiceSourceType.raceTrait,
         sourceName: species!.name,
@@ -577,7 +623,10 @@ class Creation2024Draft {
       skillProficiencies: skillsGranted.toList(),
       skillExpertises: expertise.toList(),
       equipment: equipped,
-      currency: {'cp': 0, 'sp': 0, 'ep': 0, 'gp': selectedClassEquipment.gp + selectedBackgroundEquipment.gp, 'pp': 0},
+      currency: {
+        'cp': 0, 'sp': 0, 'ep': 0, 'pp': 0,
+        'gp': (selectedClassEquipment?.gp ?? 0) + (selectedBackgroundEquipment?.gp ?? 0),
+      },
       spells: knownSpells,
       spellSlots: SpellSlots(total: List<int>.generate(9, (index) => index < slots.length ? slots[index] : 0)),
       pactMagicSlots: SpellSlots(total: [

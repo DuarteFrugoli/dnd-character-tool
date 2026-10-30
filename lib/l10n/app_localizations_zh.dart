@@ -809,6 +809,66 @@ class AppLocalizationsZh extends AppLocalizations {
   String get characterActionResetLevels => '重置等级';
 
   @override
+  String get characterActionConvert2024 => '转换为 D&D 2024';
+
+  @override
+  String get convert2024Title => '转换为 D&D 2024';
+
+  @override
+  String convert2024Intro(String name) {
+    return '将根据$name创建一张新的 D&D 2024（5.5e）角色卡。2014 角色卡保持不变。';
+  }
+
+  @override
+  String get convert2024Kept => '保留：名字、外貌、个性、背景故事、笔记、物品、金钱和经验值。';
+
+  @override
+  String convert2024Chosen(String classes) {
+    return '按 2024 规则重新选择：种族、带有属性提升和起源专长的背景，以及每个等级的选择，逐级重建到$classes。';
+  }
+
+  @override
+  String get convert2024Reset => '新角色卡以满生命值、无状态开始。';
+
+  @override
+  String get convert2024Start => '开始转换';
+
+  @override
+  String get convert2024ScoresFromSheet => '2014 角色卡';
+
+  @override
+  String get convert2024ScoresHint =>
+      '2014 角色卡的数值去掉了种族加值和已记录的等级提升。2024 背景的提升在下方添加，升级时会重新选择专长。';
+
+  @override
+  String get convert2024ScoresUnknown =>
+      '有些提升无法识别（自选的种族加值，或在等级记录之前获得的等级）。请检查这些数值。';
+
+  @override
+  String get convert2024InventoryKept => '保留 2014 角色卡的物品和金钱，代替起始装备。';
+
+  @override
+  String get convert2024Confirm => '转换';
+
+  @override
+  String convert2024Done(String name) {
+    return '$name已转换为 D&D 2024。';
+  }
+
+  @override
+  String get convert2024Cancelled => '已取消转换，没有保存任何内容。';
+
+  @override
+  String convert2024ChooseSpecies(String race) {
+    return '$race在 D&D 2024 中没有对应种族。请选择与你的角色最接近的种族。';
+  }
+
+  @override
+  String convert2024ChooseBackground(String background) {
+    return '$background不是 D&D 2024 的背景。请选择一个背景或创建自定义背景。';
+  }
+
+  @override
   String get diceExpressionLabel => '表达式';
 
   @override

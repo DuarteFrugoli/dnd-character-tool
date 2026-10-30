@@ -490,6 +490,40 @@ class AppLocalizationsEn extends AppLocalizations {
   String get whatsNewSettingsSubtitle => 'Read the latest announcement again.';
 
   @override
+  String get creditsTitle => 'Credits and licenses';
+
+  @override
+  String get creditsSettingsSubtitle => 'SRD 5.1 and SRD 5.2.1 notices';
+
+  @override
+  String get creditsIntro =>
+      'The rules and game content come from the System Reference Documents published by Wizards of the Coast. Their license requires the notices below, which stay in their original English.';
+
+  @override
+  String get creditsEdition2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creditsEdition2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String creditsLicense(String license) {
+    return 'License: $license';
+  }
+
+  @override
+  String get creditsSource => 'Official source';
+
+  @override
+  String get creditsUnavailable => 'This notice could not be loaded.';
+
+  @override
+  String get creditsNotAffiliated =>
+      'This app is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.';
+
+  @override
+  String get creditsCopyright => '© 2026 Pedro Frugoli. All rights reserved.';
+
+  @override
   String get whatsNewThanks =>
       'Thank you for playing and sharing your feedback. Your ideas help shape what comes next.';
 

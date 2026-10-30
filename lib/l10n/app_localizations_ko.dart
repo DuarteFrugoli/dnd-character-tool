@@ -479,6 +479,40 @@ class AppLocalizationsKo extends AppLocalizations {
   String get whatsNewSettingsSubtitle => '최신 소식을 다시 읽어보세요.';
 
   @override
+  String get creditsTitle => '크레딧 및 라이선스';
+
+  @override
+  String get creditsSettingsSubtitle => 'SRD 5.1 및 SRD 5.2.1 고지';
+
+  @override
+  String get creditsIntro =>
+      '규칙과 게임 콘텐츠는 Wizards of the Coast가 공개한 System Reference Documents에서 가져왔습니다. 라이선스에 따라 아래 고지를 영어 원문 그대로 표시합니다.';
+
+  @override
+  String get creditsEdition2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creditsEdition2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String creditsLicense(String license) {
+    return '라이선스: $license';
+  }
+
+  @override
+  String get creditsSource => '공식 출처';
+
+  @override
+  String get creditsUnavailable => '이 고지를 불러올 수 없습니다.';
+
+  @override
+  String get creditsNotAffiliated =>
+      '이 앱은 Wizards of the Coast LLC와 제휴하지 않았으며, 해당 회사의 보증, 후원 또는 특별한 승인을 받지 않았습니다.';
+
+  @override
+  String get creditsCopyright => '© 2026 Pedro Frugoli. All rights reserved.';
+
+  @override
   String get whatsNewThanks =>
       '게임을 즐기고 의견을 나눠 주셔서 감사합니다. 여러분의 아이디어가 앞으로의 개발에 큰 도움이 됩니다.';
 

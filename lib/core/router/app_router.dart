@@ -5,6 +5,7 @@ import '../../features/character_creation/character_creation_screen.dart';
 import '../../features/character_creation/creation_2024_screen.dart';
 import '../../features/character_creation/ruleset_selection_screen.dart';
 import '../../features/character_detail/character_detail_screen.dart';
+import '../../features/home/credits_screen.dart';
 import '../../features/home/settings_screen.dart';
 
 final appRouter = GoRouter(
@@ -41,6 +42,10 @@ final appRouter = GoRouter(
     GoRoute(
       path: '/settings',
       builder: (context, state) => const SettingsScreen(),
+    ),
+    GoRoute(
+      path: '/settings/credits',
+      builder: (context, state) => const CreditsScreen(),
     ),
   ],
 );

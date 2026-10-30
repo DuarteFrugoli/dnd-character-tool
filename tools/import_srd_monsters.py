@@ -10,8 +10,10 @@ Examples:
   python tools/import_srd_monsters.py --pack 5.2.1 --pdf docs/private/SRD_CC_v5.2.1.pdf
   python tools/import_srd_monsters.py --pack 5.1 --pdf docs/private/SRD-OGL_V5.1.pdf --dry-run
 
-Requires `pdftotext` (Poppler). The tool reads the PDF named in the pack
-manifest from a local copy and never fetches anything.
+Requires `pdftotext` (Poppler). The tool reads a local copy of the official
+PDF and never fetches anything. The 5.1 page range was calibrated on
+`SRD-OGL_V5.1.pdf`, whose text matches the CC-BY release named in the manifest;
+check the range before importing from another edition of the PDF.
 """
 
 import argparse

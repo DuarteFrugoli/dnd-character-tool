@@ -294,6 +294,46 @@
   "whatsNewSettingsSubtitle": "Read the latest announcement again.",
   "@whatsNewSettingsSubtitle": { "description": "Subtitle for the What's New entry in Settings." },
 
+  "creditsTitle": "Credits and licenses",
+
+  "@creditsTitle": {"description": "Settings entry and screen title for credits and licenses."},
+
+  "creditsSettingsSubtitle": "SRD 5.1 and SRD 5.2.1 notices",
+
+  "@creditsSettingsSubtitle": {"description": "Settings subtitle of the credits entry."},
+
+  "creditsIntro": "The rules and game content come from the System Reference Documents published by Wizards of the Coast. Their license requires the notices below, which stay in their original English.",
+
+  "@creditsIntro": {"description": "Credits screen introduction."},
+
+  "creditsEdition2014": "D&D 5e (2014)",
+
+  "@creditsEdition2014": {"description": "Edition that uses SRD 5.1."},
+
+  "creditsEdition2024": "D&D 5.5e (2024)",
+
+  "@creditsEdition2024": {"description": "Edition that uses SRD 5.2.1."},
+
+  "creditsLicense": "License: {license}",
+
+  "@creditsLicense": {"description": "License of an SRD pack.", "placeholders": {"license": {"type": "String"}}},
+
+  "creditsSource": "Official source",
+
+  "@creditsSource": {"description": "Label before the official source link."},
+
+  "creditsUnavailable": "This notice could not be loaded.",
+
+  "@creditsUnavailable": {"description": "An SRD manifest could not be read."},
+
+  "creditsNotAffiliated": "This app is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.",
+
+  "@creditsNotAffiliated": {"description": "Non-affiliation notice."},
+
+  "creditsCopyright": "© 2026 Pedro Frugoli. All rights reserved.",
+
+  "@creditsCopyright": {"description": "App copyright line."},
+
   "whatsNewThanks": "Thank you for playing and sharing your feedback. Your ideas help shape what comes next.",
   "@whatsNewThanks": { "description": "Thank-you message at the end of the What's New dialog." },
 

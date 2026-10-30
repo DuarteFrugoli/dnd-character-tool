@@ -491,6 +491,40 @@ class AppLocalizationsTr extends AppLocalizations {
   String get whatsNewSettingsSubtitle => 'Son duyuruyu yeniden oku.';
 
   @override
+  String get creditsTitle => 'Katkıda Bulunanlar ve Lisanslar';
+
+  @override
+  String get creditsSettingsSubtitle => 'SRD 5.1 ve SRD 5.2.1 bildirimleri';
+
+  @override
+  String get creditsIntro =>
+      'Kurallar ve oyun içeriği, Wizards of the Coast tarafından yayımlanan System Reference Documents\'tan gelir. Lisansları aşağıdaki bildirimleri gerektirir; bunlar özgün İngilizce halleriyle verilmiştir.';
+
+  @override
+  String get creditsEdition2014 => 'D&D 5e (2014)';
+
+  @override
+  String get creditsEdition2024 => 'D&D 5.5e (2024)';
+
+  @override
+  String creditsLicense(String license) {
+    return 'Lisans: $license';
+  }
+
+  @override
+  String get creditsSource => 'Resmi kaynak';
+
+  @override
+  String get creditsUnavailable => 'Bu bildirim yüklenemedi.';
+
+  @override
+  String get creditsNotAffiliated =>
+      'Bu uygulama Wizards of the Coast LLC ile bağlantılı değildir; şirket tarafından onaylanmamış, desteklenmemiş veya özel olarak kabul edilmemiştir.';
+
+  @override
+  String get creditsCopyright => '© 2026 Pedro Frugoli. Tüm hakları saklıdır.';
+
+  @override
   String get whatsNewThanks =>
       'Oynadığınız ve görüşlerinizi paylaştığınız için teşekkür ederiz. Fikirleriniz sonraki adımlarımıza yön veriyor.';
 

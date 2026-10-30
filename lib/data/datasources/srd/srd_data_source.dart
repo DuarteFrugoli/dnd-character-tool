@@ -7,6 +7,7 @@ import '../../rulesets/ruleset_ids.dart';
 import '../../rulesets/srd_content_pack.dart';
 import 'srd_models.dart';
 import 'srd_monster.dart';
+import 'srd_pack_manifest.dart';
 
 /// Lê e parseia os assets SRD bundados no app.
 /// Os dados são carregados sob demanda e cacheados em memória após a primeira leitura.
@@ -45,6 +46,7 @@ class SrdDataSource {
   List<SrdGearItem>? _gear;
   List<SrdMagicItem>? _magicItems;
   List<SrdMonster>? _monsters;
+  SrdPackManifest? _manifest;
   Map<String, List<SrdClassFeature>>? _classFeatures;
   Map<String, String>? _raceTraits;
   Map<String, Map<String, List<SrdClassFeature>>>? _subclassFeatures;
@@ -163,6 +165,14 @@ class SrdDataSource {
       SrdMagicItem.fromJson,
     );
     return _magicItems!;
+  }
+
+  /// Source and license notice of the pack.
+  Future<SrdPackManifest> getManifest() async {
+    _manifest ??= SrdPackManifest.fromJson(
+      jsonDecode(await rootBundle.loadString(_asset('manifest'))) as Map<String, dynamic>,
+    );
+    return _manifest!;
   }
 
   /// Stat blocks of the pack; for now the Beasts Wild Shape can use.

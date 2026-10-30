@@ -813,6 +813,14 @@ and descriptions, but saved characters keep the stable IDs.
 features/traits/feats to resources. UI labels are localized through
 `SrdI18nService.featureUsageResourceName()`.
 
+Each pack has a `manifest.json` with its title, version, official source,
+license (CC-BY-4.0) and the attribution notice. `tools/validate_srd_pack.py`
+checks that the complete and pending catalogs cover every SRD file, that a
+pack with no pending catalog is `complete`, and that `catalogScope` only
+describes complete catalogs. `SrdDataSource.getManifest()` loads it, and the
+Credits screen (`features/home/credits_screen.dart`, opened from Settings at
+`/settings/credits`) shows each notice in its original English.
+
 `monsters.json` is generated from the official PDFs by
 `tools/import_srd_monsters.py` and parsed into `SrdMonster`
 (`data/datasources/srd/srd_monster.dart`). Each stat block keeps what a future
@@ -826,8 +834,9 @@ range), `damage` (average, formula, type), `save` (ability, DC, damage on a
 failure, half on success) and `usage` (recharge, per day). The import notes
 values that differ from the usual math and keeps them as published.
 Overlays translate names, entry names and descriptions, and language text,
-keyed by entry ID; numbers stay in the English file. The 5.2.1 manifest lists
-`monsters` as partial until other creatures are imported.
+keyed by entry ID; numbers stay in the English file. Both manifests describe
+`monsters` in `catalogScope` as the Beasts up to CR 1 until other creatures are
+imported.
 
 ### UI strings
 

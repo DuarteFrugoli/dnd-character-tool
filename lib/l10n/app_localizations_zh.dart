@@ -472,6 +472,40 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whatsNewSettingsSubtitle => '再次阅读最新公告。';
 
   @override
+  String get creditsTitle => '致谢与许可';
+
+  @override
+  String get creditsSettingsSubtitle => 'SRD 5.1 与 SRD 5.2.1 声明';
+
+  @override
+  String get creditsIntro =>
+      '规则和游戏内容来自 Wizards of the Coast 发布的 System Reference Documents。其许可要求展示以下声明，并保留英文原文。';
+
+  @override
+  String get creditsEdition2014 => 'D&D 5e（2014）';
+
+  @override
+  String get creditsEdition2024 => 'D&D 5.5e（2024）';
+
+  @override
+  String creditsLicense(String license) {
+    return '许可：$license';
+  }
+
+  @override
+  String get creditsSource => '官方来源';
+
+  @override
+  String get creditsUnavailable => '无法加载此声明。';
+
+  @override
+  String get creditsNotAffiliated =>
+      '本应用与 Wizards of the Coast LLC 无关联，也未获得其认可、赞助或特别批准。';
+
+  @override
+  String get creditsCopyright => '© 2026 Pedro Frugoli。保留所有权利。';
+
+  @override
   String get whatsNewThanks => '感谢你使用本应用并分享反馈。你的建议将帮助我们决定接下来做什么。';
 
   @override

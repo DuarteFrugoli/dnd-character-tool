@@ -920,6 +920,66 @@ abstract class AppLocalizations {
   /// **'Read the latest announcement again.'**
   String get whatsNewSettingsSubtitle;
 
+  /// Settings entry and screen title for credits and licenses.
+  ///
+  /// In en, this message translates to:
+  /// **'Credits and licenses'**
+  String get creditsTitle;
+
+  /// Settings subtitle of the credits entry.
+  ///
+  /// In en, this message translates to:
+  /// **'SRD 5.1 and SRD 5.2.1 notices'**
+  String get creditsSettingsSubtitle;
+
+  /// Credits screen introduction.
+  ///
+  /// In en, this message translates to:
+  /// **'The rules and game content come from the System Reference Documents published by Wizards of the Coast. Their license requires the notices below, which stay in their original English.'**
+  String get creditsIntro;
+
+  /// Edition that uses SRD 5.1.
+  ///
+  /// In en, this message translates to:
+  /// **'D&D 5e (2014)'**
+  String get creditsEdition2014;
+
+  /// Edition that uses SRD 5.2.1.
+  ///
+  /// In en, this message translates to:
+  /// **'D&D 5.5e (2024)'**
+  String get creditsEdition2024;
+
+  /// License of an SRD pack.
+  ///
+  /// In en, this message translates to:
+  /// **'License: {license}'**
+  String creditsLicense(String license);
+
+  /// Label before the official source link.
+  ///
+  /// In en, this message translates to:
+  /// **'Official source'**
+  String get creditsSource;
+
+  /// An SRD manifest could not be read.
+  ///
+  /// In en, this message translates to:
+  /// **'This notice could not be loaded.'**
+  String get creditsUnavailable;
+
+  /// Non-affiliation notice.
+  ///
+  /// In en, this message translates to:
+  /// **'This app is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.'**
+  String get creditsNotAffiliated;
+
+  /// App copyright line.
+  ///
+  /// In en, this message translates to:
+  /// **'© 2026 Pedro Frugoli. All rights reserved.'**
+  String get creditsCopyright;
+
   /// Thank-you message at the end of the What's New dialog.
   ///
   /// In en, this message translates to:

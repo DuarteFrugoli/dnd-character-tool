@@ -854,6 +854,53 @@ def validate_monsters(monsters, conditions, pack, errors):
                     errors.append(f"{entry_location}: invalid usage")
 
 
+PACK_IDS = {"5.1": ("srd_5_1", "dnd_2014"), "5.2.1": ("srd_5_2_1", "dnd_2024")}
+
+
+def validate_manifest(pack, source, errors):
+    """The manifest names the license notice the app shows and which catalogs are done."""
+    manifest_path = source / "manifest.json"
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"), object_pairs_hook=unique_pairs)
+    except (OSError, UnicodeError, ValueError) as exc:
+        errors.append(f"{manifest_path}: {exc}")
+        return
+    pack_id, ruleset_id = PACK_IDS[pack]
+    if not isinstance(manifest, dict) or manifest.get("id") != pack_id or manifest.get("rulesetId") != ruleset_id:
+        errors.append("manifest.json: invalid pack or ruleset ID")
+        return
+    if manifest.get("version") != pack or manifest.get("license") != "CC-BY-4.0":
+        errors.append("manifest.json: invalid version or license")
+    for key in ("title", "source", "licenseUrl", "attribution"):
+        if not isinstance(manifest.get(key), str) or not manifest[key].strip():
+            errors.append(f"manifest.json: missing {key}")
+    if pack not in str(manifest.get("attribution", "")):
+        errors.append("manifest.json: attribution must name the SRD version")
+    complete = manifest.get("completeCatalogs", [])
+    pending = manifest.get("pendingCatalogs", [])
+    if (
+        not isinstance(complete, list)
+        or not isinstance(pending, list)
+        or set(complete) & set(pending)
+        or set(complete) | set(pending) != set(FILES)
+        or len(complete) + len(pending) != len(FILES)
+    ):
+        errors.append("manifest.json: catalog status must partition all SRD files")
+        return
+    for filename in complete:
+        if not (source / f"{filename}.json").is_file():
+            errors.append(f"manifest.json: complete catalog {filename!r} is missing")
+    if not pending and manifest.get("status") != "complete":
+        errors.append("manifest.json: complete pack has unfinished status")
+    if pending and manifest.get("status") != "in_progress":
+        errors.append("manifest.json: pending catalogs require in_progress status")
+    scope = manifest.get("catalogScope", {})
+    if not isinstance(scope, dict) or not set(scope) <= set(complete) or not all(
+        isinstance(text, str) and text.strip() for text in scope.values()
+    ):
+        errors.append("manifest.json: catalogScope must describe complete catalogs")
+
+
 def eval_challenge(rating):
     numerator, _, denominator = rating.partition("/")
     return int(numerator) / int(denominator or 1)
@@ -1052,34 +1099,9 @@ def validate(pack, only=None):
 
     validate_resource_refs(usages, "feature_usages")
 
+    validate_manifest(pack, source, errors)
+
     if pack == "5.2.1":
-        manifest_path = source / "manifest.json"
-        try:
-            manifest = json.loads(manifest_path.read_text(encoding="utf-8"), object_pairs_hook=unique_pairs)
-        except (OSError, UnicodeError, ValueError) as exc:
-            errors.append(f"{manifest_path}: {exc}")
-        else:
-            if not isinstance(manifest, dict) or manifest.get("id") != "srd_5_2_1" or manifest.get("license") != "CC-BY-4.0":
-                errors.append("manifest.json: invalid pack ID or license")
-            else:
-                complete = manifest.get("completeCatalogs", [])
-                pending = manifest.get("pendingCatalogs", [])
-                if (
-                    not isinstance(complete, list)
-                    or not isinstance(pending, list)
-                    or set(complete) & set(pending)
-                    or set(complete) | set(pending) != set(FILES)
-                    or len(complete) + len(pending) != len(FILES)
-                ):
-                    errors.append("manifest.json: catalog status must partition all SRD files")
-                else:
-                    for filename in complete:
-                        if not (source / f"{filename}.json").is_file():
-                            errors.append(f"manifest.json: complete catalog {filename!r} is missing")
-                    if not pending and manifest.get("status") != "complete":
-                        errors.append("manifest.json: complete pack has unfinished status")
-                    if pending and manifest.get("status") != "in_progress":
-                        errors.append("manifest.json: pending catalogs require in_progress status")
         validate_2024_origins(data, errors)
         validate_2024_classes(data, errors)
         validate_2024_features(data, errors)

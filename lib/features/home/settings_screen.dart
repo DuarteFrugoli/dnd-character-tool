@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 
@@ -217,6 +218,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                 const _WhatsNewTile(),
                 if (AppReviewService.isPlayStoreReviewSupported)
                   const _ReviewAppTile(),
+                const _CreditsTile(),
                 const Divider(height: 32),
 
                 Padding(
@@ -234,6 +236,22 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _CreditsTile extends StatelessWidget {
+  const _CreditsTile();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return ListTile(
+      leading: const Icon(Icons.gavel_outlined),
+      title: Text(l10n.creditsTitle),
+      subtitle: Text(l10n.creditsSettingsSubtitle),
+      trailing: const Icon(Icons.chevron_right),
+      onTap: () => context.push('/settings/credits'),
     );
   }
 }

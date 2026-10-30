@@ -12,7 +12,7 @@
     "2024_action_surge": {"name":"Action Surge","max":"fighter_action_surge_uses","recharge":"short_rest"},
     "2024_indomitable": {"name":"Indomitable","max":"fighter_indomitable_uses","recharge":"long_rest"},
     "2024_focus_points": {"name":"Focus Points","max":"monk_level","recharge":"short_rest","onInitiative":{"minClassLevel":15,"minimumRemaining":4,"onlyWithoutUncannyMetabolism":true}},
-    "2024_uncanny_metabolism": {"name":"Uncanny Metabolism","max":"1","recharge":"long_rest"},
+    "2024_uncanny_metabolism": {"name":"Uncanny Metabolism","max":"1","recharge":"long_rest","onSpend":{"restoreResource":"2024_focus_points","heal":"monk_level_plus_martial_arts_die"}},
     "2024_lay_on_hands": {"name":"Lay on Hands","max":"paladin_level_x5","recharge":"long_rest"},
     "2024_paladin_channel_divinity": {"name":"Channel Divinity","max":"2","maxByLevel":{"3":2,"11":3},"recharge":"short_rest_one"},
     "2024_paladins_smite": {"name":"Divine Smite (Free Cast)","max":"1","recharge":"long_rest"},

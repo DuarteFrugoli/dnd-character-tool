@@ -18,6 +18,60 @@ class AppLocalizationsPt extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => 'Antecedente personalizado';
+
+  @override
+  String get customBackgroundSubtitle =>
+      'Monte seu próprio antecedente pelas regras';
+
+  @override
+  String get customBackgroundName => 'Nome do antecedente';
+
+  @override
+  String get customBackgroundFeature => 'Característica do antecedente';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return 'Escolha $count perícias';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return 'Escolha até $count ferramentas; o restante vira idiomas';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return 'Idiomas a escolher depois: $count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => 'Pacote de equipamento';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return 'Escolha $count atributos para os aumentos';
+  }
+
+  @override
+  String get customBackgroundTool2024 =>
+      'Escolha uma ferramenta de qualquer tipo junto com as outras proficiências.';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return 'Equipamento: $gp PO para gastar';
+  }
+
+  @override
+  String get customBackgroundSave => 'Usar este antecedente';
+
+  @override
   String get creation2024Species => 'Espécie';
 
   @override
@@ -163,6 +217,38 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get whatsNewThanks =>
       'Obrigado por jogar e compartilhar suas sugestões. Suas ideias ajudam a decidir o que vem a seguir.';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024 (5.5e) chegou: crie e evolua personagens com as regras do SRD 5.2.1, ao lado dos seus personagens de 2014.';
+
+  @override
+  String get whatsNew3RulesTitle => 'Regras de D&D 2024';
+
+  @override
+  String get whatsNew3RulesBody =>
+      'Escolha D&D 5e (2014) ou 5.5e (2024) ao criar um personagem. Personagens 2024 vão do nível 1 ao 20 com subclasses, talentos, Dádivas Épicas, multiclasse e Maestria de Arma.';
+
+  @override
+  String get whatsNew3RestsTitle => 'Descansos e condições';
+
+  @override
+  String get whatsNew3RestsBody =>
+      'Em 2024, o descanso longo recupera todos os Dados de Vida e remove um nível de Exaustão, a Exaustão afeta rolagens de d20 e o deslocamento, e o descanso curto oferece habilidades como Arcane Recovery.';
+
+  @override
+  String get whatsNew3ResetTitle => 'Reinício de níveis mais seguro';
+
+  @override
+  String get whatsNew3ResetBody =>
+      'Uma revisão lista cada mudança antes de salvar. O reinício desfaz o que as classes removidas concediam, e as duas edições podem reconstruir até o nível anterior.';
+
+  @override
+  String get whatsNew3UpdateTitle => 'Atualização única dos personagens';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      'Ao abrir um personagem, o app pede para atualizar todos e abre um backup antes. Personagens 2014 mantêm suas regras e dados; personagens 2024 salvam o histórico de níveis usado para subir e reiniciar níveis.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -657,7 +743,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return 'Voltar ao nível 1 como $className? Níveis, subclasse, talentos, escolhas e magias obtidos depois do nível 1 são desfeitos pelo histórico de níveis salvo. Origem, edições manuais de atributos, inventário, notas e história são mantidos.';
+    return 'Voltar ao nível 1? Em seguida você pode manter $className ou escolher outra classe. Níveis, subclasse, talentos, escolhas e magias vindos das classes são desfeitos pelo histórico de níveis salvo. Origem, edições manuais de atributos, inventário, notas e história são mantidos.';
   }
 
   @override
@@ -672,6 +758,68 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => 'Escolha a classe desta magia';
+
+  @override
+  String get featureChoicesChooseTarget => 'Escolha um alvo';
+
+  @override
+  String get featureChoicesNoTargets => 'Ainda não há alvo elegível.';
+
+  @override
+  String get levelUp2024SwapTitle => 'Trocar magias (opcional)';
+
+  @override
+  String get levelUp2024SwapCantrip => 'Truque a trocar';
+
+  @override
+  String get levelUp2024SwapSpell => 'Magia preparada a trocar';
+
+  @override
+  String get levelUp2024SwapLearn => 'Substituta';
+
+  @override
+  String get resetLevels2024ClassTitle => 'Classe no nível 1';
+
+  @override
+  String get changesReviewTitle => 'Revisar mudanças';
+
+  @override
+  String get changesReviewIntro => 'Ao salvar, isto muda:';
+
+  @override
+  String get changesReviewNone => 'Nada vai mudar.';
+
+  @override
+  String get changesReviewApply => 'Salvar mudanças';
+
+  @override
+  String get changesKindClasses => 'Classes';
+
+  @override
+  String get changesKindExpertise => 'Especialização';
+
+  @override
+  String get changesKindProficiencies => 'Proficiências';
+
+  @override
+  String get changesKindExperience => 'Pontos de experiência';
+
+  @override
+  String get changesAdded => 'Adicionados';
+
+  @override
+  String get changesRemoved => 'Removidos';
+
+  @override
+  String get changesKeptTitle => 'Mantido como está';
+
+  @override
+  String get resetLimitAbilityIncreases =>
+      'Esta ficha não tem o histórico completo de níveis, então os aumentos de atributo de níveis anteriores continuam como estão.';
+
+  @override
+  String get resetLimitClassSkills =>
+      'Esta ficha não registrou quais perícias vieram da classe, então elas continuam.';
 
   @override
   String get concentrationBannerLabel => 'Concentrado em:';
@@ -968,7 +1116,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      'Isso vai reiniciar a progressão de classe para o nível 1. Suas notas, inventário, containers, moedas, imagem, história, aparência, raça, antecedente e atributos serão mantidos.\n\nNíveis de classe, magias de classe, escolhas de classe/subclasse, recursos de progressão e talentos de ASI serão removidos ou recalculados. Exporte um backup antes se quiser uma cópia extra.';
+      'Isto volta a progressão de classe para o nível 1. Notas, inventário, containers, moedas, imagem, história, aparência, raça e antecedente são mantidos.\n\nNíveis de classe, magias de classe, escolhas de classe e subclasse com o que concediam, recursos de progressão e talentos de nível são removidos. Os aumentos de atributo dos níveis são desfeitos quando a ficha tem o histórico completo de níveis. Você revisará cada mudança antes de qualquer coisa ser salva.';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2925,6 +3073,14 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       'Este personagem foi identificado com as regras de 2014 (SRD 5.1).';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory =>
+      'Salvou o histórico do nível 1 usado para subir e reiniciar níveis.';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills =>
+      'Salvou quais perícias vieram da classe no nível 1.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

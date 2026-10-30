@@ -18,6 +18,60 @@ class AppLocalizationsRu extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => 'Своя предыстория';
+
+  @override
+  String get customBackgroundSubtitle =>
+      'Создайте свою предысторию по правилам';
+
+  @override
+  String get customBackgroundName => 'Название предыстории';
+
+  @override
+  String get customBackgroundFeature => 'Умение предыстории';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return 'Выберите навыков: $count';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return 'Выберите до $count инструментов; остальное станет языками';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return 'Языки для выбора позже: $count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => 'Набор снаряжения';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return 'Выберите характеристик для повышений: $count';
+  }
+
+  @override
+  String get customBackgroundTool2024 =>
+      'Выберите один инструмент любого типа вместе с другими владениями.';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return 'Снаряжение: $gp зм на покупки';
+  }
+
+  @override
+  String get customBackgroundSave => 'Использовать эту предысторию';
+
+  @override
   String get creation2024Species => 'Вид';
 
   @override
@@ -163,6 +217,38 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get whatsNewThanks =>
       'Спасибо, что играете и делитесь отзывами. Ваши идеи помогают определить, что будет дальше.';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024 (5.5e) уже здесь: создавайте и развивайте персонажей по правилам SRD 5.2.1 рядом с персонажами 2014 года.';
+
+  @override
+  String get whatsNew3RulesTitle => 'Правила D&D 2024';
+
+  @override
+  String get whatsNew3RulesBody =>
+      'При создании персонажа выберите D&D 5e (2014) или 5.5e (2024). Персонажи 2024 развиваются с 1-го по 20-й уровень с подклассами, чертами, эпическими дарами, мультиклассом и мастерством оружия.';
+
+  @override
+  String get whatsNew3RestsTitle => 'Отдых и состояния';
+
+  @override
+  String get whatsNew3RestsBody =>
+      'В 2024 году продолжительный отдых восстанавливает все кости хитов и снимает один уровень истощения, истощение влияет на броски d20 и скорость, а короткий отдых даёт умения вроде Arcane Recovery.';
+
+  @override
+  String get whatsNew3ResetTitle => 'Безопасный сброс уровней';
+
+  @override
+  String get whatsNew3ResetBody =>
+      'Перед сохранением показывается каждое изменение. Сброс отменяет то, что давали удалённые классы, и в обеих редакциях можно восстановить прежний уровень.';
+
+  @override
+  String get whatsNew3UpdateTitle => 'Однократное обновление персонажей';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      'При открытии персонажа приложение предложит обновить всех и сначала откроет резервную копию. Персонажи 2014 сохраняют правила и данные; персонажи 2024 сохраняют историю уровней для повышения и сброса.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -656,7 +742,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return 'Вернуться на 1-й уровень как $className? Уровни, подкласс, черты, выборы и заклинания, полученные после 1-го уровня, отменяются по сохранённой истории уровней. Происхождение, ручные правки характеристик, инвентарь, заметки и история сохраняются.';
+    return 'Вернуться на 1-й уровень? Затем можно оставить $className или выбрать другой класс. Уровни, подкласс, черты, выборы и заклинания от классов отменяются по сохранённой истории уровней. Происхождение, ручные правки характеристик, инвентарь, заметки и история сохраняются.';
   }
 
   @override
@@ -671,6 +757,68 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => 'Выберите класс для этого заклинания';
+
+  @override
+  String get featureChoicesChooseTarget => 'Выберите цель';
+
+  @override
+  String get featureChoicesNoTargets => 'Подходящих целей пока нет.';
+
+  @override
+  String get levelUp2024SwapTitle => 'Заменить заклинания (необязательно)';
+
+  @override
+  String get levelUp2024SwapCantrip => 'Заменяемый заговор';
+
+  @override
+  String get levelUp2024SwapSpell => 'Заменяемое подготовленное заклинание';
+
+  @override
+  String get levelUp2024SwapLearn => 'Замена';
+
+  @override
+  String get resetLevels2024ClassTitle => 'Класс на 1-м уровне';
+
+  @override
+  String get changesReviewTitle => 'Проверить изменения';
+
+  @override
+  String get changesReviewIntro => 'При сохранении изменится:';
+
+  @override
+  String get changesReviewNone => 'Ничего не изменится.';
+
+  @override
+  String get changesReviewApply => 'Сохранить изменения';
+
+  @override
+  String get changesKindClasses => 'Классы';
+
+  @override
+  String get changesKindExpertise => 'Компетентность';
+
+  @override
+  String get changesKindProficiencies => 'Владения';
+
+  @override
+  String get changesKindExperience => 'Опыт';
+
+  @override
+  String get changesAdded => 'Добавлено';
+
+  @override
+  String get changesRemoved => 'Удалено';
+
+  @override
+  String get changesKeptTitle => 'Остаётся как есть';
+
+  @override
+  String get resetLimitAbilityIncreases =>
+      'У этого листа нет полной истории уровней, поэтому повышения характеристик с прошлых уровней сохраняются.';
+
+  @override
+  String get resetLimitClassSkills =>
+      'Этот лист не сохранил, какие навыки дал класс, поэтому они остаются.';
 
   @override
   String get concentrationBannerLabel => 'Концентрация на:';
@@ -968,7 +1116,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      'Это сбросит классовую прогрессию до 1 уровня. Заметки, инвентарь, контейнеры, валюта, изображение, история, внешность, раса, предыстория и характеристики сохранятся.\n\nУровни класса, классовые заклинания, выборы класса/подкласса, ресурсы прогрессии и черты ASI будут удалены или пересчитаны. Если нужна дополнительная копия, сначала экспортируйте резервную копию.';
+      'Это вернёт развитие класса на 1-й уровень. Заметки, инвентарь, контейнеры, деньги, изображение, история, внешность, раса и предыстория сохраняются.\n\nУровни класса, заклинания класса, выборы класса и подкласса вместе с тем, что они давали, ресурсы развития и черты уровней удаляются. Повышения характеристик за уровни отменяются, если у листа полная история уровней. Вы проверите каждое изменение до сохранения.';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2925,6 +3073,14 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       'Персонажу назначены правила 2014 года (SRD 5.1).';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory =>
+      'Сохранена история 1-го уровня для повышения и сброса уровней.';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills =>
+      'Сохранено, какие навыки получены от класса на 1-м уровне.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

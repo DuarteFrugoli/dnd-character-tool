@@ -1,5 +1,7 @@
 import '../character_detail_dependencies.dart';
 import '../../../data/conditions/exhaustion_rules.dart';
+import '../../../data/rulesets/initiative_rules.dart';
+import '../../../data/rulesets/speed_rules.dart';
 import '../../../data/rulesets/ruleset_ids.dart';
 import '../../../data/rulesets/srd_content_pack.dart';
 import '../widgets/dice/contextual_roll_sheet.dart';
@@ -252,10 +254,12 @@ class _StatsTabState extends ConsumerState<StatsTab>
     required String title,
     String? subtitle,
     required int modifier,
+    VoidCallback? onRolled,
   }) {
     openContextualRollSheet(
       context,
       characterId: widget.characterId,
+      onRolled: onRolled,
       request: ContextualRollRequest(
         key: key,
         title: title,
@@ -657,7 +661,7 @@ class _StatsTabState extends ConsumerState<StatsTab>
                                   ),
                                   DetailStatChip(
                                     l10n.statInitiative,
-                                    sign(character.initiative),
+                                    sign(InitiativeRules.modifierFor(character)),
                                     icon: Icons.bolt_outlined,
                                     accentColor: scheme.tertiary,
                                   ),
@@ -696,7 +700,12 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               DetailStatChip(
                                 l10n.statSpeed,
                                 formatDistance(
-                                  exhaustion.speedFor(character),
+                                  SpeedRules.speedFor(
+                                    character,
+                                    classes2024: character.rulesetId == RulesetId.dnd2024
+                                        ? ref.watch(srd2024ClassesProvider).valueOrNull
+                                        : null,
+                                  ),
                                   unitSystem,
                                 ),
                                 icon: Icons.directions_run,
@@ -704,13 +713,14 @@ class _StatsTabState extends ConsumerState<StatsTab>
                               ),
                               DetailStatChip(
                                 l10n.statInitiative,
-                                sign(character.initiative),
+                                sign(InitiativeRules.modifierFor(character)),
                                 icon: Icons.bolt_outlined,
                                 accentColor: scheme.primary,
                                 onTap: () => _openD20Roll(
                                   key: 'stat:initiative',
                                   title: l10n.statInitiative,
-                                  modifier: character.initiative,
+                                  modifier: InitiativeRules.modifierFor(character),
+                                  onRolled: notifier.applyInitiativeTriggers,
                                 ),
                               ),
                               DetailStatChip(

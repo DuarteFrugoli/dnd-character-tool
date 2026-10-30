@@ -336,6 +336,12 @@ class SrdBackground {
   final SrdBackgroundFeature feature;
   final List<String> variants;
 
+  /// Set on a custom background: the catalog background whose feature it
+  /// uses. Null for catalog backgrounds.
+  final String? featureSource;
+
+  bool get isCustom => featureSource != null;
+
   const SrdBackground({
     required this.name,
     required this.skillProficiencies,
@@ -344,6 +350,7 @@ class SrdBackground {
     required this.startingEquipment,
     required this.feature,
     required this.variants,
+    this.featureSource,
   });
 
   factory SrdBackground.fromJson(Map<String, dynamic> json) => SrdBackground(
@@ -805,6 +812,9 @@ class SrdFeat {
   final String description;
   final String category;
 
+  /// Repeated instances must differ in this choice (Magic Initiate list).
+  final String? uniqueByChoice;
+
   const SrdFeat({
     required this.name,
     this.prerequisite,
@@ -812,6 +822,7 @@ class SrdFeat {
     this.repeatable = false,
     required this.description,
     this.category = 'general',
+    this.uniqueByChoice,
   });
 
   factory SrdFeat.fromJson(Map<String, dynamic> json) => SrdFeat(
@@ -825,6 +836,7 @@ class SrdFeat {
     repeatable: readBool(json['repeatable']),
     description: json['description'] as String,
     category: json['category'] as String? ?? 'general',
+    uniqueByChoice: json['uniqueByChoice'] as String?,
   );
 }
 
@@ -986,6 +998,9 @@ class SrdFeatureChoiceRequirement {
   final bool ritualOnly;
   final bool excludePreparedSpells;
 
+  /// One saved value may be swapped whenever the class gains a level.
+  final bool replaceOneOnLevelUp;
+
   /// Ability choices of 2024 feats: points added per pick and the score cap.
   final int increase;
   final int? maximum;
@@ -1014,6 +1029,7 @@ class SrdFeatureChoiceRequirement {
     this.allowThievesTools = false,
     this.ritualOnly = false,
     this.excludePreparedSpells = false,
+    this.replaceOneOnLevelUp = false,
     this.increase = 1,
     this.maximum,
     this.patterns = const [],
@@ -1048,6 +1064,7 @@ class SrdFeatureChoiceRequirement {
       allowThievesTools: readBool(json['allowThievesTools']),
       ritualOnly: readBool(json['ritualOnly']),
       excludePreparedSpells: readBool(json['excludePreparedSpells']),
+      replaceOneOnLevelUp: readBool(json['replaceOneOnLevelUp']),
       increase: (json['increase'] as num?)?.toInt() ?? 1,
       maximum: (json['maximum'] as num?)?.toInt(),
       patterns: [

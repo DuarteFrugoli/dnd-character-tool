@@ -375,6 +375,64 @@ void main() {
   });
 
   group('dndchar file import', () {
+    test('2024 progression state survives .dndchar and backup round-trips', () async {
+      final now = DateTime(2024);
+      final original = Character(
+        id: 'leveled-2024',
+        rulesetId: RulesetId.dnd2024,
+        contentPackId: ContentPackId.srd521,
+        name: 'Leveled',
+        race: 'Human',
+        characterClass: 'Fighter',
+        level: 2,
+        abilityScores: const AbilityScores(strength: 16),
+        hitPoints: const HitPoints(maximum: 20, current: 20),
+        exhaustionLevel: 2,
+        levelHistory: const [
+          CharacterLevelRecord(
+            characterLevel: 1,
+            classEntryId: 'primary',
+            className: 'Fighter',
+            classLevel: 1,
+            hitPointsGained: 12,
+            hitPointMethod: HitPointGainMethod.maximum,
+            baseAbilityScores: {'strength': 15},
+          ),
+          CharacterLevelRecord(
+            characterLevel: 2,
+            classEntryId: 'primary',
+            className: 'Fighter',
+            classLevel: 2,
+            hitPointsGained: 8,
+            abilityIncreases: {'strength': 1},
+          ),
+        ],
+        createdAt: now,
+        updatedAt: now,
+      );
+      await repo.save(original);
+
+      void expectSameProgression(Character imported) {
+        expect(imported.exhaustionLevel, 2);
+        expect(imported.levelHistory, hasLength(2));
+        expect(imported.levelHistory.first.baseAbilityScores, {'strength': 15});
+        expect(imported.levelHistory.first.hitPointMethod, HitPointGainMethod.maximum);
+        expect(imported.levelHistory.last.abilityIncreases, {'strength': 1});
+        expect(imported.levelHistory.last.hitPointsGained, 8);
+      }
+
+      expectSameProgression(
+        await repo.importFromDndCharFile(await repo.exportToFileJson(original)),
+      );
+      final restored = await repo.importBackupFromFileJson(
+        await repo.exportBackupToFileJson(),
+      );
+      // The backup holds the original and the .dndchar copy.
+      final copies = restored.where((c) => c.name == 'Leveled').toList();
+      expect(copies, hasLength(2));
+      copies.forEach(expectSameProgression);
+    });
+
     test('export and import preserves the embedded character image', () async {
       final sourceImagePath = await backend.writeImage([
         3,

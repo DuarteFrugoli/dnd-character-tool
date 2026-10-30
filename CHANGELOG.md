@@ -5,13 +5,43 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [2.2.0] - In development
+## [3.0.0] - In development
+
+### Added
+- **D&D 2024 (5.5e)**: personagens podem ser criados com as regras de 2014 (SRD 5.1) ou de 2024 (SRD 5.2.1); cada ficha mantem a sua edicao, e fichas 2014 continuam com seus dados e calculos.
+- **Edicao visivel**: a lista de personagens e o cabecalho da ficha mostram `5e` ou `5.5e`; o cabecalho 2024 mostra todas as classes de personagens multiclasse.
+- **Criacao 2024**: classe, especie, antecedente com aumentos de atributo e talento de Origem, pericias, idiomas, ferramentas, magias e equipamento inicial.
+- **Subida de nivel 2024**: niveis 2 a 20 com subclasse no nivel 3, Aumento de Atributo e outros talentos, Dadivas Epicas no nivel 19, PV com Constituicao retroativa, multiclasse com pre-requisitos e proficiencias de 2024, troca de magias para Bardo, Feiticeiro e Bruxo e troca de invocacoes.
+- **Magias 2024**: limites de truques, magias preparadas e grimorio por classe e nivel; espacos de multiclasse com meio-conjuradores arredondando para cima; Pact Magic separado; magias sempre preparadas das subclasses.
+- **Escolhas 2024**: invocacoes com alvo (Agonizing Blast, Eldritch Spear, Repelling Blast e Lessons of the First Ones), Pacto do Tomo, instancias separadas de Magic Initiate e recursos ligados a invocacoes.
+- **Descansos 2024**: descanso longo recupera todos os Dados de Vida e concede Inspiracao Heroica a quem tem Resourceful; recursos seguem as recargas de 2024.
+- **Exaustao 2024**: niveis de 0 a 6 com -2 por nivel nas rolagens de d20 e -5 pes no deslocamento; o descanso longo remove um nivel.
+- **Recuperacoes no descanso curto**: Arcane Recovery, Natural Recovery e, em 2024, Sorcerous Restoration.
+- **Iniciativa**: rolar Iniciativa recarrega Superior Inspiration, Archdruid, Perfect Focus e Boon of Fate; gastar Uncanny Metabolism restaura os Pontos de Foco e cura.
+- **Deslocamento**: Unarmored Movement do Monge e Fast Movement do Barbaro entram no deslocamento exibido em fichas 2024.
+- **Antecedente personalizado**: as duas edicoes permitem montar um antecedente. Em 2014: caracteristica de um antecedente existente, duas pericias, duas ferramentas ou idiomas no total e o pacote de equipamento de um antecedente. Em 2024: tres atributos para os aumentos, um talento de Origem, duas pericias, uma ferramenta e 50 PO.
+- **Concentracao 2024**: a aba de magias 2024 mostra a magia em concentracao e permite iniciar, trocar e encerrar.
+- **Alert**: o talento soma +5 a Iniciativa em 2014 e o bonus de proficiencia em 2024.
+- **Revisao de mudancas**: o reinicio de niveis mostra cada mudanca antes de salvar, nas duas edicoes.
+- **Reinicio 2024**: volta ao nivel 1 em qualquer classe e pode reconstruir ate o nivel anterior.
+
+### Changed
+- **Reinicio de niveis 2014**: desfaz o que as escolhas removidas concediam, remove proficiencias de multiclasse e so zera o XP com o rastreio ligado; com historico completo, tambem desfaz aumentos de atributo e troca as pericias da classe.
+- **Descanso curto**: e possivel descansar sem gastar Dados de Vida, por exemplo para recuperar Pact Magic.
+- **Escolhas editadas na aba de habilidades**: alterar uma escolha agora adiciona e remove o que ela concede.
+- **Novidades no app**: anuncio da 3.0.0.
+
+### Fixed
+- **Descanso longo 2014**: recupera metade dos Dados de Vida arredondada para baixo, com minimo de um.
+- **Criacao 2014**: ferramentas fixas do antecedente, como as ferramentas de ladrao do Criminoso, agora sao gravadas na ficha.
+- **Subida de nivel 2014**: escolhas como Especializacao do Ladino e do Bardo agora aplicam as pericias escolhidas.
 
 ### Internal
-- **Pacotes de regras**: dados SRD e traducoes separados por versao; fichas existentes recebem a identificacao 2014/5.1 apenas pela atualizacao explicita de personagens.
-- **SRD 5.2.1**: preparados em ingles os catalogos de classes, subclasses, especies, antecedentes, talentos, equipamentos, magias, itens magicos e caracteristicas, com tabelas de progressao por classe. Escolhas e usos de habilidades ainda exigem integracao ao fluxo 2024.
-- **Traducoes SRD 5.2.1**: iniciados os overlays nos idiomas do app; a cobertura e a revisao linguistica ainda estao em andamento.
-- **Ferramentas de traducao**: adicionados fluxos para verificar campos ausentes por pacote e reaproveitar traducoes somente quando o registro ingles completo for identico.
+- **Atualizacao de personagens**: versao de dados 11 grava o historico do nivel 1 e as pericias da classe de fichas 2024 antigas; fichas 2014 recebem apenas a nova versao. A atualizacao continua explicita, com backup antes.
+- **Historico de niveis**: novas fichas e cada subida de nivel registram classe, PV, subclasse, talento e aumentos, usados para reiniciar niveis.
+- **Pacotes de regras**: dados SRD e traducoes separados por versao; catalogos SRD 5.2.1 completos em ingles e traducoes nos idiomas do app, ainda em revisao linguistica.
+- **Ferramentas de traducao**: verificacao de campos ausentes por pacote e reaproveitamento de traducoes apenas quando o registro ingles completo for identico.
+- **Versionamento**: versao do app preparada como `3.0.0+35`.
 
 ---
 

@@ -73,6 +73,16 @@ Character _fighter() {
         sourceClassEntryId: 'primary',
       ),
     ],
+    levelHistory: const [
+      CharacterLevelRecord(
+        characterLevel: 1,
+        classEntryId: 'primary',
+        className: 'Fighter',
+        classLevel: 1,
+        hitPointsGained: 12,
+        hitPointMethod: HitPointGainMethod.maximum,
+      ),
+    ],
     createdAt: now,
     updatedAt: now,
   );
@@ -95,7 +105,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   setUp(() => SharedPreferences.setMockInitialValues({}));
 
-  test('level up and reset round-trip a 2024 sheet without history', () async {
+  test('level up and reset round-trip a 2024 sheet', () async {
     final container = await _container(_fighter());
     final notifier = container.read(characterDetailProvider(_id).notifier);
 
@@ -107,7 +117,16 @@ void main() {
     expect(saved.levelHistory.first.hitPointsGained, 12);
     expect(Progression2024Engine.canResetToLevelOne(saved), isTrue);
 
-    await notifier.resetLevels2024();
+    final data = await notifier.rules2024Data();
+    final requests = Progression2024Engine.levelOneRequests(saved, data, 'Fighter');
+    await notifier.resetLevels2024(
+      choices: [
+        for (final request in requests)
+          request.toChoice([
+            for (var i = 0; i < request.requiredCount; i++) '${request.choiceId}_$i',
+          ]),
+      ],
+    );
     saved = container.read(characterDetailProvider(_id)).value!;
     expect(saved.totalLevel, 1);
     expect(saved.hitPoints.maximum, 12);
@@ -169,5 +188,88 @@ void main() {
     final saved = container.read(characterDetailProvider(_id)).value!;
     expect(saved.totalLevel, 2);
     expect(find.text('open'), findsOneWidget);
+  });
+
+  testWidgets('in-memory wizard returns the level without saving', (tester) async {
+    final container = await tester.runAsync(() async {
+      final container = await _container(_fighter());
+      await container.read(srd2024RulesDataProvider.future);
+      await container.read(srd2024SpeciesProvider.future);
+      await container.read(srdI18nForPackProvider(ContentPackId.srd521).future);
+      await container.read(srdWeaponsForPackProvider(ContentPackId.srd521).future);
+      return container;
+    });
+    LevelUp2024Result? returned;
+    await tester.pumpWidget(
+      UncontrolledProviderScope(
+        container: container!,
+        child: MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: Builder(
+            builder: (context) => Scaffold(
+              body: Center(
+                child: FilledButton(
+                  onPressed: () async {
+                    returned = await openLevelUp2024Sheet(
+                      context,
+                      container.read(characterDetailProvider(_id)).value!,
+                      _id,
+                      applyOnConfirm: false,
+                    );
+                  },
+                  child: const Text('open'),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.tap(find.text('open'));
+    for (var i = 0; i < 5; i++) {
+      await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 100)));
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Continue'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Continue'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Confirm Level Up'));
+    await tester.pumpAndSettle();
+
+    expect(returned?.className, 'Fighter');
+    expect(container.read(characterDetailProvider(_id)).value!.totalLevel, 1);
+  });
+
+  test('a reset rebuilt in memory is saved with a complete history', () async {
+    final container = await _container(_fighter());
+    final notifier = container.read(characterDetailProvider(_id).notifier);
+    await notifier.levelUp2024(const LevelUp2024Result(className: 'Fighter', classEntryId: 'primary'));
+    final original = container.read(characterDetailProvider(_id)).value!;
+    final data = await notifier.rules2024Data();
+
+    final levelOne = Progression2024Engine.resetToLevelOne(
+      original,
+      data,
+      className: 'Fighter',
+      choices: [
+        for (final request in Progression2024Engine.levelOneRequests(original, data, 'Fighter'))
+          request.toChoice([
+            for (var i = 0; i < request.requiredCount; i++) '${request.choiceId}_$i',
+          ]),
+      ],
+    );
+    final rebuilt = Progression2024Engine.applyLevelUp(
+      levelOne,
+      data,
+      const LevelUp2024Result(className: 'Fighter', classEntryId: 'primary'),
+    );
+    await notifier.saveLevelReset2024(rebuilt);
+
+    final saved = container.read(characterDetailProvider(_id)).value!;
+    expect(saved.totalLevel, 2);
+    expect(saved.levelHistory.map((r) => r.characterLevel), [1, 2]);
   });
 }

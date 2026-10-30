@@ -18,6 +18,58 @@ class AppLocalizationsZh extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => '自定义背景';
+
+  @override
+  String get customBackgroundSubtitle => '按规则创建你自己的背景';
+
+  @override
+  String get customBackgroundName => '背景名称';
+
+  @override
+  String get customBackgroundFeature => '背景特性';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return '选择$count项技能';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return '最多选择$count种工具，其余变为语言';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return '稍后选择的语言：$count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => '装备包';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return '选择$count项属性用于提升';
+  }
+
+  @override
+  String get customBackgroundTool2024 => '与其他熟练项一起选择一种任意类型的工具。';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return '装备：$gp金币可供花费';
+  }
+
+  @override
+  String get customBackgroundSave => '使用此背景';
+
+  @override
   String get creation2024Species => '物种';
 
   @override
@@ -151,6 +203,38 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get whatsNewThanks => '感谢你使用本应用并分享反馈。你的建议将帮助我们决定接下来做什么。';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024（5.5e）来了：在2014角色之外，用SRD 5.2.1规则创建并培养角色。';
+
+  @override
+  String get whatsNew3RulesTitle => 'D&D 2024规则';
+
+  @override
+  String get whatsNew3RulesBody =>
+      '创建角色时可选择D&D 5e（2014）或5.5e（2024）。2024角色可从1级成长到20级，包含子职业、专长、史诗恩赐、兼职和武器精通。';
+
+  @override
+  String get whatsNew3RestsTitle => '休息与状态';
+
+  @override
+  String get whatsNew3RestsBody =>
+      '2024规则中，长休恢复所有生命骰并降低一级力竭；力竭影响d20检定和速度；短休可使用Arcane Recovery等能力。';
+
+  @override
+  String get whatsNew3ResetTitle => '更安全的等级重置';
+
+  @override
+  String get whatsNew3ResetBody =>
+      '保存前会列出每一项更改。重置会撤销被移除职业所给予的内容，两种规则都可以重建回之前的等级。';
+
+  @override
+  String get whatsNew3UpdateTitle => '一次性角色更新';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      '打开角色时，应用会请求更新所有角色并先打开备份。2014角色保留其规则和数据；2024角色会保存用于升级和重置的等级记录。';
 
   @override
   String charListImportedSuccess(String name) {
@@ -628,7 +712,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return '以$className回到1级？1级之后获得的等级、子职业、专长、选择和法术将根据已保存的等级记录撤销。出身、手动属性修改、物品、笔记和背景故事会保留。';
+    return '回到1级？接下来你可以保留$className或选择其他职业。来自职业的等级、子职业、专长、选择和法术将根据已保存的等级记录撤销。出身、手动属性修改、物品、笔记和背景故事会保留。';
   }
 
   @override
@@ -643,6 +727,66 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => '选择此法术所属的职业';
+
+  @override
+  String get featureChoicesChooseTarget => '选择目标';
+
+  @override
+  String get featureChoicesNoTargets => '暂时没有可选目标。';
+
+  @override
+  String get levelUp2024SwapTitle => '替换法术（可选）';
+
+  @override
+  String get levelUp2024SwapCantrip => '要替换的戏法';
+
+  @override
+  String get levelUp2024SwapSpell => '要替换的已准备法术';
+
+  @override
+  String get levelUp2024SwapLearn => '替换为';
+
+  @override
+  String get resetLevels2024ClassTitle => '1级职业';
+
+  @override
+  String get changesReviewTitle => '检查更改';
+
+  @override
+  String get changesReviewIntro => '保存后将更改：';
+
+  @override
+  String get changesReviewNone => '不会有任何更改。';
+
+  @override
+  String get changesReviewApply => '保存更改';
+
+  @override
+  String get changesKindClasses => '职业';
+
+  @override
+  String get changesKindExpertise => '专精';
+
+  @override
+  String get changesKindProficiencies => '熟练项';
+
+  @override
+  String get changesKindExperience => '经验值';
+
+  @override
+  String get changesAdded => '新增';
+
+  @override
+  String get changesRemoved => '移除';
+
+  @override
+  String get changesKeptTitle => '保持不变';
+
+  @override
+  String get resetLimitAbilityIncreases => '此角色卡没有完整的等级记录，之前等级获得的属性提升会保留。';
+
+  @override
+  String get resetLimitClassSkills => '此角色卡没有记录哪些技能来自职业，因此会保留。';
 
   @override
   String get concentrationBannerLabel => '正在专注于：';
@@ -934,7 +1078,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      '这会将职业进度重置为 1 级。笔记、物品栏、容器、货币、图片、故事、外观、种族、背景和属性值会保留。\n\n职业等级、职业法术、职业/子职业选择、进度资源和 ASI 专长会被移除或重新计算。如果想保留额外副本，请先导出备份。';
+      '这会把职业成长重置为1级。笔记、物品、容器、货币、图片、背景故事、外貌、种族和背景会保留。\n\n职业等级、职业法术、职业与子职业选择及其带来的内容、成长资源和等级专长会被移除。如果角色卡有完整的等级记录，等级带来的属性提升也会撤销。保存之前你会检查每一项更改。';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2832,6 +2976,12 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       '已将此角色设为使用 2014 年规则（SRD 5.1）。';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory => '已保存用于升级和重置等级的1级记录。';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills => '已保存1级时来自职业的技能。';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

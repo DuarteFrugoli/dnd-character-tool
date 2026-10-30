@@ -540,11 +540,14 @@ void main() {
         'Lucky',
         'Campaign Gift',
       ]);
+      // Origin choices stay; the reset records the new class skills.
       expect(updated.featureChoices.map((choice) => choice.sourceType), [
         'raceTrait',
         'feat',
+        'classFeature',
       ]);
-      expect(updated.featureChoices.last.sourceName, 'Lucky');
+      expect(updated.featureChoices[1].sourceName, 'Lucky');
+      expect(updated.featureChoices.last.featureName, 'Skill Proficiencies');
       expect(updated.featureResources, isEmpty);
       expect(updated.disabledFeatures, isEmpty);
       expect(updated.disabledSpells, isEmpty);
@@ -590,7 +593,10 @@ void main() {
       expect(updated.spells.single.sourceClass, 'Cleric');
       expect(updated.spells.single.sourceSubclass, 'Life Domain');
       expect(updated.spells.single.sourceClassEntryId, 'primary');
-      expect(updated.featureChoices.single.choiceId, 'proficiency');
+      expect(
+        updated.featureChoices.map((choice) => choice.choiceId),
+        containsAll(['skills', 'proficiency']),
+      );
     });
 
     test('supports atomic rebuild by applying level ups after reset', () {

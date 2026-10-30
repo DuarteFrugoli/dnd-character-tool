@@ -47,6 +47,14 @@ class Spells2024Tab extends ConsumerWidget {
         key: PageStorageKey('spells-2024-$characterId'),
         padding: EdgeInsets.fromLTRB(16, 12, 16, 96 + MediaQuery.viewPaddingOf(context).bottom),
         children: [
+          if (character.concentrationSpell != null)
+            ConcentrationBanner(
+              spellName: character.concentrationSpell!,
+              i18n: i18n,
+              onBreak: () => ref
+                  .read(characterDetailProvider(characterId).notifier)
+                  .setConcentration(null),
+            ),
           for (final casting in castings)
             _CastingSummary(
               casting: casting,
@@ -264,11 +272,13 @@ class _Known2024SpellTile extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
+    // Each Magic Initiate instance keeps its own spellcasting ability.
     final magicInitiateAbility = spell.sourceFeature == 'Magic Initiate'
         ? character.featureChoices
             .where((choice) =>
                 choice.featureName == 'Magic Initiate' &&
-                choice.choiceId == 'spellcasting_ability')
+                choice.choiceId == 'spellcasting_ability' &&
+                choice.sourceClassEntryId == spell.sourceClassEntryId)
             .firstOrNull
             ?.values.firstOrNull
         : null;
@@ -308,18 +318,39 @@ class _Known2024SpellTile extends ConsumerWidget {
     final preparedFull = casting != null &&
         _classSpellCounts(character, casting.entry).prepared >=
             casting.preparedSpells;
+    final concentrating = character.concentrationSpell == spell.name;
     return ListTile(
       title: Text(i18n.spellName(spell.name)),
       subtitle: spell.level > 0 && spell.isPrepared ? Text(l10n.spellsPrepared) : null,
-      trailing: !canTogglePrepared
-          ? null
-          : IconButton(
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (data?.concentration == true)
+            IconButton(
+              tooltip: l10n.concentrationTooltip,
+              onPressed: () => onConcentrationTap(
+                context,
+                ref,
+                spell.name,
+                character.concentrationSpell,
+                characterId,
+                i18n,
+              ),
+              icon: Icon(
+                concentrating ? Icons.gps_fixed : Icons.gps_not_fixed,
+                color: concentrating ? Theme.of(context).colorScheme.primary : null,
+              ),
+            ),
+          if (canTogglePrepared)
+            IconButton(
               tooltip: spell.isPrepared ? l10n.spellActionPrepared : l10n.spellActionPrepare,
               onPressed: !spell.isPrepared && preparedFull
                   ? null
                   : () => ref.read(characterDetailProvider(characterId).notifier).togglePrepared(spell.name),
               icon: Icon(spell.isPrepared ? Icons.bookmark : Icons.bookmark_border),
             ),
+        ],
+      ),
       onTap: data == null
           ? null
           : () => showModalBottomSheet<void>(

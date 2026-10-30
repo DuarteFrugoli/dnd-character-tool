@@ -18,6 +18,58 @@ class AppLocalizationsJa extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => 'カスタム背景';
+
+  @override
+  String get customBackgroundSubtitle => 'ルールに沿って独自の背景を作成';
+
+  @override
+  String get customBackgroundName => '背景の名前';
+
+  @override
+  String get customBackgroundFeature => '背景の特徴';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return '技能を$countつ選択';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return '道具を最大$countつ選択。残りは言語になります';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return '後で選ぶ言語：$count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => '装備パック';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return '能力値上昇の対象を$countつ選択';
+  }
+
+  @override
+  String get customBackgroundTool2024 => '他の習熟と一緒に、任意の種類の道具を1つ選択します。';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return '装備：$gp GPを使用';
+  }
+
+  @override
+  String get customBackgroundSave => 'この背景を使う';
+
+  @override
   String get creation2024Species => '種族';
 
   @override
@@ -155,6 +207,38 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get whatsNewThanks =>
       '遊んでいただき、またご意見をお寄せいただきありがとうございます。皆さんのアイデアが今後の開発につながります。';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024（5.5e）登場：2014年版のキャラクターと並べて、SRD 5.2.1のルールでキャラクターを作成・成長できます。';
+
+  @override
+  String get whatsNew3RulesTitle => 'D&D 2024ルール';
+
+  @override
+  String get whatsNew3RulesBody =>
+      'キャラクター作成時にD&D 5e（2014）か5.5e（2024）を選べます。2024年版のキャラクターはサブクラス、特技、エピック・ブーン、マルチクラス、武器マスタリーとともにレベル1から20まで成長します。';
+
+  @override
+  String get whatsNew3RestsTitle => '休憩と状態';
+
+  @override
+  String get whatsNew3RestsBody =>
+      '2024年版では大休憩でヒットダイスがすべて回復し消耗が1段階減ります。消耗はd20ロールと移動速度に影響し、小休憩ではArcane Recoveryなどの能力を使えます。';
+
+  @override
+  String get whatsNew3ResetTitle => 'より安全なレベルリセット';
+
+  @override
+  String get whatsNew3ResetBody =>
+      '保存前にすべての変更が一覧表示されます。リセットは取り除いたクラスが与えていたものを取り消し、どちらの版でも元のレベルまで再構築できます。';
+
+  @override
+  String get whatsNew3UpdateTitle => 'キャラクターの一度きりの更新';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      'キャラクターを開くと、アプリが全員の更新を求め、先にバックアップを開きます。2014年版のキャラクターはルールとデータを保持し、2024年版のキャラクターはレベルアップとリセットに使うレベル履歴を保存します。';
 
   @override
   String charListImportedSuccess(String name) {
@@ -638,7 +722,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return '$classNameとしてレベル1に戻しますか？レベル1以降に得たレベル、サブクラス、特技、選択、呪文は保存されたレベル履歴から取り消されます。出自、手動の能力値編集、所持品、メモ、背景ストーリーは保持されます。';
+    return 'レベル1に戻しますか？次の画面で$classNameのままにするか、別のクラスを選べます。クラスから得たレベル、サブクラス、特技、選択、呪文は保存されたレベル履歴から取り消されます。出自、手動の能力値編集、所持品、メモ、背景ストーリーは保持されます。';
   }
 
   @override
@@ -653,6 +737,67 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => 'この呪文のクラスを選択';
+
+  @override
+  String get featureChoicesChooseTarget => '対象を選択';
+
+  @override
+  String get featureChoicesNoTargets => 'まだ有効な対象がありません。';
+
+  @override
+  String get levelUp2024SwapTitle => '呪文の入れ替え（任意）';
+
+  @override
+  String get levelUp2024SwapCantrip => '入れ替える初級呪文';
+
+  @override
+  String get levelUp2024SwapSpell => '入れ替える準備呪文';
+
+  @override
+  String get levelUp2024SwapLearn => '代わりの呪文';
+
+  @override
+  String get resetLevels2024ClassTitle => 'レベル1のクラス';
+
+  @override
+  String get changesReviewTitle => '変更を確認';
+
+  @override
+  String get changesReviewIntro => '保存すると次が変わります：';
+
+  @override
+  String get changesReviewNone => '何も変わりません。';
+
+  @override
+  String get changesReviewApply => '変更を保存';
+
+  @override
+  String get changesKindClasses => 'クラス';
+
+  @override
+  String get changesKindExpertise => '習熟強化';
+
+  @override
+  String get changesKindProficiencies => '習熟';
+
+  @override
+  String get changesKindExperience => '経験値';
+
+  @override
+  String get changesAdded => '追加';
+
+  @override
+  String get changesRemoved => '削除';
+
+  @override
+  String get changesKeptTitle => 'そのまま保持';
+
+  @override
+  String get resetLimitAbilityIncreases =>
+      'このシートには完全なレベル履歴がないため、以前のレベルで上げた能力値はそのまま残ります。';
+
+  @override
+  String get resetLimitClassSkills => 'このシートはクラスから得た技能を記録していないため、それらは残ります。';
 
   @override
   String get concentrationBannerLabel => '集中中の魔法：';
@@ -945,7 +1090,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      'クラス進行をレベル1に戻します。メモ、インベントリ、コンテナ、通貨、画像、物語、外見、種族、背景、能力値は保持されます。\n\nクラスレベル、クラス呪文、クラス/サブクラスの選択、進行リソース、ASIで選んだ特技は削除または再計算されます。追加のコピーが必要なら先にバックアップをエクスポートしてください。';
+      'クラスの成長をレベル1に戻します。メモ、所持品、コンテナ、通貨、画像、背景ストーリー、外見、種族、背景は保持されます。\n\nクラスレベル、クラス呪文、クラスとサブクラスの選択とそれによって得たもの、成長リソース、レベルで得た特技は削除されます。完全なレベル履歴があるシートでは、レベルによる能力値の上昇も取り消されます。保存する前に、すべての変更を確認できます。';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2849,6 +2994,13 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       'このキャラクターに2014年版ルール（SRD 5.1）を設定しました。';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory =>
+      'レベルアップとレベルリセットに使うレベル1の履歴を保存しました。';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills => 'レベル1でクラスから得た技能を保存しました。';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

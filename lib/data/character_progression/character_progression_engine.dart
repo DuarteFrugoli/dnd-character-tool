@@ -5,6 +5,7 @@ import '../datasources/srd/srd_models.dart';
 import '../feature_choice_engine.dart';
 import '../models/models.dart';
 import '../rulesets/character_rules_context.dart';
+import 'choice_effects.dart';
 
 class CharacterProgressionEngine {
   const CharacterProgressionEngine._();
@@ -17,7 +18,14 @@ class CharacterProgressionEngine {
     return 6;
   }
 
-  static Character applyLevelUp(Character character, LevelUpResult result) {
+  /// Applies a 2014 level. With [effects], skills, expertise, tools,
+  /// languages and spells granted by the level's feature choices are applied
+  /// too. The level is appended to `levelHistory`.
+  static Character applyLevelUp(
+    Character character,
+    LevelUpResult result, {
+    ChoiceEffectsData? effects,
+  }) {
     CharacterRulesContext.fromCharacter(character).requireLegacyOperation('Level up');
     final targetSubclass = _targetSubclassAfterLevelUp(character, result);
     final classes = classEntriesAfterLevelUp(
@@ -97,9 +105,37 @@ class CharacterProgressionEngine {
       spells: spells,
     );
 
+    if (effects != null) {
+      updated = ChoiceEffects.apply(character, updated, effects);
+    }
+    updated = updated.copyWith(
+      levelHistory: [
+        ...character.levelHistory,
+        CharacterLevelRecord(
+          characterLevel: totalLevel,
+          classEntryId: result.targetClassEntryId,
+          className: result.targetClassName,
+          classLevel: result.newClassLevel,
+          hitPointsGained: hpGained,
+          hitPointMethod: result.hitPointMethod,
+          subclassName: result.subclassChosen,
+          featName: result.featChosen?.name,
+          abilityIncreases: {
+            for (final entry in result.asiChanges.entries)
+              if (entry.value != 0) entry.key: entry.value,
+          },
+        ),
+      ],
+    );
+
     updated = syncSpellcastingSlotsFor(updated);
     return updated.copyWith(armorClass: calcArmorClass(updated));
   }
+
+  /// Whether every level of [character] has a history record, so a reset can
+  /// undo exactly what each level gave.
+  static bool hasCompleteHistory(Character character) =>
+      character.levelHistory.length == character.totalLevel;
 
   static List<CharacterClassEntry> classEntriesAfterLevelUp({
     required Character character,

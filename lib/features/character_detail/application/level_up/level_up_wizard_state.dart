@@ -23,6 +23,7 @@ class LevelUpWizardState {
     this.targetClassName,
     this.hpGained = 0,
     this.hpChosen = false,
+    this.hpMethod = HitPointGainMethod.average,
     this.asiMode = LevelUpAsiMode.asi,
     this.asiChanges = const {},
     this.cantripsLearned = const [],
@@ -35,6 +36,7 @@ class LevelUpWizardState {
   String? targetClassName;
   int hpGained;
   bool hpChosen;
+  String hpMethod;
   LevelUpAsiMode asiMode;
   Map<String, int> asiChanges;
   SrdFeat? featChosen;
@@ -50,6 +52,7 @@ class LevelUpWizardState {
     Object? targetClassName = _sentinel,
     int? hpGained,
     bool? hpChosen,
+    String? hpMethod,
     LevelUpAsiMode? asiMode,
     Map<String, int>? asiChanges,
     Object? featChosen = _sentinel,
@@ -70,6 +73,7 @@ class LevelUpWizardState {
           : targetClassName as String?,
       hpGained: hpGained ?? this.hpGained,
       hpChosen: hpChosen ?? this.hpChosen,
+      hpMethod: hpMethod ?? this.hpMethod,
       asiMode: asiMode ?? this.asiMode,
       asiChanges: asiChanges ?? this.asiChanges,
       cantripsLearned: cantripsLearned ?? this.cantripsLearned,

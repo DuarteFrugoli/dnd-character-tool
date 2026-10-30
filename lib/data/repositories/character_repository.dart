@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import '../character_progression/progression_2024_engine.dart';
 import '../datasources/local/character_local_data_source.dart';
 import '../datasources/srd/srd_data_source.dart';
 import '../migrations/character_migration.dart';
@@ -158,7 +159,10 @@ class CharacterRepository {
   }
 
   Future<CharacterMigrationContext> _migrationContext() async {
-    return CharacterMigrationContext(itemsByName: await _srd.getItems());
+    return CharacterMigrationContext(
+      itemsByName: await _srd.getItems(),
+      rules2024: await Rules2024Data.load(),
+    );
   }
 
   // ---------------------------------------------------------------------------

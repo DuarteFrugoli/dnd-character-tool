@@ -1,6 +1,15 @@
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/models/models.dart';
+import '../../data/rulesets/ruleset_ids.dart';
+import '../../l10n/app_localizations.dart';
+
+/// Short edition label, e.g. `5e` for 2014 and `5.5e` for 2024 sheets.
+String rulesetShortLabel(AppLocalizations l10n, RulesetId rulesetId) =>
+    switch (rulesetId) {
+      RulesetId.dnd2014 => l10n.rulesetShort2014,
+      RulesetId.dnd2024 => l10n.rulesetShort2024,
+    };
 
 String localizedClassLevelSummary(
   Character character,

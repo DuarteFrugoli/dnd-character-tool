@@ -1,13 +1,19 @@
+import 'dart:math' as math;
+
 import '../constants/armor_class.dart';
 import '../datasources/srd/srd_2024_creation_catalog.dart';
+import '../datasources/srd/srd_data_source.dart';
 import '../datasources/srd/srd_models.dart';
+import '../dice/dice.dart';
 import '../feature_choice_engine.dart';
 import '../feature_choice_option_resolver.dart';
 import '../models/models.dart';
 import '../rulesets/ruleset_ids.dart';
+import '../rulesets/srd_content_pack.dart';
+import 'choice_effects.dart';
 
 /// SRD 5.2.1 content the 2024 progression rules read.
-class Rules2024Data {
+class Rules2024Data implements ChoiceEffectsData {
   const Rules2024Data({
     required this.classes,
     required this.subclasses,
@@ -19,20 +25,45 @@ class Rules2024Data {
     required this.tools,
     required this.languages,
     required this.speciesTraits,
+    this.backgrounds = const [],
   });
 
   final List<Creation2024Class> classes;
   final Map<String, List<Creation2024Subclass>> subclasses;
   final Map<String, Map<String, List<SrdClassFeature>>> subclassFeatures;
   final List<SrdFeat> feats;
+  @override
   final SrdFeatureChoiceCatalog choices;
+  @override
   final List<SrdSpell> spells;
   final List<SrdSkill> skills;
   final List<SrdTool> tools;
   final List<SrdLanguage> languages;
+  final List<Creation2024Background> backgrounds;
 
   /// Trait names of the character's species.
   final List<String> speciesTraits;
+
+  /// Loads the SRD 5.2.1 catalogs; species traits are added per sheet.
+  static Future<Rules2024Data> load({SrdDataSource? source}) async {
+    final srd = source ?? SrdDataSource.forPack(SrdContentPackRegistry.srd521);
+    if (srd.pack.id != SrdContentPackRegistry.srd521.id) {
+      throw StateError('2024 rules require SRD 5.2.1.');
+    }
+    return Rules2024Data(
+      classes: await Creation2024Catalog.loadClasses(),
+      subclasses: await Creation2024Catalog.loadSubclasses(),
+      subclassFeatures: await srd.getAllSubclassFeatures(),
+      feats: await srd.getFeats(),
+      choices: await srd.getFeatureChoiceCatalog(),
+      spells: await srd.getSpells(),
+      skills: await srd.getSkills(),
+      tools: await srd.getTools(),
+      languages: await srd.getLanguages(),
+      backgrounds: await Creation2024Catalog.loadBackgrounds(),
+      speciesTraits: const [],
+    );
+  }
 
   Rules2024Data withSpeciesTraits(List<String> traits) => Rules2024Data(
     classes: classes,
@@ -44,6 +75,7 @@ class Rules2024Data {
     skills: skills,
     tools: tools,
     languages: languages,
+    backgrounds: backgrounds,
     speciesTraits: traits,
   );
 
@@ -62,9 +94,52 @@ class Rules2024Data {
     return null;
   }
 
+  Creation2024Background? backgroundNamed(String name) {
+    for (final background in backgrounds) {
+      if (background.name == name) return background;
+    }
+    return null;
+  }
+
+  @override
   SrdFeat? featNamed(String name) {
     for (final feat in feats) {
       if (feat.name == name) return feat;
+    }
+    return null;
+  }
+
+  @override
+  Iterable<String> backgroundSkills(String background) =>
+      backgroundNamed(background)?.skills ?? const [];
+
+  /// 2024 sheets save skills in lowercase, as the class and background lists.
+  @override
+  String skillName(String id) => id.replaceAll('_', ' ');
+
+  @override
+  String toolName(String id) => _nameById(tools.map((t) => t.name), id);
+
+  @override
+  String languageName(String id) => _nameById(languages.map((l) => l.name), id);
+
+  @override
+  String weaponName(String id) => id.replaceAll('_', ' ');
+
+  @override
+  bool get weaponChoicesGrantProficiency => false;
+
+  static String _nameById(Iterable<String> names, String id) {
+    for (final name in names) {
+      if (FeatureChoiceOptionResolver.idFromName(name) == id) return name;
+    }
+    return id.replaceAll('_', ' ');
+  }
+
+  SrdSpell? spellNamed(String name) {
+    final lower = name.toLowerCase();
+    for (final spell in spells) {
+      if (spell.name.toLowerCase() == lower) return spell;
     }
     return null;
   }
@@ -99,6 +174,14 @@ class LevelUp2024Plan {
   final String? featFeature;
 }
 
+/// A class-table spell replaced when gaining a level.
+class SpellSwap2024 {
+  const SpellSwap2024({required this.forget, required this.learn});
+
+  final String forget;
+  final String learn;
+}
+
 /// Decisions taken in the 2024 level-up flow.
 class LevelUp2024Result {
   const LevelUp2024Result({
@@ -110,6 +193,7 @@ class LevelUp2024Result {
     this.featName,
     this.abilityIncreases = const {},
     this.featureChoices = const [],
+    this.spellSwaps = const [],
   });
 
   final String className;
@@ -122,6 +206,7 @@ class LevelUp2024Result {
   final String? featName;
   final Map<String, int> abilityIncreases;
   final List<CharacterFeatureChoice> featureChoices;
+  final List<SpellSwap2024> spellSwaps;
 }
 
 /// Spellcasting limits of one class entry, as if single-classed.
@@ -163,8 +248,14 @@ class Progression2024Engine {
     'charisma',
   ];
 
-  /// Spells chosen through the class table rather than a feature choice.
-  static const _classSpellFeatures = {'Spellcasting', 'Pact Magic'};
+  /// Languages a class grants by itself at level 1.
+  static const classLanguages = {'Druid': 'Druidic', 'Rogue': "Thieves' Cant"};
+
+  /// Spells a class feature always prepares at level 1, with that feature.
+  static const classLevelOneSpells = {
+    'Druid': ('Druidcraft', 'Druidic'),
+    'Ranger': ("Hunter's Mark", 'Favored Enemy'),
+  };
 
   static int proficiencyBonus(int totalLevel) => 2 + (totalLevel - 1) ~/ 4;
 
@@ -184,45 +275,10 @@ class Progression2024Engine {
 
   // ── History ──────────────────────────────────────────────────────────────
 
-  /// Level records of [character]. Sheets created before history was saved
-  /// can only be reconstructed while they are still level 1.
-  static List<CharacterLevelRecord> historyFor(Character character) {
-    if (character.levelHistory.isNotEmpty) return character.levelHistory;
-    if (character.totalLevel != 1) return const [];
-    final entry = character.primaryClass;
-    final bonuses = backgroundAbilityBonuses(character);
-    return [
-      CharacterLevelRecord(
-        characterLevel: 1,
-        classEntryId: entry.id,
-        className: entry.className,
-        classLevel: 1,
-        hitPointsGained: character.hitPoints.maximum,
-        hitPointMethod: HitPointGainMethod.maximum,
-        baseAbilityScores: {
-          for (final ability in _abilities)
-            ability: character.abilityScores[ability] - (bonuses[ability] ?? 0),
-        },
-      ),
-    ];
-  }
-
-  /// Background increases saved by 2024 creation as `ability:bonus` values.
-  static Map<String, int> backgroundAbilityBonuses(Character character) {
-    final result = <String, int>{};
-    for (final choice in character.featureChoices) {
-      if (choice.sourceType != FeatureChoiceSourceType.background ||
-          choice.choiceId != 'ability_scores') {
-        continue;
-      }
-      for (final value in choice.values) {
-        final parts = value.split(':');
-        final bonus = parts.length == 2 ? int.tryParse(parts[1]) : null;
-        if (bonus != null) result[parts[0]] = bonus;
-      }
-    }
-    return result;
-  }
+  /// Level records of [character]. Sheets saved before history existed get
+  /// their level 1 record from the explicit character update (migration 11).
+  static List<CharacterLevelRecord> historyFor(Character character) =>
+      character.levelHistory;
 
   // ── Planning ─────────────────────────────────────────────────────────────
 
@@ -418,6 +474,8 @@ class Progression2024Engine {
   }
 
   /// Feature choices newly required by the level, the subclass and the feat.
+  /// Choices that may be swapped on gaining a level (Eldritch Invocations) and
+  /// choices depending on included ones (Pact of the Tome) are included too.
   /// Ability increases of the feat are excluded.
   static List<FeatureChoiceRequest> requestsFor(
     Character character,
@@ -452,18 +510,77 @@ class Progression2024Engine {
         targetClassName: plan.cls.name,
         subclassName: subclass,
       ),
-      if (featName != null) ...featRequests(data, featName, plan.newTotalLevel),
-      if (plan.isNewClass) ..._multiclassRequests(character, data, plan),
     ];
+    final keys = {for (final request in requests) request.key};
+    void addRequest(FeatureChoiceRequest request) {
+      if (keys.add(request.key)) requests.add(request);
+    }
+
+    if (!plan.isNewClass) {
+      for (final entry
+          in data.choices.classFeatures[plan.cls.name]?.entries ??
+              const <MapEntry<String, SrdFeatureChoiceDefinition>>[]) {
+        if (!_hasClassFeature([
+          CharacterClassEntry(
+            id: plan.classEntryId,
+            className: plan.cls.name,
+            level: plan.newClassLevel,
+          ),
+        ], data, entry.key)) {
+          continue;
+        }
+        for (final request in FeatureChoiceEngine.requestsForClassFeature(
+          catalog: data.choices,
+          className: plan.cls.name,
+          sourceClassEntryId: plan.classEntryId,
+          featureName: entry.key,
+          level: plan.newClassLevel,
+        )) {
+          if (request.requirement.replaceOneOnLevelUp) addRequest(request);
+        }
+      }
+    }
+
+    for (final request in [...requests]) {
+      if (request.sourceType != FeatureChoiceSourceType.classFeature) continue;
+      for (final dependent in FeatureChoiceEngine.requestsForClassFeature(
+        catalog: data.choices,
+        className: request.sourceClass,
+        sourceClassEntryId: request.sourceClassEntryId,
+        featureName: request.featureName,
+        level: request.level,
+      )) {
+        if (dependent.requirement.whenChoiceId == request.choiceId) {
+          addRequest(dependent);
+        }
+      }
+    }
+
+    if (featName != null) {
+      requests.addAll(featRequests(data, featName, plan.newTotalLevel, character));
+    }
+    if (plan.isNewClass) requests.addAll(_multiclassRequests(character, data, plan));
     return requests;
   }
 
-  /// Non-ability choices of a feat gained at [characterLevel].
+  /// Non-ability choices of a feat gained at [characterLevel]. Repeatable
+  /// feats that must differ in a choice exclude values of other instances.
   static List<FeatureChoiceRequest> featRequests(
     Rules2024Data data,
     String featName,
-    int characterLevel,
-  ) {
+    int characterLevel, [
+    Character? character,
+  ]) {
+    final feat = data.featNamed(featName);
+    final uniqueChoice = feat?.uniqueByChoice;
+    final used = {
+      if (uniqueChoice != null && character != null)
+        for (final choice in character.featureChoices)
+          if (choice.sourceType == FeatureChoiceSourceType.feat &&
+              choice.sourceName == featName &&
+              choice.choiceId == uniqueChoice)
+            ...choice.values,
+    };
     return [
       for (final request in FeatureChoiceEngine.requestsForFeat(
         catalog: data.choices,
@@ -478,10 +595,32 @@ class Progression2024Engine {
             sourceName: request.sourceName,
             featureName: request.featureName,
             level: request.level,
-            requirement: request.requirement,
+            requirement: request.choiceId == uniqueChoice && used.isNotEmpty
+                ? _withoutOptions(data, request.requirement, used)
+                : request.requirement,
             requiredCount: request.requiredCount,
           ),
     ];
+  }
+
+  static SrdFeatureChoiceRequirement _withoutOptions(
+    Rules2024Data data,
+    SrdFeatureChoiceRequirement requirement,
+    Set<String> excluded,
+  ) {
+    final options = requirement.options.isNotEmpty
+        ? requirement.options
+        : data.choices.optionSources[requirement.optionsSource] ??
+              const <SrdFeatureChoiceOption>[];
+    return SrdFeatureChoiceRequirement(
+      id: requirement.id,
+      type: requirement.type,
+      count: requirement.count,
+      options: [
+        for (final option in options)
+          if (!excluded.contains(option.id)) option,
+      ],
+    );
   }
 
   static List<FeatureChoiceRequest> _multiclassRequests(
@@ -490,75 +629,141 @@ class Progression2024Engine {
     LevelUp2024Plan plan,
   ) {
     final proficiencies = plan.cls.multiclass;
-    final requests = <FeatureChoiceRequest>[];
-    final skillChoice = proficiencies.skillChoice;
-    if (skillChoice != null) {
-      final known = character.skillProficiencies.toSet();
-      requests.add(
-        _multiclassRequest(
-          plan,
-          SrdFeatureChoiceRequirement(
-            id: 'skills',
-            type: 'option',
-            count: skillChoice.count,
-            options: [
-              for (final skill in skillChoice.isAny
-                  ? [for (final skill in data.skills) skill.name.toLowerCase()]
-                  : skillChoice.from)
-                if (!known.contains(skill))
-                  SrdFeatureChoiceOption(
-                    id: FeatureChoiceOptionResolver.idFromName(skill),
-                    name: _titleCase(skill),
-                  ),
-            ],
-          ),
-          skillChoice.count,
+    return [
+      if (proficiencies.skillChoice != null)
+        _skillRequest(
+          character,
+          data,
+          FeatureChoiceSourceType.multiclassProficiency,
+          plan.cls.name,
+          plan.classEntryId,
+          multiclassFeatureName,
+          proficiencies.skillChoice!,
         ),
-      );
-    }
-    final toolChoice = proficiencies.toolChoice;
-    if (toolChoice != null) {
-      requests.add(
-        _multiclassRequest(
-          plan,
-          SrdFeatureChoiceRequirement(
-            id: 'tools',
-            type: 'option',
-            count: toolChoice.count,
-            options: [
-              for (final tool in data.tools)
-                if (toolChoice.categories.contains(tool.category))
-                  SrdFeatureChoiceOption(
-                    id: FeatureChoiceOptionResolver.idFromName(tool.name),
-                    name: tool.name,
-                  ),
-            ],
-          ),
-          toolChoice.count,
+      if (proficiencies.toolChoice != null)
+        _toolRequest(
+          data,
+          FeatureChoiceSourceType.multiclassProficiency,
+          plan.cls.name,
+          plan.classEntryId,
+          multiclassFeatureName,
+          proficiencies.toolChoice!,
         ),
-      );
-    }
-    return requests;
+    ];
   }
 
-  static FeatureChoiceRequest _multiclassRequest(
-    LevelUp2024Plan plan,
-    SrdFeatureChoiceRequirement requirement,
-    int count,
+  static FeatureChoiceRequest _skillRequest(
+    Character character,
+    Rules2024Data data,
+    String sourceType,
+    String className,
+    String entryId,
+    String featureName,
+    SrdSkillChoice choice,
+  ) {
+    final known = character.skillProficiencies.toSet();
+    return FeatureChoiceRequest(
+      sourceType: sourceType,
+      sourceClass: className,
+      sourceClassEntryId: entryId,
+      featureName: featureName,
+      level: 1,
+      requirement: SrdFeatureChoiceRequirement(
+        id: 'skills',
+        type: 'option',
+        count: choice.count,
+        options: [
+          for (final skill in choice.isAny
+              ? [for (final skill in data.skills) skill.name.toLowerCase()]
+              : choice.from)
+            if (!known.contains(skill))
+              SrdFeatureChoiceOption(
+                id: FeatureChoiceOptionResolver.idFromName(skill),
+                name: _titleCase(skill),
+              ),
+        ],
+      ),
+      requiredCount: choice.count,
+    );
+  }
+
+  static FeatureChoiceRequest _toolRequest(
+    Rules2024Data data,
+    String sourceType,
+    String className,
+    String entryId,
+    String featureName,
+    Creation2024ToolChoice choice,
   ) => FeatureChoiceRequest(
-    sourceType: FeatureChoiceSourceType.multiclassProficiency,
-    sourceClass: plan.cls.name,
-    sourceClassEntryId: plan.classEntryId,
-    featureName: multiclassFeatureName,
+    sourceType: sourceType,
+    sourceClass: className,
+    sourceClassEntryId: entryId,
+    featureName: featureName,
     level: 1,
-    requirement: requirement,
-    requiredCount: count,
+    requirement: SrdFeatureChoiceRequirement(
+      id: 'tools',
+      type: 'option',
+      count: choice.count,
+      options: [
+        for (final tool in data.tools)
+          if (choice.categories.contains(tool.category))
+            SrdFeatureChoiceOption(
+              id: FeatureChoiceOptionResolver.idFromName(tool.name),
+              name: tool.name,
+            ),
+      ],
+    ),
+    requiredCount: choice.count,
   );
 
   static String _titleCase(String value) => value
       .split(' ')
       .map((word) => word.isEmpty ? word : '${word[0].toUpperCase()}${word.substring(1)}')
       .join(' ');
+
+  /// Checks saved values of [requests] against [next]: earlier values stay,
+  /// except one per choice that allows replacement on gaining a level, and
+  /// options keep their level and invocation prerequisites.
+  static void _validateChoices(
+    Character character,
+    Rules2024Data data,
+    List<FeatureChoiceRequest> requests,
+    List<CharacterFeatureChoice> next,
+  ) {
+    for (final request in requests) {
+      final before = request.findIn(character.featureChoices)?.values.toSet() ??
+          const <String>{};
+      final after = request.findIn(next)?.values.toSet() ?? const <String>{};
+      final removed = before.difference(after).length;
+      final allowed = request.requirement.replaceOneOnLevelUp ? 1 : 0;
+      if (removed > allowed) {
+        throw ArgumentError('Only $allowed earlier ${request.choiceId} can change.');
+      }
+      final source = request.requirement.optionsSource;
+      final options = {
+        for (final option
+            in data.choices.optionSources[source] ?? const <SrdFeatureChoiceOption>[])
+          option.id: option,
+      };
+      if (options.isEmpty) continue;
+      final selected = {for (final value in after) ChoiceTargetValue.optionId(value)};
+      final seen = <String>{};
+      for (final value in after) {
+        final option = options[ChoiceTargetValue.optionId(value)];
+        if (option == null) continue;
+        if (option.target != null && ChoiceTargetValue.target(value) == null) {
+          throw ArgumentError('${option.id} needs a target.');
+        }
+        if (!seen.add(option.id) && !option.repeatableWithDifferentTarget) {
+          throw ArgumentError('${option.id} cannot be repeated.');
+        }
+        if ((option.minClassLevel ?? 0) > request.level ||
+            !selected.containsAll(option.requiresInvocations)) {
+          throw ArgumentError('${option.id} prerequisites are not met.');
+        }
+      }
+    }
+  }
 
   // ── Hit points ───────────────────────────────────────────────────────────
 
@@ -579,6 +784,12 @@ class Progression2024Engine {
     final gained = die + character.abilityScores.constitutionModifier;
     return (gained < 1 ? 1 : gained) + (_hasDwarvenToughness(data) ? 1 : 0);
   }
+
+  static int _levelOneHitPoints(
+    Creation2024Class cls,
+    AbilityScores scores,
+    Rules2024Data data,
+  ) => cls.hitDie + scores.constitutionModifier + (_hasDwarvenToughness(data) ? 1 : 0);
 
   // ── Spellcasting ─────────────────────────────────────────────────────────
 
@@ -686,7 +897,46 @@ class Progression2024Engine {
         : spell.sourceClassEntryId == entry.id;
     return sameEntry &&
         (spell.sourceType == 'class' ||
-            _classSpellFeatures.contains(spell.sourceFeature));
+            ChoiceEffects.classSpellFeatures.contains(spell.sourceFeature));
+  }
+
+  /// Class-table spells of [entry] that may be replaced on gaining a level.
+  static List<KnownSpell> swappableSpells(
+    Character character,
+    CharacterClassEntry entry, {
+    required bool cantrips,
+  }) => [
+    for (final spell in character.spells)
+      if (countsAgainstClassLimits(spell, entry) && (spell.level == 0) == cantrips)
+        spell,
+  ];
+
+  /// Spells of the class list that could replace a spell at [classLevel].
+  static List<SrdSpell> swapCandidates(
+    Character character,
+    Rules2024Data data,
+    Creation2024Class cls,
+    int classLevel, {
+    required bool cantrips,
+  }) {
+    final known = {for (final spell in character.spells) spell.name.toLowerCase()};
+    final limits = spellcastingFor(
+      character.copyWith(
+        classes: [
+          CharacterClassEntry(id: '_', className: cls.name, level: classLevel),
+        ],
+      ),
+      data.classes,
+    ).firstOrNull;
+    final maxLevel = limits?.maxSpellLevel ?? 0;
+    final className = cls.name.toLowerCase();
+    return [
+      for (final spell in data.spells)
+        if (spell.classes.contains(className) &&
+            !known.contains(spell.name.toLowerCase()) &&
+            (cantrips ? spell.level == 0 : spell.level >= 1 && spell.level <= maxLevel))
+          spell,
+    ]..sort((a, b) => a.level != b.level ? a.level - b.level : a.name.compareTo(b.name));
   }
 
   /// Replaces subclass always-prepared spells with those of the current
@@ -701,7 +951,8 @@ class Progression2024Engine {
     final kept = [
       for (final spell in character.spells)
         if (spell.sourceType != FeatureChoiceSourceType.subclassFeature ||
-            !spell.isAlwaysPrepared)
+            !spell.isAlwaysPrepared ||
+            spell.sourceFeature != null)
           spell,
     ];
     final names = {for (final spell in kept) spell.name.toLowerCase()};
@@ -747,6 +998,17 @@ class Progression2024Engine {
     return kept;
   }
 
+  /// Applies feature choice edits made outside level up: their effects and
+  /// subclass spells follow the new values.
+  static Character applyChoiceEdits(
+    Character before,
+    Character after,
+    Rules2024Data data,
+  ) {
+    final edited = ChoiceEffects.apply(before, after, data);
+    return edited.copyWith(spells: syncSubclassSpells(edited, data));
+  }
+
   /// Weapon proficiencies: the starting class grants all of its own, later
   /// classes only their multiclass weapons.
   static List<String> weaponProficiencies(
@@ -762,6 +1024,30 @@ class Progression2024Engine {
       );
     }
     return result.toList();
+  }
+
+  // ── Resource effects ─────────────────────────────────────────────────────
+
+  /// Hit points healed by a resource spend effect such as Uncanny Metabolism.
+  static int healForSpendEffect(
+    String formula,
+    Character character,
+    Rules2024Data data, {
+    math.Random? random,
+  }) {
+    switch (formula) {
+      case 'monk_level_plus_martial_arts_die':
+        final level = character.classLevel('Monk');
+        if (level <= 0) return 0;
+        final die = data.classNamed('Monk').rowAt(level)['martialArtsDie'] as String?;
+        final expression = DiceParser.parse(die ?? '1d6');
+        final roll = DiceRoller(
+          rollDie: random == null ? null : (sides) => random.nextInt(sides) + 1,
+        ).roll(expression);
+        return level + roll.total;
+      default:
+        return 0;
+    }
   }
 
   // ── Level up ─────────────────────────────────────────────────────────────
@@ -799,6 +1085,9 @@ class Progression2024Engine {
     Rules2024Data data,
     LevelUp2024Result result,
   ) {
+    if (character.levelHistory.length != character.totalLevel) {
+      throw StateError('Update this character before gaining a level.');
+    }
     final plan = Progression2024Engine.plan(
       character,
       data,
@@ -851,6 +1140,7 @@ class Progression2024Engine {
     if (!FeatureChoiceEngine.allComplete(requests, newChoices)) {
       throw ArgumentError('Some feature choices are incomplete.');
     }
+    _validateChoices(character, data, requests, newChoices);
 
     // Hit points use the Constitution before this level's feat; a higher
     // modifier then raises every level retroactively.
@@ -935,7 +1225,12 @@ class Progression2024Engine {
               'Tool Proficiency: $tool',
       ],
     );
-    updated = _applyChoiceEffects(updated, data, requests, character.featureChoices);
+    updated = ChoiceEffects.apply(character, updated, data);
+    if (!plan.isNewClass) {
+      updated = _applySpellSwaps(updated, data, plan, result.spellSwaps);
+    } else if (result.spellSwaps.isNotEmpty) {
+      throw ArgumentError('A new class has no spells to replace.');
+    }
     final (standard, pact) = slotsFor(updated, data);
     updated = updated.copyWith(
       spellSlots: standard,
@@ -958,6 +1253,43 @@ class Progression2024Engine {
     );
     updated = updated.copyWith(spells: syncSubclassSpells(updated, data));
     return updated.copyWith(armorClass: calcArmorClass(updated));
+  }
+
+  static Character _applySpellSwaps(
+    Character character,
+    Rules2024Data data,
+    LevelUp2024Plan plan,
+    List<SpellSwap2024> swaps,
+  ) {
+    if (swaps.isEmpty) return character;
+    final entry = character.classEntries.firstWhere((e) => e.id == plan.classEntryId);
+    var cantripSwaps = 0;
+    var spellSwaps = 0;
+    var spells = [...character.spells];
+    for (final swap in swaps) {
+      final index = spells.indexWhere(
+        (spell) =>
+            spell.name == swap.forget && countsAgainstClassLimits(spell, entry),
+      );
+      if (index < 0) throw ArgumentError('${swap.forget} cannot be replaced.');
+      final forgotten = spells[index];
+      final cantrip = forgotten.level == 0;
+      final candidates = swapCandidates(
+        character.copyWith(spells: spells),
+        data,
+        plan.cls,
+        plan.newClassLevel,
+        cantrips: cantrip,
+      );
+      final learned = candidates.where((s) => s.name == swap.learn).firstOrNull;
+      if (learned == null) throw ArgumentError('${swap.learn} is not eligible.');
+      if (cantrip ? ++cantripSwaps > plan.cls.levelUpCantripSwaps
+                  : ++spellSwaps > plan.cls.levelUpSpellSwaps) {
+        throw ArgumentError('Too many spell replacements for ${plan.cls.name}.');
+      }
+      spells[index] = forgotten.copyWith(name: learned.name, level: learned.level);
+    }
+    return character.copyWith(spells: spells);
   }
 
   static AbilityScores _withScore(AbilityScores scores, String ability, int value) {
@@ -996,263 +1328,213 @@ class Progression2024Engine {
     ];
   }
 
-  /// Applies skills, expertise, tools, languages and spells from values that
-  /// [requests] added compared to [previous].
-  static Character _applyChoiceEffects(
-    Character character,
-    Rules2024Data data,
-    List<FeatureChoiceRequest> requests,
-    List<CharacterFeatureChoice> previous,
-  ) {
-    final skills = {...character.skillProficiencies};
-    final expertise = {...character.skillExpertises};
-    final features = [...character.features];
-    final languages = [...character.languages];
-    final spells = [...character.spells];
-    final spellsByName = {
-      for (final spell in data.spells) spell.name.toLowerCase(): spell,
-    };
-    final toolNames = {
-      for (final tool in data.tools)
-        FeatureChoiceOptionResolver.idFromName(tool.name): tool.name,
-    };
-    final languageNames = {
-      for (final language in data.languages)
-        FeatureChoiceOptionResolver.idFromName(language.name): language.name,
-    };
-    void addTool(String id) {
-      final label = 'Tool Proficiency: ${toolNames[id] ?? id.replaceAll('_', ' ')}';
-      if (!features.contains(label)) features.add(label);
-    }
-
-    for (final request in requests) {
-      final choice = request.findIn(character.featureChoices);
-      if (choice == null || !request.isApplicable(character.featureChoices)) {
-        continue;
-      }
-      final before = request.findIn(previous)?.values.toSet() ?? const {};
-      for (final value in choice.values.where((v) => !before.contains(v))) {
-        final name = value.replaceAll('_', ' ');
-        switch (request.requirement.type) {
-          case 'skill':
-            skills.add(name);
-          case 'skill_expertise':
-            expertise.add(name);
-          case 'skill_or_tool_expertise':
-            if (value.startsWith('skill:')) {
-              expertise.add(value.substring(6).replaceAll('_', ' '));
-            }
-          case 'skill_or_tool':
-            if (value.startsWith('skill:')) {
-              skills.add(value.substring(6).replaceAll('_', ' '));
-            } else if (value.startsWith('tool:')) {
-              addTool(value.substring(5));
-            }
-          case 'tool':
-            addTool(value);
-          case 'language':
-            final language = languageNames[value] ?? name;
-            if (!languages.contains(language)) languages.add(language);
-          case 'cantrip':
-          case 'spell':
-            final spell = spellsByName[value.toLowerCase()] ??
-                spellsByName[name.toLowerCase()];
-            final spellName = spell?.name ?? value;
-            if (spells.any((s) => s.name.toLowerCase() == spellName.toLowerCase())) {
-              continue;
-            }
-            spells.add(
-              KnownSpell(
-                name: spellName,
-                level: spell?.level ?? (request.requirement.type == 'cantrip' ? 0 : 1),
-                isPrepared: true,
-                isAlwaysPrepared: request.requirement.type == 'spell',
-                sourceType: request.sourceType,
-                sourceClass: request.sourceClass.isEmpty ? null : request.sourceClass,
-                sourceSubclass: request.sourceSubclass,
-                sourceFeature: request.featureName,
-                sourceClassEntryId: request.sourceClassEntryId,
-              ),
-            );
-          case 'option':
-            if (request.sourceType == FeatureChoiceSourceType.multiclassProficiency) {
-              if (request.choiceId == 'skills') skills.add(name);
-              if (request.choiceId == 'tools') addTool(value);
-            }
-        }
-      }
-    }
-    return character.copyWith(
-      skillProficiencies: skills.toList(),
-      skillExpertises: expertise.toList(),
-      features: features,
-      languages: languages,
-      spells: spells,
-    );
-  }
-
   // ── Level reset ──────────────────────────────────────────────────────────
 
   static bool canResetToLevelOne(Character character) =>
       character.rulesetId == RulesetId.dnd2024 &&
-      character.totalLevel > 1 &&
       historyFor(character).length == character.totalLevel;
 
-  /// Returns the sheet to level 1 in its starting class, undoing every later
-  /// level from the saved history while keeping origin choices, narrative
-  /// data, inventory and manual ability edits.
-  static Character resetToLevelOne(Character character, Rules2024Data data) {
-    _require2024(character);
-    if (!canResetToLevelOne(character)) {
-      throw StateError('This sheet has no complete level history.');
-    }
+  /// The character with every class-derived choice and grant removed, so a
+  /// level 1 class can be applied on top of its origin.
+  static Character _withoutClasses(Character character, Rules2024Data data) {
     final history = historyFor(character);
-    final starting = character.primaryClass;
-    final cls = data.classNamed(starting.className);
     var scores = character.abilityScores;
     for (final record in history.skip(1)) {
       for (final entry in record.abilityIncreases.entries) {
         scores = _withScore(scores, entry.key, scores[entry.key] - entry.value);
       }
     }
-    final maxHp = cls.hitDie +
-        scores.constitutionModifier +
-        (_hasDwarvenToughness(data) ? 1 : 0);
+    bool classDerived(CharacterFeatureChoice choice) =>
+        switch (choice.sourceType) {
+          FeatureChoiceSourceType.classFeature ||
+          FeatureChoiceSourceType.subclassFeature ||
+          FeatureChoiceSourceType.multiclassProficiency => true,
+          FeatureChoiceSourceType.feat => isLevelFeatSource(choice.sourceClassEntryId),
+          _ => false,
+        };
+    final withoutChoices = character.copyWith(
+      featureChoices: [
+        for (final choice in character.featureChoices)
+          if (!classDerived(choice)) choice,
+      ],
+    );
+    var stripped = ChoiceEffects.apply(character, withoutChoices, data);
+
+    final classTools = <String>{};
+    final languages = <String>{};
+    for (final entry in character.classEntries) {
+      final cls = data.classNamed(entry.className);
+      classTools.addAll(entry.isStartingClass ? cls.toolProficiencies : cls.multiclass.tools);
+      final language = classLanguages[entry.className];
+      if (entry.isStartingClass && language != null) languages.add(language);
+    }
+    final classEntryIds = {for (final entry in character.classEntries) entry.id};
+    stripped = stripped.copyWith(
+      abilityScores: scores,
+      features: [
+        for (final feature in stripped.features)
+          if (!classTools.any((tool) => feature == 'Tool Proficiency: $tool')) feature,
+      ],
+      languages: [
+        for (final language in stripped.languages)
+          if (!languages.contains(language)) language,
+      ],
+      spells: [
+        for (final spell in stripped.spells)
+          if (!classEntryIds.contains(spell.sourceClassEntryId) &&
+              spell.sourceType != FeatureChoiceSourceType.subclassFeature &&
+              spell.sourceType != FeatureChoiceSourceType.classFeature &&
+              spell.sourceType != 'class' &&
+              !isLevelFeatSource(spell.sourceClassEntryId))
+            spell,
+      ],
+      extraFeatures: [
+        for (final feature in stripped.extraFeatures)
+          if (!isLevelFeatSource(feature.sourceClassEntryId) &&
+              !classEntryIds.contains(feature.sourceClassEntryId))
+            feature,
+      ],
+    );
+    return stripped;
+  }
+
+  /// Choices a level 1 class asks for: class skills and tools, level 1
+  /// feature choices, and class-table cantrips and spells.
+  static List<FeatureChoiceRequest> levelOneRequests(
+    Character character,
+    Rules2024Data data,
+    String className,
+  ) {
+    final base = _withoutClasses(character, data);
+    final cls = data.classNamed(className);
+    final entryId = character.primaryClass.id;
+    final requests = <FeatureChoiceRequest>[
+      _skillRequest(
+        base,
+        data,
+        FeatureChoiceSourceType.classFeature,
+        cls.name,
+        entryId,
+        ChoiceEffects.classSkillsFeature,
+        cls.skillChoices,
+      ),
+      if (cls.toolChoice != null)
+        _toolRequest(
+          data,
+          FeatureChoiceSourceType.classFeature,
+          cls.name,
+          entryId,
+          ChoiceEffects.toolFeature,
+          cls.toolChoice!,
+        ),
+      for (final name in cls.featuresAt(1))
+        ...FeatureChoiceEngine.requestsForClassFeature(
+          catalog: data.choices,
+          className: cls.name,
+          sourceClassEntryId: entryId,
+          featureName: name,
+          level: 1,
+        ),
+    ];
+    final row = cls.rowAt(1);
+    final cantrips = (row['cantripsKnown'] as num?)?.toInt() ?? 0;
+    final spells = cls.name == 'Wizard'
+        ? 6
+        : (row['preparedSpells'] as num?)?.toInt() ?? 0;
+    final spellFeature = cls.spellcastingType == 'warlock' ? 'Pact Magic' : 'Spellcasting';
+    for (final (id, type, count) in [
+      ('cantrips', 'cantrip', cantrips),
+      ('prepared_spells', 'spell', spells),
+    ]) {
+      if (count <= 0) continue;
+      requests.add(
+        FeatureChoiceRequest(
+          sourceType: FeatureChoiceSourceType.classFeature,
+          sourceClass: cls.name,
+          sourceClassEntryId: entryId,
+          featureName: spellFeature,
+          level: 1,
+          requirement: SrdFeatureChoiceRequirement(
+            id: id,
+            type: type,
+            count: count,
+            spellClass: cls.name.toLowerCase(),
+            spellLevel: type == 'spell' ? 1 : 0,
+          ),
+          requiredCount: count,
+        ),
+      );
+    }
+    return requests;
+  }
+
+  /// Choices saved for [className] at level 1, to prefill a reset into the
+  /// same class.
+  static List<CharacterFeatureChoice> currentLevelOneChoices(
+    Character character,
+    Rules2024Data data,
+  ) {
+    final entry = character.primaryClass;
+    final requests = levelOneRequests(character, data, entry.className);
+    final classSpells = [
+      for (final spell in character.spells)
+        if (countsAgainstClassLimits(spell, entry)) spell,
+    ];
+    return [
+      for (final request in requests)
+        switch (request.choiceId) {
+          'cantrips' when ChoiceEffects.classSpellFeatures.contains(request.featureName) =>
+            request.toChoice([for (final s in classSpells) if (s.level == 0) s.name]),
+          'prepared_spells' when ChoiceEffects.classSpellFeatures.contains(request.featureName) =>
+            request.toChoice([for (final s in classSpells) if (s.level == 1) s.name]),
+          _ => request.toChoice(request.findIn(character.featureChoices)?.values ?? const []),
+        },
+    ];
+  }
+
+  /// Returns the sheet to level 1 in [className] (the starting class by
+  /// default), keeping origin choices, narrative data, inventory and manual
+  /// ability edits. Later levels are undone from the saved history.
+  static Character resetToLevelOne(
+    Character character,
+    Rules2024Data data, {
+    String? className,
+    List<CharacterFeatureChoice>? choices,
+  }) {
+    _require2024(character);
+    if (!canResetToLevelOne(character)) {
+      throw StateError('This sheet has no complete level history.');
+    }
+    final history = historyFor(character);
+    final cls = data.classNamed(className ?? character.primaryClass.className);
+    final requests = levelOneRequests(character, data, cls.name);
+    final selected = choices ?? currentLevelOneChoices(character, data);
+    final newChoices = [
+      for (final request in requests)
+        if (request.isApplicable(selected))
+          request.findIn(selected) ?? request.emptyChoice(),
+    ];
+    if (!FeatureChoiceEngine.allComplete(requests, newChoices)) {
+      throw ArgumentError('Some level 1 choices are incomplete.');
+    }
+    final base = _withoutClasses(character, data);
     final entry = CharacterClassEntry(
-      id: starting.id,
-      className: starting.className,
+      id: character.primaryClass.id,
+      className: cls.name,
       level: 1,
       isStartingClass: true,
     );
-
-    final levelOneRequests = <String>{
-      for (final name in cls.featuresAt(1))
-        for (final request in FeatureChoiceEngine.requestsForClassFeature(
-          catalog: data.choices,
-          className: cls.name,
-          sourceClassEntryId: starting.id,
-          featureName: name,
-          level: 1,
-        ))
-          request.key,
-    };
-    final kept = <CharacterFeatureChoice>[];
-    final dropped = <CharacterFeatureChoice>[];
-    for (final choice in character.featureChoices) {
-      final keep = switch (choice.sourceType) {
-        FeatureChoiceSourceType.classFeature =>
-          choice.sourceClassEntryId == starting.id &&
-              (_classSpellFeatures.contains(choice.featureName) ||
-                  choice.featureName == 'Tool Proficiency' ||
-                  choice.featureName == 'Starting Equipment' ||
-                  levelOneRequests.contains(_choiceKey(choice))),
-        FeatureChoiceSourceType.subclassFeature ||
-        FeatureChoiceSourceType.multiclassProficiency => false,
-        FeatureChoiceSourceType.feat =>
-          !isLevelFeatSource(choice.sourceClassEntryId),
-        _ => true,
-      };
-      if (!keep) {
-        dropped.add(choice);
-        continue;
-      }
-      final definition = choice.sourceType == FeatureChoiceSourceType.classFeature
-          ? data.choices
-                .classFeature(cls.name, choice.featureName)
-                ?.choices
-                .where((c) => c.id == choice.choiceId)
-                .firstOrNull
-          : null;
-      if (definition != null && definition.countByLevel.isNotEmpty) {
-        final count = definition.requiredCountAtLevel(1);
-        dropped.add(choice.copyWith(values: choice.values.skip(count).toList()));
-        kept.add(choice.copyWith(values: choice.values.take(count).toList()));
-      } else {
-        kept.add(choice);
-      }
-    }
-
-    final droppedTools = <String>{};
-    final droppedSkills = <String>{};
-    final droppedExpertise = <String>{};
-    final droppedLanguages = <String>{};
-    final languageNames = {
-      for (final language in data.languages)
-        FeatureChoiceOptionResolver.idFromName(language.name): language.name,
-    };
-    final toolNames = {
-      for (final tool in data.tools)
-        FeatureChoiceOptionResolver.idFromName(tool.name): tool.name,
-    };
-    for (final choice in dropped) {
-      final type = _requirementFor(data, choice)?.type ??
-          (choice.sourceType == FeatureChoiceSourceType.multiclassProficiency
-              ? 'multiclass_${choice.choiceId}'
-              : null);
-      for (final value in choice.values) {
-        final name = value.replaceAll('_', ' ');
-        switch (type) {
-          case 'skill' || 'multiclass_skills':
-            droppedSkills.add(name);
-          case 'skill_expertise':
-            droppedExpertise.add(name);
-          case 'skill_or_tool_expertise' when value.startsWith('skill:'):
-            droppedExpertise.add(value.substring(6).replaceAll('_', ' '));
-          case 'skill_or_tool' when value.startsWith('skill:'):
-            droppedSkills.add(value.substring(6).replaceAll('_', ' '));
-          case 'skill_or_tool' when value.startsWith('tool:'):
-            droppedTools.add(toolNames[value.substring(5)] ?? value.substring(5));
-          case 'tool' || 'multiclass_tools':
-            droppedTools.add(toolNames[value] ?? name);
-          case 'language':
-            droppedLanguages.add(languageNames[value] ?? name);
-        }
-      }
-    }
-    for (final record in history.skip(1)) {
-      if (record.classEntryId == starting.id) continue;
-      for (final tool in data.classNamed(record.className).multiclass.tools) {
-        droppedTools.add(tool);
-      }
-    }
-
-    final removedEntryIds = {
-      for (final e in character.classEntries)
-        if (e.id != starting.id) e.id,
-    };
-    final spells = [
-      for (final spell in character.spells)
-        if (!removedEntryIds.contains(spell.sourceClassEntryId) &&
-            spell.sourceType != FeatureChoiceSourceType.subclassFeature &&
-            !isLevelFeatSource(spell.sourceClassEntryId) &&
-            !(spell.sourceClass == starting.className && spell.level > 1))
-          spell,
-    ];
-    final spellcasting = spellcastingFor(
-      character.copyWith(classes: [entry]),
-      data.classes,
-    ).firstOrNull;
-    var prepared = 0;
-    final limitedSpells = [
-      for (final spell in spells)
-        if (spellcasting != null &&
-            spell.level > 0 &&
-            spell.isPrepared &&
-            countsAgainstClassLimits(spell, entry) &&
-            ++prepared > spellcasting.preparedSpells)
-          spell.copyWith(isPrepared: false)
-        else
-          spell,
-    ];
-
-    var reset = character.copyWith(
+    final maxHp = _levelOneHitPoints(cls, base.abilityScores, data);
+    final fixedSpell = classLevelOneSpells[cls.name];
+    final language = classLanguages[cls.name];
+    var reset = base.copyWith(
       level: 1,
-      characterClass: starting.className,
+      characterClass: cls.name,
       clearSubclass: true,
       classes: [entry],
-      abilityScores: scores,
       proficiencyBonus: proficiencyBonus(1),
-      hitPoints: character.hitPoints.copyWith(
+      savingThrowProficiencies: cls.savingThrows,
+      hitPoints: base.hitPoints.copyWith(
         maximum: maxHp,
         current: maxHp,
         hitDiceUsed: 0,
@@ -1264,62 +1546,71 @@ class Progression2024Engine {
           dieSize: cls.hitDie,
           total: 1,
           sourceClass: cls.name,
-          sourceClassEntryId: starting.id,
+          sourceClassEntryId: entry.id,
         ),
       ],
-      extraFeatures: [
-        for (final feature in character.extraFeatures)
-          if (!isLevelFeatSource(feature.sourceClassEntryId) &&
-              !removedEntryIds.contains(feature.sourceClassEntryId))
-            feature,
-      ],
-      featureChoices: kept,
-      skillProficiencies: [
-        for (final skill in character.skillProficiencies)
-          if (!droppedSkills.contains(skill)) skill,
-      ],
-      skillExpertises: [
-        for (final skill in character.skillExpertises)
-          if (!droppedExpertise.contains(skill)) skill,
+      features: [
+        ...base.features,
+        for (final tool in cls.toolProficiencies)
+          if (!base.features.contains('Tool Proficiency: $tool'))
+            'Tool Proficiency: $tool',
       ],
       languages: [
-        for (final language in character.languages)
-          if (!droppedLanguages.contains(language)) language,
+        ...base.languages,
+        if (language != null && !base.languages.contains(language)) language,
       ],
-      features: [
-        for (final feature in character.features)
-          if (!droppedTools.any((tool) => feature == 'Tool Proficiency: $tool'))
-            feature,
+      spells: [
+        ...base.spells,
+        if (fixedSpell != null &&
+            !base.spells.any((s) => s.name == fixedSpell.$1))
+          KnownSpell(
+            name: fixedSpell.$1,
+            level: data.spellNamed(fixedSpell.$1)?.level ?? 0,
+            isAlwaysPrepared: true,
+            isPrepared: true,
+            sourceType: FeatureChoiceSourceType.classFeature,
+            sourceClass: cls.name,
+            sourceFeature: fixedSpell.$2,
+          ),
       ],
-      spells: limitedSpells,
       concentrationSpell: null,
-      levelHistory: [history.first],
     );
-    final (standard, pact) = slotsFor(reset, data);
-    reset = reset.copyWith(spellSlots: standard, pactMagicSlots: pact);
-    return reset.copyWith(armorClass: calcArmorClass(reset));
-  }
-
-  static String _choiceKey(CharacterFeatureChoice choice) =>
-      '${choice.sourceType}|${choice.sourceClass}|${choice.sourceClassEntryId ?? ''}|'
-      '${choice.sourceSubclass ?? ''}|${choice.sourceName ?? ''}|'
-      '${choice.featureName}|${choice.choiceId}';
-
-  static SrdFeatureChoiceRequirement? _requirementFor(
-    Rules2024Data data,
-    CharacterFeatureChoice choice,
-  ) {
-    final definition = switch (choice.sourceType) {
-      FeatureChoiceSourceType.classFeature =>
-        data.choices.classFeature(choice.sourceClass, choice.featureName),
-      FeatureChoiceSourceType.subclassFeature => data.choices.subclassFeature(
-        choice.sourceClass,
-        choice.sourceSubclass ?? '',
-        choice.featureName,
+    reset = ChoiceEffects.apply(
+      base,
+      reset.copyWith(
+        featureChoices: FeatureChoiceEngine.upsertChoices(reset.featureChoices, newChoices),
       ),
-      FeatureChoiceSourceType.feat => data.choices.feat(choice.featureName),
-      _ => null,
-    };
-    return definition?.choices.where((c) => c.id == choice.choiceId).firstOrNull;
+      data,
+    );
+    final limits = spellcastingFor(reset, data.classes).firstOrNull;
+    if (limits?.spellbookSize != null) {
+      var prepared = 0;
+      reset = reset.copyWith(
+        spells: [
+          for (final spell in reset.spells)
+            if (spell.level > 0 && countsAgainstClassLimits(spell, entry))
+              spell.copyWith(isPrepared: ++prepared <= limits!.preparedSpells)
+            else
+              spell,
+        ],
+      );
+    }
+    final (standard, pact) = slotsFor(reset, data);
+    reset = reset.copyWith(
+      spellSlots: standard,
+      pactMagicSlots: pact,
+      levelHistory: [
+        CharacterLevelRecord(
+          characterLevel: 1,
+          classEntryId: entry.id,
+          className: cls.name,
+          classLevel: 1,
+          hitPointsGained: maxHp,
+          hitPointMethod: HitPointGainMethod.maximum,
+          baseAbilityScores: history.first.baseAbilityScores,
+        ),
+      ],
+    );
+    return reset.copyWith(armorClass: calcArmorClass(reset));
   }
 }

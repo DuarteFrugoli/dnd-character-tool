@@ -385,7 +385,7 @@ class SpellRow extends ConsumerWidget {
                       return MouseRegion(
                         cursor: SystemMouseCursors.click,
                         child: GestureDetector(
-                          onTap: () => _onConcentrationTap(
+                          onTap: () => onConcentrationTap(
                             ctx,
                             ref,
                             spell.name,
@@ -511,7 +511,9 @@ class _SmallBadge extends StatelessWidget {
 
 // ── Concentration helpers ─────────────────────────────────────────────────────
 
-Future<void> _onConcentrationTap(
+/// Starts or ends concentration on [spellName], asking before replacing
+/// another concentration spell.
+Future<void> onConcentrationTap(
   BuildContext context,
   WidgetRef ref,
   String spellName,

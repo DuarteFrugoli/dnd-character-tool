@@ -555,6 +555,7 @@ class _CharacterCard extends ConsumerWidget {
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w800),
         ),
         subtitle: Text(
+          '${rulesetShortLabel(l10n, character.rulesetId)} · '
           '${localizedRaceSummary(character, i18n)} · '
           '${localizedClassLevelSummary(character, i18n)} · '
           '${l10n.charCardLevel(character.totalLevel)}',

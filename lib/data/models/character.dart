@@ -20,7 +20,7 @@ part 'character.g.dart';
 
 // Sentinel used to distinguish "not passed" from explicit null in copyWith.
 const _keep = Object();
-const currentCharacterDataVersion = 10;
+const currentCharacterDataVersion = 11;
 
 CharacterSheetPreferences _characterSheetPreferencesFromJson(Object? json) =>
     CharacterSheetPreferences.fromJson(json);

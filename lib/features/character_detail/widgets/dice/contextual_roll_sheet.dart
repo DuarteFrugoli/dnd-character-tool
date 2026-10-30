@@ -38,6 +38,7 @@ Future<void> openContextualRollSheet(
   required String characterId,
   required ContextualRollRequest request,
   bool rollImmediately = false,
+  VoidCallback? onRolled,
 }) {
   FocusScope.of(context).unfocus();
   return showModalBottomSheet<void>(
@@ -49,6 +50,7 @@ Future<void> openContextualRollSheet(
       characterId: characterId,
       request: request,
       rollImmediately: rollImmediately,
+      onRolled: onRolled,
     ),
   );
 }
@@ -59,11 +61,16 @@ class ContextualRollSheet extends ConsumerStatefulWidget {
     required this.characterId,
     required this.request,
     this.rollImmediately = false,
+    this.onRolled,
   });
 
   final String characterId;
   final ContextualRollRequest request;
   final bool rollImmediately;
+
+  /// Rules that react to the roll itself, e.g. resources regained on rolling
+  /// Initiative.
+  final VoidCallback? onRolled;
 
   @override
   ConsumerState<ContextualRollSheet> createState() =>
@@ -125,6 +132,7 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
     final history = ref.read(contextualRollHistoryProvider(_historyKey));
     ref.read(contextualRollHistoryProvider(_historyKey).notifier).state =
         ContextualRollHistory.add(history, result);
+    widget.onRolled?.call();
   }
 
   @override

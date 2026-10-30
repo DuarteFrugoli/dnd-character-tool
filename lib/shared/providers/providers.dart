@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/locale/locale_provider.dart';
+import '../../data/character_progression/choice_effects_2014.dart';
 import '../../data/character_progression/progression_2024_engine.dart';
 import '../../data/feature_usage_engine.dart';
 import '../../data/datasources/srd/srd_data_source.dart';
@@ -38,22 +39,17 @@ final srd2024SubclassesProvider =
       (ref) => Creation2024Catalog.loadSubclasses(),
     );
 
+/// SRD 5.1 lookups that apply 2014 feature choice grants.
+final srd2014ChoiceEffectsProvider = FutureProvider<ChoiceEffects2014Data>(
+  (ref) => ChoiceEffects2014Data.load(ref.watch(srdDataSourceProvider)),
+);
+
 /// SRD 5.2.1 data for 2024 progression; species traits are added per sheet.
-final srd2024RulesDataProvider = FutureProvider<Rules2024Data>((ref) async {
-  final srd = ref.watch(srdDataSourceForPackProvider(ContentPackId.srd521));
-  return Rules2024Data(
-    classes: await ref.watch(srd2024ClassesProvider.future),
-    subclasses: await ref.watch(srd2024SubclassesProvider.future),
-    subclassFeatures: await srd.getAllSubclassFeatures(),
-    feats: await srd.getFeats(),
-    choices: await srd.getFeatureChoiceCatalog(),
-    spells: await srd.getSpells(),
-    skills: await srd.getSkills(),
-    tools: await srd.getTools(),
-    languages: await srd.getLanguages(),
-    speciesTraits: const [],
-  );
-});
+final srd2024RulesDataProvider = FutureProvider<Rules2024Data>(
+  (ref) => Rules2024Data.load(
+    source: ref.watch(srdDataSourceForPackProvider(ContentPackId.srd521)),
+  ),
+);
 
 final srd2024CreationCatalogProvider = FutureProvider<Creation2024Catalog>(
   (ref) async => Creation2024Catalog.load(

@@ -420,26 +420,6 @@ void main() {
   });
 
   group('history and reset', () {
-    test('level 1 sheets without history rebuild their first record', () {
-      final legacy = _character().copyWith(
-        levelHistory: const [],
-        featureChoices: const [
-          CharacterFeatureChoice(
-            sourceType: FeatureChoiceSourceType.background,
-            sourceName: 'Soldier',
-            featureName: 'Ability Score Increase',
-            choiceId: 'ability_scores',
-            values: ['strength:2', 'constitution:1'],
-          ),
-        ],
-      );
-      final record = Progression2024Engine.historyFor(legacy).single;
-
-      expect(record.baseAbilityScores['strength'], 13);
-      expect(record.baseAbilityScores['constitution'], 13);
-      expect(record.hitPointsGained, 12);
-    });
-
     test('reset undoes later levels from the history', () {
       final level1 = _character();
       final level4 = _levelUp(
@@ -447,7 +427,14 @@ void main() {
         feat: 'Ability Score Improvement',
         increases: const {'constitution': 2},
       );
-      final reset = Progression2024Engine.resetToLevelOne(level4, _data);
+      final reset = Progression2024Engine.resetToLevelOne(
+        level4,
+        _data,
+        choices: _fill(
+          Progression2024Engine.levelOneRequests(level4, _data, 'Fighter'),
+          level4,
+        ),
+      );
 
       expect(reset.totalLevel, 1);
       expect(reset.classEntries.single.subclassName, isNull);
@@ -472,6 +459,7 @@ void main() {
       final unknown = _fighterAt(2).copyWith(levelHistory: const []);
 
       expect(Progression2024Engine.canResetToLevelOne(unknown), isFalse);
+      expect(Progression2024Engine.canResetToLevelOne(_character()), isTrue);
       expect(
         () => Progression2024Engine.resetToLevelOne(unknown, _data),
         throwsStateError,

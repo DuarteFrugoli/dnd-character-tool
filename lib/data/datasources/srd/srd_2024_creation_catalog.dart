@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 import '../../rulesets/srd_content_pack.dart';
+import '../../custom_background.dart';
 import 'srd_data_source.dart';
 import 'srd_models.dart';
 
@@ -104,6 +105,8 @@ class Creation2024Class {
     this.subclassLevel = 3,
     this.progression = const [],
     this.multiclass = const Creation2024MulticlassProficiencies(),
+    this.levelUpCantripSwaps = 0,
+    this.levelUpSpellSwaps = 0,
   });
 
   final String name;
@@ -129,6 +132,10 @@ class Creation2024Class {
   /// Rows of the class table, index 0 = class level 1.
   final List<Map<String, dynamic>> progression;
   final Creation2024MulticlassProficiencies multiclass;
+
+  /// Cantrips and prepared spells that may be replaced on gaining a level.
+  final int levelUpCantripSwaps;
+  final int levelUpSpellSwaps;
 
   Map<String, dynamic> rowAt(int classLevel) {
     if (progression.isEmpty) return levelOne;
@@ -161,6 +168,10 @@ class Creation2024Class {
       multiclass: Creation2024MulticlassProficiencies.fromJson(
         json['multiclassProficiencies'] as Map<String, dynamic>?,
       ),
+      levelUpCantripSwaps:
+          ((json['levelUpSpellSwaps'] as Map?)?['cantrips'] as num?)?.toInt() ?? 0,
+      levelUpSpellSwaps:
+          ((json['levelUpSpellSwaps'] as Map?)?['spells'] as num?)?.toInt() ?? 0,
     );
   }
 }
@@ -243,7 +254,31 @@ class Creation2024Species {
 }
 
 class Creation2024Background {
-  const Creation2024Background({required this.name, required this.abilities, required this.featName, required this.featChoices, required this.skills, required this.tools, required this.toolChoice, required this.equipmentChoices});
+  const Creation2024Background({required this.name, required this.abilities, required this.featName, required this.featChoices, required this.skills, required this.tools, required this.toolChoice, required this.equipmentChoices, this.isCustom = false});
+
+  /// A background built by the player: three abilities, an Origin feat, two
+  /// skills, one tool of any kind and 50 GP instead of equipment.
+  factory Creation2024Background.custom({
+    required String name,
+    required List<String> abilities,
+    required String featName,
+    required List<String> skills,
+    required List<String> toolCategories,
+  }) => Creation2024Background(
+    name: name,
+    abilities: abilities,
+    featName: featName,
+    featChoices: const {},
+    skills: skills,
+    tools: const [],
+    toolChoice: Creation2024ToolChoice(categories: toolCategories, count: 1),
+    equipmentChoices: const [
+      Creation2024Equipment(id: 'gold', items: [], gp: CustomBackground.gold2024),
+    ],
+    isCustom: true,
+  );
+
+  final bool isCustom;
 
   final String name;
   final List<String> abilities;
@@ -293,6 +328,15 @@ class Creation2024Catalog {
     );
     return (jsonDecode(raw) as List<dynamic>)
         .map((entry) => Creation2024Class.fromJson(entry as Map<String, dynamic>))
+        .toList();
+  }
+
+  static Future<List<Creation2024Background>> loadBackgrounds() async {
+    final raw = await rootBundle.loadString(
+      SrdContentPackRegistry.srd521.srdAsset('backgrounds'),
+    );
+    return (jsonDecode(raw) as List<dynamic>)
+        .map((entry) => Creation2024Background.fromJson(entry as Map<String, dynamic>))
         .toList();
   }
 

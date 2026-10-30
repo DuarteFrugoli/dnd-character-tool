@@ -311,6 +311,10 @@
     },
     "spellcastingAbility": "charisma",
     "spellcastingType": "full",
+    "levelUpSpellSwaps": {
+      "cantrips": 1,
+      "spells": 1
+    },
     "subclassLevel": 3,
     "subclassFeatureName": "Bard Subclass",
     "multiclassProficiencies": {
@@ -3584,6 +3588,10 @@
     },
     "spellcastingAbility": "charisma",
     "spellcastingType": "full",
+    "levelUpSpellSwaps": {
+      "cantrips": 1,
+      "spells": 1
+    },
     "subclassLevel": 3,
     "subclassFeatureName": "Sorcerer Subclass",
     "multiclassProficiencies": {
@@ -4071,6 +4079,10 @@
     },
     "spellcastingAbility": "charisma",
     "spellcastingType": "warlock",
+    "levelUpSpellSwaps": {
+      "cantrips": 1,
+      "spells": 1
+    },
     "subclassLevel": 3,
     "subclassFeatureName": "Warlock Subclass",
     "multiclassProficiencies": {

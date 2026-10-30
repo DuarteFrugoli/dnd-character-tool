@@ -5,6 +5,24 @@ import 'datasources/srd/srd_models.dart';
 import 'feature_choice_engine.dart';
 import 'models/models.dart';
 
+/// Values of options that need a target are saved as `option@target`, e.g.
+/// `agonizing_blast@Eldritch Blast`, so each instance is a distinct value.
+class ChoiceTargetValue {
+  const ChoiceTargetValue._();
+
+  static const separator = '@';
+
+  static String optionId(String value) => value.split(separator).first;
+
+  static String? target(String value) {
+    final index = value.indexOf(separator);
+    return index < 0 ? null : value.substring(index + 1);
+  }
+
+  static String withTarget(String optionId, String target) =>
+      '$optionId$separator$target';
+}
+
 class FeatureChoiceOptionResolver {
   FeatureChoiceOptionResolver({
     required this.request,
@@ -39,9 +57,58 @@ class FeatureChoiceOptionResolver {
     for (final option in options) option.id: option,
   };
 
-  SrdFeatureChoiceOption? optionFor(String value) => _optionsById[value];
+  SrdFeatureChoiceOption? optionFor(String value) =>
+      _optionsById[value] ?? _optionsById[ChoiceTargetValue.optionId(value)];
 
-  String? labelFor(String value) => optionFor(value)?.name;
+  String? labelFor(String value) {
+    final name = optionFor(value)?.name;
+    final target = ChoiceTargetValue.target(value);
+    if (name == null || target == null) return name;
+    return '$name (${targetLabel(optionFor(value)!.target, target)})';
+  }
+
+  String targetLabel(String? target, String value) => switch (target) {
+    'origin_feat' => i18n.featName(value) ?? value,
+    _ => i18n.spellName(value),
+  };
+
+  /// Valid targets of an option, e.g. known Warlock damage cantrips for
+  /// Agonizing Blast or Origin feats for Lessons of the First Ones.
+  List<SrdFeatureChoiceOption> targetOptions(String target) {
+    if (target == 'origin_feat') {
+      final taken = {
+        for (final feature in character?.extraFeatures ?? const <CharacterExtraFeature>[])
+          feature.name,
+      };
+      return [
+        for (final feat in feats)
+          if (feat.category == 'origin' && (feat.repeatable || !taken.contains(feat.name)))
+            SrdFeatureChoiceOption(
+              id: feat.name,
+              name: i18n.featName(feat.name) ?? feat.name,
+              description: i18n.featDescription(feat.name) ?? feat.description,
+            ),
+      ];
+    }
+    final byName = {for (final spell in spells) spell.name.toLowerCase(): spell};
+    final cantrips = [
+      for (final known in character?.spells ?? const <KnownSpell>[])
+        if (known.level == 0 && known.sourceClass?.toLowerCase() == 'warlock')
+          ?byName[known.name.toLowerCase()],
+    ];
+    bool matches(SrdSpell spell) => switch (target) {
+      'warlock_damage_cantrip' => spell.damageTypes.isNotEmpty,
+      'warlock_ranged_damage_cantrip' =>
+        spell.damageTypes.isNotEmpty && (spell.rangeInFeet ?? 0) >= 10,
+      'warlock_attack_cantrip' => spell.attackType != null,
+      _ => false,
+    };
+    return [
+      for (final spell in cantrips)
+        if (matches(spell))
+          SrdFeatureChoiceOption(id: spell.name, name: i18n.spellName(spell.name)),
+    ];
+  }
 
   String? descriptionFor(String value) => optionFor(value)?.description;
 

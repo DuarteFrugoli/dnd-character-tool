@@ -18,6 +18,60 @@ class AppLocalizationsDe extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => 'Eigener Hintergrund';
+
+  @override
+  String get customBackgroundSubtitle =>
+      'Baue deinen eigenen Hintergrund nach den Regeln';
+
+  @override
+  String get customBackgroundName => 'Name des Hintergrunds';
+
+  @override
+  String get customBackgroundFeature => 'Merkmal des Hintergrunds';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return 'Wähle $count Fertigkeiten';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return 'Wähle bis zu $count Werkzeuge; der Rest wird zu Sprachen';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return 'Später zu wählende Sprachen: $count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => 'Ausrüstungspaket';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return 'Wähle $count Attribute für die Erhöhungen';
+  }
+
+  @override
+  String get customBackgroundTool2024 =>
+      'Wähle ein Werkzeug beliebiger Art zusammen mit den anderen Übungen.';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return 'Ausrüstung: $gp GM zum Ausgeben';
+  }
+
+  @override
+  String get customBackgroundSave => 'Diesen Hintergrund verwenden';
+
+  @override
   String get creation2024Species => 'Spezies';
 
   @override
@@ -165,6 +219,38 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get whatsNewThanks =>
       'Danke, dass du spielst und uns Feedback gibst. Deine Ideen helfen uns bei den nächsten Schritten.';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024 (5.5e) ist da: Erstelle und steigere Charaktere nach den Regeln des SRD 5.2.1, neben deinen 2014-Charakteren.';
+
+  @override
+  String get whatsNew3RulesTitle => 'D&D-2024-Regeln';
+
+  @override
+  String get whatsNew3RulesBody =>
+      'Wähle beim Erstellen D&D 5e (2014) oder 5.5e (2024). 2024-Charaktere steigen von Stufe 1 bis 20 mit Unterklassen, Talenten, epischen Gaben, Mehrfachklassen und Waffenmeisterschaft.';
+
+  @override
+  String get whatsNew3RestsTitle => 'Rasten und Zustände';
+
+  @override
+  String get whatsNew3RestsBody =>
+      'Lange Rasten 2024 stellen alle Trefferwürfel wieder her und entfernen eine Erschöpfungsstufe, Erschöpfung wirkt auf W20-Würfe und Bewegungsrate, und kurze Rasten bieten Merkmale wie Arcane Recovery.';
+
+  @override
+  String get whatsNew3ResetTitle => 'Sichereres Zurücksetzen';
+
+  @override
+  String get whatsNew3ResetBody =>
+      'Eine Übersicht zeigt jede Änderung, bevor etwas gespeichert wird. Das Zurücksetzen macht rückgängig, was entfernte Klassen gewährt haben, und beide Regelwerke können bis zur vorherigen Stufe neu aufbauen.';
+
+  @override
+  String get whatsNew3UpdateTitle => 'Einmalige Charakteraktualisierung';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      'Beim Öffnen eines Charakters bittet die App, alle zu aktualisieren, und öffnet zuerst ein Backup. 2014-Charaktere behalten Regeln und Daten; 2024-Charaktere speichern den Stufenverlauf für Aufstieg und Zurücksetzen.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -658,7 +744,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return 'Zurück zu Stufe 1 als $className? Stufen, Unterklasse, Talente, Auswahlen und Zauber nach Stufe 1 werden anhand des gespeicherten Stufenverlaufs rückgängig gemacht. Herkunft, manuelle Attributänderungen, Inventar, Notizen und Geschichte bleiben erhalten.';
+    return 'Zurück zu Stufe 1? Danach kannst du $className behalten oder eine andere Klasse wählen. Stufen, Unterklasse, Talente, Auswahlen und Zauber aus Klassen werden anhand des gespeicherten Stufenverlaufs rückgängig gemacht. Herkunft, manuelle Attributänderungen, Inventar, Notizen und Geschichte bleiben erhalten.';
   }
 
   @override
@@ -673,6 +759,68 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => 'Wähle die Klasse für diesen Zauber';
+
+  @override
+  String get featureChoicesChooseTarget => 'Ziel wählen';
+
+  @override
+  String get featureChoicesNoTargets => 'Noch kein gültiges Ziel.';
+
+  @override
+  String get levelUp2024SwapTitle => 'Zauber ersetzen (optional)';
+
+  @override
+  String get levelUp2024SwapCantrip => 'Zu ersetzender Zaubertrick';
+
+  @override
+  String get levelUp2024SwapSpell => 'Zu ersetzender vorbereiteter Zauber';
+
+  @override
+  String get levelUp2024SwapLearn => 'Ersatz';
+
+  @override
+  String get resetLevels2024ClassTitle => 'Klasse auf Stufe 1';
+
+  @override
+  String get changesReviewTitle => 'Änderungen prüfen';
+
+  @override
+  String get changesReviewIntro => 'Beim Speichern ändert sich:';
+
+  @override
+  String get changesReviewNone => 'Es ändert sich nichts.';
+
+  @override
+  String get changesReviewApply => 'Änderungen speichern';
+
+  @override
+  String get changesKindClasses => 'Klassen';
+
+  @override
+  String get changesKindExpertise => 'Expertise';
+
+  @override
+  String get changesKindProficiencies => 'Übungen';
+
+  @override
+  String get changesKindExperience => 'Erfahrungspunkte';
+
+  @override
+  String get changesAdded => 'Hinzugefügt';
+
+  @override
+  String get changesRemoved => 'Entfernt';
+
+  @override
+  String get changesKeptTitle => 'Unverändert';
+
+  @override
+  String get resetLimitAbilityIncreases =>
+      'Dieser Charakter hat keinen vollständigen Stufenverlauf, daher bleiben Attributserhöhungen früherer Stufen erhalten.';
+
+  @override
+  String get resetLimitClassSkills =>
+      'Dieser Charakter hat nicht gespeichert, welche Fertigkeiten von der Klasse stammen, daher bleiben sie erhalten.';
 
   @override
   String get concentrationBannerLabel => 'Konzentration auf:';
@@ -969,7 +1117,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      'Dies setzt den Klassenfortschritt auf Stufe 1 zurück. Notizen, Inventar, Behälter, Geld, Bild, Geschichte, Aussehen, Volk, Hintergrund und Attributswerte bleiben erhalten.\n\nKlassenstufen, Klassenzauber, Klassen-/Unterklassenentscheidungen, Fortschrittsressourcen und ASI-Talente werden entfernt oder neu berechnet. Exportiere vorher ein Backup, wenn du eine zusätzliche Kopie möchtest.';
+      'Dies setzt den Klassenfortschritt auf Stufe 1 zurück. Notizen, Inventar, Behälter, Währung, Bild, Geschichte, Aussehen, Volk und Hintergrund bleiben erhalten.\n\nKlassenstufen, Klassenzauber, Klassen- und Unterklassenauswahlen samt ihren Vorteilen, Fortschrittsressourcen und Stufentalente werden entfernt. Attributserhöhungen durch Stufen werden rückgängig gemacht, wenn der Charakter einen vollständigen Stufenverlauf hat. Du prüfst jede Änderung, bevor etwas gespeichert wird.';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2933,6 +3081,14 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       'Dieser Charakter wurde den Regeln von 2014 (SRD 5.1) zugeordnet.';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory =>
+      'Stufe-1-Verlauf für Stufenaufstieg und Zurücksetzen gespeichert.';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills =>
+      'Gespeichert, welche Fertigkeiten auf Stufe 1 von der Klasse stammen.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

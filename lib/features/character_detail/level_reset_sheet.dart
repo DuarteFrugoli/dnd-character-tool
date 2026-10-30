@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/character_progression/character_progression.dart';
+import '../../data/character_progression/choice_effects.dart';
 import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/datasources/srd/srd_models.dart';
@@ -13,10 +14,12 @@ import '../../data/feature_choice_engine.dart';
 import '../../data/models/models.dart';
 import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/widgets/character_changes_dialog.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import 'character_detail_provider.dart';
 import 'level_up_wizard_sheet.dart';
+import 'level_up_2024_sheet.dart';
 import 'widgets/feature_choice_editor.dart';
 
 Future<void> openLevelResetSheet(
@@ -72,11 +75,7 @@ Future<void> _resetLevels2024(
     ),
   );
   if (confirmed != true || !context.mounted) return;
-  final messenger = ScaffoldMessenger.of(context);
-  await ProviderScope.containerOf(
-    context,
-  ).read(characterDetailProvider(characterId).notifier).resetLevels2024();
-  messenger.showSnackBar(SnackBar(content: Text(l10n.resetLevelsApplied)));
+  await openLevelReset2024Sheet(context, characterId);
 }
 
 class _ResetLevelsConfirmDialog extends StatefulWidget {
@@ -427,14 +426,16 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
     if (result == null) return;
     setState(() => _saving = true);
     try {
+      final effects = await ref.read(srd2014ChoiceEffectsProvider.future);
       var updated = CharacterLevelResetEngine.resetToLevelOne(
         widget.character,
         result,
+        effects: effects,
       );
       var syncInnateSpellsAfterSave = result.subclassName != null;
 
       if (_shouldRebuildToPreviousLevel) {
-        final rebuild = await _collectLevelUpRebuild(updated);
+        final rebuild = await _collectLevelUpRebuild(updated, effects);
         if (!mounted) return;
         if (rebuild == null) {
           setState(() => _saving = false);
@@ -452,6 +453,33 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
             syncInnateSpellsAfterSave || rebuild.syncInnateSpellsAfterSave;
       }
 
+      final i18n = await ref.read(
+        srdI18nForPackProvider(widget.character.contentPackId).future,
+      );
+      if (!mounted) return;
+      final l10n = AppLocalizations.of(context)!;
+      final confirmed = await showCharacterChangesDialog(
+        context,
+        before: widget.character,
+        after: updated,
+        i18n: i18n,
+        notes: [
+          for (final limitation
+              in CharacterLevelResetEngine.limitationsFor(widget.character))
+            switch (limitation) {
+              LevelResetLimitation.abilityIncreasesKept =>
+                l10n.resetLimitAbilityIncreases,
+              LevelResetLimitation.previousClassSkillsKept =>
+                l10n.resetLimitClassSkills,
+            },
+        ],
+      );
+      if (!mounted) return;
+      if (!confirmed) {
+        setState(() => _saving = false);
+        return;
+      }
+
       await ref
           .read(characterDetailProvider(widget.characterId).notifier)
           .saveRebuiltLevels(
@@ -460,7 +488,6 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
           );
       if (!mounted) return;
       Navigator.of(context).pop();
-      final l10n = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
@@ -485,6 +512,7 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
 
   Future<_CollectedLevelRebuild?> _collectLevelUpRebuild(
     Character levelOneCharacter,
+    ChoiceEffectsData effects,
   ) async {
     var current = levelOneCharacter;
     var syncInnateSpellsAfterSave = false;
@@ -519,7 +547,11 @@ class _LevelResetFlowState extends ConsumerState<_LevelResetFlow> {
       messenger.hideCurrentSnackBar();
       if (levelUp == null) return null;
 
-      current = CharacterProgressionEngine.applyLevelUp(current, levelUp);
+      current = CharacterProgressionEngine.applyLevelUp(
+        current,
+        levelUp,
+        effects: effects,
+      );
       if (current.xpTrackingEnabled) {
         current = current.copyWith(
           experiencePoints: levelToMinXp(current.totalLevel),

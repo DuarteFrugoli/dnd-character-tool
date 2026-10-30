@@ -86,6 +86,12 @@ String _formatChange(BuildContext context, CharacterMigrationChange change) {
   if (change.code == 'ruleset_2014_assigned') {
     return l10n.settingsMaintenanceChangeRuleset2014;
   }
+  if (change.code == 'level_history_recorded') {
+    return l10n.settingsMaintenanceChangeLevelHistory;
+  }
+  if (change.code == 'class_skills_recorded') {
+    return l10n.settingsMaintenanceChangeClassSkills;
+  }
 
   return l10n.settingsMaintenanceChangeGeneric(change.count);
 }

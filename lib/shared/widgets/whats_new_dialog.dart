@@ -107,7 +107,7 @@ class _WhatsNewDialog extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 20, 24, 12),
                 child: Text(
-                  l10n.whatsNewSummary,
+                  l10n.whatsNew3Summary,
                   style: theme.textTheme.bodyLarge?.copyWith(
                     color: cs.onSurface,
                     fontWeight: FontWeight.w600,
@@ -116,24 +116,24 @@ class _WhatsNewDialog extends StatelessWidget {
                 ),
               ),
               _WhatsNewItem(
-                icon: Icons.translate_outlined,
-                title: l10n.whatsNewTurkishTitle,
-                body: l10n.whatsNewTurkishBody,
+                icon: Icons.menu_book_outlined,
+                title: l10n.whatsNew3RulesTitle,
+                body: l10n.whatsNew3RulesBody,
               ),
               _WhatsNewItem(
-                icon: Icons.inventory_2_outlined,
-                title: l10n.whatsNewMagicItemsTitle,
-                body: l10n.whatsNewMagicItemsBody,
+                icon: Icons.bedtime_outlined,
+                title: l10n.whatsNew3RestsTitle,
+                body: l10n.whatsNew3RestsBody,
+              ),
+              _WhatsNewItem(
+                icon: Icons.fact_check_outlined,
+                title: l10n.whatsNew3ResetTitle,
+                body: l10n.whatsNew3ResetBody,
               ),
               _WhatsNewItem(
                 icon: Icons.verified_user_outlined,
-                title: l10n.whatsNewCharacterUpdatesTitle,
-                body: l10n.whatsNewCharacterUpdatesBody,
-              ),
-              _WhatsNewItem(
-                icon: Icons.menu_book_outlined,
-                title: l10n.whatsNew2024Title,
-                body: l10n.whatsNew2024Body,
+                title: l10n.whatsNew3UpdateTitle,
+                body: l10n.whatsNew3UpdateBody,
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 16, 24, 0),

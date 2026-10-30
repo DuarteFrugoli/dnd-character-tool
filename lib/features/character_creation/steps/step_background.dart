@@ -6,6 +6,7 @@ import '../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../data/datasources/srd/srd_models.dart';
 import '../../../shared/providers/providers.dart';
 import '../character_draft_provider.dart';
+import 'custom_background_2014_page.dart';
 
 /// Translates a background tool proficiency string.
 /// Choice descriptions ("one type of gaming set") use ARB keys;
@@ -58,10 +59,24 @@ class _StepBackgroundState extends ConsumerState<StepBackground> {
         final backgrounds = snap.data ?? [];
         return ListView.builder(
           padding: const EdgeInsets.all(16),
-          itemCount: backgrounds.length,
-          itemBuilder: (context, i) {
-            final bg = backgrounds[i];
-            final isSelected = selected?.name == bg.name;
+          itemCount: backgrounds.length + 1,
+          itemBuilder: (context, index) {
+            if (index == 0) {
+              return _CustomBackgroundCard(
+                custom: selected?.isCustom == true ? selected : null,
+                i18n: i18n,
+                onTap: () async {
+                  final custom = await openCustomBackground2014Page(
+                    context,
+                    initial: selected?.isCustom == true ? selected : null,
+                  );
+                  if (custom == null) return;
+                  ref.read(characterDraftProvider.notifier).setBackground(custom);
+                },
+              );
+            }
+            final bg = backgrounds[index - 1];
+            final isSelected = selected?.isCustom != true && selected?.name == bg.name;
             return _BackgroundCard(
               bg: bg,
               i18n: i18n,
@@ -72,6 +87,43 @@ class _StepBackgroundState extends ConsumerState<StepBackground> {
           },
         );
       },
+    );
+  }
+}
+
+class _CustomBackgroundCard extends StatelessWidget {
+  const _CustomBackgroundCard({
+    required this.custom,
+    required this.i18n,
+    required this.onTap,
+  });
+
+  final SrdBackground? custom;
+  final SrdI18nService i18n;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    final custom = this.custom;
+    return Card(
+      margin: const EdgeInsets.only(bottom: 8),
+      color: custom != null ? scheme.primaryContainer : null,
+      child: ListTile(
+        leading: const Icon(Icons.edit_note_outlined),
+        title: Text(custom?.name ?? l10n.customBackgroundTitle),
+        subtitle: Text(
+          custom == null
+              ? l10n.customBackgroundSubtitle
+              : '${l10n.customBackgroundTitle} · '
+                    '${custom.skillProficiencies.map(i18n.skillName).join(', ')}',
+        ),
+        trailing: custom != null
+            ? Icon(Icons.check_circle, color: scheme.primary)
+            : const Icon(Icons.chevron_right),
+        onTap: onTap,
+      ),
     );
   }
 }

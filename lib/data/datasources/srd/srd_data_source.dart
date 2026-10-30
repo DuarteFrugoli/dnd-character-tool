@@ -274,6 +274,7 @@ class SrdDataSource {
           props = {
             'baseAC': a['baseAC'],
             'addDexModifier': a['addDexModifier'],
+            if (a['type'] is String) 'armorType': a['type'],
             if (maxDex != null && (maxDex as num).toInt() > 0)
               'maxDexBonus': maxDex,
             if (a['stealthDisadvantage'] == true) 'stealthDisadvantage': true,

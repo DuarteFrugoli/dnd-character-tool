@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/character_progression/progression_2024_engine.dart';
+import '../../data/constants/level_up_rules.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/feature_choice_engine.dart';
@@ -12,34 +13,46 @@ import '../../data/models/models.dart';
 import '../../l10n/ability_l10n.dart';
 import '../../l10n/app_localizations.dart';
 import '../../shared/providers/providers.dart';
+import '../../shared/widgets/character_changes_dialog.dart';
 import 'character_detail_provider.dart';
 import 'widgets/feature_choice_editor.dart';
 
-Future<void> openLevelUp2024Sheet(
+/// Opens the 2024 level up. By default the level is saved on confirm; with
+/// `applyOnConfirm: false` the wizard works on [character] in memory (e.g. a
+/// reset being rebuilt) and returns the decisions without saving.
+Future<LevelUp2024Result?> openLevelUp2024Sheet(
   BuildContext context,
   Character character,
-  String characterId,
-) {
+  String characterId, {
+  bool applyOnConfirm = true,
+}) {
   if (character.totalLevel >= Progression2024Engine.maxLevel) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text(AppLocalizations.of(context)!.levelUpMaxLevel)),
     );
     return Future.value();
   }
-  return Navigator.of(context).push<void>(
+  return Navigator.of(context).push<LevelUp2024Result>(
     MaterialPageRoute(
       fullscreenDialog: true,
-      builder: (_) => _LevelUp2024Wizard(characterId: characterId),
+      builder: (_) => _LevelUp2024Wizard(
+        characterId: characterId,
+        character: applyOnConfirm ? null : character,
+      ),
     ),
   );
 }
 
-enum _Step { classTarget, subclass, feat, hitPoints, choices, summary }
+enum _Step { classTarget, subclass, feat, hitPoints, choices, swaps, summary }
 
 class _LevelUp2024Wizard extends ConsumerStatefulWidget {
-  const _LevelUp2024Wizard({required this.characterId});
+  const _LevelUp2024Wizard({required this.characterId, this.character});
 
   final String characterId;
+
+  /// In-memory sheet being rebuilt; when set, the result is returned instead
+  /// of saved.
+  final Character? character;
 
   @override
   ConsumerState<_LevelUp2024Wizard> createState() => _LevelUp2024WizardState();
@@ -60,9 +73,11 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
   String _hpMethod = HitPointGainMethod.average;
   int? _roll;
   List<CharacterFeatureChoice> _choices = const [];
+  final Map<bool, (String?, String?)> _swaps = {};
   int _stepIndex = 0;
 
   Character get _character =>
+      widget.character ??
       ref.read(characterDetailProvider(widget.characterId)).requireValue;
 
   @override
@@ -105,8 +120,31 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
       _feat = null;
       _increases = {};
       _choices = const [];
+      _swaps.clear();
     });
   }
+
+  /// Bards, Sorcerers and Warlocks may replace class-table spells on gaining
+  /// a level; `true` keys the cantrip swap.
+  List<bool> get _swapKinds {
+    final plan = _plan;
+    if (plan == null || plan.isNewClass) return const [];
+    final entry = _character.classEntries.firstWhere((e) => e.id == plan.classEntryId);
+    return [
+      if (plan.cls.levelUpCantripSwaps > 0 &&
+          Progression2024Engine.swappableSpells(_character, entry, cantrips: true).isNotEmpty)
+        true,
+      if (plan.cls.levelUpSpellSwaps > 0 &&
+          Progression2024Engine.swappableSpells(_character, entry, cantrips: false).isNotEmpty)
+        false,
+    ];
+  }
+
+  List<SpellSwap2024> get _spellSwaps => [
+    for (final (forget, learn) in _swaps.values)
+      if (forget != null && learn != null)
+        SpellSwap2024(forget: forget, learn: learn),
+  ];
 
   List<_Step> get _steps {
     final plan = _plan;
@@ -116,6 +154,7 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
       if (plan != null && plan.featFeature != null) _Step.feat,
       _Step.hitPoints,
       if (_requests.isNotEmpty) _Step.choices,
+      if (_swapKinds.isNotEmpty) _Step.swaps,
       _Step.summary,
     ];
   }
@@ -155,6 +194,9 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
       _Step.hitPoints =>
         _hpMethod == HitPointGainMethod.average || _roll != null,
       _Step.choices => FeatureChoiceEngine.allComplete(_requests, _choices),
+      _Step.swaps => _swaps.values.every(
+        (swap) => (swap.$1 == null) == (swap.$2 == null),
+      ),
       _Step.summary => true,
     };
   }
@@ -172,23 +214,35 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
   }
 
   Future<void> _confirm() async {
+    final result = LevelUp2024Result(
+      className: _className!,
+      classEntryId: _classEntryId,
+      hitPointMethod: _hpMethod,
+      hitDieRoll: _roll,
+      subclassName: _subclass,
+      featName: _feat,
+      abilityIncreases: _increases,
+      featureChoices: _choices,
+      spellSwaps: _spellSwaps,
+    );
+    if (widget.character != null) {
+      try {
+        // Validate in memory so a rebuild never stops on an invalid level.
+        Progression2024Engine.applyLevelUp(_character, _data!, result);
+        Navigator.of(context).pop(result);
+      } catch (error) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(error.toString())));
+      }
+      return;
+    }
     setState(() => _saving = true);
     try {
       await ref
           .read(characterDetailProvider(widget.characterId).notifier)
-          .levelUp2024(
-            LevelUp2024Result(
-              className: _className!,
-              classEntryId: _classEntryId,
-              hitPointMethod: _hpMethod,
-              hitDieRoll: _roll,
-              subclassName: _subclass,
-              featName: _feat,
-              abilityIncreases: _increases,
-              featureChoices: _choices,
-            ),
-          );
-      if (mounted) Navigator.of(context).pop();
+          .levelUp2024(result);
+      if (mounted) Navigator.of(context).pop(result);
     } catch (error) {
       if (!mounted) return;
       setState(() => _saving = false);
@@ -201,7 +255,8 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final character = ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
+    final character = widget.character ??
+        ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
     final i18n = character == null
         ? null
         : ref.watch(srdI18nForPackProvider(character.contentPackId)).valueOrNull;
@@ -253,6 +308,7 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
           featureLabelBuilder: (request) => _requestLabel(request, i18n),
           onChanged: (choices) => setState(() => _choices = choices),
         ),
+        _Step.swaps => _buildSwapStep(context, character, data, i18n),
         _Step.summary => _buildSummaryStep(context, character, data, i18n),
       },
       bottomNavigationBar: SafeArea(
@@ -498,6 +554,86 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
     return total <= largest;
   }
 
+  Widget _buildSwapStep(
+    BuildContext context,
+    Character character,
+    Rules2024Data data,
+    SrdI18nService i18n,
+  ) {
+    final l10n = AppLocalizations.of(context)!;
+    final plan = _plan!;
+    final entry = character.classEntries.firstWhere((e) => e.id == plan.classEntryId);
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        Text(l10n.levelUp2024SwapTitle, style: Theme.of(context).textTheme.titleMedium),
+        for (final cantrips in _swapKinds) ...[
+          const SizedBox(height: 16),
+          Builder(
+            builder: (context) {
+              final (forget, learn) = _swaps[cantrips] ?? (null, null);
+              final known = Progression2024Engine.swappableSpells(
+                character,
+                entry,
+                cantrips: cantrips,
+              );
+              final candidates = Progression2024Engine.swapCandidates(
+                character,
+                data,
+                plan.cls,
+                plan.newClassLevel,
+                cantrips: cantrips,
+              );
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  DropdownButtonFormField<String?>(
+                    initialValue: forget,
+                    isExpanded: true,
+                    decoration: InputDecoration(
+                      labelText: cantrips
+                          ? l10n.levelUp2024SwapCantrip
+                          : l10n.levelUp2024SwapSpell,
+                    ),
+                    items: [
+                      DropdownMenuItem(value: null, child: Text(l10n.levelUpSpellSwapNone)),
+                      for (final spell in known)
+                        DropdownMenuItem(value: spell.name, child: Text(i18n.spellName(spell.name))),
+                    ],
+                    onChanged: (value) => setState(
+                      () => _swaps[cantrips] = (value, value == null ? null : learn),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  DropdownButtonFormField<String?>(
+                    key: ValueKey('learn-$cantrips-$forget'),
+                    initialValue: learn,
+                    isExpanded: true,
+                    decoration: InputDecoration(labelText: l10n.levelUp2024SwapLearn),
+                    items: [
+                      for (final spell in candidates)
+                        DropdownMenuItem(
+                          value: spell.name,
+                          child: Text(
+                            spell.level == 0
+                                ? i18n.spellName(spell.name)
+                                : '${i18n.spellName(spell.name)} · ${l10n.spellsLevelN(spell.level)}',
+                          ),
+                        ),
+                    ],
+                    onChanged: forget == null
+                        ? null
+                        : (value) => setState(() => _swaps[cantrips] = (forget, value)),
+                  ),
+                ],
+              );
+            },
+          ),
+        ],
+      ],
+    );
+  }
+
   Widget _buildHitPointStep(BuildContext context, Character character) {
     final l10n = AppLocalizations.of(context)!;
     final plan = _plan!;
@@ -684,6 +820,263 @@ class _AbilityIncreaseRow extends StatelessWidget {
           onPressed: canIncrease ? () => onChanged(increase + 1) : null,
         ),
       ],
+    );
+  }
+}
+
+/// Opens the 2024 level reset: pick the level 1 class (the current starting
+/// class by default) and its level 1 choices, then rebuild the sheet.
+Future<bool?> openLevelReset2024Sheet(BuildContext context, String characterId) {
+  return Navigator.of(context).push<bool>(
+    MaterialPageRoute(
+      fullscreenDialog: true,
+      builder: (_) => _LevelReset2024Flow(characterId: characterId),
+    ),
+  );
+}
+
+class _LevelReset2024Flow extends ConsumerStatefulWidget {
+  const _LevelReset2024Flow({required this.characterId});
+
+  final String characterId;
+
+  @override
+  ConsumerState<_LevelReset2024Flow> createState() => _LevelReset2024FlowState();
+}
+
+class _LevelReset2024FlowState extends ConsumerState<_LevelReset2024Flow> {
+  Rules2024Data? _data;
+  List<SrdWeapon> _weapons = const [];
+  Object? _loadError;
+  String? _className;
+  List<FeatureChoiceRequest> _requests = const [];
+  List<CharacterFeatureChoice> _choices = const [];
+  bool _saving = false;
+  late bool _rebuild = _character.totalLevel > 1;
+
+  Character get _character =>
+      ref.read(characterDetailProvider(widget.characterId)).requireValue;
+
+  /// Runs the level up wizard in memory from level 2 back to the original
+  /// level. Returns null when the player cancels any step.
+  Future<Character?> _rebuildLevels(Character levelOne, int targetLevel) async {
+    final messenger = ScaffoldMessenger.of(context);
+    var current = levelOne;
+    while (current.totalLevel < targetLevel) {
+      final l10n = AppLocalizations.of(context)!;
+      messenger
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          SnackBar(
+            duration: const Duration(seconds: 2),
+            content: Text(
+              l10n.resetLevelsRebuildStep(current.totalLevel + 1, targetLevel),
+            ),
+          ),
+        );
+      final result = await openLevelUp2024Sheet(
+        context,
+        current,
+        widget.characterId,
+        applyOnConfirm: false,
+      );
+      if (!mounted || result == null) return null;
+      current = Progression2024Engine.applyLevelUp(current, _data!, result);
+      if (current.xpTrackingEnabled) {
+        current = current.copyWith(
+          experiencePoints: levelToMinXp(current.totalLevel),
+        );
+      }
+    }
+    messenger.hideCurrentSnackBar();
+    return current;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    try {
+      final data = await ref
+          .read(characterDetailProvider(widget.characterId).notifier)
+          .rules2024Data();
+      final weapons = await ref.read(
+        srdWeaponsForPackProvider(_character.contentPackId).future,
+      );
+      if (!mounted) return;
+      setState(() {
+        _data = data;
+        _weapons = weapons;
+      });
+      _selectClass(_character.primaryClass.className);
+    } catch (error) {
+      if (mounted) setState(() => _loadError = error);
+    }
+  }
+
+  void _selectClass(String className) {
+    final data = _data!;
+    final character = _character;
+    setState(() {
+      _className = className;
+      _requests = Progression2024Engine.levelOneRequests(character, data, className);
+      _choices = className == character.primaryClass.className
+          ? Progression2024Engine.currentLevelOneChoices(character, data)
+          : [for (final request in _requests) request.emptyChoice()];
+    });
+  }
+
+  Future<void> _apply() async {
+    final messenger = ScaffoldMessenger.of(context);
+    final l10n = AppLocalizations.of(context)!;
+    final character = _character;
+    final i18n = await ref.read(
+      srdI18nForPackProvider(character.contentPackId).future,
+    );
+    if (!mounted) return;
+    final Character preview;
+    try {
+      preview = Progression2024Engine.resetToLevelOne(
+        character,
+        _data!,
+        className: _className,
+        choices: _choices,
+      );
+    } catch (error) {
+      messenger.showSnackBar(SnackBar(content: Text(error.toString())));
+      return;
+    }
+    var result = preview;
+    if (_rebuild && character.totalLevel > 1) {
+      final rebuilt = await _rebuildLevels(preview, character.totalLevel);
+      if (!mounted) return;
+      if (rebuilt == null) {
+        messenger.showSnackBar(
+          SnackBar(content: Text(l10n.resetLevelsRebuildCancelled)),
+        );
+        return;
+      }
+      result = rebuilt;
+    }
+    final confirmed = await showCharacterChangesDialog(
+      context,
+      before: character,
+      after: result,
+      i18n: i18n,
+    );
+    if (!confirmed || !mounted) return;
+    setState(() => _saving = true);
+    try {
+      await ref
+          .read(characterDetailProvider(widget.characterId).notifier)
+          .saveLevelReset2024(result);
+      if (!mounted) return;
+      Navigator.of(context).pop(true);
+      messenger.showSnackBar(
+        SnackBar(
+          content: Text(
+            result.totalLevel > 1
+                ? l10n.resetLevelsRebuiltApplied(result.totalLevel)
+                : l10n.resetLevelsApplied,
+          ),
+        ),
+      );
+    } catch (error) {
+      if (!mounted) return;
+      setState(() => _saving = false);
+      messenger.showSnackBar(SnackBar(content: Text(error.toString())));
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final character = ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
+    final i18n = character == null
+        ? null
+        : ref.watch(srdI18nForPackProvider(character.contentPackId)).valueOrNull;
+    final data = _data;
+    if (_loadError != null) {
+      return Scaffold(
+        appBar: AppBar(title: Text(l10n.resetLevelsTitle)),
+        body: Center(child: Text(_loadError.toString())),
+      );
+    }
+    if (character == null || data == null || i18n == null || _className == null) {
+      return Scaffold(
+        appBar: AppBar(title: Text(l10n.resetLevelsTitle)),
+        body: const Center(child: CircularProgressIndicator()),
+      );
+    }
+    final complete = FeatureChoiceEngine.allComplete(_requests, _choices);
+    return Scaffold(
+      appBar: AppBar(title: Text(l10n.resetLevelsTitle)),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+            child: DropdownButtonFormField<String>(
+              initialValue: _className,
+              isExpanded: true,
+              decoration: InputDecoration(labelText: l10n.resetLevels2024ClassTitle),
+              items: [
+                for (final cls in data.classes)
+                  DropdownMenuItem(value: cls.name, child: Text(i18n.className(cls.name))),
+              ],
+              onChanged: _saving
+                  ? null
+                  : (value) {
+                      if (value != null) _selectClass(value);
+                    },
+            ),
+          ),
+          if (character.totalLevel > 1)
+            SwitchListTile(
+              value: _rebuild,
+              onChanged: _saving ? null : (value) => setState(() => _rebuild = value),
+              title: Text(l10n.resetLevelsRebuildTitle(character.totalLevel)),
+              subtitle: Text(l10n.resetLevelsRebuildSubtitle(character.totalLevel)),
+            ),
+          Expanded(
+            child: FeatureChoiceEditor(
+              key: ValueKey('reset-$_className'),
+              requests: _requests,
+              initialChoices: _choices,
+              catalog: data.choices,
+              character: character,
+              i18n: i18n,
+              skills: data.skills,
+              tools: data.tools,
+              spells: data.spells,
+              languages: data.languages,
+              weapons: _weapons,
+              feats: data.feats,
+              featureLabelBuilder: (request) =>
+                  i18n.classFeatureName(request.sourceClass, request.featureName) ??
+                  request.featureName,
+              onChanged: (choices) => setState(() => _choices = choices),
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 12),
+          child: FilledButton(
+            onPressed: _saving || !complete ? null : _apply,
+            child: Text(
+              !complete
+                  ? l10n.resetLevelsIncomplete
+                  : _rebuild && character.totalLevel > 1
+                  ? l10n.resetLevelsApplyAndRebuild(character.totalLevel)
+                  : l10n.resetLevelsApply,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

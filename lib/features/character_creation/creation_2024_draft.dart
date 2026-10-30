@@ -1,6 +1,9 @@
 import 'package:uuid/uuid.dart';
 
+import '../../data/character_progression/choice_effects.dart';
+import '../../data/character_progression/progression_2024_engine.dart';
 import '../../data/constants/armor_class.dart';
+import '../../data/custom_background.dart';
 import '../../data/datasources/srd/srd_models.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_choice_option_resolver.dart';
@@ -384,8 +387,7 @@ class Creation2024Draft {
     final characterLanguages = <String>{
       'Common',
       ...languages,
-      if (cls.name == 'Druid') 'Druidic',
-      if (cls.name == 'Rogue') "Thieves' Cant",
+      ?Progression2024Engine.classLanguages[cls.name],
     };
     final skillsGranted = <String>{...bg.skills, ...skills};
     final expertise = <String>{};
@@ -469,22 +471,21 @@ class Creation2024Draft {
         ));
       }
     }
-    for (final spellName in [
-      if (species!.name == 'Tiefling') 'Thaumaturgy',
-      if (cls.name == 'Druid') 'Druidcraft',
-      if (cls.name == 'Ranger') "Hunter's Mark",
+    final classSpell = Progression2024Engine.classLevelOneSpells[cls.name];
+    for (final (spellName, sourceType, sourceClass, feature) in [
+      if (species!.name == 'Tiefling')
+        ('Thaumaturgy', FeatureChoiceSourceType.raceTrait, null, 'Otherworldly Presence'),
+      if (classSpell != null)
+        (classSpell.$1, FeatureChoiceSourceType.classFeature, cls.name, classSpell.$2),
     ]) {
       if (knownSpells.any((entry) => entry.name == spellName)) continue;
       knownSpells.add(KnownSpell(
         name: spellName,
         level: spellsByName[spellName.toLowerCase()]?.level ?? 0,
         isAlwaysPrepared: true,
-        sourceType: species!.name == 'Tiefling'
-            ? FeatureChoiceSourceType.raceTrait
-            : FeatureChoiceSourceType.classFeature,
-        sourceClass: species!.name == 'Tiefling' ? null : cls.name,
-        sourceFeature: species!.name == 'Tiefling' ? 'Otherworldly Presence' :
-            cls.name == 'Druid' ? 'Druidic' : 'Favored Enemy',
+        sourceType: sourceType,
+        sourceClass: sourceClass,
+        sourceFeature: feature,
       ));
     }
     final now = DateTime.now();
@@ -502,12 +503,21 @@ class Creation2024Draft {
               '$ability:${backgroundBonuses[ability]}',
         ],
       ),
+      if (bg.isCustom) CustomBackground.skillsChoice(bg.name, bg.skills),
       CharacterFeatureChoice(
         sourceType: FeatureChoiceSourceType.background,
         sourceName: bg.name,
         featureName: 'Tool Proficiency',
         choiceId: 'tools',
         values: backgroundTools.map(FeatureChoiceOptionResolver.idFromName).toList(),
+      ),
+      CharacterFeatureChoice(
+        sourceType: FeatureChoiceSourceType.classFeature,
+        sourceClass: cls.name,
+        sourceClassEntryId: 'primary',
+        featureName: ChoiceEffects.classSkillsFeature,
+        choiceId: 'skills',
+        values: skills.map(FeatureChoiceOptionResolver.idFromName).toList(),
       ),
       CharacterFeatureChoice(
         sourceType: FeatureChoiceSourceType.classFeature,

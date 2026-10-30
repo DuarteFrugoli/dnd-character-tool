@@ -1,19 +1,26 @@
 # DnD Character Tool
 
-A cross-platform app for creating and managing DnD 5e (2014) characters, built with Flutter.
+A cross-platform app for creating and managing D&D 5e (2014) and 5.5e (2024) characters, built with Flutter.
 
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11.5-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-2.1.2-orange)
+![Version](https://img.shields.io/badge/version-3.0.0-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
 
 ## Features
 
+### Two Rule Sets
+- Choose **D&D 5e (2014, SRD 5.1)** or **5.5e (2024, SRD 5.2.1)** when creating a character
+- Each sheet keeps its own rules and catalogs; 2014 characters keep their data and calculations
+- Lists and sheets show which edition a character uses
+
 ### Character Creation
-- **Guided wizard** — class, race, background, skills, attributes, identity and review
+- **2024 wizard** — class, species, background with ability increases and Origin feat, skills, languages, tools, spells and starting equipment
+- **2014 guided wizard** — class, race, background, skills, attributes, identity and review
+- **Custom backgrounds** in both editions, following each edition's rules
 - **Standard Array** and **Point Buy** attribute methods
 - Racial bonuses can use fixed SRD rules or the optional Tasha-style free assignment
 - Variant Human support with ability choices, skill proficiency, extra language and level-1 feat
@@ -28,8 +35,9 @@ A cross-platform app for creating and managing DnD 5e (2014) characters, built w
 - Inspiration banner
 - XP tracking with progress bar and auto level-up detection
 - Death Saves (auto-shown at 0 HP) — tracks successes, failures, Stabilized and Dead states
-- Active Conditions — 15 SRD conditions with descriptions; add/remove via chip picker
-- Short Rest — spend Hit Dice to recover HP
+- Active Conditions — SRD conditions with descriptions; add/remove via chip picker. 2024 Exhaustion has levels (−2 on d20 rolls and −5 ft Speed per level)
+- Short and long rests — spend Hit Dice, recover feature uses and use recovery features such as Arcane Recovery; 2024 long rests recover every Hit Die and remove one Exhaustion level
+- Rolling Initiative recharges features such as Boon of Fate and Superior Inspiration
 - Concentration tracker — badge on active spell, warning on second attempt, manual end button
 - Character actions menu for level up, rests and dice rolling
 - Optional setting to keep the Android screen awake while a character sheet is open
@@ -38,7 +46,7 @@ A cross-platform app for creating and managing DnD 5e (2014) characters, built w
 
 **Features tab** — racial traits, background feature, class features by level, SRD feats, extra features, editable feature choices and limited-use resource tracking
 
-**Spells tab** — spell slots tracker, Pact Magic short-rest recovery, concentration tracking, known/prepared spells, level shortcuts, filtered spell browser and contextual rolls for supported spells
+**Spells tab** — spell slots tracker, Pact Magic short-rest recovery, concentration tracking, known/prepared spells, level shortcuts, filtered spell browser and contextual rolls for supported spells. 2024 sheets show cantrip, prepared spell and spellbook limits per class and level
 
 **Inventory tab** — global SRD item search, equipped/carried/container sections, armor class calculation, encumbrance bar, currencies (CP/SP/EP/GP/PP), item details, reorderable items, ammunition handling and custom item creation with type-specific fields (weapon, armor, equippable, container, consumable, ammunition, gear). Tapping a supported weapon rolls its attack and damage; its details remain available from the item menu.
 
@@ -47,14 +55,15 @@ A cross-platform app for creating and managing DnD 5e (2014) characters, built w
 **Notes tab** — free-form notes with colored tags, search, tag filters, pinning, manual ordering and unsaved-change confirmation
 
 ### Level Up Wizard
-- Full level-up flow as a fullscreen modal with step indicators
+- **2024** — levels 2 to 20 with subclasses at level 3, Ability Score Improvement and other feats, Epic Boons at level 19, 2024 multiclassing, Weapon Mastery and Eldritch Invocation choices, and spell or invocation swaps where the rules allow
+- **2014** — full level-up flow as a fullscreen modal with step indicators
 - Multiclass support: level an existing class or add a new class when prerequisites are met
 - Multiclass spell slots combine full, half and third caster levels while keeping Warlock Pact Magic separate
 - Steps: new class features, subclass selection, ASI / Feat choice, HP roll or average, cantrip/spell selection, spell swap (Warlocks), summary
 - **Warlock spell swap** — dedicated step: choose which known spell to forget, then immediately pick the replacement in the same screen
 - Eldritch Knight and Arcane Trickster spell choices respect Wizard-list and school-restriction rules
 - **XP tracking** — optional toggle; quick-add field; full SRD XP table; auto prompt when XP threshold is reached
-- Safe level reset/rebuild flow for restarting class progression from level 1
+- Level reset back to level 1 in any class, optionally rebuilding to the previous level; a review lists every change before anything is saved
 
 ### Dice Roller
 - Roll expressions such as `1d20 + 5`, `2d6 + 1d8` and advantage/disadvantage checks
@@ -135,7 +144,7 @@ flutter run
 - [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, notes, dice rolling, level-up rules, review prompts, display preferences, maintenance migrations and import/export flows.
 - [Changelog](CHANGELOG.md) tracks release history.
 
-> The built-in rules currently target DnD 5e (2014) and include material from **SRD 5.1**.
+> The built-in rules cover D&D 5e (2014), with material from **SRD 5.1**, and D&D 5.5e (2024), with material from **SRD 5.2.1**.
 
 ## License
 
@@ -147,18 +156,27 @@ Translation files in `assets/data/i18n/` are licensed under CC BY 4.0, and trans
 
 This project includes material from the Dungeons & Dragons System Reference Document 5.1 (“SRD 5.1”) by Wizards of the Coast LLC, licensed under CC BY 4.0.
 
+This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License, available at https://creativecommons.org/licenses/by/4.0/legalcode.
+
 This project is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC.
 
 ---
 
 # DnD Character Tool (Português)
 
-Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e (2014), feito com Flutter.
+Aplicativo multiplataforma para criar e gerenciar personagens de D&D 5e (2014) e 5.5e (2024), feito com Flutter.
 
 ## Funcionalidades
 
+### Duas Edições
+- Escolha **D&D 5e (2014, SRD 5.1)** ou **5.5e (2024, SRD 5.2.1)** ao criar um personagem
+- Cada ficha mantém suas regras e catálogos; personagens 2014 continuam com seus dados e cálculos
+- A lista e a ficha mostram a edição de cada personagem
+
 ### Criação de Personagem
-- **Assistente guiado** com etapas de classe, raça, antecedente, perícias, atributos, identidade e revisão
+- **Assistente 2024** com classe, espécie, antecedente com aumentos de atributo e talento de Origem, perícias, idiomas, ferramentas, magias e equipamento inicial
+- **Assistente guiado 2014** com etapas de classe, raça, antecedente, perícias, atributos, identidade e revisão
+- **Antecedentes personalizados** nas duas edições, seguindo as regras de cada uma
 - Métodos de atributos: **Standard Array** e **Point Buy**
 - Bônus raciais por regras fixas do SRD ou distribuição livre no estilo da regra opcional de Tasha
 - Suporte a Humano Variante com escolhas de atributos, perícia, idioma extra e talento no nível 1
@@ -173,8 +191,9 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e (2014), 
 - Banner de Inspiração
 - Rastreamento de XP com barra de progresso e detecção automática de level up
 - Salvaguardas de Morte (exibidas ao chegar a 0 PV) — rastreia sucessos, falhas, Estabilizado e Morto
-- Condições Ativas — 15 condições do SRD com descrições; adicionar/remover via chip picker
-- Descanso Curto — gastar Hit Dice para recuperar PV
+- Condições Ativas — condições do SRD com descrições; adicionar/remover via chip picker. A Exaustão de 2024 tem níveis (−2 nas rolagens de d20 e −5 pés de deslocamento por nível)
+- Descansos curto e longo — gastar Dados de Vida, recuperar usos de habilidades e usar recuperações como Arcane Recovery; em 2024 o descanso longo recupera todos os Dados de Vida e remove um nível de Exaustão
+- Rolar Iniciativa recarrega habilidades como Boon of Fate e Superior Inspiration
 - Rastreador de Concentração — badge na magia ativa, aviso ao tentar uma segunda magia de concentração, botão para encerrar manualmente
 - Menu de ações da ficha para subir de nível, descansar e rolar dados
 - Opção para manter a tela do Android ligada enquanto uma ficha está aberta
@@ -183,7 +202,7 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e (2014), 
 
 **Aba Features** — traços raciais, feature do antecedente, features de classe por nível, talentos do SRD, features extras, escolhas editáveis e rastreamento de recursos com usos limitados
 
-**Aba Spells** — rastreador de espaços de magia, recuperação de Pact Magic no descanso curto, concentração, magias conhecidas/preparadas, atalhos de nível, busca com filtros e rolagens contextuais para magias suportadas
+**Aba Spells** — rastreador de espaços de magia, recuperação de Pact Magic no descanso curto, concentração, magias conhecidas/preparadas, atalhos de nível, busca com filtros e rolagens contextuais para magias suportadas. Fichas 2024 mostram os limites de truques, magias preparadas e grimório por classe e nível
 
 **Aba Inventory** — busca global de itens SRD, seções de equipados/carregados/containers, cálculo de CA por armadura, barra de carga, moedas (CP/SP/EP/GP/PP), detalhes dos itens, itens reordenáveis, suporte a munição e criação de itens customizados com campos por tipo (arma, armadura, equipável, container, consumível, munição, equipamento geral). Tocar em uma arma suportada rola acerto e dano; seus detalhes continuam no menu do item.
 
@@ -192,14 +211,15 @@ Aplicativo multiplataforma para criar e gerenciar personagens de DnD 5e (2014), 
 **Aba Notes** — notas livres com tags coloridas, busca, filtros por tag, fixação, ordenação manual e confirmação de alterações não salvas
 
 ### Subida de Nível
-- Fluxo completo de level up como modal em tela cheia com indicadores de passo
+- **2024** — níveis 2 a 20 com subclasse no nível 3, Aumento de Atributo e outros talentos, Dádivas Épicas no nível 19, multiclasse de 2024, escolhas de Maestria de Arma e Invocações, e trocas de magias ou invocações quando as regras permitem
+- **2014** — fluxo completo de level up como modal em tela cheia com indicadores de passo
 - Suporte a multiclasse: subir uma classe existente ou adicionar uma nova quando os pré-requisitos são cumpridos
 - Slots de magia multiclasse combinam níveis de conjurador completo, meio e terço, mantendo Pact Magic de Warlock separado
 - Passos: features novas, seleção de subclasse, ASI / Talento, rolagem de HP, escolha de truques/magias, troca de magia (Warlocks), resumo
 - **Troca de magia do Warlock** — passo dedicado: escolha qual magia esquecer e em seguida escolha a substituta na mesma tela
 - Escolhas de magia de Eldritch Knight e Arcane Trickster respeitam lista de Wizard e restrições de escola
 - **Rastreamento de XP** — toggle opcional; campo de adição rápida; tabela completa de XP do SRD; prompt automático ao atingir o threshold
-- Fluxo seguro para reiniciar/reconstruir níveis a partir do nível 1
+- Reinício para o nível 1 em qualquer classe, com reconstrução opcional até o nível anterior; uma revisão lista cada mudança antes de salvar
 
 ### Rolagem de Dados
 - Expressões como `1d20 + 5`, `2d6 + 1d8` e rolagens com vantagem/desvantagem
@@ -279,7 +299,7 @@ flutter run
 - [Arquitetura técnica](docs/ARCHITECTURE.md) explica gerenciamento de estado, persistência, dados SRD, tipos de item do inventário, notas, rolagem de dados, regras de level up, pedidos de avaliação, preferências de tela, migrações de manutenção e fluxos de import/export.
 - [Changelog](CHANGELOG.md) registra o histórico de versões.
 
-> As regras incluídas atualmente são voltadas a DnD 5e (2014) e incluem material do **SRD 5.1**.
+> As regras incluídas cobrem D&D 5e (2014), com material do **SRD 5.1**, e D&D 5.5e (2024), com material do **SRD 5.2.1**.
 
 ## Licença
 
@@ -290,5 +310,7 @@ Exceto quando indicado de outra forma, este projeto é proprietário. Consulte [
 Os arquivos de tradução em `assets/data/i18n/` são licenciados sob CC BY 4.0, e contribuições de tradução são bem-vindas.
 
 Este projeto inclui material do System Reference Document 5.1 (“SRD 5.1”) de Dungeons & Dragons, da Wizards of the Coast LLC, licenciado sob CC BY 4.0.
+
+Este trabalho inclui material do System Reference Document 5.2.1 (“SRD 5.2.1”) da Wizards of the Coast LLC, disponível em https://www.dndbeyond.com/srd. O SRD 5.2.1 é licenciado sob a Licença Creative Commons Atribuição 4.0 Internacional, disponível em https://creativecommons.org/licenses/by/4.0/legalcode.
 
 Este projeto não é afiliado, endossado, patrocinado ou especificamente aprovado pela Wizards of the Coast LLC.

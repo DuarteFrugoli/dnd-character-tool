@@ -1,10 +1,12 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:collection/collection.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/review/app_review_service.dart';
 import '../../data/character_progression/character_progression.dart';
+import '../../data/character_progression/choice_effects.dart';
 import '../../data/character_progression/progression_2024_engine.dart';
 import '../../data/feature_choice_engine.dart';
 import '../../data/feature_usage_engine.dart';
@@ -278,9 +280,68 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final current = FeatureUsageEngine.currentFor(c, resource, max) ?? max;
     final next = (current + delta).clamp(0, max).toInt();
     if (next == current) return;
-    await _save(
-      c.copyWith(featureResources: {...c.featureResources, resourceId: next}),
+    var updated = c.copyWith(
+      featureResources: {...c.featureResources, resourceId: next},
     );
+    final effect = resource.onSpend;
+    if (effect != null && next < current) {
+      updated = await _applySpendEffect(updated, effect);
+    }
+    await _save(updated);
+  }
+
+  /// Refills a linked resource and heals, e.g. Uncanny Metabolism.
+  Future<Character> _applySpendEffect(
+    Character c,
+    FeatureUsageSpendEffect effect,
+  ) async {
+    var updated = c;
+    final restoreId = effect.restoreResource;
+    if (restoreId != null) {
+      final target = await _activeFeatureUsageBinding(c, restoreId);
+      final max = target == null
+          ? null
+          : FeatureUsageEngine.maxFor(
+              target.resource,
+              c,
+              usageContext: target.usageContext,
+            );
+      if (max != null) {
+        updated = updated.copyWith(
+          featureResources: {...updated.featureResources, restoreId: max},
+        );
+      }
+    }
+    final heal = effect.heal;
+    if (heal != null && c.rulesetId == RulesetId.dnd2024) {
+      final amount = Progression2024Engine.healForSpendEffect(
+        heal,
+        c,
+        await _rules2024Data(c),
+        random: math.Random(),
+      );
+      final hp = updated.hitPoints;
+      updated = updated.copyWith(
+        hitPoints: hp.copyWith(
+          current: (hp.current + amount).clamp(0, hp.maximum).toInt(),
+        ),
+      );
+    }
+    return updated;
+  }
+
+  /// Regains uses that recharge when Initiative is rolled.
+  Future<void> applyInitiativeTriggers() async {
+    final c = state.valueOrNull;
+    if (c == null) return;
+    final resources = FeatureUsageEngine.resourcesAfterInitiative(
+      c,
+      await _activeFeatureUsageBindings(c),
+    );
+    if (const MapEquality<String, int>().equals(resources, c.featureResources)) {
+      return;
+    }
+    await _save(c.copyWith(featureResources: resources));
   }
 
   Future<Map<String, int>> _featureResourcesAfterRest(
@@ -456,7 +517,11 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     if (c == null) return;
     CharacterRulesContext.fromCharacter(c).requireLegacyOperation('Level up');
 
-    var updated = CharacterProgressionEngine.applyLevelUp(c, result);
+    var updated = CharacterProgressionEngine.applyLevelUp(
+      c,
+      result,
+      effects: await ref.read(srd2014ChoiceEffectsProvider.future),
+    );
 
     if (c.xpTrackingEnabled) {
       updated = updated.copyWith(
@@ -517,18 +582,32 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     );
   }
 
-  /// Returns a 2024 sheet to level 1 in its starting class.
-  Future<void> resetLevels2024() async {
+  /// Returns a 2024 sheet to level 1, optionally in another class.
+  Future<void> resetLevels2024({
+    String? className,
+    List<CharacterFeatureChoice>? choices,
+  }) async {
     final c = state.valueOrNull;
     if (c == null) return;
     var reset = Progression2024Engine.resetToLevelOne(
       c,
       await _rules2024Data(c),
+      className: className,
+      choices: choices,
     );
     if (c.xpTrackingEnabled) {
       reset = reset.copyWith(experiencePoints: levelToMinXp(1));
     }
     await _save(reset);
+  }
+
+  /// Saves a 2024 reset, possibly rebuilt in memory, after the player
+  /// reviewed its changes.
+  Future<void> saveLevelReset2024(Character character) async {
+    if (character.rulesetId != RulesetId.dnd2024) {
+      throw UnsupportedError('Only 2024 sheets use this reset.');
+    }
+    await _save(character);
   }
 
   /// Resets class progression to a new level 1 starting class.
@@ -771,18 +850,23 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
   ) async {
     final c = state.valueOrNull;
     if (c == null) return;
-    await _save(await _withSubclassSpells(c.copyWith(featureChoices: choices)));
+    await _save(await _withChoiceEdits(c, c.copyWith(featureChoices: choices)));
   }
 
-  /// 2024 subclass spells can depend on a choice, e.g. the Circle of the Land
-  /// terrain, so they are refreshed whenever choices change.
-  Future<Character> _withSubclassSpells(Character c) async {
-    if (c.rulesetId != RulesetId.dnd2024) return c;
-    return c.copyWith(
-      spells: Progression2024Engine.syncSubclassSpells(
-        c,
-        await _rules2024Data(c),
-      ),
+  /// 2024 choices keep their grants (skills, spells, feats...) and subclass
+  /// spells, e.g. the Circle of the Land terrain, in sync with edits.
+  Future<Character> _withChoiceEdits(Character before, Character after) async {
+    if (after.rulesetId != RulesetId.dnd2024) {
+      return ChoiceEffects.apply(
+        before,
+        after,
+        await ref.read(srd2014ChoiceEffectsProvider.future),
+      );
+    }
+    return Progression2024Engine.applyChoiceEdits(
+      before,
+      after,
+      await _rules2024Data(after),
     );
   }
 
@@ -792,7 +876,8 @@ class CharacterDetailNotifier extends FamilyAsyncNotifier<Character, String> {
     final c = state.valueOrNull;
     if (c == null) return;
     await _save(
-      await _withSubclassSpells(
+      await _withChoiceEdits(
+        c,
         c.copyWith(
           featureChoices: FeatureChoiceEngine.upsertChoices(
             c.featureChoices,

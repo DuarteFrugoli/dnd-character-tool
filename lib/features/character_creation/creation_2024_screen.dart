@@ -21,6 +21,7 @@ import '../character_list/character_list_provider.dart';
 import '../../data/datasources/srd/srd_2024_creation_catalog.dart';
 import 'creation_2024_draft.dart';
 import 'widgets/step_indicator.dart';
+import 'custom_background_2024_page.dart';
 
 class Creation2024Screen extends ConsumerStatefulWidget {
   const Creation2024Screen({super.key});
@@ -265,18 +266,45 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
   }
 
   Widget _backgroundStep(Creation2024Catalog catalog, SrdI18nService i18n, AppLocalizations l10n) {
+    final custom = draft.background?.isCustom == true ? draft.background : null;
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
+        Card(
+          child: ListTile(
+            selected: custom != null,
+            leading: const Icon(Icons.edit_note_outlined),
+            title: Text(custom?.name ?? l10n.customBackgroundTitle),
+            subtitle: Text(
+              custom == null
+                  ? l10n.customBackgroundSubtitle
+                  : '${l10n.creation2024OriginFeat}: ${i18n.featName(custom.featName) ?? custom.featName}',
+            ),
+            trailing: Icon(custom != null ? Icons.check_circle : Icons.chevron_right),
+            onTap: () async {
+              final result = await openCustomBackground2024Page(
+                context,
+                catalog: catalog,
+                i18n: i18n,
+                initial: custom,
+              );
+              if (result == null || !mounted) return;
+              setState(() {
+                draft.selectBackground(result);
+                _splitBonus = true;
+              });
+            },
+          ),
+        ),
         for (final bg in catalog.backgrounds)
           Card(
             child: ListTile(
-              selected: draft.background?.name == bg.name,
+              selected: custom == null && draft.background?.name == bg.name,
               title: Text(i18n.backgroundName(bg.name)),
               subtitle: Text('${l10n.creation2024OriginFeat}: ${i18n.featName(bg.featName) ?? bg.featName}'),
-              trailing: draft.background?.name == bg.name ? const Icon(Icons.check_circle) : null,
+              trailing: custom == null && draft.background?.name == bg.name ? const Icon(Icons.check_circle) : null,
               onTap: () {
-                if (draft.background?.name != bg.name) {
+                if (custom != null || draft.background?.name != bg.name) {
                   setState(() {
                     draft.selectBackground(bg);
                     _splitBonus = true;

@@ -23,7 +23,7 @@ class WhatsNewService {
   final SharedPreferences? _sharedPreferences;
   final Future<PackageInfo> Function() _packageInfo;
 
-  static const currentAnnouncementId = '2.1.1-whats-new';
+  static const currentAnnouncementId = '3.0.0-whats-new';
   static const _lastSeenAnnouncementKey = 'whats_new_last_seen_announcement';
 
   Future<WhatsNewInfo?> pendingInfo() async {

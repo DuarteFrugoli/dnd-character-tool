@@ -711,6 +711,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       targetHitDie:
           _srdClass?.hitDie ?? levelUpHitDie(targetClassEntry.className),
       hpGained: _state.hpGained,
+      hitPointMethod: _state.hpMethod,
       asiChanges: _state.asiChanges,
       featChosen: _state.featChosen,
       subclassChosen: _state.subclassChosen,
@@ -1010,8 +1011,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           hitDie: _srdClass?.hitDie ?? levelUpHitDie(_targetClassName),
           hpGained: _state.hpGained,
           hpChosen: _state.hpChosen,
-          onHpChosen: (hp) => setState(() {
-            _state = _state.copyWith(hpGained: hp, hpChosen: true);
+          onHpChosen: (hp, method) => setState(() {
+            _state = _state.copyWith(hpGained: hp, hpChosen: true, hpMethod: method);
           }),
         );
       case LevelUpWizardPage.cantrips:
@@ -1635,7 +1636,7 @@ class _HpPage extends StatelessWidget {
   final int hitDie;
   final int hpGained;
   final bool hpChosen;
-  final ValueChanged<int> onHpChosen;
+  final void Function(int hp, String method) onHpChosen;
 
   int get _conMod => ((character.abilityScores.constitution - 10) / 2).floor();
   String get _conModStr => _conMod >= 0 ? '+$_conMod' : '$_conMod';
@@ -1671,7 +1672,7 @@ class _HpPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 12),
                 TextButton(
-                  onPressed: () => onHpChosen(_roll()),
+                  onPressed: () => onHpChosen(_roll(), HitPointGainMethod.rolled),
                   child: Text(l10n.levelUpHpReroll),
                 ),
               ],
@@ -1684,12 +1685,12 @@ class _HpPage extends StatelessWidget {
               _HpButton(
                 label: l10n.levelUpHpAverage,
                 sublabel: '+${_average.clamp(1, 999)} HP',
-                onTap: () => onHpChosen(_average.clamp(1, 999)),
+                onTap: () => onHpChosen(_average.clamp(1, 999), HitPointGainMethod.average),
               ),
               _HpButton(
                 label: l10n.levelUpHpRoll,
                 sublabel: 'd$hitDie + CON',
-                onTap: () => onHpChosen(_roll()),
+                onTap: () => onHpChosen(_roll(), HitPointGainMethod.rolled),
               ),
             ],
           ),

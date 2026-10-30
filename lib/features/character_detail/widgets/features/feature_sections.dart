@@ -420,10 +420,10 @@ class FeatsSection extends ConsumerWidget {
       ];
       final fromLevel =
           is2024 && Progression2024Engine.isLevelFeatSource(f.sourceClassEntryId);
-      final usageViews = FeatureUsageEngine.viewsForRef(
+      final usageViews = FeatureUsageEngine.viewsForFeat(
         catalog: data.featureUsageCatalog,
         character: character,
-        ref: data.featureUsageCatalog.feat(f.name),
+        feat: f,
       );
       final displayName = i18n.featName(f.name) ?? f.name;
       return Card(
@@ -434,7 +434,7 @@ class FeatsSection extends ConsumerWidget {
         shape: _featureCardShape(accentColor: scheme.tertiary),
         clipBehavior: Clip.antiAlias,
         child: ExpansionTile(
-          key: _featureExpansionKey('feat', [f.name]),
+          key: _featureExpansionKey('feat', [f.name, f.sourceClassEntryId ?? '']),
           title: Text(
             displayName,
             style: const TextStyle(fontWeight: FontWeight.w600),
@@ -842,16 +842,27 @@ class ClassFeaturesSection extends ConsumerWidget {
         featureName: f.name,
         level: classLevel,
       );
-      final usageViews = FeatureUsageEngine.viewsForRef(
-        catalog: data.featureUsageCatalog,
-        character: character,
-        ref: data.featureUsageCatalog.classFeature(className, f.name),
-        usageContext: FeatureUsageContext.forCharacter(
-          character,
-          sourceClass: className,
-          sourceClassLevel: classLevel,
-        ),
+      final classUsageContext = FeatureUsageContext.forCharacter(
+        character,
+        sourceClass: className,
+        sourceClassLevel: classLevel,
       );
+      final usageViews = [
+        ...FeatureUsageEngine.viewsForRef(
+          catalog: data.featureUsageCatalog,
+          character: character,
+          ref: data.featureUsageCatalog.classFeature(className, f.name),
+          usageContext: classUsageContext,
+        ),
+        ...FeatureUsageEngine.viewsForChoiceOptions(
+          catalog: data.featureUsageCatalog,
+          character: character,
+          className: className,
+          featureName: f.name,
+          classEntryId: classEntry.id,
+          usageContext: classUsageContext,
+        ),
+      ];
       final card = Card(
         margin: const EdgeInsets.only(bottom: 10),
         elevation: 0,

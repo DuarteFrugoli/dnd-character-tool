@@ -243,6 +243,7 @@ Current migrations:
 | 8 | `SyncMulticlassSpellSlotsMigration` | Separates standard spell slots from Warlock Pact Magic slots. |
 | 9 | `NormalizeMulticlassStateMigration` | Reconciles class mirrors, total level, hit dice, source metadata, slots, and Armor Class. |
 | 10 | `Assign2014RulesetMigration` | Marks existing characters as 2014/SRD 5.1 through explicit user-triggered maintenance. |
+| 11 | `Record2024LevelOneMigration` | Records the level 1 history and class skill picks of 2024 characters saved before progression support; 2014 characters only get the version bump. Uses `CharacterMigrationContext.rules2024`. |
 
 Migrations are intentionally user-triggered, never applied invisibly while
 opening a character. Tapping an outdated character blocks entry and shows an
@@ -303,7 +304,7 @@ Important persisted fields on `Character`:
 | `featureResources` | Remaining uses/points for trackable feature resources, keyed by resource ID. Missing values mean "full". |
 | `spellSlots` / `pactMagicSlots` | Standard multiclass spell slots and Warlock Pact Magic slots, tracked separately. |
 | `imagePath` | Native file name/path or web image reference such as `indexeddb:image:<id>`. Export formats embed image bytes separately. |
-| `levelHistory` | 2024 only: one `CharacterLevelRecord` per gained level (class entry, hit points and method, subclass, feat and ability increases; level 1 also keeps the pre-background ability scores). Empty on 2014 sheets. |
+| `levelHistory` | 2024 only: one `CharacterLevelRecord` per gained level (class entry, hit points and method, subclass, feat and ability increases; level 1 also keeps the pre-background ability scores). Empty on 2014 sheets; filled for older 2024 sheets by migration 11. |
 | `sheetPreferences` | Per-character sheet display preferences, such as skill organization and spell level shortcut visibility. |
 | `sortOrder` | Character-list order inside the pinned or unpinned group. |
 
@@ -438,7 +439,11 @@ The wizard sends a `LevelUpResult` to `CharacterDetailNotifier.levelUp`, which
 delegates to `CharacterProgressionEngine.applyLevelUp()`. The engine applies
 the selected class entry, class level, total level, HP, hit dice, ASI/feat,
 subclass, spells, feature choices, proficiency bonus, spell slots, Pact Magic,
-and AC as one atomic character update.
+and AC as one atomic character update. With `ChoiceEffects2014Data` (loaded by
+`srd2014ChoiceEffectsProvider`) it also applies what the level's feature
+choices grant, such as Rogue Expertise, and appends a `levelHistory` record
+(hit points and method, subclass, feat and ability increases). 2014 creation
+records the level 1 history and the class skill picks.
 
 Multiclass rules use `Character.classes` as the source of truth. Legacy
 `Character.characterClass`, `Character.subclass`, and `Character.level` remain
@@ -488,9 +493,44 @@ species traits, loaded by `srd2024RulesDataProvider`).
   rounded up; Warlock Pact Magic stays separate.
 - `spellcastingFor()` gives each class entry its own cantrip, prepared and
   maximum spell level limits; the 2024 Spells tab uses it per class.
-- `resetToLevelOne()` rebuilds level 1 in the starting class from
-  `levelHistory`, removing later increases, feats, choices and their effects.
-  It is offered only when the history covers every level.
+- Choices that allow it (`replaceOneOnLevelUp`, e.g. Eldritch Invocations)
+  are requested on every level of their class and may drop one earlier value;
+  other earlier values must stay. Choices depending on a requested one (Pact
+  of the Tome cantrips and rituals) are requested with it. Option level and
+  invocation prerequisites are validated.
+- Bards, Sorcerers and Warlocks may replace one class-table cantrip and one
+  prepared spell when gaining a level (`levelUpSpellSwaps` in `classes.json`).
+- `resetToLevelOne()` strips every class-derived choice and grant, then
+  applies level 1 of the chosen class (the starting class by default) with
+  `levelOneRequests()`: class skills and tools, level 1 feature choices and
+  class-table spells. It is offered whenever the history covers every level,
+  so a level 1 sheet can change class.
+
+`data/character_progression/choice_effects.dart` applies what choices grant
+(skills, expertise, tools, languages, weapon proficiencies, spells and feats
+granted by an option target) by diffing two character states, so level up,
+reset and later edits in the Features tab add and undo the same effects in
+both rulesets. Each ruleset supplies a `ChoiceEffectsData` with its naming
+conventions: `Rules2024Data` for SRD 5.2.1 and `ChoiceEffects2014Data` for SRD
+5.1, where 2014 weapon choices grant proficiency labels. Removals ignore case
+because older 2014 sheets mix `perception` and `Perception`. Dependent choices
+whose parent option is gone are dropped with their grants. Options that need
+a target save `option@target` (`ChoiceTargetValue`); the choice editor lists
+valid targets, such as known Warlock damage cantrips or Origin feats.
+
+Custom backgrounds (`data/custom_background.dart`) exist in both editions. A
+2014 one is an `SrdBackground` with `featureSource` set to the background
+whose feature it uses; a 2024 one is `Creation2024Background.custom()` with
+three abilities, an Origin feat, two skills, one tool and 50 GP. Creation saves
+their skills as a background `Skill Proficiencies` choice (and, in 2014, the
+feature source), so effects and resets keep them although the background is
+not in the catalog; the Features tab reads the feature through
+`CustomBackground.featureSourceFor()`.
+
+Creation records the class skill picks as a `Skill Proficiencies` choice and
+the level 1 `levelHistory` record. The engine never reconstructs missing data
+while reading a sheet: older 2024 sheets get both from migration 11, and level
+up requires a history that covers every level.
 
 Subclass always-prepared spells are structured in
 `assets/data/srd/5.2.1/subclasses.json` (`alwaysPreparedSpells`, or
@@ -499,7 +539,10 @@ refreshed whenever 2024 feature choices change.
 
 The UI lives in `features/character_detail/level_up_2024_sheet.dart`;
 `openLevelUpWizardSheet()` and `openLevelResetSheet()` dispatch 2024 sheets to
-it and to `CharacterDetailNotifier.resetLevels2024()`.
+it. The 2024 reset can rebuild back to the previous level: it runs the level up
+wizard in memory (`openLevelUp2024Sheet(applyOnConfirm: false)` returns each
+`LevelUp2024Result` without saving), shows the change review for the final
+result and saves it once with `CharacterDetailNotifier.saveLevelReset2024()`.
 
 ### Level Reset
 
@@ -519,9 +562,23 @@ The reset flow:
 If the user cancels during rebuild, the original character is left unchanged.
 Class/subclass spells, class feature choices, class feature resources,
 disabled class features/spells, concentration, and ASI feats are removed as
-progression data. Narrative fields, inventory, containers, notes, image,
-currency, attributes, and level-1 feat choices such as Variant Human are
-preserved.
+progression data, and what the removed choices granted (skills, expertise,
+tools, languages) is undone through `ChoiceEffects`. Multiclass proficiency
+labels leave with their class. XP returns to 0 only when XP tracking is on.
+Narrative fields, inventory, containers, notes, image, currency and level-1
+feat choices such as Variant Human are preserved.
+
+With a complete `levelHistory`, ability increases from later levels are
+undone and the recorded class skills are replaced. Sheets saved before the
+history or the class skill record cannot be reconstructed, so
+`CharacterLevelResetEngine.limitationsFor()` lists what stays as it is.
+
+Before saving, both rulesets show `showCharacterChangesDialog()`
+(`shared/widgets/character_changes_dialog.dart`), which lists the
+differences computed by `CharacterChangeSummary` (`data/character_change_summary.dart`):
+level, classes, maximum HP, ability scores, saving throws, skills, expertise,
+proficiencies, languages, feats, spells and XP, plus the limitation notes.
+Nothing is saved unless the player confirms.
 
 ### Spellcasting
 
@@ -648,6 +705,14 @@ level and source class level. The provider passes a `FeatureUsageFeatureSet`
 for every class entry, so resources such as Ki, Rage, Lay on Hands, and Bardic
 Inspiration scale from their own class level instead of the total character
 level.
+
+Resources can also come from selected options (`choiceOptions`, e.g. Gift of
+the Depths), be tracked per repeatable feat instance (`instanceKeyFromChoice`,
+stored as `resourceId:value`, e.g. one Magic Initiate free cast per spell
+list), regain uses when Initiative is rolled (`onInitiative`, applied by
+`CharacterDetailNotifier.applyInitiativeTriggers()` after the Initiative roll)
+and trigger effects when spent (`onSpend`, e.g. Uncanny Metabolism refills
+Focus Points and heals).
 
 Remaining uses are stored in `Character.featureResources`. Missing entries are
 treated as full, which keeps old characters readable and avoids saving noise.
@@ -1115,6 +1180,11 @@ the affected files before committing.
 | Dice parser/roller | `data/dice/`, `features/character_detail/widgets/dice/dice_roller_sheet.dart` |
 | Feature choices | `data/feature_choice_engine.dart`, `assets/data/srd/5.1/feature_choices.json`, `character_detail/widgets/feature_choice_editor.dart` |
 | Short/long rest rules | `data/rest/rest_policy.dart`, `data/rest/short_rest_recovery.dart`, `CharacterDetailNotifier.shortRest()` / `longRest()` |
+| Displayed Speed (Unarmored/Fast Movement, Exhaustion) | `data/rulesets/speed_rules.dart` |
+| Choice grants and edits (both rulesets) | `data/character_progression/choice_effects.dart`, `choice_effects_2014.dart`, `ChoiceTargetValue` in `data/feature_choice_option_resolver.dart` |
+| Custom backgrounds | `data/custom_background.dart`, `features/character_creation/steps/custom_background_2014_page.dart`, `features/character_creation/custom_background_2024_page.dart` |
+| Initiative modifier (Alert) | `data/rulesets/initiative_rules.dart` |
+| Reviewing changes before saving a reset | `data/character_change_summary.dart`, `shared/widgets/character_changes_dialog.dart` |
 | Exhaustion levels | `data/conditions/exhaustion_rules.dart`, `features/character_detail/tabs/stats_tab.dart`, `widgets/dice/contextual_roll_sheet.dart` |
 | Feature usage tracking | `data/feature_usage_engine.dart`, `assets/data/srd/5.1/feature_usages.json`, `features/character_detail/widgets/features/feature_sections.dart` |
 | Character migrations | `data/migrations/`, `CharacterRepository.previewMigrations()`, `CharacterRepository.applyMigrations()` |

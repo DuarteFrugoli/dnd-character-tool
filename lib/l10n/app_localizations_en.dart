@@ -18,6 +18,60 @@ class AppLocalizationsEn extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => 'Custom background';
+
+  @override
+  String get customBackgroundSubtitle =>
+      'Build your own background with the rules';
+
+  @override
+  String get customBackgroundName => 'Background name';
+
+  @override
+  String get customBackgroundFeature => 'Background feature';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return 'Choose $count skills';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return 'Choose up to $count tools; the rest become languages';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return 'Languages to choose later: $count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => 'Equipment package';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return 'Choose $count abilities for the increases';
+  }
+
+  @override
+  String get customBackgroundTool2024 =>
+      'Choose one tool of any kind with the other proficiencies.';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return 'Equipment: $gp GP to spend';
+  }
+
+  @override
+  String get customBackgroundSave => 'Use this background';
+
+  @override
   String get creation2024Species => 'Species';
 
   @override
@@ -160,6 +214,38 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get whatsNewThanks =>
       'Thank you for playing and sharing your feedback. Your ideas help shape what comes next.';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024 (5.5e) is here: create and level characters with the SRD 5.2.1 rules, next to your 2014 characters.';
+
+  @override
+  String get whatsNew3RulesTitle => 'D&D 2024 rules';
+
+  @override
+  String get whatsNew3RulesBody =>
+      'Choose D&D 5e (2014) or 5.5e (2024) when creating a character. 2024 characters level from 1 to 20 with subclasses, feats, Epic Boons, multiclassing and Weapon Mastery.';
+
+  @override
+  String get whatsNew3RestsTitle => 'Rests and conditions';
+
+  @override
+  String get whatsNew3RestsBody =>
+      '2024 long rests recover every Hit Die and remove one Exhaustion level, Exhaustion affects d20 rolls and Speed, and short rests offer features such as Arcane Recovery.';
+
+  @override
+  String get whatsNew3ResetTitle => 'Safer level resets';
+
+  @override
+  String get whatsNew3ResetBody =>
+      'A review lists every change before anything is saved. Resets undo what removed classes granted, and both rule sets can rebuild back to your previous level.';
+
+  @override
+  String get whatsNew3UpdateTitle => 'One-time character update';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      'When you open a character, the app asks to update all of them and opens a backup first. 2014 characters keep their rules and data; 2024 characters save the level history used for leveling up and resets.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -650,7 +736,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return 'Return to level 1 as $className? Levels, subclass, feats, choices and spells gained after level 1 are undone from the saved level history. Origin, manual ability edits, inventory, notes and story are kept.';
+    return 'Return to level 1? Next you can keep $className or choose another class. Levels, subclass, feats, choices and spells gained from classes are undone from the saved level history. Origin, manual ability edits, inventory, notes and story are kept.';
   }
 
   @override
@@ -665,6 +751,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => 'Choose the class for this spell';
+
+  @override
+  String get featureChoicesChooseTarget => 'Choose a target';
+
+  @override
+  String get featureChoicesNoTargets => 'No eligible target yet.';
+
+  @override
+  String get levelUp2024SwapTitle => 'Replace spells (optional)';
+
+  @override
+  String get levelUp2024SwapCantrip => 'Cantrip to replace';
+
+  @override
+  String get levelUp2024SwapSpell => 'Prepared spell to replace';
+
+  @override
+  String get levelUp2024SwapLearn => 'Replacement';
+
+  @override
+  String get resetLevels2024ClassTitle => 'Level 1 class';
+
+  @override
+  String get changesReviewTitle => 'Review changes';
+
+  @override
+  String get changesReviewIntro => 'Saving will change:';
+
+  @override
+  String get changesReviewNone => 'Nothing will change.';
+
+  @override
+  String get changesReviewApply => 'Save changes';
+
+  @override
+  String get changesKindClasses => 'Classes';
+
+  @override
+  String get changesKindExpertise => 'Expertise';
+
+  @override
+  String get changesKindProficiencies => 'Proficiencies';
+
+  @override
+  String get changesKindExperience => 'Experience points';
+
+  @override
+  String get changesAdded => 'Added';
+
+  @override
+  String get changesRemoved => 'Removed';
+
+  @override
+  String get changesKeptTitle => 'Kept as they are';
+
+  @override
+  String get resetLimitAbilityIncreases =>
+      'This sheet has no complete level history, so ability score increases from earlier levels stay as they are.';
+
+  @override
+  String get resetLimitClassSkills =>
+      'This sheet did not record which skills came from its class, so they stay.';
 
   @override
   String get concentrationBannerLabel => 'Concentrating on:';
@@ -959,7 +1107,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      'This will reset class progression to level 1. Your notes, inventory, containers, currency, image, story, appearance, race, background and ability scores will be kept.\n\nClass levels, class spells, class/subclass choices, progression resources and ASI feats will be removed or recalculated. Export a backup first if you want an extra copy.';
+      'This resets class progression to level 1. Notes, inventory, containers, currency, image, story, appearance, race and background are kept.\n\nClass levels, class spells, class and subclass choices with what they granted, progression resources and level feats are removed. Ability score increases from levels are undone when the sheet has a complete level history. You will review every change before anything is saved.';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2899,6 +3047,14 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       'Marked this character as using the 2014 rules (SRD 5.1).';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory =>
+      'Saved the level 1 history used for leveling up and resetting levels.';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills =>
+      'Saved which skills came from the class at level 1.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

@@ -143,6 +143,51 @@ void main() {
     expect(request.findIn(draft.featureChoices)?.values, ['cleric']);
   });
 
+  test('a custom background grants its picks and records its skills', () {
+    final custom = Creation2024Background.custom(
+      name: 'Ship Hand',
+      abilities: const ['strength', 'dexterity', 'constitution'],
+      featName: 'Alert',
+      skills: const ['athletics', 'perception'],
+      toolCategories: {for (final tool in catalog.tools) tool.category}.toList(),
+    );
+    final draft = Creation2024Draft()
+      ..selectClass(catalog.classes.firstWhere((entry) => entry.name == 'Monk'))
+      ..selectSpecies(catalog.species.firstWhere((entry) => entry.name == 'Halfling'))
+      ..selectBackground(custom);
+    draft.baseAbilities.addAll({
+      'strength': 12,
+      'dexterity': 15,
+      'constitution': 14,
+      'intelligence': 10,
+      'wisdom': 13,
+      'charisma': 8,
+    });
+    draft.backgroundBonuses.addAll({'dexterity': 2, 'constitution': 1});
+    draft.skills.addAll(['acrobatics', 'stealth']);
+    draft.classTools.add("Brewer's Supplies");
+    draft.backgroundTools.add("Navigator's Tools");
+    draft.languages.addAll(['Elvish', 'Dwarvish']);
+    draft.classEquipmentId = 'b';
+    draft.backgroundEquipmentId = 'gold';
+    draft.reconcileChoices(catalog);
+
+    expect(draft.abilitiesComplete, isTrue);
+    expect(draft.proficienciesComplete, isTrue);
+    final character = draft.build(catalog, fallbackName: 'Unnamed Hero');
+
+    expect(character.background, 'Ship Hand');
+    expect(character.skillProficiencies, containsAll(['athletics', 'perception']));
+    expect(character.extraFeatures.map((f) => f.name), contains('Alert'));
+    expect(character.currency['gp'], greaterThanOrEqualTo(50));
+    expect(
+      character.featureChoices
+          .singleWhere((c) => c.sourceType == 'background' && c.choiceId == 'skills')
+          .values,
+      ['athletics', 'perception'],
+    );
+  });
+
   test('Bard and Soldier require their tool proficiency choices', () {
     final draft = Creation2024Draft()
       ..selectClass(catalog.classes.firstWhere((entry) => entry.name == 'Bard'))

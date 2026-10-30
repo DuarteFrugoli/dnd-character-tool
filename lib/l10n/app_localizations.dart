@@ -134,6 +134,90 @@ abstract class AppLocalizations {
   /// **'D&D 5.5e (2024)'**
   String get creationRuleset2024;
 
+  /// Short edition label shown on 2014 characters.
+  ///
+  /// In en, this message translates to:
+  /// **'5e'**
+  String get rulesetShort2014;
+
+  /// Short edition label shown on 2024 characters.
+  ///
+  /// In en, this message translates to:
+  /// **'5.5e'**
+  String get rulesetShort2024;
+
+  /// Custom background editor title and card title.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom background'**
+  String get customBackgroundTitle;
+
+  /// Card subtitle to build a custom background.
+  ///
+  /// In en, this message translates to:
+  /// **'Build your own background with the rules'**
+  String get customBackgroundSubtitle;
+
+  /// Custom background name field.
+  ///
+  /// In en, this message translates to:
+  /// **'Background name'**
+  String get customBackgroundName;
+
+  /// 2014 custom background: feature taken from a background.
+  ///
+  /// In en, this message translates to:
+  /// **'Background feature'**
+  String get customBackgroundFeature;
+
+  /// Custom background: skills to choose.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} skills'**
+  String customBackgroundSkills(int count);
+
+  /// 2014 custom background: tools; the rest become languages.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose up to {count} tools; the rest become languages'**
+  String customBackgroundTools2014(int count);
+
+  /// 2014 custom background: languages left to choose later.
+  ///
+  /// In en, this message translates to:
+  /// **'Languages to choose later: {count}'**
+  String customBackgroundLanguages(int count);
+
+  /// 2014 custom background: equipment package of a background.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment package'**
+  String get customBackgroundEquipment2014;
+
+  /// 2024 custom background: abilities eligible for increases.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose {count} abilities for the increases'**
+  String customBackgroundAbilities(int count);
+
+  /// 2024 custom background: where the tool is chosen.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose one tool of any kind with the other proficiencies.'**
+  String get customBackgroundTool2024;
+
+  /// 2024 custom background equipment.
+  ///
+  /// In en, this message translates to:
+  /// **'Equipment: {gp} GP to spend'**
+  String customBackgroundGold2024(int gp);
+
+  /// Confirm a custom background.
+  ///
+  /// In en, this message translates to:
+  /// **'Use this background'**
+  String get customBackgroundSave;
+
   /// Species step and review label in 2024 creation.
   ///
   /// In en, this message translates to:
@@ -391,6 +475,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Thank you for playing and sharing your feedback. Your ideas help shape what comes next.'**
   String get whatsNewThanks;
+
+  /// 3.0.0 announcement summary.
+  ///
+  /// In en, this message translates to:
+  /// **'D&D 2024 (5.5e) is here: create and level characters with the SRD 5.2.1 rules, next to your 2014 characters.'**
+  String get whatsNew3Summary;
+
+  /// 3.0.0 announcement: 2024 rules title.
+  ///
+  /// In en, this message translates to:
+  /// **'D&D 2024 rules'**
+  String get whatsNew3RulesTitle;
+
+  /// 3.0.0 announcement: 2024 rules details.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose D&D 5e (2014) or 5.5e (2024) when creating a character. 2024 characters level from 1 to 20 with subclasses, feats, Epic Boons, multiclassing and Weapon Mastery.'**
+  String get whatsNew3RulesBody;
+
+  /// 3.0.0 announcement: rests and conditions title.
+  ///
+  /// In en, this message translates to:
+  /// **'Rests and conditions'**
+  String get whatsNew3RestsTitle;
+
+  /// 3.0.0 announcement: rests and conditions details.
+  ///
+  /// In en, this message translates to:
+  /// **'2024 long rests recover every Hit Die and remove one Exhaustion level, Exhaustion affects d20 rolls and Speed, and short rests offer features such as Arcane Recovery.'**
+  String get whatsNew3RestsBody;
+
+  /// 3.0.0 announcement: level reset title.
+  ///
+  /// In en, this message translates to:
+  /// **'Safer level resets'**
+  String get whatsNew3ResetTitle;
+
+  /// 3.0.0 announcement: level reset details.
+  ///
+  /// In en, this message translates to:
+  /// **'A review lists every change before anything is saved. Resets undo what removed classes granted, and both rule sets can rebuild back to your previous level.'**
+  String get whatsNew3ResetBody;
+
+  /// 3.0.0 announcement: one-time character update title.
+  ///
+  /// In en, this message translates to:
+  /// **'One-time character update'**
+  String get whatsNew3UpdateTitle;
+
+  /// 3.0.0 announcement: one-time character update details.
+  ///
+  /// In en, this message translates to:
+  /// **'When you open a character, the app asks to update all of them and opens a backup first. 2014 characters keep their rules and data; 2024 characters save the level history used for leveling up and resets.'**
+  String get whatsNew3UpdateBody;
 
   /// Snackbar after successful import.
   ///
@@ -1276,7 +1414,7 @@ abstract class AppLocalizations {
   /// 2024 level reset confirmation.
   ///
   /// In en, this message translates to:
-  /// **'Return to level 1 as {className}? Levels, subclass, feats, choices and spells gained after level 1 are undone from the saved level history. Origin, manual ability edits, inventory, notes and story are kept.'**
+  /// **'Return to level 1? Next you can keep {className} or choose another class. Levels, subclass, feats, choices and spells gained from classes are undone from the saved level history. Origin, manual ability edits, inventory, notes and story are kept.'**
   String resetLevels2024Body(String className);
 
   /// 2024 Spells tab cantrip count per class.
@@ -1296,6 +1434,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose the class for this spell'**
   String get spells2024ChooseClass;
+
+  /// Pick the target of an option such as Agonizing Blast.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a target'**
+  String get featureChoicesChooseTarget;
+
+  /// No eligible target for an option yet.
+  ///
+  /// In en, this message translates to:
+  /// **'No eligible target yet.'**
+  String get featureChoicesNoTargets;
+
+  /// 2024 level up optional spell replacement step.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace spells (optional)'**
+  String get levelUp2024SwapTitle;
+
+  /// 2024 level up: cantrip to replace.
+  ///
+  /// In en, this message translates to:
+  /// **'Cantrip to replace'**
+  String get levelUp2024SwapCantrip;
+
+  /// 2024 level up: prepared spell to replace.
+  ///
+  /// In en, this message translates to:
+  /// **'Prepared spell to replace'**
+  String get levelUp2024SwapSpell;
+
+  /// 2024 level up: replacement spell.
+  ///
+  /// In en, this message translates to:
+  /// **'Replacement'**
+  String get levelUp2024SwapLearn;
+
+  /// 2024 level reset: class to restart at level 1.
+  ///
+  /// In en, this message translates to:
+  /// **'Level 1 class'**
+  String get resetLevels2024ClassTitle;
+
+  /// Dialog listing what an operation changes before saving.
+  ///
+  /// In en, this message translates to:
+  /// **'Review changes'**
+  String get changesReviewTitle;
+
+  /// Intro line of the changes review.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving will change:'**
+  String get changesReviewIntro;
+
+  /// Changes review with no differences.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing will change.'**
+  String get changesReviewNone;
+
+  /// Confirm button of the changes review.
+  ///
+  /// In en, this message translates to:
+  /// **'Save changes'**
+  String get changesReviewApply;
+
+  /// Changes review: classes and levels.
+  ///
+  /// In en, this message translates to:
+  /// **'Classes'**
+  String get changesKindClasses;
+
+  /// Changes review: skill expertise.
+  ///
+  /// In en, this message translates to:
+  /// **'Expertise'**
+  String get changesKindExpertise;
+
+  /// Changes review: armor, weapon and tool proficiencies.
+  ///
+  /// In en, this message translates to:
+  /// **'Proficiencies'**
+  String get changesKindProficiencies;
+
+  /// Changes review: experience points.
+  ///
+  /// In en, this message translates to:
+  /// **'Experience points'**
+  String get changesKindExperience;
+
+  /// Changes review: entries gained.
+  ///
+  /// In en, this message translates to:
+  /// **'Added'**
+  String get changesAdded;
+
+  /// Changes review: entries lost.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed'**
+  String get changesRemoved;
+
+  /// Changes review: what the operation could not change.
+  ///
+  /// In en, this message translates to:
+  /// **'Kept as they are'**
+  String get changesKeptTitle;
+
+  /// Level reset note for sheets without a complete level history.
+  ///
+  /// In en, this message translates to:
+  /// **'This sheet has no complete level history, so ability score increases from earlier levels stay as they are.'**
+  String get resetLimitAbilityIncreases;
+
+  /// Level reset note for sheets that did not record their class skills.
+  ///
+  /// In en, this message translates to:
+  /// **'This sheet did not record which skills came from its class, so they stay.'**
+  String get resetLimitClassSkills;
 
   /// Concentration banner prefix label.
   ///
@@ -1768,7 +2026,7 @@ abstract class AppLocalizations {
   /// Confirmation dialog body before opening the level reset flow.
   ///
   /// In en, this message translates to:
-  /// **'This will reset class progression to level 1. Your notes, inventory, containers, currency, image, story, appearance, race, background and ability scores will be kept.\n\nClass levels, class spells, class/subclass choices, progression resources and ASI feats will be removed or recalculated. Export a backup first if you want an extra copy.'**
+  /// **'This resets class progression to level 1. Notes, inventory, containers, currency, image, story, appearance, race and background are kept.\n\nClass levels, class spells, class and subclass choices with what they granted, progression resources and level feats are removed. Ability score increases from levels are undone when the sheet has a complete level history. You will review every change before anything is saved.'**
   String get resetLevelsConfirmBody;
 
   /// Disabled confirmation button label while waiting before level reset.
@@ -5136,6 +5394,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Marked this character as using the 2014 rules (SRD 5.1).'**
   String get settingsMaintenanceChangeRuleset2014;
+
+  /// Migration report change: level 1 history saved for a 2024 character.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved the level 1 history used for leveling up and resetting levels.'**
+  String get settingsMaintenanceChangeLevelHistory;
+
+  /// Migration report change: class skill picks saved for a 2024 character.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved which skills came from the class at level 1.'**
+  String get settingsMaintenanceChangeClassSkills;
 
   /// Migration report fallback change text.
   ///

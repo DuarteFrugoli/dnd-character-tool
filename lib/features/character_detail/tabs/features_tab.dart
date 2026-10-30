@@ -2,6 +2,7 @@ import '../character_detail_dependencies.dart';
 import '../widgets/features/add_feature_sheet.dart';
 import '../widgets/features/feature_sections.dart';
 import '../widgets/features/feature_support.dart';
+import '../../../data/custom_background.dart';
 import '../../../data/rulesets/ruleset_ids.dart';
 import '../../../data/rulesets/srd_content_pack.dart';
 
@@ -77,7 +78,8 @@ final _featuresDataProvider = Provider.family<AsyncValue<FeaturesData>, String>(
         final subrace = race?.subraces
             .where((s) => s.name == character.subrace)
             .firstOrNull;
-        final bg = backgrounds?.where((b) => b.name == character.background).firstOrNull;
+        final featureSource = CustomBackground.featureSourceFor(character);
+        final bg = backgrounds?.where((b) => b.name == featureSource).firstOrNull;
 
         List<SrdClassFeature> subclassFeaturesFor(CharacterClassEntry entry) {
           final subclassName = entry.subclassName;
@@ -237,7 +239,7 @@ class _FeaturesTabState extends ConsumerState<FeaturesTab>
                     if (data.backgroundFeatureName != null) ...[
                       const SliverToBoxAdapter(child: SizedBox(height: 24)),
                       BackgroundFeatureSection(
-                        backgroundName: widget.character.background,
+                        backgroundName: CustomBackground.featureSourceFor(widget.character),
                         featureName: data.backgroundFeatureName!,
                         featureDescription:
                             data.backgroundFeatureDescription ?? '',

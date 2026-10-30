@@ -18,6 +18,60 @@ class AppLocalizationsFr extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => 'Historique personnalisé';
+
+  @override
+  String get customBackgroundSubtitle =>
+      'Créez votre propre historique selon les règles';
+
+  @override
+  String get customBackgroundName => 'Nom de l\'historique';
+
+  @override
+  String get customBackgroundFeature => 'Aptitude de l\'historique';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return 'Choisissez $count compétences';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return 'Choisissez jusqu\'à $count outils ; le reste devient des langues';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return 'Langues à choisir plus tard : $count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => 'Paquetage d\'équipement';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return 'Choisissez $count caractéristiques pour les augmentations';
+  }
+
+  @override
+  String get customBackgroundTool2024 =>
+      'Choisissez un outil de n\'importe quel type avec les autres maîtrises.';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return 'Équipement : $gp po à dépenser';
+  }
+
+  @override
+  String get customBackgroundSave => 'Utiliser cet historique';
+
+  @override
   String get creation2024Species => 'Espèce';
 
   @override
@@ -165,6 +219,38 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get whatsNewThanks =>
       'Merci de jouer et de nous faire part de vos commentaires. Vos idées nous aident à préparer la suite.';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024 (5.5e) est arrivé : créez et faites progresser des personnages avec les règles du SRD 5.2.1, à côté de vos personnages 2014.';
+
+  @override
+  String get whatsNew3RulesTitle => 'Règles D&D 2024';
+
+  @override
+  String get whatsNew3RulesBody =>
+      'Choisissez D&D 5e (2014) ou 5.5e (2024) à la création. Les personnages 2024 progressent du niveau 1 au 20 avec sous-classes, dons, dons épiques, multiclassage et maîtrise d\'arme.';
+
+  @override
+  String get whatsNew3RestsTitle => 'Repos et états';
+
+  @override
+  String get whatsNew3RestsBody =>
+      'En 2024, le repos long rend tous les dés de vie et retire un niveau d\'épuisement, l\'épuisement affecte les jets de d20 et la vitesse, et le repos court propose des capacités comme Arcane Recovery.';
+
+  @override
+  String get whatsNew3ResetTitle => 'Réinitialisations plus sûres';
+
+  @override
+  String get whatsNew3ResetBody =>
+      'Un récapitulatif liste chaque changement avant l\'enregistrement. La réinitialisation annule ce qu\'accordaient les classes retirées, et les deux éditions peuvent reconstruire jusqu\'à votre niveau précédent.';
+
+  @override
+  String get whatsNew3UpdateTitle => 'Mise à jour unique des personnages';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      'À l\'ouverture d\'un personnage, l\'app propose de tous les mettre à jour et ouvre d\'abord une sauvegarde. Les personnages 2014 gardent leurs règles et données ; les personnages 2024 enregistrent l\'historique de niveaux utilisé pour monter et réinitialiser.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -662,7 +748,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return 'Revenir au niveau 1 en tant que $className ? Les niveaux, la sous-classe, les dons, les choix et les sorts obtenus après le niveau 1 sont annulés grâce à l\'historique de niveaux enregistré. L\'origine, les modifications manuelles de caractéristiques, l\'inventaire, les notes et l\'histoire sont conservés.';
+    return 'Revenir au niveau 1 ? Vous pourrez ensuite garder $className ou choisir une autre classe. Les niveaux, la sous-classe, les dons, les choix et les sorts issus des classes sont annulés grâce à l\'historique de niveaux enregistré. L\'origine, les modifications manuelles de caractéristiques, l\'inventaire, les notes et l\'histoire sont conservés.';
   }
 
   @override
@@ -677,6 +763,68 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => 'Choisissez la classe de ce sort';
+
+  @override
+  String get featureChoicesChooseTarget => 'Choisir une cible';
+
+  @override
+  String get featureChoicesNoTargets => 'Aucune cible valide pour l\'instant.';
+
+  @override
+  String get levelUp2024SwapTitle => 'Remplacer des sorts (facultatif)';
+
+  @override
+  String get levelUp2024SwapCantrip => 'Sort mineur à remplacer';
+
+  @override
+  String get levelUp2024SwapSpell => 'Sort préparé à remplacer';
+
+  @override
+  String get levelUp2024SwapLearn => 'Remplacement';
+
+  @override
+  String get resetLevels2024ClassTitle => 'Classe au niveau 1';
+
+  @override
+  String get changesReviewTitle => 'Vérifier les changements';
+
+  @override
+  String get changesReviewIntro => 'L\'enregistrement modifiera :';
+
+  @override
+  String get changesReviewNone => 'Rien ne changera.';
+
+  @override
+  String get changesReviewApply => 'Enregistrer';
+
+  @override
+  String get changesKindClasses => 'Classes';
+
+  @override
+  String get changesKindExpertise => 'Expertise';
+
+  @override
+  String get changesKindProficiencies => 'Maîtrises';
+
+  @override
+  String get changesKindExperience => 'Points d\'expérience';
+
+  @override
+  String get changesAdded => 'Ajoutés';
+
+  @override
+  String get changesRemoved => 'Retirés';
+
+  @override
+  String get changesKeptTitle => 'Conservé tel quel';
+
+  @override
+  String get resetLimitAbilityIncreases =>
+      'Cette fiche n\'a pas d\'historique de niveaux complet : les augmentations de caractéristiques des niveaux précédents sont conservées.';
+
+  @override
+  String get resetLimitClassSkills =>
+      'Cette fiche n\'a pas enregistré les compétences venant de sa classe : elles sont conservées.';
 
   @override
   String get concentrationBannerLabel => 'Concentration sur :';
@@ -973,7 +1121,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      'Cela réinitialisera la progression de classe au niveau 1. Vos notes, inventaire, conteneurs, monnaie, image, histoire, apparence, race, historique et caractéristiques seront conservés.\n\nLes niveaux de classe, sorts de classe, choix de classe/sous-classe, ressources de progression et dons d\'ASI seront supprimés ou recalculés. Exportez une sauvegarde avant si vous voulez une copie supplémentaire.';
+      'Cela ramène la progression de classe au niveau 1. Les notes, l\'inventaire, les contenants, la monnaie, l\'image, l\'histoire, l\'apparence, la race et l\'historique sont conservés.\n\nLes niveaux de classe, les sorts de classe, les choix de classe et de sous-classe avec ce qu\'ils accordaient, les ressources de progression et les dons de niveau sont retirés. Les augmentations de caractéristiques dues aux niveaux sont annulées si la fiche a un historique de niveaux complet. Vous vérifierez chaque changement avant tout enregistrement.';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2935,6 +3083,14 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       'Ce personnage a été associé aux règles de 2014 (SRD 5.1).';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory =>
+      'Historique du niveau 1 enregistré pour monter et réinitialiser les niveaux.';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills =>
+      'Compétences obtenues de la classe au niveau 1 enregistrées.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

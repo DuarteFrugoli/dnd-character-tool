@@ -34,6 +34,41 @@ class FeatureUsageContext {
   int get effectiveClassLevel => sourceClassLevel ?? totalCharacterLevel;
 }
 
+/// Uses regained when the character rolls Initiative.
+class FeatureUsageInitiativeRule {
+  const FeatureUsageInitiativeRule({
+    required this.minimumRemaining,
+    this.minClassLevel,
+  });
+
+  /// Uses are raised to at least this value.
+  final int minimumRemaining;
+  final int? minClassLevel;
+
+  factory FeatureUsageInitiativeRule.fromJson(Map<String, dynamic> json) =>
+      FeatureUsageInitiativeRule(
+        minimumRemaining: (json['minimumRemaining'] as num?)?.toInt() ?? 1,
+        minClassLevel: (json['minClassLevel'] as num?)?.toInt(),
+      );
+}
+
+/// What happens when one use of a resource is spent.
+class FeatureUsageSpendEffect {
+  const FeatureUsageSpendEffect({this.restoreResource, this.heal});
+
+  /// Resource refilled to its maximum.
+  final String? restoreResource;
+
+  /// Healing formula id, evaluated by the ruleset.
+  final String? heal;
+
+  factory FeatureUsageSpendEffect.fromJson(Map<String, dynamic> json) =>
+      FeatureUsageSpendEffect(
+        restoreResource: json['restoreResource'] as String?,
+        heal: json['heal'] as String?,
+      );
+}
+
 class FeatureUsageResource {
   const FeatureUsageResource({
     required this.id,
@@ -41,6 +76,8 @@ class FeatureUsageResource {
     required this.maxFormula,
     required this.recharge,
     this.maxByLevel = const {},
+    this.onInitiative,
+    this.onSpend,
   });
 
   final String id;
@@ -48,6 +85,19 @@ class FeatureUsageResource {
   final String maxFormula;
   final String recharge;
   final Map<int, int> maxByLevel;
+  final FeatureUsageInitiativeRule? onInitiative;
+  final FeatureUsageSpendEffect? onSpend;
+
+  /// The same resource tracked separately for one feat instance.
+  FeatureUsageResource scopedTo(String instanceKey) => FeatureUsageResource(
+    id: '$id:$instanceKey',
+    name: name,
+    maxFormula: maxFormula,
+    recharge: recharge,
+    maxByLevel: maxByLevel,
+    onInitiative: onInitiative,
+    onSpend: onSpend,
+  );
 
   factory FeatureUsageResource.fromJson(String id, Map<String, dynamic> json) {
     return FeatureUsageResource(
@@ -56,6 +106,16 @@ class FeatureUsageResource {
       maxFormula: json['max']?.toString() ?? '1',
       recharge: json['recharge'] as String? ?? 'long_rest',
       maxByLevel: _parseMaxByLevel(json['maxByLevel']),
+      onInitiative: json['onInitiative'] is Map
+          ? FeatureUsageInitiativeRule.fromJson(
+              (json['onInitiative'] as Map).cast<String, dynamic>(),
+            )
+          : null,
+      onSpend: json['onSpend'] is Map
+          ? FeatureUsageSpendEffect.fromJson(
+              (json['onSpend'] as Map).cast<String, dynamic>(),
+            )
+          : null,
     );
   }
 
@@ -79,6 +139,7 @@ class FeatureUsageRef {
     this.minClassLevel,
     this.minCharacterLevel,
     this.additionalResources = const [],
+    this.instanceKeyFromChoice,
   });
 
   final String resourceId;
@@ -86,6 +147,10 @@ class FeatureUsageRef {
   final int? minClassLevel;
   final int? minCharacterLevel;
   final List<FeatureUsageRef> additionalResources;
+
+  /// Repeatable feats keep one resource per value of this choice, e.g. one
+  /// Magic Initiate free cast per spell list.
+  final String? instanceKeyFromChoice;
 
   factory FeatureUsageRef.fromJson(Map<String, dynamic> json) {
     return FeatureUsageRef(
@@ -97,6 +162,7 @@ class FeatureUsageRef {
           .whereType<Map>()
           .map((entry) => FeatureUsageRef.fromJson(entry.cast<String, dynamic>()))
           .toList(),
+      instanceKeyFromChoice: json['instanceKeyFromChoice'] as String?,
     );
   }
 
@@ -118,9 +184,13 @@ class FeatureUsageCatalog {
     required this.subclassFeatures,
     required this.raceTraits,
     required this.feats,
+    this.choiceOptions = const {},
   });
 
   final Map<String, FeatureUsageResource> resources;
+
+  /// Resources granted by a selected option, by class, feature and option id.
+  final Map<String, Map<String, Map<String, FeatureUsageRef>>> choiceOptions;
   final Map<String, Map<String, FeatureUsageRef>> classFeatures;
   final Map<String, Map<String, Map<String, FeatureUsageRef>>> subclassFeatures;
   final Map<String, FeatureUsageRef> raceTraits;
@@ -133,6 +203,7 @@ class FeatureUsageCatalog {
       subclassFeatures: _parseDefinitionMap3(json['subclassFeatures']),
       raceTraits: _parseDefinitionMap1(json['raceTraits']),
       feats: _parseDefinitionMap1(json['feats']),
+      choiceOptions: _parseDefinitionMap3(json['choiceOptions']),
     );
   }
 
@@ -304,6 +375,134 @@ class FeatureUsageEngine {
     ];
   }
 
+  /// Value of the feat choice that separates instances of a repeatable feat.
+  static String? featInstanceKey(
+    Character character,
+    FeatureUsageRef ref,
+    CharacterExtraFeature feat,
+  ) {
+    final choiceId = ref.instanceKeyFromChoice;
+    if (choiceId == null) return null;
+    for (final choice in character.featureChoices) {
+      if (choice.sourceType == FeatureChoiceSourceType.feat &&
+          choice.sourceName == feat.name &&
+          choice.sourceClassEntryId == feat.sourceClassEntryId &&
+          choice.choiceId == choiceId &&
+          choice.values.isNotEmpty) {
+        return choice.values.first;
+      }
+    }
+    return null;
+  }
+
+  /// Usage views of one feat instance.
+  static List<FeatureUsageView> viewsForFeat({
+    required FeatureUsageCatalog catalog,
+    required Character character,
+    required CharacterExtraFeature feat,
+  }) {
+    final ref = catalog.feat(feat.name);
+    if (ref == null) return const [];
+    final instanceKey = featInstanceKey(character, ref, feat);
+    return [
+      for (final view in viewsForRef(
+        catalog: catalog,
+        character: character,
+        ref: ref,
+      ))
+        instanceKey == null
+            ? view
+            : FeatureUsageView(
+                resource: view.resource.scopedTo(instanceKey),
+                current: currentFor(
+                  character,
+                  view.resource.scopedTo(instanceKey),
+                  view.max,
+                ),
+                max: view.max,
+                spend: view.spend,
+                recharge: view.recharge,
+              ),
+    ];
+  }
+
+  /// Values of class feature choices, without `@target` suffixes.
+  static Iterable<String> _selectedOptionIds(
+    Character character,
+    String className,
+    String? classEntryId,
+    String featureName,
+  ) sync* {
+    for (final choice in character.featureChoices) {
+      if (choice.sourceType != FeatureChoiceSourceType.classFeature ||
+          choice.featureName != featureName ||
+          choice.sourceClass != className ||
+          (classEntryId != null &&
+              choice.sourceClassEntryId != null &&
+              choice.sourceClassEntryId != classEntryId)) {
+        continue;
+      }
+      for (final value in choice.values) {
+        yield value.split('@').first;
+      }
+    }
+  }
+
+  /// Usage views of resources granted by selected options of a class feature,
+  /// such as Gift of the Depths for Eldritch Invocations.
+  static List<FeatureUsageView> viewsForChoiceOptions({
+    required FeatureUsageCatalog catalog,
+    required Character character,
+    required String className,
+    required String featureName,
+    String? classEntryId,
+    FeatureUsageContext? usageContext,
+  }) {
+    final options = catalog.choiceOptions[className]?[featureName];
+    if (options == null) return const [];
+    return [
+      for (final optionId in _selectedOptionIds(
+        character,
+        className,
+        classEntryId,
+        featureName,
+      ).toSet())
+        ...viewsForRef(
+          catalog: catalog,
+          character: character,
+          ref: options[optionId],
+          usageContext: usageContext,
+        ),
+    ];
+  }
+
+  /// Feature resources after rolling Initiative: uses with an initiative rule
+  /// are raised to their minimum, within the maximum.
+  static Map<String, int> resourcesAfterInitiative(
+    Character character,
+    Iterable<FeatureUsageBinding> bindings,
+  ) {
+    final result = Map<String, int>.from(character.featureResources);
+    for (final binding in bindings) {
+      final rule = binding.resource.onInitiative;
+      if (rule == null) continue;
+      final minLevel = rule.minClassLevel;
+      if (minLevel != null && binding.usageContext.effectiveClassLevel < minLevel) {
+        continue;
+      }
+      final max = maxFor(
+        binding.resource,
+        character,
+        usageContext: binding.usageContext,
+      );
+      if (max == null) continue;
+      final current = currentFor(character, binding.resource, max) ?? max;
+      final target = rule.minimumRemaining < max ? rule.minimumRemaining : max;
+      if (current < target) result[binding.resource.id] = target;
+    }
+    return result;
+  }
+
   static int? currentFor(
     Character character,
     FeatureUsageResource resource,
@@ -457,16 +656,16 @@ class FeatureUsageEngine {
 
     Iterable<FeatureUsageBinding> add(
       FeatureUsageRef? ref,
-      FeatureUsageContext usageContext,
-    ) sync* {
+      FeatureUsageContext usageContext, {
+      String? instanceKey,
+    }) sync* {
       if (ref == null) return;
       for (final eligibleRef in ref.eligibleRefs(usageContext)) {
-        if (eligibleRef.resourceId.isEmpty || seen.contains(eligibleRef.resourceId)) {
-          continue;
-        }
-        final resource = catalog.resource(eligibleRef.resourceId);
-        if (resource == null) continue;
-        seen.add(resource.id);
+        if (eligibleRef.resourceId.isEmpty) continue;
+        final base = catalog.resource(eligibleRef.resourceId);
+        if (base == null) continue;
+        final resource = instanceKey == null ? base : base.scopedTo(instanceKey);
+        if (!seen.add(resource.id)) continue;
         yield FeatureUsageBinding(
           resource: resource,
           ref: eligibleRef,
@@ -499,6 +698,20 @@ class FeatureUsageEngine {
         );
       }
 
+      final optionRefs = catalog.choiceOptions[classEntry.className];
+      if (optionRefs != null) {
+        for (final entry in optionRefs.entries) {
+          for (final optionId in _selectedOptionIds(
+            character,
+            classEntry.className,
+            classEntry.id,
+            entry.key,
+          ).toSet()) {
+            yield* add(entry.value[optionId], classContext);
+          }
+        }
+      }
+
       final subclassName = classEntry.subclassName ?? '';
       if (subclassName.isEmpty) continue;
       final subclassContext = FeatureUsageContext.forCharacter(
@@ -529,7 +742,11 @@ class FeatureUsageEngine {
 
       if (sourceType == FeatureChoiceSourceType.feat ||
           feature.sourceClass == 'Feat') {
-        yield* add(catalog.feat(feature.name), characterContext);
+        final ref = catalog.feat(feature.name);
+        final instanceKey = ref == null
+            ? null
+            : featInstanceKey(character, ref, feature);
+        yield* add(ref, characterContext, instanceKey: instanceKey);
         continue;
       }
 

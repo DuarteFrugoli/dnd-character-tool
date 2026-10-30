@@ -15,6 +15,7 @@ class LevelUpResult {
     required this.newClassLevel,
     required this.targetHitDie,
     required this.hpGained,
+    this.hitPointMethod = 'average',
     this.asiChanges = const {},
     this.featChosen,
     this.subclassChosen,
@@ -34,6 +35,9 @@ class LevelUpResult {
   final int newClassLevel;
   final int targetHitDie;
   final int hpGained;
+
+  /// `HitPointGainMethod` value used for the level history.
+  final String hitPointMethod;
 
   /// Maps lowercase full ability name (e.g. 'strength') to delta (+1 or +2).
   final Map<String, int> asiChanges;

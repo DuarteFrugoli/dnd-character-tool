@@ -314,10 +314,11 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       i18n: i18n,
     );
     final levelLabel = l10n.charCardLevel(header.level);
+    final edition = rulesetShortLabel(l10n, header.rulesetId);
     final compactHeader = MediaQuery.sizeOf(context).width < 420;
     final subtitle = compactHeader
-        ? '$levelLabel  ·  $classSummary  ·  $raceSummary'
-        : '$classSummary  ·  $raceSummary  ·  $levelLabel';
+        ? '$edition  ·  $levelLabel  ·  $classSummary  ·  $raceSummary'
+        : '$edition  ·  $classSummary  ·  $raceSummary  ·  $levelLabel';
     return CharacterDetailShell(
       header: header,
       subtitle: subtitle,
@@ -402,7 +403,10 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
       error: (error, _) => Scaffold(body: Center(child: Text(error.toString()))),
       data: (i18n) {
         final l10n = AppLocalizations.of(context)!;
-        final subtitle = '${l10n.charCardLevel(header.level)} | ${i18n.className(character.primaryClassName)} | ${i18n.raceName(header.race)}';
+        final subtitle = '${rulesetShortLabel(l10n, header.rulesetId)}  ·  '
+            '${l10n.charCardLevel(header.level)}  ·  '
+            '${localizedClassEntriesSummary(header.classes, i18n, includeSubclasses: true)}  ·  '
+            '${i18n.raceName(header.race)}';
         return CharacterDetailShell(
           header: header,
           subtitle: subtitle,

@@ -18,6 +18,58 @@ class AppLocalizationsKo extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => '사용자 지정 배경';
+
+  @override
+  String get customBackgroundSubtitle => '규칙에 따라 나만의 배경 만들기';
+
+  @override
+  String get customBackgroundName => '배경 이름';
+
+  @override
+  String get customBackgroundFeature => '배경 특징';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return '기술 $count개 선택';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return '도구를 최대 $count개 선택하세요. 나머지는 언어가 됩니다';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return '나중에 고를 언어: $count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => '장비 꾸러미';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return '능력치 상승에 쓸 능력치 $count개 선택';
+  }
+
+  @override
+  String get customBackgroundTool2024 => '다른 숙련과 함께 아무 종류의 도구 1개를 선택합니다.';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return '장비: ${gp}GP 사용';
+  }
+
+  @override
+  String get customBackgroundSave => '이 배경 사용';
+
+  @override
   String get creation2024Species => '종족';
 
   @override
@@ -157,6 +209,38 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get whatsNewThanks =>
       '게임을 즐기고 의견을 나눠 주셔서 감사합니다. 여러분의 아이디어가 앞으로의 개발에 큰 도움이 됩니다.';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024(5.5e)가 왔습니다. 2014 캐릭터와 함께 SRD 5.2.1 규칙으로 캐릭터를 만들고 성장시키세요.';
+
+  @override
+  String get whatsNew3RulesTitle => 'D&D 2024 규칙';
+
+  @override
+  String get whatsNew3RulesBody =>
+      '캐릭터를 만들 때 D&D 5e(2014) 또는 5.5e(2024)를 선택하세요. 2024 캐릭터는 하위 클래스, 재주, 에픽 부운, 멀티클래스, 무기 숙련과 함께 1레벨부터 20레벨까지 성장합니다.';
+
+  @override
+  String get whatsNew3RestsTitle => '휴식과 상태';
+
+  @override
+  String get whatsNew3RestsBody =>
+      '2024에서는 긴 휴식으로 모든 히트 다이스를 회복하고 탈진이 1단계 줄어듭니다. 탈진은 d20 굴림과 이동속도에 영향을 주며, 짧은 휴식에는 Arcane Recovery 같은 능력을 쓸 수 있습니다.';
+
+  @override
+  String get whatsNew3ResetTitle => '더 안전한 레벨 초기화';
+
+  @override
+  String get whatsNew3ResetBody =>
+      '저장하기 전에 모든 변경 사항을 보여 줍니다. 초기화는 제거된 클래스가 준 것을 되돌리며, 두 규칙 모두 이전 레벨까지 다시 구성할 수 있습니다.';
+
+  @override
+  String get whatsNew3UpdateTitle => '한 번만 하는 캐릭터 업데이트';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      '캐릭터를 열면 앱이 모든 캐릭터의 업데이트를 요청하고 먼저 백업을 엽니다. 2014 캐릭터는 규칙과 데이터를 유지하고, 2024 캐릭터는 레벨 업과 초기화에 쓰는 레벨 기록을 저장합니다.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -641,7 +725,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return '$className(으)로 1레벨로 돌아갈까요? 1레벨 이후 얻은 레벨, 하위 클래스, 재주, 선택, 주문은 저장된 레벨 기록으로 되돌려집니다. 출신, 수동 능력치 수정, 소지품, 메모, 이야기는 유지됩니다.';
+    return '1레벨로 돌아갈까요? 다음 화면에서 $className을(를) 유지하거나 다른 클래스를 고를 수 있습니다. 클래스로 얻은 레벨, 하위 클래스, 재주, 선택, 주문은 저장된 레벨 기록으로 되돌려집니다. 출신, 수동 능력치 수정, 소지품, 메모, 이야기는 유지됩니다.';
   }
 
   @override
@@ -656,6 +740,67 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => '이 주문의 클래스를 선택하세요';
+
+  @override
+  String get featureChoicesChooseTarget => '대상 선택';
+
+  @override
+  String get featureChoicesNoTargets => '아직 선택할 수 있는 대상이 없습니다.';
+
+  @override
+  String get levelUp2024SwapTitle => '주문 교체 (선택)';
+
+  @override
+  String get levelUp2024SwapCantrip => '교체할 소마법';
+
+  @override
+  String get levelUp2024SwapSpell => '교체할 준비 주문';
+
+  @override
+  String get levelUp2024SwapLearn => '대체 주문';
+
+  @override
+  String get resetLevels2024ClassTitle => '1레벨 클래스';
+
+  @override
+  String get changesReviewTitle => '변경 사항 확인';
+
+  @override
+  String get changesReviewIntro => '저장하면 다음이 바뀝니다:';
+
+  @override
+  String get changesReviewNone => '바뀌는 것이 없습니다.';
+
+  @override
+  String get changesReviewApply => '변경 사항 저장';
+
+  @override
+  String get changesKindClasses => '클래스';
+
+  @override
+  String get changesKindExpertise => '전문화';
+
+  @override
+  String get changesKindProficiencies => '숙련';
+
+  @override
+  String get changesKindExperience => '경험치';
+
+  @override
+  String get changesAdded => '추가됨';
+
+  @override
+  String get changesRemoved => '제거됨';
+
+  @override
+  String get changesKeptTitle => '그대로 유지';
+
+  @override
+  String get resetLimitAbilityIncreases =>
+      '이 시트에는 완전한 레벨 기록이 없어 이전 레벨의 능력치 상승이 그대로 남습니다.';
+
+  @override
+  String get resetLimitClassSkills => '이 시트는 클래스에서 얻은 기술을 기록하지 않아 그대로 남습니다.';
 
   @override
   String get concentrationBannerLabel => '집중 중:';
@@ -948,7 +1093,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      '클래스 진행을 레벨 1로 초기화합니다. 메모, 인벤토리, 컨테이너, 화폐, 이미지, 이야기, 외형, 종족, 배경, 능력치는 유지됩니다.\n\n클래스 레벨, 클래스 주문, 클래스/하위 클래스 선택, 진행 자원, ASI 특기는 제거되거나 다시 계산됩니다. 추가 사본이 필요하면 먼저 백업을 내보내세요.';
+      '클래스 성장을 1레벨로 되돌립니다. 메모, 소지품, 보관함, 화폐, 이미지, 이야기, 외모, 종족, 배경은 유지됩니다.\n\n클래스 레벨, 클래스 주문, 클래스와 하위 클래스 선택과 그로 얻은 것, 성장 자원, 레벨 재주는 제거됩니다. 시트에 완전한 레벨 기록이 있으면 레벨로 얻은 능력치 상승도 되돌립니다. 저장하기 전에 모든 변경 사항을 확인하게 됩니다.';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2851,6 +2996,13 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       '이 캐릭터에 2014년 규칙(SRD 5.1)을 지정했습니다.';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory =>
+      '레벨 업과 레벨 초기화에 쓰이는 1레벨 기록을 저장했습니다.';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills => '1레벨에 클래스로 얻은 기술을 저장했습니다.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

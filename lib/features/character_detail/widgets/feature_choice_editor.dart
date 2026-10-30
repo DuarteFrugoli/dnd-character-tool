@@ -197,7 +197,9 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
                 child: Column(
                   children: [
                     for (final option in options)
-                      _buildRadioOption(context, request, option),
+                      option.target != null
+                          ? _buildTargetOption(context, request, option, values)
+                          : _buildRadioOption(context, request, option),
                   ],
                 ),
               )
@@ -205,7 +207,9 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
               Column(
                 children: [
                   for (final option in options)
-                    _buildCheckboxOption(context, request, option, values),
+                    option.target != null
+                        ? _buildTargetOption(context, request, option, values)
+                        : _buildCheckboxOption(context, request, option, values),
                 ],
               ),
           ],
@@ -214,7 +218,10 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
     );
   }
 
-  List<SrdFeatureChoiceOption> _optionsFor(FeatureChoiceRequest request) {
+  List<SrdFeatureChoiceOption> _optionsFor(FeatureChoiceRequest request) =>
+      _resolverFor(request).options;
+
+  FeatureChoiceOptionResolver _resolverFor(FeatureChoiceRequest request) {
     return FeatureChoiceOptionResolver(
       request: request,
       catalog: widget.catalog,
@@ -228,7 +235,111 @@ class _FeatureChoiceEditorState extends State<FeatureChoiceEditor> {
       character: widget.character,
       relatedRequests: widget.requests,
       choices: _currentChoices,
-    ).options;
+    );
+  }
+
+  /// Options such as Agonizing Blast apply to a chosen target; each saved
+  /// `option@target` value is one instance.
+  Widget _buildTargetOption(
+    BuildContext context,
+    FeatureChoiceRequest request,
+    SrdFeatureChoiceOption option,
+    List<String> values,
+  ) {
+    final resolver = _resolverFor(request);
+    final instances = [
+      for (final value in values)
+        if (ChoiceTargetValue.optionId(value) == option.id) value,
+    ];
+    final single = request.requiredCount == 1;
+    final canAdd = (single || values.length < request.requiredCount) &&
+        (instances.isEmpty || option.repeatableWithDifferentTarget);
+    final subtitle = featureChoiceOptionSubtitle(
+      context: context,
+      request: request,
+      option: option,
+      i18n: widget.i18n,
+    );
+    return ListTile(
+      dense: true,
+      title: Text(option.name),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (subtitle != null) Text(subtitle),
+          if (instances.isNotEmpty)
+            Wrap(
+              spacing: 6,
+              children: [
+                for (final value in instances)
+                  InputChip(
+                    label: Text(
+                      resolver.targetLabel(option.target, ChoiceTargetValue.target(value)!),
+                    ),
+                    onDeleted: () => _toggle(request, value, false),
+                  ),
+              ],
+            ),
+        ],
+      ),
+      trailing: IconButton(
+        icon: const Icon(Icons.add_circle_outline),
+        tooltip: AppLocalizations.of(context)!.featureChoicesChooseTarget,
+        onPressed: canAdd
+            ? () => _pickTarget(context, request, option, resolver, instances)
+            : null,
+      ),
+    );
+  }
+
+  Future<void> _pickTarget(
+    BuildContext context,
+    FeatureChoiceRequest request,
+    SrdFeatureChoiceOption option,
+    FeatureChoiceOptionResolver resolver,
+    List<String> instances,
+  ) async {
+    final l10n = AppLocalizations.of(context)!;
+    final used = {for (final value in instances) ChoiceTargetValue.target(value)};
+    final targets = [
+      for (final target in resolver.targetOptions(option.target!))
+        if (!used.contains(target.id)) target,
+    ];
+    final picked = await showModalBottomSheet<String>(
+      context: context,
+      useSafeArea: true,
+      builder: (sheetContext) => SafeArea(
+        child: ListView(
+          shrinkWrap: true,
+          children: [
+            ListTile(
+              title: Text(
+                l10n.featureChoicesChooseTarget,
+                style: Theme.of(sheetContext).textTheme.titleMedium,
+              ),
+              subtitle: Text(option.name),
+            ),
+            if (targets.isEmpty)
+              ListTile(title: Text(l10n.featureChoicesNoTargets)),
+            for (final target in targets)
+              ListTile(
+                title: Text(target.name),
+                subtitle: target.description == null
+                    ? null
+                    : Text(target.description!, maxLines: 2, overflow: TextOverflow.ellipsis),
+                onTap: () => Navigator.pop(sheetContext, target.id),
+              ),
+          ],
+        ),
+      ),
+    );
+    if (picked == null) return;
+    final value = ChoiceTargetValue.withTarget(option.id, picked);
+    if (request.requiredCount == 1) {
+      _setSingle(request, value);
+    } else {
+      _toggle(request, value, true);
+    }
   }
 
   Widget _buildRadioOption(

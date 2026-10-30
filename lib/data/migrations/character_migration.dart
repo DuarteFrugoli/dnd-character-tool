@@ -1,10 +1,14 @@
+import '../character_progression/progression_2024_engine.dart';
 import '../datasources/srd/srd_models.dart';
 import '../models/models.dart';
 
 class CharacterMigrationContext {
-  const CharacterMigrationContext({required this.itemsByName});
+  const CharacterMigrationContext({required this.itemsByName, this.rules2024});
 
   final Map<String, SrdItemData> itemsByName;
+
+  /// SRD 5.2.1 data for migrations of 2024 characters.
+  final Rules2024Data? rules2024;
 }
 
 abstract class CharacterMigration {

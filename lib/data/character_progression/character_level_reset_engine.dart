@@ -1,8 +1,15 @@
 import '../constants/armor_class.dart';
+import '../constants/level_up_rules.dart';
 import '../feature_choice_engine.dart';
+import '../feature_choice_option_resolver.dart';
 import '../models/models.dart';
 import '../rulesets/character_rules_context.dart';
 import 'character_progression_engine.dart';
+import 'choice_effects.dart';
+
+/// What a 2014 reset cannot undo on a sheet saved before levels recorded
+/// their history or class skills were recorded.
+enum LevelResetLimitation { abilityIncreasesKept, previousClassSkillsKept }
 
 class CharacterLevelResetResult {
   const CharacterLevelResetResult({
@@ -31,10 +38,25 @@ class CharacterLevelResetResult {
 class CharacterLevelResetEngine {
   const CharacterLevelResetEngine._();
 
+  /// Limits of resetting [character], to tell the player before confirming.
+  static Set<LevelResetLimitation> limitationsFor(Character character) => {
+    if (character.totalLevel > 1 &&
+        !CharacterProgressionEngine.hasCompleteHistory(character))
+      LevelResetLimitation.abilityIncreasesKept,
+    if (!character.featureChoices.any(
+      (choice) => choice.featureName == ChoiceEffects.classSkillsFeature,
+    ))
+      LevelResetLimitation.previousClassSkillsKept,
+  };
+
+  /// Rebuilds level 1 in [result]'s class. With [effects], grants of removed
+  /// and new feature choices are undone and applied; with a complete level
+  /// history, ability increases of later levels are undone too.
   static Character resetToLevelOne(
     Character character,
-    CharacterLevelResetResult result,
-  ) {
+    CharacterLevelResetResult result, {
+    ChoiceEffectsData? effects,
+  }) {
     CharacterRulesContext.fromCharacter(character).requireLegacyOperation('Level reset');
     const primaryClassEntryId = 'primary';
     final className = result.className.trim();
@@ -42,8 +64,16 @@ class CharacterLevelResetEngine {
       throw ArgumentError.value(className, 'className', 'Class is required.');
     }
 
+    var scores = character.abilityScores;
+    if (CharacterProgressionEngine.hasCompleteHistory(character)) {
+      for (final record in character.levelHistory.skip(1)) {
+        for (final entry in record.abilityIncreases.entries) {
+          scores = scores.increment(entry.key, -entry.value);
+        }
+      }
+    }
     final hitDie = result.hitDie.clamp(1, 100).toInt();
-    final maximumHp = hitDie + character.abilityScores.constitutionModifier;
+    final maximumHp = hitDie + scores.constitutionModifier;
     final safeMaximumHp = maximumHp.clamp(1, 9999).toInt();
 
     final classes = [
@@ -65,12 +95,30 @@ class CharacterLevelResetEngine {
               _shouldPreserveFeatureChoice(choice, preservedLevelOneFeatNames),
         )
         .toList();
-    final preservedExtraFeatures = character.extraFeatures
+    // Undo what the removed choices granted before rebuilding level 1.
+    var base = character.copyWith(featureChoices: preservedFeatureChoices);
+    if (effects != null) base = ChoiceEffects.apply(character, base, effects);
+    final multiclassLabels = {
+      for (final entry in character.classEntries)
+        if (!entry.isStartingClass) ..._multiclassLabels(entry.className),
+    };
+    final preservedExtraFeatures = base.extraFeatures
         .where(_shouldPreserveExtraFeature)
         .toList();
-    final preservedSpells = character.spells
+    final preservedSpells = base.spells
         .where(_shouldPreserveSpell)
         .toList();
+    final classSkillsChoice = CharacterFeatureChoice(
+      sourceType: FeatureChoiceSourceType.classFeature,
+      sourceClass: className,
+      sourceClassEntryId: primaryClassEntryId,
+      featureName: ChoiceEffects.classSkillsFeature,
+      choiceId: 'skills',
+      values: [
+        for (final skill in result.skillProficiencies)
+          FeatureChoiceOptionResolver.idFromName(skill),
+      ],
+    );
 
     var updated = character.copyWith(
       dataVersion: currentCharacterDataVersion,
@@ -79,7 +127,10 @@ class CharacterLevelResetEngine {
       clearSubclass: _emptyToNull(result.subclassName) == null,
       level: 1,
       classes: classes,
-      experiencePoints: 0,
+      experiencePoints: character.xpTrackingEnabled
+          ? levelToMinXp(1)
+          : character.experiencePoints,
+      abilityScores: scores,
       proficiencyBonus:
           CharacterProgressionEngine.proficiencyBonusForTotalLevel(1),
       hitPoints: HitPoints(maximum: safeMaximumHp, current: safeMaximumHp),
@@ -93,17 +144,20 @@ class CharacterLevelResetEngine {
       ],
       savingThrowProficiencies: _uniqueStrings(result.savingThrowProficiencies),
       skillProficiencies: _uniqueStrings([
-        ...character.skillProficiencies,
+        ...base.skillProficiencies,
         ...result.skillProficiencies,
       ]),
+      skillExpertises: base.skillExpertises,
+      languages: base.languages,
       features: _uniqueStrings([
-        ...character.features,
+        for (final feature in base.features)
+          if (!multiclassLabels.contains(feature)) feature,
         ...result.proficiencyFeatureLabels,
       ]),
       extraFeatures: [...preservedExtraFeatures, ...result.extraFeatures],
       featureChoices: FeatureChoiceEngine.upsertChoices(
-        preservedFeatureChoices,
-        result.featureChoices,
+        base.featureChoices,
+        [classSkillsChoice, ...result.featureChoices],
       ),
       spells: [
         ...preservedSpells,
@@ -120,10 +174,40 @@ class CharacterLevelResetEngine {
       disabledFeatures: const [],
       disabledSpells: const [],
       concentrationSpell: null,
+      levelHistory: [
+        CharacterLevelRecord(
+          characterLevel: 1,
+          classEntryId: primaryClassEntryId,
+          className: className,
+          classLevel: 1,
+          hitPointsGained: safeMaximumHp,
+          hitPointMethod: HitPointGainMethod.maximum,
+          subclassName: _emptyToNull(result.subclassName),
+          baseAbilityScores:
+              character.levelHistory.firstOrNull?.baseAbilityScores ?? const {},
+        ),
+      ],
     );
-
+    if (effects != null) {
+      // Grants of the new level 1 choices, e.g. Rogue Expertise.
+      updated = ChoiceEffects.apply(
+        updated.copyWith(featureChoices: base.featureChoices),
+        updated,
+        effects,
+      );
+    }
     updated = CharacterProgressionEngine.syncSpellcastingSlotsFor(updated);
     return updated.copyWith(armorClass: calcArmorClass(updated));
+  }
+
+  /// Proficiency labels that multiclassing into [className] adds.
+  static Set<String> _multiclassLabels(String className) {
+    final rule = multiclassProficiencyRuleFor(className);
+    return {
+      for (final armor in rule.armorProficiencies) 'Armor Proficiency: $armor',
+      for (final weapon in rule.weaponProficiencies) 'Weapon Proficiency: $weapon',
+      for (final tool in rule.toolProficiencies) 'Tool Proficiency: $tool',
+    };
   }
 
   static bool _shouldPreserveFeatureChoice(

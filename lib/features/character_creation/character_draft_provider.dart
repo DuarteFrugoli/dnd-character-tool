@@ -12,6 +12,8 @@ import '../../data/feature_choice_engine.dart';
 import '../../data/feature_choice_option_resolver.dart';
 import '../../data/models/models.dart';
 import '../../shared/providers/providers.dart';
+import '../../data/character_progression/choice_effects.dart';
+import '../../data/custom_background.dart';
 
 // ── Estado do rascunho ────────────────────────────────────────────────────────
 
@@ -885,6 +887,13 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
     ];
     final skillExpertises = <String>[];
     final featureToolProficiencies = <String>[...draft.chosenToolProficiencies];
+    // Tools a background grants outright, e.g. a Criminal's thieves' tools.
+    for (final tool in draft.selectedBackground!.toolProficiencies) {
+      final lower = tool.toLowerCase();
+      if (!lower.contains('one type of') && !lower.contains('of your choice')) {
+        featureToolProficiencies.add(tool);
+      }
+    }
     final featureWeaponProficiencies = <String>[];
     final characterLanguages = <String>[
       ...draft.fixedRaceLanguages,
@@ -1163,7 +1172,45 @@ class CharacterDraftNotifier extends Notifier<CharacterDraft> {
       ],
       features: featureLabels,
       extraFeatures: extraFeatures,
-      featureChoices: featureChoicesForSave,
+      featureChoices: [
+        ...featureChoicesForSave,
+        if (draft.selectedBackground!.isCustom) ...[
+          CustomBackground.featureChoice(
+            draft.selectedBackground!.name,
+            draft.selectedBackground!.featureSource!,
+          ),
+          CustomBackground.skillsChoice(
+            draft.selectedBackground!.name,
+            draft.selectedBackground!.skillProficiencies,
+          ),
+        ],
+        CharacterFeatureChoice(
+          sourceType: FeatureChoiceSourceType.classFeature,
+          sourceClass: draft.selectedClass!.name,
+          sourceClassEntryId: primaryClassEntryId,
+          featureName: ChoiceEffects.classSkillsFeature,
+          choiceId: 'skills',
+          values: [
+            for (final skill in draft.chosenSkills)
+              FeatureChoiceOptionResolver.idFromName(skill),
+          ],
+        ),
+      ],
+      levelHistory: [
+        CharacterLevelRecord(
+          characterLevel: 1,
+          classEntryId: primaryClassEntryId,
+          className: draft.selectedClass!.name,
+          classLevel: 1,
+          hitPointsGained: hitDie + conMod,
+          hitPointMethod: HitPointGainMethod.maximum,
+          subclassName: draft.selectedSubclass?.name,
+          baseAbilityScores: {
+            for (final entry in draft.baseAttributes.entries)
+              entry.key.toLowerCase(): entry.value,
+          },
+        ),
+      ],
       languages: characterLanguages,
       personality: const CharacterPersonality(
         traits: '',

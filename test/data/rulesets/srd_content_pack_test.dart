@@ -54,7 +54,7 @@ void main() {
 
     expect(oldCharacter.needsDataUpdate, isTrue);
     expect(oldCharacter.dataVersion, 9);
-    expect(report.appliedMigrationIds, ['assign_2014_ruleset']);
+    expect(report.appliedMigrationIds, ['assign_2014_ruleset', 'record_2024_level_one']);
     expect(report.changes.single.code, 'ruleset_2014_assigned');
     expect(report.character.dataVersion, currentCharacterDataVersion);
     expect(report.character.needsDataUpdate, isFalse);

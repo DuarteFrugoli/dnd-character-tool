@@ -18,6 +18,60 @@ class AppLocalizationsTr extends AppLocalizations {
   String get creationRuleset2024 => 'D&D 5.5e (2024)';
 
   @override
+  String get rulesetShort2014 => '5e';
+
+  @override
+  String get rulesetShort2024 => '5.5e';
+
+  @override
+  String get customBackgroundTitle => 'Özel geçmiş';
+
+  @override
+  String get customBackgroundSubtitle =>
+      'Kurallara göre kendi geçmişini oluştur';
+
+  @override
+  String get customBackgroundName => 'Geçmiş adı';
+
+  @override
+  String get customBackgroundFeature => 'Geçmiş özelliği';
+
+  @override
+  String customBackgroundSkills(int count) {
+    return '$count beceri seç';
+  }
+
+  @override
+  String customBackgroundTools2014(int count) {
+    return 'En fazla $count alet seç; kalanı dil olur';
+  }
+
+  @override
+  String customBackgroundLanguages(int count) {
+    return 'Daha sonra seçilecek diller: $count';
+  }
+
+  @override
+  String get customBackgroundEquipment2014 => 'Ekipman paketi';
+
+  @override
+  String customBackgroundAbilities(int count) {
+    return 'Artışlar için $count yetenek seç';
+  }
+
+  @override
+  String get customBackgroundTool2024 =>
+      'Diğer yetkinliklerle birlikte herhangi türde bir alet seç.';
+
+  @override
+  String customBackgroundGold2024(int gp) {
+    return 'Ekipman: harcamak için $gp AP';
+  }
+
+  @override
+  String get customBackgroundSave => 'Bu geçmişi kullan';
+
+  @override
   String get creation2024Species => 'Tür';
 
   @override
@@ -161,6 +215,38 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get whatsNewThanks =>
       'Oynadığınız ve görüşlerinizi paylaştığınız için teşekkür ederiz. Fikirleriniz sonraki adımlarımıza yön veriyor.';
+
+  @override
+  String get whatsNew3Summary =>
+      'D&D 2024 (5.5e) geldi: 2014 karakterlerinin yanında SRD 5.2.1 kurallarıyla karakter oluştur ve geliştir.';
+
+  @override
+  String get whatsNew3RulesTitle => 'D&D 2024 kuralları';
+
+  @override
+  String get whatsNew3RulesBody =>
+      'Karakter oluştururken D&D 5e (2014) veya 5.5e (2024) seç. 2024 karakterleri alt sınıflar, yetenekler (feat), Destansı Lütuflar, çoklu sınıf ve Silah Ustalığı ile 1\'den 20. seviyeye ilerler.';
+
+  @override
+  String get whatsNew3RestsTitle => 'Dinlenmeler ve durumlar';
+
+  @override
+  String get whatsNew3RestsBody =>
+      '2024\'te uzun dinlenme tüm Can Zarlarını geri verir ve bir Bitkinlik seviyesini kaldırır; Bitkinlik d20 zarlarını ve hızı etkiler, kısa dinlenme de Arcane Recovery gibi özellikler sunar.';
+
+  @override
+  String get whatsNew3ResetTitle => 'Daha güvenli seviye sıfırlama';
+
+  @override
+  String get whatsNew3ResetBody =>
+      'Kaydetmeden önce her değişiklik listelenir. Sıfırlama, kaldırılan sınıfların verdiklerini geri alır ve iki kural setinde de önceki seviyene yeniden kurabilirsin.';
+
+  @override
+  String get whatsNew3UpdateTitle => 'Tek seferlik karakter güncellemesi';
+
+  @override
+  String get whatsNew3UpdateBody =>
+      'Bir karakteri açtığında uygulama hepsini güncellemeyi ister ve önce yedek açar. 2014 karakterleri kurallarını ve verilerini korur; 2024 karakterleri seviye atlama ve sıfırlama için seviye geçmişini kaydeder.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -653,7 +739,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String resetLevels2024Body(String className) {
-    return '$className olarak 1. seviyeye dönülsün mü? 1. seviyeden sonra kazanılan seviyeler, alt sınıf, yetenekler (feat), seçimler ve büyüler kayıtlı seviye geçmişine göre geri alınır. Köken, elle yapılan yetenek değişiklikleri, envanter, notlar ve hikâye korunur.';
+    return '1. seviyeye dönülsün mü? Ardından $className sınıfını koruyabilir veya başka bir sınıf seçebilirsin. Sınıflardan gelen seviyeler, alt sınıf, yetenekler (feat), seçimler ve büyüler kayıtlı seviye geçmişine göre geri alınır. Köken, elle yapılan yetenek değişiklikleri, envanter, notlar ve hikâye korunur.';
   }
 
   @override
@@ -668,6 +754,68 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get spells2024ChooseClass => 'Bu büyünün sınıfını seç';
+
+  @override
+  String get featureChoicesChooseTarget => 'Bir hedef seç';
+
+  @override
+  String get featureChoicesNoTargets => 'Henüz uygun hedef yok.';
+
+  @override
+  String get levelUp2024SwapTitle => 'Büyüleri değiştir (isteğe bağlı)';
+
+  @override
+  String get levelUp2024SwapCantrip => 'Değiştirilecek cantrip';
+
+  @override
+  String get levelUp2024SwapSpell => 'Değiştirilecek hazırlanmış büyü';
+
+  @override
+  String get levelUp2024SwapLearn => 'Yerine gelen';
+
+  @override
+  String get resetLevels2024ClassTitle => '1. seviye sınıfı';
+
+  @override
+  String get changesReviewTitle => 'Değişiklikleri gözden geçir';
+
+  @override
+  String get changesReviewIntro => 'Kaydedince şunlar değişecek:';
+
+  @override
+  String get changesReviewNone => 'Hiçbir şey değişmeyecek.';
+
+  @override
+  String get changesReviewApply => 'Değişiklikleri kaydet';
+
+  @override
+  String get changesKindClasses => 'Sınıflar';
+
+  @override
+  String get changesKindExpertise => 'Uzmanlık';
+
+  @override
+  String get changesKindProficiencies => 'Yetkinlikler';
+
+  @override
+  String get changesKindExperience => 'Deneyim puanı';
+
+  @override
+  String get changesAdded => 'Eklenenler';
+
+  @override
+  String get changesRemoved => 'Kaldırılanlar';
+
+  @override
+  String get changesKeptTitle => 'Olduğu gibi kalır';
+
+  @override
+  String get resetLimitAbilityIncreases =>
+      'Bu sayfanın tam seviye geçmişi yok; önceki seviyelerden gelen yetenek artışları olduğu gibi kalır.';
+
+  @override
+  String get resetLimitClassSkills =>
+      'Bu sayfa hangi becerilerin sınıftan geldiğini kaydetmemiş; bu yüzden kalırlar.';
 
   @override
   String get concentrationBannerLabel => 'Konsantre olunan:';
@@ -962,7 +1110,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get resetLevelsConfirmBody =>
-      'Bu işlem sınıf ilerlemesini 1. seviyeye sıfırlar. Notlarınız, envanteriniz, kaplarınız, paranız, görseliniz, hikâyeniz, görünüşünüz, türünüz, geçmişiniz ve nitelik puanlarınız korunur.\n\nSınıf seviyeleri, sınıf büyüleri, sınıf ve alt sınıf seçimleri, ilerleme kaynakları ve nitelik artışı marifetleri kaldırılır veya yeniden hesaplanır. Ek bir kopya istiyorsanız önce yedek dışa aktarın.';
+      'Bu, sınıf ilerlemesini 1. seviyeye döndürür. Notlar, envanter, kaplar, para, görsel, hikâye, görünüm, ırk ve geçmiş korunur.\n\nSınıf seviyeleri, sınıf büyüleri, sınıf ve alt sınıf seçimleri ile sağladıkları, ilerleme kaynakları ve seviye yetenekleri (feat) kaldırılır. Sayfanın tam seviye geçmişi varsa seviyelerden gelen yetenek artışları da geri alınır. Kaydedilmeden önce her değişikliği gözden geçireceksin.';
 
   @override
   String resetLevelsCountdown(int seconds) {
@@ -2916,6 +3064,14 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get settingsMaintenanceChangeRuleset2014 =>
       'Bu karakter 2014 kurallarını (SRD 5.1) kullanıyor olarak işaretlendi.';
+
+  @override
+  String get settingsMaintenanceChangeLevelHistory =>
+      'Seviye atlama ve seviye sıfırlama için 1. seviye geçmişi kaydedildi.';
+
+  @override
+  String get settingsMaintenanceChangeClassSkills =>
+      '1. seviyede sınıftan gelen beceriler kaydedildi.';
 
   @override
   String settingsMaintenanceChangeGeneric(int count) {

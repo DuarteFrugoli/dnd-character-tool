@@ -1,11 +1,11 @@
 {
   "Darkvision": {
     "name": "Vision dans le noir",
-    "description": "Habitué à la vie sous terre, vous disposez d’une vision supérieure dans l’obscurité et dans la pénombre. Vous pouvez voir dans une faible lumière à moins de 60 pieds de vous comme s’il s’agissait d’une lumière vive, et dans l’obscurité comme s’il s’agissait d’une faible lumière. Vous ne pouvez pas discerner les couleurs dans l’obscurité, seulement les nuances de gris."
+    "description": "Habitué à la vie sous terre, vous disposez d’une vision supérieure dans l’obscurité et dans la pénombre. Vous pouvez voir dans une faible lumière à moins de 18 mètres de vous comme s’il s’agissait d’une lumière vive, et dans l’obscurité comme s’il s’agissait d’une faible lumière. Vous ne pouvez pas discerner les couleurs dans l’obscurité, seulement les nuances de gris."
   },
   "Superior Darkvision": {
     "name": "Vision dans le noir supérieure",
-    "description": "Votre vision dans le noir a un rayon de 120 pieds."
+    "description": "Votre vision dans le noir a un rayon de 36 mètres."
   },
   "Dwarven Resilience": {
     "name": "Résilience naine",
@@ -65,7 +65,7 @@
   },
   "Fleet of Foot": {
     "name": "Flotte de pied",
-    "description": "Votre vitesse de marche de base augmente à 35 pieds."
+    "description": "Votre vitesse de marche de base augmente à 10,5 mètres."
   },
   "Mask of the Wild": {
     "name": "Masque de la nature",

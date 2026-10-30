@@ -404,7 +404,9 @@ def parse_block(name, header, body, edition):
             if kept and not re.match(r"(?:(?:Actions|Reactions|Legendary Actions) )?" + ENTRY.pattern, paragraph):
                 break
             kept.append(paragraph)
-        rest = " ".join(kept)
+        # Sidebars such as "Variant: Insect Swarms" can follow the last
+        # action without a paragraph break.
+        rest = re.split(r"\s+Variant: ", " ".join(kept))[0]
     padded = " " + rest
     titles = [
         (m.group(1), m.start(), m.end())
@@ -422,6 +424,51 @@ def parse_block(name, header, body, edition):
         if entries:
             monster[key] = [parse_entry(entry, edition) for entry in entries]
     return monster
+
+
+# Published values that contradict the stat block's own math, or typos,
+# corrected so players read a stat block that makes sense. Tiny beasts with
+# +0 attacks and 1 damage are kept: that is a consistent design, not a slip.
+# Text fixes are (section, entry id, published text, corrected text).
+CORRECTIONS = {
+    "5.1": {
+        # Strength +2 and proficiency +2, as the damage (+2) shows.
+        "black_bear": [("actions", "bite", "+3 to hit", "+4 to hit"), ("actions", "claws", "+3 to hit", "+4 to hit")],
+        # Strength +4 and proficiency +2, as the damage (+4) shows.
+        "brown_bear": [("actions", "bite", "+5 to hit", "+6 to hit"), ("actions", "claws", "+5 to hit", "+6 to hit")],
+        "giant_sea_horse": [("traits", "charge", "It the target", "If the target")],
+    },
+    "5.2.1": {
+        # Dexterity +1 and proficiency +2.
+        "giant_frog": [("skills", "stealth", 4, 3)],
+    },
+}
+
+
+def apply_corrections(monster, pack, edition):
+    for section, key, published, corrected in CORRECTIONS.get(pack, {}).get(monster["id"], []):
+        if section == "skills":
+            if monster["skills"][key] != published:
+                raise ValueError(f"{monster['id']}: {key} is no longer {published}")
+            monster["skills"][key] = corrected
+            continue
+        entries = monster[section]
+        index = next(i for i, entry in enumerate(entries) if entry["id"] == key)
+        entry = entries[index]
+        if published not in entry["description"]:
+            raise ValueError(f"{monster['id']}.{key}: {published!r} is no longer published")
+        description = entry["description"].replace(published, corrected)
+        name = entry["name"] + (f" ({_usage_label(entry['usage'])})" if "usage" in entry else "")
+        entries[index] = parse_entry({"name": name, "description": description}, edition)
+    return monster
+
+
+def _usage_label(usage):
+    if usage["type"] == "recharge":
+        return f"Recharge {usage['min']}-6" if usage["min"] < 6 else "Recharge 6"
+    if usage["type"] == "per_day":
+        return f"{usage['uses']}/Day"
+    return "Recharges after a Short or Long Rest"
 
 
 def warnings(monster):
@@ -460,14 +507,15 @@ def extract(pdf, pack):
     return text
 
 
-def build(text, edition, max_challenge):
+def build(text, pack, max_challenge):
     """Beasts up to [max_challenge] and the Beast stat blocks that failed to parse."""
+    edition = PACKS[pack]["edition"]
     monsters, failures = [], []
     for name, header, body in stat_blocks(text, edition):
         if HEADER.match(header).group(5).lower() != "beast":
             continue
         try:
-            monster = parse_block(name, header, body, edition)
+            monster = apply_corrections(parse_block(name, header, body, edition), pack, edition)
         except (AttributeError, KeyError, ValueError) as error:
             failures.append((name, error))
             continue
@@ -483,13 +531,12 @@ def main():
     parser.add_argument("--max-cr", type=Fraction, default=Fraction(1), help="highest challenge rating to keep")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
-    edition = PACKS[args.pack]["edition"]
-    monsters, failures = build(extract(args.pdf, args.pack), edition, float(args.max_cr))
+    monsters, failures = build(extract(args.pdf, args.pack), args.pack, float(args.max_cr))
     for name, error in failures:
         print(f"failed: {name}: {error}", file=sys.stderr)
     for monster in monsters:
         for warning in warnings(monster):
-            print(f"note: {monster['name']}: {warning} (kept as published)")
+            print(f"note: {monster['name']}: {warning} (kept as published; see CORRECTIONS)")
     print(f"SRD {args.pack}: {len(monsters)} Beasts up to CR {args.max_cr}")
     if failures:
         raise SystemExit(f"{len(failures)} Beast stat block(s) failed to parse")

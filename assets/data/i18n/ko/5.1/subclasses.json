@@ -128,7 +128,7 @@
   "Sorcerer": {
     "Draconic Bloodline": {
       "name": "용의 혈통",
-      "description": "용의 조상으로부터 얻은 힘. 추가 체력, 천연 방어구(방어구 없이 AC 13 + DEX), 손상에 대한 원소 친화력, 높은 레벨에서 성장하는 용의 날개."
+      "description": "용의 조상으로부터 얻은 힘. 추가 히트 포인트, 천연 방어구(방어구 없이 AC 13 + DEX), 손상에 대한 원소 친화력, 높은 레벨에서 성장하는 용의 날개."
     },
     "Wild Magic": {
       "name": "와일드 매직",
@@ -142,7 +142,7 @@
     },
     "The Fiend": {
       "name": "악마",
-      "description": "강력한 악마나 마족을 후원자로 삼습니다. 어둠의 존재의 축복은 적을 쓰러뜨릴 때 임시 체력을 주며, 화염과 사령 계열 주문을 거쳐 지옥으로 내던지기에 이릅니다."
+      "description": "강력한 악마나 마족을 후원자로 삼습니다. 어둠의 존재의 축복은 적을 쓰러뜨릴 때 임시 히트 포인트를 주며, 화염과 사령 계열 주문을 거쳐 지옥으로 내던지기에 이릅니다."
     },
     "The Great Old One": {
       "name": "그레이트 올드 원",
@@ -176,7 +176,7 @@
     },
     "School of Necromancy": {
       "name": "강령술 학교",
-      "description": "죽음마법의 달인. 주문으로 적을 처치할 때 체력을 회복하는 Grim Harvest, 더 강력한 언데드 하인을 위한 Undead Thralls, 높은 레벨의 Command Undead 등이 있습니다."
+      "description": "죽음마법의 달인. 주문으로 적을 처치할 때 히트 포인트를 회복하는 Grim Harvest, 더 강력한 언데드 하인을 위한 Undead Thralls, 높은 레벨의 Command Undead 등이 있습니다."
     },
     "School of Transmutation": {
       "name": "변환 학교",

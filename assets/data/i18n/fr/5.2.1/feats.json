@@ -45,11 +45,11 @@
   },
   "Boon of Dimensional Travel": {
     "name": "Faveur de voyage dimensionnel",
-    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Immédiatement après l'action Attaquer ou Magie, vous pouvez vous téléporter sur une distance maximale de 30 pieds vers un espace inoccupé que vous voyez."
+    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Immédiatement après l'action Attaquer ou Magie, vous pouvez vous téléporter sur une distance maximale de 9 mètres vers un espace inoccupé que vous voyez."
   },
   "Boon of Fate": {
     "name": "Faveur du destin",
-    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Quand vous ou une créature située à 60 pieds ou moins réussissez ou échouez à un Test de D20, lancez 2d4 et appliquez le total comme bonus ou malus au jet. Vous retrouvez l'usage de cet avantage quand vous lancez l'Initiative ou terminez un Repos court ou long."
+    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Quand vous ou une créature située à 18 mètres ou moins réussissez ou échouez à un Test de D20, lancez 2d4 et appliquez le total comme bonus ou malus au jet. Vous retrouvez l'usage de cet avantage quand vous lancez l'Initiative ou terminez un Repos court ou long."
   },
   "Boon of Irresistible Offense": {
     "name": "Faveur d'offensive irrésistible",
@@ -65,6 +65,6 @@
   },
   "Boon of Truesight": {
     "name": "Faveur de vision véritable",
-    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Vous obtenez la Vision véritable sur une distance de 60 pieds."
+    "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Vous obtenez la Vision véritable sur une distance de 18 mètres."
   }
 }

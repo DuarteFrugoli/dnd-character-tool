@@ -44,7 +44,7 @@
     "description": "Uma criatura envenenada tem desvantagem em jogadas de ataque e testes de habilidade."
   },
   "Prone": {
-    "name": "Prostrado",
+    "name": "Caído",
     "description": "A única opção de movimento de uma criatura caída é rastejar, a menos que ela se levante e assim encerre a condição. A criatura tem desvantagem nas jogadas de ataque. Uma jogada de ataque contra a criatura tem vantagem se o atacante estiver a até 1,5 metro da criatura. Caso contrário, a jogada de ataque terá desvantagem."
   },
   "Restrained": {

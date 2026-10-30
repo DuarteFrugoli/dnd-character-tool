@@ -2403,7 +2403,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get spellsAttack => 'Attaque';
 
   @override
-  String get spellsSaveDC => 'Enregistrer DC';
+  String get spellsSaveDC => 'DD de sauvegarde';
 
   @override
   String get spellsCantrips => 'Tours de magie';

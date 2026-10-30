@@ -2402,7 +2402,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get spellsAttack => 'Angriff';
 
   @override
-  String get spellsSaveDC => 'Speichern Sie DC';
+  String get spellsSaveDC => 'Rettungswurf-SG';
 
   @override
   String get spellsCantrips => 'Zaubertricks';

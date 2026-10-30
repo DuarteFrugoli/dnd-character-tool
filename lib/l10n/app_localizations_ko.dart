@@ -2348,7 +2348,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get spellsAttack => '공격';
 
   @override
-  String get spellsSaveDC => 'DC 저장';
+  String get spellsSaveDC => '내성 DC';
 
   @override
   String get spellsCantrips => '캔트립';

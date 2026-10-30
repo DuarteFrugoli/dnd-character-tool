@@ -30,7 +30,7 @@
     },
     "Fast Movement": {
       "name": "Schnelle Bewegung",
-      "description": "Deine Geschwindigkeit erhöht sich um 10 Fuß, solange du keine schwere Rüstung trägst."
+      "description": "Deine Geschwindigkeit erhöht sich um 3 Meter, solange du keine schwere Rüstung trägst."
     },
     "Feral Instinct": {
       "name": "Wilder Instinkt",
@@ -92,7 +92,7 @@
     },
     "Countercharm": {
       "name": "Gegenzauber",
-      "description": "Sie erhalten die Fähigkeit, Musiknoten oder machtvolle Worte zu nutzen, um geistesbeeinflussende Effekte zu unterbrechen. Als Aktion kannst du einen Auftritt starten, der bis zum Ende deines nächsten Zuges andauert. Während dieser Zeit haben Sie und alle befreundeten Kreaturen im Umkreis von 30 Fuß um Sie einen Vorteil bei Rettungswürfen gegen Angst oder Bezauberung."
+      "description": "Sie erhalten die Fähigkeit, Musiknoten oder machtvolle Worte zu nutzen, um geistesbeeinflussende Effekte zu unterbrechen. Als Aktion kannst du einen Auftritt starten, der bis zum Ende deines nächsten Zuges andauert. Während dieser Zeit haben Sie und alle befreundeten Kreaturen im Umkreis von 9 Metern um Sie einen Vorteil bei Rettungswürfen gegen Angst oder Bezauberung."
     },
     "Magical Secrets": {
       "name": "Magische Geheimnisse",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Ungepanzerte Bewegung",
-      "description": "Deine Geschwindigkeit erhöht sich, während du keine Rüstung trägst oder keinen Schild führst: +10 Fuß auf Mönchsstufe 2, +15 Fuß auf Stufe 6, +20 Fuß auf Stufe 10, +25 Fuß auf Stufe 14 und +30 Fuß auf Stufe 18."
+      "description": "Deine Geschwindigkeit erhöht sich, während du keine Rüstung trägst oder keinen Schild führst: +3 Meter auf Mönchsstufe 2, +4,5 Meter auf Stufe 6, +6 Meter auf Stufe 10, +7,5 Meter auf Stufe 14 und +9 Meter auf Stufe 18."
     },
     "Monastic Tradition": {
       "name": "Klostertradition",
@@ -254,7 +254,7 @@
   "Paladin": {
     "Divine Sense": {
       "name": "Göttlicher Sinn",
-      "description": "Die Anwesenheit des starken Bösen nimmt Ihre Sinne wie ein schädlicher Geruch wahr, und das mächtige Gute klingt wie himmlische Musik in Ihren Ohren. Als Aktion können Sie Ihr Bewusstsein öffnen, um solche Kräfte zu erkennen. Bis zum Ende Ihres nächsten Zuges wissen Sie, wo sich alle Himmlischen, Untoten oder Untoten im Umkreis von 60 Fuß um Sie befinden, die sich nicht in vollständiger Deckung befinden."
+      "description": "Die Anwesenheit des starken Bösen nimmt Ihre Sinne wie ein schädlicher Geruch wahr, und das mächtige Gute klingt wie himmlische Musik in Ihren Ohren. Als Aktion können Sie Ihr Bewusstsein öffnen, um solche Kräfte zu erkennen. Bis zum Ende Ihres nächsten Zuges wissen Sie, wo sich alle Himmlischen, Untoten oder Untoten im Umkreis von 18 Metern um Sie befinden, die sich nicht in vollständiger Deckung befinden."
     },
     "Lay on Hands": {
       "name": "Auf die Hände legen",
@@ -290,11 +290,11 @@
     },
     "Aura of Protection": {
       "name": "Aura des Schutzes",
-      "description": "Immer wenn du oder eine befreundete Kreatur in einem Umkreis von 10 Fuß um dich einen Rettungswurf ausführen musst, erhält die Kreatur einen Bonus auf den Rettungswurf in Höhe deines Charisma-Modifikators (mit einem Mindestbonus von +1). Sie müssen sich bewusst sein, diesen Bonus zu gewähren."
+      "description": "Immer wenn du oder eine befreundete Kreatur in einem Umkreis von 3 Metern um dich einen Rettungswurf ausführen musst, erhält die Kreatur einen Bonus auf den Rettungswurf in Höhe deines Charisma-Modifikators (mit einem Mindestbonus von +1). Sie müssen sich bewusst sein, diesen Bonus zu gewähren."
     },
     "Aura of Courage": {
       "name": "Aura des Mutes",
-      "description": "Du und freundliche Kreaturen im Umkreis von 10 Fuß um dich herum können nicht erschreckt werden, solange du bei Bewusstsein bist."
+      "description": "Du und freundliche Kreaturen im Umkreis von 3 Metern um dich herum können nicht erschreckt werden, solange du bei Bewusstsein bist."
     },
     "Cleansing Touch": {
       "name": "Reinigende Berührung",
@@ -324,7 +324,7 @@
     },
     "Primeval Awareness": {
       "name": "Urzeitliches Bewusstsein",
-      "description": "Du kannst deine Aktion nutzen und einen Ranger-Zauberslot ausgeben, um deine Aufmerksamkeit auf die Region um dich herum zu richten. Für 1 Minute pro Stufe des Zauberplatzes, den Sie aufwenden, können Sie spüren, ob sich im Umkreis von 1 Meile um Sie herum Aberrationen, Himmlische, Drachen, Elementare, Feenwesen, Unholde oder Untote befinden."
+      "description": "Du kannst deine Aktion nutzen und einen Ranger-Zauberslot ausgeben, um deine Aufmerksamkeit auf die Region um dich herum zu richten. Für 1 Minute pro Stufe des Zauberplatzes, den Sie aufwenden, können Sie spüren, ob sich im Umkreis von 1,5 Kilometern um Sie herum Aberrationen, Himmlische, Drachen, Elementare, Feenwesen, Unholde oder Untote befinden."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
@@ -362,7 +362,7 @@
     },
     "Sneak Attack": {
       "name": "Hinterhältiger Angriff",
-      "description": "Sie wissen, wie man subtil zuschlägt und die Ablenkung eines Gegners ausnutzt. Einmal pro Spielzug kannst du einer Kreatur, die du mit einem Angriff triffst, zusätzlichen Schaden zufügen, wenn du beim Angriffswurf im Vorteil bist. Der Angriff muss mit einer Finesse- oder einer Fernkampfwaffe erfolgen. Sie benötigen keinen Vorteil, wenn sich ein anderer Feind im Umkreis von 5 Fuß um das Ziel befindet, dieser Feind nicht außer Gefecht gesetzt ist und Sie keinen Nachteil haben. Der zusätzliche Schaden beträgt 1W6 auf den Schurkenstufen 1–2 und erhöht sich dann alle zwei Schurkenstufen um 1W6: 2W6 auf Stufe 3, 3W6 auf Stufe 5, 4W6 auf Stufe 7, 5W6 auf Stufe 9, 6W6 auf Stufe 11, 7W6 auf Stufe 13, 8W6 auf Stufe 15, 9W6 auf Stufe 17 und 10W6 auf Stufe 19."
+      "description": "Sie wissen, wie man subtil zuschlägt und die Ablenkung eines Gegners ausnutzt. Einmal pro Spielzug kannst du einer Kreatur, die du mit einem Angriff triffst, zusätzlichen Schaden zufügen, wenn du beim Angriffswurf im Vorteil bist. Der Angriff muss mit einer Finesse- oder einer Fernkampfwaffe erfolgen. Sie benötigen keinen Vorteil, wenn sich ein anderer Feind im Umkreis von 1,5 Metern um das Ziel befindet, dieser Feind nicht außer Gefecht gesetzt ist und Sie keinen Nachteil haben. Der zusätzliche Schaden beträgt 1W6 auf den Schurkenstufen 1–2 und erhöht sich dann alle zwei Schurkenstufen um 1W6: 2W6 auf Stufe 3, 3W6 auf Stufe 5, 4W6 auf Stufe 7, 5W6 auf Stufe 9, 6W6 auf Stufe 11, 7W6 auf Stufe 13, 8W6 auf Stufe 15, 9W6 auf Stufe 17 und 10W6 auf Stufe 19."
     },
     "Thieves' Cant": {
       "name": "Diebesgesang",
@@ -394,7 +394,7 @@
     },
     "Blindsense": {
       "name": "Blindsinn",
-      "description": "Wenn Sie hören können, wissen Sie, wo sich versteckte oder unsichtbare Kreaturen im Umkreis von 10 Fuß um Sie befinden."
+      "description": "Wenn Sie hören können, wissen Sie, wo sich versteckte oder unsichtbare Kreaturen im Umkreis von 3 Metern um Sie befinden."
     },
     "Slippery Mind": {
       "name": "Schlüpfriger Geist",

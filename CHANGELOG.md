@@ -28,7 +28,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Weapon Mastery nas rolagens**: ao rolar uma arma de um tipo dominado, a rolagem mostra a maestria com os valores calculados (dano do Graze no erro, CD do Topple, segundo ataque do Cleave) e, no Guerreiro 9+, as opcoes do Tactical Master.
 - **Agonizing Blast**: o truque escolhido como alvo soma o modificador de Carisma ao dano, e a rolagem do Eldritch Blast indica quantos raios ele dispara no nivel atual.
 - **Creditos e licencas**: nova tela nas configuracoes com os avisos de atribuicao do SRD 5.1 e do SRD 5.2.1 (CC-BY-4.0), lidos do manifesto de cada pacote, e o aviso de nao afiliacao com a Wizards of the Coast.
-- **Catalogo de feras**: blocos de estatisticas do SRD 5.1 e do SRD 5.2.1 para as Feras ate ND 1, com ataques, dano, testes de resistencia e recargas estruturados para o futuro tabuleiro.
+- **Catalogo de feras**: blocos de estatisticas do SRD 5.1 e do SRD 5.2.1 para as Feras ate ND 1, com ataques, dano, testes de resistencia e recargas estruturados para o futuro tabuleiro. Nomes, tracos, acoes e idiomas das feras estao traduzidos nos dez idiomas do app.
 
 ### Changed
 - **Reinicio de niveis 2014**: desfaz o que as escolhas removidas concediam, remove proficiencias de multiclasse e so zera o XP com o rastreio ligado; com historico completo, tambem desfaz aumentos de atributo e troca as pericias da classe.
@@ -37,6 +37,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Novidades no app**: anuncio da 3.0.0.
 
 ### Fixed
+- **Termos unificados nas traducoes**: portugues usa "Caido" (como o Livro do Jogador oficial) em vez de "Prostrado"; coreano usa "히트 포인트" em todo o conteudo; turco separa CA ("ZS") de CD ("ZD") e usa "TD" para nivel de desafio; italiano chama o ataque Ram de "Testata", liberando "Carica" para o traco Charge.
+- **Distancias em metros em frances, italiano e alemao**: magias, itens, caracteristicas e feras passam a usar metros, como os livros oficiais desses idiomas (1,5 m por quadrado). Espanhol continua em pes, como o material oficial em espanhol.
+- **Erros do SRD nas feras**: corrigidos o ataque do Urso-Negro e do Urso-Pardo de 2014, a Furtividade da Ra Gigante de 2024 e um erro de digitacao do Cavalo-Marinho Gigante; o importador documenta cada correcao.
+- **CD de resistencia**: o rotulo "Save DC" estava traduzido como "salvar" (de arquivo) em alemao, espanhol, frances, japones, coreano, russo e chines.
 - **Descanso longo 2014**: recupera metade dos Dados de Vida arredondada para baixo, com minimo de um.
 - **Criacao 2014**: ferramentas fixas do antecedente, como as ferramentas de ladrao do Criminoso, agora sao gravadas na ficha.
 - **Subida de nivel 2014**: escolhas como Especializacao do Ladino e do Bardo agora aplicam as pericias escolhidas.

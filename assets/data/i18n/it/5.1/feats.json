@@ -7,7 +7,7 @@
   "Athlete": {
     "name": "Atleta",
     "prerequisite": null,
-    "description": "Hai seguito un allenamento fisico approfondito per ottenere i seguenti benefici:\n• Aumenta il tuo punteggio di Forza o Destrezza di 1, fino a un massimo di 20.\n• Quando sei prono, alzarti utilizza solo 5 piedi del tuo movimento.\n• Arrampicarsi non ti costa movimento extra.\n• È possibile eseguire un salto in lungo con corsa o un salto in alto con corsa dopo essersi mossi di soli 5 piedi a piedi, anziché di 10 piedi."
+    "description": "Hai seguito un allenamento fisico approfondito per ottenere i seguenti benefici:\n• Aumenta il tuo punteggio di Forza o Destrezza di 1, fino a un massimo di 20.\n• Quando sei prono, alzarti utilizza solo 1,5 metri del tuo movimento.\n• Arrampicarsi non ti costa movimento extra.\n• È possibile eseguire un salto in lungo con corsa o un salto in alto con corsa dopo essersi mossi di soli 1,5 metri a piedi, anziché di 3 metri."
   },
   "Actor": {
     "name": "Attore",
@@ -122,7 +122,7 @@
   "Mobile": {
     "name": "Mobile",
     "prerequisite": null,
-    "description": "Sei eccezionalmente veloce e agile. Ottieni i seguenti vantaggi:\n• La tua velocità aumenta di 10 piedi.\n• Quando usi l'azione Scattare, il terreno difficile non ti costa movimento extra in quel turno.\n• Quando effettui un attacco in mischia contro una creatura, non provochi attacchi di opportunità da parte di quella creatura per il resto del turno, indipendentemente dal fatto che l'attacco vada a segno o meno."
+    "description": "Sei eccezionalmente veloce e agile. Ottieni i seguenti vantaggi:\n• La tua velocità aumenta di 3 metri.\n• Quando usi l'azione Scattare, il terreno difficile non ti costa movimento extra in quel turno.\n• Quando effettui un attacco in mischia contro una creatura, non provochi attacchi di opportunità da parte di quella creatura per il resto del turno, indipendentemente dal fatto che l'attacco vada a segno o meno."
   },
   "Moderately Armored": {
     "name": "Moderatamente corazzato",

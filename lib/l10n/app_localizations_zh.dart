@@ -2329,7 +2329,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get spellsAttack => '攻击';
 
   @override
-  String get spellsSaveDC => '保存 DC';
+  String get spellsSaveDC => '豁免 DC';
 
   @override
   String get spellsCantrips => '戏法';

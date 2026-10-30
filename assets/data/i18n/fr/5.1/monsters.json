@@ -3,10 +3,16 @@
     "name": "Singe",
     "actions": {
       "fist": {
-        "name": "Poing"
+        "name": "Poing",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
       },
       "rock": {
-        "name": "Rocher"
+        "name": "Rocher",
+        "description": "Attaque d'arme à distance : +5 au toucher, portée 7,5/15 mètres, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
+      },
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "Le singe effectue deux attaques de poing."
       }
     }
   },
@@ -14,7 +20,8 @@
     "name": "Bec-de-hache",
     "actions": {
       "beak": {
-        "name": "Bec"
+        "name": "Bec",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d8 + 2) dégâts tranchants."
       }
     }
   },
@@ -22,7 +29,14 @@
     "name": "Babouin",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge 1,5 mètre, une cible. Touché : 1 (1d4 - 1) dégâts perforants."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le babouin a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -30,7 +44,14 @@
     "name": "Blaireau",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "Le blaireau a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
       }
     }
   },
@@ -38,7 +59,18 @@
     "name": "Chauve-souris",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une créature. Touché : 1 dégât perforant."
+      }
+    },
+    "traits": {
+      "echolocation": {
+        "name": "Écholocalisation",
+        "description": "La chauve-souris ne peut pas utiliser sa vision aveugle lorsqu'elle est assourdie."
+      },
+      "keen_hearing": {
+        "name": "Ouïe aiguisée",
+        "description": "La chauve-souris a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe."
       }
     }
   },
@@ -46,10 +78,22 @@
     "name": "Ours noir",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 5 (1d6 + 2) dégâts perforants."
       },
       "claws": {
-        "name": "Griffes"
+        "name": "Griffes",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (2d4 + 2) dégâts tranchants."
+      },
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "L'ours effectue deux attaques : une de morsure et une de griffes."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "L'ours a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
       }
     }
   },
@@ -57,7 +101,18 @@
     "name": "Faucon de sang",
     "actions": {
       "beak": {
-        "name": "Bec"
+        "name": "Bec",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts perforants."
+      }
+    },
+    "traits": {
+      "keen_sight": {
+        "name": "Vue aiguisée",
+        "description": "Le faucon a l'avantage aux tests de Sagesse (Perception) basés sur la vue."
+      },
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le faucon a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -65,7 +120,18 @@
     "name": "Sanglier",
     "actions": {
       "tusk": {
-        "name": "Défense"
+        "name": "Défense",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts tranchants."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Charge",
+        "description": "Si le sanglier se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de défense lors du même tour, la cible subit 3 (1d6) dégâts tranchants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
+      },
+      "relentless": {
+        "name": "Acharnement",
+        "description": "Si le sanglier subit 7 dégâts ou moins qui devraient le faire tomber à 0 point de vie, il tombe à 1 point de vie à la place."
       }
     }
   },
@@ -73,10 +139,22 @@
     "name": "Ours brun",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (1d8 + 4) dégâts perforants."
       },
       "claws": {
-        "name": "Griffes"
+        "name": "Griffes",
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 11 (2d6 + 4) dégâts tranchants."
+      },
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "L'ours effectue deux attaques : une de morsure et une de griffes."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "L'ours a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
       }
     }
   },
@@ -84,7 +162,8 @@
     "name": "Chameau",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 2 (1d4) dégâts contondants."
       }
     }
   },
@@ -92,7 +171,14 @@
     "name": "Chat",
     "actions": {
       "claws": {
-        "name": "Griffes"
+        "name": "Griffes",
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât tranchant."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "Le chat a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
       }
     }
   },
@@ -100,10 +186,12 @@
     "name": "Serpent constricteur",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 5 (1d6 + 2) dégâts perforants."
       },
       "constrict": {
-        "name": "Constriction"
+        "name": "Constriction",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 6 (1d8 + 2) dégâts contondants, et la cible est agrippée (évasion DD 14). Jusqu'à la fin de cette empoignade, la créature est entravée et le serpent ne peut pas étreindre une autre cible."
       }
     }
   },
@@ -111,7 +199,14 @@
     "name": "Crabe",
     "actions": {
       "claw": {
-        "name": "Griffe"
+        "name": "Griffe",
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât contondant."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amphibie",
+        "description": "Le crabe peut respirer à l'air libre et sous l'eau."
       }
     }
   },
@@ -119,7 +214,14 @@
     "name": "Crocodile",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 7 (1d10 + 2) dégâts perforants, et la cible est agrippée (évasion DD 12). Jusqu'à la fin de cette empoignade, la cible est entravée et le crocodile ne peut pas mordre une autre cible."
+      }
+    },
+    "traits": {
+      "hold_breath": {
+        "name": "Apnée",
+        "description": "Le crocodile peut retenir son souffle pendant 15 minutes."
       }
     }
   },
@@ -127,7 +229,8 @@
     "name": "Cerf",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 2 (1d4) dégâts perforants."
       }
     }
   },
@@ -135,7 +238,18 @@
     "name": "Loup sanguinaire",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 10 (2d6 + 3) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Ouïe et odorat aiguisés",
+        "description": "Le loup a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe ou l'odorat."
+      },
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le loup a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -143,7 +257,8 @@
     "name": "Cheval de trait",
     "actions": {
       "hooves": {
-        "name": "Sabots"
+        "name": "Sabots",
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 9 (2d4 + 4) dégâts contondants."
       }
     }
   },
@@ -151,7 +266,14 @@
     "name": "Aigle",
     "actions": {
       "talons": {
-        "name": "Serres"
+        "name": "Serres",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts tranchants."
+      }
+    },
+    "traits": {
+      "keen_sight": {
+        "name": "Vue aiguisée",
+        "description": "L'aigle a l'avantage aux tests de Sagesse (Perception) basés sur la vue."
       }
     }
   },
@@ -159,10 +281,18 @@
     "name": "Élan",
     "actions": {
       "ram": {
-        "name": "Charge"
+        "name": "Charge",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
       },
       "hooves": {
-        "name": "Sabots"
+        "name": "Sabots",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une créature à terre. Touché : 8 (2d4 + 3) dégâts contondants."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Charge",
+        "description": "Si l'élan se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 7 (2d6) dégâts supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
       }
     }
   },
@@ -170,21 +300,50 @@
     "name": "Serpent volant",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant plus 7 (3d4) dégâts de poison."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Vol rasant",
+        "description": "Le serpent ne provoque pas d'attaques d'opportunité lorsqu'il sort en volant de l'allonge d'un ennemi."
       }
     }
   },
   "Frog": {
-    "name": "Grenouille"
+    "name": "Grenouille",
+    "traits": {
+      "amphibious": {
+        "name": "Amphibie",
+        "description": "La grenouille peut respirer à l'air libre et sous l'eau."
+      },
+      "standing_leap": {
+        "name": "Saut sans élan",
+        "description": "Le saut en longueur de la grenouille peut atteindre 3 mètres et son saut en hauteur 1,5 mètre, avec ou sans élan."
+      }
+    }
   },
   "Giant Badger": {
     "name": "Blaireau géant",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts perforants."
       },
       "claws": {
-        "name": "Griffes"
+        "name": "Griffes",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (2d4 + 1) dégâts tranchants."
+      },
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "Le blaireau effectue deux attaques : une de morsure et une de griffes."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "Le blaireau a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
       }
     }
   },
@@ -192,7 +351,18 @@
     "name": "Chauve-souris géante",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 5 (1d6 + 2) dégâts perforants."
+      }
+    },
+    "traits": {
+      "echolocation": {
+        "name": "Écholocalisation",
+        "description": "La chauve-souris ne peut pas utiliser sa vision aveugle lorsqu'elle est assourdie."
+      },
+      "keen_hearing": {
+        "name": "Ouïe aiguisée",
+        "description": "La chauve-souris a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe."
       }
     }
   },
@@ -200,7 +370,8 @@
     "name": "Mille-pattes géant",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 4 (1d4 + 2) dégâts perforants, et la cible doit réussir un jet de sauvegarde de Constitution DD 11 sous peine de subir 10 (3d6) dégâts de poison. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
       }
     }
   },
@@ -208,7 +379,14 @@
     "name": "Crabe géant",
     "actions": {
       "claw": {
-        "name": "Griffe"
+        "name": "Griffe",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts contondants, et la cible est agrippée (évasion DD 11). Le crabe possède deux pinces, chacune ne pouvant agripper qu'une seule cible."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amphibie",
+        "description": "Le crabe peut respirer à l'air libre et sous l'eau."
       }
     }
   },
@@ -216,18 +394,40 @@
     "name": "Aigle géant",
     "actions": {
       "beak": {
-        "name": "Bec"
+        "name": "Bec",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d6 + 3) dégâts perforants."
       },
       "talons": {
-        "name": "Serres"
+        "name": "Serres",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 10 (2d6 + 3) dégâts tranchants."
+      },
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "L'aigle effectue deux attaques : une avec son bec et une avec ses serres."
       }
-    }
+    },
+    "traits": {
+      "keen_sight": {
+        "name": "Vue aiguisée",
+        "description": "L'aigle a l'avantage aux tests de Sagesse (Perception) basés sur la vue."
+      }
+    },
+    "languages": [
+      "Aigle géant, comprend le Commun et l'Aérien mais ne peut pas les parler"
+    ]
   },
   "Giant Fire Beetle": {
     "name": "Scarabée de feu géant",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge 1,5 mètre, une cible. Touché : 2 (1d6 - 1) dégâts tranchants."
+      }
+    },
+    "traits": {
+      "illumination": {
+        "name": "Illumination",
+        "description": "Le scarabée émet une lumière vive dans un rayon de 3 mètres et une lumière faible sur 3 mètres supplémentaires."
       }
     }
   },
@@ -235,7 +435,22 @@
     "name": "Grenouille géante",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts perforants, et la cible est agrippée (évasion DD 11). Jusqu'à la fin de cette empoignade, la cible est entravée et la grenouille ne peut pas mordre une autre cible."
+      },
+      "swallow": {
+        "name": "Avaler",
+        "description": "La grenouille effectue une attaque de morsure contre une cible de taille Petite ou inférieure qu'elle agrippe. Si l'attaque touche, la cible est avalée et l'empoignade prend fin. La cible avalée est aveuglée et entravée, elle bénéficie d'un abri total contre les attaques et autres effets provenant de l'extérieur de la grenouille, et elle subit 5 (2d4) dégâts d'acide au début de chaque tour de la grenouille. La grenouille ne peut avaler qu'une seule cible à la fois."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amphibie",
+        "description": "La grenouille peut respirer à l'air libre et sous l'eau."
+      },
+      "standing_leap": {
+        "name": "Saut sans élan",
+        "description": "Le saut en longueur de la grenouille peut atteindre 6 mètres et son saut en hauteur 3 mètres, avec ou sans élan."
       }
     }
   },
@@ -243,7 +458,18 @@
     "name": "Chèvre géante",
     "actions": {
       "ram": {
-        "name": "Charge"
+        "name": "Charge",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (2d4 + 3) dégâts contondants."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Charge",
+        "description": "Si la chèvre se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 5 (2d4) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
+      },
+      "sure_footed": {
+        "name": "Pied sûr",
+        "description": "La chèvre a l'avantage aux jets de sauvegarde de Force et de Dextérité contre les effets qui la jetteraient à terre."
       }
     }
   },
@@ -251,7 +477,14 @@
     "name": "Hyène géante",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 10 (2d6 + 3) dégâts perforants."
+      }
+    },
+    "traits": {
+      "rampage": {
+        "name": "Déchaînement",
+        "description": "Lorsque la hyène fait tomber une créature à 0 point de vie avec une attaque au corps à corps pendant son tour, elle peut, par une action bonus, se déplacer d'une distance maximale égale à la moitié de sa vitesse et effectuer une attaque de morsure."
       }
     }
   },
@@ -259,7 +492,8 @@
     "name": "Lézard géant",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d8 + 2) dégâts perforants."
       }
     }
   },
@@ -267,7 +501,26 @@
     "name": "Pieuvre géante",
     "actions": {
       "tentacles": {
-        "name": "Tentacules"
+        "name": "Tentacules",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 4,5 mètres, une cible. Touché : 10 (2d6 + 3) dégâts contondants. Si la cible est une créature, elle est agrippée (évasion DD 16). Jusqu'à la fin de cette empoignade, la cible est entravée et la pieuvre ne peut pas utiliser ses tentacules contre une autre cible."
+      },
+      "ink_cloud": {
+        "name": "Nuage d'encre",
+        "description": "Si la pieuvre se trouve sous l'eau, un nuage d'encre de 6 mètres de rayon se répand tout autour d'elle. La zone est fortement obscurcie pendant 1 minute, mais un courant important peut disperser l'encre. Après avoir libéré l'encre, la pieuvre peut effectuer l'action Foncer par une action bonus."
+      }
+    },
+    "traits": {
+      "hold_breath": {
+        "name": "Apnée",
+        "description": "Hors de l'eau, la pieuvre peut retenir son souffle pendant 1 heure."
+      },
+      "underwater_camouflage": {
+        "name": "Camouflage subaquatique",
+        "description": "La pieuvre a l'avantage aux tests de Dextérité (Furtivité) effectués sous l'eau."
+      },
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "La pieuvre ne peut respirer que sous l'eau."
       }
     }
   },
@@ -275,15 +528,30 @@
     "name": "Chouette géante",
     "actions": {
       "talons": {
-        "name": "Serres"
+        "name": "Serres",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (2d6 + 1) dégâts tranchants."
       }
-    }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Vol rasant",
+        "description": "La chouette ne provoque pas d'attaques d'opportunité lorsqu'elle sort en volant de l'allonge d'un ennemi."
+      },
+      "keen_hearing_and_sight": {
+        "name": "Ouïe et vue aiguisées",
+        "description": "La chouette a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe ou la vue."
+      }
+    },
+    "languages": [
+      "Chouette géante, comprend le Commun, l'Elfique et le Sylvestre mais ne peut pas les parler"
+    ]
   },
   "Giant Poisonous Snake": {
     "name": "Serpent venimeux géant",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 3 mètres, une cible. Touché : 6 (1d4 + 4) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 10 (3d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
       }
     }
   },
@@ -291,7 +559,18 @@
     "name": "Rat géant",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts perforants."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "Le rat a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
+      },
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le rat a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -299,7 +578,18 @@
     "name": "Hippocampe géant",
     "actions": {
       "ram": {
-        "name": "Charge"
+        "name": "Charge",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts contondants."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Charge",
+        "description": "Si l'hippocampe se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 7 (2d6) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
+      },
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "L'hippocampe ne peut respirer que sous l'eau."
       }
     }
   },
@@ -307,10 +597,26 @@
     "name": "Araignée géante",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une créature. Touché : 7 (1d8 + 3) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 9 (2d8) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
       },
       "web": {
-        "name": "Toile"
+        "name": "Toile",
+        "description": "Attaque d'arme à distance : +5 au toucher, portée 9/18 mètres, une créature. Touché : la cible est entravée par la toile. Par une action, la cible entravée peut effectuer un test de Force DD 12 ; en cas de réussite, elle déchire la toile. La toile peut aussi être attaquée et détruite (CA 10 ; pv 5 ; vulnérabilité aux dégâts de feu ; immunité aux dégâts contondants, de poison et psychiques)."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Pattes d'araignée",
+        "description": "L'araignée peut escalader des surfaces difficiles, y compris se déplacer à l'envers au plafond, sans avoir à effectuer de test de caractéristique."
+      },
+      "web_sense": {
+        "name": "Perception des toiles",
+        "description": "Lorsqu'elle est en contact avec une toile, l'araignée connaît la position exacte de toute autre créature en contact avec la même toile."
+      },
+      "web_walker": {
+        "name": "Marche sur les toiles",
+        "description": "L'araignée ignore les restrictions de déplacement imposées par les toiles d'araignée."
       }
     }
   },
@@ -318,7 +624,22 @@
     "name": "Crapaud géant",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (1d10 + 2) dégâts perforants plus 5 (1d10) dégâts de poison, et la cible est agrippée (évasion DD 13). Jusqu'à la fin de cette empoignade, la cible est entravée et le crapaud ne peut pas mordre une autre cible."
+      },
+      "swallow": {
+        "name": "Avaler",
+        "description": "Le crapaud effectue une attaque de morsure contre une cible de taille Moyenne ou inférieure qu'il agrippe. Si l'attaque touche, la cible est avalée et l'empoignade prend fin. La cible avalée est aveuglée et entravée, elle bénéficie d'un abri total contre les attaques et autres effets provenant de l'extérieur du crapaud, et elle subit 10 (3d6) dégâts d'acide au début de chaque tour du crapaud. Le crapaud ne peut avaler qu'une seule cible à la fois."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amphibie",
+        "description": "Le crapaud peut respirer à l'air libre et sous l'eau."
+      },
+      "standing_leap": {
+        "name": "Saut sans élan",
+        "description": "Le saut en longueur du crapaud peut atteindre 6 mètres et son saut en hauteur 3 mètres, avec ou sans élan."
       }
     }
   },
@@ -326,18 +647,38 @@
     "name": "Vautour géant",
     "actions": {
       "beak": {
-        "name": "Bec"
+        "name": "Bec",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (2d4 + 2) dégâts perforants."
       },
       "talons": {
-        "name": "Serres"
+        "name": "Serres",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 9 (2d6 + 2) dégâts tranchants."
+      },
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "Le vautour effectue deux attaques : une avec son bec et une avec ses serres."
       }
-    }
+    },
+    "traits": {
+      "keen_sight_and_smell": {
+        "name": "Vue et odorat aiguisés",
+        "description": "Le vautour a l'avantage aux tests de Sagesse (Perception) basés sur la vue ou l'odorat."
+      },
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le vautour a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+      }
+    },
+    "languages": [
+      "comprend le Commun mais ne peut pas le parler"
+    ]
   },
   "Giant Wasp": {
     "name": "Guêpe géante",
     "actions": {
       "sting": {
-        "name": "Dard"
+        "name": "Dard",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 5 (1d6 + 2) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 10 (3d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
       }
     }
   },
@@ -345,7 +686,14 @@
     "name": "Belette géante",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 5 (1d4 + 3) dégâts perforants."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Ouïe et odorat aiguisés",
+        "description": "La belette a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe ou l'odorat."
       }
     }
   },
@@ -353,7 +701,22 @@
     "name": "Araignée-loup géante",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une créature. Touché : 4 (1d6 + 1) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 7 (2d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Pattes d'araignée",
+        "description": "L'araignée peut escalader des surfaces difficiles, y compris se déplacer à l'envers au plafond, sans avoir à effectuer de test de caractéristique."
+      },
+      "web_sense": {
+        "name": "Perception des toiles",
+        "description": "Lorsqu'elle est en contact avec une toile, l'araignée connaît la position exacte de toute autre créature en contact avec la même toile."
+      },
+      "web_walker": {
+        "name": "Marche sur les toiles",
+        "description": "L'araignée ignore les restrictions de déplacement imposées par les toiles d'araignée."
       }
     }
   },
@@ -361,7 +724,18 @@
     "name": "Chèvre",
     "actions": {
       "ram": {
-        "name": "Charge"
+        "name": "Charge",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 3 (1d4 + 1) dégâts contondants."
+      }
+    },
+    "traits": {
+      "charge": {
+        "name": "Charge",
+        "description": "Si la chèvre se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 2 (1d4) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 10 sous peine d'être jetée à terre."
+      },
+      "sure_footed": {
+        "name": "Pied sûr",
+        "description": "La chèvre a l'avantage aux jets de sauvegarde de Force et de Dextérité contre les effets qui la jetteraient à terre."
       }
     }
   },
@@ -369,7 +743,14 @@
     "name": "Faucon",
     "actions": {
       "talons": {
-        "name": "Serres"
+        "name": "Serres",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât tranchant."
+      }
+    },
+    "traits": {
+      "keen_sight": {
+        "name": "Vue aiguisée",
+        "description": "Le faucon a l'avantage aux tests de Sagesse (Perception) basés sur la vue."
       }
     }
   },
@@ -377,7 +758,14 @@
     "name": "Hyène",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 3 (1d6) dégâts perforants."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "La hyène a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -385,7 +773,18 @@
     "name": "Chacal",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge 1,5 mètre, une cible. Touché : 1 (1d4 - 1) dégâts perforants."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Ouïe et odorat aiguisés",
+        "description": "Le chacal a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe ou l'odorat."
+      },
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le chacal a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -393,10 +792,30 @@
     "name": "Lion",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (1d8 + 3) dégâts perforants."
       },
       "claw": {
-        "name": "Griffe"
+        "name": "Griffe",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d6 + 3) dégâts tranchants."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "Le lion a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
+      },
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le lion a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+      },
+      "pounce": {
+        "name": "Bond",
+        "description": "Si le lion se déplace d'au moins 6 mètres en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre. Si la cible est à terre, le lion peut effectuer contre elle une attaque de morsure par une action bonus."
+      },
+      "running_leap": {
+        "name": "Saut avec élan",
+        "description": "Avec 3 mètres d'élan, le lion peut effectuer un saut en longueur de 7,5 mètres au maximum."
       }
     }
   },
@@ -404,7 +823,8 @@
     "name": "Lézard",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
       }
     }
   },
@@ -412,7 +832,14 @@
     "name": "Molosse",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Ouïe et odorat aiguisés",
+        "description": "Le molosse a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe ou l'odorat."
       }
     }
   },
@@ -420,7 +847,18 @@
     "name": "Mule",
     "actions": {
       "hooves": {
-        "name": "Sabots"
+        "name": "Sabots",
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts contondants."
+      }
+    },
+    "traits": {
+      "beast_of_burden": {
+        "name": "Bête de somme",
+        "description": "La mule est considérée comme un animal de taille Grande pour déterminer sa capacité de charge."
+      },
+      "sure_footed": {
+        "name": "Pied sûr",
+        "description": "La mule a l'avantage aux jets de sauvegarde de Force et de Dextérité contre les effets qui la jetteraient à terre."
       }
     }
   },
@@ -428,7 +866,26 @@
     "name": "Pieuvre",
     "actions": {
       "tentacles": {
-        "name": "Tentacules"
+        "name": "Tentacules",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât contondant, et la cible est agrippée (évasion DD 10). Jusqu'à la fin de cette empoignade, la pieuvre ne peut pas utiliser ses tentacules contre une autre cible."
+      },
+      "ink_cloud": {
+        "name": "Nuage d'encre",
+        "description": "Si la pieuvre se trouve sous l'eau, un nuage d'encre de 1,5 mètre de rayon se répand tout autour d'elle. La zone est fortement obscurcie pendant 1 minute, mais un courant important peut disperser l'encre. Après avoir libéré l'encre, la pieuvre peut effectuer l'action Foncer par une action bonus."
+      }
+    },
+    "traits": {
+      "hold_breath": {
+        "name": "Apnée",
+        "description": "Hors de l'eau, la pieuvre peut retenir son souffle pendant 30 minutes."
+      },
+      "underwater_camouflage": {
+        "name": "Camouflage subaquatique",
+        "description": "La pieuvre a l'avantage aux tests de Dextérité (Furtivité) effectués sous l'eau."
+      },
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "La pieuvre ne peut respirer que sous l'eau."
       }
     }
   },
@@ -436,7 +893,18 @@
     "name": "Chouette",
     "actions": {
       "talons": {
-        "name": "Serres"
+        "name": "Serres",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât tranchant."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Vol rasant",
+        "description": "La chouette ne provoque pas d'attaques d'opportunité lorsqu'elle sort en volant de l'allonge d'un ennemi."
+      },
+      "keen_hearing_and_sight": {
+        "name": "Ouïe et vue aiguisées",
+        "description": "La chouette a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe ou la vue."
       }
     }
   },
@@ -444,10 +912,22 @@
     "name": "Panthère",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 5 (1d6 + 2) dégâts perforants."
       },
       "claw": {
-        "name": "Griffe"
+        "name": "Griffe",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts tranchants."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "La panthère a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
+      },
+      "pounce": {
+        "name": "Bond",
+        "description": "Si la panthère se déplace d'au moins 6 mètres en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 12 sous peine d'être jetée à terre. Si la cible est à terre, la panthère peut effectuer contre elle une attaque de morsure par une action bonus."
       }
     }
   },
@@ -455,7 +935,8 @@
     "name": "Serpent venimeux",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant, et la cible doit effectuer un jet de sauvegarde de Constitution DD 10. Elle subit 5 (2d4) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
       }
     }
   },
@@ -463,7 +944,8 @@
     "name": "Poney",
     "actions": {
       "hooves": {
-        "name": "Sabots"
+        "name": "Sabots",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (2d4 + 2) dégâts contondants."
       }
     }
   },
@@ -471,7 +953,18 @@
     "name": "Quipper",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+      }
+    },
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frénésie sanguinaire",
+        "description": "Le quipper a l'avantage aux jets d'attaque au corps à corps contre toute créature qui n'a pas tous ses points de vie."
+      },
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "Le quipper ne peut respirer que sous l'eau."
       }
     }
   },
@@ -479,7 +972,14 @@
     "name": "Rat",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "Le rat a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
       }
     }
   },
@@ -487,7 +987,14 @@
     "name": "Corbeau",
     "actions": {
       "beak": {
-        "name": "Bec"
+        "name": "Bec",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+      }
+    },
+    "traits": {
+      "mimicry": {
+        "name": "Imitation",
+        "description": "Le corbeau peut imiter des sons simples qu'il a entendus, comme une personne qui chuchote, un bébé qui pleure ou un animal qui piaille. Une créature qui entend ces sons peut deviner qu'il s'agit d'imitations en réussissant un test de Sagesse (Intuition) DD 10."
       }
     }
   },
@@ -495,7 +1002,18 @@
     "name": "Requin de récif",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d8 + 2) dégâts perforants."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le requin a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+      },
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "Le requin ne peut respirer que sous l'eau."
       }
     }
   },
@@ -503,7 +1021,8 @@
     "name": "Cheval de selle",
     "actions": {
       "hooves": {
-        "name": "Sabots"
+        "name": "Sabots",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (2d4 + 3) dégâts contondants."
       }
     }
   },
@@ -511,18 +1030,40 @@
     "name": "Scorpion",
     "actions": {
       "sting": {
-        "name": "Dard"
+        "name": "Dard",
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une créature. Touché : 1 dégât perforant, et la cible doit effectuer un jet de sauvegarde de Constitution DD 9. Elle subit 4 (1d8) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
       }
     }
   },
   "Sea Horse": {
-    "name": "Hippocampe"
+    "name": "Hippocampe",
+    "traits": {
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "L'hippocampe ne peut respirer que sous l'eau."
+      }
+    }
   },
   "Spider": {
     "name": "Araignée",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 1 dégât perforant, et la cible doit réussir un jet de sauvegarde de Constitution DD 9 sous peine de subir 2 (1d4) dégâts de poison."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Pattes d'araignée",
+        "description": "L'araignée peut escalader des surfaces difficiles, y compris se déplacer à l'envers au plafond, sans avoir à effectuer de test de caractéristique."
+      },
+      "web_sense": {
+        "name": "Perception des toiles",
+        "description": "Lorsqu'elle est en contact avec une toile, l'araignée connaît la position exacte de toute autre créature en contact avec la même toile."
+      },
+      "web_walker": {
+        "name": "Marche sur les toiles",
+        "description": "L'araignée ignore les restrictions de déplacement imposées par les toiles d'araignée."
       }
     }
   },
@@ -530,7 +1071,8 @@
     "name": "Stirge",
     "actions": {
       "blood_drain": {
-        "name": "Absorption de sang"
+        "name": "Absorption de sang",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une créature. Touché : 5 (1d4 + 3) dégâts perforants, et la stirge s'accroche à la cible. Tant qu'elle est accrochée, la stirge n'attaque pas. À la place, au début de chacun des tours de la stirge, la cible perd 5 (1d4 + 3) points de vie à cause de la perte de sang."
       }
     }
   },
@@ -538,7 +1080,22 @@
     "name": "Nuée de chauves-souris",
     "actions": {
       "bites": {
-        "name": "Morsures"
+        "name": "Morsures",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 0 mètre, une créature dans l'espace de la nuée. Touché : 5 (2d4) dégâts perforants, ou 2 (1d4) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+      }
+    },
+    "traits": {
+      "echolocation": {
+        "name": "Écholocalisation",
+        "description": "La nuée ne peut pas utiliser sa vision aveugle lorsqu'elle est assourdie."
+      },
+      "keen_hearing": {
+        "name": "Ouïe aiguisée",
+        "description": "La nuée a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe."
+      },
+      "swarm": {
+        "name": "Nuée",
+        "description": "La nuée peut occuper l'espace d'une autre créature et inversement, et elle peut traverser toute ouverture assez grande pour une chauve-souris de taille Très Petite. La nuée ne peut pas récupérer de points de vie ni gagner de points de vie temporaires."
       }
     }
   },
@@ -546,7 +1103,14 @@
     "name": "Nuée d'insectes",
     "actions": {
       "bites": {
-        "name": "Morsures"
+        "name": "Morsures",
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 0 mètre, une cible dans l'espace de la nuée. Touché : 10 (4d4) dégâts perforants, ou 5 (2d4) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Nuée",
+        "description": "La nuée peut occuper l'espace d'une autre créature et inversement, et elle peut traverser toute ouverture assez grande pour un insecte de taille Très Petite. La nuée ne peut pas récupérer de points de vie ni gagner de points de vie temporaires."
       }
     }
   },
@@ -554,7 +1118,22 @@
     "name": "Nuée de quippers",
     "actions": {
       "bites": {
-        "name": "Morsures"
+        "name": "Morsures",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 0 mètre, une créature dans l'espace de la nuée. Touché : 14 (4d6) dégâts perforants, ou 7 (2d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+      }
+    },
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frénésie sanguinaire",
+        "description": "La nuée a l'avantage aux jets d'attaque au corps à corps contre toute créature qui n'a pas tous ses points de vie."
+      },
+      "swarm": {
+        "name": "Nuée",
+        "description": "La nuée peut occuper l'espace d'une autre créature et inversement, et elle peut traverser toute ouverture assez grande pour un quipper de taille Très Petite. La nuée ne peut pas récupérer de points de vie ni gagner de points de vie temporaires."
+      },
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "La nuée ne peut respirer que sous l'eau."
       }
     }
   },
@@ -562,7 +1141,18 @@
     "name": "Nuée de rats",
     "actions": {
       "bites": {
-        "name": "Morsures"
+        "name": "Morsures",
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 0 mètre, une cible dans l'espace de la nuée. Touché : 7 (2d6) dégâts perforants, ou 3 (1d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "La nuée a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
+      },
+      "swarm": {
+        "name": "Nuée",
+        "description": "La nuée peut occuper l'espace d'une autre créature et inversement, et elle peut traverser toute ouverture assez grande pour un rat de taille Très Petite. La nuée ne peut pas récupérer de points de vie ni gagner de points de vie temporaires."
       }
     }
   },
@@ -570,7 +1160,14 @@
     "name": "Nuée de corbeaux",
     "actions": {
       "beaks": {
-        "name": "Coups de bec"
+        "name": "Coups de bec",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible dans l'espace de la nuée. Touché : 7 (2d6) dégâts perforants, ou 3 (1d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Nuée",
+        "description": "La nuée peut occuper l'espace d'une autre créature et inversement, et elle peut traverser toute ouverture assez grande pour un corbeau de taille Très Petite. La nuée ne peut pas récupérer de points de vie ni gagner de points de vie temporaires."
       }
     }
   },
@@ -578,10 +1175,22 @@
     "name": "Tigre",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (1d10 + 3) dégâts perforants."
       },
       "claw": {
-        "name": "Griffe"
+        "name": "Griffe",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (1d8 + 3) dégâts tranchants."
+      }
+    },
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "Le tigre a l'avantage aux tests de Sagesse (Perception) basés sur l'odorat."
+      },
+      "pounce": {
+        "name": "Bond",
+        "description": "Si le tigre se déplace d'au moins 6 mètres en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre. Si la cible est à terre, le tigre peut effectuer contre elle une attaque de morsure par une action bonus."
       }
     }
   },
@@ -589,7 +1198,18 @@
     "name": "Vautour",
     "actions": {
       "beak": {
-        "name": "Bec"
+        "name": "Bec",
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 2 (1d4) dégâts perforants."
+      }
+    },
+    "traits": {
+      "keen_sight_and_smell": {
+        "name": "Vue et odorat aiguisés",
+        "description": "Le vautour a l'avantage aux tests de Sagesse (Perception) basés sur la vue ou l'odorat."
+      },
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le vautour a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -597,7 +1217,14 @@
     "name": "Cheval de guerre",
     "actions": {
       "hooves": {
-        "name": "Sabots"
+        "name": "Sabots",
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 11 (2d6 + 4) dégâts contondants."
+      }
+    },
+    "traits": {
+      "trampling_charge": {
+        "name": "Charge piétinante",
+        "description": "Si le cheval se déplace d'au moins 6 mètres en ligne droite vers une créature puis la touche avec une attaque de sabots lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 14 sous peine d'être jetée à terre. Si la cible est à terre, le cheval peut effectuer contre elle une autre attaque de sabots par une action bonus."
       }
     }
   },
@@ -605,7 +1232,14 @@
     "name": "Belette",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Ouïe et odorat aiguisés",
+        "description": "La belette a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe ou l'odorat."
       }
     }
   },
@@ -613,7 +1247,18 @@
     "name": "Loup",
     "actions": {
       "bite": {
-        "name": "Morsure"
+        "name": "Morsure",
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (2d4 + 2) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
+      }
+    },
+    "traits": {
+      "keen_hearing_and_smell": {
+        "name": "Ouïe et odorat aiguisés",
+        "description": "Le loup a l'avantage aux tests de Sagesse (Perception) basés sur l'ouïe ou l'odorat."
+      },
+      "pack_tactics": {
+        "name": "Tactique de meute",
+        "description": "Le loup a l'avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   }

@@ -2399,7 +2399,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get spellsAttack => 'Ataque';
 
   @override
-  String get spellsSaveDC => 'Salvar DC';
+  String get spellsSaveDC => 'CD de salvación';
 
   @override
   String get spellsCantrips => 'Trucos';

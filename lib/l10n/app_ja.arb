@@ -640,7 +640,7 @@
   "spellsPactMagicSlots": "契約魔法",
   "spellsSpellcasting": "呪文詠唱",
   "spellsAttack": "攻撃",
-  "spellsSaveDC": "DCの保存",
+  "spellsSaveDC": "セーヴ難易度",
   "spellsCantrips": "キャントリップ",
   "spellsPrepared": "準備した",
   "spellsKnown": "既知の",

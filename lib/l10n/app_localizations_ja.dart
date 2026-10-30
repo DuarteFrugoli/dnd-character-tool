@@ -2346,7 +2346,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get spellsAttack => '攻撃';
 
   @override
-  String get spellsSaveDC => 'DCの保存';
+  String get spellsSaveDC => 'セーヴ難易度';
 
   @override
   String get spellsCantrips => 'キャントリップ';

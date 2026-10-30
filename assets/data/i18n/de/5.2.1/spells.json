@@ -1,9 +1,9 @@
 {
   "Acid Splash": {
     "name": "Säurespritzer",
-    "description": "Säure explodiert in einer Kugel mit 5 Fuß Radius innerhalb von 60 Fuß. Kreaturen darin müssen einen Geschicklichkeitsrettungswurf bestehen oder erleiden 1d6 Säureschaden. Der Schaden steigt auf 2d6, 3d6 und 4d6 auf Charakterstufe 5, 11 und 17.",
+    "description": "Säure explodiert in einer Kugel mit 1,5 Meter Radius innerhalb von 18 Metern. Kreaturen darin müssen einen Geschicklichkeitsrettungswurf bestehen oder erleiden 1d6 Säureschaden. Der Schaden steigt auf 2d6, 3d6 und 4d6 auf Charakterstufe 5, 11 und 17.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -28,24 +28,24 @@
   },
   "Dancing Lights": {
     "name": "Tanzende Lichter",
-    "description": "Erzeuge bis zu vier schwebende Quellen dämmrigen Lichts, die jeweils 10 Fuß weit leuchten, oder verbinde sie zu einer mittelgroßen humanoiden Gestalt. Als Bonusaktion kannst du die Lichter bis zu 60 Fuß bewegen; sie müssen dabei höchstens 20 Fuß voneinander entfernt bleiben.",
+    "description": "Erzeuge bis zu vier schwebende Quellen dämmrigen Lichts, die jeweils 3 Meter weit leuchten, oder verbinde sie zu einer mittelgroßen humanoiden Gestalt. Als Bonusaktion kannst du die Lichter bis zu 18 Meter bewegen; sie müssen dabei höchstens 6 Meter voneinander entfernt bleiben.",
     "material": "etwas Phosphor",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Druidcraft": {
     "name": "Druidenkunst",
     "description": "Erzeuge einen kleinen Natureffekt: Sage das örtliche Wetter des nächsten Tages voraus, lasse eine Pflanze blühen, erschaffe einen harmlosen Sinneseindruck oder entzünde oder lösche eine Kerze, Fackel oder ein Lagerfeuer.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort"
   },
   "Eldritch Blast": {
     "name": "Schauriger Strahl",
     "description": "Führe mit jedem Strahl einen Fernkampf-Zauberangriff aus. Ein Treffer verursacht 1d10 Energieschaden. Auf Stufe 5 erzeugst du zwei Strahlen, auf Stufe 11 drei und auf Stufe 17 vier; wähle Ziele und führe jeden Angriff getrennt aus.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Sofort",
     "rolls": {
       "attack": {
@@ -58,16 +58,16 @@
   },
   "Elementalism": {
     "name": "Elementarismus",
-    "description": "Erzeuge innerhalb von 30 Fuß einen kleinen Elementareffekt: Bewege Luft oder Staub, lasse ein Wort im Sand erscheinen, erzeuge harmlosen Rauch oder Funken oder forme, färbe oder bewege kurz Wasser.",
+    "description": "Erzeuge innerhalb von 9 Metern einen kleinen Elementareffekt: Bewege Luft oder Staub, lasse ein Wort im Sand erscheinen, erzeuge harmlosen Rauch oder Funken oder forme, färbe oder bewege kurz Wasser.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort"
   },
   "Fire Bolt": {
     "name": "Feuerblitz",
     "description": "Führe einen Fernkampf-Zauberangriff gegen eine Kreatur oder einen Gegenstand aus. Ein Treffer verursacht 1d10 Feuerschaden und entzündet unbeaufsichtigte brennbare Gegenstände. Der Schaden steigt auf 2d10, 3d10 und 4d10 auf Stufe 5, 11 und 17.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Sofort",
     "rolls": {
       "attack": {
@@ -87,7 +87,7 @@
   },
   "Light": {
     "name": "Licht",
-    "description": "Berühre einen unbeaufsichtigten Gegenstand der Größenkategorie Groß oder kleiner. Er spendet 1 Stunde lang 20 Fuß weit helles und weitere 20 Fuß weit dämmriges Licht; eine undurchsichtige Abdeckung blockiert es.",
+    "description": "Berühre einen unbeaufsichtigten Gegenstand der Größenkategorie Groß oder kleiner. Er spendet 1 Stunde lang 6 Meter weit helles und weitere 6 Meter weit dämmriges Licht; eine undurchsichtige Abdeckung blockiert es.",
     "material": "ein Glühwürmchen oder phosphoreszierendes Moos",
     "castingTime": "Aktion",
     "range": "Berührung",
@@ -97,12 +97,12 @@
     "name": "Magierhand",
     "description": "Erzeuge für 1 Minute eine geisterhafte Hand. Sie kann Gegenstände handhaben, unverschlossene Türen oder Behälter öffnen und bis zu 10 Pfund tragen, aber nicht angreifen oder magische Gegenstände aktivieren.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Minute"
   },
   "Mending": {
     "name": "Ausbessern",
-    "description": "Repariere einen einzelnen Bruch oder Riss von höchstens 1 Fuß Länge an einem Gegenstand, den du berührst. Der Zauber kann einen magischen Gegenstand physisch reparieren, aber seine Magie nicht wiederherstellen.",
+    "description": "Repariere einen einzelnen Bruch oder Riss von höchstens 0,3 Meter Länge an einem Gegenstand, den du berührst. Der Zauber kann einen magischen Gegenstand physisch reparieren, aber seine Magie nicht wiederherstellen.",
     "material": "zwei Magnetsteine",
     "castingTime": "1 Minute",
     "range": "Berührung",
@@ -110,25 +110,25 @@
   },
   "Message": {
     "name": "Nachricht",
-    "description": "Flüstere einer Kreatur innerhalb von 120 Fuß etwas zu; nur sie hört dich und kann flüsternd antworten. Wenn du sie kennst, kann die Botschaft Hindernisse durchdringen, aber magische Stille, genügend festes Material oder Blei blockieren sie.",
+    "description": "Flüstere einer Kreatur innerhalb von 36 Metern etwas zu; nur sie hört dich und kann flüsternd antworten. Wenn du sie kennst, kann die Botschaft Hindernisse durchdringen, aber magische Stille, genügend festes Material oder Blei blockieren sie.",
     "material": "ein Kupferdraht",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "1 Runde"
   },
   "Minor Illusion": {
     "name": "Kleinere Illusion",
-    "description": "Erzeuge für 1 Minute einen Klang oder das Bild eines Gegenstands, der höchstens einen Würfel mit 5 Fuß Kantenlänge ausfüllt. Das Bild erzeugt weder Ton, Licht, Geruch noch physische Wirkungen; eine Kreatur kann es mit der Aktion Studieren und einem Nachforschungswurf gegen deinen Zauberrettungswurf-SG erkennen.",
+    "description": "Erzeuge für 1 Minute einen Klang oder das Bild eines Gegenstands, der höchstens einen Würfel mit 1,5 Meter Kantenlänge ausfüllt. Das Bild erzeugt weder Ton, Licht, Geruch noch physische Wirkungen; eine Kreatur kann es mit der Aktion Studieren und einem Nachforschungswurf gegen deinen Zauberrettungswurf-SG erkennen.",
     "material": "etwas Vlies",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Minute"
   },
   "Poison Spray": {
     "name": "Giftspritzer",
-    "description": "Führe einen Fernkampf-Zauberangriff gegen eine Kreatur innerhalb von 30 Fuß aus. Ein Treffer verursacht 1d12 Giftschaden; dieser steigt auf 2d12, 3d12 und 4d12 auf Stufe 5, 11 und 17.",
+    "description": "Führe einen Fernkampf-Zauberangriff gegen eine Kreatur innerhalb von 9 Metern aus. Ein Treffer verursacht 1d12 Giftschaden; dieser steigt auf 2d12, 3d12 und 4d12 auf Stufe 5, 11 und 17.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort",
     "rolls": {
       "attack": {
@@ -141,14 +141,14 @@
   },
   "Prestidigitation": {
     "name": "Zaubertrick",
-    "description": "Erzeuge innerhalb von 10 Fuß einen kleinen magischen Effekt: einen harmlosen Sinneseindruck, entzünde oder lösche eine kleine Flamme, reinige oder beschmutze einen kleinen Gegenstand, ändere Temperatur oder Geschmack, hinterlasse ein Zeichen oder erschaffe einen winzigen Tand. Bis zu drei anhaltende Effekte können gleichzeitig bestehen.",
+    "description": "Erzeuge innerhalb von 3 Metern einen kleinen magischen Effekt: einen harmlosen Sinneseindruck, entzünde oder lösche eine kleine Flamme, reinige oder beschmutze einen kleinen Gegenstand, ändere Temperatur oder Geschmack, hinterlasse ein Zeichen oder erschaffe einen winzigen Tand. Bis zu drei anhaltende Effekte können gleichzeitig bestehen.",
     "castingTime": "Aktion",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "Bis zu 1 Stunde"
   },
   "Produce Flame": {
     "name": "Flamme erzeugen",
-    "description": "Erzeuge als Bonusaktion eine Flamme, die 10 Minuten lang 20 Fuß weit helles und weitere 20 Fuß weit dämmriges Licht spendet. Währenddessen kannst du sie mit einer Magieaktion bis zu 60 Fuß weit schleudern; ein Fernkampf-Zauberangriff verursacht bei einem Treffer 1d8 Feuerschaden, der auf Stufe 5, 11 und 17 steigt.",
+    "description": "Erzeuge als Bonusaktion eine Flamme, die 10 Minuten lang 6 Meter weit helles und weitere 6 Meter weit dämmriges Licht spendet. Währenddessen kannst du sie mit einer Magieaktion bis zu 18 Meter weit schleudern; ein Fernkampf-Zauberangriff verursacht bei einem Treffer 1d8 Feuerschaden, der auf Stufe 5, 11 und 17 steigt.",
     "castingTime": "Bonusaktion",
     "range": "Selbst",
     "duration": "10 Minuten",
@@ -163,9 +163,9 @@
   },
   "Ray of Frost": {
     "name": "Froststrahl",
-    "description": "Führe einen Fernkampf-Zauberangriff aus. Ein Treffer verursacht 1d8 Kälteschaden und verringert die Bewegungsrate des Ziels bis zum Beginn deines nächsten Zuges um 10 Fuß. Der Schaden steigt auf 2d8, 3d8 und 4d8 auf Stufe 5, 11 und 17.",
+    "description": "Führe einen Fernkampf-Zauberangriff aus. Ein Treffer verursacht 1d8 Kälteschaden und verringert die Bewegungsrate des Ziels bis zum Beginn deines nächsten Zuges um 3 Meter. Der Schaden steigt auf 2d8, 3d8 und 4d8 auf Stufe 5, 11 und 17.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "attack": {
@@ -185,9 +185,9 @@
   },
   "Sacred Flame": {
     "name": "Heilige Flamme",
-    "description": "Eine sichtbare Kreatur innerhalb von 60 Fuß muss einen Geschicklichkeitsrettungswurf bestehen oder erleidet 1d8 gleißenden Schaden; halbe und Dreivierteldeckung helfen bei diesem Wurf nicht. Der Schaden steigt auf 2d8, 3d8 und 4d8 auf Stufe 5, 11 und 17.",
+    "description": "Eine sichtbare Kreatur innerhalb von 18 Metern muss einen Geschicklichkeitsrettungswurf bestehen oder erleidet 1d8 gleißenden Schaden; halbe und Dreivierteldeckung helfen bei diesem Wurf nicht. Der Schaden steigt auf 2d8, 3d8 und 4d8 auf Stufe 5, 11 und 17.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -222,21 +222,21 @@
     "name": "Zaubererexplosion",
     "description": "Führe einen Fernkampf-Zauberangriff gegen eine Kreatur oder einen Gegenstand aus. Ein Treffer verursacht 1d8 Säure-, Kälte-, Feuer-, Blitz-, Gift-, psychischen oder Schallschaden. Jeder Schadenswürfel mit einer 8 kann einen weiteren d8 hinzufügen, höchstens so viele zusätzliche Würfel wie dein Zaubermodifikator. Die Grundwürfel steigen auf 2d8, 3d8 und 4d8 auf Stufe 5, 11 und 17.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Sofort"
   },
   "Spare the Dying": {
     "name": "Verschonung der Sterbenden",
-    "description": "Eine Kreatur mit 0 Trefferpunkten, die nicht tot ist, wird stabilisiert. Die Reichweite beträgt 15 Fuß und verdoppelt sich auf Stufe 5, 11 und 17 auf 30, 60 beziehungsweise 120 Fuß.",
+    "description": "Eine Kreatur mit 0 Trefferpunkten, die nicht tot ist, wird stabilisiert. Die Reichweite beträgt 4,5 Meter und verdoppelt sich auf Stufe 5, 11 und 17 auf 30, 60 beziehungsweise 36 Meter.",
     "castingTime": "Aktion",
-    "range": "15 Fuß",
+    "range": "4,5 Meter",
     "duration": "Sofort"
   },
   "Starry Wisp": {
     "name": "Sternenlicht",
-    "description": "Führe einen Fernkampf-Zauberangriff aus. Ein Treffer verursacht 1d8 gleißenden Schaden; bis zum Ende deines nächsten Zuges spendet das Ziel 10 Fuß weit dämmriges Licht und kann nicht von Unsichtbarkeit profitieren. Der Schaden steigt auf 2d8, 3d8 und 4d8 auf Stufe 5, 11 und 17.",
+    "description": "Führe einen Fernkampf-Zauberangriff aus. Ein Treffer verursacht 1d8 gleißenden Schaden; bis zum Ende deines nächsten Zuges spendet das Ziel 3 Meter weit dämmriges Licht und kann nicht von Unsichtbarkeit profitieren. Der Schaden steigt auf 2d8, 3d8 und 4d8 auf Stufe 5, 11 und 17.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "attack": {
@@ -249,9 +249,9 @@
   },
   "Thaumaturgy": {
     "name": "Thaumaturgie",
-    "description": "Erzeuge innerhalb von 30 Fuß ein kleines Wunder, etwa veränderte Augen, eine donnernde Stimme mit Vorteil bei Einschüchterungswürfen, veränderte Flammen, eine sich öffnende oder schließende Tür, einen geisterhaften Klang oder ein Beben. Bis zu drei anhaltende Effekte können gleichzeitig bestehen.",
+    "description": "Erzeuge innerhalb von 9 Metern ein kleines Wunder, etwa veränderte Augen, eine donnernde Stimme mit Vorteil bei Einschüchterungswürfen, veränderte Flammen, eine sich öffnende oder schließende Tür, einen geisterhaften Klang oder ein Beben. Bis zu drei anhaltende Effekte können gleichzeitig bestehen.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Bis zu 1 Minute"
   },
   "True Strike": {
@@ -264,9 +264,9 @@
   },
   "Vicious Mockery": {
     "name": "Bösartiger Spott",
-    "description": "Eine Kreatur, die du innerhalb von 60 Fuß siehst oder hörst, muss einen Weisheitsrettungswurf bestehen oder erleidet 1d6 psychischen Schaden und hat Nachteil bei ihrem nächsten Angriff vor Ende ihres nächsten Zuges. Der Schaden steigt auf 2d6, 3d6 und 4d6 auf Stufe 5, 11 und 17.",
+    "description": "Eine Kreatur, die du innerhalb von 18 Metern siehst oder hörst, muss einen Weisheitsrettungswurf bestehen oder erleidet 1d6 psychischen Schaden und hat Nachteil bei ihrem nächsten Angriff vor Ende ihres nächsten Zuges. Der Schaden steigt auf 2d6, 3d6 und 4d6 auf Stufe 5, 11 und 17.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -276,10 +276,10 @@
   },
   "Alarm": {
     "name": "Alarm",
-    "description": "Schütze 8 Stunden lang eine Tür, ein Fenster oder einen Bereich von höchstens 20 Fuß Kantenlänge. Bestimme Kreaturen, die den Alarm nicht auslösen, und ob Eindringlinge eine gedankliche Warnung oder eine hörbare Glocke auslösen.",
+    "description": "Schütze 8 Stunden lang eine Tür, ein Fenster oder einen Bereich von höchstens 6 Meter Kantenlänge. Bestimme Kreaturen, die den Alarm nicht auslösen, und ob Eindringlinge eine gedankliche Warnung oder eine hörbare Glocke auslösen.",
     "material": "eine Glocke und Silberdraht",
     "castingTime": "1 Minute oder Ritual",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "8 Stunden"
   },
   "Animal Friendship": {
@@ -288,7 +288,7 @@
     "material": "ein Bissen Nahrung",
     "higherLevels": "Jeder Zauberplatzgrad über 1 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "24 Stunden"
   },
   "Bane": {
@@ -297,7 +297,7 @@
     "material": "ein Tropfen Blut",
     "higherLevels": "Jeder Zauberplatzgrad über 1 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Bless": {
@@ -306,12 +306,12 @@
     "material": "ein heiliges Symbol im Wert von mindestens 5 GM",
     "higherLevels": "Jeder Zauberplatzgrad über 1 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Burning Hands": {
     "name": "Brennende Hände",
-    "description": "Feuer erfüllt einen 15 Fuß langen Kegel von dir aus. Kreaturen legen Geschicklichkeitsrettungswürfe ab und erleiden bei Misserfolg 3d6 Feuerschaden, bei Erfolg die Hälfte. Unbeaufsichtigte brennbare Gegenstände entzünden sich; höhere Zauberplätze fügen pro Grad 1d6 Schaden hinzu.",
+    "description": "Feuer erfüllt einen 4,5 Meter langen Kegel von dir aus. Kreaturen legen Geschicklichkeitsrettungswürfe ab und erleiden bei Misserfolg 3d6 Feuerschaden, bei Erfolg die Hälfte. Unbeaufsichtigte brennbare Gegenstände entzünden sich; höhere Zauberplätze fügen pro Grad 1d6 Schaden hinzu.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 1d6 hinzu.",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -327,16 +327,16 @@
     "description": "Ein sichtbarer Humanoider legt einen Weisheitsrettungswurf ab, mit Vorteil, wenn du oder Verbündete ihn bekämpft. Bei Misserfolg ist er 1 Stunde lang bezaubert und freundlich; der Effekt endet vorzeitig, wenn du oder ein Verbündeter ihn verletzt. Danach weiß er von der Bezauberung.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Stunde"
   },
   "Chromatic Orb": {
     "name": "Chromatische Kugel",
-    "description": "Führe einen Fernkampf-Zauberangriff aus, der 3d8 Säure-, Kälte-, Feuer-, Blitz-, Gift- oder Schallschaden verursacht. Gleiche Ergebnisse auf Schadenswürfeln lassen die Kugel zu einem anderen Ziel innerhalb von 30 Fuß springen; ein höherer Zauberplatz fügt 1d8 Schaden hinzu und erlaubt bis zu so viele Sprünge wie sein Grad. Kein Ziel kann zweimal getroffen werden.",
+    "description": "Führe einen Fernkampf-Zauberangriff aus, der 3d8 Säure-, Kälte-, Feuer-, Blitz-, Gift- oder Schallschaden verursacht. Gleiche Ergebnisse auf Schadenswürfeln lassen die Kugel zu einem anderen Ziel innerhalb von 9 Metern springen; ein höherer Zauberplatz fügt 1d8 Schaden hinzu und erlaubt bis zu so viele Sprünge wie sein Grad. Kein Ziel kann zweimal getroffen werden.",
     "material": "ein Diamant im Wert von mindestens 50 GM",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 1d8 hinzu.",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Sofort",
     "rolls": {
       "attack": {
@@ -349,7 +349,7 @@
   },
   "Color Spray": {
     "name": "Farbenstrahl",
-    "description": "Kreaturen in einem 15 Fuß langen Kegel legen Konstitutionsrettungswürfe ab. Wer scheitert, ist bis zum Ende deines nächsten Zuges blind.",
+    "description": "Kreaturen in einem 4,5 Meter langen Kegel legen Konstitutionsrettungswürfe ab. Wer scheitert, ist bis zum Ende deines nächsten Zuges blind.",
     "material": "eine Prise bunter Sand",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -360,7 +360,7 @@
     "description": "Eine Kreatur, die du siehst, legt einen Weisheitsrettungswurf gegen einen Befehl aus einem Wort ab. Bei Misserfolg nähert sie sich in ihrem nächsten Zug, lässt Gehaltenes fallen, flieht, fällt zu Boden oder bleibt stehen, je nach Befehl. Höhere Zauberplätze fügen Ziele hinzu.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Comprehend Languages": {
@@ -373,11 +373,11 @@
   },
   "Create or Destroy Water": {
     "name": "Wasser erschaffen oder zerstören",
-    "description": "Erzeuge oder entferne bis zu 10 Gallonen Wasser in einem offenen Behälter, oder erzeuge Regen oder vertreibe Nebel in einem Würfel mit 30 Fuß Kantenlänge. Höhere Zauberplätze fügen 10 Gallonen hinzu oder vergrößern den Würfel.",
+    "description": "Erzeuge oder entferne bis zu 10 Gallonen Wasser in einem offenen Behälter, oder erzeuge Regen oder vertreibe Nebel in einem Würfel mit 9 Meter Kantenlänge. Höhere Zauberplätze fügen 10 Gallonen hinzu oder vergrößern den Würfel.",
     "material": "eine Mischung aus Wasser und Sand",
-    "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 10 Gallonen hinzu oder vergrößert die Würfelkante um 5 Fuß.",
+    "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 10 Gallonen hinzu oder vergrößert die Würfelkante um 1,5 Meter.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort"
   },
   "Cure Wounds": {
@@ -390,21 +390,21 @@
   },
   "Detect Evil and Good": {
     "name": "Böses und Gutes entdecken",
-    "description": "Spüre bis zu 10 Minuten lang Aberrationen, Celestische, Elementare, Feenwesen, Unholde und Untote innerhalb von 30 Fuß sowie dort aktive Weihen. Dicke Barrieren blockieren die Wahrnehmung.",
+    "description": "Spüre bis zu 10 Minuten lang Aberrationen, Celestische, Elementare, Feenwesen, Unholde und Untote innerhalb von 9 Metern sowie dort aktive Weihen. Dicke Barrieren blockieren die Wahrnehmung.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Detect Magic": {
     "name": "Magie entdecken",
-    "description": "Spüre bis zu 10 Minuten lang magische Effekte innerhalb von 30 Fuß. Eine Magieaktion enthüllt sichtbare magische Auren und die Schule eines Zaubers; ausreichend dicke Barrieren blockieren die Wahrnehmung.",
+    "description": "Spüre bis zu 10 Minuten lang magische Effekte innerhalb von 9 Metern. Eine Magieaktion enthüllt sichtbare magische Auren und die Schule eines Zaubers; ausreichend dicke Barrieren blockieren die Wahrnehmung.",
     "castingTime": "Aktion oder Ritual",
     "range": "Selbst",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Detect Poison and Disease": {
     "name": "Gift und Krankheit entdecken",
-    "description": "Spüre bis zu 10 Minuten lang Ort und Art von Giften, giftigen Kreaturen und magischen Ansteckungen innerhalb von 30 Fuß. Dicke Barrieren blockieren die Wahrnehmung.",
+    "description": "Spüre bis zu 10 Minuten lang Ort und Art von Giften, giftigen Kreaturen und magischen Ansteckungen innerhalb von 9 Metern. Dicke Barrieren blockieren die Wahrnehmung.",
     "material": "ein Eibenblatt",
     "castingTime": "Aktion oder Ritual",
     "range": "Selbst",
@@ -422,7 +422,7 @@
     "description": "Eine Kreatur, die du siehst, legt einen Weisheitsrettungswurf ab. Bei Misserfolg erleidet sie 3d6 psychischen Schaden und verwendet ihre Reaktion, falls möglich, zur sicheren Flucht; bei Erfolg erleidet sie die Hälfte. Höhere Zauberplätze fügen 1d6 hinzu.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 1d6 hinzu.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -455,9 +455,9 @@
   },
   "Entangle": {
     "name": "Rankenwuchs",
-    "description": "Pflanzen füllen bis zu 1 Minute lang ein Quadrat von 20 Fuß Seitenlänge mit schwierigem Gelände. Kreaturen dort legen beim Wirken Stärkerettungswürfe ab oder sind festgesetzt; sie können sich mit einer Aktion befreien.",
+    "description": "Pflanzen füllen bis zu 1 Minute lang ein Quadrat von 6 Metern Seitenlänge mit schwierigem Gelände. Kreaturen dort legen beim Wirken Stärkerettungswürfe ab oder sind festgesetzt; sie können sich mit einer Aktion befreien.",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Expeditious Retreat": {
@@ -469,9 +469,9 @@
   },
   "Faerie Fire": {
     "name": "Feenfeuer",
-    "description": "Kreaturen in einem Würfel mit 20 Fuß Kantenlänge, deren Geschicklichkeitsrettungswurf misslingt, leuchten bis zu 1 Minute lang. Sie können nicht von Unsichtbarkeit profitieren, und sichtbare Angreifer haben Vorteil gegen sie.",
+    "description": "Kreaturen in einem Würfel mit 6 Meter Kantenlänge, deren Geschicklichkeitsrettungswurf misslingt, leuchten bis zu 1 Minute lang. Sie können nicht von Unsichtbarkeit profitieren, und sichtbare Angreifer haben Vorteil gegen sie.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "False Life": {
@@ -485,34 +485,34 @@
   },
   "Feather Fall": {
     "name": "Federfall",
-    "description": "Verlangsame als Reaktion auf einen Sturz bis zu fünf fallende Kreaturen für 1 Minute auf 60 Fuß pro Runde. Landen sie vor Ende des Zaubers, erleiden sie keinen Fallschaden.",
+    "description": "Verlangsame als Reaktion auf einen Sturz bis zu fünf fallende Kreaturen für 1 Minute auf 18 Meter pro Runde. Landen sie vor Ende des Zaubers, erleiden sie keinen Fallschaden.",
     "material": "eine kleine Feder oder etwas Flaum",
-    "castingTime": "Reaktion, wenn du oder eine sichtbare Kreatur innerhalb von 60 Fuß fallt",
-    "range": "60 Fuß",
+    "castingTime": "Reaktion, wenn du oder eine sichtbare Kreatur innerhalb von 18 Metern fallt",
+    "range": "18 Meter",
     "duration": "1 Minute"
   },
   "Find Familiar": {
     "name": "Vertrautes finden",
-    "description": "Beschwöre einen celestischen, Feen- oder Unholdgeist in Gestalt eines Tiers mit HG 0. Er handelt selbstständig und kann nicht angreifen; innerhalb von 100 Fuß kannst du telepathisch kommunizieren, durch seine Sinne wahrnehmen oder ihn mit seiner Reaktion einen Berührungszauber übermitteln lassen. Du kannst ihn entlassen und erneut beschwören.",
+    "description": "Beschwöre einen celestischen, Feen- oder Unholdgeist in Gestalt eines Tiers mit HG 0. Er handelt selbstständig und kann nicht angreifen; innerhalb von 30 Metern kannst du telepathisch kommunizieren, durch seine Sinne wahrnehmen oder ihn mit seiner Reaktion einen Berührungszauber übermitteln lassen. Du kannst ihn entlassen und erneut beschwören.",
     "material": "brennender Weihrauch im Wert von mindestens 10 GM, den der Zauber verbraucht",
     "castingTime": "1 Stunde oder Ritual",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "Sofort"
   },
   "Floating Disk": {
     "name": "Schwebende Scheibe",
-    "description": "Erzeuge für 1 Stunde eine schwebende Scheibe mit 3 Fuß Durchmesser, die bis zu 500 Pfund trägt und dir folgt, wenn du dich mehr als 20 Fuß von ihr entfernst.",
+    "description": "Erzeuge für 1 Stunde eine schwebende Scheibe mit 0,9 Meter Durchmesser, die bis zu 500 Pfund trägt und dir folgt, wenn du dich mehr als 6 Meter von ihr entfernst.",
     "material": "ein Tropfen Quecksilber",
     "castingTime": "Aktion oder Ritual",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Stunde"
   },
   "Fog Cloud": {
     "name": "Nebelwolke",
-    "description": "Erzeuge bis zu 1 Stunde lang eine stark verschleierte Nebelkugel mit 20 Fuß Radius. Starker Wind zerstreut sie; jeder Zauberplatzgrad über 1 vergrößert ihren Radius um 20 Fuß.",
-    "higherLevels": "Jeder Zauberplatzgrad über 1 vergrößert den Nebelradius um 20 Fuß.",
+    "description": "Erzeuge bis zu 1 Stunde lang eine stark verschleierte Nebelkugel mit 6 Meter Radius. Starker Wind zerstreut sie; jeder Zauberplatzgrad über 1 vergrößert ihren Radius um 6 Meter.",
+    "higherLevels": "Jeder Zauberplatzgrad über 1 vergrößert den Nebelradius um 6 Meter.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Goodberry": {
@@ -525,10 +525,10 @@
   },
   "Grease": {
     "name": "Schmierfett",
-    "description": "Bedecke für 1 Minute ein Quadrat mit 10 Fuß Seitenlänge mit nicht brennbarem Fett; es wird schwieriges Gelände. Kreaturen dort bei Erscheinen, beim Betreten oder am Ende ihres Zuges legen Geschicklichkeitsrettungswürfe ab oder fallen zu Boden.",
+    "description": "Bedecke für 1 Minute ein Quadrat mit 3 Meter Seitenlänge mit nicht brennbarem Fett; es wird schwieriges Gelände. Kreaturen dort bei Erscheinen, beim Betreten oder am Ende ihres Zuges legen Geschicklichkeitsrettungswürfe ab oder fallen zu Boden.",
     "material": "etwas Schweineschwarte oder Butter",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "1 Minute"
   },
   "Guiding Bolt": {
@@ -536,7 +536,7 @@
     "description": "Führe einen Fernkampf-Zauberangriff aus. Ein Treffer verursacht 4d6 gleißenden Schaden und gewährt dem nächsten Angriff gegen das Ziel vor Ende deines nächsten Zuges Vorteil. Höhere Zauberplätze fügen 1d6 hinzu.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 1d6 hinzu.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "1 Runde",
     "rolls": {
       "attack": {
@@ -549,18 +549,18 @@
   },
   "Healing Word": {
     "name": "Heilendes Wort",
-    "description": "Eine Kreatur, die du innerhalb von 60 Fuß siehst, erhält Trefferpunkte in Höhe von 2d4 plus deinem Zauberattributsmodifikator zurück. Jeder Zauberplatzgrad über 1 erhöht die Heilung um 2d4.",
+    "description": "Eine Kreatur, die du innerhalb von 18 Metern siehst, erhält Trefferpunkte in Höhe von 2d4 plus deinem Zauberattributsmodifikator zurück. Jeder Zauberplatzgrad über 1 erhöht die Heilung um 2d4.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 2d4 hinzu.",
     "castingTime": "Bonusaktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Hellish Rebuke": {
     "name": "Höllische Zurechtweisung",
-    "description": "Reagiere, nachdem dir eine sichtbare Kreatur innerhalb von 60 Fuß Schaden zugefügt hat. Sie legt einen Geschicklichkeitsrettungswurf ab und erleidet bei Misserfolg 2d10 Feuerschaden, bei Erfolg die Hälfte; höhere Zauberplätze fügen 1d10 hinzu.",
+    "description": "Reagiere, nachdem dir eine sichtbare Kreatur innerhalb von 18 Metern Schaden zugefügt hat. Sie legt einen Geschicklichkeitsrettungswurf ab und erleidet bei Misserfolg 2d10 Feuerschaden, bei Erfolg die Hälfte; höhere Zauberplätze fügen 1d10 hinzu.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 1d10 hinzu.",
-    "castingTime": "Reaktion, nachdem dir eine sichtbare Kreatur innerhalb von 60 Fuß Schaden zugefügt hat",
-    "range": "60 Fuß",
+    "castingTime": "Reaktion, nachdem dir eine sichtbare Kreatur innerhalb von 18 Metern Schaden zugefügt hat",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -582,7 +582,7 @@
     "material": "das versteinerte Auge eines Molchs",
     "higherLevels": "Ein Zauberplatz des Grades 2 erlaubt bis zu 4 Stunden Konzentration, Grad 3-4 bis zu 8 Stunden und Grad 5 oder höher bis zu 24 Stunden.",
     "castingTime": "Bonusaktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Hideous Laughter": {
@@ -591,7 +591,7 @@
     "material": "ein Törtchen und eine Feder",
     "higherLevels": "Jeder Zauberplatzgrad über 1 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Hunter's Mark": {
@@ -599,16 +599,16 @@
     "description": "Markiere eine sichtbare Kreatur für bis zu 1 Stunde. Treffer deiner Angriffe verursachen zusätzlich 1d6 Energieschaden, und du hast Vorteil bei Wahrnehmungs- oder Überlebenswürfen, um sie zu finden. Als Bonusaktion kannst du das Zeichen verlagern, wenn das Ziel auf 0 Trefferpunkte fällt.",
     "higherLevels": "Ein Zauberplatz des Grades 3-4 erlaubt bis zu 8 Stunden Konzentration, Grad 5 oder höher bis zu 24 Stunden.",
     "castingTime": "Bonusaktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Ice Knife": {
     "name": "Eismesser",
-    "description": "Führe einen Fernkampf-Zauberangriff gegen eine Kreatur aus, der bei einem Treffer 1d10 Stichschaden verursacht. Ob Treffer oder Fehlschlag, die Scherbe zerbirst und das Ziel sowie Kreaturen innerhalb von 5 Fuß müssen Geschicklichkeitsrettungswürfe bestehen oder erleiden 2d6 Kälteschaden; höhere Zauberplätze erhöhen den Kälteschaden.",
+    "description": "Führe einen Fernkampf-Zauberangriff gegen eine Kreatur aus, der bei einem Treffer 1d10 Stichschaden verursacht. Ob Treffer oder Fehlschlag, die Scherbe zerbirst und das Ziel sowie Kreaturen innerhalb von 1,5 Metern müssen Geschicklichkeitsrettungswürfe bestehen oder erleiden 2d6 Kälteschaden; höhere Zauberplätze erhöhen den Kälteschaden.",
     "material": "ein Wassertropfen oder ein Stück Eis",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 1d6 Kälteschaden hinzu.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "attack": {
@@ -653,7 +653,7 @@
   },
   "Jump": {
     "name": "Springen",
-    "description": "Eine bereitwillige Kreatur, die du berührst, kann 1 Minute lang einmal pro Zug bis zu 30 Fuß springen, indem sie 10 Fuß Bewegung ausgibt. Höhere Zauberplätze fügen pro Grad ein Ziel hinzu.",
+    "description": "Eine bereitwillige Kreatur, die du berührst, kann 1 Minute lang einmal pro Zug bis zu 9 Meter springen, indem sie 3 Meter Bewegung ausgibt. Höhere Zauberplätze fügen pro Grad ein Ziel hinzu.",
     "material": "ein Hinterbein einer Heuschrecke",
     "higherLevels": "Jeder Zauberplatzgrad über 1 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Bonusaktion",
@@ -662,7 +662,7 @@
   },
   "Longstrider": {
     "name": "Lange Schritte",
-    "description": "Eine Kreatur, die du berührst, erhält 1 Stunde lang 10 Fuß zusätzliche Bewegungsrate. Jeder Zauberplatzgrad über 1 fügt ein Ziel hinzu.",
+    "description": "Eine Kreatur, die du berührst, erhält 1 Stunde lang 3 Meter zusätzliche Bewegungsrate. Jeder Zauberplatzgrad über 1 fügt ein Ziel hinzu.",
     "material": "eine Prise Erde",
     "higherLevels": "Jeder Zauberplatzgrad über 1 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
@@ -682,7 +682,7 @@
     "description": "Drei Energiefpfeile treffen automatisch sichtbare Kreaturen deiner Wahl und verursachen jeweils 1d4 + 1 Energieschaden. Alle treffen gleichzeitig; höhere Zauberplätze erzeugen pro Grad einen weiteren Pfeil.",
     "higherLevels": "Erzeuge für jeden Zauberplatzgrad über 1 einen zusätzlichen Pfeil.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Sofort"
   },
   "Protection from Evil and Good": {
@@ -695,9 +695,9 @@
   },
   "Purify Food and Drink": {
     "name": "Nahrung und Wasser reinigen",
-    "description": "Entferne Gift und Verderb aus nichtmagischem Essen und Trinken in einer Kugel mit 5 Fuß Radius innerhalb von 10 Fuß.",
+    "description": "Entferne Gift und Verderb aus nichtmagischem Essen und Trinken in einer Kugel mit 1,5 Meter Radius innerhalb von 3 Metern.",
     "castingTime": "Aktion oder Ritual",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "Sofort"
   },
   "Ray of Sickness": {
@@ -705,7 +705,7 @@
     "description": "Führe einen Fernkampf-Zauberangriff aus. Ein Treffer verursacht 2d8 Giftschaden und vergiftet das Ziel bis zum Ende deines nächsten Zuges; höhere Zauberplätze fügen 1d8 Schaden hinzu.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 1d8 hinzu.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "attack": {
@@ -721,7 +721,7 @@
     "description": "Schütze eine Kreatur für 1 Minute. Wer sie angreift oder mit einem Zauber anvisiert, muss einen Weisheitsrettungswurf bestehen oder ein anderes Ziel wählen beziehungsweise den Versuch verlieren. Der Schutz endet, wenn die Kreatur angreift, einen Zauber wirkt oder Schaden verursacht.",
     "material": "eine Glasscherbe von einem Spiegel",
     "castingTime": "Bonusaktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Minute"
   },
   "Searing Smite": {
@@ -741,26 +741,26 @@
   },
   "Shield of Faith": {
     "name": "Schild des Glaubens",
-    "description": "Eine Kreatur innerhalb von 60 Fuß erhält bis zu 10 Minuten lang +2 RK, solange du dich konzentrierst.",
+    "description": "Eine Kreatur innerhalb von 18 Metern erhält bis zu 10 Minuten lang +2 RK, solange du dich konzentrierst.",
     "material": "eine Gebetsrolle",
     "castingTime": "Bonusaktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Silent Image": {
     "name": "Stilles Bild",
-    "description": "Erzeuge bis zu 10 Minuten lang ein rein sichtbares Bild von höchstens 15 Fuß Kantenlänge. Du kannst es mit einer Magieaktion bewegen; körperliche Berührung enthüllt die Illusion.",
+    "description": "Erzeuge bis zu 10 Minuten lang ein rein sichtbares Bild von höchstens 4,5 Meter Kantenlänge. Du kannst es mit einer Magieaktion bewegen; körperliche Berührung enthüllt die Illusion.",
     "material": "etwas Vlies",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Sleep": {
     "name": "Schlaf",
-    "description": "Gewählte Kreaturen in einer Kugel mit 5 Fuß Radius legen Weisheitsrettungswürfe ab. Bei Misserfolg sind sie bis zum Ende ihres nächsten Zuges handlungsunfähig; ein zweiter misslungener Rettungswurf macht sie bis zu 1 Minute bewusstlos. Schaden oder Schütteln beendet den Effekt; Kreaturen, die nicht schlafen, bestehen automatisch.",
+    "description": "Gewählte Kreaturen in einer Kugel mit 1,5 Meter Radius legen Weisheitsrettungswürfe ab. Bei Misserfolg sind sie bis zum Ende ihres nächsten Zuges handlungsunfähig; ein zweiter misslungener Rettungswurf macht sie bis zu 1 Minute bewusstlos. Schaden oder Schütteln beendet den Effekt; Kreaturen, die nicht schlafen, bestehen automatisch.",
     "material": "eine Prise Sand oder Rosenblätter",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Speak with Animals": {
@@ -772,7 +772,7 @@
   },
   "Thunderwave": {
     "name": "Donnerwelle",
-    "description": "Ein Donnerwürfel mit 15 Fuß Kantenlänge bricht von dir aus hervor. Kreaturen legen Konstitutionsrettungswürfe ab und erleiden bei Misserfolg 2d8 Schallschaden und werden 10 Fuß weggestoßen, bei Erfolg erleiden sie halben Schaden. Höhere Zauberplätze fügen 1d8 Schaden hinzu.",
+    "description": "Ein Donnerwürfel mit 4,5 Meter Kantenlänge bricht von dir aus hervor. Kreaturen legen Konstitutionsrettungswürfe ab und erleiden bei Misserfolg 2d8 Schallschaden und werden 3 Meter weggestoßen, bei Erfolg erleiden sie halben Schaden. Höhere Zauberplätze fügen 1d8 Schaden hinzu.",
     "higherLevels": "Jeder Zauberplatzgrad über 1 fügt 1d8 hinzu.",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -788,7 +788,7 @@
     "description": "Erzeuge für 1 Stunde eine unsichtbare, geistlose Kraft. Sie kann nicht angreifen, aber einfache Aufgaben erledigen, die du ihr als Bonusaktion befiehlst.",
     "material": "etwas Schnur und Holz",
     "castingTime": "Aktion oder Ritual",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "1 Stunde"
   },
   "Acid Arrow": {
@@ -797,16 +797,16 @@
     "material": "pulverisiertes Rhabarberblatt",
     "higherLevels": "Jeder Zauberplatzgrad über 2 fügt beiden Schadenswürfen 1d4 hinzu.",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Sofort"
   },
   "Aid": {
     "name": "Beistand",
-    "description": "Bis zu drei Kreaturen innerhalb von 30 Fuß erhöhen 8 Stunden lang ihre aktuellen und maximalen Trefferpunkte um 5. Jeder Zauberplatzgrad über 2 fügt weitere 5 Trefferpunkte hinzu.",
+    "description": "Bis zu drei Kreaturen innerhalb von 9 Metern erhöhen 8 Stunden lang ihre aktuellen und maximalen Trefferpunkte um 5. Jeder Zauberplatzgrad über 2 fügt weitere 5 Trefferpunkte hinzu.",
     "material": "ein Streifen weißen Tuchs",
     "higherLevels": "Jeder Zauberplatzgrad über 2 erhöht aktuelle und maximale Trefferpunkte um 5.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "8 Stunden"
   },
   "Alter Self": {
@@ -818,11 +818,11 @@
   },
   "Animal Messenger": {
     "name": "Tierbote",
-    "description": "Ein winziges Tier mit HG 0, dessen Charismarettungswurf misslingt, bringt eine Botschaft von bis zu 25 Wörtern zu einem von dir besuchten Ort. Es legt 24 Stunden lang etwa 25 Meilen pro Tag zurück, im Flug 50; höhere Zauberplätze fügen jeweils 48 Stunden hinzu.",
+    "description": "Ein winziges Tier mit HG 0, dessen Charismarettungswurf misslingt, bringt eine Botschaft von bis zu 25 Wörtern zu einem von dir besuchten Ort. Es legt 24 Stunden lang etwa 37,5 Kilometer pro Tag zurück, im Flug 50; höhere Zauberplätze fügen jeweils 48 Stunden hinzu.",
     "material": "ein Bissen Nahrung",
     "higherLevels": "Jeder Zauberplatzgrad über 2 verlängert die Dauer um 48 Stunden.",
     "castingTime": "Aktion oder Ritual",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "24 Stunden"
   },
   "Arcane Lock": {
@@ -862,7 +862,7 @@
     "description": "Eine sichtbare Kreatur legt einen Konstitutionsrettungswurf ab oder ist 1 Minute lang blind oder taub. Am Ende jedes Zuges wiederholt sie den Wurf; höhere Zauberplätze fügen pro Grad ein Ziel hinzu.",
     "higherLevels": "Jeder Zauberplatzgrad über 2 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "1 Minute"
   },
   "Blur": {
@@ -874,14 +874,14 @@
   },
   "Calm Emotions": {
     "name": "Gefühle besänftigen",
-    "description": "Humanoide in einer Kugel mit 20 Fuß Radius legen Charismarettungswürfe ab. Bei Misserfolg kannst du ihren bezauberten oder verängstigten Zustand unterdrücken oder sie bis zu 1 Minute lang gegenüber zuvor feindlichen Kreaturen gleichgültig machen.",
+    "description": "Humanoide in einer Kugel mit 6 Meter Radius legen Charismarettungswürfe ab. Bei Misserfolg kannst du ihren bezauberten oder verängstigten Zustand unterdrücken oder sie bis zu 1 Minute lang gegenüber zuvor feindlichen Kreaturen gleichgültig machen.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Continual Flame": {
     "name": "Dauerhafte Flamme",
-    "description": "Erzeuge auf einem Gegenstand eine kühle Flamme ohne Brennstoff, die bis zur Aufhebung 20 Fuß weit helles und weitere 20 Fuß weit dämmriges Licht spendet. Das Wirken verbraucht Rubinstaub im Wert von mindestens 50 GM.",
+    "description": "Erzeuge auf einem Gegenstand eine kühle Flamme ohne Brennstoff, die bis zur Aufhebung 6 Meter weit helles und weitere 6 Meter weit dämmriges Licht spendet. Das Wirken verbraucht Rubinstaub im Wert von mindestens 50 GM.",
     "material": "Rubinstaub im Wert von mindestens 50 GM, den der Zauber verbraucht",
     "castingTime": "Aktion",
     "range": "Berührung",
@@ -889,15 +889,15 @@
   },
   "Darkness": {
     "name": "Dunkelheit",
-    "description": "Erzeuge bis zu 10 Minuten lang eine Kugel magischer Dunkelheit mit 15 Fuß Radius oder zentriere sie auf einem unbeaufsichtigten Gegenstand. Gewöhnliches Licht kann sie nicht erhellen und Dunkelsicht durchdringt sie nicht.",
+    "description": "Erzeuge bis zu 10 Minuten lang eine Kugel magischer Dunkelheit mit 4,5 Meter Radius oder zentriere sie auf einem unbeaufsichtigten Gegenstand. Gewöhnliches Licht kann sie nicht erhellen und Dunkelsicht durchdringt sie nicht.",
     "material": "Fledermausfell und ein Stück Kohle",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Darkvision": {
     "name": "Dunkelsicht",
-    "description": "Eine bereitwillige Kreatur, die du berührst, erhält 8 Stunden lang Dunkelsicht bis 150 Fuß.",
+    "description": "Eine bereitwillige Kreatur, die du berührst, erhält 8 Stunden lang Dunkelsicht bis 45 Meter.",
     "material": "eine getrocknete Karotte",
     "castingTime": "Aktion",
     "range": "Berührung",
@@ -913,7 +913,7 @@
   },
   "Dragon's Breath": {
     "name": "Drachenatem",
-    "description": "Eine bereitwillige Kreatur, die du berührst, kann mit einer Magieaktion einen 15 Fuß langen Kegel aus Säure, Kälte, Feuer, Blitz oder Gift ausatmen. Kreaturen darin legen Geschicklichkeitsrettungswürfe gegen 3d6 Schaden ab, bei Erfolg die Hälfte; höhere Zauberplätze fügen 1d6 hinzu.",
+    "description": "Eine bereitwillige Kreatur, die du berührst, kann mit einer Magieaktion einen 4,5 Meter langen Kegel aus Säure, Kälte, Feuer, Blitz oder Gift ausatmen. Kreaturen darin legen Geschicklichkeitsrettungswürfe gegen 3d6 Schaden ab, bei Erfolg die Hälfte; höhere Zauberplätze fügen 1d6 hinzu.",
     "material": "eine scharfe Paprika",
     "higherLevels": "Jeder Zauberplatzgrad über 2 fügt 1d6 Schaden hinzu.",
     "castingTime": "Bonusaktion",
@@ -939,29 +939,29 @@
     "description": "Vergrößere oder verkleinere bis zu 1 Minute lang eine Kreatur oder einen unbeaufsichtigten Gegenstand; eine nicht bereitwillige Kreatur kann mit einem Konstitutionsrettungswurf widerstehen. Größe, Gewicht und Waffenschaden ändern sich entsprechend.",
     "material": "eine Prise Eisenpulver",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Enthrall": {
     "name": "Bannende Rede",
     "description": "Sichtbare Kreaturen, gegen die du nicht kämpfst, legen Weisheitsrettungswürfe ab oder erhalten bis zu 1 Minute lang -10 auf Wahrnehmungswürfe und passive Wahrnehmung.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Find Steed": {
     "name": "Reittier finden",
-    "description": "Beschwöre in einem Bereich innerhalb von 30 Fuß ein treues außerweltliches Reittier. Es verwendet den Werteblock Außerweltliches Reittier und kann eine celestische, Feen- oder Unholdgestalt annehmen.",
+    "description": "Beschwöre in einem Bereich innerhalb von 9 Metern ein treues außerweltliches Reittier. Es verwendet den Werteblock Außerweltliches Reittier und kann eine celestische, Feen- oder Unholdgestalt annehmen.",
     "higherLevels": "Verwende den Zauberplatzgrad für die Spielwerte des Reittiers.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort"
   },
   "Find Traps": {
     "name": "Fallen finden",
-    "description": "Erkenne, ob sich innerhalb von 120 Fuß und deiner Sichtlinie eine absichtlich geschaffene Falle befindet, und erfahre ihre allgemeine Gefahr, aber nicht ihren genauen Ort.",
+    "description": "Erkenne, ob sich innerhalb von 36 Metern und deiner Sichtlinie eine absichtlich geschaffene Falle befindet, und erfahre ihre allgemeine Gefahr, aber nicht ihren genauen Ort.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Sofort"
   },
   "Flame Blade": {
@@ -975,11 +975,11 @@
   },
   "Flaming Sphere": {
     "name": "Flammende Kugel",
-    "description": "Erzeuge bis zu 1 Minute lang eine Feuerkugel von 5 Fuß Größe. Kreaturen in ihrer Nähe legen Geschicklichkeitsrettungswürfe gegen 2d6 Feuerschaden ab, bei Erfolg die Hälfte; eine Bonusaktion bewegt die Kugel und kann einen weiteren Wurf erzwingen.",
+    "description": "Erzeuge bis zu 1 Minute lang eine Feuerkugel von 1,5 Metern Größe. Kreaturen in ihrer Nähe legen Geschicklichkeitsrettungswürfe gegen 2d6 Feuerschaden ab, bei Erfolg die Hälfte; eine Bonusaktion bewegt die Kugel und kann einen weiteren Wurf erzwingen.",
     "material": "eine Wachskugel",
     "higherLevels": "Jeder Zauberplatzgrad über 2 fügt 1d6 Schaden hinzu.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute",
     "rolls": {
       "damage": {
@@ -997,7 +997,7 @@
   },
   "Gust of Wind": {
     "name": "Windstoß",
-    "description": "Eine 60 Fuß lange und 10 Fuß breite Windlinie stößt Kreaturen bei misslungenem Stärkerettungswurf 15 Fuß fort und erschwert bis zu 1 Minute lang die Bewegung auf dich zu.",
+    "description": "Eine 18 Meter lange und 3 Meter breite Windlinie stößt Kreaturen bei misslungenem Stärkerettungswurf 4,5 Meter fort und erschwert bis zu 1 Minute lang die Bewegung auf dich zu.",
     "material": "ein Hülsenfruchtsamen",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -1009,7 +1009,7 @@
     "material": "ein Stück Eisen und eine Flamme",
     "higherLevels": "Jeder Zauberplatzgrad über 2 fügt 1d8 Schaden hinzu.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute",
     "rolls": {
       "damage": {
@@ -1023,7 +1023,7 @@
     "material": "ein gerades Stück Eisen",
     "higherLevels": "Jeder Zauberplatzgrad über 2 erlaubt ein zusätzliches Ziel.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Invisibility": {
@@ -1037,9 +1037,9 @@
   },
   "Knock": {
     "name": "Klopfen",
-    "description": "Öffne ein sichtbares verschlossenes oder verriegeltes Objekt innerhalb von 60 Fuß, auch ein magisches Schloss, das kurzzeitig unterdrückt wird. Dabei erklingt ein lautes, in der Nähe hörbares Klopfen.",
+    "description": "Öffne ein sichtbares verschlossenes oder verriegeltes Objekt innerhalb von 18 Metern, auch ein magisches Schloss, das kurzzeitig unterdrückt wird. Dabei erklingt ein lautes, in der Nähe hörbares Klopfen.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Lesser Restoration": {
@@ -1051,15 +1051,15 @@
   },
   "Levitate": {
     "name": "Schweben",
-    "description": "Hebe eine sichtbare Kreatur oder einen losen Gegenstand bis zu 10 Minuten lang bis zu 20 Fuß hoch. Eine nicht bereitwillige Kreatur kann mit einem Konstitutionsrettungswurf widerstehen; zum Bewegen muss sie sich an einer Oberfläche abstoßen.",
+    "description": "Hebe eine sichtbare Kreatur oder einen losen Gegenstand bis zu 10 Minuten lang bis zu 6 Meter hoch. Eine nicht bereitwillige Kreatur kann mit einem Konstitutionsrettungswurf widerstehen; zum Bewegen muss sie sich an einer Oberfläche abstoßen.",
     "material": "eine Metallfeder",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Locate Animals or Plants": {
     "name": "Tiere oder Pflanzen finden",
-    "description": "Nenne eine Art von Tier, Pflanzenkreatur oder nichtmagischer Pflanze und erfahre Richtung und Entfernung zum nächsten Exemplar innerhalb von 5 Meilen.",
+    "description": "Nenne eine Art von Tier, Pflanzenkreatur oder nichtmagischer Pflanze und erfahre Richtung und Entfernung zum nächsten Exemplar innerhalb von 7,5 Kilometern.",
     "material": "Fell eines Spürhunds",
     "castingTime": "Aktion oder Ritual",
     "range": "Selbst",
@@ -1067,7 +1067,7 @@
   },
   "Locate Object": {
     "name": "Gegenstand finden",
-    "description": "Spüre bis zu 10 Minuten lang die Richtung eines dir bekannten Gegenstands innerhalb von 1.000 Fuß, auch wenn er sich bewegt. Dicke Bleibarrieren blockieren den Effekt.",
+    "description": "Spüre bis zu 10 Minuten lang die Richtung eines dir bekannten Gegenstands innerhalb von 300 Metern, auch wenn er sich bewegt. Dicke Bleibarrieren blockieren den Effekt.",
     "material": "ein gegabelter Zweig",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -1078,7 +1078,7 @@
     "description": "Lege eine gesprochene Botschaft von bis zu 25 Wörtern in einen Gegenstand. Bei einem von dir gewählten beobachtbaren Auslöser spricht er sie aus; der Effekt hält bis zur Aufhebung an. Das Wirken verbraucht Jadestaub im Wert von mindestens 10 GM.",
     "material": "Jadestaub im Wert von mindestens 10 GM, den der Zauber verbraucht",
     "castingTime": "1 Minute oder Ritual",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Bis zur Aufhebung"
   },
   "Magic Weapon": {
@@ -1094,7 +1094,7 @@
     "description": "Eine sichtbare Kreatur legt einen Weisheitsrettungswurf ab und erleidet bei Misserfolg 3d8 psychischen Schaden, bei Erfolg die Hälfte. Bei Misserfolg kennst du bis zu 1 Stunde lang ihren Aufenthaltsort auf derselben Ebene.",
     "higherLevels": "Jeder Zauberplatzgrad über 2 fügt 1d8 Schaden hinzu.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Stunde",
     "rolls": {
       "damage": {
@@ -1111,18 +1111,18 @@
   },
   "Misty Step": {
     "name": "Nebelschritt",
-    "description": "Teleportiere dich als Bonusaktion bis zu 30 Fuß weit an einen unbesetzten sichtbaren Ort.",
+    "description": "Teleportiere dich als Bonusaktion bis zu 9 Meter weit an einen unbesetzten sichtbaren Ort.",
     "castingTime": "Bonusaktion",
     "range": "Selbst",
     "duration": "Sofort"
   },
   "Moonbeam": {
     "name": "Mondstrahl",
-    "description": "Ein Strahl mit 5 Fuß Radius und 40 Fuß Höhe hält bis zu 1 Minute und kann mit einer Magieaktion 60 Fuß bewegt werden. Kreaturen, die ihn betreten oder darin ihren Zug beenden, legen Konstitutionsrettungswürfe gegen 2d10 gleißenden Schaden ab, bei Erfolg die Hälfte; bei Misserfolg endet zudem ihre Gestaltwandlung.",
+    "description": "Ein Strahl mit 1,5 Meter Radius und 12 Meter Höhe hält bis zu 1 Minute und kann mit einer Magieaktion 18 Meter bewegt werden. Kreaturen, die ihn betreten oder darin ihren Zug beenden, legen Konstitutionsrettungswürfe gegen 2d10 gleißenden Schaden ab, bei Erfolg die Hälfte; bei Misserfolg endet zudem ihre Gestaltwandlung.",
     "material": "ein Mondsamenblatt",
     "higherLevels": "Jeder Zauberplatzgrad über 2 fügt 1d10 Schaden hinzu.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute",
     "rolls": {
       "damage": {
@@ -1132,7 +1132,7 @@
   },
   "Pass without Trace": {
     "name": "Spurlos bewegen",
-    "description": "Gewählte Kreaturen innerhalb deiner 30-Fuß-Aura erhalten bis zu 1 Stunde lang +10 auf Heimlichkeitswürfe und hinterlassen keine Spuren.",
+    "description": "Gewählte Kreaturen innerhalb deiner 9-Meter-Aura erhalten bis zu 1 Stunde lang +10 auf Heimlichkeitswürfe und hinterlassen keine Spuren.",
     "material": "Asche verbrannter Mistel",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -1140,10 +1140,10 @@
   },
   "Phantasmal Force": {
     "name": "Trugbild",
-    "description": "Eine Kreatur, deren Intelligenzrettungswurf misslingt, nimmt bis zu 1 Minute lang eine nur für sie sichtbare Illusion in einem Würfel mit höchstens 10 Fuß Kantenlänge wahr. Mit einer Studieren-Aktion kann sie sie durchschauen; ein gefährliches Trugbild kann ihr in jedem deiner Züge 2d8 psychischen Schaden zufügen.",
+    "description": "Eine Kreatur, deren Intelligenzrettungswurf misslingt, nimmt bis zu 1 Minute lang eine nur für sie sichtbare Illusion in einem Würfel mit höchstens 3 Meter Kantenlänge wahr. Mit einer Studieren-Aktion kann sie sie durchschauen; ein gefährliches Trugbild kann ihr in jedem deiner Züge 2d8 psychischen Schaden zufügen.",
     "material": "etwas Vlies",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Prayer of Healing": {
@@ -1151,7 +1151,7 @@
     "description": "Nach 10 Minuten Wirkzeit erhalten bis zu fünf Kreaturen in Reichweite die Vorteile einer kurzen Rast und 2d8 Trefferpunkte zurück. Jede kann nur einmal pro langer Rast profitieren; höhere Zauberplätze erhöhen die Heilung um 1d8.",
     "higherLevels": "Jeder Zauberplatzgrad über 2 erhöht die Heilung um 1d8.",
     "castingTime": "10 Minuten",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort"
   },
   "Protection from Poison": {
@@ -1165,7 +1165,7 @@
     "name": "Strahl der Schwächung",
     "description": "Eine Kreatur legt einen Konstitutionsrettungswurf ab. Bei Erfolg hat ihr nächster Angriffswurf bis zu deinem nächsten Zug Nachteil. Bei Misserfolg hat sie bis zu 1 Minute lang Nachteil bei stärkeabhängigen W20-Tests und zieht 1d8 von Schadenswürfen ab; sie wiederholt den Rettungswurf in jedem Zug.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Rope Trick": {
@@ -1181,7 +1181,7 @@
     "description": "Schieße drei Strahlen ab, jeder mit einem Fernkampf-Zauberangriff und 2d6 Feuerschaden bei einem Treffer. Höhere Zauberplätze erzeugen pro Grad einen zusätzlichen Strahl.",
     "higherLevels": "Erzeuge für jeden Zauberplatzgrad über 2 einen zusätzlichen Strahl.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Sofort"
   },
   "See Invisibility": {
@@ -1194,11 +1194,11 @@
   },
   "Shatter": {
     "name": "Zerschmettern",
-    "description": "Kreaturen in einer Kugel mit 10 Fuß Radius legen Konstitutionsrettungswürfe ab und erleiden bei Misserfolg 3d8 Schallschaden, bei Erfolg die Hälfte; Konstrukte haben Nachteil beim Rettungswurf. Höhere Zauberplätze fügen 1d8 hinzu.",
+    "description": "Kreaturen in einer Kugel mit 3 Meter Radius legen Konstitutionsrettungswürfe ab und erleiden bei Misserfolg 3d8 Schallschaden, bei Erfolg die Hälfte; Konstrukte haben Nachteil beim Rettungswurf. Höhere Zauberplätze fügen 1d8 hinzu.",
     "material": "ein Glimmersplitter",
     "higherLevels": "Jeder Zauberplatzgrad über 2 fügt 1d8 Schaden hinzu.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -1216,9 +1216,9 @@
   },
   "Silence": {
     "name": "Schweigen",
-    "description": "Erzeuge bis zu 10 Minuten lang eine Kugel mit 20 Fuß Radius, in der sich kein Schall ausbreitet. Kreaturen vollständig darin sind taub, immun gegen Schallschaden und können keine Zauber mit verbalen Komponenten wirken.",
+    "description": "Erzeuge bis zu 10 Minuten lang eine Kugel mit 6 Meter Radius, in der sich kein Schall ausbreitet. Kreaturen vollständig darin sind taub, immun gegen Schallschaden und können keine Zauber mit verbalen Komponenten wirken.",
     "castingTime": "Aktion oder Ritual",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Spider Climb": {
@@ -1232,10 +1232,10 @@
   },
   "Spike Growth": {
     "name": "Dornenwuchs",
-    "description": "Ein Bereich mit 20 Fuß Radius wird bis zu 10 Minuten lang getarntes schwieriges Gelände. Eine Kreatur, die sich darin bewegt, erleidet 2d4 Stichschaden pro 5 Fuß.",
+    "description": "Ein Bereich mit 6 Meter Radius wird bis zu 10 Minuten lang getarntes schwieriges Gelände. Eine Kreatur, die sich darin bewegt, erleidet 2d4 Stichschaden pro 1,5 Meter.",
     "material": "sieben Dornen",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Spiritual Weapon": {
@@ -1243,7 +1243,7 @@
     "description": "Erzeuge bis zu 1 Minute lang eine schwebende Energiewaffe. Führe bei ihrem Erscheinen und in späteren Zügen als Bonusaktion einen Nahkampf-Zauberangriff aus; ein Treffer verursacht 1d8 Energieschaden plus deinen Zauberattributsmodifikator.",
     "higherLevels": "Jeder Zauberplatzgrad über 2 fügt 1d8 Schaden hinzu.",
     "castingTime": "Bonusaktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Suggestion": {
@@ -1251,12 +1251,12 @@
     "description": "Eine Kreatur, die einen plausiblen, ungefährlichen Vorschlag von höchstens 25 Wörtern hört und versteht, legt einen Weisheitsrettungswurf ab. Bei Misserfolg ist sie bezaubert und befolgt ihn bis zu 8 Stunden, bis sie verletzt wird oder die Aufgabe erfüllt ist.",
     "material": "ein Tropfen Honig",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 8 Stunden"
   },
   "Warding Bond": {
     "name": "Schützendes Band",
-    "description": "Verbinde dich mit einer bereitwilligen Kreatur, die einen der benötigten Platinringe trägt. Solange sie sich innerhalb von 60 Fuß befindet, erhält sie +1 RK und Rettungswürfe sowie Resistenz gegen allen Schaden, doch du erleidest denselben Schaden wie sie.",
+    "description": "Verbinde dich mit einer bereitwilligen Kreatur, die einen der benötigten Platinringe trägt. Solange sie sich innerhalb von 18 Metern befindet, erhält sie +1 RK und Rettungswürfe sowie Resistenz gegen allen Schaden, doch du erleidest denselben Schaden wie sie.",
     "material": "ein Paar Platinringe im Wert von jeweils mindestens 50 GM, die du und das Ziel während der gesamten Dauer tragen müsst",
     "castingTime": "Aktion",
     "range": "Berührung",
@@ -1264,33 +1264,33 @@
   },
   "Web": {
     "name": "Spinnennetz",
-    "description": "Klebrige Netze füllen bis zu 1 Stunde lang einen Würfel mit 20 Fuß Kantenlänge und machen ihn zu schwierigem Gelände mit leichter Verschleierung. Eine Kreatur, die ihn betritt oder darin ihren Zug beginnt, legt einen Geschicklichkeitsrettungswurf ab oder ist festgesetzt; sie kann mit einer Aktion und einem Stärke-(Athletik-)Wurf entkommen. Brennende Netze verursachen 2d4 Feuerschaden.",
+    "description": "Klebrige Netze füllen bis zu 1 Stunde lang einen Würfel mit 6 Meter Kantenlänge und machen ihn zu schwierigem Gelände mit leichter Verschleierung. Eine Kreatur, die ihn betritt oder darin ihren Zug beginnt, legt einen Geschicklichkeitsrettungswurf ab oder ist festgesetzt; sie kann mit einer Aktion und einem Stärke-(Athletik-)Wurf entkommen. Brennende Netze verursachen 2d4 Feuerschaden.",
     "material": "etwas Spinnennetz",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Zone of Truth": {
     "name": "Zone der Wahrheit",
-    "description": "Erzeuge für 10 Minuten eine Kugel mit 15 Fuß Radius. Kreaturen, die sie betreten oder darin ihren Zug beginnen, legen Charismarettungswürfe ab; wer scheitert, kann nicht absichtlich lügen, und du weißt, ob jede Kreatur bestanden hat.",
+    "description": "Erzeuge für 10 Minuten eine Kugel mit 4,5 Meter Radius. Kreaturen, die sie betreten oder darin ihren Zug beginnen, legen Charismarettungswürfe ab; wer scheitert, kann nicht absichtlich lügen, und du weißt, ob jede Kreatur bestanden hat.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "10 Minuten"
   },
   "Animate Dead": {
     "name": "Tote beleben",
-    "description": "Erwecke einen mittelgroßen oder kleinen humanoiden Leichnam als Zombie oder Knochen als Skelett. Befiehl deinen Untoten innerhalb von 60 Fuß als Bonusaktion; die Kontrolle hält 24 Stunden und kann vor Ablauf erneuert werden.",
+    "description": "Erwecke einen mittelgroßen oder kleinen humanoiden Leichnam als Zombie oder Knochen als Skelett. Befiehl deinen Untoten innerhalb von 18 Metern als Bonusaktion; die Kontrolle hält 24 Stunden und kann vor Ablauf erneuert werden.",
     "material": "ein Tropfen Blut, ein Stück Fleisch und eine Prise Knochenstaub",
     "higherLevels": "Ein Zauberplatz über Grad 3 belebt pro zusätzlichem Grad zwei weitere Untote oder erneuert die Kontrolle über sie.",
     "castingTime": "1 Minute",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "Sofort"
   },
   "Beacon of Hope": {
     "name": "Leuchtfeuer der Hoffnung",
-    "description": "Wähle beliebig viele Kreaturen innerhalb von 30 Fuß. Bis zu 1 Minute lang haben sie Vorteil bei Weisheits- und Todesrettungswürfen und erhalten bei jeder Heilung die maximal möglichen Trefferpunkte zurück.",
+    "description": "Wähle beliebig viele Kreaturen innerhalb von 9 Metern. Bis zu 1 Minute lang haben sie Vorteil bei Weisheits- und Todesrettungswürfen und erhalten bei jeder Heilung die maximal möglichen Trefferpunkte zurück.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Bestow Curse": {
@@ -1303,17 +1303,17 @@
   },
   "Blink": {
     "name": "Flimmern",
-    "description": "Würfle 1 Minute lang am Ende jedes Zuges 1d6. Bei 4-6 wechselst du bis zum Beginn deines nächsten Zuges auf die Ätherebene und kehrst dann an einen freien Ort innerhalb von 10 Fuß von deinem Ausgangspunkt zurück.",
+    "description": "Würfle 1 Minute lang am Ende jedes Zuges 1d6. Bei 4-6 wechselst du bis zum Beginn deines nächsten Zuges auf die Ätherebene und kehrst dann an einen freien Ort innerhalb von 3 Metern von deinem Ausgangspunkt zurück.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "1 Minute"
   },
   "Call Lightning": {
     "name": "Blitze herbeirufen",
-    "description": "Erzeuge eine Gewitterwolke über dir. Beim Wirken und als Magieaktion in späteren Zügen rufst du einen Blitz auf einen Punkt darunter; Kreaturen innerhalb von 5 Fuß legen Geschicklichkeitsrettungswürfe gegen 3d10 Blitzschaden ab, bei Erfolg die Hälfte. Ein vorhandenes Gewitter fügt 1d10 hinzu.",
+    "description": "Erzeuge eine Gewitterwolke über dir. Beim Wirken und als Magieaktion in späteren Zügen rufst du einen Blitz auf einen Punkt darunter; Kreaturen innerhalb von 1,5 Metern legen Geschicklichkeitsrettungswürfe gegen 3d10 Blitzschaden ab, bei Erfolg die Hälfte. Ein vorhandenes Gewitter fügt 1d10 hinzu.",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 3 um 1d10.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 10 Minuten",
     "rolls": {
       "damage": {
@@ -1323,18 +1323,18 @@
   },
   "Clairvoyance": {
     "name": "Hellsehen",
-    "description": "Platziere innerhalb von 1 Meile einen unsichtbaren, unbeweglichen Wahrnehmungspunkt an einem dir bekannten oder offensichtlichen Ort. Bis zu 10 Minuten lang kannst du von dort sehen oder hören und als Bonusaktion zwischen den Sinnen wechseln.",
+    "description": "Platziere innerhalb von 1,5 Kilometern einen unsichtbaren, unbeweglichen Wahrnehmungspunkt an einem dir bekannten oder offensichtlichen Ort. Bis zu 10 Minuten lang kannst du von dort sehen oder hören und als Bonusaktion zwischen den Sinnen wechseln.",
     "material": "ein Fokus im Wert von mindestens 100 GM: ein juwelenbesetztes Horn zum Hören oder ein Glasauge zum Sehen",
     "castingTime": "10 Minuten",
-    "range": "1 Meile",
+    "range": "1,5 Kilometer",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Conjure Animals": {
     "name": "Tiere beschwören",
-    "description": "Beschwöre bis zu 10 Minuten lang ein großes, körperloses Rudel Tiergeister. Es kann sich mit dir um 30 Fuß bewegen, gewährt innerhalb von 5 Fuß Vorteil bei Stärkerettungswürfen und kann Kreaturen innerhalb von 10 Fuß einmal pro Zug zu einem Geschicklichkeitsrettungswurf zwingen; bei Misserfolg erleiden sie 3d10 Hiebschaden.",
+    "description": "Beschwöre bis zu 10 Minuten lang ein großes, körperloses Rudel Tiergeister. Es kann sich mit dir um 9 Meter bewegen, gewährt innerhalb von 1,5 Metern Vorteil bei Stärkerettungswürfen und kann Kreaturen innerhalb von 3 Metern einmal pro Zug zu einem Geschicklichkeitsrettungswurf zwingen; bei Misserfolg erleiden sie 3d10 Hiebschaden.",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 3 um 1d10.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten",
     "rolls": {
       "damage": {
@@ -1344,36 +1344,36 @@
   },
   "Counterspell": {
     "name": "Gegenzauber",
-    "description": "Reagiere, wenn du eine Kreatur innerhalb von 60 Fuß einen Zauber mit Komponenten wirken siehst. Der Zaubernde legt einen Konstitutionsrettungswurf ab; bei Misserfolg hat der Zauber keine Wirkung und die Wirkaktion geht verloren, aber der Zauberplatz wird nicht verbraucht.",
-    "castingTime": "Reaktion, wenn du eine Kreatur innerhalb von 60 Fuß einen Zauber mit verbalen, gestischen oder Materialkomponenten wirken siehst",
-    "range": "60 Fuß",
+    "description": "Reagiere, wenn du eine Kreatur innerhalb von 18 Metern einen Zauber mit Komponenten wirken siehst. Der Zaubernde legt einen Konstitutionsrettungswurf ab; bei Misserfolg hat der Zauber keine Wirkung und die Wirkaktion geht verloren, aber der Zauberplatz wird nicht verbraucht.",
+    "castingTime": "Reaktion, wenn du eine Kreatur innerhalb von 18 Metern einen Zauber mit verbalen, gestischen oder Materialkomponenten wirken siehst",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Create Food and Water": {
     "name": "Nahrung und Wasser erschaffen",
-    "description": "Erzeuge innerhalb von 30 Fuß 45 Pfund nahrhafte Speisen und 30 Gallonen sauberes Wasser. Die Speisen verderben nach 24 Stunden.",
+    "description": "Erzeuge innerhalb von 9 Metern 45 Pfund nahrhafte Speisen und 30 Gallonen sauberes Wasser. Die Speisen verderben nach 24 Stunden.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort"
   },
   "Daylight": {
     "name": "Tageslicht",
-    "description": "Fülle für 1 Stunde eine Kugel mit 60 Fuß Radius mit Sonnenlicht und weitere 60 Fuß mit dämmrigem Licht oder zentriere sie auf einem unbeaufsichtigten Gegenstand. Überlappende magische Dunkelheit eines Zaubers von Grad 3 oder niedriger wird aufgehoben.",
+    "description": "Fülle für 1 Stunde eine Kugel mit 18 Meter Radius mit Sonnenlicht und weitere 18 Meter mit dämmrigem Licht oder zentriere sie auf einem unbeaufsichtigten Gegenstand. Überlappende magische Dunkelheit eines Zaubers von Grad 3 oder niedriger wird aufgehoben.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "1 Stunde"
   },
   "Dispel Magic": {
     "name": "Magie bannen",
-    "description": "Beende alle Zauber des Grades 3 oder niedriger auf einer Kreatur, einem Gegenstand oder einem magischen Effekt innerhalb von 120 Fuß. Für jeden höhergradigen Zauber führe einen Wurf mit deinem Zauberattribut gegen SG 10 plus seinen Grad aus.",
+    "description": "Beende alle Zauber des Grades 3 oder niedriger auf einer Kreatur, einem Gegenstand oder einem magischen Effekt innerhalb von 36 Metern. Für jeden höhergradigen Zauber führe einen Wurf mit deinem Zauberattribut gegen SG 10 plus seinen Grad aus.",
     "higherLevels": "Ein höherer Zauberplatz beendet automatisch Zauber auf dem Ziel, deren Grad nicht höher als sein Grad ist.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Sofort"
   },
   "Fear": {
     "name": "Furcht",
-    "description": "Kreaturen in einem 30 Fuß langen Kegel legen Weisheitsrettungswürfe ab oder lassen gehaltene Gegenstände fallen und werden bis zu 1 Minute lang verängstigt. Sie müssen nach Möglichkeit mit Spurt fliehen; am Ende eines Zuges ohne Sichtlinie zu dir können sie den Wurf wiederholen.",
+    "description": "Kreaturen in einem 9 Meter langen Kegel legen Weisheitsrettungswürfe ab oder lassen gehaltene Gegenstände fallen und werden bis zu 1 Minute lang verängstigt. Sie müssen nach Möglichkeit mit Spurt fliehen; am Ende eines Zuges ohne Sichtlinie zu dir können sie den Wurf wiederholen.",
     "material": "eine weiße Feder",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -1381,11 +1381,11 @@
   },
   "Fireball": {
     "name": "Feuerball",
-    "description": "Ein Punkt innerhalb von 150 Fuß explodiert in einer Kugel mit 20 Fuß Radius. Kreaturen legen Geschicklichkeitsrettungswürfe ab und erleiden bei Misserfolg 8d6 Feuerschaden, bei Erfolg die Hälfte. Unbeaufsichtigte brennbare Gegenstände entzünden sich.",
+    "description": "Ein Punkt innerhalb von 45 Metern explodiert in einer Kugel mit 6 Meter Radius. Kreaturen legen Geschicklichkeitsrettungswürfe ab und erleiden bei Misserfolg 8d6 Feuerschaden, bei Erfolg die Hälfte. Unbeaufsichtigte brennbare Gegenstände entzünden sich.",
     "material": "ein Klumpen Fledermausguano und Schwefel",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 3 um 1d6.",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -1395,7 +1395,7 @@
   },
   "Fly": {
     "name": "Fliegen",
-    "description": "Eine bereitwillige Kreatur, die du berührst, erhält bis zu 10 Minuten lang eine Flugbewegungsrate von 60 Fuß und kann schweben. Am Ende des Zaubers fällt sie, sofern sie den Sturz nicht verhindern kann.",
+    "description": "Eine bereitwillige Kreatur, die du berührst, erhält bis zu 10 Minuten lang eine Flugbewegungsrate von 18 Metern und kann schweben. Am Ende des Zaubers fällt sie, sofern sie den Sturz nicht verhindern kann.",
     "material": "eine Feder",
     "higherLevels": "Wähle pro Zauberplatzgrad über 3 eine zusätzliche Kreatur.",
     "castingTime": "Aktion",
@@ -1404,7 +1404,7 @@
   },
   "Gaseous Form": {
     "name": "Gasförmige Form",
-    "description": "Eine bereitwillige berührte Kreatur wird bis zu 1 Stunde lang zu Nebel. Sie fliegt mit 10 Fuß, kann enge Öffnungen durchdringen, hat Resistenz gegen Wucht-, Stich- und Hiebschaden und kann nicht angreifen, zaubern, sprechen oder Gegenstände handhaben.",
+    "description": "Eine bereitwillige berührte Kreatur wird bis zu 1 Stunde lang zu Nebel. Sie fliegt mit 3 Meter, kann enge Öffnungen durchdringen, hat Resistenz gegen Wucht-, Stich- und Hiebschaden und kann nicht angreifen, zaubern, sprechen oder Gegenstände handhaben.",
     "material": "etwas Gaze",
     "higherLevels": "Wähle pro Zauberplatzgrad über 3 eine zusätzliche Kreatur.",
     "castingTime": "Aktion",
@@ -1413,7 +1413,7 @@
   },
   "Glyph of Warding": {
     "name": "Glyphe der Abwehr",
-    "description": "Zeichne eine verborgene Glyphe auf eine Oberfläche oder einen verschließbaren Gegenstand. Ein gewählter Auslöser verursacht entweder eine Explosion mit 5d8 Säure-, Kälte-, Feuer-, Blitz- oder Schallschaden in einer Kugel mit 20 Fuß Radius (Geschicklichkeitsrettungswurf halbiert) oder setzt einen gespeicherten Zauber frei. Mehr als 10 Fuß Bewegung zerstören die Glyphe.",
+    "description": "Zeichne eine verborgene Glyphe auf eine Oberfläche oder einen verschließbaren Gegenstand. Ein gewählter Auslöser verursacht entweder eine Explosion mit 5d8 Säure-, Kälte-, Feuer-, Blitz- oder Schallschaden in einer Kugel mit 6 Meter Radius (Geschicklichkeitsrettungswurf halbiert) oder setzt einen gespeicherten Zauber frei. Mehr als 3 Meter Bewegung zerstören die Glyphe.",
     "material": "Diamantpulver im Wert von mindestens 200 GM, das der Zauber verbraucht",
     "higherLevels": "Der Explosionsschaden steigt pro Zauberplatzgrad über 3 um 1d8; der Grad eines gespeicherten Zaubers kann höchstens dem für die Glyphe genutzten Zauberplatzgrad entsprechen.",
     "castingTime": "1 Stunde",
@@ -1425,20 +1425,20 @@
     "description": "Eine bereitwillige Kreatur erhält bis zu 1 Minute lang doppelte Bewegungsrate, +2 RK, Vorteil bei Geschicklichkeitsrettungswürfen und in jedem Zug eine zusätzliche eingeschränkte Aktion. Danach ist das Ziel bis zum Ende seines nächsten Zuges handlungsunfähig mit Bewegungsrate 0.",
     "material": "ein Span Süßholzwurzel",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Hypnotic Pattern": {
     "name": "Hypnotisches Muster",
-    "description": "Kreaturen, die ein Muster in einem Würfel mit 30 Fuß Kantenlänge sehen, legen Weisheitsrettungswürfe ab oder sind bis zu 1 Minute lang bezaubert, handlungsunfähig und bewegungsunfähig. Schaden oder die Aktion einer anderen Kreatur, die ein Ziel wachrüttelt, beendet den Effekt für dieses Ziel.",
+    "description": "Kreaturen, die ein Muster in einem Würfel mit 9 Meter Kantenlänge sehen, legen Weisheitsrettungswürfe ab oder sind bis zu 1 Minute lang bezaubert, handlungsunfähig und bewegungsunfähig. Schaden oder die Aktion einer anderen Kreatur, die ein Ziel wachrüttelt, beendet den Effekt für dieses Ziel.",
     "material": "eine Prise Konfetti",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Lightning Bolt": {
     "name": "Blitz",
-    "description": "Eine 100 Fuß lange und 5 Fuß breite Blitzlinie bricht aus dir hervor. Kreaturen darin legen Geschicklichkeitsrettungswürfe ab und erleiden bei Misserfolg 8d6 Blitzschaden, bei Erfolg die Hälfte.",
+    "description": "Eine 30 Meter lange und 1,5 Meter breite Blitzlinie bricht aus dir hervor. Kreaturen darin legen Geschicklichkeitsrettungswürfe ab und erleiden bei Misserfolg 8d6 Blitzschaden, bei Erfolg die Hälfte.",
     "material": "etwas Fell und ein Kristallstab",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 3 um 1d6.",
     "castingTime": "Aktion",
@@ -1452,40 +1452,40 @@
   },
   "Magic Circle": {
     "name": "Magischer Kreis",
-    "description": "Erzeuge für 1 Stunde einen Zylinder mit 10 Fuß Radius und 20 Fuß Höhe. Gewählte Celestische, Elementare, Feenwesen, Unholde und Untote können normalerweise nicht eintreten, haben Nachteil bei Angriffen hinein und können Kreaturen darin nicht bezaubern, verängstigen oder besitzen. Die Barriere kann sie stattdessen einschließen.",
+    "description": "Erzeuge für 1 Stunde einen Zylinder mit 3 Meter Radius und 6 Meter Höhe. Gewählte Celestische, Elementare, Feenwesen, Unholde und Untote können normalerweise nicht eintreten, haben Nachteil bei Angriffen hinein und können Kreaturen darin nicht bezaubern, verängstigen oder besitzen. Die Barriere kann sie stattdessen einschließen.",
     "material": "Salz und Silberpulver im Wert von mindestens 100 GM, die der Zauber verbraucht",
     "higherLevels": "Die Dauer verlängert sich pro Zauberplatzgrad über 3 um 1 Stunde.",
     "castingTime": "1 Minute",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "1 Stunde"
   },
   "Major Image": {
     "name": "Mächtiges Trugbild",
-    "description": "Erzeuge bis zu 10 Minuten lang überzeugende Bilder, Klänge, Gerüche und Temperaturen von etwas, das höchstens einen Würfel mit 20 Fuß Kantenlänge ausfüllt. Es verursacht weder Schaden noch Zustände; körperliche Berührung enthüllt die Illusion. Mit einer Magieaktion kannst du sie bewegen und verändern.",
+    "description": "Erzeuge bis zu 10 Minuten lang überzeugende Bilder, Klänge, Gerüche und Temperaturen von etwas, das höchstens einen Würfel mit 6 Meter Kantenlänge ausfüllt. Es verursacht weder Schaden noch Zustände; körperliche Berührung enthüllt die Illusion. Mit einer Magieaktion kannst du sie bewegen und verändern.",
     "material": "etwas Vlies",
     "higherLevels": "Mit einem Zauberplatz des Grades 4 oder höher hält die Illusion bis zur Aufhebung an und benötigt keine Konzentration.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Mass Healing Word": {
     "name": "Massenheilendes Wort",
-    "description": "Als Bonusaktion erhalten bis zu sechs sichtbare Kreaturen innerhalb von 60 Fuß jeweils Trefferpunkte in Höhe von 2d4 plus deinem Zauberattributsmodifikator zurück.",
+    "description": "Als Bonusaktion erhalten bis zu sechs sichtbare Kreaturen innerhalb von 18 Metern jeweils Trefferpunkte in Höhe von 2d4 plus deinem Zauberattributsmodifikator zurück.",
     "higherLevels": "Die Heilung steigt pro Zauberplatzgrad über 3 um 1d4.",
     "castingTime": "Bonusaktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Meld into Stone": {
     "name": "Mit Stein verschmelzen",
-    "description": "Verschmelze mit deiner Ausrüstung bis zu 8 Stunden lang mit einem ausreichend großen Steinobjekt. Du kannst es mit 5 Fuß Bewegung verlassen; Schaden oder Zerstörung des Steins kann dich herausstoßen und verletzen.",
+    "description": "Verschmelze mit deiner Ausrüstung bis zu 8 Stunden lang mit einem ausreichend großen Steinobjekt. Du kannst es mit 1,5 Meter Bewegung verlassen; Schaden oder Zerstörung des Steins kann dich herausstoßen und verletzen.",
     "castingTime": "Aktion oder Ritual",
     "range": "Berührung",
     "duration": "8 Stunden"
   },
   "Nondetection": {
     "name": "Unauffindbarkeit",
-    "description": "Eine bereitwillige Kreatur, ein Ort oder ein Gegenstand von höchstens 10 Fuß Größe kann 8 Stunden lang weder Ziel von Erkenntnismagie werden noch durch magische Ausspähsensoren wahrgenommen werden.",
+    "description": "Eine bereitwillige Kreatur, ein Ort oder ein Gegenstand von höchstens 3 Meter Größe kann 8 Stunden lang weder Ziel von Erkenntnismagie werden noch durch magische Ausspähsensoren wahrgenommen werden.",
     "material": "eine Prise Diamantstaub im Wert von mindestens 25 GM, den der Zauber verbraucht",
     "castingTime": "Aktion",
     "range": "Berührung",
@@ -1493,16 +1493,16 @@
   },
   "Phantom Steed": {
     "name": "Phantomross",
-    "description": "Erzeuge für 1 Stunde ein fast echtes Reitpferd. Es hat eine Bewegungsrate von 100 Fuß und kann 13 Meilen in einer Stunde zurücklegen; es verblasst am Ende des Zaubers innerhalb von 1 Minute und verschwindet vorzeitig, wenn es Schaden erleidet.",
+    "description": "Erzeuge für 1 Stunde ein fast echtes Reitpferd. Es hat eine Bewegungsrate von 30 Metern und kann 19,5 Kilometer in einer Stunde zurücklegen; es verblasst am Ende des Zaubers innerhalb von 1 Minute und verschwindet vorzeitig, wenn es Schaden erleidet.",
     "castingTime": "1 Minute oder Ritual",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Stunde"
   },
   "Plant Growth": {
     "name": "Pflanzenwachstum",
-    "description": "Wähle Wucherung, damit normale Pflanzen in einer Kugel mit 100 Fuß Radius pro zurückgelegtem Fuß 4 Fuß Bewegung erfordern, ausgenommen von dir gewählte Bereiche. Alternativ bereichere Pflanzen 8 Stunden lang in einem Radius von einer halben Meile für eine doppelte Ernte über 365 Tage.",
+    "description": "Wähle Wucherung, damit normale Pflanzen in einer Kugel mit 30 Meter Radius pro zurückgelegtem Meter 4 Meter Bewegung erfordern, ausgenommen von dir gewählte Bereiche. Alternativ bereichere Pflanzen 8 Stunden lang in einem Radius von 750 Metern für eine doppelte Ernte über 365 Tage.",
     "castingTime": "Aktion (Wucherung) oder 8 Stunden (Bereicherung)",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Sofort"
   },
   "Protection from Energy": {
@@ -1537,18 +1537,18 @@
   },
   "Sleet Storm": {
     "name": "Graupelsturm",
-    "description": "Ein Zylinder mit 20 Fuß Radius und 40 Fuß Höhe wird bis zu 1 Minute lang stark verschleiert und schwieriges Gelände. Kreaturen, die ihn betreten oder dort ihren Zug beginnen, legen Geschicklichkeitsrettungswürfe ab oder fallen zu Boden und verlieren ihre Konzentration.",
+    "description": "Ein Zylinder mit 6 Meter Radius und 12 Meter Höhe wird bis zu 1 Minute lang stark verschleiert und schwieriges Gelände. Kreaturen, die ihn betreten oder dort ihren Zug beginnen, legen Geschicklichkeitsrettungswürfe ab oder fallen zu Boden und verlieren ihre Konzentration.",
     "material": "ein Miniaturschirm",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Slow": {
     "name": "Verlangsamen",
-    "description": "Bis zu sechs Kreaturen in einem Würfel mit 40 Fuß Kantenlänge legen Weisheitsrettungswürfe ab. Wer scheitert, hat halbe Bewegungsrate, -2 RK und Geschicklichkeitsrettungswürfe, keine Reaktionen, höchstens einen Angriff und in jedem Zug entweder eine Aktion oder Bonusaktion; Zauber mit gestischen Komponenten haben 25 % Fehlschlagchance. Der Rettungswurf wird in jedem Zug wiederholt.",
+    "description": "Bis zu sechs Kreaturen in einem Würfel mit 12 Meter Kantenlänge legen Weisheitsrettungswürfe ab. Wer scheitert, hat halbe Bewegungsrate, -2 RK und Geschicklichkeitsrettungswürfe, keine Reaktionen, höchstens einen Angriff und in jedem Zug entweder eine Aktion oder Bonusaktion; Zauber mit gestischen Komponenten haben 25 % Fehlschlagchance. Der Rettungswurf wird in jedem Zug wiederholt.",
     "material": "ein Tropfen Melasse",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Speak with Dead": {
@@ -1556,19 +1556,19 @@
     "description": "Stelle einem Leichnam mit Mund innerhalb von 10 Minuten bis zu fünf Fragen. Er weiß nur, was er zu Lebzeiten wusste, und muss nicht wahrheitsgemäß antworten; ein Leichnam, der in den letzten 10 Tagen Ziel dieses Zaubers war, kann nicht erneut befragt werden.",
     "material": "brennender Weihrauch",
     "castingTime": "Aktion",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "10 Minuten"
   },
   "Speak with Plants": {
     "name": "Sprich mit Pflanzen",
-    "description": "Pflanzen in einer Ausstrahlung von 30 Fuß können über den vergangenen Tag berichten und 10 Minuten lang einfache Befehle befolgen. Du kannst bewachsenen Boden zu schwierigem Gelände machen oder diesen Zustand aufheben und mit Pflanzenkreaturen kommunizieren.",
+    "description": "Pflanzen in einer Ausstrahlung von 9 Metern können über den vergangenen Tag berichten und 10 Minuten lang einfache Befehle befolgen. Du kannst bewachsenen Boden zu schwierigem Gelände machen oder diesen Zustand aufheben und mit Pflanzenkreaturen kommunizieren.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "10 Minuten"
   },
   "Spirit Guardians": {
     "name": "Geisterwächter",
-    "description": "Geister füllen bis zu 10 Minuten lang eine Ausstrahlung von 15 Fuß um dich. Bestimme Kreaturen, die verschont bleiben. Andere haben dort halbe Bewegungsrate und legen einen Weisheitsrettungswurf ab, wenn die Ausstrahlung ihren Bereich erreicht oder sie sie betreten oder darin ihren Zug beenden; bei Misserfolg erleiden sie 3d8 gleißenden oder nekrotischen Schaden, bei Erfolg die Hälfte, einmal pro Zug.",
+    "description": "Geister füllen bis zu 10 Minuten lang eine Ausstrahlung von 4,5 Metern um dich. Bestimme Kreaturen, die verschont bleiben. Andere haben dort halbe Bewegungsrate und legen einen Weisheitsrettungswurf ab, wenn die Ausstrahlung ihren Bereich erreicht oder sie sie betreten oder darin ihren Zug beenden; bei Misserfolg erleiden sie 3d8 gleißenden oder nekrotischen Schaden, bei Erfolg die Hälfte, einmal pro Zug.",
     "material": "eine Gebetsrolle",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 3 um 1d8.",
     "castingTime": "Aktion",
@@ -1577,15 +1577,15 @@
   },
   "Stinking Cloud": {
     "name": "Stinkende Wolke",
-    "description": "Erzeuge bis zu 1 Minute lang eine stark verschleierte Gaskugel mit 20 Fuß Radius. Eine Kreatur, die darin ihren Zug beginnt, legt einen Konstitutionsrettungswurf ab oder wird vergiftet und kann in diesem Zug weder Aktion noch Bonusaktion ausführen. Starker Wind zerstreut die Wolke.",
+    "description": "Erzeuge bis zu 1 Minute lang eine stark verschleierte Gaskugel mit 6 Meter Radius. Eine Kreatur, die darin ihren Zug beginnt, legt einen Konstitutionsrettungswurf ab oder wird vergiftet und kann in diesem Zug weder Aktion noch Bonusaktion ausführen. Starker Wind zerstreut die Wolke.",
     "material": "ein faules Ei",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Tiny Hut": {
     "name": "Winzige Hütte",
-    "description": "Erzeuge für 8 Stunden einen unbeweglichen Schutzraum in einer Ausstrahlung von 10 Fuß. Kreaturen und Gegenstände, die beim Wirken darin waren, können ihn durchqueren; andere nicht. Zauber des Grades 3 oder niedriger können ihn nicht durchdringen. Er endet, wenn du ihn verlässt oder erneut wirkst.",
+    "description": "Erzeuge für 8 Stunden einen unbeweglichen Schutzraum in einer Ausstrahlung von 3 Metern. Kreaturen und Gegenstände, die beim Wirken darin waren, können ihn durchqueren; andere nicht. Zauber des Grades 3 oder niedriger können ihn nicht durchdringen. Er endet, wenn du ihn verlässt oder erneut wirkst.",
     "material": "eine Kristallperle",
     "castingTime": "1 Minute oder Ritual",
     "range": "Selbst",
@@ -1617,26 +1617,26 @@
   },
   "Water Breathing": {
     "name": "Wasseratmung",
-    "description": "Bis zu zehn bereitwillige Kreaturen innerhalb von 30 Fuß können 24 Stunden lang unter Wasser atmen und behalten ihre normale Atmung.",
+    "description": "Bis zu zehn bereitwillige Kreaturen innerhalb von 9 Metern können 24 Stunden lang unter Wasser atmen und behalten ihre normale Atmung.",
     "material": "ein kurzes Schilfrohr",
     "castingTime": "Aktion oder Ritual",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "24 Stunden"
   },
   "Water Walk": {
     "name": "Auf Wasser gehen",
-    "description": "Bis zu zehn bereitwillige Kreaturen innerhalb von 30 Fuß können 1 Stunde lang Flüssigkeitsoberflächen wie festen Boden überqueren. Als Bonusaktion können sie zwischen der Oberfläche und der Flüssigkeit darunter wechseln.",
+    "description": "Bis zu zehn bereitwillige Kreaturen innerhalb von 9 Metern können 1 Stunde lang Flüssigkeitsoberflächen wie festen Boden überqueren. Als Bonusaktion können sie zwischen der Oberfläche und der Flüssigkeit darunter wechseln.",
     "material": "ein Stück Kork",
     "castingTime": "Aktion oder Ritual",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Stunde"
   },
   "Wind Wall": {
     "name": "Windwand",
-    "description": "Erzeuge bis zu 1 Minute lang eine Windwand von höchstens 50 Fuß Länge, 15 Fuß Höhe und 1 Fuß Dicke. Kreaturen in ihrem Bereich legen Stärkerettungswürfe gegen 4d8 Wuchtschaden ab, bei Erfolg die Hälfte. Sie blockiert Gase, kleine fliegende Kreaturen und gewöhnliche Geschosse.",
+    "description": "Erzeuge bis zu 1 Minute lang eine Windwand von höchstens 15 Meter Länge, 4,5 Meter Höhe und 0,3 Meter Dicke. Kreaturen in ihrem Bereich legen Stärkerettungswürfe gegen 4d8 Wuchtschaden ab, bei Erfolg die Hälfte. Sie blockiert Gase, kleine fliegende Kreaturen und gewöhnliche Geschosse.",
     "material": "ein Fächer und eine Feder",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute",
     "rolls": {
       "damage": {
@@ -1646,15 +1646,15 @@
   },
   "Arcane Eye": {
     "name": "Arkanes Auge",
-    "description": "Erzeuge bis zu 1 Stunde lang ein unsichtbares, unverwundbares schwebendes Auge. Sieh damit in alle Richtungen, auch mit 30 Fuß Dunkelsicht; bewege es als Bonusaktion 30 Fuß weit, auch durch Öffnungen von mindestens 1 Zoll Breite.",
+    "description": "Erzeuge bis zu 1 Stunde lang ein unsichtbares, unverwundbares schwebendes Auge. Sieh damit in alle Richtungen, auch mit 9 Meter Dunkelsicht; bewege es als Bonusaktion 9 Meter weit, auch durch Öffnungen von mindestens 2,5 Zentimeter Breite.",
     "material": "etwas Fledermausfell",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Aura of Life": {
     "name": "Aura des Lebens",
-    "description": "Eine Ausstrahlung von 30 Fuß um dich verleiht dir und deinen Verbündeten bis zu 10 Minuten lang Resistenz gegen nekrotischen Schaden und verhindert eine Verringerung des Trefferpunktemaximums. Ein Verbündeter, der dort seinen Zug mit 0 Trefferpunkten beginnt, erhält 1 Trefferpunkt zurück.",
+    "description": "Eine Ausstrahlung von 9 Metern um dich verleiht dir und deinen Verbündeten bis zu 10 Minuten lang Resistenz gegen nekrotischen Schaden und verhindert eine Verringerung des Trefferpunktemaximums. Ein Verbündeter, der dort seinen Zug mit 0 Trefferpunkten beginnt, erhält 1 Trefferpunkt zurück.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Konzentration, bis zu 10 Minuten"
@@ -1665,15 +1665,15 @@
     "material": "ein Pentakel",
     "higherLevels": "Wähle pro Zauberplatzgrad über 4 eine zusätzliche Kreatur.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Black Tentacles": {
     "name": "Schwarze Tentakel",
-    "description": "Ein Quadrat von 20 Fuß Seitenlänge wird bis zu 1 Minute lang schwieriges Gelände. Kreaturen darin legen Stärkerettungswürfe ab oder erleiden 3d6 Wuchtschaden und werden festgesetzt; der Wurf wird beim Betreten oder Beenden eines Zuges dort einmal pro Zug wiederholt. Ein festgesetztes Ziel kann mit einer Athletik-Aktion entkommen.",
+    "description": "Ein Quadrat von 6 Metern Seitenlänge wird bis zu 1 Minute lang schwieriges Gelände. Kreaturen darin legen Stärkerettungswürfe ab oder erleiden 3d6 Wuchtschaden und werden festgesetzt; der Wurf wird beim Betreten oder Beenden eines Zuges dort einmal pro Zug wiederholt. Ein festgesetztes Ziel kann mit einer Athletik-Aktion entkommen.",
     "material": "ein Tentakel",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 1 Minute",
     "rolls": {
       "damage": {
@@ -1683,10 +1683,10 @@
   },
   "Blight": {
     "name": "Verdorren",
-    "description": "Eine sichtbare Kreatur innerhalb von 30 Fuß legt einen Konstitutionsrettungswurf ab und erleidet bei Misserfolg 8d8 nekrotischen Schaden, bei Erfolg die Hälfte. Pflanzen scheitern automatisch; eine unbeaufsichtigte nichtmagische Pflanze verdorrt stattdessen und stirbt.",
+    "description": "Eine sichtbare Kreatur innerhalb von 9 Metern legt einen Konstitutionsrettungswurf ab und erleidet bei Misserfolg 8d8 nekrotischen Schaden, bei Erfolg die Hälfte. Pflanzen scheitern automatisch; eine unbeaufsichtigte nichtmagische Pflanze verdorrt stattdessen und stirbt.",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 4 um 1d8.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -1699,28 +1699,28 @@
     "description": "Eine sichtbare Kreatur legt einen Weisheitsrettungswurf ab, mit Vorteil, wenn du oder ein Verbündeter sie bekämpft. Bei Misserfolg ist sie 1 Stunde lang bezaubert und freundlich; Verletzungen durch dich oder einen Verbündeten beenden dies vorzeitig. Danach weiß sie, dass du sie bezaubert hast.",
     "higherLevels": "Wähle pro Zauberplatzgrad über 4 eine zusätzliche Kreatur.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Stunde"
   },
   "Compulsion": {
     "name": "Zwang",
-    "description": "Gewählte sichtbare Kreaturen innerhalb von 30 Fuß legen Weisheitsrettungswürfe ab oder sind bis zu 1 Minute lang bezaubert. Bestimme als Bonusaktion eine horizontale Richtung; Betroffene bewegen sich in ihren nächsten Zügen auf dem sichersten Weg dorthin und wiederholen dann den Rettungswurf.",
+    "description": "Gewählte sichtbare Kreaturen innerhalb von 9 Metern legen Weisheitsrettungswürfe ab oder sind bis zu 1 Minute lang bezaubert. Bestimme als Bonusaktion eine horizontale Richtung; Betroffene bewegen sich in ihren nächsten Zügen auf dem sichersten Weg dorthin und wiederholen dann den Rettungswurf.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Confusion": {
     "name": "Verwirrung",
-    "description": "Kreaturen in einer Kugel mit 10 Fuß Radius legen Weisheitsrettungswürfe ab. Wer scheitert, kann keine Bonusaktionen oder Reaktionen verwenden und würfelt in jedem Zug 1d10, um zu bestimmen, ob er sich zufällig bewegt, nichts tut, eine zufällige nahe Kreatur angreift oder normal handelt. Der Rettungswurf wird in jedem Zug wiederholt.",
+    "description": "Kreaturen in einer Kugel mit 3 Meter Radius legen Weisheitsrettungswürfe ab. Wer scheitert, kann keine Bonusaktionen oder Reaktionen verwenden und würfelt in jedem Zug 1d10, um zu bestimmen, ob er sich zufällig bewegt, nichts tut, eine zufällige nahe Kreatur angreift oder normal handelt. Der Rettungswurf wird in jedem Zug wiederholt.",
     "material": "drei Nussschalen",
-    "higherLevels": "Der Kugelradius wächst pro Zauberplatzgrad über 4 um 5 Fuß.",
+    "higherLevels": "Der Kugelradius wächst pro Zauberplatzgrad über 4 um 1,5 Meter.",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Conjure Minor Elementals": {
     "name": "Schwache Elementare beschwören",
-    "description": "Geister füllen bis zu 10 Minuten lang eine Ausstrahlung von 15 Fuß um dich. Feinde behandeln den Boden darin als schwieriges Gelände, und deine Angriffe gegen Kreaturen darin verursachen zusätzlich 2d8 Säure-, Kälte-, Feuer- oder Blitzschaden.",
+    "description": "Geister füllen bis zu 10 Minuten lang eine Ausstrahlung von 4,5 Metern um dich. Feinde behandeln den Boden darin als schwieriges Gelände, und deine Angriffe gegen Kreaturen darin verursachen zusätzlich 2d8 Säure-, Kälte-, Feuer- oder Blitzschaden.",
     "higherLevels": "Der Zusatzschaden steigt pro Zauberplatzgrad über 4 um 1d8.",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -1728,7 +1728,7 @@
   },
   "Conjure Woodland Beings": {
     "name": "Waldwesen beschwören",
-    "description": "Naturgeister füllen bis zu 10 Minuten lang eine Ausstrahlung von 10 Fuß um dich. Kreaturen, die sie betreten, darin ihren Zug beenden oder von ihr erreicht werden, können einmal pro Zug zu einem Weisheitsrettungswurf gegen 5d8 Energieschaden gezwungen werden, bei Erfolg die Hälfte. Du kannst Rückzug als Bonusaktion ausführen.",
+    "description": "Naturgeister füllen bis zu 10 Minuten lang eine Ausstrahlung von 3 Metern um dich. Kreaturen, die sie betreten, darin ihren Zug beenden oder von ihr erreicht werden, können einmal pro Zug zu einem Weisheitsrettungswurf gegen 5d8 Energieschaden gezwungen werden, bei Erfolg die Hälfte. Du kannst Rückzug als Bonusaktion ausführen.",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 4 um 1d8.",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -1741,10 +1741,10 @@
   },
   "Control Water": {
     "name": "Wasser kontrollieren",
-    "description": "Kontrolliere bis zu 10 Minuten lang Wasser in einem Würfel von höchstens 100 Fuß Kantenlänge. Flut hebt das Wasser an oder schickt eine Welle, Wasser teilen öffnet einen Weg, Strömung umleiten ändert den Verlauf und Strudel zieht Kreaturen zur Mitte und kann 2d8 Wuchtschaden verursachen.",
+    "description": "Kontrolliere bis zu 10 Minuten lang Wasser in einem Würfel von höchstens 30 Meter Kantenlänge. Flut hebt das Wasser an oder schickt eine Welle, Wasser teilen öffnet einen Weg, Strömung umleiten ändert den Verlauf und Strudel zieht Kreaturen zur Mitte und kann 2d8 Wuchtschaden verursachen.",
     "material": "eine Mischung aus Wasser und Staub",
     "castingTime": "Aktion",
-    "range": "300 Fuß",
+    "range": "90 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Death Ward": {
@@ -1756,9 +1756,9 @@
   },
   "Dimension Door": {
     "name": "Dimensionstür",
-    "description": "Teleportiere dich zu einem bestimmten Punkt innerhalb von 500 Fuß und nimm optional eine bereitwillige Kreatur innerhalb von 5 Fuß mit. Ist der Zielort besetzt oder voll, scheitert die Teleportation und jeder Reisende erleidet 4d6 Energieschaden.",
+    "description": "Teleportiere dich zu einem bestimmten Punkt innerhalb von 150 Metern und nimm optional eine bereitwillige Kreatur innerhalb von 1,5 Metern mit. Ist der Zielort besetzt oder voll, scheitert die Teleportation und jeder Reisende erleidet 4d6 Energieschaden.",
     "castingTime": "Aktion",
-    "range": "500 Fuß",
+    "range": "150 Meter",
     "duration": "Sofort"
   },
   "Divination": {
@@ -1774,22 +1774,22 @@
     "description": "Ein sichtbares Tier legt einen Weisheitsrettungswurf ab oder ist bis zu 1 Minute lang bezaubert. Du kannst ihm telepathisch ohne Aktion Befehle geben; nach Schaden wiederholt es den Rettungswurf. Wenn du es bekämpfst, hat es beim ersten Wurf Vorteil.",
     "higherLevels": "Mit Grad 5 dauert die Konzentration 10 Minuten, mit Grad 6 1 Stunde und mit Grad 7 oder höher 8 Stunden.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Fabricate": {
     "name": "Fabrizieren",
     "description": "Verwandle Rohstoffe in einen großen oder kleineren Gegenstand oder einen mittelgroßen oder kleineren Gegenstand aus Metall, Stein oder einem anderen Mineral. Für fein gearbeitete Stücke wie Waffen oder Rüstungen benötigst du die passende Handwerkszeug-Beherrschung; Kreaturen und magische Gegenstände können nicht entstehen.",
     "castingTime": "10 Minuten",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Sofort"
   },
   "Faithful Hound": {
     "name": "Treuer Hund",
-    "description": "Beschwöre für 8 Stunden einen unsichtbaren, unverwundbaren Wachhund. Er bellt, wenn eine nicht zugelassene Kreatur auf 30 Fuß herankommt, hat 30 Fuß Wahre Sicht und beißt zu Beginn jedes deiner Züge einen Feind innerhalb von 5 Fuß für 4d8 Energieschaden bei misslungenem Geschicklichkeitsrettungswurf.",
+    "description": "Beschwöre für 8 Stunden einen unsichtbaren, unverwundbaren Wachhund. Er bellt, wenn eine nicht zugelassene Kreatur auf 9 Meter herankommt, hat 9 Meter Wahre Sicht und beißt zu Beginn jedes deiner Züge einen Feind innerhalb von 1,5 Metern für 4d8 Energieschaden bei misslungenem Geschicklichkeitsrettungswurf.",
     "material": "eine Silberpfeife",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "8 Stunden",
     "rolls": {
       "damage": {
@@ -1807,7 +1807,7 @@
   },
   "Freedom of Movement": {
     "name": "Bewegungsfreiheit",
-    "description": "Eine bereitwillige berührte Kreatur ignoriert 1 Stunde lang schwieriges Gelände und magische Effekte, die ihre Bewegungsrate verringern oder Lähmung oder Festsetzen bewirken. Sie erhält eine Schwimmbewegungsrate in Höhe ihrer Bewegungsrate und kann mit 5 Fuß Bewegung nichtmagischen Fesseln entkommen.",
+    "description": "Eine bereitwillige berührte Kreatur ignoriert 1 Stunde lang schwieriges Gelände und magische Effekte, die ihre Bewegungsrate verringern oder Lähmung oder Festsetzen bewirken. Sie erhält eine Schwimmbewegungsrate in Höhe ihrer Bewegungsrate und kann mit 1,5 Meter Bewegung nichtmagischen Fesseln entkommen.",
     "material": "ein Lederriemen",
     "higherLevels": "Wähle pro Zauberplatzgrad über 4 eine zusätzliche Kreatur.",
     "castingTime": "Aktion",
@@ -1816,10 +1816,10 @@
   },
   "Giant Insect": {
     "name": "Riesiges Insekt",
-    "description": "Beschwöre bis zu 10 Minuten lang einen riesigen Tausendfüßler, eine Spinne oder Wespe in einem Bereich innerhalb von 60 Fuß. Er handelt unmittelbar nach deinem Zug, befolgt mündliche Befehle und verwendet den Werteblock Riesiges Insekt; seine Gestalt verändert seine Fähigkeiten.",
+    "description": "Beschwöre bis zu 10 Minuten lang einen riesigen Tausendfüßler, eine Spinne oder Wespe in einem Bereich innerhalb von 18 Metern. Er handelt unmittelbar nach deinem Zug, befolgt mündliche Befehle und verwendet den Werteblock Riesiges Insekt; seine Gestalt verändert seine Fähigkeiten.",
     "higherLevels": "Verwende den Zauberplatzgrad für den Zaubergrad und die skalierenden Spielwerte des beschworenen Insekts.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Greater Invisibility": {
@@ -1831,31 +1831,31 @@
   },
   "Guardian of Faith": {
     "name": "Hüter des Glaubens",
-    "description": "Beschwöre bis zu 8 Stunden lang einen unverwundbaren großen Wächter. Feinde, die innerhalb von 10 Fuß eintreten oder dort ihren Zug beginnen, legen einen Geschicklichkeitsrettungswurf ab und erleiden bei Misserfolg 20 gleißenden Schaden, bei Erfolg die Hälfte. Nach insgesamt 60 verursachten Schadenspunkten verschwindet er.",
+    "description": "Beschwöre bis zu 8 Stunden lang einen unverwundbaren großen Wächter. Feinde, die innerhalb von 3 Metern eintreten oder dort ihren Zug beginnen, legen einen Geschicklichkeitsrettungswurf ab und erleiden bei Misserfolg 20 gleißenden Schaden, bei Erfolg die Hälfte. Nach insgesamt 60 verursachten Schadenspunkten verschwindet er.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "8 Stunden"
   },
   "Hallucinatory Terrain": {
     "name": "Halluzinatorisches Gelände",
-    "description": "Lasse einen Würfel natürlichen Geländes mit 150 Fuß Kantenlänge 24 Stunden lang wie anderes natürliches Gelände aussehen, klingen und riechen. Bauwerke, Ausrüstung und Kreaturen bleiben unverändert; Berührung oder ein erfolgreicher Nachforschungswurf enthüllt die Illusion.",
+    "description": "Lasse einen Würfel natürlichen Geländes mit 45 Meter Kantenlänge 24 Stunden lang wie anderes natürliches Gelände aussehen, klingen und riechen. Bauwerke, Ausrüstung und Kreaturen bleiben unverändert; Berührung oder ein erfolgreicher Nachforschungswurf enthüllt die Illusion.",
     "material": "ein Pilz",
     "castingTime": "10 Minuten",
-    "range": "300 Fuß",
+    "range": "90 Meter",
     "duration": "24 Stunden"
   },
   "Ice Storm": {
     "name": "Eissturm",
-    "description": "Hagel trifft einen Zylinder mit 20 Fuß Radius und 40 Fuß Höhe. Kreaturen legen Geschicklichkeitsrettungswürfe gegen 2d10 Wucht- plus 4d6 Kälteschaden ab, bei Erfolg die Hälfte. Der Boden wird bis zum Ende deines nächsten Zuges schwieriges Gelände.",
+    "description": "Hagel trifft einen Zylinder mit 6 Meter Radius und 12 Meter Höhe. Kreaturen legen Geschicklichkeitsrettungswürfe gegen 2d10 Wucht- plus 4d6 Kälteschaden ab, bei Erfolg die Hälfte. Der Boden wird bis zum Ende deines nächsten Zuges schwieriges Gelände.",
     "material": "ein Fausthandschuh",
     "higherLevels": "Der Wuchtschaden steigt pro Zauberplatzgrad über 4 um 1d10.",
     "castingTime": "Aktion",
-    "range": "300 Fuß",
+    "range": "90 Meter",
     "duration": "Sofort"
   },
   "Locate Creature": {
     "name": "Kreatur finden",
-    "description": "Spüre bis zu 1 Stunde lang die Richtung einer bekannten, benannten Kreatur innerhalb von 1.000 Fuß oder der nächsten Kreatur einer Art, die du aus der Nähe gesehen hast. Eine veränderte Gestalt oder eine Bleibarriere blockiert den Effekt.",
+    "description": "Spüre bis zu 1 Stunde lang die Richtung einer bekannten, benannten Kreatur innerhalb von 300 Metern oder der nächsten Kreatur einer Art, die du aus der Nähe gesehen hast. Eine veränderte Gestalt oder eine Bleibarriere blockiert den Effekt.",
     "material": "Fell eines Spürhunds",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -1866,7 +1866,7 @@
     "description": "Eine sichtbare Kreatur legt einen Weisheitsrettungswurf gegen ihre größte Angst ab. Bei Misserfolg erleidet sie 4d10 psychischen Schaden und hat Nachteil bei Würfen und Angriffen; bei Erfolg erleidet sie die Hälfte und der Zauber endet. Sie wiederholt den Wurf in jedem Zug und erleidet bei erneutem Misserfolg wieder 4d10.",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 4 um 1d10.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute",
     "rolls": {
       "damage": {
@@ -1879,16 +1879,16 @@
     "description": "Eine Kreatur, die du siehst, legt einen Weisheitsrettungswurf ab oder wird bis zu 1 Stunde lang zu einem Tier mit HG höchstens gleich ihrem HG oder ihrer Stufe. Sie verwendet die Spielwerte des Tiers, behält aber ihre Trefferpunkte und Trefferwürfel und erhält temporäre Trefferpunkte in Höhe der Trefferpunkte des Tiers; der Zauber endet, wenn diese aufgebraucht sind.",
     "material": "ein Raupenkokon",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Private Sanctum": {
     "name": "Privates Heiligtum",
-    "description": "Schütze für 24 Stunden einen Würfel von 5 bis 100 Fuß Kantenlänge. Wähle Barrieren gegen Schall oder Sicht, Sensoren und Zielauswahl von Erkenntnismagie, Teleportation oder Ebenenreisen. Tägliches Wirken am selben Ort für 365 Tage macht den Schutz dauerhaft.",
+    "description": "Schütze für 24 Stunden einen Würfel von 5 bis 30 Meter Kantenlänge. Wähle Barrieren gegen Schall oder Sicht, Sensoren und Zielauswahl von Erkenntnismagie, Teleportation oder Ebenenreisen. Tägliches Wirken am selben Ort für 365 Tage macht den Schutz dauerhaft.",
     "material": "eine dünne Bleifolie",
-    "higherLevels": "Die maximale Würfelkante wächst pro Zauberplatzgrad über 4 um 100 Fuß.",
+    "higherLevels": "Die maximale Würfelkante wächst pro Zauberplatzgrad über 4 um 30 Meter.",
     "castingTime": "10 Minuten",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "24 Stunden"
   },
   "Resilient Sphere": {
@@ -1896,20 +1896,20 @@
     "description": "Schließe eine große oder kleinere Kreatur oder einen Gegenstand bis zu 1 Minute lang in eine unverwundbare Kugel ein; eine nicht bereitwillige Kreatur legt einen Geschicklichkeitsrettungswurf ab. Nichts kann sie durchdringen, obwohl Insassen atmen können; die Kugel kann gerollt oder bewegt werden.",
     "material": "eine Glaskugel",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Secret Chest": {
     "name": "Geheime Truhe",
-    "description": "Verbirg eine eigens gefertigte Truhe von 3 mal 2 mal 2 Fuß und bis zu 12 Kubikfuß Inhalt auf der Ätherebene. Berühre ihre winzige Nachbildung mit einer Magieaktion, um sie zurückzuholen oder wieder fortzuschicken. Nach 60 Tagen besteht an jedem Tag eine kumulative Chance von 5 %, dass der Zauber endet.",
-    "material": "eine Truhe von 3 mal 2 mal 2 Fuß aus seltenen Materialien im Wert von mindestens 5.000 GM und eine winzige Nachbildung aus denselben Materialien im Wert von mindestens 50 GM",
+    "description": "Verbirg eine eigens gefertigte Truhe von 3 mal 0,6 mal 0,6 Meter und bis zu 12 Kubikfuß Inhalt auf der Ätherebene. Berühre ihre winzige Nachbildung mit einer Magieaktion, um sie zurückzuholen oder wieder fortzuschicken. Nach 60 Tagen besteht an jedem Tag eine kumulative Chance von 5 %, dass der Zauber endet.",
+    "material": "eine Truhe von 3 mal 0,6 mal 0,6 Meter aus seltenen Materialien im Wert von mindestens 5.000 GM und eine winzige Nachbildung aus denselben Materialien im Wert von mindestens 50 GM",
     "castingTime": "Aktion",
     "range": "Berührung",
     "duration": "Bis zur Aufhebung"
   },
   "Stone Shape": {
     "name": "Stein formen",
-    "description": "Forme einen mittelgroßen oder kleineren Steingegenstand oder ein Steinstück von höchstens 5 Fuß Breite nach deinen Wünschen um. Du kannst eine einfache Öffnung, Tür oder einen Behälter schaffen, aber keine feine Mechanik.",
+    "description": "Forme einen mittelgroßen oder kleineren Steingegenstand oder ein Steinstück von höchstens 1,5 Meter Breite nach deinen Wünschen um. Du kannst eine einfache Öffnung, Tür oder einen Behälter schaffen, aber keine feine Mechanik.",
     "material": "weicher Ton",
     "castingTime": "Aktion",
     "range": "Berührung",
@@ -1925,44 +1925,44 @@
   },
   "Vitriolic Sphere": {
     "name": "Ätzkugel",
-    "description": "Eine Säurekugel mit 20 Fuß Radius explodiert innerhalb von 150 Fuß. Kreaturen legen Geschicklichkeitsrettungswürfe ab; bei Misserfolg erleiden sie sofort 10d4 Säureschaden und 5d4 am Ende ihres nächsten Zuges, bei Erfolg nur die Hälfte des anfänglichen Schadens.",
+    "description": "Eine Säurekugel mit 6 Meter Radius explodiert innerhalb von 45 Metern. Kreaturen legen Geschicklichkeitsrettungswürfe ab; bei Misserfolg erleiden sie sofort 10d4 Säureschaden und 5d4 am Ende ihres nächsten Zuges, bei Erfolg nur die Hälfte des anfänglichen Schadens.",
     "material": "ein Tropfen Galle",
     "higherLevels": "Der anfängliche Schaden steigt pro Zauberplatzgrad über 4 um 2d4.",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Sofort"
   },
   "Wall of Fire": {
     "name": "Feuerwand",
-    "description": "Erzeuge bis zu 1 Minute lang eine Feuerwand von höchstens 60 Fuß Länge und 20 Fuß Höhe oder einen Ring mit bis zu 20 Fuß Durchmesser. Kreaturen in ihrem Bereich legen Geschicklichkeitsrettungswürfe gegen 5d8 Feuerschaden ab, bei Erfolg die Hälfte. Eine gewählte Seite fügt auch Kreaturen, die die Wand betreten oder ihren Zug innerhalb von 10 Fuß beenden, 5d8 zu.",
+    "description": "Erzeuge bis zu 1 Minute lang eine Feuerwand von höchstens 18 Meter Länge und 6 Meter Höhe oder einen Ring mit bis zu 6 Meter Durchmesser. Kreaturen in ihrem Bereich legen Geschicklichkeitsrettungswürfe gegen 5d8 Feuerschaden ab, bei Erfolg die Hälfte. Eine gewählte Seite fügt auch Kreaturen, die die Wand betreten oder ihren Zug innerhalb von 3 Metern beenden, 5d8 zu.",
     "material": "ein Stück Holzkohle",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 4 um 1d8.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Animate Objects": {
     "name": "Gegenstände beleben",
-    "description": "Belebe unbeaufsichtigte nichtmagische Gegenstände bis zu deinem Zauberattributsmodifikator; mittelgroße oder kleinere zählen als einer, große als zwei, riesige als drei. Jeder wird ein verbündetes Konstrukt (RK 15; je nach Größe 10/20/40 TP), handelt nach dir und befolgt deine Befehle als Bonusaktion innerhalb von 500 Fuß. Sein Nahkampfschlag verwendet deinen Zauberangriffsbonus und verursacht 1d4+3 Energieschaden (mittelgroß oder kleiner), 2d6+3+deinen Zaubermodifikator (groß) oder 2d12+3+deinen Modifikator (riesig).",
+    "description": "Belebe unbeaufsichtigte nichtmagische Gegenstände bis zu deinem Zauberattributsmodifikator; mittelgroße oder kleinere zählen als einer, große als zwei, riesige als drei. Jeder wird ein verbündetes Konstrukt (RK 15; je nach Größe 10/20/40 TP), handelt nach dir und befolgt deine Befehle als Bonusaktion innerhalb von 150 Metern. Sein Nahkampfschlag verwendet deinen Zauberangriffsbonus und verursacht 1d4+3 Energieschaden (mittelgroß oder kleiner), 2d6+3+deinen Zaubermodifikator (groß) oder 2d12+3+deinen Modifikator (riesig).",
     "higherLevels": "Jeder Zauberplatzgrad über 5 fügt dem Schlag mittelgroßer oder kleinerer Gegenstände 1d4 Schaden hinzu, großer 1d6 und riesiger 1d12.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Antilife Shell": {
     "name": "Antilebenshülle",
-    "description": "Eine Ausstrahlung von 10 Fuß um dich hindert bis zu 1 Stunde lang alle Kreaturen außer Konstrukten und Untoten daran, sie zu durchqueren oder hindurchzugreifen. Sie können dennoch durch sie hindurch zaubern oder mit Fernkampf- oder Reichweitenwaffen angreifen. Eine Kreatur durch die Barriere zu zwingen beendet den Zauber.",
+    "description": "Eine Ausstrahlung von 3 Metern um dich hindert bis zu 1 Stunde lang alle Kreaturen außer Konstrukten und Untoten daran, sie zu durchqueren oder hindurchzugreifen. Sie können dennoch durch sie hindurch zaubern oder mit Fernkampf- oder Reichweitenwaffen angreifen. Eine Kreatur durch die Barriere zu zwingen beendet den Zauber.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Arcane Hand": {
     "name": "Arkane Hand",
-    "description": "Erzeuge bis zu 1 Minute lang eine große magische Hand (RK 20, Trefferpunkte in Höhe deiner eigenen). Bewege sie beim Wirken und später als Bonusaktion bis zu 60 Fuß und wähle einen Effekt: Nahkampf-Zauberangriff für 5d8 Energieschaden, Stoßen, Packen und Zerquetschen für 4d6 plus deinen Zaubermodifikator oder halbe Deckung gewähren.",
+    "description": "Erzeuge bis zu 1 Minute lang eine große magische Hand (RK 20, Trefferpunkte in Höhe deiner eigenen). Bewege sie beim Wirken und später als Bonusaktion bis zu 18 Meter und wähle einen Effekt: Nahkampf-Zauberangriff für 5d8 Energieschaden, Stoßen, Packen und Zerquetschen für 4d6 plus deinen Zaubermodifikator oder halbe Deckung gewähren.",
     "material": "eine Eierschale und ein Handschuh",
     "higherLevels": "Jeder Zauberplatzgrad über 5 fügt der Geballten Faust 2d8 und der Greifenden Hand 2d6 Schaden hinzu.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Awaken": {
@@ -1975,10 +1975,10 @@
   },
   "Cloudkill": {
     "name": "Todeswolke",
-    "description": "Erzeuge bis zu 10 Minuten lang eine stark verschleierte Nebelkugel mit 20 Fuß Radius; sie bewegt sich in jedem Zug 10 Fuß von dir fort. Kreaturen darin legen einmal pro Zug Konstitutionsrettungswürfe gegen 5d8 Giftschaden ab, bei Erfolg die Hälfte, wenn sie erscheint, sie erreicht oder wenn sie sie betreten oder darin ihren Zug beenden.",
+    "description": "Erzeuge bis zu 10 Minuten lang eine stark verschleierte Nebelkugel mit 6 Meter Radius; sie bewegt sich in jedem Zug 3 Meter von dir fort. Kreaturen darin legen einmal pro Zug Konstitutionsrettungswürfe gegen 5d8 Giftschaden ab, bei Erfolg die Hälfte, wenn sie erscheint, sie erreicht oder wenn sie sie betreten oder darin ihren Zug beenden.",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 5 um 1d8.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 10 Minuten",
     "rolls": {
       "damage": {
@@ -1996,14 +1996,14 @@
   },
   "Commune with Nature": {
     "name": "Mit der Natur kommunizieren",
-    "description": "Erfahre drei Tatsachen über die natürliche Umgebung: Siedlungen, Ebenenportale, eine bedeutende außerweltliche Kreatur, vorherrschende Pflanzen, Mineralien oder Tiere oder Gewässer. Der Radius beträgt draußen 3 Meilen und unterirdisch 300 Fuß; in bebauten Gebieten scheitert der Zauber.",
+    "description": "Erfahre drei Tatsachen über die natürliche Umgebung: Siedlungen, Ebenenportale, eine bedeutende außerweltliche Kreatur, vorherrschende Pflanzen, Mineralien oder Tiere oder Gewässer. Der Radius beträgt draußen 4,5 Kilometer und unterirdisch 90 Meter; in bebauten Gebieten scheitert der Zauber.",
     "castingTime": "1 Minute oder Ritual",
     "range": "Selbst",
     "duration": "Sofort"
   },
   "Cone of Cold": {
     "name": "Kältekegel",
-    "description": "Ein Kältekegel von 60 Fuß erzwingt Konstitutionsrettungswürfe. Kreaturen erleiden bei Misserfolg 8d8 Kälteschaden, bei Erfolg die Hälfte; wer dadurch stirbt, gefriert bis zum Auftauen.",
+    "description": "Ein Kältekegel von 18 Metern erzwingt Konstitutionsrettungswürfe. Kreaturen erleiden bei Misserfolg 8d8 Kälteschaden, bei Erfolg die Hälfte; wer dadurch stirbt, gefriert bis zum Auftauen.",
     "material": "ein kleiner Kegel aus Kristall oder Glas",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 5 um 1d8.",
     "castingTime": "Aktion",
@@ -2020,7 +2020,7 @@
     "description": "Beschwöre bis zu 10 Minuten lang einen großen körperlosen Geist. Wähle Luft (Blitz), Erde (Schall), Feuer (Feuer) oder Wasser (Kälte). Er kann eine Kreatur in oder nahe seinem Bereich nach einem Geschicklichkeitsrettungswurf festsetzen; ein Misserfolg verursacht 8d8 Schaden, weitere misslungene Rettungswürfe während des Festsetzens jeweils 4d8.",
     "higherLevels": "Der anfängliche Schaden steigt pro Zauberplatzgrad über 5 um 1d8.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Contact Other Plane": {
@@ -2044,16 +2044,16 @@
   },
   "Creation": {
     "name": "Erschaffung",
-    "description": "Erschaffe aus gesehener Schattenmaterie einen Gegenstand von höchstens 5 Fuß Kantenlänge. Pflanzenmaterial hält 24 Stunden, Stein oder Kristall 12 Stunden, Edelmetall 1 Stunde, Edelsteine 10 Minuten und Adamant oder Mithral 1 Minute. Der Gegenstand kann nicht als Materialkomponente eines anderen Zaubers dienen.",
+    "description": "Erschaffe aus gesehener Schattenmaterie einen Gegenstand von höchstens 1,5 Meter Kantenlänge. Pflanzenmaterial hält 24 Stunden, Stein oder Kristall 12 Stunden, Edelmetall 1 Stunde, Edelsteine 10 Minuten und Adamant oder Mithral 1 Minute. Der Gegenstand kann nicht als Materialkomponente eines anderen Zaubers dienen.",
     "material": "ein Pinsel",
-    "higherLevels": "Die maximale Würfelkante wächst pro Zauberplatzgrad über 5 um 5 Fuß.",
+    "higherLevels": "Die maximale Würfelkante wächst pro Zauberplatzgrad über 5 um 1,5 Meter.",
     "castingTime": "1 Minute",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Besonders"
   },
   "Dispel Evil and Good": {
     "name": "Vertreibe Böses und Gutes",
-    "description": "Celestische, Elementare, Feenwesen, Unholde und Untote haben bis zu 1 Minute lang Nachteil bei Angriffen gegen dich. Beende den Zauber, um eine berührte Kreatur von ihrer Besessenheit, Bezauberung oder Furcht zu befreien oder eine solche Kreatur innerhalb von 5 Fuß zu einem Charismarettungswurf zu zwingen, andernfalls kehrt sie auf ihre Heimatebene zurück.",
+    "description": "Celestische, Elementare, Feenwesen, Unholde und Untote haben bis zu 1 Minute lang Nachteil bei Angriffen gegen dich. Beende den Zauber, um eine berührte Kreatur von ihrer Besessenheit, Bezauberung oder Furcht zu befreien oder eine solche Kreatur innerhalb von 1,5 Metern zu einem Charismarettungswurf zu zwingen, andernfalls kehrt sie auf ihre Heimatebene zurück.",
     "material": "Silber- und Eisenpulver",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -2064,7 +2064,7 @@
     "description": "Ein sichtbarer Humanoider legt einen Weisheitsrettungswurf ab oder ist bis zu 1 Minute lang bezaubert. Befiehl ihm telepathisch ohne Aktion; bei Schaden wiederholt er den Wurf. Bekämpfst du ihn, hat er beim ersten Rettungswurf Vorteil.",
     "higherLevels": "Die Konzentration kann mit Grad 6 10 Minuten, mit Grad 7 1 Stunde und mit Grad 8 oder höher 8 Stunden dauern.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Dream": {
@@ -2077,11 +2077,11 @@
   },
   "Flame Strike": {
     "name": "Flammenschlag",
-    "description": "Ein Zylinder mit 10 Fuß Radius und 40 Fuß Höhe erzwingt Geschicklichkeitsrettungswürfe. Kreaturen erleiden bei Misserfolg 5d6 Feuer- plus 5d6 gleißenden Schaden, bei Erfolg jeweils die Hälfte.",
+    "description": "Ein Zylinder mit 3 Meter Radius und 12 Meter Höhe erzwingt Geschicklichkeitsrettungswürfe. Kreaturen erleiden bei Misserfolg 5d6 Feuer- plus 5d6 gleißenden Schaden, bei Erfolg jeweils die Hälfte.",
     "material": "eine Prise Schwefel",
     "higherLevels": "Feuer- und gleißender Schaden steigen pro Zauberplatzgrad über 5 jeweils um 1d6.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "fire_damage": {
@@ -2097,7 +2097,7 @@
     "description": "Eine Kreatur, die deinen Befehl versteht, legt einen Weisheitsrettungswurf ab oder ist 30 Tage lang bezaubert. Direktes Handeln gegen den Befehl verursacht höchstens einmal pro Tag 5d10 psychischen Schaden. Selbstmörderische Befehle beenden den Zauber.",
     "higherLevels": "Mit Grad 7 oder 8 hält der Zauber 365 Tage; mit Grad 9 bis zur Beendigung durch Fluch entfernen, Mächtige Genesung oder Wunsch.",
     "castingTime": "1 Minute",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "30 Tage"
   },
   "Greater Restoration": {
@@ -2110,7 +2110,7 @@
   },
   "Hallow": {
     "name": "Weihen",
-    "description": "Schütze einen Bereich mit bis zu 60 Fuß Radius bis zur Aufhebung. Gewählte Aberrationen, Celestische, Elementare, Feenwesen, Unholde oder Untote können ihn nicht freiwillig betreten; ihre Besessenheit, Bezauberung oder Furcht wird dort unterdrückt. Wähle einen zusätzlichen Effekt wie Licht, Dunkelheit, Stille, Resistenz, Verwundbarkeit, Mut, Furcht, Sprachen oder Teleportationssperre.",
+    "description": "Schütze einen Bereich mit bis zu 18 Meter Radius bis zur Aufhebung. Gewählte Aberrationen, Celestische, Elementare, Feenwesen, Unholde oder Untote können ihn nicht freiwillig betreten; ihre Besessenheit, Bezauberung oder Furcht wird dort unterdrückt. Wähle einen zusätzlichen Effekt wie Licht, Dunkelheit, Stille, Resistenz, Verwundbarkeit, Mut, Furcht, Sprachen oder Teleportationssperre.",
     "material": "Weihrauch im Wert von mindestens 1.000 GM, den der Zauber verbraucht",
     "castingTime": "24 Stunden",
     "range": "Berührung",
@@ -2122,16 +2122,16 @@
     "material": "ein gerades Stück Eisen",
     "higherLevels": "Wähle pro Zauberplatzgrad über 5 eine zusätzliche Kreatur.",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Insect Plague": {
     "name": "Insektenplage",
-    "description": "Heuschrecken füllen bis zu 10 Minuten lang eine Kugel mit 20 Fuß Radius, die leicht verschleiert und schwieriges Gelände wird. Kreaturen legen einmal pro Zug Konstitutionsrettungswürfe gegen 4d10 Stichschaden ab, bei Erfolg die Hälfte, wenn der Schwarm erscheint oder wenn sie eintreten oder darin ihren Zug beenden.",
+    "description": "Heuschrecken füllen bis zu 10 Minuten lang eine Kugel mit 6 Meter Radius, die leicht verschleiert und schwieriges Gelände wird. Kreaturen legen einmal pro Zug Konstitutionsrettungswürfe gegen 4d10 Stichschaden ab, bei Erfolg die Hälfte, wenn der Schwarm erscheint oder wenn sie eintreten oder darin ihren Zug beenden.",
     "material": "eine Heuschrecke",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 5 um 1d10.",
     "castingTime": "Aktion",
-    "range": "300 Fuß",
+    "range": "90 Meter",
     "duration": "Konzentration, bis zu 10 Minuten",
     "rolls": {
       "damage": {
@@ -2149,10 +2149,10 @@
   },
   "Mass Cure Wounds": {
     "name": "Massenwunden heilen",
-    "description": "Wähle bis zu sechs Kreaturen in einer Kugel mit 30 Fuß Radius um einen sichtbaren Punkt innerhalb von 60 Fuß. Jede erhält Trefferpunkte in Höhe von 5d8 plus deinem Zauberattributsmodifikator zurück.",
+    "description": "Wähle bis zu sechs Kreaturen in einer Kugel mit 9 Meter Radius um einen sichtbaren Punkt innerhalb von 18 Metern. Jede erhält Trefferpunkte in Höhe von 5d8 plus deinem Zauberattributsmodifikator zurück.",
     "higherLevels": "Die Heilung steigt pro Zauberplatzgrad über 5 um 1d8.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Mislead": {
@@ -2167,24 +2167,24 @@
     "description": "Eine sichtbare Kreatur legt einen Weisheitsrettungswurf ab (mit Vorteil, wenn sie dich bekämpft) oder wird bezaubert und handlungsunfähig. Beschreibe eine veränderte Erinnerung an ein Ereignis der letzten 24 Stunden von höchstens 10 Minuten Dauer; Schaden oder ein anderer Zauber beendet den Effekt ohne Erinnerungsänderung.",
     "higherLevels": "Mit Grad 6 reicht der Zauber 7 Tage zurück, mit Grad 7 30 Tage, mit Grad 8 365 Tage und mit Grad 9 beliebig weit.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Passwall": {
     "name": "Wandpassage",
-    "description": "Öffne für 1 Stunde innerhalb von 30 Fuß einen Durchgang durch Holz, Putz oder Stein von höchstens 5 Fuß Breite, 8 Fuß Höhe und 20 Fuß Tiefe. Beim Schließen werden Insassen sicher hinausbefördert.",
+    "description": "Öffne für 1 Stunde innerhalb von 9 Metern einen Durchgang durch Holz, Putz oder Stein von höchstens 1,5 Meter Breite, 2,4 Meter Höhe und 6 Meter Tiefe. Beim Schließen werden Insassen sicher hinausbefördert.",
     "material": "eine Prise Sesamsamen",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Stunde"
   },
   "Planar Binding": {
     "name": "Planare Bindung",
-    "description": "Binde einen Celestischen, Elementar, ein Feenwesen oder einen Unhold, der während der 1-stündigen Wirkzeit innerhalb von 60 Fuß bleibt. Er legt einen Charismarettungswurf ab oder dient dir 24 Stunden; die Dauer eines Beschwörungszaubers verlängert sich entsprechend.",
+    "description": "Binde einen Celestischen, Elementar, ein Feenwesen oder einen Unhold, der während der 1-stündigen Wirkzeit innerhalb von 18 Metern bleibt. Er legt einen Charismarettungswurf ab oder dient dir 24 Stunden; die Dauer eines Beschwörungszaubers verlängert sich entsprechend.",
     "material": "ein Juwel im Wert von mindestens 1.000 GM, das der Zauber verbraucht",
     "higherLevels": "Die Dauer beträgt mit Grad 6 10 Tage, mit Grad 7 30 Tage, mit Grad 8 180 Tage und mit Grad 9 366 Tage.",
     "castingTime": "1 Stunde",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "24 Stunden"
   },
   "Raise Dead": {
@@ -2213,71 +2213,71 @@
   },
   "Seeming": {
     "name": "Scheinbild",
-    "description": "Gib jeder gewählten Kreatur, die du innerhalb von 30 Fuß siehst, 8 Stunden lang ein illusionäres Aussehen. Nicht bereitwillige Ziele können Charismarettungswürfe ablegen. Körperliche Untersuchung oder ein erfolgreicher Nachforschungswurf gegen deinen Zauberrettungswurf-SG enthüllt die Verkleidung.",
+    "description": "Gib jeder gewählten Kreatur, die du innerhalb von 9 Metern siehst, 8 Stunden lang ein illusionäres Aussehen. Nicht bereitwillige Ziele können Charismarettungswürfe ablegen. Körperliche Untersuchung oder ein erfolgreicher Nachforschungswurf gegen deinen Zauberrettungswurf-SG enthüllt die Verkleidung.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "8 Stunden"
   },
   "Summon Dragon": {
     "name": "Drachen beschwören",
-    "description": "Beschwöre bis zu 1 Stunde lang einen Drachengeist. Er hat RK 14 plus Zauberplatzgrad, TP 50 plus 10 pro Zauberplatzgrad über 5, Flugbewegungsrate 60 Fuß und handelt direkt nach dir. Er führt so viele Zerreißen-Angriffe aus wie der abgerundete Zauberplatzgrad geteilt durch 2, mit deinem Zauberangriffsbonus; jeder Treffer verursacht 1d6+4+Zauberplatzgrad Stichschaden. Sein 30-Fuß-Kegel-Atem verursacht 2d6 Säure-, Kälte-, Feuer-, Blitz- oder Giftschaden (Geschicklichkeitsrettungswurf halbiert). Wähle eine seiner Resistenzen, die du für die Dauer teilst.",
+    "description": "Beschwöre bis zu 1 Stunde lang einen Drachengeist. Er hat RK 14 plus Zauberplatzgrad, TP 50 plus 10 pro Zauberplatzgrad über 5, Flugbewegungsrate 18 Meter und handelt direkt nach dir. Er führt so viele Zerreißen-Angriffe aus wie der abgerundete Zauberplatzgrad geteilt durch 2, mit deinem Zauberangriffsbonus; jeder Treffer verursacht 1d6+4+Zauberplatzgrad Stichschaden. Sein 9-Meter-Kegel-Atem verursacht 2d6 Säure-, Kälte-, Feuer-, Blitz- oder Giftschaden (Geschicklichkeitsrettungswurf halbiert). Wähle eine seiner Resistenzen, die du für die Dauer teilst.",
     "material": "ein Gegenstand mit eingraviertem Drachenbild im Wert von mindestens 500 GM",
     "higherLevels": "Verwende den Zauberplatzgrad für RK, Trefferpunkte und weitere skalierende Spielwerte des Geistes.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Telekinesis": {
     "name": "Telekinese",
-    "description": "Bewege oder handhabe bis zu 10 Minuten lang in jedem Zug mit einer Magieaktion eine riesige oder kleinere Kreatur oder einen Gegenstand innerhalb von 60 Fuß. Eine Kreatur legt einen Stärkerettungswurf ab oder wird bis zu 30 Fuß bewegt und bis zum Ende deines nächsten Zuges festgesetzt.",
+    "description": "Bewege oder handhabe bis zu 10 Minuten lang in jedem Zug mit einer Magieaktion eine riesige oder kleinere Kreatur oder einen Gegenstand innerhalb von 18 Metern. Eine Kreatur legt einen Stärkerettungswurf ab oder wird bis zu 9 Meter bewegt und bis zum Ende deines nächsten Zuges festgesetzt.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Telepathic Bond": {
     "name": "Telepathisches Band",
-    "description": "Verbinde bis zu acht bereitwillige Kreaturen innerhalb von 30 Fuß für 1 Stunde. Sie kommunizieren telepathisch über jede Entfernung auf derselben Ebene, unabhängig von gemeinsamen Sprachen.",
+    "description": "Verbinde bis zu acht bereitwillige Kreaturen innerhalb von 9 Metern für 1 Stunde. Sie kommunizieren telepathisch über jede Entfernung auf derselben Ebene, unabhängig von gemeinsamen Sprachen.",
     "material": "zwei Eier",
     "castingTime": "Aktion oder Ritual",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "1 Stunde"
   },
   "Teleportation Circle": {
     "name": "Teleportationskreis",
-    "description": "Zeichne ein vorübergehendes Portal mit 5 Fuß Radius zu einem permanenten Kreis auf derselben Ebene, dessen Siegel du kennst. Es bleibt bis zum Ende deines nächsten Zuges offen. Tägliches Wirken am selben Ort für 365 Tage erschafft einen permanenten Kreis.",
+    "description": "Zeichne ein vorübergehendes Portal mit 1,5 Meter Radius zu einem permanenten Kreis auf derselben Ebene, dessen Siegel du kennst. Es bleibt bis zum Ende deines nächsten Zuges offen. Tägliches Wirken am selben Ort für 365 Tage erschafft einen permanenten Kreis.",
     "material": "seltene Tinten im Wert von mindestens 50 GM, die der Zauber verbraucht",
     "castingTime": "1 Minute",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "1 Runde"
   },
   "Tree Stride": {
     "name": "Baumschritt",
-    "description": "Betritt bis zu 1 Minute lang einen lebenden Baum und verlasse einen anderen derselben Art innerhalb von 500 Fuß; zum Eintritt gibst du 5 Fuß und zum Austritt weitere 5 Fuß Bewegung aus. Nutze diese Reise einmal pro Zug und beende jeden Zug außerhalb eines Baums.",
+    "description": "Betritt bis zu 1 Minute lang einen lebenden Baum und verlasse einen anderen derselben Art innerhalb von 150 Metern; zum Eintritt gibst du 1,5 Meter und zum Austritt weitere 1,5 Meter Bewegung aus. Nutze diese Reise einmal pro Zug und beende jeden Zug außerhalb eines Baums.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Wall of Force": {
     "name": "Energiewand",
-    "description": "Erzeuge bis zu 10 Minuten lang eine unsichtbare, unverwundbare Wand aus zehn zusammenhängenden 10-Fuß-Platten oder eine Kuppel oder Kugel mit höchstens 10 Fuß Radius. Nichts Körperliches durchdringt sie; Magie bannen beendet sie nicht, aber Auflösung zerstört sie.",
+    "description": "Erzeuge bis zu 10 Minuten lang eine unsichtbare, unverwundbare Wand aus zehn zusammenhängenden 3-Meter-Platten oder eine Kuppel oder Kugel mit höchstens 3 Meter Radius. Nichts Körperliches durchdringt sie; Magie bannen beendet sie nicht, aber Auflösung zerstört sie.",
     "material": "eine Glasscherbe",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Wall of Stone": {
     "name": "Steinwand",
-    "description": "Erzeuge zehn zusammenhängende Steinplatten von je 10 Fuß im Quadrat und 6 Zoll Dicke oder Platten von 10 mal 20 Fuß und 3 Zoll Dicke. Eine eingeschlossene Kreatur kann mit einem Geschicklichkeitsrettungswurf ausweichen. Jede Platte hat RK 15 und 30 Trefferpunkte pro Zoll Dicke; Konzentration über die vollen 10 Minuten macht die Wand dauerhaft.",
+    "description": "Erzeuge zehn zusammenhängende Steinplatten von je 3 Meter im Quadrat und 15 Zentimeter Dicke oder Platten von 3 mal 6 Meter und 7,5 Zentimeter Dicke. Eine eingeschlossene Kreatur kann mit einem Geschicklichkeitsrettungswurf ausweichen. Jede Platte hat RK 15 und 30 Trefferpunkte pro 2,5 Zentimeter Dicke; Konzentration über die vollen 10 Minuten macht die Wand dauerhaft.",
     "material": "ein Granitwürfel",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Blade Barrier": {
     "name": "Klingenbarriere",
-    "description": "Erzeuge bis zu 10 Minuten lang eine Wand magischer Klingen von höchstens 100 Fuß Länge und 20 Fuß Höhe oder einen Ring mit 60 Fuß Durchmesser. Ihr Bereich ist schwieriges Gelände und gewährt Dreivierteldeckung. Kreaturen darin legen einmal pro Zug Geschicklichkeitsrettungswürfe gegen 6d10 Energieschaden ab, bei Erfolg die Hälfte, wenn die Wand erscheint oder sie sie betreten oder darin ihren Zug beenden.",
+    "description": "Erzeuge bis zu 10 Minuten lang eine Wand magischer Klingen von höchstens 30 Meter Länge und 6 Meter Höhe oder einen Ring mit 18 Meter Durchmesser. Ihr Bereich ist schwieriges Gelände und gewährt Dreivierteldeckung. Kreaturen darin legen einmal pro Zug Geschicklichkeitsrettungswürfe gegen 6d10 Energieschaden ab, bei Erfolg die Hälfte, wenn die Wand erscheint oder sie sie betreten oder darin ihren Zug beenden.",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 10 Minuten",
     "rolls": {
       "damage": {
@@ -2287,11 +2287,11 @@
   },
   "Chain Lightning": {
     "name": "Kettenblitz",
-    "description": "Ein Blitz trifft ein sichtbares Ziel innerhalb von 150 Fuß und springt zu bis zu drei weiteren Zielen innerhalb von 30 Fuß des ersten. Jedes Ziel legt einen Geschicklichkeitsrettungswurf gegen 10d8 Blitzschaden ab, bei Erfolg die Hälfte; kein Ziel wird zweimal getroffen.",
+    "description": "Ein Blitz trifft ein sichtbares Ziel innerhalb von 45 Metern und springt zu bis zu drei weiteren Zielen innerhalb von 9 Metern des ersten. Jedes Ziel legt einen Geschicklichkeitsrettungswurf gegen 10d8 Blitzschaden ab, bei Erfolg die Hälfte; kein Ziel wird zweimal getroffen.",
     "material": "drei Silbernadeln",
     "higherLevels": "Pro Zauberplatzgrad über 6 springt ein zusätzlicher Blitz auf ein neues Ziel.",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2301,11 +2301,11 @@
   },
   "Circle of Death": {
     "name": "Kreis des Todes",
-    "description": "Eine Kugel negativer Energie mit 60 Fuß Radius erzwingt Konstitutionsrettungswürfe und verursacht bei Misserfolg 8d8 nekrotischen Schaden, bei Erfolg die Hälfte.",
+    "description": "Eine Kugel negativer Energie mit 18 Meter Radius erzwingt Konstitutionsrettungswürfe und verursacht bei Misserfolg 8d8 nekrotischen Schaden, bei Erfolg die Hälfte.",
     "material": "das Pulver einer zerdrückten schwarzen Perle im Wert von mindestens 500 GM",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 6 um 2d8.",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2315,10 +2315,10 @@
   },
   "Conjure Fey": {
     "name": "Feenwesen beschwören",
-    "description": "Beschwöre bis zu 10 Minuten lang einen mittelgroßen Feengeist. Bei seinem Erscheinen führe aus seinem Bereich einen Nahkampf-Zauberangriff aus; ein Treffer verursacht 3d12 psychischen Schaden plus deinen Zauberattributsmodifikator und verängstigt das Ziel bis zu deinem nächsten Zug. Später kann eine Bonusaktion den Geist 30 Fuß teleportieren und den Angriff wiederholen.",
+    "description": "Beschwöre bis zu 10 Minuten lang einen mittelgroßen Feengeist. Bei seinem Erscheinen führe aus seinem Bereich einen Nahkampf-Zauberangriff aus; ein Treffer verursacht 3d12 psychischen Schaden plus deinen Zauberattributsmodifikator und verängstigt das Ziel bis zu deinem nächsten Zug. Später kann eine Bonusaktion den Geist 9 Meter teleportieren und den Angriff wiederholen.",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 6 um 1d12.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Contingency": {
@@ -2331,11 +2331,11 @@
   },
   "Create Undead": {
     "name": "Erschaffe Untote",
-    "description": "Belebe nur nachts bis zu drei mittelgroße oder kleine humanoide Leichname als Ghule, mit je einem schwarzen Onyx im Wert von mindestens 150 GM. Befiehl ihnen innerhalb von 120 Fuß als Bonusaktion. Die Kontrolle hält 24 Stunden und muss vor Ablauf erneuert werden.",
+    "description": "Belebe nur nachts bis zu drei mittelgroße oder kleine humanoide Leichname als Ghule, mit je einem schwarzen Onyx im Wert von mindestens 150 GM. Befiehl ihnen innerhalb von 36 Metern als Bonusaktion. Die Kontrolle hält 24 Stunden und muss vor Ablauf erneuert werden.",
     "material": "je Leichnam ein schwarzer Onyx im Wert von mindestens 150 GM",
     "higherLevels": "Mit Grad 7 kontrollierst du vier Ghule, mit Grad 8 fünf Ghule oder zwei Ghasts/Ghule der Nacht, mit Grad 9 sechs Ghule, drei Ghasts/Ghule der Nacht oder zwei Mumien.",
     "castingTime": "1 Minute",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "Sofort"
   },
   "Disintegrate": {
@@ -2344,7 +2344,7 @@
     "material": "ein Magnetstein und Staub",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 6 um 3d6.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2354,7 +2354,7 @@
   },
   "Eyebite": {
     "name": "Böser Blick",
-    "description": "Zwinge bis zu 1 Minute lang eine sichtbare Kreatur innerhalb von 60 Fuß zu einem Weisheitsrettungswurf und wähle dann Schlaf (bewusstlos), Panik (verängstigt und zur Flucht gezwungen) oder Übelkeit (vergiftet). In späteren Zügen kannst du mit einer Magieaktion eine andere Kreatur anvisieren, die gegen dieses Wirken noch keinen erfolgreichen Rettungswurf abgelegt hat.",
+    "description": "Zwinge bis zu 1 Minute lang eine sichtbare Kreatur innerhalb von 18 Metern zu einem Weisheitsrettungswurf und wähle dann Schlaf (bewusstlos), Panik (verängstigt und zur Flucht gezwungen) oder Übelkeit (vergiftet). In späteren Zügen kannst du mit einer Magieaktion eine andere Kreatur anvisieren, die gegen dieses Wirken noch keinen erfolgreichen Rettungswurf abgelegt hat.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Konzentration, bis zu 1 Minute"
@@ -2372,12 +2372,12 @@
     "description": "Eine sichtbare Kreatur legt einen Konstitutionsrettungswurf ab. Bei Misserfolg wird sie festgesetzt; bei Erfolg beträgt ihre Bewegungsrate bis zu deinem nächsten Zug 0. Ein festgesetztes Ziel wiederholt den Wurf in jedem Zug: Drei Erfolge beenden den Zauber, drei Misserfolge versteinern es. Konzentration über die volle Minute lässt die Versteinerung bestehen.",
     "material": "eine Kokatrizenfeder",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Forbiddance": {
     "name": "Verbot",
-    "description": "Schütze 1 Tag lang bis zu 40.000 Quadratfuß Boden und 30 Fuß darüber vor Teleportation und Ebenenreisen. Gewählte Aberrationen, Celestische, Elementare, Feenwesen, Unholde oder Untote erleiden beim Betreten oder Beenden ihres Zuges dort 5d10 gleißenden oder nekrotischen Schaden, außer sie nennen dein Passwort. Tägliches Wirken über 30 Tage macht den Schutz dauerhaft und verbraucht beim letzten Wirken den Rubinstaub.",
+    "description": "Schütze 1 Tag lang bis zu 40.000 Quadratfuß Boden und 9 Meter darüber vor Teleportation und Ebenenreisen. Gewählte Aberrationen, Celestische, Elementare, Feenwesen, Unholde oder Untote erleiden beim Betreten oder Beenden ihres Zuges dort 5d10 gleißenden oder nekrotischen Schaden, außer sie nennen dein Passwort. Tägliches Wirken über 30 Tage macht den Schutz dauerhaft und verbraucht beim letzten Wirken den Rubinstaub.",
     "material": "Rubinstaub im Wert von mindestens 1.000 GM",
     "castingTime": "10 Minuten oder Ritual",
     "range": "Berührung",
@@ -2385,11 +2385,11 @@
   },
   "Freezing Sphere": {
     "name": "Frostkugel",
-    "description": "Eine Kugel mit 60 Fuß Radius erzwingt Konstitutionsrettungswürfe gegen 10d6 Kälteschaden, bei Erfolg die Hälfte. Getroffenes Wasser gefriert und kann Schwimmer an der Oberfläche festsetzen. Alternativ kannst du die Kugel bis zu 1 Minute halten und sie später vor ihrer Explosion werfen.",
+    "description": "Eine Kugel mit 18 Meter Radius erzwingt Konstitutionsrettungswürfe gegen 10d6 Kälteschaden, bei Erfolg die Hälfte. Getroffenes Wasser gefriert und kann Schwimmer an der Oberfläche festsetzen. Alternativ kannst du die Kugel bis zu 1 Minute halten und sie später vor ihrer Explosion werfen.",
     "material": "eine Miniaturkristallkugel",
     "higherLevels": "Der Schaden steigt pro Zauberplatzgrad über 6 um 1d6.",
     "castingTime": "Aktion",
-    "range": "300 Fuß",
+    "range": "90 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2399,7 +2399,7 @@
   },
   "Globe of Invulnerability": {
     "name": "Kugel der Unverwundbarkeit",
-    "description": "Eine unbewegliche Ausstrahlung von 10 Fuß um dich hindert bis zu 1 Minute lang Zauber des Grades 5 oder niedriger, die von außerhalb gewirkt werden, daran, etwas im Inneren zu beeinflussen.",
+    "description": "Eine unbewegliche Ausstrahlung von 3 Metern um dich hindert bis zu 1 Minute lang Zauber des Grades 5 oder niedriger, die von außerhalb gewirkt werden, daran, etwas im Inneren zu beeinflussen.",
     "material": "eine Glasperle",
     "higherLevels": "Der höchste blockierte Zaubergrad steigt pro Zauberplatzgrad über 6 um 1.",
     "castingTime": "Aktion",
@@ -2408,7 +2408,7 @@
   },
   "Guards and Wards": {
     "name": "Wachen und Schutzzauber",
-    "description": "Schütze 24 Stunden lang bis zu 2.500 Quadratfuß mit 20 Fuß Höhe. Wähle ausgenommene Kreaturen und ein Passwort. Gänge füllen sich mit verschleierndem Nebel und können Reisende irreführen; Türen erhalten Arkanes Schloss, bis zu zehn Türen wirken wie Wände und Treppen füllen sich mit nachwachsenden Spinnennetzen. Platziere auch Tanzende Lichter, Magischer Mund, Stinkende Wolke, Windstoß oder Einflüsterung an bestimmten Orten. Tägliches Wirken über 365 Tage macht den Schutz dauerhaft.",
+    "description": "Schütze 24 Stunden lang bis zu 2.500 Quadratfuß mit 6 Meter Höhe. Wähle ausgenommene Kreaturen und ein Passwort. Gänge füllen sich mit verschleierndem Nebel und können Reisende irreführen; Türen erhalten Arkanes Schloss, bis zu zehn Türen wirken wie Wände und Treppen füllen sich mit nachwachsenden Spinnennetzen. Platziere auch Tanzende Lichter, Magischer Mund, Stinkende Wolke, Windstoß oder Einflüsterung an bestimmten Orten. Tägliches Wirken über 365 Tage macht den Schutz dauerhaft.",
     "material": "ein Silberstab im Wert von mindestens 10 GM",
     "castingTime": "1 Stunde",
     "range": "Berührung",
@@ -2418,7 +2418,7 @@
     "name": "Verletzen",
     "description": "Eine sichtbare Kreatur legt einen Konstitutionsrettungswurf ab. Bei Misserfolg erleidet sie 14d6 nekrotischen Schaden und ihr Trefferpunktemaximum sinkt um den erlittenen Schaden, jedoch nicht unter 1. Bei Erfolg erleidet sie halben Schaden ohne Verringerung des Maximums.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2428,10 +2428,10 @@
   },
   "Heal": {
     "name": "Heilen",
-    "description": "Eine sichtbare Kreatur innerhalb von 60 Fuß erhält 70 Trefferpunkte zurück und ist nicht mehr blind, taub oder vergiftet.",
+    "description": "Eine sichtbare Kreatur innerhalb von 18 Metern erhält 70 Trefferpunkte zurück und ist nicht mehr blind, taub oder vergiftet.",
     "higherLevels": "Die Heilung steigt pro Zauberplatzgrad über 6 um 10 Trefferpunkte.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Heroes' Feast": {
@@ -2444,7 +2444,7 @@
   },
   "Instant Summons": {
     "name": "Sofortige Beschwörung",
-    "description": "Markiere einen Gegenstand von höchstens 10 Pfund Gewicht und 6 Fuß Länge mit einem Saphir im Wert von mindestens 1.000 GM. Später zerdrücke den Saphir mit einer Magieaktion, um den Gegenstand aus beliebiger Entfernung oder Ebene in deine Hand zu rufen. Hält ihn eine andere Kreatur, erfährst du stattdessen, wer und wo sie ist.",
+    "description": "Markiere einen Gegenstand von höchstens 10 Pfund Gewicht und 1,8 Meter Länge mit einem Saphir im Wert von mindestens 1.000 GM. Später zerdrücke den Saphir mit einer Magieaktion, um den Gegenstand aus beliebiger Entfernung oder Ebene in deine Hand zu rufen. Hält ihn eine andere Kreatur, erfährst du stattdessen, wer und wo sie ist.",
     "material": "ein Saphir im Wert von mindestens 1.000 GM",
     "castingTime": "1 Minute oder Ritual",
     "range": "Berührung",
@@ -2454,12 +2454,12 @@
     "name": "Unwiderstehlicher Tanz",
     "description": "Eine sichtbare Kreatur legt einen Weisheitsrettungswurf ab. Auch bei Erfolg muss sie bis zum Ende ihres nächsten Zuges ihre gesamte Bewegung zum Tanzen verwenden. Bei Misserfolg ist sie zusätzlich bezaubert, hat Nachteil bei Geschicklichkeitsrettungswürfen und Angriffen und gewährt Angriffen gegen sich Vorteil; mit einer Aktion kann sie den Wurf wiederholen.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Magic Jar": {
     "name": "Magisches Gefäß",
-    "description": "Lege deine Seele in einen Behälter im Wert von mindestens 500 GM und lasse deinen Körper katatonisch zurück. Versuche daraus einen sichtbaren Humanoiden innerhalb von 100 Fuß zu besitzen; er legt einen Charismarettungswurf ab. Bei Misserfolg kontrollierst du seinen Körper, während seine Seele im Behälter gefangen ist. Der Verlust deines Körpers oder Behälters zum falschen Zeitpunkt kann dich oder den Wirt töten.",
+    "description": "Lege deine Seele in einen Behälter im Wert von mindestens 500 GM und lasse deinen Körper katatonisch zurück. Versuche daraus einen sichtbaren Humanoiden innerhalb von 30 Metern zu besitzen; er legt einen Charismarettungswurf ab. Bei Misserfolg kontrollierst du seinen Körper, während seine Seele im Behälter gefangen ist. Der Verlust deines Körpers oder Behälters zum falschen Zeitpunkt kann dich oder den Wirt töten.",
     "material": "ein Edelstein, Kristall oder Reliquiar im Wert von mindestens 500 GM",
     "castingTime": "1 Minute",
     "range": "Selbst",
@@ -2467,39 +2467,39 @@
   },
   "Mass Suggestion": {
     "name": "Masseneinflüsterung",
-    "description": "Gib bis zu zwölf Kreaturen innerhalb von 60 Fuß, die dich verstehen, eine plausible und ungefährliche Handlungsanweisung von höchstens 25 Wörtern. Jede legt einen Weisheitsrettungswurf ab oder wird bezaubert und befolgt sie bis zu 24 Stunden, bis sie abgeschlossen ist oder du oder ein Verbündeter sie verletzt.",
+    "description": "Gib bis zu zwölf Kreaturen innerhalb von 18 Metern, die dich verstehen, eine plausible und ungefährliche Handlungsanweisung von höchstens 25 Wörtern. Jede legt einen Weisheitsrettungswurf ab oder wird bezaubert und befolgt sie bis zu 24 Stunden, bis sie abgeschlossen ist oder du oder ein Verbündeter sie verletzt.",
     "material": "eine Schlangenzunge",
     "higherLevels": "Die Dauer beträgt mit Grad 7 10 Tage, mit Grad 8 30 Tage und mit Grad 9 366 Tage.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "24 Stunden"
   },
   "Move Earth": {
     "name": "Erde bewegen",
-    "description": "Forme einen Bereich aus Erde, Sand oder Lehm von höchstens 40 Fuß Kantenlänge um. Jede Änderung dauert 10 Minuten und kann Gelände heben oder senken, Gräben ausheben oder füllen oder Wände und Pfeiler bis zur Hälfte der größten Bereichsabmessung errichten. Du kannst bis zu 2 Stunden lang alle 10 Minuten einen neuen Bereich wählen.",
+    "description": "Forme einen Bereich aus Erde, Sand oder Lehm von höchstens 12 Meter Kantenlänge um. Jede Änderung dauert 10 Minuten und kann Gelände heben oder senken, Gräben ausheben oder füllen oder Wände und Pfeiler bis zur Hälfte der größten Bereichsabmessung errichten. Du kannst bis zu 2 Stunden lang alle 10 Minuten einen neuen Bereich wählen.",
     "material": "eine Miniaturschaufel",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 2 Stunden"
   },
   "Planar Ally": {
     "name": "Planarer Verbündeter",
-    "description": "Bitte eine außerweltliche Macht um einen Celestischen, Elementar oder Unhold. Er erscheint innerhalb von 60 Fuß, ist aber nicht zur Hilfe verpflichtet; verhandle über eine Leistung, die gewöhnlich etwa 100 GM pro Minute, 1.000 GM pro Stunde oder 10.000 GM pro Tag kostet, nach Ermessen der Spielleitung.",
+    "description": "Bitte eine außerweltliche Macht um einen Celestischen, Elementar oder Unhold. Er erscheint innerhalb von 18 Metern, ist aber nicht zur Hilfe verpflichtet; verhandle über eine Leistung, die gewöhnlich etwa 100 GM pro Minute, 1.000 GM pro Stunde oder 10.000 GM pro Tag kostet, nach Ermessen der Spielleitung.",
     "castingTime": "10 Minuten",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Programmed Illusion": {
     "name": "Programmierte Illusion",
-    "description": "Erzeuge eine verborgene Illusion von höchstens 30 Fuß Kantenlänge. Ein sicht- oder hörbarer Auslöser innerhalb von 30 Fuß aktiviert eine vorgegebene Szene mit Ton für bis zu 5 Minuten. Nach 10 Minuten Ruhe kann sie bis zur Aufhebung erneut ausgelöst werden.",
+    "description": "Erzeuge eine verborgene Illusion von höchstens 9 Meter Kantenlänge. Ein sicht- oder hörbarer Auslöser innerhalb von 9 Metern aktiviert eine vorgegebene Szene mit Ton für bis zu 5 Minuten. Nach 10 Minuten Ruhe kann sie bis zur Aufhebung erneut ausgelöst werden.",
     "material": "Jadestaub im Wert von mindestens 25 GM",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Bis zur Aufhebung"
   },
   "Sunbeam": {
     "name": "Sonnenstrahl",
-    "description": "Schicke eine 60 Fuß lange und 5 Fuß breite Sonnenlichtlinie von dir aus. Kreaturen legen Konstitutionsrettungswürfe gegen 6d8 gleißenden Schaden und Blindheit bis zu deinem nächsten Zug ab; bei Erfolg erleiden sie halben Schaden und werden nicht blind. Bis zu 1 Minute lang kannst du in jedem Zug mit einer Magieaktion einen weiteren Strahl aussenden.",
+    "description": "Schicke eine 18 Meter lange und 1,5 Meter breite Sonnenlichtlinie von dir aus. Kreaturen legen Konstitutionsrettungswürfe gegen 6d8 gleißenden Schaden und Blindheit bis zu deinem nächsten Zug ab; bei Erfolg erleiden sie halben Schaden und werden nicht blind. Bis zu 1 Minute lang kannst du in jedem Zug mit einer Magieaktion einen weiteren Strahl aussenden.",
     "material": "eine Lupe",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -2512,14 +2512,14 @@
   },
   "Transport via Plants": {
     "name": "Transport über Pflanzen",
-    "description": "Verbinde eine große oder größere unbewegliche Pflanze innerhalb von 10 Fuß mit einer Pflanze, die du auf derselben Ebene gesehen oder berührt hast, in beliebiger Entfernung. Kreaturen können 1 Minute lang 5 Fuß Bewegung ausgeben, um durch die erste einzutreten und aus der zweiten herauszukommen.",
+    "description": "Verbinde eine große oder größere unbewegliche Pflanze innerhalb von 3 Metern mit einer Pflanze, die du auf derselben Ebene gesehen oder berührt hast, in beliebiger Entfernung. Kreaturen können 1 Minute lang 1,5 Meter Bewegung ausgeben, um durch die erste einzutreten und aus der zweiten herauszukommen.",
     "castingTime": "Aktion",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "1 Minute"
   },
   "True Seeing": {
     "name": "Wahre Sicht",
-    "description": "Eine bereitwillige berührte Kreatur erhält 1 Stunde lang Wahre Sicht auf 120 Fuß.",
+    "description": "Eine bereitwillige berührte Kreatur erhält 1 Stunde lang Wahre Sicht auf 36 Meter.",
     "material": "Pilzpulver im Wert von mindestens 25 GM, das der Zauber verbraucht",
     "castingTime": "Aktion",
     "range": "Berührung",
@@ -2527,60 +2527,60 @@
   },
   "Wall of Ice": {
     "name": "Wand aus Eis",
-    "description": "Erzeuge bis zu 10 Minuten lang eine 1 Fuß dicke Eiskuppel oder -kugel mit höchstens 10 Fuß Radius oder zehn zusammenhängende 10-Fuß-Platten. Eine bei ihrem Erscheinen verdrängte Kreatur legt einen Geschicklichkeitsrettungswurf gegen 10d6 Kälteschaden ab. Zerstörte Platten hinterlassen eisige Luft, die beim Durchqueren bei misslungenem Konstitutionsrettungswurf 5d6 Kälteschaden verursacht.",
+    "description": "Erzeuge bis zu 10 Minuten lang eine 0,3 Meter dicke Eiskuppel oder -kugel mit höchstens 3 Meter Radius oder zehn zusammenhängende 3-Meter-Platten. Eine bei ihrem Erscheinen verdrängte Kreatur legt einen Geschicklichkeitsrettungswurf gegen 10d6 Kälteschaden ab. Zerstörte Platten hinterlassen eisige Luft, die beim Durchqueren bei misslungenem Konstitutionsrettungswurf 5d6 Kälteschaden verursacht.",
     "material": "ein Stück Quarz",
     "higherLevels": "Der Schaden beim Erscheinen steigt pro Zauberplatzgrad über 6 um 2d6, der Schaden der frostigen Luft um 1d6.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Wall of Thorns": {
     "name": "Dornenwand",
-    "description": "Erzeuge bis zu 10 Minuten lang eine Dornenwand von höchstens 60 Fuß Länge und 10 Fuß Höhe oder einen Ring mit 20 Fuß Durchmesser. Kreaturen darin legen bei ihrem Erscheinen Geschicklichkeitsrettungswürfe gegen 7d8 Stichschaden ab. Jeder Fuß hindurch kostet 4 Fuß Bewegung; Betreten oder Beenden eines Zuges darin verursacht bei misslungenem Geschicklichkeitsrettungswurf einmal pro Zug 7d8 Hiebschaden.",
+    "description": "Erzeuge bis zu 10 Minuten lang eine Dornenwand von höchstens 18 Meter Länge und 3 Meter Höhe oder einen Ring mit 6 Meter Durchmesser. Kreaturen darin legen bei ihrem Erscheinen Geschicklichkeitsrettungswürfe gegen 7d8 Stichschaden ab. Jeder Meter hindurch kostet 4 Meter Bewegung; Betreten oder Beenden eines Zuges darin verursacht bei misslungenem Geschicklichkeitsrettungswurf einmal pro Zug 7d8 Hiebschaden.",
     "material": "eine Handvoll Dornen",
     "higherLevels": "Beide Schadensarten steigen pro Zauberplatzgrad über 6 um 1d8.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Wind Walk": {
     "name": "Wolkenwandeln",
-    "description": "Du und bis zu zehn bereitwillige Kreaturen werden 8 Stunden lang zu Wolken mit Flugbewegungsrate 300 Fuß, Schwebefähigkeit, Immunität gegen den Zustand Liegend und Resistenz gegen Wucht-, Stich- und Hiebschaden. In Wolkengestalt kann eine Kreatur nur Spurt ausführen oder eine 1-minütige Rückverwandlung beginnen, während der sie betäubt ist.",
+    "description": "Du und bis zu zehn bereitwillige Kreaturen werden 8 Stunden lang zu Wolken mit Flugbewegungsrate 90 Meter, Schwebefähigkeit, Immunität gegen den Zustand Liegend und Resistenz gegen Wucht-, Stich- und Hiebschaden. In Wolkengestalt kann eine Kreatur nur Spurt ausführen oder eine 1-minütige Rückverwandlung beginnen, während der sie betäubt ist.",
     "material": "eine Kerze",
     "castingTime": "1 Minute",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "8 Stunden"
   },
   "Word of Recall": {
     "name": "Wort der Heimkehr",
-    "description": "Teleportiere dich und bis zu fünf bereitwillige Kreaturen innerhalb von 5 Fuß zu dem Heiligtum, das du zuvor durch Wirken dieses Zaubers dort bestimmt hast. Ohne vorbereitetes Heiligtum bleibt der Zauber wirkungslos.",
+    "description": "Teleportiere dich und bis zu fünf bereitwillige Kreaturen innerhalb von 1,5 Metern zu dem Heiligtum, das du zuvor durch Wirken dieses Zaubers dort bestimmt hast. Ohne vorbereitetes Heiligtum bleibt der Zauber wirkungslos.",
     "castingTime": "Aktion",
-    "range": "5 Fuß",
+    "range": "1,5 Meter",
     "duration": "Sofort"
   },
   "Arcane Sword": {
     "name": "Arkanes Schwert",
-    "description": "Erzeuge bis zu 1 Minute lang ein schwebendes Energieschwert. Führe einen Nahkampf-Zauberangriff gegen ein Ziel innerhalb von 5 Fuß davon aus; ein Treffer verursacht 4d12 Energieschaden plus deinen Zauberattributsmodifikator. In späteren Zügen bewege das Schwert als Bonusaktion bis zu 30 Fuß und greife erneut an.",
+    "description": "Erzeuge bis zu 1 Minute lang ein schwebendes Energieschwert. Führe einen Nahkampf-Zauberangriff gegen ein Ziel innerhalb von 1,5 Metern davon aus; ein Treffer verursacht 4d12 Energieschaden plus deinen Zauberattributsmodifikator. In späteren Zügen bewege das Schwert als Bonusaktion bis zu 9 Meter und greife erneut an.",
     "material": "ein Miniaturschwert im Wert von mindestens 250 GM",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Conjure Celestial": {
     "name": "Celestischen beschwören",
-    "description": "Eine celestische Präsenz füllt bis zu 10 Minuten lang einen Zylinder mit 10 Fuß Radius und 40 Fuß Höhe. Jede sichtbare Kreatur darin kann Trefferpunkte in Höhe von 4d12 plus deinem Zauberattributsmodifikator zurückerhalten oder legt einen Geschicklichkeitsrettungswurf gegen 6d12 gleißenden Schaden ab (bei Erfolg die Hälfte). Bewegst du dich in deinem Zug, kann sich der Zylinder bis zu 30 Fuß bewegen. Kreaturen, die eintreten oder ihren Zug darin beenden, können betroffen sein, jede nur einmal pro Zug.",
+    "description": "Eine celestische Präsenz füllt bis zu 10 Minuten lang einen Zylinder mit 3 Meter Radius und 12 Meter Höhe. Jede sichtbare Kreatur darin kann Trefferpunkte in Höhe von 4d12 plus deinem Zauberattributsmodifikator zurückerhalten oder legt einen Geschicklichkeitsrettungswurf gegen 6d12 gleißenden Schaden ab (bei Erfolg die Hälfte). Bewegst du dich in deinem Zug, kann sich der Zylinder bis zu 9 Meter bewegen. Kreaturen, die eintreten oder ihren Zug darin beenden, können betroffen sein, jede nur einmal pro Zug.",
     "higherLevels": "Die Heilung steigt pro Zauberplatzgrad über 7 um 1d12 und der Schaden ebenfalls um 1d12.",
     "castingTime": "Aktion",
-    "range": "90 Fuß",
+    "range": "27 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Delayed Blast Fireball": {
     "name": "Verzögerter Feuerball",
-    "description": "Eine leuchtende Perle wartet bis zu 1 Minute lang an einem Punkt innerhalb von 150 Fuß. Endet deine Konzentration, legen Kreaturen in einer Kugel mit 20 Fuß Radius Geschicklichkeitsrettungswürfe gegen 12d6 Feuerschaden ab, bei Erfolg die Hälfte. Am Ende jedes deiner Züge mit Konzentration steigt der Schaden um 1d6. Eine Kreatur kann die Perle mit einem Geschicklichkeitsrettungswurf aufheben oder werfen; bei Misserfolg explodiert sie.",
+    "description": "Eine leuchtende Perle wartet bis zu 1 Minute lang an einem Punkt innerhalb von 45 Metern. Endet deine Konzentration, legen Kreaturen in einer Kugel mit 6 Meter Radius Geschicklichkeitsrettungswürfe gegen 12d6 Feuerschaden ab, bei Erfolg die Hälfte. Am Ende jedes deiner Züge mit Konzentration steigt der Schaden um 1d6. Eine Kreatur kann die Perle mit einem Geschicklichkeitsrettungswurf aufheben oder werfen; bei Misserfolg explodiert sie.",
     "material": "ein Klumpen Fledermausguano und Schwefel",
     "higherLevels": "Der anfängliche Schaden steigt pro Zauberplatzgrad über 7 um 1d6.",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Konzentration, bis zu 1 Minute",
     "rolls": {
       "damage": {
@@ -2590,24 +2590,24 @@
   },
   "Divine Word": {
     "name": "Göttliches Wort",
-    "description": "Wähle sichtbare Kreaturen innerhalb von 30 Fuß; jede legt einen Charismarettungswurf ab. Wer scheitert und höchstens 20 Trefferpunkte hat, stirbt; bei 21-30 TP ist sie 1 Stunde lang blind, taub und betäubt; bei 31-40 TP 10 Minuten lang blind und taub; bei 41-50 TP 1 Minute lang taub. Ein Celestischer, Elementar, Feenwesen oder Unhold wird bei Misserfolg zusätzlich mindestens 24 Stunden auf seine Heimatebene verbannt.",
+    "description": "Wähle sichtbare Kreaturen innerhalb von 9 Metern; jede legt einen Charismarettungswurf ab. Wer scheitert und höchstens 20 Trefferpunkte hat, stirbt; bei 21-30 TP ist sie 1 Stunde lang blind, taub und betäubt; bei 31-40 TP 10 Minuten lang blind und taub; bei 41-50 TP 1 Minute lang taub. Ein Celestischer, Elementar, Feenwesen oder Unhold wird bei Misserfolg zusätzlich mindestens 24 Stunden auf seine Heimatebene verbannt.",
     "castingTime": "Bonusaktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Sofort"
   },
   "Etherealness": {
     "name": "Ätherische Gestalt",
     "description": "Betritt bis zu 8 Stunden lang die Grenzätherebene. Du kannst dich durch Kreaturen und Gegenstände auf der Materiellen Ebene bewegen, aber sie nicht beeinflussen. Am Ende kehrst du zum nächsten freien Ort zurück; du kannst den Zauber vorzeitig beenden.",
-    "higherLevels": "Pro Zauberplatzgrad über 7 kannst du drei zusätzliche bereitwillige Kreaturen innerhalb von 10 Fuß mitnehmen.",
+    "higherLevels": "Pro Zauberplatzgrad über 7 kannst du drei zusätzliche bereitwillige Kreaturen innerhalb von 3 Metern mitnehmen.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Bis zu 8 Stunden"
   },
   "Finger of Death": {
     "name": "Finger des Todes",
-    "description": "Eine sichtbare Kreatur innerhalb von 60 Fuß legt einen Konstitutionsrettungswurf gegen 7d8 + 30 nekrotischen Schaden ab, bei Erfolg die Hälfte. Ein dadurch getöteter Humanoider erhebt sich zu Beginn deines nächsten Zuges als Zombie und befolgt deine mündlichen Befehle.",
+    "description": "Eine sichtbare Kreatur innerhalb von 18 Metern legt einen Konstitutionsrettungswurf gegen 7d8 + 30 nekrotischen Schaden ab, bei Erfolg die Hälfte. Ein dadurch getöteter Humanoider erhebt sich zu Beginn deines nächsten Zuges als Zombie und befolgt deine mündlichen Befehle.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2617,9 +2617,9 @@
   },
   "Fire Storm": {
     "name": "Feuersturm",
-    "description": "Erzeuge bis zu zehn zusammenhängende Flammenwürfel von je 10 Fuß Kantenlänge innerhalb von 150 Fuß. Kreaturen darin legen Geschicklichkeitsrettungswürfe gegen 7d10 Feuerschaden ab, bei Erfolg die Hälfte. Du kannst gewählte Pflanzen verschonen.",
+    "description": "Erzeuge bis zu zehn zusammenhängende Flammenwürfel von je 3 Meter Kantenlänge innerhalb von 45 Metern. Kreaturen darin legen Geschicklichkeitsrettungswürfe gegen 7d10 Feuerschaden ab, bei Erfolg die Hälfte. Du kannst gewählte Pflanzen verschonen.",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2629,18 +2629,18 @@
   },
   "Forcecage": {
     "name": "Energiekäfig",
-    "description": "Sperre Kreaturen bis zu 1 Stunde Konzentration in einen Energiekäfig von höchstens 20 Fuß Kantenlänge oder eine geschlossene Kiste von höchstens 10 Fuß Kantenlänge. Gefangene können nicht auf nichtmagische Weise hinaus; Teleportation oder Ebenenreisen erfordern einen erfolgreichen Charismarettungswurf. Magie bannen beendet den Käfig nicht.",
+    "description": "Sperre Kreaturen bis zu 1 Stunde Konzentration in einen Energiekäfig von höchstens 6 Meter Kantenlänge oder eine geschlossene Kiste von höchstens 3 Meter Kantenlänge. Gefangene können nicht auf nichtmagische Weise hinaus; Teleportation oder Ebenenreisen erfordern einen erfolgreichen Charismarettungswurf. Magie bannen beendet den Käfig nicht.",
     "material": "Rubinstaub im Wert von mindestens 1.500 GM, den der Zauber verbraucht",
     "castingTime": "Aktion",
-    "range": "100 Fuß",
+    "range": "30 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Magnificent Mansion": {
     "name": "Prächtiges Herrenhaus",
-    "description": "Erzeuge für 24 Stunden eine extradimensionale Unterkunft mit einer Tür innerhalb von 300 Fuß. Sie enthält bis zu fünfzig Würfel mit 10 Fuß Kantenlänge, Nahrung für 100 Gäste und bis zu 100 Diener; nur von dir bestimmte Kreaturen können eintreten.",
+    "description": "Erzeuge für 24 Stunden eine extradimensionale Unterkunft mit einer Tür innerhalb von 90 Metern. Sie enthält bis zu fünfzig Würfel mit 3 Meter Kantenlänge, Nahrung für 100 Gäste und bis zu 100 Diener; nur von dir bestimmte Kreaturen können eintreten.",
     "material": "eine Miniaturtür im Wert von mindestens 15 GM",
     "castingTime": "1 Minute",
-    "range": "300 Fuß",
+    "range": "90 Meter",
     "duration": "24 Stunden"
   },
   "Mirage Arcane": {
@@ -2660,17 +2660,17 @@
   },
   "Prismatic Spray": {
     "name": "Prismatischer Strahl",
-    "description": "Kreaturen in einem 60 Fuß langen Kegel legen Geschicklichkeitsrettungswürfe ab; würfle für jedes Ziel getrennt 1d8. Ergebnisse 1-5 verursachen 12d6 Feuer-, Säure-, Blitz-, Gift- oder Kälteschaden (bei Erfolg die Hälfte); 6 setzt fest und drei misslungene Konstitutionsrettungswürfe versteinern; 7 blendet und kann nach einem Weisheitsrettungswurf verbannen; 8 trifft mit zwei verschiedenen Strahlen.",
+    "description": "Kreaturen in einem 18 Meter langen Kegel legen Geschicklichkeitsrettungswürfe ab; würfle für jedes Ziel getrennt 1d8. Ergebnisse 1-5 verursachen 12d6 Feuer-, Säure-, Blitz-, Gift- oder Kälteschaden (bei Erfolg die Hälfte); 6 setzt fest und drei misslungene Konstitutionsrettungswürfe versteinern; 7 blendet und kann nach einem Weisheitsrettungswurf verbannen; 8 trifft mit zwei verschiedenen Strahlen.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Sofort"
   },
   "Project Image": {
     "name": "Bild projizieren",
-    "description": "Erzeuge bis zu 1 Tag Konzentration lang eine illusionäre Kopie von dir in bis zu 500 Meilen Entfernung. Sie sieht aus und klingt wie du; du kannst durch sie sehen und hören und sie mit einer Magieaktion bis zu 60 Fuß bewegen. Körperliche Berührung oder ein erfolgreicher Nachforschungswurf enthüllt die Illusion.",
+    "description": "Erzeuge bis zu 1 Tag Konzentration lang eine illusionäre Kopie von dir in bis zu 750 Kilometer Entfernung. Sie sieht aus und klingt wie du; du kannst durch sie sehen und hören und sie mit einer Magieaktion bis zu 18 Meter bewegen. Körperliche Berührung oder ein erfolgreicher Nachforschungswurf enthüllt die Illusion.",
     "material": "eine Statuette von dir im Wert von mindestens 5 GM",
     "castingTime": "Aktion",
-    "range": "500 Meilen",
+    "range": "750 Kilometer",
     "duration": "Konzentration, bis zu 1 Tag"
   },
   "Regenerate": {
@@ -2691,10 +2691,10 @@
   },
   "Reverse Gravity": {
     "name": "Umgekehrte Schwerkraft",
-    "description": "Kehre bis zu 1 Minute lang die Schwerkraft in einem Zylinder mit 50 Fuß Radius und 100 Fuß Höhe um. Kreaturen und Gegenstände fallen nach oben, es sei denn, eine Kreatur hält sich mit einem erfolgreichen Geschicklichkeitsrettungswurf an etwas Festem fest; am Ende des Zaubers fallen sie wieder.",
+    "description": "Kehre bis zu 1 Minute lang die Schwerkraft in einem Zylinder mit 15 Meter Radius und 30 Meter Höhe um. Kreaturen und Gegenstände fallen nach oben, es sei denn, eine Kreatur hält sich mit einem erfolgreichen Geschicklichkeitsrettungswurf an etwas Festem fest; am Ende des Zaubers fallen sie wieder.",
     "material": "ein Magnetstein und Eisenspäne",
     "castingTime": "Aktion",
-    "range": "100 Fuß",
+    "range": "30 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Sequester": {
@@ -2715,7 +2715,7 @@
   },
   "Symbol": {
     "name": "Symbol",
-    "description": "Schreibe eine fast unsichtbare Glyphe mit einem von dir bestimmten Auslöser. Bei Auslösung betrifft sie Kreaturen in einer Kugel mit 60 Fuß Radius 10 Minuten lang mit einem gewählten Effekt: Tod (Konstitutionsrettungswurf, 10d10 nekrotischer Schaden, bei Erfolg die Hälfte), Zwietracht, Furcht, Schmerz, Schlaf oder Betäubung, jeweils mit eigenem Wurf und Zustand. Jede Kreatur wird höchstens einmal pro Zug betroffen.",
+    "description": "Schreibe eine fast unsichtbare Glyphe mit einem von dir bestimmten Auslöser. Bei Auslösung betrifft sie Kreaturen in einer Kugel mit 18 Meter Radius 10 Minuten lang mit einem gewählten Effekt: Tod (Konstitutionsrettungswurf, 10d10 nekrotischer Schaden, bei Erfolg die Hälfte), Zwietracht, Furcht, Schmerz, Schlaf oder Betäubung, jeweils mit eigenem Wurf und Zustand. Jede Kreatur wird höchstens einmal pro Zug betroffen.",
     "material": "Diamantpulver im Wert von mindestens 1.000 GM, das der Zauber verbraucht",
     "castingTime": "1 Minute",
     "range": "Berührung",
@@ -2723,21 +2723,21 @@
   },
   "Teleport": {
     "name": "Teleportieren",
-    "description": "Teleportiere dich und bis zu acht bereitwillige Kreaturen innerhalb von 10 Fuß oder einen großen oder kleineren Gegenstand an einen bekannten Ort auf derselben Ebene. Die Spielleitung würfelt je nach Vertrautheit d100: Ein permanenter Kreis oder ein kürzlich verbundener Gegenstand erreicht das Ziel immer; bei anderen Zielen kann es zu einem Fehlschlag (3d10 Energieschaden und erneut würfeln), einem ähnlichen Bereich oder einer Ankunft abseits des Ziels kommen.",
+    "description": "Teleportiere dich und bis zu acht bereitwillige Kreaturen innerhalb von 3 Metern oder einen großen oder kleineren Gegenstand an einen bekannten Ort auf derselben Ebene. Die Spielleitung würfelt je nach Vertrautheit d100: Ein permanenter Kreis oder ein kürzlich verbundener Gegenstand erreicht das Ziel immer; bei anderen Zielen kann es zu einem Fehlschlag (3d10 Energieschaden und erneut würfeln), einem ähnlichen Bereich oder einer Ankunft abseits des Ziels kommen.",
     "castingTime": "Aktion",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "Sofort"
   },
   "Animal Shapes": {
     "name": "Tiergestalten",
-    "description": "Beliebig viele bereitwillige Kreaturen, die du innerhalb von 30 Fuß siehst, werden 24 Stunden lang zu großen oder kleineren Tieren mit HG 4 oder niedriger. Jede behält Trefferpunkte, Trefferwürfel, geistige Attribute, Kommunikation und Kreaturentyp, kann aber weder zaubern noch verschmolzene Ausrüstung benutzen. Jede erhält temporäre Trefferpunkte in Höhe der Trefferpunkte ihrer ersten Gestalt. Mit einer Magieaktion kannst du ihre Gestalten erneut ändern; ein Ziel kann seine Gestalt als Bonusaktion beenden.",
+    "description": "Beliebig viele bereitwillige Kreaturen, die du innerhalb von 9 Metern siehst, werden 24 Stunden lang zu großen oder kleineren Tieren mit HG 4 oder niedriger. Jede behält Trefferpunkte, Trefferwürfel, geistige Attribute, Kommunikation und Kreaturentyp, kann aber weder zaubern noch verschmolzene Ausrüstung benutzen. Jede erhält temporäre Trefferpunkte in Höhe der Trefferpunkte ihrer ersten Gestalt. Mit einer Magieaktion kannst du ihre Gestalten erneut ändern; ein Ziel kann seine Gestalt als Bonusaktion beenden.",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "24 Stunden"
   },
   "Antimagic Field": {
     "name": "Antimagisches Feld",
-    "description": "Eine Ausstrahlung von 10 Fuß um dich unterdrückt bis zu 1 Stunde Konzentration lang Zauber und andere magische Effekte. Sie verhindert Zauberwirken und magische Reisen in das Gebiet oder darin, unterdrückt magische Gegenstände und blockiert die meisten magischen Bereiche und beschworenen Kreaturen, nicht aber die Magie von Artefakten oder Gottheiten.",
+    "description": "Eine Ausstrahlung von 3 Metern um dich unterdrückt bis zu 1 Stunde Konzentration lang Zauber und andere magische Effekte. Sie verhindert Zauberwirken und magische Reisen in das Gebiet oder darin, unterdrückt magische Gegenstände und blockiert die meisten magischen Bereiche und beschworenen Kreaturen, nicht aber die Magie von Artefakten oder Gottheiten.",
     "material": "Eisenspäne",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -2745,18 +2745,18 @@
   },
   "Antipathy/Sympathy": {
     "name": "Antipathie/Sympathie",
-    "description": "Lasse eine Kreatur oder einen Gegenstand 10 Tage lang eine bestimmte Kreaturenart abstoßen oder anziehen. Eine solche Kreatur innerhalb von 120 Fuß legt einen Weisheitsrettungswurf ab: Antipathie verängstigt und vertreibt sie, Sympathie bezaubert und lockt sie an. Wiederholte Rettungswürfe können den Effekt für eine Kreatur beenden.",
+    "description": "Lasse eine Kreatur oder einen Gegenstand 10 Tage lang eine bestimmte Kreaturenart abstoßen oder anziehen. Eine solche Kreatur innerhalb von 36 Metern legt einen Weisheitsrettungswurf ab: Antipathie verängstigt und vertreibt sie, Sympathie bezaubert und lockt sie an. Wiederholte Rettungswürfe können den Effekt für eine Kreatur beenden.",
     "material": "eine Mischung aus Essig und Honig",
     "castingTime": "1 Stunde",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "10 Tage"
   },
   "Befuddlement": {
     "name": "Geistesverwirrung",
-    "description": "Eine Kreatur innerhalb von 150 Fuß legt einen Intelligenzrettungswurf gegen 10d12 psychischen Schaden ab, bei Erfolg die Hälfte. Bei Misserfolg kann sie zudem weder Zauber wirken noch Magieaktionen ausführen. Sie wiederholt den Wurf alle 30 Tage; Mächtige Genesung, Heilen oder Wunsch können den Effekt beenden.",
+    "description": "Eine Kreatur innerhalb von 45 Metern legt einen Intelligenzrettungswurf gegen 10d12 psychischen Schaden ab, bei Erfolg die Hälfte. Bei Misserfolg kann sie zudem weder Zauber wirken noch Magieaktionen ausführen. Sie wiederholt den Wurf alle 30 Tage; Mächtige Genesung, Heilen oder Wunsch können den Effekt beenden.",
     "material": "ein Schlüsselring ohne Schlüssel",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2774,7 +2774,7 @@
   },
   "Control Weather": {
     "name": "Wetterkontrolle",
-    "description": "Kontrolliere bei bis zu 8 Stunden Konzentration im Freien das Wetter innerhalb von 5 Meilen. Niederschlag, Temperatur und Wind lassen sich jeweils um eine Stufe ändern; jede Änderung tritt nach 1d4 x 10 Minuten ein.",
+    "description": "Kontrolliere bei bis zu 8 Stunden Konzentration im Freien das Wetter innerhalb von 7,5 Kilometern. Niederschlag, Temperatur und Wind lassen sich jeweils um eine Stufe ändern; jede Änderung tritt nach 1d4 x 10 Minuten ein.",
     "material": "brennender Weihrauch",
     "castingTime": "10 Minuten",
     "range": "Selbst",
@@ -2782,25 +2782,25 @@
   },
   "Demiplane": {
     "name": "Halbebene",
-    "description": "Öffne für 1 Stunde eine schattige Tür zu einem extradimensionalen Raum mit 30 Fuß Kantenlänge. Verbinde sie mit einer neuen Halbebene, einer von dir zuvor erschaffenen oder einer anderen Halbebene, deren Art und Inhalt du kennst.",
+    "description": "Öffne für 1 Stunde eine schattige Tür zu einem extradimensionalen Raum mit 9 Meter Kantenlänge. Verbinde sie mit einer neuen Halbebene, einer von dir zuvor erschaffenen oder einer anderen Halbebene, deren Art und Inhalt du kennst.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "1 Stunde"
   },
   "Dominate Monster": {
     "name": "Monster beherrschen",
-    "description": "Eine Kreatur innerhalb von 60 Fuß legt einen Weisheitsrettungswurf ab oder ist bis zu 1 Stunde Konzentration lang bezaubert und telepathisch kontrolliert. Du kannst Befehle erteilen und die direkte Kontrolle übernehmen; Schaden erlaubt ihr einen weiteren Rettungswurf, um den Zauber zu beenden.",
+    "description": "Eine Kreatur innerhalb von 18 Metern legt einen Weisheitsrettungswurf ab oder ist bis zu 1 Stunde Konzentration lang bezaubert und telepathisch kontrolliert. Du kannst Befehle erteilen und die direkte Kontrolle übernehmen; Schaden erlaubt ihr einen weiteren Rettungswurf, um den Zauber zu beenden.",
     "higherLevels": "Mit einem Zauberplatz des Grades 9 kann die Konzentration bis zu 8 Stunden dauern.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "Earthquake": {
     "name": "Erdbeben",
-    "description": "Beben machen den Boden in einem Kreis mit 100 Fuß Radius bis zu 1 Minute lang zu schwierigem Gelände. Kreaturen darin legen beim Wirken und in jedem Zug Geschicklichkeitsrettungswürfe ab oder fallen zu Boden und verlieren die Konzentration. Der Zauber öffnet 1d6 Erdspalten und verursacht in jedem Zug 50 Wuchtschaden an Bauwerken; einstürzende Bauwerke können 12d6 Wuchtschaden verursachen (Geschicklichkeitsrettungswurf halbiert).",
+    "description": "Beben machen den Boden in einem Kreis mit 30 Meter Radius bis zu 1 Minute lang zu schwierigem Gelände. Kreaturen darin legen beim Wirken und in jedem Zug Geschicklichkeitsrettungswürfe ab oder fallen zu Boden und verlieren die Konzentration. Der Zauber öffnet 1d6 Erdspalten und verursacht in jedem Zug 50 Wuchtschaden an Bauwerken; einstürzende Bauwerke können 12d6 Wuchtschaden verursachen (Geschicklichkeitsrettungswurf halbiert).",
     "material": "ein zerbrochener Stein",
     "castingTime": "Aktion",
-    "range": "500 Fuß",
+    "range": "150 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Glibness": {
@@ -2812,7 +2812,7 @@
   },
   "Holy Aura": {
     "name": "Heilige Aura",
-    "description": "Gewählte Kreaturen in einer Ausstrahlung von 30 Fuß um dich haben bis zu 1 Minute lang Vorteil bei allen Rettungswürfen, während andere Kreaturen Nachteil bei Angriffen gegen sie haben. Ein Unhold oder Untoter, der eine geschützte Kreatur im Nahkampf trifft, muss einen Konstitutionsrettungswurf bestehen oder wird blind.",
+    "description": "Gewählte Kreaturen in einer Ausstrahlung von 9 Metern um dich haben bis zu 1 Minute lang Vorteil bei allen Rettungswürfen, während andere Kreaturen Nachteil bei Angriffen gegen sie haben. Ein Unhold oder Untoter, der eine geschützte Kreatur im Nahkampf trifft, muss einen Konstitutionsrettungswurf bestehen oder wird blind.",
     "material": "ein Reliquiar im Wert von mindestens 1.000 GM",
     "castingTime": "Aktion",
     "range": "Selbst",
@@ -2820,9 +2820,9 @@
   },
   "Incendiary Cloud": {
     "name": "Brandwolke",
-    "description": "Eine stark verschleierte Rauchkugel mit 20 Fuß Radius erscheint innerhalb von 150 Fuß und bewegt sich in jedem Zug 10 Fuß von dir fort. Kreaturen darin bei Erscheinen und solche, die sie erreicht oder die eintreten oder ihren Zug darin beenden, legen einen Geschicklichkeitsrettungswurf gegen 10d8 Feuerschaden ab, bei Erfolg die Hälfte; jede nur einmal pro Zug. Die Wolke hält bis zu 1 Minute Konzentration.",
+    "description": "Eine stark verschleierte Rauchkugel mit 6 Meter Radius erscheint innerhalb von 45 Metern und bewegt sich in jedem Zug 3 Meter von dir fort. Kreaturen darin bei Erscheinen und solche, die sie erreicht oder die eintreten oder ihren Zug darin beenden, legen einen Geschicklichkeitsrettungswurf gegen 10d8 Feuerschaden ab, bei Erfolg die Hälfte; jede nur einmal pro Zug. Die Wolke hält bis zu 1 Minute Konzentration.",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Konzentration, bis zu 1 Minute",
     "rolls": {
       "damage": {
@@ -2832,9 +2832,9 @@
   },
   "Maze": {
     "name": "Labyrinth",
-    "description": "Verbanne eine Kreatur innerhalb von 60 Fuß für bis zu 10 Minuten Konzentration in ein Labyrinth; anfänglich gibt es keinen Rettungswurf. Sie kann mit der Aktion Studieren und einem Intelligenz-(Nachforschungs-)Wurf gegen SG 20 entkommen; andernfalls kehrt sie am Ende des Zaubers zurück.",
+    "description": "Verbanne eine Kreatur innerhalb von 18 Metern für bis zu 10 Minuten Konzentration in ein Labyrinth; anfänglich gibt es keinen Rettungswurf. Sie kann mit der Aktion Studieren und einem Intelligenz-(Nachforschungs-)Wurf gegen SG 20 entkommen; andernfalls kehrt sie am Ende des Zaubers zurück.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 10 Minuten"
   },
   "Mind Blank": {
@@ -2846,17 +2846,17 @@
   },
   "Power Word Stun": {
     "name": "Machtwort Betäubung",
-    "description": "Eine sichtbare Kreatur innerhalb von 60 Fuß ist betäubt, wenn sie höchstens 150 Trefferpunkte hat; andernfalls beträgt ihre Bewegungsrate bis zum Beginn deines nächsten Zuges 0. Ein betäubtes Ziel wiederholt am Ende jedes Zuges einen Konstitutionsrettungswurf, um den Effekt zu beenden.",
+    "description": "Eine sichtbare Kreatur innerhalb von 18 Metern ist betäubt, wenn sie höchstens 150 Trefferpunkte hat; andernfalls beträgt ihre Bewegungsrate bis zum Beginn deines nächsten Zuges 0. Ein betäubtes Ziel wiederholt am Ende jedes Zuges einen Konstitutionsrettungswurf, um den Effekt zu beenden.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Sunburst": {
     "name": "Sonnenexplosion",
-    "description": "Sonnenlicht explodiert in einer Kugel mit 60 Fuß Radius innerhalb von 150 Fuß. Kreaturen legen Konstitutionsrettungswürfe gegen 12d6 gleißenden Schaden ab, bei Erfolg die Hälfte; wer scheitert, ist außerdem 1 Minute lang blind und darf am Ende jedes Zuges erneut würfeln. Das Licht bannt magische Dunkelheit im Bereich.",
+    "description": "Sonnenlicht explodiert in einer Kugel mit 18 Meter Radius innerhalb von 45 Metern. Kreaturen legen Konstitutionsrettungswürfe gegen 12d6 gleißenden Schaden ab, bei Erfolg die Hälfte; wer scheitert, ist außerdem 1 Minute lang blind und darf am Ende jedes Zuges erneut würfeln. Das Licht bannt magische Dunkelheit im Bereich.",
     "material": "ein Stück Sonnenstein",
     "castingTime": "Aktion",
-    "range": "150 Fuß",
+    "range": "45 Meter",
     "duration": "Sofort",
     "rolls": {
       "damage": {
@@ -2866,9 +2866,9 @@
   },
   "Tsunami": {
     "name": "Tsunami",
-    "description": "Erhebe bis zu sechs Runden lang eine Wasserwand von höchstens 300 Fuß Länge und Höhe sowie 50 Fuß Dicke. Kreaturen darin legen Stärkerettungswürfe gegen 6d10 Wuchtschaden ab, bei Erfolg die Hälfte. Jede Runde rückt sie 50 Fuß vor; riesige oder kleinere Kreaturen, die sie erfasst, legen einen weiteren Stärkerettungswurf gegen 5d10 Wuchtschaden ab. Ihre Höhe und ihr späterer Schaden nehmen in jeder Runde ab.",
+    "description": "Erhebe bis zu sechs Runden lang eine Wasserwand von höchstens 90 Meter Länge und Höhe sowie 15 Meter Dicke. Kreaturen darin legen Stärkerettungswürfe gegen 6d10 Wuchtschaden ab, bei Erfolg die Hälfte. Jede Runde rückt sie 15 Meter vor; riesige oder kleinere Kreaturen, die sie erfasst, legen einen weiteren Stärkerettungswurf gegen 5d10 Wuchtschaden ab. Ihre Höhe und ihr späterer Schaden nehmen in jeder Runde ab.",
     "castingTime": "1 Minute",
-    "range": "1 Meile",
+    "range": "1,5 Kilometer",
     "duration": "Konzentration, bis zu 6 Runden"
   },
   "Astral Projection": {
@@ -2876,7 +2876,7 @@
     "description": "Projiziere dich und bis zu acht bereitwillige Kreaturen auf die Astralebene; eure bewusstlosen Körper altern nicht. Jede Astralgestalt hat eine silberne Schnur, deren Durchtrennen das Ziel tötet. Wer die Astralebene verlässt, zieht den Körper auf die neue Ebene. Für ein Ziel endet der Zauber, wenn sein Körper oder seine Astralgestalt 0 Trefferpunkte erreicht oder du ihn beendest. Jedes Ziel benötigt einen Hyazinth im Wert von 1.000 GM und einen Silberbarren im Wert von 100 GM; beide werden verbraucht.",
     "material": "für jedes Ziel des Zaubers ein Hyazinth im Wert von mindestens 1.000 GM und ein Silberbarren im Wert von mindestens 100 GM, die alle der Zauber verbraucht",
     "castingTime": "1 Stunde",
-    "range": "10 Fuß",
+    "range": "3 Meter",
     "duration": "Bis zur Aufhebung"
   },
   "Foresight": {
@@ -2889,53 +2889,53 @@
   },
   "Gate": {
     "name": "Tor",
-    "description": "Öffne bis zu 1 Minute lang ein Portal mit 5-20 Fuß Durchmesser zu einem genauen Ort auf einer anderen Ebene. Kreaturen können von beiden Ebenen durch die Vorderseite reisen. Beim Öffnen kannst du eine bestimmte Kreatur auf einer anderen Ebene nennen, die sofort an deine Seite gebracht wird; du kontrollierst sie nicht.",
+    "description": "Öffne bis zu 1 Minute lang ein Portal mit 5-6 Meter Durchmesser zu einem genauen Ort auf einer anderen Ebene. Kreaturen können von beiden Ebenen durch die Vorderseite reisen. Beim Öffnen kannst du eine bestimmte Kreatur auf einer anderen Ebene nennen, die sofort an deine Seite gebracht wird; du kontrollierst sie nicht.",
     "material": "ein Diamant im Wert von mindestens 5.000 GM",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Imprisonment": {
     "name": "Einkerkerung",
-    "description": "Eine Kreatur innerhalb von 30 Fuß legt einen Weisheitsrettungswurf ab oder wird bis zur Aufhebung oder einem von dir festgelegten Auslöser eingesperrt. Wähle Begraben, Anketten, Gefängnis, Winzige Verwahrung oder Schlummer. Sie altert nicht, braucht keine Nahrung, kann sich nicht teleportieren und nicht durch Erkenntnismagie gefunden werden. Ein erfolgreicher Rettungswurf macht sie 24 Stunden lang gegen diesen Zauber immun; nur Magie bannen des Grades 9 kann ihn vorzeitig beenden.",
+    "description": "Eine Kreatur innerhalb von 9 Metern legt einen Weisheitsrettungswurf ab oder wird bis zur Aufhebung oder einem von dir festgelegten Auslöser eingesperrt. Wähle Begraben, Anketten, Gefängnis, Winzige Verwahrung oder Schlummer. Sie altert nicht, braucht keine Nahrung, kann sich nicht teleportieren und nicht durch Erkenntnismagie gefunden werden. Ein erfolgreicher Rettungswurf macht sie 24 Stunden lang gegen diesen Zauber immun; nur Magie bannen des Grades 9 kann ihn vorzeitig beenden.",
     "material": "eine Statuette des Ziels im Wert von mindestens 5.000 GM",
     "castingTime": "1 Minute",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Bis zur Aufhebung"
   },
   "Mass Heal": {
     "name": "Massenheilung",
-    "description": "Verteile bis zu 700 Trefferpunkte Heilung auf beliebige Kreaturen, die du innerhalb von 60 Fuß siehst. Jede geheilte Kreatur wird außerdem von Blindheit, Taubheit und Vergiftung befreit.",
+    "description": "Verteile bis zu 700 Trefferpunkte Heilung auf beliebige Kreaturen, die du innerhalb von 18 Metern siehst. Jede geheilte Kreatur wird außerdem von Blindheit, Taubheit und Vergiftung befreit.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Meteor Swarm": {
     "name": "Meteorschwarm",
-    "description": "Vier Meteore treffen verschiedene Punkte innerhalb von 1 Meile. Jeder erzeugt eine Kugel mit 40 Fuß Radius; Kreaturen darin legen Geschicklichkeitsrettungswürfe gegen 20d6 Feuer- plus 20d6 Wuchtschaden ab, bei Erfolg die Hälfte. Überlappende Bereiche verletzen eine Kreatur nur einmal.",
+    "description": "Vier Meteore treffen verschiedene Punkte innerhalb von 1,5 Kilometern. Jeder erzeugt eine Kugel mit 12 Meter Radius; Kreaturen darin legen Geschicklichkeitsrettungswürfe gegen 20d6 Feuer- plus 20d6 Wuchtschaden ab, bei Erfolg die Hälfte. Überlappende Bereiche verletzen eine Kreatur nur einmal.",
     "castingTime": "Aktion",
-    "range": "1 Meile",
+    "range": "1,5 Kilometer",
     "duration": "Sofort"
   },
   "Power Word Heal": {
     "name": "Machtwort Heilung",
-    "description": "Eine Kreatur innerhalb von 60 Fuß erhält alle Trefferpunkte zurück und wird von Bezauberung, Verängstigung, Lähmung, Vergiftung und Betäubung befreit. Ein liegendes Ziel kann seine Reaktion verwenden, um aufzustehen.",
+    "description": "Eine Kreatur innerhalb von 18 Metern erhält alle Trefferpunkte zurück und wird von Bezauberung, Verängstigung, Lähmung, Vergiftung und Betäubung befreit. Ein liegendes Ziel kann seine Reaktion verwenden, um aufzustehen.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Power Word Kill": {
     "name": "Machtwort Tod",
-    "description": "Eine Kreatur innerhalb von 60 Fuß stirbt, wenn sie höchstens 100 Trefferpunkte hat. Hat sie mehr als 100, erleidet sie stattdessen 12d12 psychischen Schaden; kein Rettungswurf.",
+    "description": "Eine Kreatur innerhalb von 18 Metern stirbt, wenn sie höchstens 100 Trefferpunkte hat. Hat sie mehr als 100, erleidet sie stattdessen 12d12 psychischen Schaden; kein Rettungswurf.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "Sofort"
   },
   "Prismatic Wall": {
     "name": "Prismatische Wand",
-    "description": "Erzeuge für 10 Minuten eine siebenlagige Wand von höchstens 90 mal 30 Fuß oder eine Kugel mit höchstens 30 Fuß Durchmesser. Ungeschützte Kreaturen in der Nähe können erblinden; jede Schicht zu durchqueren erfordert einen Geschicklichkeitsrettungswurf. Die ersten fünf verursachen jeweils 12d6 Feuer-, Säure-, Blitz-, Gift- oder Kälteschaden (bei Erfolg die Hälfte); die sechste kann versteinern, die siebte verbannen. Jede Schicht hat ihre eigene Gegenmaßnahme; Antimagisches Feld unterdrückt die Wand nicht.",
+    "description": "Erzeuge für 10 Minuten eine siebenlagige Wand von höchstens 27 mal 9 Meter oder eine Kugel mit höchstens 9 Meter Durchmesser. Ungeschützte Kreaturen in der Nähe können erblinden; jede Schicht zu durchqueren erfordert einen Geschicklichkeitsrettungswurf. Die ersten fünf verursachen jeweils 12d6 Feuer-, Säure-, Blitz-, Gift- oder Kälteschaden (bei Erfolg die Hälfte); die sechste kann versteinern, die siebte verbannen. Jede Schicht hat ihre eigene Gegenmaßnahme; Antimagisches Feld unterdrückt die Wand nicht.",
     "castingTime": "Aktion",
-    "range": "60 Fuß",
+    "range": "18 Meter",
     "duration": "10 Minuten"
   },
   "Shapechange": {
@@ -2948,14 +2948,14 @@
   },
   "Storm of Vengeance": {
     "name": "Sturm der Rache",
-    "description": "Ein Sturm mit 300 Fuß Radius hält bis zu 1 Minute. Zunächst legen Kreaturen darunter einen Konstitutionsrettungswurf ab oder erleiden 2d6 Schallschaden und werden taub. Zug 2 verursacht 4d6 Säureschaden; Zug 3 ruft sechs Blitze mit je 10d6 Blitzschaden (Geschicklichkeitsrettungswurf halbiert); Zug 4 verursacht 2d6 Wuchtschaden; die Züge 5-10 verursachen jeweils 1d6 Kälteschaden und machen das Gebiet stark verschleiert und schwer passierbar.",
+    "description": "Ein Sturm mit 90 Meter Radius hält bis zu 1 Minute. Zunächst legen Kreaturen darunter einen Konstitutionsrettungswurf ab oder erleiden 2d6 Schallschaden und werden taub. Zug 2 verursacht 4d6 Säureschaden; Zug 3 ruft sechs Blitze mit je 10d6 Blitzschaden (Geschicklichkeitsrettungswurf halbiert); Zug 4 verursacht 2d6 Wuchtschaden; die Züge 5-10 verursachen jeweils 1d6 Kälteschaden und machen das Gebiet stark verschleiert und schwer passierbar.",
     "castingTime": "Aktion",
-    "range": "1 Meile",
+    "range": "1,5 Kilometer",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Time Stop": {
     "name": "Zeitstopp",
-    "description": "Führe 1d4 + 1 zusätzliche Züge aus, während die Zeit für andere Kreaturen stillsteht. Der Effekt endet vorzeitig, wenn du eine andere Kreatur oder etwas, das sie trägt, beeinflusst oder dich mehr als 1.000 Fuß vom Wirkungsort entfernst.",
+    "description": "Führe 1d4 + 1 zusätzliche Züge aus, während die Zeit für andere Kreaturen stillsteht. Der Effekt endet vorzeitig, wenn du eine andere Kreatur oder etwas, das sie trägt, beeinflusst oder dich mehr als 300 Meter vom Wirkungsort entfernst.",
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Sofort"
@@ -2965,7 +2965,7 @@
     "description": "Verwandle eine Kreatur in eine andere Kreatur oder einen nichtmagischen Gegenstand oder einen nicht getragenen nichtmagischen Gegenstand in eine Kreatur. Eine nicht bereitwillige Kreatur kann mit einem Weisheitsrettungswurf widerstehen. Die neue Kreatur hat HG höchstens gleich der Stufe oder dem HG des Originals; aus einem Gegenstand kann eine Kreatur mit HG 9 oder niedriger werden. Konzentration über die volle Stunde lässt die Verwandlung bis zur Aufhebung bestehen.",
     "material": "ein Tropfen Quecksilber, ein Klumpen Gummi arabicum und eine Rauchschwade",
     "castingTime": "Aktion",
-    "range": "30 Fuß",
+    "range": "9 Meter",
     "duration": "Konzentration, bis zu 1 Stunde"
   },
   "True Resurrection": {
@@ -2978,9 +2978,9 @@
   },
   "Weird": {
     "name": "Unheimliches",
-    "description": "Gewählte Kreaturen in einer Kugel mit 30 Fuß Radius legen Weisheitsrettungswürfe gegen 10d10 psychischen Schaden ab, bei Erfolg die Hälfte. Wer scheitert, ist außerdem bis zu 1 Minute lang verängstigt und wiederholt den Wurf am Ende jedes Zuges: Misserfolg verursacht 5d10 psychischen Schaden, Erfolg beendet den Zauber für diese Kreatur.",
+    "description": "Gewählte Kreaturen in einer Kugel mit 9 Meter Radius legen Weisheitsrettungswürfe gegen 10d10 psychischen Schaden ab, bei Erfolg die Hälfte. Wer scheitert, ist außerdem bis zu 1 Minute lang verängstigt und wiederholt den Wurf am Ende jedes Zuges: Misserfolg verursacht 5d10 psychischen Schaden, Erfolg beendet den Zauber für diese Kreatur.",
     "castingTime": "Aktion",
-    "range": "120 Fuß",
+    "range": "36 Meter",
     "duration": "Konzentration, bis zu 1 Minute"
   },
   "Wish": {

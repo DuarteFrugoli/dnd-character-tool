@@ -3,10 +3,16 @@
     "name": "İnsansı Maymun",
     "actions": {
       "fist": {
-        "name": "Yumruk"
+        "name": "Yumruk",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 5 (1d4 + 3) Ezici hasar."
       },
       "rock": {
-        "name": "Kaya"
+        "name": "Kaya",
+        "description": "Menzilli Saldırı Atışı: +5, menzil 25/50 fit. İsabet: 10 (2d6 + 3) Ezici hasar."
+      },
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Maymun iki Yumruk saldırısı yapar."
       }
     }
   },
@@ -14,7 +20,14 @@
     "name": "Babun",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +1, erişim 5 fit. İsabet: 1 (1d4 - 1) Delici hasar."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Babunun en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, babun o yaratığa karşı yaptığı saldırı atışında Avantajlıdır."
       }
     }
   },
@@ -22,7 +35,8 @@
     "name": "Porsuk",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 1 Delici hasar."
       }
     }
   },
@@ -30,7 +44,8 @@
     "name": "Yarasa",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 1 Delici hasar."
       }
     }
   },
@@ -38,7 +53,12 @@
     "name": "Kara Ayı",
     "actions": {
       "rend": {
-        "name": "Parçalama"
+        "name": "Parçalama",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 5 (1d6 + 2) Kesici hasar."
+      },
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Ayı iki Parçalama saldırısı yapar."
       }
     }
   },
@@ -46,7 +66,14 @@
     "name": "Kan Şahini",
     "actions": {
       "beak": {
-        "name": "Gaga"
+        "name": "Gaga",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 4 (1d4 + 2) Delici hasar; hedef Kana Bulanmışsa 6 (1d8 + 2) Delici hasar."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Şahinin en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, şahin o yaratığa karşı yaptığı saldırı atışında Avantajlıdır."
       }
     }
   },
@@ -54,7 +81,14 @@
     "name": "Yaban Domuzu",
     "actions": {
       "gore": {
-        "name": "Boynuz Darbesi"
+        "name": "Boynuz Darbesi",
+        "description": "Yakın Dövüş Saldırı Atışı: +3, erişim 5 fit. İsabet: 4 (1d6 + 1) Delici hasar. Hedef Orta veya daha küçük bir yaratıksa ve yaban domuzu isabetten hemen önce ona doğru düz bir çizgide 20 fit veya daha fazla hareket ettiyse, hedef fazladan 3 (1d6) Delici hasar alır ve Yere Düşmüş durumuna girer."
+      }
+    },
+    "traits": {
+      "bloodied_fury": {
+        "name": "Kana Bulanmış Öfke",
+        "description": "Kana Bulanmışken yaban domuzu saldırı atışlarında Avantajlıdır."
       }
     }
   },
@@ -62,10 +96,16 @@
     "name": "Boz Ayı",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 7 (1d8 + 3) Delici hasar."
       },
       "claw": {
-        "name": "Pençe"
+        "name": "Pençe",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 5 (1d4 + 3) Kesici hasar. Hedef Büyük veya daha küçük bir yaratıksa Yere Düşmüş durumuna girer."
+      },
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Ayı bir Isırık ve bir Pençe saldırısı yapar."
       }
     }
   },
@@ -73,7 +113,8 @@
     "name": "Deve",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 4 (1d4 + 2) Ezici hasar."
       }
     }
   },
@@ -81,7 +122,14 @@
     "name": "Kedi",
     "actions": {
       "scratch": {
-        "name": "Tırmalama"
+        "name": "Tırmalama",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 1 Kesici hasar."
+      }
+    },
+    "traits": {
+      "jumper": {
+        "name": "Sıçrayıcı",
+        "description": "Kedinin atlama mesafesi Kuvveti yerine Çevikliği kullanılarak belirlenir."
       }
     }
   },
@@ -89,7 +137,12 @@
     "name": "Boğucu Yılan",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 6 (1d8 + 2) Delici hasar."
+      },
+      "constrict": {
+        "name": "Sıkma",
+        "description": "Kuvvet Kurtulma Atışı: ZD 12, yılanın 5 fit içinde görebildiği Orta veya daha küçük bir yaratık. Başarısızlık: 7 (3d4) Ezici hasar ve hedef Kavranmış durumuna girer (kurtulma ZD 12)."
       }
     }
   },
@@ -97,7 +150,14 @@
     "name": "Yengeç",
     "actions": {
       "claw": {
-        "name": "Pençe"
+        "name": "Pençe",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 1 Ezici hasar."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amfibi",
+        "description": "Yengeç hem havada hem suda nefes alabilir."
       }
     }
   },
@@ -105,7 +165,14 @@
     "name": "Timsah",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 6 (1d8 + 2) Delici hasar. Hedef Orta veya daha küçük bir yaratıksa Kavranmış durumuna girer (kurtulma ZD 12). Kavranmış olduğu sürece hedef Kısıtlanmış durumundadır."
+      }
+    },
+    "traits": {
+      "hold_breath": {
+        "name": "Nefes Tutma",
+        "description": "Timsah nefesini 1 saat tutabilir."
       }
     }
   },
@@ -113,7 +180,14 @@
     "name": "Geyik",
     "actions": {
       "ram": {
-        "name": "Toslama"
+        "name": "Toslama",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 2 (1d4) Ezici hasar."
+      }
+    },
+    "traits": {
+      "agile": {
+        "name": "Çevik",
+        "description": "Geyik, bir düşmanın erişiminden çıktığında Fırsat Saldırısına yol açmaz."
       }
     }
   },
@@ -121,7 +195,14 @@
     "name": "Dehşet Kurdu",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 8 (1d10 + 3) Delici hasar. Hedef Büyük veya daha küçük bir yaratıksa Yere Düşmüş durumuna girer."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Kurdun en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, kurt o yaratığa karşı yaptığı saldırı atışında Avantajlıdır."
       }
     }
   },
@@ -129,7 +210,8 @@
     "name": "Yük Atı",
     "actions": {
       "hooves": {
-        "name": "Toynaklar"
+        "name": "Toynaklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +6, erişim 5 fit. İsabet: 6 (1d4 + 4) Ezici hasar."
       }
     }
   },
@@ -137,7 +219,8 @@
     "name": "Kartal",
     "actions": {
       "talons": {
-        "name": "Kanca Pençeler"
+        "name": "Kanca Pençeler",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 4 (1d4 + 2) Kesici hasar."
       }
     }
   },
@@ -145,7 +228,8 @@
     "name": "Kızıl Geyik",
     "actions": {
       "ram": {
-        "name": "Toslama"
+        "name": "Toslama",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 6 (1d6 + 3) Ezici hasar. Hedef Büyük veya daha küçük bir yaratıksa ve kızıl geyik isabetten hemen önce ona doğru düz bir çizgide 20 fit veya daha fazla hareket ettiyse, hedef fazladan 3 (1d6) Ezici hasar alır ve Yere Düşmüş durumuna girer."
       }
     }
   },
@@ -153,7 +237,18 @@
     "name": "Kurbağa",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +3, erişim 5 fit. İsabet: 1 Delici hasar."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amfibi",
+        "description": "Kurbağa hem havada hem suda nefes alabilir."
+      },
+      "standing_leap": {
+        "name": "Durarak Sıçrama",
+        "description": "Kurbağanın Uzun Atlaması en fazla 10 fit, Yüksek Atlaması en fazla 5 fittir; hız alarak ya da almadan atlayabilir."
       }
     }
   },
@@ -161,7 +256,8 @@
     "name": "Dev Porsuk",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +3, erişim 5 fit. İsabet: 6 (2d4 + 1) Delici hasar."
       }
     }
   },
@@ -169,7 +265,8 @@
     "name": "Dev Yarasa",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 6 (1d6 + 3) Delici hasar."
       }
     }
   },
@@ -177,7 +274,8 @@
     "name": "Dev Kırkayak",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 4 (1d4 + 2) Delici hasar ve hedef, kırkayağın bir sonraki turunun başına kadar Zehirlenmiş durumuna girer."
       }
     }
   },
@@ -185,7 +283,14 @@
     "name": "Dev Yengeç",
     "actions": {
       "claw": {
-        "name": "Pençe"
+        "name": "Pençe",
+        "description": "Yakın Dövüş Saldırı Atışı: +3, erişim 5 fit. İsabet: 4 (1d6 + 1) Ezici hasar. Hedef Orta veya daha küçük bir yaratıksa iki kıskaçtan biriyle Kavranmış durumuna girer (kurtulma ZD 11)."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amfibi",
+        "description": "Yengeç hem havada hem suda nefes alabilir."
       }
     }
   },
@@ -193,7 +298,14 @@
     "name": "Dev Ateş Böceği",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +1, erişim 5 fit. İsabet: 1 Ateş hasarı."
+      }
+    },
+    "traits": {
+      "illumination": {
+        "name": "Aydınlatma",
+        "description": "Böcek 10 fit yarıçapında Parlak Işık ve bunun ötesinde 10 fit daha Loş Işık yayar."
       }
     }
   },
@@ -201,7 +313,22 @@
     "name": "Dev Kurbağa",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +3, erişim 5 fit. İsabet: 5 (1d6 + 2) Delici hasar. Hedef Orta veya daha küçük bir yaratıksa Kavranmış durumuna girer (kurtulma ZD 11)."
+      },
+      "swallow": {
+        "name": "Yutma",
+        "description": "Kurbağa, kavradığı Küçük veya daha küçük bir hedefi yutar. Yutulmuşken hedef Kavranmış değildir, ancak Kör ve Kısıtlanmış durumlarındadır ve kurbağanın dışından gelen saldırılara ve diğer etkilere karşı Tam Siper altındadır. Hedefi yutmuşken kurbağa Isırık kullanamaz; kurbağa ölürse yutulan hedef artık Kısıtlanmış değildir ve 5 fit hareket harcayarak cesetten kaçabilir, dışarı Yere Düşmüş durumunda çıkar. Kurbağanın bir sonraki turunun sonunda yutulan hedef 5 (2d4) Asit hasarı alır. Bu hasar onu öldürmezse kurbağa onu kusar ve hedef dışarı Yere Düşmüş durumunda çıkar."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amfibi",
+        "description": "Kurbağa hem havada hem suda nefes alabilir."
+      },
+      "standing_leap": {
+        "name": "Durarak Sıçrama",
+        "description": "Kurbağanın Uzun Atlaması en fazla 20 fit, Yüksek Atlaması en fazla 10 fittir; hız alarak ya da almadan atlayabilir."
       }
     }
   },
@@ -209,7 +336,8 @@
     "name": "Dev Keçi",
     "actions": {
       "ram": {
-        "name": "Toslama"
+        "name": "Toslama",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 6 (1d6 + 3) Ezici hasar. Hedef Büyük veya daha küçük bir yaratıksa ve keçi isabetten hemen önce ona doğru düz bir çizgide 20 fit veya daha fazla hareket ettiyse, hedef fazladan 5 (2d4) Ezici hasar alır ve Yere Düşmüş durumuna girer."
       }
     }
   },
@@ -217,7 +345,14 @@
     "name": "Dev Sırtlan",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 10 (2d6 + 3) Delici hasar."
+      }
+    },
+    "bonusActions": {
+      "rampage": {
+        "name": "Kudurma",
+        "description": "Zaten Kana Bulanmış olan bir yaratığa hasar verdikten hemen sonra sırtlan Hızının en fazla yarısı kadar hareket edebilir ve bir Isırık saldırısı yapar."
       }
     }
   },
@@ -225,7 +360,14 @@
     "name": "Dev Kertenkele",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 6 (1d8 + 2) Delici hasar."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Örümcek Tırmanışı",
+        "description": "Kertenkele, özellik kontrolü yapmasına gerek kalmadan tavanlar boyunca ilerlemek dahil zorlu yüzeylere tırmanabilir."
       }
     }
   },
@@ -233,7 +375,20 @@
     "name": "Dev Ahtapot",
     "actions": {
       "tentacles": {
-        "name": "Dokunaçlar"
+        "name": "Dokunaçlar",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 10 fit. İsabet: 10 (2d6 + 3) Ezici hasar. Hedef Orta veya daha küçük bir yaratıksa sekiz dokunacın hepsiyle Kavranmış durumuna girer (kurtulma ZD 13). Kavranmış olduğu sürece hedef Kısıtlanmış durumundadır."
+      }
+    },
+    "traits": {
+      "water_breathing": {
+        "name": "Suda Nefes Alma",
+        "description": "Ahtapot yalnızca su altında nefes alabilir. Su dışında nefesini 1 saat tutabilir."
+      }
+    },
+    "reactions": {
+      "ink_cloud": {
+        "name": "Mürekkep Bulutu",
+        "description": "Tetikleyici: Ahtapot su altındayken hasar alır. Yanıt: Ahtapot, kendisini merkez alan 10 fitlik bir Küpü dolduran mürekkep salar ve Yüzme Hızının tamamı kadar hareket edebilir. Küp, 1 dakika boyunca veya güçlü bir akıntı ya da benzer bir etki mürekkebi dağıtana kadar görüşü yoğun biçimde engeller."
       }
     }
   },
@@ -241,7 +396,14 @@
     "name": "Dev Sıçan",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 5 (1d4 + 3) Delici hasar."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Sıçanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, sıçan o yaratığa karşı yaptığı saldırı atışında Avantajlıdır."
       }
     }
   },
@@ -249,7 +411,20 @@
     "name": "Dev Denizatı",
     "actions": {
       "ram": {
-        "name": "Toslama"
+        "name": "Toslama",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 9 (2d6 + 2) Ezici hasar; denizatı isabetten hemen önce hedefe doğru düz bir çizgide 20 fit veya daha fazla hareket ettiyse 11 (2d8 + 2) Ezici hasar."
+      }
+    },
+    "traits": {
+      "water_breathing": {
+        "name": "Suda Nefes Alma",
+        "description": "Denizatı yalnızca su altında nefes alabilir."
+      }
+    },
+    "bonusActions": {
+      "bubble_dash": {
+        "name": "Kabarcık Atılışı",
+        "description": "Su altındayken denizatı, Fırsat Saldırılarına yol açmadan Yüzme Hızının en fazla yarısı kadar hareket eder."
       }
     }
   },
@@ -257,7 +432,22 @@
     "name": "Dev Örümcek",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 7 (1d8 + 3) Delici hasar artı 7 (2d6) Zehir hasarı."
+      },
+      "web": {
+        "name": "Ağ",
+        "description": "Çeviklik Kurtulma Atışı: ZD 13, örümceğin 60 fit içinde görebildiği bir yaratık. Başarısızlık: Hedef, ağ yok edilene kadar Kısıtlanmış durumuna girer (ZS 10; 5 Can Puanı; Ateş hasarına karşı Zayıflık; Zehir ve Psişik hasara karşı Bağışıklık)."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Örümcek Tırmanışı",
+        "description": "Örümcek, özellik kontrolü yapmasına gerek kalmadan tavanlar boyunca ilerlemek dahil zorlu yüzeylere tırmanabilir."
+      },
+      "web_walker": {
+        "name": "Ağ Yürüyüşçüsü",
+        "description": "Örümcek, ağların neden olduğu hareket kısıtlamalarını yok sayar ve aynı ağla temas halindeki diğer her yaratığın konumunu bilir."
       }
     }
   },
@@ -265,7 +455,22 @@
     "name": "Dev Karakurbağası",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 5 (1d6 + 2) Delici hasar artı 5 (2d4) Zehir hasarı. Hedef Orta veya daha küçük bir yaratıksa Kavranmış durumuna girer (kurtulma ZD 12)."
+      },
+      "swallow": {
+        "name": "Yutma",
+        "description": "Karakurbağası, kavradığı Orta veya daha küçük bir hedefi yutar. Yutulmuşken hedef Kavranmış değildir, ancak Kör ve Kısıtlanmış durumlarındadır ve karakurbağasının dışından gelen saldırılara ve diğer etkilere karşı Tam Siper altındadır. Ayrıca hedef, karakurbağasının her turunun sonunda 10 (3d6) Asit hasarı alır. Karakurbağası aynı anda yalnızca bir hedefi yutmuş olabilir ve yutulmuş bir hedefi varken Isırık kullanamaz. Karakurbağası ölürse yutulan yaratık artık Kısıtlanmış değildir ve 5 fit hareket harcayarak cesetten kaçabilir, dışarı Yere Düşmüş durumunda çıkar."
+      }
+    },
+    "traits": {
+      "amphibious": {
+        "name": "Amfibi",
+        "description": "Karakurbağası hem havada hem suda nefes alabilir."
+      },
+      "standing_leap": {
+        "name": "Durarak Sıçrama",
+        "description": "Karakurbağasının Uzun Atlaması en fazla 20 fit, Yüksek Atlaması en fazla 10 fittir; hız alarak ya da almadan atlayabilir."
       }
     }
   },
@@ -273,7 +478,8 @@
     "name": "Dev Zehirli Yılan",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +6, erişim 10 fit. İsabet: 6 (1d4 + 4) Delici hasar artı 4 (1d8) Zehir hasarı."
       }
     }
   },
@@ -281,7 +487,14 @@
     "name": "Dev Eşekarısı",
     "actions": {
       "sting": {
-        "name": "İğne"
+        "name": "İğne",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 5 (1d6 + 2) Delici hasar artı 5 (2d4) Zehir hasarı."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Uçarak Geçiş",
+        "description": "Eşekarısı, bir düşmanın erişiminden uçarak çıktığında Fırsat Saldırısına yol açmaz."
       }
     }
   },
@@ -289,7 +502,8 @@
     "name": "Dev Gelincik",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 5 (1d4 + 3) Delici hasar."
       }
     }
   },
@@ -297,7 +511,14 @@
     "name": "Dev Kurt Örümceği",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 5 (1d4 + 3) Delici hasar artı 5 (2d4) Zehir hasarı."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Örümcek Tırmanışı",
+        "description": "Örümcek, özellik kontrolü yapmasına gerek kalmadan tavanlar boyunca ilerlemek dahil zorlu yüzeylere tırmanabilir."
       }
     }
   },
@@ -305,7 +526,8 @@
     "name": "Keçi",
     "actions": {
       "ram": {
-        "name": "Toslama"
+        "name": "Toslama",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 1 Ezici hasar; keçi isabetten hemen önce hedefe doğru düz bir çizgide 20 fit veya daha fazla hareket ettiyse 2 (1d4) Ezici hasar."
       }
     }
   },
@@ -313,7 +535,8 @@
     "name": "Şahin",
     "actions": {
       "talons": {
-        "name": "Kanca Pençeler"
+        "name": "Kanca Pençeler",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 1 Kesici hasar."
       }
     }
   },
@@ -321,7 +544,14 @@
     "name": "Sırtlan",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 3 (1d6) Delici hasar."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Sırtlanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, sırtlan o yaratığa karşı yaptığı saldırı atışında Avantajlıdır."
       }
     }
   },
@@ -329,7 +559,8 @@
     "name": "Çakal",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +1, erişim 5 fit. İsabet: 1 (1d4 - 1) Delici hasar."
       }
     }
   },
@@ -337,7 +568,26 @@
     "name": "Aslan",
     "actions": {
       "rend": {
-        "name": "Parçalama"
+        "name": "Parçalama",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 7 (1d8 + 3) Kesici hasar."
+      },
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Aslan iki Parçalama saldırısı yapar. Bu saldırılardan birinin yerine Kükreme kullanabilir."
+      },
+      "roar": {
+        "name": "Kükreme",
+        "description": "Bilgelik Kurtulma Atışı: ZD 11, 15 fit içindeki bir yaratık. Başarısızlık: Hedef, aslanın bir sonraki turunun başına kadar Korkmuş durumuna girer."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Aslanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, aslan o yaratığa karşı yaptığı saldırı atışında Avantajlıdır."
+      },
+      "running_leap": {
+        "name": "Koşarak Sıçrama",
+        "description": "Aslan 10 fit koşarak hız aldığında en fazla 25 fit Uzun Atlama yapabilir."
       }
     }
   },
@@ -345,7 +595,14 @@
     "name": "Kertenkele",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 1 Delici hasar."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Örümcek Tırmanışı",
+        "description": "Kertenkele, özellik kontrolü yapmasına gerek kalmadan tavanlar boyunca ilerlemek dahil zorlu yüzeylere tırmanabilir."
       }
     }
   },
@@ -353,7 +610,8 @@
     "name": "Mastiff",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +3, erişim 5 fit. İsabet: 4 (1d6 + 1) Delici hasar. Hedef Orta veya daha küçük bir yaratıksa Yere Düşmüş durumuna girer."
       }
     }
   },
@@ -361,7 +619,14 @@
     "name": "Katır",
     "actions": {
       "hooves": {
-        "name": "Toynaklar"
+        "name": "Toynaklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 4 (1d4 + 2) Ezici hasar."
+      }
+    },
+    "traits": {
+      "beast_of_burden": {
+        "name": "Yük Hayvanı",
+        "description": "Katır, taşıma kapasitesinin belirlenmesi açısından bir boy daha büyük sayılır."
       }
     }
   },
@@ -369,7 +634,24 @@
     "name": "Ahtapot",
     "actions": {
       "tentacles": {
-        "name": "Dokunaçlar"
+        "name": "Dokunaçlar",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 1 Ezici hasar."
+      }
+    },
+    "traits": {
+      "compression": {
+        "name": "Sıkışma",
+        "description": "Ahtapot, fazladan hareket harcamadan 1 inç kadar dar bir aralıktan geçebilir."
+      },
+      "water_breathing": {
+        "name": "Suda Nefes Alma",
+        "description": "Ahtapot yalnızca su altında nefes alabilir."
+      }
+    },
+    "reactions": {
+      "ink_cloud": {
+        "name": "Mürekkep Bulutu",
+        "description": "Tetikleyici: Ahtapot su altındayken bir yaratık turunu ahtapotun 5 fit yakınında bitirir. Yanıt: Ahtapot, kendisini merkez alan 5 fitlik bir Küpü dolduran mürekkep salar ve Yüzme Hızının tamamı kadar hareket edebilir. Küp, 1 dakika boyunca veya güçlü bir akıntı ya da benzer bir etki mürekkebi dağıtana kadar görüşü yoğun biçimde engeller."
       }
     }
   },
@@ -377,7 +659,14 @@
     "name": "Baykuş",
     "actions": {
       "talons": {
-        "name": "Kanca Pençeler"
+        "name": "Kanca Pençeler",
+        "description": "Yakın Dövüş Saldırı Atışı: +3, erişim 5 fit. İsabet: 1 Kesici hasar."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Uçarak Geçiş",
+        "description": "Baykuş, bir düşmanın erişiminden uçarak çıktığında Fırsat Saldırısına yol açmaz."
       }
     }
   },
@@ -385,7 +674,14 @@
     "name": "Panter",
     "actions": {
       "rend": {
-        "name": "Parçalama"
+        "name": "Parçalama",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 6 (1d6 + 3) Kesici hasar."
+      }
+    },
+    "bonusActions": {
+      "nimble_escape": {
+        "name": "Çevik Kaçış",
+        "description": "Panter Sıyrılma veya Saklanma eylemini gerçekleştirir."
       }
     }
   },
@@ -393,7 +689,14 @@
     "name": "Pirana",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5 (hedefin Can Puanları tam değilse Avantajlı), erişim 5 fit. İsabet: 1 Delici hasar."
+      }
+    },
+    "traits": {
+      "water_breathing": {
+        "name": "Suda Nefes Alma",
+        "description": "Pirana yalnızca su altında nefes alabilir."
       }
     }
   },
@@ -401,7 +704,8 @@
     "name": "Midilli",
     "actions": {
       "hooves": {
-        "name": "Toynaklar"
+        "name": "Toynaklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 4 (1d4 + 2) Ezici hasar."
       }
     }
   },
@@ -409,7 +713,14 @@
     "name": "Pteranodon",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 6 (1d8 + 2) Delici hasar."
+      }
+    },
+    "traits": {
+      "flyby": {
+        "name": "Uçarak Geçiş",
+        "description": "Pteranodon, bir düşmanın erişiminden uçarak çıktığında Fırsat Saldırısına yol açmaz."
       }
     }
   },
@@ -417,7 +728,14 @@
     "name": "Sıçan",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 1 Delici hasar."
+      }
+    },
+    "traits": {
+      "agile": {
+        "name": "Çevik",
+        "description": "Sıçan, bir düşmanın erişiminden çıktığında Fırsat Saldırısına yol açmaz."
       }
     }
   },
@@ -425,7 +743,14 @@
     "name": "Kuzgun",
     "actions": {
       "beak": {
-        "name": "Gaga"
+        "name": "Gaga",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 1 Delici hasar."
+      }
+    },
+    "traits": {
+      "mimicry": {
+        "name": "Taklit",
+        "description": "Kuzgun, duyduğu fısıltı veya cıvıltı gibi basit sesleri taklit edebilir. Bu sesleri duyan biri, ZD 10 Bilgelik (Sezgi) kontrolünde başarılı olursa bunların taklit olduğunu anlayabilir."
       }
     }
   },
@@ -433,7 +758,18 @@
     "name": "Resif Köpekbalığı",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 7 (2d4 + 2) Delici hasar."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Köpekbalığının en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, köpekbalığı o yaratığa karşı yaptığı saldırı atışında Avantajlıdır."
+      },
+      "water_breathing": {
+        "name": "Suda Nefes Alma",
+        "description": "Köpekbalığı yalnızca su altında nefes alabilir."
       }
     }
   },
@@ -441,7 +777,8 @@
     "name": "Binek Atı",
     "actions": {
       "hooves": {
-        "name": "Toynaklar"
+        "name": "Toynaklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 7 (1d8 + 3) Ezici hasar."
       }
     }
   },
@@ -449,18 +786,42 @@
     "name": "Akrep",
     "actions": {
       "sting": {
-        "name": "İğne"
+        "name": "İğne",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 1 Delici hasar artı 3 (1d6) Zehir hasarı."
       }
     }
   },
   "Seahorse": {
-    "name": "Denizatı"
+    "name": "Denizatı",
+    "traits": {
+      "water_breathing": {
+        "name": "Suda Nefes Alma",
+        "description": "Denizatı yalnızca su altında nefes alabilir."
+      }
+    },
+    "actions": {
+      "bubble_dash": {
+        "name": "Kabarcık Atılışı",
+        "description": "Su altındayken denizatı, Fırsat Saldırılarına yol açmadan Yüzme Hızının tamamı kadar hareket eder."
+      }
+    }
   },
   "Spider": {
     "name": "Örümcek",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 1 Delici hasar artı 2 (1d4) Zehir hasarı."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Örümcek Tırmanışı",
+        "description": "Örümcek, özellik kontrolü yapmasına gerek kalmadan tavanlar boyunca ilerlemek dahil zorlu yüzeylere tırmanabilir."
+      },
+      "web_walker": {
+        "name": "Ağ Yürüyüşçüsü",
+        "description": "Örümcek, ağların neden olduğu hareket kısıtlamalarını yok sayar ve örümcek aynı ağla temas halindeki diğer her yaratığın konumunu bilir."
       }
     }
   },
@@ -468,7 +829,14 @@
     "name": "Yarasa Sürüsü",
     "actions": {
       "bites": {
-        "name": "Isırıklar"
+        "name": "Isırıklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 5 (2d4) Delici hasar; sürü Kana Bulanmışsa 2 (1d4) Delici hasar."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Sürü",
+        "description": "Sürü başka bir yaratığın alanını işgal edebilir, başka bir yaratık da sürünün alanını işgal edebilir; sürü, Minik bir yarasanın sığabileceği büyüklükteki her açıklıktan geçebilir. Sürü Can Puanı geri kazanamaz ve Geçici Can Puanı kazanamaz."
       }
     }
   },
@@ -476,7 +844,18 @@
     "name": "Böcek Sürüsü",
     "actions": {
       "bites": {
-        "name": "Isırıklar"
+        "name": "Isırıklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +3, erişim 5 fit. İsabet: 6 (2d4 + 1) Zehir hasarı; sürü Kana Bulanmışsa 3 (1d4 + 1) Zehir hasarı."
+      }
+    },
+    "traits": {
+      "spider_climb": {
+        "name": "Örümcek Tırmanışı",
+        "description": "Sürünün Tırmanma Hızı varsa, sürü özellik kontrolü yapmasına gerek kalmadan tavanlar boyunca ilerlemek dahil zorlu yüzeylere tırmanabilir."
+      },
+      "swarm": {
+        "name": "Sürü",
+        "description": "Sürü başka bir yaratığın alanını işgal edebilir, başka bir yaratık da sürünün alanını işgal edebilir; sürü, Minik bir böceğin sığabileceği büyüklükteki her açıklıktan geçebilir. Sürü Can Puanı geri kazanamaz ve Geçici Can Puanı kazanamaz."
       }
     }
   },
@@ -484,7 +863,18 @@
     "name": "Pirana Sürüsü",
     "actions": {
       "bites": {
-        "name": "Isırıklar"
+        "name": "Isırıklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +5 (hedefin Can Puanları tam değilse Avantajlı), erişim 5 fit. İsabet: 8 (2d4 + 3) Delici hasar; sürü Kana Bulanmışsa 5 (1d4 + 3) Delici hasar."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Sürü",
+        "description": "Sürü başka bir yaratığın alanını işgal edebilir, başka bir yaratık da sürünün alanını işgal edebilir; sürü, Minik bir piranın sığabileceği büyüklükteki her açıklıktan geçebilir. Sürü Can Puanı geri kazanamaz ve Geçici Can Puanı kazanamaz."
+      },
+      "water_breathing": {
+        "name": "Suda Nefes Alma",
+        "description": "Sürü yalnızca su altında nefes alabilir."
       }
     }
   },
@@ -492,7 +882,14 @@
     "name": "Sıçan Sürüsü",
     "actions": {
       "bites": {
-        "name": "Isırıklar"
+        "name": "Isırıklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 5 (2d4) Delici hasar; sürü Kana Bulanmışsa 2 (1d4) Delici hasar."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Sürü",
+        "description": "Sürü başka bir yaratığın alanını işgal edebilir, başka bir yaratık da sürünün alanını işgal edebilir; sürü, Minik bir sıçanın sığabileceği büyüklükteki her açıklıktan geçebilir. Sürü Can Puanı geri kazanamaz ve Geçici Can Puanı kazanamaz."
       }
     }
   },
@@ -500,7 +897,18 @@
     "name": "Kuzgun Sürüsü",
     "actions": {
       "beaks": {
-        "name": "Gagalar"
+        "name": "Gagalar",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 5 (1d6 + 2) Delici hasar; sürü Kana Bulanmışsa 2 (1d4) Delici hasar."
+      },
+      "cacophony": {
+        "name": "Kakofoni",
+        "description": "Bilgelik Kurtulma Atışı: ZD 10, sürünün alanındaki bir yaratık. Başarısızlık: Hedef, sürünün bir sonraki turunun başına kadar Sağır durumuna girer. Sağır olduğu sürece hedef ayrıca özellik kontrollerinde ve saldırı atışlarında Dezavantajlıdır."
+      }
+    },
+    "traits": {
+      "swarm": {
+        "name": "Sürü",
+        "description": "Sürü başka bir yaratığın alanını işgal edebilir, başka bir yaratık da sürünün alanını işgal edebilir; sürü, Minik bir kuzgunun sığabileceği büyüklükteki her açıklıktan geçebilir. Sürü Can Puanı geri kazanamaz ve Geçici Can Puanı kazanamaz."
       }
     }
   },
@@ -508,7 +916,14 @@
     "name": "Kaplan",
     "actions": {
       "rend": {
-        "name": "Parçalama"
+        "name": "Parçalama",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 10 (2d6 + 3) Kesici hasar. Hedef Büyük veya daha küçük bir yaratıksa Yere Düşmüş durumuna girer."
+      }
+    },
+    "bonusActions": {
+      "nimble_escape": {
+        "name": "Çevik Kaçış",
+        "description": "Kaplan Sıyrılma veya Saklanma eylemini gerçekleştirir."
       }
     }
   },
@@ -516,7 +931,8 @@
     "name": "Zehirli Yılan",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 4 (1d4 + 2) Delici hasar artı 3 (1d6) Zehir hasarı."
       }
     }
   },
@@ -524,7 +940,14 @@
     "name": "Akbaba",
     "actions": {
       "beak": {
-        "name": "Gaga"
+        "name": "Gaga",
+        "description": "Yakın Dövüş Saldırı Atışı: +2, erişim 5 fit. İsabet: 2 (1d4) Delici hasar."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Akbabanın en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, akbaba o yaratığa karşı yaptığı saldırı atışında Avantajlıdır."
       }
     }
   },
@@ -532,7 +955,8 @@
     "name": "Savaş Atı",
     "actions": {
       "hooves": {
-        "name": "Toynaklar"
+        "name": "Toynaklar",
+        "description": "Yakın Dövüş Saldırı Atışı: +6, erişim 5 fit. İsabet: 9 (2d4 + 4) Ezici hasar. Hedef Büyük veya daha küçük bir yaratıksa ve at isabetten hemen önce ona doğru düz bir çizgide 20 fit veya daha fazla hareket ettiyse, hedef fazladan 5 (2d4) Ezici hasar alır ve Yere Düşmüş durumuna girer."
       }
     }
   },
@@ -540,7 +964,8 @@
     "name": "Gelincik",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +5, erişim 5 fit. İsabet: 1 Delici hasar."
       }
     }
   },
@@ -548,7 +973,14 @@
     "name": "Kurt",
     "actions": {
       "bite": {
-        "name": "Isırık"
+        "name": "Isırık",
+        "description": "Yakın Dövüş Saldırı Atışı: +4, erişim 5 fit. İsabet: 5 (1d6 + 2) Delici hasar. Hedef Orta veya daha küçük bir yaratıksa Yere Düşmüş durumuna girer."
+      }
+    },
+    "traits": {
+      "pack_tactics": {
+        "name": "Sürü Taktikleri",
+        "description": "Kurdun en az bir müttefiki yaratığın 5 fit yakınındaysa ve bu müttefik Eylemsiz durumunda değilse, kurt o yaratığa karşı yaptığı saldırı atışlarında Avantajlıdır."
       }
     }
   }

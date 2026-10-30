@@ -275,7 +275,7 @@
   },
   "Chain (10 feet)": {
     "name": "체인(10피트)",
-    "description": "체력은 10입니다. DC 20 강도 판정으로 폭발할 수 있습니다."
+    "description": "히트 포인트는 10입니다. DC 20 강도 판정으로 폭발할 수 있습니다."
   },
   "Chalk (1 piece)": {
     "name": "분필(1개)",
@@ -463,11 +463,11 @@
   },
   "Rope, hempen (50 feet)": {
     "name": "밧줄, 대마(50피트)",
-    "description": "체력은 2이고 DC 17 강도 검사로 폭발할 수 있습니다."
+    "description": "히트 포인트는 2이고 DC 17 강도 검사로 폭발할 수 있습니다."
   },
   "Rope, silk (50 feet)": {
     "name": "로프, 실크(50피트)",
-    "description": "체력은 2이고 DC 17 강도 검사로 폭발할 수 있습니다."
+    "description": "히트 포인트는 2이고 DC 17 강도 검사로 폭발할 수 있습니다."
   },
   "Sack": {
     "name": "해고",

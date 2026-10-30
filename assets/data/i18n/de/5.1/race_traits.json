@@ -1,11 +1,11 @@
 {
   "Darkvision": {
     "name": "Dunkelsicht",
-    "description": "Da Sie an das Leben unter der Erde gewöhnt sind, verfügen Sie auch bei Dunkelheit über eine hervorragende Sicht. Sie können bei schwachem Licht in einem Umkreis von 60 Fuß um Sie herum sehen, als ob es helles Licht wäre, und bei Dunkelheit, als wäre es schwaches Licht. In der Dunkelheit kann man keine Farben erkennen, sondern nur Grautöne."
+    "description": "Da Sie an das Leben unter der Erde gewöhnt sind, verfügen Sie auch bei Dunkelheit über eine hervorragende Sicht. Sie können bei schwachem Licht in einem Umkreis von 18 Metern um Sie herum sehen, als ob es helles Licht wäre, und bei Dunkelheit, als wäre es schwaches Licht. In der Dunkelheit kann man keine Farben erkennen, sondern nur Grautöne."
   },
   "Superior Darkvision": {
     "name": "Überlegene Dunkelsicht",
-    "description": "Ihre Dunkelsicht hat einen Radius von 120 Fuß."
+    "description": "Ihre Dunkelsicht hat einen Radius von 36 Metern."
   },
   "Dwarven Resilience": {
     "name": "Widerstandsfähigkeit der Zwerge",
@@ -65,7 +65,7 @@
   },
   "Fleet of Foot": {
     "name": "Flotte zu Fuß",
-    "description": "Ihre Grundgehgeschwindigkeit erhöht sich auf 35 Fuß."
+    "description": "Ihre Grundgehgeschwindigkeit erhöht sich auf 10,5 Meter."
   },
   "Mask of the Wild": {
     "name": "Maske der Wildnis",

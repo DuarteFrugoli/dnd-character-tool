@@ -45,11 +45,11 @@
   },
   "Boon of Dimensional Travel": {
     "name": "Segen der Dimensionsreise",
-    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Unmittelbar nach der Aktion Angreifen oder Magie kannst du dich bis zu 30 Fuß weit an einen freien Ort teleportieren, den du sehen kannst."
+    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Unmittelbar nach der Aktion Angreifen oder Magie kannst du dich bis zu 9 Meter weit an einen freien Ort teleportieren, den du sehen kannst."
   },
   "Boon of Fate": {
     "name": "Segen des Schicksals",
-    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Wenn du oder eine Kreatur innerhalb von 60 Fuß bei einer W20-Probe Erfolg hat oder scheitert, würfle 2W4 und wende die Summe als Bonus oder Malus auf den Wurf an. Du erhältst die Nutzung zurück, wenn du Initiative würfelst oder eine Kurze oder Lange Rast beendest."
+    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Wenn du oder eine Kreatur innerhalb von 18 Metern bei einer W20-Probe Erfolg hat oder scheitert, würfle 2W4 und wende die Summe als Bonus oder Malus auf den Wurf an. Du erhältst die Nutzung zurück, wenn du Initiative würfelst oder eine Kurze oder Lange Rast beendest."
   },
   "Boon of Irresistible Offense": {
     "name": "Segen des unwiderstehlichen Angriffs",
@@ -65,6 +65,6 @@
   },
   "Boon of Truesight": {
     "name": "Segen der wahren Sicht",
-    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Du erhältst Wahre Sicht mit einer Reichweite von 60 Fuß."
+    "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Du erhältst Wahre Sicht mit einer Reichweite von 18 Metern."
   }
 }

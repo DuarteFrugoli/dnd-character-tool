@@ -16,7 +16,7 @@
   },
   "Dancing Lights": {
     "name": "Lumières dansantes",
-    "description": "Vous créez jusqu'à quatre lumières de la taille d'une torche à portée, les faisant apparaître comme des torches, des lanternes ou des orbes lumineux qui planent dans les airs pendant toute la durée. Vous pouvez également combiner les quatre lumières en une forme lumineuse et vaguement humanoïde de taille moyenne. En guise d'action bonus, vous pouvez déplacer les lumières jusqu'à 60 pieds vers un nouvel endroit à portée.",
+    "description": "Vous créez jusqu'à quatre lumières de la taille d'une torche à portée, les faisant apparaître comme des torches, des lanternes ou des orbes lumineux qui planent dans les airs pendant toute la durée. Vous pouvez également combiner les quatre lumières en une forme lumineuse et vaguement humanoïde de taille moyenne. En guise d'action bonus, vous pouvez déplacer les lumières jusqu'à 18 mètres vers un nouvel endroit à portée.",
     "higherLevels": null,
     "material": "un peu de phosphore ou de bois de wych, ou un ver luisant"
   },
@@ -48,7 +48,7 @@
   },
   "Light": {
     "name": "Lumière",
-    "description": "Vous touchez un objet qui ne dépasse pas 10 pieds dans n’importe quelle dimension. Jusqu'à la fin du sort, l'objet émet une lumière vive dans un rayon de 20 pieds et une lumière tamisée sur 20 pieds supplémentaires. La lumière peut être colorée à votre guise. Recouvrir complètement l'objet avec quelque chose d'opaque bloque la lumière. Le sort prend fin si vous le lancez à nouveau ou si vous le rejetez comme une action. Si vous ciblez un objet tenu ou porté par une créature hostile, cette créature doit réussir un jet de sauvegarde de Dextérité pour éviter le sort.",
+    "description": "Vous touchez un objet qui ne dépasse pas 3 mètres dans n’importe quelle dimension. Jusqu'à la fin du sort, l'objet émet une lumière vive dans un rayon de 6 mètres et une lumière tamisée sur 6 mètres supplémentaires. La lumière peut être colorée à votre guise. Recouvrir complètement l'objet avec quelque chose d'opaque bloque la lumière. Le sort prend fin si vous le lancez à nouveau ou si vous le rejetez comme une action. Si vous ciblez un objet tenu ou porté par une créature hostile, cette créature doit réussir un jet de sauvegarde de Dextérité pour éviter le sort.",
     "higherLevels": null,
     "material": "une luciole ou une mousse phosphorescente"
   },
@@ -59,19 +59,19 @@
   },
   "Mending": {
     "name": "Raccommodage",
-    "description": "Ce sort répare une seule cassure ou déchirure d'un objet que vous touchez, comme un maillon de chaîne cassé, deux moitiés de clé cassée, une cape déchirée ou une outre de vin qui fuit. Tant que la cassure ou la déchirure ne dépasse pas 1 pied dans n'importe quelle dimension, vous la réparez, ne laissant aucune trace des dommages antérieurs. Ce sort peut réparer physiquement un objet ou une construction magique, mais il ne peut pas restaurer la magie d'un tel objet.",
+    "description": "Ce sort répare une seule cassure ou déchirure d'un objet que vous touchez, comme un maillon de chaîne cassé, deux moitiés de clé cassée, une cape déchirée ou une outre de vin qui fuit. Tant que la cassure ou la déchirure ne dépasse pas 0,3 mètre dans n'importe quelle dimension, vous la réparez, ne laissant aucune trace des dommages antérieurs. Ce sort peut réparer physiquement un objet ou une construction magique, mais il ne peut pas restaurer la magie d'un tel objet.",
     "higherLevels": null,
     "material": "deux magnétites"
   },
   "Message": {
     "name": "Message",
-    "description": "Vous pointez votre doigt vers une créature à portée et murmurez un message. La cible (et seule la cible) entend le message et peut répondre dans un murmure que vous seul pouvez entendre. Vous pouvez lancer ce sort à travers des objets solides si vous connaissez la cible et savez qu'elle se trouve au-delà de la barrière. Un silence magique, 1 pied de pierre, 1 pouce de métal commun, une fine feuille de plomb ou 3 pieds de bois bloquent le sort.",
+    "description": "Vous pointez votre doigt vers une créature à portée et murmurez un message. La cible (et seule la cible) entend le message et peut répondre dans un murmure que vous seul pouvez entendre. Vous pouvez lancer ce sort à travers des objets solides si vous connaissez la cible et savez qu'elle se trouve au-delà de la barrière. Un silence magique, 0,3 mètre de pierre, 2,5 centimètres de métal commun, une fine feuille de plomb ou 0,9 mètre de bois bloquent le sort.",
     "higherLevels": null,
     "material": "un petit morceau de fil de cuivre"
   },
   "Minor Illusion": {
     "name": "Illusion mineure",
-    "description": "Vous créez un son ou une image d'un objet à portée qui dure pendant toute la durée. L'illusion prend fin si vous la rejetez comme une action ou si vous relancez ce sort. Si vous créez un son, son volume peut aller d'un murmure à un cri. Si vous créez l’image d’un objet, celle-ci ne doit pas dépasser un cube de 5 pieds. Une créature qui utilise son action pour examiner le son ou l'image peut déterminer qu'il s'agit d'une illusion en réussissant un test d'Intelligence (Enquête) contre votre DD de sauvegarde de sort.",
+    "description": "Vous créez un son ou une image d'un objet à portée qui dure pendant toute la durée. L'illusion prend fin si vous la rejetez comme une action ou si vous relancez ce sort. Si vous créez un son, son volume peut aller d'un murmure à un cri. Si vous créez l’image d’un objet, celle-ci ne doit pas dépasser un cube de 1,5 mètre. Une créature qui utilise son action pour examiner le son ou l'image peut déterminer qu'il s'agit d'une illusion en réussissant un test d'Intelligence (Enquête) contre votre DD de sauvegarde de sort.",
     "higherLevels": null,
     "material": "un peu de toison"
   },
@@ -82,12 +82,12 @@
   },
   "Prestidigitation": {
     "name": "Prestidigitation",
-    "description": "Ce sort est un tour de magie mineur que les lanceurs de sorts débutants utilisent pour s'entraîner. Vous créez l'un des effets magiques suivants à portée : un effet sensoriel instantané et inoffensif ; allumer ou éteindre une bougie, une torche ou un petit feu de camp ; nettoyer ou salir un objet ; réfrigérer, réchauffer ou aromatiser jusqu'à 1 pied cube de matière non vivante ; faire apparaître une couleur, une petite marque ou un symbole sur un objet ou une surface pendant 1 heure ; ou créez un bibelot non magique ou une image illusoire qui peut tenir dans votre main.",
+    "description": "Ce sort est un tour de magie mineur que les lanceurs de sorts débutants utilisent pour s'entraîner. Vous créez l'un des effets magiques suivants à portée : un effet sensoriel instantané et inoffensif ; allumer ou éteindre une bougie, une torche ou un petit feu de camp ; nettoyer ou salir un objet ; réfrigérer, réchauffer ou aromatiser jusqu'à 28 litres de matière non vivante ; faire apparaître une couleur, une petite marque ou un symbole sur un objet ou une surface pendant 1 heure ; ou créez un bibelot non magique ou une image illusoire qui peut tenir dans votre main.",
     "higherLevels": null
   },
   "Produce Flame": {
     "name": "Produire une flamme",
-    "description": "Une flamme vacillante apparaît dans votre main. La flamme reste là pendant toute la durée et ne nuit ni à vous ni à votre équipement. La flamme projette une lumière vive dans un rayon de 10 pieds et une lumière tamisée sur 10 pieds supplémentaires. Le sort prend fin si vous le rejetez comme une action ou si vous le relancez. Vous pouvez également attaquer avec la flamme, même si cela met fin au sort. Lorsque vous lancez ce sort, ou par une action lors d'un tour ultérieur, vous pouvez lancer la flamme sur une créature à moins de 9 mètres de vous. Effectuez une attaque magique à distance. En cas de coup, la cible subit 1d8 dégâts de feu. Les dégâts de ce sort augmentent de 1d8 lorsque vous atteignez le niveau 5 (2d8), le niveau 11 (3d8) et le niveau 17 (4d8).",
+    "description": "Une flamme vacillante apparaît dans votre main. La flamme reste là pendant toute la durée et ne nuit ni à vous ni à votre équipement. La flamme projette une lumière vive dans un rayon de 3 mètres et une lumière tamisée sur 3 mètres supplémentaires. Le sort prend fin si vous le rejetez comme une action ou si vous le relancez. Vous pouvez également attaquer avec la flamme, même si cela met fin au sort. Lorsque vous lancez ce sort, ou par une action lors d'un tour ultérieur, vous pouvez lancer la flamme sur une créature à moins de 9 mètres de vous. Effectuez une attaque magique à distance. En cas de coup, la cible subit 1d8 dégâts de feu. Les dégâts de ce sort augmentent de 1d8 lorsque vous atteignez le niveau 5 (2d8), le niveau 11 (3d8) et le niveau 17 (4d8).",
     "higherLevels": null
   },
   "Ray of Frost": {
@@ -139,7 +139,7 @@
   },
   "Alarm": {
     "name": "Alarme",
-    "description": "Vous définissez une alarme contre les intrusions indésirables. Choisissez une porte, une fenêtre ou une zone à portée ne dépassant pas un cube de 20 pieds. Jusqu'à la fin du sort, une alarme vous avertit chaque fois qu'une créature minuscule ou plus grande touche ou entre dans la zone protégée. Lorsque vous lancez le sort, vous choisissez si l'alarme est mentale ou sonore.",
+    "description": "Vous définissez une alarme contre les intrusions indésirables. Choisissez une porte, une fenêtre ou une zone à portée ne dépassant pas un cube de 6 mètres. Jusqu'à la fin du sort, une alarme vous avertit chaque fois qu'une créature minuscule ou plus grande touche ou entre dans la zone protégée. Lorsque vous lancez le sort, vous choisissez si l'alarme est mentale ou sonore.",
     "higherLevels": null,
     "material": "une petite cloche et un morceau de fil d'argent fin"
   },
@@ -163,7 +163,7 @@
   },
   "Burning Hands": {
     "name": "Mains brûlantes",
-    "description": "Lorsque vous tenez vos mains avec les pouces touchés et les doigts écartés, une fine nappe de flammes jaillit du bout de vos doigts tendus. Chaque créature dans un cône de 15 pieds doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 3d6 dégâts de feu en cas d'échec, ou la moitié en cas de réussite.",
+    "description": "Lorsque vous tenez vos mains avec les pouces touchés et les doigts écartés, une fine nappe de flammes jaillit du bout de vos doigts tendus. Chaque créature dans un cône de 4,5 mètres doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 3d6 dégâts de feu en cas d'échec, ou la moitié en cas de réussite.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 2 ou supérieur, les dégâts augmentent de 1d6 pour chaque niveau d'emplacement supérieur au 1er."
   },
   "Charm Person": {
@@ -217,7 +217,7 @@
   },
   "Disguise Self": {
     "name": "Se déguiser",
-    "description": "Vous vous donnez, y compris vos vêtements, armures, armes et autres biens personnels, une apparence différente jusqu'à la fin du sort ou jusqu'à ce que vous utilisiez votre action pour le rejeter. Vous pouvez paraître 1 pied plus petit ou plus grand et paraître mince, gros ou entre les deux.",
+    "description": "Vous vous donnez, y compris vos vêtements, armures, armes et autres biens personnels, une apparence différente jusqu'à la fin du sort ou jusqu'à ce que vous utilisiez votre action pour le rejeter. Vous pouvez paraître 0,3 mètre plus petit ou plus grand et paraître mince, gros ou entre les deux.",
     "higherLevels": null
   },
   "Divine Favor": {
@@ -227,7 +227,7 @@
   },
   "Entangle": {
     "name": "Emmêler",
-    "description": "Les mauvaises herbes et les vignes poussent du sol dans un carré de 20 pieds à partir d'un point à portée. Au fil du temps, ces plantes transforment le sol de la zone en terrain difficile. Une créature dans la zone au moment où vous lancez le sort doit réussir un jet de sauvegarde de Force ou être retenue par les plantes enchevêtrées jusqu'à la fin du sort.",
+    "description": "Les mauvaises herbes et les vignes poussent du sol dans un carré de 6 mètres à partir d'un point à portée. Au fil du temps, ces plantes transforment le sol de la zone en terrain difficile. Une créature dans la zone au moment où vous lancez le sort doit réussir un jet de sauvegarde de Force ou être retenue par les plantes enchevêtrées jusqu'à la fin du sort.",
     "higherLevels": null
   },
   "Expeditious Retreat": {
@@ -237,7 +237,7 @@
   },
   "Faerie Fire": {
     "name": "Feu féerique",
-    "description": "Chaque objet dans un cube de 20 pieds à portée est entouré d'une lumière bleue, verte ou violette. Toute créature présente dans la zone au moment où le sort est lancé est également éclairée si elle échoue à un jet de sauvegarde de Dextérité. Tout jet d'attaque contre une créature ou un objet affecté a un avantage si l'attaquant peut le voir.",
+    "description": "Chaque objet dans un cube de 6 mètres à portée est entouré d'une lumière bleue, verte ou violette. Toute créature présente dans la zone au moment où le sort est lancé est également éclairée si elle échoue à un jet de sauvegarde de Dextérité. Tout jet d'attaque contre une créature ou un objet affecté a un avantage si l'attaquant peut le voir.",
     "higherLevels": null
   },
   "False Life": {
@@ -248,7 +248,7 @@
   },
   "Feather Fall": {
     "name": "Chute de plumes",
-    "description": "Choisissez jusqu'à cinq créatures qui tombent à portée. La vitesse de descente d'une créature en chute ralentit à 60 pieds par tour jusqu'à la fin du sort. Si la créature atterrit avant la fin du sort, elle ne subit aucun dégât de chute et peut atterrir sur ses pieds.",
+    "description": "Choisissez jusqu'à cinq créatures qui tombent à portée. La vitesse de descente d'une créature en chute ralentit à 18 mètres par tour jusqu'à la fin du sort. Si la créature atterrit avant la fin du sort, elle ne subit aucun dégât de chute et peut atterrir sur ses pieds.",
     "higherLevels": null,
     "material": "une petite plume ou un morceau de duvet"
   },
@@ -260,8 +260,8 @@
   },
   "Fog Cloud": {
     "name": "Nuage de brouillard",
-    "description": "Vous créez une sphère de brouillard d’un rayon de 6 mètres centrée sur un point à portée. La sphère s'étend autour des coins et sa zone est fortement obscurcie. Il dure pendant toute la durée ou jusqu'à ce qu'un vent de vitesse modérée ou supérieure (au moins 10 miles par heure) le disperse.",
-    "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 2 ou supérieur, le rayon du brouillard augmente de 20 pieds pour chaque niveau d'emplacement supérieur au 1er."
+    "description": "Vous créez une sphère de brouillard d’un rayon de 6 mètres centrée sur un point à portée. La sphère s'étend autour des coins et sa zone est fortement obscurcie. Il dure pendant toute la durée ou jusqu'à ce qu'un vent de vitesse modérée ou supérieure (au moins 15 kilomètres par heure) le disperse.",
+    "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 2 ou supérieur, le rayon du brouillard augmente de 6 mètres pour chaque niveau d'emplacement supérieur au 1er."
   },
   "Goodberry": {
     "name": "Bonne baie",
@@ -271,7 +271,7 @@
   },
   "Grease": {
     "name": "Graisse",
-    "description": "De la graisse glissante recouvre le sol dans un carré de 10 pieds centré sur un point à portée et le transforme en terrain difficile pour la durée. Lorsque la graisse apparaît, chaque créature se trouvant dans sa zone doit réussir un jet de sauvegarde de Dextérité ou tomber à terre.",
+    "description": "De la graisse glissante recouvre le sol dans un carré de 3 mètres centré sur un point à portée et le transforme en terrain difficile pour la durée. Lorsque la graisse apparaît, chaque créature se trouvant dans sa zone doit réussir un jet de sauvegarde de Dextérité ou tomber à terre.",
     "higherLevels": null,
     "material": "un peu de couenne de porc ou de beurre"
   },
@@ -371,7 +371,7 @@
   },
   "Silent Image": {
     "name": "Image silencieuse",
-    "description": "Vous créez l'image d'un objet, d'une créature ou d'un autre phénomène visible qui ne dépasse pas un cube de 15 pieds. L'image apparaît à un endroit à portée et dure toute la durée. L'image est purement visuelle ; il n'est pas accompagné de sons, d'odeurs ou d'autres effets sensoriels.",
+    "description": "Vous créez l'image d'un objet, d'une créature ou d'un autre phénomène visible qui ne dépasse pas un cube de 4,5 mètres. L'image apparaît à un endroit à portée et dure toute la durée. L'image est purement visuelle ; il n'est pas accompagné de sons, d'odeurs ou d'autres effets sensoriels.",
     "higherLevels": null,
     "material": "un peu de toison"
   },
@@ -388,7 +388,7 @@
   },
   "Thunderwave": {
     "name": "Onde d'orage",
-    "description": "Une vague de force tonitruante vous échappe. Chaque créature dans un cube de 15 pieds provenant de vous doit effectuer un jet de sauvegarde de Constitution. En cas d'échec, une créature subit 2d8 dégâts de tonnerre et est repoussée à 3 mètres de vous. En cas de sauvegarde réussie, la créature subit deux fois moins de dégâts et n'est pas poussée.",
+    "description": "Une vague de force tonitruante vous échappe. Chaque créature dans un cube de 4,5 mètres provenant de vous doit effectuer un jet de sauvegarde de Constitution. En cas d'échec, une créature subit 2d8 dégâts de tonnerre et est repoussée à 3 mètres de vous. En cas de sauvegarde réussie, la créature subit deux fois moins de dégâts et n'est pas poussée.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 2 ou supérieur, les dégâts augmentent de 1d8 pour chaque niveau d'emplacement supérieur au 1er."
   },
   "Unseen Servant": {
@@ -460,7 +460,7 @@
   },
   "Cloud of Daggers": {
     "name": "Nuage de poignards",
-    "description": "Vous remplissez l'air dans un cube de 5 pieds centré sur un point que vous choisissez à portée avec des dagues tournantes. Une créature subit 4d4 dégâts tranchants lorsqu'elle entre dans la zone du sort pour la première fois d'un tour ou qu'elle y commence son tour.",
+    "description": "Vous remplissez l'air dans un cube de 1,5 mètre centré sur un point que vous choisissez à portée avec des dagues tournantes. Une créature subit 4d4 dégâts tranchants lorsqu'elle entre dans la zone du sort pour la première fois d'un tour ou qu'elle y commence son tour.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 3 ou supérieur, les dégâts augmentent de 2d4 pour chaque niveau d'emplacement supérieur au 2e.",
     "material": "un éclat de verre"
   },
@@ -477,13 +477,13 @@
   },
   "Darkness": {
     "name": "Obscurité",
-    "description": "L'obscurité magique se propage à partir d'un point que vous choisissez à portée pour remplir une sphère de 15 pieds de rayon pendant toute la durée. L’obscurité s’étend dans les coins. Une créature dotée de la vision dans le noir ne peut pas voir à travers ces ténèbres, et la lumière non magique ne peut pas l'éclairer. Si le point que vous choisissez se trouve sur un objet que vous tenez ou sur un objet qui n'est pas porté, l'obscurité émane de l'objet et se déplace avec lui.",
+    "description": "L'obscurité magique se propage à partir d'un point que vous choisissez à portée pour remplir une sphère de 4,5 mètres de rayon pendant toute la durée. L’obscurité s’étend dans les coins. Une créature dotée de la vision dans le noir ne peut pas voir à travers ces ténèbres, et la lumière non magique ne peut pas l'éclairer. Si le point que vous choisissez se trouve sur un objet que vous tenez ou sur un objet qui n'est pas porté, l'obscurité émane de l'objet et se déplace avec lui.",
     "higherLevels": null,
     "material": "fourrure de chauve-souris et une goutte de poix ou un morceau de charbon"
   },
   "Darkvision": {
     "name": "Vision dans le noir",
-    "description": "Vous touchez une créature consentante pour lui accorder la capacité de voir dans le noir. Pendant toute cette durée, cette créature a une vision dans le noir jusqu'à une portée de 60 pieds.",
+    "description": "Vous touchez une créature consentante pour lui accorder la capacité de voir dans le noir. Pendant toute cette durée, cette créature a une vision dans le noir jusqu'à une portée de 18 mètres.",
     "higherLevels": null,
     "material": "soit une pincée de carotte séchée, soit une agate"
   },
@@ -495,7 +495,7 @@
   },
   "Enhance Ability": {
     "name": "Améliorer la capacité",
-    "description": "Vous touchez une créature et lui confèrez une amélioration magique. Choisissez l'un des effets suivants : la cible acquiert cet effet jusqu'à la fin du sort : Endurance de l'ours (avantage aux tests de CON, 2d6 temp HP), Force du taureau (avantage aux tests de FOR, double capacité de transport), Grâce du chat (avantage aux tests de DEX, pas de dégâts de chute jusqu'à 20 pieds), Splendeur de l'Aigle (avantage aux tests de CHA), Ruse du Renard (avantage aux tests d'INT) ou Sagesse de la chouette (avantage au WIS). chèques).",
+    "description": "Vous touchez une créature et lui confèrez une amélioration magique. Choisissez l'un des effets suivants : la cible acquiert cet effet jusqu'à la fin du sort : Endurance de l'ours (avantage aux tests de CON, 2d6 temp HP), Force du taureau (avantage aux tests de FOR, double capacité de transport), Grâce du chat (avantage aux tests de DEX, pas de dégâts de chute jusqu'à 6 mètres), Splendeur de l'Aigle (avantage aux tests de CHA), Ruse du Renard (avantage aux tests d'INT) ou Sagesse de la chouette (avantage au WIS). chèques).",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 3 ou supérieur, vous pouvez cibler une créature supplémentaire pour chaque niveau d'emplacement supérieur au 2e.",
     "material": "fourrure ou plume d'une bête"
   },
@@ -517,7 +517,7 @@
   },
   "Flame Blade": {
     "name": "Lame de flamme",
-    "description": "Vous évoquez une lame ardente dans votre main libre. La lame est similaire en taille et en forme à un cimeterre, et elle dure toute la durée. Si vous lâchez la lame, elle disparaît, mais vous pouvez à nouveau l'évoquer par une action bonus. Vous pouvez utiliser votre action pour lancer une attaque magique au corps à corps avec la lame enflammée. En cas de coup, la cible subit 3d6 dégâts de feu. La lame enflammée projette une lumière vive dans un rayon de 10 pieds et une lumière tamisée sur 10 pieds supplémentaires.",
+    "description": "Vous évoquez une lame ardente dans votre main libre. La lame est similaire en taille et en forme à un cimeterre, et elle dure toute la durée. Si vous lâchez la lame, elle disparaît, mais vous pouvez à nouveau l'évoquer par une action bonus. Vous pouvez utiliser votre action pour lancer une attaque magique au corps à corps avec la lame enflammée. En cas de coup, la cible subit 3d6 dégâts de feu. La lame enflammée projette une lumière vive dans un rayon de 3 mètres et une lumière tamisée sur 3 mètres supplémentaires.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 4 ou supérieur, les dégâts augmentent de 1d6 tous les deux niveaux d'emplacement au-dessus du niveau 2.",
     "material": "feuille de sumac"
   },
@@ -535,7 +535,7 @@
   },
   "Gust of Wind": {
     "name": "Coup de vent",
-    "description": "Une ligne de vent fort de 60 pieds de long et 10 pieds de large souffle depuis vous dans la direction que vous choisissez pour la durée du sort. Chaque créature qui commence son tour dans la ligne doit réussir un jet de sauvegarde de Force ou être poussée à 15 pieds de vous dans une direction suivant la ligne. Toute créature dans la ligne doit dépenser 2 pieds de mouvement pour chaque 1 pied qu'elle bouge lorsqu'elle se rapproche de vous.",
+    "description": "Une ligne de vent fort de 18 mètres de long et 3 mètres de large souffle depuis vous dans la direction que vous choisissez pour la durée du sort. Chaque créature qui commence son tour dans la ligne doit réussir un jet de sauvegarde de Force ou être poussée à 4,5 mètres de vous dans une direction suivant la ligne. Toute créature dans la ligne doit dépenser 0,6 mètre de mouvement pour chaque 0,3 mètre qu'elle bouge lorsqu'elle se rapproche de vous.",
     "higherLevels": null,
     "material": "une graine de légumineuse"
   },
@@ -559,7 +559,7 @@
   },
   "Knock": {
     "name": "Déblocage",
-    "description": "Choisissez un objet que vous pouvez voir à portée. L'objet peut être une porte verrouillée, une boîte, un coffre, un jeu de menottes, un cadenas ou tout autre objet contenant un moyen banal ou magique empêchant l'accès. Une cible qui est maintenue fermée par un verrou banal ou qui est bloquée ou barrée devient déverrouillée, décollée ou non barrée. Lorsque vous lancez le sort, un coup fort, audible jusqu'à 300 pieds, émane de l'objet cible.",
+    "description": "Choisissez un objet que vous pouvez voir à portée. L'objet peut être une porte verrouillée, une boîte, un coffre, un jeu de menottes, un cadenas ou tout autre objet contenant un moyen banal ou magique empêchant l'accès. Une cible qui est maintenue fermée par un verrou banal ou qui est bloquée ou barrée devient déverrouillée, décollée ou non barrée. Lorsque vous lancez le sort, un coup fort, audible jusqu'à 90 mètres, émane de l'objet cible.",
     "higherLevels": null
   },
   "Lesser Restoration": {
@@ -569,19 +569,19 @@
   },
   "Levitate": {
     "name": "Léviter",
-    "description": "Une créature ou un objet de votre choix que vous pouvez voir à portée s'élève verticalement, jusqu'à 20 pieds, et y reste suspendu pendant toute la durée. Le sort peut faire léviter une cible pesant jusqu'à 500 livres. Une créature réticente qui réussit un jet de sauvegarde de Constitution n'est pas affectée. La cible ne peut se déplacer qu'en poussant ou en tirant contre un objet fixe ou une surface à sa portée.",
+    "description": "Une créature ou un objet de votre choix que vous pouvez voir à portée s'élève verticalement, jusqu'à 6 mètres, et y reste suspendu pendant toute la durée. Le sort peut faire léviter une cible pesant jusqu'à 500 livres. Une créature réticente qui réussit un jet de sauvegarde de Constitution n'est pas affectée. La cible ne peut se déplacer qu'en poussant ou en tirant contre un objet fixe ou une surface à sa portée.",
     "higherLevels": null,
     "material": "soit une petite boucle de cuir, soit un morceau de fil doré plié en forme de coupe avec une longue tige à une extrémité"
   },
   "Locate Animals or Plants": {
     "name": "Localiser des animaux ou des plantes",
-    "description": "Décrivez ou nommez un type spécifique d’animal ou de plante. En vous concentrant sur la voix de la nature dans votre environnement, vous apprenez la direction et la distance par rapport à la créature ou à la plante de ce type la plus proche dans un rayon de 5 miles, le cas échéant.",
+    "description": "Décrivez ou nommez un type spécifique d’animal ou de plante. En vous concentrant sur la voix de la nature dans votre environnement, vous apprenez la direction et la distance par rapport à la créature ou à la plante de ce type la plus proche dans un rayon de 7,5 kilomètres, le cas échéant.",
     "higherLevels": null,
     "material": "un peu de fourrure d'un limier"
   },
   "Locate Object": {
     "name": "Localiser un objet",
-    "description": "Décrivez ou nommez un objet qui vous est familier. Vous ressentez la direction vers l'emplacement de l'objet, tant que cet objet se trouve à moins de 1 000 pieds de vous. Si l'objet est en mouvement, vous connaissez la direction de son mouvement. Le sort peut localiser un objet spécifique que vous connaissez, à condition que vous l'ayez vu de près – à moins de 9 mètres – au moins une fois.",
+    "description": "Décrivez ou nommez un objet qui vous est familier. Vous ressentez la direction vers l'emplacement de l'objet, tant que cet objet se trouve à moins de 300 mètres de vous. Si l'objet est en mouvement, vous connaissez la direction de son mouvement. Le sort peut localiser un objet spécifique que vous connaissez, à condition que vous l'ayez vu de près – à moins de 9 mètres – au moins une fois.",
     "higherLevels": null,
     "material": "une brindille fourchue"
   },
@@ -608,7 +608,7 @@
   },
   "Moonbeam": {
     "name": "Rayon de lune",
-    "description": "Un faisceau argenté de lumière pâle brille dans un cylindre de 1,50 mètre de rayon et de 40 pieds de haut centré sur un point à portée. Jusqu'à la fin du sort, une faible lumière remplit le cylindre. Lorsqu'une créature entre dans la zone du sort pour la première fois au cours d'un tour ou y commence son tour, elle est engloutie par des flammes fantomatiques qui provoquent une douleur brûlante, et elle doit effectuer un jet de sauvegarde de Constitution. Il subit 2d10 dégâts radiants en cas d'échec, ou la moitié en cas de réussite.",
+    "description": "Un faisceau argenté de lumière pâle brille dans un cylindre de 1,50 mètre de rayon et de 12 mètres de haut centré sur un point à portée. Jusqu'à la fin du sort, une faible lumière remplit le cylindre. Lorsqu'une créature entre dans la zone du sort pour la première fois au cours d'un tour ou y commence son tour, elle est engloutie par des flammes fantomatiques qui provoquent une douleur brûlante, et elle doit effectuer un jet de sauvegarde de Constitution. Il subit 2d10 dégâts radiants en cas d'échec, ou la moitié en cas de réussite.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 3 ou supérieur, les dégâts augmentent de 1d10 pour chaque niveau d'emplacement au-dessus du niveau 2.",
     "material": "plusieurs graines de n'importe quelle plante Moonseed et un morceau de feldspath opalescent"
   },
@@ -641,7 +641,7 @@
   },
   "Rope Trick": {
     "name": "Tour de corde",
-    "description": "Vous touchez une longueur de corde pouvant atteindre 60 pieds de long. Une extrémité de la corde s’élève ensuite dans les airs jusqu’à ce que toute la corde pende perpendiculairement au sol. À l’extrémité supérieure de la corde, une entrée invisible s’ouvre sur un espace extradimensionnel qui dure jusqu’à la fin du sort. L’espace extradimensionnel peut être atteint en grimpant jusqu’au sommet de la corde. Jusqu'à huit créatures de taille moyenne ou plus petite peuvent tenir dans l'espace extradimensionnel.",
+    "description": "Vous touchez une longueur de corde pouvant atteindre 18 mètres de long. Une extrémité de la corde s’élève ensuite dans les airs jusqu’à ce que toute la corde pende perpendiculairement au sol. À l’extrémité supérieure de la corde, une entrée invisible s’ouvre sur un espace extradimensionnel qui dure jusqu’à la fin du sort. L’espace extradimensionnel peut être atteint en grimpant jusqu’au sommet de la corde. Jusqu'à huit créatures de taille moyenne ou plus petite peuvent tenir dans l'espace extradimensionnel.",
     "higherLevels": null,
     "material": "extrait de maïs en poudre et une boucle torsadée de parchemin"
   },
@@ -652,7 +652,7 @@
   },
   "See Invisibility": {
     "name": "Voir l'invisibilité",
-    "description": "Pendant toute la durée du sort, vous voyez les créatures et les objets invisibles comme s'ils étaient visibles, et vous pouvez voir dans le plan éthéré, dans une portée de 60 pieds. Les créatures et objets éthérés semblent fantomatiques et translucides.",
+    "description": "Pendant toute la durée du sort, vous voyez les créatures et les objets invisibles comme s'ils étaient visibles, et vous pouvez voir dans le plan éthéré, dans une portée de 18 mètres. Les créatures et objets éthérés semblent fantomatiques et translucides.",
     "higherLevels": null,
     "material": "une pincée de talc et une petite pincée d'argent en poudre"
   },
@@ -664,7 +664,7 @@
   },
   "Silence": {
     "name": "Silence",
-    "description": "Pendant toute cette durée, aucun son ne peut être créé ou traverser une sphère d'un rayon de 20 pieds centrée sur un point que vous choisissez à portée. Toute créature ou objet entièrement à l'intérieur de la sphère est immunisé contre les dégâts du tonnerre, et les créatures sont assourdies lorsqu'elles sont entièrement à l'intérieur de la sphère. Lancer un sort comprenant une composante verbale y est impossible.",
+    "description": "Pendant toute cette durée, aucun son ne peut être créé ou traverser une sphère d'un rayon de 6 mètres centrée sur un point que vous choisissez à portée. Toute créature ou objet entièrement à l'intérieur de la sphère est immunisé contre les dégâts du tonnerre, et les créatures sont assourdies lorsqu'elles sont entièrement à l'intérieur de la sphère. Lancer un sort comprenant une composante verbale y est impossible.",
     "higherLevels": null
   },
   "Spider Climb": {
@@ -686,18 +686,18 @@
   },
   "Web": {
     "name": "Web",
-    "description": "Vous invoquez une masse de sangles épaisses et collantes à un point de votre choix à portée. Les toiles remplissent un cube de 20 pieds à partir de ce point et durent pendant toute la durée. Les toiles sont un terrain difficile, et chaque créature qui commence son tour dans les toiles ou qui y pénètre pendant son tour doit effectuer un jet de sauvegarde de Dextérité ou être retenue tant qu'elle reste dans les toiles ou jusqu'à ce qu'elle se libère.",
+    "description": "Vous invoquez une masse de sangles épaisses et collantes à un point de votre choix à portée. Les toiles remplissent un cube de 6 mètres à partir de ce point et durent pendant toute la durée. Les toiles sont un terrain difficile, et chaque créature qui commence son tour dans les toiles ou qui y pénètre pendant son tour doit effectuer un jet de sauvegarde de Dextérité ou être retenue tant qu'elle reste dans les toiles ou jusqu'à ce qu'elle se libère.",
     "higherLevels": null,
     "material": "un peu de toile d'araignée"
   },
   "Zone of Truth": {
     "name": "Zone de vérité",
-    "description": "Vous créez une zone magique qui protège contre la tromperie dans une sphère d'un rayon de 15 pieds centrée sur un point de votre choix à portée. Jusqu'à la fin du sort, une créature qui entre dans la zone du sort pour la première fois lors d'un tour ou qui y commence son tour doit effectuer un jet de sauvegarde de Charisme. En cas d'échec, une créature ne peut pas mentir délibérément tant qu'elle se trouve dans le rayon.",
+    "description": "Vous créez une zone magique qui protège contre la tromperie dans une sphère d'un rayon de 4,5 mètres centrée sur un point de votre choix à portée. Jusqu'à la fin du sort, une créature qui entre dans la zone du sort pour la première fois lors d'un tour ou qui y commence son tour doit effectuer un jet de sauvegarde de Charisme. En cas d'échec, une créature ne peut pas mentir délibérément tant qu'elle se trouve dans le rayon.",
     "higherLevels": null
   },
   "Animate Dead": {
     "name": "Animer les morts",
-    "description": "Ce sort crée un serviteur mort-vivant. Choisissez un tas d'os ou le cadavre d'un humanoïde de taille moyenne ou petite à portée. Votre sort imprègne la cible d'une imitation immonde de la vie, l'élevant comme une créature mort-vivante. À chacun de vos tours, vous pouvez utiliser une action bonus pour commander mentalement n'importe quelle créature que vous avez créée avec ce sort si la créature se trouve à moins de 60 pieds de vous.",
+    "description": "Ce sort crée un serviteur mort-vivant. Choisissez un tas d'os ou le cadavre d'un humanoïde de taille moyenne ou petite à portée. Votre sort imprègne la cible d'une imitation immonde de la vie, l'élevant comme une créature mort-vivante. À chacun de vos tours, vous pouvez utiliser une action bonus pour commander mentalement n'importe quelle créature que vous avez créée avec ce sort si la créature se trouve à moins de 18 mètres de vous.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 4 ou supérieur, vous animez ou réaffirmez le contrôle de deux créatures mort-vivantes supplémentaires pour chaque niveau d'emplacement supérieur au 3.",
     "material": "une goutte de sang, un morceau de chair et une pincée de poussière d'os"
   },
@@ -708,7 +708,7 @@
   },
   "Call Lightning": {
     "name": "Appeler Lightning",
-    "description": "Un nuage d'orage apparaît sous la forme d'un cylindre de 10 pieds de haut avec un rayon de 60 pieds, centré sur un point que vous pouvez voir à portée directement au-dessus de vous. Lorsque vous lancez le sort, choisissez un point que vous pouvez voir sous le nuage. Un éclair jaillit jusqu’à ce point. Chaque créature à moins de 1,50 mètre de ce point doit effectuer un jet de sauvegarde de Dextérité, subissant 3d10 dégâts de foudre en cas d'échec ou la moitié en cas de réussite.",
+    "description": "Un nuage d'orage apparaît sous la forme d'un cylindre de 3 mètres de haut avec un rayon de 18 mètres, centré sur un point que vous pouvez voir à portée directement au-dessus de vous. Lorsque vous lancez le sort, choisissez un point que vous pouvez voir sous le nuage. Un éclair jaillit jusqu’à ce point. Chaque créature à moins de 1,50 mètre de ce point doit effectuer un jet de sauvegarde de Dextérité, subissant 3d10 dégâts de foudre en cas d'échec ou la moitié en cas de réussite.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 4 ou supérieur, les dégâts augmentent de 1d10 pour chaque niveau d'emplacement au-dessus du niveau 3."
   },
   "Clairvoyance": {
@@ -734,7 +734,7 @@
   },
   "Daylight": {
     "name": "Lumière du jour",
-    "description": "Une sphère de lumière d’un rayon de 60 pieds s’étend à partir d’un point que vous choisissez à portée. La sphère émet une lumière vive et diffuse une lumière faible sur 60 pieds supplémentaires. Si vous choisissez un point sur un objet que vous tenez ou sur un objet qui n'est pas porté, la lumière brille depuis l'objet et se déplace avec lui. Couvrir complètement l'objet affecté avec un objet opaque, comme un bol ou un casque, bloque la lumière.",
+    "description": "Une sphère de lumière d’un rayon de 18 mètres s’étend à partir d’un point que vous choisissez à portée. La sphère émet une lumière vive et diffuse une lumière faible sur 18 mètres supplémentaires. Si vous choisissez un point sur un objet que vous tenez ou sur un objet qui n'est pas porté, la lumière brille depuis l'objet et se déplace avec lui. Couvrir complètement l'objet affecté avec un objet opaque, comme un bol ou un casque, bloque la lumière.",
     "higherLevels": null
   },
   "Dispel Magic": {
@@ -762,13 +762,13 @@
   },
   "Fly": {
     "name": "Voler",
-    "description": "Vous touchez une créature consentante. La cible gagne une vitesse de vol de 60 pieds pendant toute la durée du sort. À la fin du sort, la cible tombe si elle est toujours en l'air, à moins qu'elle ne puisse arrêter la chute.",
+    "description": "Vous touchez une créature consentante. La cible gagne une vitesse de vol de 18 mètres pendant toute la durée du sort. À la fin du sort, la cible tombe si elle est toujours en l'air, à moins qu'elle ne puisse arrêter la chute.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 4 ou supérieur, vous pouvez cibler une créature supplémentaire pour chaque niveau d'emplacement au-dessus du niveau 3.",
     "material": "une plume d'aile de n'importe quel oiseau"
   },
   "Gaseous Form": {
     "name": "Forme gazeuse",
-    "description": "Vous transformez une créature volontaire que vous touchez, ainsi que tout ce qu'elle porte, en un nuage brumeux pour la durée du sort. Le sort se termine si la créature tombe à 0 point de vie. Une créature incorporelle n'est pas affectée. Sous cette forme, la seule méthode de déplacement de la cible est une vitesse de vol de 10 pieds. La cible peut entrer et occuper l'espace d'une autre créature. La cible a une résistance aux dégâts non magiques et un avantage aux jets de sauvegarde de Force, de Dextérité et de Constitution.",
+    "description": "Vous transformez une créature volontaire que vous touchez, ainsi que tout ce qu'elle porte, en un nuage brumeux pour la durée du sort. Le sort se termine si la créature tombe à 0 point de vie. Une créature incorporelle n'est pas affectée. Sous cette forme, la seule méthode de déplacement de la cible est une vitesse de vol de 3 mètres. La cible peut entrer et occuper l'espace d'une autre créature. La cible a une résistance aux dégâts non magiques et un avantage aux jets de sauvegarde de Force, de Dextérité et de Constitution.",
     "higherLevels": null,
     "material": "un peu de gaze et un filet de fumée"
   },
@@ -792,13 +792,13 @@
   },
   "Leomund's Tiny Hut": {
     "name": "La petite cabane de Léomonde",
-    "description": "Un dôme de force immobile d’un rayon de 10 pieds surgit autour et au-dessus de vous et reste stationnaire pendant toute la durée. Le sort prend fin si vous quittez sa zone. Neuf créatures de taille moyenne ou inférieure peuvent entrer avec vous à l'intérieur du dôme. L’atmosphère à l’intérieur de l’espace est confortable et sèche, quelle que soit la météo extérieure. Jusqu'à la fin du sort, vous pouvez ordonner à l'intérieur de devenir faiblement éclairé ou sombre. Le dôme est opaque de l’extérieur, de la couleur de votre choix, mais il est transparent de l’intérieur.",
+    "description": "Un dôme de force immobile d’un rayon de 3 mètres surgit autour et au-dessus de vous et reste stationnaire pendant toute la durée. Le sort prend fin si vous quittez sa zone. Neuf créatures de taille moyenne ou inférieure peuvent entrer avec vous à l'intérieur du dôme. L’atmosphère à l’intérieur de l’espace est confortable et sèche, quelle que soit la météo extérieure. Jusqu'à la fin du sort, vous pouvez ordonner à l'intérieur de devenir faiblement éclairé ou sombre. Le dôme est opaque de l’extérieur, de la couleur de votre choix, mais il est transparent de l’intérieur.",
     "higherLevels": null,
     "material": "une petite perle de cristal"
   },
   "Lightning Bolt": {
     "name": "Éclair",
-    "description": "Un éclair formant une ligne de 100 pieds de long et 5 pieds de large jaillit de vous dans la direction que vous choisissez. Chaque créature de la ligne doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 8d6 dégâts de foudre en cas d'échec, ou la moitié en cas de réussite. La foudre enflamme des objets inflammables dans la zone qui ne sont pas portés ou transportés.",
+    "description": "Un éclair formant une ligne de 30 mètres de long et 1,5 mètre de large jaillit de vous dans la direction que vous choisissez. Chaque créature de la ligne doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 8d6 dégâts de foudre en cas d'échec, ou la moitié en cas de réussite. La foudre enflamme des objets inflammables dans la zone qui ne sont pas portés ou transportés.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 4 ou supérieur, les dégâts augmentent de 1d6 pour chaque niveau d'emplacement au-dessus du niveau 3.",
     "material": "un peu de fourrure et une tige d'ambre, de cristal ou de verre"
   },
@@ -814,13 +814,13 @@
   },
   "Nondetection": {
     "name": "Non-détection",
-    "description": "Pendant toute la durée, vous cachez une cible que vous touchez à la magie divinatoire. La cible peut être une créature volontaire ou un lieu ou un objet ne dépassant pas 10 pieds dans n'importe quelle dimension. La cible ne peut être ciblée par aucune magie divinatoire ni perçue par des capteurs de vision magique.",
+    "description": "Pendant toute la durée, vous cachez une cible que vous touchez à la magie divinatoire. La cible peut être une créature volontaire ou un lieu ou un objet ne dépassant pas 3 mètres dans n'importe quelle dimension. La cible ne peut être ciblée par aucune magie divinatoire ni perçue par des capteurs de vision magique.",
     "higherLevels": null,
     "material": "une pincée de poussière de diamant d'une valeur de 25 po répandue sur la cible, que le sort consomme"
   },
   "Plant Growth": {
     "name": "Croissance des plantes",
-    "description": "Ce sort canalise la vitalité des plantes dans une zone spécifique. Il existe deux utilisations possibles du sort, conférant des avantages immédiats ou à long terme. Si vous lancez ce sort en utilisant 1 action, choisissez un point à portée. Toutes les plantes normales dans un rayon de 100 pieds centré sur ce point deviennent épaisses et envahies par la végétation. Une créature se déplaçant dans la zone doit dépenser 4 pieds de mouvement pour chaque 1 pied de déplacement. Vous pouvez exclure une ou plusieurs zones de n'importe quelle taille dans la zone du sort d'être affectées.",
+    "description": "Ce sort canalise la vitalité des plantes dans une zone spécifique. Il existe deux utilisations possibles du sort, conférant des avantages immédiats ou à long terme. Si vous lancez ce sort en utilisant 1 action, choisissez un point à portée. Toutes les plantes normales dans un rayon de 30 mètres centré sur ce point deviennent épaisses et envahies par la végétation. Une créature se déplaçant dans la zone doit dépenser 1,2 mètre de mouvement pour chaque 0,3 mètre de déplacement. Vous pouvez exclure une ou plusieurs zones de n'importe quelle taille dans la zone du sort d'être affectées.",
     "higherLevels": null
   },
   "Protection from Energy": {
@@ -847,13 +847,13 @@
   },
   "Sleet Storm": {
     "name": "Tempête de neige fondue",
-    "description": "Jusqu'à la fin du sort, la pluie verglaçante et la neige fondue tombent dans un cylindre de 20 pieds de haut avec un rayon de 40 pieds centré sur un point que vous choisissez à portée. La zone est fortement obscurcie et les flammes exposées dans la zone sont éteintes. Le sol de la zone est recouvert de glace glissante, ce qui rend le terrain difficile. Lorsqu'une créature entre dans la zone du sort pour la première fois au cours d'un tour ou y commence son tour, elle doit effectuer un jet de sauvegarde de Dextérité ou tomber à terre.",
+    "description": "Jusqu'à la fin du sort, la pluie verglaçante et la neige fondue tombent dans un cylindre de 6 mètres de haut avec un rayon de 12 mètres centré sur un point que vous choisissez à portée. La zone est fortement obscurcie et les flammes exposées dans la zone sont éteintes. Le sol de la zone est recouvert de glace glissante, ce qui rend le terrain difficile. Lorsqu'une créature entre dans la zone du sort pour la première fois au cours d'un tour ou y commence son tour, elle doit effectuer un jet de sauvegarde de Dextérité ou tomber à terre.",
     "higherLevels": null,
     "material": "une pincée de poussière et quelques gouttes d'eau"
   },
   "Slow": {
     "name": "Lent",
-    "description": "Vous modifiez le temps autour d'un maximum de six créatures de votre choix dans un cube de 40 pieds à portée. Chaque cible doit réussir un jet de sauvegarde de Sagesse ou être affectée pour la durée. La vitesse d'une cible affectée est réduite de moitié, elle subit un malus de -2 aux jets de sauvegarde de CA et de Dextérité, et elle ne peut pas utiliser de réactions. A son tour, il peut utiliser soit une action, soit une action bonus, mais pas les deux. Quels que soient les capacités ou les objets magiques de la créature, elle ne peut pas effectuer plus d'une attaque au corps à corps ou à distance pendant son tour.",
+    "description": "Vous modifiez le temps autour d'un maximum de six créatures de votre choix dans un cube de 12 mètres à portée. Chaque cible doit réussir un jet de sauvegarde de Sagesse ou être affectée pour la durée. La vitesse d'une cible affectée est réduite de moitié, elle subit un malus de -2 aux jets de sauvegarde de CA et de Dextérité, et elle ne peut pas utiliser de réactions. A son tour, il peut utiliser soit une action, soit une action bonus, mais pas les deux. Quels que soient les capacités ou les objets magiques de la créature, elle ne peut pas effectuer plus d'une attaque au corps à corps ou à distance pendant son tour.",
     "higherLevels": null,
     "material": "une goutte de mélasse"
   },
@@ -905,13 +905,13 @@
   },
   "Wind Wall": {
     "name": "Mur de vent",
-    "description": "Un mur de vent fort s'élève du sol à un point que vous choisissez à portée. Vous pouvez faire un mur jusqu'à 50 pieds de long, 15 pieds de haut et 1 pied d'épaisseur. Vous pouvez façonner le mur comme bon vous semble, à condition qu'il forme un chemin continu le long du sol. Le mur dure pour la durée. Lorsque le mur apparaît, chaque créature présente dans sa zone doit effectuer un jet de sauvegarde de Force. Une créature subit 3d8 dégâts contondants en cas d'échec, ou la moitié en cas de réussite.",
+    "description": "Un mur de vent fort s'élève du sol à un point que vous choisissez à portée. Vous pouvez faire un mur jusqu'à 15 mètres de long, 4,5 mètres de haut et 0,3 mètre d'épaisseur. Vous pouvez façonner le mur comme bon vous semble, à condition qu'il forme un chemin continu le long du sol. Le mur dure pour la durée. Lorsque le mur apparaît, chaque créature présente dans sa zone doit effectuer un jet de sauvegarde de Force. Une créature subit 3d8 dégâts contondants en cas d'échec, ou la moitié en cas de réussite.",
     "higherLevels": null,
     "material": "un petit éventail et une plume d'origine exotique"
   },
   "Arcane Eye": {
     "name": "Œil arcanique",
-    "description": "Vous créez un œil invisible et magique à portée qui plane dans les airs pendant toute la durée du sort. Vous recevez mentalement des informations visuelles de l’œil, qui a une vision normale et une vision dans le noir jusqu’à 30 pieds. L’œil peut regarder dans toutes les directions. Par une action, vous pouvez déplacer l’œil jusqu’à 9 mètres dans n’importe quelle direction. Il n’y a pas de limite à la distance à laquelle l’œil peut s’éloigner de vous, mais il ne peut pas entrer dans un autre plan d’existence.",
+    "description": "Vous créez un œil invisible et magique à portée qui plane dans les airs pendant toute la durée du sort. Vous recevez mentalement des informations visuelles de l’œil, qui a une vision normale et une vision dans le noir jusqu’à 9 mètres. L’œil peut regarder dans toutes les directions. Par une action, vous pouvez déplacer l’œil jusqu’à 9 mètres dans n’importe quelle direction. Il n’y a pas de limite à la distance à laquelle l’œil peut s’éloigner de vous, mais il ne peut pas entrer dans un autre plan d’existence.",
     "higherLevels": null,
     "material": "un peu de fourrure de chauve-souris"
   },
@@ -950,7 +950,7 @@
   },
   "Control Water": {
     "name": "Contrôler l'eau",
-    "description": "Jusqu'à la fin du sort, vous contrôlez toute eau libre à l'intérieur d'une zone que vous choisissez et qui est un cube mesurant jusqu'à 100 pieds de côté. Vous pouvez choisir parmi l'un des effets suivants lorsque vous lancez ce sort, ou n'importe quelle combinaison : Inondation, Eau partielle, Flux de redirection ou Tourbillon.",
+    "description": "Jusqu'à la fin du sort, vous contrôlez toute eau libre à l'intérieur d'une zone que vous choisissez et qui est un cube mesurant jusqu'à 30 mètres de côté. Vous pouvez choisir parmi l'un des effets suivants lorsque vous lancez ce sort, ou n'importe quelle combinaison : Inondation, Eau partielle, Flux de redirection ou Tourbillon.",
     "higherLevels": null,
     "material": "une goutte d'eau et une pincée de poussière"
   },
@@ -983,12 +983,12 @@
   },
   "Fabricate": {
     "name": "Fabriquer",
-    "description": "Vous convertissez des matières premières en produits du même matériau. Par exemple, vous pouvez fabriquer un pont en bois à partir d’un bouquet d’arbres, une corde à partir d’un morceau de chanvre et des vêtements en lin ou en laine. Choisissez des matières premières que vous pouvez voir à portée. Vous pouvez fabriquer un objet de grande taille ou plus petit (contenu dans un cube de 10 pieds ou huit cubes connectés de 5 pieds), à condition d'avoir une quantité suffisante de matière première.",
+    "description": "Vous convertissez des matières premières en produits du même matériau. Par exemple, vous pouvez fabriquer un pont en bois à partir d’un bouquet d’arbres, une corde à partir d’un morceau de chanvre et des vêtements en lin ou en laine. Choisissez des matières premières que vous pouvez voir à portée. Vous pouvez fabriquer un objet de grande taille ou plus petit (contenu dans un cube de 3 mètres ou huit cubes connectés de 1,5 mètre), à condition d'avoir une quantité suffisante de matière première.",
     "higherLevels": null
   },
   "Fire Shield": {
     "name": "Bouclier de feu",
-    "description": "Des flammes fines et vaporeuses enveloppent votre corps pendant toute la durée, projetant une lumière vive dans un rayon de 10 pieds et une lumière tamisée sur 10 pieds supplémentaires. Les flammes vous fournissent un bouclier chaud ou un bouclier froid, selon votre choix. Le bouclier chaud vous confère une résistance aux dégâts de froid et le bouclier froid vous confère une résistance aux dégâts de feu. De plus, chaque fois qu'une créature à moins de 1,50 mètre de vous vous frappe avec une attaque de mêlée, le bouclier éclate de flammes. L'attaquant subit 2d8 dégâts de feu d'un bouclier chaud, ou 2d8 dégâts de froid d'un bouclier froid.",
+    "description": "Des flammes fines et vaporeuses enveloppent votre corps pendant toute la durée, projetant une lumière vive dans un rayon de 3 mètres et une lumière tamisée sur 3 mètres supplémentaires. Les flammes vous fournissent un bouclier chaud ou un bouclier froid, selon votre choix. Le bouclier chaud vous confère une résistance aux dégâts de froid et le bouclier froid vous confère une résistance aux dégâts de feu. De plus, chaque fois qu'une créature à moins de 1,50 mètre de vous vous frappe avec une attaque de mêlée, le bouclier éclate de flammes. L'attaquant subit 2d8 dégâts de feu d'un bouclier chaud, ou 2d8 dégâts de froid d'un bouclier froid.",
     "higherLevels": null,
     "material": "un peu de phosphore ou une luciole"
   },
@@ -1015,13 +1015,13 @@
   },
   "Hallucinatory Terrain": {
     "name": "Terrain hallucinatoire",
-    "description": "Vous faites en sorte qu'un terrain naturel dans un cube de 150 pieds de portée ressemble, sonne et sente comme un autre type de terrain naturel. Ainsi, des champs ouverts ou une route peuvent ressembler à un marécage, une colline, une crevasse ou tout autre terrain difficile ou infranchissable. Un étang peut ressembler à une prairie herbeuse, un précipice à une pente douce ou un ravin parsemé de rochers à une route large et lisse. L'apparence des structures, équipements et créatures manufacturés dans la zone ne change pas.",
+    "description": "Vous faites en sorte qu'un terrain naturel dans un cube de 45 mètres de portée ressemble, sonne et sente comme un autre type de terrain naturel. Ainsi, des champs ouverts ou une route peuvent ressembler à un marécage, une colline, une crevasse ou tout autre terrain difficile ou infranchissable. Un étang peut ressembler à une prairie herbeuse, un précipice à une pente douce ou un ravin parsemé de rochers à une route large et lisse. L'apparence des structures, équipements et créatures manufacturés dans la zone ne change pas.",
     "higherLevels": null,
     "material": "une pierre, une brindille et un peu de plante verte"
   },
   "Ice Storm": {
     "name": "Tempête de verglas",
-    "description": "Une grêle de glace dure comme la pierre frappe le sol dans un cylindre de 20 pieds de rayon et 40 pieds de haut centré sur un point à portée. Chaque créature présente dans le cylindre doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 2d8 dégâts contondants et 4d6 dégâts de froid en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Les grêlons transforment la zone d'effet de la tempête en terrain difficile jusqu'à la fin de votre prochain tour.",
+    "description": "Une grêle de glace dure comme la pierre frappe le sol dans un cylindre de 6 mètres de rayon et 12 mètres de haut centré sur un point à portée. Chaque créature présente dans le cylindre doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 2d8 dégâts contondants et 4d6 dégâts de froid en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Les grêlons transforment la zone d'effet de la tempête en terrain difficile jusqu'à la fin de votre prochain tour.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 5 ou supérieur, les dégâts contondants augmentent de 1d8 pour chaque niveau d'emplacement au-dessus du niveau 4.",
     "material": "une pincée de poussière et quelques gouttes d'eau"
   },
@@ -1039,8 +1039,8 @@
   },
   "Mordenkainen's Private Sanctum": {
     "name": "Le sanctuaire privé de Mordenkainen",
-    "description": "Vous sécurisez comme par magie une zone à portée. La zone est un cube qui peut mesurer entre 5 pieds et 100 pieds de chaque côté. Le sort dure pendant toute la durée ou jusqu'à ce que vous utilisiez une action pour le renvoyer. Lorsque vous lancez le sort, vous décidez quel type de sécurité le sort offre, en choisissant une ou toutes les propriétés suivantes : le son ne peut pas traverser la barrière, la barrière devient opaque, les sorts de divination ne peuvent pas cibler à l'intérieur de la zone, les créatures de la zone ne peuvent pas être ciblées par la magie divinatoire, rien ne peut se téléporter dans ou hors de la zone protégée, le voyage planaire est bloqué dans la zone protégée.",
-    "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 5 ou supérieur, vous pouvez augmenter la taille du cube de 100 pieds pour chaque niveau d'emplacement au-delà du 4ème. Ainsi vous pourriez protéger un cube pouvant mesurer jusqu'à 200 pieds de côté en utilisant un emplacement de sort de niveau 5.",
+    "description": "Vous sécurisez comme par magie une zone à portée. La zone est un cube qui peut mesurer entre 1,5 mètre et 30 mètres de chaque côté. Le sort dure pendant toute la durée ou jusqu'à ce que vous utilisiez une action pour le renvoyer. Lorsque vous lancez le sort, vous décidez quel type de sécurité le sort offre, en choisissant une ou toutes les propriétés suivantes : le son ne peut pas traverser la barrière, la barrière devient opaque, les sorts de divination ne peuvent pas cibler à l'intérieur de la zone, les créatures de la zone ne peuvent pas être ciblées par la magie divinatoire, rien ne peut se téléporter dans ou hors de la zone protégée, le voyage planaire est bloqué dans la zone protégée.",
+    "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 5 ou supérieur, vous pouvez augmenter la taille du cube de 30 mètres pour chaque niveau d'emplacement au-delà du 4ème. Ainsi vous pourriez protéger un cube pouvant mesurer jusqu'à 60 mètres de côté en utilisant un emplacement de sort de niveau 5.",
     "material": "une fine feuille de plomb, un morceau de verre opaque, un tampon de coton ou de tissu et de la chrysolite en poudre"
   },
   "Otiluke's Resilient Sphere": {
@@ -1062,9 +1062,9 @@
   },
   "Secret Chest": {
     "name": "Coffre secret",
-    "description": "Vous cachez un coffre et tout son contenu sur le plan Éthéré. Vous devez toucher le coffre et la réplique miniature qui sert de composant matériel au sort. Le coffre peut contenir jusqu'à 12 pieds cubes de matière non vivante (3 pieds sur 2 pieds sur 2 pieds). Tant que le coffre reste sur le plan éthéré, vous pouvez utiliser une action et toucher la réplique pour rappeler le coffre. Il apparaît dans un espace ouvert au sol à moins de 1,50 mètre de vous. Vous pouvez renvoyer le coffre dans le plan éthéré en utilisant une action et en touchant à la fois le coffre et la réplique.",
+    "description": "Vous cachez un coffre et tout son contenu sur le plan Éthéré. Vous devez toucher le coffre et la réplique miniature qui sert de composant matériel au sort. Le coffre peut contenir jusqu'à 340 litres de matière non vivante (0,9 mètre sur 0,6 mètre sur 0,6 mètre). Tant que le coffre reste sur le plan éthéré, vous pouvez utiliser une action et toucher la réplique pour rappeler le coffre. Il apparaît dans un espace ouvert au sol à moins de 1,50 mètre de vous. Vous pouvez renvoyer le coffre dans le plan éthéré en utilisant une action et en touchant à la fois le coffre et la réplique.",
     "higherLevels": null,
-    "material": "un coffre exquis de 3 pieds sur 2 pieds sur 2 pieds construit à partir de matériaux rares d'une valeur d'au moins 5 000 po, et une petite réplique fabriquée à partir des mêmes matériaux d'une valeur d'au moins 50 po"
+    "material": "un coffre exquis de 0,9 mètre sur 0,6 mètre sur 0,6 mètre construit à partir de matériaux rares d'une valeur d'au moins 5 000 po, et une petite réplique fabriquée à partir des mêmes matériaux d'une valeur d'au moins 50 po"
   },
   "Stone Shape": {
     "name": "Forme de pierre",
@@ -1080,7 +1080,7 @@
   },
   "Wall of Fire": {
     "name": "Mur de feu",
-    "description": "Vous créez un mur de feu sur une surface solide à portée. Le mur peut mesurer jusqu'à 60 pieds de long, 20 pieds de haut et 1 pied d'épaisseur, ou un mur annelé jusqu'à 20 pieds de diamètre, 20 pieds de haut et 1 pied d'épaisseur. Le mur est opaque et dure toute la durée. Lorsque le mur apparaît, chaque créature présente dans sa zone doit effectuer un jet de sauvegarde de Dextérité. En cas d'échec, la créature subit 5d8 dégâts de feu, soit la moitié de ce montant en cas de réussite. Un côté du mur (votre choix) inflige 5d8 dégâts de feu à chaque créature qui termine son tour à moins de 3 mètres de ce côté.",
+    "description": "Vous créez un mur de feu sur une surface solide à portée. Le mur peut mesurer jusqu'à 18 mètres de long, 6 mètres de haut et 0,3 mètre d'épaisseur, ou un mur annelé jusqu'à 6 mètres de diamètre, 6 mètres de haut et 0,3 mètre d'épaisseur. Le mur est opaque et dure toute la durée. Lorsque le mur apparaît, chaque créature présente dans sa zone doit effectuer un jet de sauvegarde de Dextérité. En cas d'échec, la créature subit 5d8 dégâts de feu, soit la moitié de ce montant en cas de réussite. Un côté du mur (votre choix) inflige 5d8 dégâts de feu à chaque créature qui termine son tour à moins de 3 mètres de ce côté.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 5 ou supérieur, les dégâts augmentent de 1d8 pour chaque niveau d'emplacement supérieur au 4e.",
     "material": "un petit morceau de phosphore"
   },
@@ -1113,18 +1113,18 @@
   },
   "Commune with Nature": {
     "name": "Communier avec la nature",
-    "description": "Vous ne faites brièvement qu'un avec la nature et acquérez des connaissances sur le territoire environnant. En extérieur, le sort vous donne des informations factuelles sur les terres situées dans un rayon de 3 miles autour de vous. Dans les grottes et autres milieux souterrains naturels, le rayon est limité à 300 pieds. Le sort ne fonctionne pas là où la nature a été remplacée par des constructions, comme dans les donjons et les villes. Vous acquérez instantanément jusqu'à trois faits de votre choix sur l'un des sujets suivants en rapport avec la zone : le terrain et les plans d'eau, les plantes, les minéraux, les animaux ou les peuples répandus, les puissants célestes, les fées, les démons, les élémentaires ou les morts-vivants, l'influence d'autres plans d'existence, les bâtiments.",
+    "description": "Vous ne faites brièvement qu'un avec la nature et acquérez des connaissances sur le territoire environnant. En extérieur, le sort vous donne des informations factuelles sur les terres situées dans un rayon de 4,5 kilomètres autour de vous. Dans les grottes et autres milieux souterrains naturels, le rayon est limité à 90 mètres. Le sort ne fonctionne pas là où la nature a été remplacée par des constructions, comme dans les donjons et les villes. Vous acquérez instantanément jusqu'à trois faits de votre choix sur l'un des sujets suivants en rapport avec la zone : le terrain et les plans d'eau, les plantes, les minéraux, les animaux ou les peuples répandus, les puissants célestes, les fées, les démons, les élémentaires ou les morts-vivants, l'influence d'autres plans d'existence, les bâtiments.",
     "higherLevels": null
   },
   "Cone of Cold": {
     "name": "Cône de froid",
-    "description": "Un souffle d’air froid jaillit de vos mains. Chaque créature dans un cône de 60 pieds doit effectuer un jet de sauvegarde de Constitution. Une créature subit 8d8 dégâts de froid en cas d'échec, ou la moitié en cas de réussite. Une créature tuée par ce sort devient une statue gelée jusqu'à ce qu'elle dégèle.",
+    "description": "Un souffle d’air froid jaillit de vos mains. Chaque créature dans un cône de 18 mètres doit effectuer un jet de sauvegarde de Constitution. Une créature subit 8d8 dégâts de froid en cas d'échec, ou la moitié en cas de réussite. Une créature tuée par ce sort devient une statue gelée jusqu'à ce qu'elle dégèle.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 6 ou supérieur, les dégâts augmentent de 1d8 pour chaque niveau d'emplacement supérieur au 5.",
     "material": "un petit cône de cristal ou de verre"
   },
   "Conjure Elemental": {
     "name": "Invocation d'élémentaire",
-    "description": "Vous invoquez un serviteur élémentaire. Choisissez une zone d'air, de terre, de feu ou d'eau qui remplit un cube de 10 pieds à portée. Un élémental de niveau de défi 5 ou inférieur approprié à la zone que vous avez choisie apparaît dans un espace inoccupé à moins de 3 mètres de celui-ci. Par exemple, un élémentaire de feu émerge d’un feu de joie et un élémentaire de terre s’élève du sol. Si vous perdez votre concentration, l'élémentaire ne disparaît pas. Au lieu de cela, vous perdez le contrôle de l'élémentaire, il devient hostile envers vous et vos compagnons et il pourrait attaquer.",
+    "description": "Vous invoquez un serviteur élémentaire. Choisissez une zone d'air, de terre, de feu ou d'eau qui remplit un cube de 3 mètres à portée. Un élémental de niveau de défi 5 ou inférieur approprié à la zone que vous avez choisie apparaît dans un espace inoccupé à moins de 3 mètres de celui-ci. Par exemple, un élémentaire de feu émerge d’un feu de joie et un élémentaire de terre s’élève du sol. Si vous perdez votre concentration, l'élémentaire ne disparaît pas. Au lieu de cela, vous perdez le contrôle de l'élémentaire, il devient hostile envers vous et vos compagnons et il pourrait attaquer.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 6 ou supérieur, le niveau de défi augmente de 1 pour chaque niveau d'emplacement supérieur au 5.",
     "material": "brûler de l'encens pour l'air, de l'argile molle pour la terre, du soufre et du phosphore pour le feu, ou de l'eau et du sable pour l'eau."
   },
@@ -1140,7 +1140,7 @@
   },
   "Creation": {
     "name": "Création",
-    "description": "Vous extrayez des brins de matière d'ombre de Shadowfell pour créer un objet non vivant fait de matière végétale à portée : des objets textiles, de la corde, du bois ou quelque chose de similaire. Vous pouvez également utiliser ce sort pour créer des objets minéraux tels que de la pierre, du cristal ou du métal. L'objet créé ne doit pas mesurer plus d'un cube de 5 pieds et doit avoir une forme et un matériau que vous avez déjà vus. La durée dépend du matériau de l'objet.",
+    "description": "Vous extrayez des brins de matière d'ombre de Shadowfell pour créer un objet non vivant fait de matière végétale à portée : des objets textiles, de la corde, du bois ou quelque chose de similaire. Vous pouvez également utiliser ce sort pour créer des objets minéraux tels que de la pierre, du cristal ou du métal. L'objet créé ne doit pas mesurer plus d'un cube de 1,5 mètre et doit avoir une forme et un matériau que vous avez déjà vus. La durée dépend du matériau de l'objet.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 6 ou supérieur, le cube augmente de 1,50 mètre pour chaque niveau d'emplacement supérieur au 5.",
     "material": "un petit morceau de matière du même type que l'objet que vous envisagez de créer"
   },
@@ -1163,7 +1163,7 @@
   },
   "Flame Strike": {
     "name": "Frappe de flamme",
-    "description": "Une colonne verticale de feu divin descend du ciel à un endroit que vous spécifiez. Chaque créature située dans un cylindre de 10 pieds de rayon et 40 pieds de haut centré sur un point à portée doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 4d6 dégâts de feu et 4d6 dégâts de rayonnement en cas d'échec, ou la moitié en cas de réussite.",
+    "description": "Une colonne verticale de feu divin descend du ciel à un endroit que vous spécifiez. Chaque créature située dans un cylindre de 3 mètres de rayon et 12 mètres de haut centré sur un point à portée doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 4d6 dégâts de feu et 4d6 dégâts de rayonnement en cas d'échec, ou la moitié en cas de réussite.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 6 ou supérieur, les dégâts de feu ou les dégâts radiants (votre choix) augmentent de 1d6 pour chaque niveau d'emplacement supérieur au 5.",
     "material": "pincée de soufre"
   },
@@ -1213,7 +1213,7 @@
   },
   "Passwall": {
     "name": "Passwall",
-    "description": "Un passage apparaît à un point de votre choix que vous pouvez voir sur une surface en bois, en plâtre ou en pierre (comme un mur, un plafond ou un sol) à portée, et dure toute la durée du passage. Vous choisissez les dimensions de l'ouverture : jusqu'à 5 pieds de largeur, 8 pieds de hauteur et 20 pieds de profondeur. Le passage ne crée aucune instabilité dans une structure qui l'entoure.",
+    "description": "Un passage apparaît à un point de votre choix que vous pouvez voir sur une surface en bois, en plâtre ou en pierre (comme un mur, un plafond ou un sol) à portée, et dure toute la durée du passage. Vous choisissez les dimensions de l'ouverture : jusqu'à 1,5 mètre de largeur, 2,4 mètres de hauteur et 6 mètres de profondeur. Le passage ne crée aucune instabilité dans une structure qui l'entoure.",
     "higherLevels": null,
     "material": "une pincée de graines de sésame"
   },
@@ -1259,46 +1259,46 @@
   },
   "Teleportation Circle": {
     "name": "Cercle de téléportation",
-    "description": "Pendant que vous lancez le sort, vous dessinez sur le sol un cercle de 10 pieds de diamètre inscrit avec des sceaux qui relient votre emplacement à un cercle de téléportation permanent de votre choix dont vous connaissez la séquence de sceaux et qui se trouve sur le même plan d'existence que vous. Un portail scintillant s'ouvre dans le cercle que vous avez dessiné et reste ouvert jusqu'à la fin de votre prochain tour. Toute créature qui entre dans le portail apparaît instantanément à moins de 1,50 mètre du cercle de destination ou dans l'espace inoccupé le plus proche si cet espace est occupé.",
+    "description": "Pendant que vous lancez le sort, vous dessinez sur le sol un cercle de 3 mètres de diamètre inscrit avec des sceaux qui relient votre emplacement à un cercle de téléportation permanent de votre choix dont vous connaissez la séquence de sceaux et qui se trouve sur le même plan d'existence que vous. Un portail scintillant s'ouvre dans le cercle que vous avez dessiné et reste ouvert jusqu'à la fin de votre prochain tour. Toute créature qui entre dans le portail apparaît instantanément à moins de 1,50 mètre du cercle de destination ou dans l'espace inoccupé le plus proche si cet espace est occupé.",
     "higherLevels": null,
     "material": "des craies et des encres rares infusées de pierres précieuses d'une valeur de 50 po, que le sort consomme"
   },
   "Tree Stride": {
     "name": "Foulée des arbres",
-    "description": "Vous obtenez la possibilité d'entrer dans un arbre et de vous déplacer de l'intérieur vers l'intérieur d'un autre arbre du même type dans un rayon de 500 pieds. Les deux arbres doivent être vivants et avoir au moins la même taille que vous. Vous devez utiliser 5 pieds de mouvement pour entrer dans un arbre. Vous connaissez instantanément l'emplacement de tous les autres arbres du même type dans un rayon de 500 pieds et, dans le cadre du mouvement utilisé pour entrer dans l'arbre, vous pouvez soit passer dans l'un de ces arbres, soit sortir de l'arbre dans lequel vous vous trouvez.",
+    "description": "Vous obtenez la possibilité d'entrer dans un arbre et de vous déplacer de l'intérieur vers l'intérieur d'un autre arbre du même type dans un rayon de 150 mètres. Les deux arbres doivent être vivants et avoir au moins la même taille que vous. Vous devez utiliser 1,5 mètre de mouvement pour entrer dans un arbre. Vous connaissez instantanément l'emplacement de tous les autres arbres du même type dans un rayon de 150 mètres et, dans le cadre du mouvement utilisé pour entrer dans l'arbre, vous pouvez soit passer dans l'un de ces arbres, soit sortir de l'arbre dans lequel vous vous trouvez.",
     "higherLevels": null
   },
   "Wall of Force": {
     "name": "Mur de force",
-    "description": "Un mur de force invisible surgit à un point que vous choisissez à portée. Le mur apparaît dans n'importe quelle orientation que vous choisissez, comme une barrière horizontale ou verticale ou sous un angle. Il peut flotter librement ou reposer sur une surface solide. Vous pouvez en faire un dôme hémisphérique ou une sphère d'un rayon allant jusqu'à 10 pieds, ou vous pouvez façonner une surface plane composée de dix panneaux de 10 pieds sur 10 pieds. Chaque panneau doit être contigu à un autre panneau. Quelle que soit sa forme, le mur a une épaisseur de 1/4 de pouce. Cela dure pour la durée.",
+    "description": "Un mur de force invisible surgit à un point que vous choisissez à portée. Le mur apparaît dans n'importe quelle orientation que vous choisissez, comme une barrière horizontale ou verticale ou sous un angle. Il peut flotter librement ou reposer sur une surface solide. Vous pouvez en faire un dôme hémisphérique ou une sphère d'un rayon allant jusqu'à 3 mètres, ou vous pouvez façonner une surface plane composée de dix panneaux de 3 mètres sur 3 mètres. Chaque panneau doit être contigu à un autre panneau. Quelle que soit sa forme, le mur a une épaisseur de 6 millimètres. Cela dure pour la durée.",
     "higherLevels": null,
     "material": "une pincée de poudre obtenue en écrasant une pierre précieuse transparente"
   },
   "Wall of Stone": {
     "name": "Mur de pierre",
-    "description": "Un mur non magique de pierre solide surgit à un point que vous choisissez à portée. Le mur a une épaisseur de 6 pouces et est composé de dix panneaux de 10 pieds sur 10 pieds. Chaque panneau doit être contigu à au moins un autre panneau. Alternativement, vous pouvez créer des panneaux de 10 pieds sur 20 pieds qui n'ont que 3 pouces d'épaisseur. Si le mur traverse l'espace d'une créature lorsqu'il apparaît, la créature est poussée d'un côté du mur (votre choix). Si une créature est entourée de tous côtés par le mur (ou par le mur et une autre surface solide), cette créature peut effectuer un jet de sauvegarde de Dextérité.",
+    "description": "Un mur non magique de pierre solide surgit à un point que vous choisissez à portée. Le mur a une épaisseur de 15 centimètres et est composé de dix panneaux de 3 mètres sur 3 mètres. Chaque panneau doit être contigu à au moins un autre panneau. Alternativement, vous pouvez créer des panneaux de 3 mètres sur 6 mètres qui n'ont que 7,5 centimètres d'épaisseur. Si le mur traverse l'espace d'une créature lorsqu'il apparaît, la créature est poussée d'un côté du mur (votre choix). Si une créature est entourée de tous côtés par le mur (ou par le mur et une autre surface solide), cette créature peut effectuer un jet de sauvegarde de Dextérité.",
     "higherLevels": null,
     "material": "un petit bloc de granit"
   },
   "Arcane Gate": {
     "name": "Porte des Arcanes",
-    "description": "Vous créez des portails de téléportation liés qui restent ouverts pendant toute la durée. Choisissez deux points au sol que vous pouvez voir, un point à moins de 10 pieds de vous et un point à moins de 500 pieds de vous. Un portail circulaire de 10 pieds de diamètre s'ouvre sur chaque point. Toute créature ou objet entrant dans un portail sort par l'autre portail comme si les deux étaient adjacents l'un à l'autre ; le passage par un portail du côté non-portail n'a aucun effet.",
+    "description": "Vous créez des portails de téléportation liés qui restent ouverts pendant toute la durée. Choisissez deux points au sol que vous pouvez voir, un point à moins de 3 mètres de vous et un point à moins de 150 mètres de vous. Un portail circulaire de 3 mètres de diamètre s'ouvre sur chaque point. Toute créature ou objet entrant dans un portail sort par l'autre portail comme si les deux étaient adjacents l'un à l'autre ; le passage par un portail du côté non-portail n'a aucun effet.",
     "higherLevels": null
   },
   "Blade Barrier": {
     "name": "Barrière de lame",
-    "description": "Vous créez un mur vertical de lames tourbillonnantes et tranchantes comme des rasoirs faites d'énergie magique. Le mur apparaît à portée et dure pendant toute la durée. Vous pouvez créer un mur droit jusqu'à 100 pieds de long, 20 pieds de haut et 5 pieds d'épaisseur, ou un mur annelé jusqu'à 60 pieds de diamètre, 20 pieds de haut et 5 pieds d'épaisseur. Le mur offre une couverture aux trois quarts aux créatures derrière lui et son espace est un terrain difficile. Lorsqu'une créature entre dans la zone du mur pour la première fois lors d'un tour ou y commence son tour, la créature doit effectuer un jet de sauvegarde de Dextérité. En cas d'échec, la créature subit 6d10 dégâts tranchants. En cas de sauvegarde réussie, la créature subit deux fois moins de dégâts.",
+    "description": "Vous créez un mur vertical de lames tourbillonnantes et tranchantes comme des rasoirs faites d'énergie magique. Le mur apparaît à portée et dure pendant toute la durée. Vous pouvez créer un mur droit jusqu'à 30 mètres de long, 6 mètres de haut et 1,5 mètre d'épaisseur, ou un mur annelé jusqu'à 18 mètres de diamètre, 6 mètres de haut et 1,5 mètre d'épaisseur. Le mur offre une couverture aux trois quarts aux créatures derrière lui et son espace est un terrain difficile. Lorsqu'une créature entre dans la zone du mur pour la première fois lors d'un tour ou y commence son tour, la créature doit effectuer un jet de sauvegarde de Dextérité. En cas d'échec, la créature subit 6d10 dégâts tranchants. En cas de sauvegarde réussie, la créature subit deux fois moins de dégâts.",
     "higherLevels": null
   },
   "Chain Lightning": {
     "name": "Chaîne d'éclairs",
-    "description": "Vous créez un éclair qui se dirige vers une cible de votre choix que vous pouvez voir à portée. Trois carreaux sautent ensuite de cette cible vers trois autres cibles, chacune devant se trouver à moins de 30 pieds de la première cible. Une cible peut être une créature ou un objet et ne peut être ciblée que par un seul des carreaux. Une cible doit effectuer un jet de sauvegarde de Dextérité. La cible subit 10d8 dégâts de foudre en cas d'échec, ou la moitié de ces dégâts en cas de réussite.",
+    "description": "Vous créez un éclair qui se dirige vers une cible de votre choix que vous pouvez voir à portée. Trois carreaux sautent ensuite de cette cible vers trois autres cibles, chacune devant se trouver à moins de 9 mètres de la première cible. Une cible peut être une créature ou un objet et ne peut être ciblée que par un seul des carreaux. Une cible doit effectuer un jet de sauvegarde de Dextérité. La cible subit 10d8 dégâts de foudre en cas d'échec, ou la moitié de ces dégâts en cas de réussite.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 7 ou supérieur, un éclair supplémentaire saute de la première cible à une autre cible pour chaque niveau d'emplacement supérieur au 6.",
     "material": "un peu de fourrure ; un morceau d'ambre, de verre ou une tige de cristal ; et trois épingles en argent"
   },
   "Circle of Death": {
     "name": "Cercle de la mort",
-    "description": "Une sphère d'énergie négative ondule dans une sphère d'un rayon de 60 pieds à partir d'un point à portée. Chaque créature vivante dans cette zone doit effectuer un jet de sauvegarde de Constitution. Une cible subit 8d6 dégâts nécrotiques en cas d'échec, ou la moitié en cas de réussite.",
+    "description": "Une sphère d'énergie négative ondule dans une sphère d'un rayon de 18 mètres à partir d'un point à portée. Chaque créature vivante dans cette zone doit effectuer un jet de sauvegarde de Constitution. Une cible subit 8d6 dégâts nécrotiques en cas d'échec, ou la moitié en cas de réussite.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 7 ou supérieur, les dégâts augmentent de 2d6 pour chaque niveau d'emplacement supérieur au 6.",
     "material": "la poudre d'une perle noire broyée valant au moins 500 po"
   },
@@ -1315,7 +1315,7 @@
   },
   "Create Undead": {
     "name": "Créer des morts-vivants",
-    "description": "Vous ne pouvez lancer ce sort que la nuit. Choisissez jusqu'à trois cadavres d'humanoïdes de taille moyenne ou petite à portée. Chaque cadavre devient une goule sous votre contrôle. (Le DM a des statistiques de jeu pour ces créatures.) En tant qu'action bonus à chacun de vos tours, vous pouvez commander mentalement n'importe quelle créature que vous avez animée avec ce sort si la créature est à moins de 120 pieds de vous (si vous contrôlez plusieurs créatures, vous pouvez commander n'importe laquelle ou toutes en même temps, en émettant le même ordre à chacune).",
+    "description": "Vous ne pouvez lancer ce sort que la nuit. Choisissez jusqu'à trois cadavres d'humanoïdes de taille moyenne ou petite à portée. Chaque cadavre devient une goule sous votre contrôle. (Le DM a des statistiques de jeu pour ces créatures.) En tant qu'action bonus à chacun de vos tours, vous pouvez commander mentalement n'importe quelle créature que vous avez animée avec ce sort si la créature est à moins de 36 mètres de vous (si vous contrôlez plusieurs créatures, vous pouvez commander n'importe laquelle ou toutes en même temps, en émettant le même ordre à chacune).",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 7, vous pouvez animer ou réaffirmer le contrôle de quatre goules. Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 8, vous pouvez animer ou réaffirmer le contrôle de cinq fantômes ou revenants. Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 9, vous pouvez animer ou réaffirmer le contrôle de six fantômes ou revenants ou de trois momies.",
     "material": "un pot en argile rempli de terre funéraire, un pot en argile rempli d'eau saumâtre et une pierre d'onyx noir de 150 po pour chaque cadavre"
   },
@@ -1327,7 +1327,7 @@
   },
   "Drawmij's Instant Summons": {
     "name": "Invocation instantanée de Drawmij",
-    "description": "Vous touchez un objet pesant 10 livres ou moins dont la dimension la plus longue est de 6 pieds ou moins. Le sort laisse une marque invisible sur sa surface et inscrit de manière invisible le nom de l'objet sur le saphir que vous utilisez comme composant matériel. Chaque fois que vous lancez ce sort, vous devez utiliser un saphir différent. À tout moment par la suite, vous pouvez utiliser votre action pour prononcer le nom de l'objet et écraser le saphir. L'objet apparaît instantanément dans votre main, quelles que soient les distances physiques ou planaires, et le sort prend fin.",
+    "description": "Vous touchez un objet pesant 10 livres ou moins dont la dimension la plus longue est de 1,8 mètre ou moins. Le sort laisse une marque invisible sur sa surface et inscrit de manière invisible le nom de l'objet sur le saphir que vous utilisez comme composant matériel. Chaque fois que vous lancez ce sort, vous devez utiliser un saphir différent. À tout moment par la suite, vous pouvez utiliser votre action pour prononcer le nom de l'objet et écraser le saphir. L'objet apparaît instantanément dans votre main, quelles que soient les distances physiques ou planaires, et le sort prend fin.",
     "higherLevels": null,
     "material": "un saphir valant 1 000 po"
   },
@@ -1350,19 +1350,19 @@
   },
   "Forbiddance": {
     "name": "Interdiction",
-    "description": "Vous créez une protection contre les voyages magiques qui protège jusqu'à 40 000 pieds carrés de surface au sol jusqu'à une hauteur de 30 pieds au-dessus du sol. Pendant toute la durée du sort, les créatures ne peuvent pas se téléporter dans la zone ni utiliser de portails, tels que ceux créés par le sort de porte, pour entrer dans la zone. La protection empêche également les créatures d'un type spécifique (votre choix lorsque vous lancez le sort) d'entrer : célestes, élémentaires, fées, démons ou morts-vivants. Lorsqu'une telle créature tente d'entrer dans la zone protégée pour la première fois au cours d'un tour, elle subit 5d10 dégâts radiants ou nécrotiques (votre choix lorsque vous lancez le sort).",
+    "description": "Vous créez une protection contre les voyages magiques qui protège jusqu'à 3600 mètres carrés de surface au sol jusqu'à une hauteur de 9 mètres au-dessus du sol. Pendant toute la durée du sort, les créatures ne peuvent pas se téléporter dans la zone ni utiliser de portails, tels que ceux créés par le sort de porte, pour entrer dans la zone. La protection empêche également les créatures d'un type spécifique (votre choix lorsque vous lancez le sort) d'entrer : célestes, élémentaires, fées, démons ou morts-vivants. Lorsqu'une telle créature tente d'entrer dans la zone protégée pour la première fois au cours d'un tour, elle subit 5d10 dégâts radiants ou nécrotiques (votre choix lorsque vous lancez le sort).",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 7 ou supérieur, vous pouvez maintenir la protection jusqu'à 2 jours avec un emplacement de niveau 7, 10 jours avec un emplacement de niveau 7 ou 30 jours avec un emplacement de niveau 9.",
     "material": "une pincée d'eau bénite, d'encens rare et de rubis en poudre d'une valeur d'au moins 1 000 po"
   },
   "Globe of Invulnerability": {
     "name": "Globe d'invulnérabilité",
-    "description": "Une barrière immobile et légèrement scintillante surgit dans un rayon de 10 pieds autour de vous et reste pour toute la durée. Tout sort de niveau 5 ou inférieur lancé depuis l'extérieur de la barrière ne peut pas affecter les créatures ou les objets qui s'y trouvent, même si le sort est lancé en utilisant un emplacement de sort de niveau supérieur. Un tel sort peut cibler des créatures et des objets à l'intérieur de la barrière, mais le sort n'a aucun effet sur eux.",
+    "description": "Une barrière immobile et légèrement scintillante surgit dans un rayon de 3 mètres autour de vous et reste pour toute la durée. Tout sort de niveau 5 ou inférieur lancé depuis l'extérieur de la barrière ne peut pas affecter les créatures ou les objets qui s'y trouvent, même si le sort est lancé en utilisant un emplacement de sort de niveau supérieur. Un tel sort peut cibler des créatures et des objets à l'intérieur de la barrière, mais le sort n'a aucun effet sur eux.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 7 ou supérieur, la barrière bloque les sorts d'un niveau supérieur pour chaque niveau d'emplacement supérieur au 6e.",
     "material": "une perle de verre ou de cristal qui se brise à la fin du sort"
   },
   "Guards and Wards": {
     "name": "Gardes et protections",
-    "description": "Vous créez une salle qui protège jusqu'à 2 500 pieds carrés de surface au sol (une superficie de 50 pieds carrés, ou cent carrés de 5 pieds ou vingt-cinq carrés de 10 pieds). La zone protégée peut mesurer jusqu'à 20 pieds de haut et être façonnée comme vous le désirez. Vous pouvez protéger plusieurs étages d'une forteresse en divisant la zone entre eux, à condition que vous puissiez marcher dans chaque zone contiguë pendant que vous lancez le sort. Lorsque vous lancez ce sort, vous pouvez spécifier des individus qui ne sont pas affectés par tout ou partie des effets que vous choisissez. Vous pouvez également spécifier un mot de passe qui, lorsqu'il est prononcé à voix haute, immunise le locuteur contre ces effets.",
+    "description": "Vous créez une salle qui protège jusqu'à 225 mètres carrés de surface au sol (une superficie de 4,5 mètres carrés, ou cent carrés de 1,5 mètre ou vingt-cinq carrés de 3 mètres). La zone protégée peut mesurer jusqu'à 6 mètres de haut et être façonnée comme vous le désirez. Vous pouvez protéger plusieurs étages d'une forteresse en divisant la zone entre eux, à condition que vous puissiez marcher dans chaque zone contiguë pendant que vous lancez le sort. Lorsque vous lancez ce sort, vous pouvez spécifier des individus qui ne sont pas affectés par tout ou partie des effets que vous choisissez. Vous pouvez également spécifier un mot de passe qui, lorsqu'il est prononcé à voix haute, immunise le locuteur contre ces effets.",
     "higherLevels": null,
     "material": "de l'encens brûlant, une petite mesure de soufre et d'huile, une ficelle nouée, une petite quantité de sang de Hulk d'ombre et un petit bâton d'argent d'une valeur d'au moins 10 po"
   },
@@ -1389,7 +1389,7 @@
   },
   "Magic Jar": {
     "name": "Pot magique",
-    "description": "Votre corps tombe dans un état catatonique lorsque votre âme le quitte et entre dans le conteneur que vous avez utilisé pour la composante matérielle du sort. Pendant que votre âme habite le conteneur, vous êtes conscient de votre environnement comme si vous étiez dans l'espace du conteneur. Vous ne pouvez pas bouger ni utiliser de réactions. La seule action que vous pouvez entreprendre est de projeter votre âme jusqu'à 100 pieds hors du conteneur, soit en retournant dans votre corps vivant (et en mettant fin au sort), soit en tentant de posséder le corps d'un humanoïde.",
+    "description": "Votre corps tombe dans un état catatonique lorsque votre âme le quitte et entre dans le conteneur que vous avez utilisé pour la composante matérielle du sort. Pendant que votre âme habite le conteneur, vous êtes conscient de votre environnement comme si vous étiez dans l'espace du conteneur. Vous ne pouvez pas bouger ni utiliser de réactions. La seule action que vous pouvez entreprendre est de projeter votre âme jusqu'à 30 mètres hors du conteneur, soit en retournant dans votre corps vivant (et en mettant fin au sort), soit en tentant de posséder le corps d'un humanoïde.",
     "higherLevels": null,
     "material": "une gemme, un cristal, un reliquaire ou tout autre récipient ornemental d'une valeur d'au moins 500 po"
   },
@@ -1401,7 +1401,7 @@
   },
   "Move Earth": {
     "name": "Déplacer la Terre",
-    "description": "Choisissez une zone de terrain ne dépassant pas 40 pieds de côté à portée. Vous pouvez remodeler la terre, le sable ou l'argile de la zone de la manière que vous choisissez pendant la durée. Vous pouvez augmenter ou diminuer l'élévation de la zone, créer ou combler une tranchée, ériger ou aplatir un mur ou former un pilier. L'étendue de ces changements ne peut pas dépasser la moitié de la plus grande dimension de la zone. Ainsi, si vous touchez un carré de 40 pieds, vous pouvez créer un pilier jusqu'à 20 pieds de haut, augmenter ou diminuer l'élévation du carré jusqu'à 20 pieds, creuser une tranchée jusqu'à 20 pieds de profondeur, et ainsi de suite.",
+    "description": "Choisissez une zone de terrain ne dépassant pas 12 mètres de côté à portée. Vous pouvez remodeler la terre, le sable ou l'argile de la zone de la manière que vous choisissez pendant la durée. Vous pouvez augmenter ou diminuer l'élévation de la zone, créer ou combler une tranchée, ériger ou aplatir un mur ou former un pilier. L'étendue de ces changements ne peut pas dépasser la moitié de la plus grande dimension de la zone. Ainsi, si vous touchez un carré de 12 mètres, vous pouvez créer un pilier jusqu'à 6 mètres de haut, augmenter ou diminuer l'élévation du carré jusqu'à 6 mètres, creuser une tranchée jusqu'à 6 mètres de profondeur, et ainsi de suite.",
     "higherLevels": null,
     "material": "une lame de fer et un petit sac contenant un mélange de sols : argile, limon et sable"
   },
@@ -1418,7 +1418,7 @@
   },
   "Sunbeam": {
     "name": "Rayon de soleil",
-    "description": "Un faisceau de lumière brillante jaillit de votre main sur une ligne de 5 pieds de large et 60 pieds de long. Chaque créature de la ligne doit effectuer un jet de sauvegarde de Constitution. En cas d'échec, une créature subit 6d8 dégâts radiants et est aveuglée jusqu'à votre prochain tour. En cas de sauvegarde réussie, il subit deux fois moins de dégâts et n'est pas aveuglé par ce sort. Les morts-vivants et les limons sont désavantagés lors de ce jet de sauvegarde. Vous pouvez créer une nouvelle ligne de rayonnement lors de votre action à n'importe quel tour jusqu'à la fin du sort.",
+    "description": "Un faisceau de lumière brillante jaillit de votre main sur une ligne de 1,5 mètre de large et 18 mètres de long. Chaque créature de la ligne doit effectuer un jet de sauvegarde de Constitution. En cas d'échec, une créature subit 6d8 dégâts radiants et est aveuglée jusqu'à votre prochain tour. En cas de sauvegarde réussie, il subit deux fois moins de dégâts et n'est pas aveuglé par ce sort. Les morts-vivants et les limons sont désavantagés lors de ce jet de sauvegarde. Vous pouvez créer une nouvelle ligne de rayonnement lors de votre action à n'importe quel tour jusqu'à la fin du sort.",
     "higherLevels": null,
     "material": "une loupe"
   },
@@ -1429,7 +1429,7 @@
   },
   "True Seeing": {
     "name": "La vraie vision",
-    "description": "Vous donnez à la créature volontaire que vous touchez la capacité de voir les choses telles qu'elles sont réellement. Pendant toute cette durée, la créature a une vision véritable, remarque les portes secrètes cachées par magie et peut voir dans le plan éthéré, le tout dans une portée de 120 pieds.",
+    "description": "Vous donnez à la créature volontaire que vous touchez la capacité de voir les choses telles qu'elles sont réellement. Pendant toute cette durée, la créature a une vision véritable, remarque les portes secrètes cachées par magie et peut voir dans le plan éthéré, le tout dans une portée de 36 mètres.",
     "higherLevels": null,
     "material": "une pommade pour les yeux qui coûte 25 po ; est fabriqué à partir de poudre de champignons, de safran et de graisse ; et est consumé par le sort"
   },
@@ -1441,13 +1441,13 @@
   },
   "Wall of Thorns": {
     "name": "Mur d'épines",
-    "description": "Vous créez un mur de brosses dures, souples et emmêlées, hérissées d'épines acérées. Le mur apparaît à portée sur une surface solide et dure pendant toute la durée. Vous choisissez de faire un mur mesurant jusqu'à 60 pieds de long, 10 pieds de haut et 5 pieds d'épaisseur ou un cercle d'un diamètre de 20 pieds et mesurant jusqu'à 20 pieds de haut et 5 pieds d'épaisseur. Le mur bloque la ligne de vue. Lorsque le mur apparaît, chaque créature présente dans sa zone doit effectuer un jet de sauvegarde de Dextérité. En cas d'échec, la créature subit 7d8 dégâts perforants, soit la moitié de ceux en cas de réussite.",
+    "description": "Vous créez un mur de brosses dures, souples et emmêlées, hérissées d'épines acérées. Le mur apparaît à portée sur une surface solide et dure pendant toute la durée. Vous choisissez de faire un mur mesurant jusqu'à 18 mètres de long, 3 mètres de haut et 1,5 mètre d'épaisseur ou un cercle d'un diamètre de 6 mètres et mesurant jusqu'à 6 mètres de haut et 1,5 mètre d'épaisseur. Le mur bloque la ligne de vue. Lorsque le mur apparaît, chaque créature présente dans sa zone doit effectuer un jet de sauvegarde de Dextérité. En cas d'échec, la créature subit 7d8 dégâts perforants, soit la moitié de ceux en cas de réussite.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 7 ou supérieur, les deux types de dégâts augmentent de 1d8 pour chaque niveau d'emplacement supérieur au 6.",
     "material": "une poignée d'épines"
   },
   "Wind Walk": {
     "name": "Marche du vent",
-    "description": "Vous et jusqu'à dix créatures volontaires que vous pouvez voir à portée prenez une forme gazeuse pendant toute la durée, apparaissant comme des volutes de nuages. Sous cette forme de nuage, une créature a une vitesse de vol de 300 pieds et une résistance aux dégâts des armes non magiques. Les seules actions qu'une créature peut entreprendre sous cette forme sont l'action Dash ou le retour à sa forme normale. Le retour en arrière prend 1 minute, pendant laquelle la créature est incapable de bouger et ne peut plus bouger.",
+    "description": "Vous et jusqu'à dix créatures volontaires que vous pouvez voir à portée prenez une forme gazeuse pendant toute la durée, apparaissant comme des volutes de nuages. Sous cette forme de nuage, une créature a une vitesse de vol de 90 mètres et une résistance aux dégâts des armes non magiques. Les seules actions qu'une créature peut entreprendre sous cette forme sont l'action Dash ou le retour à sa forme normale. Le retour en arrière prend 1 minute, pendant laquelle la créature est incapable de bouger et ne peut plus bouger.",
     "higherLevels": null,
     "material": "feu et eau bénite"
   },
@@ -1474,7 +1474,7 @@
   },
   "Etherealness": {
     "name": "Éthéré",
-    "description": "Vous entrez dans les régions frontalières du plan Éthéré, dans la zone où il chevauche votre plan actuel. Vous restez dans la Frontière Éthérée pendant toute la durée ou jusqu'à ce que vous utilisiez votre action pour rejeter le sort. Pendant ce temps, vous pouvez vous déplacer dans n’importe quelle direction. Si vous montez ou descendez, chaque pied de mouvement coûte un pied supplémentaire. Vous pouvez voir et entendre l'avion d'où vous venez, mais tout là-bas semble gris et vous ne pouvez rien voir à plus de 20 mètres.",
+    "description": "Vous entrez dans les régions frontalières du plan Éthéré, dans la zone où il chevauche votre plan actuel. Vous restez dans la Frontière Éthérée pendant toute la durée ou jusqu'à ce que vous utilisiez votre action pour rejeter le sort. Pendant ce temps, vous pouvez vous déplacer dans n’importe quelle direction. Si vous montez ou descendez, chaque mètre de déplacement coûte un mètre supplémentaire. Vous pouvez voir et entendre l'avion d'où vous venez, mais tout là-bas semble gris et vous ne pouvez rien voir à plus de 20 mètres.",
     "higherLevels": "Lorsque vous lancez ce sort en utilisant un emplacement de sort de niveau 8 ou supérieur, vous pouvez cibler jusqu'à trois créatures consentantes (vous y compris) pour chaque niveau d'emplacement supérieur au 7."
   },
   "Finger of Death": {
@@ -1484,29 +1484,29 @@
   },
   "Fire Storm": {
     "name": "Tempête de feu",
-    "description": "Une tempête composée de nappes de flammes rugissantes apparaît à un endroit que vous choisissez à portée. La zone de la tempête comprend jusqu'à dix cubes de 10 pieds, que vous pouvez disposer à votre guise. Chaque cube doit avoir au moins une face adjacente à la face d'un autre cube. Chaque créature présente dans la zone doit effectuer un jet de sauvegarde de Dextérité. Il subit 7d10 dégâts de feu en cas d'échec, ou la moitié en cas de réussite. L'incendie endommage les objets présents dans la zone et enflamme les objets inflammables qui ne sont pas portés ou transportés.",
+    "description": "Une tempête composée de nappes de flammes rugissantes apparaît à un endroit que vous choisissez à portée. La zone de la tempête comprend jusqu'à dix cubes de 3 mètres, que vous pouvez disposer à votre guise. Chaque cube doit avoir au moins une face adjacente à la face d'un autre cube. Chaque créature présente dans la zone doit effectuer un jet de sauvegarde de Dextérité. Il subit 7d10 dégâts de feu en cas d'échec, ou la moitié en cas de réussite. L'incendie endommage les objets présents dans la zone et enflamme les objets inflammables qui ne sont pas portés ou transportés.",
     "higherLevels": null
   },
   "Forcecage": {
     "name": "Cage de force",
-    "description": "Une prison immobile, invisible, en forme de cube, composée de force magique, surgit autour d'une zone que vous choisissez à portée. La prison peut être une cage (cube de 20 pieds avec des barres de 1/2 pouce de diamètre espacées de 1/2 pouce) ou une boîte (cube de 10 pieds solide de tous les côtés). Une créature à l'intérieur de la cage est piégée. Les sorts peuvent être lancés à travers la cage, mais la créature ne peut en aucun cas la quitter. Le sort prend fin si vous le lancez à nouveau ou si vous utilisez une action pour le renvoyer.",
+    "description": "Une prison immobile, invisible, en forme de cube, composée de force magique, surgit autour d'une zone que vous choisissez à portée. La prison peut être une cage (cube de 6 mètres avec des barres de 2,5/5 centimètres de diamètre espacées de 2,5/5 centimètres) ou une boîte (cube de 3 mètres solide de tous les côtés). Une créature à l'intérieur de la cage est piégée. Les sorts peuvent être lancés à travers la cage, mais la créature ne peut en aucun cas la quitter. Le sort prend fin si vous le lancez à nouveau ou si vous utilisez une action pour le renvoyer.",
     "higherLevels": null,
     "material": "poussière de rubis d'une valeur de 1 500 po"
   },
   "Mirage Arcane": {
     "name": "Mirage arcanique",
-    "description": "Vous donnez au terrain dans une zone allant jusqu'à 1 mile carré l'apparence, le son, l'odeur et même la sensation d'un autre type de terrain. La forme générale du terrain reste cependant la même. Les champs ouverts ou une route pourraient ressembler à un marécage, une colline, une crevasse ou tout autre terrain difficile ou infranchissable. Un étang peut ressembler à une prairie herbeuse, un précipice à une pente douce ou un ravin parsemé de rochers à une route large et lisse. De même, vous pouvez modifier l’apparence des structures ou en ajouter là où il n’y en a pas.",
+    "description": "Vous donnez au terrain dans une zone allant jusqu'à 2,5 kilomètres carrés l'apparence, le son, l'odeur et même la sensation d'un autre type de terrain. La forme générale du terrain reste cependant la même. Les champs ouverts ou une route pourraient ressembler à un marécage, une colline, une crevasse ou tout autre terrain difficile ou infranchissable. Un étang peut ressembler à une prairie herbeuse, un précipice à une pente douce ou un ravin parsemé de rochers à une route large et lisse. De même, vous pouvez modifier l’apparence des structures ou en ajouter là où il n’y en a pas.",
     "higherLevels": null
   },
   "Mordenkainen's Magnificent Mansion": {
     "name": "Le magnifique manoir de Mordenkainen",
-    "description": "Vous évoquez une demeure extradimensionnelle à portée qui dure toute la durée. Vous choisissez où se trouve son entrée. L'entrée scintille légèrement et mesure 5 pieds de large et 10 pieds de haut. Vous et toute créature que vous désignez lorsque vous lancez le sort pouvez entrer dans la demeure extradimensionnelle tant que le portail reste ouvert. Vous pouvez ouvrir ou fermer le portail si vous êtes à moins de 30 pieds de celui-ci.",
+    "description": "Vous évoquez une demeure extradimensionnelle à portée qui dure toute la durée. Vous choisissez où se trouve son entrée. L'entrée scintille légèrement et mesure 1,5 mètre de large et 3 mètres de haut. Vous et toute créature que vous désignez lorsque vous lancez le sort pouvez entrer dans la demeure extradimensionnelle tant que le portail reste ouvert. Vous pouvez ouvrir ou fermer le portail si vous êtes à moins de 9 mètres de celui-ci.",
     "higherLevels": null,
     "material": "un portail miniature sculpté dans l'ivoire, un petit morceau de marbre poli et une petite cuillère en argent, chaque objet valant au moins 5 po"
   },
   "Mordenkainen's Sword": {
     "name": "L'épée de Mordenkainen",
-    "description": "Vous créez un plan de force en forme d’épée qui plane à portée. Cela dure pour la durée. Lorsque l'épée apparaît, vous lancez une attaque au corps à corps contre une cible de votre choix à moins de 1,50 mètre de l'épée. En cas de coup, la cible subit 3d10 dégâts de force. Jusqu'à la fin du sort, vous pouvez utiliser une action bonus à chacun de vos tours pour déplacer l'épée jusqu'à 20 pieds jusqu'à un endroit que vous pouvez voir et répéter cette attaque contre la même cible ou une autre.",
+    "description": "Vous créez un plan de force en forme d’épée qui plane à portée. Cela dure pour la durée. Lorsque l'épée apparaît, vous lancez une attaque au corps à corps contre une cible de votre choix à moins de 1,50 mètre de l'épée. En cas de coup, la cible subit 3d10 dégâts de force. Jusqu'à la fin du sort, vous pouvez utiliser une action bonus à chacun de vos tours pour déplacer l'épée jusqu'à 6 mètres jusqu'à un endroit que vous pouvez voir et répéter cette attaque contre la même cible ou une autre.",
     "higherLevels": null,
     "material": "une épée miniature en platine avec une poignée et une garde en cuivre et en zinc, d'une valeur de 250 po"
   },
@@ -1518,7 +1518,7 @@
   },
   "Prismatic Spray": {
     "name": "Spray prismatique",
-    "description": "Huit rayons de lumière multicolores jaillissent de votre main. Chaque rayon est d’une couleur différente et a un pouvoir et un objectif différents. Chaque créature dans un cône de 60 pieds doit effectuer un jet de sauvegarde de Dextérité. Pour chaque cible, lancez un d8 pour déterminer quelle couleur de rayon l'affecte : 1 Rouge (10d6 feu), 2 Orange (10d6 acide), 3 Jaune (10d6 éclair), 4 Vert (poison, mort), 5 Bleu (10d6 froid), 6 Indigo (retenu, puis pétrifié), 7 Violet (aveugle puis transporté), 8 Spécial (deux rayons).",
+    "description": "Huit rayons de lumière multicolores jaillissent de votre main. Chaque rayon est d’une couleur différente et a un pouvoir et un objectif différents. Chaque créature dans un cône de 18 mètres doit effectuer un jet de sauvegarde de Dextérité. Pour chaque cible, lancez un d8 pour déterminer quelle couleur de rayon l'affecte : 1 Rouge (10d6 feu), 2 Orange (10d6 acide), 3 Jaune (10d6 éclair), 4 Vert (poison, mort), 5 Bleu (10d6 froid), 6 Indigo (retenu, puis pétrifié), 7 Violet (aveugle puis transporté), 8 Spécial (deux rayons).",
     "higherLevels": null
   },
   "Project Image": {
@@ -1541,7 +1541,7 @@
   },
   "Reverse Gravity": {
     "name": "Gravité inversée",
-    "description": "Ce sort inverse la gravité dans un cylindre de 15 mètres de rayon et de 100 pieds de haut centré sur un point à portée. Toutes les créatures et objets qui ne sont pas ancrés au sol dans la zone tombent vers le haut et atteignent le sommet de la zone. Une créature peut effectuer un jet de sauvegarde de Dextérité pour s'agripper à un objet fixe qu'elle peut atteindre, évitant ainsi la chute. Si un objet solide (comme un plafond) est rencontré lors de la chute, les créatures et les objets qui tombent le heurtent comme ils le feraient lors d'une chute normale.",
+    "description": "Ce sort inverse la gravité dans un cylindre de 15 mètres de rayon et de 30 mètres de haut centré sur un point à portée. Toutes les créatures et objets qui ne sont pas ancrés au sol dans la zone tombent vers le haut et atteignent le sommet de la zone. Une créature peut effectuer un jet de sauvegarde de Dextérité pour s'agripper à un objet fixe qu'elle peut atteindre, évitant ainsi la chute. Si un objet solide (comme un plafond) est rencontré lors de la chute, les créatures et les objets qui tombent le heurtent comme ils le feraient lors d'une chute normale.",
     "higherLevels": null,
     "material": "une magnétite et de la limaille de fer"
   },
@@ -1559,13 +1559,13 @@
   },
   "Symbol": {
     "name": "Symbole",
-    "description": "Lorsque vous lancez ce sort, vous inscrivez un glyphe nuisible soit sur une surface (comme une partie du sol, un mur ou une table), soit à l'intérieur d'un objet qui peut être fermé pour cacher le glyphe (comme un livre, un parchemin ou un coffre au trésor). Le glyphe peut couvrir une zone ne dépassant pas 10 pieds de diamètre. Vous décidez ce qui déclenche le glyphe lorsque vous lancez le sort. Pour les glyphes inscrits sur une surface, les déclencheurs les plus courants incluent le fait de toucher ou de marcher sur le glyphe, de retirer un autre objet qui le recouvre ou de s'en approcher à une certaine distance. Lorsqu'il est déclenché, le glyphe émet une énergie magique dans une sphère de 60 pieds de rayon centrée sur le glyphe. La sphère s'étend dans les coins. Chaque créature présente dans la zone doit effectuer un jet de sauvegarde (le type dépend de l'effet choisi : Mort, Discorde, Peur, Désespoir, Folie, Douleur, Sommeil ou Étourdissement).",
+    "description": "Lorsque vous lancez ce sort, vous inscrivez un glyphe nuisible soit sur une surface (comme une partie du sol, un mur ou une table), soit à l'intérieur d'un objet qui peut être fermé pour cacher le glyphe (comme un livre, un parchemin ou un coffre au trésor). Le glyphe peut couvrir une zone ne dépassant pas 3 mètres de diamètre. Vous décidez ce qui déclenche le glyphe lorsque vous lancez le sort. Pour les glyphes inscrits sur une surface, les déclencheurs les plus courants incluent le fait de toucher ou de marcher sur le glyphe, de retirer un autre objet qui le recouvre ou de s'en approcher à une certaine distance. Lorsqu'il est déclenché, le glyphe émet une énergie magique dans une sphère de 18 mètres de rayon centrée sur le glyphe. La sphère s'étend dans les coins. Chaque créature présente dans la zone doit effectuer un jet de sauvegarde (le type dépend de l'effet choisi : Mort, Discorde, Peur, Désespoir, Folie, Douleur, Sommeil ou Étourdissement).",
     "higherLevels": null,
     "material": "du mercure, du phosphore et de la poudre de diamant et d'opale d'une valeur totale d'au moins 1 000 po, que le sort consomme"
   },
   "Teleport": {
     "name": "Téléportation",
-    "description": "Ce sort vous transporte instantanément, ainsi que jusqu'à huit créatures volontaires de votre choix que vous pouvez voir à portée, ou un seul objet que vous pouvez voir à portée, vers une destination que vous sélectionnez. Si vous ciblez un objet, il doit pouvoir tenir entièrement dans un cube de 10 pieds et il ne peut pas être tenu ou transporté par une créature réticente. La destination que vous choisissez doit vous être connue et elle doit se trouver sur le même plan d’existence que vous. Votre familiarité avec la destination détermine si vous y arriverez avec succès.",
+    "description": "Ce sort vous transporte instantanément, ainsi que jusqu'à huit créatures volontaires de votre choix que vous pouvez voir à portée, ou un seul objet que vous pouvez voir à portée, vers une destination que vous sélectionnez. Si vous ciblez un objet, il doit pouvoir tenir entièrement dans un cube de 3 mètres et il ne peut pas être tenu ou transporté par une créature réticente. La destination que vous choisissez doit vous être connue et elle doit se trouver sur le même plan d’existence que vous. Votre familiarité avec la destination détermine si vous y arriverez avec succès.",
     "higherLevels": null
   },
   "Whirlwind": {
@@ -1582,7 +1582,7 @@
   },
   "Antipathy/Sympathy": {
     "name": "Antipathie/Sympathie",
-    "description": "Ce sort attire ou repousse les créatures de votre choix. Vous ciblez quelque chose à portée, soit un objet ou une créature énorme ou plus petite, soit une zone qui ne dépasse pas un cube de 200 pieds. Spécifiez ensuite une sorte de créature intelligente, comme des dragons rouges, des gobelins ou des vampires. Vous investissez la cible d'une aura qui attire ou repousse les créatures spécifiées pendant la durée. Choisissez l'antipathie ou la sympathie comme effet de l'aura. Toute créature du type que vous avez choisi et qui s'approche à moins de 60 pieds de la cible doit effectuer un jet de sauvegarde de Sagesse.",
+    "description": "Ce sort attire ou repousse les créatures de votre choix. Vous ciblez quelque chose à portée, soit un objet ou une créature énorme ou plus petite, soit une zone qui ne dépasse pas un cube de 60 mètres. Spécifiez ensuite une sorte de créature intelligente, comme des dragons rouges, des gobelins ou des vampires. Vous investissez la cible d'une aura qui attire ou repousse les créatures spécifiées pendant la durée. Choisissez l'antipathie ou la sympathie comme effet de l'aura. Toute créature du type que vous avez choisi et qui s'approche à moins de 18 mètres de la cible doit effectuer un jet de sauvegarde de Sagesse.",
     "higherLevels": null,
     "material": "soit un morceau d'alun imbibé de vinaigre pour l'effet antipathie, soit une goutte de miel pour l'effet sympathie"
   },
@@ -1590,17 +1590,17 @@
     "name": "Cloner",
     "description": "Ce sort fait croître une copie inerte d'une créature vivante comme protection contre la mort. Ce clone se forme à l'intérieur d'un récipient scellé et atteint sa taille maximale et sa maturité après 120 jours ; vous pouvez également choisir que le clone soit une version plus jeune de la même créature. Il reste inerte et perdure indéfiniment, tant que son récipient reste intact. À tout moment après la maturité du clone, si la créature d'origine meurt, son âme est transférée au clone, à condition que l'âme soit libre et disposée à revenir.",
     "higherLevels": null,
-    "material": "un diamant d'une valeur d'au moins 1 000 po et au moins 1 pouce cube de chair de la créature à cloner, que le sort consomme, et un récipient d'une valeur d'au moins 2 000 po doté d'un couvercle refermable et suffisamment grand pour contenir une créature de taille M, comme une énorme urne, un cercueil, un kyste rempli de boue dans le sol ou un récipient en cristal rempli d'eau salée"
+    "material": "un diamant d'une valeur d'au moins 1 000 po et au moins 2,5 centimètres cube de chair de la créature à cloner, que le sort consomme, et un récipient d'une valeur d'au moins 2 000 po doté d'un couvercle refermable et suffisamment grand pour contenir une créature de taille M, comme une énorme urne, un cercueil, un kyste rempli de boue dans le sol ou un récipient en cristal rempli d'eau salée"
   },
   "Control Weather": {
     "name": "Contrôler la météo",
-    "description": "Vous prenez le contrôle de la météo dans un rayon de 5 miles autour de vous pendant toute la durée. Vous devez être à l'extérieur pour lancer ce sort. Se déplacer vers un endroit où vous n'avez pas de chemin clair vers le ciel met fin au sort plus tôt. Lorsque vous lancez le sort, vous modifiez les conditions météorologiques actuelles, qui sont déterminées par le DM en fonction du climat et de la saison. Vous pouvez modifier les précipitations, la température et le vent. Il faut 1d4 × 10 minutes pour que les nouvelles conditions prennent effet.",
+    "description": "Vous prenez le contrôle de la météo dans un rayon de 7,5 kilomètres autour de vous pendant toute la durée. Vous devez être à l'extérieur pour lancer ce sort. Se déplacer vers un endroit où vous n'avez pas de chemin clair vers le ciel met fin au sort plus tôt. Lorsque vous lancez le sort, vous modifiez les conditions météorologiques actuelles, qui sont déterminées par le DM en fonction du climat et de la saison. Vous pouvez modifier les précipitations, la température et le vent. Il faut 1d4 × 10 minutes pour que les nouvelles conditions prennent effet.",
     "higherLevels": null,
     "material": "brûler de l'encens et des morceaux de terre et de bois mélangés à de l'eau"
   },
   "Demiplane": {
     "name": "Demi-plan",
-    "description": "Vous créez une porte sombre sur une surface solide et plane que vous pouvez voir à portée. La porte est suffisamment grande pour permettre aux créatures de taille M de passer sans entrave. Une fois ouverte, la porte mène à un demi-plan qui semble être une pièce vide de 30 pieds dans chaque dimension, faite de bois ou de pierre. Lorsque le sort se termine, la porte disparaît et toutes les créatures ou objets à l'intérieur du demi-plan y restent piégés, car la porte est la seule entrée ou sortie.",
+    "description": "Vous créez une porte sombre sur une surface solide et plane que vous pouvez voir à portée. La porte est suffisamment grande pour permettre aux créatures de taille M de passer sans entrave. Une fois ouverte, la porte mène à un demi-plan qui semble être une pièce vide de 9 mètres dans chaque dimension, faite de bois ou de pierre. Lorsque le sort se termine, la porte disparaît et toutes les créatures ou objets à l'intérieur du demi-plan y restent piégés, car la porte est la seule entrée ou sortie.",
     "higherLevels": null
   },
   "Dominate Monster": {
@@ -1633,7 +1633,7 @@
   },
   "Incendiary Cloud": {
     "name": "Nuage incendiaire",
-    "description": "Un nuage tourbillonnant de fumée traversé de braises chauffées à blanc apparaît dans une sphère d'un rayon de 20 pieds centrée sur un point à portée. Le nuage s'étend dans les coins et est fortement obscurci. Il dure pendant toute la durée ou jusqu'à ce qu'un vent de vitesse modérée ou supérieure (au moins 10 miles par heure) le disperse. Lorsque le nuage apparaît, chaque créature qui s'y trouve doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 10d8 dégâts de feu en cas d'échec, ou la moitié en cas de réussite. Une créature doit également effectuer ce jet de sauvegarde lorsqu'elle entre dans la zone du sort pour la première fois d'un tour ou qu'elle y termine son tour.",
+    "description": "Un nuage tourbillonnant de fumée traversé de braises chauffées à blanc apparaît dans une sphère d'un rayon de 6 mètres centrée sur un point à portée. Le nuage s'étend dans les coins et est fortement obscurci. Il dure pendant toute la durée ou jusqu'à ce qu'un vent de vitesse modérée ou supérieure (au moins 15 kilomètres par heure) le disperse. Lorsque le nuage apparaît, chaque créature qui s'y trouve doit effectuer un jet de sauvegarde de Dextérité. Une créature subit 10d8 dégâts de feu en cas d'échec, ou la moitié en cas de réussite. Une créature doit également effectuer ce jet de sauvegarde lorsqu'elle entre dans la zone du sort pour la première fois d'un tour ou qu'elle y termine son tour.",
     "higherLevels": null
   },
   "Maze": {
@@ -1653,7 +1653,7 @@
   },
   "Sunburst": {
     "name": "Coup de soleil",
-    "description": "La lumière du soleil brillante clignote dans un rayon de 60 pieds centré sur un point que vous choisissez à portée. Chaque créature dans cette lumière doit effectuer un jet de sauvegarde de Constitution. En cas d'échec, la créature subit 12d6 dégâts radiants et est aveuglée pendant 1 minute. En cas de sauvegarde réussie, il subit deux fois moins de dégâts et n'est pas aveuglé par ce sort. Les morts-vivants et les limons sont désavantagés lors de ce jet de sauvegarde. Une créature aveuglée par ce sort effectue un nouveau jet de sauvegarde de Constitution à la fin de chacun de ses tours.",
+    "description": "La lumière du soleil brillante clignote dans un rayon de 18 mètres centré sur un point que vous choisissez à portée. Chaque créature dans cette lumière doit effectuer un jet de sauvegarde de Constitution. En cas d'échec, la créature subit 12d6 dégâts radiants et est aveuglée pendant 1 minute. En cas de sauvegarde réussie, il subit deux fois moins de dégâts et n'est pas aveuglé par ce sort. Les morts-vivants et les limons sont désavantagés lors de ce jet de sauvegarde. Une créature aveuglée par ce sort effectue un nouveau jet de sauvegarde de Constitution à la fin de chacun de ses tours.",
     "higherLevels": null,
     "material": "du feu et un morceau de pierre de soleil"
   },
@@ -1665,7 +1665,7 @@
   },
   "Tsunami": {
     "name": "Tsunami",
-    "description": "Un mur d’eau surgit à un point que vous choisissez à portée. Vous pouvez faire un mur jusqu'à 300 pieds de long, 300 pieds de haut et 50 pieds d'épaisseur. Le mur dure pour la durée. Lorsque le mur apparaît, chaque créature présente dans sa zone doit effectuer un jet de sauvegarde de Force. En cas d'échec, la créature subit 6d10 dégâts contondants, soit la moitié de ce montant en cas de réussite. Au début de chacun de vos tours après l'apparition du mur, le mur, ainsi que toutes les créatures qu'il contient, s'éloignent de 15 mètres de vous.",
+    "description": "Un mur d’eau surgit à un point que vous choisissez à portée. Vous pouvez faire un mur jusqu'à 90 mètres de long, 90 mètres de haut et 15 mètres d'épaisseur. Le mur dure pour la durée. Lorsque le mur apparaît, chaque créature présente dans sa zone doit effectuer un jet de sauvegarde de Force. En cas d'échec, la créature subit 6d10 dégâts contondants, soit la moitié de ce montant en cas de réussite. Au début de chacun de vos tours après l'apparition du mur, le mur, ainsi que toutes les créatures qu'il contient, s'éloignent de 15 mètres de vous.",
     "higherLevels": null
   },
   "Astral Projection": {
@@ -1682,7 +1682,7 @@
   },
   "Gate": {
     "name": "Grille",
-    "description": "Vous invoquez un portail reliant un espace inoccupé que vous pouvez voir à portée à un emplacement précis sur un plan d'existence différent. Le portail est une ouverture circulaire que vous pouvez réaliser de 5 à 20 pieds de diamètre. Vous pouvez orienter le portail dans la direction de votre choix. Le portail dure pour la durée. Le portail a un recto et un verso sur chaque plan où il apparaît. Le voyage à travers le portail n'est possible qu'en se déplaçant par sa façade. Tout ce qui fait cela est instantanément transporté vers l’autre avion.",
+    "description": "Vous invoquez un portail reliant un espace inoccupé que vous pouvez voir à portée à un emplacement précis sur un plan d'existence différent. Le portail est une ouverture circulaire que vous pouvez réaliser de 5 à 6 mètres de diamètre. Vous pouvez orienter le portail dans la direction de votre choix. Le portail dure pour la durée. Le portail a un recto et un verso sur chaque plan où il apparaît. Le voyage à travers le portail n'est possible qu'en se déplaçant par sa façade. Tout ce qui fait cela est instantanément transporté vers l’autre avion.",
     "higherLevels": null,
     "material": "un diamant valant au moins 5 000 po"
   },
@@ -1699,7 +1699,7 @@
   },
   "Meteor Swarm": {
     "name": "Essaim de météores",
-    "description": "Des orbes de feu flamboyants tombent au sol à quatre points différents que vous pouvez voir à portée. Chaque créature dans une sphère de 40 pieds de rayon centrée sur chaque point que vous choisissez doit effectuer un jet de sauvegarde de Dextérité. La sphère s'étend dans les coins. Une créature subit 20d6 dégâts de feu et 20d6 dégâts contondants en cas d'échec, ou la moitié en cas de réussite. Une créature située dans la zone de plusieurs explosions de feu n'est affectée qu'une seule fois.",
+    "description": "Des orbes de feu flamboyants tombent au sol à quatre points différents que vous pouvez voir à portée. Chaque créature dans une sphère de 12 mètres de rayon centrée sur chaque point que vous choisissez doit effectuer un jet de sauvegarde de Dextérité. La sphère s'étend dans les coins. Une créature subit 20d6 dégâts de feu et 20d6 dégâts contondants en cas d'échec, ou la moitié en cas de réussite. Une créature située dans la zone de plusieurs explosions de feu n'est affectée qu'une seule fois.",
     "higherLevels": null
   },
   "Power Word Heal": {
@@ -1725,7 +1725,7 @@
   },
   "Storm of Vengeance": {
     "name": "Tempête de vengeance",
-    "description": "Un nuage d’orage tourbillonnant se forme, centré sur un point que vous pouvez voir et s’étendant sur un rayon de 360 ​​pieds. Des éclairs dans la région, des grondements de tonnerre et des vents violents rugissent. Chaque créature sous le nuage (pas plus de 5 000 pieds sous le nuage) lorsqu'elle apparaît doit effectuer un jet de sauvegarde de Constitution. En cas d'échec, la créature subit 2d6 dégâts de tonnerre et devient assourdie pendant 5 minutes. À chaque round où vous maintenez votre concentration sur ce sort, la tempête produit des effets différents à votre tour.",
+    "description": "Un nuage d’orage tourbillonnant se forme, centré sur un point que vous pouvez voir et s’étendant sur un rayon de 108 mètres. Des éclairs dans la région, des grondements de tonnerre et des vents violents rugissent. Chaque créature sous le nuage (pas plus de 1500 mètres sous le nuage) lorsqu'elle apparaît doit effectuer un jet de sauvegarde de Constitution. En cas d'échec, la créature subit 2d6 dégâts de tonnerre et devient assourdie pendant 5 minutes. À chaque round où vous maintenez votre concentration sur ce sort, la tempête produit des effets différents à votre tour.",
     "higherLevels": null
   },
   "Time Stop": {

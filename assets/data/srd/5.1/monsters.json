@@ -385,10 +385,10 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
-          "bonus": 3,
+          "bonus": 4,
           "reach": 5
         },
         "damage": [
@@ -402,10 +402,10 @@
       {
         "id": "claws",
         "name": "Claws",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage.",
         "attack": {
           "kind": "melee",
-          "bonus": 3,
+          "bonus": 4,
           "reach": 5
         },
         "damage": [
@@ -618,10 +618,10 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
+        "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
         "attack": {
           "kind": "melee",
-          "bonus": 5,
+          "bonus": 6,
           "reach": 5
         },
         "damage": [
@@ -635,10 +635,10 @@
       {
         "id": "claws",
         "name": "Claws",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+        "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
         "attack": {
           "kind": "melee",
-          "bonus": 5,
+          "bonus": 6,
           "reach": 5
         },
         "damage": [
@@ -2469,7 +2469,7 @@
       {
         "id": "charge",
         "name": "Charge",
-        "description": "If the sea horse moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) bludgeoning damage. It the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
+        "description": "If the sea horse moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) bludgeoning damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
         "save": {
           "ability": "strength",
           "dc": 11
@@ -4919,7 +4919,7 @@
       {
         "id": "beaks",
         "name": "Beaks",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer. Variant: Insect Swarms Different kinds of insects can gather in swarms, and each swarm has the special characteristics described below.",
+        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -4932,41 +4932,6 @@
             "type": "piercing"
           }
         ]
-      },
-      {
-        "id": "swarm_of_beetles",
-        "name": "Swarm of Beetles",
-        "description": "A swarm of beetles gains a burrowing speed of 5 feet."
-      },
-      {
-        "id": "swarm_of_centipedes",
-        "name": "Swarm of Centipedes",
-        "description": "A creature reduced to 0 hit points by a swarm of centipedes is stable but poisoned for 1 hour, even after regaining hit points, and paralyzed while poisoned in this way."
-      },
-      {
-        "id": "swarm_of_spiders",
-        "name": "Swarm of Spiders",
-        "description": "A swarm of spiders has the following additional traits."
-      },
-      {
-        "id": "spider_climb",
-        "name": "Spider Climb",
-        "description": "The swarm can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check."
-      },
-      {
-        "id": "web_sense",
-        "name": "Web Sense",
-        "description": "While in contact with a web, the swarm knows the exact location of any other creature in contact with the same web."
-      },
-      {
-        "id": "web_walker",
-        "name": "Web Walker",
-        "description": "The swarm ignores movement restrictions caused by webbing."
-      },
-      {
-        "id": "swarm_of_wasps",
-        "name": "Swarm of Wasps",
-        "description": "A swarm of wasps has a walking speed of 5 feet, a flying speed of 30 feet, and no climbing speed."
       }
     ]
   },

@@ -2400,7 +2400,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get spellsAttack => 'Атака';
 
   @override
-  String get spellsSaveDC => 'Сохранить Вашингтон';
+  String get spellsSaveDC => 'Сл спасброска';
 
   @override
   String get spellsCantrips => 'Заговоры';

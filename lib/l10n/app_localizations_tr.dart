@@ -84,7 +84,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String wildShapeLimits(String cr) {
-    return 'ZD $cr değerine kadar biçimler';
+    return 'TD $cr değerine kadar biçimler';
   }
 
   @override
@@ -95,7 +95,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String wildShapeChallengeRating(String cr) {
-    return 'ZD $cr';
+    return 'TD $cr';
   }
 
   @override
@@ -317,7 +317,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get monsterLanguagesNone => 'Yok';
 
   @override
-  String get monsterChallenge => 'Zorluk Derecesi';
+  String get monsterChallenge => 'Tehlike Derecesi';
 
   @override
   String monsterChallengeValue(String cr, String xp, int pb) {
@@ -2391,7 +2391,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get spellsAttack => 'Saldırı';
 
   @override
-  String get spellsSaveDC => 'Kurtarma ZS';
+  String get spellsSaveDC => 'Kurtarma ZD';
 
   @override
   String get spellsCantrips => 'Sihirbazlıklar';

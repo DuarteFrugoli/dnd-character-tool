@@ -20,10 +20,10 @@
   "wildShapeTitle": "Vahşi Biçim",
   "wildShapeUses": "Kullanım: {current}/{max}",
   "wildShapeUsesUnlimited": "Kullanım: sınırsız",
-  "wildShapeLimits": "ZD {cr} değerine kadar biçimler",
+  "wildShapeLimits": "TD {cr} değerine kadar biçimler",
   "wildShapeNoFly": "Uçma Hızı olmadan",
   "wildShapeNoSwim": "Yüzme Hızı olmadan",
-  "wildShapeChallengeRating": "ZD {cr}",
+  "wildShapeChallengeRating": "TD {cr}",
   "wildShapeKnownForms": "Bilinen biçimler: {count}/{max}",
   "wildShapeChooseForms": "Bilinen biçimlerini Özellikler sekmesindeki Vahşi Biçim'den seç.",
   "wildShapeAssume": "Bir biçime gir",
@@ -83,7 +83,7 @@
   "monsterSenseTruesight": "Gerçek Görüş",
   "monsterLanguages": "Diller",
   "monsterLanguagesNone": "Yok",
-  "monsterChallenge": "Zorluk Derecesi",
+  "monsterChallenge": "Tehlike Derecesi",
   "monsterChallengeValue": "{cr} (TP {xp}; UB +{pb})",
   "monsterTraits": "Özellikler",
   "monsterActions": "Eylemler",
@@ -2629,7 +2629,7 @@
   "@spellsAttack": {
     "description": "Spell attack banner stat label."
   },
-  "spellsSaveDC": "Kurtarma ZS",
+  "spellsSaveDC": "Kurtarma ZD",
   "@spellsSaveDC": {
     "description": "Save DC banner stat label."
   },

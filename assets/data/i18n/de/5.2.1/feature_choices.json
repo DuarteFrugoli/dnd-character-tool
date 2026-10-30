@@ -177,7 +177,7 @@
       },
       "distant_spell": {
         "name": "Fernzauber",
-        "description": "Verbrauche 1 Zaubereipunkt, um die Reichweite eines Zaubers von mindestens 5 Fuß zu verdoppeln oder seine Berührungsreichweite auf 30 Fuß zu erhöhen."
+        "description": "Verbrauche 1 Zaubereipunkt, um die Reichweite eines Zaubers von mindestens 1,5 Meter zu verdoppeln oder seine Berührungsreichweite auf 9 Meter zu erhöhen."
       },
       "empowered_spell": {
         "name": "Verstärkter Zauber",
@@ -370,7 +370,7 @@
     "giant_ancestries": {
       "cloud": {
         "name": "Wolkenschritt",
-        "description": "Teleportiere dich als Bonusaktion bis zu 30 Fuß weit."
+        "description": "Teleportiere dich als Bonusaktion bis zu 9 Meter weit."
       },
       "fire": {
         "name": "Feuerbrand",
@@ -779,7 +779,7 @@
       },
       "devils_sight": {
         "name": "Teufelssicht",
-        "description": "Du kannst innerhalb von 120 Fuß um dich in dämmrigem Licht und Dunkelheit, ob magisch oder gewöhnlich, normal sehen."
+        "description": "Du kannst innerhalb von 36 Metern um dich in dämmrigem Licht und Dunkelheit, ob magisch oder gewöhnlich, normal sehen."
       },
       "devouring_blade": {
         "name": "Verschlingende Klinge",
@@ -795,7 +795,7 @@
       },
       "eldritch_spear": {
         "name": "Andersweltlicher Speer",
-        "description": "Wähle einen deiner bekannten Hexenmeister-Zaubertricks, der Schaden verursacht und eine Reichweite von mindestens 10 Fuß hat. Wenn du ihn wirkst, erhöht sich seine Reichweite um eine Anzahl Fuß in Höhe des 30-Fachen deiner Hexenmeisterstufe."
+        "description": "Wähle einen deiner bekannten Hexenmeister-Zaubertricks, der Schaden verursacht und eine Reichweite von mindestens 3 Meter hat. Wenn du ihn wirkst, erhöht sich seine Reichweite um 9 Meter × deine Hexenmeisterstufe."
       },
       "fiendish_vigor": {
         "name": "Teuflische Lebenskraft",
@@ -803,7 +803,7 @@
       },
       "gaze_of_two_minds": {
         "name": "Blick zweier Geister",
-        "description": "Als Bonusaktion kannst du eine bereitwillige Kreatur berühren und bis zum Ende deines nächsten Zuges durch ihre Sinne wahrnehmen. Solange sie sich auf derselben Existenzebene wie du befindet, kannst du in folgenden Zügen jeweils eine Bonusaktion verwenden, um die Verbindung bis zum Ende deines nächsten Zuges aufrechtzuerhalten. Ohne diese Erneuerung endet sie.\n\nWährend du durch die Sinne der anderen Kreatur wahrnimmst, profitierst du von ihren besonderen Sinnen. Du kannst Zauber so wirken, als befändest du dich an deinem oder ihrem Platz, sofern ihr höchstens 60 Fuß voneinander entfernt seid."
+        "description": "Als Bonusaktion kannst du eine bereitwillige Kreatur berühren und bis zum Ende deines nächsten Zuges durch ihre Sinne wahrnehmen. Solange sie sich auf derselben Existenzebene wie du befindet, kannst du in folgenden Zügen jeweils eine Bonusaktion verwenden, um die Verbindung bis zum Ende deines nächsten Zuges aufrechtzuerhalten. Ohne diese Erneuerung endet sie.\n\nWährend du durch die Sinne der anderen Kreatur wahrnimmst, profitierst du von ihren besonderen Sinnen. Du kannst Zauber so wirken, als befändest du dich an deinem oder ihrem Platz, sofern ihr höchstens 18 Meter voneinander entfernt seid."
       },
       "gift_of_the_depths": {
         "name": "Gabe der Tiefen",
@@ -815,7 +815,7 @@
       },
       "investment_of_the_chain_master": {
         "name": "Macht des Kettenmeisters",
-        "description": "Wenn du Vertrauten finden wirkst, stärkst du den beschworenen Vertrauten mit deiner andersweltlichen Macht und gewährst ihm folgende Vorzüge.\n\nLuft oder Wasser. Der Vertraute erhält eine Flug- oder Schwimmbewegungsrate (deine Wahl) von 40 Fuß.\n\nSchneller Angriff. Als Bonusaktion kannst du dem Vertrauten befehlen, die Angriffsaktion auszuführen.\n\nNekrotischer oder gleißender Schaden. Wenn der Vertraute Wucht-, Stich- oder Hiebschaden verursacht, kannst du stattdessen nekrotischen oder gleißenden Schaden verursachen lassen.\n\nDein Rettungswurf-SG. Wenn der Vertraute eine Kreatur zu einem Rettungswurf zwingt, verwendet er deinen Zauberrettungswurf-SG.\n\nResistenz. Erleidet der Vertraute Schaden, kannst du ihm als Reaktion Resistenz gegen diesen Schaden verleihen."
+        "description": "Wenn du Vertrauten finden wirkst, stärkst du den beschworenen Vertrauten mit deiner andersweltlichen Macht und gewährst ihm folgende Vorzüge.\n\nLuft oder Wasser. Der Vertraute erhält eine Flug- oder Schwimmbewegungsrate (deine Wahl) von 12 Metern.\n\nSchneller Angriff. Als Bonusaktion kannst du dem Vertrauten befehlen, die Angriffsaktion auszuführen.\n\nNekrotischer oder gleißender Schaden. Wenn der Vertraute Wucht-, Stich- oder Hiebschaden verursacht, kannst du stattdessen nekrotischen oder gleißenden Schaden verursachen lassen.\n\nDein Rettungswurf-SG. Wenn der Vertraute eine Kreatur zu einem Rettungswurf zwingt, verwendet er deinen Zauberrettungswurf-SG.\n\nResistenz. Erleidet der Vertraute Schaden, kannst du ihm als Reaktion Resistenz gegen diesen Schaden verleihen."
       },
       "lessons_of_the_first_ones": {
         "name": "Lehren der Ersten",
@@ -847,7 +847,7 @@
       },
       "pact_of_the_blade": {
         "name": "Pakt der Klinge",
-        "description": "Als Bonusaktion kannst du eine Paktwaffe in deiner Hand beschwören – eine einfache oder Kriegsnahkampfwaffe deiner Wahl, mit der du einen Bund eingehst – oder dich mit einer berührten magischen Waffe verbinden. Du kannst dich nicht mit einer magischen Waffe verbinden, wenn eine andere Person auf sie eingestimmt oder ein anderer Hexenmeister mit ihr verbunden ist. Solange die Verbindung besteht, beherrschst du die Waffe und kannst sie als Zauberfokus verwenden.\n\nBei Angriffen mit der verbundenen Waffe kannst du deinen Charismamodifikator statt Stärke oder Geschicklichkeit für Angriffs- und Schadenswürfe verwenden. Du kannst die Waffe außerdem nekrotischen, psychischen oder gleißenden Schaden statt ihrer üblichen Schadensart verursachen lassen.\n\nDie Verbindung endet, wenn du die Bonusaktion dieses Merkmals erneut verwendest, wenn die Waffe mehr als 5 Fuß von dir entfernt bleibt, und zwar mindestens 1 Minute lang oder wenn du stirbst. Eine beschworene Waffe verschwindet mit dem Ende der Verbindung."
+        "description": "Als Bonusaktion kannst du eine Paktwaffe in deiner Hand beschwören – eine einfache oder Kriegsnahkampfwaffe deiner Wahl, mit der du einen Bund eingehst – oder dich mit einer berührten magischen Waffe verbinden. Du kannst dich nicht mit einer magischen Waffe verbinden, wenn eine andere Person auf sie eingestimmt oder ein anderer Hexenmeister mit ihr verbunden ist. Solange die Verbindung besteht, beherrschst du die Waffe und kannst sie als Zauberfokus verwenden.\n\nBei Angriffen mit der verbundenen Waffe kannst du deinen Charismamodifikator statt Stärke oder Geschicklichkeit für Angriffs- und Schadenswürfe verwenden. Du kannst die Waffe außerdem nekrotischen, psychischen oder gleißenden Schaden statt ihrer üblichen Schadensart verursachen lassen.\n\nDie Verbindung endet, wenn du die Bonusaktion dieses Merkmals erneut verwendest, wenn die Waffe mehr als 1,5 Meter von dir entfernt bleibt, und zwar mindestens 1 Minute lang oder wenn du stirbst. Eine beschworene Waffe verschwindet mit dem Ende der Verbindung."
       },
       "pact_of_the_chain": {
         "name": "Pakt der Kette",
@@ -859,7 +859,7 @@
       },
       "repelling_blast": {
         "name": "Abstoßender Strahl",
-        "description": "Wähle einen deiner bekannten Hexenmeister-Zaubertricks, der einen Angriffswurf erfordert. Wenn du damit eine große oder kleinere Kreatur triffst, kannst du sie bis zu 10 Fuß gerade von dir wegstoßen."
+        "description": "Wähle einen deiner bekannten Hexenmeister-Zaubertricks, der einen Angriffswurf erfordert. Wenn du damit eine große oder kleinere Kreatur triffst, kannst du sie bis zu 3 Meter gerade von dir wegstoßen."
       },
       "thirsting_blade": {
         "name": "Durstige Klinge",
@@ -875,7 +875,7 @@
       },
       "witch_sight": {
         "name": "Hexensicht",
-        "description": "Du erhältst Wahre Sicht mit einer Reichweite von 30 Fuß."
+        "description": "Du erhältst Wahre Sicht mit einer Reichweite von 9 Metern."
       }
     }
   },

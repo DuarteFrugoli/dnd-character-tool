@@ -177,7 +177,7 @@
       },
       "distant_spell": {
         "name": "Sort distant",
-        "description": "Dépensez 1 point de sorcellerie pour doubler la portée d'un sort d'au moins 5 pieds, ou porter sa portée de contact à 30 pieds."
+        "description": "Dépensez 1 point de sorcellerie pour doubler la portée d'un sort d'au moins 1,5 mètre, ou porter sa portée de contact à 9 mètres."
       },
       "empowered_spell": {
         "name": "Sort renforcé",
@@ -370,7 +370,7 @@
     "giant_ancestries": {
       "cloud": {
         "name": "Pas des nuages",
-        "description": "Téléportez-vous jusqu'à 30 pieds par une Action bonus."
+        "description": "Téléportez-vous jusqu'à 9 mètres par une Action bonus."
       },
       "fire": {
         "name": "Brûlure du feu",
@@ -779,7 +779,7 @@
       },
       "devils_sight": {
         "name": "Vision du diable",
-        "description": "Vous voyez normalement dans la lumière faible et les ténèbres, magiques ou non, à une distance de 120 pieds de vous."
+        "description": "Vous voyez normalement dans la lumière faible et les ténèbres, magiques ou non, à une distance de 36 mètres de vous."
       },
       "devouring_blade": {
         "name": "Lame dévorante",
@@ -795,7 +795,7 @@
       },
       "eldritch_spear": {
         "name": "Lance occulte",
-        "description": "Choisissez un de vos tours de magie d'occultiste connus qui inflige des dégâts et dont la portée est d'au moins 10 pieds. Quand vous le lancez, sa portée augmente d'un nombre de pieds égal à 30 fois votre niveau d'occultiste."
+        "description": "Choisissez un de vos tours de magie d'occultiste connus qui inflige des dégâts et dont la portée est d'au moins 3 mètres. Quand vous le lancez, sa portée augmente de 9 mètres × votre niveau d'occultiste."
       },
       "fiendish_vigor": {
         "name": "Vigueur fiélonne",
@@ -803,7 +803,7 @@
       },
       "gaze_of_two_minds": {
         "name": "Regard des deux esprits",
-        "description": "Par une Action bonus, vous pouvez toucher une créature consentante et percevoir le monde par ses sens jusqu'à la fin de votre prochain tour. Tant qu'elle se trouve sur le même plan d'existence que vous, vous pouvez utiliser une Action bonus lors des tours suivants pour maintenir ce lien jusqu'à la fin de votre prochain tour. Le lien prend fin si vous ne le maintenez pas ainsi.\n\nLorsque vous percevez par les sens de l'autre créature, vous bénéficiez de ses sens spéciaux et pouvez lancer des sorts comme si vous étiez dans votre espace ou dans le sien, à condition d'être à 60 pieds ou moins l'un de l'autre."
+        "description": "Par une Action bonus, vous pouvez toucher une créature consentante et percevoir le monde par ses sens jusqu'à la fin de votre prochain tour. Tant qu'elle se trouve sur le même plan d'existence que vous, vous pouvez utiliser une Action bonus lors des tours suivants pour maintenir ce lien jusqu'à la fin de votre prochain tour. Le lien prend fin si vous ne le maintenez pas ainsi.\n\nLorsque vous percevez par les sens de l'autre créature, vous bénéficiez de ses sens spéciaux et pouvez lancer des sorts comme si vous étiez dans votre espace ou dans le sien, à condition d'être à 18 mètres ou moins l'un de l'autre."
       },
       "gift_of_the_depths": {
         "name": "Don des profondeurs",
@@ -815,7 +815,7 @@
       },
       "investment_of_the_chain_master": {
         "name": "Investiture du maître de la chaîne",
-        "description": "Lorsque vous lancez Appel de familier, vous insufflez une partie de votre puissance occulte au familier invoqué et lui accordez les avantages suivants.\n\nAérien ou aquatique. Le familier gagne une Vitesse de vol ou de nage (à votre choix) de 40 pieds.\n\nAttaque rapide. Par une Action bonus, vous pouvez ordonner au familier d'effectuer l'action Attaquer.\n\nDégâts nécrotiques ou radiants. Chaque fois que le familier inflige des dégâts contondants, perforants ou tranchants, vous pouvez les remplacer par des dégâts nécrotiques ou radiants.\n\nVotre DD de sauvegarde. Si le familier oblige une créature à effectuer un jet de sauvegarde, il utilise le DD de sauvegarde de vos sorts.\n\nRésistance. Lorsque le familier subit des dégâts, vous pouvez utiliser une Réaction pour lui accorder la Résistance à ces dégâts."
+        "description": "Lorsque vous lancez Appel de familier, vous insufflez une partie de votre puissance occulte au familier invoqué et lui accordez les avantages suivants.\n\nAérien ou aquatique. Le familier gagne une Vitesse de vol ou de nage (à votre choix) de 12 mètres.\n\nAttaque rapide. Par une Action bonus, vous pouvez ordonner au familier d'effectuer l'action Attaquer.\n\nDégâts nécrotiques ou radiants. Chaque fois que le familier inflige des dégâts contondants, perforants ou tranchants, vous pouvez les remplacer par des dégâts nécrotiques ou radiants.\n\nVotre DD de sauvegarde. Si le familier oblige une créature à effectuer un jet de sauvegarde, il utilise le DD de sauvegarde de vos sorts.\n\nRésistance. Lorsque le familier subit des dégâts, vous pouvez utiliser une Réaction pour lui accorder la Résistance à ces dégâts."
       },
       "lessons_of_the_first_ones": {
         "name": "Leçons des Premiers",
@@ -847,7 +847,7 @@
       },
       "pact_of_the_blade": {
         "name": "Pacte de la lame",
-        "description": "Par une Action bonus, vous pouvez conjurer dans votre main une arme de pacte — une arme courante ou de guerre de corps à corps de votre choix avec laquelle vous vous liez — ou vous lier à une arme magique que vous touchez. Vous ne pouvez pas vous lier à une arme magique si quelqu'un d'autre y est harmonisé ou si un autre occultiste lui est lié. Tant que le lien persiste, vous maîtrisez l'arme et pouvez l'utiliser comme focaliseur de sort.\n\nQuand vous attaquez avec l'arme liée, vous pouvez utiliser votre modificateur de Charisme pour les jets d'attaque et de dégâts à la place de la Force ou de la Dextérité. Vous pouvez aussi lui faire infliger des dégâts nécrotiques, psychiques ou radiants à la place de son type de dégâts habituel.\n\nLe lien prend fin si vous utilisez de nouveau l'Action bonus de cette aptitude, si l'arme reste à plus de 5 pieds de vous pendant 1 minute ou davantage, ou si vous mourez. Une arme conjurée disparaît lorsque le lien prend fin."
+        "description": "Par une Action bonus, vous pouvez conjurer dans votre main une arme de pacte — une arme courante ou de guerre de corps à corps de votre choix avec laquelle vous vous liez — ou vous lier à une arme magique que vous touchez. Vous ne pouvez pas vous lier à une arme magique si quelqu'un d'autre y est harmonisé ou si un autre occultiste lui est lié. Tant que le lien persiste, vous maîtrisez l'arme et pouvez l'utiliser comme focaliseur de sort.\n\nQuand vous attaquez avec l'arme liée, vous pouvez utiliser votre modificateur de Charisme pour les jets d'attaque et de dégâts à la place de la Force ou de la Dextérité. Vous pouvez aussi lui faire infliger des dégâts nécrotiques, psychiques ou radiants à la place de son type de dégâts habituel.\n\nLe lien prend fin si vous utilisez de nouveau l'Action bonus de cette aptitude, si l'arme reste à plus de 1,5 mètre de vous pendant 1 minute ou davantage, ou si vous mourez. Une arme conjurée disparaît lorsque le lien prend fin."
       },
       "pact_of_the_chain": {
         "name": "Pacte de la chaîne",
@@ -859,7 +859,7 @@
       },
       "repelling_blast": {
         "name": "Décharge repoussante",
-        "description": "Choisissez un de vos tours de magie d'occultiste connus qui nécessite un jet d'attaque. Quand vous touchez avec lui une créature de taille G ou inférieure, vous pouvez la repousser jusqu'à 10 pieds directement loin de vous."
+        "description": "Choisissez un de vos tours de magie d'occultiste connus qui nécessite un jet d'attaque. Quand vous touchez avec lui une créature de taille G ou inférieure, vous pouvez la repousser jusqu'à 3 mètres directement loin de vous."
       },
       "thirsting_blade": {
         "name": "Lame assoiffée",
@@ -875,7 +875,7 @@
       },
       "witch_sight": {
         "name": "Vue de sorcière",
-        "description": "Vous disposez de la Vision véritable dans un rayon de 30 pieds."
+        "description": "Vous disposez de la Vision véritable dans un rayon de 9 mètres."
       }
     }
   },

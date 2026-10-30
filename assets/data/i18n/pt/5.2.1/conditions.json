@@ -44,7 +44,7 @@
     "description": "Você tem desvantagem nas jogadas de ataque e nos testes de habilidade."
   },
   "Prone": {
-    "name": "Prostrado",
+    "name": "Caído",
     "description": "Você pode rastejar ou gastar movimento igual à metade do seu deslocamento para se levantar e encerrar a condição; não pode se levantar se seu deslocamento for 0. Suas jogadas de ataque têm desvantagem. Jogadas de ataque contra você têm vantagem se o atacante estiver a até 1,5 metro e desvantagem se estiver mais longe."
   },
   "Restrained": {
@@ -57,6 +57,6 @@
   },
   "Unconscious": {
     "name": "Inconsciente",
-    "description": "Você está incapacitado e prostrado, larga o que estiver segurando e não percebe o que acontece ao seu redor. Seu deslocamento é 0, jogadas de ataque contra você têm vantagem e você falha automaticamente nos testes de resistência de Força e Destreza. Um acerto é crítico se o atacante estiver a até 1,5 metro de você. Você permanece prostrado depois que esta condição termina."
+    "description": "Você está incapacitado e caído, larga o que estiver segurando e não percebe o que acontece ao seu redor. Seu deslocamento é 0, jogadas de ataque contra você têm vantagem e você falha automaticamente nos testes de resistência de Força e Destreza. Um acerto é crítico se o atacante estiver a até 1,5 metro de você. Você permanece caído depois que esta condição termina."
   }
 }

@@ -30,7 +30,7 @@
     },
     "Fast Movement": {
       "name": "Mouvement rapide",
-      "description": "Votre vitesse augmente de 10 pieds lorsque vous ne portez pas d'armure lourde."
+      "description": "Votre vitesse augmente de 3 mètres lorsque vous ne portez pas d'armure lourde."
     },
     "Feral Instinct": {
       "name": "Instinct sauvage",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Mouvement sans armure",
-      "description": "Votre vitesse augmente lorsque vous ne portez pas d'armure ou ne brandissez pas de bouclier : +10 pieds au niveau de moine 2, +15 pieds au niveau 6, +20 pieds au niveau 10, +25 pieds au niveau 14 et +30 pieds au niveau 18."
+      "description": "Votre vitesse augmente lorsque vous ne portez pas d'armure ou ne brandissez pas de bouclier : +3 mètres au niveau de moine 2, +4,5 mètres au niveau 6, +6 mètres au niveau 10, +7,5 mètres au niveau 14 et +9 mètres au niveau 18."
     },
     "Monastic Tradition": {
       "name": "Tradition monastique",
@@ -394,7 +394,7 @@
     },
     "Blindsense": {
       "name": "Sens aveugle",
-      "description": "Si vous êtes capable d'entendre, vous connaissez l'emplacement de toute créature cachée ou invisible à moins de 10 pieds de vous."
+      "description": "Si vous êtes capable d'entendre, vous connaissez l'emplacement de toute créature cachée ou invisible à moins de 3 mètres de vous."
     },
     "Slippery Mind": {
       "name": "Esprit glissant",

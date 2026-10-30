@@ -1,8 +1,9 @@
 {
   "id": "srd_5_2_1",
+  "title": "System Reference Document 5.2.1",
   "rulesetId": "dnd_2024",
   "version": "5.2.1",
-  "status": "in_progress",
+  "status": "complete",
   "source": "https://media.dndbeyond.com/compendium-images/srd/5.2/SRD_CC_v5.2.1.pdf",
   "sourcePages": {
     "skills": 9,
@@ -19,9 +20,9 @@
     "magicItems": [209, 254],
     "animals": [343, 364]
   },
-  "completeCatalogs": ["backgrounds", "class_features", "classes", "conditions", "equipment", "feats", "languages", "magic_items", "race_traits", "races", "skills", "spells", "subclass_features", "subclasses", "tools"],
-  "pendingCatalogs": ["feature_choices", "feature_usages", "monsters"],
-  "partialCatalogs": {
+  "completeCatalogs": ["backgrounds", "class_features", "classes", "conditions", "equipment", "feats", "feature_choices", "feature_usages", "languages", "magic_items", "monsters", "race_traits", "races", "skills", "spells", "subclass_features", "subclasses", "tools"],
+  "pendingCatalogs": [],
+  "catalogScope": {
     "monsters": "Beasts up to CR 1, the Wild Shape forms. Other creatures will be imported for the tabletop."
   },
   "license": "CC-BY-4.0",

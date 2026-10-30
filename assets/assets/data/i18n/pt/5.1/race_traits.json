@@ -1,11 +1,11 @@
 {
   "Darkvision": {
     "name": "Visão no Escuro",
-    "description": "Acostumado à vida subterrânea, você tem visão superior em condições de escuridão e pouca luz. Você pode enxergar em pouca luz a até 18 m como se fosse luz plena, e na escuridão como se fosse pouca luz. Você não consegue distinguir cores na escuridão, apenas tons de cinza."
+    "description": "Acostumado à vida subterrânea, você tem visão superior em condições de escuridão e pouca luz. Você pode enxergar em pouca luz a até {{distance:60ft|short}} como se fosse luz plena, e na escuridão como se fosse pouca luz. Você não consegue distinguir cores na escuridão, apenas tons de cinza."
   },
   "Superior Darkvision": {
     "name": "Visão no Escuro Superior",
-    "description": "Sua visão no escuro tem um raio de 36 m."
+    "description": "Sua visão no escuro tem um raio de {{distance:120ft|short}}."
   },
   "Dwarven Resilience": {
     "name": "Resiliência Anã",
@@ -65,7 +65,7 @@
   },
   "Fleet of Foot": {
     "name": "Pés Velozes",
-    "description": "Seu deslocamento base de caminhada aumenta para 10,5 m."
+    "description": "Seu deslocamento base de caminhada aumenta para {{distance:35ft|short}}."
   },
   "Mask of the Wild": {
     "name": "Máscara da Natureza",

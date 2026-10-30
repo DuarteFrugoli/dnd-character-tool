@@ -4,11 +4,11 @@
     "actions": {
       "fist": {
         "name": "Faust",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 5 (1d4 + 3) Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 5 (1d4 + 3) Wuchtschaden."
       },
       "rock": {
         "name": "Felsbrocken",
-        "description": "Fernkampfangriffswurf: +5, Reichweite 7,5/15 Meter. Treffer: 10 (2d6 + 3) Wuchtschaden."
+        "description": "Fernkampfangriffswurf: +5, Reichweite {{distance:25/50ft}}. Treffer: 10 (2d6 + 3) Wuchtschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -21,13 +21,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +1, Reichweite 1,5 Meter. Treffer: 1 (1d4 - 1) Stichschaden."
+        "description": "Nahkampfangriffswurf: +1, Reichweite {{distance:5ft}}. Treffer: 1 (1d4 - 1) Stichschaden."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Pavian hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Pavians innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Der Pavian hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Pavians innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       }
     }
   },
@@ -36,7 +36,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 1 Stichschaden."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden."
       }
     }
   },
@@ -45,7 +45,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 1 Stichschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden."
       }
     }
   },
@@ -54,7 +54,7 @@
     "actions": {
       "rend": {
         "name": "Zerfetzen",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 5 (1d6 + 2) Hiebschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 5 (1d6 + 2) Hiebschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -67,13 +67,13 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 4 (1d4 + 2) Stichschaden oder 6 (1d8 + 2) Stichschaden, wenn das Ziel Blutend ist."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 4 (1d4 + 2) Stichschaden oder 6 (1d8 + 2) Stichschaden, wenn das Ziel Blutend ist."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Falke hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Falken innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Der Falke hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Falken innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       }
     }
   },
@@ -82,7 +82,7 @@
     "actions": {
       "gore": {
         "name": "Aufspießen",
-        "description": "Nahkampfangriffswurf: +3, Reichweite 1,5 Meter. Treffer: 4 (1d6 + 1) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur und hat sich das Wildschwein unmittelbar vor dem Treffer mindestens 6 Meter geradlinig auf sie zubewegt, erleidet das Ziel zusätzlich 3 (1d6) Stichschaden und erhält den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +3, Reichweite {{distance:5ft}}. Treffer: 4 (1d6 + 1) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur und hat sich das Wildschwein unmittelbar vor dem Treffer mindestens {{distance:20+ft}} geradlinig auf sie zubewegt, erleidet das Ziel zusätzlich 3 (1d6) Stichschaden und erhält den Zustand Liegend."
       }
     },
     "traits": {
@@ -97,11 +97,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 7 (1d8 + 3) Stichschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 7 (1d8 + 3) Stichschaden."
       },
       "claw": {
         "name": "Klaue",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 5 (1d4 + 3) Hiebschaden. Ist das Ziel eine große oder kleinere Kreatur, erhält es den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 5 (1d4 + 3) Hiebschaden. Ist das Ziel eine große oder kleinere Kreatur, erhält es den Zustand Liegend."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -114,7 +114,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 4 (1d4 + 2) Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 4 (1d4 + 2) Wuchtschaden."
       }
     }
   },
@@ -123,7 +123,7 @@
     "actions": {
       "scratch": {
         "name": "Kratzen",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 1 Hiebschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 1 Hiebschaden."
       }
     },
     "traits": {
@@ -138,11 +138,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 6 (1d8 + 2) Stichschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 6 (1d8 + 2) Stichschaden."
       },
       "constrict": {
         "name": "Umschlingen",
-        "description": "Stärkerettungswurf: SG 12, eine mittelgroße oder kleinere Kreatur, die die Schlange innerhalb von 1,5 Metern sehen kann. Misserfolg: 7 (3d4) Wuchtschaden, und das Ziel erhält den Zustand Gepackt (Entkommen SG 12)."
+        "description": "Stärkerettungswurf: SG 12, eine mittelgroße oder kleinere Kreatur, die die Schlange innerhalb von {{distance:5ft|dat}} sehen kann. Misserfolg: 7 (3d4) Wuchtschaden, und das Ziel erhält den Zustand Gepackt (Entkommen SG 12)."
       }
     }
   },
@@ -151,7 +151,7 @@
     "actions": {
       "claw": {
         "name": "Klaue",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 1 Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 1 Wuchtschaden."
       }
     },
     "traits": {
@@ -166,7 +166,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 6 (1d8 + 2) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Gepackt (Entkommen SG 12). Solange das Ziel gepackt ist, hat es den Zustand Festgesetzt."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 6 (1d8 + 2) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Gepackt (Entkommen SG 12). Solange das Ziel gepackt ist, hat es den Zustand Festgesetzt."
       }
     },
     "traits": {
@@ -181,7 +181,7 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 2 (1d4) Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 2 (1d4) Wuchtschaden."
       }
     },
     "traits": {
@@ -196,13 +196,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 8 (1d10 + 3) Stichschaden. Ist das Ziel eine große oder kleinere Kreatur, erhält es den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 8 (1d10 + 3) Stichschaden. Ist das Ziel eine große oder kleinere Kreatur, erhält es den Zustand Liegend."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Wolf hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Der Wolf hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       }
     }
   },
@@ -211,7 +211,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampfangriffswurf: +6, Reichweite 1,5 Meter. Treffer: 6 (1d4 + 4) Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +6, Reichweite {{distance:5ft}}. Treffer: 6 (1d4 + 4) Wuchtschaden."
       }
     }
   },
@@ -220,7 +220,7 @@
     "actions": {
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 4 (1d4 + 2) Hiebschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 4 (1d4 + 2) Hiebschaden."
       }
     }
   },
@@ -229,7 +229,7 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 6 (1d6 + 3) Wuchtschaden. Ist das Ziel eine große oder kleinere Kreatur und hat sich der Elch unmittelbar vor dem Treffer mindestens 6 Meter geradlinig auf sie zubewegt, erleidet das Ziel zusätzlich 3 (1d6) Wuchtschaden und erhält den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 6 (1d6 + 3) Wuchtschaden. Ist das Ziel eine große oder kleinere Kreatur und hat sich der Elch unmittelbar vor dem Treffer mindestens {{distance:20+ft}} geradlinig auf sie zubewegt, erleidet das Ziel zusätzlich 3 (1d6) Wuchtschaden und erhält den Zustand Liegend."
       }
     }
   },
@@ -238,7 +238,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +3, Reichweite 1,5 Meter. Treffer: 1 Stichschaden."
+        "description": "Nahkampfangriffswurf: +3, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -248,7 +248,7 @@
       },
       "standing_leap": {
         "name": "Sprung aus dem Stand",
-        "description": "Der Weitsprung des Frosches beträgt bis zu 3 Meter und sein Hochsprung bis zu 1,5 Meter, mit oder ohne Anlauf."
+        "description": "Der Weitsprung des Frosches beträgt bis zu {{distance:10ft}} und sein Hochsprung bis zu {{distance:5ft}}, mit oder ohne Anlauf."
       }
     }
   },
@@ -257,7 +257,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +3, Reichweite 1,5 Meter. Treffer: 6 (2d4 + 1) Stichschaden."
+        "description": "Nahkampfangriffswurf: +3, Reichweite {{distance:5ft}}. Treffer: 6 (2d4 + 1) Stichschaden."
       }
     }
   },
@@ -266,7 +266,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 6 (1d6 + 3) Stichschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 6 (1d6 + 3) Stichschaden."
       }
     }
   },
@@ -275,7 +275,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 4 (1d4 + 2) Stichschaden, und das Ziel erhält bis zum Beginn des nächsten Zuges des Hundertfüßers den Zustand Vergiftet."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 4 (1d4 + 2) Stichschaden, und das Ziel erhält bis zum Beginn des nächsten Zuges des Hundertfüßers den Zustand Vergiftet."
       }
     }
   },
@@ -284,7 +284,7 @@
     "actions": {
       "claw": {
         "name": "Klaue",
-        "description": "Nahkampfangriffswurf: +3, Reichweite 1,5 Meter. Treffer: 4 (1d6 + 1) Wuchtschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es durch eine von zwei Scheren den Zustand Gepackt (Entkommen SG 11)."
+        "description": "Nahkampfangriffswurf: +3, Reichweite {{distance:5ft}}. Treffer: 4 (1d6 + 1) Wuchtschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es durch eine von zwei Scheren den Zustand Gepackt (Entkommen SG 11)."
       }
     },
     "traits": {
@@ -299,13 +299,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +1, Reichweite 1,5 Meter. Treffer: 1 Feuerschaden."
+        "description": "Nahkampfangriffswurf: +1, Reichweite {{distance:5ft}}. Treffer: 1 Feuerschaden."
       }
     },
     "traits": {
       "illumination": {
         "name": "Leuchten",
-        "description": "Der Käfer spendet in einem Radius von 3 Metern helles Licht und weitere 3 Meter weit dämmriges Licht."
+        "description": "Der Käfer spendet in einem Radius von {{distance:10ft|dat}} helles Licht und weitere {{distance:10ft}} weit dämmriges Licht."
       }
     }
   },
@@ -314,11 +314,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +3, Reichweite 1,5 Meter. Treffer: 5 (1d6 + 2) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Gepackt (Entkommen SG 11)."
+        "description": "Nahkampfangriffswurf: +3, Reichweite {{distance:5ft}}. Treffer: 5 (1d6 + 2) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Gepackt (Entkommen SG 11)."
       },
       "swallow": {
         "name": "Verschlucken",
-        "description": "Der Frosch verschluckt ein kleines oder kleineres Ziel, das er gepackt hält. Solange das Ziel verschluckt ist, ist es nicht gepackt, hat aber die Zustände Geblendet und Festgesetzt sowie vollständige Deckung gegen Angriffe und andere Effekte von außerhalb des Frosches. Solange der Frosch das Ziel verschluckt hat, kann er Biss nicht einsetzen, und stirbt der Frosch, ist das verschluckte Ziel nicht mehr festgesetzt und kann mit 1,5 Meter Bewegung aus dem Kadaver entkommen, wobei es mit dem Zustand Liegend herauskommt. Am Ende des nächsten Zuges des Frosches erleidet das verschluckte Ziel 5 (2d4) Säureschaden. Tötet dieser Schaden es nicht, würgt der Frosch es wieder hervor, sodass es mit dem Zustand Liegend herauskommt."
+        "description": "Der Frosch verschluckt ein kleines oder kleineres Ziel, das er gepackt hält. Solange das Ziel verschluckt ist, ist es nicht gepackt, hat aber die Zustände Geblendet und Festgesetzt sowie vollständige Deckung gegen Angriffe und andere Effekte von außerhalb des Frosches. Solange der Frosch das Ziel verschluckt hat, kann er Biss nicht einsetzen, und stirbt der Frosch, ist das verschluckte Ziel nicht mehr festgesetzt und kann mit {{distance:5ft}} Bewegung aus dem Kadaver entkommen, wobei es mit dem Zustand Liegend herauskommt. Am Ende des nächsten Zuges des Frosches erleidet das verschluckte Ziel 5 (2d4) Säureschaden. Tötet dieser Schaden es nicht, würgt der Frosch es wieder hervor, sodass es mit dem Zustand Liegend herauskommt."
       }
     },
     "traits": {
@@ -328,7 +328,7 @@
       },
       "standing_leap": {
         "name": "Sprung aus dem Stand",
-        "description": "Der Weitsprung des Frosches beträgt bis zu 6 Meter und sein Hochsprung bis zu 3 Meter, mit oder ohne Anlauf."
+        "description": "Der Weitsprung des Frosches beträgt bis zu {{distance:20ft}} und sein Hochsprung bis zu {{distance:10ft}}, mit oder ohne Anlauf."
       }
     }
   },
@@ -337,7 +337,7 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 6 (1d6 + 3) Wuchtschaden. Ist das Ziel eine große oder kleinere Kreatur und hat sich die Ziege unmittelbar vor dem Treffer mindestens 6 Meter geradlinig auf sie zubewegt, erleidet das Ziel zusätzlich 5 (2d4) Wuchtschaden und erhält den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 6 (1d6 + 3) Wuchtschaden. Ist das Ziel eine große oder kleinere Kreatur und hat sich die Ziege unmittelbar vor dem Treffer mindestens {{distance:20+ft}} geradlinig auf sie zubewegt, erleidet das Ziel zusätzlich 5 (2d4) Wuchtschaden und erhält den Zustand Liegend."
       }
     }
   },
@@ -346,7 +346,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 10 (2d6 + 3) Stichschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 10 (2d6 + 3) Stichschaden."
       }
     },
     "bonusActions": {
@@ -361,7 +361,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 6 (1d8 + 2) Stichschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 6 (1d8 + 2) Stichschaden."
       }
     },
     "traits": {
@@ -376,7 +376,7 @@
     "actions": {
       "tentacles": {
         "name": "Tentakel",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 3 Meter. Treffer: 10 (2d6 + 3) Wuchtschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es durch alle acht Tentakel den Zustand Gepackt (Entkommen SG 13). Solange das Ziel gepackt ist, hat es den Zustand Festgesetzt."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:10ft}}. Treffer: 10 (2d6 + 3) Wuchtschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es durch alle acht Tentakel den Zustand Gepackt (Entkommen SG 13). Solange das Ziel gepackt ist, hat es den Zustand Festgesetzt."
       }
     },
     "traits": {
@@ -388,7 +388,7 @@
     "reactions": {
       "ink_cloud": {
         "name": "Tintenwolke",
-        "description": "Auslöser: Der Krake erleidet unter Wasser Schaden. Reaktion: Der Krake stößt Tinte aus, die einen Würfel mit 3 Meter Kantenlänge mit ihm im Zentrum füllt, und bewegt sich bis zu seiner Schwimmbewegungsrate. Der Würfel ist 1 Minute lang stark verschleiert oder bis eine starke Strömung oder ein ähnlicher Effekt die Tinte zerstreut."
+        "description": "Auslöser: Der Krake erleidet unter Wasser Schaden. Reaktion: Der Krake stößt Tinte aus, die einen Würfel mit {{distance:10ft}} Kantenlänge mit ihm im Zentrum füllt, und bewegt sich bis zu seiner Schwimmbewegungsrate. Der Würfel ist 1 Minute lang stark verschleiert oder bis eine starke Strömung oder ein ähnlicher Effekt die Tinte zerstreut."
       }
     }
   },
@@ -397,13 +397,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 5 (1d4 + 3) Stichschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 5 (1d4 + 3) Stichschaden."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Die Ratte hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter der Ratte innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Die Ratte hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter der Ratte innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       }
     }
   },
@@ -412,7 +412,7 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 9 (2d6 + 2) Wuchtschaden oder 11 (2d8 + 2) Wuchtschaden, wenn sich das Seepferdchen unmittelbar vor dem Treffer mindestens 6 Meter geradlinig auf das Ziel zubewegt hat."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 9 (2d6 + 2) Wuchtschaden oder 11 (2d8 + 2) Wuchtschaden, wenn sich das Seepferdchen unmittelbar vor dem Treffer mindestens {{distance:20+ft}} geradlinig auf das Ziel zubewegt hat."
       }
     },
     "traits": {
@@ -433,11 +433,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 7 (1d8 + 3) Stichschaden plus 7 (2d6) Giftschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 7 (1d8 + 3) Stichschaden plus 7 (2d6) Giftschaden."
       },
       "web": {
         "name": "Netz",
-        "description": "Geschicklichkeitsrettungswurf: SG 13, eine Kreatur, die die Spinne innerhalb von 18 Metern sehen kann. Misserfolg: Das Ziel hat den Zustand Festgesetzt, bis das Netz zerstört wird (RK 10; TP 5; Verwundbarkeit gegen Feuerschaden; Immunität gegen Gift- und psychischen Schaden)."
+        "description": "Geschicklichkeitsrettungswurf: SG 13, eine Kreatur, die die Spinne innerhalb von {{distance:60ft|dat}} sehen kann. Misserfolg: Das Ziel hat den Zustand Festgesetzt, bis das Netz zerstört wird (RK 10; TP 5; Verwundbarkeit gegen Feuerschaden; Immunität gegen Gift- und psychischen Schaden)."
       }
     },
     "traits": {
@@ -456,11 +456,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 5 (1d6 + 2) Stichschaden plus 5 (2d4) Giftschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Gepackt (Entkommen SG 12)."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 5 (1d6 + 2) Stichschaden plus 5 (2d4) Giftschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Gepackt (Entkommen SG 12)."
       },
       "swallow": {
         "name": "Verschlucken",
-        "description": "Die Kröte verschluckt ein mittelgroßes oder kleineres Ziel, das sie gepackt hält. Solange das Ziel verschluckt ist, ist es nicht gepackt, hat aber die Zustände Geblendet und Festgesetzt sowie vollständige Deckung gegen Angriffe und andere Effekte von außerhalb der Kröte. Außerdem erleidet das Ziel am Ende jedes Zuges der Kröte 10 (3d6) Säureschaden. Die Kröte kann jeweils nur ein Ziel verschluckt haben und kann Biss nicht einsetzen, solange sie ein verschlucktes Ziel hat. Stirbt die Kröte, ist eine verschluckte Kreatur nicht mehr festgesetzt und kann mit 1,5 Meter Bewegung aus dem Kadaver entkommen, wobei sie mit dem Zustand Liegend herauskommt."
+        "description": "Die Kröte verschluckt ein mittelgroßes oder kleineres Ziel, das sie gepackt hält. Solange das Ziel verschluckt ist, ist es nicht gepackt, hat aber die Zustände Geblendet und Festgesetzt sowie vollständige Deckung gegen Angriffe und andere Effekte von außerhalb der Kröte. Außerdem erleidet das Ziel am Ende jedes Zuges der Kröte 10 (3d6) Säureschaden. Die Kröte kann jeweils nur ein Ziel verschluckt haben und kann Biss nicht einsetzen, solange sie ein verschlucktes Ziel hat. Stirbt die Kröte, ist eine verschluckte Kreatur nicht mehr festgesetzt und kann mit {{distance:5ft}} Bewegung aus dem Kadaver entkommen, wobei sie mit dem Zustand Liegend herauskommt."
       }
     },
     "traits": {
@@ -470,7 +470,7 @@
       },
       "standing_leap": {
         "name": "Sprung aus dem Stand",
-        "description": "Der Weitsprung der Kröte beträgt bis zu 6 Meter und ihr Hochsprung bis zu 3 Meter, mit oder ohne Anlauf."
+        "description": "Der Weitsprung der Kröte beträgt bis zu {{distance:20ft}} und ihr Hochsprung bis zu {{distance:10ft}}, mit oder ohne Anlauf."
       }
     }
   },
@@ -479,7 +479,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +6, Reichweite 3 Meter. Treffer: 6 (1d4 + 4) Stichschaden plus 4 (1d8) Giftschaden."
+        "description": "Nahkampfangriffswurf: +6, Reichweite {{distance:10ft}}. Treffer: 6 (1d4 + 4) Stichschaden plus 4 (1d8) Giftschaden."
       }
     }
   },
@@ -488,7 +488,7 @@
     "actions": {
       "sting": {
         "name": "Stachel",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 5 (1d6 + 2) Stichschaden plus 5 (2d4) Giftschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 5 (1d6 + 2) Stichschaden plus 5 (2d4) Giftschaden."
       }
     },
     "traits": {
@@ -503,7 +503,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 5 (1d4 + 3) Stichschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 5 (1d4 + 3) Stichschaden."
       }
     }
   },
@@ -512,7 +512,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 5 (1d4 + 3) Stichschaden plus 5 (2d4) Giftschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 5 (1d4 + 3) Stichschaden plus 5 (2d4) Giftschaden."
       }
     },
     "traits": {
@@ -527,7 +527,7 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 1 Wuchtschaden oder 2 (1d4) Wuchtschaden, wenn sich die Ziege unmittelbar vor dem Treffer mindestens 6 Meter geradlinig auf das Ziel zubewegt hat."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 1 Wuchtschaden oder 2 (1d4) Wuchtschaden, wenn sich die Ziege unmittelbar vor dem Treffer mindestens {{distance:20+ft}} geradlinig auf das Ziel zubewegt hat."
       }
     }
   },
@@ -536,7 +536,7 @@
     "actions": {
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 1 Hiebschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 1 Hiebschaden."
       }
     }
   },
@@ -545,13 +545,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 3 (1d6) Stichschaden."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 3 (1d6) Stichschaden."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Die Hyäne hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter der Hyäne innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Die Hyäne hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter der Hyäne innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       }
     }
   },
@@ -560,7 +560,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +1, Reichweite 1,5 Meter. Treffer: 1 (1d4 - 1) Stichschaden."
+        "description": "Nahkampfangriffswurf: +1, Reichweite {{distance:5ft}}. Treffer: 1 (1d4 - 1) Stichschaden."
       }
     }
   },
@@ -569,7 +569,7 @@
     "actions": {
       "rend": {
         "name": "Zerfetzen",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 7 (1d8 + 3) Hiebschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 7 (1d8 + 3) Hiebschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -577,17 +577,17 @@
       },
       "roar": {
         "name": "Brüllen",
-        "description": "Weisheitsrettungswurf: SG 11, eine Kreatur innerhalb von 4,5 Metern. Misserfolg: Das Ziel hat bis zum Beginn des nächsten Zuges des Löwen den Zustand Verängstigt."
+        "description": "Weisheitsrettungswurf: SG 11, eine Kreatur innerhalb von {{distance:15ft|dat}}. Misserfolg: Das Ziel hat bis zum Beginn des nächsten Zuges des Löwen den Zustand Verängstigt."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Löwe hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Löwen innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Der Löwe hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Löwen innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       },
       "running_leap": {
         "name": "Sprung mit Anlauf",
-        "description": "Mit 3 Meter Anlauf kann der Löwe einen Weitsprung von bis zu 7,5 Meter ausführen."
+        "description": "Mit {{distance:10ft}} Anlauf kann der Löwe einen Weitsprung von bis zu {{distance:25ft}} ausführen."
       }
     }
   },
@@ -596,7 +596,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 1 Stichschaden."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -611,7 +611,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +3, Reichweite 1,5 Meter. Treffer: 4 (1d6 + 1) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +3, Reichweite {{distance:5ft}}. Treffer: 4 (1d6 + 1) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Liegend."
       }
     }
   },
@@ -620,7 +620,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 4 (1d4 + 2) Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 4 (1d4 + 2) Wuchtschaden."
       }
     },
     "traits": {
@@ -635,13 +635,13 @@
     "actions": {
       "tentacles": {
         "name": "Tentakel",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 1 Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 1 Wuchtschaden."
       }
     },
     "traits": {
       "compression": {
         "name": "Zusammenpressen",
-        "description": "Der Krake kann sich durch einen Zwischenraum bewegen, der nur 2,5 Zentimeter breit ist, ohne dafür zusätzliche Bewegung aufzuwenden."
+        "description": "Der Krake kann sich durch einen Zwischenraum bewegen, der nur {{distance:1in}} breit ist, ohne dafür zusätzliche Bewegung aufzuwenden."
       },
       "water_breathing": {
         "name": "Wasseratmung",
@@ -651,7 +651,7 @@
     "reactions": {
       "ink_cloud": {
         "name": "Tintenwolke",
-        "description": "Auslöser: Eine Kreatur beendet ihren Zug innerhalb von 1,5 Metern um den Kraken, während dieser unter Wasser ist. Reaktion: Der Krake stößt Tinte aus, die einen Würfel mit 1,5 Meter Kantenlänge mit ihm im Zentrum füllt, und bewegt sich bis zu seiner Schwimmbewegungsrate. Der Würfel ist 1 Minute lang stark verschleiert oder bis eine starke Strömung oder ein ähnlicher Effekt die Tinte zerstreut."
+        "description": "Auslöser: Eine Kreatur beendet ihren Zug innerhalb von {{distance:5ft|dat}} um den Kraken, während dieser unter Wasser ist. Reaktion: Der Krake stößt Tinte aus, die einen Würfel mit {{distance:5ft}} Kantenlänge mit ihm im Zentrum füllt, und bewegt sich bis zu seiner Schwimmbewegungsrate. Der Würfel ist 1 Minute lang stark verschleiert oder bis eine starke Strömung oder ein ähnlicher Effekt die Tinte zerstreut."
       }
     }
   },
@@ -660,7 +660,7 @@
     "actions": {
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampfangriffswurf: +3, Reichweite 1,5 Meter. Treffer: 1 Hiebschaden."
+        "description": "Nahkampfangriffswurf: +3, Reichweite {{distance:5ft}}. Treffer: 1 Hiebschaden."
       }
     },
     "traits": {
@@ -675,7 +675,7 @@
     "actions": {
       "rend": {
         "name": "Zerfetzen",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 6 (1d6 + 3) Hiebschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 6 (1d6 + 3) Hiebschaden."
       }
     },
     "bonusActions": {
@@ -690,7 +690,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5 (mit Vorteil, wenn das Ziel nicht alle seine Trefferpunkte hat), Reichweite 1,5 Meter. Treffer: 1 Stichschaden."
+        "description": "Nahkampfangriffswurf: +5 (mit Vorteil, wenn das Ziel nicht alle seine Trefferpunkte hat), Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -705,7 +705,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 4 (1d4 + 2) Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 4 (1d4 + 2) Wuchtschaden."
       }
     }
   },
@@ -714,7 +714,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 6 (1d8 + 2) Stichschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 6 (1d8 + 2) Stichschaden."
       }
     },
     "traits": {
@@ -729,7 +729,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 1 Stichschaden."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -744,7 +744,7 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 1 Stichschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -759,13 +759,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 7 (2d4 + 2) Stichschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 7 (2d4 + 2) Stichschaden."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Hai hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Hais innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Der Hai hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Hais innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       },
       "water_breathing": {
         "name": "Wasseratmung",
@@ -778,7 +778,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 7 (1d8 + 3) Wuchtschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 7 (1d8 + 3) Wuchtschaden."
       }
     }
   },
@@ -787,7 +787,7 @@
     "actions": {
       "sting": {
         "name": "Stachel",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 1 Stichschaden plus 3 (1d6) Giftschaden."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden plus 3 (1d6) Giftschaden."
       }
     }
   },
@@ -811,7 +811,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 1 Stichschaden plus 2 (1d4) Giftschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden plus 2 (1d4) Giftschaden."
       }
     },
     "traits": {
@@ -830,7 +830,7 @@
     "actions": {
       "bites": {
         "name": "Bisse",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 5 (2d4) Stichschaden oder 2 (1d4) Stichschaden, wenn der Schwarm Blutend ist."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 5 (2d4) Stichschaden oder 2 (1d4) Stichschaden, wenn der Schwarm Blutend ist."
       }
     },
     "traits": {
@@ -845,7 +845,7 @@
     "actions": {
       "bites": {
         "name": "Bisse",
-        "description": "Nahkampfangriffswurf: +3, Reichweite 1,5 Meter. Treffer: 6 (2d4 + 1) Giftschaden oder 3 (1d4 + 1) Giftschaden, wenn der Schwarm Blutend ist."
+        "description": "Nahkampfangriffswurf: +3, Reichweite {{distance:5ft}}. Treffer: 6 (2d4 + 1) Giftschaden oder 3 (1d4 + 1) Giftschaden, wenn der Schwarm Blutend ist."
       }
     },
     "traits": {
@@ -864,7 +864,7 @@
     "actions": {
       "bites": {
         "name": "Bisse",
-        "description": "Nahkampfangriffswurf: +5 (mit Vorteil, wenn das Ziel nicht alle seine Trefferpunkte hat), Reichweite 1,5 Meter. Treffer: 8 (2d4 + 3) Stichschaden oder 5 (1d4 + 3) Stichschaden, wenn der Schwarm Blutend ist."
+        "description": "Nahkampfangriffswurf: +5 (mit Vorteil, wenn das Ziel nicht alle seine Trefferpunkte hat), Reichweite {{distance:5ft}}. Treffer: 8 (2d4 + 3) Stichschaden oder 5 (1d4 + 3) Stichschaden, wenn der Schwarm Blutend ist."
       }
     },
     "traits": {
@@ -883,7 +883,7 @@
     "actions": {
       "bites": {
         "name": "Bisse",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 5 (2d4) Stichschaden oder 2 (1d4) Stichschaden, wenn der Schwarm Blutend ist."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 5 (2d4) Stichschaden oder 2 (1d4) Stichschaden, wenn der Schwarm Blutend ist."
       }
     },
     "traits": {
@@ -898,7 +898,7 @@
     "actions": {
       "beaks": {
         "name": "Schnäbel",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 5 (1d6 + 2) Stichschaden oder 2 (1d4) Stichschaden, wenn der Schwarm Blutend ist."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 5 (1d6 + 2) Stichschaden oder 2 (1d4) Stichschaden, wenn der Schwarm Blutend ist."
       },
       "cacophony": {
         "name": "Kakophonie",
@@ -917,7 +917,7 @@
     "actions": {
       "rend": {
         "name": "Zerfetzen",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 10 (2d6 + 3) Hiebschaden. Ist das Ziel eine große oder kleinere Kreatur, erhält es den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 10 (2d6 + 3) Hiebschaden. Ist das Ziel eine große oder kleinere Kreatur, erhält es den Zustand Liegend."
       }
     },
     "bonusActions": {
@@ -932,7 +932,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 4 (1d4 + 2) Stichschaden plus 3 (1d6) Giftschaden."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 4 (1d4 + 2) Stichschaden plus 3 (1d6) Giftschaden."
       }
     }
   },
@@ -941,13 +941,13 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampfangriffswurf: +2, Reichweite 1,5 Meter. Treffer: 2 (1d4) Stichschaden."
+        "description": "Nahkampfangriffswurf: +2, Reichweite {{distance:5ft}}. Treffer: 2 (1d4) Stichschaden."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Geier hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Geiers innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Der Geier hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Geiers innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       }
     }
   },
@@ -956,7 +956,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampfangriffswurf: +6, Reichweite 1,5 Meter. Treffer: 9 (2d4 + 4) Wuchtschaden. Ist das Ziel eine große oder kleinere Kreatur und hat sich das Pferd unmittelbar vor dem Treffer mindestens 6 Meter geradlinig auf sie zubewegt, erleidet das Ziel zusätzlich 5 (2d4) Wuchtschaden und erhält den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +6, Reichweite {{distance:5ft}}. Treffer: 9 (2d4 + 4) Wuchtschaden. Ist das Ziel eine große oder kleinere Kreatur und hat sich das Pferd unmittelbar vor dem Treffer mindestens {{distance:20+ft}} geradlinig auf sie zubewegt, erleidet das Ziel zusätzlich 5 (2d4) Wuchtschaden und erhält den Zustand Liegend."
       }
     }
   },
@@ -965,7 +965,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +5, Reichweite 1,5 Meter. Treffer: 1 Stichschaden."
+        "description": "Nahkampfangriffswurf: +5, Reichweite {{distance:5ft}}. Treffer: 1 Stichschaden."
       }
     }
   },
@@ -974,13 +974,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampfangriffswurf: +4, Reichweite 1,5 Meter. Treffer: 5 (1d6 + 2) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Liegend."
+        "description": "Nahkampfangriffswurf: +4, Reichweite {{distance:5ft}}. Treffer: 5 (1d6 + 2) Stichschaden. Ist das Ziel eine mittelgroße oder kleinere Kreatur, erhält es den Zustand Liegend."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Wolf hat Vorteil bei Angriffswürfen gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
+        "description": "Der Wolf hat Vorteil bei Angriffswürfen gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht den Zustand Handlungsunfähig hat."
       }
     }
   }

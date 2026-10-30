@@ -19,7 +19,7 @@
       },
       "feinting_attack": {
         "name": "Attacco con finta",
-        "description": "Spendi un'azione bonus e un dado superiorità per fintare contro una creatura entro 1,5 metri. Hai vantaggio al tuo prossimo attacco contro di esso in questo turno e, se quell'attacco va a segno, aggiungi il dado superiorità al danno."
+        "description": "Spendi un'azione bonus e un dado superiorità per fintare contro una creatura entro {{distance:5ft}}. Hai vantaggio al tuo prossimo attacco contro di esso in questo turno e, se quell'attacco va a segno, aggiungi il dado superiorità al danno."
       },
       "goading_attack": {
         "name": "Attacco pungente",
@@ -27,7 +27,7 @@
       },
       "lunging_attack": {
         "name": "Attacco in affondo",
-        "description": "Quando effettui un attacco con un'arma da mischia, spendi un dado superiorità per aumentare la tua portata di 1,5 metri per quell'attacco. Se l'attacco va a segno, sommare il dado superiorità al danno."
+        "description": "Quando effettui un attacco con un'arma da mischia, spendi un dado superiorità per aumentare la tua portata di {{distance:5ft}} per quell'attacco. Se l'attacco va a segno, sommare il dado superiorità al danno."
       },
       "maneuvering_attack": {
         "name": "Attacco di manovra",
@@ -47,7 +47,7 @@
       },
       "pushing_attack": {
         "name": "Attacco spingente",
-        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Se il bersaglio è Grande o più piccolo, deve effettuare un tiro salvezza sulla Forza o essere spinto fino a 4,5 metri lontano da te."
+        "description": "Quando colpisci con un attacco con arma, spendi un dado superiorità e aggiungilo al danno. Se il bersaglio è Grande o più piccolo, deve effettuare un tiro salvezza sulla Forza o essere spinto fino a {{distance:15ft}} lontano da te."
       },
       "rally": {
         "name": "Rincuorare",
@@ -59,7 +59,7 @@
       },
       "sweeping_attack": {
         "name": "Attacco devastante",
-        "description": "Quando colpisci con un attacco con arma da mischia, spendi un dado superiorità per danneggiare un'altra creatura entro 1,5 metri dal bersaglio originale e alla tua portata. Se il tiro per colpire originale dovesse colpire la seconda creatura, questa subirà danni pari al dado superiorità."
+        "description": "Quando colpisci con un attacco con arma da mischia, spendi un dado superiorità per danneggiare un'altra creatura entro {{distance:5ft}} dal bersaglio originale e alla tua portata. Se il tiro per colpire originale dovesse colpire la seconda creatura, questa subirà danni pari al dado superiorità."
       },
       "trip_attack": {
         "name": "Attacco in viaggio",
@@ -85,7 +85,7 @@
       },
       "protection": {
         "name": "Protezione",
-        "description": "Quando una creatura attacca un bersaglio diverso da te entro 1,5 metri, puoi usare la tua reazione per imporre svantaggio al tiro per colpire. Devi impugnare uno scudo."
+        "description": "Quando una creatura attacca un bersaglio diverso da te entro {{distance:5ft}}, puoi usare la tua reazione per imporre svantaggio al tiro per colpire. Devi impugnare uno scudo."
       },
       "two_weapon_fighting": {
         "name": "Combattimento con due armi",
@@ -107,7 +107,7 @@
       },
       "protection": {
         "name": "Protezione",
-        "description": "Quando una creatura attacca un bersaglio diverso da te entro 1,5 metri, puoi usare la tua reazione per imporre svantaggio al tiro per colpire. Devi impugnare uno scudo."
+        "description": "Quando una creatura attacca un bersaglio diverso da te entro {{distance:5ft}}, puoi usare la tua reazione per imporre svantaggio al tiro per colpire. Devi impugnare uno scudo."
       }
     },
     "fighting_styles_ranger": {
@@ -135,7 +135,7 @@
       },
       "distant_spell": {
         "name": "Incantesimo lontano",
-        "description": "Spendi 1 punto stregoneria per raddoppiare la portata di un incantesimo se ha una portata di 1,5 metri o superiore. Se l'incantesimo ha una portata di contatto, la sua portata diventa 9 metri."
+        "description": "Spendi 1 punto stregoneria per raddoppiare la portata di un incantesimo se ha una portata di {{distance:5ft}} o superiore. Se l'incantesimo ha una portata di contatto, la sua portata diventa {{distance:30ft}}."
       },
       "empowered_spell": {
         "name": "Incantesimo Potenziato",
@@ -438,7 +438,7 @@
                 },
                 "whirlwind_attack": {
                   "name": "Attacco vorticoso",
-                  "description": "Usa la tua azione per effettuare attacchi in mischia contro un qualsiasi numero di creature entro 1,5 metri da te."
+                  "description": "Usa la tua azione per effettuare attacchi in mischia contro un qualsiasi numero di creature entro {{distance:5ft}} da te."
                 }
               }
             }

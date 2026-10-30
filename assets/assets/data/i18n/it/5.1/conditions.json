@@ -34,7 +34,7 @@
   },
   "Paralyzed": {
     "name": "Paralizzato",
-    "description": "Una creatura paralizzata è incapacitata e non può muoversi né parlare. Fallisce automaticamente i tiri salvezza su Forza e Destrezza. I tiri per colpire contro la creatura hanno vantaggio. Qualsiasi attacco che colpisca la creatura è un colpo critico se l'attaccante si trova entro 1,5 metri da essa."
+    "description": "Una creatura paralizzata è incapacitata e non può muoversi né parlare. Fallisce automaticamente i tiri salvezza su Forza e Destrezza. I tiri per colpire contro la creatura hanno vantaggio. Qualsiasi attacco che colpisca la creatura è un colpo critico se l'attaccante si trova entro {{distance:5ft}} da essa."
   },
   "Petrified": {
     "name": "Pietrificato",
@@ -46,7 +46,7 @@
   },
   "Prone": {
     "name": "Prono",
-    "description": "Una creatura prona può muoversi soltanto strisciando, a meno che non si rialzi ponendo fine alla condizione. La creatura ha svantaggio ai tiri per colpire. I tiri per colpire contro di essa hanno vantaggio se l'attaccante si trova entro 1,5 metri dalla creatura; altrimenti hanno svantaggio."
+    "description": "Una creatura prona può muoversi soltanto strisciando, a meno che non si rialzi ponendo fine alla condizione. La creatura ha svantaggio ai tiri per colpire. I tiri per colpire contro di essa hanno vantaggio se l'attaccante si trova entro {{distance:5ft}} dalla creatura; altrimenti hanno svantaggio."
   },
   "Restrained": {
     "name": "Trattenuto",
@@ -58,6 +58,6 @@
   },
   "Unconscious": {
     "name": "Privo di sensi",
-    "description": "Una creatura priva di sensi è incapacitata, non può muoversi né parlare e non è consapevole di ciò che la circonda. Lascia cadere qualsiasi oggetto che sta impugnando e cade a terra prona. Fallisce automaticamente i tiri salvezza su Forza e Destrezza. I tiri per colpire contro la creatura hanno vantaggio. Qualsiasi attacco che colpisca la creatura è un colpo critico se l'attaccante si trova entro 1,5 metri da essa."
+    "description": "Una creatura priva di sensi è incapacitata, non può muoversi né parlare e non è consapevole di ciò che la circonda. Lascia cadere qualsiasi oggetto che sta impugnando e cade a terra prona. Fallisce automaticamente i tiri salvezza su Forza e Destrezza. I tiri per colpire contro la creatura hanno vantaggio. Qualsiasi attacco che colpisca la creatura è un colpo critico se l'attaccante si trova entro {{distance:5ft}} da essa."
   }
 }

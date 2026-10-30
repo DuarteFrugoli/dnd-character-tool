@@ -19,7 +19,7 @@
       },
       "feinting_attack": {
         "name": "Attaque de feinte",
-        "description": "Dépensez une action bonus et un dé de supériorité pour feinter une créature à moins de 1,50 mètre. Vous avez un avantage lors de votre prochaine attaque contre lui ce tour-ci, et si cette attaque réussit, ajoutez le dé de supériorité aux dégâts."
+        "description": "Dépensez une action bonus et un dé de supériorité pour feinter une créature à moins de {{distance:5ft}}. Vous avez un avantage lors de votre prochaine attaque contre lui ce tour-ci, et si cette attaque réussit, ajoutez le dé de supériorité aux dégâts."
       },
       "goading_attack": {
         "name": "Attaque d'aiguillon",
@@ -27,7 +27,7 @@
       },
       "lunging_attack": {
         "name": "Attaque brusque",
-        "description": "Lorsque vous effectuez une attaque au corps à corps avec une arme, dépensez un dé de supériorité pour augmenter votre portée de 1,50 mètre pour cette attaque. Si l’attaque réussit, ajoutez le dé de supériorité aux dégâts."
+        "description": "Lorsque vous effectuez une attaque au corps à corps avec une arme, dépensez un dé de supériorité pour augmenter votre portée de {{distance:5ft}} pour cette attaque. Si l’attaque réussit, ajoutez le dé de supériorité aux dégâts."
       },
       "maneuvering_attack": {
         "name": "Attaque de manœuvre",
@@ -47,7 +47,7 @@
       },
       "pushing_attack": {
         "name": "Attaque poussée",
-        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. Si la cible est de grande taille ou plus petite, elle doit effectuer une sauvegarde de Force ou être poussée jusqu'à 4,5 mètres de vous."
+        "description": "Lorsque vous frappez avec une arme, dépensez un dé de supériorité et ajoutez-le aux dégâts. Si la cible est de grande taille ou plus petite, elle doit effectuer une sauvegarde de Force ou être poussée jusqu'à {{distance:15ft}} de vous."
       },
       "rally": {
         "name": "Rallier",
@@ -59,7 +59,7 @@
       },
       "sweeping_attack": {
         "name": "Attaque radicale",
-        "description": "Lorsque vous frappez avec une arme de mêlée, dépensez un dé de supériorité pour endommager une autre créature à moins de 1,50 mètre de la cible d'origine et à votre portée. Si le jet d'attaque d'origine devait toucher la deuxième créature, elle subit des dégâts égaux au dé de supériorité."
+        "description": "Lorsque vous frappez avec une arme de mêlée, dépensez un dé de supériorité pour endommager une autre créature à moins de {{distance:5ft}} de la cible d'origine et à votre portée. Si le jet d'attaque d'origine devait toucher la deuxième créature, elle subit des dégâts égaux au dé de supériorité."
       },
       "trip_attack": {
         "name": "Attaque de voyage",
@@ -85,7 +85,7 @@
       },
       "protection": {
         "name": "Protection",
-        "description": "Lorsqu'une créature attaque une cible autre que vous dans un rayon de 1,50 mètre, vous pouvez utiliser votre réaction pour imposer un désavantage au jet d'attaque. Vous devez porter un bouclier."
+        "description": "Lorsqu'une créature attaque une cible autre que vous dans un rayon de {{distance:5ft}}, vous pouvez utiliser votre réaction pour imposer un désavantage au jet d'attaque. Vous devez porter un bouclier."
       },
       "two_weapon_fighting": {
         "name": "Combat à deux armes",
@@ -107,7 +107,7 @@
       },
       "protection": {
         "name": "Protection",
-        "description": "Lorsqu'une créature attaque une cible autre que vous dans un rayon de 1,50 mètre, vous pouvez utiliser votre réaction pour imposer un désavantage au jet d'attaque. Vous devez porter un bouclier."
+        "description": "Lorsqu'une créature attaque une cible autre que vous dans un rayon de {{distance:5ft}}, vous pouvez utiliser votre réaction pour imposer un désavantage au jet d'attaque. Vous devez porter un bouclier."
       }
     },
     "fighting_styles_ranger": {
@@ -135,7 +135,7 @@
       },
       "distant_spell": {
         "name": "Sort lointain",
-        "description": "Dépensez 1 point de sorcellerie pour doubler la portée d'un sort s'il a une portée de 1,50 mètre ou plus. Si le sort a une portée de contact, sa portée devient 9 mètres."
+        "description": "Dépensez 1 point de sorcellerie pour doubler la portée d'un sort s'il a une portée de {{distance:5ft}} ou plus. Si le sort a une portée de contact, sa portée devient {{distance:30ft}}."
       },
       "empowered_spell": {
         "name": "Sort surpuissant",
@@ -438,7 +438,7 @@
                 },
                 "whirlwind_attack": {
                   "name": "Attaque tourbillonnante",
-                  "description": "Utilisez votre action pour effectuer des attaques au corps à corps contre n'importe quel nombre de créatures à moins de 1,50 mètre de vous."
+                  "description": "Utilisez votre action pour effectuer des attaques au corps à corps contre n'importe quel nombre de créatures à moins de {{distance:5ft}} de vous."
                 }
               }
             }

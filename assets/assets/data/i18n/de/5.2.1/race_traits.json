@@ -1,7 +1,7 @@
 {
   "Darkvision": {
     "name": "Dunkelsicht",
-    "description": "Du siehst in dämmrigem Licht innerhalb der Reichweite dieses Merkmals wie in hellem Licht und in Dunkelheit wie in dämmrigem Licht, dort jedoch nur Graustufen. Die Reichweite beträgt 36 Meter für Zwerge, Orks und Drow-Elfen und 18 Meter für die übrigen aufgeführten Spezies."
+    "description": "Du siehst in dämmrigem Licht innerhalb der Reichweite dieses Merkmals wie in hellem Licht und in Dunkelheit wie in dämmrigem Licht, dort jedoch nur Graustufen. Die Reichweite beträgt {{distance:120ft}} für Zwerge, Orks und Drow-Elfen und {{distance:60ft}} für die übrigen aufgeführten Spezies."
   },
   "Draconic Ancestry": {
     "name": "Drachenabstammung",
@@ -9,7 +9,7 @@
   },
   "Breath Weapon": {
     "name": "Odemwaffe",
-    "description": "Bei der Angriffsaktion kannst du einen Angriff durch einen 4,5 Meter langen Kegel oder eine 9 Meter lange und 1,5 Meter breite Linie ersetzen. Kreaturen darin legen einen Geschicklichkeitsrettungswurf gegen SG 8 + deinen Konstitutionsmodifikator + Übungsbonus ab. Bei Misserfolg erleiden sie Schaden der Abstammungsart, bei Erfolg die Hälfte. Der Schaden beträgt 1W10, steigt auf 2W10 auf Charakterstufe 5, 3W10 auf Stufe 11 und 4W10 auf Stufe 17. Nutzungen in Höhe deines Übungsbonus pro Langer Rast."
+    "description": "Bei der Angriffsaktion kannst du einen Angriff durch einen {{distance:15ft}} langen Kegel oder eine {{distance:30ft}} lange und {{distance:5ft}} breite Linie ersetzen. Kreaturen darin legen einen Geschicklichkeitsrettungswurf gegen SG 8 + deinen Konstitutionsmodifikator + Übungsbonus ab. Bei Misserfolg erleiden sie Schaden der Abstammungsart, bei Erfolg die Hälfte. Der Schaden beträgt 1W10, steigt auf 2W10 auf Charakterstufe 5, 3W10 auf Stufe 11 und 4W10 auf Stufe 17. Nutzungen in Höhe deines Übungsbonus pro Langer Rast."
   },
   "Damage Resistance": {
     "name": "Schadensresistenz",
@@ -29,7 +29,7 @@
   },
   "Stonecunning": {
     "name": "Steingespür",
-    "description": "Während du Stein berührst oder darauf stehst, kannst du als Bonusaktion für 10 Minuten Erschütterungssinn auf 18 Meter erhalten. Nutzungen in Höhe deines Übungsbonus pro Langer Rast."
+    "description": "Während du Stein berührst oder darauf stehst, kannst du als Bonusaktion für 10 Minuten Erschütterungssinn auf {{distance:60ft}} erhalten. Nutzungen in Höhe deines Übungsbonus pro Langer Rast."
   },
   "Elven Lineage": {
     "name": "Elfische Abstammung",
@@ -69,7 +69,7 @@
   },
   "Cloud's Jaunt": {
     "name": "Wolkensprung",
-    "description": "Teleportiere dich als Bonusaktion bis zu 9 Meter zu einem freien Ort, den du sehen kannst."
+    "description": "Teleportiere dich als Bonusaktion bis zu {{distance:30ft}} zu einem freien Ort, den du sehen kannst."
   },
   "Fire's Burn": {
     "name": "Feuerbrand",
@@ -77,7 +77,7 @@
   },
   "Frost's Chill": {
     "name": "Frostkälte",
-    "description": "Wenn ein Angriffswurf trifft und Schaden verursacht, verursachst du zusätzlich 1W6 Kälteschaden und verringerst die Bewegungsrate des Ziels bis zum Beginn deines nächsten Zuges um 3 Meter."
+    "description": "Wenn ein Angriffswurf trifft und Schaden verursacht, verursachst du zusätzlich 1W6 Kälteschaden und verringerst die Bewegungsrate des Ziels bis zum Beginn deines nächsten Zuges um {{distance:10ft}}."
   },
   "Hill's Tumble": {
     "name": "Hügelsturz",
@@ -89,11 +89,11 @@
   },
   "Storm's Thunder": {
     "name": "Sturmdonner",
-    "description": "Wenn eine Kreatur innerhalb von 18 Metern dir Schaden zufügt, kannst du ihr als Reaktion 1W8 Schallschaden zufügen."
+    "description": "Wenn eine Kreatur innerhalb von {{distance:60ft|dat}} dir Schaden zufügt, kannst du ihr als Reaktion 1W8 Schallschaden zufügen."
   },
   "Large Form": {
     "name": "Große Gestalt",
-    "description": "Ab Charakterstufe 5 kannst du als Bonusaktion für bis zu 10 Minuten Groß werden, wenn genug Platz vorhanden ist. Du hast Vorteil auf Stärkeproben und deine Bewegungsrate steigt um 3 Meter. Einmal pro Langer Rast."
+    "description": "Ab Charakterstufe 5 kannst du als Bonusaktion für bis zu 10 Minuten Groß werden, wenn genug Platz vorhanden ist. Du hast Vorteil auf Stärkeproben und deine Bewegungsrate steigt um {{distance:10ft}}. Einmal pro Langer Rast."
   },
   "Powerful Build": {
     "name": "Kräftiger Körperbau",

@@ -155,7 +155,7 @@
   },
   "Acid (vial)": {
     "name": "Ácido (frasco)",
-    "description": "Com uma ação, você pode jogar o conteúdo deste frasco em uma criatura a até 1,5 metro ou arremessá-lo a até 6 metros, quebrando-o no impacto. Em um acerto, a criatura sofre 2d6 de dano ácido."
+    "description": "Com uma ação, você pode jogar o conteúdo deste frasco em uma criatura a até {{distance:5ft}} ou arremessá-lo a até {{distance:20ft}}, quebrando-o no impacto. Em um acerto, a criatura sofre 2d6 de dano ácido."
   },
   "Alchemist's Fire": {
     "name": "Fogo do Alquimista",
@@ -255,11 +255,11 @@
   },
   "Caltrops (bag of 20)": {
     "name": "Estrepes (saco de 20)",
-    "description": "Espalhe por uma área de 1,5 metro. As criaturas que se movem devem fazer um teste de resistência de Destreza CD 15 ou parar e sofrer 1 dano perfurante (velocidade reduzida em 3 metros até serem curadas)."
+    "description": "Espalhe por uma área de {{distance:5ft}}. As criaturas que se movem devem fazer um teste de resistência de Destreza CD 15 ou parar e sofrer 1 dano perfurante (velocidade reduzida em {{distance:10ft}} até serem curadas)."
   },
   "Candle": {
     "name": "Vela",
-    "description": "Ilumina um raio de 1,5 metro de luz brilhante e 1,5 metro de luz fraca por 1 hora."
+    "description": "Ilumina um raio de {{distance:5ft}} de luz brilhante e {{distance:5ft}} de luz fraca por 1 hora."
   },
   "Case, crossbow bolt": {
     "name": "Estojo de virotes de besta",
@@ -343,7 +343,7 @@
   },
   "Holy Water (flask)": {
     "name": "Água benta (frasco)",
-    "description": "Com uma ação, você pode aspergir água benta em uma criatura a até 1,5 metro ou arremessá-la a até 6 metros. Em um acerto, um ínfero ou morto-vivo sofre 2d6 de dano radiante."
+    "description": "Com uma ação, você pode aspergir água benta em uma criatura a até {{distance:5ft}} ou arremessá-la a até {{distance:20ft}}. Em um acerto, um ínfero ou morto-vivo sofre 2d6 de dano radiante."
   },
   "Hourglass": {
     "name": "Ampulheta",
@@ -375,19 +375,19 @@
   },
   "Ladder (10-foot)": {
     "name": "Escada (3 m)",
-    "description": "Uma escada de madeira de 3 metros."
+    "description": "Uma escada de madeira de {{distance:10ft}}."
   },
   "Lamp": {
     "name": "Lamparina",
-    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um raio de 4,5 metros e luz fraca por mais 9 metros."
+    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um raio de {{distance:15ft}} e luz fraca por mais {{distance:30ft}}."
   },
   "Lantern, bullseye": {
     "name": "Lanterna direcionável",
-    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um cone de 18 metros e luz fraca por mais 18 metros."
+    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um cone de {{distance:60ft}} e luz fraca por mais {{distance:60ft}}."
   },
   "Lantern, hooded": {
     "name": "Lanterna coberta",
-    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um raio de 9 metros e luz fraca por mais 9 metros. Pode ser coberta para reduzir a luz a 1,5 metro."
+    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um raio de {{distance:30ft}} e luz fraca por mais {{distance:30ft}}. Pode ser coberta para reduzir a luz a {{distance:5ft}}."
   },
   "Lock": {
     "name": "Cadeado",
@@ -439,7 +439,7 @@
   },
   "Pole (10-foot)": {
     "name": "Vara (3 m)",
-    "description": "Uma vara de madeira de 3 metros."
+    "description": "Uma vara de madeira de {{distance:10ft}}."
   },
   "Pot, iron": {
     "name": "Panela de ferro",
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "Apito de sinal",
-    "description": "Um pequeno apito de metal audível a até 180 metros de distância."
+    "description": "Um pequeno apito de metal audível a até {{distance:600ft}} de distância."
   },
   "Signet Ring": {
     "name": "Anel de sinete",
@@ -515,7 +515,7 @@
   },
   "String (10 feet)": {
     "name": "Barbante (3 m)",
-    "description": "Um pedaço de barbante de 3 metros."
+    "description": "Um pedaço de barbante de {{distance:10ft}}."
   },
   "Tent, two-person": {
     "name": "Tenda para duas pessoas",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "Tocha",
-    "description": "Queima 1 hora. Luz brilhante em um raio de 6 metros, luz fraca em 6 metros adicionais. Pode ser usada como arma improvisada (1d4 de dano de fogo)."
+    "description": "Queima 1 hora. Luz brilhante em um raio de {{distance:20ft}}, luz fraca em {{distance:20ft}} adicionais. Pode ser usada como arma improvisada (1d4 de dano de fogo)."
   },
   "Vial": {
     "name": "Frasco",

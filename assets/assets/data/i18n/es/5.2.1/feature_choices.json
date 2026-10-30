@@ -177,7 +177,7 @@
       },
       "distant_spell": {
         "name": "Conjuro distante",
-        "description": "Gastas 1 punto de hechicería para duplicar el alcance de un conjuro de al menos 5 pies, o para convertir su alcance de toque en 30 pies."
+        "description": "Gastas 1 punto de hechicería para duplicar el alcance de un conjuro de al menos {{distance:5ft}}, o para convertir su alcance de toque en {{distance:30ft}}."
       },
       "empowered_spell": {
         "name": "Conjuro potenciado",
@@ -370,7 +370,7 @@
     "giant_ancestries": {
       "cloud": {
         "name": "Salto de las nubes",
-        "description": "Te teletransportas hasta 30 pies como acción adicional."
+        "description": "Te teletransportas hasta {{distance:30ft}} como acción adicional."
       },
       "fire": {
         "name": "Ardor del fuego",
@@ -779,7 +779,7 @@
       },
       "devils_sight": {
         "name": "Vista del diablo",
-        "description": "Puedes ver con normalidad en luz tenue y oscuridad, tanto mágica como no mágica, a una distancia de hasta 120 pies de ti."
+        "description": "Puedes ver con normalidad en luz tenue y oscuridad, tanto mágica como no mágica, a una distancia de hasta {{distance:120ft}} de ti."
       },
       "devouring_blade": {
         "name": "Hoja devoradora",
@@ -795,7 +795,7 @@
       },
       "eldritch_spear": {
         "name": "Lanza sobrenatural",
-        "description": "Elige un truco de brujo que conozcas, que cause daño y tenga un alcance de al menos 10 pies. Cuando lanzas ese conjuro, su alcance aumenta tantos pies como 30 veces tu nivel de brujo."
+        "description": "Elige un truco de brujo que conozcas, que cause daño y tenga un alcance de {{distance:10+ft}}. Cuando lanzas ese conjuro, su alcance aumenta {{distance:30ft}} por cada nivel de brujo que tengas."
       },
       "fiendish_vigor": {
         "name": "Vigor infernal",
@@ -803,7 +803,7 @@
       },
       "gaze_of_two_minds": {
         "name": "Mirada de dos mentes",
-        "description": "Puedes usar una acción adicional para tocar a una criatura voluntaria y percibir a través de sus sentidos hasta el final de tu siguiente turno. Mientras la criatura esté en tu mismo plano de existencia, puedes usar una acción adicional en turnos posteriores para mantener la conexión y prolongarla hasta el final de tu siguiente turno. La conexión termina si no la mantienes de este modo.\n\nMientras percibes a través de sus sentidos, te beneficias de sus sentidos especiales y puedes lanzar conjuros como si estuvieras en tu espacio o en el suyo, siempre que ambos estéis a no más de 60 pies el uno del otro."
+        "description": "Puedes usar una acción adicional para tocar a una criatura voluntaria y percibir a través de sus sentidos hasta el final de tu siguiente turno. Mientras la criatura esté en tu mismo plano de existencia, puedes usar una acción adicional en turnos posteriores para mantener la conexión y prolongarla hasta el final de tu siguiente turno. La conexión termina si no la mantienes de este modo.\n\nMientras percibes a través de sus sentidos, te beneficias de sus sentidos especiales y puedes lanzar conjuros como si estuvieras en tu espacio o en el suyo, siempre que ambos estéis a no más de {{distance:60ft}} el uno del otro."
       },
       "gift_of_the_depths": {
         "name": "Don de las profundidades",
@@ -815,7 +815,7 @@
       },
       "investment_of_the_chain_master": {
         "name": "Poder del amo de la cadena",
-        "description": "Cuando lanzas Encontrar familiar, imbuyes al familiar invocado con parte de tu poder sobrenatural y le concedes los siguientes beneficios.\n\nAéreo o acuático. El familiar obtiene una velocidad de vuelo o de nado (a tu elección) de 40 pies.\n\nAtaque rápido. Como acción adicional, puedes ordenar al familiar que realice la acción Atacar.\n\nDaño necrótico o radiante. Cuando el familiar inflige daño contundente, perforante o cortante, puedes hacer que inflija daño necrótico o radiante en su lugar.\n\nTu CD de salvación. Si el familiar obliga a una criatura a hacer una tirada de salvación, utiliza la CD de salvación de tus conjuros.\n\nResistencia. Cuando el familiar recibe daño, puedes usar una reacción para otorgarle resistencia a ese daño."
+        "description": "Cuando lanzas Encontrar familiar, imbuyes al familiar invocado con parte de tu poder sobrenatural y le concedes los siguientes beneficios.\n\nAéreo o acuático. El familiar obtiene una velocidad de vuelo o de nado (a tu elección) de {{distance:40ft}}.\n\nAtaque rápido. Como acción adicional, puedes ordenar al familiar que realice la acción Atacar.\n\nDaño necrótico o radiante. Cuando el familiar inflige daño contundente, perforante o cortante, puedes hacer que inflija daño necrótico o radiante en su lugar.\n\nTu CD de salvación. Si el familiar obliga a una criatura a hacer una tirada de salvación, utiliza la CD de salvación de tus conjuros.\n\nResistencia. Cuando el familiar recibe daño, puedes usar una reacción para otorgarle resistencia a ese daño."
       },
       "lessons_of_the_first_ones": {
         "name": "Lecciones de los Primeros",
@@ -847,7 +847,7 @@
       },
       "pact_of_the_blade": {
         "name": "Pacto de la hoja",
-        "description": "Como acción adicional, puedes conjurar en tu mano un arma de pacto, un arma cuerpo a cuerpo sencilla o marcial a tu elección con la que estableces un vínculo, o vincularte a un arma mágica que toques. No puedes vincularte a un arma mágica si otra persona está sintonizada con ella o si otro brujo está vinculado a ella. Hasta que termine el vínculo, tienes competencia con el arma y puedes usarla como canalizador mágico.\n\nAl atacar con el arma vinculada, puedes usar tu modificador de Carisma para las tiradas de ataque y daño en lugar de Fuerza o Destreza, y puedes hacer que el arma inflija daño necrótico, psíquico o radiante en vez de su tipo de daño habitual.\n\nEl vínculo termina si vuelves a usar la acción adicional de esta característica, si el arma permanece a más de 5 pies de ti durante 1 minuto o más, o si mueres. Un arma conjurada desaparece cuando termina el vínculo."
+        "description": "Como acción adicional, puedes conjurar en tu mano un arma de pacto, un arma cuerpo a cuerpo sencilla o marcial a tu elección con la que estableces un vínculo, o vincularte a un arma mágica que toques. No puedes vincularte a un arma mágica si otra persona está sintonizada con ella o si otro brujo está vinculado a ella. Hasta que termine el vínculo, tienes competencia con el arma y puedes usarla como canalizador mágico.\n\nAl atacar con el arma vinculada, puedes usar tu modificador de Carisma para las tiradas de ataque y daño en lugar de Fuerza o Destreza, y puedes hacer que el arma inflija daño necrótico, psíquico o radiante en vez de su tipo de daño habitual.\n\nEl vínculo termina si vuelves a usar la acción adicional de esta característica, si el arma permanece a más de {{distance:5ft}} de ti durante 1 minuto o más, o si mueres. Un arma conjurada desaparece cuando termina el vínculo."
       },
       "pact_of_the_chain": {
         "name": "Pacto de la cadena",
@@ -859,7 +859,7 @@
       },
       "repelling_blast": {
         "name": "Descarga repelente",
-        "description": "Elige un truco de brujo que conozcas y que requiera una tirada de ataque. Cuando impactas con él a una criatura Grande o más pequeña, puedes empujarla hasta 10 pies en línea recta alejándola de ti."
+        "description": "Elige un truco de brujo que conozcas y que requiera una tirada de ataque. Cuando impactas con él a una criatura Grande o más pequeña, puedes empujarla hasta {{distance:10ft}} en línea recta alejándola de ti."
       },
       "thirsting_blade": {
         "name": "Hoja sedienta",
@@ -875,7 +875,7 @@
       },
       "witch_sight": {
         "name": "Vista de bruja",
-        "description": "Obtienes visión verdadera con un alcance de 30 pies."
+        "description": "Obtienes visión verdadera con un alcance de {{distance:30ft}}."
       }
     }
   },

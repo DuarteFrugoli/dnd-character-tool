@@ -174,11 +174,11 @@
   },
   "Acid": {
     "name": "Ácido",
-    "description": "Substitua um ataque pelo arremesso de uma ampola contra um alvo a até 20 pés. Se falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência), ele sofre 2d6 de dano Ácido."
+    "description": "Substitua um ataque pelo arremesso de uma ampola contra um alvo a até {{distance:20ft}}. Se falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência), ele sofre 2d6 de dano Ácido."
   },
   "Alchemist's Fire": {
     "name": "Fogo Alquímico",
-    "description": "Substitua um ataque pelo arremesso de um frasco contra um alvo a até 20 pés. Se falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência), ele sofre 1d4 de dano de Fogo e começa a queimar."
+    "description": "Substitua um ataque pelo arremesso de um frasco contra um alvo a até {{distance:20ft}}. Se falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência), ele sofre 1d4 de dano de Fogo e começa a queimar."
   },
   "Antitoxin": {
     "name": "Antitoxina",
@@ -214,7 +214,7 @@
   },
   "Ball Bearings": {
     "name": "Esferas de Metal",
-    "description": "Espalhe-as num quadrado plano de 10 pés a até 10 pés de distância com a ação Utilizar. Criaturas que entrarem nele fazem um teste de resistência de Destreza CD 10 ou ficam Caídas. Recuperá-las leva 10 minutos."
+    "description": "Espalhe-as num quadrado plano de {{distance:10ft}} a até {{distance:10ft}} de distância com a ação Utilizar. Criaturas que entrarem nele fazem um teste de resistência de Destreza CD 10 ou ficam Caídas. Recuperá-las leva 10 minutos."
   },
   "Barrel": {
     "name": "Barril",
@@ -230,7 +230,7 @@
   },
   "Bell": {
     "name": "Sino",
-    "description": "Tocá-lo com a ação Utilizar produz som audível a até 60 pés."
+    "description": "Tocá-lo com a ação Utilizar produz som audível a até {{distance:60ft}}."
   },
   "Blanket": {
     "name": "Cobertor",
@@ -258,11 +258,11 @@
   },
   "Caltrops": {
     "name": "Estrepes",
-    "description": "Espalhe-os em um quadrado de 5 pés com a ação Utilizar. Uma criatura que entrar nele deve passar em um teste de resistência de Destreza CD 15 ou sofrer 1 de dano Perfurante e ficar com Deslocamento 0 até o próximo turno. Recuperá-los leva 10 minutos."
+    "description": "Espalhe-os em um quadrado de {{distance:5ft}} com a ação Utilizar. Uma criatura que entrar nele deve passar em um teste de resistência de Destreza CD 15 ou sofrer 1 de dano Perfurante e ficar com Deslocamento 0 até o próximo turno. Recuperá-los leva 10 minutos."
   },
   "Candle": {
     "name": "Vela",
-    "description": "Queima por 1 hora, emitindo Luz Plena por 5 pés e Penumbra por mais 5 pés."
+    "description": "Queima por 1 hora, emitindo Luz Plena por {{distance:5ft}} e Penumbra por mais {{distance:5ft}}."
   },
   "Case, Crossbow Bolt": {
     "name": "Estojo de Virotes",
@@ -282,7 +282,7 @@
   },
   "Climber's Kit": {
     "name": "Kit de Escalada",
-    "description": "Inclui pontas para botas, luvas, pítons e um arnês. Prender-se a uma âncora com a ação Utilizar limita uma queda a 25 pés e o movimento a 25 pés da âncora."
+    "description": "Inclui pontas para botas, luvas, pítons e um arnês. Prender-se a uma âncora com a ação Utilizar limita uma queda a {{distance:25ft}} e o movimento a {{distance:25ft}} da âncora."
   },
   "Clothes, Fine": {
     "name": "Roupas Finas",
@@ -342,7 +342,7 @@
   },
   "Grappling Hook": {
     "name": "Gancho de Escalada",
-    "description": "Arremesse-o em um ponto de apoio a até 50 pés com a ação Utilizar. Um teste de Destreza (Acrobacia) CD 13 o prende; então é possível escalar uma Corda amarrada."
+    "description": "Arremesse-o em um ponto de apoio a até {{distance:50ft}} com a ação Utilizar. Um teste de Destreza (Acrobacia) CD 13 o prende; então é possível escalar uma Corda amarrada."
   },
   "Healer's Kit": {
     "name": "Kit de Curandeiro",
@@ -366,7 +366,7 @@
   },
   "Holy Water": {
     "name": "Água Benta",
-    "description": "Substitua um ataque pelo arremesso de um frasco contra uma criatura a até 20 pés. Um Ínfero ou Morto-vivo que falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência) sofre 2d8 de dano Radiante."
+    "description": "Substitua um ataque pelo arremesso de um frasco contra uma criatura a até {{distance:20ft}}. Um Ínfero ou Morto-vivo que falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência) sofre 2d8 de dano Radiante."
   },
   "Hunting Trap": {
     "name": "Armadilha de Caça",
@@ -386,19 +386,19 @@
   },
   "Ladder": {
     "name": "Escada",
-    "description": "Escada de 10 pés."
+    "description": "Escada de {{distance:10ft}}."
   },
   "Lamp": {
     "name": "Lamparina",
-    "description": "Queima Óleo, emitindo Luz Plena por 15 pés e Penumbra por mais 30 pés."
+    "description": "Queima Óleo, emitindo Luz Plena por {{distance:15ft}} e Penumbra por mais {{distance:30ft}}."
   },
   "Lantern, Bullseye": {
     "name": "Lanterna Direcional",
-    "description": "Queima Óleo, emitindo Luz Plena em um Cone de 60 pés e Penumbra por mais 60 pés."
+    "description": "Queima Óleo, emitindo Luz Plena em um Cone de {{distance:60ft}} e Penumbra por mais {{distance:60ft}}."
   },
   "Lantern, Hooded": {
     "name": "Lanterna Coberta",
-    "description": "Queima Óleo, emitindo Luz Plena por 30 pés e Penumbra por mais 30 pés. Baixar a tampa limita a Penumbra a 5 pés."
+    "description": "Queima Óleo, emitindo Luz Plena por {{distance:30ft}} e Penumbra por mais {{distance:30ft}}. Baixar a tampa limita a Penumbra a {{distance:5ft}}."
   },
   "Lock": {
     "name": "Cadeado",
@@ -422,7 +422,7 @@
   },
   "Net": {
     "name": "Rede",
-    "description": "Substitua um ataque por um arremesso contra uma criatura a até 15 pés. Ela fica Contida se falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência); criaturas Enormes ou maiores passam automaticamente. Escapar exige um teste de Força (Atletismo) CD 10."
+    "description": "Substitua um ataque por um arremesso contra uma criatura a até {{distance:15ft}}. Ela fica Contida se falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência); criaturas Enormes ou maiores passam automaticamente. Escapar exige um teste de Força (Atletismo) CD 10."
   },
   "Oil": {
     "name": "Óleo",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Perfume",
-    "description": "Frasco de 4 onças. Por 1 hora após aplicá-lo, ganhe Vantagem em testes de Carisma (Persuasão) para influenciar um Humanoide Indiferente a até 5 pés."
+    "description": "Frasco de 4 onças. Por 1 hora após aplicá-lo, ganhe Vantagem em testes de Carisma (Persuasão) para influenciar um Humanoide Indiferente a até {{distance:5ft}}."
   },
   "Poison, Basic": {
     "name": "Veneno Básico",
@@ -446,7 +446,7 @@
   },
   "Pole": {
     "name": "Vara",
-    "description": "Vara de 10 pés. Usá-la para se impulsionar concede Vantagem em um teste de Força (Atletismo) para Salto em Altura ou em Distância."
+    "description": "Vara de {{distance:10ft}}. Usá-la para se impulsionar concede Vantagem em um teste de Força (Atletismo) para Salto em Altura ou em Distância."
   },
   "Pot, Iron": {
     "name": "Panela de Ferro",
@@ -490,11 +490,11 @@
   },
   "Shovel": {
     "name": "Pá",
-    "description": "Uma hora escavando terra ou material semelhante cria um espaço em forma de cubo com 5 pés de lado."
+    "description": "Uma hora escavando terra ou material semelhante cria um espaço em forma de cubo com {{distance:5ft}} de lado."
   },
   "Signal Whistle": {
     "name": "Apito de Sinalização",
-    "description": "Soprá-lo com a ação Utilizar produz som audível a até 600 pés."
+    "description": "Soprá-lo com a ação Utilizar produz som audível a até {{distance:600ft}}."
   },
   "Spellbook": {
     "name": "Grimório",
@@ -510,7 +510,7 @@
   },
   "String": {
     "name": "Barbante",
-    "description": "Barbante de 10 pés; dar um nó é uma ação Utilizar."
+    "description": "Barbante de {{distance:10ft}}; dar um nó é uma ação Utilizar."
   },
   "Tent": {
     "name": "Tenda",
@@ -522,7 +522,7 @@
   },
   "Torch": {
     "name": "Tocha",
-    "description": "Queima por 1 hora, emitindo Luz Plena por 20 pés e Penumbra por mais 20 pés. Pode ser usada como arma Simples Corpo a Corpo, causando 1 de dano de Fogo ao acertar."
+    "description": "Queima por 1 hora, emitindo Luz Plena por {{distance:20ft}} e Penumbra por mais {{distance:20ft}}. Pode ser usada como arma Simples Corpo a Corpo, causando 1 de dano de Fogo ao acertar."
   },
   "Vial": {
     "name": "Ampola",
@@ -535,7 +535,7 @@
   "weaponMasteries": {
     "cleave": {
       "name": "Cortar",
-      "description": "Uma vez por turno, após acertar um ataque corpo a corpo, ataque outra criatura a até 5 pés da primeira e ao seu alcance com a mesma arma. Ao acertar, cause o dano da arma sem modificador de habilidade positivo."
+      "description": "Uma vez por turno, após acertar um ataque corpo a corpo, ataque outra criatura a até {{distance:5ft}} da primeira e ao seu alcance com a mesma arma. Ao acertar, cause o dano da arma sem modificador de habilidade positivo."
     },
     "graze": {
       "name": "Raspar",
@@ -547,7 +547,7 @@
     },
     "push": {
       "name": "Empurrar",
-      "description": "Ao acertar, empurre uma criatura Grande ou menor até 10 pés em linha reta para longe de você."
+      "description": "Ao acertar, empurre uma criatura Grande ou menor até {{distance:10ft}} em linha reta para longe de você."
     },
     "sap": {
       "name": "Debilitar",
@@ -555,7 +555,7 @@
     },
     "slow": {
       "name": "Desacelerar",
-      "description": "Ao acertar e causar dano, reduza o Deslocamento do alvo em 10 pés até o início do seu próximo turno. Vários acertos com Desacelerar não aumentam a redução."
+      "description": "Ao acertar e causar dano, reduza o Deslocamento do alvo em {{distance:10ft}} até o início do seu próximo turno. Vários acertos com Desacelerar não aumentam a redução."
     },
     "topple": {
       "name": "Derrubar",

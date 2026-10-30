@@ -11,11 +11,11 @@
       },
       "Retaliation": {
         "name": "Représailles",
-        "description": "Quand une créature à 1,5 mètre ou moins vous blesse, vous pouvez utiliser votre Réaction pour lui porter une attaque de corps à corps avec une arme ou une Frappe à mains nues."
+        "description": "Quand une créature à {{distance:5ft}} ou moins vous blesse, vous pouvez utiliser votre Réaction pour lui porter une attaque de corps à corps avec une arme ou une Frappe à mains nues."
       },
       "Intimidating Presence": {
         "name": "Présence intimidante",
-        "description": "Par une Action bonus, les créatures de votre choix dans une Émanation de 9 mètres effectuent une sauvegarde de Sagesse (DD 8 + modificateur de Force + bonus de maîtrise) ou sont Effrayées pendant 1 minute ; elles la répètent à la fin de chacun de leurs tours. Une fois par Repos long, ou dépensez une utilisation de Rage pour retrouver ce pouvoir."
+        "description": "Par une Action bonus, les créatures de votre choix dans une Émanation de {{distance:30ft}} effectuent une sauvegarde de Sagesse (DD 8 + modificateur de Force + bonus de maîtrise) ou sont Effrayées pendant 1 minute ; elles la répètent à la fin de chacun de leurs tours. Une fois par Repos long, ou dépensez une utilisation de Rage pour retrouver ce pouvoir."
       }
     }
   },
@@ -27,7 +27,7 @@
       },
       "Cutting Words": {
         "name": "Mots cinglants",
-        "description": "Quand une créature visible à 18 mètres ou moins lance des dégâts ou réussit un test de caractéristique ou jet d'attaque, utilisez votre Réaction et une Inspiration bardique. Soustrayez le résultat de votre dé d'Inspiration bardique, pouvant transformer la réussite en échec."
+        "description": "Quand une créature visible à {{distance:60ft}} ou moins lance des dégâts ou réussit un test de caractéristique ou jet d'attaque, utilisez votre Réaction et une Inspiration bardique. Soustrayez le résultat de votre dé d'Inspiration bardique, pouvant transformer la réussite en échec."
       },
       "Magical Discoveries": {
         "name": "Découvertes magiques",
@@ -51,7 +51,7 @@
       },
       "Preserve Life": {
         "name": "Préservation de la vie",
-        "description": "Par l'action Magie, dépensez Canalisation d'énergie divine pour restaurer un total de points de vie égal à 5 fois votre niveau de Clerc, réparti entre des créatures Ensanglantées à 9 mètres ou moins, vous compris. Aucune ne peut ainsi dépasser la moitié de ses points de vie maximums."
+        "description": "Par l'action Magie, dépensez Canalisation d'énergie divine pour restaurer un total de points de vie égal à 5 fois votre niveau de Clerc, réparti entre des créatures Ensanglantées à {{distance:30ft}} ou moins, vous compris. Aucune ne peut ainsi dépasser la moitié de ses points de vie maximums."
       },
       "Blessed Healer": {
         "name": "Guérisseur béni",
@@ -71,7 +71,7 @@
       },
       "Land's Aid": {
         "name": "Aide de la terre",
-        "description": "Par l'action Magie, dépensez Forme sauvage pour créer une Sphère de 3 mètres de rayon à 18 mètres ou moins. Les créatures choisies dans la zone effectuent une sauvegarde de Constitution : 2d6 dégâts Nécrotiques en cas d'échec, moitié en cas de réussite ; une créature dans la zone récupère aussi 2d6 points de vie. Les deux valeurs deviennent 3d6 au niveau 10 de Druide et 4d6 au niveau 14."
+        "description": "Par l'action Magie, dépensez Forme sauvage pour créer une Sphère de {{distance:10ft}} de rayon à {{distance:60ft}} ou moins. Les créatures choisies dans la zone effectuent une sauvegarde de Constitution : 2d6 dégâts Nécrotiques en cas d'échec, moitié en cas de réussite ; une créature dans la zone récupère aussi 2d6 points de vie. Les deux valeurs deviennent 3d6 au niveau 10 de Druide et 4d6 au niveau 14."
       },
       "Natural Recovery": {
         "name": "Récupération naturelle",
@@ -83,7 +83,7 @@
       },
       "Nature's Sanctuary": {
         "name": "Sanctuaire de la nature",
-        "description": "Par l'action Magie, dépensez Forme sauvage pour créer au sol un Cube de 4,5 mètres à 36 mètres ou moins pendant 1 minute ; il prend fin si vous êtes Neutralisé ou mourez. Vous et vos alliés à l'intérieur bénéficiez d'un Abri partiel ; les alliés gagnent aussi votre Résistance de Protection de la nature. Par une Action bonus, déplacez le Cube de 18 mètres au maximum vers le sol à 36 mètres ou moins."
+        "description": "Par l'action Magie, dépensez Forme sauvage pour créer au sol un Cube de {{distance:15ft}} à {{distance:120ft}} ou moins pendant 1 minute ; il prend fin si vous êtes Neutralisé ou mourez. Vous et vos alliés à l'intérieur bénéficiez d'un Abri partiel ; les alliés gagnent aussi votre Résistance de Protection de la nature. Par une Action bonus, déplacez le Cube de {{distance:60ft}} au maximum vers le sol à {{distance:120ft}} ou moins."
       }
     }
   },
@@ -119,7 +119,7 @@
     "Warrior of the Open Hand": {
       "Open Hand Technique": {
         "name": "Technique de la main ouverte",
-        "description": "Quand une attaque de Déluge de coups touche, choisissez : empêcher la cible de faire des attaques d'opportunité jusqu'à son prochain tour ; la repousser de 4,5 mètres au plus si elle rate une sauvegarde de Force ; ou la mettre À terre si elle rate une sauvegarde de Dextérité."
+        "description": "Quand une attaque de Déluge de coups touche, choisissez : empêcher la cible de faire des attaques d'opportunité jusqu'à son prochain tour ; la repousser de {{distance:15ft}} au plus si elle rate une sauvegarde de Force ; ou la mettre À terre si elle rate une sauvegarde de Dextérité."
       },
       "Wholeness of Body": {
         "name": "Plénitude du corps",
@@ -143,7 +143,7 @@
       },
       "Sacred Weapon": {
         "name": "Arme sacrée",
-        "description": "Lors de l'action Attaquer, dépensez Canalisation d'énergie divine pour renforcer pendant 10 minutes une arme de corps à corps tenue. Ajoutez votre modificateur de Charisme (minimum +1) aux jets d'attaque ; chaque coup peut infliger son type de dégâts normal ou Radiant. Elle produit une Lumière vive sur 6 mètres et faible sur 6 mètres de plus ; l'effet cesse si vous ne la portez plus."
+        "description": "Lors de l'action Attaquer, dépensez Canalisation d'énergie divine pour renforcer pendant 10 minutes une arme de corps à corps tenue. Ajoutez votre modificateur de Charisme (minimum +1) aux jets d'attaque ; chaque coup peut infliger son type de dégâts normal ou Radiant. Elle produit une Lumière vive sur {{distance:20ft}} et faible sur {{distance:20ft}} de plus ; l'effet cesse si vous ne la portez plus."
       },
       "Aura of Devotion": {
         "name": "Aura de dévotion",
@@ -167,7 +167,7 @@
       },
       "Hunter's Prey": {
         "name": "Proie du chasseur",
-        "description": "Choisissez une option, modifiable après un Repos court ou long. Tueur de colosses : une fois par tour, un coup d'arme sur une créature ayant perdu des points de vie inflige +1d8 dégâts. Briseur de hordes : une fois pendant votre tour en attaquant avec une arme, attaquez une autre créature à 1,5 mètre ou moins de la cible initiale, à portée, non encore attaquée pendant ce tour."
+        "description": "Choisissez une option, modifiable après un Repos court ou long. Tueur de colosses : une fois par tour, un coup d'arme sur une créature ayant perdu des points de vie inflige +1d8 dégâts. Briseur de hordes : une fois pendant votre tour en attaquant avec une arme, attaquez une autre créature à {{distance:5ft}} ou moins de la cible initiale, à portée, non encore attaquée pendant ce tour."
       },
       "Defensive Tactics": {
         "name": "Tactiques défensives",
@@ -175,7 +175,7 @@
       },
       "Superior Hunter's Prey": {
         "name": "Proie supérieure du chasseur",
-        "description": "Une fois par tour, quand vous blessez une créature marquée par Marque du chasseur, infligez les dégâts supplémentaires du sort à une autre créature visible à 9 mètres ou moins de la créature marquée."
+        "description": "Une fois par tour, quand vous blessez une créature marquée par Marque du chasseur, infligez les dégâts supplémentaires du sort à une autre créature visible à {{distance:30ft}} ou moins de la créature marquée."
       },
       "Superior Hunter's Defense": {
         "name": "Défense supérieure du chasseur",
@@ -223,7 +223,7 @@
       },
       "Dragon Wings": {
         "name": "Ailes de dragon",
-        "description": "Par une Action bonus, gagnez des ailes et une Vitesse de vol de 18 mètres pendant 1 heure ou jusqu'à leur révocation. Une fois par Repos long, ou dépensez 3 points de Sorcellerie pour récupérer l'utilisation."
+        "description": "Par une Action bonus, gagnez des ailes et une Vitesse de vol de {{distance:60ft}} pendant 1 heure ou jusqu'à leur révocation. Une fois par Repos long, ou dépensez 3 points de Sorcellerie pour récupérer l'utilisation."
       },
       "Dragon Companion": {
         "name": "Compagnon dragon",
@@ -235,7 +235,7 @@
     "Fiend Patron": {
       "Dark One's Blessing": {
         "name": "Bénédiction du Ténébreux",
-        "description": "Quand vous réduisez un ennemi à 0 point de vie, gagnez des points de vie temporaires égaux à votre modificateur de Charisme + niveau d'Occultiste (minimum 1). Vous les gagnez aussi si une autre personne réduit à 0 point de vie un ennemi à 3 mètres ou moins de vous."
+        "description": "Quand vous réduisez un ennemi à 0 point de vie, gagnez des points de vie temporaires égaux à votre modificateur de Charisme + niveau d'Occultiste (minimum 1). Vous les gagnez aussi si une autre personne réduit à 0 point de vie un ennemi à {{distance:10ft}} ou moins de vous."
       },
       "Fiend Spells": {
         "name": "Sorts du Fiélon",

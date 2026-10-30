@@ -155,7 +155,7 @@
   },
   "Acid (vial)": {
     "name": "Säure (Fläschchen)",
-    "description": "Als Aktion können Sie den Inhalt dieser Phiole auf eine Kreatur im Umkreis von 1,5 m spritzen oder sie bis zu 6 m weit werfen, sodass sie beim Aufprall zerbricht. Bei einem Treffer erleidet eine Kreatur 2W6 Säureschaden."
+    "description": "Als Aktion können Sie den Inhalt dieser Phiole auf eine Kreatur im Umkreis von {{distance:5ft|short}} spritzen oder sie bis zu {{distance:20ft|short}} weit werfen, sodass sie beim Aufprall zerbricht. Bei einem Treffer erleidet eine Kreatur 2W6 Säureschaden."
   },
   "Alchemist's Fire": {
     "name": "Feuer des Alchemisten",
@@ -255,11 +255,11 @@
   },
   "Caltrops (bag of 20)": {
     "name": "Krähenfüße (Beutel mit 20 Stück)",
-    "description": "Über eine Fläche von 1,50 m verteilen. Kreaturen, die sich hindurchbewegen, müssen einen Geschicklichkeitswurf gegen SG 15 schaffen oder anhalten und 1 Stichschaden erleiden (die Geschwindigkeit wird bis zur Heilung um 3 Meter verringert)."
+    "description": "Über eine Fläche von {{distance:5ft|short}} verteilen. Kreaturen, die sich hindurchbewegen, müssen einen Geschicklichkeitswurf gegen SG 15 schaffen oder anhalten und 1 Stichschaden erleiden (die Geschwindigkeit wird bis zur Heilung um {{distance:10ft}} verringert)."
   },
   "Candle": {
     "name": "Kerze",
-    "description": "Beleuchtet 1 Stunde lang einen Radius von 1,5 m mit hellem Licht und 1,5 m mit schwachem Licht."
+    "description": "Beleuchtet 1 Stunde lang einen Radius von {{distance:5ft|short}} mit hellem Licht und {{distance:5ft|short}} mit schwachem Licht."
   },
   "Case, crossbow bolt": {
     "name": "Koffer, Armbrustbolzen",
@@ -343,7 +343,7 @@
   },
   "Holy Water (flask)": {
     "name": "Weihwasser (Flasche)",
-    "description": "Bespritze als Aktion eine Kreatur im Umkreis von 1,5 m oder schleudere sie bis zu 6 m weit. Bei einem Treffer erleidet ein Untoter oder Untoter 2W6 Strahlungsschaden."
+    "description": "Bespritze als Aktion eine Kreatur im Umkreis von {{distance:5ft|short}} oder schleudere sie bis zu {{distance:20ft|short}} weit. Bei einem Treffer erleidet ein Untoter oder Untoter 2W6 Strahlungsschaden."
   },
   "Hourglass": {
     "name": "Sanduhr",
@@ -375,19 +375,19 @@
   },
   "Ladder (10-foot)": {
     "name": "Leiter (3 Meter)",
-    "description": "Eine 3 Meter lange Holzleiter."
+    "description": "Eine {{distance:10ft}} lange Holzleiter."
   },
   "Lamp": {
     "name": "Lampe",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Spendet helles Licht in einem Radius von 4,5 Metern und gedämpftes Licht für weitere 9 Meter."
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Spendet helles Licht in einem Radius von {{distance:15ft|dat}} und gedämpftes Licht für weitere {{distance:30ft}}."
   },
   "Lantern, bullseye": {
     "name": "Laterne, Volltreffer",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). 18-Meter-Kegel aus hellem Licht, zusätzlich 18 Meter gedämpftes Licht."
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). {{distance:60ft|adj}}-Kegel aus hellem Licht, zusätzlich {{distance:60ft}} gedämpftes Licht."
   },
   "Lantern, hooded": {
     "name": "Laterne, mit Kapuze",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Helles Licht mit einem Radius von 9 Metern, zusätzliches schwaches Licht mit einem Radius von 9 Metern. Kann mit einer Haube abgedeckt werden, um das Licht auf 1,5 m zu reduzieren."
+    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Helles Licht mit einem Radius von {{distance:30ft|dat}}, zusätzliches schwaches Licht mit einem Radius von {{distance:30ft|dat}}. Kann mit einer Haube abgedeckt werden, um das Licht auf {{distance:5ft|short}} zu reduzieren."
   },
   "Lock": {
     "name": "Sperren",
@@ -439,7 +439,7 @@
   },
   "Pole (10-foot)": {
     "name": "Stange (3 Meter)",
-    "description": "Eine 3 Meter lange Holzstange."
+    "description": "Eine {{distance:10ft}} lange Holzstange."
   },
   "Pot, iron": {
     "name": "Topf, Eisen",
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "Signalpfeife",
-    "description": "Eine kleine Metallpfeife, die bis zu 180 Meter entfernt hörbar ist."
+    "description": "Eine kleine Metallpfeife, die bis zu {{distance:600ft}} entfernt hörbar ist."
   },
   "Signet Ring": {
     "name": "Siegelring",
@@ -515,7 +515,7 @@
   },
   "String (10 feet)": {
     "name": "Schnur (3 Meter)",
-    "description": "Eine 3 Meter lange Schnur."
+    "description": "Eine {{distance:10ft}} lange Schnur."
   },
   "Tent, two-person": {
     "name": "Zelt, zwei Personen",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "Fackel",
-    "description": "Brennt 1 Stunde. Helles Licht in einem Radius von 6 Metern, gedämpftes Licht in weiteren 6 Meter. Kann als improvisierte Waffe verwendet werden (1W4 Feuerschaden)."
+    "description": "Brennt 1 Stunde. Helles Licht in einem Radius von {{distance:20ft|dat}}, gedämpftes Licht in weiteren {{distance:20ft}}. Kann als improvisierte Waffe verwendet werden (1W4 Feuerschaden)."
   },
   "Vial": {
     "name": "Phiole",

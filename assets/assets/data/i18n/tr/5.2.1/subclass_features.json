@@ -11,11 +11,11 @@
       },
       "Retaliation": {
         "name": "Misilleme",
-        "description": "5 fit içindeki bir yaratık sana hasar verdiğinde Tepki kullanarak ona bir silah veya Silahsız Vuruşla yakın dövüş saldırısı yapabilirsin."
+        "description": "{{distance:5ft}} içindeki bir yaratık sana hasar verdiğinde Tepki kullanarak ona bir silah veya Silahsız Vuruşla yakın dövüş saldırısı yapabilirsin."
       },
       "Intimidating Presence": {
         "name": "Korkutucu Varlık",
-        "description": "Bonus Eylemle 30 fitlik Yayılımındaki seçtiğin yaratıklar Bilgelik kurtarma atışı yapar (SG 8 + Güç değiştiricisi + Yeterlilik Bonusu), başarısız olanlar 1 dakika Korkmuş olur; her turun sonunda yeniden denerler. Uzun Dinlenme başına bir kez veya kullanımı yenilemek için bir Öfke kullanımı harca."
+        "description": "Bonus Eylemle {{distance:30ft|lik}} Yayılımındaki seçtiğin yaratıklar Bilgelik kurtarma atışı yapar (SG 8 + Güç değiştiricisi + Yeterlilik Bonusu), başarısız olanlar 1 dakika Korkmuş olur; her turun sonunda yeniden denerler. Uzun Dinlenme başına bir kez veya kullanımı yenilemek için bir Öfke kullanımı harca."
       }
     }
   },
@@ -27,7 +27,7 @@
       },
       "Cutting Words": {
         "name": "Keskin Sözler",
-        "description": "60 fit içindeki görebildiğin bir yaratık hasar attığında veya nitelik kontrolü ya da saldırı atışında başarılı olduğunda Tepki ve bir Ozan İlhamı kullan. İlham zarını atıp sonuçtan çıkar; başarıyı başarısızlığa çevirebilirsin."
+        "description": "{{distance:60ft}} içindeki görebildiğin bir yaratık hasar attığında veya nitelik kontrolü ya da saldırı atışında başarılı olduğunda Tepki ve bir Ozan İlhamı kullan. İlham zarını atıp sonuçtan çıkar; başarıyı başarısızlığa çevirebilirsin."
       },
       "Magical Discoveries": {
         "name": "Büyülü Keşifler",
@@ -51,7 +51,7 @@
       },
       "Preserve Life": {
         "name": "Yaşamı Koru",
-        "description": "Büyü eylemiyle Kutsal Güç Aktarmayı harcayarak Rahip seviyenin 5 katı toplam Can Puanını 30 fit içindeki Yaralı yaratıklara, kendin dahil, paylaştır. Bu yolla hiçbiri azami Can Puanının yarısının üstüne iyileştirilemez."
+        "description": "Büyü eylemiyle Kutsal Güç Aktarmayı harcayarak Rahip seviyenin 5 katı toplam Can Puanını {{distance:30ft}} içindeki Yaralı yaratıklara, kendin dahil, paylaştır. Bu yolla hiçbiri azami Can Puanının yarısının üstüne iyileştirilemez."
       },
       "Blessed Healer": {
         "name": "Kutsanmış Şifacı",
@@ -71,7 +71,7 @@
       },
       "Land's Aid": {
         "name": "Toprağın Yardımı",
-        "description": "Büyü eylemiyle Vahşi Biçim harcayıp 60 fit içinde yarıçapı 10 fit olan Küre oluştur. Seçtiğin yaratıklar Dayanıklılık kurtarma atışında başarısızsa 2d6 Nekrotik hasar, başarılıysa yarısını alır; oradaki bir yaratık da 2d6 Can Puanı yeniler. Her ikisi Druid seviyesi 10'da 3d6, 14'te 4d6 olur."
+        "description": "Büyü eylemiyle Vahşi Biçim harcayıp {{distance:60ft}} içinde yarıçapı {{distance:10ft}} olan Küre oluştur. Seçtiğin yaratıklar Dayanıklılık kurtarma atışında başarısızsa 2d6 Nekrotik hasar, başarılıysa yarısını alır; oradaki bir yaratık da 2d6 Can Puanı yeniler. Her ikisi Druid seviyesi 10'da 3d6, 14'te 4d6 olur."
       },
       "Natural Recovery": {
         "name": "Doğal İyileşme",
@@ -83,7 +83,7 @@
       },
       "Nature's Sanctuary": {
         "name": "Doğanın Sığınağı",
-        "description": "Büyü eylemiyle Vahşi Biçim harcayıp 120 fit içinde zeminde 15 fitlik bir Küpü 1 dakikalığına oluştur; Etkisiz olursan veya ölürsen biter. İçindeki sen ve müttefiklerin Yarım Siper kazanır; müttefikler Doğanın Koruması Direncini de kazanır. Bonus Eylemle Küpü 120 fit içindeki zemine 60 fite kadar taşı."
+        "description": "Büyü eylemiyle Vahşi Biçim harcayıp {{distance:120ft}} içinde zeminde {{distance:15ft|lik}} bir Küpü 1 dakikalığına oluştur; Etkisiz olursan veya ölürsen biter. İçindeki sen ve müttefiklerin Yarım Siper kazanır; müttefikler Doğanın Koruması Direncini de kazanır. Bonus Eylemle Küpü {{distance:120ft}} içindeki zemine {{distance:60ft|dat}} kadar taşı."
       }
     }
   },
@@ -119,7 +119,7 @@
     "Warrior of the Open Hand": {
       "Open Hand Technique": {
         "name": "Açık El Tekniği",
-        "description": "Darbe Sağanağı isabet ettiğinde seç: hedef sonraki turuna kadar Fırsat Saldırısı yapamaz; Güç kurtarma atışında başarısızsa onu 15 fite kadar it; ya da Çeviklik kurtarma atışında başarısızsa Yere Düşmüş olur."
+        "description": "Darbe Sağanağı isabet ettiğinde seç: hedef sonraki turuna kadar Fırsat Saldırısı yapamaz; Güç kurtarma atışında başarısızsa onu {{distance:15ft|dat}} kadar it; ya da Çeviklik kurtarma atışında başarısızsa Yere Düşmüş olur."
       },
       "Wholeness of Body": {
         "name": "Beden Bütünlüğü",
@@ -143,7 +143,7 @@
       },
       "Sacred Weapon": {
         "name": "Kutsal Silah",
-        "description": "Saldırı eyleminde tuttuğun Yakın Dövüş silahını 10 dakikalığına güçlendirmek için Kutsal Güç Aktarmayı harca. Saldırı atışlarına Karizma değiştiricini (en az +1) ekle; her isabet normal türde veya Işınsal hasar verebilir. 20 fit Parlak Işık ve ek 20 fit Loş Işık yayar; taşımayı bırakırsan biter."
+        "description": "Saldırı eyleminde tuttuğun Yakın Dövüş silahını 10 dakikalığına güçlendirmek için Kutsal Güç Aktarmayı harca. Saldırı atışlarına Karizma değiştiricini (en az +1) ekle; her isabet normal türde veya Işınsal hasar verebilir. {{distance:20ft}} Parlak Işık ve ek {{distance:20ft}} Loş Işık yayar; taşımayı bırakırsan biter."
       },
       "Aura of Devotion": {
         "name": "Bağlılık Aurası",
@@ -167,7 +167,7 @@
       },
       "Hunter's Prey": {
         "name": "Avcının Avı",
-        "description": "Kısa veya Uzun Dinlenmeden sonra değiştirilebilen seçenek seç. Dev Katili: tur başına bir kez Can Puanı eksilmiş yaratığa silah isabeti +1d8 hasar verir. Sürü Kıran: turunda bir kez silahla saldırdığında ilk hedefin 5 fit yakınında, erişimindeki ve bu tur saldırmadığın farklı bir yaratığa saldır."
+        "description": "Kısa veya Uzun Dinlenmeden sonra değiştirilebilen seçenek seç. Dev Katili: tur başına bir kez Can Puanı eksilmiş yaratığa silah isabeti +1d8 hasar verir. Sürü Kıran: turunda bir kez silahla saldırdığında ilk hedefin {{distance:5ft}} yakınında, erişimindeki ve bu tur saldırmadığın farklı bir yaratığa saldır."
       },
       "Defensive Tactics": {
         "name": "Savunma Taktikleri",
@@ -175,7 +175,7 @@
       },
       "Superior Hunter's Prey": {
         "name": "Üstün Avcı Avı",
-        "description": "Tur başına bir kez Avcı İşaretiyle işaretli yaratığa hasar verdiğinde, büyünün ek hasarını işaretlinin 30 fit içindeki görebildiğin farklı bir yaratığa ver."
+        "description": "Tur başına bir kez Avcı İşaretiyle işaretli yaratığa hasar verdiğinde, büyünün ek hasarını işaretlinin {{distance:30ft}} içindeki görebildiğin farklı bir yaratığa ver."
       },
       "Superior Hunter's Defense": {
         "name": "Üstün Avcı Savunması",
@@ -223,7 +223,7 @@
       },
       "Dragon Wings": {
         "name": "Ejderha Kanatları",
-        "description": "Bonus Eylemle kanatlar ve 1 saatliğine veya kaldırana kadar 60 fit Uçuş Hızı kazan. Uzun Dinlenme başına bir kez veya kullanımı yenilemek için 3 Büyücülük Puanı harca."
+        "description": "Bonus Eylemle kanatlar ve 1 saatliğine veya kaldırana kadar {{distance:60ft}} Uçuş Hızı kazan. Uzun Dinlenme başına bir kez veya kullanımı yenilemek için 3 Büyücülük Puanı harca."
       },
       "Dragon Companion": {
         "name": "Ejderha Yoldaş",
@@ -235,7 +235,7 @@
     "Fiend Patron": {
       "Dark One's Blessing": {
         "name": "Karanlık Efendinin Kutsaması",
-        "description": "Bir düşmanı 0 Can Puanına düşürdüğünde Karizma değiştiricin + Warlock seviyen kadar Geçici Can Puanı kazan (en az 1). 10 fit içindeki düşmanı başka biri 0'a düşürürse de kazanırsın."
+        "description": "Bir düşmanı 0 Can Puanına düşürdüğünde Karizma değiştiricin + Warlock seviyen kadar Geçici Can Puanı kazan (en az 1). {{distance:10ft}} içindeki düşmanı başka biri 0'a düşürürse de kazanırsın."
       },
       "Fiend Spells": {
         "name": "İfrit Büyüleri",

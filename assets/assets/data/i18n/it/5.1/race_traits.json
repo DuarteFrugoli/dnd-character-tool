@@ -1,11 +1,11 @@
 {
   "Darkvision": {
     "name": "Scurovisione",
-    "description": "Abituato alla vita sottoterra, hai una visione superiore in condizioni di oscurità e penombra. Puoi vedere in condizioni di scarsa luce entro 18 metri da te come se fosse luce intensa, e nell'oscurità come se fosse luce fioca. Nell'oscurità non puoi distinguere i colori, solo le sfumature di grigio."
+    "description": "Abituato alla vita sottoterra, hai una visione superiore in condizioni di oscurità e penombra. Puoi vedere in condizioni di scarsa luce entro {{distance:60ft}} da te come se fosse luce intensa, e nell'oscurità come se fosse luce fioca. Nell'oscurità non puoi distinguere i colori, solo le sfumature di grigio."
   },
   "Superior Darkvision": {
     "name": "Scurovisione superiore",
-    "description": "La tua scurovisione ha un raggio di 36 metri."
+    "description": "La tua scurovisione ha un raggio di {{distance:120ft}}."
   },
   "Dwarven Resilience": {
     "name": "Resilienza nanica",
@@ -65,7 +65,7 @@
   },
   "Fleet of Foot": {
     "name": "Flotta di piedi",
-    "description": "La tua velocità di camminata base aumenta a 10,5 metri."
+    "description": "La tua velocità di camminata base aumenta a {{distance:35ft}}."
   },
   "Mask of the Wild": {
     "name": "Maschera del selvaggio",

@@ -1,7 +1,7 @@
 {
   "Acid Splash": {
     "name": "Respingo Ácido",
-    "description": "Ácido irrompe em uma Esfera de 1,5 metro de raio a até 18 metros. As criaturas na área fazem um teste de resistência de Destreza ou sofrem 1d6 de dano Ácido. O dano passa a 2d6, 3d6 e 4d6 nos níveis de personagem 5, 11 e 17.",
+    "description": "Ácido irrompe em uma Esfera de {{distance:5ft}} de raio a até {{distance:60ft}}. As criaturas na área fazem um teste de resistência de Destreza ou sofrem 1d6 de dano Ácido. O dano passa a 2d6, 3d6 e 4d6 nos níveis de personagem 5, 11 e 17.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea",
@@ -28,7 +28,7 @@
   },
   "Dancing Lights": {
     "name": "Luzes Dançantes",
-    "description": "Crie até quatro luzes flutuantes de Penumbra, cada uma iluminando um raio de 3 metros, ou combine-as na forma de um humanoide Médio. Como Ação Bônus, mova as luzes até 18 metros, mantendo-as a até 6 metros umas das outras.",
+    "description": "Crie até quatro luzes flutuantes de Penumbra, cada uma iluminando um raio de {{distance:10ft}}, ou combine-as na forma de um humanoide Médio. Como Ação Bônus, mova as luzes até {{distance:60ft}}, mantendo-as a até {{distance:20ft}} umas das outras.",
     "material": "um pouco de fósforo",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -58,7 +58,7 @@
   },
   "Elementalism": {
     "name": "Elementalismo",
-    "description": "Crie um pequeno efeito elemental a até 9 metros: agite ar ou poeira, faça uma palavra aparecer na areia, produza fumaça ou brasas inofensivas ou molde, colore ou mova água brevemente.",
+    "description": "Crie um pequeno efeito elemental a até {{distance:30ft}}: agite ar ou poeira, faça uma palavra aparecer na areia, produza fumaça ou brasas inofensivas ou molde, colore ou mova água brevemente.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "Instantânea"
@@ -87,7 +87,7 @@
   },
   "Light": {
     "name": "Luz",
-    "description": "Toque um objeto desacompanhado Grande ou menor. Por 1 hora, ele emite Luz Plena em um raio de 6 metros e Penumbra por mais 6 metros; uma cobertura opaca bloqueia a luz.",
+    "description": "Toque um objeto desacompanhado Grande ou menor. Por 1 hora, ele emite Luz Plena em um raio de {{distance:20ft}} e Penumbra por mais {{distance:20ft}}; uma cobertura opaca bloqueia a luz.",
     "material": "um vaga-lume ou musgo fosforescente",
     "castingTime": "Ação",
     "range": "Toque",
@@ -102,7 +102,7 @@
   },
   "Mending": {
     "name": "Consertar",
-    "description": "Repare uma única quebra ou rasgo de até 30 centímetros em um objeto que você toca. A magia pode consertar fisicamente um item mágico, mas não restaurar sua magia.",
+    "description": "Repare uma única quebra ou rasgo de até {{distance:1ft}} em um objeto que você toca. A magia pode consertar fisicamente um item mágico, mas não restaurar sua magia.",
     "material": "duas magnetitas",
     "castingTime": "1 minuto",
     "range": "Toque",
@@ -110,7 +110,7 @@
   },
   "Message": {
     "name": "Mensagem",
-    "description": "Sussurre para uma criatura a até 36 metros; somente ela ouve e pode responder em sussurro. Se você conhece o alvo, a mensagem atravessa barreiras, mas silêncio mágico, material sólido suficiente ou chumbo a bloqueiam.",
+    "description": "Sussurre para uma criatura a até {{distance:120ft}}; somente ela ouve e pode responder em sussurro. Se você conhece o alvo, a mensagem atravessa barreiras, mas silêncio mágico, material sólido suficiente ou chumbo a bloqueiam.",
     "material": "um fio de cobre",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -118,7 +118,7 @@
   },
   "Minor Illusion": {
     "name": "Ilusão Menor",
-    "description": "Crie um som ou a imagem de um objeto de até um Cubo de 1,5 metro por 1 minuto. A imagem não produz som, luz, cheiro ou efeitos físicos; uma criatura pode discernir a ilusão usando a ação Estudar e passando em um teste de Investigação contra a CD das suas magias.",
+    "description": "Crie um som ou a imagem de um objeto de até um Cubo de {{distance:5ft}} por 1 minuto. A imagem não produz som, luz, cheiro ou efeitos físicos; uma criatura pode discernir a ilusão usando a ação Estudar e passando em um teste de Investigação contra a CD das suas magias.",
     "material": "um pouco de lã",
     "castingTime": "Ação",
     "range": "9 metros",
@@ -126,7 +126,7 @@
   },
   "Poison Spray": {
     "name": "Jato Venenoso",
-    "description": "Faça um ataque mágico à distância contra uma criatura a até 9 metros. Um acerto causa 1d12 de dano de Veneno; o dano passa a 2d12, 3d12 e 4d12 nos níveis 5, 11 e 17.",
+    "description": "Faça um ataque mágico à distância contra uma criatura a até {{distance:30ft}}. Um acerto causa 1d12 de dano de Veneno; o dano passa a 2d12, 3d12 e 4d12 nos níveis 5, 11 e 17.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "Instantânea",
@@ -141,14 +141,14 @@
   },
   "Prestidigitation": {
     "name": "Prestidigitação",
-    "description": "Crie um pequeno efeito mágico a até 3 metros: um efeito sensorial inofensivo; acenda ou apague uma chama pequena; limpe ou suje um objeto pequeno; altere sua temperatura ou sabor; deixe uma marca ou crie uma bugiganga minúscula. Até três efeitos duradouros podem coexistir.",
+    "description": "Crie um pequeno efeito mágico a até {{distance:10ft}}: um efeito sensorial inofensivo; acenda ou apague uma chama pequena; limpe ou suje um objeto pequeno; altere sua temperatura ou sabor; deixe uma marca ou crie uma bugiganga minúscula. Até três efeitos duradouros podem coexistir.",
     "castingTime": "Ação",
     "range": "3 metros",
     "duration": "Até 1 hora"
   },
   "Produce Flame": {
     "name": "Produzir Chama",
-    "description": "Como Ação Bônus, crie uma chama que emite Luz Plena por 6 metros e Penumbra por mais 6 metros durante 10 minutos. Nesse período, uma ação Magia permite arremessá-la a até 18 metros; um ataque mágico à distância causa 1d8 de dano de Fogo ao acertar, aumentando nos níveis 5, 11 e 17.",
+    "description": "Como Ação Bônus, crie uma chama que emite Luz Plena por {{distance:20ft}} e Penumbra por mais {{distance:20ft}} durante 10 minutos. Nesse período, uma ação Magia permite arremessá-la a até {{distance:60ft}}; um ataque mágico à distância causa 1d8 de dano de Fogo ao acertar, aumentando nos níveis 5, 11 e 17.",
     "castingTime": "Ação Bônus",
     "range": "Pessoal",
     "duration": "10 minutos",
@@ -163,7 +163,7 @@
   },
   "Ray of Frost": {
     "name": "Raio de Gelo",
-    "description": "Faça um ataque mágico à distância. Um acerto causa 1d8 de dano de Frio e reduz a Deslocamento do alvo em 3 metros até o início do seu próximo turno. O dano passa a 2d8, 3d8 e 4d8 nos níveis 5, 11 e 17.",
+    "description": "Faça um ataque mágico à distância. Um acerto causa 1d8 de dano de Frio e reduz a Deslocamento do alvo em {{distance:10ft}} até o início do seu próximo turno. O dano passa a 2d8, 3d8 e 4d8 nos níveis 5, 11 e 17.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea",
@@ -185,7 +185,7 @@
   },
   "Sacred Flame": {
     "name": "Chama Sagrada",
-    "description": "Uma criatura visível a até 18 metros faz um teste de resistência de Destreza ou sofre 1d8 de dano Radiante; Cobertura Parcial e Cobertura de Três Quartos não ajudam no teste. O dano passa a 2d8, 3d8 e 4d8 nos níveis 5, 11 e 17.",
+    "description": "Uma criatura visível a até {{distance:60ft}} faz um teste de resistência de Destreza ou sofre 1d8 de dano Radiante; Cobertura Parcial e Cobertura de Três Quartos não ajudam no teste. O dano passa a 2d8, 3d8 e 4d8 nos níveis 5, 11 e 17.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea",
@@ -227,14 +227,14 @@
   },
   "Spare the Dying": {
     "name": "Estabilizar",
-    "description": "Uma criatura com 0 Pontos de Vida que não esteja morta torna-se Estável. O alcance é de 4,5 metros e dobra nos níveis 5, 11 e 17, chegando a 30, 60 e 36 metros.",
+    "description": "Uma criatura com 0 Pontos de Vida que não esteja morta torna-se Estável. O alcance é de {{distance:15ft}} e dobra nos níveis 5, 11 e 17, chegando a {{distance:30ft|num}}, {{distance:60ft|num}} e {{distance:120ft}}.",
     "castingTime": "Ação",
     "range": "4,5 metros",
     "duration": "Instantânea"
   },
   "Starry Wisp": {
     "name": "Fagulha Estelar",
-    "description": "Faça um ataque mágico à distância. Um acerto causa 1d8 de dano Radiante; até o fim do seu próximo turno, o alvo emite Penumbra em um raio de 3 metros e não pode se beneficiar da condição Invisível. O dano passa a 2d8, 3d8 e 4d8 nos níveis 5, 11 e 17.",
+    "description": "Faça um ataque mágico à distância. Um acerto causa 1d8 de dano Radiante; até o fim do seu próximo turno, o alvo emite Penumbra em um raio de {{distance:10ft}} e não pode se beneficiar da condição Invisível. O dano passa a 2d8, 3d8 e 4d8 nos níveis 5, 11 e 17.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea",
@@ -249,7 +249,7 @@
   },
   "Thaumaturgy": {
     "name": "Taumaturgia",
-    "description": "Crie uma pequena maravilha a até 9 metros, como olhos alterados, uma voz estrondosa que concede Vantagem em testes de Intimidação, chamas modificadas, uma porta que abre ou fecha, um som fantasma ou um tremor. Até três efeitos duradouros podem coexistir.",
+    "description": "Crie uma pequena maravilha a até {{distance:30ft}}, como olhos alterados, uma voz estrondosa que concede Vantagem em testes de Intimidação, chamas modificadas, uma porta que abre ou fecha, um som fantasma ou um tremor. Até três efeitos duradouros podem coexistir.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "Até 1 minuto"
@@ -264,7 +264,7 @@
   },
   "Vicious Mockery": {
     "name": "Zombaria Perversa",
-    "description": "Uma criatura que você possa ver ou ouvir a até 18 metros faz um teste de resistência de Sabedoria ou sofre 1d6 de dano Psíquico e recebe Desvantagem em seu próximo ataque antes do fim do próximo turno dela. O dano passa a 2d6, 3d6 e 4d6 nos níveis 5, 11 e 17.",
+    "description": "Uma criatura que você possa ver ou ouvir a até {{distance:60ft}} faz um teste de resistência de Sabedoria ou sofre 1d6 de dano Psíquico e recebe Desvantagem em seu próximo ataque antes do fim do próximo turno dela. O dano passa a 2d6, 3d6 e 4d6 nos níveis 5, 11 e 17.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea",
@@ -276,7 +276,7 @@
   },
   "Alarm": {
     "name": "Alarme",
-    "description": "Proteja uma porta, janela ou área de até um Cubo de 6 metros por 8 horas. Escolha quais criaturas não acionam o alarme e se um intruso provoca um alerta mental ou o som de um sino.",
+    "description": "Proteja uma porta, janela ou área de até um Cubo de {{distance:20ft}} por 8 horas. Escolha quais criaturas não acionam o alarme e se um intruso provoca um alerta mental ou o som de um sino.",
     "material": "um sino e fio de prata",
     "castingTime": "1 minuto ou Ritual",
     "range": "9 metros",
@@ -311,7 +311,7 @@
   },
   "Burning Hands": {
     "name": "Mãos Flamejantes",
-    "description": "Fogo preenche um Cone de 4,5 metros a partir de você. As criaturas fazem testes de resistência de Destreza, sofrendo 3d6 de dano de Fogo se falharem ou metade se passarem. Objetos inflamáveis desacompanhados pegam fogo; espaços superiores adicionam 1d6 de dano por nível.",
+    "description": "Fogo preenche um Cone de {{distance:15ft}} a partir de você. As criaturas fazem testes de resistência de Destreza, sofrendo 3d6 de dano de Fogo se falharem ou metade se passarem. Objetos inflamáveis desacompanhados pegam fogo; espaços superiores adicionam 1d6 de dano por nível.",
     "higherLevels": "Cada nível de espaço acima do 1º adiciona 1d6.",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -332,7 +332,7 @@
   },
   "Chromatic Orb": {
     "name": "Orbe Cromática",
-    "description": "Faça um ataque mágico à distância que causa 3d8 de dano Ácido, Frio, Fogo, Elétrico, Veneno ou Trovejante. Dados de dano com resultados iguais permitem que o orbe salte para outro alvo a até 9 metros; com um espaço superior, adicione 1d8 de dano e permita até um número de saltos igual ao nível do espaço. Nenhum alvo pode ser atingido duas vezes.",
+    "description": "Faça um ataque mágico à distância que causa 3d8 de dano Ácido, Frio, Fogo, Elétrico, Veneno ou Trovejante. Dados de dano com resultados iguais permitem que o orbe salte para outro alvo a até {{distance:30ft}}; com um espaço superior, adicione 1d8 de dano e permita até um número de saltos igual ao nível do espaço. Nenhum alvo pode ser atingido duas vezes.",
     "higherLevels": "Cada nível de espaço acima do 1º adiciona 1d8.",
     "material": "um diamante que valha pelo menos 50 PO",
     "castingTime": "Ação",
@@ -349,7 +349,7 @@
   },
   "Color Spray": {
     "name": "Leque Cromático",
-    "description": "Criaturas em um Cone de 4,5 metros fazem testes de resistência de Constituição. Quem falhar fica Cego até o fim do seu próximo turno.",
+    "description": "Criaturas em um Cone de {{distance:15ft}} fazem testes de resistência de Constituição. Quem falhar fica Cego até o fim do seu próximo turno.",
     "material": "uma pitada de areia colorida",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -373,8 +373,8 @@
   },
   "Create or Destroy Water": {
     "name": "Criar ou Destruir Água",
-    "description": "Crie ou remova até cerca de 38 litros de água em um recipiente aberto, ou faça chover ou disperse névoa em um Cubo de 9 metros. Espaços superiores acrescentam cerca de 38 litros ou aumentam o Cubo.",
-    "higherLevels": "Cada nível de espaço acima do 1º acrescenta cerca de 38 litros ou aumenta em 1,5 metro o lado do Cubo.",
+    "description": "Crie ou remova até cerca de 38 litros de água em um recipiente aberto, ou faça chover ou disperse névoa em um Cubo de {{distance:30ft}}. Espaços superiores acrescentam cerca de 38 litros ou aumentam o Cubo.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta cerca de 38 litros ou aumenta em {{distance:5ft}} o lado do Cubo.",
     "material": "uma mistura de água e areia",
     "castingTime": "Ação",
     "range": "9 metros",
@@ -390,21 +390,21 @@
   },
   "Detect Evil and Good": {
     "name": "Detectar o Bem e o Mal",
-    "description": "Por até 10 minutos, perceba Aberrações, Celestiais, Elementais, Fadas, Ínferos e Mortos-Vivos a até 9 metros, assim como qualquer efeito ativo de Consagrar nessa área. Barreiras espessas bloqueiam essa percepção.",
+    "description": "Por até 10 minutos, perceba Aberrações, Celestiais, Elementais, Fadas, Ínferos e Mortos-Vivos a até {{distance:30ft}}, assim como qualquer efeito ativo de Consagrar nessa área. Barreiras espessas bloqueiam essa percepção.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "Concentração, até 10 minutos"
   },
   "Detect Magic": {
     "name": "Detectar Magia",
-    "description": "Por até 10 minutos, perceba efeitos mágicos a até 9 metros. Uma ação Magia revela auras mágicas visíveis e a escola de uma magia; barreiras suficientemente espessas bloqueiam a detecção.",
+    "description": "Por até 10 minutos, perceba efeitos mágicos a até {{distance:30ft}}. Uma ação Magia revela auras mágicas visíveis e a escola de uma magia; barreiras suficientemente espessas bloqueiam a detecção.",
     "castingTime": "Ação ou Ritual",
     "range": "Pessoal",
     "duration": "Concentração, até 10 minutos"
   },
   "Detect Poison and Disease": {
     "name": "Detectar Veneno e Doença",
-    "description": "Por até 10 minutos, perceba a localização e o tipo de venenos, criaturas venenosas e contágios mágicos a até 9 metros. Barreiras espessas bloqueiam a detecção.",
+    "description": "Por até 10 minutos, perceba a localização e o tipo de venenos, criaturas venenosas e contágios mágicos a até {{distance:30ft}}. Barreiras espessas bloqueiam a detecção.",
     "material": "uma folha de teixo",
     "castingTime": "Ação ou Ritual",
     "range": "Pessoal",
@@ -455,7 +455,7 @@
   },
   "Entangle": {
     "name": "Constrição",
-    "description": "Plantas preenchem um quadrado de 6 metros com Terreno Difícil por até 1 minuto. As criaturas na área quando a magia é conjurada fazem testes de resistência de Força ou ficam Contidas; podem usar uma ação para escapar.",
+    "description": "Plantas preenchem um quadrado de {{distance:20ft}} com Terreno Difícil por até 1 minuto. As criaturas na área quando a magia é conjurada fazem testes de resistência de Força ou ficam Contidas; podem usar uma ação para escapar.",
     "castingTime": "Ação",
     "range": "27 metros",
     "duration": "Concentração, até 1 minuto"
@@ -469,7 +469,7 @@
   },
   "Faerie Fire": {
     "name": "Fogo das Fadas",
-    "description": "Criaturas em um Cubo de 6 metros que falharem em testes de resistência de Destreza brilham por até 1 minuto. Elas não podem se beneficiar de Invisibilidade e atacantes que possam vê-las têm Vantagem contra elas.",
+    "description": "Criaturas em um Cubo de {{distance:20ft}} que falharem em testes de resistência de Destreza brilham por até 1 minuto. Elas não podem se beneficiar de Invisibilidade e atacantes que possam vê-las têm Vantagem contra elas.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Concentração, até 1 minuto"
@@ -485,7 +485,7 @@
   },
   "Feather Fall": {
     "name": "Queda Suave",
-    "description": "Como Reação quando criaturas caem, reduza a queda de até cinco criaturas para 18 metros por rodada durante 1 minuto. Elas não sofrem dano de queda se aterrissarem antes do fim da magia.",
+    "description": "Como Reação quando criaturas caem, reduza a queda de até cinco criaturas para {{distance:60ft}} por rodada durante 1 minuto. Elas não sofrem dano de queda se aterrissarem antes do fim da magia.",
     "material": "uma pequena pena ou um pouco de penugem",
     "castingTime": "Reação, realizada quando você ou uma criatura que você possa ver a até 18 metros de você cai",
     "range": "18 metros",
@@ -493,7 +493,7 @@
   },
   "Find Familiar": {
     "name": "Encontrar Familiar",
-    "description": "Convoque um espírito Celestial, Feérico ou Ínfero na forma de uma Fera com ND 0. Ele age de modo independente e não pode atacar; a até 30 metros, você pode comunicar-se telepaticamente, perceber pelos sentidos dele ou fazê-lo entregar uma magia de toque com sua Reação. Você pode dispensá-lo e invocá-lo novamente.",
+    "description": "Convoque um espírito Celestial, Feérico ou Ínfero na forma de uma Fera com ND 0. Ele age de modo independente e não pode atacar; a até {{distance:100ft}}, você pode comunicar-se telepaticamente, perceber pelos sentidos dele ou fazê-lo entregar uma magia de toque com sua Reação. Você pode dispensá-lo e invocá-lo novamente.",
     "material": "incenso em chamas que valha pelo menos 10 PO, consumido pela magia",
     "castingTime": "1 hora ou Ritual",
     "range": "3 metros",
@@ -501,7 +501,7 @@
   },
   "Floating Disk": {
     "name": "Disco Flutuante",
-    "description": "Crie um disco flutuante de 90 centímetros que carrega até 225 quilos por 1 hora e o segue quando você se move a mais de 6 metros dele.",
+    "description": "Crie um disco flutuante de {{distance:3ft}} que carrega até 225 quilos por 1 hora e o segue quando você se move a mais de {{distance:20ft}} dele.",
     "material": "uma gota de mercúrio",
     "castingTime": "Ação ou Ritual",
     "range": "9 metros",
@@ -509,8 +509,8 @@
   },
   "Fog Cloud": {
     "name": "Névoa Obscurecente",
-    "description": "Crie uma Esfera de névoa de 6 metros de raio que deixa a área Fortemente Obscurecida por até 1 hora. Vento forte a dispersa; cada nível de espaço acima do 1º aumenta seu raio em 6 metros.",
-    "higherLevels": "Cada nível de espaço acima do 1º aumenta o raio da névoa em 6 metros.",
+    "description": "Crie uma Esfera de névoa de {{distance:20ft}} de raio que deixa a área Fortemente Obscurecida por até 1 hora. Vento forte a dispersa; cada nível de espaço acima do 1º aumenta seu raio em {{distance:20ft}}.",
+    "higherLevels": "Cada nível de espaço acima do 1º aumenta o raio da névoa em {{distance:20ft}}.",
     "castingTime": "Ação",
     "range": "36 metros",
     "duration": "Concentração, até 1 hora"
@@ -525,7 +525,7 @@
   },
   "Grease": {
     "name": "Graxa",
-    "description": "Cubra um quadrado de 3 metros com graxa não inflamável por 1 minuto, tornando-o Terreno Difícil. Criaturas na área quando a graxa surge, ou que entrem ou terminem um turno nela, devem passar em um teste de resistência de Destreza ou caem Caídas.",
+    "description": "Cubra um quadrado de {{distance:10ft}} com graxa não inflamável por 1 minuto, tornando-o Terreno Difícil. Criaturas na área quando a graxa surge, ou que entrem ou terminem um turno nela, devem passar em um teste de resistência de Destreza ou caem Caídas.",
     "material": "um pouco de toucinho ou manteiga",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -549,7 +549,7 @@
   },
   "Healing Word": {
     "name": "Palavra Curativa",
-    "description": "Uma criatura que você possa ver a até 18 metros recupera 2d4 mais seu modificador de atributo de conjuração em Pontos de Vida. Cada nível de espaço acima do 1º acrescenta 2d4 à cura.",
+    "description": "Uma criatura que você possa ver a até {{distance:60ft}} recupera 2d4 mais seu modificador de atributo de conjuração em Pontos de Vida. Cada nível de espaço acima do 1º acrescenta 2d4 à cura.",
     "higherLevels": "Cada nível de espaço acima do 1º adiciona 2d4.",
     "castingTime": "Ação Bônus",
     "range": "18 metros",
@@ -557,7 +557,7 @@
   },
   "Hellish Rebuke": {
     "name": "Repreensão Infernal",
-    "description": "Use a reação depois que uma criatura visível a até 18 metros causar dano a você. Ela faz um teste de resistência de Destreza, sofrendo 2d10 de dano de Fogo se falhar, ou metade se passar. Espaços de nível superior acrescentam 1d10.",
+    "description": "Use a reação depois que uma criatura visível a até {{distance:60ft}} causar dano a você. Ela faz um teste de resistência de Destreza, sofrendo 2d10 de dano de Fogo se falhar, ou metade se passar. Espaços de nível superior acrescentam 1d10.",
     "higherLevels": "Cada nível de espaço acima do 1º adiciona 1d10.",
     "castingTime": "Reação, realizada ao sofrer dano de uma criatura que você possa ver a até 18 metros de você",
     "range": "18 metros",
@@ -604,7 +604,7 @@
   },
   "Ice Knife": {
     "name": "Faca de Gelo",
-    "description": "Faça um ataque mágico à distância contra uma criatura para causar 1d10 de dano Perfurante se acertar. Acerte ou erre, o fragmento explode: o alvo e as criaturas a até 1,5 metro dele fazem testes de resistência de Destreza ou sofrem 2d6 de dano de Frio. Espaços de nível superior aumentam o dano de Frio.",
+    "description": "Faça um ataque mágico à distância contra uma criatura para causar 1d10 de dano Perfurante se acertar. Acerte ou erre, o fragmento explode: o alvo e as criaturas a até {{distance:5ft}} dele fazem testes de resistência de Destreza ou sofrem 2d6 de dano de Frio. Espaços de nível superior aumentam o dano de Frio.",
     "higherLevels": "Cada nível de espaço acima do 1º adiciona 1d6 de dano de Frio.",
     "material": "uma gota de água ou um pedaço de gelo",
     "castingTime": "Ação",
@@ -653,7 +653,7 @@
   },
   "Jump": {
     "name": "Salto",
-    "description": "Uma criatura voluntária que você toque pode saltar até 9 metros uma vez a cada turno, gastando 3 metros de deslocamento, por 1 minuto. Espaços de nível superior acrescentam um alvo por nível.",
+    "description": "Uma criatura voluntária que você toque pode saltar até {{distance:30ft}} uma vez a cada turno, gastando {{distance:10ft}} de deslocamento, por 1 minuto. Espaços de nível superior acrescentam um alvo por nível.",
     "higherLevels": "Cada nível de espaço acima do 1º permite um alvo adicional.",
     "material": "a pata traseira de um gafanhoto",
     "castingTime": "Ação Bônus",
@@ -662,7 +662,7 @@
   },
   "Longstrider": {
     "name": "Passos Longos",
-    "description": "Uma criatura que você toque ganha 3 metros de Deslocamento por 1 hora. Cada nível de espaço acima do 1º acrescenta um alvo.",
+    "description": "Uma criatura que você toque ganha {{distance:10ft}} de Deslocamento por 1 hora. Cada nível de espaço acima do 1º acrescenta um alvo.",
     "higherLevels": "Cada nível de espaço acima do 1º permite um alvo adicional.",
     "material": "uma pitada de terra",
     "castingTime": "Ação",
@@ -695,7 +695,7 @@
   },
   "Purify Food and Drink": {
     "name": "Purificar Alimentos e Bebidas",
-    "description": "Remova veneno e deterioração de comida e bebida não mágicas em uma Esfera de 1,5 metro de raio a até 3 metros.",
+    "description": "Remova veneno e deterioração de comida e bebida não mágicas em uma Esfera de {{distance:5ft}} de raio a até {{distance:10ft}}.",
     "castingTime": "Ação ou Ritual",
     "range": "3 metros",
     "duration": "Instantânea"
@@ -741,7 +741,7 @@
   },
   "Shield of Faith": {
     "name": "Escudo da Fé",
-    "description": "Uma criatura a até 18 metros ganha +2 na CA por até 10 minutos enquanto você mantiver a Concentração.",
+    "description": "Uma criatura a até {{distance:60ft}} ganha +2 na CA por até 10 minutos enquanto você mantiver a Concentração.",
     "material": "um pergaminho de oração",
     "castingTime": "Ação Bônus",
     "range": "18 metros",
@@ -749,7 +749,7 @@
   },
   "Silent Image": {
     "name": "Imagem Silenciosa",
-    "description": "Crie uma imagem puramente visual de até um Cubo de 4,5 metros por até 10 minutos. Você pode movê-la com uma ação Magia; a interação física revela a ilusão.",
+    "description": "Crie uma imagem puramente visual de até um Cubo de {{distance:15ft}} por até 10 minutos. Você pode movê-la com uma ação Magia; a interação física revela a ilusão.",
     "material": "um pouco de lã",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -757,7 +757,7 @@
   },
   "Sleep": {
     "name": "Sono",
-    "description": "Criaturas escolhidas em uma Esfera de 1,5 metro de raio fazem testes de resistência de Sabedoria. Uma falha as deixa Incapacitadas até o fim do próximo turno; uma segunda falha as deixa Inconscientes por até 1 minuto. Dano ou ser sacudido encerra o efeito; criaturas que não dormem passam automaticamente.",
+    "description": "Criaturas escolhidas em uma Esfera de {{distance:5ft}} de raio fazem testes de resistência de Sabedoria. Uma falha as deixa Incapacitadas até o fim do próximo turno; uma segunda falha as deixa Inconscientes por até 1 minuto. Dano ou ser sacudido encerra o efeito; criaturas que não dormem passam automaticamente.",
     "material": "uma pitada de areia ou pétalas de rosa",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -772,7 +772,7 @@
   },
   "Thunderwave": {
     "name": "Onda Trovejante",
-    "description": "Um Cubo de 4,5 metros de trovão irrompe a partir de você. As criaturas fazem testes de resistência de Constituição, sofrendo 2d8 de dano Trovejante e sendo empurradas 3 metros se falharem, ou metade do dano se passarem. Espaços de nível superior acrescentam 1d8 ao dano.",
+    "description": "Um Cubo de {{distance:15ft}} de trovão irrompe a partir de você. As criaturas fazem testes de resistência de Constituição, sofrendo 2d8 de dano Trovejante e sendo empurradas {{distance:10ft}} se falharem, ou metade do dano se passarem. Espaços de nível superior acrescentam 1d8 ao dano.",
     "higherLevels": "Cada nível de espaço acima do 1º adiciona 1d8.",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -802,7 +802,7 @@
   },
   "Aid": {
     "name": "Ajuda",
-    "description": "Até três criaturas a até 9 metros ganham 5 Pontos de Vida atuais e máximos por 8 horas. Cada nível de espaço acima do 2º acrescenta mais 5 Pontos de Vida.",
+    "description": "Até três criaturas a até {{distance:30ft}} ganham 5 Pontos de Vida atuais e máximos por 8 horas. Cada nível de espaço acima do 2º acrescenta mais 5 Pontos de Vida.",
     "higherLevels": "Cada nível de espaço acima do 2º adiciona 5 aos Pontos de Vida atuais e máximos.",
     "material": "uma tira de pano branco",
     "castingTime": "Ação",
@@ -818,7 +818,7 @@
   },
   "Animal Messenger": {
     "name": "Mensageiro Animal",
-    "description": "Uma Fera Miúda de ND 0 que falhe em um teste de resistência de Carisma leva uma mensagem de até 25 palavras rumo a um lugar que você já visitou. Ela percorre cerca de 40 quilômetros por dia, ou 80 se puder voar, por 24 horas; espaços de nível superior acrescentam 48 horas cada.",
+    "description": "Uma Fera Miúda de ND 0 que falhe em um teste de resistência de Carisma leva uma mensagem de até 25 palavras rumo a um lugar que você já visitou. Ela percorre cerca de {{distance:25mi}} por dia, ou {{distance:50mi|num}} se puder voar, por 24 horas; espaços de nível superior acrescentam 48 horas cada.",
     "higherLevels": "Cada nível de espaço acima do 2º aumenta a duração em 48 horas.",
     "material": "um pouco de comida",
     "castingTime": "Ação ou Ritual",
@@ -874,14 +874,14 @@
   },
   "Calm Emotions": {
     "name": "Acalmar Emoções",
-    "description": "Humanoides em uma Esfera de 6 metros de raio fazem testes de resistência de Carisma. Se falharem, você pode suprimir as condições Enfeitiçado ou Amedrontado ou torná-los Indiferentes a criaturas às quais eram hostis, por até 1 minuto.",
+    "description": "Humanoides em uma Esfera de {{distance:20ft}} de raio fazem testes de resistência de Carisma. Se falharem, você pode suprimir as condições Enfeitiçado ou Amedrontado ou torná-los Indiferentes a criaturas às quais eram hostis, por até 1 minuto.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Concentração, até 1 minuto"
   },
   "Continual Flame": {
     "name": "Chama Contínua",
-    "description": "Crie em um objeto uma chama fria e sem combustível que emite luz plena por 6 metros e penumbra por mais 6 metros até ser dissipada. A conjuração consome pó de rubi que valha pelo menos 50 PO.",
+    "description": "Crie em um objeto uma chama fria e sem combustível que emite luz plena por {{distance:20ft}} e penumbra por mais {{distance:20ft}} até ser dissipada. A conjuração consome pó de rubi que valha pelo menos 50 PO.",
     "material": "pó de rubi que valha pelo menos 50 PO, consumido pela magia",
     "castingTime": "Ação",
     "range": "Toque",
@@ -889,7 +889,7 @@
   },
   "Darkness": {
     "name": "Escuridão",
-    "description": "Crie uma Esfera de 4,5 metros de raio de Escuridão mágica por até 10 minutos, ou centralize-a em um objeto não carregado. Luz comum não pode iluminá-la e Visão no Escuro não permite enxergar através dela.",
+    "description": "Crie uma Esfera de {{distance:15ft}} de raio de Escuridão mágica por até 10 minutos, ou centralize-a em um objeto não carregado. Luz comum não pode iluminá-la e Visão no Escuro não permite enxergar através dela.",
     "material": "pelo de morcego e um pedaço de carvão",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -897,7 +897,7 @@
   },
   "Darkvision": {
     "name": "Visão no Escuro",
-    "description": "Uma criatura voluntária que você toque ganha Visão no Escuro com alcance de 45 metros por 8 horas.",
+    "description": "Uma criatura voluntária que você toque ganha Visão no Escuro com alcance de {{distance:150ft}} por 8 horas.",
     "material": "uma cenoura seca",
     "castingTime": "Ação",
     "range": "Toque",
@@ -913,7 +913,7 @@
   },
   "Dragon's Breath": {
     "name": "Sopro do Dragão",
-    "description": "Uma criatura voluntária que você toque pode usar uma ação Magia para soprar um Cone de 4,5 metros de Ácido, Frio, Fogo, Elétrico ou Veneno. Criaturas na área fazem testes de resistência de Destreza contra 3d6 de dano, sofrendo metade se passarem; espaços de nível superior acrescentam 1d6.",
+    "description": "Uma criatura voluntária que você toque pode usar uma ação Magia para soprar um Cone de {{distance:15ft}} de Ácido, Frio, Fogo, Elétrico ou Veneno. Criaturas na área fazem testes de resistência de Destreza contra 3d6 de dano, sofrendo metade se passarem; espaços de nível superior acrescentam 1d6.",
     "higherLevels": "Cada nível de espaço acima do 2º adiciona 1d6 de dano.",
     "material": "uma pimenta ardida",
     "castingTime": "Ação Bônus",
@@ -951,7 +951,7 @@
   },
   "Find Steed": {
     "name": "Encontrar Montaria",
-    "description": "Convoque uma montaria leal de outro mundo em um espaço a até 9 metros. Ela usa o bloco de estatísticas Montaria Extraplanar e pode assumir forma Celestial, Feérica ou Ínfera.",
+    "description": "Convoque uma montaria leal de outro mundo em um espaço a até {{distance:30ft}}. Ela usa o bloco de estatísticas Montaria Extraplanar e pode assumir forma Celestial, Feérica ou Ínfera.",
     "higherLevels": "Use o nível do espaço de magia para as estatísticas do corcel.",
     "castingTime": "Ação",
     "range": "9 metros",
@@ -959,7 +959,7 @@
   },
   "Find Traps": {
     "name": "Encontrar Armadilhas",
-    "description": "Detecte se há uma armadilha criada deliberadamente a até 36 metros e na sua linha de visão, e saiba o perigo geral que ela apresenta, mas não sua localização exata.",
+    "description": "Detecte se há uma armadilha criada deliberadamente a até {{distance:120ft}} e na sua linha de visão, e saiba o perigo geral que ela apresenta, mas não sua localização exata.",
     "castingTime": "Ação",
     "range": "36 metros",
     "duration": "Instantânea"
@@ -975,7 +975,7 @@
   },
   "Flaming Sphere": {
     "name": "Esfera Flamejante",
-    "description": "Crie uma esfera de fogo de 1,5 metro por até 1 minuto. Criaturas próximas fazem testes de resistência de Destreza contra 2d6 de dano de Fogo, sofrendo metade se passarem; uma Ação Bônus move a esfera e pode exigir outro teste de resistência.",
+    "description": "Crie uma esfera de fogo de {{distance:5ft}} por até 1 minuto. Criaturas próximas fazem testes de resistência de Destreza contra 2d6 de dano de Fogo, sofrendo metade se passarem; uma Ação Bônus move a esfera e pode exigir outro teste de resistência.",
     "higherLevels": "Cada nível de espaço acima do 2º adiciona 1d6 de dano.",
     "material": "uma bola de cera",
     "castingTime": "Ação",
@@ -997,7 +997,7 @@
   },
   "Gust of Wind": {
     "name": "Lufada de Vento",
-    "description": "Uma linha de vento de 18 metros de comprimento e 3 metros de largura empurra 4,5 metros para longe as criaturas que falhem em testes de resistência de Força e dificulta o movimento em sua direção por até 1 minuto.",
+    "description": "Uma linha de vento de {{distance:60ft}} de comprimento e {{distance:10ft}} de largura empurra {{distance:15ft}} para longe as criaturas que falhem em testes de resistência de Força e dificulta o movimento em sua direção por até 1 minuto.",
     "material": "uma semente de leguminosa",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -1037,7 +1037,7 @@
   },
   "Knock": {
     "name": "Arrombar",
-    "description": "Abra uma tranca ou barra de um objeto visível a até 18 metros, inclusive uma tranca mágica, que é suprimida brevemente. A abertura produz uma batida alta audível nas proximidades.",
+    "description": "Abra uma tranca ou barra de um objeto visível a até {{distance:60ft}}, inclusive uma tranca mágica, que é suprimida brevemente. A abertura produz uma batida alta audível nas proximidades.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea"
@@ -1051,7 +1051,7 @@
   },
   "Levitate": {
     "name": "Levitar",
-    "description": "Erga uma criatura visível ou um objeto solto até 6 metros por até 10 minutos. Uma criatura involuntária pode resistir com um teste de resistência de Constituição; o deslocamento requer puxar-se contra uma superfície.",
+    "description": "Erga uma criatura visível ou um objeto solto até {{distance:20ft}} por até 10 minutos. Uma criatura involuntária pode resistir com um teste de resistência de Constituição; o deslocamento requer puxar-se contra uma superfície.",
     "material": "uma mola de metal",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -1059,7 +1059,7 @@
   },
   "Locate Animals or Plants": {
     "name": "Localizar Animais ou Plantas",
-    "description": "Diga um tipo de Fera, criatura Planta ou planta não mágica e descubra a direção e a distância da mais próxima a até 8 quilômetros.",
+    "description": "Diga um tipo de Fera, criatura Planta ou planta não mágica e descubra a direção e a distância da mais próxima a até {{distance:5mi}}.",
     "material": "pelo de um cão farejador",
     "castingTime": "Ação ou Ritual",
     "range": "Pessoal",
@@ -1067,7 +1067,7 @@
   },
   "Locate Object": {
     "name": "Localizar Objeto",
-    "description": "Por até 10 minutos, perceba a direção de um objeto familiar a até 300 metros, inclusive seu movimento. Barreiras espessas de chumbo bloqueiam o efeito.",
+    "description": "Por até 10 minutos, perceba a direção de um objeto familiar a até {{distance:1000ft}}, inclusive seu movimento. Barreiras espessas de chumbo bloqueiam o efeito.",
     "material": "um galho bifurcado",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -1111,14 +1111,14 @@
   },
   "Misty Step": {
     "name": "Passo Nebuloso",
-    "description": "Com uma Ação Bônus, teleporte-se até 9 metros para um espaço desocupado que você possa ver.",
+    "description": "Com uma Ação Bônus, teleporte-se até {{distance:30ft}} para um espaço desocupado que você possa ver.",
     "castingTime": "Ação Bônus",
     "range": "Pessoal",
     "duration": "Instantânea"
   },
   "Moonbeam": {
     "name": "Raio Lunar",
-    "description": "Um feixe de 1,5 metro de raio e 12 metros de altura dura até 1 minuto e pode ser movido 18 metros com uma ação Magia. Criaturas que entrarem ou terminarem um turno nele fazem testes de resistência de Constituição contra 2d10 de dano Radiante, sofrendo metade se passarem; uma falha também encerra a mudança de forma.",
+    "description": "Um feixe de {{distance:5ft}} de raio e {{distance:40ft}} de altura dura até 1 minuto e pode ser movido {{distance:60ft}} com uma ação Magia. Criaturas que entrarem ou terminarem um turno nele fazem testes de resistência de Constituição contra 2d10 de dano Radiante, sofrendo metade se passarem; uma falha também encerra a mudança de forma.",
     "higherLevels": "Cada nível de espaço acima do 2º adiciona 1d10 de dano.",
     "material": "uma folha de semente-da-lua",
     "castingTime": "Ação",
@@ -1132,7 +1132,7 @@
   },
   "Pass without Trace": {
     "name": "Passar sem Deixar Rastros",
-    "description": "Por até 1 hora, criaturas escolhidas dentro da sua aura de 9 metros recebem +10 em testes de Furtividade e não deixam rastros.",
+    "description": "Por até 1 hora, criaturas escolhidas dentro da sua aura de {{distance:30ft}} recebem +10 em testes de Furtividade e não deixam rastros.",
     "material": "cinzas de visco queimado",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -1140,7 +1140,7 @@
   },
   "Phantasmal Force": {
     "name": "Força Fantasmagórica",
-    "description": "Uma criatura que falhe em um teste de resistência de Inteligência percebe uma ilusão particular de até um Cubo de 3 metros por até 1 minuto. Ela pode usar uma ação Estudar para desacreditá-la; uma ilusão perigosa pode causar 2d8 de dano Psíquico à criatura em cada um de seus turnos.",
+    "description": "Uma criatura que falhe em um teste de resistência de Inteligência percebe uma ilusão particular de até um Cubo de {{distance:10ft}} por até 1 minuto. Ela pode usar uma ação Estudar para desacreditá-la; uma ilusão perigosa pode causar 2d8 de dano Psíquico à criatura em cada um de seus turnos.",
     "material": "um pouco de lã",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -1194,7 +1194,7 @@
   },
   "Shatter": {
     "name": "Despedaçar",
-    "description": "Criaturas em uma Esfera de 3 metros de raio fazem testes de resistência de Constituição, sofrendo 3d8 de dano Trovejante se falharem ou metade se passarem; Constructos fazem o teste de resistência com Desvantagem. Espaços de nível superior acrescentam 1d8.",
+    "description": "Criaturas em uma Esfera de {{distance:10ft}} de raio fazem testes de resistência de Constituição, sofrendo 3d8 de dano Trovejante se falharem ou metade se passarem; Constructos fazem o teste de resistência com Desvantagem. Espaços de nível superior acrescentam 1d8.",
     "higherLevels": "Cada nível de espaço acima do 2º adiciona 1d8 de dano.",
     "material": "uma lasca de mica",
     "castingTime": "Ação",
@@ -1216,7 +1216,7 @@
   },
   "Silence": {
     "name": "Silêncio",
-    "description": "Crie uma Esfera de 6 metros de raio pela qual nenhum som passa por até 10 minutos. Criaturas inteiramente dentro dela ficam Surdas, são imunes a dano Trovejante e não podem conjurar magias com componentes Verbais.",
+    "description": "Crie uma Esfera de {{distance:20ft}} de raio pela qual nenhum som passa por até 10 minutos. Criaturas inteiramente dentro dela ficam Surdas, são imunes a dano Trovejante e não podem conjurar magias com componentes Verbais.",
     "castingTime": "Ação ou Ritual",
     "range": "36 metros",
     "duration": "Concentração, até 10 minutos"
@@ -1232,7 +1232,7 @@
   },
   "Spike Growth": {
     "name": "Crescimento de Espinhos",
-    "description": "Uma área de 6 metros de raio torna-se Terreno Difícil camuflado por até 10 minutos. Uma criatura que se desloque por ela sofre 2d4 de dano Perfurante a cada 1,5 metro percorrido.",
+    "description": "Uma área de {{distance:20ft}} de raio torna-se Terreno Difícil camuflado por até 10 minutos. Uma criatura que se desloque por ela sofre 2d4 de dano Perfurante a cada {{distance:5ft}} percorrido.",
     "material": "sete espinhos",
     "castingTime": "Ação",
     "range": "45 metros",
@@ -1256,7 +1256,7 @@
   },
   "Warding Bond": {
     "name": "Vínculo Protetor",
-    "description": "Conecte-se a uma criatura voluntária que esteja usando um dos anéis de platina exigidos. Enquanto permanecerem a até 18 metros, ela ganha +1 na CA e nos testes de resistência e Resistência a todo dano, mas você sofre o mesmo dano que ela.",
+    "description": "Conecte-se a uma criatura voluntária que esteja usando um dos anéis de platina exigidos. Enquanto permanecerem a até {{distance:60ft}}, ela ganha +1 na CA e nos testes de resistência e Resistência a todo dano, mas você sofre o mesmo dano que ela.",
     "material": "um par de anéis de platina que valham pelo menos 50 PO cada, usados por você e pelo alvo durante toda a duração",
     "castingTime": "Ação",
     "range": "Toque",
@@ -1264,7 +1264,7 @@
   },
   "Web": {
     "name": "Teia",
-    "description": "Teias pegajosas preenchem um Cubo de 6 metros por até 1 hora, criando Terreno Difícil e obscurecimento leve. Uma criatura que entre ou comece seu turno ali faz um teste de resistência de Destreza ou fica Contida; pode escapar usando uma ação de Força (Atletismo). Teias em chamas causam 2d4 de dano de Fogo.",
+    "description": "Teias pegajosas preenchem um Cubo de {{distance:20ft}} por até 1 hora, criando Terreno Difícil e obscurecimento leve. Uma criatura que entre ou comece seu turno ali faz um teste de resistência de Destreza ou fica Contida; pode escapar usando uma ação de Força (Atletismo). Teias em chamas causam 2d4 de dano de Fogo.",
     "material": "um pouco de teia de aranha",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -1272,14 +1272,14 @@
   },
   "Zone of Truth": {
     "name": "Zona da Verdade",
-    "description": "Crie uma Esfera de 4,5 metros de raio por 10 minutos. Criaturas que entrarem ou começarem o turno nela fazem testes de resistência de Carisma; as que falharem não podem mentir deliberadamente, e você sabe se cada criatura passou no teste de resistência.",
+    "description": "Crie uma Esfera de {{distance:15ft}} de raio por 10 minutos. Criaturas que entrarem ou começarem o turno nela fazem testes de resistência de Carisma; as que falharem não podem mentir deliberadamente, e você sabe se cada criatura passou no teste de resistência.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "10 minutos"
   },
   "Animate Dead": {
     "name": "Animar Mortos",
-    "description": "Anime o cadáver de um Humanoide Médio ou Pequeno como Zumbi, ou seus ossos como Esqueleto. Com uma Ação Bônus, comande seus mortos-vivos a até 18 metros; o controle dura 24 horas e pode ser renovado antes de terminar.",
+    "description": "Anime o cadáver de um Humanoide Médio ou Pequeno como Zumbi, ou seus ossos como Esqueleto. Com uma Ação Bônus, comande seus mortos-vivos a até {{distance:60ft}}; o controle dura 24 horas e pode ser renovado antes de terminar.",
     "higherLevels": "Um espaço acima do 3º nível anima ou restabelece o controle sobre dois mortos-vivos adicionais por nível extra de espaço.",
     "material": "uma gota de sangue, um pedaço de carne e uma pitada de pó de osso",
     "castingTime": "1 minuto",
@@ -1288,7 +1288,7 @@
   },
   "Beacon of Hope": {
     "name": "Farol da Esperança",
-    "description": "Escolha qualquer número de criaturas a até 9 metros. Por até 1 minuto, elas têm Vantagem em testes de resistência de Sabedoria e contra a Morte e recuperam o máximo possível de Pontos de Vida sempre que receberem cura.",
+    "description": "Escolha qualquer número de criaturas a até {{distance:30ft}}. Por até 1 minuto, elas têm Vantagem em testes de resistência de Sabedoria e contra a Morte e recuperam o máximo possível de Pontos de Vida sempre que receberem cura.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "Concentração, até 1 minuto"
@@ -1303,14 +1303,14 @@
   },
   "Blink": {
     "name": "Piscar",
-    "description": "Por 1 minuto, role 1d6 no fim de cada turno. Com um resultado de 4 a 6, você passa ao Plano Etéreo até o início do seu próximo turno e então retorna a um espaço livre a até 3 metros de onde estava.",
+    "description": "Por 1 minuto, role 1d6 no fim de cada turno. Com um resultado de 4 a 6, você passa ao Plano Etéreo até o início do seu próximo turno e então retorna a um espaço livre a até {{distance:10ft}} de onde estava.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "1 minuto"
   },
   "Call Lightning": {
     "name": "Convocar Relâmpagos",
-    "description": "Crie uma nuvem de tempestade acima de você. Ao conjurar e, nos turnos seguintes, com uma ação Magia, invoque um raio em um ponto abaixo dela; criaturas a até 1,5 metro fazem um teste de resistência de Destreza contra 3d10 de dano Elétrico, sofrendo metade se passarem. Uma tempestade preexistente acrescenta 1d10.",
+    "description": "Crie uma nuvem de tempestade acima de você. Ao conjurar e, nos turnos seguintes, com uma ação Magia, invoque um raio em um ponto abaixo dela; criaturas a até {{distance:5ft}} fazem um teste de resistência de Destreza contra 3d10 de dano Elétrico, sofrendo metade se passarem. Uma tempestade preexistente acrescenta 1d10.",
     "higherLevels": "O dano aumenta em 1d10 por nível de espaço acima do 3º.",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -1323,7 +1323,7 @@
   },
   "Clairvoyance": {
     "name": "Clarividência",
-    "description": "Coloque um ponto sensorial invisível e imóvel em um local familiar ou evidente a até 1,6 quilômetro. Veja ou ouça por meio dele por até 10 minutos; alterne os sentidos com uma Ação Bônus.",
+    "description": "Coloque um ponto sensorial invisível e imóvel em um local familiar ou evidente a até {{distance:1mi}}. Veja ou ouça por meio dele por até 10 minutos; alterne os sentidos com uma Ação Bônus.",
     "material": "um foco que valha pelo menos 100 PO: um chifre com joias para ouvir ou um olho de vidro para ver",
     "castingTime": "10 minutos",
     "range": "1,6 quilômetro",
@@ -1331,7 +1331,7 @@
   },
   "Conjure Animals": {
     "name": "Conjurar Animais",
-    "description": "Convoque uma matilha Grande e intangível de espíritos animais por até 10 minutos. Ela pode se mover 9 metros com você, concede Vantagem em testes de resistência de Força enquanto você estiver a até 1,5 metro e pode obrigar criaturas a até 3 metros a fazer um teste de resistência de Destreza ou sofrer 3d10 de dano Cortante, uma vez por turno.",
+    "description": "Convoque uma matilha Grande e intangível de espíritos animais por até 10 minutos. Ela pode se mover {{distance:30ft}} com você, concede Vantagem em testes de resistência de Força enquanto você estiver a até {{distance:5ft}} e pode obrigar criaturas a até {{distance:10ft}} a fazer um teste de resistência de Destreza ou sofrer 3d10 de dano Cortante, uma vez por turno.",
     "higherLevels": "O dano aumenta em 1d10 por nível de espaço acima do 3º.",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -1344,28 +1344,28 @@
   },
   "Counterspell": {
     "name": "Contramágica",
-    "description": "Use a reação ao ver uma criatura a até 18 metros conjurando uma magia com componentes. O conjurador faz um teste de resistência de Constituição; se falhar, a magia não tem efeito e a ação de conjuração é perdida, mas o espaço de magia não é gasto.",
+    "description": "Use a reação ao ver uma criatura a até {{distance:60ft}} conjurando uma magia com componentes. O conjurador faz um teste de resistência de Constituição; se falhar, a magia não tem efeito e a ação de conjuração é perdida, mas o espaço de magia não é gasto.",
     "castingTime": "Reação, realizada quando você vê uma criatura a até 18 metros de você conjurar uma magia com componentes Verbais, Somáticos ou Materiais",
     "range": "18 metros",
     "duration": "Instantânea"
   },
   "Create Food and Water": {
     "name": "Criar Comida e Água",
-    "description": "Crie cerca de 20 quilos de comida nutritiva e 110 litros de água limpa a até 9 metros. A comida estraga após 24 horas.",
+    "description": "Crie cerca de 20 quilos de comida nutritiva e 110 litros de água limpa a até {{distance:30ft}}. A comida estraga após 24 horas.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "Instantânea"
   },
   "Daylight": {
     "name": "Luz do Dia",
-    "description": "Preencha uma Esfera de 18 metros de raio com luz solar e mais 18 metros de Penumbra por 1 hora, ou centralize-a em um objeto não carregado. Escuridão mágica sobreposta criada por uma magia de nível 3 ou inferior é dissipada.",
+    "description": "Preencha uma Esfera de {{distance:60ft}} de raio com luz solar e mais {{distance:60ft}} de Penumbra por 1 hora, ou centralize-a em um objeto não carregado. Escuridão mágica sobreposta criada por uma magia de nível 3 ou inferior é dissipada.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "1 hora"
   },
   "Dispel Magic": {
     "name": "Dissipar Magia",
-    "description": "Encerre todas as magias de nível 3 ou inferior em uma criatura, objeto ou efeito mágico a até 36 metros. Para cada magia de nível superior, faça um teste de atributo de conjuração contra CD 10 mais o nível dela.",
+    "description": "Encerre todas as magias de nível 3 ou inferior em uma criatura, objeto ou efeito mágico a até {{distance:120ft}}. Para cada magia de nível superior, faça um teste de atributo de conjuração contra CD 10 mais o nível dela.",
     "higherLevels": "Usar um espaço de nível superior encerra automaticamente magias sobre o alvo cujo nível não ultrapasse o do espaço usado.",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -1373,7 +1373,7 @@
   },
   "Fear": {
     "name": "Medo",
-    "description": "Criaturas em um Cone de 9 metros fazem um teste de resistência de Sabedoria ou largam o que seguram e ficam Amedrontadas por até 1 minuto. Elas devem usar Disparada para se afastar enquanto puderem; podem repetir o teste de resistência no fim de um turno em que não tenham linha de visão até você.",
+    "description": "Criaturas em um Cone de {{distance:30ft}} fazem um teste de resistência de Sabedoria ou largam o que seguram e ficam Amedrontadas por até 1 minuto. Elas devem usar Disparada para se afastar enquanto puderem; podem repetir o teste de resistência no fim de um turno em que não tenham linha de visão até você.",
     "material": "uma pena branca",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -1381,7 +1381,7 @@
   },
   "Fireball": {
     "name": "Bola de Fogo",
-    "description": "Um ponto a até 45 metros explode em uma Esfera de 6 metros de raio. As criaturas fazem um teste de resistência de Destreza, sofrendo 8d6 de dano de Fogo se falharem ou metade se passarem. Objetos inflamáveis não carregados se incendeiam.",
+    "description": "Um ponto a até {{distance:150ft}} explode em uma Esfera de {{distance:20ft}} de raio. As criaturas fazem um teste de resistência de Destreza, sofrendo 8d6 de dano de Fogo se falharem ou metade se passarem. Objetos inflamáveis não carregados se incendeiam.",
     "higherLevels": "O dano aumenta em 1d6 por nível de espaço acima do 3º.",
     "material": "uma bola de guano de morcego e enxofre",
     "castingTime": "Ação",
@@ -1395,7 +1395,7 @@
   },
   "Fly": {
     "name": "Voo",
-    "description": "Uma criatura voluntária que você toque ganha Deslocamento de Voo de 18 metros e pode pairar por até 10 minutos. Ela cai quando a magia termina, a menos que consiga evitar a queda.",
+    "description": "Uma criatura voluntária que você toque ganha Deslocamento de Voo de {{distance:60ft}} e pode pairar por até 10 minutos. Ela cai quando a magia termina, a menos que consiga evitar a queda.",
     "higherLevels": "Escolha uma criatura adicional como alvo por nível de espaço acima do 3º.",
     "material": "uma pena",
     "castingTime": "Ação",
@@ -1404,7 +1404,7 @@
   },
   "Gaseous Form": {
     "name": "Forma Gasosa",
-    "description": "Uma criatura voluntária que você toque transforma-se em névoa por até 1 hora. Ela voa a 3 metros, atravessa aberturas estreitas, tem Resistência a dano Concussão, Perfurante e Cortante e não pode atacar, conjurar magias, falar ou manipular objetos.",
+    "description": "Uma criatura voluntária que você toque transforma-se em névoa por até 1 hora. Ela voa a {{distance:10ft}}, atravessa aberturas estreitas, tem Resistência a dano Concussão, Perfurante e Cortante e não pode atacar, conjurar magias, falar ou manipular objetos.",
     "higherLevels": "Escolha uma criatura adicional como alvo por nível de espaço acima do 3º.",
     "material": "um pouco de gaze",
     "castingTime": "Ação",
@@ -1413,7 +1413,7 @@
   },
   "Glyph of Warding": {
     "name": "Glifo de Proteção",
-    "description": "Inscreva um glifo oculto em uma superfície ou objeto que possa ser fechado. O gatilho escolhido faz o glifo explodir, causando 5d8 de dano de Ácido, Frio, Fogo, Elétrico ou Trovejante em uma Esfera de 6 metros de raio (teste de resistência de Destreza para metade), ou liberar uma magia armazenada. Movê-lo mais de 3 metros rompe o glifo.",
+    "description": "Inscreva um glifo oculto em uma superfície ou objeto que possa ser fechado. O gatilho escolhido faz o glifo explodir, causando 5d8 de dano de Ácido, Frio, Fogo, Elétrico ou Trovejante em uma Esfera de {{distance:20ft}} de raio (teste de resistência de Destreza para metade), ou liberar uma magia armazenada. Movê-lo mais de {{distance:10ft}} rompe o glifo.",
     "higherLevels": "O dano explosivo aumenta em 1d8 por nível de espaço acima do 3º; a magia armazenada pode ter até o nível do espaço usado para o glifo.",
     "material": "pó de diamante que valha pelo menos 200 PO, consumido pela magia",
     "castingTime": "1 hora",
@@ -1430,7 +1430,7 @@
   },
   "Hypnotic Pattern": {
     "name": "Padrão Hipnótico",
-    "description": "Criaturas que vejam um padrão em um Cubo de 9 metros fazem testes de resistência de Sabedoria ou ficam Enfeitiçadas, Incapacitadas e incapazes de se mover por até 1 minuto. Dano ou a ação de outra criatura para sacudir um alvo encerra o efeito nele.",
+    "description": "Criaturas que vejam um padrão em um Cubo de {{distance:30ft}} fazem testes de resistência de Sabedoria ou ficam Enfeitiçadas, Incapacitadas e incapazes de se mover por até 1 minuto. Dano ou a ação de outra criatura para sacudir um alvo encerra o efeito nele.",
     "material": "uma pitada de confete",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -1438,7 +1438,7 @@
   },
   "Lightning Bolt": {
     "name": "Relâmpago",
-    "description": "Uma Linha de relâmpago de 30 metros de comprimento e 1,5 metro de largura irrompe de você. As criaturas nela fazem testes de resistência de Destreza, sofrendo 8d6 de dano Elétrico se falharem ou metade se passarem.",
+    "description": "Uma Linha de relâmpago de {{distance:100ft}} de comprimento e {{distance:5ft}} de largura irrompe de você. As criaturas nela fazem testes de resistência de Destreza, sofrendo 8d6 de dano Elétrico se falharem ou metade se passarem.",
     "higherLevels": "O dano aumenta em 1d6 por nível de espaço acima do 3º.",
     "material": "um pouco de pelo e uma haste de cristal",
     "castingTime": "Ação",
@@ -1452,7 +1452,7 @@
   },
   "Magic Circle": {
     "name": "Círculo Mágico",
-    "description": "Crie um cilindro de 3 metros de raio e 6 metros de altura por 1 hora. Celestiais, Elementais, Fadas, Ínferos e Mortos-vivos escolhidos normalmente não podem entrar, têm Desvantagem em ataques para dentro dele e não podem enfeitiçar, amedrontar nem possuir criaturas no interior. A barreira pode, em vez disso, aprisioná-los.",
+    "description": "Crie um cilindro de {{distance:10ft}} de raio e {{distance:20ft}} de altura por 1 hora. Celestiais, Elementais, Fadas, Ínferos e Mortos-vivos escolhidos normalmente não podem entrar, têm Desvantagem em ataques para dentro dele e não podem enfeitiçar, amedrontar nem possuir criaturas no interior. A barreira pode, em vez disso, aprisioná-los.",
     "higherLevels": "A duração aumenta em 1 hora por nível de espaço acima do 3º.",
     "material": "sal e prata em pó que valham pelo menos 100 PO, consumidos pela magia",
     "castingTime": "1 minuto",
@@ -1461,7 +1461,7 @@
   },
   "Major Image": {
     "name": "Imagem Maior",
-    "description": "Crie uma imagem convincente com aparência, som, cheiro e temperatura de algo de até um Cubo de 6 metros por até 10 minutos. Ela não pode causar dano ou condições; a interação física a revela. Você pode movê-la e alterá-la com uma ação Magia.",
+    "description": "Crie uma imagem convincente com aparência, som, cheiro e temperatura de algo de até um Cubo de {{distance:20ft}} por até 10 minutos. Ela não pode causar dano ou condições; a interação física a revela. Você pode movê-la e alterá-la com uma ação Magia.",
     "higherLevels": "Com um espaço de 4º nível ou superior, a ilusão dura até ser dissipada e não exige concentração.",
     "material": "um pouco de lã",
     "castingTime": "Ação",
@@ -1470,7 +1470,7 @@
   },
   "Mass Healing Word": {
     "name": "Palavra Curativa em Massa",
-    "description": "Com uma Ação Bônus, até seis criaturas visíveis a até 18 metros recuperam, cada uma, 2d4 mais seu modificador de atributo de conjuração em Pontos de Vida.",
+    "description": "Com uma Ação Bônus, até seis criaturas visíveis a até {{distance:60ft}} recuperam, cada uma, 2d4 mais seu modificador de atributo de conjuração em Pontos de Vida.",
     "higherLevels": "A cura aumenta em 1d4 por nível de espaço acima do 3º.",
     "castingTime": "Ação Bônus",
     "range": "18 metros",
@@ -1478,14 +1478,14 @@
   },
   "Meld into Stone": {
     "name": "Mesclar-se à Pedra",
-    "description": "Funda seu corpo e equipamento a um objeto de pedra grande o suficiente por até 8 horas. Você pode sair gastando 1,5 metro de deslocamento; dano ou destruição da pedra pode expulsá-lo e feri-lo.",
+    "description": "Funda seu corpo e equipamento a um objeto de pedra grande o suficiente por até 8 horas. Você pode sair gastando {{distance:5ft}} de deslocamento; dano ou destruição da pedra pode expulsá-lo e feri-lo.",
     "castingTime": "Ação ou Ritual",
     "range": "Toque",
     "duration": "8 horas"
   },
   "Nondetection": {
     "name": "Indetectável",
-    "description": "Por 8 horas, uma criatura voluntária, lugar ou objeto de até 3 metros não pode ser alvo de magias de Adivinhação nem percebido por sensores mágicos de observação.",
+    "description": "Por 8 horas, uma criatura voluntária, lugar ou objeto de até {{distance:10ft}} não pode ser alvo de magias de Adivinhação nem percebido por sensores mágicos de observação.",
     "material": "uma pitada de pó de diamante que valha pelo menos 25 PO, consumida pela magia",
     "castingTime": "Ação",
     "range": "Toque",
@@ -1493,14 +1493,14 @@
   },
   "Phantom Steed": {
     "name": "Corcel Fantasma",
-    "description": "Crie um cavalo de montaria quase real por 1 hora. Ele tem Deslocamento de 30 metros e pode percorrer 21 quilômetros em uma hora; desaparece ao longo de 1 minuto quando a magia termina e antes disso se sofrer dano.",
+    "description": "Crie um cavalo de montaria quase real por 1 hora. Ele tem Deslocamento de {{distance:100ft}} e pode percorrer {{distance:13mi}} em uma hora; desaparece ao longo de 1 minuto quando a magia termina e antes disso se sofrer dano.",
     "castingTime": "1 minuto ou Ritual",
     "range": "9 metros",
     "duration": "1 hora"
   },
   "Plant Growth": {
     "name": "Ampliar Plantas",
-    "description": "Escolha Crescimento Exuberante para fazer as plantas normais em uma Esfera de 30 metros de raio exigirem 4 metros de deslocamento para cada metro percorrido, exceto nas áreas que você escolher. Alternativamente, passe 8 horas enriquecendo plantas em um raio de 800 metros para dobrar a colheita durante 365 dias.",
+    "description": "Escolha Crescimento Exuberante para fazer as plantas normais em uma Esfera de {{distance:100ft}} de raio exigirem {{distance:4ft}} de deslocamento para cada {{distance:1ft}} de avanço, exceto nas áreas que você escolher. Alternativamente, passe 8 horas enriquecendo plantas em um raio de {{distance:0.5mi}} para dobrar a colheita durante 365 dias.",
     "castingTime": "Ação (Supercrescimento) ou 8 horas (Enriquecimento)",
     "range": "45 metros",
     "duration": "Instantânea"
@@ -1537,7 +1537,7 @@
   },
   "Sleet Storm": {
     "name": "Tempestade de Granizo",
-    "description": "Um Cilindro de 6 metros de raio e 12 metros de altura fica fortemente obscurecido e se torna Terreno Difícil por até 1 minuto. Criaturas que entrem ou comecem o turno nele fazem um teste de resistência de Destreza ou caem Caídas e perdem a Concentração.",
+    "description": "Um Cilindro de {{distance:20ft}} de raio e {{distance:40ft}} de altura fica fortemente obscurecido e se torna Terreno Difícil por até 1 minuto. Criaturas que entrem ou comecem o turno nele fazem um teste de resistência de Destreza ou caem Caídas e perdem a Concentração.",
     "material": "um guarda-chuva em miniatura",
     "castingTime": "Ação",
     "range": "45 metros",
@@ -1545,7 +1545,7 @@
   },
   "Slow": {
     "name": "Lentidão",
-    "description": "Até seis criaturas em um Cubo de 12 metros fazem testes de resistência de Sabedoria. Os alvos que falharem têm Deslocamento reduzido à metade, -2 na CA e nos testes de resistência de Destreza, nenhuma Reação, no máximo um ataque e apenas uma ação ou Ação Bônus por turno; magias com componentes Somáticos têm 25% de chance de falhar. Repetem o teste de resistência a cada turno.",
+    "description": "Até seis criaturas em um Cubo de {{distance:40ft}} fazem testes de resistência de Sabedoria. Os alvos que falharem têm Deslocamento reduzido à metade, -2 na CA e nos testes de resistência de Destreza, nenhuma Reação, no máximo um ataque e apenas uma ação ou Ação Bônus por turno; magias com componentes Somáticos têm 25% de chance de falhar. Repetem o teste de resistência a cada turno.",
     "material": "uma gota de melaço",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -1561,14 +1561,14 @@
   },
   "Speak with Plants": {
     "name": "Falar com Plantas",
-    "description": "Plantas em uma Emanação de 9 metros podem relatar o que ocorreu no último dia e obedecer a comandos simples por 10 minutos. Você pode tornar o solo coberto de plantas Terreno Difícil ou restaurá-lo e se comunicar com criaturas Planta.",
+    "description": "Plantas em uma Emanação de {{distance:30ft}} podem relatar o que ocorreu no último dia e obedecer a comandos simples por 10 minutos. Você pode tornar o solo coberto de plantas Terreno Difícil ou restaurá-lo e se comunicar com criaturas Planta.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "10 minutos"
   },
   "Spirit Guardians": {
     "name": "Guardiões Espirituais",
-    "description": "Espíritos preenchem uma Emanação de 4,5 metros ao seu redor por até 10 minutos. Escolha criaturas para poupar. As demais têm Deslocamento reduzido à metade na área e fazem um teste de resistência de Sabedoria quando a Emanação entra no espaço delas ou quando elas entram ou terminam um turno nela: sofrem 3d8 de dano Radiante ou Necrótico se falharem, ou metade se passarem, uma vez por turno.",
+    "description": "Espíritos preenchem uma Emanação de {{distance:15ft}} ao seu redor por até 10 minutos. Escolha criaturas para poupar. As demais têm Deslocamento reduzido à metade na área e fazem um teste de resistência de Sabedoria quando a Emanação entra no espaço delas ou quando elas entram ou terminam um turno nela: sofrem 3d8 de dano Radiante ou Necrótico se falharem, ou metade se passarem, uma vez por turno.",
     "higherLevels": "O dano aumenta em 1d8 por nível de espaço acima do 3º.",
     "material": "um pergaminho de oração",
     "castingTime": "Ação",
@@ -1577,7 +1577,7 @@
   },
   "Stinking Cloud": {
     "name": "Nuvem Fétida",
-    "description": "Crie uma Esfera de gás fortemente obscurecida de 6 metros de raio por até 1 minuto. Uma criatura que comece seu turno nela faz um teste de resistência de Constituição ou fica Envenenada e não pode realizar ação nem Ação Bônus naquele turno. Um vento forte dispersa a nuvem.",
+    "description": "Crie uma Esfera de gás fortemente obscurecida de {{distance:20ft}} de raio por até 1 minuto. Uma criatura que comece seu turno nela faz um teste de resistência de Constituição ou fica Envenenada e não pode realizar ação nem Ação Bônus naquele turno. Um vento forte dispersa a nuvem.",
     "material": "um ovo podre",
     "castingTime": "Ação",
     "range": "27 metros",
@@ -1585,7 +1585,7 @@
   },
   "Tiny Hut": {
     "name": "Pequena Cabana",
-    "description": "Crie um abrigo estacionário em uma Emanação de 3 metros por 8 horas. Criaturas e objetos presentes na conjuração podem atravessá-lo; outros não. Magias de nível 3 ou inferior não podem atravessá-lo. Ele termina se você sair ou conjurá-lo novamente.",
+    "description": "Crie um abrigo estacionário em uma Emanação de {{distance:10ft}} por 8 horas. Criaturas e objetos presentes na conjuração podem atravessá-lo; outros não. Magias de nível 3 ou inferior não podem atravessá-lo. Ele termina se você sair ou conjurá-lo novamente.",
     "material": "uma conta de cristal",
     "castingTime": "1 minuto ou Ritual",
     "range": "Pessoal",
@@ -1617,7 +1617,7 @@
   },
   "Water Breathing": {
     "name": "Respirar na Água",
-    "description": "Até dez criaturas voluntárias a até 9 metros podem respirar debaixo d'água por 24 horas sem perder sua capacidade normal de respirar.",
+    "description": "Até dez criaturas voluntárias a até {{distance:30ft}} podem respirar debaixo d'água por 24 horas sem perder sua capacidade normal de respirar.",
     "material": "um pequeno junco",
     "castingTime": "Ação ou Ritual",
     "range": "9 metros",
@@ -1625,7 +1625,7 @@
   },
   "Water Walk": {
     "name": "Caminhar sobre a Água",
-    "description": "Até dez criaturas voluntárias a até 9 metros podem caminhar sobre superfícies líquidas como se fossem solo sólido por 1 hora. Elas podem usar uma Ação Bônus para passar entre a superfície e o líquido abaixo.",
+    "description": "Até dez criaturas voluntárias a até {{distance:30ft}} podem caminhar sobre superfícies líquidas como se fossem solo sólido por 1 hora. Elas podem usar uma Ação Bônus para passar entre a superfície e o líquido abaixo.",
     "material": "um pedaço de cortiça",
     "castingTime": "Ação ou Ritual",
     "range": "9 metros",
@@ -1633,7 +1633,7 @@
   },
   "Wind Wall": {
     "name": "Muralha de Vento",
-    "description": "Crie uma muralha de vento de até 15 metros de comprimento, 4,5 metros de altura e 30 centímetros de espessura por até 1 minuto. Criaturas no espaço dela fazem um teste de resistência de Força contra 4d8 de dano Concussão, sofrendo metade se passarem. Ela bloqueia gases, criaturas voadoras pequenas e projéteis comuns.",
+    "description": "Crie uma muralha de vento de até {{distance:50ft}} de comprimento, {{distance:15ft}} de altura e {{distance:1ft}} de espessura por até 1 minuto. Criaturas no espaço dela fazem um teste de resistência de Força contra 4d8 de dano Concussão, sofrendo metade se passarem. Ela bloqueia gases, criaturas voadoras pequenas e projéteis comuns.",
     "material": "um leque e uma pena",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -1646,7 +1646,7 @@
   },
   "Arcane Eye": {
     "name": "Olho Arcano",
-    "description": "Crie um olho invisível, invulnerável e flutuante por até 1 hora. Veja através dele em todas as direções, inclusive com Visão no Escuro de 9 metros; mova-o 9 metros com uma Ação Bônus, até mesmo através de aberturas de pelo menos 2,5 centímetros.",
+    "description": "Crie um olho invisível, invulnerável e flutuante por até 1 hora. Veja através dele em todas as direções, inclusive com Visão no Escuro de {{distance:30ft}}; mova-o {{distance:30ft}} com uma Ação Bônus, até mesmo através de aberturas de pelo menos {{distance:1in}}.",
     "material": "um pouco de pelo de morcego",
     "castingTime": "Ação",
     "range": "9 metros",
@@ -1654,7 +1654,7 @@
   },
   "Aura of Life": {
     "name": "Aura da Vida",
-    "description": "Por até 10 minutos, uma Emanação de 9 metros ao seu redor concede a você e a seus aliados Resistência a dano Necrótico e impede a redução do máximo de Pontos de Vida. Um aliado que comece um turno nela com 0 Pontos de Vida recupera 1 Ponto de Vida.",
+    "description": "Por até 10 minutos, uma Emanação de {{distance:30ft}} ao seu redor concede a você e a seus aliados Resistência a dano Necrótico e impede a redução do máximo de Pontos de Vida. Um aliado que comece um turno nela com 0 Pontos de Vida recupera 1 Ponto de Vida.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "Concentração, até 10 minutos"
@@ -1670,7 +1670,7 @@
   },
   "Black Tentacles": {
     "name": "Tentáculos Negros",
-    "description": "Uma área quadrada de 6 metros torna-se Terreno Difícil por até 1 minuto. Criaturas ali fazem testes de resistência de Força ou sofrem 3d6 de dano Concussão e ficam Contidas; o teste de resistência se repete ao entrar ou terminar um turno na área, uma vez por turno. Um alvo Contido pode escapar com uma ação de Atletismo.",
+    "description": "Uma área quadrada de {{distance:20ft}} torna-se Terreno Difícil por até 1 minuto. Criaturas ali fazem testes de resistência de Força ou sofrem 3d6 de dano Concussão e ficam Contidas; o teste de resistência se repete ao entrar ou terminar um turno na área, uma vez por turno. Um alvo Contido pode escapar com uma ação de Atletismo.",
     "material": "um tentáculo",
     "castingTime": "Ação",
     "range": "27 metros",
@@ -1683,7 +1683,7 @@
   },
   "Blight": {
     "name": "Praga",
-    "description": "Uma criatura visível a até 9 metros faz um teste de resistência de Constituição, sofrendo 8d8 de dano Necrótico se falhar ou metade se passar. Plantas falham automaticamente; uma planta não mágica não carregada murcha e morre.",
+    "description": "Uma criatura visível a até {{distance:30ft}} faz um teste de resistência de Constituição, sofrendo 8d8 de dano Necrótico se falhar ou metade se passar. Plantas falham automaticamente; uma planta não mágica não carregada murcha e morre.",
     "higherLevels": "O dano aumenta em 1d8 por nível de espaço acima do 4º.",
     "castingTime": "Ação",
     "range": "9 metros",
@@ -1704,15 +1704,15 @@
   },
   "Compulsion": {
     "name": "Compulsão",
-    "description": "Criaturas visíveis escolhidas a até 9 metros fazem testes de resistência de Sabedoria ou ficam Enfeitiçadas por até 1 minuto. Com uma Ação Bônus, indique uma direção horizontal; as criaturas afetadas se movem nessa direção pelo caminho mais seguro em seus próximos turnos e então repetem o teste de resistência.",
+    "description": "Criaturas visíveis escolhidas a até {{distance:30ft}} fazem testes de resistência de Sabedoria ou ficam Enfeitiçadas por até 1 minuto. Com uma Ação Bônus, indique uma direção horizontal; as criaturas afetadas se movem nessa direção pelo caminho mais seguro em seus próximos turnos e então repetem o teste de resistência.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "Concentração, até 1 minuto"
   },
   "Confusion": {
     "name": "Confusão",
-    "description": "Criaturas em uma Esfera de 3 metros de raio fazem testes de resistência de Sabedoria. Alvos que falharem não podem usar Ações Bônus nem Reações e rolam 1d10 a cada turno para determinar se se movem aleatoriamente, não fazem nada, atacam uma criatura próxima aleatória ou agem normalmente. Repetem o teste de resistência a cada turno.",
-    "higherLevels": "O raio da Esfera aumenta em 1,5 metro por nível de espaço acima do 4º.",
+    "description": "Criaturas em uma Esfera de {{distance:10ft}} de raio fazem testes de resistência de Sabedoria. Alvos que falharem não podem usar Ações Bônus nem Reações e rolam 1d10 a cada turno para determinar se se movem aleatoriamente, não fazem nada, atacam uma criatura próxima aleatória ou agem normalmente. Repetem o teste de resistência a cada turno.",
+    "higherLevels": "O raio da Esfera aumenta em {{distance:5ft}} por nível de espaço acima do 4º.",
     "material": "três cascas de nozes",
     "castingTime": "Ação",
     "range": "27 metros",
@@ -1720,7 +1720,7 @@
   },
   "Conjure Minor Elementals": {
     "name": "Conjurar Elementais Menores",
-    "description": "Por até 10 minutos, espíritos preenchem uma Emanação de 4,5 metros ao seu redor. Inimigos tratam o solo ali como Terreno Difícil, e seus ataques que acertem uma criatura na área causam 2d8 de dano adicional de Ácido, Frio, Fogo ou Elétrico.",
+    "description": "Por até 10 minutos, espíritos preenchem uma Emanação de {{distance:15ft}} ao seu redor. Inimigos tratam o solo ali como Terreno Difícil, e seus ataques que acertem uma criatura na área causam 2d8 de dano adicional de Ácido, Frio, Fogo ou Elétrico.",
     "higherLevels": "O dano adicional aumenta em 1d8 por nível de espaço acima do 4º.",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -1728,7 +1728,7 @@
   },
   "Conjure Woodland Beings": {
     "name": "Conjurar Seres da Floresta",
-    "description": "Espíritos da natureza preenchem uma Emanação de 3 metros ao seu redor por até 10 minutos. Criaturas que entrem ou terminem um turno nela, ou cujo espaço seja alcançado pela Emanação, podem ser obrigadas a fazer um teste de resistência de Sabedoria contra 5d8 de dano de Energia, sofrendo metade se passarem, uma vez por turno. Você pode usar Desengajar com uma Ação Bônus.",
+    "description": "Espíritos da natureza preenchem uma Emanação de {{distance:10ft}} ao seu redor por até 10 minutos. Criaturas que entrem ou terminem um turno nela, ou cujo espaço seja alcançado pela Emanação, podem ser obrigadas a fazer um teste de resistência de Sabedoria contra 5d8 de dano de Energia, sofrendo metade se passarem, uma vez por turno. Você pode usar Desengajar com uma Ação Bônus.",
     "higherLevels": "O dano aumenta em 1d8 por nível de espaço acima do 4º.",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -1741,7 +1741,7 @@
   },
   "Control Water": {
     "name": "Controlar Água",
-    "description": "Controle água em um Cubo de até 30 metros de lado por até 10 minutos. Inundação eleva a água ou envia uma onda; Dividir Águas abre uma passagem; Redirecionar Corrente muda o curso; e Redemoinho puxa criaturas para o centro e pode causar 2d8 de dano Concussão.",
+    "description": "Controle água em um Cubo de até {{distance:100ft}} de lado por até 10 minutos. Inundação eleva a água ou envia uma onda; Dividir Águas abre uma passagem; Redirecionar Corrente muda o curso; e Redemoinho puxa criaturas para o centro e pode causar 2d8 de dano Concussão.",
     "material": "uma mistura de água e pó",
     "castingTime": "Ação",
     "range": "90 metros",
@@ -1756,7 +1756,7 @@
   },
   "Dimension Door": {
     "name": "Porta Dimensional",
-    "description": "Teleporte-se a um ponto especificado a até 150 metros, podendo levar uma criatura voluntária a até 1,5 metro. Se o destino estiver ocupado ou cheio, o teleporte falha e cada viajante sofre 4d6 de dano de Energia.",
+    "description": "Teleporte-se a um ponto especificado a até {{distance:500ft}}, podendo levar uma criatura voluntária a até {{distance:5ft}}. Se o destino estiver ocupado ou cheio, o teleporte falha e cada viajante sofre 4d6 de dano de Energia.",
     "castingTime": "Ação",
     "range": "150 metros",
     "duration": "Instantânea"
@@ -1786,7 +1786,7 @@
   },
   "Faithful Hound": {
     "name": "Cão Fiel",
-    "description": "Conjure um cão de guarda invisível e invulnerável por 8 horas. Ele late quando uma criatura não autorizada chega a até 9 metros, tem Visão Verdadeira de 9 metros e, no início de cada um de seus turnos, morde um inimigo a até 1,5 metro, causando 4d8 de dano de Energia se ele falhar em um teste de resistência de Destreza.",
+    "description": "Conjure um cão de guarda invisível e invulnerável por 8 horas. Ele late quando uma criatura não autorizada chega a até {{distance:30ft}}, tem Visão Verdadeira de {{distance:30ft}} e, no início de cada um de seus turnos, morde um inimigo a até {{distance:5ft}}, causando 4d8 de dano de Energia se ele falhar em um teste de resistência de Destreza.",
     "material": "um apito de prata",
     "castingTime": "Ação",
     "range": "9 metros",
@@ -1807,7 +1807,7 @@
   },
   "Freedom of Movement": {
     "name": "Movimentação Livre",
-    "description": "Uma criatura voluntária que você toque ignora Terreno Difícil e efeitos mágicos que reduzam seu Deslocamento ou causem as condições Paralisado ou Contido por 1 hora. Ela ganha Deslocamento de Natação igual ao seu Deslocamento e pode gastar 1,5 metro de movimento para escapar de restrições não mágicas.",
+    "description": "Uma criatura voluntária que você toque ignora Terreno Difícil e efeitos mágicos que reduzam seu Deslocamento ou causem as condições Paralisado ou Contido por 1 hora. Ela ganha Deslocamento de Natação igual ao seu Deslocamento e pode gastar {{distance:5ft}} de movimento para escapar de restrições não mágicas.",
     "higherLevels": "Escolha uma criatura adicional como alvo por nível de espaço acima do 4º.",
     "material": "uma tira de couro",
     "castingTime": "Ação",
@@ -1816,7 +1816,7 @@
   },
   "Giant Insect": {
     "name": "Inseto Gigante",
-    "description": "Convoque uma centopeia, aranha ou vespa gigante em um espaço a até 18 metros por até 10 minutos. Ela age imediatamente depois do seu turno, obedece a comandos verbais e usa o bloco de estatísticas Inseto Gigante; a forma altera suas capacidades.",
+    "description": "Convoque uma centopeia, aranha ou vespa gigante em um espaço a até {{distance:60ft}} por até 10 minutos. Ela age imediatamente depois do seu turno, obedece a comandos verbais e usa o bloco de estatísticas Inseto Gigante; a forma altera suas capacidades.",
     "higherLevels": "Use o nível do espaço para o nível de magia e as estatísticas escaláveis do inseto invocado.",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -1831,14 +1831,14 @@
   },
   "Guardian of Faith": {
     "name": "Guardião da Fé",
-    "description": "Convoque um guardião Grande e invulnerável por até 8 horas. Inimigos que entrem ou comecem um turno a até 3 metros fazem um teste de resistência de Destreza, sofrendo 20 de dano Radiante se falharem ou metade se passarem. Ele desaparece depois de causar 60 de dano total.",
+    "description": "Convoque um guardião Grande e invulnerável por até 8 horas. Inimigos que entrem ou comecem um turno a até {{distance:10ft}} fazem um teste de resistência de Destreza, sofrendo 20 de dano Radiante se falharem ou metade se passarem. Ele desaparece depois de causar 60 de dano total.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "8 horas"
   },
   "Hallucinatory Terrain": {
     "name": "Terreno Alucinatório",
-    "description": "Faça um Cubo de 45 metros de terreno natural parecer, soar e cheirar como outro terreno natural por 24 horas. Estruturas, equipamentos e criaturas não mudam; o toque ou um teste bem-sucedido de Investigação pode revelar a ilusão.",
+    "description": "Faça um Cubo de {{distance:150ft}} de terreno natural parecer, soar e cheirar como outro terreno natural por 24 horas. Estruturas, equipamentos e criaturas não mudam; o toque ou um teste bem-sucedido de Investigação pode revelar a ilusão.",
     "material": "um cogumelo",
     "castingTime": "10 minutos",
     "range": "90 metros",
@@ -1846,7 +1846,7 @@
   },
   "Ice Storm": {
     "name": "Tempestade de Gelo",
-    "description": "Granizo atinge um Cilindro de 6 metros de raio e 12 metros de altura. Criaturas fazem testes de resistência de Destreza contra 2d10 de dano Concussão mais 4d6 de dano de Frio, sofrendo metade se passarem. O solo torna-se Terreno Difícil até o fim do seu próximo turno.",
+    "description": "Granizo atinge um Cilindro de {{distance:20ft}} de raio e {{distance:40ft}} de altura. Criaturas fazem testes de resistência de Destreza contra 2d10 de dano Concussão mais 4d6 de dano de Frio, sofrendo metade se passarem. O solo torna-se Terreno Difícil até o fim do seu próximo turno.",
     "higherLevels": "O dano Concussão aumenta em 1d10 por nível de espaço acima do 4º.",
     "material": "uma luva de inverno",
     "castingTime": "Ação",
@@ -1855,7 +1855,7 @@
   },
   "Locate Creature": {
     "name": "Localizar Criatura",
-    "description": "Por até 1 hora, perceba a direção de uma criatura conhecida pelo nome a até 300 metros, ou da criatura mais próxima de um tipo que você tenha visto de perto. Uma forma alterada ou barreira de chumbo bloqueia o efeito.",
+    "description": "Por até 1 hora, perceba a direção de uma criatura conhecida pelo nome a até {{distance:1000ft}}, ou da criatura mais próxima de um tipo que você tenha visto de perto. Uma forma alterada ou barreira de chumbo bloqueia o efeito.",
     "material": "pelo de um cão farejador",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -1884,8 +1884,8 @@
   },
   "Private Sanctum": {
     "name": "Santuário Privado",
-    "description": "Proteja um Cubo de 1,5 a 30 metros de lado por 24 horas. Escolha barreiras contra som ou visão, sensores e alvos de Adivinhação, teleporte ou viagem planar. Conjurar diariamente no mesmo lugar por 365 dias torna a proteção permanente.",
-    "higherLevels": "O tamanho máximo do Cubo aumenta em 30 metros por nível de espaço acima do 4º.",
+    "description": "Proteja um Cubo de {{distance:5ft|num}} a {{distance:100ft}} de lado por 24 horas. Escolha barreiras contra som ou visão, sensores e alvos de Adivinhação, teleporte ou viagem planar. Conjurar diariamente no mesmo lugar por 365 dias torna a proteção permanente.",
+    "higherLevels": "O tamanho máximo do Cubo aumenta em {{distance:100ft}} por nível de espaço acima do 4º.",
     "material": "uma folha fina de chumbo",
     "castingTime": "10 minutos",
     "range": "36 metros",
@@ -1901,15 +1901,15 @@
   },
   "Secret Chest": {
     "name": "Baú Secreto",
-    "description": "Esconda no Plano Etéreo um baú especialmente feito de cerca de 90 por 60 por 60 centímetros e até 340 litros de conteúdo. Toque sua réplica minúscula com uma ação Magia para trazê-lo de volta ou enviá-lo novamente. Após 60 dias, cada dia tem uma chance cumulativa de 5% de encerrar a magia.",
-    "material": "um baú de cerca de 90 por 60 por 60 centímetros, feito de materiais raros que valham pelo menos 5.000 PO, e uma réplica Minúscula feita dos mesmos materiais que valha pelo menos 50 PO",
+    "description": "Esconda no Plano Etéreo um baú especialmente feito, de {{distance:3ft|num}} por {{distance:2ft|num}} por {{distance:2ft}}, e até 340 litros de conteúdo. Toque sua réplica minúscula com uma ação Magia para trazê-lo de volta ou enviá-lo novamente. Após 60 dias, cada dia tem uma chance cumulativa de 5% de encerrar a magia.",
+    "material": "um baú de {{distance:3ft}} por {{distance:2ft}} por {{distance:2ft}}, feito de materiais raros que valham pelo menos 5.000 PO, e uma réplica Minúscula feita dos mesmos materiais que valha pelo menos 50 PO",
     "castingTime": "Ação",
     "range": "Toque",
     "duration": "Até ser dissipada"
   },
   "Stone Shape": {
     "name": "Moldar Pedra",
-    "description": "Remodele um objeto de pedra Médio ou menor, ou uma seção de pedra de até 1,5 metro de largura, na forma que escolher. Pode criar uma abertura, porta ou recipiente simples, mas não maquinaria delicada.",
+    "description": "Remodele um objeto de pedra Médio ou menor, ou uma seção de pedra de até {{distance:5ft}} de largura, na forma que escolher. Pode criar uma abertura, porta ou recipiente simples, mas não maquinaria delicada.",
     "material": "argila macia",
     "castingTime": "Ação",
     "range": "Toque",
@@ -1925,7 +1925,7 @@
   },
   "Vitriolic Sphere": {
     "name": "Esfera Vitriólica",
-    "description": "Uma Esfera de ácido de 6 metros de raio explode a até 45 metros. Criaturas fazem testes de resistência de Destreza; uma falha causa 10d4 de dano de Ácido imediatamente e 5d4 no fim do próximo turno, enquanto um sucesso reduz à metade apenas o dano inicial.",
+    "description": "Uma Esfera de ácido de {{distance:20ft}} de raio explode a até {{distance:150ft}}. Criaturas fazem testes de resistência de Destreza; uma falha causa 10d4 de dano de Ácido imediatamente e 5d4 no fim do próximo turno, enquanto um sucesso reduz à metade apenas o dano inicial.",
     "higherLevels": "O dano inicial aumenta em 2d4 por nível de espaço acima do 4º.",
     "material": "uma gota de bile",
     "castingTime": "Ação",
@@ -1934,7 +1934,7 @@
   },
   "Wall of Fire": {
     "name": "Muralha de Fogo",
-    "description": "Crie uma muralha de fogo de até 18 metros de comprimento e 6 metros de altura, ou um anel de até 6 metros de diâmetro, por até 1 minuto. Criaturas no espaço dela fazem testes de resistência de Destreza contra 5d8 de dano de Fogo, sofrendo metade se passarem. Um lado escolhido também causa 5d8 a criaturas que entrem na muralha ou terminem o turno a até 3 metros dela.",
+    "description": "Crie uma muralha de fogo de até {{distance:60ft}} de comprimento e {{distance:20ft}} de altura, ou um anel de até {{distance:20ft}} de diâmetro, por até 1 minuto. Criaturas no espaço dela fazem testes de resistência de Destreza contra 5d8 de dano de Fogo, sofrendo metade se passarem. Um lado escolhido também causa 5d8 a criaturas que entrem na muralha ou terminem o turno a até {{distance:10ft}} dela.",
     "higherLevels": "O dano aumenta em 1d8 por nível de espaço acima do 4º.",
     "material": "um pedaço de carvão vegetal",
     "castingTime": "Ação",
@@ -1943,7 +1943,7 @@
   },
   "Animate Objects": {
     "name": "Animar Objetos",
-    "description": "Anime objetos não mágicos não carregados em quantidade até seu modificador de atributo de conjuração; cada objeto Médio ou menor conta como um, Grande como dois e Enorme como três. Cada um se torna um Constructo aliado (CA 15; PV 10/20/40 conforme o tamanho), age depois de você e obedece aos seus comandos dados com uma Ação Bônus a até 150 metros. Seu ataque corpo a corpo usa seu bônus de ataque mágico e causa 1d4+3 de dano de Energia (Médio ou menor), 2d6+3+seu modificador de conjuração (Grande) ou 2d12+3+seu modificador (Enorme).",
+    "description": "Anime objetos não mágicos não carregados em quantidade até seu modificador de atributo de conjuração; cada objeto Médio ou menor conta como um, Grande como dois e Enorme como três. Cada um se torna um Constructo aliado (CA 15; PV 10/20/40 conforme o tamanho), age depois de você e obedece aos seus comandos dados com uma Ação Bônus a até {{distance:500ft}}. Seu ataque corpo a corpo usa seu bônus de ataque mágico e causa 1d4+3 de dano de Energia (Médio ou menor), 2d6+3+seu modificador de conjuração (Grande) ou 2d12+3+seu modificador (Enorme).",
     "higherLevels": "Cada nível de espaço acima do 5º adiciona 1d4 de dano de Golpe para objetos Médios ou menores, 1d6 para Grandes ou 1d12 para Enormes.",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -1951,14 +1951,14 @@
   },
   "Antilife Shell": {
     "name": "Concha Antivida",
-    "description": "Uma Emanação de 3 metros ao seu redor impede que criaturas, exceto Constructos e Mortos-vivos, atravessem a barreira ou alcancem algo através dela por até 1 hora. Elas ainda podem conjurar magias ou atacar através da barreira com armas à distância ou de Alcance. Forçar uma delas a atravessá-la encerra a magia.",
+    "description": "Uma Emanação de {{distance:10ft}} ao seu redor impede que criaturas, exceto Constructos e Mortos-vivos, atravessem a barreira ou alcancem algo através dela por até 1 hora. Elas ainda podem conjurar magias ou atacar através da barreira com armas à distância ou de Alcance. Forçar uma delas a atravessá-la encerra a magia.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "Concentração, até 1 hora"
   },
   "Arcane Hand": {
     "name": "Mão Arcana",
-    "description": "Crie uma mão mágica Grande (CA 20, Pontos de Vida iguais aos seus) por até 1 minuto. Mova-a até 18 metros ao conjurar e, depois, com uma Ação Bônus; então escolha um efeito: ataque mágico corpo a corpo que causa 5d8 de dano de Energia, empurrar, agarrar e esmagar causando 4d6 mais seu modificador de conjuração, ou conceder Meia Cobertura.",
+    "description": "Crie uma mão mágica Grande (CA 20, Pontos de Vida iguais aos seus) por até 1 minuto. Mova-a até {{distance:60ft}} ao conjurar e, depois, com uma Ação Bônus; então escolha um efeito: ataque mágico corpo a corpo que causa 5d8 de dano de Energia, empurrar, agarrar e esmagar causando 4d6 mais seu modificador de conjuração, ou conceder Meia Cobertura.",
     "higherLevels": "Cada nível de espaço acima do 5º adiciona 2d8 ao dano de Punho Cerrado e 2d6 ao de Mão Agarradora.",
     "material": "uma casca de ovo e uma luva",
     "castingTime": "Ação",
@@ -1975,7 +1975,7 @@
   },
   "Cloudkill": {
     "name": "Névoa Mortal",
-    "description": "Crie uma Esfera de névoa fortemente obscurecida de 6 metros de raio por até 10 minutos; ela se move 3 metros para longe de você a cada turno. Criaturas na área fazem testes de resistência de Constituição contra 5d8 de dano de Veneno, sofrendo metade se passarem, quando a névoa surge, passa sobre elas ou quando entram ou terminam um turno nela, uma vez por turno.",
+    "description": "Crie uma Esfera de névoa fortemente obscurecida de {{distance:20ft}} de raio por até 10 minutos; ela se move {{distance:10ft}} para longe de você a cada turno. Criaturas na área fazem testes de resistência de Constituição contra 5d8 de dano de Veneno, sofrendo metade se passarem, quando a névoa surge, passa sobre elas ou quando entram ou terminam um turno nela, uma vez por turno.",
     "higherLevels": "O dano aumenta em 1d8 por nível de espaço acima do 5º.",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -1996,14 +1996,14 @@
   },
   "Commune with Nature": {
     "name": "Comunhão com a Natureza",
-    "description": "Aprenda três fatos sobre a área natural ao redor: assentamentos, portais planares, uma criatura extraplanar importante, plantas/minerais/Feras predominantes ou corpos d'água. O raio é de 4,8 quilômetros ao ar livre ou 90 metros no subsolo; a magia falha em áreas construídas.",
+    "description": "Aprenda três fatos sobre a área natural ao redor: assentamentos, portais planares, uma criatura extraplanar importante, plantas/minerais/Feras predominantes ou corpos d'água. O raio é de {{distance:3mi}} ao ar livre ou {{distance:300ft}} no subsolo; a magia falha em áreas construídas.",
     "castingTime": "1 minuto ou Ritual",
     "range": "Pessoal",
     "duration": "Instantânea"
   },
   "Cone of Cold": {
     "name": "Cone de Frio",
-    "description": "Um Cone de frio de 18 metros exige testes de resistência de Constituição. As criaturas sofrem 8d8 de dano de Frio se falharem ou metade se passarem; as mortas pela magia congelam até descongelarem.",
+    "description": "Um Cone de frio de {{distance:60ft}} exige testes de resistência de Constituição. As criaturas sofrem 8d8 de dano de Frio se falharem ou metade se passarem; as mortas pela magia congelam até descongelarem.",
     "higherLevels": "O dano aumenta em 1d8 por nível de espaço acima do 5º.",
     "material": "um pequeno cone de cristal ou vidro",
     "castingTime": "Ação",
@@ -2044,8 +2044,8 @@
   },
   "Creation": {
     "name": "Criação",
-    "description": "Crie um objeto de até um Cubo de 1,5 metro a partir de matéria sombria que você já tenha visto. Material vegetal dura 24 horas; pedra ou cristal, 12 horas; metal precioso, 1 hora; gemas, 10 minutos; adamantina ou mitral, 1 minuto. O objeto não pode servir como componente material de outra magia.",
-    "higherLevels": "O Cubo máximo aumenta em 1,5 metro por nível de espaço acima do 5º.",
+    "description": "Crie um objeto de até um Cubo de {{distance:5ft}} a partir de matéria sombria que você já tenha visto. Material vegetal dura 24 horas; pedra ou cristal, 12 horas; metal precioso, 1 hora; gemas, 10 minutos; adamantina ou mitral, 1 minuto. O objeto não pode servir como componente material de outra magia.",
+    "higherLevels": "O Cubo máximo aumenta em {{distance:5ft}} por nível de espaço acima do 5º.",
     "material": "um pincel",
     "castingTime": "1 minuto",
     "range": "9 metros",
@@ -2053,7 +2053,7 @@
   },
   "Dispel Evil and Good": {
     "name": "Dissipar o Bem e o Mal",
-    "description": "Por até 1 minuto, Celestiais, Elementais, Fadas, Ínferos e Mortos-vivos têm Desvantagem em ataques contra você. Encerre a magia para libertar uma criatura tocada da possessão, encanto ou medo causados por eles, ou para obrigar uma dessas criaturas a até 1,5 metro a fazer um teste de resistência de Carisma ou retornar ao seu plano de origem.",
+    "description": "Por até 1 minuto, Celestiais, Elementais, Fadas, Ínferos e Mortos-vivos têm Desvantagem em ataques contra você. Encerre a magia para libertar uma criatura tocada da possessão, encanto ou medo causados por eles, ou para obrigar uma dessas criaturas a até {{distance:5ft}} a fazer um teste de resistência de Carisma ou retornar ao seu plano de origem.",
     "material": "prata e ferro em pó",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -2077,7 +2077,7 @@
   },
   "Flame Strike": {
     "name": "Coluna de Chamas",
-    "description": "Um Cilindro de 3 metros de raio e 12 metros de altura exige testes de resistência de Destreza. Criaturas sofrem 5d6 de dano de Fogo mais 5d6 de dano Radiante se falharem, ou metade de cada se passarem.",
+    "description": "Um Cilindro de {{distance:10ft}} de raio e {{distance:40ft}} de altura exige testes de resistência de Destreza. Criaturas sofrem 5d6 de dano de Fogo mais 5d6 de dano Radiante se falharem, ou metade de cada se passarem.",
     "higherLevels": "Os danos de Fogo e Radiante aumentam em 1d6 por nível de espaço acima do 5º.",
     "material": "uma pitada de enxofre",
     "castingTime": "Ação",
@@ -2110,7 +2110,7 @@
   },
   "Hallow": {
     "name": "Consagrar",
-    "description": "Proteja uma área de até 18 metros de raio até a magia ser dissipada. Aberrações, Celestiais, Elementais, Fadas, Ínferos ou Mortos-vivos escolhidos não podem entrar voluntariamente, e sua possessão, encanto ou medo ficam suprimidos ali. Escolha um efeito adicional, como luz, escuridão, silêncio, resistência, vulnerabilidade, coragem, medo, idiomas ou bloqueio de teleporte.",
+    "description": "Proteja uma área de até {{distance:60ft}} de raio até a magia ser dissipada. Aberrações, Celestiais, Elementais, Fadas, Ínferos ou Mortos-vivos escolhidos não podem entrar voluntariamente, e sua possessão, encanto ou medo ficam suprimidos ali. Escolha um efeito adicional, como luz, escuridão, silêncio, resistência, vulnerabilidade, coragem, medo, idiomas ou bloqueio de teleporte.",
     "material": "incenso que valha pelo menos 1.000 PO, consumido pela magia",
     "castingTime": "24 horas",
     "range": "Toque",
@@ -2127,7 +2127,7 @@
   },
   "Insect Plague": {
     "name": "Praga de Insetos",
-    "description": "Gafanhotos preenchem uma Esfera de 6 metros de raio por até 10 minutos, deixando-a levemente obscurecida e transformando-a em Terreno Difícil. Criaturas fazem testes de resistência de Constituição contra 4d10 de dano Perfurante, sofrendo metade se passarem, quando a nuvem aparece ou quando entram ou terminam um turno nela, uma vez por turno.",
+    "description": "Gafanhotos preenchem uma Esfera de {{distance:20ft}} de raio por até 10 minutos, deixando-a levemente obscurecida e transformando-a em Terreno Difícil. Criaturas fazem testes de resistência de Constituição contra 4d10 de dano Perfurante, sofrendo metade se passarem, quando a nuvem aparece ou quando entram ou terminam um turno nela, uma vez por turno.",
     "higherLevels": "O dano aumenta em 1d10 por nível de espaço acima do 5º.",
     "material": "um gafanhoto",
     "castingTime": "Ação",
@@ -2149,7 +2149,7 @@
   },
   "Mass Cure Wounds": {
     "name": "Curar Ferimentos em Massa",
-    "description": "Escolha até seis criaturas em uma Esfera de 9 metros de raio ao redor de um ponto visível a até 18 metros. Cada uma recupera 5d8 mais seu modificador de atributo de conjuração em Pontos de Vida.",
+    "description": "Escolha até seis criaturas em uma Esfera de {{distance:30ft}} de raio ao redor de um ponto visível a até {{distance:60ft}}. Cada uma recupera 5d8 mais seu modificador de atributo de conjuração em Pontos de Vida.",
     "higherLevels": "A cura aumenta em 1d8 por nível de espaço acima do 5º.",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -2172,7 +2172,7 @@
   },
   "Passwall": {
     "name": "Passagem",
-    "description": "Abra uma passagem através de madeira, gesso ou pedra a até 9 metros, de até 1,5 metro de largura, 2,4 metros de altura e 6 metros de profundidade, por 1 hora. Ao se fechar, ela expulsa com segurança quem estiver dentro.",
+    "description": "Abra uma passagem através de madeira, gesso ou pedra a até {{distance:30ft}}, de até {{distance:5ft}} de largura, {{distance:8ft}} de altura e {{distance:20ft}} de profundidade, por 1 hora. Ao se fechar, ela expulsa com segurança quem estiver dentro.",
     "material": "uma pitada de sementes de gergelim",
     "castingTime": "Ação",
     "range": "9 metros",
@@ -2180,7 +2180,7 @@
   },
   "Planar Binding": {
     "name": "Vínculo Planar",
-    "description": "Vincule um Celestial, Elemental, Fada ou Ínfero que permaneça a até 18 metros durante a conjuração de 1 hora. Ele faz um teste de resistência de Carisma ou serve você por 24 horas; a duração de uma magia de invocação se estende para acompanhar a vinculação.",
+    "description": "Vincule um Celestial, Elemental, Fada ou Ínfero que permaneça a até {{distance:60ft}} durante a conjuração de 1 hora. Ele faz um teste de resistência de Carisma ou serve você por 24 horas; a duração de uma magia de invocação se estende para acompanhar a vinculação.",
     "higherLevels": "A duração passa a 10 dias com um espaço de 6º nível, 30 dias com um de 7º, 180 dias com um de 8º ou 366 dias com um de 9º.",
     "material": "uma joia que valha pelo menos 1.000 PO, consumida pela magia",
     "castingTime": "1 hora",
@@ -2213,14 +2213,14 @@
   },
   "Seeming": {
     "name": "Aparência Ilusória",
-    "description": "Dê a cada criatura escolhida que você possa ver a até 9 metros uma aparência ilusória por 8 horas. Alvos involuntários podem fazer testes de resistência de Carisma. Uma inspeção física ou um teste bem-sucedido de Investigação contra a CD de suas magias revela o disfarce.",
+    "description": "Dê a cada criatura escolhida que você possa ver a até {{distance:30ft}} uma aparência ilusória por 8 horas. Alvos involuntários podem fazer testes de resistência de Carisma. Uma inspeção física ou um teste bem-sucedido de Investigação contra a CD de suas magias revela o disfarce.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "8 horas"
   },
   "Summon Dragon": {
     "name": "Invocar Dragão",
-    "description": "Convoque um Espírito Dracônico por até 1 hora. Ele tem CA 14 mais o nível do espaço, PV 50 mais 10 por nível de espaço acima do 5º, Voo de 18 metros e age logo depois de você. Faz uma quantidade de ataques Dilacerar igual à metade do nível do espaço, arredondada para baixo, usando seu bônus de ataque mágico; cada acerto causa 1d6+4+nível do espaço de dano Perfurante. Seu sopro em Cone de 9 metros causa 2d6 de dano de Ácido, Frio, Fogo, Elétrico ou Veneno (teste de resistência de Destreza para metade). Escolha uma das Resistências dele para compartilhar durante a duração.",
+    "description": "Convoque um Espírito Dracônico por até 1 hora. Ele tem CA 14 mais o nível do espaço, PV 50 mais 10 por nível de espaço acima do 5º, Voo de {{distance:60ft}} e age logo depois de você. Faz uma quantidade de ataques Dilacerar igual à metade do nível do espaço, arredondada para baixo, usando seu bônus de ataque mágico; cada acerto causa 1d6+4+nível do espaço de dano Perfurante. Seu sopro em Cone de {{distance:30ft}} causa 2d6 de dano de Ácido, Frio, Fogo, Elétrico ou Veneno (teste de resistência de Destreza para metade). Escolha uma das Resistências dele para compartilhar durante a duração.",
     "higherLevels": "Use o nível do espaço para determinar a CA, os Pontos de Vida e as demais estatísticas escaláveis do espírito.",
     "material": "um objeto com a imagem de um dragão gravada que valha pelo menos 500 PO",
     "castingTime": "Ação",
@@ -2229,14 +2229,14 @@
   },
   "Telekinesis": {
     "name": "Telecinese",
-    "description": "Por até 10 minutos, use uma ação Magia a cada turno para mover ou manipular uma criatura ou objeto Enorme ou menor a até 18 metros. Uma criatura faz um teste de resistência de Força ou é movida até 9 metros e fica Contida até o fim do seu próximo turno.",
+    "description": "Por até 10 minutos, use uma ação Magia a cada turno para mover ou manipular uma criatura ou objeto Enorme ou menor a até {{distance:60ft}}. Uma criatura faz um teste de resistência de Força ou é movida até {{distance:30ft}} e fica Contida até o fim do seu próximo turno.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Concentração, até 10 minutos"
   },
   "Telepathic Bond": {
     "name": "Vínculo Telepático",
-    "description": "Conecte até oito criaturas voluntárias a até 9 metros por 1 hora. Elas se comunicam telepaticamente a qualquer distância no mesmo plano, mesmo sem compartilhar idiomas.",
+    "description": "Conecte até oito criaturas voluntárias a até {{distance:30ft}} por 1 hora. Elas se comunicam telepaticamente a qualquer distância no mesmo plano, mesmo sem compartilhar idiomas.",
     "material": "dois ovos",
     "castingTime": "Ação ou Ritual",
     "range": "9 metros",
@@ -2244,7 +2244,7 @@
   },
   "Teleportation Circle": {
     "name": "Círculo de Teletransporte",
-    "description": "Desenhe um portal temporário de 1,5 metro de raio que leva a um círculo permanente no mesmo plano cujos sigilos você conhece. Ele permanece aberto até o fim do seu próximo turno. Conjurá-lo no mesmo lugar diariamente por 365 dias cria um círculo permanente.",
+    "description": "Desenhe um portal temporário de {{distance:5ft}} de raio que leva a um círculo permanente no mesmo plano cujos sigilos você conhece. Ele permanece aberto até o fim do seu próximo turno. Conjurá-lo no mesmo lugar diariamente por 365 dias cria um círculo permanente.",
     "material": "tintas raras que valham pelo menos 50 PO, consumidas pela magia",
     "castingTime": "1 minuto",
     "range": "3 metros",
@@ -2252,14 +2252,14 @@
   },
   "Tree Stride": {
     "name": "Passo Arbóreo",
-    "description": "Por até 1 minuto, entre em uma árvore viva e saia de outra árvore viva da mesma espécie a até 150 metros, gastando 1,5 metro de deslocamento para entrar e mais 1,5 metro para sair. Use essa viagem uma vez por turno e termine cada turno fora de uma árvore.",
+    "description": "Por até 1 minuto, entre em uma árvore viva e saia de outra árvore viva da mesma espécie a até {{distance:500ft}}, gastando {{distance:5ft}} de deslocamento para entrar e outros {{distance:5ft|num}} para sair. Use essa viagem uma vez por turno e termine cada turno fora de uma árvore.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "Concentração, até 1 minuto"
   },
   "Wall of Force": {
     "name": "Muralha de Energia",
-    "description": "Crie uma muralha invisível e invulnerável de dez painéis contíguos de 3 metros ou uma cúpula/globo de até 3 metros de raio por até 10 minutos. Nada físico a atravessa; Dissipar Magia não a encerra, mas Desintegrar a destrói.",
+    "description": "Crie uma muralha invisível e invulnerável de dez painéis contíguos de {{distance:10ft}} ou uma cúpula/globo de até {{distance:10ft}} de raio por até 10 minutos. Nada físico a atravessa; Dissipar Magia não a encerra, mas Desintegrar a destrói.",
     "material": "um fragmento de vidro",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -2267,7 +2267,7 @@
   },
   "Wall of Stone": {
     "name": "Muralha de Pedra",
-    "description": "Crie dez painéis de pedra contíguos, cada um de 3 metros quadrados e 15 centímetros de espessura, ou painéis de 3 por 6 metros com 7,5 centímetros de espessura. Uma criatura cercada pode fazer um teste de resistência de Destreza para sair. Cada painel tem CA 15 e 30 Pontos de Vida por 2,5 centímetros de espessura; manter a Concentração pelos 10 minutos completos torna a muralha permanente.",
+    "description": "Crie dez painéis de pedra contíguos, cada um com {{distance:10ft}} de lado e {{distance:6in}} de espessura, ou painéis de {{distance:10ft|num}} por {{distance:20ft}}, com {{distance:3in}} de espessura. Uma criatura cercada pode fazer um teste de resistência de Destreza para sair. Cada painel tem CA 15 e 30 Pontos de Vida por polegada de espessura; manter a Concentração pelos 10 minutos completos torna a muralha permanente.",
     "material": "um cubo de granito",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -2275,7 +2275,7 @@
   },
   "Blade Barrier": {
     "name": "Barreira de Lâminas",
-    "description": "Crie uma muralha de lâminas mágicas de até 30 metros de comprimento e 6 metros de altura, ou um anel de 18 metros de diâmetro, por até 10 minutos. Seu espaço é Terreno Difícil e concede Três Quartos de Cobertura. Criaturas nele fazem testes de resistência de Destreza contra 6d10 de dano de Energia, sofrendo metade se passarem, quando a muralha surge ou quando entram ou terminam um turno nela, uma vez por turno.",
+    "description": "Crie uma muralha de lâminas mágicas de até {{distance:100ft}} de comprimento e {{distance:20ft}} de altura, ou um anel de {{distance:60ft}} de diâmetro, por até 10 minutos. Seu espaço é Terreno Difícil e concede Três Quartos de Cobertura. Criaturas nele fazem testes de resistência de Destreza contra 6d10 de dano de Energia, sofrendo metade se passarem, quando a muralha surge ou quando entram ou terminam um turno nela, uma vez por turno.",
     "castingTime": "Ação",
     "range": "27 metros",
     "duration": "Concentração, até 10 minutos",
@@ -2287,7 +2287,7 @@
   },
   "Chain Lightning": {
     "name": "Corrente de Relâmpagos",
-    "description": "Um raio atinge um alvo visível a até 45 metros e salta para até outros três alvos a até 9 metros dele. Cada alvo faz um teste de resistência de Destreza contra 10d8 de dano Elétrico, sofrendo metade se passar; nenhum alvo é atingido duas vezes.",
+    "description": "Um raio atinge um alvo visível a até {{distance:150ft}} e salta para até outros três alvos a até {{distance:30ft}} dele. Cada alvo faz um teste de resistência de Destreza contra 10d8 de dano Elétrico, sofrendo metade se passar; nenhum alvo é atingido duas vezes.",
     "higherLevels": "Um raio adicional salta para um novo alvo por nível de espaço acima do 6º.",
     "material": "três alfinetes de prata",
     "castingTime": "Ação",
@@ -2301,7 +2301,7 @@
   },
   "Circle of Death": {
     "name": "Círculo da Morte",
-    "description": "Uma Esfera de energia negativa de 18 metros de raio exige testes de resistência de Constituição, causando 8d8 de dano Necrótico se falharem ou metade se passarem.",
+    "description": "Uma Esfera de energia negativa de {{distance:60ft}} de raio exige testes de resistência de Constituição, causando 8d8 de dano Necrótico se falharem ou metade se passarem.",
     "higherLevels": "O dano aumenta em 2d8 por nível de espaço acima do 6º.",
     "material": "o pó de uma pérola negra esmagada que valha pelo menos 500 PO",
     "castingTime": "Ação",
@@ -2315,7 +2315,7 @@
   },
   "Conjure Fey": {
     "name": "Conjurar Fada",
-    "description": "Convoque um espírito Feérico Médio por até 10 minutos. Quando surge, faça um ataque mágico corpo a corpo a partir do espaço dele; se acertar, causa 3d12 mais seu modificador de atributo de conjuração em dano Psíquico e deixa o alvo Amedrontado até seu próximo turno. Depois, você pode usar uma Ação Bônus para teleportar o espírito 9 metros e repetir o ataque.",
+    "description": "Convoque um espírito Feérico Médio por até 10 minutos. Quando surge, faça um ataque mágico corpo a corpo a partir do espaço dele; se acertar, causa 3d12 mais seu modificador de atributo de conjuração em dano Psíquico e deixa o alvo Amedrontado até seu próximo turno. Depois, você pode usar uma Ação Bônus para teleportar o espírito {{distance:30ft}} e repetir o ataque.",
     "higherLevels": "O dano aumenta em 1d12 por nível de espaço acima do 6º.",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -2331,7 +2331,7 @@
   },
   "Create Undead": {
     "name": "Criar Mortos-Vivos",
-    "description": "Apenas à noite, anime até três cadáveres de Humanoides Médios ou Pequenos como Carniçais, usando uma ônix negra que valha pelo menos 150 PO para cada cadáver. Comande-os a até 36 metros com uma Ação Bônus. O controle dura 24 horas e deve ser renovado antes de terminar.",
+    "description": "Apenas à noite, anime até três cadáveres de Humanoides Médios ou Pequenos como Carniçais, usando uma ônix negra que valha pelo menos 150 PO para cada cadáver. Comande-os a até {{distance:120ft}} com uma Ação Bônus. O controle dura 24 horas e deve ser renovado antes de terminar.",
     "higherLevels": "Um espaço de 7º nível controla quatro Carniçais; de 8º, cinco Carniçais ou dois Carniçais Fétidos ou Lívidos; de 9º, seis Carniçais, três Carniçais Fétidos ou Lívidos, ou duas Múmias.",
     "material": "uma pedra de ônix negra que valha pelo menos 150 PO por cadáver",
     "castingTime": "1 minuto",
@@ -2354,7 +2354,7 @@
   },
   "Eyebite": {
     "name": "Olhar Maligno",
-    "description": "Por até 1 minuto, obrigue uma criatura visível a até 18 metros a fazer um teste de resistência de Sabedoria e escolha Sono (Inconsciente), Pânico (Amedrontada e obrigada a fugir) ou Enfermidade (Envenenada). Nos turnos seguintes, você pode usar uma ação Magia para afetar outra criatura que ainda não tenha passado em um teste de resistência contra esta conjuração.",
+    "description": "Por até 1 minuto, obrigue uma criatura visível a até {{distance:60ft}} a fazer um teste de resistência de Sabedoria e escolha Sono (Inconsciente), Pânico (Amedrontada e obrigada a fugir) ou Enfermidade (Envenenada). Nos turnos seguintes, você pode usar uma ação Magia para afetar outra criatura que ainda não tenha passado em um teste de resistência contra esta conjuração.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "Concentração, até 1 minuto"
@@ -2377,7 +2377,7 @@
   },
   "Forbiddance": {
     "name": "Interdição",
-    "description": "Proteja até 3.700 metros quadrados de piso e 9 metros acima dele contra teleporte e viagem planar por 1 dia. Aberrações, Celestiais, Elementais, Fadas, Ínferos ou Mortos-vivos escolhidos sofrem 5d10 de dano Radiante ou Necrótico ao entrar ou terminar um turno na área, a menos que digam sua senha. Conjurar diariamente por 30 dias torna o efeito permanente e consome o pó de rubi na última conjuração.",
+    "description": "Proteja até 3.700 metros quadrados de piso e {{distance:30ft}} acima dele contra teleporte e viagem planar por 1 dia. Aberrações, Celestiais, Elementais, Fadas, Ínferos ou Mortos-vivos escolhidos sofrem 5d10 de dano Radiante ou Necrótico ao entrar ou terminar um turno na área, a menos que digam sua senha. Conjurar diariamente por 30 dias torna o efeito permanente e consome o pó de rubi na última conjuração.",
     "material": "pó de rubi que valha pelo menos 1.000 PO",
     "castingTime": "10 minutos ou Ritual",
     "range": "Toque",
@@ -2385,7 +2385,7 @@
   },
   "Freezing Sphere": {
     "name": "Esfera Congelante",
-    "description": "Uma Esfera de 18 metros de raio exige testes de resistência de Constituição contra 10d6 de dano de Frio, sofrendo metade se passarem. A água atingida congela e pode deixar nadadores na superfície Contidos. Você pode, em vez disso, segurar o globo por até 1 minuto e lançá-lo mais tarde, antes que exploda.",
+    "description": "Uma Esfera de {{distance:60ft}} de raio exige testes de resistência de Constituição contra 10d6 de dano de Frio, sofrendo metade se passarem. A água atingida congela e pode deixar nadadores na superfície Contidos. Você pode, em vez disso, segurar o globo por até 1 minuto e lançá-lo mais tarde, antes que exploda.",
     "higherLevels": "O dano aumenta em 1d6 por nível de espaço acima do 6º.",
     "material": "uma esfera de cristal em miniatura",
     "castingTime": "Ação",
@@ -2399,7 +2399,7 @@
   },
   "Globe of Invulnerability": {
     "name": "Globo de Invulnerabilidade",
-    "description": "Uma Emanação imóvel de 3 metros ao seu redor impede que magias de nível 5 ou inferior conjuradas do lado de fora afetem qualquer coisa dentro por até 1 minuto.",
+    "description": "Uma Emanação imóvel de {{distance:10ft}} ao seu redor impede que magias de nível 5 ou inferior conjuradas do lado de fora afetem qualquer coisa dentro por até 1 minuto.",
     "higherLevels": "O nível máximo de magia bloqueada aumenta em 1 por nível de espaço acima do 6º.",
     "material": "uma conta de vidro",
     "castingTime": "Ação",
@@ -2408,7 +2408,7 @@
   },
   "Guards and Wards": {
     "name": "Guardas e Proteções",
-    "description": "Proteja até 230 metros quadrados e 6 metros de altura por 24 horas. Escolha criaturas isentas e uma senha. Corredores se enchem de névoa obscurecedora e podem desorientar viajantes; portas recebem Tranca Arcana, até dez portas parecem paredes e escadas se enchem de Teia que se refaz. Coloque também Luzes Dançantes, Boca Encantada, Nuvem Fétida, Lufada de Vento ou Sugestão em locais determinados. Conjurar diariamente por 365 dias torna a proteção permanente.",
+    "description": "Proteja até 230 metros quadrados e {{distance:20ft}} de altura por 24 horas. Escolha criaturas isentas e uma senha. Corredores se enchem de névoa obscurecedora e podem desorientar viajantes; portas recebem Tranca Arcana, até dez portas parecem paredes e escadas se enchem de Teia que se refaz. Coloque também Luzes Dançantes, Boca Encantada, Nuvem Fétida, Lufada de Vento ou Sugestão em locais determinados. Conjurar diariamente por 365 dias torna a proteção permanente.",
     "material": "uma haste de prata que valha pelo menos 10 PO",
     "castingTime": "1 hora",
     "range": "Toque",
@@ -2428,7 +2428,7 @@
   },
   "Heal": {
     "name": "Cura",
-    "description": "Uma criatura visível a até 18 metros recupera 70 Pontos de Vida e perde as condições Cega, Surda e Envenenada.",
+    "description": "Uma criatura visível a até {{distance:60ft}} recupera 70 Pontos de Vida e perde as condições Cega, Surda e Envenenada.",
     "higherLevels": "A cura aumenta em 10 Pontos de Vida por nível de espaço acima do 6º.",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -2444,7 +2444,7 @@
   },
   "Instant Summons": {
     "name": "Invocação Instantânea",
-    "description": "Marque um objeto de até 4,5 quilos e 1,8 metro de comprimento com uma safira que valha pelo menos 1.000 PO. Depois, esmague a safira com uma ação Magia para trazer o objeto à sua mão de qualquer distância ou plano. Se outra criatura o estiver segurando, você descobre quem e onde ela está.",
+    "description": "Marque um objeto de até 4,5 quilos e {{distance:6ft}} de comprimento com uma safira que valha pelo menos 1.000 PO. Depois, esmague a safira com uma ação Magia para trazer o objeto à sua mão de qualquer distância ou plano. Se outra criatura o estiver segurando, você descobre quem e onde ela está.",
     "material": "uma safira que valha pelo menos 1.000 PO",
     "castingTime": "1 minuto ou Ritual",
     "range": "Toque",
@@ -2459,7 +2459,7 @@
   },
   "Magic Jar": {
     "name": "Jarra Mágica",
-    "description": "Coloque sua alma em um recipiente que valha pelo menos 500 PO, deixando seu corpo catatônico. Dele, tente possuir um Humanoide visível a até 30 metros; ele faz um teste de resistência de Carisma. Se falhar, você controla o corpo dele enquanto sua alma fica presa no recipiente. Perder seu corpo ou o recipiente no momento errado pode matar você ou o hospedeiro.",
+    "description": "Coloque sua alma em um recipiente que valha pelo menos 500 PO, deixando seu corpo catatônico. Dele, tente possuir um Humanoide visível a até {{distance:100ft}}; ele faz um teste de resistência de Carisma. Se falhar, você controla o corpo dele enquanto sua alma fica presa no recipiente. Perder seu corpo ou o recipiente no momento errado pode matar você ou o hospedeiro.",
     "material": "uma gema, cristal ou relicário que valha pelo menos 500 PO",
     "castingTime": "1 minuto",
     "range": "Pessoal",
@@ -2467,7 +2467,7 @@
   },
   "Mass Suggestion": {
     "name": "Sugestão em Massa",
-    "description": "Dê uma ordem plausível e não prejudicial de até 25 palavras a até doze criaturas a até 18 metros que entendam você. Cada uma faz um teste de resistência de Sabedoria ou fica Enfeitiçada e cumpre a ordem por até 24 horas, terminando antes se a concluir ou se você ou um aliado a ferir.",
+    "description": "Dê uma ordem plausível e não prejudicial de até 25 palavras a até doze criaturas a até {{distance:60ft}} que entendam você. Cada uma faz um teste de resistência de Sabedoria ou fica Enfeitiçada e cumpre a ordem por até 24 horas, terminando antes se a concluir ou se você ou um aliado a ferir.",
     "higherLevels": "A duração passa a 10 dias com um espaço de 7º nível, 30 dias com um de 8º ou 366 dias com um de 9º.",
     "material": "uma língua de serpente",
     "castingTime": "Ação",
@@ -2476,7 +2476,7 @@
   },
   "Move Earth": {
     "name": "Mover Terra",
-    "description": "Remodele uma área de terra, areia ou argila de até 12 metros de lado. Cada mudança leva 10 minutos e pode elevar ou abaixar o terreno, cavar ou preencher trincheiras ou erguer muros e pilares de até metade da maior dimensão da área. Você pode escolher uma nova área a cada 10 minutos por até 2 horas.",
+    "description": "Remodele uma área de terra, areia ou argila de até {{distance:40ft}} de lado. Cada mudança leva 10 minutos e pode elevar ou abaixar o terreno, cavar ou preencher trincheiras ou erguer muros e pilares de até metade da maior dimensão da área. Você pode escolher uma nova área a cada 10 minutos por até 2 horas.",
     "material": "uma pá em miniatura",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -2484,14 +2484,14 @@
   },
   "Planar Ally": {
     "name": "Aliado Planar",
-    "description": "Peça um Celestial, Elemental ou Ínfero a um poder extraplanar. Ele surge a até 18 metros, mas não é obrigado a ajudar; negocie um serviço, geralmente por cerca de 100 PO por minuto, 1.000 PO por hora ou 10.000 PO por dia, a critério do Mestre.",
+    "description": "Peça um Celestial, Elemental ou Ínfero a um poder extraplanar. Ele surge a até {{distance:60ft}}, mas não é obrigado a ajudar; negocie um serviço, geralmente por cerca de 100 PO por minuto, 1.000 PO por hora ou 10.000 PO por dia, a critério do Mestre.",
     "castingTime": "10 minutos",
     "range": "18 metros",
     "duration": "Instantânea"
   },
   "Programmed Illusion": {
     "name": "Ilusão Programada",
-    "description": "Crie uma ilusão oculta de até um Cubo de 9 metros. Um gatilho visual ou sonoro a até 9 metros ativa imagens e sons programados de até 5 minutos. Após um intervalo de 10 minutos, ela pode ser ativada novamente até ser dissipada.",
+    "description": "Crie uma ilusão oculta de até um Cubo de {{distance:30ft}}. Um gatilho visual ou sonoro a até {{distance:30ft}} ativa imagens e sons programados de até 5 minutos. Após um intervalo de 10 minutos, ela pode ser ativada novamente até ser dissipada.",
     "material": "pó de jade que valha pelo menos 25 PO",
     "castingTime": "Ação",
     "range": "36 metros",
@@ -2499,7 +2499,7 @@
   },
   "Sunbeam": {
     "name": "Raio Solar",
-    "description": "Emita de si uma Linha de luz solar de 18 metros de comprimento e 1,5 metro de largura. Criaturas fazem testes de resistência de Constituição contra 6d8 de dano Radiante e ficam Cegas até seu próximo turno; um sucesso reduz o dano à metade e evita a condição. Você pode usar uma ação Magia para disparar outro feixe a cada turno por até 1 minuto.",
+    "description": "Emita de si uma Linha de luz solar de {{distance:60ft}} de comprimento e {{distance:5ft}} de largura. Criaturas fazem testes de resistência de Constituição contra 6d8 de dano Radiante e ficam Cegas até seu próximo turno; um sucesso reduz o dano à metade e evita a condição. Você pode usar uma ação Magia para disparar outro feixe a cada turno por até 1 minuto.",
     "material": "uma lupa",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -2512,14 +2512,14 @@
   },
   "Transport via Plants": {
     "name": "Transporte por Plantas",
-    "description": "Ligue uma planta inanimada Grande ou maior a até 3 metros a outra planta que você já tenha visto ou tocado no mesmo plano, a qualquer distância. Por 1 minuto, criaturas podem gastar 1,5 metro de deslocamento para entrar na primeira e sair da segunda.",
+    "description": "Ligue uma planta inanimada Grande ou maior a até {{distance:10ft}} a outra planta que você já tenha visto ou tocado no mesmo plano, a qualquer distância. Por 1 minuto, criaturas podem gastar {{distance:5ft}} de deslocamento para entrar na primeira e sair da segunda.",
     "castingTime": "Ação",
     "range": "3 metros",
     "duration": "1 minuto"
   },
   "True Seeing": {
     "name": "Visão Verdadeira",
-    "description": "Uma criatura voluntária que você toque ganha Visão Verdadeira com alcance de 36 metros por 1 hora.",
+    "description": "Uma criatura voluntária que você toque ganha Visão Verdadeira com alcance de {{distance:120ft}} por 1 hora.",
     "material": "pó de cogumelo que valha pelo menos 25 PO, consumido pela magia",
     "castingTime": "Ação",
     "range": "Toque",
@@ -2527,7 +2527,7 @@
   },
   "Wall of Ice": {
     "name": "Muralha de Gelo",
-    "description": "Crie uma cúpula ou globo de gelo com 30 centímetros de espessura e até 3 metros de raio, ou dez painéis contíguos de 3 metros, por até 10 minutos. Uma criatura deslocada pelo surgimento da muralha faz um teste de resistência de Destreza contra 10d6 de dano de Frio. Painéis destruídos deixam ar gélido que causa 5d6 de dano de Frio se alguém atravessá-lo e falhar em um teste de resistência de Constituição.",
+    "description": "Crie uma cúpula ou globo de gelo com {{distance:1ft}} de espessura e até {{distance:10ft}} de raio, ou dez painéis contíguos de {{distance:10ft}}, por até 10 minutos. Uma criatura deslocada pelo surgimento da muralha faz um teste de resistência de Destreza contra 10d6 de dano de Frio. Painéis destruídos deixam ar gélido que causa 5d6 de dano de Frio se alguém atravessá-lo e falhar em um teste de resistência de Constituição.",
     "higherLevels": "O dano ao aparecer aumenta em 2d6 e o dano do ar gelado em 1d6 por nível de espaço acima do 6º.",
     "material": "um pedaço de quartzo",
     "castingTime": "Ação",
@@ -2536,7 +2536,7 @@
   },
   "Wall of Thorns": {
     "name": "Muralha de Espinhos",
-    "description": "Crie uma muralha de espinhos de até 18 metros de comprimento e 3 metros de altura, ou um anel de 6 metros de diâmetro, por até 10 minutos. Criaturas em seu espaço fazem testes de resistência de Destreza contra 7d8 de dano Perfurante quando ela surge. Atravessá-la custa 4 metros de deslocamento por metro percorrido; entrar ou terminar um turno nela causa 7d8 de dano Cortante se falhar em um teste de resistência de Destreza, uma vez por turno.",
+    "description": "Crie uma muralha de espinhos de até {{distance:60ft}} de comprimento e {{distance:10ft}} de altura, ou um anel de {{distance:20ft}} de diâmetro, por até 10 minutos. Criaturas em seu espaço fazem testes de resistência de Destreza contra 7d8 de dano Perfurante quando ela surge. Atravessá-la exige {{distance:4ft}} de deslocamento para cada {{distance:1ft}} de avanço; entrar ou terminar um turno nela causa 7d8 de dano Cortante se falhar em um teste de resistência de Destreza, uma vez por turno.",
     "higherLevels": "Ambos os tipos de dano aumentam em 1d8 por nível de espaço acima do 6º.",
     "material": "um punhado de espinhos",
     "castingTime": "Ação",
@@ -2545,7 +2545,7 @@
   },
   "Wind Walk": {
     "name": "Caminhar no Vento",
-    "description": "Você e até dez criaturas voluntárias tornam-se nuvens por 8 horas, ganhando Deslocamento de Voo de 90 metros, capacidade de pairar, imunidade à condição Caído e Resistência a dano Concussão, Perfurante e Cortante. Nessa forma, só podem usar Disparada ou começar a voltar à forma normal, processo que dura 1 minuto e durante o qual ficam Atordoadas.",
+    "description": "Você e até dez criaturas voluntárias tornam-se nuvens por 8 horas, ganhando Deslocamento de Voo de {{distance:300ft}}, capacidade de pairar, imunidade à condição Caído e Resistência a dano Concussão, Perfurante e Cortante. Nessa forma, só podem usar Disparada ou começar a voltar à forma normal, processo que dura 1 minuto e durante o qual ficam Atordoadas.",
     "material": "uma vela",
     "castingTime": "1 minuto",
     "range": "9 metros",
@@ -2553,14 +2553,14 @@
   },
   "Word of Recall": {
     "name": "Palavra de Recordação",
-    "description": "Teleporte-se e leve até cinco criaturas voluntárias a até 1,5 metro para um santuário previamente designado por você ao conjurar esta magia lá. Sem um santuário preparado, a magia não tem efeito.",
+    "description": "Teleporte-se e leve até cinco criaturas voluntárias a até {{distance:5ft}} para um santuário previamente designado por você ao conjurar esta magia lá. Sem um santuário preparado, a magia não tem efeito.",
     "castingTime": "Ação",
     "range": "1,5 metro",
     "duration": "Instantânea"
   },
   "Arcane Sword": {
     "name": "Espada Arcana",
-    "description": "Crie uma espada flutuante de energia por até 1 minuto. Faça um ataque mágico corpo a corpo contra um alvo a até 1,5 metro dela; se acertar, causa 4d12 mais seu modificador de atributo de conjuração em dano de Energia. Com uma Ação Bônus nos turnos seguintes, mova a espada até 9 metros e ataque novamente.",
+    "description": "Crie uma espada flutuante de energia por até 1 minuto. Faça um ataque mágico corpo a corpo contra um alvo a até {{distance:5ft}} dela; se acertar, causa 4d12 mais seu modificador de atributo de conjuração em dano de Energia. Com uma Ação Bônus nos turnos seguintes, mova a espada até {{distance:30ft}} e ataque novamente.",
     "material": "uma espada em miniatura que valha pelo menos 250 PO",
     "castingTime": "Ação",
     "range": "27 metros",
@@ -2568,7 +2568,7 @@
   },
   "Conjure Celestial": {
     "name": "Conjurar Celestial",
-    "description": "Uma presença celestial preenche um Cilindro de 3 metros de raio e 12 metros de altura por até 10 minutos. Cada criatura visível na área pode receber cura de 4d12 mais seu modificador de atributo de conjuração ou fazer um teste de resistência de Destreza contra 6d12 de dano Radiante (metade se passar). Quando você se move no seu turno, o Cilindro pode mover-se até 9 metros. Criaturas que entrem ou terminem um turno nele podem ser afetadas; cada uma é afetada apenas uma vez por turno.",
+    "description": "Uma presença celestial preenche um Cilindro de {{distance:10ft}} de raio e {{distance:40ft}} de altura por até 10 minutos. Cada criatura visível na área pode receber cura de 4d12 mais seu modificador de atributo de conjuração ou fazer um teste de resistência de Destreza contra 6d12 de dano Radiante (metade se passar). Quando você se move no seu turno, o Cilindro pode mover-se até {{distance:30ft}}. Criaturas que entrem ou terminem um turno nele podem ser afetadas; cada uma é afetada apenas uma vez por turno.",
     "higherLevels": "A cura aumenta em 1d12 e o dano em 1d12 por nível de espaço acima do 7º.",
     "castingTime": "Ação",
     "range": "27 metros",
@@ -2576,7 +2576,7 @@
   },
   "Delayed Blast Fireball": {
     "name": "Bola de Fogo de Explosão Retardada",
-    "description": "Uma conta brilhante espera em um ponto a até 45 metros por até 1 minuto. Quando a Concentração termina, criaturas em uma Esfera de 6 metros de raio fazem testes de resistência de Destreza contra 12d6 de dano de Fogo, sofrendo metade se passarem. O dano aumenta em 1d6 no fim de cada um de seus turnos enquanto você mantém a Concentração. Uma criatura pode pegar ou lançar a conta com um teste de resistência de Destreza; se falhar, ela explode.",
+    "description": "Uma conta brilhante espera em um ponto a até {{distance:150ft}} por até 1 minuto. Quando a Concentração termina, criaturas em uma Esfera de {{distance:20ft}} de raio fazem testes de resistência de Destreza contra 12d6 de dano de Fogo, sofrendo metade se passarem. O dano aumenta em 1d6 no fim de cada um de seus turnos enquanto você mantém a Concentração. Uma criatura pode pegar ou lançar a conta com um teste de resistência de Destreza; se falhar, ela explode.",
     "higherLevels": "O dano inicial aumenta em 1d6 por nível de espaço acima do 7º.",
     "material": "uma bola de guano de morcego e enxofre",
     "castingTime": "Ação",
@@ -2590,7 +2590,7 @@
   },
   "Divine Word": {
     "name": "Palavra Divina",
-    "description": "Escolha criaturas visíveis a até 9 metros; cada uma faz um teste de resistência de Carisma. Se falhar e tiver 20 Pontos de Vida ou menos, morre; com 21-30 PV fica Cega, Surda e Atordoada por 1 hora; com 31-40 PV fica Cega e Surda por 10 minutos; com 41-50 PV fica Surda por 1 minuto. Um Celestial, Elemental, Fada ou Ínfero que falhe também é banido para seu plano de origem por pelo menos 24 horas.",
+    "description": "Escolha criaturas visíveis a até {{distance:30ft}}; cada uma faz um teste de resistência de Carisma. Se falhar e tiver 20 Pontos de Vida ou menos, morre; com 21-30 PV fica Cega, Surda e Atordoada por 1 hora; com 31-40 PV fica Cega e Surda por 10 minutos; com 41-50 PV fica Surda por 1 minuto. Um Celestial, Elemental, Fada ou Ínfero que falhe também é banido para seu plano de origem por pelo menos 24 horas.",
     "castingTime": "Ação Bônus",
     "range": "9 metros",
     "duration": "Instantânea"
@@ -2598,14 +2598,14 @@
   "Etherealness": {
     "name": "Forma Etérea",
     "description": "Entre na Fronteira Etérea por até 8 horas. Você pode atravessar criaturas e objetos no Plano Material, mas não pode afetá-los. Quando a magia termina, retorna ao espaço desocupado mais próximo; pode encerrá-la antes se desejar.",
-    "higherLevels": "Para cada nível de espaço acima do 7º, você pode levar mais três criaturas voluntárias a até 3 metros.",
+    "higherLevels": "Para cada nível de espaço acima do 7º, você pode levar mais três criaturas voluntárias a até {{distance:10ft}}.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "Até 8 horas"
   },
   "Finger of Death": {
     "name": "Dedo da Morte",
-    "description": "Uma criatura visível a até 18 metros faz um teste de resistência de Constituição contra 7d8 + 30 de dano Necrótico, sofrendo metade se passar. Um Humanoide morto por esta magia se ergue como Zumbi no início do seu próximo turno e obedece aos seus comandos verbais.",
+    "description": "Uma criatura visível a até {{distance:60ft}} faz um teste de resistência de Constituição contra 7d8 + 30 de dano Necrótico, sofrendo metade se passar. Um Humanoide morto por esta magia se ergue como Zumbi no início do seu próximo turno e obedece aos seus comandos verbais.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea",
@@ -2617,7 +2617,7 @@
   },
   "Fire Storm": {
     "name": "Tempestade de Fogo",
-    "description": "Crie até dez Cubos contíguos de chamas, cada um de 3 metros, a até 45 metros. Criaturas na área fazem um teste de resistência de Destreza contra 7d10 de dano de Fogo, sofrendo metade se passarem. Você pode poupar as plantas que escolher.",
+    "description": "Crie até dez Cubos contíguos de chamas, cada um de {{distance:10ft}}, a até {{distance:150ft}}. Criaturas na área fazem um teste de resistência de Destreza contra 7d10 de dano de Fogo, sofrendo metade se passarem. Você pode poupar as plantas que escolher.",
     "castingTime": "Ação",
     "range": "45 metros",
     "duration": "Instantânea",
@@ -2629,7 +2629,7 @@
   },
   "Forcecage": {
     "name": "Jaula de Energia",
-    "description": "Por até 1 hora de Concentração, aprisione criaturas em uma jaula de energia de até 6 metros de lado ou em uma caixa sólida de até 3 metros de lado. Uma criatura presa não pode sair por meios não mágicos; teleporte ou viagem planar exige um teste de resistência de Carisma bem-sucedida. Dissipar Magia não encerra a jaula.",
+    "description": "Por até 1 hora de Concentração, aprisione criaturas em uma jaula de energia de até {{distance:20ft}} de lado ou em uma caixa sólida de até {{distance:10ft}} de lado. Uma criatura presa não pode sair por meios não mágicos; teleporte ou viagem planar exige um teste de resistência de Carisma bem-sucedida. Dissipar Magia não encerra a jaula.",
     "material": "pó de rubi que valha pelo menos 1.500 PO, consumido pela magia",
     "castingTime": "Ação",
     "range": "30 metros",
@@ -2637,7 +2637,7 @@
   },
   "Magnificent Mansion": {
     "name": "Mansão Magnífica",
-    "description": "Crie uma moradia extradimensional por 24 horas, com uma porta a até 90 metros. Ela contém até cinquenta Cubos de 3 metros, comida para 100 convidados e até 100 criados; apenas criaturas designadas por você podem entrar.",
+    "description": "Crie uma moradia extradimensional por 24 horas, com uma porta a até {{distance:300ft}}. Ela contém até cinquenta Cubos de {{distance:10ft}}, comida para 100 convidados e até 100 criados; apenas criaturas designadas por você podem entrar.",
     "material": "uma porta em miniatura que valha pelo menos 15 PO",
     "castingTime": "1 minuto",
     "range": "90 metros",
@@ -2645,7 +2645,7 @@
   },
   "Mirage Arcane": {
     "name": "Miragem Arcana",
-    "description": "Por 10 dias, mude aparência, som, cheiro e sensação tátil do terreno em uma área quadrada de até 1,6 quilômetro de lado. Você pode acrescentar ou alterar estruturas e tornar o terreno mais fácil ou difícil de atravessar, mas não disfarçar nem criar criaturas. Visão Verdadeira revela o terreno original sem remover os efeitos físicos da ilusão.",
+    "description": "Por 10 dias, mude aparência, som, cheiro e sensação tátil do terreno em uma área quadrada de até {{distance:1mi}} de lado. Você pode acrescentar ou alterar estruturas e tornar o terreno mais fácil ou difícil de atravessar, mas não disfarçar nem criar criaturas. Visão Verdadeira revela o terreno original sem remover os efeitos físicos da ilusão.",
     "castingTime": "10 minutos",
     "range": "Visão",
     "duration": "10 dias"
@@ -2660,14 +2660,14 @@
   },
   "Prismatic Spray": {
     "name": "Rajada Prismática",
-    "description": "Criaturas em um Cone de 18 metros fazem testes de resistência de Destreza; role 1d8 separadamente para cada alvo. Resultados 1 a 5 causam 12d6 de dano de Fogo, Ácido, Elétrico, Veneno ou Frio (metade se o teste de resistência for bem-sucedida); 6 deixa Contido, e três falhas em testes de resistência de Constituição causam Petrificação; 7 deixa Cego e pode banir após um teste de resistência de Sabedoria; 8 atinge com dois raios diferentes.",
+    "description": "Criaturas em um Cone de {{distance:60ft}} fazem testes de resistência de Destreza; role 1d8 separadamente para cada alvo. Resultados 1 a 5 causam 12d6 de dano de Fogo, Ácido, Elétrico, Veneno ou Frio (metade se o teste de resistência for bem-sucedida); 6 deixa Contido, e três falhas em testes de resistência de Constituição causam Petrificação; 7 deixa Cego e pode banir após um teste de resistência de Sabedoria; 8 atinge com dois raios diferentes.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "Instantânea"
   },
   "Project Image": {
     "name": "Projetar Imagem",
-    "description": "Crie uma cópia ilusória de si mesmo a até 800 quilômetros por até 1 dia de Concentração. Ela parece e soa como você, e você pode ver e ouvir por meio dela e movê-la até 18 metros com uma ação Magia. A interação física ou um teste bem-sucedido de Investigação pode revelar a ilusão.",
+    "description": "Crie uma cópia ilusória de si mesmo a até {{distance:500mi}} por até 1 dia de Concentração. Ela parece e soa como você, e você pode ver e ouvir por meio dela e movê-la até {{distance:60ft}} com uma ação Magia. A interação física ou um teste bem-sucedido de Investigação pode revelar a ilusão.",
     "material": "uma estatueta sua que valha pelo menos 5 PO",
     "castingTime": "Ação",
     "range": "800 quilômetros",
@@ -2691,7 +2691,7 @@
   },
   "Reverse Gravity": {
     "name": "Inverter Gravidade",
-    "description": "Inverta a gravidade em um Cilindro de 15 metros de raio e 30 metros de altura por até 1 minuto. Criaturas e objetos caem para cima, a menos que uma criatura passe em um teste de resistência de Destreza para se agarrar a algo fixo; eles caem novamente quando a magia termina.",
+    "description": "Inverta a gravidade em um Cilindro de {{distance:50ft}} de raio e {{distance:100ft}} de altura por até 1 minuto. Criaturas e objetos caem para cima, a menos que uma criatura passe em um teste de resistência de Destreza para se agarrar a algo fixo; eles caem novamente quando a magia termina.",
     "material": "uma magnetita e limalhas de ferro",
     "castingTime": "Ação",
     "range": "30 metros",
@@ -2715,7 +2715,7 @@
   },
   "Symbol": {
     "name": "Símbolo",
-    "description": "Inscreva um glifo quase invisível com um gatilho definido por você. Quando ativado, afeta criaturas em uma Esfera de 18 metros de raio por 10 minutos com um efeito escolhido: Morte (teste de resistência de Constituição, 10d10 de dano Necrótico, metade se passar), Discórdia, Medo, Dor, Sono ou Atordoamento, cada um com suo teste de resistência e condição. Uma criatura é afetada no máximo uma vez por turno.",
+    "description": "Inscreva um glifo quase invisível com um gatilho definido por você. Quando ativado, afeta criaturas em uma Esfera de {{distance:60ft}} de raio por 10 minutos com um efeito escolhido: Morte (teste de resistência de Constituição, 10d10 de dano Necrótico, metade se passar), Discórdia, Medo, Dor, Sono ou Atordoamento, cada um com suo teste de resistência e condição. Uma criatura é afetada no máximo uma vez por turno.",
     "material": "pó de diamante que valha pelo menos 1.000 PO, consumido pela magia",
     "castingTime": "1 minuto",
     "range": "Toque",
@@ -2723,21 +2723,21 @@
   },
   "Teleport": {
     "name": "Teletransporte",
-    "description": "Teleporte-se e leve até oito criaturas voluntárias a até 3 metros, ou um objeto Grande ou menor, a um lugar conhecido no mesmo plano. O Mestre rola d100 conforme sua familiaridade: um círculo permanente ou objeto de ligação recente sempre chega ao destino; outros destinos podem causar um acidente (3d10 de dano de Energia e nova rolagem), levar a uma área semelhante ou a um ponto afastado.",
+    "description": "Teleporte-se e leve até oito criaturas voluntárias a até {{distance:10ft}}, ou um objeto Grande ou menor, a um lugar conhecido no mesmo plano. O Mestre rola d100 conforme sua familiaridade: um círculo permanente ou objeto de ligação recente sempre chega ao destino; outros destinos podem causar um acidente (3d10 de dano de Energia e nova rolagem), levar a uma área semelhante ou a um ponto afastado.",
     "castingTime": "Ação",
     "range": "3 metros",
     "duration": "Instantânea"
   },
   "Animal Shapes": {
     "name": "Formas Animais",
-    "description": "Qualquer número de criaturas voluntárias visíveis a até 9 metros tornam-se Feras Grandes ou menores de ND 4 ou inferior por 24 horas. Cada uma mantém seus Pontos de Vida, Dados de Vida, valores de atributos mentais, comunicação e tipo de criatura, mas não pode conjurar magias nem usar equipamentos fundidos ao corpo. Cada alvo ganha Pontos de Vida Temporários iguais aos Pontos de Vida da primeira forma. Você pode mudar as formas novamente com uma ação Magia; um alvo pode encerrar a própria forma com uma Ação Bônus.",
+    "description": "Qualquer número de criaturas voluntárias visíveis a até {{distance:30ft}} tornam-se Feras Grandes ou menores de ND 4 ou inferior por 24 horas. Cada uma mantém seus Pontos de Vida, Dados de Vida, valores de atributos mentais, comunicação e tipo de criatura, mas não pode conjurar magias nem usar equipamentos fundidos ao corpo. Cada alvo ganha Pontos de Vida Temporários iguais aos Pontos de Vida da primeira forma. Você pode mudar as formas novamente com uma ação Magia; um alvo pode encerrar a própria forma com uma Ação Bônus.",
     "castingTime": "Ação",
     "range": "9 metros",
     "duration": "24 horas"
   },
   "Antimagic Field": {
     "name": "Campo Antimagia",
-    "description": "Uma Emanação de 3 metros centrada em você suprime magias e outros efeitos mágicos por até 1 hora de Concentração. Ela impede conjuração e viagem mágica para dentro da área ou em seu interior, suprime itens mágicos e bloqueia a maioria das áreas mágicas e criaturas invocadas, mas não a magia de artefatos ou divindades.",
+    "description": "Uma Emanação de {{distance:10ft}} centrada em você suprime magias e outros efeitos mágicos por até 1 hora de Concentração. Ela impede conjuração e viagem mágica para dentro da área ou em seu interior, suprime itens mágicos e bloqueia a maioria das áreas mágicas e criaturas invocadas, mas não a magia de artefatos ou divindades.",
     "material": "limalhas de ferro",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -2745,7 +2745,7 @@
   },
   "Antipathy/Sympathy": {
     "name": "Antipatia/Simpatia",
-    "description": "Por 10 dias, faça uma criatura ou objeto repelir ou atrair um tipo de criatura especificado por você. Uma criatura desse tipo a até 36 metros faz um teste de resistência de Sabedoria: Antipatia a deixa Amedrontada e a afasta; Simpatia a deixa Enfeitiçada e a atrai. Salvaguardas repetidas podem encerrar o efeito para ela.",
+    "description": "Por 10 dias, faça uma criatura ou objeto repelir ou atrair um tipo de criatura especificado por você. Uma criatura desse tipo a até {{distance:120ft}} faz um teste de resistência de Sabedoria: Antipatia a deixa Amedrontada e a afasta; Simpatia a deixa Enfeitiçada e a atrai. Salvaguardas repetidas podem encerrar o efeito para ela.",
     "material": "uma mistura de vinagre e mel",
     "castingTime": "1 hora",
     "range": "18 metros",
@@ -2753,7 +2753,7 @@
   },
   "Befuddlement": {
     "name": "Confusão Mental",
-    "description": "Uma criatura a até 45 metros faz um teste de resistência de Inteligência contra 10d12 de dano Psíquico, sofrendo metade se passar. Se falhar, também não pode conjurar magias nem realizar a ação Magia. Repete o teste de resistência a cada 30 dias; Restauração Maior, Cura ou Desejo podem encerrar o efeito.",
+    "description": "Uma criatura a até {{distance:150ft}} faz um teste de resistência de Inteligência contra 10d12 de dano Psíquico, sofrendo metade se passar. Se falhar, também não pode conjurar magias nem realizar a ação Magia. Repete o teste de resistência a cada 30 dias; Restauração Maior, Cura ou Desejo podem encerrar o efeito.",
     "material": "um chaveiro sem chaves",
     "castingTime": "Ação",
     "range": "45 metros",
@@ -2774,7 +2774,7 @@
   },
   "Control Weather": {
     "name": "Controlar Clima",
-    "description": "Por até 8 horas de Concentração ao ar livre, controle o clima em um raio de 8 quilômetros. Você pode alterar precipitação, temperatura e vento uma etapa por vez; cada ajuste leva 1d4 x 10 minutos para surtir efeito.",
+    "description": "Por até 8 horas de Concentração ao ar livre, controle o clima em um raio de {{distance:5mi}}. Você pode alterar precipitação, temperatura e vento uma etapa por vez; cada ajuste leva 1d4 x 10 minutos para surtir efeito.",
     "material": "incenso aceso",
     "castingTime": "10 minutos",
     "range": "Pessoal",
@@ -2782,14 +2782,14 @@
   },
   "Demiplane": {
     "name": "Semiplano",
-    "description": "Abra por 1 hora uma porta sombria para uma sala extradimensional cúbica de 9 metros. Pode ligá-la a um semiplano novo, a um que já tenha criado ou a outro cuja natureza e conteúdo você conheça.",
+    "description": "Abra por 1 hora uma porta sombria para uma sala extradimensional cúbica de {{distance:30ft}}. Pode ligá-la a um semiplano novo, a um que já tenha criado ou a outro cuja natureza e conteúdo você conheça.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "1 hora"
   },
   "Dominate Monster": {
     "name": "Dominar Monstro",
-    "description": "Uma criatura a até 18 metros faz um teste de resistência de Sabedoria ou fica Enfeitiçada e sob seu controle telepático por até 1 hora de Concentração. Você pode dar ordens e assumir o controle direto; quando ela sofre dano, pode fazer outro teste de resistência para encerrar a magia.",
+    "description": "Uma criatura a até {{distance:60ft}} faz um teste de resistência de Sabedoria ou fica Enfeitiçada e sob seu controle telepático por até 1 hora de Concentração. Você pode dar ordens e assumir o controle direto; quando ela sofre dano, pode fazer outro teste de resistência para encerrar a magia.",
     "higherLevels": "Com um espaço de 9º nível, a concentração pode durar até 8 horas.",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -2797,7 +2797,7 @@
   },
   "Earthquake": {
     "name": "Terremoto",
-    "description": "Por até 1 minuto, tremores tornam o solo em um círculo de 30 metros de raio Terreno Difícil. Criaturas na área fazem testes de resistência de Destreza quando a magia é conjurada e a cada turno ou caem Caídas e perdem a Concentração. A magia abre 1d6 fendas e causa 50 de dano Concussão a estruturas por turno; uma estrutura em colapso pode causar 12d6 de dano Concussão (teste de resistência de Destreza para metade).",
+    "description": "Por até 1 minuto, tremores tornam o solo em um círculo de {{distance:100ft}} de raio Terreno Difícil. Criaturas na área fazem testes de resistência de Destreza quando a magia é conjurada e a cada turno ou caem Caídas e perdem a Concentração. A magia abre 1d6 fendas e causa 50 de dano Concussão a estruturas por turno; uma estrutura em colapso pode causar 12d6 de dano Concussão (teste de resistência de Destreza para metade).",
     "material": "uma pedra rachada",
     "castingTime": "Ação",
     "range": "150 metros",
@@ -2812,7 +2812,7 @@
   },
   "Holy Aura": {
     "name": "Aura Sagrada",
-    "description": "Por até 1 minuto, criaturas escolhidas em uma Emanação de 9 metros ao seu redor têm Vantagem em todas os testes de resistência, enquanto outras criaturas têm Desvantagem em ataques contra elas. Um Ínfero ou Morto-vivo que acerte uma criatura protegida em combate corpo a corpo deve fazer um teste de resistência de Constituição ou fica Cego.",
+    "description": "Por até 1 minuto, criaturas escolhidas em uma Emanação de {{distance:30ft}} ao seu redor têm Vantagem em todas os testes de resistência, enquanto outras criaturas têm Desvantagem em ataques contra elas. Um Ínfero ou Morto-vivo que acerte uma criatura protegida em combate corpo a corpo deve fazer um teste de resistência de Constituição ou fica Cego.",
     "material": "um relicário que valha pelo menos 1.000 PO",
     "castingTime": "Ação",
     "range": "Pessoal",
@@ -2820,7 +2820,7 @@
   },
   "Incendiary Cloud": {
     "name": "Nuvem Incendiária",
-    "description": "Uma Esfera de fumaça fortemente obscurecida de 6 metros de raio surge a até 45 metros e se move 3 metros para longe de você a cada turno. Criaturas na área quando ela surge, e as que ela alcançar ou que entrarem ou terminarem um turno nela, fazem um teste de resistência de Destreza contra 10d8 de dano de Fogo, sofrendo metade se passarem; cada uma faz o teste de resistência apenas uma vez por turno. A nuvem dura até 1 minuto de Concentração.",
+    "description": "Uma Esfera de fumaça fortemente obscurecida de {{distance:20ft}} de raio surge a até {{distance:150ft}} e se move {{distance:10ft}} para longe de você a cada turno. Criaturas na área quando ela surge, e as que ela alcançar ou que entrarem ou terminarem um turno nela, fazem um teste de resistência de Destreza contra 10d8 de dano de Fogo, sofrendo metade se passarem; cada uma faz o teste de resistência apenas uma vez por turno. A nuvem dura até 1 minuto de Concentração.",
     "castingTime": "Ação",
     "range": "45 metros",
     "duration": "Concentração, até 1 minuto",
@@ -2832,7 +2832,7 @@
   },
   "Maze": {
     "name": "Labirinto",
-    "description": "Bana uma criatura a até 18 metros para um labirinto por até 10 minutos de Concentração; não há teste de resistência inicial. Ela pode usar uma ação Estudar para escapar com um teste de Inteligência (Investigação) CD 20; caso contrário, retorna quando a magia termina.",
+    "description": "Bana uma criatura a até {{distance:60ft}} para um labirinto por até 10 minutos de Concentração; não há teste de resistência inicial. Ela pode usar uma ação Estudar para escapar com um teste de Inteligência (Investigação) CD 20; caso contrário, retorna quando a magia termina.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Concentração, até 10 minutos"
@@ -2846,14 +2846,14 @@
   },
   "Power Word Stun": {
     "name": "Palavra de Poder: Atordoar",
-    "description": "Uma criatura visível a até 18 metros fica Atordoada se tiver 150 Pontos de Vida ou menos; caso contrário, seu Deslocamento torna-se 0 até o início do seu próximo turno. Um alvo Atordoado repete um teste de resistência de Constituição ao fim de cada um de seus turnos para encerrar o efeito.",
+    "description": "Uma criatura visível a até {{distance:60ft}} fica Atordoada se tiver 150 Pontos de Vida ou menos; caso contrário, seu Deslocamento torna-se 0 até o início do seu próximo turno. Um alvo Atordoado repete um teste de resistência de Constituição ao fim de cada um de seus turnos para encerrar o efeito.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea"
   },
   "Sunburst": {
     "name": "Explosão Solar",
-    "description": "Luz solar explode em uma Esfera de 18 metros de raio a até 45 metros. Criaturas fazem um teste de resistência de Constituição contra 12d6 de dano Radiante, sofrendo metade se passarem; as que falharem também ficam Cegas por 1 minuto e podem repetir o teste de resistência no fim de cada turno. A luz dissipa a Escuridão mágica na área.",
+    "description": "Luz solar explode em uma Esfera de {{distance:60ft}} de raio a até {{distance:150ft}}. Criaturas fazem um teste de resistência de Constituição contra 12d6 de dano Radiante, sofrendo metade se passarem; as que falharem também ficam Cegas por 1 minuto e podem repetir o teste de resistência no fim de cada turno. A luz dissipa a Escuridão mágica na área.",
     "material": "um pedaço de pedra-do-sol",
     "castingTime": "Ação",
     "range": "45 metros",
@@ -2866,7 +2866,7 @@
   },
   "Tsunami": {
     "name": "Tsunami",
-    "description": "Erga uma muralha de água de até 90 metros de comprimento e altura e 15 metros de espessura por até seis rodadas. Criaturas na área fazem um teste de resistência de Força contra 6d10 de dano Concussão, sofrendo metade se passarem. A cada rodada ela avança 15 metros; criaturas Enormes ou menores alcançadas fazem outro teste de resistência de Força contra 5d10 de dano Concussão. A altura e o dano posterior diminuem a cada rodada.",
+    "description": "Erga uma muralha de água de até {{distance:300ft}} de comprimento e altura e {{distance:50ft}} de espessura por até seis rodadas. Criaturas na área fazem um teste de resistência de Força contra 6d10 de dano Concussão, sofrendo metade se passarem. A cada rodada ela avança {{distance:50ft}}; criaturas Enormes ou menores alcançadas fazem outro teste de resistência de Força contra 5d10 de dano Concussão. A altura e o dano posterior diminuem a cada rodada.",
     "castingTime": "1 minuto",
     "range": "1,6 quilômetro",
     "duration": "Concentração, até 6 rodadas"
@@ -2889,7 +2889,7 @@
   },
   "Gate": {
     "name": "Portal",
-    "description": "Abra um portal de 1,5 a 6 metros de diâmetro para um local exato em outro plano por até 1 minuto. Criaturas podem atravessar a frente do portal a partir de qualquer um dos planos. Ao abri-lo, você pode nomear uma criatura específica em outro plano para trazê-la imediatamente ao seu lado; isso não lhe dá controle sobre ela.",
+    "description": "Abra um portal de {{distance:5ft|num}} a {{distance:20ft}} de diâmetro para um local exato em outro plano por até 1 minuto. Criaturas podem atravessar a frente do portal a partir de qualquer um dos planos. Ao abri-lo, você pode nomear uma criatura específica em outro plano para trazê-la imediatamente ao seu lado; isso não lhe dá controle sobre ela.",
     "material": "um diamante que valha pelo menos 5.000 PO",
     "castingTime": "Ação",
     "range": "18 metros",
@@ -2897,7 +2897,7 @@
   },
   "Imprisonment": {
     "name": "Aprisionamento",
-    "description": "Uma criatura a até 9 metros faz um teste de resistência de Sabedoria ou fica aprisionada até a magia ser dissipada ou ocorrer um gatilho definido por você. Escolha Sepultamento, Acorrentamento, Prisão Cercada, Contenção Mínima ou Sono. Ela não envelhece nem precisa de sustento, não pode se teleportar e não pode ser localizada por Adivinhação. Passar no teste de resistência concede imunidade a esta magia por 24 horas; apenas Dissipar Magia de nível 9 pode encerrá-la antes.",
+    "description": "Uma criatura a até {{distance:30ft}} faz um teste de resistência de Sabedoria ou fica aprisionada até a magia ser dissipada ou ocorrer um gatilho definido por você. Escolha Sepultamento, Acorrentamento, Prisão Cercada, Contenção Mínima ou Sono. Ela não envelhece nem precisa de sustento, não pode se teleportar e não pode ser localizada por Adivinhação. Passar no teste de resistência concede imunidade a esta magia por 24 horas; apenas Dissipar Magia de nível 9 pode encerrá-la antes.",
     "material": "uma estatueta do alvo que valha pelo menos 5.000 PO",
     "castingTime": "1 minuto",
     "range": "9 metros",
@@ -2905,35 +2905,35 @@
   },
   "Mass Heal": {
     "name": "Cura em Massa",
-    "description": "Distribua até 700 Pontos de Vida de cura entre quaisquer criaturas visíveis a até 18 metros. Cada criatura curada também perde as condições Cega, Surda e Envenenada.",
+    "description": "Distribua até 700 Pontos de Vida de cura entre quaisquer criaturas visíveis a até {{distance:60ft}}. Cada criatura curada também perde as condições Cega, Surda e Envenenada.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea"
   },
   "Meteor Swarm": {
     "name": "Chuva de Meteoros",
-    "description": "Quatro meteoros atingem pontos distintos a até 1,6 quilômetro. Cada um cria uma Esfera de 12 metros de raio; criaturas na área fazem um teste de resistência de Destreza contra 20d6 de dano de Fogo mais 20d6 de dano Concussão, sofrendo metade se passarem. Áreas sobrepostas causam dano a uma criatura apenas uma vez.",
+    "description": "Quatro meteoros atingem pontos distintos a até {{distance:1mi}}. Cada um cria uma Esfera de {{distance:40ft}} de raio; criaturas na área fazem um teste de resistência de Destreza contra 20d6 de dano de Fogo mais 20d6 de dano Concussão, sofrendo metade se passarem. Áreas sobrepostas causam dano a uma criatura apenas uma vez.",
     "castingTime": "Ação",
     "range": "1,6 quilômetro",
     "duration": "Instantânea"
   },
   "Power Word Heal": {
     "name": "Palavra de Poder: Curar",
-    "description": "Uma criatura a até 18 metros recupera todos os Pontos de Vida e perde as condições Enfeitiçada, Amedrontada, Paralisada, Envenenada e Atordoada. Um alvo Caído pode usar sua Reação para se levantar.",
+    "description": "Uma criatura a até {{distance:60ft}} recupera todos os Pontos de Vida e perde as condições Enfeitiçada, Amedrontada, Paralisada, Envenenada e Atordoada. Um alvo Caído pode usar sua Reação para se levantar.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea"
   },
   "Power Word Kill": {
     "name": "Palavra de Poder: Matar",
-    "description": "Uma criatura a até 18 metros morre se tiver 100 Pontos de Vida ou menos. Se tiver mais de 100 Pontos de Vida, sofre 12d12 de dano Psíquico; não há teste de resistência.",
+    "description": "Uma criatura a até {{distance:60ft}} morre se tiver 100 Pontos de Vida ou menos. Se tiver mais de 100 Pontos de Vida, sofre 12d12 de dano Psíquico; não há teste de resistência.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "Instantânea"
   },
   "Prismatic Wall": {
     "name": "Muralha Prismática",
-    "description": "Crie uma muralha de sete camadas de até 27 por 9 metros ou um globo de até 9 metros de diâmetro por 10 minutos. Criaturas desprotegidas próximas podem ficar Cegas; atravessar cada camada exige um teste de resistência de Destreza. As cinco primeiras causam, cada uma, 12d6 de dano de Fogo, Ácido, Elétrico, Veneno ou Frio (metade se passar); a sexta pode Petrificar e a sétima pode banir. Cada camada tem sua própria forma de neutralização; Campo Antimagia não pode suprimir a muralha.",
+    "description": "Crie uma muralha de sete camadas de até {{distance:90ft|num}} por {{distance:30ft}} ou um globo de até {{distance:30ft}} de diâmetro por 10 minutos. Criaturas desprotegidas próximas podem ficar Cegas; atravessar cada camada exige um teste de resistência de Destreza. As cinco primeiras causam, cada uma, 12d6 de dano de Fogo, Ácido, Elétrico, Veneno ou Frio (metade se passar); a sexta pode Petrificar e a sétima pode banir. Cada camada tem sua própria forma de neutralização; Campo Antimagia não pode suprimir a muralha.",
     "castingTime": "Ação",
     "range": "18 metros",
     "duration": "10 minutos"
@@ -2948,14 +2948,14 @@
   },
   "Storm of Vengeance": {
     "name": "Tempestade da Vingança",
-    "description": "Uma tempestade de 90 metros de raio dura até 1 minuto. Inicialmente, criaturas sob ela fazem um teste de resistência de Constituição ou sofrem 2d6 de dano Trovejante e ficam Surdas. O turno 2 causa 4d6 de dano de Ácido; o turno 3 invoca seis raios de 10d6 de dano Elétrico cada (teste de resistência de Destreza para metade); o turno 4 causa 2d6 de dano Concussão; os turnos 5 a 10 causam 1d6 de dano de Frio cada e deixam a área fortemente obscurecida e difícil de atravessar.",
+    "description": "Uma tempestade de {{distance:300ft}} de raio dura até 1 minuto. Inicialmente, criaturas sob ela fazem um teste de resistência de Constituição ou sofrem 2d6 de dano Trovejante e ficam Surdas. O turno 2 causa 4d6 de dano de Ácido; o turno 3 invoca seis raios de 10d6 de dano Elétrico cada (teste de resistência de Destreza para metade); o turno 4 causa 2d6 de dano Concussão; os turnos 5 a 10 causam 1d6 de dano de Frio cada e deixam a área fortemente obscurecida e difícil de atravessar.",
     "castingTime": "Ação",
     "range": "1,6 quilômetro",
     "duration": "Concentração, até 1 minuto"
   },
   "Time Stop": {
     "name": "Parar o Tempo",
-    "description": "Realize 1d4 + 1 turnos adicionais enquanto o tempo fica parado para as outras criaturas. O efeito termina antes se você afetar outra criatura ou algo que ela vista ou carregue, ou se afastar mais de 300 metros do ponto onde conjurou a magia.",
+    "description": "Realize 1d4 + 1 turnos adicionais enquanto o tempo fica parado para as outras criaturas. O efeito termina antes se você afetar outra criatura ou algo que ela vista ou carregue, ou se afastar mais de {{distance:1000ft}} do ponto onde conjurou a magia.",
     "castingTime": "Ação",
     "range": "Pessoal",
     "duration": "Instantânea"
@@ -2978,7 +2978,7 @@
   },
   "Weird": {
     "name": "Estranheza",
-    "description": "Criaturas à sua escolha em uma Esfera de 9 metros de raio fazem um teste de resistência de Sabedoria contra 10d10 de dano Psíquico; um sucesso reduz o dano à metade. Uma criatura que falhe também fica Amedrontada por até 1 minuto e repete o teste de resistência ao fim de cada turno: uma falha causa 5d10 de dano Psíquico e um sucesso encerra a magia para ela.",
+    "description": "Criaturas à sua escolha em uma Esfera de {{distance:30ft}} de raio fazem um teste de resistência de Sabedoria contra 10d10 de dano Psíquico; um sucesso reduz o dano à metade. Uma criatura que falhe também fica Amedrontada por até 1 minuto e repete o teste de resistência ao fim de cada turno: uma falha causa 5d10 de dano Psíquico e um sucesso encerra a magia para ela.",
     "castingTime": "Ação",
     "range": "36 metros",
     "duration": "Concentração, até 1 minuto"

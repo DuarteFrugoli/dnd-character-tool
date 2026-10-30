@@ -47,7 +47,7 @@
       {
         "id": "fist",
         "name": "Fist",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 6 (1d6 + 3) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -64,7 +64,7 @@
       {
         "id": "rock",
         "name": "Rock",
-        "description": "Ranged Weapon Attack: +5 to hit, range 25/50 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.",
+        "description": "Ranged Weapon Attack: +5 to hit, range {{distance:25/50ft|short}}, one target. Hit: 6 (1d6 + 3) bludgeoning damage.",
         "attack": {
           "kind": "ranged",
           "bonus": 5,
@@ -121,7 +121,7 @@
       {
         "id": "beak",
         "name": "Beak",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) slashing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 6 (1d8 + 2) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -176,14 +176,14 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The baboon has advantage on an attack roll against a creature if at least one of the baboon's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The baboon has advantage on an attack roll against a creature if at least one of the baboon's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) piercing damage.",
+        "description": "Melee Weapon Attack: +1 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 (1d4 - 1) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 1,
@@ -246,7 +246,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
+        "description": "Melee Weapon Attack: +2 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 2,
@@ -314,7 +314,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one creature. Hit: 1 piercing damage.",
+        "description": "Melee Weapon Attack: +0 to hit, reach {{distance:5ft|short}}, one creature. Hit: 1 piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 0,
@@ -385,7 +385,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 5 (1d6 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -402,7 +402,7 @@
       {
         "id": "claws",
         "name": "Claws",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) slashing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 7 (2d4 + 2) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -465,14 +465,14 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The hawk has advantage on an attack roll against a creature if at least one of the hawk's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The hawk has advantage on an attack roll against a creature if at least one of the hawk's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "id": "beak",
         "name": "Beak",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d4 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -527,7 +527,7 @@
       {
         "id": "charge",
         "name": "Charge",
-        "description": "If the boar moves at least 20 feet straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 3 (1d6) slashing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
+        "description": "If the boar moves at least {{distance:20ft}} straight toward a target and then hits it with a tusk attack on the same turn, the target takes an extra 3 (1d6) slashing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
         "save": {
           "ability": "strength",
           "dc": 11
@@ -547,7 +547,7 @@
       {
         "id": "tusk",
         "name": "Tusk",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) slashing damage.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d6 + 1) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -618,7 +618,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 8 (1d8 + 4) piercing damage.",
+        "description": "Melee Weapon Attack: +6 to hit, reach {{distance:5ft|short}}, one target. Hit: 8 (1d8 + 4) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 6,
@@ -635,7 +635,7 @@
       {
         "id": "claws",
         "name": "Claws",
-        "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) slashing damage.",
+        "description": "Melee Weapon Attack: +6 to hit, reach {{distance:5ft|short}}, one target. Hit: 11 (2d6 + 4) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 6,
@@ -689,7 +689,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 2 (1d4) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 2 (1d4) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -755,7 +755,7 @@
       {
         "id": "claws",
         "name": "Claws",
-        "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 slashing damage.",
+        "description": "Melee Weapon Attack: +0 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 0,
@@ -811,7 +811,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one creature. Hit: 5 (1d6 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -828,7 +828,7 @@
       {
         "id": "constrict",
         "name": "Constrict",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 6 (1d8 + 2) bludgeoning damage, and the target is grappled (escape DC 14). Until this grapple ends, the creature is restrained, and the snake can't constrict another target.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one creature. Hit: 6 (1d8 + 2) bludgeoning damage, and the target is grappled (escape DC 14). Until this grapple ends, the creature is restrained, and the snake can't constrict another target.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -895,7 +895,7 @@
       {
         "id": "claw",
         "name": "Claw",
-        "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 bludgeoning damage.",
+        "description": "Melee Weapon Attack: +0 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 0,
@@ -961,7 +961,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 7 (1d10 + 2) piercing damage, and the target is grappled (escape DC 12). Until this grapple ends, the target is restrained, and the crocodile can't bite another target.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one creature. Hit: 7 (1d10 + 2) piercing damage, and the target is grappled (escape DC 12). Until this grapple ends, the target is restrained, and the crocodile can't bite another target.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -1015,7 +1015,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
+        "description": "Melee Weapon Attack: +2 to hit, reach {{distance:5ft|short}}, one target. Hit: 2 (1d4) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 2,
@@ -1079,14 +1079,14 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The wolf has advantage on an attack roll against a creature if at least one of the wolf's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 10 (2d6 + 3) piercing damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -1144,7 +1144,7 @@
       {
         "id": "hooves",
         "name": "Hooves",
-        "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 9 (2d4 + 4) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +6 to hit, reach {{distance:5ft|short}}, one target. Hit: 9 (2d4 + 4) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 6,
@@ -1209,7 +1209,7 @@
       {
         "id": "talons",
         "name": "Talons",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d4 + 2) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -1263,7 +1263,7 @@
       {
         "id": "charge",
         "name": "Charge",
-        "description": "If the elk moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+        "description": "If the elk moves at least {{distance:20ft}} straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
         "save": {
           "ability": "strength",
           "dc": 13
@@ -1274,7 +1274,7 @@
       {
         "id": "ram",
         "name": "Ram",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 6 (1d6 + 3) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -1291,7 +1291,7 @@
       {
         "id": "hooves",
         "name": "Hooves",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one prone creature. Hit: 8 (2d4 + 3) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one prone creature. Hit: 8 (2d4 + 3) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -1355,7 +1355,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 1 piercing damage plus 7 (3d4) poison damage.",
+        "description": "Melee Weapon Attack: +6 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 piercing damage plus 7 (3d4) poison damage.",
         "attack": {
           "kind": "melee",
           "bonus": 6,
@@ -1425,7 +1425,7 @@
       {
         "id": "standing_leap",
         "name": "Standing Leap",
-        "description": "The frog's long jump is up to 10 feet and its high jump is up to 5 feet, with or without a running start."
+        "description": "The frog's long jump is up to {{distance:10ft}} and its high jump is up to {{distance:5ft}}, with or without a running start."
       }
     ]
   },
@@ -1481,7 +1481,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d6 + 1) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -1498,7 +1498,7 @@
       {
         "id": "claws",
         "name": "Claws",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) slashing damage.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 6 (2d4 + 1) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -1566,7 +1566,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one creature. Hit: 5 (1d6 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -1623,7 +1623,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one creature. Hit: 4 (1d4 + 2) piercing damage, and the target must succeed on a DC 11 Constitution saving throw or take 10 (3d6) poison damage. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -1694,7 +1694,7 @@
       {
         "id": "claw",
         "name": "Claw",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage, and the target is grappled (escape DC 11). The crab has two claws, each of which can grapple only one target.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d6 + 1) bludgeoning damage, and the target is grappled (escape DC 11). The crab has two claws, each of which can grapple only one target.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -1766,7 +1766,7 @@
       {
         "id": "beak",
         "name": "Beak",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) piercing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 6 (1d6 + 3) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -1783,7 +1783,7 @@
       {
         "id": "talons",
         "name": "Talons",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) slashing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 10 (2d6 + 3) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -1839,14 +1839,14 @@
       {
         "id": "illumination",
         "name": "Illumination",
-        "description": "The beetle sheds bright light in a 10-foot radius and dim light for an additional 10 feet."
+        "description": "The beetle sheds bright light in a {{distance:10ft|adj}} radius and dim light for an additional {{distance:10ft}}."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 2 (1d6 - 1) slashing damage.",
+        "description": "Melee Weapon Attack: +1 to hit, reach {{distance:5ft|short}}, one target. Hit: 2 (1d6 - 1) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 1,
@@ -1911,14 +1911,14 @@
       {
         "id": "standing_leap",
         "name": "Standing Leap",
-        "description": "The frog's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+        "description": "The frog's long jump is up to {{distance:20ft}} and its high jump is up to {{distance:10ft}}, with or without a running start."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage, and the target is grappled (escape DC 11). Until this grapple ends, the target is restrained, and the frog can't bite another target.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d6 + 1) piercing damage, and the target is grappled (escape DC 11). Until this grapple ends, the target is restrained, and the frog can't bite another target.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -1978,7 +1978,7 @@
       {
         "id": "charge",
         "name": "Charge",
-        "description": "If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 5 (2d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
+        "description": "If the goat moves at least {{distance:20ft}} straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 5 (2d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 13 Strength saving throw or be knocked prone.",
         "save": {
           "ability": "strength",
           "dc": 13
@@ -1994,7 +1994,7 @@
       {
         "id": "ram",
         "name": "Ram",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -2058,7 +2058,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 10 (2d6 + 3) piercing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 10 (2d6 + 3) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -2115,7 +2115,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 6 (1d8 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -2192,7 +2192,7 @@
       {
         "id": "tentacles",
         "name": "Tentacles",
-        "description": "Melee Weapon Attack: +5 to hit, reach 15 ft., one target. Hit: 10 (2d6 + 3) bludgeoning damage. If the target is a creature, it is grappled (escape DC 16). Until this grapple ends, the target is restrained, and the octopus can't use its tentacles on another target.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:15ft|short}}, one target. Hit: 10 (2d6 + 3) bludgeoning damage. If the target is a creature, it is grappled (escape DC 16). Until this grapple ends, the target is restrained, and the octopus can't use its tentacles on another target.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -2209,7 +2209,7 @@
       {
         "id": "ink_cloud",
         "name": "Ink Cloud",
-        "description": "A 20-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.",
+        "description": "A {{distance:20ft|adj}}-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.",
         "usage": {
           "type": "per_rest",
           "rest": "short_or_long_rest"
@@ -2275,7 +2275,7 @@
       {
         "id": "talons",
         "name": "Talons",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 8 (2d6 + 1) slashing damage.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 8 (2d6 + 1) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -2334,7 +2334,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +6 to hit, reach 10 ft., one target. Hit: 6 (1d4 + 4) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.",
+        "description": "Melee Weapon Attack: +6 to hit, reach {{distance:10ft|short}}, one target. Hit: 6 (1d4 + 4) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one.",
         "attack": {
           "kind": "melee",
           "bonus": 6,
@@ -2406,14 +2406,14 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The rat has advantage on an attack roll against a creature if at least one of the rat's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d4 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -2469,7 +2469,7 @@
       {
         "id": "charge",
         "name": "Charge",
-        "description": "If the sea horse moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) bludgeoning damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
+        "description": "If the sea horse moves at least {{distance:20ft}} straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 7 (2d6) bludgeoning damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
         "save": {
           "ability": "strength",
           "dc": 11
@@ -2485,7 +2485,7 @@
       {
         "id": "ram",
         "name": "Ram",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d6 + 1) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -2563,7 +2563,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 7 (1d8 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one creature. Hit: 7 (1d8 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -2592,7 +2592,7 @@
       {
         "id": "web",
         "name": "Web",
-        "description": "Ranged Weapon Attack: +5 to hit, range 30/60 ft., one creature. Hit: The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).",
+        "description": "Ranged Weapon Attack: +5 to hit, range {{distance:30/60ft|short}}, one creature. Hit: The target is restrained by webbing. As an action, the restrained target can make a DC 12 Strength check, bursting the webbing on a success. The webbing can also be attacked and destroyed (AC 10; hp 5; vulnerability to fire damage; immunity to bludgeoning, poison, and psychic damage).",
         "usage": {
           "type": "recharge",
           "min": 5
@@ -2653,14 +2653,14 @@
       {
         "id": "standing_leap",
         "name": "Standing Leap",
-        "description": "The toad's long jump is up to 20 feet and its high jump is up to 10 feet, with or without a running start."
+        "description": "The toad's long jump is up to {{distance:20ft}} and its high jump is up to {{distance:10ft}}, with or without a running start."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (1d10 + 2) piercing damage plus 5 (1d10) poison damage, and the target is grappled (escape DC 13). Until this grapple ends, the target is restrained, and the toad can't bite another target.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 7 (1d10 + 2) piercing damage plus 5 (1d10) poison damage, and the target is grappled (escape DC 13). Until this grapple ends, the target is restrained, and the toad can't bite another target.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -2735,7 +2735,7 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
@@ -2747,7 +2747,7 @@
       {
         "id": "beak",
         "name": "Beak",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 7 (2d4 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -2764,7 +2764,7 @@
       {
         "id": "talons",
         "name": "Talons",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 9 (2d6 + 2) slashing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 9 (2d6 + 2) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -2819,7 +2819,7 @@
       {
         "id": "sting",
         "name": "Sting",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 5 (1d6 + 2) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one creature. Hit: 5 (1d6 + 2) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -2897,7 +2897,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 5 (1d4 + 3) piercing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 5 (1d4 + 3) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -2975,7 +2975,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one creature. Hit: 4 (1d6 + 1) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 7 (2d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one creature. Hit: 4 (1d6 + 1) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 7 (2d6) poison damage on a failed save, or half as much damage on a successful one. If the poison damage reduces the target to 0 hit points, the target is stable but poisoned for 1 hour, even after regaining hit points, and is paralyzed while poisoned in this way.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -3041,7 +3041,7 @@
       {
         "id": "charge",
         "name": "Charge",
-        "description": "If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 2 (1d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.",
+        "description": "If the goat moves at least {{distance:20ft}} straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 2 (1d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone.",
         "save": {
           "ability": "strength",
           "dc": 10
@@ -3057,7 +3057,7 @@
       {
         "id": "ram",
         "name": "Ram",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 3 (1d4 + 1) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 3 (1d4 + 1) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -3122,7 +3122,7 @@
       {
         "id": "talons",
         "name": "Talons",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 slashing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -3179,14 +3179,14 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The hyena has advantage on an attack roll against a creature if at least one of the hyena's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The hyena has advantage on an attack roll against a creature if at least one of the hyena's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 3 (1d6) piercing damage.",
+        "description": "Melee Weapon Attack: +2 to hit, reach {{distance:5ft|short}}, one target. Hit: 3 (1d6) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 2,
@@ -3248,14 +3248,14 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The jackal has advantage on an attack roll against a creature if at least one of the jackal's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The jackal has advantage on an attack roll against a creature if at least one of the jackal's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +1 to hit, reach 5 ft., one target. Hit: 1 (1d4 - 1) piercing damage.",
+        "description": "Melee Weapon Attack: +1 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 (1d4 - 1) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 1,
@@ -3318,12 +3318,12 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The lion has advantage on an attack roll against a creature if at least one of the lion's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The lion has advantage on an attack roll against a creature if at least one of the lion's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       },
       {
         "id": "pounce",
         "name": "Pounce",
-        "description": "If the lion moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the lion can make one bite attack against it as a bonus action.",
+        "description": "If the lion moves at least {{distance:20ft}} straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the lion can make one bite attack against it as a bonus action.",
         "save": {
           "ability": "strength",
           "dc": 13
@@ -3332,14 +3332,14 @@
       {
         "id": "running_leap",
         "name": "Running Leap",
-        "description": "With a 10-foot running start, the lion can long jump up to 25 feet."
+        "description": "With a {{distance:10ft|adj}} running start, the lion can long jump up to {{distance:25ft}}."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) piercing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 7 (1d8 + 3) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -3356,7 +3356,7 @@
       {
         "id": "claw",
         "name": "Claw",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 6 (1d6 + 3) slashing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 6 (1d6 + 3) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -3412,7 +3412,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
+        "description": "Melee Weapon Attack: +0 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 0,
@@ -3476,7 +3476,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d6 + 1) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -3546,7 +3546,7 @@
       {
         "id": "hooves",
         "name": "Hooves",
-        "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +2 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d4 + 2) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 2,
@@ -3623,7 +3623,7 @@
       {
         "id": "tentacles",
         "name": "Tentacles",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 bludgeoning damage, and the target is grappled (escape DC 10). Until this grapple ends, the octopus can't use its tentacles on another target.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 bludgeoning damage, and the target is grappled (escape DC 10). Until this grapple ends, the octopus can't use its tentacles on another target.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -3640,7 +3640,7 @@
       {
         "id": "ink_cloud",
         "name": "Ink Cloud",
-        "description": "A 5-foot-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.",
+        "description": "A {{distance:5ft|adj}}-radius cloud of ink extends all around the octopus if it is underwater. The area is heavily obscured for 1 minute, although a significant current can disperse the ink. After releasing the ink, the octopus can use the Dash action as a bonus action.",
         "usage": {
           "type": "per_rest",
           "rest": "short_or_long_rest"
@@ -3704,7 +3704,7 @@
       {
         "id": "talons",
         "name": "Talons",
-        "description": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 1 slashing damage.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -3768,7 +3768,7 @@
       {
         "id": "pounce",
         "name": "Pounce",
-        "description": "If the panther moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the panther can make one bite attack against it as a bonus action.",
+        "description": "If the panther moves at least {{distance:20ft}} straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 12 Strength saving throw or be knocked prone. If the target is prone, the panther can make one bite attack against it as a bonus action.",
         "save": {
           "ability": "strength",
           "dc": 12
@@ -3779,7 +3779,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 5 (1d6 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 5 (1d6 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -3796,7 +3796,7 @@
       {
         "id": "claw",
         "name": "Claw",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 4 (1d4 + 2) slashing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 4 (1d4 + 2) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -3852,7 +3852,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage, and the target must make a DC 10 Constitution saving throw, taking 5 (2d4) poison damage on a failed save, or half as much damage on a successful one.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 piercing damage, and the target must make a DC 10 Constitution saving throw, taking 5 (2d4) poison damage on a failed save, or half as much damage on a successful one.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -3918,7 +3918,7 @@
       {
         "id": "hooves",
         "name": "Hooves",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 7 (2d4 + 2) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -3986,7 +3986,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -4048,7 +4048,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +0 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
+        "description": "Melee Weapon Attack: +0 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 0,
@@ -4113,7 +4113,7 @@
       {
         "id": "beak",
         "name": "Beak",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -4173,7 +4173,7 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The shark has advantage on an attack roll against a creature if at least one of the shark's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The shark has advantage on an attack roll against a creature if at least one of the shark's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       },
       {
         "id": "water_breathing",
@@ -4185,7 +4185,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 6 (1d8 + 2) piercing damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 6 (1d8 + 2) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -4239,7 +4239,7 @@
       {
         "id": "hooves",
         "name": "Hooves",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 8 (2d4 + 3) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -4295,7 +4295,7 @@
       {
         "id": "sting",
         "name": "Sting",
-        "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must make a DC 9 Constitution saving throw, taking 4 (1d8) poison damage on a failed save, or half as much damage on a successful one.",
+        "description": "Melee Weapon Attack: +2 to hit, reach {{distance:5ft|short}}, one creature. Hit: 1 piercing damage, and the target must make a DC 9 Constitution saving throw, taking 4 (1d8) poison damage on a failed save, or half as much damage on a successful one.",
         "attack": {
           "kind": "melee",
           "bonus": 2,
@@ -4426,7 +4426,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one creature. Hit: 1 piercing damage, and the target must succeed on a DC 9 Constitution saving throw or take 2 (1d4) poison damage.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one creature. Hit: 1 piercing damage, and the target must succeed on a DC 9 Constitution saving throw or take 2 (1d4) poison damage.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -4487,7 +4487,7 @@
       {
         "id": "blood_drain",
         "name": "Blood Drain",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one creature. Hit: 5 (1d4 + 3) piercing damage, and the stirge attaches to the target. While attached, the stirge doesn't attack. Instead, at the start of each of the stirge's turns, the target loses 5 (1d4 + 3) hit points due to blood loss.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one creature. Hit: 5 (1d4 + 3) piercing damage, and the stirge attaches to the target. While attached, the stirge doesn't attack. Instead, at the start of each of the stirge's turns, the target loses 5 (1d4 + 3) hit points due to blood loss.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -4578,7 +4578,7 @@
       {
         "id": "bites",
         "name": "Bites",
-        "description": "Melee Weapon Attack: +4 to hit, reach 0 ft., one creature in the swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing damage if the swarm has half of its hit points or fewer.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:0ft|short}}, one creature in the swarm's space. Hit: 5 (2d4) piercing damage, or 2 (1d4) piercing damage if the swarm has half of its hit points or fewer.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -4660,7 +4660,7 @@
       {
         "id": "bites",
         "name": "Bites",
-        "description": "Melee Weapon Attack: +3 to hit, reach 0 ft., one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.",
+        "description": "Melee Weapon Attack: +3 to hit, reach {{distance:0ft|short}}, one target in the swarm's space. Hit: 10 (4d4) piercing damage, or 5 (2d4) piercing damage if the swarm has half of its hit points or fewer.",
         "attack": {
           "kind": "melee",
           "bonus": 3,
@@ -4751,7 +4751,7 @@
       {
         "id": "bites",
         "name": "Bites",
-        "description": "Melee Weapon Attack: +5 to hit, reach 0 ft., one creature in the swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing damage if the swarm has half of its hit points or fewer.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:0ft|short}}, one creature in the swarm's space. Hit: 14 (4d6) piercing damage, or 7 (2d6) piercing damage if the swarm has half of its hit points or fewer.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -4836,7 +4836,7 @@
       {
         "id": "bites",
         "name": "Bites",
-        "description": "Melee Weapon Attack: +2 to hit, reach 0 ft., one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.",
+        "description": "Melee Weapon Attack: +2 to hit, reach {{distance:0ft|short}}, one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.",
         "attack": {
           "kind": "melee",
           "bonus": 2,
@@ -4919,7 +4919,7 @@
       {
         "id": "beaks",
         "name": "Beaks",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target in the swarm's space. Hit: 7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half of its hit points or fewer.",
         "attack": {
           "kind": "melee",
           "bonus": 4,
@@ -4983,7 +4983,7 @@
       {
         "id": "pounce",
         "name": "Pounce",
-        "description": "If the tiger moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.",
+        "description": "If the tiger moves at least {{distance:20ft}} straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a DC 13 Strength saving throw or be knocked prone. If the target is prone, the tiger can make one bite attack against it as a bonus action.",
         "save": {
           "ability": "strength",
           "dc": 13
@@ -4994,7 +4994,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 8 (1d10 + 3) piercing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 8 (1d10 + 3) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -5011,7 +5011,7 @@
       {
         "id": "claw",
         "name": "Claw",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 7 (1d8 + 3) slashing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 7 (1d8 + 3) slashing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -5074,14 +5074,14 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The vulture has advantage on an attack roll against a creature if at least one of the vulture's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "id": "beak",
         "name": "Beak",
-        "description": "Melee Weapon Attack: +2 to hit, reach 5 ft., one target. Hit: 2 (1d4) piercing damage.",
+        "description": "Melee Weapon Attack: +2 to hit, reach {{distance:5ft|short}}, one target. Hit: 2 (1d4) piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 2,
@@ -5135,7 +5135,7 @@
       {
         "id": "trampling_charge",
         "name": "Trampling Charge",
-        "description": "If the horse moves at least 20 feet straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.",
+        "description": "If the horse moves at least {{distance:20ft}} straight toward a creature and then hits it with a hooves attack on the same turn, that target must succeed on a DC 14 Strength saving throw or be knocked prone. If the target is prone, the horse can make another attack with its hooves against it as a bonus action.",
         "save": {
           "ability": "strength",
           "dc": 14
@@ -5146,7 +5146,7 @@
       {
         "id": "hooves",
         "name": "Hooves",
-        "description": "Melee Weapon Attack: +6 to hit, reach 5 ft., one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
+        "description": "Melee Weapon Attack: +6 to hit, reach {{distance:5ft|short}}, one target. Hit: 11 (2d6 + 4) bludgeoning damage.",
         "attack": {
           "kind": "melee",
           "bonus": 6,
@@ -5211,7 +5211,7 @@
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +5 to hit, reach 5 ft., one target. Hit: 1 piercing damage.",
+        "description": "Melee Weapon Attack: +5 to hit, reach {{distance:5ft|short}}, one target. Hit: 1 piercing damage.",
         "attack": {
           "kind": "melee",
           "bonus": 5,
@@ -5275,14 +5275,14 @@
       {
         "id": "pack_tactics",
         "name": "Pack Tactics",
-        "description": "The wolf has advantage on attack rolls against a creature if at least one of the wolf's allies is within 5 feet of the creature and the ally isn't incapacitated."
+        "description": "The wolf has advantage on attack rolls against a creature if at least one of the wolf's allies is within {{distance:5ft}} of the creature and the ally isn't incapacitated."
       }
     ],
     "actions": [
       {
         "id": "bite",
         "name": "Bite",
-        "description": "Melee Weapon Attack: +4 to hit, reach 5 ft., one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
+        "description": "Melee Weapon Attack: +4 to hit, reach {{distance:5ft|short}}, one target. Hit: 7 (2d4 + 2) piercing damage. If the target is a creature, it must succeed on a DC 11 Strength saving throw or be knocked prone.",
         "attack": {
           "kind": "melee",
           "bonus": 4,

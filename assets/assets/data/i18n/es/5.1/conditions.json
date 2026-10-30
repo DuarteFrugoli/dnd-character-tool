@@ -33,7 +33,7 @@
   },
   "Paralyzed": {
     "name": "Paralizado",
-    "description": "Una criatura paralizada está incapacitada y no puede moverse ni hablar. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. Las tiradas de ataque contra la criatura tienen ventaja. Cualquier ataque que golpee a la criatura es un golpe crítico si el atacante está a 5 pies de la criatura."
+    "description": "Una criatura paralizada está incapacitada y no puede moverse ni hablar. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. Las tiradas de ataque contra la criatura tienen ventaja. Cualquier ataque que golpee a la criatura es un golpe crítico si el atacante está a {{distance:5ft}} de la criatura."
   },
   "Petrified": {
     "name": "petrificado",
@@ -45,7 +45,7 @@
   },
   "Prone": {
     "name": "Derribado",
-    "description": "La única opción de movimiento de una criatura boca abajo es gatear, a menos que se ponga de pie y así termine la condición. La criatura tiene desventaja en las tiradas de ataque. Una tirada de ataque contra la criatura tiene ventaja si el atacante está a 5 pies de la criatura. De lo contrario, la tirada de ataque tiene desventaja."
+    "description": "La única opción de movimiento de una criatura boca abajo es gatear, a menos que se ponga de pie y así termine la condición. La criatura tiene desventaja en las tiradas de ataque. Una tirada de ataque contra la criatura tiene ventaja si el atacante está a {{distance:5ft}} de la criatura. De lo contrario, la tirada de ataque tiene desventaja."
   },
   "Restrained": {
     "name": "Apresado",
@@ -57,6 +57,6 @@
   },
   "Unconscious": {
     "name": "Inconsciente",
-    "description": "Una criatura inconsciente está incapacitada, no puede moverse ni hablar y no es consciente de su entorno. La criatura deja caer lo que sea que esté sosteniendo y cae boca abajo. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. Las tiradas de ataque contra la criatura tienen ventaja. Cualquier ataque que golpee a la criatura es un golpe crítico si el atacante está a 5 pies de la criatura."
+    "description": "Una criatura inconsciente está incapacitada, no puede moverse ni hablar y no es consciente de su entorno. La criatura deja caer lo que sea que esté sosteniendo y cae boca abajo. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. Las tiradas de ataque contra la criatura tienen ventaja. Cualquier ataque que golpee a la criatura es un golpe crítico si el atacante está a {{distance:5ft}} de la criatura."
   }
 }

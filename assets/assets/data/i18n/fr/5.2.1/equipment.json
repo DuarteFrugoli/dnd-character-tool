@@ -174,11 +174,11 @@
   },
   "Acid": {
     "name": "Acide",
-    "description": "Remplacez une attaque en lançant une fiole sur une cible à 6 mètres ou moins. Si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise), elle subit 2d6 dégâts d'Acide."
+    "description": "Remplacez une attaque en lançant une fiole sur une cible à {{distance:20ft}} ou moins. Si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise), elle subit 2d6 dégâts d'Acide."
   },
   "Alchemist's Fire": {
     "name": "Feu grégeois",
-    "description": "Remplacez une attaque en lançant une flasque sur une cible à 6 mètres ou moins. Si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise), elle subit 1d4 dégâts de Feu et s'enflamme."
+    "description": "Remplacez une attaque en lançant une flasque sur une cible à {{distance:20ft}} ou moins. Si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise), elle subit 1d4 dégâts de Feu et s'enflamme."
   },
   "Antitoxin": {
     "name": "Antitoxine",
@@ -214,7 +214,7 @@
   },
   "Ball Bearings": {
     "name": "Billes",
-    "description": "Répandez-les sur un carré plat de 3 mètres à 3 mètres ou moins avec l'action Utiliser. Les créatures qui y entrent doivent réussir une sauvegarde de Dextérité DD 10 ou tomber À terre. Les récupérer prend 10 minutes."
+    "description": "Répandez-les sur un carré plat de {{distance:10ft}} à {{distance:10ft}} ou moins avec l'action Utiliser. Les créatures qui y entrent doivent réussir une sauvegarde de Dextérité DD 10 ou tomber À terre. Les récupérer prend 10 minutes."
   },
   "Barrel": {
     "name": "Tonneau",
@@ -230,7 +230,7 @@
   },
   "Bell": {
     "name": "Cloche",
-    "description": "La faire sonner avec l'action Utiliser produit un bruit audible jusqu'à 18 mètres."
+    "description": "La faire sonner avec l'action Utiliser produit un bruit audible jusqu'à {{distance:60ft}}."
   },
   "Blanket": {
     "name": "Couverture",
@@ -258,11 +258,11 @@
   },
   "Caltrops": {
     "name": "Chausse-trappes",
-    "description": "Répandez-les sur un carré de 1,5 mètre avec l'action Utiliser. Une créature qui y entre doit réussir une sauvegarde de Dextérité DD 15 ou subir 1 dégât Perforant et voir sa Vitesse réduite à 0 jusqu'à son prochain tour. Les récupérer prend 10 minutes."
+    "description": "Répandez-les sur un carré de {{distance:5ft}} avec l'action Utiliser. Une créature qui y entre doit réussir une sauvegarde de Dextérité DD 15 ou subir 1 dégât Perforant et voir sa Vitesse réduite à 0 jusqu'à son prochain tour. Les récupérer prend 10 minutes."
   },
   "Candle": {
     "name": "Bougie",
-    "description": "Brûle pendant 1 heure et produit une Lumière vive sur 1,5 mètre et une Lumière faible sur 1,5 mètre supplémentaires."
+    "description": "Brûle pendant 1 heure et produit une Lumière vive sur {{distance:5ft}} et une Lumière faible sur {{distance:5ft}} supplémentaires."
   },
   "Case, Crossbow Bolt": {
     "name": "Étui à carreaux",
@@ -282,7 +282,7 @@
   },
   "Climber's Kit": {
     "name": "Matériel d'escalade",
-    "description": "Comprend pointes de bottes, gants, pitons et harnais. S'ancrer avec l'action Utiliser limite une chute à 7,5 mètres et le déplacement à 7,5 mètres de l'ancrage."
+    "description": "Comprend pointes de bottes, gants, pitons et harnais. S'ancrer avec l'action Utiliser limite une chute à {{distance:25ft}} et le déplacement à {{distance:25ft}} de l'ancrage."
   },
   "Clothes, Fine": {
     "name": "Habits élégants",
@@ -342,7 +342,7 @@
   },
   "Grappling Hook": {
     "name": "Grappin",
-    "description": "Lancez-le sur un point d'accroche à 15 mètres ou moins avec l'action Utiliser. Un test de Dextérité (Acrobaties) DD 13 le fixe ; on peut alors escalader une Corde attachée."
+    "description": "Lancez-le sur un point d'accroche à {{distance:50ft}} ou moins avec l'action Utiliser. Un test de Dextérité (Acrobaties) DD 13 le fixe ; on peut alors escalader une Corde attachée."
   },
   "Healer's Kit": {
     "name": "Trousse de soins",
@@ -366,7 +366,7 @@
   },
   "Holy Water": {
     "name": "Eau bénite",
-    "description": "Remplacez une attaque en lançant une flasque sur une créature à 6 mètres ou moins. Un Fiélon ou Mort-vivant ratant une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise) subit 2d8 dégâts Radiants."
+    "description": "Remplacez une attaque en lançant une flasque sur une créature à {{distance:20ft}} ou moins. Un Fiélon ou Mort-vivant ratant une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise) subit 2d8 dégâts Radiants."
   },
   "Hunting Trap": {
     "name": "Piège de chasse",
@@ -386,19 +386,19 @@
   },
   "Ladder": {
     "name": "Échelle",
-    "description": "Une échelle de 3 mètres."
+    "description": "Une échelle de {{distance:10ft}}."
   },
   "Lamp": {
     "name": "Lampe",
-    "description": "Brûle de l'Huile et produit une Lumière vive sur 4,5 mètres et une Lumière faible sur 9 mètres supplémentaires."
+    "description": "Brûle de l'Huile et produit une Lumière vive sur {{distance:15ft}} et une Lumière faible sur {{distance:30ft}} supplémentaires."
   },
   "Lantern, Bullseye": {
     "name": "Lanterne à œil-de-bœuf",
-    "description": "Brûle de l'Huile et produit une Lumière vive dans un Cône de 18 mètres et une Lumière faible sur 18 mètres supplémentaires."
+    "description": "Brûle de l'Huile et produit une Lumière vive dans un Cône de {{distance:60ft}} et une Lumière faible sur {{distance:60ft}} supplémentaires."
   },
   "Lantern, Hooded": {
     "name": "Lanterne sourde",
-    "description": "Brûle de l'Huile et produit une Lumière vive sur 9 mètres et une Lumière faible sur 9 mètres supplémentaires. Abaisser le capot limite la Lumière faible à 1,5 mètre."
+    "description": "Brûle de l'Huile et produit une Lumière vive sur {{distance:30ft}} et une Lumière faible sur {{distance:30ft}} supplémentaires. Abaisser le capot limite la Lumière faible à {{distance:5ft}}."
   },
   "Lock": {
     "name": "Serrure",
@@ -422,7 +422,7 @@
   },
   "Net": {
     "name": "Filet",
-    "description": "Remplacez une attaque en le lançant sur une créature à 4,5 mètres ou moins. Elle est Entravée si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise) ; les créatures de taille TG ou plus réussissent automatiquement. S'évader demande Force (Athlétisme) DD 10."
+    "description": "Remplacez une attaque en le lançant sur une créature à {{distance:15ft}} ou moins. Elle est Entravée si elle rate une sauvegarde de Dextérité (DD 8 + modificateur de Dextérité + bonus de maîtrise) ; les créatures de taille TG ou plus réussissent automatiquement. S'évader demande Force (Athlétisme) DD 10."
   },
   "Oil": {
     "name": "Huile",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Parfum",
-    "description": "Fiole de 4 onces. Pendant 1 heure après application, gagnez l'Avantage aux tests de Charisme (Persuasion) pour influencer un Humanoïde Indifférent à 1,5 mètre ou moins."
+    "description": "Fiole de 4 onces. Pendant 1 heure après application, gagnez l'Avantage aux tests de Charisme (Persuasion) pour influencer un Humanoïde Indifférent à {{distance:5ft}} ou moins."
   },
   "Poison, Basic": {
     "name": "Poison de base",
@@ -446,7 +446,7 @@
   },
   "Pole": {
     "name": "Perche",
-    "description": "Perche de 3 mètres. S'en servir pour prendre appui donne l'Avantage à un test de Force (Athlétisme) pour un saut en hauteur ou en longueur."
+    "description": "Perche de {{distance:10ft}}. S'en servir pour prendre appui donne l'Avantage à un test de Force (Athlétisme) pour un saut en hauteur ou en longueur."
   },
   "Pot, Iron": {
     "name": "Marmite en fer",
@@ -490,11 +490,11 @@
   },
   "Shovel": {
     "name": "Pelle",
-    "description": "Une heure à creuser la terre ou une matière semblable crée un cube vide de 1,5 mètre de côté."
+    "description": "Une heure à creuser la terre ou une matière semblable crée un cube vide de {{distance:5ft}} de côté."
   },
   "Signal Whistle": {
     "name": "Sifflet",
-    "description": "Souffler dedans avec l'action Utiliser produit un son audible jusqu'à 180 mètres."
+    "description": "Souffler dedans avec l'action Utiliser produit un son audible jusqu'à {{distance:600ft}}."
   },
   "Spellbook": {
     "name": "Grimoire",
@@ -510,7 +510,7 @@
   },
   "String": {
     "name": "Ficelle",
-    "description": "Ficelle de 3 mètres ; faire un nœud est une action Utiliser."
+    "description": "Ficelle de {{distance:10ft}} ; faire un nœud est une action Utiliser."
   },
   "Tent": {
     "name": "Tente",
@@ -522,7 +522,7 @@
   },
   "Torch": {
     "name": "Torche",
-    "description": "Brûle pendant 1 heure et produit une Lumière vive sur 6 mètres et une Lumière faible sur 6 mètres supplémentaires. Peut servir d'arme de Corps à corps simple infligeant 1 dégât de Feu en touchant."
+    "description": "Brûle pendant 1 heure et produit une Lumière vive sur {{distance:20ft}} et une Lumière faible sur {{distance:20ft}} supplémentaires. Peut servir d'arme de Corps à corps simple infligeant 1 dégât de Feu en touchant."
   },
   "Vial": {
     "name": "Fiole",
@@ -535,7 +535,7 @@
   "weaponMasteries": {
     "cleave": {
       "name": "Tailler",
-      "description": "Une fois par tour après avoir touché avec une attaque de corps à corps, attaquez avec la même arme une autre créature à 1,5 mètre ou moins de la première et à votre portée. En touchant, infligez les dégâts de l'arme sans modificateur positif de caractéristique."
+      "description": "Une fois par tour après avoir touché avec une attaque de corps à corps, attaquez avec la même arme une autre créature à {{distance:5ft}} ou moins de la première et à votre portée. En touchant, infligez les dégâts de l'arme sans modificateur positif de caractéristique."
     },
     "graze": {
       "name": "Érafler",
@@ -547,7 +547,7 @@
     },
     "push": {
       "name": "Repousser",
-      "description": "En touchant, repoussez une créature de taille G ou inférieure jusqu'à 3 mètres directement loin de vous."
+      "description": "En touchant, repoussez une créature de taille G ou inférieure jusqu'à {{distance:10ft}} directement loin de vous."
     },
     "sap": {
       "name": "Affaiblir",
@@ -555,7 +555,7 @@
     },
     "slow": {
       "name": "Ralentir",
-      "description": "En touchant et infligeant des dégâts, réduisez la Vitesse de la cible de 3 mètres jusqu'au début de votre prochain tour. Plusieurs touches ne cumulent pas cette réduction."
+      "description": "En touchant et infligeant des dégâts, réduisez la Vitesse de la cible de {{distance:10ft}} jusqu'au début de votre prochain tour. Plusieurs touches ne cumulent pas cette réduction."
     },
     "topple": {
       "name": "Renverser",

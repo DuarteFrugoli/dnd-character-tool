@@ -38,7 +38,7 @@
     },
     "Fast Movement": {
       "name": "Movimento Veloce",
-      "description": "La tua Velocità aumenta di 3 metri mentre non indossi armatura pesante."
+      "description": "La tua Velocità aumenta di {{distance:10ft}} mentre non indossi armatura pesante."
     },
     "Feral Instinct": {
       "name": "Istinto Ferino",
@@ -50,7 +50,7 @@
     },
     "Brutal Strike": {
       "name": "Colpo Brutale",
-      "description": "Quando usi Attacco Irruento, rinuncia al suo Vantaggio su un attacco basato su Forza che non abbia Svantaggio. Se colpisci, aggiungi 1d10 danni dello stesso tipo dell'attacco e scegli un effetto di Colpo Brutale: Colpo Possente spinge il bersaglio di 4,5 metri e ti permette di seguirlo fino a metà della tua Velocità senza provocare attacchi di opportunità; Colpo ai Tendini riduce la sua Velocità di 4,5 metri fino al tuo turno successivo."
+      "description": "Quando usi Attacco Irruento, rinuncia al suo Vantaggio su un attacco basato su Forza che non abbia Svantaggio. Se colpisci, aggiungi 1d10 danni dello stesso tipo dell'attacco e scegli un effetto di Colpo Brutale: Colpo Possente spinge il bersaglio di {{distance:15ft}} e ti permette di seguirlo fino a metà della tua Velocità senza provocare attacchi di opportunità; Colpo ai Tendini riduce la sua Velocità di {{distance:15ft}} fino al tuo turno successivo."
     },
     "Relentless Rage": {
       "name": "Ira Implacabile",
@@ -80,7 +80,7 @@
   "Bard": {
     "Bardic Inspiration": {
       "name": "Ispirazione bardica",
-      "description": "Come Azione Bonus, dai un dado di Ispirazione bardica a una creatura entro 18 metri che possa vederti o sentirti. Entro 1 ora, dopo aver fallito una Prova di d20, può tirare il dado e aggiungerlo alla prova. Una creatura può possedere solo un dado del genere. Hai usi pari al tuo modificatore di Carisma (minimo 1), recuperati dopo un Riposo Lungo. Dado: d6 ai livelli 1-4, d8 ai livelli 5-9, d10 ai livelli 10-14, d12 dal livello 15."
+      "description": "Come Azione Bonus, dai un dado di Ispirazione bardica a una creatura entro {{distance:60ft}} che possa vederti o sentirti. Entro 1 ora, dopo aver fallito una Prova di d20, può tirare il dado e aggiungerlo alla prova. Una creatura può possedere solo un dado del genere. Hai usi pari al tuo modificatore di Carisma (minimo 1), recuperati dopo un Riposo Lungo. Dado: d6 ai livelli 1-4, d8 ai livelli 5-9, d10 ai livelli 10-14, d12 dal livello 15."
     },
     "Spellcasting": {
       "name": "Lancio di Incantesimi",
@@ -108,7 +108,7 @@
     },
     "Countercharm": {
       "name": "Controfascino",
-      "description": "Come Reazione, quando tu o una creatura entro 9 metri fallite un tiro salvezza contro Affascinato o Spaventato, puoi far ripetere quel tiro con Vantaggio."
+      "description": "Come Reazione, quando tu o una creatura entro {{distance:30ft}} fallite un tiro salvezza contro Affascinato o Spaventato, puoi far ripetere quel tiro con Vantaggio."
     },
     "Magical Secrets": {
       "name": "Segreti Magici",
@@ -124,7 +124,7 @@
     },
     "Words of Creation": {
       "name": "Parole della Creazione",
-      "description": "Parola del Potere Guarire e Parola del Potere Uccidere sono sempre preparati. Quando lanci uno dei due, puoi bersagliare una seconda creatura entro 3 metri dalla prima."
+      "description": "Parola del Potere Guarire e Parola del Potere Uccidere sono sempre preparati. Quando lanci uno dei due, puoi bersagliare una seconda creatura entro {{distance:10ft}} dalla prima."
     }
   },
   "Cleric": {
@@ -138,7 +138,7 @@
     },
     "Channel Divinity": {
       "name": "Incanalare Divinità",
-      "description": "Ottieni Scintilla Divina e Scacciare i Non Morti, oltre alle opzioni della tua sottoclasse. Puoi usare Incanalare Divinità due volte al livello 2, tre al livello 6 e quattro al livello 18; recuperi un uso dopo un Riposo Breve e tutti dopo un Riposo Lungo. Come azione Magica, Scintilla Divina cura un'altra creatura visibile entro 9 metri di 1d8 + il tuo modificatore di Saggezza, oppure infligge la stessa quantità di danni necrotici o radiosi se fallisce un tiro salvezza su Costituzione (metà se riesce); i dadi aumentano a 2d8 al livello 7, 3d8 al livello 13 e 4d8 al livello 18. Come azione Magica, Scacciare i Non Morti costringe i non morti scelti entro 9 metri a un tiro salvezza su Saggezza; se falliscono diventano Spaventati e Incapacitati per 1 minuto, cercano di allontanarsi e l'effetto termina se subiscono danni oppure se diventi Incapacitato o muori."
+      "description": "Ottieni Scintilla Divina e Scacciare i Non Morti, oltre alle opzioni della tua sottoclasse. Puoi usare Incanalare Divinità due volte al livello 2, tre al livello 6 e quattro al livello 18; recuperi un uso dopo un Riposo Breve e tutti dopo un Riposo Lungo. Come azione Magica, Scintilla Divina cura un'altra creatura visibile entro {{distance:30ft}} di 1d8 + il tuo modificatore di Saggezza, oppure infligge la stessa quantità di danni necrotici o radiosi se fallisce un tiro salvezza su Costituzione (metà se riesce); i dadi aumentano a 2d8 al livello 7, 3d8 al livello 13 e 4d8 al livello 18. Come azione Magica, Scacciare i Non Morti costringe i non morti scelti entro {{distance:30ft}} a un tiro salvezza su Saggezza; se falliscono diventano Spaventati e Incapacitati per 1 minuto, cercano di allontanarsi e l'effetto termina se subiscono danni oppure se diventi Incapacitato o muori."
     },
     "Cleric Subclass": {
       "name": "Sottoclasse del Chierico",
@@ -162,7 +162,7 @@
     },
     "Improved Blessed Strikes": {
       "name": "Colpi Benedetti Migliorati",
-      "description": "I danni extra di Colpo Divino diventano 2d8. Se invece hai scelto Incantesimi Potenti, infliggere danni a una creatura con un trucchetto da chierico può conferire a te o a un alleato entro 18 metri punti ferita temporanei pari al doppio del tuo modificatore di Saggezza."
+      "description": "I danni extra di Colpo Divino diventano 2d8. Se invece hai scelto Incantesimi Potenti, infliggere danni a una creatura con un trucchetto da chierico può conferire a te o a un alleato entro {{distance:60ft}} punti ferita temporanei pari al doppio del tuo modificatore di Saggezza."
     },
     "Epic Boon": {
       "name": "Dono Epico",
@@ -212,7 +212,7 @@
     },
     "Improved Elemental Fury": {
       "name": "Furia Elementale Migliorata",
-      "description": "Incantesimi Potenti aggiunge 90 metri alla gittata di un trucchetto da druido che normalmente raggiunge almeno 3 metri. I danni extra di Colpo Primordiale diventano 2d8."
+      "description": "Incantesimi Potenti aggiunge {{distance:300ft}} alla gittata di un trucchetto da druido che normalmente raggiunge almeno {{distance:10ft}}. I danni extra di Colpo Primordiale diventano 2d8."
     },
     "Beast Spells": {
       "name": "Incantesimi in Forma di Bestia",
@@ -304,7 +304,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimento Senza Armatura",
-      "description": "Senza armatura né Scudo, la tua Velocità aumenta di 3 metri ai livelli 2-5, 15 ai livelli 6-9, 20 ai livelli 10-13, 25 ai livelli 14-17 e 30 dal livello 18."
+      "description": "Senza armatura né Scudo, la tua Velocità aumenta di {{distance:10ft}} ai livelli 2-5, di {{distance:15ft}} ai livelli 6-9, di {{distance:20ft}} ai livelli 10-13, di {{distance:25ft}} ai livelli 14-17 e di {{distance:30ft}} dal livello 18."
     },
     "Uncanny Metabolism": {
       "name": "Metabolismo Straordinario",
@@ -312,7 +312,7 @@
     },
     "Deflect Attacks": {
       "name": "Deviare gli Attacchi",
-      "description": "Come Reazione, quando un attacco ti colpisce e include danni contundenti, perforanti o taglienti, riduci i danni totali di 1d10 + il tuo modificatore di Destrezza + il tuo livello da monaco. Se li riduci a 0, spendi 1 Punto focalizzazione per deviarli: una creatura visibile entro 1,5 metri per un attacco da mischia, oppure entro 18 metri e non dietro Copertura Totale per un attacco a distanza, effettua un tiro salvezza su Destrezza; se fallisce subisce danni del tipo dell'attacco pari a due dadi di Arti Marziali + il tuo modificatore di Destrezza."
+      "description": "Come Reazione, quando un attacco ti colpisce e include danni contundenti, perforanti o taglienti, riduci i danni totali di 1d10 + il tuo modificatore di Destrezza + il tuo livello da monaco. Se li riduci a 0, spendi 1 Punto focalizzazione per deviarli: una creatura visibile entro {{distance:5ft}} per un attacco da mischia, oppure entro {{distance:60ft}} e non dietro Copertura Totale per un attacco a distanza, effettua un tiro salvezza su Destrezza; se fallisce subisce danni del tipo dell'attacco pari a due dadi di Arti Marziali + il tuo modificatore di Destrezza."
     },
     "Monk Subclass": {
       "name": "Sottoclasse del Monaco",
@@ -348,7 +348,7 @@
     },
     "Heightened Focus": {
       "name": "Focalizzazione Migliorata",
-      "description": "Per 1 Punto focalizzazione, Raffica di Colpi consente tre Colpi Senz'Armi; Difesa Paziente conferisce anche punti ferita temporanei pari a due dadi di Arti Marziali; Passo del Vento può trasportare una creatura consenziente di taglia Grande o inferiore entro 1,5 metri senza provocare attacchi di opportunità."
+      "description": "Per 1 Punto focalizzazione, Raffica di Colpi consente tre Colpi Senz'Armi; Difesa Paziente conferisce anche punti ferita temporanei pari a due dadi di Arti Marziali; Passo del Vento può trasportare una creatura consenziente di taglia Grande o inferiore entro {{distance:5ft}} senza provocare attacchi di opportunità."
     },
     "Self-Restoration": {
       "name": "Autoguarigione",
@@ -402,7 +402,7 @@
     },
     "Channel Divinity": {
       "name": "Incanalare Divinità",
-      "description": "Ottieni Senso Divino e le opzioni di Incanalare Divinità della tua sottoclasse. Parti con due usi, che diventano tre al livello 11 da paladino; ne recuperi uno dopo un Riposo Breve e tutti dopo un Riposo Lungo. Senso Divino è un'Azione Bonus che per 10 minuti rivela Celestiali, Immondi, Non Morti e luoghi o oggetti consacrati o profanati entro 18 metri, finché non diventi Incapacitato."
+      "description": "Ottieni Senso Divino e le opzioni di Incanalare Divinità della tua sottoclasse. Parti con due usi, che diventano tre al livello 11 da paladino; ne recuperi uno dopo un Riposo Breve e tutti dopo un Riposo Lungo. Senso Divino è un'Azione Bonus che per 10 minuti rivela Celestiali, Immondi, Non Morti e luoghi o oggetti consacrati o profanati entro {{distance:60ft}}, finché non diventi Incapacitato."
     },
     "Paladin Subclass": {
       "name": "Sottoclasse del Paladino",
@@ -422,11 +422,11 @@
     },
     "Aura of Protection": {
       "name": "Aura di Protezione",
-      "description": "Tu e gli alleati nella tua emanazione di 3 metri ottenete un bonus ai tiri salvezza pari al tuo modificatore di Carisma (minimo +1) mentre non sei Incapacitato. Una creatura beneficia di una sola Aura di Protezione da paladino alla volta."
+      "description": "Tu e gli alleati nella tua emanazione di {{distance:10ft}} ottenete un bonus ai tiri salvezza pari al tuo modificatore di Carisma (minimo +1) mentre non sei Incapacitato. Una creatura beneficia di una sola Aura di Protezione da paladino alla volta."
     },
     "Abjure Foes": {
       "name": "Abiurare i Nemici",
-      "description": "Come azione Magica, spendi un uso di Incanalare Divinità per bersagliare un numero di creature fino al tuo modificatore di Carisma (minimo una) entro 18 metri. Ognuna effettua un tiro salvezza su Saggezza; se fallisce diventa Spaventata per 1 minuto o finché subisce danni. Nei propri turni può muoversi, compiere un'azione o un'Azione Bonus, ma soltanto una di queste cose."
+      "description": "Come azione Magica, spendi un uso di Incanalare Divinità per bersagliare un numero di creature fino al tuo modificatore di Carisma (minimo una) entro {{distance:60ft}}. Ognuna effettua un tiro salvezza su Saggezza; se fallisce diventa Spaventata per 1 minuto o finché subisce danni. Nei propri turni può muoversi, compiere un'azione o un'Azione Bonus, ma soltanto una di queste cose."
     },
     "Aura of Courage": {
       "name": "Aura di Coraggio",
@@ -442,7 +442,7 @@
     },
     "Aura Expansion": {
       "name": "Espansione dell'Aura",
-      "description": "La tua Aura di Protezione si estende a un'emanazione di 9 metri."
+      "description": "La tua Aura di Protezione si estende a un'emanazione di {{distance:30ft}}."
     },
     "Epic Boon": {
       "name": "Dono Epico",
@@ -484,7 +484,7 @@
     },
     "Roving": {
       "name": "Vagabondo",
-      "description": "La tua Velocità aumenta di 3 metri mentre non indossi armatura pesante. Ottieni Velocità di Scalata e Nuoto pari alla tua Velocità."
+      "description": "La tua Velocità aumenta di {{distance:10ft}} mentre non indossi armatura pesante. Ottieni Velocità di Scalata e Nuoto pari alla tua Velocità."
     },
     "Expertise": {
       "name": "Maestria",
@@ -508,7 +508,7 @@
     },
     "Feral Senses": {
       "name": "Sensi Ferini",
-      "description": "Ottieni Vista Cieca entro 9 metri."
+      "description": "Ottieni Vista Cieca entro {{distance:30ft}}."
     },
     "Epic Boon": {
       "name": "Dono Epico",
@@ -526,7 +526,7 @@
     },
     "Sneak Attack": {
       "name": "Attacco Furtivo",
-      "description": "Una volta per turno infliggi danni extra con un attacco di arma Accurata o a distanza se l'attacco ha Vantaggio. Non serve Vantaggio se un alleato è entro 1,5 metri dal bersaglio, non è Incapacitato e il tuo tiro non ha Svantaggio. I danni extra sono 1d6 al livello 1 e aumentano di 1d6 a ogni livello dispari da ladro, fino a 10d6 al livello 19."
+      "description": "Una volta per turno infliggi danni extra con un attacco di arma Accurata o a distanza se l'attacco ha Vantaggio. Non serve Vantaggio se un alleato è entro {{distance:5ft}} dal bersaglio, non è Incapacitato e il tuo tiro non ha Svantaggio. I danni extra sono 1d6 al livello 1 e aumentano di 1d6 a ogni livello dispari da ladro, fino a 10d6 al livello 19."
     },
     "Thieves' Cant": {
       "name": "Gergo dei Ladri",

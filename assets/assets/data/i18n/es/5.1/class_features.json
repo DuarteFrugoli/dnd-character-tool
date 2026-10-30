@@ -30,7 +30,7 @@
     },
     "Fast Movement": {
       "name": "Movimiento rápido",
-      "description": "Tu velocidad aumenta 10 pies mientras no llevas armadura pesada."
+      "description": "Tu velocidad aumenta {{distance:10ft}} mientras no llevas armadura pesada."
     },
     "Feral Instinct": {
       "name": "Instinto salvaje",
@@ -92,7 +92,7 @@
     },
     "Countercharm": {
       "name": "Contraencanto",
-      "description": "Obtienes la capacidad de usar notas musicales o palabras de poder para interrumpir los efectos que influyen en la mente. Como acción, puedes iniciar una actuación que dura hasta el final de tu siguiente turno. Durante ese tiempo, tú y cualquier criatura amiga a 30 pies de ti tenéis ventaja en las tiradas de salvación contra ser asustados o encantados."
+      "description": "Obtienes la capacidad de usar notas musicales o palabras de poder para interrumpir los efectos que influyen en la mente. Como acción, puedes iniciar una actuación que dura hasta el final de tu siguiente turno. Durante ese tiempo, tú y cualquier criatura amiga a {{distance:30ft}} de ti tenéis ventaja en las tiradas de salvación contra ser asustados o encantados."
     },
     "Magical Secrets": {
       "name": "Secretos magicos",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimiento sin armadura",
-      "description": "Tu velocidad aumenta mientras no llevas armadura ni empuñas un escudo: +10 pies en el nivel 2 de monje, +15 pies en el nivel 6, +20 pies en el nivel 10, +25 pies en el nivel 14 y +30 pies en el nivel 18."
+      "description": "Tu velocidad aumenta mientras no llevas armadura ni empuñas un escudo: +{{distance:10ft}} en el nivel 2 de monje, +{{distance:15ft}} en el nivel 6, +{{distance:20ft}} en el nivel 10, +{{distance:25ft}} en el nivel 14 y +{{distance:30ft}} en el nivel 18."
     },
     "Monastic Tradition": {
       "name": "Tradición monástica",
@@ -254,7 +254,7 @@
   "Paladin": {
     "Divine Sense": {
       "name": "Sentido Divino",
-      "description": "La presencia de un fuerte mal se registra en tus sentidos como un olor nocivo, y un poderoso bien suena como música celestial en tus oídos. Como acción, puedes abrir tu conciencia para detectar tales fuerzas. Hasta el final de tu siguiente turno, conoces la ubicación de cualquier celestial, demonio o no-muerto dentro de 60 pies de ti que no esté detrás de una cobertura total."
+      "description": "La presencia de un fuerte mal se registra en tus sentidos como un olor nocivo, y un poderoso bien suena como música celestial en tus oídos. Como acción, puedes abrir tu conciencia para detectar tales fuerzas. Hasta el final de tu siguiente turno, conoces la ubicación de cualquier celestial, demonio o no-muerto dentro de {{distance:60ft}} de ti que no esté detrás de una cobertura total."
     },
     "Lay on Hands": {
       "name": "Imposición de manos",
@@ -290,11 +290,11 @@
     },
     "Aura of Protection": {
       "name": "Aura de protección",
-      "description": "Siempre que tú o una criatura amiga a 10 pies de ti debas realizar una tirada de salvación, la criatura obtiene una bonificación a la tirada de salvación igual a tu modificador de Carisma (con una bonificación mínima de +1). Debes estar consciente para otorgar este bono."
+      "description": "Siempre que tú o una criatura amiga a {{distance:10ft}} de ti debas realizar una tirada de salvación, la criatura obtiene una bonificación a la tirada de salvación igual a tu modificador de Carisma (con una bonificación mínima de +1). Debes estar consciente para otorgar este bono."
     },
     "Aura of Courage": {
       "name": "Aura de coraje",
-      "description": "Ni tú ni las criaturas amigas que se encuentren a 10 pies de ti pueden asustarse mientras estás consciente."
+      "description": "Ni tú ni las criaturas amigas que se encuentren a {{distance:10ft}} de ti pueden asustarse mientras estás consciente."
     },
     "Cleansing Touch": {
       "name": "Toque limpiador",
@@ -324,7 +324,7 @@
     },
     "Primeval Awareness": {
       "name": "Conciencia primitiva",
-      "description": "Puedes usar tu acción y gastar un espacio de hechizo de guardabosques para centrar tu atención en la región que te rodea. Durante 1 minuto por nivel del espacio de hechizo que gastas, puedes sentir si hay aberraciones, celestiales, dragones, elementales, hadas, demonios o muertos vivientes en un radio de 1 milla de ti."
+      "description": "Puedes usar tu acción y gastar un espacio de hechizo de guardabosques para centrar tu atención en la región que te rodea. Durante 1 minuto por nivel del espacio de hechizo que gastas, puedes sentir si hay aberraciones, celestiales, dragones, elementales, hadas, demonios o muertos vivientes en un radio de {{distance:1mi}} de ti."
     },
     "Ability Score Improvement": {
       "name": "Mejora de característica",
@@ -362,7 +362,7 @@
     },
     "Sneak Attack": {
       "name": "Ataque furtivo",
-      "description": "Sabes cómo atacar sutilmente y aprovechar la distracción del enemigo. Una vez por turno, puedes infligir daño adicional a una criatura que golpeas con un ataque si tienes ventaja en la tirada de ataque. El ataque debe utilizar delicadeza o un arma a distancia. No necesitas ventaja si otro enemigo del objetivo está a 5 pies de él, ese enemigo no está incapacitado y no tienes desventaja. El daño adicional es 1d6 en los niveles 1-2 de pícaro, luego aumenta en 1d6 cada dos niveles de pícaro: 2d6 en el nivel 3, 3d6 en el nivel 5, 4d6 en el nivel 7, 5d6 en el nivel 9, 6d6 en el nivel 11, 7d6 en el nivel 13, 8d6 en el nivel 15, 9d6 en el nivel 17 y 10d6 en el nivel 19."
+      "description": "Sabes cómo atacar sutilmente y aprovechar la distracción del enemigo. Una vez por turno, puedes infligir daño adicional a una criatura que golpeas con un ataque si tienes ventaja en la tirada de ataque. El ataque debe utilizar delicadeza o un arma a distancia. No necesitas ventaja si otro enemigo del objetivo está a {{distance:5ft}} de él, ese enemigo no está incapacitado y no tienes desventaja. El daño adicional es 1d6 en los niveles 1-2 de pícaro, luego aumenta en 1d6 cada dos niveles de pícaro: 2d6 en el nivel 3, 3d6 en el nivel 5, 4d6 en el nivel 7, 5d6 en el nivel 9, 6d6 en el nivel 11, 7d6 en el nivel 13, 8d6 en el nivel 15, 9d6 en el nivel 17 y 10d6 en el nivel 19."
     },
     "Thieves' Cant": {
       "name": "El hipocresía de los ladrones",
@@ -394,7 +394,7 @@
     },
     "Blindsense": {
       "name": "Sentido ciego",
-      "description": "Si puede oír, sabrá la ubicación de cualquier criatura oculta o invisible a menos de 10 pies de usted."
+      "description": "Si puede oír, sabrá la ubicación de cualquier criatura oculta o invisible a menos de {{distance:10ft}} de usted."
     },
     "Slippery Mind": {
       "name": "Mente resbaladiza",

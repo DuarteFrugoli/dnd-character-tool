@@ -4,11 +4,11 @@
     "actions": {
       "fist": {
         "name": "Punho",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 5 (1d4 + 3) de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 5 (1d4 + 3) de dano de Concussão."
       },
       "rock": {
         "name": "Pedra",
-        "description": "Jogada de Ataque à Distância: +5, distância 7,5/15 metros. Acerto: 10 (2d6 + 3) de dano de Concussão."
+        "description": "Jogada de Ataque à Distância: +5, distância {{distance:25/50ft}}. Acerto: 10 (2d6 + 3) de dano de Concussão."
       },
       "multiattack": {
         "name": "Ataques Múltiplos",
@@ -21,13 +21,13 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +1, alcance 1,5 metro. Acerto: 1 (1d4 - 1) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +1, alcance {{distance:5ft}}. Acerto: 1 (1d4 - 1) de dano Perfurante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "O babuíno tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do babuíno estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "O babuíno tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do babuíno estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       }
     }
   },
@@ -36,7 +36,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 1 de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante."
       }
     }
   },
@@ -45,7 +45,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 1 de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante."
       }
     }
   },
@@ -54,7 +54,7 @@
     "actions": {
       "rend": {
         "name": "Dilacerar",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 5 (1d6 + 2) de dano Cortante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 5 (1d6 + 2) de dano Cortante."
       },
       "multiattack": {
         "name": "Ataques Múltiplos",
@@ -67,13 +67,13 @@
     "actions": {
       "beak": {
         "name": "Bico",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 4 (1d4 + 2) de dano Perfurante, ou 6 (1d8 + 2) de dano Perfurante se o alvo estiver Ensanguentado."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 4 (1d4 + 2) de dano Perfurante, ou 6 (1d8 + 2) de dano Perfurante se o alvo estiver Ensanguentado."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "O falcão tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do falcão estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "O falcão tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do falcão estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       }
     }
   },
@@ -82,7 +82,7 @@
     "actions": {
       "gore": {
         "name": "Chifrada",
-        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance 1,5 metro. Acerto: 4 (1d6 + 1) de dano Perfurante. Se o alvo for uma criatura Média ou menor e o javali tiver se movido pelo menos 6 metros em linha reta em direção a ele imediatamente antes do acerto, o alvo sofre 3 (1d6) de dano Perfurante extra e fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance {{distance:5ft}}. Acerto: 4 (1d6 + 1) de dano Perfurante. Se o alvo for uma criatura Média ou menor e o javali tiver se movido pelo menos {{distance:20+ft}} em linha reta em direção a ele imediatamente antes do acerto, o alvo sofre 3 (1d6) de dano Perfurante extra e fica com a condição Caído."
       }
     },
     "traits": {
@@ -97,11 +97,11 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 7 (1d8 + 3) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 7 (1d8 + 3) de dano Perfurante."
       },
       "claw": {
         "name": "Garra",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 5 (1d4 + 3) de dano Cortante. Se o alvo for uma criatura Grande ou menor, ele fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 5 (1d4 + 3) de dano Cortante. Se o alvo for uma criatura Grande ou menor, ele fica com a condição Caído."
       },
       "multiattack": {
         "name": "Ataques Múltiplos",
@@ -114,7 +114,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 4 (1d4 + 2) de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 4 (1d4 + 2) de dano de Concussão."
       }
     }
   },
@@ -123,7 +123,7 @@
     "actions": {
       "scratch": {
         "name": "Arranhão",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 1 de dano Cortante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 1 de dano Cortante."
       }
     },
     "traits": {
@@ -138,11 +138,11 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 6 (1d8 + 2) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 6 (1d8 + 2) de dano Perfurante."
       },
       "constrict": {
         "name": "Constrição",
-        "description": "Teste de Resistência de Força: CD 12, uma criatura Média ou menor que a cobra possa ver a até 1,5 metro. Falha: 7 (3d4) de dano de Concussão, e o alvo fica com a condição Agarrado (CD 12 para escapar)."
+        "description": "Teste de Resistência de Força: CD 12, uma criatura Média ou menor que a cobra possa ver a até {{distance:5ft}}. Falha: 7 (3d4) de dano de Concussão, e o alvo fica com a condição Agarrado (CD 12 para escapar)."
       }
     }
   },
@@ -151,7 +151,7 @@
     "actions": {
       "claw": {
         "name": "Garra",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 1 de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 1 de dano de Concussão."
       }
     },
     "traits": {
@@ -166,7 +166,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 6 (1d8 + 2) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 12 para escapar). Enquanto estiver Agarrado, o alvo fica com a condição Contido."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 6 (1d8 + 2) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 12 para escapar). Enquanto estiver Agarrado, o alvo fica com a condição Contido."
       }
     },
     "traits": {
@@ -181,7 +181,7 @@
     "actions": {
       "ram": {
         "name": "Investida",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 2 (1d4) de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 2 (1d4) de dano de Concussão."
       }
     },
     "traits": {
@@ -196,13 +196,13 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 8 (1d10 + 3) de dano Perfurante. Se o alvo for uma criatura Grande ou menor, ele fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 8 (1d10 + 3) de dano Perfurante. Se o alvo for uma criatura Grande ou menor, ele fica com a condição Caído."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "O lobo tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do lobo estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "O lobo tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do lobo estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       }
     }
   },
@@ -211,7 +211,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Jogada de Ataque Corpo a Corpo: +6, alcance 1,5 metro. Acerto: 6 (1d4 + 4) de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +6, alcance {{distance:5ft}}. Acerto: 6 (1d4 + 4) de dano de Concussão."
       }
     }
   },
@@ -220,7 +220,7 @@
     "actions": {
       "talons": {
         "name": "Garras Afiadas",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 4 (1d4 + 2) de dano Cortante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 4 (1d4 + 2) de dano Cortante."
       }
     }
   },
@@ -229,7 +229,7 @@
     "actions": {
       "ram": {
         "name": "Investida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 6 (1d6 + 3) de dano de Concussão. Se o alvo for uma criatura Grande ou menor e o alce tiver se movido pelo menos 6 metros em linha reta em direção a ele imediatamente antes do acerto, o alvo sofre 3 (1d6) de dano de Concussão extra e fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 6 (1d6 + 3) de dano de Concussão. Se o alvo for uma criatura Grande ou menor e o alce tiver se movido pelo menos {{distance:20+ft}} em linha reta em direção a ele imediatamente antes do acerto, o alvo sofre 3 (1d6) de dano de Concussão extra e fica com a condição Caído."
       }
     }
   },
@@ -238,7 +238,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance 1,5 metro. Acerto: 1 de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante."
       }
     },
     "traits": {
@@ -248,7 +248,7 @@
       },
       "standing_leap": {
         "name": "Salto Parado",
-        "description": "O Salto em Distância da rã é de até 3 metros e seu Salto em Altura é de até 1,5 metro, com ou sem corrida."
+        "description": "O Salto em Distância da rã é de até {{distance:10ft}} e seu Salto em Altura é de até {{distance:5ft}}, com ou sem corrida."
       }
     }
   },
@@ -257,7 +257,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance 1,5 metro. Acerto: 6 (2d4 + 1) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance {{distance:5ft}}. Acerto: 6 (2d4 + 1) de dano Perfurante."
       }
     }
   },
@@ -266,7 +266,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 6 (1d6 + 3) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 6 (1d6 + 3) de dano Perfurante."
       }
     }
   },
@@ -275,7 +275,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 4 (1d4 + 2) de dano Perfurante, e o alvo fica com a condição Envenenado até o início do próximo turno da centopeia."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 4 (1d4 + 2) de dano Perfurante, e o alvo fica com a condição Envenenado até o início do próximo turno da centopeia."
       }
     }
   },
@@ -284,7 +284,7 @@
     "actions": {
       "claw": {
         "name": "Garra",
-        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance 1,5 metro. Acerto: 4 (1d6 + 1) de dano de Concussão. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 11 para escapar) por uma das duas garras."
+        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance {{distance:5ft}}. Acerto: 4 (1d6 + 1) de dano de Concussão. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 11 para escapar) por uma das duas garras."
       }
     },
     "traits": {
@@ -299,13 +299,13 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +1, alcance 1,5 metro. Acerto: 1 de dano de Fogo."
+        "description": "Jogada de Ataque Corpo a Corpo: +1, alcance {{distance:5ft}}. Acerto: 1 de dano de Fogo."
       }
     },
     "traits": {
       "illumination": {
         "name": "Iluminação",
-        "description": "O besouro emite Luz Plena em um raio de 3 metros e Penumbra por mais 3 metros."
+        "description": "O besouro emite Luz Plena em um raio de {{distance:10ft}} e Penumbra por mais {{distance:10ft}}."
       }
     }
   },
@@ -314,11 +314,11 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance 1,5 metro. Acerto: 5 (1d6 + 2) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 11 para escapar)."
+        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance {{distance:5ft}}. Acerto: 5 (1d6 + 2) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 11 para escapar)."
       },
       "swallow": {
         "name": "Engolir",
-        "description": "A rã engole um alvo Pequeno ou menor que esteja agarrando. Enquanto estiver engolido, o alvo não está Agarrado, mas tem as condições Cego e Contido, e tem Cobertura Total contra ataques e outros efeitos originados fora da rã. Enquanto estiver com o alvo engolido, a rã não pode usar Mordida e, se a rã morrer, o alvo engolido deixa de estar Contido e pode escapar do cadáver usando 1,5 metro de movimento, saindo com a condição Caído. No fim do próximo turno da rã, o alvo engolido sofre 5 (2d4) de dano de Ácido. Se esse dano não o matar, a rã o regurgita, e ele sai Caído."
+        "description": "A rã engole um alvo Pequeno ou menor que esteja agarrando. Enquanto estiver engolido, o alvo não está Agarrado, mas tem as condições Cego e Contido, e tem Cobertura Total contra ataques e outros efeitos originados fora da rã. Enquanto estiver com o alvo engolido, a rã não pode usar Mordida e, se a rã morrer, o alvo engolido deixa de estar Contido e pode escapar do cadáver usando {{distance:5ft}} de movimento, saindo com a condição Caído. No fim do próximo turno da rã, o alvo engolido sofre 5 (2d4) de dano de Ácido. Se esse dano não o matar, a rã o regurgita, e ele sai Caído."
       }
     },
     "traits": {
@@ -328,7 +328,7 @@
       },
       "standing_leap": {
         "name": "Salto Parado",
-        "description": "O Salto em Distância da rã é de até 6 metros e seu Salto em Altura é de até 3 metros, com ou sem corrida."
+        "description": "O Salto em Distância da rã é de até {{distance:20ft}} e seu Salto em Altura é de até {{distance:10ft}}, com ou sem corrida."
       }
     }
   },
@@ -337,7 +337,7 @@
     "actions": {
       "ram": {
         "name": "Investida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 6 (1d6 + 3) de dano de Concussão. Se o alvo for uma criatura Grande ou menor e o bode tiver se movido pelo menos 6 metros em linha reta em direção a ele imediatamente antes do acerto, o alvo sofre 5 (2d4) de dano de Concussão extra e fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 6 (1d6 + 3) de dano de Concussão. Se o alvo for uma criatura Grande ou menor e o bode tiver se movido pelo menos {{distance:20+ft}} em linha reta em direção a ele imediatamente antes do acerto, o alvo sofre 5 (2d4) de dano de Concussão extra e fica com a condição Caído."
       }
     }
   },
@@ -346,7 +346,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 10 (2d6 + 3) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 10 (2d6 + 3) de dano Perfurante."
       }
     },
     "bonusActions": {
@@ -361,7 +361,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 6 (1d8 + 2) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 6 (1d8 + 2) de dano Perfurante."
       }
     },
     "traits": {
@@ -376,7 +376,7 @@
     "actions": {
       "tentacles": {
         "name": "Tentáculos",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 3 metros. Acerto: 10 (2d6 + 3) de dano de Concussão. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 13 para escapar) por todos os oito tentáculos. Enquanto estiver Agarrado, o alvo fica com a condição Contido."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:10ft}}. Acerto: 10 (2d6 + 3) de dano de Concussão. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 13 para escapar) por todos os oito tentáculos. Enquanto estiver Agarrado, o alvo fica com a condição Contido."
       }
     },
     "traits": {
@@ -388,7 +388,7 @@
     "reactions": {
       "ink_cloud": {
         "name": "Nuvem de Tinta",
-        "description": "Gatilho: O polvo sofre dano enquanto está debaixo d'água. Resposta: O polvo libera tinta que preenche um Cubo de 3 metros centrado em si mesmo e se move até o valor do seu Deslocamento de Natação. O Cubo fica Fortemente Obscurecido por 1 minuto ou até que uma corrente forte ou efeito semelhante disperse a tinta."
+        "description": "Gatilho: O polvo sofre dano enquanto está debaixo d'água. Resposta: O polvo libera tinta que preenche um Cubo de {{distance:10ft}} centrado em si mesmo e se move até o valor do seu Deslocamento de Natação. O Cubo fica Fortemente Obscurecido por 1 minuto ou até que uma corrente forte ou efeito semelhante disperse a tinta."
       }
     }
   },
@@ -397,13 +397,13 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 5 (1d4 + 3) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 5 (1d4 + 3) de dano Perfurante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "O rato tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do rato estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "O rato tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do rato estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       }
     }
   },
@@ -412,7 +412,7 @@
     "actions": {
       "ram": {
         "name": "Investida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 9 (2d6 + 2) de dano de Concussão, ou 11 (2d8 + 2) de dano de Concussão se o cavalo-marinho tiver se movido pelo menos 6 metros em linha reta em direção ao alvo imediatamente antes do acerto."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 9 (2d6 + 2) de dano de Concussão, ou 11 (2d8 + 2) de dano de Concussão se o cavalo-marinho tiver se movido pelo menos {{distance:20+ft}} em linha reta em direção ao alvo imediatamente antes do acerto."
       }
     },
     "traits": {
@@ -433,11 +433,11 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 7 (1d8 + 3) de dano Perfurante mais 7 (2d6) de dano de Veneno."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 7 (1d8 + 3) de dano Perfurante mais 7 (2d6) de dano de Veneno."
       },
       "web": {
         "name": "Teia",
-        "description": "Teste de Resistência de Destreza: CD 13, uma criatura que a aranha possa ver a até 18 metros. Falha: O alvo fica com a condição Contido até que a teia seja destruída (CA 10; PV 5; Vulnerabilidade a dano de Fogo; Imunidade a dano de Veneno e Psíquico)."
+        "description": "Teste de Resistência de Destreza: CD 13, uma criatura que a aranha possa ver a até {{distance:60ft}}. Falha: O alvo fica com a condição Contido até que a teia seja destruída (CA 10; PV 5; Vulnerabilidade a dano de Fogo; Imunidade a dano de Veneno e Psíquico)."
       }
     },
     "traits": {
@@ -456,11 +456,11 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 5 (1d6 + 2) de dano Perfurante mais 5 (2d4) de dano de Veneno. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 12 para escapar)."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 5 (1d6 + 2) de dano Perfurante mais 5 (2d4) de dano de Veneno. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 12 para escapar)."
       },
       "swallow": {
         "name": "Engolir",
-        "description": "O sapo engole um alvo Médio ou menor que esteja agarrando. Enquanto estiver engolido, o alvo não está Agarrado, mas tem as condições Cego e Contido, e tem Cobertura Total contra ataques e outros efeitos originados fora do sapo. Além disso, o alvo sofre 10 (3d6) de dano de Ácido no fim de cada turno do sapo. O sapo só pode ter um alvo engolido por vez e não pode usar Mordida enquanto tiver um alvo engolido. Se o sapo morrer, uma criatura engolida deixa de estar Contida e pode escapar do cadáver usando 1,5 metro de movimento, saindo com a condição Caído."
+        "description": "O sapo engole um alvo Médio ou menor que esteja agarrando. Enquanto estiver engolido, o alvo não está Agarrado, mas tem as condições Cego e Contido, e tem Cobertura Total contra ataques e outros efeitos originados fora do sapo. Além disso, o alvo sofre 10 (3d6) de dano de Ácido no fim de cada turno do sapo. O sapo só pode ter um alvo engolido por vez e não pode usar Mordida enquanto tiver um alvo engolido. Se o sapo morrer, uma criatura engolida deixa de estar Contida e pode escapar do cadáver usando {{distance:5ft}} de movimento, saindo com a condição Caído."
       }
     },
     "traits": {
@@ -470,7 +470,7 @@
       },
       "standing_leap": {
         "name": "Salto Parado",
-        "description": "O Salto em Distância do sapo é de até 6 metros e seu Salto em Altura é de até 3 metros, com ou sem corrida."
+        "description": "O Salto em Distância do sapo é de até {{distance:20ft}} e seu Salto em Altura é de até {{distance:10ft}}, com ou sem corrida."
       }
     }
   },
@@ -479,7 +479,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +6, alcance 3 metros. Acerto: 6 (1d4 + 4) de dano Perfurante mais 4 (1d8) de dano de Veneno."
+        "description": "Jogada de Ataque Corpo a Corpo: +6, alcance {{distance:10ft}}. Acerto: 6 (1d4 + 4) de dano Perfurante mais 4 (1d8) de dano de Veneno."
       }
     }
   },
@@ -488,7 +488,7 @@
     "actions": {
       "sting": {
         "name": "Ferrão",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 5 (1d6 + 2) de dano Perfurante mais 5 (2d4) de dano de Veneno."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 5 (1d6 + 2) de dano Perfurante mais 5 (2d4) de dano de Veneno."
       }
     },
     "traits": {
@@ -503,7 +503,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 5 (1d4 + 3) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 5 (1d4 + 3) de dano Perfurante."
       }
     }
   },
@@ -512,7 +512,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 5 (1d4 + 3) de dano Perfurante mais 5 (2d4) de dano de Veneno."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 5 (1d4 + 3) de dano Perfurante mais 5 (2d4) de dano de Veneno."
       }
     },
     "traits": {
@@ -527,7 +527,7 @@
     "actions": {
       "ram": {
         "name": "Investida",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 1 de dano de Concussão, ou 2 (1d4) de dano de Concussão se o bode tiver se movido pelo menos 6 metros em linha reta em direção ao alvo imediatamente antes do acerto."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 1 de dano de Concussão, ou 2 (1d4) de dano de Concussão se o bode tiver se movido pelo menos {{distance:20+ft}} em linha reta em direção ao alvo imediatamente antes do acerto."
       }
     }
   },
@@ -536,7 +536,7 @@
     "actions": {
       "talons": {
         "name": "Garras Afiadas",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 1 de dano Cortante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 1 de dano Cortante."
       }
     }
   },
@@ -545,13 +545,13 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 3 (1d6) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 3 (1d6) de dano Perfurante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "A hiena tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados da hiena estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "A hiena tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados da hiena estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       }
     }
   },
@@ -560,7 +560,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +1, alcance 1,5 metro. Acerto: 1 (1d4 - 1) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +1, alcance {{distance:5ft}}. Acerto: 1 (1d4 - 1) de dano Perfurante."
       }
     }
   },
@@ -569,7 +569,7 @@
     "actions": {
       "rend": {
         "name": "Dilacerar",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 7 (1d8 + 3) de dano Cortante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 7 (1d8 + 3) de dano Cortante."
       },
       "multiattack": {
         "name": "Ataques Múltiplos",
@@ -577,17 +577,17 @@
       },
       "roar": {
         "name": "Rugido",
-        "description": "Teste de Resistência de Sabedoria: CD 11, uma criatura a até 4,5 metros. Falha: O alvo fica com a condição Amedrontado até o início do próximo turno do leão."
+        "description": "Teste de Resistência de Sabedoria: CD 11, uma criatura a até {{distance:15ft}}. Falha: O alvo fica com a condição Amedrontado até o início do próximo turno do leão."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "O leão tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do leão estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "O leão tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do leão estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       },
       "running_leap": {
         "name": "Salto com Corrida",
-        "description": "Com 3 metros de corrida, o leão pode fazer um Salto em Distância de até 7,5 metros."
+        "description": "Com {{distance:10ft}} de corrida, o leão pode fazer um Salto em Distância de até {{distance:25ft}}."
       }
     }
   },
@@ -596,7 +596,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 1 de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante."
       }
     },
     "traits": {
@@ -611,7 +611,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance 1,5 metro. Acerto: 4 (1d6 + 1) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance {{distance:5ft}}. Acerto: 4 (1d6 + 1) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Caído."
       }
     }
   },
@@ -620,7 +620,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 4 (1d4 + 2) de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 4 (1d4 + 2) de dano de Concussão."
       }
     },
     "traits": {
@@ -635,13 +635,13 @@
     "actions": {
       "tentacles": {
         "name": "Tentáculos",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 1 de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 1 de dano de Concussão."
       }
     },
     "traits": {
       "compression": {
         "name": "Compressão",
-        "description": "O polvo pode se mover por um espaço de apenas 2,5 centímetros de largura sem gastar movimento extra para isso."
+        "description": "O polvo pode se mover por um espaço de apenas {{distance:1in}} de largura sem gastar movimento extra para isso."
       },
       "water_breathing": {
         "name": "Respiração Aquática",
@@ -651,7 +651,7 @@
     "reactions": {
       "ink_cloud": {
         "name": "Nuvem de Tinta",
-        "description": "Gatilho: Uma criatura termina o turno a até 1,5 metro do polvo enquanto ele está debaixo d'água. Resposta: O polvo libera tinta que preenche um Cubo de 1,5 metro centrado em si mesmo e se move até o valor do seu Deslocamento de Natação. O Cubo fica Fortemente Obscurecido por 1 minuto ou até que uma corrente forte ou efeito semelhante disperse a tinta."
+        "description": "Gatilho: Uma criatura termina o turno a até {{distance:5ft}} do polvo enquanto ele está debaixo d'água. Resposta: O polvo libera tinta que preenche um Cubo de {{distance:5ft}} centrado em si mesmo e se move até o valor do seu Deslocamento de Natação. O Cubo fica Fortemente Obscurecido por 1 minuto ou até que uma corrente forte ou efeito semelhante disperse a tinta."
       }
     }
   },
@@ -660,7 +660,7 @@
     "actions": {
       "talons": {
         "name": "Garras Afiadas",
-        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance 1,5 metro. Acerto: 1 de dano Cortante."
+        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance {{distance:5ft}}. Acerto: 1 de dano Cortante."
       }
     },
     "traits": {
@@ -675,7 +675,7 @@
     "actions": {
       "rend": {
         "name": "Dilacerar",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 6 (1d6 + 3) de dano Cortante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 6 (1d6 + 3) de dano Cortante."
       }
     },
     "bonusActions": {
@@ -690,7 +690,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5 (com Vantagem se o alvo não estiver com todos os seus Pontos de Vida), alcance 1,5 metro. Acerto: 1 de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5 (com Vantagem se o alvo não estiver com todos os seus Pontos de Vida), alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante."
       }
     },
     "traits": {
@@ -705,7 +705,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 4 (1d4 + 2) de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 4 (1d4 + 2) de dano de Concussão."
       }
     }
   },
@@ -714,7 +714,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 6 (1d8 + 2) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 6 (1d8 + 2) de dano Perfurante."
       }
     },
     "traits": {
@@ -729,7 +729,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 1 de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante."
       }
     },
     "traits": {
@@ -744,7 +744,7 @@
     "actions": {
       "beak": {
         "name": "Bico",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 1 de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante."
       }
     },
     "traits": {
@@ -759,13 +759,13 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 7 (2d4 + 2) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 7 (2d4 + 2) de dano Perfurante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "O tubarão tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do tubarão estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "O tubarão tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do tubarão estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       },
       "water_breathing": {
         "name": "Respiração Aquática",
@@ -778,7 +778,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 7 (1d8 + 3) de dano de Concussão."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 7 (1d8 + 3) de dano de Concussão."
       }
     }
   },
@@ -787,7 +787,7 @@
     "actions": {
       "sting": {
         "name": "Ferrão",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 1 de dano Perfurante mais 3 (1d6) de dano de Veneno."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante mais 3 (1d6) de dano de Veneno."
       }
     }
   },
@@ -811,7 +811,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 1 de dano Perfurante mais 2 (1d4) de dano de Veneno."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante mais 2 (1d4) de dano de Veneno."
       }
     },
     "traits": {
@@ -830,7 +830,7 @@
     "actions": {
       "bites": {
         "name": "Mordidas",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 5 (2d4) de dano Perfurante, ou 2 (1d4) de dano Perfurante se o enxame estiver Ensanguentado."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 5 (2d4) de dano Perfurante, ou 2 (1d4) de dano Perfurante se o enxame estiver Ensanguentado."
       }
     },
     "traits": {
@@ -845,7 +845,7 @@
     "actions": {
       "bites": {
         "name": "Mordidas",
-        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance 1,5 metro. Acerto: 6 (2d4 + 1) de dano de Veneno, ou 3 (1d4 + 1) de dano de Veneno se o enxame estiver Ensanguentado."
+        "description": "Jogada de Ataque Corpo a Corpo: +3, alcance {{distance:5ft}}. Acerto: 6 (2d4 + 1) de dano de Veneno, ou 3 (1d4 + 1) de dano de Veneno se o enxame estiver Ensanguentado."
       }
     },
     "traits": {
@@ -864,7 +864,7 @@
     "actions": {
       "bites": {
         "name": "Mordidas",
-        "description": "Jogada de Ataque Corpo a Corpo: +5 (com Vantagem se o alvo não estiver com todos os seus Pontos de Vida), alcance 1,5 metro. Acerto: 8 (2d4 + 3) de dano Perfurante, ou 5 (1d4 + 3) de dano Perfurante se o enxame estiver Ensanguentado."
+        "description": "Jogada de Ataque Corpo a Corpo: +5 (com Vantagem se o alvo não estiver com todos os seus Pontos de Vida), alcance {{distance:5ft}}. Acerto: 8 (2d4 + 3) de dano Perfurante, ou 5 (1d4 + 3) de dano Perfurante se o enxame estiver Ensanguentado."
       }
     },
     "traits": {
@@ -883,7 +883,7 @@
     "actions": {
       "bites": {
         "name": "Mordidas",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 5 (2d4) de dano Perfurante, ou 2 (1d4) de dano Perfurante se o enxame estiver Ensanguentado."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 5 (2d4) de dano Perfurante, ou 2 (1d4) de dano Perfurante se o enxame estiver Ensanguentado."
       }
     },
     "traits": {
@@ -898,7 +898,7 @@
     "actions": {
       "beaks": {
         "name": "Bicadas",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 5 (1d6 + 2) de dano Perfurante, ou 2 (1d4) de dano Perfurante se o enxame estiver Ensanguentado."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 5 (1d6 + 2) de dano Perfurante, ou 2 (1d4) de dano Perfurante se o enxame estiver Ensanguentado."
       },
       "cacophony": {
         "name": "Cacofonia",
@@ -917,7 +917,7 @@
     "actions": {
       "rend": {
         "name": "Dilacerar",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 10 (2d6 + 3) de dano Cortante. Se o alvo for uma criatura Grande ou menor, ele fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 10 (2d6 + 3) de dano Cortante. Se o alvo for uma criatura Grande ou menor, ele fica com a condição Caído."
       }
     },
     "bonusActions": {
@@ -932,7 +932,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 4 (1d4 + 2) de dano Perfurante mais 3 (1d6) de dano de Veneno."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 4 (1d4 + 2) de dano Perfurante mais 3 (1d6) de dano de Veneno."
       }
     }
   },
@@ -941,13 +941,13 @@
     "actions": {
       "beak": {
         "name": "Bico",
-        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance 1,5 metro. Acerto: 2 (1d4) de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +2, alcance {{distance:5ft}}. Acerto: 2 (1d4) de dano Perfurante."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "O abutre tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do abutre estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "O abutre tem Vantagem em uma jogada de ataque contra uma criatura se pelo menos um dos aliados do abutre estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       }
     }
   },
@@ -956,7 +956,7 @@
     "actions": {
       "hooves": {
         "name": "Cascos",
-        "description": "Jogada de Ataque Corpo a Corpo: +6, alcance 1,5 metro. Acerto: 9 (2d4 + 4) de dano de Concussão. Se o alvo for uma criatura Grande ou menor e o cavalo tiver se movido pelo menos 6 metros em linha reta em direção a ele imediatamente antes do acerto, o alvo sofre 5 (2d4) de dano de Concussão extra e fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +6, alcance {{distance:5ft}}. Acerto: 9 (2d4 + 4) de dano de Concussão. Se o alvo for uma criatura Grande ou menor e o cavalo tiver se movido pelo menos {{distance:20+ft}} em linha reta em direção a ele imediatamente antes do acerto, o alvo sofre 5 (2d4) de dano de Concussão extra e fica com a condição Caído."
       }
     }
   },
@@ -965,7 +965,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance 1,5 metro. Acerto: 1 de dano Perfurante."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:5ft}}. Acerto: 1 de dano Perfurante."
       }
     }
   },
@@ -974,13 +974,13 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance 1,5 metro. Acerto: 5 (1d6 + 2) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Caído."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 5 (1d6 + 2) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Caído."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Táticas de Matilha",
-        "description": "O lobo tem Vantagem em jogadas de ataque contra uma criatura se pelo menos um dos aliados do lobo estiver a até 1,5 metro da criatura e esse aliado não estiver com a condição Incapacitado."
+        "description": "O lobo tem Vantagem em jogadas de ataque contra uma criatura se pelo menos um dos aliados do lobo estiver a até {{distance:5ft}} da criatura e esse aliado não estiver com a condição Incapacitado."
       }
     }
   }

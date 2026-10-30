@@ -11,11 +11,11 @@
       },
       "Intimidating Presence": {
         "name": "Presencia intimidante",
-        "description": "A partir del nivel 10, puedes usar tu acción para asustar a alguien con tu presencia amenazadora. Elige una criatura que puedas ver a 30 pies de ti. Si la criatura puede verte u oírte, debe superar una tirada de salvación de Sabiduría (CD = 8 + tu bonificación de competencia + tu modificador de Carisma) o tener miedo de ti hasta el final de tu siguiente turno. En turnos posteriores, puedes usar tu acción para extender la duración hasta el final de tu siguiente turno. El efecto termina si la criatura termina su turno fuera de tu línea de visión o a más de 60 pies de ti."
+        "description": "A partir del nivel 10, puedes usar tu acción para asustar a alguien con tu presencia amenazadora. Elige una criatura que puedas ver a {{distance:30ft}} de ti. Si la criatura puede verte u oírte, debe superar una tirada de salvación de Sabiduría (CD = 8 + tu bonificación de competencia + tu modificador de Carisma) o tener miedo de ti hasta el final de tu siguiente turno. En turnos posteriores, puedes usar tu acción para extender la duración hasta el final de tu siguiente turno. El efecto termina si la criatura termina su turno fuera de tu línea de visión o a más de {{distance:60ft}} de ti."
       },
       "Retaliation": {
         "name": "Represalias",
-        "description": "A partir del nivel 14, cuando recibes daño de una criatura que está a 5 pies de ti, puedes usar tu reacción para realizar un ataque con arma cuerpo a cuerpo contra esa criatura."
+        "description": "A partir del nivel 14, cuando recibes daño de una criatura que está a {{distance:5ft}} de ti, puedes usar tu reacción para realizar un ataque con arma cuerpo a cuerpo contra esa criatura."
       }
     },
     "Path of the Totem Warrior": {
@@ -25,11 +25,11 @@
       },
       "Totem Spirit": {
         "name": "Espíritu tótem",
-        "description": "En el nivel 3, elige un espíritu tótem y obtén su característica. Oso: Mientras estás furioso, tienes resistencia a todo el daño excepto al daño psíquico. Águila: mientras están furiosas, otras criaturas tienen desventaja en las tiradas de ataque de oportunidad contra ti, y puedes usar Dash como acción adicional. Lobo: mientras están furiosos, tus amigos tienen ventaja en las tiradas de ataque cuerpo a cuerpo contra cualquier criatura a 5 pies de ti que sea hostil hacia ti."
+        "description": "En el nivel 3, elige un espíritu tótem y obtén su característica. Oso: Mientras estás furioso, tienes resistencia a todo el daño excepto al daño psíquico. Águila: mientras están furiosas, otras criaturas tienen desventaja en las tiradas de ataque de oportunidad contra ti, y puedes usar Dash como acción adicional. Lobo: mientras están furiosos, tus amigos tienen ventaja en las tiradas de ataque cuerpo a cuerpo contra cualquier criatura a {{distance:5ft}} de ti que sea hostil hacia ti."
       },
       "Aspect of the Beast": {
         "name": "Aspecto de la Bestia",
-        "description": "Obtienes un beneficio mágico basado en el animal tótem elegido. Oso: Tu capacidad de carga se duplica y tienes ventaja en las pruebas de Fuerza para empujar, tirar, levantar o romper cosas. Águila: Puedes ver hasta 1 milla de distancia sin dificultad, y la luz tenue no impone desventajas en tus pruebas de Percepción. Lobo: puedes rastrear a otras criaturas mientras viajas a un ritmo rápido y puedes moverte sigilosamente mientras viajas a un ritmo normal."
+        "description": "Obtienes un beneficio mágico basado en el animal tótem elegido. Oso: Tu capacidad de carga se duplica y tienes ventaja en las pruebas de Fuerza para empujar, tirar, levantar o romper cosas. Águila: Puedes ver hasta {{distance:1mi}} de distancia sin dificultad, y la luz tenue no impone desventajas en tus pruebas de Percepción. Lobo: puedes rastrear a otras criaturas mientras viajas a un ritmo rápido y puedes moverte sigilosamente mientras viajas a un ritmo normal."
       },
       "Spirit Walker": {
         "name": "Caminante espiritual",
@@ -37,7 +37,7 @@
       },
       "Totemic Attunement": {
         "name": "Sintonía totémica",
-        "description": "Obtienes un beneficio mágico basado en un animal tótem de tu elección. Oso: mientras está furioso, cualquier criatura hostil a 5 pies de ti tiene desventaja en las tiradas de ataque contra objetivos que no sean tú. Águila: Mientras estás furioso, tienes una velocidad de vuelo igual a tu velocidad al caminar, pero caes si terminas tu turno en el aire. Lobo: mientras estás furioso, puedes usar una acción adicional para derribar a una criatura grande o más pequeña cuando la golpeas con un ataque de arma cuerpo a cuerpo."
+        "description": "Obtienes un beneficio mágico basado en un animal tótem de tu elección. Oso: mientras está furioso, cualquier criatura hostil a {{distance:5ft}} de ti tiene desventaja en las tiradas de ataque contra objetivos que no sean tú. Águila: Mientras estás furioso, tienes una velocidad de vuelo igual a tu velocidad al caminar, pero caes si terminas tu turno en el aire. Lobo: mientras estás furioso, puedes usar una acción adicional para derribar a una criatura grande o más pequeña cuando la golpeas con un ataque de arma cuerpo a cuerpo."
       }
     }
   },
@@ -49,7 +49,7 @@
       },
       "Cutting Words": {
         "name": "Cortar palabras",
-        "description": "También en el nivel 3, cuando una criatura que puedes ver a menos de 60 pies hace una tirada de ataque, prueba de habilidad o tirada de daño, puedes usar tu reacción para gastar un uso de Inspiración bárdica, tirar el dado y restar el número de la tirada de la criatura. La criatura es inmune si no puede oírte o es inmune a ser encantada."
+        "description": "También en el nivel 3, cuando una criatura que puedes ver a menos de {{distance:60ft}} hace una tirada de ataque, prueba de habilidad o tirada de daño, puedes usar tu reacción para gastar un uso de Inspiración bárdica, tirar el dado y restar el número de la tirada de la criatura. La criatura es inmune si no puede oírte o es inmune a ser encantada."
       },
       "Additional Magical Secrets": {
         "name": "Secretos mágicos adicionales",
@@ -113,7 +113,7 @@
       },
       "Channel Divinity: Preserve Life": {
         "name": "Canalizar Divinidad: Preservar la vida",
-        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado y evocas energía curativa que puede restaurar una cantidad de puntos de vida igual a cinco veces tu nivel de clérigo. Elige cualquier criatura a 30 pies de ti y divide esos puntos de vida entre ellas. Esta característica puede restaurar una criatura a no más de la mitad de su máximo de puntos de vida."
+        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado y evocas energía curativa que puede restaurar una cantidad de puntos de vida igual a cinco veces tu nivel de clérigo. Elige cualquier criatura a {{distance:30ft}} de ti y divide esos puntos de vida entre ellas. Esta característica puede restaurar una criatura a no más de la mitad de su máximo de puntos de vida."
       },
       "Blessed Healer": {
         "name": "Bendito sanador",
@@ -135,15 +135,15 @@
       },
       "Warding Flare": {
         "name": "Llamarada protectora",
-        "description": "También en el nivel 1, cuando eres atacado por una criatura a 30 pies de ti que puedes ver, puedes usar tu reacción para imponer desventaja en la tirada de ataque, provocando que una luz brille ante el atacante. Puedes usar esta característica una cantidad de veces igual a tu modificador de Sabiduría (mínimo una vez) y recuperar todos los usos con un descanso prolongado."
+        "description": "También en el nivel 1, cuando eres atacado por una criatura a {{distance:30ft}} de ti que puedes ver, puedes usar tu reacción para imponer desventaja en la tirada de ataque, provocando que una luz brille ante el atacante. Puedes usar esta característica una cantidad de veces igual a tu modificador de Sabiduría (mínimo una vez) y recuperar todos los usos con un descanso prolongado."
       },
       "Channel Divinity: Radiance of the Dawn": {
         "name": "Canal Divinidad: Resplandor del amanecer",
-        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado y se disipa cualquier oscuridad mágica dentro de 30 pies de ti. Además, cada criatura hostil en un radio de 30 pies debe realizar una tirada de salvación de Constitución, recibiendo 2d10 + tu nivel de clérigo de daño radiante si falla, o la mitad si tiene éxito."
+        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado y se disipa cualquier oscuridad mágica dentro de {{distance:30ft}} de ti. Además, cada criatura hostil en un radio de {{distance:30ft}} debe realizar una tirada de salvación de Constitución, recibiendo 2d10 + tu nivel de clérigo de daño radiante si falla, o la mitad si tiene éxito."
       },
       "Improved Flare": {
         "name": "Destello mejorado",
-        "description": "A partir del nivel 6, también puedes usar tu función Warding Flare cuando una criatura que puedes ver a 30 pies de ti ataca a otra criatura que no seas tú."
+        "description": "A partir del nivel 6, también puedes usar tu función Warding Flare cuando una criatura que puedes ver a {{distance:30ft}} de ti ataca a otra criatura que no seas tú."
       },
       "Potent Spellcasting": {
         "name": "Lanzamiento de hechizos potente",
@@ -151,7 +151,7 @@
       },
       "Corona of Light": {
         "name": "Corona de Luz",
-        "description": "A partir del nivel 17, puedes usar tu acción para activar un aura de luz solar que dura 1 minuto o hasta que la desestimes. Emites luz brillante en un radio de 60 pies y luz tenue 30 pies más allá. Tus enemigos en la luz brillante tienen desventaja en las tiradas de salvación contra cualquier hechizo que cause fuego o daño radiante."
+        "description": "A partir del nivel 17, puedes usar tu acción para activar un aura de luz solar que dura 1 minuto o hasta que la desestimes. Emites luz brillante en un radio de {{distance:60ft}} y luz tenue {{distance:30ft}} más allá. Tus enemigos en la luz brillante tienen desventaja en las tiradas de salvación contra cualquier hechizo que cause fuego o daño radiante."
       }
     },
     "Nature Domain": {
@@ -165,11 +165,11 @@
       },
       "Channel Divinity: Charm Animals and Plants": {
         "name": "Canalizar Divinidad: Encantar animales y plantas",
-        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado e invocas el nombre de tu deidad. Cada bestia o criatura vegetal que pueda verte a menos de 30 pies debe realizar una tirada de salvación de Sabiduría. Si falla, quedará encantado durante 1 minuto o hasta que sufra daño."
+        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado e invocas el nombre de tu deidad. Cada bestia o criatura vegetal que pueda verte a menos de {{distance:30ft}} debe realizar una tirada de salvación de Sabiduría. Si falla, quedará encantado durante 1 minuto o hasta que sufra daño."
       },
       "Dampen Elements": {
         "name": "Elementos humedecidos",
-        "description": "A partir del nivel 6, cuando tú o una criatura a 30 pies de ti sufre daño por ácido, frío, fuego, relámpago o trueno, puedes usar tu reacción para otorgar resistencia a la criatura contra esa instancia del daño."
+        "description": "A partir del nivel 6, cuando tú o una criatura a {{distance:30ft}} de ti sufre daño por ácido, frío, fuego, relámpago o trueno, puedes usar tu reacción para otorgar resistencia a la criatura contra esa instancia del daño."
       },
       "Divine Strike": {
         "name": "Golpe divino",
@@ -187,7 +187,7 @@
       },
       "Wrath of the Storm": {
         "name": "La ira de la tormenta",
-        "description": "También en el nivel 1, cuando una criatura a 5 pies de ti que puedas ver te golpea con un ataque, puedes usar tu reacción para hacer que la criatura realice una tirada de salvación de Destreza. Se necesitan 2d8 daños por rayos o truenos (a tu elección) si falla la salvación, o la mitad si tienes éxito. Puedes usar esta característica una cantidad de veces igual a tu modificador de Sabiduría (mínimo una vez) y recuperar todos los usos con un descanso prolongado."
+        "description": "También en el nivel 1, cuando una criatura a {{distance:5ft}} de ti que puedas ver te golpea con un ataque, puedes usar tu reacción para hacer que la criatura realice una tirada de salvación de Destreza. Se necesitan 2d8 daños por rayos o truenos (a tu elección) si falla la salvación, o la mitad si tienes éxito. Puedes usar esta característica una cantidad de veces igual a tu modificador de Sabiduría (mínimo una vez) y recuperar todos los usos con un descanso prolongado."
       },
       "Channel Divinity: Destructive Wrath": {
         "name": "Canalizar la divinidad: ira destructiva",
@@ -195,7 +195,7 @@
       },
       "Thunderbolt Strike": {
         "name": "Golpe de rayo",
-        "description": "En el nivel 6, cuando infliges daño de rayo a una criatura Grande o más pequeña, también puedes empujarla hasta 10 pies de distancia de ti."
+        "description": "En el nivel 6, cuando infliges daño de rayo a una criatura Grande o más pequeña, también puedes empujarla hasta {{distance:10ft}} de distancia de ti."
       },
       "Divine Strike": {
         "name": "Golpe divino",
@@ -213,7 +213,7 @@
       },
       "Channel Divinity: Invoke Duplicity": {
         "name": "Canalizar la divinidad: invocar la duplicidad",
-        "description": "A partir del nivel 2, como acción, creas un duplicado ilusorio perfecto de ti mismo que dura 1 minuto. La ilusión aparece en un espacio desocupado que puedes ver a 30 pies de ti. Como acción adicional en tu turno, puedes mover la ilusión hasta 30 pies. Puedes lanzar hechizos como si estuvieras en el espacio de la ilusión, pero debes usar tus propios sentidos."
+        "description": "A partir del nivel 2, como acción, creas un duplicado ilusorio perfecto de ti mismo que dura 1 minuto. La ilusión aparece en un espacio desocupado que puedes ver a {{distance:30ft}} de ti. Como acción adicional en tu turno, puedes mover la ilusión hasta {{distance:30ft}}. Puedes lanzar hechizos como si estuvieras en el espacio de la ilusión, pero debes usar tus propios sentidos."
       },
       "Channel Divinity: Cloak of Shadows": {
         "name": "Canalizar Divinidad: Capa de Sombras",
@@ -225,7 +225,7 @@
       },
       "Improved Duplicity": {
         "name": "Duplicidad mejorada",
-        "description": "En el nivel 17, puedes crear hasta cuatro duplicados de ti mismo, en lugar de uno, cuando usas Invocar Duplicidad. Como acción adicional en tu turno, puedes mover cualquier número de ellos hasta 30 pies, hasta un alcance máximo de 120 pies."
+        "description": "En el nivel 17, puedes crear hasta cuatro duplicados de ti mismo, en lugar de uno, cuando usas Invocar Duplicidad. Como acción adicional en tu turno, puedes mover cualquier número de ellos hasta {{distance:30ft}}, hasta un alcance máximo de {{distance:120ft}}."
       }
     },
     "War Domain": {
@@ -243,7 +243,7 @@
       },
       "Channel Divinity: War God's Blessing": {
         "name": "Canalizar Divinidad: La bendición del dios de la guerra",
-        "description": "En el nivel 6, cuando una criatura a 30 pies de ti realiza una tirada de ataque, puedes usar tu reacción para otorgarle a esa criatura una bonificación de +10 a la tirada usando tu Canalizar Divinidad."
+        "description": "En el nivel 6, cuando una criatura a {{distance:30ft}} de ti realiza una tirada de ataque, puedes usar tu reacción para otorgarle a esa criatura una bonificación de +10 a la tirada usando tu Canalizar Divinidad."
       },
       "Divine Strike": {
         "name": "Golpe divino",
@@ -309,7 +309,7 @@
       },
       "Remarkable Athlete": {
         "name": "Atleta notable",
-        "description": "A partir del nivel 7, puedes agregar la mitad de tu bono de competencia (redondeando hacia arriba) a cualquier prueba de Fuerza, Destreza o Constitución que realices y que aún no utilice tu bono de competencia. Además, cuando realizas un salto de longitud corriendo, la distancia que puedes cubrir aumenta en una cantidad de pies igual a tu modificador de Fuerza."
+        "description": "A partir del nivel 7, puedes agregar la mitad de tu bono de competencia (redondeando hacia arriba) a cualquier prueba de Fuerza, Destreza o Constitución que realices y que aún no utilice tu bono de competencia. Además, cuando realizas un salto de longitud corriendo, la distancia que puedes cubrir aumenta en {{distance:1ft}} × tu modificador de Fuerza."
       },
       "Additional Fighting Style": {
         "name": "Estilo de lucha adicional",
@@ -365,7 +365,7 @@
       },
       "Arcane Charge": {
         "name": "Carga arcana",
-        "description": "En el nivel 15, obtienes la capacidad de teletransportarte hasta 30 pies a un espacio desocupado que puedes ver cuando usas tu Action Surge. Puedes teletransportarte antes o después de la acción adicional."
+        "description": "En el nivel 15, obtienes la capacidad de teletransportarte hasta {{distance:30ft}} a un espacio desocupado que puedes ver cuando usas tu Action Surge. Puedes teletransportarte antes o después de la acción adicional."
       },
       "Improved War Magic": {
         "name": "Magia de guerra mejorada",
@@ -377,7 +377,7 @@
     "Way of the Open Hand": {
       "Open Hand Technique": {
         "name": "Técnica de mano abierta",
-        "description": "A partir de cuando eliges esta tradición en el nivel 3, cada vez que golpeas a una criatura con uno de los ataques otorgados por tu Ráfaga de Golpes, puedes imponer uno de los siguientes efectos: debe tener éxito en una tirada de salvación de Destreza o quedará derribado; debe realizar una tirada de salvación de Fuerza; si falla, puedes empujarlo hasta 15 pies de distancia; o no puede reaccionar hasta el final de tu siguiente turno."
+        "description": "A partir de cuando eliges esta tradición en el nivel 3, cada vez que golpeas a una criatura con uno de los ataques otorgados por tu Ráfaga de Golpes, puedes imponer uno de los siguientes efectos: debe tener éxito en una tirada de salvación de Destreza o quedará derribado; debe realizar una tirada de salvación de Fuerza; si falla, puedes empujarlo hasta {{distance:15ft}} de distancia; o no puede reaccionar hasta el final de tu siguiente turno."
       },
       "Wholeness of Body": {
         "name": "Totalidad del cuerpo",
@@ -399,7 +399,7 @@
       },
       "Shadow Step": {
         "name": "Paso de sombra",
-        "description": "En el nivel 6, cuando estás en condiciones de poca luz u oscuridad, como acción adicional puedes teletransportarte hasta 60 pies a un espacio desocupado que puedas ver y que también esté en condiciones de poca luz u oscuridad. Entonces tendrás ventaja en el primer ataque cuerpo a cuerpo que realices antes del final del turno."
+        "description": "En el nivel 6, cuando estás en condiciones de poca luz u oscuridad, como acción adicional puedes teletransportarte hasta {{distance:60ft}} a un espacio desocupado que puedas ver y que también esté en condiciones de poca luz u oscuridad. Entonces tendrás ventaja en el primer ataque cuerpo a cuerpo que realices antes del final del turno."
       },
       "Cloak of Shadows": {
         "name": "Manto de sombras",
@@ -407,7 +407,7 @@
       },
       "Opportunist": {
         "name": "Oportunista",
-        "description": "En el nivel 17, siempre que una criatura a 5 pies de ti sea golpeada por un ataque realizado por una criatura distinta a ti, puedes usar tu reacción para realizar un ataque cuerpo a cuerpo contra esa criatura."
+        "description": "En el nivel 17, siempre que una criatura a {{distance:5ft}} de ti sea golpeada por un ataque realizado por una criatura distinta a ti, puedes usar tu reacción para realizar un ataque cuerpo a cuerpo contra esa criatura."
       }
     },
     "Way of the Four Elements": {
@@ -425,15 +425,15 @@
     "Oath of Devotion": {
       "Channel Divinity: Sacred Weapon": {
         "name": "Canalizar Divinidad: Arma Sagrada",
-        "description": "Como acción, puedes imbuir un arma que estás sosteniendo con energía positiva, usando tu Canal Divinidad. Durante 1 minuto, añades tu modificador de Carisma a las tiradas de ataque realizadas con esa arma (mínimo +1). El arma también emite luz brillante en un radio de 20 pies y luz tenue 20 pies más allá. Si el arma aún no es mágica, se vuelve mágica mientras dure."
+        "description": "Como acción, puedes imbuir un arma que estás sosteniendo con energía positiva, usando tu Canal Divinidad. Durante 1 minuto, añades tu modificador de Carisma a las tiradas de ataque realizadas con esa arma (mínimo +1). El arma también emite luz brillante en un radio de {{distance:20ft}} y luz tenue {{distance:20ft}} más allá. Si el arma aún no es mágica, se vuelve mágica mientras dure."
       },
       "Channel Divinity: Turn the Unholy": {
         "name": "Canalizar la divinidad: convertir lo impío",
-        "description": "Como acción, presentas tu símbolo sagrado y pronuncias una oración censurando a los demonios y no-muertos, usando tu Canal Divinidad. Cada demonio o no-muerto que pueda verte u oírte en un radio de 30 pies debe realizar una tirada de salvación de Sabiduría. Si falla, la criatura gira durante 1 minuto o hasta que reciba daño."
+        "description": "Como acción, presentas tu símbolo sagrado y pronuncias una oración censurando a los demonios y no-muertos, usando tu Canal Divinidad. Cada demonio o no-muerto que pueda verte u oírte en un radio de {{distance:30ft}} debe realizar una tirada de salvación de Sabiduría. Si falla, la criatura gira durante 1 minuto o hasta que reciba daño."
       },
       "Aura of Devotion": {
         "name": "Aura de devoción",
-        "description": "A partir del nivel 7, ni tú ni las criaturas amigas que se encuentren a 10 pies de ti no podéis ser hechizados mientras estéis conscientes. En el nivel 18, el alcance de esta aura aumenta a 30 pies."
+        "description": "A partir del nivel 7, ni tú ni las criaturas amigas que se encuentren a {{distance:10ft}} de ti no podéis ser hechizados mientras estéis conscientes. En el nivel 18, el alcance de esta aura aumenta a {{distance:30ft}}."
       },
       "Purity of Spirit": {
         "name": "Pureza de espíritu",
@@ -441,21 +441,21 @@
       },
       "Holy Nimbus": {
         "name": "Nimbo sagrado",
-        "description": "En el nivel 20, como acción, puedes emanar un aura de luz solar. Durante 1 minuto, una luz brillante brilla desde usted en un radio de 30 pies y una luz tenue brilla 30 pies más allá de ese radio. Cada vez que una criatura enemiga comienza su turno en la luz brillante, la criatura sufre 10 de daño radiante. Además, tienes ventaja en las tiradas de salvación contra hechizos lanzados por demonios o no-muertos. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso prolongado."
+        "description": "En el nivel 20, como acción, puedes emanar un aura de luz solar. Durante 1 minuto, una luz brillante brilla desde usted en un radio de {{distance:30ft}} y una luz tenue brilla {{distance:30ft}} más allá de ese radio. Cada vez que una criatura enemiga comienza su turno en la luz brillante, la criatura sufre 10 de daño radiante. Además, tienes ventaja en las tiradas de salvación contra hechizos lanzados por demonios o no-muertos. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso prolongado."
       }
     },
     "Oath of the Ancients": {
       "Channel Divinity: Nature's Wrath": {
         "name": "Canalizar Divinidad: La ira de la naturaleza",
-        "description": "Como acción, puedes hacer que surjan enredaderas espectrales y alcancen una criatura a 10 pies de ti que puedas ver. La criatura debe superar una tirada de salvación de Fuerza o Destreza (a su elección) o ser restringida. Mientras está sujeta por las enredaderas, la criatura repite la tirada de salvación al final de cada uno de sus turnos. Si tiene éxito, se libera y las enredaderas desaparecen."
+        "description": "Como acción, puedes hacer que surjan enredaderas espectrales y alcancen una criatura a {{distance:10ft}} de ti que puedas ver. La criatura debe superar una tirada de salvación de Fuerza o Destreza (a su elección) o ser restringida. Mientras está sujeta por las enredaderas, la criatura repite la tirada de salvación al final de cada uno de sus turnos. Si tiene éxito, se libera y las enredaderas desaparecen."
       },
       "Channel Divinity: Turn the Faithless": {
         "name": "Canalizar la divinidad: convertir a los infieles",
-        "description": "Como acción, presentas tu símbolo sagrado, y cada hada o demonio a 30 pies de ti que pueda oírte debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, la criatura gira durante 1 minuto o hasta que reciba daño."
+        "description": "Como acción, presentas tu símbolo sagrado, y cada hada o demonio a {{distance:30ft}} de ti que pueda oírte debe realizar una tirada de salvación de Sabiduría. Si falla la salvación, la criatura gira durante 1 minuto o hasta que reciba daño."
       },
       "Aura of Warding": {
         "name": "Aura de protección",
-        "description": "A partir del nivel 7, la magia antigua yace tan pesadamente sobre ti que forma una protección sobrenatural. Tú y las criaturas amigas que se encuentren a 10 pies de ti tenéis resistencia al daño de los hechizos. En el nivel 18, el alcance de esta aura aumenta a 30 pies."
+        "description": "A partir del nivel 7, la magia antigua yace tan pesadamente sobre ti que forma una protección sobrenatural. Tú y las criaturas amigas que se encuentren a {{distance:10ft}} de ti tenéis resistencia al daño de los hechizos. En el nivel 18, el alcance de esta aura aumenta a {{distance:30ft}}."
       },
       "Undying Sentinel": {
         "name": "Centinela inmortal",
@@ -463,17 +463,17 @@
       },
       "Elder Champion": {
         "name": "Campeón anciano",
-        "description": "En el nivel 20, como acción, asumes la forma de una antigua fuerza de la naturaleza durante 1 minuto. Obtienes los siguientes beneficios: al comienzo de cada uno de tus turnos, recuperas 10 puntos de vida; siempre que lances un hechizo de paladín con un tiempo de lanzamiento de 1 acción, puedes lanzarlo usando una acción adicional; Las criaturas enemigas a 10 pies de ti tienen desventaja en los tiros de salvación contra tus hechizos de paladín y las opciones de Canalizar Divinidad."
+        "description": "En el nivel 20, como acción, asumes la forma de una antigua fuerza de la naturaleza durante 1 minuto. Obtienes los siguientes beneficios: al comienzo de cada uno de tus turnos, recuperas 10 puntos de vida; siempre que lances un hechizo de paladín con un tiempo de lanzamiento de 1 acción, puedes lanzarlo usando una acción adicional; Las criaturas enemigas a {{distance:10ft}} de ti tienen desventaja en los tiros de salvación contra tus hechizos de paladín y las opciones de Canalizar Divinidad."
       }
     },
     "Oath of Vengeance": {
       "Channel Divinity: Abjure Enemy": {
         "name": "Canalizar Divinidad: Abjurar del enemigo",
-        "description": "Como acción, presentas tu símbolo sagrado y pronuncias una oración de denuncia, usando tu Canal Divinidad. Elige una criatura a 60 pies de ti que puedas ver. Esa criatura debe realizar una tirada de salvación de Sabiduría. Los demonios y los no-muertos tienen desventaja en esta tirada de salvación. Si falla la salvación, la criatura queda asustada durante 1 minuto o hasta que reciba algún daño. Mientras está asustada, la velocidad de la criatura es 0 y no puede beneficiarse de ninguna bonificación a su velocidad."
+        "description": "Como acción, presentas tu símbolo sagrado y pronuncias una oración de denuncia, usando tu Canal Divinidad. Elige una criatura a {{distance:60ft}} de ti que puedas ver. Esa criatura debe realizar una tirada de salvación de Sabiduría. Los demonios y los no-muertos tienen desventaja en esta tirada de salvación. Si falla la salvación, la criatura queda asustada durante 1 minuto o hasta que reciba algún daño. Mientras está asustada, la velocidad de la criatura es 0 y no puede beneficiarse de ninguna bonificación a su velocidad."
       },
       "Channel Divinity: Vow of Enmity": {
         "name": "Canalizar Divinidad: Voto de Enemistad",
-        "description": "Como acción adicional, puedes pronunciar un voto de enemistad contra una criatura que puedas ver a 10 pies de ti, usando tu Canalizar Divinidad. Obtienes ventaja en las tiradas de ataque contra la criatura durante 1 minuto o hasta que baje a 0 puntos de vida o quede inconsciente."
+        "description": "Como acción adicional, puedes pronunciar un voto de enemistad contra una criatura que puedas ver a {{distance:10ft}} de ti, usando tu Canalizar Divinidad. Obtienes ventaja en las tiradas de ataque contra la criatura durante 1 minuto o hasta que baje a 0 puntos de vida o quede inconsciente."
       },
       "Relentless Avenger": {
         "name": "Vengador implacable",
@@ -485,7 +485,7 @@
       },
       "Avenging Angel": {
         "name": "ángel vengador",
-        "description": "En el nivel 20, como acción, asumes la forma de un vengador angelical durante 1 minuto. Las alas brotan de tu espalda y te otorgan una velocidad de vuelo de 60 pies. Emanas un aura de amenaza en un radio de 30 pies: la primera vez que una criatura enemiga ingresa al aura o comienza su turno allí, debe superar una tirada de salvación de Sabiduría o te tendrá miedo durante 1 minuto o hasta que reciba algún daño."
+        "description": "En el nivel 20, como acción, asumes la forma de un vengador angelical durante 1 minuto. Las alas brotan de tu espalda y te otorgan una velocidad de vuelo de {{distance:60ft}}. Emanas un aura de amenaza en un radio de {{distance:30ft}}: la primera vez que una criatura enemiga ingresa al aura o comienza su turno allí, debe superar una tirada de salvación de Sabiduría o te tendrá miedo durante 1 minuto o hasta que reciba algún daño."
       }
     }
   },
@@ -493,7 +493,7 @@
     "Hunter": {
       "Hunter's Prey": {
         "name": "La presa del cazador",
-        "description": "En el nivel 3, obtienes una de las siguientes características de tu elección. Matador de colosos: cuando golpeas a una criatura con un ataque con arma, la criatura sufre 1d8 de daño adicional si está por debajo de su máximo de puntos de vida. Puedes infligir este daño adicional solo una vez por turno. Asesino de gigantes: cuando una criatura grande o más grande a 5 pies de ti te golpea o falla con un ataque, puedes usar tu reacción para atacar a esa criatura inmediatamente después. Rompehordas: una vez en cada uno de tus turnos, cuando realizas un ataque con arma, puedes realizar otro ataque con la misma arma contra una criatura diferente que esté a 5 pies del objetivo original."
+        "description": "En el nivel 3, obtienes una de las siguientes características de tu elección. Matador de colosos: cuando golpeas a una criatura con un ataque con arma, la criatura sufre 1d8 de daño adicional si está por debajo de su máximo de puntos de vida. Puedes infligir este daño adicional solo una vez por turno. Asesino de gigantes: cuando una criatura grande o más grande a {{distance:5ft}} de ti te golpea o falla con un ataque, puedes usar tu reacción para atacar a esa criatura inmediatamente después. Rompehordas: una vez en cada uno de tus turnos, cuando realizas un ataque con arma, puedes realizar otro ataque con la misma arma contra una criatura diferente que esté a {{distance:5ft}} del objetivo original."
       },
       "Defensive Tactics": {
         "name": "Tácticas defensivas",
@@ -501,7 +501,7 @@
       },
       "Multiattack": {
         "name": "Multiataque",
-        "description": "En el nivel 11, obtienes una de las siguientes características. Volea: puedes usar tu acción para realizar un ataque a distancia contra cualquier cantidad de criaturas dentro de 10 pies de un punto que puedas ver dentro del alcance de tu arma, realizando una tirada de ataque separada para cada objetivo. Ataque torbellino: puedes usar tu acción para realizar un ataque cuerpo a cuerpo contra cualquier cantidad de criaturas dentro de un radio de 5 pies de ti, con una tirada de ataque separada para cada objetivo."
+        "description": "En el nivel 11, obtienes una de las siguientes características. Volea: puedes usar tu acción para realizar un ataque a distancia contra cualquier cantidad de criaturas dentro de {{distance:10ft}} de un punto que puedas ver dentro del alcance de tu arma, realizando una tirada de ataque separada para cada objetivo. Ataque torbellino: puedes usar tu acción para realizar un ataque cuerpo a cuerpo contra cualquier cantidad de criaturas dentro de un radio de {{distance:5ft}} de ti, con una tirada de ataque separada para cada objetivo."
       },
       "Superior Hunter's Defense": {
         "name": "Defensa del cazador superior",
@@ -523,7 +523,7 @@
       },
       "Share Spells": {
         "name": "Compartir hechizos",
-        "description": "A partir del nivel 15, cuando lanzas un hechizo dirigido a ti mismo, también puedes afectar a tu compañera bestia con el hechizo si la bestia está a 30 pies de ti."
+        "description": "A partir del nivel 15, cuando lanzas un hechizo dirigido a ti mismo, también puedes afectar a tu compañera bestia con el hechizo si la bestia está a {{distance:30ft}} de ti."
       }
     }
   },
@@ -535,7 +535,7 @@
       },
       "Second-Story Work": {
         "name": "Trabajo del segundo piso",
-        "description": "Cuando eliges este arquetipo en el nivel 3, escalar ya no te cuesta movimiento extra. Además, cuando haces un salto corriendo, la distancia que cubres aumenta en una cantidad de pies igual a tu modificador de Destreza."
+        "description": "Cuando eliges este arquetipo en el nivel 3, escalar ya no te cuesta movimiento extra. Además, cuando haces un salto corriendo, la distancia que cubres aumenta en {{distance:1ft}} × tu modificador de Destreza."
       },
       "Supreme Sneak": {
         "name": "Furtivo Supremo",
@@ -587,7 +587,7 @@
       },
       "Versatile Trickster": {
         "name": "Embaucador versátil",
-        "description": "En el nivel 13, como acción adicional en tu turno, puedes designar una criatura a 5 pies de la mano espectral creada por la mano del mago. Hacerlo te da ventaja en las tiradas de ataque contra esa criatura hasta el final del turno."
+        "description": "En el nivel 13, como acción adicional en tu turno, puedes designar una criatura a {{distance:5ft}} de la mano espectral creada por la mano del mago. Hacerlo te da ventaja en las tiradas de ataque contra esa criatura hasta el final del turno."
       },
       "Spell Thief": {
         "name": "Ladrón de hechizos",
@@ -615,7 +615,7 @@
       },
       "Draconic Presence": {
         "name": "Presencia dracónica",
-        "description": "A partir del nivel 18, como acción, puedes gastar 5 puntos de hechicería para exudar un aura de asombro o miedo (tú eliges) a una distancia de 60 pies. Durante 1 minuto o hasta que pierdas la concentración, cada criatura hostil que comience su turno en esta aura debe superar una tirada de salvación de Sabiduría o quedar encantada (si eliges asombro) o asustada (si eliges miedo) hasta que el aura termine."
+        "description": "A partir del nivel 18, como acción, puedes gastar 5 puntos de hechicería para exudar un aura de asombro o miedo (tú eliges) a una distancia de {{distance:60ft}}. Durante 1 minuto o hasta que pierdas la concentración, cada criatura hostil que comience su turno en esta aura debe superar una tirada de salvación de Sabiduría o quedar encantada (si eliges asombro) o asustada (si eliges miedo) hasta que el aura termine."
       }
     },
     "Wild Magic": {
@@ -645,11 +645,11 @@
     "The Archfey": {
       "Fey Presence": {
         "name": "Presencia feérica",
-        "description": "A partir del nivel 1, como acción, puedes hacer que cada criatura en un cubo de 10 pies que se origina en ti haga una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de brujo. Las criaturas que fallan quedan encantadas o asustadas por ti (tú eliges) hasta el final de tu siguiente turno. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+        "description": "A partir del nivel 1, como acción, puedes hacer que cada criatura en un cubo de {{distance:10ft}} que se origina en ti haga una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de brujo. Las criaturas que fallan quedan encantadas o asustadas por ti (tú eliges) hasta el final de tu siguiente turno. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
       },
       "Misty Escape": {
         "name": "Escape brumoso",
-        "description": "A partir del nivel 6, cuando recibes daño, puedes usar tu reacción para volverte invisible y teletransportarte hasta 60 pies a un espacio desocupado que puedas ver. Permaneces invisible hasta el comienzo de tu siguiente turno o hasta que atacas o lanzas un hechizo. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+        "description": "A partir del nivel 6, cuando recibes daño, puedes usar tu reacción para volverte invisible y teletransportarte hasta {{distance:60ft}} a un espacio desocupado que puedas ver. Permaneces invisible hasta el comienzo de tu siguiente turno o hasta que atacas o lanzas un hechizo. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
       },
       "Beguiling Defenses": {
         "name": "Defensas seductoras",
@@ -657,7 +657,7 @@
       },
       "Dark Delirium": {
         "name": "Delirio oscuro",
-        "description": "A partir del nivel 14, como acción, elige una criatura que puedas ver a 60 pies o menos. Debe realizar una tirada de salvación de Sabiduría o ser hechizado o asustado por ti (tú eliges) durante 1 minuto o hasta que rompas tu concentración. Este efecto termina antes de tiempo si la criatura sufre algún daño. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+        "description": "A partir del nivel 14, como acción, elige una criatura que puedas ver a {{distance:60ft}} o menos. Debe realizar una tirada de salvación de Sabiduría o ser hechizado o asustado por ti (tú eliges) durante 1 minuto o hasta que rompas tu concentración. Este efecto termina antes de tiempo si la criatura sufre algún daño. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
       }
     },
     "The Fiend": {
@@ -681,7 +681,7 @@
     "The Great Old One": {
       "Awakened Mind": {
         "name": "Mente despierta",
-        "description": "A partir del nivel 1, tu conocimiento alienígena te otorga la capacidad de tocar las mentes de otras criaturas. Puedes comunicarte telepáticamente con cualquier criatura que puedas ver a 30 pies de ti. No es necesario compartir un idioma con la criatura para que comprenda sus expresiones telepáticas, pero la criatura debe poder comprender al menos un idioma."
+        "description": "A partir del nivel 1, tu conocimiento alienígena te otorga la capacidad de tocar las mentes de otras criaturas. Puedes comunicarte telepáticamente con cualquier criatura que puedas ver a {{distance:30ft}} de ti. No es necesario compartir un idioma con la criatura para que comprenda sus expresiones telepáticas, pero la criatura debe poder comprender al menos un idioma."
       },
       "Entropic Ward": {
         "name": "Barrio entrópico",
@@ -709,7 +709,7 @@
       },
       "Projected Ward": {
         "name": "Sala proyectada",
-        "description": "A partir del nivel 6, cuando una criatura que puedes ver a 30 pies de ti sufre daño, puedes usar tu reacción para hacer que tu Resguardo Arcano absorba ese daño. Si este daño reduce la protección a 0 puntos de vida, la criatura protegida recibe el daño restante."
+        "description": "A partir del nivel 6, cuando una criatura que puedes ver a {{distance:30ft}} de ti sufre daño, puedes usar tu reacción para hacer que tu Resguardo Arcano absorba ese daño. Si este daño reduce la protección a 0 puntos de vida, la criatura protegida recibe el daño restante."
       },
       "Improved Abjuration": {
         "name": "Abjuración mejorada",
@@ -727,11 +727,11 @@
       },
       "Minor Conjuration": {
         "name": "Conjuración menor",
-        "description": "A partir del nivel 2, puedes usar tu acción para conjurar un objeto inanimado en tu mano o en el suelo en un espacio desocupado a 10 pies de ti. Este objeto no puede medir más de 3 pies de lado y pesar no más de 10 libras, y su forma debe ser la de un objeto no mágico que hayas visto. El objeto es visiblemente mágico. El objeto desaparece después de 1 hora, cuando usas esta función nuevamente o si recibe o causa algún daño."
+        "description": "A partir del nivel 2, puedes usar tu acción para conjurar un objeto inanimado en tu mano o en el suelo en un espacio desocupado a {{distance:10ft}} de ti. Este objeto no puede medir más de {{distance:3ft}} de lado y pesar no más de 10 libras, y su forma debe ser la de un objeto no mágico que hayas visto. El objeto es visiblemente mágico. El objeto desaparece después de 1 hora, cuando usas esta función nuevamente o si recibe o causa algún daño."
       },
       "Benign Transposition": {
         "name": "Transposición benigna",
-        "description": "A partir del nivel 6, puedes usar tu acción para teletransportarte hasta 30 pies a un espacio desocupado que puedas ver, o que puedas ver que está ocupado por una criatura Pequeña o Mediana dispuesta a ser teletransportada. Después de usar esta función, no podrás volver a usarla hasta que termines un descanso prolongado o lances un hechizo de conjuración de nivel 1 o superior."
+        "description": "A partir del nivel 6, puedes usar tu acción para teletransportarte hasta {{distance:30ft}} a un espacio desocupado que puedas ver, o que puedas ver que está ocupado por una criatura Pequeña o Mediana dispuesta a ser teletransportada. Después de usar esta función, no podrás volver a usarla hasta que termines un descanso prolongado o lances un hechizo de conjuración de nivel 1 o superior."
       },
       "Focused Conjuration": {
         "name": "Conjuración enfocada",
@@ -757,7 +757,7 @@
       },
       "The Third Eye": {
         "name": "El tercer ojo",
-        "description": "A partir del nivel 10, puedes usar tu acción para aumentar tus poderes de percepción. Cuando lo hagas, elige uno de los siguientes beneficios, que dura hasta que quedes incapacitado o tomes un descanso corto o largo: Visión en la oscuridad (60 pies), Visión etérea (ver el plano etéreo), Mayor comprensión (leer cualquier idioma) o Ver invisibilidad."
+        "description": "A partir del nivel 10, puedes usar tu acción para aumentar tus poderes de percepción. Cuando lo hagas, elige uno de los siguientes beneficios, que dura hasta que quedes incapacitado o tomes un descanso corto o largo: Visión en la oscuridad ({{distance:60ft}}), Visión etérea (ver el plano etéreo), Mayor comprensión (leer cualquier idioma) o Ver invisibilidad."
       },
       "Greater Portent": {
         "name": "Mayor presagio",
@@ -771,11 +771,11 @@
       },
       "Hypnotic Gaze": {
         "name": "Mirada hipnótica",
-        "description": "A partir del nivel 2, como acción, elige una criatura que puedas ver a 5 pies de ti. Si el objetivo puede verte u oírte, debe superar una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de mago o ser hechizado por ti hasta el final de tu siguiente turno. La velocidad de la criatura encantada cae a 0 y queda incapacitada y visiblemente aturdida. En turnos posteriores, puedes usar tu acción para mantener este efecto hasta el final de tu siguiente turno. El efecto termina si te alejas más de 5 pies, si la criatura no puede verte ni oírte, o si la criatura sufre daño."
+        "description": "A partir del nivel 2, como acción, elige una criatura que puedas ver a {{distance:5ft}} de ti. Si el objetivo puede verte u oírte, debe superar una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de mago o ser hechizado por ti hasta el final de tu siguiente turno. La velocidad de la criatura encantada cae a 0 y queda incapacitada y visiblemente aturdida. En turnos posteriores, puedes usar tu acción para mantener este efecto hasta el final de tu siguiente turno. El efecto termina si te alejas más de {{distance:5ft}}, si la criatura no puede verte ni oírte, o si la criatura sufre daño."
       },
       "Instinctive Charm": {
         "name": "Encanto instintivo",
-        "description": "A partir del nivel 6, cuando una criatura que puedes ver a 30 pies de ti realiza una tirada de ataque contra ti, puedes usar tu reacción para desviar el ataque. El atacante debe realizar una tirada de salvación de Sabiduría. En caso de una salvación fallida, el atacante debe apuntar a la criatura más cercana a él, sin contarte a ti ni a él mismo. Una vez que uses esta función, no podrás usarla hasta que termines un descanso prolongado, a menos que gastes un espacio de hechizo de cualquier nivel para usarla nuevamente."
+        "description": "A partir del nivel 6, cuando una criatura que puedes ver a {{distance:30ft}} de ti realiza una tirada de ataque contra ti, puedes usar tu reacción para desviar el ataque. El atacante debe realizar una tirada de salvación de Sabiduría. En caso de una salvación fallida, el atacante debe apuntar a la criatura más cercana a él, sin contarte a ti ni a él mismo. Una vez que uses esta función, no podrás usarla hasta que termines un descanso prolongado, a menos que gastes un espacio de hechizo de cualquier nivel para usarla nuevamente."
       },
       "Split Enchantment": {
         "name": "Encantamiento dividido",
@@ -849,7 +849,7 @@
       },
       "Command Undead": {
         "name": "Comando no-muertos",
-        "description": "A partir del nivel 14, como acción, puedes elegir un no-muerto que puedas ver a 60 pies de ti. Esa criatura debe realizar una tirada de salvación de Carisma contra la CD de salvación de tu hechizo de mago. Si tiene éxito, no podrá volver a utilizar esta función. Si falla, se vuelve amigable contigo y obedece tus órdenes hasta que uses esta función nuevamente. Los muertos vivientes inteligentes son más difíciles de controlar y tienen ventaja en la tirada de salvación."
+        "description": "A partir del nivel 14, como acción, puedes elegir un no-muerto que puedas ver a {{distance:60ft}} de ti. Esa criatura debe realizar una tirada de salvación de Carisma contra la CD de salvación de tu hechizo de mago. Si tiene éxito, no podrá volver a utilizar esta función. Si falla, se vuelve amigable contigo y obedece tus órdenes hasta que uses esta función nuevamente. Los muertos vivientes inteligentes son más difíciles de controlar y tienen ventaja en la tirada de salvación."
       }
     },
     "School of Transmutation": {
@@ -863,7 +863,7 @@
       },
       "Transmuter's Stone": {
         "name": "Piedra del transmutador",
-        "description": "A partir del nivel 6, puedes pasar 8 horas creando una piedra transmutadora que almacena magia de transmutación. Una criatura obtiene un beneficio de tu elección siempre que la piedra esté en posesión de la criatura: visión en la oscuridad (60 pies), velocidad aumentada en 10 pies, competencia en las tiradas de salvación de Constitución o resistencia al daño por ácido, frío, fuego, relámpagos o truenos."
+        "description": "A partir del nivel 6, puedes pasar 8 horas creando una piedra transmutadora que almacena magia de transmutación. Una criatura obtiene un beneficio de tu elección siempre que la piedra esté en posesión de la criatura: visión en la oscuridad ({{distance:60ft}}), velocidad aumentada en {{distance:10ft}}, competencia en las tiradas de salvación de Constitución o resistencia al daño por ácido, frío, fuego, relámpagos o truenos."
       },
       "Shapechanger": {
         "name": "Cambiador de forma",

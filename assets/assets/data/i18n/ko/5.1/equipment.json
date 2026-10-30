@@ -155,7 +155,7 @@
   },
   "Acid (vial)": {
     "name": "산(바이알)",
-    "description": "행동으로 이 약병의 내용물을 5피트 내의 생물체에 뿌리거나 최대 20피트까지 던져 충격을 가할 수 있습니다. 생물은 적중 시 2d6의 산성 피해를 입습니다."
+    "description": "행동으로 이 약병의 내용물을 {{distance:5ft}} 내의 생물체에 뿌리거나 최대 {{distance:20ft}}까지 던져 충격을 가할 수 있습니다. 생물은 적중 시 2d6의 산성 피해를 입습니다."
   },
   "Alchemist's Fire": {
     "name": "연금술사의 불",
@@ -255,11 +255,11 @@
   },
   "Caltrops (bag of 20)": {
     "name": "마름쇠 (20개들이 봉지)",
-    "description": "5피트 영역에 분산됩니다. 통과하여 이동하는 생물은 DC 15 민첩성을 저장하거나 중지하고 1 관통 피해를 입어야 합니다(치료될 때까지 속도가 10피트 감소)."
+    "description": "{{distance:5ft}} 영역에 분산됩니다. 통과하여 이동하는 생물은 DC 15 민첩성을 저장하거나 중지하고 1 관통 피해를 입어야 합니다(치료될 때까지 속도가 {{distance:10ft}} 감소)."
   },
   "Candle": {
     "name": "양초",
-    "description": "1시간 동안 반경 5피트의 밝은 빛과 5피트의 희미한 빛을 비춥니다."
+    "description": "1시간 동안 반경 {{distance:5ft}}의 밝은 빛과 {{distance:5ft}}의 희미한 빛을 비춥니다."
   },
   "Case, crossbow bolt": {
     "name": "케이스, 석궁 볼트",
@@ -343,7 +343,7 @@
   },
   "Holy Water (flask)": {
     "name": "성수(플라스크)",
-    "description": "행동으로 5피트 이내의 생물을 튀기거나 최대 20피트까지 던집니다. 적중 시 악마나 언데드는 2d6의 복사 피해를 입습니다."
+    "description": "행동으로 {{distance:5ft}} 이내의 생물을 튀기거나 최대 {{distance:20ft}}까지 던집니다. 적중 시 악마나 언데드는 2d6의 복사 피해를 입습니다."
   },
   "Hourglass": {
     "name": "모래시계",
@@ -375,19 +375,19 @@
   },
   "Ladder (10-foot)": {
     "name": "사다리(10피트)",
-    "description": "10피트 높이의 나무 사다리."
+    "description": "{{distance:10ft}} 높이의 나무 사다리."
   },
   "Lamp": {
     "name": "램프",
-    "description": "기름을 태웁니다(1파인트 = 6시간). 15피트 반경에는 밝은 빛을 비추고 추가 30피트 반경에는 희미한 빛을 비춥니다."
+    "description": "기름을 태웁니다(1파인트 = 6시간). {{distance:15ft}} 반경에는 밝은 빛을 비추고 추가 {{distance:30ft}} 반경에는 희미한 빛을 비춥니다."
   },
   "Lantern, bullseye": {
     "name": "랜턴, 불스아이",
-    "description": "기름을 태웁니다(1파인트 = 6시간). 60피트 원뿔 모양의 밝은 빛, 추가로 60피트 희미한 빛."
+    "description": "기름을 태웁니다(1파인트 = 6시간). {{distance:60ft}} 원뿔 모양의 밝은 빛, 추가로 {{distance:60ft}} 희미한 빛."
   },
   "Lantern, hooded": {
     "name": "랜턴, 후드",
-    "description": "기름을 태웁니다(1파인트 = 6시간). 반경 30피트의 밝은 빛, 추가로 30피트의 희미한 빛. 5피트 높이에서 어두운 빛을 줄이기 위해 후드를 씌울 수 있습니다."
+    "description": "기름을 태웁니다(1파인트 = 6시간). 반경 {{distance:30ft}}의 밝은 빛, 추가로 {{distance:30ft}}의 희미한 빛. {{distance:5ft}} 높이에서 어두운 빛을 줄이기 위해 후드를 씌울 수 있습니다."
   },
   "Lock": {
     "name": "잠그다",
@@ -439,7 +439,7 @@
   },
   "Pole (10-foot)": {
     "name": "기둥(10피트)",
-    "description": "10피트 길이의 나무 기둥."
+    "description": "{{distance:10ft}} 길이의 나무 기둥."
   },
   "Pot, iron": {
     "name": "냄비, 다리미",
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "신호 호루라기",
-    "description": "최대 600피트 떨어진 곳까지 들리는 작은 금속 휘파람 소리."
+    "description": "최대 {{distance:600ft}} 떨어진 곳까지 들리는 작은 금속 휘파람 소리."
   },
   "Signet Ring": {
     "name": "인장 반지",
@@ -515,7 +515,7 @@
   },
   "String (10 feet)": {
     "name": "끈(10피트)",
-    "description": "10피트 길이의 끈."
+    "description": "{{distance:10ft}} 길이의 끈."
   },
   "Tent, two-person": {
     "name": "텐트, 2인용",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "횃불",
-    "description": "1시간 동안 연소됩니다. 반경 20피트의 밝은 빛, 추가 20피트의 희미한 빛. 즉석 무기로 사용할 수 있습니다(1d4 화염 피해)."
+    "description": "1시간 동안 연소됩니다. 반경 {{distance:20ft}}의 밝은 빛, 추가 {{distance:20ft}}의 희미한 빛. 즉석 무기로 사용할 수 있습니다(1d4 화염 피해)."
   },
   "Vial": {
     "name": "약병",

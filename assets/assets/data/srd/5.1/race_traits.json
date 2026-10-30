@@ -1,6 +1,6 @@
 {
-  "Darkvision": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within 60 feet of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
-  "Superior Darkvision": "Your darkvision has a radius of 120 feet.",
+  "Darkvision": "Accustomed to life underground, you have superior vision in dark and dim conditions. You can see in dim light within {{distance:60ft}} of you as if it were bright light, and in darkness as if it were dim light. You can't discern color in darkness, only shades of gray.",
+  "Superior Darkvision": "Your darkvision has a radius of {{distance:120ft}}.",
   "Dwarven Resilience": "You have advantage on saving throws against poison, and you have resistance against poison damage.",
   "Dwarven Combat Training": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer.",
   "Stonecunning": "Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check.",
@@ -15,7 +15,7 @@
   "Elf Weapon Training": "You have proficiency with the longsword, shortsword, shortbow, and longbow.",
   "Cantrip": "You know one cantrip of your choice from the wizard spell list. Intelligence is your spellcasting ability for it.",
   "Extra Language": "You can speak, read, and write one extra language of your choice.",
-  "Fleet of Foot": "Your base walking speed increases to 35 feet.",
+  "Fleet of Foot": "Your base walking speed increases to {{distance:35ft}}.",
   "Mask of the Wild": "You can attempt to hide even when you are only lightly obscured by foliage, heavy rain, falling snow, mist, and other natural phenomena.",
   "Sunlight Sensitivity": "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely on sight when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.",
   "Drow Magic": "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire spell once per day. When you reach 5th level, you can also cast the darkness spell once per day. Charisma is your spellcasting ability for these spells.",

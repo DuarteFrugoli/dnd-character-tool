@@ -4,11 +4,11 @@
     "actions": {
       "fist": {
         "name": "Poing",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
       },
       "rock": {
         "name": "Rocher",
-        "description": "Attaque d'arme à distance : +5 au toucher, portée 7,5/15 mètres, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
+        "description": "Attaque d'arme à distance : +5 au toucher, portée {{distance:25/50ft}}, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
       },
       "multiattack": {
         "name": "Attaques multiples",
@@ -21,7 +21,7 @@
     "actions": {
       "beak": {
         "name": "Bec",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d8 + 2) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 6 (1d8 + 2) dégâts tranchants."
       }
     }
   },
@@ -30,13 +30,13 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge 1,5 mètre, une cible. Touché : 1 (1d4 - 1) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 (1d4 - 1) dégâts perforants."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le babouin a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le babouin a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -45,7 +45,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât perforant."
       }
     },
     "traits": {
@@ -60,7 +60,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une créature. Touché : 1 dégât perforant."
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge {{distance:5ft}}, une créature. Touché : 1 dégât perforant."
       }
     },
     "traits": {
@@ -79,11 +79,11 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 5 (1d6 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 5 (1d6 + 2) dégâts perforants."
       },
       "claws": {
         "name": "Griffes",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (2d4 + 2) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 7 (2d4 + 2) dégâts tranchants."
       },
       "multiattack": {
         "name": "Attaques multiples",
@@ -102,7 +102,7 @@
     "actions": {
       "beak": {
         "name": "Bec",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d4 + 2) dégâts perforants."
       }
     },
     "traits": {
@@ -112,7 +112,7 @@
       },
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le faucon a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le faucon a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -121,13 +121,13 @@
     "actions": {
       "tusk": {
         "name": "Défense",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d6 + 1) dégâts tranchants."
       }
     },
     "traits": {
       "charge": {
         "name": "Charge",
-        "description": "Si le sanglier se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de défense lors du même tour, la cible subit 3 (1d6) dégâts tranchants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
+        "description": "Si le sanglier se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible puis la touche avec une attaque de défense lors du même tour, la cible subit 3 (1d6) dégâts tranchants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
       },
       "relentless": {
         "name": "Acharnement",
@@ -140,11 +140,11 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (1d8 + 4) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge {{distance:5ft}}, une cible. Touché : 8 (1d8 + 4) dégâts perforants."
       },
       "claws": {
         "name": "Griffes",
-        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 11 (2d6 + 4) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge {{distance:5ft}}, une cible. Touché : 11 (2d6 + 4) dégâts tranchants."
       },
       "multiattack": {
         "name": "Attaques multiples",
@@ -163,7 +163,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 2 (1d4) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 2 (1d4) dégâts contondants."
       }
     }
   },
@@ -172,7 +172,7 @@
     "actions": {
       "claws": {
         "name": "Griffes",
-        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât tranchant."
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât tranchant."
       }
     },
     "traits": {
@@ -187,11 +187,11 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 5 (1d6 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une créature. Touché : 5 (1d6 + 2) dégâts perforants."
       },
       "constrict": {
         "name": "Constriction",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 6 (1d8 + 2) dégâts contondants, et la cible est agrippée (évasion DD 14). Jusqu'à la fin de cette empoignade, la créature est entravée et le serpent ne peut pas étreindre une autre cible."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une créature. Touché : 6 (1d8 + 2) dégâts contondants, et la cible est agrippée (évasion DD 14). Jusqu'à la fin de cette empoignade, la créature est entravée et le serpent ne peut pas étreindre une autre cible."
       }
     }
   },
@@ -200,7 +200,7 @@
     "actions": {
       "claw": {
         "name": "Griffe",
-        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât contondant."
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât contondant."
       }
     },
     "traits": {
@@ -215,7 +215,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 7 (1d10 + 2) dégâts perforants, et la cible est agrippée (évasion DD 12). Jusqu'à la fin de cette empoignade, la cible est entravée et le crocodile ne peut pas mordre une autre cible."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une créature. Touché : 7 (1d10 + 2) dégâts perforants, et la cible est agrippée (évasion DD 12). Jusqu'à la fin de cette empoignade, la cible est entravée et le crocodile ne peut pas mordre une autre cible."
       }
     },
     "traits": {
@@ -230,7 +230,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 2 (1d4) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge {{distance:5ft}}, une cible. Touché : 2 (1d4) dégâts perforants."
       }
     }
   },
@@ -239,7 +239,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 10 (2d6 + 3) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 10 (2d6 + 3) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
       }
     },
     "traits": {
@@ -249,7 +249,7 @@
       },
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le loup a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le loup a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -258,7 +258,7 @@
     "actions": {
       "hooves": {
         "name": "Sabots",
-        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 9 (2d4 + 4) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge {{distance:5ft}}, une cible. Touché : 9 (2d4 + 4) dégâts contondants."
       }
     }
   },
@@ -267,7 +267,7 @@
     "actions": {
       "talons": {
         "name": "Serres",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d4 + 2) dégâts tranchants."
       }
     },
     "traits": {
@@ -282,17 +282,17 @@
     "actions": {
       "ram": {
         "name": "Charge",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 6 (1d6 + 3) dégâts contondants."
       },
       "hooves": {
         "name": "Sabots",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une créature à terre. Touché : 8 (2d4 + 3) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une créature à terre. Touché : 8 (2d4 + 3) dégâts contondants."
       }
     },
     "traits": {
       "charge": {
         "name": "Charge",
-        "description": "Si l'élan se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 7 (2d6) dégâts supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
+        "description": "Si l'élan se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 7 (2d6) dégâts supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
       }
     }
   },
@@ -301,7 +301,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant plus 7 (3d4) dégâts de poison."
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât perforant plus 7 (3d4) dégâts de poison."
       }
     },
     "traits": {
@@ -320,7 +320,7 @@
       },
       "standing_leap": {
         "name": "Saut sans élan",
-        "description": "Le saut en longueur de la grenouille peut atteindre 3 mètres et son saut en hauteur 1,5 mètre, avec ou sans élan."
+        "description": "Le saut en longueur de la grenouille peut atteindre {{distance:10ft}} et son saut en hauteur {{distance:5ft}}, avec ou sans élan."
       }
     }
   },
@@ -329,11 +329,11 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d6 + 1) dégâts perforants."
       },
       "claws": {
         "name": "Griffes",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (2d4 + 1) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 6 (2d4 + 1) dégâts tranchants."
       },
       "multiattack": {
         "name": "Attaques multiples",
@@ -352,7 +352,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 5 (1d6 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une créature. Touché : 5 (1d6 + 2) dégâts perforants."
       }
     },
     "traits": {
@@ -371,7 +371,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 4 (1d4 + 2) dégâts perforants, et la cible doit réussir un jet de sauvegarde de Constitution DD 11 sous peine de subir 10 (3d6) dégâts de poison. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une créature. Touché : 4 (1d4 + 2) dégâts perforants, et la cible doit réussir un jet de sauvegarde de Constitution DD 11 sous peine de subir 10 (3d6) dégâts de poison. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
       }
     }
   },
@@ -380,7 +380,7 @@
     "actions": {
       "claw": {
         "name": "Griffe",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts contondants, et la cible est agrippée (évasion DD 11). Le crabe possède deux pinces, chacune ne pouvant agripper qu'une seule cible."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d6 + 1) dégâts contondants, et la cible est agrippée (évasion DD 11). Le crabe possède deux pinces, chacune ne pouvant agripper qu'une seule cible."
       }
     },
     "traits": {
@@ -395,11 +395,11 @@
     "actions": {
       "beak": {
         "name": "Bec",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d6 + 3) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 6 (1d6 + 3) dégâts perforants."
       },
       "talons": {
         "name": "Serres",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 10 (2d6 + 3) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 10 (2d6 + 3) dégâts tranchants."
       },
       "multiattack": {
         "name": "Attaques multiples",
@@ -421,13 +421,13 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge 1,5 mètre, une cible. Touché : 2 (1d6 - 1) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge {{distance:5ft}}, une cible. Touché : 2 (1d6 - 1) dégâts tranchants."
       }
     },
     "traits": {
       "illumination": {
         "name": "Illumination",
-        "description": "Le scarabée émet une lumière vive dans un rayon de 3 mètres et une lumière faible sur 3 mètres supplémentaires."
+        "description": "Le scarabée émet une lumière vive dans un rayon de {{distance:10ft}} et une lumière faible sur {{distance:10ft}} supplémentaires."
       }
     }
   },
@@ -436,7 +436,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts perforants, et la cible est agrippée (évasion DD 11). Jusqu'à la fin de cette empoignade, la cible est entravée et la grenouille ne peut pas mordre une autre cible."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d6 + 1) dégâts perforants, et la cible est agrippée (évasion DD 11). Jusqu'à la fin de cette empoignade, la cible est entravée et la grenouille ne peut pas mordre une autre cible."
       },
       "swallow": {
         "name": "Avaler",
@@ -450,7 +450,7 @@
       },
       "standing_leap": {
         "name": "Saut sans élan",
-        "description": "Le saut en longueur de la grenouille peut atteindre 6 mètres et son saut en hauteur 3 mètres, avec ou sans élan."
+        "description": "Le saut en longueur de la grenouille peut atteindre {{distance:20ft}} et son saut en hauteur {{distance:10ft}}, avec ou sans élan."
       }
     }
   },
@@ -459,13 +459,13 @@
     "actions": {
       "ram": {
         "name": "Charge",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (2d4 + 3) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 8 (2d4 + 3) dégâts contondants."
       }
     },
     "traits": {
       "charge": {
         "name": "Charge",
-        "description": "Si la chèvre se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 5 (2d4) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
+        "description": "Si la chèvre se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 5 (2d4) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre."
       },
       "sure_footed": {
         "name": "Pied sûr",
@@ -478,7 +478,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 10 (2d6 + 3) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 10 (2d6 + 3) dégâts perforants."
       }
     },
     "traits": {
@@ -493,7 +493,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d8 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 6 (1d8 + 2) dégâts perforants."
       }
     }
   },
@@ -502,11 +502,11 @@
     "actions": {
       "tentacles": {
         "name": "Tentacules",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 4,5 mètres, une cible. Touché : 10 (2d6 + 3) dégâts contondants. Si la cible est une créature, elle est agrippée (évasion DD 16). Jusqu'à la fin de cette empoignade, la cible est entravée et la pieuvre ne peut pas utiliser ses tentacules contre une autre cible."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:15ft}}, une cible. Touché : 10 (2d6 + 3) dégâts contondants. Si la cible est une créature, elle est agrippée (évasion DD 16). Jusqu'à la fin de cette empoignade, la cible est entravée et la pieuvre ne peut pas utiliser ses tentacules contre une autre cible."
       },
       "ink_cloud": {
         "name": "Nuage d'encre",
-        "description": "Si la pieuvre se trouve sous l'eau, un nuage d'encre de 6 mètres de rayon se répand tout autour d'elle. La zone est fortement obscurcie pendant 1 minute, mais un courant important peut disperser l'encre. Après avoir libéré l'encre, la pieuvre peut effectuer l'action Foncer par une action bonus."
+        "description": "Si la pieuvre se trouve sous l'eau, un nuage d'encre de {{distance:20ft}} de rayon se répand tout autour d'elle. La zone est fortement obscurcie pendant 1 minute, mais un courant important peut disperser l'encre. Après avoir libéré l'encre, la pieuvre peut effectuer l'action Foncer par une action bonus."
       }
     },
     "traits": {
@@ -529,7 +529,7 @@
     "actions": {
       "talons": {
         "name": "Serres",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (2d6 + 1) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 8 (2d6 + 1) dégâts tranchants."
       }
     },
     "traits": {
@@ -551,7 +551,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 3 mètres, une cible. Touché : 6 (1d4 + 4) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 10 (3d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge {{distance:10ft}}, une cible. Touché : 6 (1d4 + 4) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 10 (3d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
       }
     }
   },
@@ -560,7 +560,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d4 + 2) dégâts perforants."
       }
     },
     "traits": {
@@ -570,7 +570,7 @@
       },
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le rat a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le rat a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -579,13 +579,13 @@
     "actions": {
       "ram": {
         "name": "Charge",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d6 + 1) dégâts contondants."
       }
     },
     "traits": {
       "charge": {
         "name": "Charge",
-        "description": "Si l'hippocampe se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 7 (2d6) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
+        "description": "Si l'hippocampe se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 7 (2d6) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
       },
       "water_breathing": {
         "name": "Respiration aquatique",
@@ -598,11 +598,11 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une créature. Touché : 7 (1d8 + 3) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 9 (2d8) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une créature. Touché : 7 (1d8 + 3) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 9 (2d8) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
       },
       "web": {
         "name": "Toile",
-        "description": "Attaque d'arme à distance : +5 au toucher, portée 9/18 mètres, une créature. Touché : la cible est entravée par la toile. Par une action, la cible entravée peut effectuer un test de Force DD 12 ; en cas de réussite, elle déchire la toile. La toile peut aussi être attaquée et détruite (CA 10 ; pv 5 ; vulnérabilité aux dégâts de feu ; immunité aux dégâts contondants, de poison et psychiques)."
+        "description": "Attaque d'arme à distance : +5 au toucher, portée {{distance:30/60ft}}, une créature. Touché : la cible est entravée par la toile. Par une action, la cible entravée peut effectuer un test de Force DD 12 ; en cas de réussite, elle déchire la toile. La toile peut aussi être attaquée et détruite (CA 10 ; pv 5 ; vulnérabilité aux dégâts de feu ; immunité aux dégâts contondants, de poison et psychiques)."
       }
     },
     "traits": {
@@ -625,7 +625,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (1d10 + 2) dégâts perforants plus 5 (1d10) dégâts de poison, et la cible est agrippée (évasion DD 13). Jusqu'à la fin de cette empoignade, la cible est entravée et le crapaud ne peut pas mordre une autre cible."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 7 (1d10 + 2) dégâts perforants plus 5 (1d10) dégâts de poison, et la cible est agrippée (évasion DD 13). Jusqu'à la fin de cette empoignade, la cible est entravée et le crapaud ne peut pas mordre une autre cible."
       },
       "swallow": {
         "name": "Avaler",
@@ -639,7 +639,7 @@
       },
       "standing_leap": {
         "name": "Saut sans élan",
-        "description": "Le saut en longueur du crapaud peut atteindre 6 mètres et son saut en hauteur 3 mètres, avec ou sans élan."
+        "description": "Le saut en longueur du crapaud peut atteindre {{distance:20ft}} et son saut en hauteur {{distance:10ft}}, avec ou sans élan."
       }
     }
   },
@@ -648,11 +648,11 @@
     "actions": {
       "beak": {
         "name": "Bec",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (2d4 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 7 (2d4 + 2) dégâts perforants."
       },
       "talons": {
         "name": "Serres",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 9 (2d6 + 2) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 9 (2d6 + 2) dégâts tranchants."
       },
       "multiattack": {
         "name": "Attaques multiples",
@@ -666,7 +666,7 @@
       },
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le vautour a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le vautour a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     },
     "languages": [
@@ -678,7 +678,7 @@
     "actions": {
       "sting": {
         "name": "Dard",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 5 (1d6 + 2) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 10 (3d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une créature. Touché : 5 (1d6 + 2) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 10 (3d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
       }
     }
   },
@@ -687,7 +687,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 5 (1d4 + 3) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 5 (1d4 + 3) dégâts perforants."
       }
     },
     "traits": {
@@ -702,7 +702,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une créature. Touché : 4 (1d6 + 1) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 7 (2d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une créature. Touché : 4 (1d6 + 1) dégâts perforants, et la cible doit effectuer un jet de sauvegarde de Constitution DD 11. Elle subit 7 (2d6) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Si les dégâts de poison font tomber la cible à 0 point de vie, celle-ci est stabilisée mais empoisonnée pendant 1 heure, même si elle récupère des points de vie, et elle est paralysée tant qu'elle est empoisonnée de cette façon."
       }
     },
     "traits": {
@@ -725,13 +725,13 @@
     "actions": {
       "ram": {
         "name": "Charge",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 3 (1d4 + 1) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 3 (1d4 + 1) dégâts contondants."
       }
     },
     "traits": {
       "charge": {
         "name": "Charge",
-        "description": "Si la chèvre se déplace d'au moins 6 mètres en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 2 (1d4) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 10 sous peine d'être jetée à terre."
+        "description": "Si la chèvre se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible puis la touche avec une attaque de charge lors du même tour, la cible subit 2 (1d4) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 10 sous peine d'être jetée à terre."
       },
       "sure_footed": {
         "name": "Pied sûr",
@@ -744,7 +744,7 @@
     "actions": {
       "talons": {
         "name": "Serres",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât tranchant."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât tranchant."
       }
     },
     "traits": {
@@ -759,13 +759,13 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 3 (1d6) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge {{distance:5ft}}, une cible. Touché : 3 (1d6) dégâts perforants."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "La hyène a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "La hyène a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -774,7 +774,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge 1,5 mètre, une cible. Touché : 1 (1d4 - 1) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +1 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 (1d4 - 1) dégâts perforants."
       }
     },
     "traits": {
@@ -784,7 +784,7 @@
       },
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le chacal a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le chacal a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -793,11 +793,11 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (1d8 + 3) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 7 (1d8 + 3) dégâts perforants."
       },
       "claw": {
         "name": "Griffe",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d6 + 3) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 6 (1d6 + 3) dégâts tranchants."
       }
     },
     "traits": {
@@ -807,15 +807,15 @@
       },
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le lion a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le lion a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       },
       "pounce": {
         "name": "Bond",
-        "description": "Si le lion se déplace d'au moins 6 mètres en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre. Si la cible est à terre, le lion peut effectuer contre elle une attaque de morsure par une action bonus."
+        "description": "Si le lion se déplace d'au moins {{distance:20ft}} en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre. Si la cible est à terre, le lion peut effectuer contre elle une attaque de morsure par une action bonus."
       },
       "running_leap": {
         "name": "Saut avec élan",
-        "description": "Avec 3 mètres d'élan, le lion peut effectuer un saut en longueur de 7,5 mètres au maximum."
+        "description": "Avec {{distance:10ft}} d'élan, le lion peut effectuer un saut en longueur de {{distance:25ft}} au maximum."
       }
     }
   },
@@ -824,7 +824,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât perforant."
       }
     }
   },
@@ -833,7 +833,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d6 + 1) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d6 + 1) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
       }
     },
     "traits": {
@@ -848,7 +848,7 @@
     "actions": {
       "hooves": {
         "name": "Sabots",
-        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d4 + 2) dégâts contondants."
       }
     },
     "traits": {
@@ -867,11 +867,11 @@
     "actions": {
       "tentacles": {
         "name": "Tentacules",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât contondant, et la cible est agrippée (évasion DD 10). Jusqu'à la fin de cette empoignade, la pieuvre ne peut pas utiliser ses tentacules contre une autre cible."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât contondant, et la cible est agrippée (évasion DD 10). Jusqu'à la fin de cette empoignade, la pieuvre ne peut pas utiliser ses tentacules contre une autre cible."
       },
       "ink_cloud": {
         "name": "Nuage d'encre",
-        "description": "Si la pieuvre se trouve sous l'eau, un nuage d'encre de 1,5 mètre de rayon se répand tout autour d'elle. La zone est fortement obscurcie pendant 1 minute, mais un courant important peut disperser l'encre. Après avoir libéré l'encre, la pieuvre peut effectuer l'action Foncer par une action bonus."
+        "description": "Si la pieuvre se trouve sous l'eau, un nuage d'encre de {{distance:5ft}} de rayon se répand tout autour d'elle. La zone est fortement obscurcie pendant 1 minute, mais un courant important peut disperser l'encre. Après avoir libéré l'encre, la pieuvre peut effectuer l'action Foncer par une action bonus."
       }
     },
     "traits": {
@@ -894,7 +894,7 @@
     "actions": {
       "talons": {
         "name": "Serres",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât tranchant."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât tranchant."
       }
     },
     "traits": {
@@ -913,11 +913,11 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 5 (1d6 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 5 (1d6 + 2) dégâts perforants."
       },
       "claw": {
         "name": "Griffe",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 4 (1d4 + 2) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 4 (1d4 + 2) dégâts tranchants."
       }
     },
     "traits": {
@@ -927,7 +927,7 @@
       },
       "pounce": {
         "name": "Bond",
-        "description": "Si la panthère se déplace d'au moins 6 mètres en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 12 sous peine d'être jetée à terre. Si la cible est à terre, la panthère peut effectuer contre elle une attaque de morsure par une action bonus."
+        "description": "Si la panthère se déplace d'au moins {{distance:20ft}} en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 12 sous peine d'être jetée à terre. Si la cible est à terre, la panthère peut effectuer contre elle une attaque de morsure par une action bonus."
       }
     }
   },
@@ -936,7 +936,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant, et la cible doit effectuer un jet de sauvegarde de Constitution DD 10. Elle subit 5 (2d4) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât perforant, et la cible doit effectuer un jet de sauvegarde de Constitution DD 10. Elle subit 5 (2d4) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
       }
     }
   },
@@ -945,7 +945,7 @@
     "actions": {
       "hooves": {
         "name": "Sabots",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (2d4 + 2) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 7 (2d4 + 2) dégâts contondants."
       }
     }
   },
@@ -954,7 +954,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât perforant."
       }
     },
     "traits": {
@@ -973,7 +973,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+        "description": "Attaque d'arme au corps à corps : +0 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât perforant."
       }
     },
     "traits": {
@@ -988,7 +988,7 @@
     "actions": {
       "beak": {
         "name": "Bec",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât perforant."
       }
     },
     "traits": {
@@ -1003,13 +1003,13 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 6 (1d8 + 2) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 6 (1d8 + 2) dégâts perforants."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le requin a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le requin a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       },
       "water_breathing": {
         "name": "Respiration aquatique",
@@ -1022,7 +1022,7 @@
     "actions": {
       "hooves": {
         "name": "Sabots",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (2d4 + 3) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 8 (2d4 + 3) dégâts contondants."
       }
     }
   },
@@ -1031,7 +1031,7 @@
     "actions": {
       "sting": {
         "name": "Dard",
-        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une créature. Touché : 1 dégât perforant, et la cible doit effectuer un jet de sauvegarde de Constitution DD 9. Elle subit 4 (1d8) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge {{distance:5ft}}, une créature. Touché : 1 dégât perforant, et la cible doit effectuer un jet de sauvegarde de Constitution DD 9. Elle subit 4 (1d8) dégâts de poison en cas d'échec, ou la moitié de ces dégâts en cas de réussite."
       }
     }
   },
@@ -1049,7 +1049,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une créature. Touché : 1 dégât perforant, et la cible doit réussir un jet de sauvegarde de Constitution DD 9 sous peine de subir 2 (1d4) dégâts de poison."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une créature. Touché : 1 dégât perforant, et la cible doit réussir un jet de sauvegarde de Constitution DD 9 sous peine de subir 2 (1d4) dégâts de poison."
       }
     },
     "traits": {
@@ -1072,7 +1072,7 @@
     "actions": {
       "blood_drain": {
         "name": "Absorption de sang",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une créature. Touché : 5 (1d4 + 3) dégâts perforants, et la stirge s'accroche à la cible. Tant qu'elle est accrochée, la stirge n'attaque pas. À la place, au début de chacun des tours de la stirge, la cible perd 5 (1d4 + 3) points de vie à cause de la perte de sang."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une créature. Touché : 5 (1d4 + 3) dégâts perforants, et la stirge s'accroche à la cible. Tant qu'elle est accrochée, la stirge n'attaque pas. À la place, au début de chacun des tours de la stirge, la cible perd 5 (1d4 + 3) points de vie à cause de la perte de sang."
       }
     }
   },
@@ -1081,7 +1081,7 @@
     "actions": {
       "bites": {
         "name": "Morsures",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 0 mètre, une créature dans l'espace de la nuée. Touché : 5 (2d4) dégâts perforants, ou 2 (1d4) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:0ft}}, une créature dans l'espace de la nuée. Touché : 5 (2d4) dégâts perforants, ou 2 (1d4) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
       }
     },
     "traits": {
@@ -1104,7 +1104,7 @@
     "actions": {
       "bites": {
         "name": "Morsures",
-        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge 0 mètre, une cible dans l'espace de la nuée. Touché : 10 (4d4) dégâts perforants, ou 5 (2d4) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+        "description": "Attaque d'arme au corps à corps : +3 au toucher, allonge {{distance:0ft}}, une cible dans l'espace de la nuée. Touché : 10 (4d4) dégâts perforants, ou 5 (2d4) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
       }
     },
     "traits": {
@@ -1119,7 +1119,7 @@
     "actions": {
       "bites": {
         "name": "Morsures",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 0 mètre, une créature dans l'espace de la nuée. Touché : 14 (4d6) dégâts perforants, ou 7 (2d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:0ft}}, une créature dans l'espace de la nuée. Touché : 14 (4d6) dégâts perforants, ou 7 (2d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
       }
     },
     "traits": {
@@ -1142,7 +1142,7 @@
     "actions": {
       "bites": {
         "name": "Morsures",
-        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 0 mètre, une cible dans l'espace de la nuée. Touché : 7 (2d6) dégâts perforants, ou 3 (1d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge {{distance:0ft}}, une cible dans l'espace de la nuée. Touché : 7 (2d6) dégâts perforants, ou 3 (1d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
       }
     },
     "traits": {
@@ -1161,7 +1161,7 @@
     "actions": {
       "beaks": {
         "name": "Coups de bec",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible dans l'espace de la nuée. Touché : 7 (2d6) dégâts perforants, ou 3 (1d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible dans l'espace de la nuée. Touché : 7 (2d6) dégâts perforants, ou 3 (1d6) dégâts perforants si la nuée a la moitié de ses points de vie ou moins."
       }
     },
     "traits": {
@@ -1176,11 +1176,11 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 8 (1d10 + 3) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 8 (1d10 + 3) dégâts perforants."
       },
       "claw": {
         "name": "Griffe",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (1d8 + 3) dégâts tranchants."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 7 (1d8 + 3) dégâts tranchants."
       }
     },
     "traits": {
@@ -1190,7 +1190,7 @@
       },
       "pounce": {
         "name": "Bond",
-        "description": "Si le tigre se déplace d'au moins 6 mètres en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre. Si la cible est à terre, le tigre peut effectuer contre elle une attaque de morsure par une action bonus."
+        "description": "Si le tigre se déplace d'au moins {{distance:20ft}} en ligne droite vers une créature puis la touche avec une attaque de griffe lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 13 sous peine d'être jetée à terre. Si la cible est à terre, le tigre peut effectuer contre elle une attaque de morsure par une action bonus."
       }
     }
   },
@@ -1199,7 +1199,7 @@
     "actions": {
       "beak": {
         "name": "Bec",
-        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge 1,5 mètre, une cible. Touché : 2 (1d4) dégâts perforants."
+        "description": "Attaque d'arme au corps à corps : +2 au toucher, allonge {{distance:5ft}}, une cible. Touché : 2 (1d4) dégâts perforants."
       }
     },
     "traits": {
@@ -1209,7 +1209,7 @@
       },
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le vautour a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le vautour a l'avantage au jet d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   },
@@ -1218,13 +1218,13 @@
     "actions": {
       "hooves": {
         "name": "Sabots",
-        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge 1,5 mètre, une cible. Touché : 11 (2d6 + 4) dégâts contondants."
+        "description": "Attaque d'arme au corps à corps : +6 au toucher, allonge {{distance:5ft}}, une cible. Touché : 11 (2d6 + 4) dégâts contondants."
       }
     },
     "traits": {
       "trampling_charge": {
         "name": "Charge piétinante",
-        "description": "Si le cheval se déplace d'au moins 6 mètres en ligne droite vers une créature puis la touche avec une attaque de sabots lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 14 sous peine d'être jetée à terre. Si la cible est à terre, le cheval peut effectuer contre elle une autre attaque de sabots par une action bonus."
+        "description": "Si le cheval se déplace d'au moins {{distance:20ft}} en ligne droite vers une créature puis la touche avec une attaque de sabots lors du même tour, la cible doit réussir un jet de sauvegarde de Force DD 14 sous peine d'être jetée à terre. Si la cible est à terre, le cheval peut effectuer contre elle une autre attaque de sabots par une action bonus."
       }
     }
   },
@@ -1233,7 +1233,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge 1,5 mètre, une cible. Touché : 1 dégât perforant."
+        "description": "Attaque d'arme au corps à corps : +5 au toucher, allonge {{distance:5ft}}, une cible. Touché : 1 dégât perforant."
       }
     },
     "traits": {
@@ -1248,7 +1248,7 @@
     "actions": {
       "bite": {
         "name": "Morsure",
-        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge 1,5 mètre, une cible. Touché : 7 (2d4 + 2) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
+        "description": "Attaque d'arme au corps à corps : +4 au toucher, allonge {{distance:5ft}}, une cible. Touché : 7 (2d4 + 2) dégâts perforants. Si la cible est une créature, elle doit réussir un jet de sauvegarde de Force DD 11 sous peine d'être jetée à terre."
       }
     },
     "traits": {
@@ -1258,7 +1258,7 @@
       },
       "pack_tactics": {
         "name": "Tactique de meute",
-        "description": "Le loup a l'avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve à 1,5 mètre ou moins de cette créature et que cet allié n'est pas incapable d'agir."
+        "description": "Le loup a l'avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
   }

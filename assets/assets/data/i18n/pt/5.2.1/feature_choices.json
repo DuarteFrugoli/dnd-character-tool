@@ -177,7 +177,7 @@
       },
       "distant_spell": {
         "name": "Magia Distante",
-        "description": "Gaste 1 Ponto de Feitiçaria para dobrar o alcance de uma magia com alcance de pelo menos 5 pés, ou para tornar o alcance Toque igual a 30 pés."
+        "description": "Gaste 1 Ponto de Feitiçaria para dobrar o alcance de uma magia com alcance de pelo menos {{distance:5ft}}, ou para tornar o alcance Toque igual a {{distance:30ft}}."
       },
       "empowered_spell": {
         "name": "Magia Potencializada",
@@ -370,7 +370,7 @@
     "giant_ancestries": {
       "cloud": {
         "name": "Passo das Nuvens",
-        "description": "Teleporte-se até 30 pés como Ação Bônus."
+        "description": "Teleporte-se até {{distance:30ft}} como Ação Bônus."
       },
       "fire": {
         "name": "Queimadura do Fogo",
@@ -779,7 +779,7 @@
       },
       "devils_sight": {
         "name": "Visão Diabólica",
-        "description": "Você enxerga normalmente em Luz Fraca e Escuridão, mágicas ou não mágicas, a até 120 pés de você."
+        "description": "Você enxerga normalmente em Luz Fraca e Escuridão, mágicas ou não mágicas, a até {{distance:120ft}} de você."
       },
       "devouring_blade": {
         "name": "Lâmina Devoradora",
@@ -795,7 +795,7 @@
       },
       "eldritch_spear": {
         "name": "Lança Mística",
-        "description": "Escolha um dos seus truques de Bruxo conhecidos que cause dano e tenha alcance de 10 pés ou mais. Ao lançá-lo, seu alcance aumenta em um número de pés igual a 30 vezes seu nível de Bruxo."
+        "description": "Escolha um dos seus truques de Bruxo conhecidos que cause dano e tenha alcance de {{distance:10+ft}}. Ao lançá-lo, seu alcance aumenta em {{distance:30ft}} para cada nível de Bruxo que você tiver."
       },
       "fiendish_vigor": {
         "name": "Vigor Infernal",
@@ -803,7 +803,7 @@
       },
       "gaze_of_two_minds": {
         "name": "Olhar de Duas Mentes",
-        "description": "Como Ação Bônus, toque uma criatura voluntária para perceber por meio dos sentidos dela até o fim do seu próximo turno. Enquanto ela estiver no mesmo plano de existência que você, use uma Ação Bônus nos turnos seguintes para manter a conexão até o fim do seu próximo turno. A conexão termina se você não a mantiver assim.\n\nEnquanto percebe por meio dos sentidos da criatura, você se beneficia dos sentidos especiais dela e pode lançar magias como se estivesse no seu espaço ou no espaço dela, desde que ambos estejam a até 60 pés um do outro."
+        "description": "Como Ação Bônus, toque uma criatura voluntária para perceber por meio dos sentidos dela até o fim do seu próximo turno. Enquanto ela estiver no mesmo plano de existência que você, use uma Ação Bônus nos turnos seguintes para manter a conexão até o fim do seu próximo turno. A conexão termina se você não a mantiver assim.\n\nEnquanto percebe por meio dos sentidos da criatura, você se beneficia dos sentidos especiais dela e pode lançar magias como se estivesse no seu espaço ou no espaço dela, desde que ambos estejam a até {{distance:60ft}} um do outro."
       },
       "gift_of_the_depths": {
         "name": "Dádiva das Profundezas",
@@ -815,7 +815,7 @@
       },
       "investment_of_the_chain_master": {
         "name": "Investidura do Mestre da Corrente",
-        "description": "Quando você lança Encontrar Familiar, infunde o familiar invocado com parte do seu poder místico, concedendo-lhe os seguintes benefícios.\n\nAéreo ou Aquático. O familiar recebe Deslocamento de Voo ou de Natação (à sua escolha) de 40 pés.\n\nAtaque Rápido. Como Ação Bônus, você pode ordenar que o familiar realize a ação Atacar.\n\nDano Necrótico ou Radiante. Sempre que o familiar causar dano de Concussão, Perfurante ou Cortante, você pode fazer com que cause dano Necrótico ou Radiante em vez disso.\n\nSua CD de Resistência. Se o familiar obrigar uma criatura a fazer um teste de resistência, usa sua CD de resistência de magia.\n\nResistência. Quando o familiar sofre dano, você pode usar uma Reação para conceder a ele Resistência a esse dano."
+        "description": "Quando você lança Encontrar Familiar, infunde o familiar invocado com parte do seu poder místico, concedendo-lhe os seguintes benefícios.\n\nAéreo ou Aquático. O familiar recebe Deslocamento de Voo ou de Natação (à sua escolha) de {{distance:40ft}}.\n\nAtaque Rápido. Como Ação Bônus, você pode ordenar que o familiar realize a ação Atacar.\n\nDano Necrótico ou Radiante. Sempre que o familiar causar dano de Concussão, Perfurante ou Cortante, você pode fazer com que cause dano Necrótico ou Radiante em vez disso.\n\nSua CD de Resistência. Se o familiar obrigar uma criatura a fazer um teste de resistência, usa sua CD de resistência de magia.\n\nResistência. Quando o familiar sofre dano, você pode usar uma Reação para conceder a ele Resistência a esse dano."
       },
       "lessons_of_the_first_ones": {
         "name": "Lições dos Primeiros",
@@ -847,7 +847,7 @@
       },
       "pact_of_the_blade": {
         "name": "Pacto da Lâmina",
-        "description": "Como Ação Bônus, você pode conjurar em sua mão uma arma do pacto — uma arma Simples ou Marcial corpo a corpo à sua escolha, com a qual cria um vínculo — ou vincular-se a uma arma mágica que tocar. Você não pode criar vínculo com uma arma mágica sintonizada com outra pessoa ou vinculada a outro Bruxo. Enquanto o vínculo durar, você tem proficiência com a arma e pode usá-la como Foco de Conjuração.\n\nAo atacar com a arma vinculada, você pode usar seu modificador de Carisma nas jogadas de ataque e dano em vez de Força ou Destreza; também pode fazer a arma causar dano Necrótico, Psíquico ou Radiante, ou seu tipo de dano normal.\n\nO vínculo termina se você usar novamente a Ação Bônus desta habilidade, se a arma ficar a mais de 5 pés de você por 1 minuto ou mais, ou se você morrer. Uma arma conjurada desaparece quando o vínculo termina."
+        "description": "Como Ação Bônus, você pode conjurar em sua mão uma arma do pacto — uma arma Simples ou Marcial corpo a corpo à sua escolha, com a qual cria um vínculo — ou vincular-se a uma arma mágica que tocar. Você não pode criar vínculo com uma arma mágica sintonizada com outra pessoa ou vinculada a outro Bruxo. Enquanto o vínculo durar, você tem proficiência com a arma e pode usá-la como Foco de Conjuração.\n\nAo atacar com a arma vinculada, você pode usar seu modificador de Carisma nas jogadas de ataque e dano em vez de Força ou Destreza; também pode fazer a arma causar dano Necrótico, Psíquico ou Radiante, ou seu tipo de dano normal.\n\nO vínculo termina se você usar novamente a Ação Bônus desta habilidade, se a arma ficar a mais de {{distance:5ft}} de você por 1 minuto ou mais, ou se você morrer. Uma arma conjurada desaparece quando o vínculo termina."
       },
       "pact_of_the_chain": {
         "name": "Pacto da Corrente",
@@ -859,7 +859,7 @@
       },
       "repelling_blast": {
         "name": "Rajada Repulsora",
-        "description": "Escolha um dos seus truques de Bruxo conhecidos que exija uma jogada de ataque. Ao acertar uma criatura Grande ou menor com o truque, você pode empurrá-la até 10 pés diretamente para longe de você."
+        "description": "Escolha um dos seus truques de Bruxo conhecidos que exija uma jogada de ataque. Ao acertar uma criatura Grande ou menor com o truque, você pode empurrá-la até {{distance:10ft}} diretamente para longe de você."
       },
       "thirsting_blade": {
         "name": "Lâmina Sedenta",
@@ -875,7 +875,7 @@
       },
       "witch_sight": {
         "name": "Visão de Bruxa",
-        "description": "Você tem Visão Verdadeira com alcance de 30 pés."
+        "description": "Você tem Visão Verdadeira com alcance de {{distance:30ft}}."
       }
     }
   },

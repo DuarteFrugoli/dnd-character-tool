@@ -155,7 +155,7 @@
   },
   "Acid (vial)": {
     "name": "Acido (fiala)",
-    "description": "Con un'azione, è possibile spruzzare il contenuto di questa fiala su una creatura entro 1,5 metri o lanciarla fino a 6 metri, rompendola all'impatto. Una creatura subisce 2d6 danni da acido se colpisce."
+    "description": "Con un'azione, è possibile spruzzare il contenuto di questa fiala su una creatura entro {{distance:5ft}} o lanciarla fino a {{distance:20ft}}, rompendola all'impatto. Una creatura subisce 2d6 danni da acido se colpisce."
   },
   "Alchemist's Fire": {
     "name": "Il fuoco dell'alchimista",
@@ -255,11 +255,11 @@
   },
   "Caltrops (bag of 20)": {
     "name": "Triboli (sacchetto da 20)",
-    "description": "Spargi su un'area di 1,5 metri. Le creature che si muovono attraverso devono effettuare un tiro salvezza su Destrezza con CD 15 o fermarsi e subire 1 danno perforante (velocità ridotta di 3 metri finché non vengono guarite)."
+    "description": "Spargi su un'area di {{distance:5ft}}. Le creature che si muovono attraverso devono effettuare un tiro salvezza su Destrezza con CD 15 o fermarsi e subire 1 danno perforante (velocità ridotta di {{distance:10ft}} finché non vengono guarite)."
   },
   "Candle": {
     "name": "Candela",
-    "description": "Illumina un raggio di 1,5 metri di luce intensa e 1,5 metri di luce fioca per 1 ora."
+    "description": "Illumina un raggio di {{distance:5ft}} di luce intensa e {{distance:5ft}} di luce fioca per 1 ora."
   },
   "Case, crossbow bolt": {
     "name": "Custodia, dardo di balestra",
@@ -343,7 +343,7 @@
   },
   "Holy Water (flask)": {
     "name": "Acqua Santa (fiaschetta)",
-    "description": "Come azione, schizza una creatura entro 1,5 metri o lanciala fino a 6 metri. Se colpisce, un immondo o un non morto subisce 2d6 danni radiosi."
+    "description": "Come azione, schizza una creatura entro {{distance:5ft}} o lanciala fino a {{distance:20ft}}. Se colpisce, un immondo o un non morto subisce 2d6 danni radiosi."
   },
   "Hourglass": {
     "name": "Clessidra",
@@ -375,19 +375,19 @@
   },
   "Ladder (10-foot)": {
     "name": "Scala (3 metri)",
-    "description": "Una scala di legno di 3 metri."
+    "description": "Una scala di legno di {{distance:10ft}}."
   },
   "Lamp": {
     "name": "Lampada",
-    "description": "Brucia olio (1 pinta = 6 ore). Diffonde luce intensa in un raggio di 4,5 metri e luce fioca per ulteriori 9 metri."
+    "description": "Brucia olio (1 pinta = 6 ore). Diffonde luce intensa in un raggio di {{distance:15ft}} e luce fioca per ulteriori {{distance:30ft}}."
   },
   "Lantern, bullseye": {
     "name": "Lanterna, bersaglio",
-    "description": "Brucia olio (1 pinta = 6 ore). Cono di luce intensa di 18 metri, ulteriori 18 metri di luce fioca."
+    "description": "Brucia olio (1 pinta = 6 ore). Cono di luce intensa di {{distance:60ft}}, ulteriori {{distance:60ft}} di luce fioca."
   },
   "Lantern, hooded": {
     "name": "Lanterna, con cappuccio",
-    "description": "Brucia olio (1 pinta = 6 ore). Luce intensa con raggio di 9 metri, luce fioca aggiuntiva di 9 metri. Può essere incappucciato per ridurre la luce fioca a 1,5 metri."
+    "description": "Brucia olio (1 pinta = 6 ore). Luce intensa con raggio di {{distance:30ft}}, luce fioca aggiuntiva di {{distance:30ft}}. Può essere incappucciato per ridurre la luce fioca a {{distance:5ft}}."
   },
   "Lock": {
     "name": "Serratura",
@@ -439,7 +439,7 @@
   },
   "Pole (10-foot)": {
     "name": "Palo (3 metri)",
-    "description": "Un palo di legno di 3 metri."
+    "description": "Un palo di legno di {{distance:10ft}}."
   },
   "Pot, iron": {
     "name": "Pentola, ferro",
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "Fischio di segnale",
-    "description": "Un piccolo fischio metallico udibile fino a 180 metri di distanza."
+    "description": "Un piccolo fischio metallico udibile fino a {{distance:600ft}} di distanza."
   },
   "Signet Ring": {
     "name": "Anello con sigillo",
@@ -515,7 +515,7 @@
   },
   "String (10 feet)": {
     "name": "Corda (3 metri)",
-    "description": "Una corda lunga 3 metri."
+    "description": "Una corda lunga {{distance:10ft}}."
   },
   "Tent, two-person": {
     "name": "Tenda, due persone",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "Torcia",
-    "description": "Brucia 1 ora. Luce intensa nel raggio di 6 metri, luce fioca in ulteriori 6 metri. Può essere usato come arma improvvisata (1d4 danni da fuoco)."
+    "description": "Brucia 1 ora. Luce intensa nel raggio di {{distance:20ft}}, luce fioca in ulteriori {{distance:20ft}}. Può essere usato come arma improvvisata (1d4 danni da fuoco)."
   },
   "Vial": {
     "name": "Fiala",

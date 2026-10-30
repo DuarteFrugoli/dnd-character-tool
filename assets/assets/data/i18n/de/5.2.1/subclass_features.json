@@ -11,11 +11,11 @@
       },
       "Retaliation": {
         "name": "Vergeltung",
-        "description": "Wenn eine Kreatur innerhalb von 1,5 Metern dir Schaden zufügt, kannst du als Reaktion einen Nahkampfangriff mit einer Waffe oder einem Waffenlosen Schlag gegen sie ausführen."
+        "description": "Wenn eine Kreatur innerhalb von {{distance:5ft|dat}} dir Schaden zufügt, kannst du als Reaktion einen Nahkampfangriff mit einer Waffe oder einem Waffenlosen Schlag gegen sie ausführen."
       },
       "Intimidating Presence": {
         "name": "Einschüchternde Präsenz",
-        "description": "Als Bonusaktion legen von dir gewählte Kreaturen in einer Ausstrahlung von 9 Metern einen Weisheitsrettungswurf ab (SG 8 + Stärkemodifikator + Übungsbonus) oder werden 1 Minute Verängstigt; am Ende jedes Zuges wiederholen sie den Wurf. Einmal pro Langer Rast, oder verbrauche eine Wutnutzung, um das Merkmal wiederherzustellen."
+        "description": "Als Bonusaktion legen von dir gewählte Kreaturen in einer Ausstrahlung von {{distance:30ft|dat}} einen Weisheitsrettungswurf ab (SG 8 + Stärkemodifikator + Übungsbonus) oder werden 1 Minute Verängstigt; am Ende jedes Zuges wiederholen sie den Wurf. Einmal pro Langer Rast, oder verbrauche eine Wutnutzung, um das Merkmal wiederherzustellen."
       }
     }
   },
@@ -27,7 +27,7 @@
       },
       "Cutting Words": {
         "name": "Schneidende Worte",
-        "description": "Wenn eine sichtbare Kreatur innerhalb von 18 Metern Schaden würfelt oder bei einer Attributsprobe oder einem Angriffswurf Erfolg hat, verwende deine Reaktion und eine Bardische Inspiration. Ziehe einen Wurf deines Inspirationswürfels vom Ergebnis ab; dadurch kann ein Erfolg scheitern."
+        "description": "Wenn eine sichtbare Kreatur innerhalb von {{distance:60ft|dat}} Schaden würfelt oder bei einer Attributsprobe oder einem Angriffswurf Erfolg hat, verwende deine Reaktion und eine Bardische Inspiration. Ziehe einen Wurf deines Inspirationswürfels vom Ergebnis ab; dadurch kann ein Erfolg scheitern."
       },
       "Magical Discoveries": {
         "name": "Magische Entdeckungen",
@@ -51,7 +51,7 @@
       },
       "Preserve Life": {
         "name": "Leben bewahren",
-        "description": "Verbrauche als Aktion Magie Göttliche Macht und verteile Trefferpunkte in Höhe des Fünffachen deiner Klerikerstufe auf Blutende Kreaturen innerhalb von 9 Metern, dich eingeschlossen. Damit kann niemand über die Hälfte seines Trefferpunktemaximums geheilt werden."
+        "description": "Verbrauche als Aktion Magie Göttliche Macht und verteile Trefferpunkte in Höhe des Fünffachen deiner Klerikerstufe auf Blutende Kreaturen innerhalb von {{distance:30ft|dat}}, dich eingeschlossen. Damit kann niemand über die Hälfte seines Trefferpunktemaximums geheilt werden."
       },
       "Blessed Healer": {
         "name": "Gesegneter Heiler",
@@ -71,7 +71,7 @@
       },
       "Land's Aid": {
         "name": "Hilfe des Landes",
-        "description": "Verbrauche als Aktion Magie Tiergestalt, um eine Kugel mit 3 Meter Radius innerhalb von 18 Metern zu erschaffen. Gewählte Kreaturen darin legen einen Konstitutionsrettungswurf ab: 2W6 nekrotischer Schaden bei Misserfolg, halb so viel bei Erfolg; eine Kreatur darin heilt außerdem 2W6. Beide steigen auf 3W6 auf Druidenstufe 10 und 4W6 auf Stufe 14."
+        "description": "Verbrauche als Aktion Magie Tiergestalt, um eine Kugel mit {{distance:10ft}} Radius innerhalb von {{distance:60ft|dat}} zu erschaffen. Gewählte Kreaturen darin legen einen Konstitutionsrettungswurf ab: 2W6 nekrotischer Schaden bei Misserfolg, halb so viel bei Erfolg; eine Kreatur darin heilt außerdem 2W6. Beide steigen auf 3W6 auf Druidenstufe 10 und 4W6 auf Stufe 14."
       },
       "Natural Recovery": {
         "name": "Natürliche Erholung",
@@ -83,7 +83,7 @@
       },
       "Nature's Sanctuary": {
         "name": "Zuflucht der Natur",
-        "description": "Verbrauche als Aktion Magie Tiergestalt, um für 1 Minute einen Würfel von 4,5 Metern auf dem Boden innerhalb von 36 Metern zu erschaffen. Er endet, wenn du kampfunfähig wirst oder stirbst. Du und Verbündete darin haben Halbe Deckung; Verbündete erhalten auch deine Resistenz durch Schutz der Natur. Als Bonusaktion bewege den Würfel bis zu 18 Meter zu Boden innerhalb von 36 Metern."
+        "description": "Verbrauche als Aktion Magie Tiergestalt, um für 1 Minute einen Würfel von {{distance:15ft|dat}} auf dem Boden innerhalb von {{distance:120ft|dat}} zu erschaffen. Er endet, wenn du kampfunfähig wirst oder stirbst. Du und Verbündete darin haben Halbe Deckung; Verbündete erhalten auch deine Resistenz durch Schutz der Natur. Als Bonusaktion bewege den Würfel bis zu {{distance:60ft}} zu Boden innerhalb von {{distance:120ft|dat}}."
       }
     }
   },
@@ -119,7 +119,7 @@
     "Warrior of the Open Hand": {
       "Open Hand Technique": {
         "name": "Technik der offenen Hand",
-        "description": "Trifft ein Angriff deines Schlaghagels, wähle: Das Ziel kann bis zu seinem nächsten Zug keine Gelegenheitsangriffe machen; ein misslungener Stärkerettungswurf stößt es bis zu 4,5 Meter weg; oder ein misslungener Geschicklichkeitsrettungswurf wirft es Liegend."
+        "description": "Trifft ein Angriff deines Schlaghagels, wähle: Das Ziel kann bis zu seinem nächsten Zug keine Gelegenheitsangriffe machen; ein misslungener Stärkerettungswurf stößt es bis zu {{distance:15ft}} weg; oder ein misslungener Geschicklichkeitsrettungswurf wirft es Liegend."
       },
       "Wholeness of Body": {
         "name": "Ganzheit des Körpers",
@@ -143,7 +143,7 @@
       },
       "Sacred Weapon": {
         "name": "Heilige Waffe",
-        "description": "Bei der Angriffsaktion verbrauche Göttliche Macht, um eine gehaltene Nahkampfwaffe 10 Minuten zu stärken. Addiere deinen Charismamodifikator (mindestens +1) zu Angriffswürfen; jeder Treffer kann normalen oder gleißenden Schaden verursachen. Sie spendet 6 Meter helles und weitere 6 Meter dämmriges Licht; der Effekt endet, wenn du sie nicht mehr trägst."
+        "description": "Bei der Angriffsaktion verbrauche Göttliche Macht, um eine gehaltene Nahkampfwaffe 10 Minuten zu stärken. Addiere deinen Charismamodifikator (mindestens +1) zu Angriffswürfen; jeder Treffer kann normalen oder gleißenden Schaden verursachen. Sie spendet {{distance:20ft}} helles und weitere {{distance:20ft}} dämmriges Licht; der Effekt endet, wenn du sie nicht mehr trägst."
       },
       "Aura of Devotion": {
         "name": "Aura der Hingabe",
@@ -167,7 +167,7 @@
       },
       "Hunter's Prey": {
         "name": "Beute des Jägers",
-        "description": "Wähle eine Option, nach Kurzer oder Langer Rast änderbar. Kolosstöter: Einmal pro Zug verursacht ein Waffentreffer gegen eine Kreatur mit verlorenen Trefferpunkten +1W8 Schaden. Hordenbrecher: Einmal in deinem Zug bei einem Waffenangriff greife eine andere Kreatur innerhalb von 1,5 Metern vom ersten Ziel, in Reichweite und bisher in diesem Zug nicht angegriffen, an."
+        "description": "Wähle eine Option, nach Kurzer oder Langer Rast änderbar. Kolosstöter: Einmal pro Zug verursacht ein Waffentreffer gegen eine Kreatur mit verlorenen Trefferpunkten +1W8 Schaden. Hordenbrecher: Einmal in deinem Zug bei einem Waffenangriff greife eine andere Kreatur innerhalb von {{distance:5ft|dat}} vom ersten Ziel, in Reichweite und bisher in diesem Zug nicht angegriffen, an."
       },
       "Defensive Tactics": {
         "name": "Verteidigungstaktiken",
@@ -175,7 +175,7 @@
       },
       "Superior Hunter's Prey": {
         "name": "Überlegene Beute des Jägers",
-        "description": "Einmal pro Zug, wenn du einer mit Mal des Jägers markierten Kreatur Schaden zufügst, füge einer anderen sichtbaren Kreatur innerhalb von 9 Metern vom markierten Ziel den zusätzlichen Zauberschaden zu."
+        "description": "Einmal pro Zug, wenn du einer mit Mal des Jägers markierten Kreatur Schaden zufügst, füge einer anderen sichtbaren Kreatur innerhalb von {{distance:30ft|dat}} vom markierten Ziel den zusätzlichen Zauberschaden zu."
       },
       "Superior Hunter's Defense": {
         "name": "Überlegene Verteidigung des Jägers",
@@ -223,7 +223,7 @@
       },
       "Dragon Wings": {
         "name": "Drachenflügel",
-        "description": "Als Bonusaktion erhalte Flügel und eine Flugbewegungsrate von 18 Metern für 1 Stunde oder bis du sie auflöst. Einmal pro Langer Rast, oder verbrauche 3 Zaubereipunkte zur Wiederherstellung."
+        "description": "Als Bonusaktion erhalte Flügel und eine Flugbewegungsrate von {{distance:60ft|dat}} für 1 Stunde oder bis du sie auflöst. Einmal pro Langer Rast, oder verbrauche 3 Zaubereipunkte zur Wiederherstellung."
       },
       "Dragon Companion": {
         "name": "Drachengefährte",
@@ -235,7 +235,7 @@
     "Fiend Patron": {
       "Dark One's Blessing": {
         "name": "Segen des Dunklen",
-        "description": "Wenn du einen Feind auf 0 Trefferpunkte bringst, erhältst du temporäre Trefferpunkte in Höhe von Charismamodifikator + Hexenmeisterstufe (mindestens 1). Du erhältst sie auch, wenn jemand anderes einen Feind innerhalb von 3 Metern von dir auf 0 bringt."
+        "description": "Wenn du einen Feind auf 0 Trefferpunkte bringst, erhältst du temporäre Trefferpunkte in Höhe von Charismamodifikator + Hexenmeisterstufe (mindestens 1). Du erhältst sie auch, wenn jemand anderes einen Feind innerhalb von {{distance:10ft|dat}} von dir auf 0 bringt."
       },
       "Fiend Spells": {
         "name": "Zauber des Unholds",

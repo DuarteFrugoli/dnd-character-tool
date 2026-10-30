@@ -174,11 +174,11 @@
   },
   "Acid": {
     "name": "强酸",
-    "description": "以向20尺内目标投掷一瓶强酸代替一次攻击。目标若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到2d6强酸伤害。"
+    "description": "以向{{distance:20ft|short}}内目标投掷一瓶强酸代替一次攻击。目标若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到2d6强酸伤害。"
   },
   "Alchemist's Fire": {
     "name": "炼金之火",
-    "description": "以向20尺内目标投掷一瓶炼金之火代替一次攻击。目标若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到1d4火焰伤害并开始燃烧。"
+    "description": "以向{{distance:20ft|short}}内目标投掷一瓶炼金之火代替一次攻击。目标若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到1d4火焰伤害并开始燃烧。"
   },
   "Antitoxin": {
     "name": "抗毒剂",
@@ -214,7 +214,7 @@
   },
   "Ball Bearings": {
     "name": "金属滚珠",
-    "description": "用使用动作在10尺内平坦的10尺见方区域撒开。进入的生物须通过DC 10敏捷豁免，否则倒地。回收需要10分钟。"
+    "description": "用使用动作在{{distance:10ft|short}}内平坦的{{distance:10ft|short}}见方区域撒开。进入的生物须通过DC 10敏捷豁免，否则倒地。回收需要10分钟。"
   },
   "Barrel": {
     "name": "木桶",
@@ -230,7 +230,7 @@
   },
   "Bell": {
     "name": "铃铛",
-    "description": "用使用动作敲响，声音在60尺内可听见。"
+    "description": "用使用动作敲响，声音在{{distance:60ft|short}}内可听见。"
   },
   "Blanket": {
     "name": "毛毯",
@@ -258,11 +258,11 @@
   },
   "Caltrops": {
     "name": "铁蒺藜",
-    "description": "用使用动作撒在5尺见方区域。进入的生物须通过DC 15敏捷豁免，否则受到1点穿刺伤害，且速度变为0直至其下回合。回收需要10分钟。"
+    "description": "用使用动作撒在{{distance:5ft|short}}见方区域。进入的生物须通过DC 15敏捷豁免，否则受到1点穿刺伤害，且速度变为0直至其下回合。回收需要10分钟。"
   },
   "Candle": {
     "name": "蜡烛",
-    "description": "燃烧1小时，向5尺内提供明亮光照，额外5尺提供微光。"
+    "description": "燃烧1小时，向{{distance:5ft|short}}内提供明亮光照，额外{{distance:5ft|short}}提供微光。"
   },
   "Case, Crossbow Bolt": {
     "name": "弩矢盒",
@@ -282,7 +282,7 @@
   },
   "Climber's Kit": {
     "name": "攀爬工具组",
-    "description": "包括鞋尖、手套、岩钉和安全带。以使用动作系住后，坠落距离和离锚点的移动距离均被限制为25尺。"
+    "description": "包括鞋尖、手套、岩钉和安全带。以使用动作系住后，坠落距离和离锚点的移动距离均被限制为{{distance:25ft|short}}。"
   },
   "Clothes, Fine": {
     "name": "华服",
@@ -342,7 +342,7 @@
   },
   "Grappling Hook": {
     "name": "抓钩",
-    "description": "以使用动作将其掷向50尺内的挂点。通过DC 13敏捷（特技）检定可固定，然后可攀爬系上的绳索。"
+    "description": "以使用动作将其掷向{{distance:50ft|short}}内的挂点。通过DC 13敏捷（特技）检定可固定，然后可攀爬系上的绳索。"
   },
   "Healer's Kit": {
     "name": "医药包",
@@ -366,7 +366,7 @@
   },
   "Holy Water": {
     "name": "圣水",
-    "description": "以向20尺内生物投掷一瓶圣水代替一次攻击。邪魔或亡灵若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到2d8光耀伤害。"
+    "description": "以向{{distance:20ft|short}}内生物投掷一瓶圣水代替一次攻击。邪魔或亡灵若在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，受到2d8光耀伤害。"
   },
   "Hunting Trap": {
     "name": "捕兽夹",
@@ -386,19 +386,19 @@
   },
   "Ladder": {
     "name": "梯子",
-    "description": "一架10尺长的梯子。"
+    "description": "一架{{distance:10ft|short}}长的梯子。"
   },
   "Lamp": {
     "name": "油灯",
-    "description": "燃烧油，向15尺内提供明亮光照，额外30尺提供微光。"
+    "description": "燃烧油，向{{distance:15ft|short}}内提供明亮光照，额外{{distance:30ft|short}}提供微光。"
   },
   "Lantern, Bullseye": {
     "name": "牛眼提灯",
-    "description": "燃烧油，在60尺锥形内提供明亮光照，额外60尺提供微光。"
+    "description": "燃烧油，在{{distance:60ft|short}}锥形内提供明亮光照，额外{{distance:60ft|short}}提供微光。"
   },
   "Lantern, Hooded": {
     "name": "罩灯",
-    "description": "燃烧油，向30尺内提供明亮光照，额外30尺提供微光。放下罩盖后仅在5尺内提供微光。"
+    "description": "燃烧油，向{{distance:30ft|short}}内提供明亮光照，额外{{distance:30ft|short}}提供微光。放下罩盖后仅在{{distance:5ft|short}}内提供微光。"
   },
   "Lock": {
     "name": "锁",
@@ -422,7 +422,7 @@
   },
   "Net": {
     "name": "网",
-    "description": "以向15尺内的生物投网代替一次攻击。若其在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，则陷入受束缚状态；巨型或更大生物自动成功。逃脱需DC 10力量（运动）。"
+    "description": "以向{{distance:15ft|short}}内的生物投网代替一次攻击。若其在敏捷豁免（DC 8＋敏捷调整值＋熟练加值）中失败，则陷入受束缚状态；巨型或更大生物自动成功。逃脱需DC 10力量（运动）。"
   },
   "Oil": {
     "name": "油",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "香水",
-    "description": "4盎司一瓶。涂抹后1小时内，说服5尺内态度冷淡的人形生物的魅力（游说）检定具有优势。"
+    "description": "4盎司一瓶。涂抹后1小时内，说服{{distance:5ft|short}}内态度冷淡的人形生物的魅力（游说）检定具有优势。"
   },
   "Poison, Basic": {
     "name": "基础毒药",
@@ -446,7 +446,7 @@
   },
   "Pole": {
     "name": "长杆",
-    "description": "10尺长杆。用它撑杆跳时，进行跳高或跳远的力量（运动）检定具有优势。"
+    "description": "{{distance:10ft|short}}长杆。用它撑杆跳时，进行跳高或跳远的力量（运动）检定具有优势。"
   },
   "Pot, Iron": {
     "name": "铁锅",
@@ -490,11 +490,11 @@
   },
   "Shovel": {
     "name": "铲子",
-    "description": "在泥土或类似材料中挖掘1小时，可挖出边长5尺的立方空间。"
+    "description": "在泥土或类似材料中挖掘1小时，可挖出边长{{distance:5ft|short}}的立方空间。"
   },
   "Signal Whistle": {
     "name": "信号哨",
-    "description": "用使用动作吹响，声音在600尺内可听见。"
+    "description": "用使用动作吹响，声音在{{distance:600ft|short}}内可听见。"
   },
   "Spellbook": {
     "name": "法术书",
@@ -510,7 +510,7 @@
   },
   "String": {
     "name": "细绳",
-    "description": "10尺长细绳；打结需要使用动作。"
+    "description": "{{distance:10ft|short}}长细绳；打结需要使用动作。"
   },
   "Tent": {
     "name": "帐篷",
@@ -522,7 +522,7 @@
   },
   "Torch": {
     "name": "火把",
-    "description": "燃烧1小时，向20尺内提供明亮光照，额外20尺提供微光。也可作为简易近战武器，命中造成1点火焰伤害。"
+    "description": "燃烧1小时，向{{distance:20ft|short}}内提供明亮光照，额外{{distance:20ft|short}}提供微光。也可作为简易近战武器，命中造成1点火焰伤害。"
   },
   "Vial": {
     "name": "小瓶",
@@ -535,7 +535,7 @@
   "weaponMasteries": {
     "cleave": {
       "name": "顺势斩",
-      "description": "每回合一次，以近战攻击命中后，可用同一武器攻击距首名目标5尺内且在你触及范围内的另一生物。命中时造成武器伤害，但不加入正值属性调整值。"
+      "description": "每回合一次，以近战攻击命中后，可用同一武器攻击距首名目标{{distance:5ft|short}}内且在你触及范围内的另一生物。命中时造成武器伤害，但不加入正值属性调整值。"
     },
     "graze": {
       "name": "擦击",
@@ -547,7 +547,7 @@
     },
     "push": {
       "name": "推击",
-      "description": "命中时，将一名大型或更小的生物沿远离你的直线推开最多10尺。"
+      "description": "命中时，将一名大型或更小的生物沿远离你的直线推开最多{{distance:10ft|short}}。"
     },
     "sap": {
       "name": "削弱",
@@ -555,7 +555,7 @@
     },
     "slow": {
       "name": "缓速",
-      "description": "造成伤害的命中使目标速度降低10尺，直至你下回合开始。多次命中不会叠加减速。"
+      "description": "造成伤害的命中使目标速度降低{{distance:10ft|short}}，直至你下回合开始。多次命中不会叠加减速。"
     },
     "topple": {
       "name": "绊倒",

@@ -155,7 +155,7 @@
   },
   "Acid (vial)": {
     "name": "酸（小瓶）",
-    "description": "作为一个动作，你可以将这个小瓶中的内容物溅到 5 英尺内的生物身上，或者将其扔到 20 英尺外，在撞击时将其打破。生物被击中时会受到 2d6 酸伤害。"
+    "description": "作为一个动作，你可以将这个小瓶中的内容物溅到 {{distance:5ft}}内的生物身上，或者将其扔到 {{distance:20ft}}外，在撞击时将其打破。生物被击中时会受到 2d6 酸伤害。"
   },
   "Alchemist's Fire": {
     "name": "炼金术士之火",
@@ -255,11 +255,11 @@
   },
   "Caltrops (bag of 20)": {
     "name": "铁蒺藜（20枚）",
-    "description": "分散在 5 英尺的区域内。穿过的生物必须进行 DC 15 敏捷豁免，否则会停止并受到 1 点穿刺伤害（速度降低 10 英尺，直至痊愈）。"
+    "description": "分散在 {{distance:5ft}}的区域内。穿过的生物必须进行 DC 15 敏捷豁免，否则会停止并受到 1 点穿刺伤害（速度降低 {{distance:10ft}}，直至痊愈）。"
   },
   "Candle": {
     "name": "蜡烛",
-    "description": "照亮半径 5 英尺的亮光和 5 英尺的暗光，持续 1 小时。"
+    "description": "照亮半径 {{distance:5ft}}的亮光和 {{distance:5ft}}的暗光，持续 1 小时。"
   },
   "Case, crossbow bolt": {
     "name": "箱体，弩栓",
@@ -343,7 +343,7 @@
   },
   "Holy Water (flask)": {
     "name": "圣水（瓶）",
-    "description": "以一个动作，将生物溅到 5 英尺内或将其扔到 20 英尺之外。击中时，恶魔或不死生物会受到 2d6 光辉伤害。"
+    "description": "以一个动作，将生物溅到 {{distance:5ft}}内或将其扔到 {{distance:20ft}}之外。击中时，恶魔或不死生物会受到 2d6 光辉伤害。"
   },
   "Hourglass": {
     "name": "滴漏",
@@ -375,19 +375,19 @@
   },
   "Ladder (10-foot)": {
     "name": "梯子（10英尺）",
-    "description": "10英尺高的木梯。"
+    "description": "{{distance:10ft}}高的木梯。"
   },
   "Lamp": {
     "name": "灯",
-    "description": "燃烧油（1 品脱 = 6 小时）。在 15 英尺半径内发出明亮的光线，在另外 30 英尺的范围内发出昏暗的光线。"
+    "description": "燃烧油（1 品脱 = 6 小时）。在 {{distance:15ft}}半径内发出明亮的光线，在另外 {{distance:30ft}}的范围内发出昏暗的光线。"
   },
   "Lantern, bullseye": {
     "name": "灯笼、靶心",
-    "description": "燃烧油（1 品脱 = 6 小时）。 60 英尺的锥体亮光，额外的 60 英尺的暗光。"
+    "description": "燃烧油（1 品脱 = 6 小时）。 {{distance:60ft}}的锥体亮光，额外的 {{distance:60ft}}的暗光。"
   },
   "Lantern, hooded": {
     "name": "灯笼，带帽",
-    "description": "燃烧油（1 品脱 = 6 小时）。 30 英尺半径的亮光，额外 30 英尺的暗光。可以戴上帽子以减少 5 英尺处的昏暗光线。"
+    "description": "燃烧油（1 品脱 = 6 小时）。 {{distance:30ft}}半径的亮光，额外 {{distance:30ft}}的暗光。可以戴上帽子以减少 {{distance:5ft}}处的昏暗光线。"
   },
   "Lock": {
     "name": "锁",
@@ -439,7 +439,7 @@
   },
   "Pole (10-foot)": {
     "name": "杆（10 英尺）",
-    "description": "一根 10 英尺高的木杆。"
+    "description": "一根 {{distance:10ft}}高的木杆。"
   },
   "Pot, iron": {
     "name": "锅、铁",
@@ -491,7 +491,7 @@
   },
   "Signal Whistle": {
     "name": "信号哨",
-    "description": "600 英尺外都能听到的小金属哨子。"
+    "description": "{{distance:600ft}}外都能听到的小金属哨子。"
   },
   "Signet Ring": {
     "name": "图章戒指",
@@ -515,7 +515,7 @@
   },
   "String (10 feet)": {
     "name": "绳子（10 英尺）",
-    "description": "10 英尺长的绳子。"
+    "description": "{{distance:10ft}}长的绳子。"
   },
   "Tent, two-person": {
     "name": "帐篷，两人",
@@ -527,7 +527,7 @@
   },
   "Torch": {
     "name": "火把",
-    "description": "燃烧1小时。 20 英尺半径内有亮光，另外 20 英尺内有暗光。可用作简易武器（1d4 火焰伤害）。"
+    "description": "燃烧1小时。 {{distance:20ft}}半径内有亮光，另外 {{distance:20ft}}内有暗光。可用作简易武器（1d4 火焰伤害）。"
   },
   "Vial": {
     "name": "小瓶",

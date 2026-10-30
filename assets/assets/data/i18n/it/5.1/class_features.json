@@ -30,7 +30,7 @@
     },
     "Fast Movement": {
       "name": "Movimento rapido",
-      "description": "La tua velocità aumenta di 3 metri mentre non indossi un'armatura pesante."
+      "description": "La tua velocità aumenta di {{distance:10ft}} mentre non indossi un'armatura pesante."
     },
     "Feral Instinct": {
       "name": "Istinto Ferale",
@@ -92,7 +92,7 @@
     },
     "Countercharm": {
       "name": "Controfascino",
-      "description": "Ottieni la capacità di usare note musicali o parole di potere per interrompere gli effetti di influenza mentale. Con un'azione, puoi iniziare un'esibizione che dura fino alla fine del tuo turno successivo. Durante questo periodo, tu e qualsiasi creatura amica entro 9 metri da te avete vantaggio ai tiri salvezza contro l'essere spaventati o affascinati."
+      "description": "Ottieni la capacità di usare note musicali o parole di potere per interrompere gli effetti di influenza mentale. Con un'azione, puoi iniziare un'esibizione che dura fino alla fine del tuo turno successivo. Durante questo periodo, tu e qualsiasi creatura amica entro {{distance:30ft}} da te avete vantaggio ai tiri salvezza contro l'essere spaventati o affascinati."
     },
     "Magical Secrets": {
       "name": "Segreti magici",
@@ -208,7 +208,7 @@
     },
     "Unarmored Movement": {
       "name": "Movimento senza armatura",
-      "description": "La tua velocità aumenta mentre non indossi un'armatura o non impugni uno scudo: +3 metri al livello monaco 2, +4,5 metri al livello 6, +6 metri al livello 10, +7,5 metri al livello 14 e +9 metri al livello 18."
+      "description": "La tua velocità aumenta mentre non indossi un'armatura o non impugni uno scudo: +{{distance:10ft}} al livello monaco 2, +{{distance:15ft}} al livello 6, +{{distance:20ft}} al livello 10, +{{distance:25ft}} al livello 14 e +{{distance:30ft}} al livello 18."
     },
     "Monastic Tradition": {
       "name": "Tradizione monastica",
@@ -254,7 +254,7 @@
   "Paladin": {
     "Divine Sense": {
       "name": "Senso Divino",
-      "description": "La presenza di un forte male si registra nei tuoi sensi come un odore nocivo e un bene potente risuona nelle tue orecchie come una musica celestiale. Con un’azione, puoi aprire la tua consapevolezza per individuare tali forze. Fino alla fine del tuo turno successivo, conosci la posizione di qualsiasi celestiale, immondo o non morto entro 18 metri da te che non sia coperto da copertura totale."
+      "description": "La presenza di un forte male si registra nei tuoi sensi come un odore nocivo e un bene potente risuona nelle tue orecchie come una musica celestiale. Con un’azione, puoi aprire la tua consapevolezza per individuare tali forze. Fino alla fine del tuo turno successivo, conosci la posizione di qualsiasi celestiale, immondo o non morto entro {{distance:60ft}} da te che non sia coperto da copertura totale."
     },
     "Lay on Hands": {
       "name": "Imporre le mani",
@@ -290,11 +290,11 @@
     },
     "Aura of Protection": {
       "name": "Aura di protezione",
-      "description": "Ogni volta che tu o una creatura amica entro 3 metri da te dovete effettuare un Tiro Salvezza, la creatura ottiene un bonus al Tiro Salvezza pari al tuo modificatore di Carisma (con un bonus minimo di +1). Devi essere consapevole per concedere questo bonus."
+      "description": "Ogni volta che tu o una creatura amica entro {{distance:10ft}} da te dovete effettuare un Tiro Salvezza, la creatura ottiene un bonus al Tiro Salvezza pari al tuo modificatore di Carisma (con un bonus minimo di +1). Devi essere consapevole per concedere questo bonus."
     },
     "Aura of Courage": {
       "name": "Aura di coraggio",
-      "description": "Tu e le creature amiche entro 3 metri da te non potete essere spaventati mentre sei cosciente."
+      "description": "Tu e le creature amiche entro {{distance:10ft}} da te non potete essere spaventati mentre sei cosciente."
     },
     "Cleansing Touch": {
       "name": "Tocco purificatore",
@@ -324,7 +324,7 @@
     },
     "Primeval Awareness": {
       "name": "Consapevolezza primordiale",
-      "description": "Puoi usare la tua azione e spendere uno slot incantesimo da ranger per focalizzare la tua consapevolezza sulla regione intorno a te. Per 1 minuto per livello dello slot incantesimo speso, puoi percepire se sono presenti aberrazioni, celestiali, draghi, elementali, folletti, immondi o non morti entro 1,5 chilometri da te."
+      "description": "Puoi usare la tua azione e spendere uno slot incantesimo da ranger per focalizzare la tua consapevolezza sulla regione intorno a te. Per 1 minuto per livello dello slot incantesimo speso, puoi percepire se sono presenti aberrazioni, celestiali, draghi, elementali, folletti, immondi o non morti entro {{distance:1mi}} da te."
     },
     "Ability Score Improvement": {
       "name": "Aumento dei punteggi di caratteristica",
@@ -362,7 +362,7 @@
     },
     "Sneak Attack": {
       "name": "Attacco furtivo",
-      "description": "Sai come colpire in modo sottile e sfruttare la distrazione del nemico. Una volta per turno, puoi infliggere danni extra a una creatura colpita con un attacco se hai vantaggio sul tiro per colpire. L'attacco deve utilizzare un'arma fine o a distanza. Non hai bisogno di vantaggio se un altro nemico del bersaglio si trova entro 1,5 metri da esso, quel nemico non è incapacitato e non hai svantaggio. Il danno extra è 1d6 ai livelli da ladro 1-2, poi aumenta di 1d6 ogni due livelli da ladro: 2d6 al livello 3, 3d6 al livello 5, 4d6 al livello 7, 5d6 al livello 9, 6d6 al livello 11, 7d6 al livello 13, 8d6 al livello 15, 9d6 al livello 17 e 10d6 al livello 19."
+      "description": "Sai come colpire in modo sottile e sfruttare la distrazione del nemico. Una volta per turno, puoi infliggere danni extra a una creatura colpita con un attacco se hai vantaggio sul tiro per colpire. L'attacco deve utilizzare un'arma fine o a distanza. Non hai bisogno di vantaggio se un altro nemico del bersaglio si trova entro {{distance:5ft}} da esso, quel nemico non è incapacitato e non hai svantaggio. Il danno extra è 1d6 ai livelli da ladro 1-2, poi aumenta di 1d6 ogni due livelli da ladro: 2d6 al livello 3, 3d6 al livello 5, 4d6 al livello 7, 5d6 al livello 9, 6d6 al livello 11, 7d6 al livello 13, 8d6 al livello 15, 9d6 al livello 17 e 10d6 al livello 19."
     },
     "Thieves' Cant": {
       "name": "Gergo ladresco",
@@ -394,7 +394,7 @@
     },
     "Blindsense": {
       "name": "Senso cieco",
-      "description": "Se sei in grado di sentire, sei consapevole della posizione di qualsiasi creatura nascosta o invisibile entro 3 metri da te."
+      "description": "Se sei in grado di sentire, sei consapevole della posizione di qualsiasi creatura nascosta o invisibile entro {{distance:10ft}} da te."
     },
     "Slippery Mind": {
       "name": "Mente sfuggente",

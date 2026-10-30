@@ -1,7 +1,7 @@
 {
   "Darkvision": {
     "name": "Karanlık Görüş",
-    "description": "Bu özelliğin menzili içinde Loş Işığı Parlak Işık, Karanlığı Loş Işık gibi görürsün; karanlıkta yalnızca gri tonları ayırt edersin. Menzil Cüceler, Orklar ve Drow Elfleri için 120 fit, listelenen diğer türler için 60 fittir."
+    "description": "Bu özelliğin menzili içinde Loş Işığı Parlak Işık, Karanlığı Loş Işık gibi görürsün; karanlıkta yalnızca gri tonları ayırt edersin. Menzil Cüceler, Orklar ve Drow Elfleri için {{distance:120ft}}, listelenen diğer türler için {{distance:60ft|cop}}."
   },
   "Draconic Ancestry": {
     "name": "Ejderha Soyu",
@@ -9,7 +9,7 @@
   },
   "Breath Weapon": {
     "name": "Nefes Silahı",
-    "description": "Saldırı eyleminde bir saldırını 15 fitlik Koni veya 30 fit uzunluğunda, 5 fit genişliğinde Çizgi ile değiştir. Alandaki yaratıklar SG 8 + Dayanıklılık değiştiricin + Yeterlilik Bonusuna karşı Çeviklik kurtarma atışı yapar; başarısızlıkta soyunun türünde hasarın tamamını, başarıda yarısını alır. Hasar 1d10'dur; karakter seviyesi 5'te 2d10, 11'de 3d10 ve 17'de 4d10 olur. Uzun Dinlenme başına kullanım sayısı Yeterlilik Bonusuna eşittir."
+    "description": "Saldırı eyleminde bir saldırını {{distance:15ft|lik}} Koni veya {{distance:30ft}} uzunluğunda, {{distance:5ft}} genişliğinde Çizgi ile değiştir. Alandaki yaratıklar SG 8 + Dayanıklılık değiştiricin + Yeterlilik Bonusuna karşı Çeviklik kurtarma atışı yapar; başarısızlıkta soyunun türünde hasarın tamamını, başarıda yarısını alır. Hasar 1d10'dur; karakter seviyesi 5'te 2d10, 11'de 3d10 ve 17'de 4d10 olur. Uzun Dinlenme başına kullanım sayısı Yeterlilik Bonusuna eşittir."
   },
   "Damage Resistance": {
     "name": "Hasar Direnci",
@@ -29,7 +29,7 @@
   },
   "Stonecunning": {
     "name": "Taş Bilgisi",
-    "description": "Taşa dokunurken veya üzerinde dururken Bonus Eylemle 10 dakikalığına 60 fitlik titreşim algısı kazan. Uzun Dinlenme başına kullanım sayısı Yeterlilik Bonusuna eşittir."
+    "description": "Taşa dokunurken veya üzerinde dururken Bonus Eylemle 10 dakikalığına {{distance:60ft|lik}} titreşim algısı kazan. Uzun Dinlenme başına kullanım sayısı Yeterlilik Bonusuna eşittir."
   },
   "Elven Lineage": {
     "name": "Elf Soyu",
@@ -69,7 +69,7 @@
   },
   "Cloud's Jaunt": {
     "name": "Bulut Sıçrayışı",
-    "description": "Bonus Eylemle görebildiğin boş bir alana 30 fite kadar ışınlan."
+    "description": "Bonus Eylemle görebildiğin boş bir alana {{distance:30ft|dat}} kadar ışınlan."
   },
   "Fire's Burn": {
     "name": "Ateş Yanığı",
@@ -77,7 +77,7 @@
   },
   "Frost's Chill": {
     "name": "Don Soğuğu",
-    "description": "Bir saldırı atışı isabet edip hasar verdiğinde ek 1d6 Soğuk hasarı ver ve hedefin Hızını bir sonraki turunun başına kadar 10 fit azalt."
+    "description": "Bir saldırı atışı isabet edip hasar verdiğinde ek 1d6 Soğuk hasarı ver ve hedefin Hızını bir sonraki turunun başına kadar {{distance:10ft}} azalt."
   },
   "Hill's Tumble": {
     "name": "Tepe Devrilmesi",
@@ -89,11 +89,11 @@
   },
   "Storm's Thunder": {
     "name": "Fırtına Gök Gürültüsü",
-    "description": "60 fit içindeki bir yaratık sana hasar verdiğinde Tepki kullanarak ona 1d8 Gök Gürültüsü hasarı ver."
+    "description": "{{distance:60ft}} içindeki bir yaratık sana hasar verdiğinde Tepki kullanarak ona 1d8 Gök Gürültüsü hasarı ver."
   },
   "Large Form": {
     "name": "Büyük Biçim",
-    "description": "Karakter seviyesi 5'ten itibaren yer varsa Bonus Eylemle en fazla 10 dakika Büyük ol. Güç kontrollerinde Avantajın olur ve Hızın 10 fit artar. Uzun Dinlenme başına bir kez."
+    "description": "Karakter seviyesi 5'ten itibaren yer varsa Bonus Eylemle en fazla 10 dakika Büyük ol. Güç kontrollerinde Avantajın olur ve Hızın {{distance:10ft}} artar. Uzun Dinlenme başına bir kez."
   },
   "Powerful Build": {
     "name": "Güçlü Yapı",

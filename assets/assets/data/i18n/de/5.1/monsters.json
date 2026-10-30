@@ -4,11 +4,11 @@
     "actions": {
       "fist": {
         "name": "Faust",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 6 (1d6 + 3) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 6 (1d6 + 3) Wuchtschaden."
       },
       "rock": {
         "name": "Felsbrocken",
-        "description": "Fernkampf-Waffenangriff: +5 zum Treffen, Reichweite 7,5/15 Meter, ein Ziel. Treffer: 6 (1d6 + 3) Wuchtschaden."
+        "description": "Fernkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:25/50ft}}, ein Ziel. Treffer: 6 (1d6 + 3) Wuchtschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -21,7 +21,7 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 6 (1d8 + 2) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 6 (1d8 + 2) Hiebschaden."
       }
     }
   },
@@ -30,13 +30,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +1 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 (1d4 - 1) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +1 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 (1d4 - 1) Stichschaden."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Pavian hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Pavians innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Pavian hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Pavians innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
   },
@@ -45,7 +45,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -60,7 +60,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 1 Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -79,11 +79,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 5 (1d6 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 5 (1d6 + 2) Stichschaden."
       },
       "claws": {
         "name": "Klauen",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 7 (2d4 + 2) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 7 (2d4 + 2) Hiebschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -102,7 +102,7 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d4 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d4 + 2) Stichschaden."
       }
     },
     "traits": {
@@ -112,7 +112,7 @@
       },
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Falke hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Falken innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Falke hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Falken innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
   },
@@ -121,13 +121,13 @@
     "actions": {
       "tusk": {
         "name": "Hauer",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d6 + 1) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d6 + 1) Hiebschaden."
       }
     },
     "traits": {
       "charge": {
         "name": "Sturmangriff",
-        "description": "Wenn sich das Wildschwein mindestens 6 Meter geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Hauerangriff trifft, erleidet das Ziel zusätzlich 3 (1d6) Hiebschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 11 bestehen oder wird zu Boden geworfen."
+        "description": "Wenn sich das Wildschwein mindestens {{distance:20ft}} geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Hauerangriff trifft, erleidet das Ziel zusätzlich 3 (1d6) Hiebschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 11 bestehen oder wird zu Boden geworfen."
       },
       "relentless": {
         "name": "Unerbittlich",
@@ -140,11 +140,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 8 (1d8 + 4) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 8 (1d8 + 4) Stichschaden."
       },
       "claws": {
         "name": "Klauen",
-        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 11 (2d6 + 4) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 11 (2d6 + 4) Hiebschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -163,7 +163,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 2 (1d4) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 2 (1d4) Wuchtschaden."
       }
     }
   },
@@ -172,7 +172,7 @@
     "actions": {
       "claws": {
         "name": "Klauen",
-        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Hiebschaden."
       }
     },
     "traits": {
@@ -187,11 +187,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 5 (1d6 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 5 (1d6 + 2) Stichschaden."
       },
       "constrict": {
         "name": "Umschlingen",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 6 (1d8 + 2) Wuchtschaden, und das Ziel ist gepackt (Entkommen SG 14). Bis das Packen endet, ist die Kreatur festgesetzt, und die Schlange kann kein anderes Ziel umschlingen."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 6 (1d8 + 2) Wuchtschaden, und das Ziel ist gepackt (Entkommen SG 14). Bis das Packen endet, ist die Kreatur festgesetzt, und die Schlange kann kein anderes Ziel umschlingen."
       }
     }
   },
@@ -200,7 +200,7 @@
     "actions": {
       "claw": {
         "name": "Klaue",
-        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Wuchtschaden."
       }
     },
     "traits": {
@@ -215,7 +215,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 7 (1d10 + 2) Stichschaden, und das Ziel ist gepackt (Entkommen SG 12). Bis das Packen endet, ist das Ziel festgesetzt, und das Krokodil kann kein anderes Ziel beißen."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 7 (1d10 + 2) Stichschaden, und das Ziel ist gepackt (Entkommen SG 12). Bis das Packen endet, ist das Ziel festgesetzt, und das Krokodil kann kein anderes Ziel beißen."
       }
     },
     "traits": {
@@ -230,7 +230,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 2 (1d4) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 2 (1d4) Stichschaden."
       }
     }
   },
@@ -239,7 +239,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 10 (2d6 + 3) Stichschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 10 (2d6 + 3) Stichschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen."
       }
     },
     "traits": {
@@ -249,7 +249,7 @@
       },
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Wolf hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Wolf hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
   },
@@ -258,7 +258,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 9 (2d4 + 4) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 9 (2d4 + 4) Wuchtschaden."
       }
     }
   },
@@ -267,7 +267,7 @@
     "actions": {
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d4 + 2) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d4 + 2) Hiebschaden."
       }
     },
     "traits": {
@@ -282,17 +282,17 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 6 (1d6 + 3) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 6 (1d6 + 3) Wuchtschaden."
       },
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, eine liegende Kreatur. Treffer: 8 (2d4 + 3) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, eine liegende Kreatur. Treffer: 8 (2d4 + 3) Wuchtschaden."
       }
     },
     "traits": {
       "charge": {
         "name": "Sturmangriff",
-        "description": "Wenn sich der Elch mindestens 6 Meter geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Rammangriff trifft, erleidet das Ziel zusätzlich 7 (2d6) Schaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen."
+        "description": "Wenn sich der Elch mindestens {{distance:20ft}} geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Rammangriff trifft, erleidet das Ziel zusätzlich 7 (2d6) Schaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen."
       }
     }
   },
@@ -301,7 +301,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Stichschaden plus 7 (3d4) Giftschaden."
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Stichschaden plus 7 (3d4) Giftschaden."
       }
     },
     "traits": {
@@ -320,7 +320,7 @@
       },
       "standing_leap": {
         "name": "Sprung aus dem Stand",
-        "description": "Der Weitsprung des Frosches beträgt bis zu 3 Meter und sein Hochsprung bis zu 1,5 Meter, mit oder ohne Anlauf."
+        "description": "Der Weitsprung des Frosches beträgt bis zu {{distance:10ft}} und sein Hochsprung bis zu {{distance:5ft}}, mit oder ohne Anlauf."
       }
     }
   },
@@ -329,11 +329,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d6 + 1) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d6 + 1) Stichschaden."
       },
       "claws": {
         "name": "Klauen",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 6 (2d4 + 1) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 6 (2d4 + 1) Hiebschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -352,7 +352,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 5 (1d6 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 5 (1d6 + 2) Stichschaden."
       }
     },
     "traits": {
@@ -371,7 +371,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 4 (1d4 + 2) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 bestehen oder erleidet 10 (3d6) Giftschaden. Senkt der Giftschaden das Ziel auf 0 Trefferpunkte, ist es stabil, aber 1 Stunde lang vergiftet, selbst wenn es Trefferpunkte zurückerhält, und gelähmt, solange es auf diese Weise vergiftet ist."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 4 (1d4 + 2) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 bestehen oder erleidet 10 (3d6) Giftschaden. Senkt der Giftschaden das Ziel auf 0 Trefferpunkte, ist es stabil, aber 1 Stunde lang vergiftet, selbst wenn es Trefferpunkte zurückerhält, und gelähmt, solange es auf diese Weise vergiftet ist."
       }
     }
   },
@@ -380,7 +380,7 @@
     "actions": {
       "claw": {
         "name": "Klaue",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d6 + 1) Wuchtschaden, und das Ziel ist gepackt (Entkommen SG 11). Die Krabbe hat zwei Scheren, von denen jede nur ein Ziel packen kann."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d6 + 1) Wuchtschaden, und das Ziel ist gepackt (Entkommen SG 11). Die Krabbe hat zwei Scheren, von denen jede nur ein Ziel packen kann."
       }
     },
     "traits": {
@@ -395,11 +395,11 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 6 (1d6 + 3) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 6 (1d6 + 3) Stichschaden."
       },
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 10 (2d6 + 3) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 10 (2d6 + 3) Hiebschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -421,13 +421,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +1 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 2 (1d6 - 1) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +1 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 2 (1d6 - 1) Hiebschaden."
       }
     },
     "traits": {
       "illumination": {
         "name": "Leuchten",
-        "description": "Der Käfer spendet in einem Radius von 3 Metern helles Licht und weitere 3 Meter weit dämmriges Licht."
+        "description": "Der Käfer spendet in einem Radius von {{distance:10ft|dat}} helles Licht und weitere {{distance:10ft}} weit dämmriges Licht."
       }
     }
   },
@@ -436,7 +436,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d6 + 1) Stichschaden, und das Ziel ist gepackt (Entkommen SG 11). Bis das Packen endet, ist das Ziel festgesetzt, und der Frosch kann kein anderes Ziel beißen."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d6 + 1) Stichschaden, und das Ziel ist gepackt (Entkommen SG 11). Bis das Packen endet, ist das Ziel festgesetzt, und der Frosch kann kein anderes Ziel beißen."
       },
       "swallow": {
         "name": "Verschlucken",
@@ -450,7 +450,7 @@
       },
       "standing_leap": {
         "name": "Sprung aus dem Stand",
-        "description": "Der Weitsprung des Frosches beträgt bis zu 6 Meter und sein Hochsprung bis zu 3 Meter, mit oder ohne Anlauf."
+        "description": "Der Weitsprung des Frosches beträgt bis zu {{distance:20ft}} und sein Hochsprung bis zu {{distance:10ft}}, mit oder ohne Anlauf."
       }
     }
   },
@@ -459,13 +459,13 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 8 (2d4 + 3) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 8 (2d4 + 3) Wuchtschaden."
       }
     },
     "traits": {
       "charge": {
         "name": "Sturmangriff",
-        "description": "Wenn sich die Ziege mindestens 6 Meter geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Rammangriff trifft, erleidet das Ziel zusätzlich 5 (2d4) Wuchtschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen."
+        "description": "Wenn sich die Ziege mindestens {{distance:20ft}} geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Rammangriff trifft, erleidet das Ziel zusätzlich 5 (2d4) Wuchtschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen."
       },
       "sure_footed": {
         "name": "Trittsicher",
@@ -478,7 +478,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 10 (2d6 + 3) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 10 (2d6 + 3) Stichschaden."
       }
     },
     "traits": {
@@ -493,7 +493,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 6 (1d8 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 6 (1d8 + 2) Stichschaden."
       }
     }
   },
@@ -502,11 +502,11 @@
     "actions": {
       "tentacles": {
         "name": "Tentakel",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 4,5 Meter, ein Ziel. Treffer: 10 (2d6 + 3) Wuchtschaden. Ist das Ziel eine Kreatur, ist sie gepackt (Entkommen SG 16). Bis das Packen endet, ist das Ziel festgesetzt, und der Krake kann seine Tentakel nicht gegen ein anderes Ziel einsetzen."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:15ft}}, ein Ziel. Treffer: 10 (2d6 + 3) Wuchtschaden. Ist das Ziel eine Kreatur, ist sie gepackt (Entkommen SG 16). Bis das Packen endet, ist das Ziel festgesetzt, und der Krake kann seine Tentakel nicht gegen ein anderes Ziel einsetzen."
       },
       "ink_cloud": {
         "name": "Tintenwolke",
-        "description": "Befindet sich der Krake unter Wasser, breitet sich eine Tintenwolke mit 6 Meter Radius rings um ihn aus. Der Bereich ist 1 Minute lang stark verschleiert, wobei eine starke Strömung die Tinte zerstreuen kann. Nachdem der Krake die Tinte ausgestoßen hat, kann er die Aktion Spurt als Bonusaktion ausführen."
+        "description": "Befindet sich der Krake unter Wasser, breitet sich eine Tintenwolke mit {{distance:20ft}} Radius rings um ihn aus. Der Bereich ist 1 Minute lang stark verschleiert, wobei eine starke Strömung die Tinte zerstreuen kann. Nachdem der Krake die Tinte ausgestoßen hat, kann er die Aktion Spurt als Bonusaktion ausführen."
       }
     },
     "traits": {
@@ -529,7 +529,7 @@
     "actions": {
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 8 (2d6 + 1) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 8 (2d6 + 1) Hiebschaden."
       }
     },
     "traits": {
@@ -551,7 +551,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite 3 Meter, ein Ziel. Treffer: 6 (1d4 + 4) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 ablegen. Bei einem Misserfolg erleidet es 10 (3d6) Giftschaden, bei einem Erfolg die Hälfte."
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:10ft}}, ein Ziel. Treffer: 6 (1d4 + 4) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 ablegen. Bei einem Misserfolg erleidet es 10 (3d6) Giftschaden, bei einem Erfolg die Hälfte."
       }
     }
   },
@@ -560,7 +560,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d4 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d4 + 2) Stichschaden."
       }
     },
     "traits": {
@@ -570,7 +570,7 @@
       },
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Die Ratte hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter der Ratte innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Die Ratte hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter der Ratte innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
   },
@@ -579,13 +579,13 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d6 + 1) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d6 + 1) Wuchtschaden."
       }
     },
     "traits": {
       "charge": {
         "name": "Sturmangriff",
-        "description": "Wenn sich das Seepferdchen mindestens 6 Meter geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Rammangriff trifft, erleidet das Ziel zusätzlich 7 (2d6) Wuchtschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 11 bestehen oder wird zu Boden geworfen."
+        "description": "Wenn sich das Seepferdchen mindestens {{distance:20ft}} geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Rammangriff trifft, erleidet das Ziel zusätzlich 7 (2d6) Wuchtschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 11 bestehen oder wird zu Boden geworfen."
       },
       "water_breathing": {
         "name": "Wasseratmung",
@@ -598,11 +598,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 7 (1d8 + 3) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 ablegen. Bei einem Misserfolg erleidet es 9 (2d8) Giftschaden, bei einem Erfolg die Hälfte. Senkt der Giftschaden das Ziel auf 0 Trefferpunkte, ist es stabil, aber 1 Stunde lang vergiftet, selbst wenn es Trefferpunkte zurückerhält, und gelähmt, solange es auf diese Weise vergiftet ist."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 7 (1d8 + 3) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 ablegen. Bei einem Misserfolg erleidet es 9 (2d8) Giftschaden, bei einem Erfolg die Hälfte. Senkt der Giftschaden das Ziel auf 0 Trefferpunkte, ist es stabil, aber 1 Stunde lang vergiftet, selbst wenn es Trefferpunkte zurückerhält, und gelähmt, solange es auf diese Weise vergiftet ist."
       },
       "web": {
         "name": "Netz",
-        "description": "Fernkampf-Waffenangriff: +5 zum Treffen, Reichweite 9/18 Meter, eine Kreatur. Treffer: Das Ziel ist durch Spinnweben festgesetzt. Als Aktion kann das festgesetzte Ziel eine Stärkeprobe gegen SG 12 ablegen und die Spinnweben bei einem Erfolg zerreißen. Die Spinnweben können auch angegriffen und zerstört werden (RK 10; TP 5; Verwundbarkeit gegen Feuerschaden; Immunität gegen Wucht-, Gift- und psychischen Schaden)."
+        "description": "Fernkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:30/60ft}}, eine Kreatur. Treffer: Das Ziel ist durch Spinnweben festgesetzt. Als Aktion kann das festgesetzte Ziel eine Stärkeprobe gegen SG 12 ablegen und die Spinnweben bei einem Erfolg zerreißen. Die Spinnweben können auch angegriffen und zerstört werden (RK 10; TP 5; Verwundbarkeit gegen Feuerschaden; Immunität gegen Wucht-, Gift- und psychischen Schaden)."
       }
     },
     "traits": {
@@ -625,7 +625,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 7 (1d10 + 2) Stichschaden plus 5 (1d10) Giftschaden, und das Ziel ist gepackt (Entkommen SG 13). Bis das Packen endet, ist das Ziel festgesetzt, und die Kröte kann kein anderes Ziel beißen."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 7 (1d10 + 2) Stichschaden plus 5 (1d10) Giftschaden, und das Ziel ist gepackt (Entkommen SG 13). Bis das Packen endet, ist das Ziel festgesetzt, und die Kröte kann kein anderes Ziel beißen."
       },
       "swallow": {
         "name": "Verschlucken",
@@ -639,7 +639,7 @@
       },
       "standing_leap": {
         "name": "Sprung aus dem Stand",
-        "description": "Der Weitsprung der Kröte beträgt bis zu 6 Meter und ihr Hochsprung bis zu 3 Meter, mit oder ohne Anlauf."
+        "description": "Der Weitsprung der Kröte beträgt bis zu {{distance:20ft}} und ihr Hochsprung bis zu {{distance:10ft}}, mit oder ohne Anlauf."
       }
     }
   },
@@ -648,11 +648,11 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 7 (2d4 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 7 (2d4 + 2) Stichschaden."
       },
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 9 (2d6 + 2) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 9 (2d6 + 2) Hiebschaden."
       },
       "multiattack": {
         "name": "Mehrfachangriff",
@@ -666,7 +666,7 @@
       },
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Geier hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Geiers innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Geier hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Geiers innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     },
     "languages": [
@@ -678,7 +678,7 @@
     "actions": {
       "sting": {
         "name": "Stachel",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 5 (1d6 + 2) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 ablegen. Bei einem Misserfolg erleidet es 10 (3d6) Giftschaden, bei einem Erfolg die Hälfte. Senkt der Giftschaden das Ziel auf 0 Trefferpunkte, ist es stabil, aber 1 Stunde lang vergiftet, selbst wenn es Trefferpunkte zurückerhält, und gelähmt, solange es auf diese Weise vergiftet ist."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 5 (1d6 + 2) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 ablegen. Bei einem Misserfolg erleidet es 10 (3d6) Giftschaden, bei einem Erfolg die Hälfte. Senkt der Giftschaden das Ziel auf 0 Trefferpunkte, ist es stabil, aber 1 Stunde lang vergiftet, selbst wenn es Trefferpunkte zurückerhält, und gelähmt, solange es auf diese Weise vergiftet ist."
       }
     }
   },
@@ -687,7 +687,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 5 (1d4 + 3) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 5 (1d4 + 3) Stichschaden."
       }
     },
     "traits": {
@@ -702,7 +702,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 4 (1d6 + 1) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 ablegen. Bei einem Misserfolg erleidet es 7 (2d6) Giftschaden, bei einem Erfolg die Hälfte. Senkt der Giftschaden das Ziel auf 0 Trefferpunkte, ist es stabil, aber 1 Stunde lang vergiftet, selbst wenn es Trefferpunkte zurückerhält, und gelähmt, solange es auf diese Weise vergiftet ist."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 4 (1d6 + 1) Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 ablegen. Bei einem Misserfolg erleidet es 7 (2d6) Giftschaden, bei einem Erfolg die Hälfte. Senkt der Giftschaden das Ziel auf 0 Trefferpunkte, ist es stabil, aber 1 Stunde lang vergiftet, selbst wenn es Trefferpunkte zurückerhält, und gelähmt, solange es auf diese Weise vergiftet ist."
       }
     },
     "traits": {
@@ -725,13 +725,13 @@
     "actions": {
       "ram": {
         "name": "Rammen",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 3 (1d4 + 1) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 3 (1d4 + 1) Wuchtschaden."
       }
     },
     "traits": {
       "charge": {
         "name": "Sturmangriff",
-        "description": "Wenn sich die Ziege mindestens 6 Meter geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Rammangriff trifft, erleidet das Ziel zusätzlich 2 (1d4) Wuchtschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 10 bestehen oder wird zu Boden geworfen."
+        "description": "Wenn sich die Ziege mindestens {{distance:20ft}} geradlinig auf ein Ziel zubewegt und es dann im selben Zug mit einem Rammangriff trifft, erleidet das Ziel zusätzlich 2 (1d4) Wuchtschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 10 bestehen oder wird zu Boden geworfen."
       },
       "sure_footed": {
         "name": "Trittsicher",
@@ -744,7 +744,7 @@
     "actions": {
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Hiebschaden."
       }
     },
     "traits": {
@@ -759,13 +759,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 3 (1d6) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 3 (1d6) Stichschaden."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Die Hyäne hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter der Hyäne innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Die Hyäne hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter der Hyäne innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
   },
@@ -774,7 +774,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +1 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 (1d4 - 1) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +1 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 (1d4 - 1) Stichschaden."
       }
     },
     "traits": {
@@ -784,7 +784,7 @@
       },
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Schakal hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Schakals innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Schakal hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Schakals innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
   },
@@ -793,11 +793,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 7 (1d8 + 3) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 7 (1d8 + 3) Stichschaden."
       },
       "claw": {
         "name": "Klaue",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 6 (1d6 + 3) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 6 (1d6 + 3) Hiebschaden."
       }
     },
     "traits": {
@@ -807,15 +807,15 @@
       },
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Löwe hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Löwen innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Löwe hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Löwen innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       },
       "pounce": {
         "name": "Anspringen",
-        "description": "Wenn sich der Löwe mindestens 6 Meter geradlinig auf eine Kreatur zubewegt und sie dann im selben Zug mit einem Klauenangriff trifft, muss das Ziel einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann der Löwe als Bonusaktion einen Bissangriff gegen es ausführen."
+        "description": "Wenn sich der Löwe mindestens {{distance:20ft}} geradlinig auf eine Kreatur zubewegt und sie dann im selben Zug mit einem Klauenangriff trifft, muss das Ziel einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann der Löwe als Bonusaktion einen Bissangriff gegen es ausführen."
       },
       "running_leap": {
         "name": "Sprung mit Anlauf",
-        "description": "Mit 3 Meter Anlauf kann der Löwe bis zu 7,5 Meter weit springen."
+        "description": "Mit {{distance:10ft}} Anlauf kann der Löwe bis zu {{distance:25ft}} weit springen."
       }
     }
   },
@@ -824,7 +824,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Stichschaden."
       }
     }
   },
@@ -833,7 +833,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d6 + 1) Stichschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 11 bestehen oder wird zu Boden geworfen."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d6 + 1) Stichschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 11 bestehen oder wird zu Boden geworfen."
       }
     },
     "traits": {
@@ -848,7 +848,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d4 + 2) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d4 + 2) Wuchtschaden."
       }
     },
     "traits": {
@@ -867,11 +867,11 @@
     "actions": {
       "tentacles": {
         "name": "Tentakel",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Wuchtschaden, und das Ziel ist gepackt (Entkommen SG 10). Bis das Packen endet, kann der Krake seine Tentakel nicht gegen ein anderes Ziel einsetzen."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Wuchtschaden, und das Ziel ist gepackt (Entkommen SG 10). Bis das Packen endet, kann der Krake seine Tentakel nicht gegen ein anderes Ziel einsetzen."
       },
       "ink_cloud": {
         "name": "Tintenwolke",
-        "description": "Befindet sich der Krake unter Wasser, breitet sich eine Tintenwolke mit 1,5 Meter Radius rings um ihn aus. Der Bereich ist 1 Minute lang stark verschleiert, wobei eine starke Strömung die Tinte zerstreuen kann. Nachdem der Krake die Tinte ausgestoßen hat, kann er die Aktion Spurt als Bonusaktion ausführen."
+        "description": "Befindet sich der Krake unter Wasser, breitet sich eine Tintenwolke mit {{distance:5ft}} Radius rings um ihn aus. Der Bereich ist 1 Minute lang stark verschleiert, wobei eine starke Strömung die Tinte zerstreuen kann. Nachdem der Krake die Tinte ausgestoßen hat, kann er die Aktion Spurt als Bonusaktion ausführen."
       }
     },
     "traits": {
@@ -894,7 +894,7 @@
     "actions": {
       "talons": {
         "name": "Krallen",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Hiebschaden."
       }
     },
     "traits": {
@@ -913,11 +913,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 5 (1d6 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 5 (1d6 + 2) Stichschaden."
       },
       "claw": {
         "name": "Klaue",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 4 (1d4 + 2) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 4 (1d4 + 2) Hiebschaden."
       }
     },
     "traits": {
@@ -927,7 +927,7 @@
       },
       "pounce": {
         "name": "Anspringen",
-        "description": "Wenn sich der Panther mindestens 6 Meter geradlinig auf eine Kreatur zubewegt und sie dann im selben Zug mit einem Klauenangriff trifft, muss das Ziel einen Stärkerettungswurf gegen SG 12 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann der Panther als Bonusaktion einen Bissangriff gegen es ausführen."
+        "description": "Wenn sich der Panther mindestens {{distance:20ft}} geradlinig auf eine Kreatur zubewegt und sie dann im selben Zug mit einem Klauenangriff trifft, muss das Ziel einen Stärkerettungswurf gegen SG 12 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann der Panther als Bonusaktion einen Bissangriff gegen es ausführen."
       }
     }
   },
@@ -936,7 +936,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 10 ablegen. Bei einem Misserfolg erleidet es 5 (2d4) Giftschaden, bei einem Erfolg die Hälfte."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 10 ablegen. Bei einem Misserfolg erleidet es 5 (2d4) Giftschaden, bei einem Erfolg die Hälfte."
       }
     }
   },
@@ -945,7 +945,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 7 (2d4 + 2) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 7 (2d4 + 2) Wuchtschaden."
       }
     }
   },
@@ -954,7 +954,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -973,7 +973,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +0 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -988,7 +988,7 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -1003,13 +1003,13 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 6 (1d8 + 2) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 6 (1d8 + 2) Stichschaden."
       }
     },
     "traits": {
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Hai hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Hais innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Hai hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Hais innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       },
       "water_breathing": {
         "name": "Wasseratmung",
@@ -1022,7 +1022,7 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 8 (2d4 + 3) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 8 (2d4 + 3) Wuchtschaden."
       }
     }
   },
@@ -1031,7 +1031,7 @@
     "actions": {
       "sting": {
         "name": "Stachel",
-        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 1 Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 9 ablegen. Bei einem Misserfolg erleidet es 4 (1d8) Giftschaden, bei einem Erfolg die Hälfte."
+        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 1 Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 9 ablegen. Bei einem Misserfolg erleidet es 4 (1d8) Giftschaden, bei einem Erfolg die Hälfte."
       }
     }
   },
@@ -1049,7 +1049,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 1 Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 9 bestehen oder erleidet 2 (1d4) Giftschaden."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 1 Stichschaden, und das Ziel muss einen Konstitutionsrettungswurf gegen SG 9 bestehen oder erleidet 2 (1d4) Giftschaden."
       }
     },
     "traits": {
@@ -1072,7 +1072,7 @@
     "actions": {
       "blood_drain": {
         "name": "Blut saugen",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, eine Kreatur. Treffer: 5 (1d4 + 3) Stichschaden, und die Stirge heftet sich an das Ziel. Solange sie angeheftet ist, greift die Stirge nicht an. Stattdessen verliert das Ziel zu Beginn jedes Zuges der Stirge durch Blutverlust 5 (1d4 + 3) Trefferpunkte."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, eine Kreatur. Treffer: 5 (1d4 + 3) Stichschaden, und die Stirge heftet sich an das Ziel. Solange sie angeheftet ist, greift die Stirge nicht an. Stattdessen verliert das Ziel zu Beginn jedes Zuges der Stirge durch Blutverlust 5 (1d4 + 3) Trefferpunkte."
       }
     }
   },
@@ -1081,7 +1081,7 @@
     "actions": {
       "bites": {
         "name": "Bisse",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 0 Meter, eine Kreatur im Bereich des Schwarms. Treffer: 5 (2d4) Stichschaden oder 2 (1d4) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:0ft}}, eine Kreatur im Bereich des Schwarms. Treffer: 5 (2d4) Stichschaden oder 2 (1d4) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
       }
     },
     "traits": {
@@ -1104,7 +1104,7 @@
     "actions": {
       "bites": {
         "name": "Bisse",
-        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite 0 Meter, ein Ziel im Bereich des Schwarms. Treffer: 10 (4d4) Stichschaden oder 5 (2d4) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
+        "description": "Nahkampf-Waffenangriff: +3 zum Treffen, Reichweite {{distance:0ft}}, ein Ziel im Bereich des Schwarms. Treffer: 10 (4d4) Stichschaden oder 5 (2d4) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
       }
     },
     "traits": {
@@ -1119,7 +1119,7 @@
     "actions": {
       "bites": {
         "name": "Bisse",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 0 Meter, eine Kreatur im Bereich des Schwarms. Treffer: 14 (4d6) Stichschaden oder 7 (2d6) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:0ft}}, eine Kreatur im Bereich des Schwarms. Treffer: 14 (4d6) Stichschaden oder 7 (2d6) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
       }
     },
     "traits": {
@@ -1142,7 +1142,7 @@
     "actions": {
       "bites": {
         "name": "Bisse",
-        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite 0 Meter, ein Ziel im Bereich des Schwarms. Treffer: 7 (2d6) Stichschaden oder 3 (1d6) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
+        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite {{distance:0ft}}, ein Ziel im Bereich des Schwarms. Treffer: 7 (2d6) Stichschaden oder 3 (1d6) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
       }
     },
     "traits": {
@@ -1161,7 +1161,7 @@
     "actions": {
       "beaks": {
         "name": "Schnäbel",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel im Bereich des Schwarms. Treffer: 7 (2d6) Stichschaden oder 3 (1d6) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel im Bereich des Schwarms. Treffer: 7 (2d6) Stichschaden oder 3 (1d6) Stichschaden, wenn der Schwarm höchstens noch die Hälfte seiner Trefferpunkte hat."
       }
     },
     "traits": {
@@ -1176,11 +1176,11 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 8 (1d10 + 3) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 8 (1d10 + 3) Stichschaden."
       },
       "claw": {
         "name": "Klaue",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 7 (1d8 + 3) Hiebschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 7 (1d8 + 3) Hiebschaden."
       }
     },
     "traits": {
@@ -1190,7 +1190,7 @@
       },
       "pounce": {
         "name": "Anspringen",
-        "description": "Wenn sich der Tiger mindestens 6 Meter geradlinig auf eine Kreatur zubewegt und sie dann im selben Zug mit einem Klauenangriff trifft, muss das Ziel einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann der Tiger als Bonusaktion einen Bissangriff gegen es ausführen."
+        "description": "Wenn sich der Tiger mindestens {{distance:20ft}} geradlinig auf eine Kreatur zubewegt und sie dann im selben Zug mit einem Klauenangriff trifft, muss das Ziel einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann der Tiger als Bonusaktion einen Bissangriff gegen es ausführen."
       }
     }
   },
@@ -1199,7 +1199,7 @@
     "actions": {
       "beak": {
         "name": "Schnabel",
-        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 2 (1d4) Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 2 (1d4) Stichschaden."
       }
     },
     "traits": {
@@ -1209,7 +1209,7 @@
       },
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Geier hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Geiers innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Geier hat Vorteil bei einem Angriffswurf gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Geiers innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
   },
@@ -1218,13 +1218,13 @@
     "actions": {
       "hooves": {
         "name": "Hufe",
-        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 11 (2d6 + 4) Wuchtschaden."
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 11 (2d6 + 4) Wuchtschaden."
       }
     },
     "traits": {
       "trampling_charge": {
         "name": "Trampelnder Sturmangriff",
-        "description": "Wenn sich das Pferd mindestens 6 Meter geradlinig auf eine Kreatur zubewegt und sie dann im selben Zug mit einem Hufangriff trifft, muss das Ziel einen Stärkerettungswurf gegen SG 14 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann das Pferd als Bonusaktion einen weiteren Angriff mit seinen Hufen gegen es ausführen."
+        "description": "Wenn sich das Pferd mindestens {{distance:20ft}} geradlinig auf eine Kreatur zubewegt und sie dann im selben Zug mit einem Hufangriff trifft, muss das Ziel einen Stärkerettungswurf gegen SG 14 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann das Pferd als Bonusaktion einen weiteren Angriff mit seinen Hufen gegen es ausführen."
       }
     }
   },
@@ -1233,7 +1233,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 1 Stichschaden."
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 1 Stichschaden."
       }
     },
     "traits": {
@@ -1248,7 +1248,7 @@
     "actions": {
       "bite": {
         "name": "Biss",
-        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite 1,5 Meter, ein Ziel. Treffer: 7 (2d4 + 2) Stichschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 11 bestehen oder wird zu Boden geworfen."
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft}}, ein Ziel. Treffer: 7 (2d4 + 2) Stichschaden. Ist das Ziel eine Kreatur, muss sie einen Stärkerettungswurf gegen SG 11 bestehen oder wird zu Boden geworfen."
       }
     },
     "traits": {
@@ -1258,7 +1258,7 @@
       },
       "pack_tactics": {
         "name": "Rudeltaktik",
-        "description": "Der Wolf hat Vorteil bei Angriffswürfen gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von 1,5 Metern von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
+        "description": "Der Wolf hat Vorteil bei Angriffswürfen gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
   }

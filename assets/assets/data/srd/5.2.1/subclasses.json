@@ -17,14 +17,104 @@
     {
       "id": "life_domain",
       "name": "Life Domain",
-      "description": "Channel divine power to protect and restore life. Your domain provides healing spells, improves healing, and helps preserve allies in danger."
+      "description": "Channel divine power to protect and restore life. Your domain provides healing spells, improves healing, and helps preserve allies in danger.",
+      "alwaysPreparedSpells": {
+        "3": [
+          "Aid",
+          "Bless",
+          "Cure Wounds",
+          "Lesser Restoration"
+        ],
+        "5": [
+          "Mass Healing Word",
+          "Revivify"
+        ],
+        "7": [
+          "Aura of Life",
+          "Death Ward"
+        ],
+        "9": [
+          "Greater Restoration",
+          "Mass Cure Wounds"
+        ]
+      }
     }
   ],
   "Druid": [
     {
       "id": "circle_of_the_land",
       "name": "Circle of the Land",
-      "description": "Draw magic from a chosen landscape. Change your land after a Long Rest to gain its circle spells, and later gain nature-based protection and sanctuary."
+      "description": "Draw magic from a chosen landscape. Change your land after a Long Rest to gain its circle spells, and later gain nature-based protection and sanctuary.",
+      "alwaysPreparedSpellsByChoice": {
+        "feature": "Circle of the Land Spells",
+        "choiceId": "land",
+        "options": {
+          "arid": {
+            "3": [
+              "Blur",
+              "Burning Hands",
+              "Fire Bolt"
+            ],
+            "5": [
+              "Fireball"
+            ],
+            "7": [
+              "Blight"
+            ],
+            "9": [
+              "Wall of Stone"
+            ]
+          },
+          "polar": {
+            "3": [
+              "Fog Cloud",
+              "Hold Person",
+              "Ray of Frost"
+            ],
+            "5": [
+              "Sleet Storm"
+            ],
+            "7": [
+              "Ice Storm"
+            ],
+            "9": [
+              "Cone of Cold"
+            ]
+          },
+          "temperate": {
+            "3": [
+              "Misty Step",
+              "Shocking Grasp",
+              "Sleep"
+            ],
+            "5": [
+              "Lightning Bolt"
+            ],
+            "7": [
+              "Freedom of Movement"
+            ],
+            "9": [
+              "Tree Stride"
+            ]
+          },
+          "tropical": {
+            "3": [
+              "Acid Splash",
+              "Ray of Sickness",
+              "Web"
+            ],
+            "5": [
+              "Stinking Cloud"
+            ],
+            "7": [
+              "Polymorph"
+            ],
+            "9": [
+              "Insect Plague"
+            ]
+          }
+        }
+      }
     }
   ],
   "Fighter": [
@@ -45,7 +135,29 @@
     {
       "id": "oath_of_devotion",
       "name": "Oath of Devotion",
-      "description": "Uphold justice and protect the vulnerable. Empower a weapon with Channel Divinity and gain oath spells and a protective aura."
+      "description": "Uphold justice and protect the vulnerable. Empower a weapon with Channel Divinity and gain oath spells and a protective aura.",
+      "alwaysPreparedSpells": {
+        "3": [
+          "Protection from Evil and Good",
+          "Shield of Faith"
+        ],
+        "5": [
+          "Aid",
+          "Zone of Truth"
+        ],
+        "9": [
+          "Beacon of Hope",
+          "Dispel Magic"
+        ],
+        "13": [
+          "Freedom of Movement",
+          "Guardian of Faith"
+        ],
+        "17": [
+          "Commune",
+          "Flame Strike"
+        ]
+      }
     }
   ],
   "Ranger": [
@@ -66,14 +178,54 @@
     {
       "id": "draconic_sorcery",
       "name": "Draconic Sorcery",
-      "description": "Manifest magic linked to dragons. Gain draconic resilience and spells, then develop greater elemental power and draconic abilities."
+      "description": "Manifest magic linked to dragons. Gain draconic resilience and spells, then develop greater elemental power and draconic abilities.",
+      "alwaysPreparedSpells": {
+        "3": [
+          "Alter Self",
+          "Chromatic Orb",
+          "Command",
+          "Dragon's Breath"
+        ],
+        "5": [
+          "Fear",
+          "Fly"
+        ],
+        "7": [
+          "Arcane Eye",
+          "Charm Monster"
+        ],
+        "9": [
+          "Legend Lore",
+          "Summon Dragon"
+        ]
+      }
     }
   ],
   "Warlock": [
     {
       "id": "fiend_patron",
       "name": "Fiend Patron",
-      "description": "Draw power from a mighty fiend of the Lower Planes. Gain patron spells, temporary vitality, protection, and other infernal gifts."
+      "description": "Draw power from a mighty fiend of the Lower Planes. Gain patron spells, temporary vitality, protection, and other infernal gifts.",
+      "alwaysPreparedSpells": {
+        "3": [
+          "Burning Hands",
+          "Command",
+          "Scorching Ray",
+          "Suggestion"
+        ],
+        "5": [
+          "Fireball",
+          "Stinking Cloud"
+        ],
+        "7": [
+          "Fire Shield",
+          "Wall of Fire"
+        ],
+        "9": [
+          "Geas",
+          "Insect Plague"
+        ]
+      }
     }
   ],
   "Wizard": [

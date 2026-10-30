@@ -44,6 +44,7 @@ class SrdDataSource {
   List<SrdWeapon>? _weapons;
   List<SrdArmor>? _armors;
   List<SrdGearItem>? _gear;
+  Map<String, String>? _weaponMasteries;
   List<SrdMagicItem>? _magicItems;
   List<SrdMonster>? _monsters;
   SrdPackManifest? _manifest;
@@ -152,6 +153,13 @@ class SrdDataSource {
   Future<List<SrdArmor>> getArmors() async {
     await _loadEquipment();
     return _armors!;
+  }
+
+  /// 2024 mastery properties (`cleave`, `graze`, ...) and their English
+  /// descriptions; empty for packs without Weapon Mastery.
+  Future<Map<String, String>> getWeaponMasteries() async {
+    await _loadEquipment();
+    return _weaponMasteries!;
   }
 
   Future<List<SrdGearItem>> getGear() async {
@@ -471,7 +479,7 @@ class SrdDataSource {
   }
 
   Future<void> _loadEquipment() async {
-    if (_weapons != null && _armors != null && _gear != null) return;
+    if (_weapons != null && _armors != null && _gear != null && _weaponMasteries != null) return;
     // Reuse the in-flight future so concurrent callers share one parse.
     _equipmentLoadFuture ??= _doLoadEquipment();
     try {
@@ -494,6 +502,10 @@ class SrdDataSource {
     _gear = (json['gear'] as List<dynamic>)
         .map((e) => SrdGearItem.fromJson(e as Map<String, dynamic>))
         .toList();
+    _weaponMasteries = {
+      for (final entry in (json['weaponMasteries'] as Map? ?? const {}).entries)
+        if (entry.value is String) entry.key as String: entry.value as String,
+    };
   }
 
   Future<List<T>> _loadList<T>(

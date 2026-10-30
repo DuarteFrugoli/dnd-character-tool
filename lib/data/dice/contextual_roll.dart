@@ -20,18 +20,29 @@ class ContextualRollOptions {
   final int d20SituationalModifier;
 }
 
+/// A rule that applies to the roll without dice of its own, e.g. a weapon
+/// mastery effect with its save DC already computed.
+class ContextualRollNote {
+  const ContextualRollNote({required this.title, required this.text});
+
+  final String title;
+  final String text;
+}
+
 class ContextualRollRequest {
   const ContextualRollRequest({
     required this.key,
     required this.title,
     this.subtitle,
     required this.parts,
+    this.notes = const [],
   });
 
   final String key;
   final String title;
   final String? subtitle;
   final List<ContextualRollPart> parts;
+  final List<ContextualRollNote> notes;
 
   bool get supportsD20Mode => parts.any((part) => part.supportsD20Mode);
 

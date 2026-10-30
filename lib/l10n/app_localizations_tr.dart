@@ -525,6 +525,47 @@ class AppLocalizationsTr extends AppLocalizations {
   String get creditsCopyright => '© 2026 Pedro Frugoli. Tüm hakları saklıdır.';
 
   @override
+  String weaponMasteryNoteTitle(String name) {
+    return 'Ustalık: $name';
+  }
+
+  @override
+  String weaponMasteryGrazeValue(int damage, String type) {
+    return 'Iskalarsa: $damage $type hasar.';
+  }
+
+  @override
+  String weaponMasteryToppleValue(int dc) {
+    return 'Kurtarma ZD $dc.';
+  }
+
+  @override
+  String weaponMasteryCleaveValue(String bonus, String damage) {
+    return 'İkinci saldırı: isabet $bonus, hasar $damage.';
+  }
+
+  @override
+  String get weaponMasteryTacticalMasterTitle => 'Taktik Ustası';
+
+  @override
+  String weaponMasteryTacticalMaster(String options) {
+    return 'Bu saldırıda bunun yerine $options kullanabilirsin.';
+  }
+
+  @override
+  String agonizingBlastNote(int bonus) {
+    return 'Karizma değiştiricin (+$bonus) hasara eklenir.';
+  }
+
+  @override
+  String get eldritchBlastBeamsTitle => 'Işınlar';
+
+  @override
+  String eldritchBlastBeams(int count) {
+    return '$count ışın: her biri için ayrı saldırı ve hasar zarı at.';
+  }
+
+  @override
   String get whatsNewThanks =>
       'Oynadığınız ve görüşlerinizi paylaştığınız için teşekkür ederiz. Fikirleriniz sonraki adımlarımıza yön veriyor.';
 

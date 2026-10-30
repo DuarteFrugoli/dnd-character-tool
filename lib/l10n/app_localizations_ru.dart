@@ -527,6 +527,47 @@ class AppLocalizationsRu extends AppLocalizations {
   String get creditsCopyright => '© 2026 Pedro Frugoli. Все права защищены.';
 
   @override
+  String weaponMasteryNoteTitle(String name) {
+    return 'Мастерство: $name';
+  }
+
+  @override
+  String weaponMasteryGrazeValue(int damage, String type) {
+    return 'При промахе: $damage урона ($type).';
+  }
+
+  @override
+  String weaponMasteryToppleValue(int dc) {
+    return 'Сл спасброска $dc.';
+  }
+
+  @override
+  String weaponMasteryCleaveValue(String bonus, String damage) {
+    return 'Вторая атака: $bonus к попаданию, урон $damage.';
+  }
+
+  @override
+  String get weaponMasteryTacticalMasterTitle => 'Мастер тактики';
+
+  @override
+  String weaponMasteryTacticalMaster(String options) {
+    return 'В этой атаке вы можете вместо этого использовать: $options.';
+  }
+
+  @override
+  String agonizingBlastNote(int bonus) {
+    return 'Ваш модификатор Харизмы (+$bonus) прибавляется к урону.';
+  }
+
+  @override
+  String get eldritchBlastBeamsTitle => 'Лучи';
+
+  @override
+  String eldritchBlastBeams(int count) {
+    return 'Лучей: $count. Для каждого делайте отдельный бросок атаки и урона.';
+  }
+
+  @override
   String get whatsNewThanks =>
       'Спасибо, что играете и делитесь отзывами. Ваши идеи помогают определить, что будет дальше.';
 

@@ -205,6 +205,29 @@ class _ContextualRollSheetState extends ConsumerState<ContextualRollSheet> {
               ),
             ],
           ),
+          for (final note in widget.request.notes) ...[
+            const SizedBox(height: 8),
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: scheme.surfaceContainerHigh,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: '${note.title}. ',
+                      style: const TextStyle(fontWeight: FontWeight.w700),
+                    ),
+                    TextSpan(text: note.text),
+                  ],
+                ),
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            ),
+          ],
           if (showD20Options) ...[
             const SizedBox(height: 16),
             SegmentedButton<ContextualD20Mode>(

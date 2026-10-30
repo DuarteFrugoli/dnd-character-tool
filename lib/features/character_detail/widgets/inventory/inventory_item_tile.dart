@@ -1,6 +1,8 @@
 import '../../character_detail_dependencies.dart';
 import '../../../../data/json_helpers.dart';
+import '../../../../data/rulesets/weapon_mastery_rules.dart';
 import '../dice/contextual_roll_sheet.dart';
+import '../dice/roll_notes.dart';
 import 'inventory_display_helpers.dart';
 import 'item_detail_sheet.dart';
 
@@ -508,7 +510,25 @@ class ItemTile extends ConsumerWidget {
     final meta = itemMeta(item, i18n, l10n);
     final displayName = itemDisplayName(item, i18n);
     final classes = srdClasses;
-    final rollRequest = classes == null && weaponProficiencies == null
+    final canRoll = classes != null || weaponProficiencies != null;
+    final stats = canRoll
+        ? ContextualWeaponRollBuilder.statsFor(
+            character: character,
+            item: item,
+            classes: classes,
+            weaponProficiencies: weaponProficiencies,
+          )
+        : null;
+    final mastery = stats == null
+        ? null
+        : WeaponMasteryRules.effectFor(character, item, stats);
+    final masteryDescriptions = mastery == null
+        ? const <String, String>{}
+        : ref
+                  .watch(srdWeaponMasteriesForPackProvider(character.contentPackId))
+                  .valueOrNull ??
+              const <String, String>{};
+    final rollRequest = !canRoll
         ? null
         : ContextualWeaponRollBuilder.build(
             character: character,
@@ -523,6 +543,15 @@ class ItemTile extends ConsumerWidget {
             classes: classes,
             weaponProficiencies: weaponProficiencies,
             subtitle: meta,
+            notes: mastery == null
+                ? const []
+                : weaponMasteryNotes(
+                    l10n: l10n,
+                    i18n: i18n,
+                    effect: mastery,
+                    descriptions: masteryDescriptions,
+                    damageType: stats!.damageType,
+                  ),
           );
     final widgetsL10n = WidgetsLocalizations.of(context);
     final reorderTooltip =

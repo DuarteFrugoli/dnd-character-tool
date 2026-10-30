@@ -506,6 +506,47 @@ class AppLocalizationsZh extends AppLocalizations {
   String get creditsCopyright => '© 2026 Pedro Frugoli。保留所有权利。';
 
   @override
+  String weaponMasteryNoteTitle(String name) {
+    return '精通：$name';
+  }
+
+  @override
+  String weaponMasteryGrazeValue(int damage, String type) {
+    return '未命中时：$damage点$type伤害。';
+  }
+
+  @override
+  String weaponMasteryToppleValue(int dc) {
+    return '豁免DC $dc。';
+  }
+
+  @override
+  String weaponMasteryCleaveValue(String bonus, String damage) {
+    return '第二次攻击：命中$bonus，伤害$damage。';
+  }
+
+  @override
+  String get weaponMasteryTacticalMasterTitle => '战术大师';
+
+  @override
+  String weaponMasteryTacticalMaster(String options) {
+    return '本次攻击你可以改用$options。';
+  }
+
+  @override
+  String agonizingBlastNote(int bonus) {
+    return '你的魅力调整值（+$bonus）会加到伤害上。';
+  }
+
+  @override
+  String get eldritchBlastBeamsTitle => '光束';
+
+  @override
+  String eldritchBlastBeams(int count) {
+    return '$count道光束：每道分别进行攻击检定和伤害掷骰。';
+  }
+
+  @override
   String get whatsNewThanks => '感谢你使用本应用并分享反馈。你的建议将帮助我们决定接下来做什么。';
 
   @override

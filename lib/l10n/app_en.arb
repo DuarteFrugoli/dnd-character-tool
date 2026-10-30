@@ -334,6 +334,42 @@
 
   "@creditsCopyright": {"description": "App copyright line."},
 
+  "weaponMasteryNoteTitle": "Mastery: {name}",
+
+  "@weaponMasteryNoteTitle": {"description": "Roll note title for a weapon mastery property.", "placeholders": {"name": {"type": "String"}}},
+
+  "weaponMasteryGrazeValue": "On a miss: {damage} {type} damage.",
+
+  "@weaponMasteryGrazeValue": {"description": "Graze damage on a miss.", "placeholders": {"damage": {"type": "int"}, "type": {"type": "String"}}},
+
+  "weaponMasteryToppleValue": "Save DC {dc}.",
+
+  "@weaponMasteryToppleValue": {"description": "Topple save DC.", "placeholders": {"dc": {"type": "int"}}},
+
+  "weaponMasteryCleaveValue": "Second attack: {bonus} to hit, {damage} damage.",
+
+  "@weaponMasteryCleaveValue": {"description": "Cleave second attack.", "placeholders": {"bonus": {"type": "String"}, "damage": {"type": "String"}}},
+
+  "weaponMasteryTacticalMasterTitle": "Tactical Master",
+
+  "@weaponMasteryTacticalMasterTitle": {"description": "Fighter level 9 feature name."},
+
+  "weaponMasteryTacticalMaster": "For this attack you can use {options} instead.",
+
+  "@weaponMasteryTacticalMaster": {"description": "Masteries Tactical Master can use instead.", "placeholders": {"options": {"type": "String"}}},
+
+  "agonizingBlastNote": "Your Charisma modifier (+{bonus}) is added to the damage.",
+
+  "@agonizingBlastNote": {"description": "Agonizing Blast damage bonus.", "placeholders": {"bonus": {"type": "int"}}},
+
+  "eldritchBlastBeamsTitle": "Beams",
+
+  "@eldritchBlastBeamsTitle": {"description": "Roll note title for Eldritch Blast beams."},
+
+  "eldritchBlastBeams": "{count} beams: make a separate attack roll and damage roll for each one.",
+
+  "@eldritchBlastBeams": {"description": "Number of Eldritch Blast beams.", "placeholders": {"count": {"type": "int"}}},
+
   "whatsNewThanks": "Thank you for playing and sharing your feedback. Your ideas help shape what comes next.",
   "@whatsNewThanks": { "description": "Thank-you message at the end of the What's New dialog." },
 

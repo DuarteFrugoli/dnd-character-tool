@@ -95,6 +95,11 @@ final srdToolsForPackProvider = FutureProvider.family<List<SrdTool>, ContentPack
   (ref, packId) => ref.watch(srdDataSourceForPackProvider(packId)).getTools(),
 );
 
+final srdWeaponMasteriesForPackProvider = FutureProvider.family<
+    Map<String, String>, ContentPackId>(
+  (ref, packId) => ref.watch(srdDataSourceForPackProvider(packId)).getWeaponMasteries(),
+);
+
 final srdFeatsForPackProvider = FutureProvider.family<List<SrdFeat>, ContentPackId>(
   (ref, packId) => ref.watch(srdDataSourceForPackProvider(packId)).getFeats(),
 );

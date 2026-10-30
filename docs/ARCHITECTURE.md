@@ -623,6 +623,28 @@ UI entry point. It is opened from the character action menu. Roll history is
 kept in memory while the app process is alive; it is not persisted into
 `.dndchar`/`.dndbackup`.
 
+Contextual rolls (`data/dice/contextual_roll.dart`) are built by
+`ContextualWeaponRollBuilder` and `ContextualSpellRollBuilder` and shown by
+`contextual_roll_sheet.dart`. A request can carry `ContextualRollNote`s: rules
+that apply to the roll without dice of their own, shown under the title.
+
+- `data/rulesets/weapon_mastery_rules.dart` reads the 2024 Weapon Mastery
+  choices (`weapon_masteries` IDs such as `longsword`) and matches them to
+  inventory weapons by the English catalog name the item keeps; the mastery
+  property comes from the item's `mastery`. It computes Graze damage, the
+  Topple DC, the Cleave attack (damage without a positive ability modifier)
+  and the Tactical Master alternatives (Fighter 9+).
+  `ContextualWeaponRollBuilder.statsFor()` gives the attack numbers it uses.
+  Weapons without a catalog name, such as custom items and generic magic
+  weapons, have no mastery.
+- `data/rulesets/spell_roll_rules.dart` adds the Charisma modifier to the
+  damage of each cantrip chosen as an Agonizing Blast target
+  (`agonizing_blast@<cantrip>`, 2024 only) and gives the Eldritch Blast beam
+  count by character level.
+- `features/character_detail/widgets/dice/roll_notes.dart` turns both into
+  localized notes, reusing the SRD mastery descriptions from `equipment.json`
+  and its overlays.
+
 ### Feature Choices
 
 `data/feature_choice_engine.dart` turns SRD feature-choice definitions into

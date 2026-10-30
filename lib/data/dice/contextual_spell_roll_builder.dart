@@ -19,6 +19,8 @@ class ContextualSpellRollBuilder {
     int? spellAttackBonus,
     Set<int>? availableSlotLevels,
     String? subtitle,
+    int damageBonus = 0,
+    List<ContextualRollNote> notes = const [],
   }) {
     if (spell.rolls.isEmpty) return null;
 
@@ -36,14 +38,16 @@ class ContextualSpellRollBuilder {
             ),
           );
         case 'damage':
-          final formula = _formulaFor(roll, character.totalLevel);
-          if (formula == null || _isZeroExpression(formula)) break;
+          final base = _formulaFor(roll, character.totalLevel);
+          if (base == null || _isZeroExpression(base)) break;
+          final formula = _withModifier(base, damageBonus);
           final choices = _slotChoices(
             spell: spell,
             roll: roll,
             baseFormula: formula,
             availableSlotLevels: availableSlotLevels,
             slotLevelLabel: slotLevelLabel,
+            damageBonus: damageBonus,
           );
           parts.add(
             ContextualRollPart.expression(
@@ -64,6 +68,7 @@ class ContextualSpellRollBuilder {
       title: displayName,
       subtitle: subtitle,
       parts: parts,
+      notes: notes,
     );
   }
 
@@ -85,6 +90,7 @@ class ContextualSpellRollBuilder {
     required String baseFormula,
     required Set<int>? availableSlotLevels,
     required String Function(int level) slotLevelLabel,
+    int damageBonus = 0,
   }) {
     if (spell.level <= 0 || roll.slotLevelScaling.isEmpty) return const [];
 
@@ -93,7 +99,7 @@ class ContextualSpellRollBuilder {
       ..sort((a, b) => a.key.compareTo(b.key));
     for (final entry in scaling) {
       if (entry.key > spell.level) {
-        formulasByLevel[entry.key] = entry.value;
+        formulasByLevel[entry.key] = _withModifier(entry.value, damageBonus);
       }
     }
     if (formulasByLevel.length <= 1) return const [];
@@ -131,5 +137,10 @@ class ContextualSpellRollBuilder {
 
   static bool _isZeroExpression(String expression) {
     return int.tryParse(expression.trim()) == 0;
+  }
+
+  static String _withModifier(String expression, int modifier) {
+    if (modifier == 0) return expression;
+    return modifier > 0 ? '$expression+$modifier' : '$expression$modifier';
   }
 }

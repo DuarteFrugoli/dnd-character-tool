@@ -980,6 +980,60 @@ abstract class AppLocalizations {
   /// **'© 2026 Pedro Frugoli. All rights reserved.'**
   String get creditsCopyright;
 
+  /// Roll note title for a weapon mastery property.
+  ///
+  /// In en, this message translates to:
+  /// **'Mastery: {name}'**
+  String weaponMasteryNoteTitle(String name);
+
+  /// Graze damage on a miss.
+  ///
+  /// In en, this message translates to:
+  /// **'On a miss: {damage} {type} damage.'**
+  String weaponMasteryGrazeValue(int damage, String type);
+
+  /// Topple save DC.
+  ///
+  /// In en, this message translates to:
+  /// **'Save DC {dc}.'**
+  String weaponMasteryToppleValue(int dc);
+
+  /// Cleave second attack.
+  ///
+  /// In en, this message translates to:
+  /// **'Second attack: {bonus} to hit, {damage} damage.'**
+  String weaponMasteryCleaveValue(String bonus, String damage);
+
+  /// Fighter level 9 feature name.
+  ///
+  /// In en, this message translates to:
+  /// **'Tactical Master'**
+  String get weaponMasteryTacticalMasterTitle;
+
+  /// Masteries Tactical Master can use instead.
+  ///
+  /// In en, this message translates to:
+  /// **'For this attack you can use {options} instead.'**
+  String weaponMasteryTacticalMaster(String options);
+
+  /// Agonizing Blast damage bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'Your Charisma modifier (+{bonus}) is added to the damage.'**
+  String agonizingBlastNote(int bonus);
+
+  /// Roll note title for Eldritch Blast beams.
+  ///
+  /// In en, this message translates to:
+  /// **'Beams'**
+  String get eldritchBlastBeamsTitle;
+
+  /// Number of Eldritch Blast beams.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} beams: make a separate attack roll and damage roll for each one.'**
+  String eldritchBlastBeams(int count);
+
   /// Thank-you message at the end of the What's New dialog.
   ///
   /// In en, this message translates to:

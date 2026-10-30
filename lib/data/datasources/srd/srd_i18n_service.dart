@@ -404,6 +404,15 @@ class SrdI18nService {
   String? conditionDescription(String en) =>
       _str('conditions', en, 'description');
 
+  // ── Weapon masteries ───────────────────────────────────────────────────────
+
+  /// 2024 mastery property name, e.g. `topple`.
+  String? weaponMasteryName(String mastery) =>
+      _nested2('equipment', 'weaponMasteries', mastery, 'name');
+
+  String? weaponMasteryDescription(String mastery) =>
+      _nested2('equipment', 'weaponMasteries', mastery, 'description');
+
   // ── Monsters ───────────────────────────────────────────────────────────────
 
   String monsterName(String en) => _str('monsters', en, 'name') ?? en;

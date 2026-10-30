@@ -531,6 +531,47 @@ class AppLocalizationsDe extends AppLocalizations {
       '© 2026 Pedro Frugoli. Alle Rechte vorbehalten.';
 
   @override
+  String weaponMasteryNoteTitle(String name) {
+    return 'Meisterschaft: $name';
+  }
+
+  @override
+  String weaponMasteryGrazeValue(int damage, String type) {
+    return 'Bei Fehlschlag: $damage Schaden ($type).';
+  }
+
+  @override
+  String weaponMasteryToppleValue(int dc) {
+    return 'SG des Rettungswurfs $dc.';
+  }
+
+  @override
+  String weaponMasteryCleaveValue(String bonus, String damage) {
+    return 'Zweiter Angriff: $bonus auf Treffer, $damage Schaden.';
+  }
+
+  @override
+  String get weaponMasteryTacticalMasterTitle => 'Taktischer Meister';
+
+  @override
+  String weaponMasteryTacticalMaster(String options) {
+    return 'Bei diesem Angriff kannst du stattdessen $options nutzen.';
+  }
+
+  @override
+  String agonizingBlastNote(int bonus) {
+    return 'Dein Charismamodifikator (+$bonus) wird zum Schaden addiert.';
+  }
+
+  @override
+  String get eldritchBlastBeamsTitle => 'Strahlen';
+
+  @override
+  String eldritchBlastBeams(int count) {
+    return '$count Strahlen: Würfle für jeden einen eigenen Angriffs- und Schadenswurf.';
+  }
+
+  @override
   String get whatsNewThanks =>
       'Danke, dass du spielst und uns Feedback gibst. Deine Ideen helfen uns bei den nächsten Schritten.';
 

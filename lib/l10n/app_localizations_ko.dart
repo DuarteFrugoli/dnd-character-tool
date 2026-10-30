@@ -513,6 +513,47 @@ class AppLocalizationsKo extends AppLocalizations {
   String get creditsCopyright => '© 2026 Pedro Frugoli. All rights reserved.';
 
   @override
+  String weaponMasteryNoteTitle(String name) {
+    return '숙달: $name';
+  }
+
+  @override
+  String weaponMasteryGrazeValue(int damage, String type) {
+    return '빗나가면: $type 피해 $damage.';
+  }
+
+  @override
+  String weaponMasteryToppleValue(int dc) {
+    return '내성 DC $dc.';
+  }
+
+  @override
+  String weaponMasteryCleaveValue(String bonus, String damage) {
+    return '두 번째 공격: 명중 $bonus, 피해 $damage.';
+  }
+
+  @override
+  String get weaponMasteryTacticalMasterTitle => '전술의 달인';
+
+  @override
+  String weaponMasteryTacticalMaster(String options) {
+    return '이 공격에는 대신 $options을(를) 사용할 수 있습니다.';
+  }
+
+  @override
+  String agonizingBlastNote(int bonus) {
+    return '매력 수정치(+$bonus)가 피해에 더해집니다.';
+  }
+
+  @override
+  String get eldritchBlastBeamsTitle => '광선';
+
+  @override
+  String eldritchBlastBeams(int count) {
+    return '광선 $count개: 각각 따로 명중 굴림과 피해 굴림을 합니다.';
+  }
+
+  @override
   String get whatsNewThanks =>
       '게임을 즐기고 의견을 나눠 주셔서 감사합니다. 여러분의 아이디어가 앞으로의 개발에 큰 도움이 됩니다.';
 

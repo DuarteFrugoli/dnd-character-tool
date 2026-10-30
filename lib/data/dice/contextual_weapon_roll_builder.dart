@@ -1,6 +1,7 @@
 import '../datasources/srd/srd_models.dart';
 import '../models/models.dart';
 import '../rulesets/ruleset_ids.dart';
+import '../rulesets/weapon_mastery_rules.dart';
 import 'contextual_roll.dart';
 
 class ContextualWeaponRollBuilder {
@@ -19,25 +20,19 @@ class ContextualWeaponRollBuilder {
     List<SrdClass>? classes,
     List<String>? weaponProficiencies,
     String? subtitle,
+    List<ContextualRollNote> notes = const [],
   }) {
-    if (item.itemType != ItemType.weapon) return null;
-    if (character.rulesetId == RulesetId.dnd2014 && classes == null ||
-        character.rulesetId == RulesetId.dnd2024 && weaponProficiencies == null) {
-      throw StateError('Weapon proficiencies must come from the character ruleset.');
-    }
-
-    final damageDice = _propertyText(item, 'damageDice') ??
-        _propertyText(item, 'damage');
-    if (damageDice == null || damageDice.isEmpty) return null;
-
-    final abilityModifier = _weaponAbilityModifier(character, item);
-    final magicBonus = _propertyInt(item, 'bonus');
-    final attackBonus =
-        abilityModifier +
-        magicBonus +
-        (_isProficientWithWeapon(character, item, classes, weaponProficiencies)
-            ? character.proficiencyBonus
-            : 0);
+    final stats = statsFor(
+      character: character,
+      item: item,
+      classes: classes,
+      weaponProficiencies: weaponProficiencies,
+    );
+    if (stats == null) return null;
+    final damageDice = stats.damageDice;
+    final abilityModifier = stats.abilityModifier;
+    final magicBonus = stats.magicBonus;
+    final attackBonus = stats.attackBonus;
 
     final parts = <ContextualRollPart>[
       ContextualRollPart.d20(
@@ -102,6 +97,38 @@ class ContextualWeaponRollBuilder {
       title: displayName,
       subtitle: subtitle,
       parts: parts,
+      notes: notes,
+    );
+  }
+
+  /// Attack and damage numbers of [item], or null when it is not a weapon
+  /// with damage dice.
+  static WeaponAttackStats? statsFor({
+    required Character character,
+    required EquipmentItem item,
+    List<SrdClass>? classes,
+    List<String>? weaponProficiencies,
+  }) {
+    if (item.itemType != ItemType.weapon) return null;
+    if (character.rulesetId == RulesetId.dnd2014 && classes == null ||
+        character.rulesetId == RulesetId.dnd2024 && weaponProficiencies == null) {
+      throw StateError('Weapon proficiencies must come from the character ruleset.');
+    }
+    final damageDice = _propertyText(item, 'damageDice') ??
+        _propertyText(item, 'damage');
+    if (damageDice == null || damageDice.isEmpty) return null;
+    final abilityModifier = _weaponAbilityModifier(character, item);
+    final magicBonus = _propertyInt(item, 'bonus');
+    return WeaponAttackStats(
+      abilityModifier: abilityModifier,
+      magicBonus: magicBonus,
+      attackBonus: abilityModifier +
+          magicBonus +
+          (_isProficientWithWeapon(character, item, classes, weaponProficiencies)
+              ? character.proficiencyBonus
+              : 0),
+      damageDice: damageDice,
+      damageType: _propertyText(item, 'damageType'),
     );
   }
 

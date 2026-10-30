@@ -512,6 +512,47 @@ class AppLocalizationsJa extends AppLocalizations {
   String get creditsCopyright => '© 2026 Pedro Frugoli. All rights reserved.';
 
   @override
+  String weaponMasteryNoteTitle(String name) {
+    return 'マスタリー：$name';
+  }
+
+  @override
+  String weaponMasteryGrazeValue(int damage, String type) {
+    return '外れた場合：$typeダメージ$damage。';
+  }
+
+  @override
+  String weaponMasteryToppleValue(int dc) {
+    return 'セーヴDC$dc。';
+  }
+
+  @override
+  String weaponMasteryCleaveValue(String bonus, String damage) {
+    return '2回目の攻撃：命中$bonus、ダメージ$damage。';
+  }
+
+  @override
+  String get weaponMasteryTacticalMasterTitle => '戦術の達人';
+
+  @override
+  String weaponMasteryTacticalMaster(String options) {
+    return 'この攻撃では代わりに$optionsを使用できます。';
+  }
+
+  @override
+  String agonizingBlastNote(int bonus) {
+    return '【魅力】修正値（+$bonus）がダメージに加算されます。';
+  }
+
+  @override
+  String get eldritchBlastBeamsTitle => '光線';
+
+  @override
+  String eldritchBlastBeams(int count) {
+    return '光線$count本：それぞれ別々に攻撃ロールとダメージ・ロールを行います。';
+  }
+
+  @override
   String get whatsNewThanks =>
       '遊んでいただき、またご意見をお寄せいただきありがとうございます。皆さんのアイデアが今後の開発につながります。';
 

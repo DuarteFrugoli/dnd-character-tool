@@ -3,6 +3,8 @@ import '../../../data/character_progression/progression_2024_engine.dart';
 import '../../../data/rulesets/ruleset_ids.dart';
 import '../widgets/spells/spell_widgets.dart';
 import '../widgets/dice/contextual_roll_sheet.dart';
+import '../widgets/dice/roll_notes.dart';
+import '../../../data/rulesets/spell_roll_rules.dart';
 import '../../../l10n/ability_l10n.dart';
 
 class Spells2024Tab extends ConsumerWidget {
@@ -306,6 +308,13 @@ class _Known2024SpellTile extends ConsumerWidget {
             damageTypeLabel: i18n.damageType,
             spellAttackBonus: attackBonus,
             availableSlotLevels: availableLevels,
+            damageBonus: SpellRollRules.damageBonus(character, spell.name),
+            notes: spellRollNotes(
+              l10n: l10n,
+              i18n: i18n,
+              damageBonus: SpellRollRules.damageBonus(character, spell.name),
+              beams: SpellRollRules.beams(spell.name, character.totalLevel),
+            ),
           );
     final casting = this.casting;
     final countsAgainstLimit = casting != null &&

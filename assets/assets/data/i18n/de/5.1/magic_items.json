@@ -254,11 +254,11 @@
   },
   "Potion of Superior Healing": {
     "name": "Trank der überlegenen Heilung",
-    "description": "Wenn Sie diesen Trank trinken, erhalten Sie 8W4 + 8 Trefferpunkte zurück."
+    "description": "Wenn du diesen Trank trinkst, erhältst du 8W4 + 8 Trefferpunkte zurück."
   },
   "Potion of Supreme Healing": {
     "name": "Trank der höchsten Heilung",
-    "description": "Wenn Sie diesen Trank trinken, erhalten Sie 10W4 + 20 Trefferpunkte zurück."
+    "description": "Wenn du diesen Trank trinkst, erhältst du 10W4 + 20 Trefferpunkte zurück."
   },
   "Bag of Holding": {
     "name": "Beutel voller Halt",
@@ -298,18 +298,18 @@
   },
   "Headband of Intellect": {
     "name": "Stirnband der Intelligenz",
-    "description": "Ihr Intelligenzwert beträgt 19, während Sie dieses Stirnband tragen. Es hat keine Auswirkungen auf Sie, wenn Ihre Intelligenz bereits 19 oder höher ist."
+    "description": "Dein Intelligenzwert beträgt 19, während du dieses Stirnband trägst. Es hat keine Wirkung auf dich, wenn deine Intelligenz bereits 19 oder höher ist."
   },
   "Amulet of Health": {
     "name": "Amulett der Gesundheit",
-    "description": "Ihr Konstitutionswert beträgt 19, während Sie dieses Amulett tragen. Es hat keine Auswirkungen auf Sie, wenn Ihre Verfassung bereits 19 oder höher ist."
+    "description": "Dein Konstitutionswert beträgt 19, während du dieses Amulett trägst. Es hat keine Wirkung auf dich, wenn deine Konstitution bereits 19 oder höher ist."
   },
   "Wand of Magic Missiles": {
     "name": "Zauberstab der magischen Raketen",
-    "description": "Dieser Zauberstab hat 7 Ladungen. Während Sie es halten, können Sie eine Aktion ausführen, um eine oder mehrere seiner Ladungen zu verbrauchen, um den Zauber „Magische Rakete“ von ihm zu wirken. Für 1 Ladung wirken Sie die Version des Zaubers der 1. Stufe. Für jede zusätzlich aufgewendete Ladung können Sie die Stufe des Zauberslots um eins erhöhen. Der Zauberstab erhält täglich im Morgengrauen 1W6 + 1 verbrauchte Ladung zurück."
+    "description": "Dieser Zauberstab hat 7 Ladungen. Während du ihn hältst, kannst du eine Aktion nutzen und 1 oder mehr seiner Ladungen verbrauchen, um mit ihm den Zauber Magisches Geschoss zu wirken. Für 1 Ladung wirkst du die Version des Zaubers des 1. Grades. Für jede zusätzlich verbrauchte Ladung kannst du den Grad des Zauberplatzes um eins erhöhen. Der Zauberstab erhält täglich im Morgengrauen 1W6 + 1 verbrauchte Ladungen zurück. Verbrauchst du die letzte Ladung, wirf einen W20. Bei einer 1 zerfällt der Zauberstab zu Asche und wird zerstört."
   },
   "Rope of Climbing": {
     "name": "Kletterseil",
-    "description": "Dieses {{distance:60ft}} lange Seidenseil wiegt 3 Pfund und kann bis zu 3.000 Pfund tragen. Wenn Sie ein Ende des Seils festhalten und mit einer Aktion das Befehlswort aussprechen, wird das Seil animiert. Als Bonusaktion können Sie dem anderen Ende befehlen, sich zu einem von Ihnen gewählten Ziel zu bewegen. Dieses Ende bewegt sich in dem Zug, in dem Sie es zum ersten Mal befehligen, um {{distance:10ft}} und in jedem Ihrer folgenden Züge um weitere {{distance:10ft}}, bis es sein Ziel erreicht, die maximale Länge des Seils ausgeschöpft ist oder Sie ihm befehlen anzuhalten. Sie können dem Seil auch befehlen, sich sicher an einem Gegenstand festzubinden oder sich zu lösen, sich zu verknoten oder zu entknoten oder sich zum Tragen aufzurollen.\n\nBefehlen Sie dem Seil, sich zu verknoten, bilden sich im Abstand von je {{distance:1ft|dat}} große Knoten entlang des Seils. Solange es verknotet ist, verkürzt sich das Seil auf eine Länge von {{distance:50ft|dat}} und gewährt Vorteil bei Würfen, um daran hinaufzuklettern.\n\nDas Seil hat RK 20 und 20 Trefferpunkte. Es erhält alle 5 Minuten 1 Trefferpunkt zurück, solange es mindestens 1 Trefferpunkt hat. Fällt das Seil auf 0 Trefferpunkte, wird es zerstört."
+    "description": "Dieses {{distance:60ft}} lange Seidenseil wiegt 3 Pfund und kann bis zu 3.000 Pfund tragen. Wenn du ein Ende des Seils hältst und mit einer Aktion das Befehlswort sprichst, wird das Seil lebendig. Als Bonusaktion kannst du dem anderen Ende befehlen, sich zu einem Ziel deiner Wahl zu bewegen. Dieses Ende bewegt sich in dem Zug, in dem du ihm den Befehl erstmals gibst, um {{distance:10ft}} und in jedem deiner folgenden Züge um weitere {{distance:10ft}}, bis es sein Ziel erreicht, die maximale Länge des Seils ausgeschöpft ist oder du ihm befiehlst anzuhalten. Du kannst dem Seil auch befehlen, sich sicher an einem Gegenstand festzubinden oder sich zu lösen, sich zu verknoten oder zu entknoten oder sich zum Tragen aufzurollen.\n\nBefiehlst du dem Seil, sich zu verknoten, bilden sich im Abstand von je {{distance:1ft|dat}} große Knoten entlang des Seils. Solange es verknotet ist, verkürzt sich das Seil auf eine Länge von {{distance:50ft|dat}} und gewährt Vorteil bei Würfen, um daran hinaufzuklettern.\n\nDas Seil hat RK 20 und 20 Trefferpunkte. Es erhält alle 5 Minuten 1 Trefferpunkt zurück, solange es mindestens 1 Trefferpunkt hat. Fällt das Seil auf 0 Trefferpunkte, wird es zerstört."
   }
 }

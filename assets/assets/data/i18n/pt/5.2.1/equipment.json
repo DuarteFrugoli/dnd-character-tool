@@ -210,7 +210,7 @@
   },
   "Backpack": {
     "name": "Mochila",
-    "description": "Comporta até 30 libras em 1 pé cúbico; também pode servir como alforje."
+    "description": "Comporta até 30 libras em {{volume:1cuft}}; também pode servir como alforje."
   },
   "Ball Bearings": {
     "name": "Esferas de Metal",
@@ -218,11 +218,11 @@
   },
   "Barrel": {
     "name": "Barril",
-    "description": "Comporta até 40 galões de líquido ou 4 pés cúbicos de produtos secos."
+    "description": "Comporta até {{volume:40gal}} de líquido ou {{volume:4cuft}} de produtos secos."
   },
   "Basket": {
     "name": "Cesto",
-    "description": "Comporta até 40 libras em 2 pés cúbicos."
+    "description": "Comporta até 40 libras em {{volume:2cuft}}."
   },
   "Bedroll": {
     "name": "Saco de Dormir",
@@ -246,11 +246,11 @@
   },
   "Bottle, Glass": {
     "name": "Garrafa de Vidro",
-    "description": "Comporta até 1,5 pinta."
+    "description": "Comporta até {{volume:1.5pint}}."
   },
   "Bucket": {
     "name": "Balde",
-    "description": "Comporta até meio pé cúbico de conteúdo."
+    "description": "Comporta até {{volume:0.5cuft}} de conteúdo."
   },
   "Burglar's Pack": {
     "name": "Kit de Assaltante",
@@ -278,7 +278,7 @@
   },
   "Chest": {
     "name": "Baú",
-    "description": "Comporta até 12 pés cúbicos de conteúdo."
+    "description": "Comporta até {{volume:12cuft}} de conteúdo."
   },
   "Climber's Kit": {
     "name": "Kit de Escalada",
@@ -338,7 +338,7 @@
   },
   "Flask": {
     "name": "Frasco",
-    "description": "Comporta até 1 pinta."
+    "description": "Comporta até {{volume:1pint}}."
   },
   "Grappling Hook": {
     "name": "Gancho de Escalada",
@@ -374,7 +374,7 @@
   },
   "Ink": {
     "name": "Tinta",
-    "description": "Um frasco de 1 onça contém tinta suficiente para cerca de 500 páginas."
+    "description": "Um frasco de {{volume:1floz}} contém tinta suficiente para cerca de 500 páginas."
   },
   "Ink Pen": {
     "name": "Pena de Escrever",
@@ -382,7 +382,7 @@
   },
   "Jug": {
     "name": "Jarro",
-    "description": "Comporta até 1 galão."
+    "description": "Comporta até {{volume:1gal}}."
   },
   "Ladder": {
     "name": "Escada",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Perfume",
-    "description": "Frasco de 4 onças. Por 1 hora após aplicá-lo, ganhe Vantagem em testes de Carisma (Persuasão) para influenciar um Humanoide Indiferente a até {{distance:5ft}}."
+    "description": "Frasco de {{volume:4floz}}. Por 1 hora após aplicá-lo, ganhe Vantagem em testes de Carisma (Persuasão) para influenciar um Humanoide Indiferente a até {{distance:5ft}}."
   },
   "Poison, Basic": {
     "name": "Veneno Básico",
@@ -450,11 +450,11 @@
   },
   "Pot, Iron": {
     "name": "Panela de Ferro",
-    "description": "Comporta até 1 galão."
+    "description": "Comporta até {{volume:1gal}}."
   },
   "Pouch": {
     "name": "Algibeira",
-    "description": "Comporta até 6 libras em um quinto de pé cúbico."
+    "description": "Comporta até 6 libras em {{volume:0.2cuft}}."
   },
   "Priest's Pack": {
     "name": "Kit de Sacerdote",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "Saco",
-    "description": "Comporta até 30 libras em 1 pé cúbico."
+    "description": "Comporta até 30 libras em {{volume:1cuft}}."
   },
   "Scholar's Pack": {
     "name": "Kit de Estudioso",
@@ -530,7 +530,7 @@
   },
   "Waterskin": {
     "name": "Odre",
-    "description": "Comporta até 4 pintas de água; o peso indicado é quando está cheio."
+    "description": "Comporta até {{volume:4pint}} de água; o peso indicado é quando está cheio."
   },
   "weaponMasteries": {
     "cleave": {

@@ -13,7 +13,7 @@
       "name": "Göttliches Eingreifen"
     },
     "wild_shape": {
-      "name": "Tiergestalt"
+      "name": "Wilde Form"
     },
     "second_wind": {
       "name": "Zweiter Atem"
@@ -40,7 +40,7 @@
       "name": "Reinigende Berührung"
     },
     "stroke_of_luck": {
-      "name": "Glücksgriff"
+      "name": "Glückstreffer"
     },
     "sorcery_points": {
       "name": "Zaubereipunkte"
@@ -49,7 +49,7 @@
       "name": "Mystisches Arkanum"
     },
     "eldritch_master": {
-      "name": "Okkulter Meister"
+      "name": "Andersweltlicher Meister"
     },
     "arcane_recovery": {
       "name": "Arkane Erholung"
@@ -109,10 +109,10 @@
       "name": "Gutartige Transposition"
     },
     "portent": {
-      "name": "Omen"
+      "name": "Vorzeichen"
     },
     "instinctive_charm": {
-      "name": "Instinktiver Zauber"
+      "name": "Instinktive Bezauberung"
     },
     "illusory_self": {
       "name": "Illusorisches Selbst"

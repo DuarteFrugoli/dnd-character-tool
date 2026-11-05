@@ -438,7 +438,7 @@
     }
   },
   "Sorcerer": {
-    "name": "마법사",
+    "name": "소서러",
     "subclassFeatureName": "마법의 근원",
     "weaponProficiencies": [
       "단검",
@@ -488,7 +488,7 @@
     }
   },
   "Warlock": {
-    "name": "요술 장이",
+    "name": "워락",
     "subclassFeatureName": "다른 세상의 후원자",
     "weaponProficiencies": [
       "단순한"
@@ -542,7 +542,7 @@
     }
   },
   "Wizard": {
-    "name": "마법사",
+    "name": "위저드",
     "subclassFeatureName": "신비한 전통",
     "weaponProficiencies": [
       "단검",

@@ -3,7 +3,7 @@
     "name": "Acrobacia"
   },
   "Animal Handling": {
-    "name": "Manejo de animales"
+    "name": "Trato con animales"
   },
   "Arcana": {
     "name": "Arcanos"
@@ -18,7 +18,7 @@
     "name": "Historia"
   },
   "Insight": {
-    "name": "Conocimiento"
+    "name": "Perspicacia"
   },
   "Intimidation": {
     "name": "Intimidación"
@@ -27,7 +27,7 @@
     "name": "Investigación"
   },
   "Medicine": {
-    "name": "Medicamento"
+    "name": "Medicina"
   },
   "Nature": {
     "name": "Naturaleza"
@@ -45,7 +45,7 @@
     "name": "Religión"
   },
   "Sleight of Hand": {
-    "name": "Prestidigitación"
+    "name": "Juego de manos"
   },
   "Stealth": {
     "name": "Sigilo"

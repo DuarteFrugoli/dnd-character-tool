@@ -92,7 +92,7 @@
     },
     "Countercharm": {
       "name": "Contraencanto",
-      "description": "Obtienes la capacidad de usar notas musicales o palabras de poder para interrumpir los efectos que influyen en la mente. Como acción, puedes iniciar una actuación que dura hasta el final de tu siguiente turno. Durante ese tiempo, tú y cualquier criatura amiga a {{distance:30ft}} de ti tenéis ventaja en las tiradas de salvación contra ser asustados o encantados."
+      "description": "Obtienes la capacidad de usar notas musicales o palabras de poder para interrumpir los efectos que influyen en la mente. Como acción, puedes iniciar una actuación que dura hasta el final de tu siguiente turno. Durante ese tiempo, tú y cualquier criatura amiga a {{distance:30ft}} de ti tenéis ventaja en las tiradas de salvación contra ser asustados o hechizados."
     },
     "Magical Secrets": {
       "name": "Secretos magicos",
@@ -236,7 +236,7 @@
     },
     "Stillness of Mind": {
       "name": "Quietud de la mente",
-      "description": "Puedes usar tu acción para poner fin a un efecto en ti mismo que te hace sentir encantado o asustado."
+      "description": "Puedes usar tu acción para poner fin a un efecto en ti mismo que te hace sentir hechizado o asustado."
     },
     "Timeless Body": {
       "name": "Cuerpo atemporal",

@@ -7,7 +7,7 @@
       },
       "Mindless Rage": {
         "name": "Rabia sin sentido",
-        "description": "A partir del nivel 6, no puedes ser hechizado ni asustado mientras estás furioso. Si estás encantado o asustado cuando entras en ira, el efecto se suspende mientras dure la ira."
+        "description": "A partir del nivel 6, no puedes ser hechizado ni asustado mientras estás furioso. Si estás hechizado o asustado cuando entras en ira, el efecto se suspende mientras dure la ira."
       },
       "Intimidating Presence": {
         "name": "Presencia intimidante",
@@ -49,7 +49,7 @@
       },
       "Cutting Words": {
         "name": "Cortar palabras",
-        "description": "También en el nivel 3, cuando una criatura que puedes ver a menos de {{distance:60ft}} hace una tirada de ataque, prueba de habilidad o tirada de daño, puedes usar tu reacción para gastar un uso de Inspiración bárdica, tirar el dado y restar el número de la tirada de la criatura. La criatura es inmune si no puede oírte o es inmune a ser encantada."
+        "description": "También en el nivel 3, cuando una criatura que puedes ver a menos de {{distance:60ft}} hace una tirada de ataque, prueba de habilidad o tirada de daño, puedes usar tu reacción para gastar un uso de Inspiración bárdica, tirar el dado y restar el número de la tirada de la criatura. La criatura es inmune si no puede oírte o es inmune a ser hechizada."
       },
       "Additional Magical Secrets": {
         "name": "Secretos mágicos adicionales",
@@ -91,7 +91,7 @@
       },
       "Channel Divinity: Read Thoughts": {
         "name": "Canalizar Divinidad: leer pensamientos",
-        "description": "En el nivel 6, puedes usar tu Canalizar Divinidad para leer los pensamientos de una criatura. Lanzas detectar pensamientos (la CD de salvación es igual a la CD de salvación del clérigo) sin necesidad de espacio para hechizos ni componentes. El objetivo que falla su salvación será encantado por ti durante 1 minuto o hasta que le hagas daño."
+        "description": "En el nivel 6, puedes usar tu Canalizar Divinidad para leer los pensamientos de una criatura. Lanzas detectar pensamientos (la CD de salvación es igual a la CD de salvación del clérigo) sin necesidad de espacio para hechizos ni componentes. El objetivo que falla su salvación será hechizado por ti durante 1 minuto o hasta que le hagas daño."
       },
       "Potent Spellcasting": {
         "name": "Lanzamiento de hechizos potente",
@@ -164,8 +164,8 @@
         "description": "También en el nivel 1, ganas competencia con armadura pesada."
       },
       "Channel Divinity: Charm Animals and Plants": {
-        "name": "Canalizar Divinidad: Encantar animales y plantas",
-        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado e invocas el nombre de tu deidad. Cada bestia o criatura vegetal que pueda verte a menos de {{distance:30ft}} debe realizar una tirada de salvación de Sabiduría. Si falla, quedará encantado durante 1 minuto o hasta que sufra daño."
+        "name": "Canalizar Divinidad: Hechizar animales y plantas",
+        "description": "A partir del nivel 2, como acción, presentas tu símbolo sagrado e invocas el nombre de tu deidad. Cada bestia o criatura vegetal que pueda verte a menos de {{distance:30ft}} debe realizar una tirada de salvación de Sabiduría. Si falla, quedará hechizado durante 1 minuto o hasta que sufra daño."
       },
       "Dampen Elements": {
         "name": "Elementos humedecidos",
@@ -177,7 +177,7 @@
       },
       "Master of Nature": {
         "name": "Maestro de la naturaleza",
-        "description": "En el nivel 17, obtienes la capacidad de comandar animales y criaturas vegetales. Mientras las criaturas están encantadas con tu función Encantar animales y plantas, puedes realizar una acción adicional en tu turno para ordenar verbalmente lo que hará cada una de esas criaturas en su próximo turno."
+        "description": "En el nivel 17, obtienes la capacidad de comandar animales y criaturas vegetales. Mientras las criaturas están hechizadas con tu función Hechizar animales y plantas, puedes realizar una acción adicional en tu turno para ordenar verbalmente lo que hará cada una de esas criaturas en su próximo turno."
       }
     },
     "Tempest Domain": {
@@ -615,7 +615,7 @@
       },
       "Draconic Presence": {
         "name": "Presencia dracónica",
-        "description": "A partir del nivel 18, como acción, puedes gastar 5 puntos de hechicería para exudar un aura de asombro o miedo (tú eliges) a una distancia de {{distance:60ft}}. Durante 1 minuto o hasta que pierdas la concentración, cada criatura hostil que comience su turno en esta aura debe superar una tirada de salvación de Sabiduría o quedar encantada (si eliges asombro) o asustada (si eliges miedo) hasta que el aura termine."
+        "description": "A partir del nivel 18, como acción, puedes gastar 5 puntos de hechicería para exudar un aura de asombro o miedo (tú eliges) a una distancia de {{distance:60ft}}. Durante 1 minuto o hasta que pierdas la concentración, cada criatura hostil que comience su turno en esta aura debe superar una tirada de salvación de Sabiduría o quedar hechizada (si eliges asombro) o asustada (si eliges miedo) hasta que el aura termine."
       }
     },
     "Wild Magic": {
@@ -645,7 +645,7 @@
     "The Archfey": {
       "Fey Presence": {
         "name": "Presencia feérica",
-        "description": "A partir del nivel 1, como acción, puedes hacer que cada criatura en un cubo de {{distance:10ft}} que se origina en ti haga una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de brujo. Las criaturas que fallan quedan encantadas o asustadas por ti (tú eliges) hasta el final de tu siguiente turno. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
+        "description": "A partir del nivel 1, como acción, puedes hacer que cada criatura en un cubo de {{distance:10ft}} que se origina en ti haga una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de brujo. Las criaturas que fallan quedan hechizadas o asustadas por ti (tú eliges) hasta el final de tu siguiente turno. Una vez que uses esta función, no podrás volver a usarla hasta que termines un descanso corto o largo."
       },
       "Misty Escape": {
         "name": "Escape brumoso",
@@ -693,7 +693,7 @@
       },
       "Create Thrall": {
         "name": "Crear esclavo",
-        "description": "En el nivel 14, obtienes la capacidad de infectar la mente de un humanoide con la magia alienígena de tu patrón. Puedes usar tu acción para tocar a un humanoide incapacitado. Luego, esa criatura es encantada por ti hasta que se le lanza un hechizo para eliminar la maldición, se elimina la condición de encantamiento o usas esta característica nuevamente. Puedes comunicarte telepáticamente con la criatura encantada siempre que ambos estéis en el mismo plano de existencia."
+        "description": "En el nivel 14, obtienes la capacidad de infectar la mente de un humanoide con la magia alienígena de tu patrón. Puedes usar tu acción para tocar a un humanoide incapacitado. Luego, esa criatura es hechizada por ti hasta que se le lanza un hechizo para eliminar la maldición, se elimina la condición de encantamiento o usas esta característica nuevamente. Puedes comunicarte telepáticamente con la criatura hechizada siempre que ambos estéis en el mismo plano de existencia."
       }
     }
   },
@@ -771,7 +771,7 @@
       },
       "Hypnotic Gaze": {
         "name": "Mirada hipnótica",
-        "description": "A partir del nivel 2, como acción, elige una criatura que puedas ver a {{distance:5ft}} de ti. Si el objetivo puede verte u oírte, debe superar una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de mago o ser hechizado por ti hasta el final de tu siguiente turno. La velocidad de la criatura encantada cae a 0 y queda incapacitada y visiblemente aturdida. En turnos posteriores, puedes usar tu acción para mantener este efecto hasta el final de tu siguiente turno. El efecto termina si te alejas más de {{distance:5ft}}, si la criatura no puede verte ni oírte, o si la criatura sufre daño."
+        "description": "A partir del nivel 2, como acción, elige una criatura que puedas ver a {{distance:5ft}} de ti. Si el objetivo puede verte u oírte, debe superar una tirada de salvación de Sabiduría contra la CD de salvación de tu hechizo de mago o ser hechizado por ti hasta el final de tu siguiente turno. La velocidad de la criatura hechizada cae a 0 y queda incapacitada y visiblemente aturdida. En turnos posteriores, puedes usar tu acción para mantener este efecto hasta el final de tu siguiente turno. El efecto termina si te alejas más de {{distance:5ft}}, si la criatura no puede verte ni oírte, o si la criatura sufre daño."
       },
       "Instinctive Charm": {
         "name": "Encanto instintivo",
@@ -783,7 +783,7 @@
       },
       "Alter Memories": {
         "name": "Alterar recuerdos",
-        "description": "En el nivel 14, cuando lanzas un conjuro de encantamiento para encantar a una o más criaturas, puedes alterar la comprensión de una criatura para que no se dé cuenta de que está encantada. Además, una vez antes de que expire el hechizo, puedes usar tu acción para intentar que la criatura elegida olvide parte del tiempo que pasó encantada. La criatura debe superar una tirada de salvación de Inteligencia contra la CD de salvación de tu hechizo de mago o perderá un número de horas de sus recuerdos igual a 1 + tu modificador de Carisma (mínimo 1)."
+        "description": "En el nivel 14, cuando lanzas un conjuro de encantamiento para encantar a una o más criaturas, puedes alterar la comprensión de una criatura para que no se dé cuenta de que está hechizada. Además, una vez antes de que expire el hechizo, puedes usar tu acción para intentar que la criatura elegida olvide parte del tiempo que pasó hechizada. La criatura debe superar una tirada de salvación de Inteligencia contra la CD de salvación de tu hechizo de mago o perderá un número de horas de sus recuerdos igual a 1 + tu modificador de Carisma (mínimo 1)."
       }
     },
     "School of Evocation": {

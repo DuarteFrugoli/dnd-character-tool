@@ -183,7 +183,7 @@
   },
   "Backpack": {
     "name": "Sac à dos",
-    "description": "Peut contenir 30 lb/28 litres."
+    "description": "Peut contenir 30 lb/{{volume:1cuft}}."
   },
   "Burglar's Pack": {
     "name": "Pack du cambrioleur",
@@ -219,11 +219,11 @@
   },
   "Barrel": {
     "name": "Baril",
-    "description": "Peut contenir 40 gallons de liquide ou 113 litres de solide."
+    "description": "Peut contenir {{volume:40gal}} de liquide ou {{volume:4cuft}} de solide."
   },
   "Basket": {
     "name": "Panier",
-    "description": "Peut contenir 57 litres/40 lb."
+    "description": "Peut contenir {{volume:2cuft}}/40 lb."
   },
   "Bedroll": {
     "name": "Sac de couchage",
@@ -247,11 +247,11 @@
   },
   "Bottle, glass": {
     "name": "Bouteille, verre",
-    "description": "Peut contenir 1,5 pinte de liquide."
+    "description": "Peut contenir {{volume:1.5pint}} de liquide."
   },
   "Bucket": {
     "name": "Seau",
-    "description": "Peut contenir 3 gallons."
+    "description": "Peut contenir {{volume:3gal}}."
   },
   "Caltrops (bag of 20)": {
     "name": "Chausse-trapes (sachet de 20)",
@@ -283,7 +283,7 @@
   },
   "Chest": {
     "name": "Poitrine",
-    "description": "Peut contenir 340 litres/300 lb."
+    "description": "Peut contenir {{volume:12cuft}}/300 lb."
   },
   "Climber's Kit": {
     "name": "Kit du grimpeur",
@@ -319,7 +319,7 @@
   },
   "Flask or tankard": {
     "name": "Flacon ou chope",
-    "description": "Peut contenir 1 pinte de liquide."
+    "description": "Peut contenir {{volume:1pint}} de liquide."
   },
   "Grappling Hook": {
     "name": "Grappin",
@@ -371,7 +371,7 @@
   },
   "Jug or Pitcher": {
     "name": "Cruche ou pichet",
-    "description": "Peut contenir 1 gallon de liquide."
+    "description": "Peut contenir {{volume:1gal}} de liquide."
   },
   "Ladder (10-foot)": {
     "name": "Échelle (3 mètres)",
@@ -379,15 +379,15 @@
   },
   "Lamp": {
     "name": "Lampe",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Projette une lumière vive dans un rayon de {{distance:15ft}} et une lumière tamisée sur {{distance:30ft}} supplémentaires."
+    "description": "Brûle de l'huile ({{volume:1pint}} = 6 heures). Projette une lumière vive dans un rayon de {{distance:15ft}} et une lumière tamisée sur {{distance:30ft}} supplémentaires."
   },
   "Lantern, bullseye": {
     "name": "Lanterne, cible",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Cône de {{distance:60ft}} de lumière vive, {{distance:60ft}} supplémentaires de lumière tamisée."
+    "description": "Brûle de l'huile ({{volume:1pint}} = 6 heures). Cône de {{distance:60ft}} de lumière vive, {{distance:60ft}} supplémentaires de lumière tamisée."
   },
   "Lantern, hooded": {
     "name": "Lanterne, à capuchon",
-    "description": "Brûle de l'huile (1 pinte = 6 heures). Lumière vive dans un rayon de {{distance:30ft}}, lumière faible supplémentaire de {{distance:30ft}}. Peut être recouvert d'une capuche pour réduire la lumière à {{distance:5ft}}."
+    "description": "Brûle de l'huile ({{volume:1pint}} = 6 heures). Lumière vive dans un rayon de {{distance:30ft}}, lumière faible supplémentaire de {{distance:30ft}}. Peut être recouvert d'une capuche pour réduire la lumière à une lumière faible à {{distance:5ft}}."
   },
   "Lock": {
     "name": "Verrouillage",
@@ -447,7 +447,7 @@
   },
   "Pouch": {
     "name": "Poche",
-    "description": "Peut contenir jusqu'à 20 balles de fronde ou 50 aiguilles de sarbacane, ou 6 lb / 6 litres d'équipement."
+    "description": "Peut contenir jusqu'à 20 balles de fronde ou 50 aiguilles de sarbacane, ou 6 lb / {{volume:0.2cuft}} d'équipement."
   },
   "Quiver": {
     "name": "Frémir",
@@ -471,7 +471,7 @@
   },
   "Sack": {
     "name": "Sac",
-    "description": "Peut contenir 28 litres/30 lb."
+    "description": "Peut contenir {{volume:1cuft}}/30 lb."
   },
   "Sand (small bag)": {
     "name": "Sable (petit sac)",
@@ -539,7 +539,7 @@
   },
   "Waterskin": {
     "name": "Outre",
-    "description": "Peut contenir 4 pintes de liquide. Pèse 5 livres une fois plein."
+    "description": "Peut contenir {{volume:4pint}} de liquide. Pèse 5 livres une fois plein."
   },
   "Whetstone": {
     "name": "Pierre à aiguiser",

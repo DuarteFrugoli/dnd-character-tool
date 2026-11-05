@@ -10,7 +10,7 @@
       "name": "神性伝導"
     },
     "divine_intervention": {
-      "name": "神性介入"
+      "name": "神の介入"
     },
     "wild_shape": {
       "name": "野生の形態"
@@ -49,7 +49,7 @@
       "name": "秘奥義"
     },
     "eldritch_master": {
-      "name": "異界の達人"
+      "name": "妖術の達人"
     },
     "arcane_recovery": {
       "name": "秘術回復"
@@ -70,7 +70,7 @@
       "name": "自然回復"
     },
     "superiority_dice": {
-      "name": "戦技ダイス"
+      "name": "優越ダイス"
     },
     "wholeness_of_body": {
       "name": "肉体の完成"
@@ -97,10 +97,10 @@
       "name": "暗き幻惑"
     },
     "dark_ones_own_luck": {
-      "name": "暗き者の幸運"
+      "name": "闇の者の幸運"
     },
     "hurl_through_hell": {
-      "name": "地獄送り"
+      "name": "地獄への追放"
     },
     "entropic_ward": {
       "name": "エントロピーの守り"
@@ -124,16 +124,16 @@
       "name": "幸運点"
     },
     "martial_adept_superiority_die": {
-      "name": "戦技ダイス"
+      "name": "優越ダイス"
     },
     "magic_initiate_spell": {
-      "name": "魔法入門の呪文"
+      "name": "魔法のたしなみの呪文"
     },
     "breath_weapon": {
       "name": "ブレス攻撃"
     },
     "relentless_endurance": {
-      "name": "しぶとい持久力"
+      "name": "執念の耐久力"
     }
   }
 }

@@ -5,16 +5,16 @@
       "description": "Im Kampf kämpfst du mit ursprünglicher Wildheit. In deinem Zug kannst du als Bonusaktion in Kampfrausch verfallen. Während des Kampfrauschs hast du Vorteil bei Stärkeproben und Stärkerettungswürfen, erhältst einen Bonus auf Schadenswürfe von Nahkampfangriffen mit Stärke (+2 auf Barbarenstufen 1–8, +3 auf Stufen 9–15 und +4 auf Stufen 16–20) und bist gegen Wucht-, Stich- und Hiebschaden resistent. Dein Kampfrausch hält 1 Minute an. Er endet vorzeitig, wenn du bewusstlos wirst oder wenn dein Zug endet, ohne dass du seit deinem letzten Zug eine feindliche Kreatur angegriffen oder Schaden erlitten hast."
     },
     "Unarmored Defense": {
-      "name": "Ungepanzerte Verteidigung",
-      "description": "Solange Sie keine Rüstung tragen, beträgt Ihre Rüstungsklasse 10 + Ihr Geschicklichkeitsmodifikator + Ihr Konstitutionsmodifikator. Sie können einen Schild verwenden und trotzdem von diesem Vorteil profitieren."
+      "name": "Rüstungslose Verteidigung",
+      "description": "Solange du keine Rüstung trägst, beträgt deine Rüstungsklasse 10 + dein Geschicklichkeitsmodifikator + dein Konstitutionsmodifikator. Du kannst einen Schild verwenden und profitierst trotzdem davon."
     },
     "Reckless Attack": {
       "name": "Rücksichtsloser Angriff",
-      "description": "Wenn Sie in Ihrem Zug zum ersten Mal angreifen, können Sie sich für einen rücksichtslosen Angriff entscheiden. Dadurch erhältst du in diesem Zug einen Vorteil bei Angriffswürfen für Nahkampfwaffen, bei denen du Stärke verwendest. Angriffswürfe gegen dich haben jedoch bis zu deinem nächsten Zug einen Vorteil."
+      "description": "Wenn du in deinem Zug deinen ersten Angriff ausführst, kannst du dich entscheiden, rücksichtslos anzugreifen. Dadurch hast du in diesem Zug Vorteil bei Angriffswürfen mit Nahkampfwaffen, für die du Stärke verwendest, aber Angriffswürfe gegen dich haben bis zu deinem nächsten Zug Vorteil."
     },
     "Danger Sense": {
-      "name": "Gefahrenbewusstsein",
-      "description": "Sie haben ein unheimliches Gespür dafür, wenn Dinge in der Nähe nicht so sind, wie sie sein sollten. Du hast einen Vorteil bei Geschicklichkeitsrettungswürfen gegenüber sichtbaren Effekten wie Fallen und Zaubersprüchen. Um diesen Vorteil zu erlangen, dürfen Sie nicht geblendet, taub oder handlungsunfähig sein."
+      "name": "Gefahrengespür",
+      "description": "Du hast ein unheimliches Gespür dafür, wenn Dinge in der Nähe nicht so sind, wie sie sein sollten. Du hast Vorteil bei Geschicklichkeitsrettungswürfen gegen Effekte, die du sehen kannst, wie Fallen und Zauber. Um diesen Nutzen zu erhalten, darfst du nicht geblendet, taub oder handlungsunfähig sein."
     },
     "Primal Path": {
       "name": "Urpfad",
@@ -26,7 +26,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Du kannst zweimal statt einmal angreifen, wenn du in deinem Zug die Angriffsaktion ausführst."
     },
     "Fast Movement": {
       "name": "Schnelle Bewegung",
@@ -38,7 +38,7 @@
     },
     "Brutal Critical": {
       "name": "Brutaler kritischer Treffer",
-      "description": "Sie können einen zusätzlichen Waffenschadenswürfel werfen, wenn Sie den zusätzlichen Schaden für einen kritischen Treffer bei einem Nahkampfangriff bestimmen. Dies erhöht sich auf zwei zusätzliche Würfel auf der 13. Stufe und auf drei zusätzliche Würfel auf der 17. Stufe."
+      "description": "Du kannst einen zusätzlichen Waffenschadenswürfel werfen, wenn du den zusätzlichen Schaden eines kritischen Treffers mit einem Nahkampfangriff bestimmst. Dies erhöht sich auf der 13. Stufe auf zwei und auf der 17. Stufe auf drei zusätzliche Würfel."
     },
     "Relentless Rage": {
       "name": "Unaufhaltsamer Kampfrausch",
@@ -49,38 +49,38 @@
       "description": "Dein Kampfrausch ist so heftig, dass er nur dann vorzeitig endet, wenn du bewusstlos wirst oder dich entscheidest, ihn zu beenden."
     },
     "Indomitable Might": {
-      "name": "Unbezwingbare Macht",
-      "description": "Wenn Ihr Gesamtwert für einen Stärkewurf geringer ist als Ihr Stärkewert, können Sie diesen Wert anstelle des Gesamtwerts verwenden."
+      "name": "Unbezwingbare Stärke",
+      "description": "Wenn dein Gesamtergebnis bei einem Stärkewurf niedriger als dein Stärkewert ist, kannst du diesen Wert anstelle des Gesamtergebnisses verwenden."
     },
     "Primal Champion": {
-      "name": "Ur-Champion",
+      "name": "Ursprünglicher Champion",
       "description": "Du verkörperst die Kraft der Wildnis. Ihre Stärke- und Konstitutionswerte erhöhen sich um 4. Ihr Höchstwert für diese Punkte beträgt jetzt 24."
     }
   },
   "Bard": {
     "Spellcasting": {
-      "name": "Zauberei",
-      "description": "Sie haben gelernt, das Gefüge der Realität im Einklang mit Ihren Wünschen und Ihrer Musik zu entwirren und neu zu gestalten. Charisma ist Ihre Zauberfähigkeit."
+      "name": "Zauberwirken",
+      "description": "Du hast gelernt, das Gefüge der Realität im Einklang mit deinen Wünschen und deiner Musik zu entwirren und neu zu formen. Charisma ist dein Zauberattribut."
     },
     "Bardic Inspiration": {
       "name": "Bardische Inspiration",
-      "description": "Sie können andere durch mitreißende Worte oder Musik inspirieren. Als Bonusaktion kannst du einer anderen Kreatur als dir selbst einen bardischen Inspirationswürfel geben. Der Würfel beträgt d6 auf den Stufen 1–4 des Barden, d8 auf den Stufen 5–9, d10 auf den Stufen 10–14 und d12 auf den Stufen 15–20. Einmal in den nächsten 10 Minuten kann die Kreatur diesen Würfel werfen und die Zahl zu einer Fähigkeitsüberprüfung, einem Angriffswurf oder einem Rettungswurf addieren, die sie durchführt."
+      "description": "Sie können andere durch mitreißende Worte oder Musik inspirieren. Als Bonusaktion kannst du einer anderen Kreatur als dir selbst einen bardischen Inspirationswürfel geben. Der Würfel beträgt d6 auf den Stufen 1–4 des Barden, d8 auf den Stufen 5–9, d10 auf den Stufen 10–14 und d12 auf den Stufen 15–20. Einmal in den nächsten 10 Minuten kann die Kreatur diesen Würfel werfen und die Zahl zu einem Attributswurf, einem Angriffswurf oder einem Rettungswurf addieren, den sie ausführt."
     },
     "Jack of All Trades": {
       "name": "Alleskönner",
-      "description": "Sie können die Hälfte Ihres Fähigkeitsbonus, abgerundet, zu jeder Fähigkeitsüberprüfung hinzufügen, die Sie durchführen und die Ihren Fähigkeitsbonus nicht bereits enthält."
+      "description": "Du kannst die Hälfte deines Übungsbonus, abgerundet, zu jedem Attributswurf addieren, den du ausführst und der deinen Übungsbonus noch nicht enthält."
     },
     "Song of Rest": {
       "name": "Lied der Ruhe",
-      "description": "Sie können beruhigende Musik oder Reden nutzen, um Ihre verwundeten Verbündeten während einer kurzen Pause wiederzubeleben. Wenn Sie oder eine befreundete Kreatur, die Ihre Leistung hören kann, am Ende der kurzen Pause durch das Ausgeben eines oder mehrerer Trefferwürfel Trefferpunkte zurückgewinnen, erhält jede dieser Kreaturen zusätzlich 1W6 Trefferpunkte zurück."
+      "description": "Du kannst mit beruhigender Musik oder Redekunst dazu beitragen, deinen verwundeten Verbündeten während einer kurzen Rast neue Kraft zu geben. Wenn du oder befreundete Kreaturen, die deine Darbietung hören können, am Ende der kurzen Rast durch das Ausgeben von einem oder mehreren Trefferwürfeln Trefferpunkte zurückerhalten, erhält jede dieser Kreaturen zusätzlich 1W6 Trefferpunkte zurück."
     },
     "Bard College": {
       "name": "Bardenkolleg",
-      "description": "Sie tauchen in die fortgeschrittenen Techniken einer Bardenschule Ihrer Wahl ein."
+      "description": "Du vertiefst dich in die fortgeschrittenen Techniken eines Bardenkollegs deiner Wahl."
     },
     "Expertise": {
-      "name": "Sachverstand",
-      "description": "Wählen Sie zwei Ihrer Kompetenzkompetenzen aus. Ihr Fähigkeitsbonus wird für jede von Ihnen durchgeführte Fähigkeitsüberprüfung verdoppelt, bei der eine der ausgewählten Fähigkeiten zum Einsatz kommt."
+      "name": "Expertise",
+      "description": "Wähle zwei Fertigkeiten, in denen du geübt bist. Dein Übungsbonus wird bei jedem Attributswurf verdoppelt, den du ausführst und für den eine der gewählten Fertigkeiten gilt."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
@@ -88,15 +88,15 @@
     },
     "Font of Inspiration": {
       "name": "Quelle der Inspiration",
-      "description": "Sobald Sie eine kurze oder lange Pause beendet haben, erhalten Sie die gesamte verbrauchte Bardeninspiration zurück."
+      "description": "Du erhältst alle verbrauchten Anwendungen deiner Bardischen Inspiration zurück, wenn du eine kurze oder lange Rast beendest."
     },
     "Countercharm": {
-      "name": "Gegenzauber",
-      "description": "Sie erhalten die Fähigkeit, Musiknoten oder machtvolle Worte zu nutzen, um geistesbeeinflussende Effekte zu unterbrechen. Als Aktion kannst du einen Auftritt starten, der bis zum Ende deines nächsten Zuges andauert. Während dieser Zeit haben Sie und alle befreundeten Kreaturen im Umkreis von {{distance:30ft|dat}} um Sie einen Vorteil bei Rettungswürfen gegen Angst oder Bezauberung."
+      "name": "Gegenbezauberung",
+      "description": "Du erhältst die Fähigkeit, mit Musiknoten oder Worten der Macht geistesbeeinflussende Effekte zu stören. Als Aktion kannst du eine Darbietung beginnen, die bis zum Ende deines nächsten Zugs anhält. Während dieser Zeit hast du, ebenso wie alle befreundeten Kreaturen im Umkreis von {{distance:30ft|dat}} um dich, Vorteil bei Rettungswürfen, um nicht verängstigt oder bezaubert zu werden."
     },
     "Magical Secrets": {
       "name": "Magische Geheimnisse",
-      "description": "Sie haben magisches Wissen aus einem breiten Spektrum von Disziplinen geplündert. Wähle zwei Zaubersprüche aus einer beliebigen Klasse, einschließlich dieser. Ein von Ihnen gewählter Zauber muss eine Stufe haben, die Sie wirken können. Die gewählten Zauber gelten für dich als Bardenzauber."
+      "description": "Du hast magisches Wissen aus einem breiten Spektrum von Disziplinen geplündert. Wähle zwei Zauber aus beliebigen Klassen, einschließlich dieser. Ein gewählter Zauber muss von einer Stufe sein, die du wirken kannst. Die gewählten Zauber gelten für dich als Bardenzauber."
     },
     "Superior Inspiration": {
       "name": "Überlegene Inspiration",
@@ -105,46 +105,46 @@
   },
   "Cleric": {
     "Spellcasting": {
-      "name": "Zauberei",
-      "description": "Als Kanal für göttliche Macht können Sie Geisterzauber wirken. Weisheit ist deine Zauberfähigkeit."
+      "name": "Zauberwirken",
+      "description": "Als Kanal für göttliche Macht kannst du Klerikerzauber wirken. Weisheit ist dein Zauberattribut."
     },
     "Divine Domain": {
       "name": "Göttliche Domäne",
-      "description": "Wählen Sie eine Domain aus, die mit Ihrer Gottheit in Zusammenhang steht. Ihre Wahl gewährt Ihnen Domänenzauber und andere Funktionen."
+      "description": "Wähle eine Domäne, die mit deiner Gottheit verbunden ist. Deine Wahl gewährt dir Domänenzauber und andere Merkmale."
     },
     "Channel Divinity": {
-      "name": "Kanal-Göttlichkeit",
-      "description": "Sie erhalten die Fähigkeit, göttliche Energie direkt von Ihrer Gottheit zu kanalisieren und diese Energie zu nutzen, um magische Effekte zu erzielen. Sie beginnen mit zwei solchen Effekten: „Untote verwandeln“ und einem Effekt, der von Ihrer Domäne bestimmt wird. Wenn Sie Ihren Göttliche Macht fokussieren verwenden, entscheiden Sie, welchen Effekt Sie erzeugen möchten."
+      "name": "Göttliche Macht fokussieren",
+      "description": "Du erhältst die Fähigkeit, göttliche Energie direkt von deiner Gottheit zu kanalisieren und mit dieser Energie magische Effekte zu speisen. Du beginnst mit zwei solchen Effekten: „Untote vertreiben“ und einem Effekt, der von deiner Domäne bestimmt wird. Wenn du Göttliche Macht fokussieren einsetzt, entscheidest du, welchen Effekt du erzeugst."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
       "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Destroy Undead": {
-      "name": "Vernichte Untote",
-      "description": "Wenn ein Untoter seinen Rettungswurf gegen deine Funktion „Untote verwandeln“ misslingt, wird die Kreatur sofort zerstört, wenn ihre Herausforderungsbewertung niedrig genug ist: CR 1/2 auf Klerikerstufe 5, CR 1 auf Stufe 8, CR 2 auf Stufe 11, CR 3 auf Stufe 14 und CR 4 auf Stufe 17."
+      "name": "Untote vernichten",
+      "description": "Wenn ein Untoter seinen Rettungswurf gegen dein Merkmal „Untote vertreiben“ misslingt, wird die Kreatur sofort zerstört, wenn ihr Herausforderungsgrad niedrig genug ist: HG 1/2 auf Klerikerstufe 5, HG 1 auf Stufe 8, HG 2 auf Stufe 11, HG 3 auf Stufe 14 und HG 4 auf Stufe 17."
     },
     "Divine Intervention": {
       "name": "Göttliches Eingreifen",
-      "description": "Sie können Ihre Gottheit anrufen, um in Ihrem Namen einzugreifen, wenn Ihre Not groß ist. Bitten Sie die Hilfe Ihrer Gottheit als Tat. Beschreiben Sie die Hilfe, die Sie suchen, und würfeln Sie per Prozentwert. Wenn Sie eine Zahl würfeln, die Ihrer Klerikerstufe entspricht oder darunter liegt, greift Ihre Gottheit ein."
+      "description": "Du kannst deine Gottheit anrufen, damit sie zu deinen Gunsten eingreift, wenn deine Not groß ist. Erflehe den Beistand deiner Gottheit als Aktion. Beschreibe die Hilfe, die du suchst, und würfle mit Prozentwürfeln. Wenn du eine Zahl würfelst, die gleich deiner Klerikerstufe oder niedriger ist, greift deine Gottheit ein."
     }
   },
   "Druid": {
     "Druidic": {
       "name": "Druidisch",
-      "description": "Sie kennen Druidisch, die Geheimsprache der Druiden. Sie können die Sprache sprechen und damit versteckte Nachrichten hinterlassen."
+      "description": "Du kennst Druidisch, die Geheimsprache der Druiden. Du kannst diese Sprache sprechen und mit ihr versteckte Botschaften hinterlassen."
     },
     "Spellcasting": {
-      "name": "Zauberei",
-      "description": "Indem Sie sich auf die göttliche Essenz der Natur selbst stützen, können Sie Zauber wirken, um diese Essenz nach Ihrem Willen zu formen. Weisheit ist deine Zauberfähigkeit."
+      "name": "Zauberwirken",
+      "description": "Du schöpfst aus der göttlichen Essenz der Natur selbst und kannst Zauber wirken, um diese Essenz nach deinem Willen zu formen. Weisheit ist dein Zauberattribut."
     },
     "Wild Shape": {
       "name": "Wilde Form",
-      "description": "Ab der 2. Stufe können Sie durch Ihre Aktion auf magische Weise die Gestalt eines Tieres annehmen, das Sie zuvor gesehen haben. Sie können diese Funktion zweimal nutzen. Nach einer kurzen oder langen Pause erhalten Sie verbrauchte Energie zurück."
+      "description": "Ab der 2. Stufe kannst du deine Aktion nutzen, um auf magische Weise die Gestalt eines Tieres anzunehmen, das du schon einmal gesehen hast. Du kannst dieses Merkmal zweimal nutzen. Du erhältst verbrauchte Anwendungen zurück, wenn du eine kurze oder lange Rast beendest."
     },
     "Druid Circle": {
-      "name": "Druidenkreis",
-      "description": "Du identifizierst dich mit einem Kreis von Druiden."
+      "name": "Druidenzirkel",
+      "description": "Du identifizierst dich mit einem Zirkel von Druiden."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
@@ -152,33 +152,33 @@
     },
     "Timeless Body": {
       "name": "Zeitloser Körper",
-      "description": "Die Urmagie, die Sie ausüben, lässt Sie langsamer altern. Alle 10 Jahre, die vergehen, altert Ihr Körper nur um 1 Jahr."
+      "description": "Die Urmagie, die du ausübst, lässt dich langsamer altern. Für je 10 Jahre, die vergehen, altert dein Körper nur um 1 Jahr."
     },
     "Beast Spells": {
-      "name": "Tierzauber",
-      "description": "Mit Wilde Form können Sie viele Ihrer Druidenzauber in jeder beliebigen Form wirken. Du kannst die somatischen und verbalen Komponenten eines Druidenzaubers ausführen, während du in einer Bestiengestalt bist, aber du bist nicht in der Lage, materielle Komponenten bereitzustellen."
+      "name": "Zauber in Tiergestalt",
+      "description": "Du kannst viele deiner Druidenzauber in jeder Gestalt wirken, die du mit Wilde Form annimmst. Du kannst die somatischen und verbalen Komponenten eines Druidenzaubers ausführen, während du in Tiergestalt bist, aber du kannst keine Materialkomponenten bereitstellen."
     },
     "Archdruid": {
       "name": "Erzdruide",
-      "description": "Sie können Ihren Wilde Form unbegrenzt oft verwenden. Darüber hinaus können Sie die verbalen und somatischen Komponenten Ihrer Druidenzauber sowie alle materiellen Komponenten ignorieren, für die keine Kosten anfallen und die nicht von einem Zauber verbraucht werden."
+      "description": "Du kannst Wilde Form unbegrenzt oft verwenden. Außerdem kannst du die verbalen und somatischen Komponenten deiner Druidenzauber ignorieren, ebenso wie alle Materialkomponenten, die keine Kosten haben und von einem Zauber nicht verbraucht werden."
     }
   },
   "Fighter": {
     "Fighting Style": {
       "name": "Kampfstil",
-      "description": "Sie machen sich einen bestimmten Kampfstil zu Ihrer Spezialität. Wählen Sie einen Kampfstil: Bogenschießen, Verteidigung, Duell, Großwaffenkampf, Schutz oder Kampf mit zwei Waffen."
+      "description": "Du machst einen bestimmten Kampfstil zu deiner Spezialität. Wähle einen Kampfstil: Bogenschießen, Verteidigung, Duell, Großwaffenkampf, Schutz oder Zwei-Waffen-Kampf."
     },
     "Second Wind": {
       "name": "Zweiter Atem",
-      "description": "Sie verfügen nur über eine begrenzte Ausdauer, auf die Sie zurückgreifen können, um sich vor Schaden zu schützen. Wenn Sie an der Reihe sind, können Sie eine Bonusaktion nutzen, um Trefferpunkte in Höhe von 1W10 + Ihrer Kämpferstufe zurückzugewinnen."
+      "description": "Du verfügst über einen begrenzten Vorrat an Ausdauer, aus dem du schöpfen kannst, um dich vor Schaden zu schützen. In deinem Zug kannst du eine Bonusaktion nutzen, um Trefferpunkte in Höhe von 1W10 + deiner Kämpferstufe zurückzuerhalten."
     },
     "Action Surge": {
-      "name": "Aktionsschub",
-      "description": "Ab der 2. Stufe können Sie für einen Moment über Ihre normalen Grenzen hinausgehen. Wenn du an der Reihe bist, kannst du zusätzlich zu deiner regulären Aktion und einer möglichen Bonusaktion eine zusätzliche Aktion ausführen."
+      "name": "Tatendrang",
+      "description": "Ab der 2. Stufe kannst du für einen Moment über deine normalen Grenzen hinausgehen. In deinem Zug kannst du zusätzlich zu deiner regulären Aktion und einer möglichen Bonusaktion eine weitere Aktion ausführen."
     },
     "Martial Archetype": {
-      "name": "Martialischer Archetyp",
-      "description": "Sie wählen einen Archetyp, den Sie in Ihren Kampfstilen und -techniken nachahmen möchten."
+      "name": "Kampfarchetyp",
+      "description": "Du wählst einen Archetyp, dem du in deinen Kampfstilen und -techniken nacheiferst."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
@@ -186,65 +186,65 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Du kannst zweimal statt einmal angreifen, wenn du in deinem Zug die Angriffsaktion ausführst."
     },
     "Indomitable": {
-      "name": "Unbezwingbar",
-      "description": "Sie können einen Rettungswurf, der Ihnen misslingt, wiederholen. Wenn Sie dies tun, müssen Sie die neue Rolle verwenden und können diese Funktion erst wieder verwenden, wenn Sie eine lange Pause beendet haben."
+      "name": "Unbeugsam",
+      "description": "Du kannst einen misslungenen Rettungswurf wiederholen. Wenn du das tust, musst du den neuen Wurf verwenden und kannst dieses Merkmal erst wieder nutzen, wenn du eine lange Rast beendet hast."
     }
   },
   "Monk": {
     "Unarmored Defense": {
-      "name": "Ungepanzerte Verteidigung",
-      "description": "Solange Sie keine Rüstung tragen und keinen Schild tragen, beträgt Ihre AC 10 + Ihr Geschicklichkeitsmodifikator + Ihr Weisheitsmodifikator."
+      "name": "Rüstungslose Verteidigung",
+      "description": "Solange du keine Rüstung trägst und keinen Schild führst, beträgt deine RK 10 + dein Geschicklichkeitsmodifikator + dein Weisheitsmodifikator."
     },
     "Martial Arts": {
       "name": "Kampfkunst",
-      "description": "Durch die Ausübung der Kampfkünste beherrschen Sie Kampfstile, bei denen unbewaffnete Schläge und Mönchswaffen zum Einsatz kommen. Sie können Geschicklichkeit anstelle von Stärke für Angriffs- und Schadenswürfe verwenden. Ihr Kampfkunst-Würfel für einen unbewaffneten Schlag oder eine Mönchswaffe beträgt d4 auf den Mönchsstufen 1–4, d6 auf den Stufen 5–10, d8 auf den Stufen 11–16 und d10 auf den Stufen 17–20. Wenn Sie die Angriffsaktion mit einem unbewaffneten Schlag oder einer Mönchswaffe verwenden, können Sie als Bonusaktion einen unbewaffneten Schlag ausführen."
+      "description": "Deine Übung der Kampfkünste verleiht dir Meisterschaft in Kampfstilen, die waffenlose Schläge und Mönchswaffen nutzen. Du kannst Geschicklichkeit statt Stärke für Angriffs- und Schadenswürfe verwenden. Dein Kampfkunst-Würfel für einen waffenlosen Schlag oder eine Mönchswaffe ist ein W4 auf den Mönchsstufen 1–4, ein W6 auf den Stufen 5–10, ein W8 auf den Stufen 11–16 und ein W10 auf den Stufen 17–20. Wenn du die Angriffsaktion mit einem waffenlosen Schlag oder einer Mönchswaffe ausführst, kannst du als Bonusaktion einen waffenlosen Schlag ausführen."
     },
     "Ki": {
       "name": "Ki",
-      "description": "Ihr Training ermöglicht es Ihnen, die mystische Energie von Ki zu nutzen. Ihr Zugang zu dieser Energie wird durch eine Anzahl von Ki-Punkten entsprechend Ihrer Mönchsstufe repräsentiert. Sie können Ki-Punkte ausgeben, um Ki-Funktionen voranzutreiben: Schlaghagel, Geduldige Verteidigung, Schritt des Windes."
+      "description": "Dein Training ermöglicht es dir, die mystische Energie des Ki zu nutzen. Dein Zugang zu dieser Energie wird durch eine Anzahl von Ki-Punkten dargestellt, die deiner Mönchsstufe entspricht. Du kannst Ki-Punkte ausgeben, um Ki-Merkmale anzutreiben: Schlaghagel, Geduldige Verteidigung, Schritt des Windes."
     },
     "Unarmored Movement": {
-      "name": "Ungepanzerte Bewegung",
+      "name": "Bewegung ohne Rüstung",
       "description": "Deine Geschwindigkeit erhöht sich, während du keine Rüstung trägst oder keinen Schild führst: +{{distance:10ft}} auf Mönchsstufe 2, +{{distance:15ft}} auf Stufe 6, +{{distance:20ft}} auf Stufe 10, +{{distance:25ft}} auf Stufe 14 und +{{distance:30ft}} auf Stufe 18."
     },
     "Monastic Tradition": {
       "name": "Klostertradition",
-      "description": "Sie bekennen sich zu einer klösterlichen Tradition."
+      "description": "Du verschreibst dich einer klösterlichen Tradition."
     },
     "Deflect Missiles": {
-      "name": "Lenken Sie Raketen ab",
-      "description": "Sie können Ihre Reaktion nutzen, um die Rakete abzuwehren oder abzufangen, wenn Sie von einem Fernkampfwaffenangriff getroffen werden. Wenn Sie dies tun, wird der Schaden, den Sie durch den Angriff erleiden, um 1W10 + Ihren Geschicklichkeitsmodifikator + Ihre Mönchsstufe verringert."
+      "name": "Geschosse abwehren",
+      "description": "Du kannst deine Reaktion nutzen, um das Geschoss abzulenken oder zu fangen, wenn du von einem Fernkampfwaffenangriff getroffen wirst. Wenn du das tust, wird der Schaden, den du durch den Angriff erleidest, um 1W10 + deinen Geschicklichkeitsmodifikator + deine Mönchsstufe verringert."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
       "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Slow Fall": {
-      "name": "Langsamer Fall",
+      "name": "Sanfter Fall",
       "description": "Du kannst deine Reaktion bei einem Sturz nutzen, um den erlittenen Fallschaden um den Betrag zu reduzieren, der dem Fünffachen deiner Mönchsstufe entspricht."
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Du kannst zweimal statt einmal angreifen, wenn du in deinem Zug die Angriffsaktion ausführst."
     },
     "Stunning Strike": {
-      "name": "Atemberaubender Schlag",
-      "description": "Sie können den Ki-Fluss im Körper eines Gegners stören. Wenn du eine andere Kreatur mit einem Nahkampfwaffenangriff triffst, kannst du 1 Ki-Punkt ausgeben, um einen atemberaubenden Schlag zu versuchen. Dem Ziel muss ein konstitutionsrettender Wurf gelingen, sonst ist es bis zum Ende seines nächsten Zuges betäubt."
+      "name": "Betäubender Schlag",
+      "description": "Sie können den Ki-Fluss im Körper eines Gegners stören. Wenn du eine andere Kreatur mit einem Nahkampfwaffenangriff triffst, kannst du 1 Ki-Punkt ausgeben, um einen Betäubenden Schlag zu versuchen. Dem Ziel muss ein Konstitutionsrettungswurf gelingen, sonst ist es bis zum Ende seines nächsten Zuges betäubt."
     },
     "Stillness of Mind": {
       "name": "Stille des Geistes",
-      "description": "Mit Ihrer Aktion können Sie einen Effekt auf sich selbst beenden, der Sie verzaubert oder verängstigt."
+      "description": "Du kannst deine Aktion nutzen, um einen Effekt auf dir zu beenden, der dich bezaubert oder verängstigt."
     },
     "Timeless Body": {
       "name": "Zeitloser Körper",
-      "description": "Ihr Ki trägt Sie, so dass Sie nicht unter der Gebrechlichkeit des Alters leiden und nicht auf magische Weise altern können. Sie sterben jedoch immer noch an Altersschwäche. Darüber hinaus benötigen Sie weder Nahrung noch Wasser mehr."
+      "description": "Dein Ki erhält dich, sodass du nicht unter den Gebrechen des Alters leidest und nicht magisch altern kannst. An Altersschwäche stirbst du jedoch trotzdem. Außerdem brauchst du weder Nahrung noch Wasser mehr."
     },
     "Empty Body": {
       "name": "Leerer Körper",
-      "description": "Du kannst mit deiner Aktion 4 Ki-Punkte ausgeben, um 1 Minute lang unsichtbar zu werden. Während dieser Zeit haben Sie auch Widerstand gegen jeglichen Schaden außer Kraftschaden."
+      "description": "Du kannst deine Aktion nutzen und 4 Ki-Punkte ausgeben, um 1 Minute lang unsichtbar zu werden. Während dieser Zeit hast du außerdem Resistenz gegen jeglichen Schaden außer Energieschaden."
     },
     "Perfect Self": {
       "name": "Perfektes Selbst",
@@ -254,31 +254,31 @@
   "Paladin": {
     "Divine Sense": {
       "name": "Göttlicher Sinn",
-      "description": "Die Anwesenheit des starken Bösen nimmt Ihre Sinne wie ein schädlicher Geruch wahr, und das mächtige Gute klingt wie himmlische Musik in Ihren Ohren. Als Aktion können Sie Ihr Bewusstsein öffnen, um solche Kräfte zu erkennen. Bis zum Ende Ihres nächsten Zuges wissen Sie, wo sich alle Himmlischen, Untoten oder Untoten im Umkreis von {{distance:60ft|dat}} um Sie befinden, die sich nicht in vollständiger Deckung befinden."
+      "description": "Die Anwesenheit des starken Bösen dringt wie ein widerlicher Geruch in deine Sinne, und mächtiges Gutes klingt wie himmlische Musik in deinen Ohren. Als Aktion kannst du dein Bewusstsein öffnen, um solche Kräfte zu erkennen. Bis zum Ende deines nächsten Zugs weißt du, wo sich alle Himmlischen, Unholde oder Untoten im Umkreis von {{distance:60ft|dat}} um dich befinden, die nicht hinter vollständiger Deckung sind."
     },
     "Lay on Hands": {
-      "name": "Auf die Hände legen",
-      "description": "Deine gesegnete Berührung kann Wunden heilen. Sie verfügen über einen Pool an Heilkraft, der sich nach einer längeren Pause wieder auffüllt. Mit diesem Vorrat können Sie eine Gesamtzahl an Trefferpunkten wiederherstellen, die Ihrem Paladin-Level × 5 entspricht."
+      "name": "Handauflegen",
+      "description": "Deine gesegnete Berührung kann Wunden heilen. Du verfügst über einen Vorrat an Heilkraft, der sich nach einer langen Rast wieder auffüllt. Mit diesem Vorrat kannst du insgesamt so viele Trefferpunkte wiederherstellen, wie deiner Paladinstufe × 5 entspricht."
     },
     "Fighting Style": {
       "name": "Kampfstil",
-      "description": "Machen Sie einen bestimmten Kampfstil zu Ihrer Spezialität. Wählen Sie aus: Verteidigung, Duell, Großwaffenkampf oder Schutz."
+      "description": "Mache einen bestimmten Kampfstil zu deiner Spezialität. Wähle aus: Verteidigung, Duell, Großwaffenkampf oder Schutz."
     },
     "Spellcasting": {
-      "name": "Zauberei",
-      "description": "Sie haben gelernt, durch Meditation und Gebete göttliche Magie zu nutzen, um Zauber zu wirken. Charisma ist Ihre Zauberfähigkeit."
+      "name": "Zauberwirken",
+      "description": "Du hast gelernt, durch Meditation und Gebet göttliche Magie zu nutzen, um Zauber zu wirken. Charisma ist dein Zauberattribut."
     },
     "Divine Smite": {
-      "name": "Göttlicher Schlag",
-      "description": "Wenn du eine Kreatur mit einem Nahkampfwaffenangriff triffst, kannst du einen Zauberplatz aufwenden, um dem Ziel zusätzlich zum Schaden der Waffe Strahlungsschaden zuzufügen. Der zusätzliche Schaden beträgt 2W8 für einen Zauberslot der 1. Stufe, plus 1W8 für jede höhere Zauberstufe als die 1. Stufe, bis zu einem Maximum von 5W8."
+      "name": "Göttliches Niederstrecken",
+      "description": "Wenn du eine Kreatur mit einem Nahkampfwaffenangriff triffst, kannst du einen Zauberplatz aufwenden, um dem Ziel zusätzlich zum Schaden der Waffe gleißenden Schaden zuzufügen. Der zusätzliche Schaden beträgt 2W8 für einen Zauberplatz der 1. Stufe, plus 1W8 für jede höhere Zauberstufe als die 1. Stufe, bis zu einem Maximum von 5W8."
     },
     "Sacred Oath": {
       "name": "Heiliger Eid",
-      "description": "Du schwörst den Eid, der dich als Paladin für immer bindet. Bis zu diesem Zeitpunkt befanden Sie sich in einer Vorbereitungsphase, waren dem Weg verpflichtet, aber noch nicht darauf eingeschworen."
+      "description": "Du schwörst den Eid, der dich für immer als Paladin bindet. Bis zu diesem Zeitpunkt warst du in einer Vorbereitungsphase, dem Weg verpflichtet, aber noch nicht auf ihn eingeschworen."
     },
     "Channel Divinity": {
-      "name": "Kanal-Göttlichkeit",
-      "description": "Ihr Eid ermöglicht es Ihnen, göttliche Energie zu kanalisieren, um magische Effekte zu erzielen. Wenn Sie Ihren Göttliche Macht fokussieren nutzen, entscheiden Sie, welche Option Sie nutzen möchten. Nach einer kurzen oder langen Pause erhalten Sie verbrauchte Energie zurück."
+      "name": "Göttliche Macht fokussieren",
+      "description": "Dein Eid ermöglicht es dir, göttliche Energie zu kanalisieren, um magische Effekte zu speisen. Wenn du Göttliche Macht fokussieren einsetzt, entscheidest du, welche Option du nutzt. Du erhältst verbrauchte Anwendungen zurück, wenn du eine kurze oder lange Rast beendest."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
@@ -286,7 +286,7 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Du kannst zweimal statt einmal angreifen, wenn du in deinem Zug die Angriffsaktion ausführst."
     },
     "Aura of Protection": {
       "name": "Aura des Schutzes",
@@ -303,28 +303,28 @@
   },
   "Ranger": {
     "Favored Enemy": {
-      "name": "Bevorzugter Feind",
-      "description": "Sie verfügen über umfangreiche Erfahrung im Erlernen, Aufspüren, Jagen und sogar im Sprechen mit bestimmten Feinden. Wählen Sie einen bevorzugten Feindtyp auf Ranger-Stufe 1, einen anderen auf Stufe 6 und einen weiteren auf Stufe 14: Aberrationen, Bestien, Himmlische, Konstrukte, Drachen, Elementare, Feenwesen, Unholde, Riesen, Monstrositäten, Schleime, Pflanzen oder Untote. Sie haben einen Vorteil bei Würfen auf Weisheit (Überleben), um Ihre bevorzugten Feinde aufzuspüren, sowie bei Würfen auf Intelligenz, um Informationen über sie abzurufen."
+      "name": "Erzfeind",
+      "description": "Du hast umfangreiche Erfahrung darin, bestimmte Feinde zu studieren, aufzuspüren, zu jagen und sogar mit ihnen zu sprechen. Wähle einen Erzfeindtyp auf Waldläuferstufe 1, einen weiteren auf Stufe 6 und einen weiteren auf Stufe 14: Aberrationen, Bestien, Himmlische, Konstrukte, Drachen, Elementare, Feenwesen, Unholde, Riesen, Monstrositäten, Schlicke, Pflanzen oder Untote. Du hast Vorteil bei Würfen auf Weisheit (Überleben), um deine Erzfeinde aufzuspüren, sowie bei Intelligenzwürfen, um dich an Informationen über sie zu erinnern."
     },
     "Natural Explorer": {
       "name": "Natürlicher Entdecker",
-      "description": "Sie sind mit einer bestimmten Naturumgebung besonders vertraut und können sich in solchen Regionen gut fortbewegen und überleben. Wählen Sie ein bevorzugtes Gelände auf Ranger-Stufe 1, ein anderes auf Stufe 6 und ein weiteres auf Stufe 10: Arktis, Küste, Wüste, Wald, Grasland, Berg, Sumpf oder Unterreich."
+      "description": "Du bist mit einer bestimmten Art von natürlicher Umgebung besonders vertraut und kannst dich in solchen Regionen geschickt fortbewegen und überleben. Wähle ein bevorzugtes Gelände auf Waldläuferstufe 1, ein weiteres auf Stufe 6 und ein weiteres auf Stufe 10: Arktis, Küste, Wüste, Wald, Grasland, Berg, Sumpf oder Unterreich."
     },
     "Fighting Style": {
       "name": "Kampfstil",
-      "description": "Machen Sie einen bestimmten Kampfstil zu Ihrer Spezialität. Wählen Sie aus: Bogenschießen, Verteidigung, Duell oder Zwei-Waffen-Kampf."
+      "description": "Mache einen bestimmten Kampfstil zu deiner Spezialität. Wähle aus: Bogenschießen, Verteidigung, Duell oder Zwei-Waffen-Kampf."
     },
     "Spellcasting": {
-      "name": "Zauberei",
+      "name": "Zauberwirken",
       "description": "Du hast gelernt, die magische Essenz der Natur zu nutzen, um Zauber zu wirken. Weisheit ist deine Zauberfähigkeit."
     },
     "Ranger Archetype": {
-      "name": "Ranger-Archetyp",
-      "description": "Sie wählen einen Archetyp, den Sie nachahmen möchten."
+      "name": "Waldläufer-Archetyp",
+      "description": "Du wählst einen Archetyp, dem du nacheiferst."
     },
     "Primeval Awareness": {
       "name": "Urzeitliches Bewusstsein",
-      "description": "Du kannst deine Aktion nutzen und einen Ranger-Zauberslot ausgeben, um deine Aufmerksamkeit auf die Region um dich herum zu richten. Für 1 Minute pro Stufe des Zauberplatzes, den Sie aufwenden, können Sie spüren, ob sich im Umkreis von {{distance:1mi|dat}} um Sie herum Aberrationen, Himmlische, Drachen, Elementare, Feenwesen, Unholde oder Untote befinden."
+      "description": "Du kannst deine Aktion nutzen und einen Waldläufer-Zauberplatz verbrauchen, um deine Aufmerksamkeit auf die Region um dich herum zu richten. Für 1 Minute pro Stufe des verbrauchten Zauberplatzes kannst du spüren, ob sich im Umkreis von {{distance:1mi|dat}} um dich Aberrationen, Himmlische, Drachen, Elementare, Feenwesen, Unholde oder Untote befinden."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
@@ -332,49 +332,49 @@
     },
     "Extra Attack": {
       "name": "Zusätzlicher Angriff",
-      "description": "Sie können zweimal statt einmal angreifen, wenn Sie in Ihrem Zug die Aktion „Angreifen“ ausführen."
+      "description": "Du kannst zweimal statt einmal angreifen, wenn du in deinem Zug die Angriffsaktion ausführst."
     },
     "Land's Stride": {
-      "name": "Lands Schritt",
-      "description": "Das Bewegen durch nichtmagisches schwieriges Gelände kostet Sie keine zusätzliche Bewegung. Sie können auch nichtmagische Pflanzen durchqueren, ohne von ihnen verlangsamt zu werden und ohne Schaden durch sie zu erleiden, wenn sie Dornen, Stacheln oder eine ähnliche Gefahr haben."
+      "name": "Schritt des Landes",
+      "description": "Das Bewegen durch nichtmagisches schwieriges Gelände kostet dich keine zusätzliche Bewegung. Außerdem kannst du nichtmagische Pflanzen durchqueren, ohne von ihnen verlangsamt zu werden und ohne durch sie Schaden zu erleiden, falls sie Dornen, Stacheln oder eine ähnliche Gefahr aufweisen."
     },
     "Hide in Plain Sight": {
-      "name": "Verstecke dich in Sichtweite",
-      "description": "Sie können 1 Minute damit verbringen, eine Tarnung für sich selbst zu erstellen. Sie müssen Zugang zu frischem Schlamm, Schmutz, Pflanzen, Ruß und anderen natürlich vorkommenden Materialien haben, mit denen Sie Ihre Tarnung erstellen können. Sobald Sie auf diese Weise getarnt sind, können Sie versuchen, sich zu verstecken, indem Sie sich gegen eine feste Oberfläche wie einen Baum oder eine Wand drücken, die mindestens so hoch und breit ist wie Sie. Sie erhalten einen Bonus von +10 auf Geschicklichkeitsprüfungen (Stealth), solange Sie dort bleiben, ohne sich zu bewegen oder Aktionen auszuführen."
+      "name": "Vor aller Augen verborgen",
+      "description": "Du kannst 1 Minute damit verbringen, dir eine Tarnung zu schaffen. Du brauchst Zugang zu frischem Schlamm, Erde, Pflanzen, Ruß und anderen natürlich vorkommenden Materialien, um deine Tarnung herzustellen. Sobald du auf diese Weise getarnt bist, kannst du versuchen, dich zu verstecken, indem du dich gegen eine feste Oberfläche wie einen Baum oder eine Wand drückst, die mindestens so hoch und breit ist wie du. Du erhältst einen Bonus von +10 auf Würfe auf Geschicklichkeit (Heimlichkeit), solange du dort bleibst, ohne dich zu bewegen oder Aktionen auszuführen."
     },
     "Vanish": {
       "name": "Verschwinden",
-      "description": "Du kannst die Aktion „Verstecken“ als Bonusaktion in deinem Zug nutzen. Außerdem können Sie nicht mit nichtmagischen Mitteln verfolgt werden, es sei denn, Sie hinterlassen eine Spur."
+      "description": "Du kannst in deinem Zug die Verstecken-Aktion als Bonusaktion ausführen. Außerdem kannst du mit nichtmagischen Mitteln nicht verfolgt werden, es sei denn, du entscheidest dich, eine Spur zu hinterlassen."
     },
     "Feral Senses": {
       "name": "Wilde Sinne",
       "description": "Du erhältst übernatürliche Sinne, die dir helfen, Kreaturen zu bekämpfen, die du nicht sehen kannst. Wenn du eine Kreatur angreifst, die du nicht sehen kannst, führt deine Unfähigkeit, sie zu sehen, nicht zu einem Nachteil bei deinen Angriffswürfen gegen sie."
     },
     "Foe Slayer": {
-      "name": "Feindtöter",
-      "description": "Sie werden zu einem unvergleichlichen Jäger Ihrer Feinde. Einmal in jedem Ihrer Züge können Sie Ihren Weisheitsmodifikator zum Angriffswurf oder zum Schadenswurf eines Angriffs hinzufügen, den Sie gegen einen Ihrer bevorzugten Feinde ausführen."
+      "name": "Feindbezwinger",
+      "description": "Du wirst zu einem unvergleichlichen Jäger deiner Feinde. Einmal in jedem deiner Züge kannst du deinen Weisheitsmodifikator zum Angriffswurf oder zum Schadenswurf eines Angriffs addieren, den du gegen einen deiner Erzfeinde ausführst."
     }
   },
   "Rogue": {
     "Expertise": {
-      "name": "Sachverstand",
-      "description": "Wählen Sie zwei Ihrer Fähigkeitskompetenzen oder eine Ihrer Fähigkeitskompetenzen und Ihre Kenntnisse im Umgang mit Diebeswerkzeugen. Ihr Fähigkeitsbonus wird für jede von Ihnen durchgeführte Fähigkeitsüberprüfung verdoppelt, bei der eine der ausgewählten Fähigkeiten zum Einsatz kommt."
+      "name": "Expertise",
+      "description": "Wähle zwei Fertigkeiten, in denen du geübt bist, oder eine Fertigkeit, in der du geübt bist, und deine Übung mit Diebeswerkzeug. Dein Übungsbonus wird bei jedem Attributswurf verdoppelt, den du ausführst und für den eine der gewählten Übungen gilt."
     },
     "Sneak Attack": {
       "name": "Hinterhältiger Angriff",
-      "description": "Sie wissen, wie man subtil zuschlägt und die Ablenkung eines Gegners ausnutzt. Einmal pro Spielzug kannst du einer Kreatur, die du mit einem Angriff triffst, zusätzlichen Schaden zufügen, wenn du beim Angriffswurf im Vorteil bist. Der Angriff muss mit einer Finesse- oder einer Fernkampfwaffe erfolgen. Sie benötigen keinen Vorteil, wenn sich ein anderer Feind im Umkreis von {{distance:5ft|dat}} um das Ziel befindet, dieser Feind nicht außer Gefecht gesetzt ist und Sie keinen Nachteil haben. Der zusätzliche Schaden beträgt 1W6 auf den Schurkenstufen 1–2 und erhöht sich dann alle zwei Schurkenstufen um 1W6: 2W6 auf Stufe 3, 3W6 auf Stufe 5, 4W6 auf Stufe 7, 5W6 auf Stufe 9, 6W6 auf Stufe 11, 7W6 auf Stufe 13, 8W6 auf Stufe 15, 9W6 auf Stufe 17 und 10W6 auf Stufe 19."
+      "description": "Du weißt, wie man subtil zuschlägt und die Ablenkung eines Gegners ausnutzt. Einmal pro Zug kannst du einer Kreatur, die du mit einem Angriff triffst, zusätzlichen Schaden zufügen, wenn du beim Angriffswurf Vorteil hast. Der Angriff muss mit einer Finesse- oder einer Fernkampfwaffe erfolgen. Du brauchst keinen Vorteil, wenn sich ein anderer Feind des Ziels im Umkreis von {{distance:5ft|dat}} um das Ziel befindet, dieser Feind nicht handlungsunfähig ist und du keinen Nachteil hast. Der zusätzliche Schaden beträgt 1W6 auf den Schurkenstufen 1–2 und steigt dann alle zwei Schurkenstufen um 1W6: 2W6 auf Stufe 3, 3W6 auf Stufe 5, 4W6 auf Stufe 7, 5W6 auf Stufe 9, 6W6 auf Stufe 11, 7W6 auf Stufe 13, 8W6 auf Stufe 15, 9W6 auf Stufe 17 und 10W6 auf Stufe 19."
     },
     "Thieves' Cant": {
-      "name": "Diebesgesang",
-      "description": "Während Ihrer Schurkenausbildung haben Sie den Diebesjargon gelernt, eine geheime Mischung aus Dialekt, Jargon und Code, die es Ihnen ermöglicht, Nachrichten in scheinbar normalen Gesprächen zu verbergen."
+      "name": "Diebessprache",
+      "description": "Während deiner Schurkenausbildung hast du die Diebessprache gelernt, eine geheime Mischung aus Dialekt, Jargon und Code, mit der du Botschaften in scheinbar normalen Gesprächen verbergen kannst."
     },
     "Cunning Action": {
-      "name": "Listige Aktion",
-      "description": "Ihr schnelles Denken und Ihre Beweglichkeit ermöglichen es Ihnen, sich schnell zu bewegen und zu handeln. Du kannst in jedem deiner Kampfzüge eine Bonusaktion ausführen. Diese Aktion kann nur zum Ausführen der Aktionen „Sprinten“, „Entfernen“ oder „Verstecken“ verwendet werden."
+      "name": "Gerissene Aktion",
+      "description": "Dein schnelles Denken und deine Beweglichkeit ermöglichen es dir, dich schnell zu bewegen und zu handeln. Du kannst in jedem deiner Züge im Kampf eine Bonusaktion ausführen. Diese Aktion kann nur für die Aktionen Spurt, Rückzug oder Verstecken verwendet werden."
     },
     "Roguish Archetype": {
-      "name": "Schelmischer Archetyp",
-      "description": "Sie wählen einen Archetyp, den Sie bei der Ausübung Ihrer Schurkenfähigkeiten nachahmen."
+      "name": "Schurkenarchetyp",
+      "description": "Du wählst einen Archetyp, dem du bei der Ausübung deiner Schurkenfähigkeiten nacheiferst."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
@@ -382,75 +382,75 @@
     },
     "Uncanny Dodge": {
       "name": "Unheimliches Ausweichen",
-      "description": "Wenn ein Angreifer, den Sie sehen können, Sie mit einem Angriff trifft, können Sie Ihre Reaktion nutzen, um den Schaden des Angriffs gegen Sie zu halbieren."
+      "description": "Wenn ein Angreifer, den du sehen kannst, dich mit einem Angriff trifft, kannst du deine Reaktion nutzen, um den Schaden des Angriffs gegen dich zu halbieren."
     },
     "Evasion": {
-      "name": "Ausweichen",
-      "description": "Wenn Sie einem Effekt ausgesetzt sind, der es Ihnen ermöglicht, bei einem Geschicklichkeitsrettungswurf nur den halben Schaden zu erleiden, erleiden Sie stattdessen keinen Schaden, wenn Ihnen der Rettungswurf gelingt, und nur halben Schaden, wenn Ihnen der Rettungswurf misslingt."
+      "name": "Entrinnen",
+      "description": "Wenn du einem Effekt ausgesetzt bist, bei dem du mit einem Geschicklichkeitsrettungswurf nur halben Schaden erleiden kannst, erleidest du stattdessen keinen Schaden, wenn dir der Rettungswurf gelingt, und nur halben Schaden, wenn er dir misslingt."
     },
     "Reliable Talent": {
-      "name": "Zuverlässiges Talent",
-      "description": "Sie haben Ihre gewählten Fähigkeiten verfeinert, bis sie der Perfektion nahe kommen. Immer wenn Sie eine Fähigkeitsüberprüfung durchführen, mit der Sie Ihren Fähigkeitsbonus addieren können, können Sie einen W20-Wurf von 9 oder weniger als 10 behandeln."
+      "name": "Verlässliches Talent",
+      "description": "Du hast deine gewählten Fertigkeiten verfeinert, bis sie der Perfektion nahekommen. Immer wenn du einen Attributswurf ausführst, bei dem du deinen Übungsbonus addieren darfst, kannst du ein W20-Ergebnis von 9 oder weniger als 10 behandeln."
     },
     "Blindsense": {
       "name": "Blindsinn",
-      "description": "Wenn Sie hören können, wissen Sie, wo sich versteckte oder unsichtbare Kreaturen im Umkreis von {{distance:10ft|dat}} um Sie befinden."
+      "description": "Wenn du hören kannst, weißt du, wo sich alle versteckten oder unsichtbaren Kreaturen im Umkreis von {{distance:10ft|dat}} um dich befinden."
     },
     "Slippery Mind": {
-      "name": "Schlüpfriger Geist",
+      "name": "Wendiger Geist",
       "description": "Sie haben eine größere mentale Stärke erlangt. Du erwirbst Kenntnisse in Weisheitsrettungswürfen."
     },
     "Elusive": {
-      "name": "Schwer fassbar",
-      "description": "Sie sind so ausweichend, dass Angreifer selten die Oberhand gegen Sie gewinnen. Kein Angriffswurf hat einen Vorteil gegen dich, solange du nicht außer Gefecht gesetzt bist."
+      "name": "Unfassbar",
+      "description": "Du bist so schwer zu fassen, dass Angreifer selten die Oberhand gegen dich gewinnen. Kein Angriffswurf hat Vorteil gegen dich, solange du nicht handlungsunfähig bist."
     },
     "Stroke of Luck": {
-      "name": "Glücksfall",
-      "description": "Sie haben ein unheimliches Gespür dafür, erfolgreich zu sein, wenn es darauf ankommt. Wenn Ihr Angriff ein Ziel in Reichweite verfehlt, können Sie den Fehlschlag in einen Treffer umwandeln. Wenn Sie bei einer Fähigkeitsüberprüfung scheitern, können Sie alternativ den W20-Wurf als 20 behandeln."
+      "name": "Glückstreffer",
+      "description": "Du hast ein unheimliches Talent dafür, erfolgreich zu sein, wenn es darauf ankommt. Wenn dein Angriff ein Ziel in Reichweite verfehlt, kannst du den Fehlschlag in einen Treffer umwandeln. Alternativ kannst du, wenn dir ein Attributswurf misslingt, den W20-Wurf als 20 behandeln."
     }
   },
   "Sorcerer": {
     "Spellcasting": {
-      "name": "Zauberei",
-      "description": "Ein Ereignis in Ihrer Vergangenheit oder im Leben eines Elternteils oder Vorfahren hat einen unauslöschlichen Eindruck bei Ihnen hinterlassen und Sie mit arkaner Magie erfüllt. Charisma ist Ihre Zauberfähigkeit."
+      "name": "Zauberwirken",
+      "description": "Ein Ereignis in deiner Vergangenheit oder im Leben eines Elternteils oder Vorfahren hat ein unauslöschliches Mal an dir hinterlassen und dich mit arkaner Magie erfüllt. Charisma ist dein Zauberattribut."
     },
     "Sorcerous Origin": {
-      "name": "Zauberhafter Ursprung",
-      "description": "Wählen Sie einen Zauberursprung, der die Quelle Ihrer angeborenen magischen Kraft beschreibt."
+      "name": "Zauberischer Ursprung",
+      "description": "Wähle einen zauberischen Ursprung, der die Quelle deiner angeborenen magischen Kraft beschreibt."
     },
     "Font of Magic": {
       "name": "Quelle der Magie",
-      "description": "Sie erschließen eine tiefe Quelle der Magie in Ihrem Inneren. Diese Quelle wird durch Zauberpunkte repräsentiert, die es Ihnen ermöglichen, eine Vielzahl magischer Effekte zu erzeugen. Du hast 2 Zauberpunkte auf der 2. Stufe und erhältst 1 zusätzlichen Punkt für jede Stufe über der 2. Stufe hinaus."
+      "description": "Du erschließt eine tiefe Quelle der Magie in deinem Inneren. Diese Quelle wird durch Zaubereipunkte dargestellt, mit denen du eine Vielzahl magischer Effekte erzeugen kannst. Du hast auf der 2. Stufe 2 Zaubereipunkte und erhältst für jede Stufe über der 2. einen zusätzlichen Punkt."
     },
     "Metamagic": {
       "name": "Metamagie",
-      "description": "Du erhältst die Fähigkeit, deine Zaubersprüche an deine Bedürfnisse anzupassen. Sie erhalten zwei metamagische Optionen Ihrer Wahl: Vorsichtiger Zauber, Fernzauber, Ermächtigter Zauber, Erweiterter Zauber, Erhöhter Zauber, Beschleunigter Zauber, Subtiler Zauber, Zwillingszauber."
+      "description": "Du erhältst die Fähigkeit, deine Zauber nach deinen Bedürfnissen zu verändern. Du erhältst zwei Metamagie-Optionen deiner Wahl aus: Vorsichtiger Zauber, Fernzauber, Machtvoller Zauber, Erweiterter Zauber, Erhöhter Zauber, Beschleunigter Zauber, Subtiler Zauber, Zwillingszauber."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
       "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Sorcerous Restoration": {
-      "name": "Zauberhafte Wiederherstellung",
-      "description": "Nach einer kurzen Pause erhältst du 4 verbrauchte Zauberpunkte zurück."
+      "name": "Magische Erholung",
+      "description": "Nach einer kurzen Rast erhältst du 4 verbrauchte Zaubereipunkte zurück."
     }
   },
   "Warlock": {
     "Otherworldly Patron": {
       "name": "Jenseitiger Gönner",
-      "description": "Sie haben einen Handel mit einem jenseitigen Wesen Ihrer Wahl abgeschlossen: dem Erzfeind, dem Unterweltler oder dem Großen Alten, die jeweils am Ende der Klassenbeschreibung detailliert beschrieben werden."
+      "description": "Du hast einen Handel mit einem jenseitigen Wesen deiner Wahl geschlossen: der Erzfee, dem Unhold oder dem Großen Alten, die jeweils am Ende der Klassenbeschreibung ausführlich beschrieben werden."
     },
     "Pact Magic": {
       "name": "Paktmagie",
-      "description": "Ihre arkanen Forschungen und die Magie, die Ihnen Ihr Gönner verliehen hat, haben Ihnen den Umgang mit Zaubern erleichtert. Charisma ist Ihre Zauberfähigkeit. Im Gegensatz zu anderen Zauberwirkern werden alle verbrauchten Zauberslots bei einer kurzen oder langen Pause wiederhergestellt."
+      "description": "Deine arkanen Forschungen und die Magie, die dir dein Gönner verliehen hat, haben dir den Umgang mit Zaubern erleichtert. Charisma ist dein Zauberattribut. Anders als bei anderen Zauberwirkern werden alle deine verbrauchten Zauberplätze bei einer kurzen oder langen Rast wiederhergestellt."
     },
     "Eldritch Invocations": {
-      "name": "Okkulte Anrufungen",
-      "description": "Bei Ihrem Studium der okkulten Überlieferungen sind Sie auf unheimliche Beschwörungen gestoßen, Fragmente verbotenen Wissens, die Ihnen dauerhafte magische Fähigkeiten verleihen. Du erhältst zwei unheimliche Beschwörungen deiner Wahl."
+      "name": "Andersweltliche Anrufungen",
+      "description": "Bei deinem Studium verborgener Überlieferungen bist du auf andersweltliche Anrufungen gestoßen, Fragmente verbotenen Wissens, die dir eine dauerhafte magische Fähigkeit verleihen. Du erhältst zwei andersweltliche Anrufungen deiner Wahl."
     },
     "Pact Boon": {
-      "name": "Pakt-Segen",
-      "description": "Ihr jenseitiger Gönner macht Ihnen für Ihren treuen Dienst ein Geschenk. Sie erhalten eine der folgenden Eigenschaften Ihrer Wahl: Pakt der Kette, Pakt der Klinge oder Pakt des Wälzers."
+      "name": "Paktgabe",
+      "description": "Dein jenseitiger Gönner macht dir für deinen treuen Dienst ein Geschenk. Du erhältst eines der folgenden Merkmale deiner Wahl: Pakt der Kette, Pakt der Klinge oder Pakt des Wälzers."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
@@ -458,37 +458,37 @@
     },
     "Mystic Arcanum": {
       "name": "Mystisches Arkanum",
-      "description": "Ihr Gönner schenkt Ihnen ein magisches Geheimnis namens Arkanum. Wählen Sie als Arkanum einen Zauber der 6. Stufe aus der Hexenmeister-Zauberliste. Du kannst deinen Arkanumzauber einmal wirken, ohne einen Zauberslot zu verbrauchen. Sie müssen eine lange Pause einlegen, bevor Sie dies erneut tun."
+      "description": "Dein Gönner schenkt dir ein magisches Geheimnis namens Arkanum. Wähle als dieses Arkanum einen Zauber der 6. Stufe aus der Hexenmeister-Zauberliste. Du kannst deinen Arkanumzauber einmal wirken, ohne einen Zauberplatz zu verbrauchen. Du musst eine lange Rast beenden, bevor du das erneut tun kannst."
     },
     "Eldritch Master": {
-      "name": "Okkulter Meister",
-      "description": "Sie können auf Ihre innere Reserve an mystischer Kraft zurückgreifen und gleichzeitig Ihren Gönner bitten, verbrauchte Zauberslots zurückzugewinnen. Sie können 1 Minute damit verbringen, Ihren Gönner um Hilfe zu bitten, um alle verbrauchten Zauberslots aus Ihrer Paktmagie-Funktion zurückzugewinnen. Sobald Sie mit dieser Funktion Zauberslots wiedererlangen, müssen Sie eine lange Pause einlegen, bevor Sie dies erneut tun können."
+      "name": "Andersweltlicher Meister",
+      "description": "Du kannst auf deine innere Reserve an mystischer Kraft zurückgreifen und zugleich deinen Gönner anflehen, um verbrauchte Zauberplätze zurückzuerhalten. Du kannst 1 Minute damit verbringen, deinen Gönner um Hilfe anzuflehen, um alle verbrauchten Zauberplätze deines Merkmals Paktmagie zurückzuerhalten. Sobald du mit diesem Merkmal Zauberplätze zurückerhalten hast, musst du eine lange Rast beenden, bevor du das erneut tun kannst."
     }
   },
   "Wizard": {
     "Spellcasting": {
-      "name": "Zauberei",
-      "description": "Als Schüler der arkanen Magie verfügen Sie über ein Zauberbuch mit 6 Zaubersprüchen der 1. Stufe Ihrer Wahl. Intelligenz ist Ihre Zauberfähigkeit."
+      "name": "Zauberwirken",
+      "description": "Als Schüler der arkanen Magie besitzt du ein Zauberbuch mit 6 Zaubern der 1. Stufe deiner Wahl. Intelligenz ist dein Zauberattribut."
     },
     "Arcane Recovery": {
       "name": "Arkane Erholung",
-      "description": "Du hast gelernt, durch das Studium deines Zauberbuchs einen Teil deiner magischen Energie zurückzugewinnen. Einmal am Tag, wenn Sie eine kurze Pause beendet haben, können Sie verbrauchte Zauberslots zur Wiederherstellung auswählen. Die Zauberslots können eine kombinierte Stufe haben, die gleich oder kleiner als die Hälfte Ihrer Zaubererstufe (aufgerundet) ist, und keiner der Zauberplätze darf der 6. Stufe oder höher angehören."
+      "description": "Du hast gelernt, einen Teil deiner magischen Energie durch das Studium deines Zauberbuchs zurückzugewinnen. Einmal pro Tag kannst du, wenn du eine kurze Rast beendest, verbrauchte Zauberplätze zur Wiederherstellung auswählen. Die Zauberplätze können zusammen eine Stufe haben, die höchstens der Hälfte deiner Magierstufe (aufgerundet) entspricht, und keiner der Plätze darf der 6. Stufe oder höher angehören."
     },
     "Arcane Tradition": {
       "name": "Arkane Tradition",
-      "description": "Sie entscheiden sich für eine arkane Tradition und gestalten Ihre magische Praxis durch eine der folgenden Schulen: Abschwörung, Beschwörung, Wahrsagerei, Verzauberung, Evokation, Illusion, Nekromantie oder Transmutation."
+      "description": "Du entscheidest dich für eine arkane Tradition und prägst deine Magieausübung durch eine der folgenden Schulen: Abschwörung, Beschwörung, Wahrsagerei, Verzauberung, Evokation, Illusion, Nekromantie oder Transmutation."
     },
     "Ability Score Improvement": {
       "name": "Attributswertverbesserung",
       "description": "Erhöhe einen Attributswert um 2 oder zwei Attributswerte um jeweils 1. Kein Attributswert darf dadurch 20 überschreiten."
     },
     "Spell Mastery": {
-      "name": "Zauberbeherrschung",
-      "description": "Du hast bestimmte Zauber so gut gemeistert, dass du sie nach Belieben wirken kannst. Wählen Sie einen Zaubererzauber der 1. Stufe und einen Zaubererzauber der 2. Stufe aus, die sich in Ihrem Zauberbuch befinden. Sie können diese Zauber auf der niedrigsten Stufe wirken, ohne einen Zauberslot zu verbrauchen, wenn Sie sie vorbereitet haben."
+      "name": "Zaubermeisterschaft",
+      "description": "Du hast bestimmte Zauber so gut gemeistert, dass du sie nach Belieben wirken kannst. Wähle einen Magierzauber der 1. Stufe und einen Magierzauber der 2. Stufe aus, die in deinem Zauberbuch stehen. Du kannst diese Zauber auf ihrer niedrigsten Stufe wirken, ohne einen Zauberplatz zu verbrauchen, wenn du sie vorbereitet hast."
     },
     "Signature Spells": {
       "name": "Signaturzauber",
-      "description": "Du meisterst zwei mächtige Zaubersprüche und kannst sie mit wenig Aufwand wirken. Wählen Sie zwei Zaubersprüche der 3. Stufe aus Ihrem Zauberbuch als Ihre Signaturzauber. Du hast diese Zauber immer vorbereitet, sie zählen nicht zu der Anzahl der Zauber, die du vorbereitet hast, und du kannst jeden von ihnen auf der 3. Stufe einmal wirken, ohne einen Zauberslot zu verbrauchen. Wenn Sie dies tun, können Sie dies nicht erneut tun, bis Sie eine kurze oder lange Pause beendet haben."
+      "description": "Du meisterst zwei mächtige Zauber und kannst sie mit geringem Aufwand wirken. Wähle zwei Magierzauber der 3. Stufe aus deinem Zauberbuch als deine Signaturzauber. Du hast diese Zauber immer vorbereitet, sie zählen nicht zu der Anzahl deiner vorbereiteten Zauber, und du kannst jeden von ihnen einmal auf der 3. Stufe wirken, ohne einen Zauberplatz zu verbrauchen. Wenn du das tust, kannst du es erst wieder tun, wenn du eine kurze oder lange Rast beendet hast."
     }
   }
 }

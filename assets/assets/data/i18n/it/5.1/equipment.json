@@ -183,7 +183,7 @@
   },
   "Backpack": {
     "name": "Zaino",
-    "description": "Contiene 30 libbre/28 litri."
+    "description": "Contiene 30 libbre/{{volume:1cuft}}."
   },
   "Burglar's Pack": {
     "name": "Dotazione da scassinatore",
@@ -219,11 +219,11 @@
   },
   "Barrel": {
     "name": "Barile",
-    "description": "Contiene 40 galloni liquidi o 113 litri solidi."
+    "description": "Contiene {{volume:40gal}} liquidi o {{volume:4cuft}} solidi."
   },
   "Basket": {
     "name": "Cestino",
-    "description": "Contiene 57 litri/40 libbre."
+    "description": "Contiene {{volume:2cuft}}/40 libbre."
   },
   "Bedroll": {
     "name": "Lettino",
@@ -247,11 +247,11 @@
   },
   "Bottle, glass": {
     "name": "Bottiglia, vetro",
-    "description": "Contiene 1,5 pinte di liquido."
+    "description": "Contiene {{volume:1.5pint}} di liquido."
   },
   "Bucket": {
     "name": "Secchio",
-    "description": "Contiene 3 galloni."
+    "description": "Contiene {{volume:3gal}}."
   },
   "Caltrops (bag of 20)": {
     "name": "Triboli (sacchetto da 20)",
@@ -283,7 +283,7 @@
   },
   "Chest": {
     "name": "Petto",
-    "description": "Contiene 340 litri/300 libbre."
+    "description": "Contiene {{volume:12cuft}}/300 libbre."
   },
   "Climber's Kit": {
     "name": "Kit da scalatore",
@@ -319,7 +319,7 @@
   },
   "Flask or tankard": {
     "name": "Fiaschetta o boccale",
-    "description": "Contiene 1 litro di liquido."
+    "description": "Contiene {{volume:1pint}} di liquido."
   },
   "Grappling Hook": {
     "name": "Rampino",
@@ -371,7 +371,7 @@
   },
   "Jug or Pitcher": {
     "name": "Brocca o brocca",
-    "description": "Contiene 1 litro di liquido."
+    "description": "Contiene {{volume:1gal}} di liquido."
   },
   "Ladder (10-foot)": {
     "name": "Scala (3 metri)",
@@ -379,15 +379,15 @@
   },
   "Lamp": {
     "name": "Lampada",
-    "description": "Brucia olio (1 pinta = 6 ore). Diffonde luce intensa in un raggio di {{distance:15ft}} e luce fioca per ulteriori {{distance:30ft}}."
+    "description": "Brucia olio ({{volume:1pint}} = 6 ore). Diffonde luce intensa in un raggio di {{distance:15ft}} e luce fioca per ulteriori {{distance:30ft}}."
   },
   "Lantern, bullseye": {
     "name": "Lanterna, bersaglio",
-    "description": "Brucia olio (1 pinta = 6 ore). Cono di luce intensa di {{distance:60ft}}, ulteriori {{distance:60ft}} di luce fioca."
+    "description": "Brucia olio ({{volume:1pint}} = 6 ore). Cono di luce intensa di {{distance:60ft}}, ulteriori {{distance:60ft}} di luce fioca."
   },
   "Lantern, hooded": {
     "name": "Lanterna, con cappuccio",
-    "description": "Brucia olio (1 pinta = 6 ore). Luce intensa con raggio di {{distance:30ft}}, luce fioca aggiuntiva di {{distance:30ft}}. Può essere incappucciato per ridurre la luce fioca a {{distance:5ft}}."
+    "description": "Brucia olio ({{volume:1pint}} = 6 ore). Luce intensa con raggio di {{distance:30ft}}, luce fioca aggiuntiva di {{distance:30ft}}. Può essere incappucciato per ridurre la luce a luce fioca a {{distance:5ft}}."
   },
   "Lock": {
     "name": "Serratura",
@@ -447,7 +447,7 @@
   },
   "Pouch": {
     "name": "Custodia",
-    "description": "Può contenere fino a 20 proiettili per fionda o 50 aghi per cerbottana o 6 libbre / 6 litri di attrezzatura."
+    "description": "Può contenere fino a 20 proiettili per fionda o 50 aghi per cerbottana o 6 libbre / {{volume:0.2cuft}} di attrezzatura."
   },
   "Quiver": {
     "name": "Faretra",
@@ -471,7 +471,7 @@
   },
   "Sack": {
     "name": "Sacco",
-    "description": "Contiene 28 litri / 30 libbre."
+    "description": "Contiene {{volume:1cuft}} / 30 libbre."
   },
   "Sand (small bag)": {
     "name": "Sabbia (borsa piccola)",
@@ -539,7 +539,7 @@
   },
   "Waterskin": {
     "name": "Otre d'acqua",
-    "description": "Contiene 4 pinte di liquido. Pesa 5 libbre quando è pieno."
+    "description": "Contiene {{volume:4pint}} di liquido. Pesa 5 libbre quando è pieno."
   },
   "Whetstone": {
     "name": "Cote",

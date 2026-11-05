@@ -2,61 +2,61 @@
   "Barbarian": {
     "Path of the Berserker": {
       "name": "Pfad des Berserkers",
-      "description": "Wandeln Sie Ihre Wut in wilde Wut um. Wenn Sie wütend sind, können Sie in Raserei verfallen und als Bonusaktion in jeder Runde einen zusätzlichen Nahkampfangriff ausführen, allerdings auf Kosten der anschließenden Erschöpfung."
+      "description": "Verwandle deinen Kampfrausch in wilde Raserei. Wenn du in Kampfrausch gerätst, kannst du in Raserei verfallen und in jedem Zug als Bonusaktion einen zusätzlichen Nahkampfangriff ausführen, allerdings auf Kosten anschließender Erschöpfung."
     },
     "Path of the Totem Warrior": {
       "name": "Pfad des Totemkriegers",
-      "description": "Verbinden Sie sich mit einem Tiergeist als Ihrem Führer und erlangen Sie magische Kräfte. Wählen Sie zwischen Bär (Widerstand gegen jeglichen Schaden), Adler (Zurückziehen als Bonusaktion) oder Wolf (Verbündete erhalten Vorteile bei Nahkampfangriffen gegen Feinde in Ihrer Nähe)."
+      "description": "Verbinde dich mit einem Tiergeist als deinem Führer und erlange magische Kräfte. Wähle zwischen Bär (Resistenz gegen jeglichen Schaden), Adler (Rückzug als Bonusaktion) oder Wolf (Verbündete sind bei Nahkampfangriffen gegen Feinde in deiner Nähe im Vorteil)."
     }
   },
   "Bard": {
     "College of Lore": {
-      "name": "Hochschule für Überlieferungen",
-      "description": "Ein Meister des Wissens und der Geheimnisse. Erwerben Sie Kenntnisse in drei zusätzlichen Fertigkeiten: Wörter schneiden, um Feinde zu behindern, und die Fähigkeit, magische Geheimnisse von anderen Klassen zu stehlen."
+      "name": "Kolleg des Wissens",
+      "description": "Ein Meister des Wissens und der Geheimnisse. Erhalte Übung in drei zusätzlichen Fertigkeiten, behindere Feinde mit Schneidenden Worten und stiehl magische Geheimnisse anderer Klassen."
     },
     "College of Valor": {
       "name": "Kolleg der Tapferkeit",
-      "description": "Ein kampfbereiter Künstler, der Verbündete im Kampf inspiriert. Erwerben Sie Kenntnisse im Umgang mit mittleren Rüstungen, Schilden und Kampfwaffen und gewähren Sie Verbündeten schließlich mit Ihrer bardischen Inspiration einen zusätzlichen Angriff."
+      "description": "Ein kampfbereiter Künstler, der Verbündete im Kampf inspiriert. Erhalte Übung im Umgang mit mittelschweren Rüstungen, Schilden und Kampfwaffen und gewähre Verbündeten schließlich mit deiner Bardischen Inspiration einen zusätzlichen Angriff."
     }
   },
   "Cleric": {
     "Knowledge Domain": {
-      "name": "Wissensbereich",
-      "description": "Gelehrter der Geheimnisse und der göttlichen Weisheit. Erwerben Sie Kenntnisse in zwei zusätzlichen Fertigkeiten und zwei zusätzlichen Sprachen, lesen Sie Erinnerungen aus Objekten und lernen Sie die Gedanken anderer kennen."
+      "name": "Domäne des Wissens",
+      "description": "Gelehrter der Geheimnisse und der göttlichen Weisheit. Erhalte Übung in zwei zusätzlichen Fertigkeiten, lerne zwei zusätzliche Sprachen, lies Erinnerungen aus Gegenständen und erfahre die Gedanken anderer."
     },
     "Life Domain": {
-      "name": "Lebensbereich",
-      "description": "Heiler und Beschützer, gesegnet von den Göttern des Lebens. Schwere Rüstungskompetenz, verbesserte Heilung und die Fähigkeit, Leben am Rande des Todes zu bewahren."
+      "name": "Domäne des Lebens",
+      "description": "Heiler und Beschützer, gesegnet von den Göttern des Lebens. Übung mit schwerer Rüstung, verbesserte Heilung und die Fähigkeit, Leben am Rande des Todes zu bewahren."
     },
     "Light Domain": {
-      "name": "Lichtdomäne",
-      "description": "Kanalisiere die göttliche Flamme gegen die Dunkelheit. Bonus-Feuer-Cantrip, Warding Flare, um Angreifer abzuwehren, und eine brillante Corona of Light auf hohen Leveln."
+      "name": "Domäne des Lichts",
+      "description": "Kanalisiere die göttliche Flamme gegen die Dunkelheit. Zusätzlicher Feuer-Zaubertrick, Schützendes Aufleuchten, um Angreifer abzuwehren, und eine strahlende Korona des Lichts auf hohen Stufen."
     },
     "Nature Domain": {
-      "name": "Naturdomäne",
-      "description": "Hüter wilder Orte und wachsender Dinge. Kenntnisse in schwerer Rüstung, ein Bonus-Druiden-Cantrip und die Fähigkeit, Tiere und Pflanzen zu bezaubern."
+      "name": "Domäne der Natur",
+      "description": "Hüter wilder Orte und wachsender Dinge. Übung mit schwerer Rüstung, ein zusätzlicher Druiden-Zaubertrick und die Fähigkeit, Tiere und Pflanzen zu bezaubern."
     },
     "Tempest Domain": {
-      "name": "Tempest-Domäne",
-      "description": "Zorn von Sturm und Meer. Schwere Rüstung und Kampfwaffenkompetenz, Zorn des Sturms zur Bestrafung von Angreifern sowie zerstörerische Wind- und Blitzmagie."
+      "name": "Domäne des Sturms",
+      "description": "Zorn von Sturm und Meer. Übung mit schwerer Rüstung und Kampfwaffen, Zorn des Sturms zur Bestrafung von Angreifern sowie zerstörerische Wind- und Blitzmagie."
     },
     "Trickery Domain": {
-      "name": "Trickery-Domäne",
-      "description": "Gottheit der Täuschung und Illusion. Rufen Sie Duplicity an, um eine illusorische Kopie Ihrer selbst zu erstellen, und greifen Sie auf eine Reihe von Zaubersprüchen zur Irreführung und Tarnung zu."
+      "name": "Domäne der List",
+      "description": "Gottheit der Täuschung und Illusion. Nutze „Duplizität hervorrufen“, um eine illusorische Kopie von dir selbst zu erschaffen, und greife auf eine Reihe von Zaubern zur Irreführung und Heimlichkeit zurück."
     },
     "War Domain": {
-      "name": "Kriegsdomäne",
-      "description": "Krieger der Götter. Schwere Rüstung und Kampfwaffenkompetenz, zusätzliche Kriegspriester-Angriffe als Bonusaktion und mächtige Kampfzauber."
+      "name": "Domäne des Krieges",
+      "description": "Krieger der Götter. Übung mit schwerer Rüstung und Kampfwaffen, zusätzliche Kriegspriester-Angriffe als Bonusaktion und mächtige Kampfzauber."
     }
   },
   "Druid": {
     "Circle of the Land": {
-      "name": "Kreis des Landes",
-      "description": "Hüter alter Traditionen und Naturgeheimnisse. Gewinnen Sie bei einer kurzen Pause Zauberslots zurück, widerstehen Sie dem Charme und der Angst von Feen und Elementarwesen und erhalten Sie je nach gewähltem Gelände zusätzliche Zauber."
+      "name": "Zirkel des Landes",
+      "description": "Hüter alter Traditionen und Naturgeheimnisse. Erhalte bei einer kurzen Rast Zauberplätze zurück, widerstehe der Bezauberung und Furcht durch Feenwesen und Elementare und erhalte je nach gewähltem Gelände zusätzliche Zauber."
     },
     "Circle of the Moon": {
-      "name": "Kreis des Mondes",
-      "description": "Leistungsstarker Gestaltwandler. Wild Verwandeln Sie sich ab HG 1 in kampfbereite Bestien (skaliert auf höheren Stufen auf HG 6) und verwandeln Sie sich schließlich in elementare Formen."
+      "name": "Zirkel des Mondes",
+      "description": "Mächtiger Gestaltwandler. Verwandle dich mit Wilder Form ab HG 1 in kampfbereite Tiere (auf höheren Stufen bis HG 6) und schließlich in elementare Formen."
     }
   },
   "Fighter": {
@@ -66,17 +66,17 @@
     },
     "Battle Master": {
       "name": "Kampfmeister",
-      "description": "Taktisches Genie. Verwenden Sie Überlegenheitswürfel, um eine Vielzahl von Kampfmanövern durchzuführen – zu Fall zu bringen, zu entwaffnen, zu parieren und Verbündete zu dirigieren – und erholen Sie sich bei einer kurzen Pause."
+      "description": "Taktisches Genie. Setze Überlegenheitswürfel für eine Vielzahl von Kampfmanövern ein – zu Fall bringen, entwaffnen, parieren und Verbündete dirigieren – und erhalte sie bei einer kurzen Rast zurück."
     },
     "Eldritch Knight": {
-      "name": "Unheimlicher Ritter",
-      "description": "Eine Zauberklinge, die Kampftraining mit arkaner Kraft verbindet. Erlernen Sie Abschwörungs- und Beschwörungszauber, binden Sie Waffen an Ihre Hand und wirken Sie schließlich als Bonusaktion Zauber."
+      "name": "Mystischer Ritter",
+      "description": "Eine Zauberklinge, die Kampfausbildung mit arkaner Macht verbindet. Lerne Abschwörungs- und Evokationszauber, binde Waffen an deine Hand und wirke schließlich Zauber als Bonusaktion."
     }
   },
   "Monk": {
     "Way of the Open Hand": {
       "name": "Weg der offenen Hand",
-      "description": "Meister des unbewaffneten Kampfes. Mit der Open-Hand-Technik können Sie Reaktionen niederschlagen, schieben oder verhindern. „Quivering Palm“ verursacht schließlich mit einer einzigen Berührung massiven Schaden."
+      "description": "Meister des waffenlosen Kampfes. Mit „Technik der offenen Hand“ kannst du Gegner niederwerfen, wegstoßen oder ihre Reaktionen verhindern; „Bebende Handfläche“ verursacht schließlich mit einer einzigen Berührung massiven Schaden."
     },
     "Way of Shadow": {
       "name": "Weg des Schattens",
@@ -84,17 +84,17 @@
     },
     "Way of the Four Elements": {
       "name": "Weg der vier Elemente",
-      "description": "Kanalisieren Sie die Elemente selbst. Gib Ki aus, um elementare Disziplinen anzuwenden – Feuer schleudern, Wasser kontrollieren, Steinmauern errichten und auf dem Wind reiten."
+      "description": "Kanalisiere die Elemente selbst. Gib Ki aus, um elementare Disziplinen einzusetzen – Feuer schleudern, Wasser kontrollieren, Steinmauern errichten und auf dem Wind reiten."
     }
   },
   "Paladin": {
     "Oath of Devotion": {
       "name": "Eid der Hingabe",
-      "description": "Der klassische Ritter der Gerechtigkeit und Ordnung. Heilige Waffe, um Angriffe zu verstärken, Heiliger Nimbus, um Untoten und Untoten Schaden zuzufügen, und mächtige Schutz- und Schlagzauber."
+      "description": "Der klassische Ritter der Gerechtigkeit und Ordnung. Heilige Waffe, um Angriffe zu verstärken, Heiliger Nimbus, um Unholden und Untoten Schaden zuzufügen, und mächtige Schutz- und Schlagzauber."
     },
     "Oath of the Ancients": {
       "name": "Eid der Alten",
-      "description": "Hüter des Lichts und der Natur. Der Zorn der Natur zur Eindämmung von Feinden, zur Verwandlung von Ältesten-Champions und zum Schutz vor Elementar- und magischem Schaden."
+      "description": "Hüter des Lichts und der Natur. Zorn der Natur, um Feinde festzuhalten, die Verwandlung zum Uralten Champion und Schutz vor Elementar- und magischem Schaden."
     },
     "Oath of Vengeance": {
       "name": "Eid der Rache",
@@ -104,17 +104,17 @@
   "Ranger": {
     "Hunter": {
       "name": "Jäger",
-      "description": "Meisterlicher Fährtenleser und Jäger. Wählen Sie aus den Optionen von Jägerbeute (Kolosstöter, Riesentöter, Hordenbrecher) und Verteidigungstaktiken, um jeder Bedrohung zu begegnen."
+      "description": "Meisterlicher Fährtenleser und Jäger. Wähle aus den Optionen von Beute des Jägers (Kolosstöter, Riesentöter, Hordenbrecher) und Verteidigungstaktiken, um jeder Bedrohung zu begegnen."
     },
     "Beast Master": {
       "name": "Bestienmeister",
-      "description": "Verbinde dich intensiv mit einem tierischen Begleiter, der an deiner Seite kämpft. Das Biest handelt, wenn Sie an der Reihe sind, und gewinnt mit zunehmendem Level an Macht."
+      "description": "Verbinde dich eng mit einem tierischen Gefährten, der an deiner Seite kämpft. Das Tier handelt in deinem Zug und gewinnt mit deinem Stufenaufstieg an Macht."
     }
   },
   "Rogue": {
     "Thief": {
       "name": "Dieb",
-      "description": "Meistereinbrecher und Opportunist. Schnelle Hände für die schnelle Verwendung von Gegenständen als Bonusaktion, Arbeit im zweiten Stock für überlegene Klettergeschwindigkeit und Verwendung eines magischen Geräts auf höheren Ebenen."
+      "description": "Meistereinbrecher und Opportunist. Schnelle Hände für die schnelle Verwendung von Gegenständen als Bonusaktion, Fassadenkletterer für überlegene Klettergeschwindigkeit und Magische Geräte verwenden auf höheren Stufen."
     },
     "Assassin": {
       "name": "Attentäter",
@@ -122,7 +122,7 @@
     },
     "Arcane Trickster": {
       "name": "Arkaner Trickster",
-      "description": "Ein zaubernder Schurke, der Magie mit Tricks verbindet. Erlernen Sie Illusions- und Verzauberungszauber, nutzen Sie Magierhand-Spielerei und stehlen Sie schließlich Zaubereffekte von anderen Zauberern."
+      "description": "Ein zaubernder Schurke, der Magie mit List verbindet. Lerne Illusions- und Verzauberungszauber, nutze „Geschickte Magierhand“ und stiehl schließlich Zaubereffekte von anderen Zauberwirkern."
     }
   },
   "Sorcerer": {
@@ -132,12 +132,12 @@
     },
     "Wild Magic": {
       "name": "Wilde Magie",
-      "description": "Chaotische Wellen unvorhersehbarer Macht. Fluten des Chaos für einen Vorteil bei einem Wurf, zufällige Wild Magic Surge-Effekte und die Fähigkeit, Verbündeten im Notfall dabei zu helfen, Zauberpunkte zurückzugewinnen."
+      "description": "Chaotische Wellen unvorhersehbarer Macht. Gezeiten des Chaos für einen Vorteil bei einem Wurf, zufällige Effekte der Welle wilder Magie und die Fähigkeit, Verbündeten im Notfall dabei zu helfen, Zaubereipunkte zurückzugewinnen."
     }
   },
   "Warlock": {
     "The Archfey": {
-      "name": "Der Erzfey",
+      "name": "Die Erzfee",
       "description": "Ein Feenfürst der Emotionen und des Glamours. Feenpräsenz, um Kreaturen in der Nähe zu bezaubern oder zu erschrecken, neblige Flucht, die bei einem Treffer verschwindet, und verzauberungsorientierte Magie."
     },
     "The Fiend": {
@@ -152,7 +152,7 @@
   "Wizard": {
     "School of Abjuration": {
       "name": "Schule der Abschwörung",
-      "description": "Meister der Schutzmagie. „Arkaner Schutz“ absorbiert Schaden für Sie, „Projizierter Schutz“ erweitert den Schutz auf Verbündete und Ihre Abschwörungen sind maximal wirksam."
+      "description": "Meister der Schutzmagie. „Arkaner Schutz“ absorbiert Schaden für dich, „Projizierter Schutz“ erweitert den Schutz auf Verbündete, und deine Abschwörungen sind maximal wirksam."
     },
     "School of Conjuration": {
       "name": "Schule der Beschwörung",
@@ -160,7 +160,7 @@
     },
     "School of Divination": {
       "name": "Schule der Wahrsagerei",
-      "description": "Seher und Orakel. Mit Portent können Sie im Morgengrauen zwei W20 würfeln und jeden Wurf im Spiel damit ersetzen – was möglicherweise den Ausgang kritischer Momente verändert."
+      "description": "Seher und Orakel. Mit „Vorzeichen“ kannst du im Morgengrauen zwei W20 würfeln und damit jeden Wurf im Spiel ersetzen – was den Ausgang entscheidender Momente verändern kann."
     },
     "School of Enchantment": {
       "name": "Schule der Verzauberung",
@@ -168,7 +168,7 @@
     },
     "School of Evocation": {
       "name": "Schule der Evokation",
-      "description": "Der arkane Blaster. Formen Sie Zauber, um Verbündete von Ihren Flächeneffekten auszuschließen, mächtigen Cantrip für den halben Schaden bei Rettungswürfen und mächtige Evokation, um einen Schadenswurf zu maximieren."
+      "description": "Der arkane Sprengmeister. Forme Zauber, um Verbündete von deinen Flächeneffekten auszunehmen, „Starker Zaubertrick“ für halben Schaden bei Rettungswürfen und „Kraftvolle Evokation“, um einen Schadenswurf zu maximieren."
     },
     "School of Illusion": {
       "name": "Schule der Illusion",
@@ -176,11 +176,11 @@
     },
     "School of Necromancy": {
       "name": "Schule der Nekromantie",
-      "description": "Meister der Todesmagie. Grim Harvest, um Trefferpunkte zurückzugewinnen, wenn Sie mit Zaubern töten, Untote Thralls für mächtigere untote Diener und Command Untote auf hohen Stufen."
+      "description": "Meister der Todesmagie. „Grimmige Ernte“, um Trefferpunkte zurückzuerhalten, wenn du mit Zaubern tötest, „Untote Leibeigene“ für mächtigere untote Diener und „Untote befehligen“ auf hohen Stufen."
     },
     "School of Transmutation": {
       "name": "Schule der Transmutation",
-      "description": "Meister der Transformation. „Transmuter-Stein“ für fortlaufende Stärkungen, „Gestaltwandler“, um sich selbst zu verwandeln, und „Meister-Transmuter“, um durch die Verwendung Ihres Steins wundersame Effekte zu erzielen."
+      "description": "Meister der Verwandlung. „Stein des Transmuters“ für dauerhafte Stärkungen, „Gestaltwandler“, um dich selbst zu verwandeln, und „Meistertransmuter“, um durch den Verbrauch deines Steins wundersame Effekte zu erzielen."
     }
   }
 }

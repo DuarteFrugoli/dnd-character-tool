@@ -183,7 +183,7 @@
   },
   "Backpack": {
     "name": "背包",
-    "description": "可容纳 30 磅/1 立方英尺。"
+    "description": "可容纳 30 磅/{{volume:1cuft}}。"
   },
   "Burglar's Pack": {
     "name": "窃贼包",
@@ -219,11 +219,11 @@
   },
   "Barrel": {
     "name": "桶",
-    "description": "可容纳 40 加仑液体或 4 立方英尺固体。"
+    "description": "可容纳 {{volume:40gal}}液体或 {{volume:4cuft}}固体。"
   },
   "Basket": {
     "name": "篮子",
-    "description": "可容纳 2 立方英尺/40 磅。"
+    "description": "可容纳 {{volume:2cuft}}/40 磅。"
   },
   "Bedroll": {
     "name": "铺盖卷",
@@ -247,11 +247,11 @@
   },
   "Bottle, glass": {
     "name": "瓶子、玻璃",
-    "description": "可容纳 1.5 品脱液体。"
+    "description": "可容纳 {{volume:1.5pint}}液体。"
   },
   "Bucket": {
     "name": "桶",
-    "description": "可容纳 3 加仑。"
+    "description": "可容纳 {{volume:3gal}}。"
   },
   "Caltrops (bag of 20)": {
     "name": "铁蒺藜（20枚）",
@@ -283,7 +283,7 @@
   },
   "Chest": {
     "name": "胸部",
-    "description": "可容纳 12 立方英尺/300 磅。"
+    "description": "可容纳 {{volume:12cuft}}/300 磅。"
   },
   "Climber's Kit": {
     "name": "登山者套件",
@@ -319,7 +319,7 @@
   },
   "Flask or tankard": {
     "name": "烧瓶或大酒杯",
-    "description": "可容纳 1 品脱液体。"
+    "description": "可容纳 {{volume:1pint}}液体。"
   },
   "Grappling Hook": {
     "name": "抓钩",
@@ -371,7 +371,7 @@
   },
   "Jug or Pitcher": {
     "name": "壶或水罐",
-    "description": "可容纳 1 加仑液体。"
+    "description": "可容纳 {{volume:1gal}}液体。"
   },
   "Ladder (10-foot)": {
     "name": "梯子（10英尺）",
@@ -379,15 +379,15 @@
   },
   "Lamp": {
     "name": "灯",
-    "description": "燃烧油（1 品脱 = 6 小时）。在 {{distance:15ft}}半径内发出明亮的光线，在另外 {{distance:30ft}}的范围内发出昏暗的光线。"
+    "description": "燃烧油（{{volume:1pint}} = 6 小时）。在 {{distance:15ft}}半径内发出明亮的光线，在另外 {{distance:30ft}}的范围内发出昏暗的光线。"
   },
   "Lantern, bullseye": {
     "name": "灯笼、靶心",
-    "description": "燃烧油（1 品脱 = 6 小时）。 {{distance:60ft}}的锥体亮光，额外的 {{distance:60ft}}的暗光。"
+    "description": "燃烧油（{{volume:1pint}} = 6 小时）。 {{distance:60ft}}的锥体亮光，额外的 {{distance:60ft}}的暗光。"
   },
   "Lantern, hooded": {
     "name": "灯笼，带帽",
-    "description": "燃烧油（1 品脱 = 6 小时）。 {{distance:30ft}}半径的亮光，额外 {{distance:30ft}}的暗光。可以戴上帽子以减少 {{distance:5ft}}处的昏暗光线。"
+    "description": "燃烧油（{{volume:1pint}} = 6 小时）。 {{distance:30ft}}半径的亮光，额外 {{distance:30ft}}的暗光。可罩上灯罩，将光线减弱为 {{distance:5ft}}处的昏暗光线。"
   },
   "Lock": {
     "name": "锁",
@@ -447,7 +447,7 @@
   },
   "Pouch": {
     "name": "小袋",
-    "description": "可容纳最多 20 颗弹弓子弹或 50 支吹气枪针，或 6 磅/1/5 立方英尺的装备。"
+    "description": "可容纳最多 20 颗弹弓子弹或 50 支吹气枪针，或 6 磅/{{volume:0.2cuft}}的装备。"
   },
   "Quiver": {
     "name": "颤动",
@@ -471,7 +471,7 @@
   },
   "Sack": {
     "name": "解雇",
-    "description": "可容纳 1 立方英尺/30 磅。"
+    "description": "可容纳 {{volume:1cuft}}/30 磅。"
   },
   "Sand (small bag)": {
     "name": "沙子（小袋）",
@@ -539,7 +539,7 @@
   },
   "Waterskin": {
     "name": "水袋",
-    "description": "可容纳 4 品脱液体。满载时重 5 磅。"
+    "description": "可容纳 {{volume:4pint}}液体。满载时重 5 磅。"
   },
   "Whetstone": {
     "name": "磨石",

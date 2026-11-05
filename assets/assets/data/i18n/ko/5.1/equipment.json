@@ -183,7 +183,7 @@
   },
   "Backpack": {
     "name": "배낭",
-    "description": "30파운드/1입방피트를 수용합니다."
+    "description": "30파운드/{{volume:1cuft|obj}} 수용합니다."
   },
   "Burglar's Pack": {
     "name": "도둑의 꾸러미",
@@ -219,11 +219,11 @@
   },
   "Barrel": {
     "name": "통",
-    "description": "40갤런의 액체 또는 4입방피트의 고체를 담을 수 있습니다."
+    "description": "{{volume:40gal}}의 액체 또는 {{volume:4cuft}}의 고체를 담을 수 있습니다."
   },
   "Basket": {
     "name": "바구니",
-    "description": "2입방피트/40파운드를 수용합니다."
+    "description": "{{volume:2cuft}}/40파운드를 수용합니다."
   },
   "Bedroll": {
     "name": "침낭",
@@ -247,11 +247,11 @@
   },
   "Bottle, glass": {
     "name": "병, 유리",
-    "description": "1.5 파인트의 액체를 담습니다."
+    "description": "{{volume:1.5pint}}의 액체를 담습니다."
   },
   "Bucket": {
     "name": "버킷",
-    "description": "3갤런을 담을 수 있습니다."
+    "description": "{{volume:3gal|obj}} 담을 수 있습니다."
   },
   "Caltrops (bag of 20)": {
     "name": "마름쇠 (20개들이 봉지)",
@@ -283,7 +283,7 @@
   },
   "Chest": {
     "name": "가슴",
-    "description": "12입방피트/300파운드를 수용합니다."
+    "description": "{{volume:12cuft}}/300파운드를 수용합니다."
   },
   "Climber's Kit": {
     "name": "등산용 키트",
@@ -319,7 +319,7 @@
   },
   "Flask or tankard": {
     "name": "플라스크 또는 텀커드",
-    "description": "1 파인트의 액체를 담습니다."
+    "description": "{{volume:1pint}}의 액체를 담습니다."
   },
   "Grappling Hook": {
     "name": "갈고리",
@@ -371,7 +371,7 @@
   },
   "Jug or Pitcher": {
     "name": "주전자 또는 투수",
-    "description": "1갤런의 액체를 담을 수 있습니다."
+    "description": "{{volume:1gal}}의 액체를 담을 수 있습니다."
   },
   "Ladder (10-foot)": {
     "name": "사다리(10피트)",
@@ -379,15 +379,15 @@
   },
   "Lamp": {
     "name": "램프",
-    "description": "기름을 태웁니다(1파인트 = 6시간). {{distance:15ft}} 반경에는 밝은 빛을 비추고 추가 {{distance:30ft}} 반경에는 희미한 빛을 비춥니다."
+    "description": "기름을 태웁니다({{volume:1pint}} = 6시간). {{distance:15ft}} 반경에는 밝은 빛을 비추고 추가 {{distance:30ft}} 반경에는 희미한 빛을 비춥니다."
   },
   "Lantern, bullseye": {
     "name": "랜턴, 불스아이",
-    "description": "기름을 태웁니다(1파인트 = 6시간). {{distance:60ft}} 원뿔 모양의 밝은 빛, 추가로 {{distance:60ft}} 희미한 빛."
+    "description": "기름을 태웁니다({{volume:1pint}} = 6시간). {{distance:60ft}} 원뿔 모양의 밝은 빛, 추가로 {{distance:60ft}} 희미한 빛."
   },
   "Lantern, hooded": {
     "name": "랜턴, 후드",
-    "description": "기름을 태웁니다(1파인트 = 6시간). 반경 {{distance:30ft}}의 밝은 빛, 추가로 {{distance:30ft}}의 희미한 빛. {{distance:5ft}} 높이에서 어두운 빛을 줄이기 위해 후드를 씌울 수 있습니다."
+    "description": "기름을 태웁니다({{volume:1pint}} = 6시간). 반경 {{distance:30ft}}의 밝은 빛, 추가로 {{distance:30ft}}의 희미한 빛. 후드를 씌우면 {{distance:5ft}} 거리의 희미한 빛으로 줄일 수 있습니다."
   },
   "Lock": {
     "name": "잠그다",
@@ -447,7 +447,7 @@
   },
   "Pouch": {
     "name": "작은 주머니",
-    "description": "최대 20개의 슬링 총알, 50개의 블로우건 바늘 또는 6lbs/1/5입방피트의 장비를 수용할 수 있습니다."
+    "description": "최대 20개의 슬링 총알, 50개의 블로우건 바늘 또는 6lbs/{{volume:0.2cuft}}의 장비를 수용할 수 있습니다."
   },
   "Quiver": {
     "name": "떨림",
@@ -471,7 +471,7 @@
   },
   "Sack": {
     "name": "해고",
-    "description": "1입방피트/30파운드를 수용합니다."
+    "description": "{{volume:1cuft}}/30파운드를 수용합니다."
   },
   "Sand (small bag)": {
     "name": "모래(작은 봉지)",
@@ -539,7 +539,7 @@
   },
   "Waterskin": {
     "name": "물주머니",
-    "description": "4파인트의 액체를 담을 수 있습니다. 가득 찼을 때 무게는 5파운드입니다."
+    "description": "{{volume:4pint}}의 액체를 담을 수 있습니다. 가득 찼을 때 무게는 5파운드입니다."
   },
   "Whetstone": {
     "name": "숫돌",

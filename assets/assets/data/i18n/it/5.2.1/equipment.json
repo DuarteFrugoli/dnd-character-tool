@@ -210,7 +210,7 @@
   },
   "Backpack": {
     "name": "Zaino",
-    "description": "Contiene fino a 30 libbre in 28 litri; può servire anche da bisaccia."
+    "description": "Contiene fino a 30 libbre in {{volume:1cuft}}; può servire anche da bisaccia."
   },
   "Ball Bearings": {
     "name": "Sfere di Metallo",
@@ -218,11 +218,11 @@
   },
   "Barrel": {
     "name": "Barile",
-    "description": "Contiene fino a 40 galloni di liquido o 113 litri di merci secche."
+    "description": "Contiene fino a {{volume:40gal}} di liquido o {{volume:4cuft}} di merci secche."
   },
   "Basket": {
     "name": "Cesto",
-    "description": "Contiene fino a 40 libbre in 57 litri."
+    "description": "Contiene fino a 40 libbre in {{volume:2cuft}}."
   },
   "Bedroll": {
     "name": "Giaciglio",
@@ -246,11 +246,11 @@
   },
   "Bottle, Glass": {
     "name": "Bottiglia di Vetro",
-    "description": "Contiene fino a 1,5 pinte."
+    "description": "Contiene fino a {{volume:1.5pint}}."
   },
   "Bucket": {
     "name": "Secchio",
-    "description": "Contiene fino a 14 litri."
+    "description": "Contiene fino a {{volume:0.5cuft}}."
   },
   "Burglar's Pack": {
     "name": "Dotazione da Scassinatore",
@@ -278,7 +278,7 @@
   },
   "Chest": {
     "name": "Forziere",
-    "description": "Contiene fino a 340 litri."
+    "description": "Contiene fino a {{volume:12cuft}}."
   },
   "Climber's Kit": {
     "name": "Attrezzatura da Scalatore",
@@ -338,7 +338,7 @@
   },
   "Flask": {
     "name": "Fiaschetta",
-    "description": "Contiene fino a 1 pinta."
+    "description": "Contiene fino a {{volume:1pint}}."
   },
   "Grappling Hook": {
     "name": "Rampino",
@@ -374,7 +374,7 @@
   },
   "Ink": {
     "name": "Inchiostro",
-    "description": "Una bottiglia da 1 oncia contiene inchiostro per circa 500 pagine."
+    "description": "Una bottiglia da {{volume:1floz}} contiene inchiostro per circa 500 pagine."
   },
   "Ink Pen": {
     "name": "Penna",
@@ -382,7 +382,7 @@
   },
   "Jug": {
     "name": "Brocca",
-    "description": "Contiene fino a 1 gallone."
+    "description": "Contiene fino a {{volume:1gal}}."
   },
   "Ladder": {
     "name": "Scala",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Profumo",
-    "description": "Fiala da 4 once. Per 1 ora dopo l'applicazione ottieni Vantaggio alle prove di Carisma (Persuasione) per influenzare un Umanoide Indifferente entro {{distance:5ft}}."
+    "description": "Fiala da {{volume:4floz}}. Per 1 ora dopo l'applicazione ottieni Vantaggio alle prove di Carisma (Persuasione) per influenzare un Umanoide Indifferente entro {{distance:5ft}}."
   },
   "Poison, Basic": {
     "name": "Veleno Base",
@@ -450,11 +450,11 @@
   },
   "Pot, Iron": {
     "name": "Pentola di Ferro",
-    "description": "Contiene fino a 1 gallone."
+    "description": "Contiene fino a {{volume:1gal}}."
   },
   "Pouch": {
     "name": "Borsello",
-    "description": "Contiene fino a 6 libbre in 6 litri."
+    "description": "Contiene fino a 6 libbre in {{volume:0.2cuft}}."
   },
   "Priest's Pack": {
     "name": "Dotazione da Sacerdote",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "Sacco",
-    "description": "Contiene fino a 30 libbre in 28 litri."
+    "description": "Contiene fino a 30 libbre in {{volume:1cuft}}."
   },
   "Scholar's Pack": {
     "name": "Dotazione da Studioso",
@@ -530,7 +530,7 @@
   },
   "Waterskin": {
     "name": "Otre",
-    "description": "Contiene fino a 4 pinte d'acqua; il peso indicato è da pieno."
+    "description": "Contiene fino a {{volume:4pint}} d'acqua; il peso indicato è da pieno."
   },
   "weaponMasteries": {
     "cleave": {

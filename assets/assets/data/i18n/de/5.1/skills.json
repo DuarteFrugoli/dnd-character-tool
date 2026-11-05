@@ -3,13 +3,13 @@
     "name": "Akrobatik"
   },
   "Animal Handling": {
-    "name": "Umgang mit Tieren"
+    "name": "Mit Tieren umgehen"
   },
   "Arcana": {
-    "name": "Arkana"
+    "name": "Arkane Kunde"
   },
   "Athletics": {
-    "name": "Leichtathletik"
+    "name": "Athletik"
   },
   "Deception": {
     "name": "Täuschung"
@@ -18,13 +18,13 @@
     "name": "Geschichte"
   },
   "Insight": {
-    "name": "Einblick"
+    "name": "Motiv erkennen"
   },
   "Intimidation": {
     "name": "Einschüchterung"
   },
   "Investigation": {
-    "name": "Untersuchung"
+    "name": "Nachforschungen"
   },
   "Medicine": {
     "name": "Medizin"
@@ -36,7 +36,7 @@
     "name": "Wahrnehmung"
   },
   "Performance": {
-    "name": "Leistung"
+    "name": "Auftreten"
   },
   "Persuasion": {
     "name": "Überzeugung"
@@ -45,7 +45,7 @@
     "name": "Religion"
   },
   "Sleight of Hand": {
-    "name": "Taschenspielertrick"
+    "name": "Fingerfertigkeit"
   },
   "Stealth": {
     "name": "Heimlichkeit"

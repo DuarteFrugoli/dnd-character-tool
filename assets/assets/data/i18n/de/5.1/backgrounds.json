@@ -11,7 +11,7 @@
     ],
     "feature": {
       "name": "Zufluchtsort der Gläubigen",
-      "description": "Sie und Ihre Begleiter können in den Tempeln Ihres Glaubens kostenlose Heilung und Pflege erhalten und Priester um Hilfe bitten."
+      "description": "Du und deine Begleiter könnt in den Tempeln deines Glaubens kostenlose Heilung und Pflege erhalten, und du kannst Priester um Hilfe bitten."
     }
   },
   "Charlatan": {
@@ -19,16 +19,16 @@
     "startingEquipment": [
       "Feine Kleidung",
       "Verkleidungsset",
-      "Werkzeuge der Con Ihrer Wahl",
+      "Betrugswerkzeug deiner Wahl",
       "15 GM"
     ],
     "feature": {
       "name": "Falsche Identität",
-      "description": "Sie haben eine zweite Identität geschaffen, einschließlich Dokumentation, etablierter Bekanntschaften und Verkleidungen."
+      "description": "Du hast dir eine zweite Identität geschaffen, einschließlich Dokumenten, fester Bekanntschaften und Verkleidungen."
     }
   },
   "Criminal": {
-    "name": "Kriminell",
+    "name": "Krimineller",
     "startingEquipment": [
       "Brecheisen",
       "Dunkle Alltagskleidung mit Kapuze",
@@ -36,7 +36,7 @@
     ],
     "feature": {
       "name": "Krimineller Kontakt",
-      "description": "Sie haben einen zuverlässigen Ansprechpartner, der als Vermittler zu einem Netzwerk von Kriminellen fungiert."
+      "description": "Du hast einen zuverlässigen Kontakt, der als Verbindung zu einem Netzwerk von Kriminellen dient."
     }
   },
   "Entertainer": {
@@ -49,7 +49,7 @@
     ],
     "feature": {
       "name": "Auf vielfachen Wunsch",
-      "description": "Sie können immer einen Ort finden, an dem Sie auftreten können, und erhalten kostenlose Unterkunft und Verpflegung von bescheidener Qualität."
+      "description": "Du findest immer einen Ort, an dem du auftreten kannst, und erhältst kostenlose Unterkunft und Verpflegung von bescheidener Qualität."
     }
   },
   "Folk Hero": {
@@ -70,13 +70,13 @@
     "name": "Gildenhandwerker",
     "startingEquipment": [
       "Handwerkerwerkzeuge",
-      "Vorstellungsschreiben Ihrer Gilde",
+      "Empfehlungsschreiben deiner Gilde",
       "Kleidung eines Reisenden",
       "15 GM"
     ],
     "feature": {
       "name": "Gildenmitgliedschaft",
-      "description": "Ihre Gilde bietet Unterkunft, Rechtsbeistand und Beistand – und erwartet im Gegenzug Beiträge und Loyalität."
+      "description": "Deine Gilde bietet dir Unterkunft, Rechtsbeistand und Unterstützung – und erwartet im Gegenzug Beiträge und Loyalität."
     }
   },
   "Hermit": {
@@ -90,11 +90,11 @@
     ],
     "feature": {
       "name": "Entdeckung",
-      "description": "Ihre Einsamkeit brachte eine einzigartige Entdeckung hervor – eine große Wahrheit, ein Geheimnis oder einen verborgenen Ort."
+      "description": "Deine Einsamkeit führte zu einer einzigartigen Entdeckung – einer großen Wahrheit, einem Geheimnis oder einem verborgenen Ort."
     }
   },
   "Noble": {
-    "name": "Edel",
+    "name": "Adliger",
     "startingEquipment": [
       "Feine Kleidung",
       "Siegelring",
@@ -103,11 +103,11 @@
     ],
     "feature": {
       "name": "Privilegierte Position",
-      "description": "Die Leute gehen davon aus, dass Sie das Beste sind. Sie sind in der High Society willkommen und können sich eine Audienz bei einem örtlichen Adligen sichern."
+      "description": "Die Leute nehmen von dir das Beste an. Du bist in der feinen Gesellschaft willkommen und kannst dir eine Audienz bei einem örtlichen Adligen verschaffen."
     }
   },
   "Outlander": {
-    "name": "Wanderer",
+    "name": "Außenseiter",
     "startingEquipment": [
       "Personal",
       "Jagdfalle",
@@ -117,11 +117,11 @@
     ],
     "feature": {
       "name": "Wanderer",
-      "description": "Sie können täglich Nahrung und frisches Wasser für sich und bis zu fünf andere finden und sich die allgemeine Beschaffenheit des Geländes merken."
+      "description": "Du kannst jeden Tag Nahrung und frisches Wasser für dich und bis zu fünf andere finden und dich an die allgemeine Beschaffenheit von Gelände erinnern."
     }
   },
   "Sage": {
-    "name": "Salbei",
+    "name": "Gelehrter",
     "startingEquipment": [
       "Flasche schwarze Tinte",
       "Feder",
@@ -132,7 +132,7 @@
     ],
     "feature": {
       "name": "Forscher",
-      "description": "Sie wissen, wo Sie obskure Informationen finden. Wenn Sie es nicht wissen, wissen Sie, wer es weiß."
+      "description": "Du weißt, wo du obskure Informationen findest. Wenn du etwas nicht weißt, weißt du, wer es weiß."
     }
   },
   "Sailor": {
@@ -146,7 +146,7 @@
     ],
     "feature": {
       "name": "Schiffspassage",
-      "description": "Gegen Arbeitskraft können Sie sich und Ihren Begleitern die freie Durchfahrt auf Segelschiffen sichern."
+      "description": "Im Austausch gegen deine Arbeitskraft kannst du dir und deinen Begleitern eine kostenlose Überfahrt auf Segelschiffen sichern."
     }
   },
   "Soldier": {
@@ -160,14 +160,14 @@
     ],
     "feature": {
       "name": "Militärischer Rang",
-      "description": "Soldaten, die Ihrer ehemaligen Fraktion treu ergeben sind, erkennen Ihren Rang an. Sie können sich auf Ihren Rang berufen, um Einfluss und Zugang zu Militärlagern zu erhalten."
+      "description": "Soldaten, die deiner ehemaligen Fraktion treu sind, erkennen deinen Rang an. Du kannst dich auf deinen Rang berufen, um Einfluss und Zugang zu Militärlagern zu erhalten."
     }
   },
   "Urchin": {
     "name": "Straßenkind",
     "startingEquipment": [
       "Kleines Messer",
-      "Karte Ihrer Heimatstadt",
+      "Karte deiner Heimatstadt",
       "Haustiermaus",
       "Token von deinen Eltern",
       "Gemeinsame Kleidung",
@@ -175,7 +175,7 @@
     ],
     "feature": {
       "name": "Stadtgeheimnisse",
-      "description": "Sie kennen die geheimen Muster von Städten und können doppelt so schnell Passagen durch städtische Gebiete finden wie normal."
+      "description": "Du kennst die geheimen Muster von Städten und kannst Wege durch Stadtgebiete doppelt so schnell wie normal finden."
     }
   }
 }

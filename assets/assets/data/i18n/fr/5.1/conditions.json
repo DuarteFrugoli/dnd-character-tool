@@ -1,6 +1,6 @@
 {
   "Blinded": {
-    "name": "Aveugle",
+    "name": "Aveuglé",
     "description": "Une créature aveuglée ne peut pas voir et échoue automatiquement à tout test de capacité nécessitant la vue. Les jets d'attaque contre la créature ont un avantage, et les jets d'attaque de la créature ont un désavantage."
   },
   "Charmed": {

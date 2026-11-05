@@ -19,6 +19,7 @@ import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/character_avatar.dart';
 import '../../shared/widgets/character_update_dialog.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
+import '../../shared/widgets/convert_2024_dialog.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import '../../shared/widgets/whats_new_dialog.dart';
 
@@ -436,13 +437,26 @@ class _CharacterCard extends ConsumerWidget {
     final rules = ref.watch(characterRulesContextProvider((character.rulesetId, character.contentPackId)));
     final i18n = ref.watch(srdI18nForPackProvider(rules.contentPackId)).valueOrNull ??
         SrdI18nService.englishForPack(rules.pack);
+    /// Sheets waiting for a data update stay closed until the player updates.
+    Future<bool> ensureUpdated() async {
+      if (!character.needsDataUpdate) return true;
+      final updated = await showCharacterUpdateDialog(context);
+      if (!context.mounted || !updated) return false;
+      ref.invalidate(characterListProvider);
+      return true;
+    }
+
     Future<void> openCharacter() async {
-      if (character.needsDataUpdate) {
-        final updated = await showCharacterUpdateDialog(context);
-        if (!context.mounted || !updated) return;
-        ref.invalidate(characterListProvider);
-      }
+      if (!await ensureUpdated() || !context.mounted) return;
       context.push('/character/${character.id}');
+    }
+
+    Future<void> convertCharacter() async {
+      final router = GoRouter.of(context);
+      if (!await ensureUpdated() || !context.mounted) return;
+      if (await confirmConvert2024(context, character, i18n)) {
+        router.push('/convert/2024/${character.id}');
+      }
     }
 
     Future<void> exportCharacter() async {
@@ -605,6 +619,9 @@ class _CharacterCard extends ConsumerWidget {
                 if (value == 'duplicate') {
                   await duplicateCharacter();
                 }
+                if (value == 'convert2024') {
+                  await convertCharacter();
+                }
                 if (value == 'rename') {
                   if (!context.mounted) return;
                   final newName = await showDialog<String>(
@@ -667,6 +684,11 @@ class _CharacterCard extends ConsumerWidget {
                   value: 'duplicate',
                   child: Text(l10n.charCardDuplicate),
                 ),
+                if (rules.supportsLegacySheet)
+                  PopupMenuItem(
+                    value: 'convert2024',
+                    child: Text(l10n.characterActionConvert2024),
+                  ),
                 PopupMenuItem(
                   value: 'export',
                   child: Text(l10n.charCardExport),

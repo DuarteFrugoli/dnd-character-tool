@@ -17,6 +17,7 @@ import '../../shared/providers/providers.dart';
 import '../../shared/utils/character_display.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/character_update_dialog.dart';
+import '../../shared/widgets/convert_2024_dialog.dart';
 import '../../shared/widgets/responsive_layout.dart';
 import 'application/character_tab_view_models.dart';
 import 'character_detail_provider.dart';
@@ -250,48 +251,13 @@ class _CharacterDetailScreenState extends ConsumerState<CharacterDetailScreen>
     openLevelResetSheet(context, character, widget.characterId);
   }
 
-  /// Says what the conversion keeps and what is chosen again, then opens the
-  /// 2024 creation flow prefilled from this 2014 sheet.
+  /// Opens the 2024 creation flow prefilled from this 2014 sheet.
   Future<void> _confirmConvert2024() async {
     final character = _currentCharacter();
     if (character == null) return;
-    final l10n = AppLocalizations.of(context)!;
     final i18n = ref.read(srdI18nForPackProvider(character.contentPackId)).valueOrNull;
-    final classes = character.classEntries
-        .map((entry) => '${i18n?.className(entry.className) ?? entry.className} ${entry.level}')
-        .join(' / ');
-    final confirmed = await showDialog<bool>(
-      context: context,
-      builder: (dialogContext) => AlertDialog(
-        title: Text(l10n.convert2024Title),
-        content: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(l10n.convert2024Intro(character.name)),
-              const SizedBox(height: 12),
-              Text('• ${l10n.convert2024Kept}'),
-              const SizedBox(height: 8),
-              Text('• ${l10n.convert2024Chosen(classes)}'),
-              const SizedBox(height: 8),
-              Text('• ${l10n.convert2024Reset}'),
-            ],
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(dialogContext).pop(false),
-            child: Text(MaterialLocalizations.of(dialogContext).cancelButtonLabel),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.of(dialogContext).pop(true),
-            child: Text(l10n.convert2024Start),
-          ),
-        ],
-      ),
-    );
-    if (confirmed == true && mounted) {
+    final confirmed = await confirmConvert2024(context, character, i18n);
+    if (confirmed && mounted) {
       context.push('/convert/2024/${widget.characterId}');
     }
   }

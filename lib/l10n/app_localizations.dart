@@ -1520,7 +1520,7 @@ abstract class AppLocalizations {
   /// **'Reset levels'**
   String get characterActionResetLevels;
 
-  /// Sheet menu action that converts a 2014 sheet.
+  /// Sheet and character list menu action that converts a 2014 sheet.
   ///
   /// In en, this message translates to:
   /// **'Convert to D&D 2024'**

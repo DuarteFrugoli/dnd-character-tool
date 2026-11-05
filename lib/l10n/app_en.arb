@@ -644,7 +644,7 @@
   "characterActionResetLevels": "Reset levels",
   "@characterActionResetLevels": { "description": "Character header action menu item that opens the level reset flow." },
   "characterActionConvert2024": "Convert to D&D 2024",
-  "@characterActionConvert2024": {"description": "Sheet menu action that converts a 2014 sheet."},
+  "@characterActionConvert2024": {"description": "Sheet and character list menu action that converts a 2014 sheet."},
   "convert2024Title": "Convert to D&D 2024",
   "@convert2024Title": {"description": "Title of the 2014 to 2024 conversion."},
   "convert2024Intro": "This creates a new D&D 2024 (5.5e) sheet from {name}. The 2014 sheet stays as it is.",

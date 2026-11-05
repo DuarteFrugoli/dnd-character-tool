@@ -1058,8 +1058,8 @@
   "@levelUpSummarySpellsLearned": { "description": "Level Up summary: spells learned.", "placeholders": { "count": { "type": "int" } } },
   "levelUpSummaryCantripsLearned": "Cantrips learned: {count}",
   "@levelUpSummaryCantripsLearned": { "description": "Level Up summary: cantrips learned.", "placeholders": { "count": { "type": "int" } } },
-  "levelUpSubclassAlreadyHas": "Current subclass: {name}",
-  "@levelUpSubclassAlreadyHas": { "description": "Level Up subclass step: warning when character already has a subclass.", "placeholders": { "name": { "type": "String" } } },
+  "levelUpSubclassAlreadyHas": "Subclass chosen earlier: {name}. Keep it or choose another.",
+  "@levelUpSubclassAlreadyHas": { "description": "Level Up subclass step at the subclass level: the subclass chosen earlier (e.g. at creation), which the player can keep or change.", "placeholders": { "name": { "type": "String" } } },
   "levelUpMaxLevel": "Already at maximum level (20).",
   "@levelUpMaxLevel": { "description": "Level Up: shown when character is already level 20." },
   "levelUpHpReroll": "Reroll / change",
@@ -2335,6 +2335,18 @@
   "@detailSheetProficiencies": { "description": "Detail sheet: proficiencies section label." },
   "detailSheetTraits": "Traits",
   "@detailSheetTraits": { "description": "Detail sheet: racial traits section label." },
+  "detailSheetPrimaryAbility": "Primary ability",
+  "@detailSheetPrimaryAbility": {
+    "description": "Label for the abilities a class relies on most."
+  },
+  "detailSheetLineages": "Lineages",
+  "@detailSheetLineages": {
+    "description": "Section title for the lineages of a 2024 species, such as Elf lineages."
+  },
+  "detailSheetAnySkills": "any skills",
+  "@detailSheetAnySkills": {
+    "description": "Shown when a class can choose its skills from any skill."
+  },
   "detailSheetSubclassFeaturePlaceholder": "Subclass Feature",
   "@detailSheetSubclassFeaturePlaceholder": { "description": "Detail sheet: placeholder label shown at the level where a subclass feature is gained." },
   "detailSheetAvailableSubclasses": "Available {feature}",

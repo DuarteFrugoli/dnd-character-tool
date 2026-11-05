@@ -877,6 +877,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "特性",
+  "detailSheetPrimaryAbility": "主要能力値",
+  "detailSheetLineages": "血統",
+  "detailSheetAnySkills": "任意の技能",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },
@@ -952,7 +955,7 @@
   "levelUpSummarySubclass": "サブクラス: {name}",
   "levelUpSummarySpellsLearned": "習得した呪文: {count}",
   "levelUpSummaryCantripsLearned": "習得したカントリップ: {count}",
-  "levelUpSubclassAlreadyHas": "現在のサブクラス: {name}",
+  "levelUpSubclassAlreadyHas": "以前に選んだサブクラス: {name}。このままにするか、別のものを選んでください。",
   "levelUpMaxLevel": "すでに最大レベル（20）に達しています。",
   "levelUpHpReroll": "振り直す / 変更",
     "levelUpSpellSwapPickReplacement": "代わりの呪文を選んでください",

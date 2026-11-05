@@ -879,6 +879,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "Merkmale",
+  "detailSheetPrimaryAbility": "Primärattribut",
+  "detailSheetLineages": "Abstammungen",
+  "detailSheetAnySkills": "beliebige Fertigkeiten",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },
@@ -954,7 +957,7 @@
   "levelUpSummarySubclass": "Unterklasse: {name}",
   "levelUpSummarySpellsLearned": "Gelernte Zauber: {count}",
   "levelUpSummaryCantripsLearned": "Gelernte Zaubertricks: {count}",
-  "levelUpSubclassAlreadyHas": "Aktuelle Unterklasse: {name}",
+  "levelUpSubclassAlreadyHas": "Zuvor gewählte Unterklasse: {name}. Behalte sie oder wähle eine andere.",
   "levelUpMaxLevel": "Bereits auf maximaler Stufe (20).",
   "levelUpHpReroll": "Neu würfeln / ändern",
     "levelUpSpellSwapPickReplacement": "Wähle jetzt einen Ersatzzauber",

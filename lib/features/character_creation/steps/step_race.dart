@@ -158,7 +158,7 @@ class _RaceCard extends ConsumerWidget {
                       : scheme.onSurfaceVariant,
                 ),
                 tooltip: AppLocalizations.of(context)!.detailSheetInfoTooltip,
-                onPressed: () => showRaceDetailSheet(context, race, i18n),
+                onPressed: () => showRaceDetailSheet(context, SpeciesDetail.from2014(race), i18n),
               ),
               if (isSelected) Icon(Icons.check_circle, color: scheme.primary),
             ],

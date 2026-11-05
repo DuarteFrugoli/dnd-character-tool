@@ -13,6 +13,7 @@ const _abilities = [
 class Conversion2024Prefill {
   const Conversion2024Prefill({
     required this.className,
+    this.subclassName,
     required this.speciesName,
     required this.backgroundName,
     required this.baseAbilities,
@@ -22,6 +23,9 @@ class Conversion2024Prefill {
   });
 
   final String? className;
+
+  /// Null when the 2014 subclass has no 2024 version in the catalog.
+  final String? subclassName;
 
   /// Null when the 2014 race has no 2024 species (Half-Elf, Half-Orc).
   final String? speciesName;
@@ -45,10 +49,19 @@ class EditionConversion2024 {
   /// 2014 races renamed or folded into a 2024 species.
   static const _speciesFor2014Race = {'Variant Human': 'Human'};
 
+  /// 2014 subclasses renamed in 2024.
+  static const _subclassFor2014 = {
+    'Way of the Open Hand': 'Warrior of the Open Hand',
+    'Draconic Bloodline': 'Draconic Sorcery',
+    'The Fiend': 'Fiend Patron',
+    'School of Evocation': 'Evoker',
+  };
+
   static Conversion2024Prefill prefill(
     Character old, {
     required List<SrdRace> races2014,
     required Creation2024Catalog catalog,
+    Map<String, List<Creation2024Subclass>> subclasses = const {},
   }) {
     if (old.rulesetId != RulesetId.dnd2014) {
       throw ArgumentError('Only 2014 sheets can be converted.');
@@ -83,6 +96,8 @@ class EditionConversion2024 {
     final startingClass = old.classEntries.where((e) => e.isStartingClass).firstOrNull ??
         old.primaryClass;
     final cls = catalog.classes.where((c) => c.name == startingClass.className).firstOrNull;
+    final subclassName = _subclassFor2014[startingClass.subclassName] ?? startingClass.subclassName;
+    final subclass = subclasses[cls?.name]?.where((sub) => sub.name == subclassName).firstOrNull;
     final speciesName = _speciesFor2014Race[old.race] ?? old.race;
     final species = catalog.species.where((s) => s.name == speciesName).firstOrNull;
     final background = catalog.backgrounds.where((b) => b.name == old.background).firstOrNull;
@@ -106,6 +121,7 @@ class EditionConversion2024 {
 
     return Conversion2024Prefill(
       className: cls?.name,
+      subclassName: subclass?.name,
       speciesName: species?.name,
       backgroundName: background?.name,
       baseAbilities: base,

@@ -1490,7 +1490,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Mevcut alt sınıf: $name';
+    return 'Önceden seçilen alt sınıf: $name. Koruyun ya da başka birini seçin.';
   }
 
   @override
@@ -3169,6 +3169,15 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get detailSheetTraits => 'Özellikler';
+
+  @override
+  String get detailSheetPrimaryAbility => 'Birincil nitelik';
+
+  @override
+  String get detailSheetLineages => 'Soylar';
+
+  @override
+  String get detailSheetAnySkills => 'herhangi bir beceri';
 
   @override
   String get detailSheetSubclassFeaturePlaceholder => 'Alt Sınıf Özelliği';

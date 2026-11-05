@@ -94,6 +94,7 @@ class Creation2024Class {
     required this.savingThrows,
     required this.skillChoices,
     required this.weaponProficiencies,
+    this.armorProficiencies = const [],
     required this.toolProficiencies,
     required this.toolChoice,
     required this.equipmentChoices,
@@ -114,6 +115,7 @@ class Creation2024Class {
   final List<String> savingThrows;
   final SrdSkillChoice skillChoices;
   final List<String> weaponProficiencies;
+  final List<String> armorProficiencies;
   final String? spellcastingAbility;
 
   /// `full`, `half`, `warlock` or null.
@@ -153,6 +155,7 @@ class Creation2024Class {
       savingThrows: List<String>.from(json['savingThrows'] as List),
       skillChoices: SrdSkillChoice.fromJson(json['skillChoices'] as Map<String, dynamic>),
       weaponProficiencies: List<String>.from(json['weaponProficiencies'] as List),
+      armorProficiencies: List<String>.from(json['armorProficiencies'] as List? ?? const []),
       spellcastingAbility: json['spellcastingAbility'] as String?,
       spellcastingType: json['spellcastingType'] as String?,
       primaryAbilities: List<String>.from(json['primaryAbility'] as List? ?? const []),

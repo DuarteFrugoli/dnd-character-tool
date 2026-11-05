@@ -18,6 +18,8 @@ import '../../data/rulesets/ruleset_ids.dart';
 import '../../shared/providers/providers.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/character_changes_dialog.dart';
+import '../../shared/widgets/rules_text.dart';
+import '../../shared/widgets/srd_detail_sheets.dart';
 import '../character_detail/level_up_2024_sheet.dart';
 import '../character_detail/widgets/feature_choice_editor.dart';
 import '../character_list/character_list_provider.dart';
@@ -41,6 +43,9 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
   Creation2024Draft draft = Creation2024Draft();
   late final Future<Creation2024Catalog> _catalogFuture;
 
+  /// Subclasses of each class, loaded with the catalog.
+  Map<String, List<Creation2024Subclass>> _subclasses = const {};
+
   /// The 2014 sheet being converted and what it suggested.
   Character? _source;
   Conversion2024Prefill? _prefill;
@@ -58,6 +63,7 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
 
   Future<Creation2024Catalog> _load() async {
     final catalog = await ref.read(srd2024CreationCatalogProvider.future);
+    _subclasses = await Creation2024Catalog.loadSubclasses();
     final id = widget.convertFromId;
     if (id == null) return catalog;
     final source = await ref.read(characterRepositoryProvider).getById(id);
@@ -65,7 +71,12 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
     final races = await ref
         .read(srdDataSourceForPackProvider(source.contentPackId))
         .getRaces();
-    final prefill = EditionConversion2024.prefill(source, races2014: races, catalog: catalog);
+    final prefill = EditionConversion2024.prefill(
+      source,
+      races2014: races,
+      catalog: catalog,
+      subclasses: _subclasses,
+    );
     _source = source;
     _prefill = prefill;
     draft = Creation2024Draft.forConversion(prefill, catalog)
@@ -300,19 +311,53 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
       itemCount: catalog.classes.length,
       itemBuilder: (context, index) {
         final cls = catalog.classes[index];
-        return Card(
+        final selected = draft.characterClass?.name == cls.name;
+        String abilities(List<String> list) => list.map((a) => abilityName(l10n, a)).join(', ');
+        final skills = cls.skillChoices;
+        final detail = ClassDetail.from2024(
+          cls,
+          _subclasses[cls.name] ?? const [],
+          subclassFeatureName: l10n.labelSubclass,
+        );
+        final card = Card(
           child: ListTile(
-            selected: draft.characterClass?.name == cls.name,
+            selected: selected,
             title: Text(i18n.className(cls.name)),
-            subtitle: Text('${l10n.reviewRowHitDie}: d${cls.hitDie}'),
-            trailing: draft.characterClass?.name == cls.name ? const Icon(Icons.check_circle) : null,
+            subtitle: Text([
+              '${l10n.stepHitDieLabel}: d${cls.hitDie}  ·  ${l10n.stepSavesLabel}: ${abilities(cls.savingThrows)}',
+              if (cls.primaryAbilities.isNotEmpty)
+                '${l10n.detailSheetPrimaryAbility}: ${abilities(cls.primaryAbilities)}',
+              if (cls.spellcastingAbility case final ability?)
+                '${l10n.stepSpellcastingLabel}: ${abilityName(l10n, ability)}',
+              '${l10n.stepClassSkillChoices(skills.count)} '
+                  '${skills.isAny ? l10n.detailSheetAnySkills : skills.from.map(i18n.skillName).join(', ')}',
+            ].join('\n')),
+            isThreeLine: true,
+            trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+              IconButton(
+                icon: const Icon(Icons.info_outline),
+                tooltip: l10n.detailSheetInfoTooltip,
+                onPressed: () => showClassDetailSheet(context, detail, i18n),
+              ),
+              if (selected) const Icon(Icons.check_circle),
+            ]),
             onTap: () {
-              if (draft.characterClass?.name != cls.name) {
+              if (!selected) {
                 setState(() => draft.selectClass(cls));
               }
             },
           ),
         );
+        if (!selected || detail.subclasses.isEmpty) return card;
+        return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          card,
+          SubclassSelector(
+            cls: detail,
+            i18n: i18n,
+            selected: draft.subclassName,
+            onSelect: (name) => setState(() => draft.subclassName = name),
+          ),
+        ]);
       },
     );
   }
@@ -330,8 +375,22 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
               ListTile(
                 selected: draft.species?.name == species.name,
                 title: Text(i18n.raceName(species.name)),
-                subtitle: Text('${l10n.reviewRowSpeed}: ${formatDistance(species.speed, ref.watch(unitSystemProvider))}'),
-                trailing: draft.species?.name == species.name ? const Icon(Icons.check_circle) : null,
+                subtitle: Text([
+                  [
+                    '${l10n.reviewRowSpeed}: ${formatDistance(species.speed, ref.watch(unitSystemProvider))}',
+                    '${l10n.creation2024Size}: ${species.sizes.map((size) => size == 'Small' ? l10n.creation2024SizeSmall : l10n.creation2024SizeMedium).join(' / ')}',
+                  ].join('  ·  '),
+                  if (species.traits.isNotEmpty)
+                    '${l10n.detailSheetTraits}: ${species.traits.map(i18n.raceTraitName).join(', ')}',
+                ].join('\n')),
+                trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+                  IconButton(
+                    icon: const Icon(Icons.info_outline),
+                    tooltip: l10n.detailSheetInfoTooltip,
+                    onPressed: () => showRaceDetailSheet(context, SpeciesDetail.from2024(species), i18n),
+                  ),
+                  if (draft.species?.name == species.name) const Icon(Icons.check_circle),
+                ]),
                 onTap: () {
                   if (draft.species?.name != species.name) {
                     setState(() => draft.selectSpecies(species));
@@ -402,7 +461,23 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
             child: ListTile(
               selected: custom == null && draft.background?.name == bg.name,
               title: Text(i18n.backgroundName(bg.name)),
-              subtitle: Text('${l10n.creation2024OriginFeat}: ${i18n.featName(bg.featName) ?? bg.featName}'),
+              subtitle: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text([
+                  '${l10n.stepRaceASILabel}: ${bg.abilities.map((a) => abilityName(l10n, a)).join(', ')}',
+                  '${l10n.creationStepSkills}: ${bg.skills.map(i18n.skillName).join(', ')}',
+                  if (bg.tools.isNotEmpty) '${l10n.inventoryTabTools}: ${bg.tools.map(i18n.toolName).join(', ')}',
+                  '${l10n.creation2024OriginFeat}: ${i18n.featName(bg.featName) ?? bg.featName}',
+                ].join('\n')),
+                if (custom == null && draft.background?.name == bg.name)
+                  if (catalog.feats.where((feat) => feat.name == bg.featName).firstOrNull case final feat?)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: RulesText(
+                        i18n.featDescription(feat.name) ?? feat.description,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
+                    ),
+              ]),
               trailing: custom == null && draft.background?.name == bg.name ? const Icon(Icons.check_circle) : null,
               onTap: () {
                 if (custom != null || draft.background?.name != bg.name) {
@@ -901,6 +976,11 @@ class _Creation2024ScreenState extends ConsumerState<Creation2024Screen> {
       ),
       const SizedBox(height: 20),
       ListTile(title: Text(l10n.creationStepClass), subtitle: Text(i18n.className(draft.characterClass!.name))),
+      if (draft.subclassName case final subclass?)
+        ListTile(
+          title: Text(l10n.labelSubclass),
+          subtitle: Text(i18n.subclassName(draft.characterClass!.name, subclass)),
+        ),
       ListTile(
         title: Text(l10n.creation2024Species),
         subtitle: Text('${i18n.raceName(draft.species!.name)} - '

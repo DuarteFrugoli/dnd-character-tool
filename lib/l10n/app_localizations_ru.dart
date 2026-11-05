@@ -1495,7 +1495,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Текущий подкласс: $name';
+    return 'Ранее выбранный подкласс: $name. Оставьте его или выберите другой.';
   }
 
   @override
@@ -3176,6 +3176,15 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get detailSheetTraits => 'Черты';
+
+  @override
+  String get detailSheetPrimaryAbility => 'Основная характеристика';
+
+  @override
+  String get detailSheetLineages => 'Происхождения';
+
+  @override
+  String get detailSheetAnySkills => 'любые навыки';
 
   @override
   String get detailSheetSubclassFeaturePlaceholder => 'Умение подкласса';

@@ -1447,7 +1447,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return '当前子职业: $name';
+    return '之前选择的子职业：$name。保留它或选择其他子职业。';
   }
 
   @override
@@ -3088,6 +3088,15 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get detailSheetTraits => '种族特性';
+
+  @override
+  String get detailSheetPrimaryAbility => '主属性';
+
+  @override
+  String get detailSheetLineages => '血统';
+
+  @override
+  String get detailSheetAnySkills => '任意技能';
 
   @override
   String get detailSheetSubclassFeaturePlaceholder => '子职业特性';

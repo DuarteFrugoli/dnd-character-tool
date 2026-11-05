@@ -175,7 +175,12 @@ class LevelUp2024Plan {
 
   /// Class feature names gained at [newClassLevel].
   final List<String> newFeatures;
+
+  /// True at the class subclass level, even when a subclass was chosen
+  /// earlier: the player confirms it or picks another.
   final bool requiresSubclass;
+
+  /// The subclass chosen earlier, if any.
   final String? currentSubclass;
 
   /// `Ability Score Improvement` or `Epic Boon` when this level grants a feat.
@@ -313,8 +318,7 @@ class Progression2024Engine {
       newClassLevel: newClassLevel,
       newTotalLevel: character.totalLevel + 1,
       newFeatures: features,
-      requiresSubclass:
-          newClassLevel == cls.subclassLevel && entry?.subclassName == null,
+      requiresSubclass: newClassLevel == cls.subclassLevel,
       currentSubclass: entry?.subclassName,
       featFeature: features.contains(epicBoon)
           ? epicBoon

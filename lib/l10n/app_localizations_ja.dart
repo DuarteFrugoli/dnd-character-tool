@@ -1462,7 +1462,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return '現在のサブクラス: $name';
+    return '以前に選んだサブクラス: $name。このままにするか、別のものを選んでください。';
   }
 
   @override
@@ -3105,6 +3105,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get detailSheetTraits => '特性';
+
+  @override
+  String get detailSheetPrimaryAbility => '主要能力値';
+
+  @override
+  String get detailSheetLineages => '血統';
+
+  @override
+  String get detailSheetAnySkills => '任意の技能';
 
   @override
   String get detailSheetSubclassFeaturePlaceholder => 'サブクラス特性';

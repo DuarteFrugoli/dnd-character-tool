@@ -1495,7 +1495,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Subclase actual: $name';
+    return 'Subclase elegida antes: $name. Mantenla o elige otra.';
   }
 
   @override
@@ -3175,6 +3175,15 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get detailSheetTraits => 'Rasgos';
+
+  @override
+  String get detailSheetPrimaryAbility => 'Característica principal';
+
+  @override
+  String get detailSheetLineages => 'Linajes';
+
+  @override
+  String get detailSheetAnySkills => 'cualquier habilidad';
 
   @override
   String get detailSheetSubclassFeaturePlaceholder => 'Rasgo de Subclase';

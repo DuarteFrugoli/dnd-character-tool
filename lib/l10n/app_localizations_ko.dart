@@ -1464,7 +1464,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return '현재 서브클래스: $name';
+    return '이전에 고른 서브클래스: $name. 그대로 두거나 다른 것을 고르세요.';
   }
 
   @override
@@ -3107,6 +3107,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get detailSheetTraits => '특성';
+
+  @override
+  String get detailSheetPrimaryAbility => '주요 능력치';
+
+  @override
+  String get detailSheetLineages => '혈통';
+
+  @override
+  String get detailSheetAnySkills => '아무 기술';
 
   @override
   String get detailSheetSubclassFeaturePlaceholder => '하위 클래스 특성';

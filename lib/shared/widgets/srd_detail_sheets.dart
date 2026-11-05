@@ -5,17 +5,141 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
+import '../../data/datasources/srd/srd_2024_creation_catalog.dart';
+import '../../data/datasources/srd/srd_data_source.dart';
 import '../../data/datasources/srd/srd_i18n_service.dart';
 import '../../data/datasources/srd/srd_models.dart';
+import '../../data/rulesets/ruleset_ids.dart';
+import '../../data/rulesets/srd_content_pack.dart';
 import '../../core/units/unit_system_provider.dart';
 import '../../core/units/unit_formatter.dart';
 import '../providers/providers.dart';
+
+// ── Detail models ─────────────────────────────────────────────────────────────
+
+/// What the class sheet shows, from the class data of either edition.
+class ClassDetail {
+  const ClassDetail({
+    required this.packId,
+    required this.name,
+    required this.hitDie,
+    required this.savingThrows,
+    required this.subclassFeatureName,
+    this.subclassLevel = 3,
+    this.primaryAbilities = const [],
+    this.spellcastingAbility,
+    this.proficiencies = const [],
+    this.skillChoices,
+    this.subclasses = const [],
+  });
+
+  factory ClassDetail.from2014(SrdClass cls) => ClassDetail(
+    packId: ContentPackId.srd51,
+    name: cls.name,
+    hitDie: cls.hitDie,
+    savingThrows: cls.savingThrows,
+    subclassFeatureName: cls.subclassFeatureName,
+    subclassLevel: cls.subclassLevel,
+    spellcastingAbility: cls.spellcastingAbility,
+    proficiencies: [...cls.armorProficiencies, ...cls.weaponProficiencies],
+    skillChoices: cls.skillChoices,
+    subclasses: [for (final sub in cls.subclasses) (name: sub.name, description: sub.description)],
+  );
+
+  factory ClassDetail.from2024(
+    Creation2024Class cls,
+    List<Creation2024Subclass> subclasses, {
+    required String subclassFeatureName,
+  }) => ClassDetail(
+    packId: ContentPackId.srd521,
+    name: cls.name,
+    hitDie: cls.hitDie,
+    savingThrows: cls.savingThrows,
+    subclassFeatureName: subclassFeatureName,
+    subclassLevel: cls.subclassLevel,
+    primaryAbilities: cls.primaryAbilities,
+    spellcastingAbility: cls.spellcastingAbility,
+    proficiencies: [...cls.armorProficiencies, ...cls.weaponProficiencies],
+    skillChoices: cls.skillChoices,
+    subclasses: [for (final sub in subclasses) (name: sub.name, description: sub.description)],
+  );
+
+  final ContentPackId packId;
+  final String name;
+  final int hitDie;
+  final List<String> savingThrows;
+  final String subclassFeatureName;
+
+  /// Class level at which the subclass applies; it can be chosen earlier.
+  final int subclassLevel;
+  final List<String> primaryAbilities;
+  final String? spellcastingAbility;
+  final List<String> proficiencies;
+  final SrdSkillChoice? skillChoices;
+  final List<SubclassSummary> subclasses;
+}
+
+typedef SubclassSummary = ({String name, String description});
+
+/// What the race or species sheet shows, from the data of either edition.
+class SpeciesDetail {
+  const SpeciesDetail({
+    required this.packId,
+    required this.name,
+    required this.speed,
+    required this.traits,
+    this.sizes = const [],
+    this.abilityIncreases = const {},
+    this.freeAbilityIncreases = 0,
+    this.subraces = const [],
+    this.lineages = const [],
+  });
+
+  factory SpeciesDetail.from2014(SrdRace race) => SpeciesDetail(
+    packId: ContentPackId.srd51,
+    name: race.name,
+    speed: race.speed,
+    traits: race.traits,
+    abilityIncreases: race.abilityScoreIncreases,
+    freeAbilityIncreases: race.freeAsiPoints,
+    subraces: race.subraces,
+  );
+
+  factory SpeciesDetail.from2024(Creation2024Species species) => SpeciesDetail(
+    packId: ContentPackId.srd521,
+    name: species.name,
+    speed: species.speed,
+    traits: species.traits,
+    sizes: species.sizes,
+    lineages: [
+      for (final lineage in species.lineages)
+        if (lineage case {'id': final String id, 'name': final String name}) (id: id, name: name),
+    ],
+  );
+
+  final ContentPackId packId;
+  final String name;
+  final int speed;
+  final List<String> traits;
+
+  /// 2024 size options (`Small`, `Medium`).
+  final List<String> sizes;
+
+  /// 2014 racial increases.
+  final Map<String, int> abilityIncreases;
+  final int freeAbilityIncreases;
+  final List<SrdSubrace> subraces;
+  final List<({String id, String name})> lineages;
+}
+
+SrdDataSource _sourceFor(ContentPackId packId) =>
+    SrdDataSource.forPack(SrdContentPackRegistry.forId(packId));
 
 // ── Public helpers ────────────────────────────────────────────────────────────
 
 void showClassDetailSheet(
   BuildContext context,
-  SrdClass cls,
+  ClassDetail cls,
   SrdI18nService i18n,
 ) {
   showModalBottomSheet<void>(
@@ -28,8 +152,8 @@ void showClassDetailSheet(
 
 void showSubclassDetailSheet(
   BuildContext context,
-  SrdClass cls,
-  SrdSubclass sub,
+  ClassDetail cls,
+  SubclassSummary sub,
   SrdI18nService i18n,
 ) {
   showModalBottomSheet<void>(
@@ -42,7 +166,7 @@ void showSubclassDetailSheet(
 
 void showRaceDetailSheet(
   BuildContext context,
-  SrdRace race,
+  SpeciesDetail race,
   SrdI18nService i18n,
 ) {
   showModalBottomSheet<void>(
@@ -170,7 +294,7 @@ class _FeatureTile extends StatelessWidget {
 class _ClassDetailSheet extends ConsumerStatefulWidget {
   const _ClassDetailSheet({required this.cls, required this.i18n});
 
-  final SrdClass cls;
+  final ClassDetail cls;
   final SrdI18nService i18n;
 
   @override
@@ -184,8 +308,7 @@ class _ClassDetailSheetState extends ConsumerState<_ClassDetailSheet> {
   @override
   void initState() {
     super.initState();
-    ref
-        .read(srdDataSourceProvider)
+    _sourceFor(widget.cls.packId)
         .getClassFeatures(widget.cls.name)
         .then((f) {
           if (mounted) setState(() => _features = f);
@@ -241,7 +364,17 @@ class _ClassDetailSheetState extends ConsumerState<_ClassDetailSheet> {
                       color: scheme.onSurfaceVariant,
                     ),
                   ),
-                  if (cls.isSpellcaster && cls.spellcastingAbility != null) ...[
+                  if (cls.primaryAbilities.isNotEmpty) ...[
+                    const SizedBox(height: 2),
+                    Text(
+                      '${l10n.detailSheetPrimaryAbility}: '
+                      '${cls.primaryAbilities.map((a) => abilityName(l10n, a)).join(', ')}',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                  if (cls.spellcastingAbility != null) ...[
                     const SizedBox(height: 2),
                     Text(
                       '${l10n.stepSpellcastingLabel}: ${abilityName(l10n, cls.spellcastingAbility!)}',
@@ -250,12 +383,21 @@ class _ClassDetailSheetState extends ConsumerState<_ClassDetailSheet> {
                       ).textTheme.bodySmall?.copyWith(color: scheme.primary),
                     ),
                   ],
-                  if (cls.armorProficiencies.isNotEmpty ||
-                      cls.weaponProficiencies.isNotEmpty) ...[
+                  if (cls.skillChoices case final skills?) ...[
+                    const SizedBox(height: 2),
+                    Text(
+                      '${l10n.stepClassSkillChoices(skills.count)} '
+                      '${skills.isAny ? l10n.detailSheetAnySkills : skills.from.map(i18n.skillName).join(', ')}',
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                  if (cls.proficiencies.isNotEmpty) ...[
                     const SizedBox(height: 2),
                     Text(
                       '${l10n.detailSheetProficiencies}: '
-                      '${[...cls.armorProficiencies, ...cls.weaponProficiencies].join(', ')}',
+                      '${cls.proficiencies.map(i18n.term).join(', ')}',
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -368,8 +510,8 @@ class _SubclassDetailSheet extends ConsumerStatefulWidget {
     required this.i18n,
   });
 
-  final SrdClass cls;
-  final SrdSubclass sub;
+  final ClassDetail cls;
+  final SubclassSummary sub;
   final SrdI18nService i18n;
 
   @override
@@ -384,8 +526,7 @@ class _SubclassDetailSheetState extends ConsumerState<_SubclassDetailSheet> {
   @override
   void initState() {
     super.initState();
-    ref
-        .read(srdDataSourceProvider)
+    _sourceFor(widget.cls.packId)
         .getAllSubclassFeatures()
         .then((all) {
           final features =
@@ -523,12 +664,115 @@ class _SubclassDetailSheetState extends ConsumerState<_SubclassDetailSheet> {
   }
 }
 
+// ── Subclass selector ─────────────────────────────────────────────────────────
+
+/// Subclass choice under the selected class in character creation. The
+/// player may choose it before the class level at which it applies.
+class SubclassSelector extends StatelessWidget {
+  const SubclassSelector({
+    super.key,
+    required this.cls,
+    required this.i18n,
+    required this.selected,
+    required this.onSelect,
+  });
+
+  final ClassDetail cls;
+  final SrdI18nService i18n;
+  final String? selected;
+  final ValueChanged<String?> onSelect;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final scheme = Theme.of(context).colorScheme;
+    final subclassFeature =
+        i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
+    return Padding(
+      padding: const EdgeInsets.only(left: 16, bottom: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: Text(
+              l10n.stepChooseSubclassPrompt(subclassFeature, cls.subclassLevel),
+              style: Theme.of(context).textTheme.labelLarge,
+            ),
+          ),
+          ...cls.subclasses.map((sub) {
+            final isSelected = selected == sub.name;
+            final subName = i18n.subclassName(cls.name, sub.name);
+            final subDesc =
+                i18n.subclassDescription(cls.name, sub.name) ?? sub.description;
+            return Card(
+              margin: const EdgeInsets.only(bottom: 6),
+              color: isSelected ? scheme.secondaryContainer : scheme.surface,
+              child: InkWell(
+                onTap: () => onSelect(isSelected ? null : sub.name),
+                borderRadius: BorderRadius.circular(12),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 12,
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              subName,
+                              style: Theme.of(context).textTheme.bodyMedium
+                                  ?.copyWith(fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(height: 2),
+                            RulesText(
+                              subDesc,
+                              style: Theme.of(context).textTheme.bodySmall,
+                            ),
+                          ],
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          Icons.info_outline,
+                          color: isSelected
+                              ? scheme.onSecondaryContainer
+                              : scheme.onSurfaceVariant,
+                          size: 20,
+                        ),
+                        tooltip: l10n.detailSheetInfoTooltip,
+                        padding: EdgeInsets.zero,
+                        constraints: const BoxConstraints(),
+                        onPressed: () =>
+                            showSubclassDetailSheet(context, cls, sub, i18n),
+                      ),
+                      if (isSelected)
+                        Icon(
+                          Icons.check_circle,
+                          color: scheme.secondary,
+                          size: 20,
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          }),
+        ],
+      ),
+    );
+  }
+}
+
 // ── Race detail sheet ─────────────────────────────────────────────────────────
 
 class _RaceDetailSheet extends ConsumerStatefulWidget {
   const _RaceDetailSheet({required this.race, required this.i18n});
 
-  final SrdRace race;
+  final SpeciesDetail race;
   final SrdI18nService i18n;
 
   @override
@@ -542,8 +786,7 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
   @override
   void initState() {
     super.initState();
-    ref
-        .read(srdDataSourceProvider)
+    _sourceFor(widget.race.packId)
         .getRaceTraits()
         .then((traits) {
           if (mounted) setState(() => _traitDescriptions = traits);
@@ -561,10 +804,13 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
     final race = widget.race;
     final raceName = i18n.raceName(race.name);
     final asiText = [
-      for (final entry in race.abilityScoreIncreases.entries)
+      for (final entry in race.abilityIncreases.entries)
         '+${entry.value} ${abilityName(l10n, entry.key)}',
-      if (race.freeAsiPoints > 0) '${race.freeAsiPoints}x +1',
+      if (race.freeAbilityIncreases > 0) '${race.freeAbilityIncreases}x +1',
     ].join(', ');
+    final sizeText = race.sizes
+        .map((size) => size == 'Small' ? l10n.creation2024SizeSmall : l10n.creation2024SizeMedium)
+        .join(' / ');
 
     return DraggableScrollableSheet(
       initialChildSize: 0.87,
@@ -587,8 +833,11 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '${l10n.stepRaceSpeedLabel}: ${formatDistance(race.speed, ref.watch(unitSystemProvider))}  ·  '
-                  '${l10n.stepRaceASILabel}: $asiText',
+                  [
+                    '${l10n.stepRaceSpeedLabel}: ${formatDistance(race.speed, ref.watch(unitSystemProvider))}',
+                    if (sizeText.isNotEmpty) '${l10n.creation2024Size}: $sizeText',
+                    if (asiText.isNotEmpty) '${l10n.stepRaceASILabel}: $asiText',
+                  ].join('  ·  '),
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                     color: scheme.onSurfaceVariant,
                   ),
@@ -625,6 +874,23 @@ class _RaceDetailSheetState extends ConsumerState<_RaceDetailSheet> {
                               description: displayDesc,
                             );
                           }, childCount: race.traits.length),
+                        ),
+                      ],
+                      if (race.lineages.isNotEmpty) ...[
+                        SliverToBoxAdapter(
+                          child: _sectionHeader(context, l10n.detailSheetLineages),
+                        ),
+                        SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (_, i) => ListTile(
+                              title: Text(
+                                i18n.optionSourceName(race.lineages[i].id) ?? race.lineages[i].name,
+                                style: const TextStyle(fontSize: 14),
+                              ),
+                              dense: true,
+                            ),
+                            childCount: race.lineages.length,
+                          ),
                         ),
                       ],
                       if (race.subraces.isNotEmpty) ...[

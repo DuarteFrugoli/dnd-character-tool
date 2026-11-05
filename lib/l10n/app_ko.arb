@@ -879,6 +879,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "특성",
+  "detailSheetPrimaryAbility": "주요 능력치",
+  "detailSheetLineages": "혈통",
+  "detailSheetAnySkills": "아무 기술",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },
@@ -954,7 +957,7 @@
   "levelUpSummarySubclass": "서브클래스: {name}",
   "levelUpSummarySpellsLearned": "습득한 주문: {count}",
   "levelUpSummaryCantripsLearned": "습득한 소마술: {count}",
-  "levelUpSubclassAlreadyHas": "현재 서브클래스: {name}",
+  "levelUpSubclassAlreadyHas": "이전에 고른 서브클래스: {name}. 그대로 두거나 다른 것을 고르세요.",
   "levelUpMaxLevel": "이미 최대 레벨(20)입니다.",
   "levelUpHpReroll": "다시 굴리기 / 변경",
     "levelUpSpellSwapPickReplacement": "교체할 주문을 선택하세요",

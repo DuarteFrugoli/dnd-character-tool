@@ -1,4 +1,3 @@
-import 'package:dnd_character_tool/shared/widgets/rules_text.dart';
 import 'package:flutter/material.dart';
 import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import 'package:dnd_character_tool/l10n/ability_l10n.dart';
@@ -61,15 +60,20 @@ class _StepClassState extends ConsumerState<StepClass> {
                   },
                 ),
                 if (isSelected && cls.subclasses.isNotEmpty)
-                  _SubclassSelector(
-                    cls: cls,
+                  SubclassSelector(
+                    cls: ClassDetail.from2014(cls),
                     i18n: i18n,
-                    selectedSubclass: ref
+                    selected: ref
                         .watch(characterDraftProvider)
-                        .selectedSubclass,
-                    onSelect: (s) => ref
+                        .selectedSubclass
+                        ?.name,
+                    onSelect: (name) => ref
                         .read(characterDraftProvider.notifier)
-                        .setSubclass(s),
+                        .setSubclass(
+                          cls.subclasses
+                              .where((sub) => sub.name == name)
+                              .firstOrNull,
+                        ),
                   ),
               ],
             );
@@ -166,112 +170,12 @@ class _ClassCard extends StatelessWidget {
                       : scheme.onSurfaceVariant,
                 ),
                 tooltip: AppLocalizations.of(context)!.detailSheetInfoTooltip,
-                onPressed: () => showClassDetailSheet(context, cls, i18n),
+                onPressed: () => showClassDetailSheet(context, ClassDetail.from2014(cls), i18n),
               ),
               if (isSelected) Icon(Icons.check_circle, color: scheme.primary),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _SubclassSelector extends StatelessWidget {
-  const _SubclassSelector({
-    required this.cls,
-    required this.i18n,
-    required this.selectedSubclass,
-    required this.onSelect,
-  });
-
-  final SrdClass cls;
-  final SrdI18nService i18n;
-  final SrdSubclass? selectedSubclass;
-  final ValueChanged<SrdSubclass?> onSelect;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final scheme = Theme.of(context).colorScheme;
-    final subclassFeature =
-        i18n.classSubclassFeatureName(cls.name) ?? cls.subclassFeatureName;
-    return Padding(
-      padding: const EdgeInsets.only(left: 16, bottom: 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Text(
-              l10n.stepChooseSubclassPrompt(subclassFeature, cls.subclassLevel),
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
-          ),
-          ...cls.subclasses.map((sub) {
-            final isSelected = selectedSubclass?.name == sub.name;
-            final subName = i18n.subclassName(cls.name, sub.name);
-            final subDesc =
-                i18n.subclassDescription(cls.name, sub.name) ?? sub.description;
-            return Card(
-              margin: const EdgeInsets.only(bottom: 6),
-              color: isSelected ? scheme.secondaryContainer : scheme.surface,
-              child: InkWell(
-                onTap: () => onSelect(isSelected ? null : sub),
-                borderRadius: BorderRadius.circular(12),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 12,
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              subName,
-                              style: Theme.of(context).textTheme.bodyMedium
-                                  ?.copyWith(fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(height: 2),
-                            RulesText(
-                              subDesc,
-                              style: Theme.of(context).textTheme.bodySmall,
-                            ),
-                          ],
-                        ),
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.info_outline,
-                          color: isSelected
-                              ? scheme.onSecondaryContainer
-                              : scheme.onSurfaceVariant,
-                          size: 20,
-                        ),
-                        tooltip: AppLocalizations.of(
-                          context,
-                        )!.detailSheetInfoTooltip,
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(),
-                        onPressed: () =>
-                            showSubclassDetailSheet(context, cls, sub, i18n),
-                      ),
-                      if (isSelected)
-                        Icon(
-                          Icons.check_circle,
-                          color: scheme.secondary,
-                          size: 20,
-                        ),
-                    ],
-                  ),
-                ),
-              ),
-            );
-          }),
-        ],
       ),
     );
   }

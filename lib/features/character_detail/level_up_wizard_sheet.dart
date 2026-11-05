@@ -356,9 +356,7 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         .where((feature) => feature.level == newClassLevel)
         .toList();
 
-    final needsSubclass =
-        _targetClassEntry.subclassName == null &&
-        isSubclassUnlockLevel(className, newClassLevel);
+    final needsSubclass = isSubclassUnlockLevel(className, newClassLevel);
     final needsAsi = isAsiLevel(className, newClassLevel);
 
     final fixedCantrips = _computeFixedCantripsToLearn(engineOld, engineNew);
@@ -715,7 +713,9 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       hitPointMethod: _state.hpMethod,
       asiChanges: _state.asiChanges,
       featChosen: _state.featChosen,
-      subclassChosen: _state.subclassChosen,
+      subclassChosen: _pages.contains(LevelUpWizardPage.subclass)
+          ? _effectiveSubclass
+          : _state.subclassChosen,
       cantripsLearned: [
         ..._fixedCantripsLearned.map(withSource),
         ..._state.cantripsLearned.map(withSource),
@@ -1422,7 +1422,11 @@ class _SubclassPage extends StatelessWidget {
             color: Theme.of(context).colorScheme.secondaryContainer,
             child: ListTile(
               leading: const Icon(Icons.info_outline),
-              title: Text(l10n.levelUpSubclassAlreadyHas(existing)),
+              title: Text(
+                l10n.levelUpSubclassAlreadyHas(
+                  i18n.subclassName(srdClass?.name ?? '', existing),
+                ),
+              ),
             ),
           ),
         ],

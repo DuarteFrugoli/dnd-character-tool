@@ -17,6 +17,7 @@ Character _monk({
   String race = 'Halfling',
   String? subrace = 'Lightfoot',
   int level = 1,
+  String? subclass,
   List<CharacterLevelRecord> history = const [],
 }) {
   final now = DateTime(2024);
@@ -29,7 +30,13 @@ Character _monk({
     characterClass: 'Monk',
     level: level,
     classes: [
-      CharacterClassEntry(id: 'primary', className: 'Monk', level: level, isStartingClass: true),
+      CharacterClassEntry(
+        id: 'primary',
+        className: 'Monk',
+        subclassName: subclass,
+        level: level,
+        isStartingClass: true,
+      ),
     ],
     background: 'Criminal',
     abilityScores: const AbilityScores(
@@ -185,6 +192,50 @@ void main() {
     expect(levelTwo.totalLevel, 2);
     expect(levelTwo.levelHistory, hasLength(2));
     expect(levelTwo.experiencePoints, old.experiencePoints);
+  });
+
+  test('a 2014 subclass carries over and is confirmed at its 2024 level', () async {
+    final old = _monk(level: 3, subclass: 'Way of the Open Hand');
+    final prefill = EditionConversion2024.prefill(
+      old,
+      races2014: _races,
+      catalog: _catalog,
+      subclasses: await Creation2024Catalog.loadSubclasses(),
+    );
+    expect(prefill.subclassName, 'Warrior of the Open Hand');
+    final draft = Creation2024Draft.forConversion(prefill, _catalog);
+    draft.backgroundBonuses.addAll({'dexterity': 2, 'constitution': 1});
+    draft.classTools.add("Brewer's Supplies");
+    draft.languages.add('Elvish');
+    draft.reconcileChoices(_catalog);
+    var character = draft.build(_catalog, fallbackName: 'Unnamed');
+    expect(character.subclass, 'Warrior of the Open Hand');
+    expect(character.classEntries.single.subclassName, 'Warrior of the Open Hand');
+
+    final data = await Rules2024Data.load();
+    for (var level = 2; level <= 3; level++) {
+      final plan = Progression2024Engine.plan(character, data, className: 'Monk', classEntryId: 'primary');
+      // At the subclass level the player confirms the earlier choice or
+      // picks another.
+      expect(plan.requiresSubclass, level == 3);
+      expect(plan.currentSubclass, 'Warrior of the Open Hand');
+      final requests = Progression2024Engine.requestsFor(character, data, plan);
+      character = Progression2024Engine.applyLevelUp(
+        character,
+        data,
+        LevelUp2024Result(
+          className: 'Monk',
+          classEntryId: 'primary',
+          subclassName: plan.requiresSubclass ? plan.currentSubclass : null,
+          featureChoices: [
+            for (final request in requests)
+              request.toChoice([for (var i = 0; i < request.requiredCount; i++) '${request.choiceId}_$i']),
+          ],
+        ),
+      );
+    }
+    expect(character.totalLevel, 3);
+    expect(character.classEntries.single.subclassName, 'Warrior of the Open Hand');
   });
 
   test('only 2014 sheets can be converted', () {

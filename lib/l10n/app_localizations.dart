@@ -2623,10 +2623,10 @@ abstract class AppLocalizations {
   /// **'Cantrips learned: {count}'**
   String levelUpSummaryCantripsLearned(int count);
 
-  /// Level Up subclass step: warning when character already has a subclass.
+  /// Level Up subclass step at the subclass level: the subclass chosen earlier (e.g. at creation), which the player can keep or change.
   ///
   /// In en, this message translates to:
-  /// **'Current subclass: {name}'**
+  /// **'Subclass chosen earlier: {name}. Keep it or choose another.'**
   String levelUpSubclassAlreadyHas(String name);
 
   /// Level Up: shown when character is already level 20.
@@ -5640,6 +5640,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Traits'**
   String get detailSheetTraits;
+
+  /// Label for the abilities a class relies on most.
+  ///
+  /// In en, this message translates to:
+  /// **'Primary ability'**
+  String get detailSheetPrimaryAbility;
+
+  /// Section title for the lineages of a 2024 species, such as Elf lineages.
+  ///
+  /// In en, this message translates to:
+  /// **'Lineages'**
+  String get detailSheetLineages;
+
+  /// Shown when a class can choose its skills from any skill.
+  ///
+  /// In en, this message translates to:
+  /// **'any skills'**
+  String get detailSheetAnySkills;
 
   /// Detail sheet: placeholder label shown at the level where a subclass feature is gained.
   ///

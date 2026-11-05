@@ -879,6 +879,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "Tratti",
+  "detailSheetPrimaryAbility": "Caratteristica primaria",
+  "detailSheetLineages": "Lignaggi",
+  "detailSheetAnySkills": "qualsiasi abilità",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },
@@ -954,7 +957,7 @@
   "levelUpSummarySubclass": "Sottoclasse: {name}",
   "levelUpSummarySpellsLearned": "Incantesimi appresi: {count}",
   "levelUpSummaryCantripsLearned": "Trucchetti appresi: {count}",
-  "levelUpSubclassAlreadyHas": "Sottoclasse attuale: {name}",
+  "levelUpSubclassAlreadyHas": "Sottoclasse scelta in precedenza: {name}. Mantienila o scegline un'altra.",
   "levelUpMaxLevel": "Già al livello massimo (20).",
   "levelUpHpReroll": "Rilancia / cambia",
     "levelUpSpellSwapPickReplacement": "Ora scegli un incantesimo sostitutivo",

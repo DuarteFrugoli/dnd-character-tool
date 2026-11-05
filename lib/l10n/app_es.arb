@@ -879,6 +879,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "Rasgos",
+  "detailSheetPrimaryAbility": "Característica principal",
+  "detailSheetLineages": "Linajes",
+  "detailSheetAnySkills": "cualquier habilidad",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },
@@ -954,7 +957,7 @@
   "levelUpSummarySubclass": "Subclase: {name}",
   "levelUpSummarySpellsLearned": "Conjuros aprendidos: {count}",
   "levelUpSummaryCantripsLearned": "Trucos aprendidos: {count}",
-  "levelUpSubclassAlreadyHas": "Subclase actual: {name}",
+  "levelUpSubclassAlreadyHas": "Subclase elegida antes: {name}. Mantenla o elige otra.",
   "levelUpMaxLevel": "Ya está en el nivel máximo (20).",
   "levelUpHpReroll": "Volver a tirar / cambiar",
     "levelUpSpellSwapPickReplacement": "Ahora elige un hechizo de reemplazo",

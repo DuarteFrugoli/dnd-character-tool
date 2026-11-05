@@ -1499,7 +1499,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return 'Aktuelle Unterklasse: $name';
+    return 'Zuvor gewählte Unterklasse: $name. Behalte sie oder wähle eine andere.';
   }
 
   @override
@@ -3182,6 +3182,15 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get detailSheetTraits => 'Merkmale';
+
+  @override
+  String get detailSheetPrimaryAbility => 'Primärattribut';
+
+  @override
+  String get detailSheetLineages => 'Abstammungen';
+
+  @override
+  String get detailSheetAnySkills => 'beliebige Fertigkeiten';
 
   @override
   String get detailSheetSubclassFeaturePlaceholder => 'Unterklassen-Merkmal';

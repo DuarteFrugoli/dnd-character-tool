@@ -878,6 +878,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "种族特性",
+  "detailSheetPrimaryAbility": "主属性",
+  "detailSheetLineages": "血统",
+  "detailSheetAnySkills": "任意技能",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },
@@ -953,7 +956,7 @@
   "levelUpSummarySubclass": "子职业: {name}",
   "levelUpSummarySpellsLearned": "学会法术: {count}",
   "levelUpSummaryCantripsLearned": "学会戏法: {count}",
-  "levelUpSubclassAlreadyHas": "当前子职业: {name}",
+  "levelUpSubclassAlreadyHas": "之前选择的子职业：{name}。保留它或选择其他子职业。",
   "levelUpMaxLevel": "已达到最高等级（20）。",
   "levelUpHpReroll": "重掷 / 更改",
     "levelUpSpellSwapPickReplacement": "现在选择一个替换法术",

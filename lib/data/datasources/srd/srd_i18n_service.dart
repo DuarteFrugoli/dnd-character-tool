@@ -474,6 +474,18 @@ class SrdI18nService {
     return entry['name'] as String? ?? fallback;
   }
 
+  /// The translated name of an option of a shared option list, found by its
+  /// ID alone (e.g. the `high_elf` lineage of the 2024 Elf).
+  String? optionSourceName(String optionId) {
+    final sources = _data['feature_choices']?['optionsources'];
+    if (sources is! Map) return null;
+    for (final options in sources.values) {
+      if (options is! Map) continue;
+      if (options[optionId.toLowerCase()] case {'name': final String name}) return name;
+    }
+    return null;
+  }
+
   String? featureChoiceOptionName({
     required String sourceType,
     required String sourceClass,

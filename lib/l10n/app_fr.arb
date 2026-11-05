@@ -879,6 +879,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "Traits",
+  "detailSheetPrimaryAbility": "Caractéristique principale",
+  "detailSheetLineages": "Lignées",
+  "detailSheetAnySkills": "n’importe quelles compétences",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },
@@ -954,7 +957,7 @@
   "levelUpSummarySubclass": "Sous-classe : {name}",
   "levelUpSummarySpellsLearned": "Sorts appris : {count}",
   "levelUpSummaryCantripsLearned": "Tours de magie appris : {count}",
-  "levelUpSubclassAlreadyHas": "Sous-classe actuelle : {name}",
+  "levelUpSubclassAlreadyHas": "Sous-classe choisie plus tôt : {name}. Gardez-la ou choisissez-en une autre.",
   "levelUpMaxLevel": "Déjà au niveau maximum (20).",
   "levelUpHpReroll": "Relancer / modifier",
     "levelUpSpellSwapPickReplacement": "Choisissez maintenant un sort de remplacement",

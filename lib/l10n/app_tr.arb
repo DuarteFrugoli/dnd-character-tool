@@ -1277,7 +1277,7 @@
       }
     }
   },
-  "levelUpSubclassAlreadyHas": "Mevcut alt sınıf: {name}",
+  "levelUpSubclassAlreadyHas": "Önceden seçilen alt sınıf: {name}. Koruyun ya da başka birini seçin.",
   "@levelUpSubclassAlreadyHas": {
     "description": "Level Up subclass step: warning when character already has a subclass.",
     "placeholders": {
@@ -3602,6 +3602,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "Özellikler",
+  "detailSheetPrimaryAbility": "Birincil nitelik",
+  "detailSheetLineages": "Soylar",
+  "detailSheetAnySkills": "herhangi bir beceri",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },

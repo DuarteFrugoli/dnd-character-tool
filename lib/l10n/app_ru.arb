@@ -879,6 +879,9 @@
     "description": "Detail sheet: proficiencies section label."
   },
   "detailSheetTraits": "Черты",
+  "detailSheetPrimaryAbility": "Основная характеристика",
+  "detailSheetLineages": "Происхождения",
+  "detailSheetAnySkills": "любые навыки",
   "@detailSheetTraits": {
     "description": "Detail sheet: racial traits section label."
   },
@@ -954,7 +957,7 @@
   "levelUpSummarySubclass": "Подкласс: {name}",
   "levelUpSummarySpellsLearned": "Изучено заклинаний: {count}",
   "levelUpSummaryCantripsLearned": "Изучено заговоров: {count}",
-  "levelUpSubclassAlreadyHas": "Текущий подкласс: {name}",
+  "levelUpSubclassAlreadyHas": "Ранее выбранный подкласс: {name}. Оставьте его или выберите другой.",
   "levelUpMaxLevel": "Уже максимальный уровень (20).",
   "levelUpHpReroll": "Перебросить / изменить",
     "levelUpSpellSwapPickReplacement": "Теперь выберите заменяющее заклинание",

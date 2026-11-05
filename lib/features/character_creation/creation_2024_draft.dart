@@ -33,6 +33,9 @@ String creation2024AbilityName(String ability) =>
 class Creation2024Draft {
   final String id = const Uuid().v4();
   Creation2024Class? characterClass;
+
+  /// Optional; it applies from the class subclass level on.
+  String? subclassName;
   Creation2024Species? species;
   Creation2024Background? background;
   String name = '';
@@ -71,7 +74,11 @@ class Creation2024Draft {
     final cls = catalog.classes.where((c) => c.name == prefill.className).firstOrNull;
     final species = catalog.species.where((s) => s.name == prefill.speciesName).firstOrNull;
     final background = catalog.backgrounds.where((b) => b.name == prefill.backgroundName).firstOrNull;
-    if (cls != null) draft.selectClass(cls);
+    if (cls != null) {
+      draft
+        ..selectClass(cls)
+        ..subclassName = prefill.subclassName;
+    }
     if (species != null) draft.selectSpecies(species);
     if (background != null) draft.selectBackground(background);
     draft.baseAbilities.addAll(prefill.baseAbilities);
@@ -82,6 +89,7 @@ class Creation2024Draft {
 
   void selectClass(Creation2024Class value) {
     characterClass = value;
+    subclassName = null;
     skills.clear();
     classTools.clear();
     classEquipmentId = null;
@@ -610,7 +618,16 @@ class Creation2024Draft {
       playerName: playerName.trim(),
       race: species!.name,
       characterClass: cls.name,
-      classes: [CharacterClassEntry(id: 'primary', className: cls.name, level: 1, isStartingClass: true)],
+      subclass: subclassName,
+      classes: [
+        CharacterClassEntry(
+          id: 'primary',
+          className: cls.name,
+          subclassName: subclassName,
+          level: 1,
+          isStartingClass: true,
+        ),
+      ],
       background: bg.name,
       abilityScores: AbilityScores(
         strength: attrs['strength']!, dexterity: attrs['dexterity']!,

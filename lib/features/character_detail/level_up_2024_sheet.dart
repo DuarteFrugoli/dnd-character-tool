@@ -116,7 +116,7 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
         className: className,
         classEntryId: classEntryId,
       );
-      _subclass = null;
+      _subclass = _plan!.requiresSubclass ? _plan!.currentSubclass : null;
       _feat = null;
       _increases = {};
       _choices = const [];
@@ -462,6 +462,16 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
             ),
             style: Theme.of(context).textTheme.titleMedium,
           ),
+          if (plan.currentSubclass case final earlier?) ...[
+            const SizedBox(height: 8),
+            Card(
+              color: Theme.of(context).colorScheme.secondaryContainer,
+              child: ListTile(
+                leading: const Icon(Icons.info_outline),
+                title: Text(l10n.levelUpSubclassAlreadyHas(i18n.subclassName(plan.cls.name, earlier))),
+              ),
+            ),
+          ],
           for (final subclass in subclasses)
             RadioListTile<String>(
               value: subclass.name,

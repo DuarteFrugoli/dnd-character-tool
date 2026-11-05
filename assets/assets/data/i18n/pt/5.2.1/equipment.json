@@ -274,7 +274,7 @@
   },
   "Chain": {
     "name": "Corrente",
-    "description": "Pode prender uma criatura Agarrada, Incapacitada ou Contida com um teste de Força (Atletismo) CD 13. Escapar exige um teste de Destreza (Acrobacia) CD 18; rompê-la exige Força (Atletismo) CD 20."
+    "description": "Pode prender uma criatura Agarrada, Incapacitada ou Impedida com um teste de Força (Atletismo) CD 13. Escapar exige um teste de Destreza (Acrobacia) CD 18; rompê-la exige Força (Atletismo) CD 20."
   },
   "Chest": {
     "name": "Baú",
@@ -410,7 +410,7 @@
   },
   "Manacles": {
     "name": "Algemas",
-    "description": "Pode prender uma criatura Pequena ou Média Agarrada, Incapacitada ou Contida com um teste de Destreza (Prestidigitação) CD 13. Escapar exige CD 20; rompê-las exige um teste de Força (Atletismo) CD 25."
+    "description": "Pode prender uma criatura Pequena ou Média Agarrada, Incapacitada ou Impedida com um teste de Destreza (Prestidigitação) CD 13. Escapar exige CD 20; rompê-las exige um teste de Força (Atletismo) CD 25."
   },
   "Map": {
     "name": "Mapa",
@@ -422,7 +422,7 @@
   },
   "Net": {
     "name": "Rede",
-    "description": "Substitua um ataque por um arremesso contra uma criatura a até {{distance:15ft}}. Ela fica Contida se falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência); criaturas Enormes ou maiores passam automaticamente. Escapar exige um teste de Força (Atletismo) CD 10."
+    "description": "Substitua um ataque por um arremesso contra uma criatura a até {{distance:15ft}}. Ela fica Impedida se falhar em um teste de resistência de Destreza (CD 8 + modificador de Destreza + Bônus de Proficiência); criaturas Enormes ou maiores passam automaticamente. Escapar exige um teste de Força (Atletismo) CD 10."
   },
   "Oil": {
     "name": "Óleo",

@@ -191,7 +191,7 @@
       },
       "constrict": {
         "name": "Constrição",
-        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance {{distance:5ft}}, uma criatura. Acerto: 6 (1d8 + 2) de dano de concussão, e o alvo fica agarrado (CD 14 para escapar). Até o fim dessa agarrada, a criatura fica contida, e a cobra não pode usar constrição em outro alvo."
+        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance {{distance:5ft}}, uma criatura. Acerto: 6 (1d8 + 2) de dano de concussão, e o alvo fica agarrado (CD 14 para escapar). Até o fim dessa agarrada, a criatura fica impedida, e a cobra não pode usar constrição em outro alvo."
       }
     }
   },
@@ -215,7 +215,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance {{distance:5ft}}, uma criatura. Acerto: 7 (1d10 + 2) de dano perfurante, e o alvo fica agarrado (CD 12 para escapar). Até o fim dessa agarrada, o alvo fica contido, e o crocodilo não pode morder outro alvo."
+        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance {{distance:5ft}}, uma criatura. Acerto: 7 (1d10 + 2) de dano perfurante, e o alvo fica agarrado (CD 12 para escapar). Até o fim dessa agarrada, o alvo fica impedido, e o crocodilo não pode morder outro alvo."
       }
     },
     "traits": {
@@ -436,11 +436,11 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Ataque Corpo a Corpo com Arma: +3 para acertar, alcance {{distance:5ft}}, um alvo. Acerto: 4 (1d6 + 1) de dano perfurante, e o alvo fica agarrado (CD 11 para escapar). Até o fim dessa agarrada, o alvo fica contido, e a rã não pode morder outro alvo."
+        "description": "Ataque Corpo a Corpo com Arma: +3 para acertar, alcance {{distance:5ft}}, um alvo. Acerto: 4 (1d6 + 1) de dano perfurante, e o alvo fica agarrado (CD 11 para escapar). Até o fim dessa agarrada, o alvo fica impedido, e a rã não pode morder outro alvo."
       },
       "swallow": {
         "name": "Engolir",
-        "description": "A rã faz um ataque de mordida contra um alvo Pequeno ou menor que esteja agarrando. Se o ataque acertar, o alvo é engolido e a agarrada termina. O alvo engolido fica cego e contido, tem cobertura total contra ataques e outros efeitos originados fora da rã e sofre 5 (2d4) de dano de ácido no início de cada turno da rã. A rã só pode ter um alvo engolido por vez."
+        "description": "A rã faz um ataque de mordida contra um alvo Pequeno ou menor que esteja agarrando. Se o ataque acertar, o alvo é engolido e a agarrada termina. O alvo engolido fica cego e impedido, tem cobertura total contra ataques e outros efeitos originados fora da rã e sofre 5 (2d4) de dano de ácido no início de cada turno da rã. A rã só pode ter um alvo engolido por vez."
       }
     },
     "traits": {
@@ -502,7 +502,7 @@
     "actions": {
       "tentacles": {
         "name": "Tentáculos",
-        "description": "Ataque Corpo a Corpo com Arma: +5 para acertar, alcance {{distance:15ft}}, um alvo. Acerto: 10 (2d6 + 3) de dano de concussão. Se o alvo for uma criatura, ele fica agarrado (CD 16 para escapar). Até o fim dessa agarrada, o alvo fica contido, e o polvo não pode usar seus tentáculos em outro alvo."
+        "description": "Ataque Corpo a Corpo com Arma: +5 para acertar, alcance {{distance:15ft}}, um alvo. Acerto: 10 (2d6 + 3) de dano de concussão. Se o alvo for uma criatura, ele fica agarrado (CD 16 para escapar). Até o fim dessa agarrada, o alvo fica impedido, e o polvo não pode usar seus tentáculos em outro alvo."
       },
       "ink_cloud": {
         "name": "Nuvem de Tinta",
@@ -602,7 +602,7 @@
       },
       "web": {
         "name": "Teia",
-        "description": "Ataque à Distância com Arma: +5 para acertar, distância {{distance:30/60ft}}, uma criatura. Acerto: O alvo fica contido pela teia. Com uma ação, o alvo contido pode fazer um teste de Força CD 12, rompendo a teia se for bem-sucedido. A teia também pode ser atacada e destruída (CA 10; PV 5; vulnerabilidade a dano de fogo; imunidade a dano de concussão, de veneno e psíquico)."
+        "description": "Ataque à Distância com Arma: +5 para acertar, distância {{distance:30/60ft}}, uma criatura. Acerto: O alvo fica impedido pela teia. Com uma ação, o alvo impedido pode fazer um teste de Força CD 12, rompendo a teia se for bem-sucedido. A teia também pode ser atacada e destruída (CA 10; PV 5; vulnerabilidade a dano de fogo; imunidade a dano de concussão, de veneno e psíquico)."
       }
     },
     "traits": {
@@ -625,11 +625,11 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance {{distance:5ft}}, um alvo. Acerto: 7 (1d10 + 2) de dano perfurante mais 5 (1d10) de dano de veneno, e o alvo fica agarrado (CD 13 para escapar). Até o fim dessa agarrada, o alvo fica contido, e o sapo não pode morder outro alvo."
+        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance {{distance:5ft}}, um alvo. Acerto: 7 (1d10 + 2) de dano perfurante mais 5 (1d10) de dano de veneno, e o alvo fica agarrado (CD 13 para escapar). Até o fim dessa agarrada, o alvo fica impedido, e o sapo não pode morder outro alvo."
       },
       "swallow": {
         "name": "Engolir",
-        "description": "O sapo faz um ataque de mordida contra um alvo Médio ou menor que esteja agarrando. Se o ataque acertar, o alvo é engolido e a agarrada termina. O alvo engolido fica cego e contido, tem cobertura total contra ataques e outros efeitos originados fora do sapo e sofre 10 (3d6) de dano de ácido no início de cada turno do sapo. O sapo só pode ter um alvo engolido por vez."
+        "description": "O sapo faz um ataque de mordida contra um alvo Médio ou menor que esteja agarrando. Se o ataque acertar, o alvo é engolido e a agarrada termina. O alvo engolido fica cego e impedido, tem cobertura total contra ataques e outros efeitos originados fora do sapo e sofre 10 (3d6) de dano de ácido no início de cada turno do sapo. O sapo só pode ter um alvo engolido por vez."
       }
     },
     "traits": {

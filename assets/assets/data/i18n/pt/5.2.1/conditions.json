@@ -48,7 +48,7 @@
     "description": "Você pode rastejar ou gastar movimento igual à metade do seu deslocamento para se levantar e encerrar a condição; não pode se levantar se seu deslocamento for 0. Suas jogadas de ataque têm desvantagem. Jogadas de ataque contra você têm vantagem se o atacante estiver a até {{distance:5ft}} e desvantagem se estiver mais longe."
   },
   "Restrained": {
-    "name": "Contido",
+    "name": "Impedido",
     "description": "Seu deslocamento é 0 e não pode aumentar. Jogadas de ataque contra você têm vantagem, suas jogadas de ataque têm desvantagem e você tem desvantagem nos testes de resistência de Destreza."
   },
   "Stunned": {

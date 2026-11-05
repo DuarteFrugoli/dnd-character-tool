@@ -859,7 +859,7 @@
       },
       "Minor Alchemy": {
         "name": "Alquimia menor",
-        "description": "A partir del nivel 2, puedes alterar temporalmente las propiedades físicas de un objeto no mágico, cambiándolo de una sustancia a otra. Realizas un procedimiento alquímico especial en un objeto compuesto enteramente de madera, piedra (pero no una piedra preciosa), hierro, cobre o plata. Por cada 10 minutos que dediques a realizar el procedimiento, podrás transformar hasta 1 pie cúbico de material. Después de 1 hora, o hasta que pierda la concentración, el material vuelve a su sustancia original."
+        "description": "A partir del nivel 2, puedes alterar temporalmente las propiedades físicas de un objeto no mágico, cambiándolo de una sustancia a otra. Realizas un procedimiento alquímico especial en un objeto compuesto enteramente de madera, piedra (pero no una piedra preciosa), hierro, cobre o plata. Por cada 10 minutos que dediques a realizar el procedimiento, podrás transformar hasta {{volume:1cuft}} de material. Después de 1 hora, o hasta que pierda la concentración, el material vuelve a su sustancia original."
       },
       "Transmuter's Stone": {
         "name": "Piedra del transmutador",

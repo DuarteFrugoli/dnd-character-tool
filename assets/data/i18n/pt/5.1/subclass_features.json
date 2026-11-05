@@ -7,7 +7,7 @@
       },
       "Mindless Rage": {
         "name": "Fúria Irracional",
-        "description": "A partir do 6º nível, você não pode ficar encantado ou assustado enquanto estiver em fúria. Se você ficar encantado ou assustado quando entrar em fúria, o efeito será suspenso enquanto durar a fúria."
+        "description": "A partir do 6º nível, você não pode ficar enfeitiçado ou amedrontado enquanto estiver em fúria. Se você ficar enfeitiçado ou amedrontado quando entrar em fúria, o efeito será suspenso enquanto durar a fúria."
       },
       "Intimidating Presence": {
         "name": "Presença intimidante",
@@ -91,7 +91,7 @@
       },
       "Channel Divinity: Read Thoughts": {
         "name": "Canalizar Divindade: Ler Pensamentos",
-        "description": "No 6º nível, você pode usar seu Canalizar Divindade para ler os pensamentos de uma criatura. Você conjura detectar pensamentos (CD de resistência igual à CD das suas magias de clérigo) sem gastar espaço de magia e sem componentes. O alvo que falhar no teste ficará encantado por você por 1 minuto ou até que você cause dano a ele."
+        "description": "No 6º nível, você pode usar seu Canalizar Divindade para ler os pensamentos de uma criatura. Você conjura detectar pensamentos (CD de resistência igual à CD das suas magias de clérigo) sem gastar espaço de magia e sem componentes. O alvo que falhar no teste ficará enfeitiçado por você por 1 minuto ou até que você cause dano a ele."
       },
       "Potent Spellcasting": {
         "name": "Conjuração Potente",
@@ -164,8 +164,8 @@
         "description": "Também no 1º nível, você ganha proficiência com armaduras pesadas."
       },
       "Channel Divinity: Charm Animals and Plants": {
-        "name": "Canalizar Divindade: Encantar Animais e Plantas",
-        "description": "Começando no 2º nível, como uma ação, você apresenta seu símbolo sagrado e invoca o nome de sua divindade. Cada criatura animal ou planta que puder ver você em um raio de {{distance:30ft}} deve fazer um teste de resistência de Sabedoria. Se falhar, ele ficará encantado por você por 1 minuto ou até sofrer dano."
+        "name": "Canalizar Divindade: Enfeitiçar Animais e Plantas",
+        "description": "Começando no 2º nível, como uma ação, você apresenta seu símbolo sagrado e invoca o nome de sua divindade. Cada criatura animal ou planta que puder ver você em um raio de {{distance:30ft}} deve fazer um teste de resistência de Sabedoria. Se falhar, ele ficará enfeitiçado por você por 1 minuto ou até sofrer dano."
       },
       "Dampen Elements": {
         "name": "Umedecer Elementos",
@@ -177,7 +177,7 @@
       },
       "Master of Nature": {
         "name": "Mestre da Natureza",
-        "description": "No 17º nível, você ganha a habilidade de comandar animais e criaturas vegetais. Enquanto as criaturas estão encantadas com seu recurso Encantar Animais e Plantas, você pode realizar uma ação bônus em seu turno para comandar verbalmente o que cada uma dessas criaturas fará em seu próximo turno."
+        "description": "No 17º nível, você ganha a habilidade de comandar animais e criaturas vegetais. Enquanto as criaturas estão enfeitiçadas com seu recurso Enfeitiçar Animais e Plantas, você pode realizar uma ação bônus em seu turno para comandar verbalmente o que cada uma dessas criaturas fará em seu próximo turno."
       }
     },
     "Tempest Domain": {
@@ -271,7 +271,7 @@
       },
       "Nature's Ward": {
         "name": "Proteção da Natureza",
-        "description": "Quando você atinge o 10º nível, você não pode ser encantado ou assustado por elementais ou fadas e fica imune a venenos e doenças."
+        "description": "Quando você atinge o 10º nível, você não pode ser enfeitiçado ou amedrontado por elementais ou fadas e fica imune a venenos e doenças."
       },
       "Nature's Sanctuary": {
         "name": "Santuário da Natureza",
@@ -447,7 +447,7 @@
     "Oath of the Ancients": {
       "Channel Divinity: Nature's Wrath": {
         "name": "Canalizar Divindade: Ira da Natureza",
-        "description": "Com uma ação, você pode fazer com que videiras espectrais brotem e alcancem uma criatura que você possa ver a até {{distance:10ft}} de você. A criatura deve ser bem sucedida em um teste de resistência de Força ou Destreza (à sua escolha) ou será impedida. Enquanto estiver contida pelas vinhas, a criatura repete o teste de resistência no final de cada um de seus turnos. Se obtiver sucesso, ele se liberta e as vinhas desaparecem."
+        "description": "Com uma ação, você pode fazer com que videiras espectrais brotem e alcancem uma criatura que você possa ver a até {{distance:10ft}} de você. A criatura deve ser bem sucedida em um teste de resistência de Força ou Destreza (à sua escolha) ou será impedida. Enquanto estiver impedida pelas vinhas, a criatura repete o teste de resistência no final de cada um de seus turnos. Se obtiver sucesso, ele se liberta e as vinhas desaparecem."
       },
       "Channel Divinity: Turn the Faithless": {
         "name": "Canalizar Divindade: Expulsar os Infiéis",
@@ -469,7 +469,7 @@
     "Oath of Vengeance": {
       "Channel Divinity: Abjure Enemy": {
         "name": "Canalizar Divindade: Abjurar Inimigo",
-        "description": "Como uma ação, você apresenta seu símbolo sagrado e faz uma oração de denúncia, usando seu Canal Divindade. Escolha uma criatura que você possa ver a até {{distance:60ft}} de você. Essa criatura deve fazer um teste de resistência de Sabedoria. Demônios e mortos-vivos têm desvantagem neste teste de resistência. Se falhar na resistência, a criatura fica assustada por 1 minuto ou até sofrer qualquer dano. Enquanto estiver assustada, o deslocamento da criatura é 0 e ela não pode se beneficiar de nenhum bônus em seu deslocamento."
+        "description": "Como uma ação, você apresenta seu símbolo sagrado e faz uma oração de denúncia, usando seu Canal Divindade. Escolha uma criatura que você possa ver a até {{distance:60ft}} de você. Essa criatura deve fazer um teste de resistência de Sabedoria. Demônios e mortos-vivos têm desvantagem neste teste de resistência. Se falhar na resistência, a criatura fica amedrontada por 1 minuto ou até sofrer qualquer dano. Enquanto estiver amedrontada, o deslocamento da criatura é 0 e ela não pode se beneficiar de nenhum bônus em seu deslocamento."
       },
       "Channel Divinity: Vow of Enmity": {
         "name": "Canalizar Divindade: Voto de Inimizade",
@@ -497,7 +497,7 @@
       },
       "Defensive Tactics": {
         "name": "Táticas Defensivas",
-        "description": "No 7º nível, você ganha uma das seguintes características. Escapar da Horda: Ataques de oportunidade contra você são feitos com desvantagem. Defesa de Ataques Múltiplos: Quando uma criatura atinge você com um ataque, você ganha +4 de bônus na CA contra todos os ataques subsequentes feitos por aquela criatura pelo resto do turno. Vontade de Aço: Você tem vantagem em testes de resistência contra ficar assustado."
+        "description": "No 7º nível, você ganha uma das seguintes características. Escapar da Horda: Ataques de oportunidade contra você são feitos com desvantagem. Defesa de Ataques Múltiplos: Quando uma criatura atinge você com um ataque, você ganha +4 de bônus na CA contra todos os ataques subsequentes feitos por aquela criatura pelo resto do turno. Vontade de Aço: Você tem vantagem em testes de resistência contra ficar amedrontado."
       },
       "Multiattack": {
         "name": "Multiataque",
@@ -645,7 +645,7 @@
     "The Archfey": {
       "Fey Presence": {
         "name": "Presença Feérica",
-        "description": "Começando no 1º nível, como uma ação, você pode fazer com que cada criatura em um cubo de {{distance:10ft}} originário de você faça um teste de resistência de Sabedoria contra a CD de resistência da sua magia de bruxo. As criaturas que falharem ficarão todas encantadas ou assustadas por você (sua escolha) até o final do seu próximo turno. Depois de usar esse recurso, você não poderá usá-lo novamente até terminar um descanso curto ou longo."
+        "description": "Começando no 1º nível, como uma ação, você pode fazer com que cada criatura em um cubo de {{distance:10ft}} originário de você faça um teste de resistência de Sabedoria contra a CD de resistência da sua magia de bruxo. As criaturas que falharem ficarão todas enfeitiçadas ou amedrontadas por você (sua escolha) até o final do seu próximo turno. Depois de usar esse recurso, você não poderá usá-lo novamente até terminar um descanso curto ou longo."
       },
       "Misty Escape": {
         "name": "Fuga Enevoada",
@@ -653,11 +653,11 @@
       },
       "Beguiling Defenses": {
         "name": "Defesas Sedutoras",
-        "description": "A partir do 10º nível, você fica imune a ser enfeitiçado. Quando outra criatura tentar encantar você, você pode usar sua reação para tentar devolver o encanto àquela criatura. A criatura deve ser bem sucedida em um teste de resistência de Sabedoria contra a CD de resistência das suas magias de bruxo ou ficará enfeitiçada por você por 1 minuto ou até que a criatura sofra algum dano."
+        "description": "A partir do 10º nível, você fica imune a ser enfeitiçado. Quando outra criatura tentar enfeitiçar você, você pode usar sua reação para tentar devolver o encanto àquela criatura. A criatura deve ser bem sucedida em um teste de resistência de Sabedoria contra a CD de resistência das suas magias de bruxo ou ficará enfeitiçada por você por 1 minuto ou até que a criatura sofra algum dano."
       },
       "Dark Delirium": {
         "name": "Delírio Sombrio",
-        "description": "A partir do 14º nível, como ação, escolha uma criatura que você possa ver a até {{distance:60ft}}. Ele deve fazer um teste de resistência de Sabedoria ou ficará encantado ou assustado por você (sua escolha) por 1 minuto ou até que sua concentração seja quebrada. Este efeito termina mais cedo se a criatura sofrer algum dano. Depois de usar esse recurso, você não poderá usá-lo novamente até terminar um descanso curto ou longo."
+        "description": "A partir do 14º nível, como ação, escolha uma criatura que você possa ver a até {{distance:60ft}}. Ele deve fazer um teste de resistência de Sabedoria ou ficará enfeitiçado ou amedrontado por você (sua escolha) por 1 minuto ou até que sua concentração seja quebrada. Este efeito termina mais cedo se a criatura sofrer algum dano. Depois de usar esse recurso, você não poderá usá-lo novamente até terminar um descanso curto ou longo."
       }
     },
     "The Fiend": {
@@ -693,7 +693,7 @@
       },
       "Create Thrall": {
         "name": "Criar Servo",
-        "description": "No 14º nível, você ganha a habilidade de infectar a mente de um humanóide com a magia alienígena de seu patrono. Você pode usar sua ação para tocar um humanoide incapacitado. Essa criatura é então encantada por você até que uma magia remover maldição seja lançada sobre ela, a condição encantada seja removida ou você use esse recurso novamente. Você pode se comunicar telepaticamente com a criatura encantada desde que vocês dois estejam no mesmo plano de existência."
+        "description": "No 14º nível, você ganha a habilidade de infectar a mente de um humanóide com a magia alienígena de seu patrono. Você pode usar sua ação para tocar um humanoide incapacitado. Essa criatura é então enfeitiçada por você até que uma magia remover maldição seja lançada sobre ela, a condição enfeitiçada seja removida ou você use esse recurso novamente. Você pode se comunicar telepaticamente com a criatura enfeitiçada desde que vocês dois estejam no mesmo plano de existência."
       }
     }
   },
@@ -771,7 +771,7 @@
       },
       "Hypnotic Gaze": {
         "name": "Olhar Hipnótico",
-        "description": "Começando no 2º nível, como uma ação, escolha uma criatura que você possa ver a até {{distance:5ft}} de você. Se o alvo puder ver ou ouvir você, ele deverá ser bem-sucedido em um teste de resistência de Sabedoria contra a CD de resistência das suas magias de mago ou ficará enfeitiçado por você até o final do seu próximo turno. A velocidade da criatura encantada cai para 0 e ela fica incapacitada e visivelmente atordoada. Nos turnos subsequentes, você pode usar sua ação para manter esse efeito até o final do seu próximo turno. O efeito termina se você se afastar mais de {{distance:5ft}}, se a criatura não puder ver nem ouvir você, ou se a criatura sofrer dano."
+        "description": "Começando no 2º nível, como uma ação, escolha uma criatura que você possa ver a até {{distance:5ft}} de você. Se o alvo puder ver ou ouvir você, ele deverá ser bem-sucedido em um teste de resistência de Sabedoria contra a CD de resistência das suas magias de mago ou ficará enfeitiçado por você até o final do seu próximo turno. A velocidade da criatura enfeitiçada cai para 0 e ela fica incapacitada e visivelmente atordoada. Nos turnos subsequentes, você pode usar sua ação para manter esse efeito até o final do seu próximo turno. O efeito termina se você se afastar mais de {{distance:5ft}}, se a criatura não puder ver nem ouvir você, ou se a criatura sofrer dano."
       },
       "Instinctive Charm": {
         "name": "Charme Instintivo",

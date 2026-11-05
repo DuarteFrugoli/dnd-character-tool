@@ -42,7 +42,8 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Fixed
 - **Medidas no equipamento**: capacidades como a da mochila e do barril agora seguem a unidade escolhida em todos os idiomas, e a Tocha em japones mostra a distancia certa; o validador passou a comparar o equipamento com o ingles.
-- **Nomes de pericias, condicoes e classes**: o SRD 5.1 usa os mesmos nomes revisados do 5.2.1 nas pericias e nas condicoes (exceto Encantado e Ensurdecido em portugues); classes que dividiam um nome em alemao, frances e coreano e Percepcao e Intuicao em chines agora tem nomes proprios.
+- **Condicoes em portugues**: as duas edicoes usam os termos do Livro do Jogador: Enfeiticado, Surdo e Impedido.
+- **Nomes de pericias, condicoes e classes**: o SRD 5.1 usa os mesmos nomes revisados do 5.2.1 nas pericias e nas condicoes; classes que dividiam um nome em alemao, frances e coreano e Percepcao e Intuicao em chines agora tem nomes proprios.
 - **Alemao e japones do SRD 5.1**: textos de regras e nomes de habilidades revisados; o alemao trata o jogador por "du", tambem na interface, e o japones saiu do tom de traducao automatica.
 - **Termos unificados nas traducoes**: portugues usa "Caido" (como o Livro do Jogador oficial) em vez de "Prostrado"; coreano usa "히트 포인트" em todo o conteudo; turco separa CA ("ZS") de CD ("ZD") e usa "TD" para nivel de desafio; italiano chama o ataque Ram de "Testata", liberando "Carica" para o traco Charge.
 - **Distancias em metros em frances, italiano e alemao**: magias, itens, caracteristicas e feras passam a usar metros, como os livros oficiais desses idiomas (1,5 m por quadrado). Espanhol continua em pes, como o material oficial em espanhol.

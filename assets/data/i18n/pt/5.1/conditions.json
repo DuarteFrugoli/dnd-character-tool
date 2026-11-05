@@ -4,11 +4,11 @@
     "description": "Uma criatura cega não pode ver e falha automaticamente em qualquer teste de habilidade que exija visão. As jogadas de ataque contra a criatura têm vantagem e as jogadas de ataque da criatura têm desvantagem."
   },
   "Charmed": {
-    "name": "Encantado",
-    "description": "Uma criatura encantada não pode atacar o encantador ou atingi-lo com habilidades prejudiciais ou efeitos mágicos. O encantador tem vantagem em qualquer teste de habilidade para interagir socialmente com a criatura."
+    "name": "Enfeitiçado",
+    "description": "Uma criatura enfeitiçada não pode atacar quem a enfeitiçou nem ter essa criatura como alvo de habilidades ou efeitos mágicos nocivos. Quem a enfeitiçou tem vantagem em qualquer teste de habilidade para interagir socialmente com a criatura."
   },
   "Deafened": {
-    "name": "Ensurdecido",
+    "name": "Surdo",
     "description": "Uma criatura surda não pode ouvir e falha automaticamente em qualquer teste de habilidade que exija audição."
   },
   "Exhaustion": {
@@ -17,7 +17,7 @@
   },
   "Frightened": {
     "name": "Amedrontado",
-    "description": "Uma criatura assustada tem desvantagem em testes de habilidade e jogadas de ataque enquanto a fonte de seu medo estiver dentro de sua linha de visão. A criatura não pode se aproximar voluntariamente da fonte de seu medo."
+    "description": "Uma criatura amedrontada tem desvantagem em testes de habilidade e jogadas de ataque enquanto a fonte de seu medo estiver dentro de sua linha de visão. A criatura não pode se aproximar voluntariamente da fonte de seu medo."
   },
   "Grappled": {
     "name": "Agarrado",
@@ -48,7 +48,7 @@
     "description": "A única opção de movimento de uma criatura caída é rastejar, a menos que ela se levante e assim encerre a condição. A criatura tem desvantagem nas jogadas de ataque. Uma jogada de ataque contra a criatura tem vantagem se o atacante estiver a até {{distance:5ft}} da criatura. Caso contrário, a jogada de ataque terá desvantagem."
   },
   "Restrained": {
-    "name": "Contido",
+    "name": "Impedido",
     "description": "O deslocamento de uma criatura restringida torna-se 0 e ela não pode se beneficiar de nenhum bônus em seu deslocamento. As jogadas de ataque contra a criatura têm vantagem e as jogadas de ataque da criatura têm desvantagem. A criatura tem desvantagem nos testes de resistência de Destreza."
   },
   "Stunned": {

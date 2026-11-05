@@ -166,7 +166,7 @@
     "actions": {
       "bite": {
         "name": "Mordida",
-        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 6 (1d8 + 2) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 12 para escapar). Enquanto estiver Agarrado, o alvo fica com a condição Contido."
+        "description": "Jogada de Ataque Corpo a Corpo: +4, alcance {{distance:5ft}}. Acerto: 6 (1d8 + 2) de dano Perfurante. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 12 para escapar). Enquanto estiver Agarrado, o alvo fica com a condição Impedido."
       }
     },
     "traits": {
@@ -318,7 +318,7 @@
       },
       "swallow": {
         "name": "Engolir",
-        "description": "A rã engole um alvo Pequeno ou menor que esteja agarrando. Enquanto estiver engolido, o alvo não está Agarrado, mas tem as condições Cego e Contido, e tem Cobertura Total contra ataques e outros efeitos originados fora da rã. Enquanto estiver com o alvo engolido, a rã não pode usar Mordida e, se a rã morrer, o alvo engolido deixa de estar Contido e pode escapar do cadáver usando {{distance:5ft}} de movimento, saindo com a condição Caído. No fim do próximo turno da rã, o alvo engolido sofre 5 (2d4) de dano de Ácido. Se esse dano não o matar, a rã o regurgita, e ele sai Caído."
+        "description": "A rã engole um alvo Pequeno ou menor que esteja agarrando. Enquanto estiver engolido, o alvo não está Agarrado, mas tem as condições Cego e Impedido, e tem Cobertura Total contra ataques e outros efeitos originados fora da rã. Enquanto estiver com o alvo engolido, a rã não pode usar Mordida e, se a rã morrer, o alvo engolido deixa de estar Impedido e pode escapar do cadáver usando {{distance:5ft}} de movimento, saindo com a condição Caído. No fim do próximo turno da rã, o alvo engolido sofre 5 (2d4) de dano de Ácido. Se esse dano não o matar, a rã o regurgita, e ele sai Caído."
       }
     },
     "traits": {
@@ -376,7 +376,7 @@
     "actions": {
       "tentacles": {
         "name": "Tentáculos",
-        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:10ft}}. Acerto: 10 (2d6 + 3) de dano de Concussão. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 13 para escapar) por todos os oito tentáculos. Enquanto estiver Agarrado, o alvo fica com a condição Contido."
+        "description": "Jogada de Ataque Corpo a Corpo: +5, alcance {{distance:10ft}}. Acerto: 10 (2d6 + 3) de dano de Concussão. Se o alvo for uma criatura Média ou menor, ele fica com a condição Agarrado (CD 13 para escapar) por todos os oito tentáculos. Enquanto estiver Agarrado, o alvo fica com a condição Impedido."
       }
     },
     "traits": {
@@ -437,7 +437,7 @@
       },
       "web": {
         "name": "Teia",
-        "description": "Teste de Resistência de Destreza: CD 13, uma criatura que a aranha possa ver a até {{distance:60ft}}. Falha: O alvo fica com a condição Contido até que a teia seja destruída (CA 10; PV 5; Vulnerabilidade a dano de Fogo; Imunidade a dano de Veneno e Psíquico)."
+        "description": "Teste de Resistência de Destreza: CD 13, uma criatura que a aranha possa ver a até {{distance:60ft}}. Falha: O alvo fica com a condição Impedido até que a teia seja destruída (CA 10; PV 5; Vulnerabilidade a dano de Fogo; Imunidade a dano de Veneno e Psíquico)."
       }
     },
     "traits": {
@@ -460,7 +460,7 @@
       },
       "swallow": {
         "name": "Engolir",
-        "description": "O sapo engole um alvo Médio ou menor que esteja agarrando. Enquanto estiver engolido, o alvo não está Agarrado, mas tem as condições Cego e Contido, e tem Cobertura Total contra ataques e outros efeitos originados fora do sapo. Além disso, o alvo sofre 10 (3d6) de dano de Ácido no fim de cada turno do sapo. O sapo só pode ter um alvo engolido por vez e não pode usar Mordida enquanto tiver um alvo engolido. Se o sapo morrer, uma criatura engolida deixa de estar Contida e pode escapar do cadáver usando {{distance:5ft}} de movimento, saindo com a condição Caído."
+        "description": "O sapo engole um alvo Médio ou menor que esteja agarrando. Enquanto estiver engolido, o alvo não está Agarrado, mas tem as condições Cego e Impedido, e tem Cobertura Total contra ataques e outros efeitos originados fora do sapo. Além disso, o alvo sofre 10 (3d6) de dano de Ácido no fim de cada turno do sapo. O sapo só pode ter um alvo engolido por vez e não pode usar Mordida enquanto tiver um alvo engolido. Se o sapo morrer, uma criatura engolida deixa de estar Impedida e pode escapar do cadáver usando {{distance:5ft}} de movimento, saindo com a condição Caído."
       }
     },
     "traits": {

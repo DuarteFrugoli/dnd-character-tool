@@ -236,20 +236,22 @@ void main() {
         }
       });
 
-      test('$locale names skills the same way in both editions', () {
-        final older = _readJsonMap('assets/data/i18n/$locale/5.1/skills.json');
-        final newer = {
-          for (final entry
-              in _readJsonMap('assets/data/i18n/$locale/5.2.1/skills.json').entries)
-            entry.key.toLowerCase(): _asMap(entry.value)?['name'],
-        };
-        final different = [
-          for (final entry in older.entries)
-            if (newer.containsKey(entry.key.toLowerCase()) &&
-                newer[entry.key.toLowerCase()] != _asMap(entry.value)?['name'])
-              entry.key,
-        ];
-        expect(different, isEmpty, reason: locale);
+      test('$locale names skills and conditions the same way in both editions', () {
+        for (final fileName in ['skills', 'conditions']) {
+          final older = _readJsonMap('assets/data/i18n/$locale/5.1/$fileName.json');
+          final newer = {
+            for (final entry
+                in _readJsonMap('assets/data/i18n/$locale/5.2.1/$fileName.json').entries)
+              entry.key.toLowerCase(): _asMap(entry.value)?['name'],
+          };
+          final different = [
+            for (final entry in older.entries)
+              if (newer.containsKey(entry.key.toLowerCase()) &&
+                  newer[entry.key.toLowerCase()] != _asMap(entry.value)?['name'])
+                entry.key,
+          ];
+          expect(different, isEmpty, reason: '$locale $fileName');
+        }
       });
 
       test('$locale has descriptions for SRD spells and equipment', () {

@@ -13,6 +13,10 @@ def rows(*lines):
 
 FIXES = {
     "5.1": {
+        "Hallow": [
+            ("under the effect a hallow spell", "under the effect of a hallow spell"),
+            ("from this effect. Second, you", "from this effect.\n\nSecond, you"),
+        ],
         "Confusion": [(
             "for that turn. d10 Behavior 1 The creature uses all its movement to move in a random direction. "
             "To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn't "
@@ -287,6 +291,7 @@ LIST_ENDS = {
         "Conjure Woodland Beings": "rating 1/4 or lower",
         "Commune with Nature": "- buildings",
         "Divine Word": "killed instantly",
+        "Magic Circle": "possessed by the creature.",
     },
     "5.2.1": {"Commune with Nature": "- Locations of bodies of water"},
 }

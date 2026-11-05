@@ -3,7 +3,7 @@
     "name": "Acrobaties"
   },
   "Animal Handling": {
-    "name": "Manipulation des animaux"
+    "name": "Dressage"
   },
   "Arcana": {
     "name": "Arcanes"
@@ -18,7 +18,7 @@
     "name": "Histoire"
   },
   "Insight": {
-    "name": "Aperçu"
+    "name": "Intuition"
   },
   "Intimidation": {
     "name": "Intimidation"
@@ -36,7 +36,7 @@
     "name": "Perception"
   },
   "Performance": {
-    "name": "Performance"
+    "name": "Représentation"
   },
   "Persuasion": {
     "name": "Persuasion"
@@ -45,7 +45,7 @@
     "name": "Religion"
   },
   "Sleight of Hand": {
-    "name": "Tour de passe-passe"
+    "name": "Escamotage"
   },
   "Stealth": {
     "name": "Furtivité"

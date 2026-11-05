@@ -1,15 +1,15 @@
 {
   "Acrobatics": {
-    "name": "재주 넘기"
+    "name": "곡예"
   },
   "Animal Handling": {
-    "name": "동물 취급"
+    "name": "동물 조련"
   },
   "Arcana": {
-    "name": "아르카나"
+    "name": "비전학"
   },
   "Athletics": {
-    "name": "체육 실기"
+    "name": "운동"
   },
   "Deception": {
     "name": "기만"
@@ -18,7 +18,7 @@
     "name": "역사"
   },
   "Insight": {
-    "name": "통찰력"
+    "name": "통찰"
   },
   "Intimidation": {
     "name": "위협"
@@ -27,7 +27,7 @@
     "name": "조사"
   },
   "Medicine": {
-    "name": "약"
+    "name": "의학"
   },
   "Nature": {
     "name": "자연"
@@ -36,7 +36,7 @@
     "name": "지각"
   },
   "Performance": {
-    "name": "성능"
+    "name": "공연"
   },
   "Persuasion": {
     "name": "설득"
@@ -45,12 +45,12 @@
     "name": "종교"
   },
   "Sleight of Hand": {
-    "name": "손재주"
+    "name": "손놀림"
   },
   "Stealth": {
-    "name": "몰래 하기"
+    "name": "은신"
   },
   "Survival": {
-    "name": "활착"
+    "name": "생존"
   }
 }

@@ -210,7 +210,7 @@
   },
   "Backpack": {
     "name": "Sac à dos",
-    "description": "Contient jusqu'à 30 livres dans 28 litres ; peut aussi servir de sacoche de selle."
+    "description": "Contient jusqu'à 30 livres dans {{volume:1cuft}} ; peut aussi servir de sacoche de selle."
   },
   "Ball Bearings": {
     "name": "Billes",
@@ -218,11 +218,11 @@
   },
   "Barrel": {
     "name": "Tonneau",
-    "description": "Contient jusqu'à 40 gallons de liquide ou 113 litres de denrées sèches."
+    "description": "Contient jusqu'à {{volume:40gal}} de liquide ou {{volume:4cuft}} de denrées sèches."
   },
   "Basket": {
     "name": "Panier",
-    "description": "Contient jusqu'à 40 livres dans 57 litres."
+    "description": "Contient jusqu'à 40 livres dans {{volume:2cuft}}."
   },
   "Bedroll": {
     "name": "Sac de couchage",
@@ -246,11 +246,11 @@
   },
   "Bottle, Glass": {
     "name": "Bouteille en verre",
-    "description": "Contient jusqu'à 1,5 pinte."
+    "description": "Contient jusqu'à {{volume:1.5pint}}."
   },
   "Bucket": {
     "name": "Seau",
-    "description": "Contient jusqu'à 14 litres."
+    "description": "Contient jusqu'à {{volume:0.5cuft}}."
   },
   "Burglar's Pack": {
     "name": "Paquet de cambrioleur",
@@ -278,7 +278,7 @@
   },
   "Chest": {
     "name": "Coffre",
-    "description": "Contient jusqu'à 340 litres."
+    "description": "Contient jusqu'à {{volume:12cuft}}."
   },
   "Climber's Kit": {
     "name": "Matériel d'escalade",
@@ -338,7 +338,7 @@
   },
   "Flask": {
     "name": "Flasque",
-    "description": "Contient jusqu'à 1 pinte."
+    "description": "Contient jusqu'à {{volume:1pint}}."
   },
   "Grappling Hook": {
     "name": "Grappin",
@@ -374,7 +374,7 @@
   },
   "Ink": {
     "name": "Encre",
-    "description": "Une bouteille de 1 once contient assez d'encre pour environ 500 pages."
+    "description": "Une bouteille de {{volume:1floz}} contient assez d'encre pour environ 500 pages."
   },
   "Ink Pen": {
     "name": "Plume",
@@ -382,7 +382,7 @@
   },
   "Jug": {
     "name": "Cruche",
-    "description": "Contient jusqu'à 1 gallon."
+    "description": "Contient jusqu'à {{volume:1gal}}."
   },
   "Ladder": {
     "name": "Échelle",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Parfum",
-    "description": "Fiole de 4 onces. Pendant 1 heure après application, gagnez l'Avantage aux tests de Charisme (Persuasion) pour influencer un Humanoïde Indifférent à {{distance:5ft}} ou moins."
+    "description": "Fiole de {{volume:4floz}}. Pendant 1 heure après application, gagnez l'Avantage aux tests de Charisme (Persuasion) pour influencer un Humanoïde Indifférent à {{distance:5ft}} ou moins."
   },
   "Poison, Basic": {
     "name": "Poison de base",
@@ -450,11 +450,11 @@
   },
   "Pot, Iron": {
     "name": "Marmite en fer",
-    "description": "Contient jusqu'à 1 gallon."
+    "description": "Contient jusqu'à {{volume:1gal}}."
   },
   "Pouch": {
     "name": "Bourse",
-    "description": "Contient jusqu'à 6 livres dans 6 litres."
+    "description": "Contient jusqu'à 6 livres dans {{volume:0.2cuft}}."
   },
   "Priest's Pack": {
     "name": "Paquet de prêtre",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "Sac",
-    "description": "Contient jusqu'à 30 livres dans 28 litres."
+    "description": "Contient jusqu'à 30 livres dans {{volume:1cuft}}."
   },
   "Scholar's Pack": {
     "name": "Paquet d'érudit",
@@ -530,7 +530,7 @@
   },
   "Waterskin": {
     "name": "Outre",
-    "description": "Contient jusqu'à 4 pintes d'eau ; le poids indiqué correspond à l'outre pleine."
+    "description": "Contient jusqu'à {{volume:4pint}} d'eau ; le poids indiqué correspond à l'outre pleine."
   },
   "weaponMasteries": {
     "cleave": {

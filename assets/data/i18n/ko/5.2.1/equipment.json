@@ -210,7 +210,7 @@
   },
   "Backpack": {
     "name": "배낭",
-    "description": "1입방피트에 최대 30파운드를 담으며 안장 주머니로도 사용할 수 있습니다."
+    "description": "{{volume:1cuft}}에 최대 30파운드를 담으며 안장 주머니로도 사용할 수 있습니다."
   },
   "Ball Bearings": {
     "name": "금속 구슬",
@@ -218,11 +218,11 @@
   },
   "Barrel": {
     "name": "통",
-    "description": "액체 최대 40갤런 또는 마른 물건 4입방피트를 담습니다."
+    "description": "액체 최대 {{volume:40gal}} 또는 마른 물건 {{volume:4cuft|obj}} 담습니다."
   },
   "Basket": {
     "name": "바구니",
-    "description": "2입방피트에 최대 40파운드를 담습니다."
+    "description": "{{volume:2cuft}}에 최대 40파운드를 담습니다."
   },
   "Bedroll": {
     "name": "침낭",
@@ -246,11 +246,11 @@
   },
   "Bottle, Glass": {
     "name": "유리병",
-    "description": "최대 1.5파인트를 담습니다."
+    "description": "최대 {{volume:1.5pint|obj}} 담습니다."
   },
   "Bucket": {
     "name": "양동이",
-    "description": "최대 0.5입방피트를 담습니다."
+    "description": "최대 {{volume:0.5cuft|obj}} 담습니다."
   },
   "Burglar's Pack": {
     "name": "도둑 꾸러미",
@@ -278,7 +278,7 @@
   },
   "Chest": {
     "name": "궤짝",
-    "description": "최대 12입방피트를 담습니다."
+    "description": "최대 {{volume:12cuft|obj}} 담습니다."
   },
   "Climber's Kit": {
     "name": "등반 도구",
@@ -338,7 +338,7 @@
   },
   "Flask": {
     "name": "플라스크",
-    "description": "최대 1파인트를 담습니다."
+    "description": "최대 {{volume:1pint|obj}} 담습니다."
   },
   "Grappling Hook": {
     "name": "갈고리",
@@ -374,7 +374,7 @@
   },
   "Ink": {
     "name": "잉크",
-    "description": "1온스 병에는 약 500쪽에 쓸 잉크가 들어 있습니다."
+    "description": "{{volume:1floz}} 병에는 약 500쪽에 쓸 잉크가 들어 있습니다."
   },
   "Ink Pen": {
     "name": "잉크 펜",
@@ -382,7 +382,7 @@
   },
   "Jug": {
     "name": "물병",
-    "description": "최대 1갤런을 담습니다."
+    "description": "최대 {{volume:1gal|obj}} 담습니다."
   },
   "Ladder": {
     "name": "사다리",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "향수",
-    "description": "4온스 병입니다. 바른 뒤 1시간 동안 {{distance:5ft}} 이내의 무관심한 인간형을 설득하는 매력(설득) 판정에 이점을 얻습니다."
+    "description": "{{volume:4floz}} 병입니다. 바른 뒤 1시간 동안 {{distance:5ft}} 이내의 무관심한 인간형을 설득하는 매력(설득) 판정에 이점을 얻습니다."
   },
   "Poison, Basic": {
     "name": "기본 독",
@@ -450,11 +450,11 @@
   },
   "Pot, Iron": {
     "name": "쇠솥",
-    "description": "최대 1갤런을 담습니다."
+    "description": "최대 {{volume:1gal|obj}} 담습니다."
   },
   "Pouch": {
     "name": "주머니",
-    "description": "0.2입방피트에 최대 6파운드를 담습니다."
+    "description": "{{volume:0.2cuft}}에 최대 6파운드를 담습니다."
   },
   "Priest's Pack": {
     "name": "사제 꾸러미",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "자루",
-    "description": "1입방피트에 최대 30파운드를 담습니다."
+    "description": "{{volume:1cuft}}에 최대 30파운드를 담습니다."
   },
   "Scholar's Pack": {
     "name": "학자 꾸러미",
@@ -530,7 +530,7 @@
   },
   "Waterskin": {
     "name": "물가죽",
-    "description": "물 최대 4파인트를 담습니다. 표시된 무게는 가득 찼을 때입니다."
+    "description": "물 최대 {{volume:4pint|obj}} 담습니다. 표시된 무게는 가득 찼을 때입니다."
   },
   "weaponMasteries": {
     "cleave": {

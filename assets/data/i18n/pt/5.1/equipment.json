@@ -183,7 +183,7 @@
   },
   "Backpack": {
     "name": "Mochila",
-    "description": "Comporta 30 libras/1 pé cúbico."
+    "description": "Comporta 30 libras/{{volume:1cuft}}."
   },
   "Burglar's Pack": {
     "name": "Pacote de ladrão",
@@ -219,11 +219,11 @@
   },
   "Barrel": {
     "name": "Barril",
-    "description": "Contém 40 galões de líquido ou 4 pés cúbicos de sólido."
+    "description": "Contém {{volume:40gal}} de líquido ou {{volume:4cuft}} de sólido."
   },
   "Basket": {
     "name": "Cesta",
-    "description": "Comporta 2 pés cúbicos/40 libras."
+    "description": "Comporta {{volume:2cuft}}/40 libras."
   },
   "Bedroll": {
     "name": "Saco de dormir",
@@ -247,11 +247,11 @@
   },
   "Bottle, glass": {
     "name": "Garrafa de vidro",
-    "description": "Contém cerca de 0,7 litro de líquido."
+    "description": "Contém {{volume:1.5pint}} de líquido."
   },
   "Bucket": {
     "name": "Balde",
-    "description": "Comporta cerca de 11 litros."
+    "description": "Comporta {{volume:3gal}}."
   },
   "Caltrops (bag of 20)": {
     "name": "Estrepes (saco de 20)",
@@ -283,7 +283,7 @@
   },
   "Chest": {
     "name": "Baú",
-    "description": "Comporta 12 pés cúbicos ou 300 libras."
+    "description": "Comporta {{volume:12cuft}} ou 300 libras."
   },
   "Climber's Kit": {
     "name": "Kit de escalador",
@@ -319,7 +319,7 @@
   },
   "Flask or tankard": {
     "name": "Frasco ou caneca",
-    "description": "Contém cerca de 0,5 litro de líquido."
+    "description": "Contém {{volume:1pint}} de líquido."
   },
   "Grappling Hook": {
     "name": "Arpéu",
@@ -371,7 +371,7 @@
   },
   "Jug or Pitcher": {
     "name": "Jarro ou bilha",
-    "description": "Contém 1 galão de líquido."
+    "description": "Contém {{volume:1gal}} de líquido."
   },
   "Ladder (10-foot)": {
     "name": "Escada (3 m)",
@@ -379,15 +379,15 @@
   },
   "Lamp": {
     "name": "Lamparina",
-    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um raio de {{distance:15ft}} e luz fraca por mais {{distance:30ft}}."
+    "description": "Queima óleo ({{volume:1pint}} = 6 horas). Emite luz brilhante em um raio de {{distance:15ft}} e luz fraca por mais {{distance:30ft}}."
   },
   "Lantern, bullseye": {
     "name": "Lanterna direcionável",
-    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um cone de {{distance:60ft}} e luz fraca por mais {{distance:60ft}}."
+    "description": "Queima óleo ({{volume:1pint}} = 6 horas). Emite luz brilhante em um cone de {{distance:60ft}} e luz fraca por mais {{distance:60ft}}."
   },
   "Lantern, hooded": {
     "name": "Lanterna coberta",
-    "description": "Queima óleo (cerca de 0,5 litro = 6 horas). Emite luz brilhante em um raio de {{distance:30ft}} e luz fraca por mais {{distance:30ft}}. Pode ser coberta para reduzir a luz a {{distance:5ft}}."
+    "description": "Queima óleo ({{volume:1pint}} = 6 horas). Emite luz brilhante em um raio de {{distance:30ft}} e luz fraca por mais {{distance:30ft}}. Pode ser coberta para reduzir a luz a uma luz fraca em {{distance:5ft}}."
   },
   "Lock": {
     "name": "Cadeado",
@@ -447,7 +447,7 @@
   },
   "Pouch": {
     "name": "Bolsa",
-    "description": "Comporta até 20 balas de funda, 50 agulhas de zarabatana ou 6 lb/1/5 pé cúbico de equipamento."
+    "description": "Comporta até 20 balas de funda, 50 agulhas de zarabatana ou 6 lb/{{volume:0.2cuft}} de equipamento."
   },
   "Quiver": {
     "name": "Aljava",
@@ -471,7 +471,7 @@
   },
   "Sack": {
     "name": "Saco",
-    "description": "Comporta 1 pé cúbico/30 libras."
+    "description": "Comporta {{volume:1cuft}}/30 libras."
   },
   "Sand (small bag)": {
     "name": "Areia (saco pequeno)",
@@ -539,7 +539,7 @@
   },
   "Waterskin": {
     "name": "Odre",
-    "description": "Contém 4 litros de líquido. Pesa 5 libras quando cheio."
+    "description": "Contém {{volume:4pint}} de líquido. Pesa 5 libras quando cheio."
   },
   "Whetstone": {
     "name": "Pedra de amolar",

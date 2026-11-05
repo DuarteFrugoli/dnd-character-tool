@@ -4,11 +4,11 @@
     "description": "Una criatura ciega no puede ver y automáticamente falla cualquier prueba de habilidad que requiera vista. Las tiradas de ataque contra la criatura tienen ventaja y las tiradas de ataque de la criatura tienen desventaja."
   },
   "Charmed": {
-    "name": "Encantado",
-    "description": "Una criatura encantada no puede atacar al encantador ni apuntarle con habilidades dañinas o efectos mágicos. El encantador tiene ventaja en cualquier prueba de habilidad para interactuar socialmente con la criatura."
+    "name": "Hechizado",
+    "description": "Una criatura hechizada no puede atacar a quien la hechizó ni apuntarle con habilidades dañinas o efectos mágicos. Quien la hechizó tiene ventaja en cualquier prueba de característica para interactuar socialmente con la criatura."
   },
   "Deafened": {
-    "name": "ensordecido",
+    "name": "Ensordecido",
     "description": "Una criatura ensordecedora no puede oír y automáticamente falla cualquier prueba de habilidad que requiera oír."
   },
   "Exhaustion": {
@@ -16,7 +16,7 @@
     "description": "El agotamiento se mide en seis niveles. Nivel 1: Desventaja en las pruebas de habilidad. Nivel 2: Velocidad reducida a la mitad. Nivel 3: Desventaja en las tiradas de ataque y tiradas de salvación. Nivel 4: Punto de vida máximo reducido a la mitad. Nivel 5: Velocidad reducida a 0. Nivel 6: Muerte. Terminar un descanso prolongado reduce el nivel de agotamiento en 1, siempre que la criatura también haya ingerido algo de comida y bebida."
   },
   "Frightened": {
-    "name": "Atemorizado",
+    "name": "Asustado",
     "description": "Una criatura asustada tiene desventaja en las pruebas de característica y tiradas de ataque mientras la fuente de su miedo esté dentro de su línea de visión. La criatura no puede acercarse voluntariamente a la fuente de su miedo."
   },
   "Grappled": {
@@ -24,7 +24,7 @@
     "description": "La velocidad de una criatura apresada se vuelve 0 y no puede beneficiarse de ninguna bonificación a su velocidad. La condición termina si el luchador queda incapacitado. La condición también termina si un efecto elimina a la criatura apresada del alcance del luchador o del efecto de agarre."
   },
   "Incapacitated": {
-    "name": "incapacitado",
+    "name": "Incapacitado",
     "description": "Una criatura incapacitada no puede realizar acciones ni reacciones."
   },
   "Invisible": {
@@ -36,11 +36,11 @@
     "description": "Una criatura paralizada está incapacitada y no puede moverse ni hablar. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. Las tiradas de ataque contra la criatura tienen ventaja. Cualquier ataque que golpee a la criatura es un golpe crítico si el atacante está a {{distance:5ft}} de la criatura."
   },
   "Petrified": {
-    "name": "petrificado",
+    "name": "Petrificado",
     "description": "Una criatura petrificada se transforma, junto con cualquier objeto no mágico que lleve o lleve, en una sustancia sólida inanimada (normalmente piedra). Su peso aumenta diez veces y deja de envejecer. La criatura está incapacitada, no puede moverse ni hablar y desconoce su entorno. Las tiradas de ataque contra la criatura tienen ventaja. La criatura falla automáticamente las tiradas de salvación de Fuerza y ​​Destreza. La criatura tiene resistencia a todo daño. La criatura es inmune al veneno y a las enfermedades, aunque un veneno o una enfermedad que ya esté en su sistema queda suspendido, no neutralizado."
   },
   "Poisoned": {
-    "name": "envenenado",
+    "name": "Envenenado",
     "description": "Una criatura envenenada tiene desventaja en las tiradas de ataque y pruebas de habilidad."
   },
   "Prone": {

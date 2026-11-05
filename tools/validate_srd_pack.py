@@ -1008,8 +1008,10 @@ def validate_distance_markers(pack, errors):
 
 
 def by_feature_name(filename, rows):
-    """Nests class and subclass feature rows like their overlays:
-    class -> (subclass ->) feature name -> feature."""
+    """Shapes English rows like their overlays: equipment is flat by name, and
+    features nest as class -> (subclass ->) feature name -> feature."""
+    if filename == "equipment" and isinstance(rows, dict):
+        return [row for group in rows.values() if isinstance(group, list) for row in group]
     if filename not in ("class_features", "subclass_features") or not isinstance(rows, list):
         return rows
     nested = {}

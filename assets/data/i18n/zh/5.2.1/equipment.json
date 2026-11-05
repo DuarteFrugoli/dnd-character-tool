@@ -210,7 +210,7 @@
   },
   "Backpack": {
     "name": "背包",
-    "description": "可在1立方尺空间内容纳最多30磅，也可用作马鞍袋。"
+    "description": "可在{{volume:1cuft}}空间内容纳最多30磅，也可用作马鞍袋。"
   },
   "Ball Bearings": {
     "name": "金属滚珠",
@@ -218,11 +218,11 @@
   },
   "Barrel": {
     "name": "木桶",
-    "description": "可容纳最多40加仑液体或4立方尺干货。"
+    "description": "可容纳最多{{volume:40gal}}液体或{{volume:4cuft}}干货。"
   },
   "Basket": {
     "name": "篮子",
-    "description": "可在2立方尺空间内容纳最多40磅。"
+    "description": "可在{{volume:2cuft}}空间内容纳最多40磅。"
   },
   "Bedroll": {
     "name": "铺盖",
@@ -246,11 +246,11 @@
   },
   "Bottle, Glass": {
     "name": "玻璃瓶",
-    "description": "可容纳最多1.5品脱。"
+    "description": "可容纳最多{{volume:1.5pint}}。"
   },
   "Bucket": {
     "name": "水桶",
-    "description": "可容纳最多半立方尺。"
+    "description": "可容纳最多{{volume:0.5cuft}}。"
   },
   "Burglar's Pack": {
     "name": "盗贼背包",
@@ -278,11 +278,11 @@
   },
   "Chest": {
     "name": "箱子",
-    "description": "可容纳最多12立方尺物品。"
+    "description": "可容纳最多{{volume:12cuft}}物品。"
   },
   "Climber's Kit": {
     "name": "攀爬工具组",
-    "description": "包括鞋尖、手套、岩钉和安全带。以使用动作系住后，坠落距离和离锚点的移动距离均被限制为{{distance:25ft|short}}。"
+    "description": "包括鞋尖、手套、岩钉和安全带。以使用动作系住后，坠落距离被限制为{{distance:25ft|short}}，离锚点的移动距离被限制为{{distance:25ft|short}}。"
   },
   "Clothes, Fine": {
     "name": "华服",
@@ -338,7 +338,7 @@
   },
   "Flask": {
     "name": "扁瓶",
-    "description": "可容纳最多1品脱。"
+    "description": "可容纳最多{{volume:1pint}}。"
   },
   "Grappling Hook": {
     "name": "抓钩",
@@ -374,7 +374,7 @@
   },
   "Ink": {
     "name": "墨水",
-    "description": "一瓶1盎司的墨水足够书写约500页。"
+    "description": "一瓶{{volume:1floz}}的墨水足够书写约500页。"
   },
   "Ink Pen": {
     "name": "墨水笔",
@@ -382,7 +382,7 @@
   },
   "Jug": {
     "name": "水壶",
-    "description": "可容纳最多1加仑。"
+    "description": "可容纳最多{{volume:1gal}}。"
   },
   "Ladder": {
     "name": "梯子",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "香水",
-    "description": "4盎司一瓶。涂抹后1小时内，说服{{distance:5ft|short}}内态度冷淡的人形生物的魅力（游说）检定具有优势。"
+    "description": "{{volume:4floz}}一瓶。涂抹后1小时内，说服{{distance:5ft|short}}内态度冷淡的人形生物的魅力（游说）检定具有优势。"
   },
   "Poison, Basic": {
     "name": "基础毒药",
@@ -450,11 +450,11 @@
   },
   "Pot, Iron": {
     "name": "铁锅",
-    "description": "可容纳最多1加仑。"
+    "description": "可容纳最多{{volume:1gal}}。"
   },
   "Pouch": {
     "name": "小袋",
-    "description": "可在五分之一立方尺内容纳最多6磅。"
+    "description": "可在{{volume:0.2cuft}}内容纳最多6磅。"
   },
   "Priest's Pack": {
     "name": "祭司背包",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "麻袋",
-    "description": "可在1立方尺内容纳最多30磅。"
+    "description": "可在{{volume:1cuft}}内容纳最多30磅。"
   },
   "Scholar's Pack": {
     "name": "学者背包",
@@ -530,7 +530,7 @@
   },
   "Waterskin": {
     "name": "水囊",
-    "description": "可容纳最多4品脱水；所列重量为装满时。"
+    "description": "可容纳最多{{volume:4pint}}水；所列重量为装满时。"
   },
   "weaponMasteries": {
     "cleave": {

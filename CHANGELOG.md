@@ -34,13 +34,16 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - **Criacao 2024 mais informativa**: as etapas de classe, especie e antecedente mostram dado de vida, salvaguardas, atributo principal e de conjuracao, pericias, tamanho, tracos, aumentos de atributo, ferramentas e o talento de Origem com sua descricao; classe e especie abrem a mesma ficha de detalhes da criacao 2014, com caracteristicas por nivel, subclasses, tracos e linhagens. A subclasse pode ser escolhida ja na criacao, como na 2014: ela vale a partir do nivel 3, e no level up desse nivel o app pergunta se o jogador quer mante-la ou escolher outra (o mesmo vale para a 2014); converter uma ficha 2014 sugere a subclasse 2024 correspondente.
-- **Texto oficial das magias**: as descricoes das magias do SRD 5.1 e do SRD 5.2.1 agora trazem o texto oficial completo, com tabelas e blocos de estatisticas, em vez de resumos, nos onze idiomas.
+- **Texto oficial das magias**: as descricoes das magias do SRD 5.1 e do SRD 5.2.1 agora trazem o texto oficial completo, com tabelas e blocos de estatisticas, em vez de resumos, nos onze idiomas. As 17 magias do SRD 5.1 que faltavam (como Aid, Blink e Spike Growth) entraram no catalogo 2014, nas listas de classe e subclasse.
 - **Reinicio de niveis 2014**: desfaz o que as escolhas removidas concediam, remove proficiencias de multiclasse e so zera o XP com o rastreio ligado; com historico completo, tambem desfaz aumentos de atributo e troca as pericias da classe.
 - **Descanso curto**: e possivel descansar sem gastar Dados de Vida, por exemplo para recuperar Pact Magic.
 - **Escolhas editadas na aba de habilidades**: alterar uma escolha agora adiciona e remove o que ela concede.
 - **Novidades no app**: anuncio da 3.0.0.
 
 ### Fixed
+- **Medidas no equipamento**: capacidades como a da mochila e do barril agora seguem a unidade escolhida em todos os idiomas, e a Tocha em japones mostra a distancia certa; o validador passou a comparar o equipamento com o ingles.
+- **Nomes de pericias, condicoes e classes**: o SRD 5.1 usa os mesmos nomes revisados do 5.2.1 nas pericias e nas condicoes (exceto Encantado e Ensurdecido em portugues); classes que dividiam um nome em alemao, frances e coreano e Percepcao e Intuicao em chines agora tem nomes proprios.
+- **Alemao e japones do SRD 5.1**: textos de regras e nomes de habilidades revisados; o alemao trata o jogador por "du", tambem na interface, e o japones saiu do tom de traducao automatica.
 - **Termos unificados nas traducoes**: portugues usa "Caido" (como o Livro do Jogador oficial) em vez de "Prostrado"; coreano usa "히트 포인트" em todo o conteudo; turco separa CA ("ZS") de CD ("ZD") e usa "TD" para nivel de desafio; italiano chama o ataque Ram de "Testata", liberando "Carica" para o traco Charge.
 - **Distancias em metros em frances, italiano e alemao**: magias, itens, caracteristicas e feras passam a usar metros, como os livros oficiais desses idiomas (1,5 m por quadrado). Espanhol continua em pes, como o material oficial em espanhol.
 - **Erros do SRD nas feras**: corrigidos o ataque do Urso-Negro e do Urso-Pardo de 2014, a Furtividade da Ra Gigante de 2024 e um erro de digitacao do Cavalo-Marinho Gigante; o importador documenta cada correcao.

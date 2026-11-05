@@ -419,7 +419,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get charListEmptyHint =>
-      'Tippen Sie auf +, um Ihren ersten Charakter zu erstellen';
+      'Tippe auf +, um deinen ersten Charakter zu erstellen';
 
   @override
   String get whatsNewTitle => 'Neuigkeiten';
@@ -431,21 +431,21 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get whatsNewIntro =>
-      'Ein paar nützliche Verbesserungen sind bereit für Ihre nächste Runde.';
+      'Ein paar nützliche Neuerungen stehen für deine nächste Spielrunde bereit.';
 
   @override
   String get whatsNewContextualRollsTitle => 'Kontextwürfe';
 
   @override
   String get whatsNewContextualRollsBody =>
-      'Würfeln Sie Attribute, Fertigkeiten, Rettungswürfe, Waffen und einfache Zauber direkt vom Charakterbogen.';
+      'Würfle Attribute, Fertigkeiten, Rettungswürfe, Waffen und einfache Zauber direkt vom Charakterbogen aus.';
 
   @override
   String get whatsNewCriticalsTitle => 'Optionen für kritische Treffer';
 
   @override
   String get whatsNewCriticalsBody =>
-      'Wählen Sie, wie kritischer Schaden berechnet wird, mit Abfragen für Vorteil und Nachteil, wenn Sie sie brauchen.';
+      'Wähle, wie kritischer Schaden berechnet wird, mit Abfragen für Vorteil und Nachteil, wenn du sie brauchst.';
 
   @override
   String get whatsNewConfirmationsTitle => 'Klarere Bestätigungen';
@@ -619,11 +619,11 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get charListImportError =>
-      'Unerwarteter Fehler beim Importieren. Bitte versuchen Sie es erneut.';
+      'Unerwarteter Fehler beim Importieren. Bitte versuche es erneut.';
 
   @override
   String get charListDuplicateError =>
-      'Charakter konnte nicht dupliziert werden. Bitte versuchen Sie es erneut.';
+      'Charakter konnte nicht dupliziert werden. Bitte versuche es erneut.';
 
   @override
   String get importErrorInvalidJson => 'Das eingefügte JSON ist nicht gültig.';
@@ -696,7 +696,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String deleteDialogContent(String name) {
-    return 'Sind Sie sicher, dass Sie $name löschen möchten? Dies kann nicht rückgängig gemacht werden.';
+    return 'Möchtest du $name wirklich löschen? Das kann nicht rückgängig gemacht werden.';
   }
 
   @override
@@ -709,7 +709,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get dialogContinue => 'Weitermachen';
 
   @override
-  String get dialogKeepEditing => 'Bearbeiten Sie weiter';
+  String get dialogKeepEditing => 'Weiter bearbeiten';
 
   @override
   String get dialogRemove => 'Entfernen';
@@ -733,7 +733,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get settingsLight => 'Licht';
 
   @override
-  String get settingsChooseTheme => 'Wählen Sie ein Thema';
+  String get settingsChooseTheme => 'Wähle ein Thema';
 
   @override
   String get settingsSectionLanguage => 'Sprache';
@@ -742,7 +742,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get settingsAppLanguage => 'App-Sprache';
 
   @override
-  String get settingsChooseLanguage => 'Wählen Sie eine Sprache';
+  String get settingsChooseLanguage => 'Wähle eine Sprache';
 
   @override
   String get settingsSystemDefault => 'Systemstandard';
@@ -759,28 +759,28 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get modeGuidedSubtitle =>
-      'Schritt-für-Schritt-Assistent. Wählen Sie nacheinander Klasse, Rasse, Hintergrund, Fähigkeiten und Attribute aus. Empfohlen für neue Spieler.';
+      'Schritt-für-Schritt-Assistent. Wähle nacheinander Klasse, Volk, Hintergrund, Fertigkeiten und Attribute aus. Empfohlen für neue Spieler.';
 
   @override
   String get modeManualTitle => 'Handbuch';
 
   @override
   String get modeManualSubtitle =>
-      'Füllen Sie alles selbst aus. Alle Felder sind frei und es werden keine Werte für Sie berechnet. Am besten für erfahrene Spieler.';
+      'Fülle alles selbst aus. Alle Felder sind frei und es werden keine Werte für dich berechnet. Am besten für erfahrene Spieler.';
 
   @override
   String get modeRandomTitle => 'Zufällig';
 
   @override
   String get modeRandomSubtitle =>
-      'Alles wird für Sie gewürfelt – Rasse, Klasse, Hintergrund und Attribute. Ideal für eine Herausforderung oder One-Shots.';
+      'Alles wird für dich ausgewürfelt: Volk, Klasse, Hintergrund und Attribute. Ideal als Herausforderung oder für One-Shots.';
 
   @override
   String get modeSemiRandomTitle => 'Halbzufällig';
 
   @override
   String get modeSemiRandomSubtitle =>
-      'Sie treffen die wichtigen Entscheidungen; alles andere ist gerollt. Gut, wenn Sie ein Konzept haben, aber Überraschungen wünschen.';
+      'Du triffst die wichtigen Entscheidungen; alles andere wird ausgewürfelt. Gut, wenn du ein Konzept hast, aber Überraschungen möchtest.';
 
   @override
   String get modeComingSoon => 'Bald';
@@ -827,7 +827,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get detailChangesWillBeDiscarded =>
-      'Änderungen werden verworfen. Zum Speichern nutzen Sie den ✓-Button oben rechts.';
+      'Änderungen werden verworfen. Zum Speichern nutze den ✓-Button oben rechts.';
 
   @override
   String get detailLeaveAndDiscard => 'Verlassen und entsorgen';
@@ -1069,7 +1069,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get longRestContent =>
-      'HP auf Maximum wiederherstellen und alle Zauberslots wiederherstellen?';
+      'TP auf Maximum wiederherstellen und alle Zauberplätze zurückerhalten?';
 
   @override
   String get longRestButton => 'Ausruhen';
@@ -1337,7 +1337,7 @@ class AppLocalizationsDe extends AppLocalizations {
       'Deine aktuelle Klasse erfüllt ihre Multiklassen-Voraussetzung nicht.';
 
   @override
-  String get levelUpConfirm => 'Level Up bestätigen';
+  String get levelUpConfirm => 'Stufenaufstieg bestätigen';
 
   @override
   String get levelUpCancel => 'Abbrechen';
@@ -1442,7 +1442,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get levelUpSpellFreeLocked =>
-      'Schließen Sie zuerst die Wahl aus den vorgeschriebenen Schulen ab.';
+      'Schließe zuerst die Wahl aus den vorgeschriebenen Schulen ab.';
 
   @override
   String levelUpCantripsToLearn(int n) {
@@ -1641,10 +1641,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get labelHair => 'Haare';
 
   @override
-  String get labelMaxHP => 'Maximale HP';
+  String get labelMaxHP => 'Maximale TP';
 
   @override
-  String get labelTempHP => 'Temp. HP';
+  String get labelTempHP => 'Temp. TP';
 
   @override
   String get labelAmount => 'Menge';
@@ -1662,19 +1662,19 @@ class AppLocalizationsDe extends AppLocalizations {
   String get detailNone => 'Keiner';
 
   @override
-  String get tempHpDialogTitle => 'Fügen Sie temporäre HP hinzu';
+  String get tempHpDialogTitle => 'Temporäre Trefferpunkte hinzufügen';
 
   @override
-  String get tempHpDialogTitleReplace => 'Temporäre HP';
+  String get tempHpDialogTitleReplace => 'Temporäre TP';
 
   @override
   String tempHpCurrent(int n) {
-    return 'Aktuell: + $n temp HP';
+    return 'Aktuell: +$n temp. TP';
   }
 
   @override
   String get tempHpNoStack =>
-      'Temporäre HP werden nicht gestapelt – nur höhere Werte ersetzen die aktuellen.';
+      'Temporäre TP sind nicht kumulativ – nur höhere Werte ersetzen die aktuellen.';
 
   @override
   String get tempHpReplace => 'Ersetzen';
@@ -1686,36 +1686,36 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String subclassConfirmTitle(String feature) {
-    return 'Bestätigen Sie $feature';
+    return 'Bestätige: $feature';
   }
 
   @override
   String subclassChooseTitle(String feature) {
-    return 'Wählen Sie $feature';
+    return 'Wähle: $feature';
   }
 
   @override
   String subclassConfirmBody(int level, String feature) {
-    return 'Sie haben Level $level erreicht. Bestätigen oder ändern Sie Ihr $feature.';
+    return 'Du hast Stufe $level erreicht. Bestätige oder ändere deine Wahl: $feature.';
   }
 
   @override
   String subclassChooseBody(int level, String feature) {
-    return 'Du hast Level $level erreicht! Wählen Sie Ihr $feature.';
+    return 'Du hast Stufe $level erreicht! Triff deine Wahl: $feature.';
   }
 
   @override
-  String get subclassKeepCurrent => 'Bleiben Sie auf dem Laufenden';
+  String get subclassKeepCurrent => 'Aktuelle Wahl behalten';
 
   @override
   String get subclassChangeTitle => 'Unterklasse ändern';
 
   @override
   String get subclassChangeWarning =>
-      'Warnung: Von der vorherigen Unterklasse gewährte Zauber und Fertigkeiten werden nicht automatisch entfernt. Sie müssen sie manuell anpassen.';
+      'Warnung: Von der vorherigen Unterklasse gewährte Zauber und Übungen werden nicht automatisch entfernt. Du musst sie manuell anpassen.';
 
   @override
-  String get backgroundChooseTitle => 'Wählen Sie Hintergrund';
+  String get backgroundChooseTitle => 'Wähle einen Hintergrund';
 
   @override
   String get featuresTooltipAdd => 'Funktion hinzufügen';
@@ -1744,7 +1744,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get featuresTabClass => 'Klasse';
 
   @override
-  String get featuresTabRacial => 'Rasse';
+  String get featuresTabRacial => 'Volk';
 
   @override
   String get featuresTabCustom => 'Benutzerd.';
@@ -1795,7 +1795,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String spellsRemoveContent(String name) {
-    return '„$name“ aus Ihrer Zauberliste entfernen?';
+    return '„$name“ aus deiner Zauberliste entfernen?';
   }
 
   @override
@@ -1931,7 +1931,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get inventoryTooltipAdd => 'Artikel hinzufügen';
+  String get inventoryTooltipAdd => 'Gegenstand hinzufügen';
 
   @override
   String get inventoryTooltipRemove => 'Entfernen';
@@ -1967,7 +1967,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get inventoryContainerEmpty => 'Leer';
 
   @override
-  String get inventoryRemoveTitle => 'Artikel entfernen?';
+  String get inventoryRemoveTitle => 'Gegenstand entfernen?';
 
   @override
   String inventoryRemoveContent(String name) {
@@ -2010,7 +2010,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get inventoryAddCustomItem => 'Benutzerdefiniertes Element hinzufügen';
 
   @override
-  String get inventoryAddItem => 'Artikel hinzufügen';
+  String get inventoryAddItem => 'Gegenstand hinzufügen';
 
   @override
   String get inventoryLabelItemName => 'Name *';
@@ -2268,7 +2268,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get stepChooseMethod => 'Wählen Sie Ihre Methode:';
+  String get stepChooseMethod => 'Wähle deine Methode:';
 
   @override
   String get stepStandardArray => 'Standard-Array';
@@ -2280,13 +2280,13 @@ class AppLocalizationsDe extends AppLocalizations {
   String get stepRoll4d6 => 'Wirf 4W6';
 
   @override
-  String get stepDistributeRacialBonuses => 'Verteilen Sie Rassenboni frei';
+  String get stepDistributeRacialBonuses => 'Verteile die Volksboni frei';
 
   @override
-  String get stepAssignRolls => 'Weisen Sie jede Rolle einem Attribut zu:';
+  String get stepAssignRolls => 'Weise jeden Wurf einem Attribut zu:';
 
   @override
-  String get stepAssignValues => 'Weisen Sie jeden Wert einem Attribut zu:';
+  String get stepAssignValues => 'Weise jeden Wert einem Attribut zu:';
 
   @override
   String get stepPointsRemaining => 'Verbleibende Punkte:';
@@ -2297,7 +2297,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get stepChooseSubrace => 'Wählen Sie eine Unterrasse:';
+  String get stepChooseSubrace => 'Wähle eine Unterrasse:';
 
   @override
   String get stepGrantedByBackground => 'Aufgrund des Hintergrunds gewährt:';
@@ -2308,10 +2308,10 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get stepChooseOne => 'Wählen Sie eine aus';
+  String get stepChooseOne => 'Wähle eine Option';
 
   @override
-  String get stepSelectTool => 'Wählen Sie ein Werkzeug aus…';
+  String get stepSelectTool => 'Wähle ein Werkzeug aus…';
 
   @override
   String get statAC => 'RK';
@@ -2397,10 +2397,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get conditionsRemove => 'Zustand entfernen';
 
   @override
-  String get tooltipAddTempHp => 'Fügen Sie temporäre HP hinzu';
+  String get tooltipAddTempHp => 'Temporäre TP hinzufügen';
 
   @override
-  String get tooltipChangeTempHp => 'Temperatur-HP ändern';
+  String get tooltipChangeTempHp => 'Temporäre TP ändern';
 
   @override
   String get abilityStr => 'STR';
@@ -2422,7 +2422,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String featuresSectionRacialTraits(String name) {
-    return 'Rassenmerkmale – $name';
+    return 'Volksmerkmale – $name';
   }
 
   @override
@@ -2479,7 +2479,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get spellsEmpty =>
-      'Noch keine Zauber hinzugefügt.\nTippen Sie auf +, um Zaubersprüche zu durchsuchen.';
+      'Noch keine Zauber hinzugefügt.\nTippe auf +, um Zauber zu durchsuchen.';
 
   @override
   String spellsSlotLevel(int level) {
@@ -2492,7 +2492,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get spellsInnateHeader => 'Rassenzauber';
+  String get spellsInnateHeader => 'Volkszauber';
 
   @override
   String get spellsDisableTitle => 'Zauber deaktivieren?';
@@ -2638,7 +2638,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get inventoryEmpty =>
-      'Noch keine Artikel. Tippen Sie zum Hinzufügen auf +.';
+      'Noch keine Gegenstände. Tippe zum Hinzufügen auf +.';
 
   @override
   String get inventoryAmmunition => 'Munition';
@@ -2860,7 +2860,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get reviewRowClassChoices => 'Klassenauswahl';
 
   @override
-  String get reviewRowMaxHp => 'Maximale HP';
+  String get reviewRowMaxHp => 'Maximale TP';
 
   @override
   String get reviewRowAcUnarmored => 'RK (ohne Rüstung)';
@@ -2871,7 +2871,7 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get reviewRowProficiencyBonus => 'Kompetenzbonus';
+  String get reviewRowProficiencyBonus => 'Übungsbonus';
 
   @override
   String get reviewStartingGold => 'Startgold';
@@ -2887,33 +2887,32 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get reviewUncheckHint =>
-      'Deaktivieren Sie die Artikel, die Sie nicht zu Ihrem Inventar hinzufügen möchten.';
+      'Entferne das Häkchen bei Gegenständen, die du nicht in dein Inventar aufnehmen möchtest.';
 
   @override
   String get reviewEquipmentChoices => 'Ausrüstungsauswahl';
 
   @override
   String get reviewEquipmentChoicesHint =>
-      'Wählen Sie den spezifischen Artikel für jeden Slot aus.';
+      'Wähle für jeden Platz den konkreten Gegenstand aus.';
 
   @override
   String get reviewToolProficiencies => 'Werkzeugkenntnisse';
 
   @override
-  String get reviewChooseToolProficiency =>
-      'Wählen Sie Ihre Werkzeugkompetenz:';
+  String get reviewChooseToolProficiency => 'Wähle deine Werkzeugübung:';
 
   @override
   String reviewChooseLanguages(int count) {
-    return 'Wählen Sie die $count-Sprache(n), die Ihrer Rasse oder Ihrem Hintergrund entspricht.';
+    return 'Wähle $count Sprache(n), die dir dein Volk oder dein Hintergrund gewährt.';
   }
 
   @override
-  String get reviewChooseOne => 'Wählen Sie eines aus:';
+  String get reviewChooseOne => 'Wähle eine Option:';
 
   @override
   String get stepTashaRule =>
-      'Tashas optionale Regel: Weisen Sie jedem Attribut ASI-Punkte zu';
+      'Tashas optionale Regel: Verteile die Attributserhöhungen auf beliebige Attribute';
 
   @override
   String get stepRollDice => 'Würfeln';
@@ -2929,10 +2928,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get stepPrimaryAbilities => 'Hauptfähigkeiten:';
 
   @override
-  String get stepNameTitle => 'Geben Sie Ihrem Charakter einen Namen.';
+  String get stepNameTitle => 'Gib deinem Charakter einen Namen.';
 
   @override
-  String get stepNameHint => 'Sie können dies später jederzeit ändern.';
+  String get stepNameHint => 'Du kannst das später jederzeit ändern.';
 
   @override
   String get stepNameCharLabel => 'Charaktername';
@@ -2954,7 +2953,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String stepChooseSubclassPrompt(String feature, int level) {
-    return 'Wählen Sie ein $feature (Lv $level):';
+    return '$feature (Stufe $level) – wähle eine Option:';
   }
 
   @override
@@ -2970,7 +2969,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String stepChooseSkillsHint(int count) {
-    return 'Wählen Sie $count Fertigkeiten aus Ihrer Klassenliste aus.';
+    return 'Wähle $count Fertigkeiten aus deiner Klassenliste aus.';
   }
 
   @override
@@ -2993,17 +2992,17 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String stepFreeAsiRemaining(int remaining) {
-    return 'Verteilen Sie die Volksboni frei (verbleibend: $remaining):';
+    return 'Verteile die Volksboni frei (verbleibend: $remaining):';
   }
 
   @override
   String stepFreePicksRemaining(int total, int remaining) {
-    return 'Weisen Sie $total Attributswerten je +1 zu (verbleibend: $remaining):';
+    return 'Freier Volksbonus: Gib $total Attributen je +1 (verbleibend: $remaining):';
   }
 
   @override
   String get stepFreePicksNoStack =>
-      'Wählen Sie keine Attributswerte, die bereits einen Volksbonus erhalten.';
+      'Attribute, die bereits einen Volksbonus erhalten, können nicht gewählt werden.';
 
   @override
   String reviewClassEquipmentTitle(String name) {
@@ -3214,7 +3213,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String xpLevelUpNowMessage(int level) {
-    return 'Sie haben genug EP für Stufe $level. Möchten Sie jetzt aufsteigen?';
+    return 'Du hast genug EP für Stufe $level. Jetzt aufsteigen?';
   }
 
   @override

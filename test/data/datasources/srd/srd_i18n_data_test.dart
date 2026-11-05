@@ -215,6 +215,43 @@ void main() {
         }
       });
 
+      test('$locale gives skills and classes one name each', () {
+        for (final pack in ['5.1', '5.2.1']) {
+          for (final fileName in ['skills', 'classes']) {
+            final localized = _readJsonMap(
+              'assets/data/i18n/$locale/$pack/$fileName.json',
+            );
+            final byName = <String, List<String>>{};
+            for (final entry in localized.entries) {
+              final name = _asMap(entry.value)?['name'];
+              if (name is String) (byName[name] ??= []).add(entry.key);
+            }
+            byName.removeWhere((_, keys) => keys.length < 2);
+            expect(
+              byName,
+              isEmpty,
+              reason: 'assets/data/i18n/$locale/$pack/$fileName.json',
+            );
+          }
+        }
+      });
+
+      test('$locale names skills the same way in both editions', () {
+        final older = _readJsonMap('assets/data/i18n/$locale/5.1/skills.json');
+        final newer = {
+          for (final entry
+              in _readJsonMap('assets/data/i18n/$locale/5.2.1/skills.json').entries)
+            entry.key.toLowerCase(): _asMap(entry.value)?['name'],
+        };
+        final different = [
+          for (final entry in older.entries)
+            if (newer.containsKey(entry.key.toLowerCase()) &&
+                newer[entry.key.toLowerCase()] != _asMap(entry.value)?['name'])
+              entry.key,
+        ];
+        expect(different, isEmpty, reason: locale);
+      });
+
       test('$locale has descriptions for SRD spells and equipment', () {
         for (final fileName in ['equipment', 'spells']) {
           final srd = _readJson('assets/data/srd/5.1/$fileName.json');
@@ -272,5 +309,44 @@ void main() {
         );
       });
     }
+
+    Iterable<String> strings(Object? node) sync* {
+      if (node is String) {
+        yield node;
+      } else if (node is Map) {
+        for (final value in node.values) {
+          yield* strings(value);
+        }
+      } else if (node is List) {
+        for (final value in node) {
+          yield* strings(value);
+        }
+      }
+    }
+
+    Iterable<File> overlays(String locale) => Directory(
+      'assets/data/i18n/$locale/5.1',
+    ).listSync().whereType<File>().where((file) => file.path.endsWith('.json'));
+
+    test('German rules text addresses the player with du', () {
+      // A capitalized Sie or Ihr inside a sentence can only be the formal you.
+      final formal = RegExp(r'(?<![.!?:\n] )(?<!^)\b(Sie|Ihre?[nmrs]?|Ihnen)\b');
+      final found = [
+        for (final file in overlays('de'))
+          for (final text in strings(jsonDecode(file.readAsStringSync())))
+            if (formal.hasMatch(text)) text,
+      ];
+      expect(found, isEmpty);
+    });
+
+    test('Japanese rules text keeps the plain style of the reviewed texts', () {
+      final old = RegExp(r'あなた|(ます|ません|です)(。|$)');
+      final found = [
+        for (final file in overlays('ja'))
+          for (final text in strings(jsonDecode(file.readAsStringSync())))
+            if (old.hasMatch(text)) text,
+      ];
+      expect(found, isEmpty);
+    });
   });
 }

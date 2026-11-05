@@ -210,7 +210,7 @@
   },
   "Backpack": {
     "name": "Sırt Çantası",
-    "description": "1 fit küpte 30 libreye kadar taşır; heybe olarak da kullanılabilir."
+    "description": "{{volume:1cuft}} hacimde 30 libreye kadar taşır; heybe olarak da kullanılabilir."
   },
   "Ball Bearings": {
     "name": "Metal Bilyeler",
@@ -218,11 +218,11 @@
   },
   "Barrel": {
     "name": "Fıçı",
-    "description": "40 galona kadar sıvı veya 4 fit küp kuru malzeme alır."
+    "description": "En fazla {{volume:40gal}} sıvı veya {{volume:4cuft}} kuru malzeme alır."
   },
   "Basket": {
     "name": "Sepet",
-    "description": "2 fit küpte 40 libreye kadar taşır."
+    "description": "{{volume:2cuft}} hacimde 40 libreye kadar taşır."
   },
   "Bedroll": {
     "name": "Uyku Tulumu",
@@ -246,11 +246,11 @@
   },
   "Bottle, Glass": {
     "name": "Cam Şişe",
-    "description": "1,5 pintaya kadar alır."
+    "description": "En fazla {{volume:1.5pint}} alır."
   },
   "Bucket": {
     "name": "Kova",
-    "description": "Yarım fit küpe kadar alır."
+    "description": "En fazla {{volume:0.5cuft}} alır."
   },
   "Burglar's Pack": {
     "name": "Hırsız Çantası",
@@ -278,7 +278,7 @@
   },
   "Chest": {
     "name": "Sandık",
-    "description": "12 fit küpe kadar alır."
+    "description": "En fazla {{volume:12cuft}} alır."
   },
   "Climber's Kit": {
     "name": "Tırmanış Takımı",
@@ -338,7 +338,7 @@
   },
   "Flask": {
     "name": "Matara",
-    "description": "1 pintaya kadar alır."
+    "description": "En fazla {{volume:1pint}} alır."
   },
   "Grappling Hook": {
     "name": "Kancalı Halat",
@@ -374,7 +374,7 @@
   },
   "Ink": {
     "name": "Mürekkep",
-    "description": "1 onsluk şişe yaklaşık 500 sayfaya yetecek mürekkep içerir."
+    "description": "{{volume:1floz|lik}} şişe yaklaşık 500 sayfaya yetecek mürekkep içerir."
   },
   "Ink Pen": {
     "name": "Mürekkep Kalemi",
@@ -382,7 +382,7 @@
   },
   "Jug": {
     "name": "Sürahi",
-    "description": "1 galona kadar alır."
+    "description": "En fazla {{volume:1gal}} alır."
   },
   "Ladder": {
     "name": "Merdiven",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Parfüm",
-    "description": "4 onsluk şişe. Sürdükten sonra 1 saat boyunca {{distance:5ft}} içindeki İlgisiz bir İnsansıyı etkilemeye yönelik Karizma (İkna) kontrollerinde Avantaj kazan."
+    "description": "{{volume:4floz|lik}} şişe. Sürdükten sonra 1 saat boyunca {{distance:5ft}} içindeki İlgisiz bir İnsansıyı etkilemeye yönelik Karizma (İkna) kontrollerinde Avantaj kazan."
   },
   "Poison, Basic": {
     "name": "Temel Zehir",
@@ -450,11 +450,11 @@
   },
   "Pot, Iron": {
     "name": "Demir Tencere",
-    "description": "1 galona kadar alır."
+    "description": "En fazla {{volume:1gal}} alır."
   },
   "Pouch": {
     "name": "Kese",
-    "description": "Fit küpün beşte birinde 6 libreye kadar taşır."
+    "description": "{{volume:0.2cuft}} hacimde 6 libreye kadar taşır."
   },
   "Priest's Pack": {
     "name": "Rahip Çantası",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "Çuval",
-    "description": "1 fit küpte 30 libreye kadar taşır."
+    "description": "{{volume:1cuft}} hacimde 30 libreye kadar taşır."
   },
   "Scholar's Pack": {
     "name": "Bilgin Çantası",
@@ -530,7 +530,7 @@
   },
   "Waterskin": {
     "name": "Su Tulumu",
-    "description": "4 pinta suya kadar alır; verilen ağırlık doluyken geçerlidir."
+    "description": "En fazla {{volume:4pint}} su alır; verilen ağırlık doluyken geçerlidir."
   },
   "weaponMasteries": {
     "cleave": {

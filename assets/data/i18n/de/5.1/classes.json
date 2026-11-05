@@ -149,7 +149,7 @@
   },
   "Druid": {
     "name": "Druide",
-    "subclassFeatureName": "Druidenkreis",
+    "subclassFeatureName": "Druidenzirkel",
     "weaponProficiencies": [
       "Knüppel",
       "Dolche",
@@ -194,7 +194,7 @@
   },
   "Fighter": {
     "name": "Kämpfer",
-    "subclassFeatureName": "Martialischer Archetyp",
+    "subclassFeatureName": "Kampfarchetyp",
     "weaponProficiencies": [
       "einfach",
       "kriegerisch"
@@ -335,8 +335,8 @@
     }
   },
   "Ranger": {
-    "name": "Ranger",
-    "subclassFeatureName": "Ranger-Archetyp",
+    "name": "Waldläufer",
+    "subclassFeatureName": "Waldläufer-Archetyp",
     "weaponProficiencies": [
       "einfach",
       "kriegerisch"
@@ -384,7 +384,7 @@
   },
   "Rogue": {
     "name": "Schurke",
-    "subclassFeatureName": "Schelmischer Archetyp",
+    "subclassFeatureName": "Schurkenarchetyp",
     "weaponProficiencies": [
       "einfache Waffen",
       "Handarmbrüste",
@@ -439,7 +439,7 @@
   },
   "Sorcerer": {
     "name": "Zauberer",
-    "subclassFeatureName": "Zauberhafter Ursprung",
+    "subclassFeatureName": "Zauberischer Ursprung",
     "weaponProficiencies": [
       "Dolche",
       "Darts",
@@ -542,7 +542,7 @@
     }
   },
   "Wizard": {
-    "name": "Zauberer",
+    "name": "Magier",
     "subclassFeatureName": "Arkane Tradition",
     "weaponProficiencies": [
       "Dolche",

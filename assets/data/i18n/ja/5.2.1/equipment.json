@@ -210,7 +210,7 @@
   },
   "Backpack": {
     "name": "背負い袋",
-    "description": "1立方フィートの空間に最大30ポンド収納できる。鞍袋にもなる。"
+    "description": "{{volume:1cuft}}の空間に最大30ポンド収納できる。鞍袋にもなる。"
   },
   "Ball Bearings": {
     "name": "金属球",
@@ -218,11 +218,11 @@
   },
   "Barrel": {
     "name": "樽",
-    "description": "液体を最大40ガロン、乾いた物を最大4立方フィート収納。"
+    "description": "液体を最大{{volume:40gal}}、乾いた物を最大{{volume:4cuft}}収納。"
   },
   "Basket": {
     "name": "籠",
-    "description": "2立方フィートの空間に最大40ポンド収納。"
+    "description": "{{volume:2cuft}}の空間に最大40ポンド収納。"
   },
   "Bedroll": {
     "name": "寝袋",
@@ -246,11 +246,11 @@
   },
   "Bottle, Glass": {
     "name": "ガラス瓶",
-    "description": "最大1.5パイント収納。"
+    "description": "最大{{volume:1.5pint}}収納。"
   },
   "Bucket": {
     "name": "バケツ",
-    "description": "最大0.5立方フィート収納。"
+    "description": "最大{{volume:0.5cuft}}収納。"
   },
   "Burglar's Pack": {
     "name": "盗賊の装備一式",
@@ -278,7 +278,7 @@
   },
   "Chest": {
     "name": "箱",
-    "description": "最大12立方フィート収納。"
+    "description": "最大{{volume:12cuft}}収納。"
   },
   "Climber's Kit": {
     "name": "登攀用具",
@@ -338,7 +338,7 @@
   },
   "Flask": {
     "name": "フラスコ",
-    "description": "最大1パイント収納。"
+    "description": "最大{{volume:1pint}}収納。"
   },
   "Grappling Hook": {
     "name": "かぎ爪",
@@ -374,7 +374,7 @@
   },
   "Ink": {
     "name": "インク",
-    "description": "1オンス瓶で約500ページ分のインク。"
+    "description": "{{volume:1floz}}瓶で約500ページ分のインク。"
   },
   "Ink Pen": {
     "name": "ペン",
@@ -382,7 +382,7 @@
   },
   "Jug": {
     "name": "水差し",
-    "description": "最大1ガロン収納。"
+    "description": "最大{{volume:1gal}}収納。"
   },
   "Ladder": {
     "name": "梯子",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "香水",
-    "description": "4オンス瓶。塗布後1時間、{{distance:5ft}}以内の無関心な人型生物を説得する【魅力】〈説得〉判定に有利を得る。"
+    "description": "{{volume:4floz}}瓶。塗布後1時間、{{distance:5ft}}以内の無関心な人型生物を説得する【魅力】〈説得〉判定に有利を得る。"
   },
   "Poison, Basic": {
     "name": "基本毒",
@@ -450,11 +450,11 @@
   },
   "Pot, Iron": {
     "name": "鉄鍋",
-    "description": "最大1ガロン収納。"
+    "description": "最大{{volume:1gal}}収納。"
   },
   "Pouch": {
     "name": "小袋",
-    "description": "5分の1立方フィートに最大6ポンド収納。"
+    "description": "{{volume:0.2cuft}}に最大6ポンド収納。"
   },
   "Priest's Pack": {
     "name": "司祭の装備一式",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "袋",
-    "description": "1立方フィートに最大30ポンド収納。"
+    "description": "{{volume:1cuft}}に最大30ポンド収納。"
   },
   "Scholar's Pack": {
     "name": "学者の装備一式",
@@ -530,7 +530,7 @@
   },
   "Waterskin": {
     "name": "水袋",
-    "description": "水を最大4パイント収納。記載重量は満水時。"
+    "description": "水を最大{{volume:4pint}}収納。記載重量は満水時。"
   },
   "weaponMasteries": {
     "cleave": {

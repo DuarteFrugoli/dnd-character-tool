@@ -155,7 +155,7 @@
   },
   "Acid (vial)": {
     "name": "Säure (Fläschchen)",
-    "description": "Als Aktion können Sie den Inhalt dieser Phiole auf eine Kreatur im Umkreis von {{distance:5ft|short}} spritzen oder sie bis zu {{distance:20ft|short}} weit werfen, sodass sie beim Aufprall zerbricht. Bei einem Treffer erleidet eine Kreatur 2W6 Säureschaden."
+    "description": "Als Aktion kannst du den Inhalt dieser Phiole auf eine Kreatur im Umkreis von {{distance:5ft|short}} spritzen oder die Phiole bis zu {{distance:20ft|short}} weit werfen, sodass sie beim Aufprall zerbricht. Bei einem Treffer erleidet eine Kreatur 2W6 Säureschaden."
   },
   "Alchemist's Fire": {
     "name": "Feuer des Alchemisten",
@@ -183,7 +183,7 @@
   },
   "Backpack": {
     "name": "Rucksack",
-    "description": "Hält 30 Pfund / 1 Kubikfuß."
+    "description": "Hält 30 Pfund / {{volume:1cuft}}."
   },
   "Burglar's Pack": {
     "name": "Einbrecherpaket",
@@ -215,15 +215,15 @@
   },
   "Ball Bearings (bag of 1000)": {
     "name": "Kugeln (Beutel mit 1000 Stück)",
-    "description": "Streuen Sie als Aktion diese kleinen Metallkugeln. Den Kreaturen muss ein Geschicklichkeitsrettungswurf von DC 10 gelingen, sonst fallen sie hin."
+    "description": "Verstreue als Aktion diese kleinen Metallkugeln. Kreaturen muss ein Geschicklichkeitsrettungswurf mit SG 10 gelingen, sonst fallen sie liegend zu Boden."
   },
   "Barrel": {
     "name": "Fass",
-    "description": "Fasst 40 Gallonen Flüssigkeit oder 4 Kubikfuß Feststoff."
+    "description": "Fasst {{volume:40gal}} Flüssigkeit oder {{volume:4cuft}} Feststoff."
   },
   "Basket": {
     "name": "Korb",
-    "description": "Fasst 2 Kubikfuß / 40 Pfund."
+    "description": "Fasst {{volume:2cuft}} / 40 Pfund."
   },
   "Bedroll": {
     "name": "Bettzeug",
@@ -247,11 +247,11 @@
   },
   "Bottle, glass": {
     "name": "Flasche, Glas",
-    "description": "Fasst 1,5 Pints ​​Flüssigkeit."
+    "description": "Fasst {{volume:1.5pint}} Flüssigkeit."
   },
   "Bucket": {
     "name": "Eimer",
-    "description": "Fasst 3 Gallonen."
+    "description": "Fasst {{volume:3gal}}."
   },
   "Caltrops (bag of 20)": {
     "name": "Krähenfüße (Beutel mit 20 Stück)",
@@ -283,7 +283,7 @@
   },
   "Chest": {
     "name": "Brust",
-    "description": "Fasst 12 Kubikfuß / 300 Pfund."
+    "description": "Fasst {{volume:12cuft}} / 300 Pfund."
   },
   "Climber's Kit": {
     "name": "Kletterausrüstung",
@@ -319,7 +319,7 @@
   },
   "Flask or tankard": {
     "name": "Flasche oder Humpen",
-    "description": "Hält 1 Pint Flüssigkeit."
+    "description": "Hält {{volume:1pint}} Flüssigkeit."
   },
   "Grappling Hook": {
     "name": "Enterhaken",
@@ -343,7 +343,7 @@
   },
   "Holy Water (flask)": {
     "name": "Weihwasser (Flasche)",
-    "description": "Bespritze als Aktion eine Kreatur im Umkreis von {{distance:5ft|short}} oder schleudere sie bis zu {{distance:20ft|short}} weit. Bei einem Treffer erleidet ein Untoter oder Untoter 2W6 Strahlungsschaden."
+    "description": "Bespritze als Aktion eine Kreatur im Umkreis von {{distance:5ft|short}} oder schleudere sie bis zu {{distance:20ft|short}} weit. Bei einem Treffer erleidet ein Unhold oder Untoter 2W6 gleißenden Schaden."
   },
   "Hourglass": {
     "name": "Sanduhr",
@@ -371,7 +371,7 @@
   },
   "Jug or Pitcher": {
     "name": "Krug oder Krug",
-    "description": "Hält 1 Gallone Flüssigkeit."
+    "description": "Hält {{volume:1gal}} Flüssigkeit."
   },
   "Ladder (10-foot)": {
     "name": "Leiter (3 Meter)",
@@ -379,15 +379,15 @@
   },
   "Lamp": {
     "name": "Lampe",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Spendet helles Licht in einem Radius von {{distance:15ft|dat}} und gedämpftes Licht für weitere {{distance:30ft}}."
+    "description": "Verbrennt Öl ({{volume:1pint}} = 6 Stunden). Spendet helles Licht in einem Radius von {{distance:15ft|dat}} und gedämpftes Licht für weitere {{distance:30ft}}."
   },
   "Lantern, bullseye": {
     "name": "Laterne, Volltreffer",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). {{distance:60ft|adj}}-Kegel aus hellem Licht, zusätzlich {{distance:60ft}} gedämpftes Licht."
+    "description": "Verbrennt Öl ({{volume:1pint}} = 6 Stunden). {{distance:60ft|adj}}-Kegel aus hellem Licht, zusätzlich {{distance:60ft}} gedämpftes Licht."
   },
   "Lantern, hooded": {
     "name": "Laterne, mit Kapuze",
-    "description": "Verbrennt Öl (1 Pint = 6 Stunden). Helles Licht mit einem Radius von {{distance:30ft|dat}}, zusätzliches schwaches Licht mit einem Radius von {{distance:30ft|dat}}. Kann mit einer Haube abgedeckt werden, um das Licht auf {{distance:5ft|short}} zu reduzieren."
+    "description": "Verbrennt Öl ({{volume:1pint}} = 6 Stunden). Helles Licht mit einem Radius von {{distance:30ft|dat}}, zusätzlich {{distance:30ft}} schwaches Licht. Kann mit einer Haube abgedeckt werden, um das Licht auf schwaches Licht im Umkreis von {{distance:5ft|dat}} zu reduzieren."
   },
   "Lock": {
     "name": "Sperren",
@@ -447,7 +447,7 @@
   },
   "Pouch": {
     "name": "Beutel",
-    "description": "Hält bis zu 20 Schleudergeschosse oder 50 Blaspistolennadeln oder 6 Pfund / 1/5 Kubikfuß Ausrüstung."
+    "description": "Hält bis zu 20 Schleudergeschosse oder 50 Blaspistolennadeln oder 6 Pfund / {{volume:0.2cuft}} Ausrüstung."
   },
   "Quiver": {
     "name": "Köcher",
@@ -471,7 +471,7 @@
   },
   "Sack": {
     "name": "Sack",
-    "description": "Fasst 1 Kubikfuß / 30 Pfund."
+    "description": "Fasst {{volume:1cuft}} / 30 Pfund."
   },
   "Sand (small bag)": {
     "name": "Sand (kleiner Beutel)",
@@ -503,7 +503,7 @@
   },
   "Spellbook": {
     "name": "Zauberbuch",
-    "description": "Unverzichtbar für Zauberer. Enthält 100 Seiten zum Aufzeichnen von Zaubersprüchen – beim Kauf leer."
+    "description": "Unverzichtbar für Magier. Enthält 100 Seiten zum Aufzeichnen von Zaubersprüchen – beim Kauf leer."
   },
   "Spikes, iron (10)": {
     "name": "Eisenstifte (10)",
@@ -539,7 +539,7 @@
   },
   "Waterskin": {
     "name": "Wasserschlauch",
-    "description": "Fasst 4 Pints ​​Flüssigkeit. Wiegt im vollen Zustand 5 Pfund."
+    "description": "Fasst {{volume:4pint}} Flüssigkeit. Wiegt im vollen Zustand 5 Pfund."
   },
   "Whetstone": {
     "name": "Wetzstein",

@@ -210,7 +210,7 @@
   },
   "Backpack": {
     "name": "Rucksack",
-    "description": "Fasst bis zu 30 Pfund in 1 Kubikfuß; kann auch als Satteltasche dienen."
+    "description": "Fasst bis zu 30 Pfund in {{volume:1cuft|dat}}; kann auch als Satteltasche dienen."
   },
   "Ball Bearings": {
     "name": "Kugellager",
@@ -218,11 +218,11 @@
   },
   "Barrel": {
     "name": "Fass",
-    "description": "Fasst bis zu 40 Gallonen Flüssigkeit oder 4 Kubikfuß trockene Güter."
+    "description": "Fasst bis zu {{volume:40gal}} Flüssigkeit oder {{volume:4cuft}} trockene Güter."
   },
   "Basket": {
     "name": "Korb",
-    "description": "Fasst bis zu 40 Pfund in 2 Kubikfuß."
+    "description": "Fasst bis zu 40 Pfund in {{volume:2cuft|dat}}."
   },
   "Bedroll": {
     "name": "Schlafsack",
@@ -246,11 +246,11 @@
   },
   "Bottle, Glass": {
     "name": "Glasflasche",
-    "description": "Fasst bis zu 1,5 Pinten."
+    "description": "Fasst bis zu {{volume:1.5pint}}."
   },
   "Bucket": {
     "name": "Eimer",
-    "description": "Fasst bis zu einem halben Kubikfuß."
+    "description": "Fasst bis zu {{volume:0.5cuft}}."
   },
   "Burglar's Pack": {
     "name": "Einbrecherpaket",
@@ -278,7 +278,7 @@
   },
   "Chest": {
     "name": "Truhe",
-    "description": "Fasst bis zu 12 Kubikfuß."
+    "description": "Fasst bis zu {{volume:12cuft}}."
   },
   "Climber's Kit": {
     "name": "Kletterausrüstung",
@@ -338,7 +338,7 @@
   },
   "Flask": {
     "name": "Flasche",
-    "description": "Fasst bis zu 1 Pinte."
+    "description": "Fasst bis zu {{volume:1pint}}."
   },
   "Grappling Hook": {
     "name": "Wurfhaken",
@@ -374,7 +374,7 @@
   },
   "Ink": {
     "name": "Tinte",
-    "description": "Eine Flasche von 1 Unze enthält Tinte für ungefähr 500 Seiten."
+    "description": "Eine Flasche von {{volume:1floz|dat}} enthält Tinte für ungefähr 500 Seiten."
   },
   "Ink Pen": {
     "name": "Schreibfeder",
@@ -382,7 +382,7 @@
   },
   "Jug": {
     "name": "Krug",
-    "description": "Fasst bis zu 1 Gallone."
+    "description": "Fasst bis zu {{volume:1gal}}."
   },
   "Ladder": {
     "name": "Leiter",
@@ -438,7 +438,7 @@
   },
   "Perfume": {
     "name": "Parfüm",
-    "description": "Phiole mit 4 Unzen. Nach dem Auftragen hast du 1 Stunde Vorteil auf Charismaproben (Überzeugen), um einen gleichgültigen Humanoiden innerhalb von {{distance:5ft|dat}} zu beeinflussen."
+    "description": "Phiole mit {{volume:4floz|dat}}. Nach dem Auftragen hast du 1 Stunde Vorteil auf Charismaproben (Überzeugen), um einen gleichgültigen Humanoiden innerhalb von {{distance:5ft|dat}} zu beeinflussen."
   },
   "Poison, Basic": {
     "name": "Einfaches Gift",
@@ -450,11 +450,11 @@
   },
   "Pot, Iron": {
     "name": "Eisentopf",
-    "description": "Fasst bis zu 1 Gallone."
+    "description": "Fasst bis zu {{volume:1gal}}."
   },
   "Pouch": {
     "name": "Beutel",
-    "description": "Fasst bis zu 6 Pfund in einem Fünftel Kubikfuß."
+    "description": "Fasst bis zu 6 Pfund in {{volume:0.2cuft|dat}}."
   },
   "Priest's Pack": {
     "name": "Priesterpaket",
@@ -482,7 +482,7 @@
   },
   "Sack": {
     "name": "Sack",
-    "description": "Fasst bis zu 30 Pfund in 1 Kubikfuß."
+    "description": "Fasst bis zu 30 Pfund in {{volume:1cuft|dat}}."
   },
   "Scholar's Pack": {
     "name": "Gelehrtenpaket",
@@ -530,7 +530,7 @@
   },
   "Waterskin": {
     "name": "Wasserschlauch",
-    "description": "Fasst bis zu 4 Pinten Wasser; angegebenes Gewicht gilt für den vollen Schlauch."
+    "description": "Fasst bis zu {{volume:4pint}} Wasser; angegebenes Gewicht gilt für den vollen Schlauch."
   },
   "weaponMasteries": {
     "cleave": {

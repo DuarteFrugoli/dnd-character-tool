@@ -438,7 +438,7 @@
     }
   },
   "Sorcerer": {
-    "name": "Sorcier",
+    "name": "Ensorceleur",
     "subclassFeatureName": "Origine sorcière",
     "weaponProficiencies": [
       "poignards",

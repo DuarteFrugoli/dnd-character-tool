@@ -1,23 +1,23 @@
 {
   "Blinded": {
     "name": "Geblendet",
-    "description": "Eine geblendete Kreatur kann nicht sehen und scheitert automatisch an jeder Fähigkeitsprüfung, die Sicht erfordert. Angriffswürfe gegen die Kreatur haben einen Vorteil, und die Angriffswürfe der Kreatur haben einen Nachteil."
+    "description": "Eine geblendete Kreatur kann nicht sehen und scheitert automatisch an jedem Attributswurf, der Sicht erfordert. Angriffswürfe gegen die Kreatur sind im Vorteil, und die Angriffswürfe der Kreatur sind im Nachteil."
   },
   "Charmed": {
     "name": "Bezaubert",
-    "description": "Eine verzauberte Kreatur kann den Beschwörer nicht angreifen oder ihn mit schädlichen Fähigkeiten oder magischen Effekten angreifen. Der Charmeur hat bei jeder Fähigkeitsüberprüfung einen Vorteil, wenn es darum geht, sozial mit der Kreatur zu interagieren."
+    "description": "Eine bezauberte Kreatur kann den Bezauberer nicht angreifen und nicht mit schädlichen Fähigkeiten oder magischen Effekten zum Ziel nehmen. Der Bezauberer ist bei jedem Attributswurf im Vorteil, um sozial mit der Kreatur zu interagieren."
   },
   "Deafened": {
     "name": "Taub",
-    "description": "Eine taube Kreatur kann nicht hören und besteht automatisch jede Fähigkeitsüberprüfung, die Hören erfordert, nicht."
+    "description": "Eine taube Kreatur kann nicht hören und scheitert automatisch an jedem Attributswurf, der Hören erfordert."
   },
   "Exhaustion": {
     "name": "Erschöpfung",
-    "description": "Die Erschöpfung wird in sechs Stufen gemessen. Stufe 1: Nachteil bei Fähigkeitsüberprüfungen. Stufe 2: Geschwindigkeit halbiert. Stufe 3: Nachteil bei Angriffswürfen und Rettungswürfen. Level 4: Maximaler Trefferpunkt halbiert. Level 5: Geschwindigkeit auf 0 reduziert. Level 6: Tod. Das Beenden einer langen Pause verringert den Erschöpfungsgrad um 1, vorausgesetzt, die Kreatur hat auch etwas gegessen und getrunken."
+    "description": "Erschöpfung wird in sechs Stufen gemessen. Stufe 1: Nachteil bei Attributswürfen. Stufe 2: Bewegungsrate halbiert. Stufe 3: Nachteil bei Angriffswürfen und Rettungswürfen. Stufe 4: Trefferpunktemaximum halbiert. Stufe 5: Bewegungsrate auf 0 reduziert. Stufe 6: Tod. Das Beenden einer langen Rast verringert die Erschöpfungsstufe um 1, sofern die Kreatur auch Nahrung und Wasser zu sich genommen hat."
   },
   "Frightened": {
     "name": "Verängstigt",
-    "description": "Eine verängstigte Kreatur ist bei Fähigkeits- und Angriffswürfen im Nachteil, solange die Quelle ihrer Angst in Sichtweite liegt. Die Kreatur kann sich nicht freiwillig der Quelle ihrer Angst nähern."
+    "description": "Eine verängstigte Kreatur ist bei Attributs- und Angriffswürfen im Nachteil, solange die Quelle ihrer Angst in Sichtweite liegt. Die Kreatur kann sich nicht freiwillig der Quelle ihrer Angst nähern."
   },
   "Grappled": {
     "name": "Gepackt",
@@ -41,7 +41,7 @@
   },
   "Poisoned": {
     "name": "Vergiftet",
-    "description": "Eine vergiftete Kreatur hat einen Nachteil bei Angriffswürfen und Fähigkeitsüberprüfungen."
+    "description": "Eine vergiftete Kreatur hat einen Nachteil bei Angriffswürfen und Attributswürfen."
   },
   "Prone": {
     "name": "Liegend",

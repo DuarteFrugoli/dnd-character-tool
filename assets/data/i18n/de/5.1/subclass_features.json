@@ -859,7 +859,7 @@
       },
       "Minor Alchemy": {
         "name": "Kleinere Alchemie",
-        "description": "Ab der 2. Stufe können Sie die physikalischen Eigenschaften eines nichtmagischen Objekts vorübergehend ändern und es von einer Substanz in eine andere umwandeln. Sie führen eine besondere alchemistische Prozedur an einem Objekt durch, das vollständig aus Holz, Stein (aber keinem Edelstein), Eisen, Kupfer oder Silber besteht. Pro 10 Minuten, die Sie mit der Durchführung des Verfahrens verbringen, können Sie bis zu 1 Kubikfuß Material umwandeln. Nach einer Stunde oder bis Sie die Konzentration verlieren, nimmt das Material wieder seine ursprüngliche Substanz an."
+        "description": "Ab der 2. Stufe können Sie die physikalischen Eigenschaften eines nichtmagischen Objekts vorübergehend ändern und es von einer Substanz in eine andere umwandeln. Sie führen eine besondere alchemistische Prozedur an einem Objekt durch, das vollständig aus Holz, Stein (aber keinem Edelstein), Eisen, Kupfer oder Silber besteht. Pro 10 Minuten, die Sie mit der Durchführung des Verfahrens verbringen, können Sie bis zu {{volume:1cuft}} Material umwandeln. Nach einer Stunde oder bis Sie die Konzentration verlieren, nimmt das Material wieder seine ursprüngliche Substanz an."
       },
       "Transmuter's Stone": {
         "name": "Stein des Transmuters",

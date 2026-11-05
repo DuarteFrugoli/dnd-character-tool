@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:dnd_character_tool/core/units/distance_markup.dart';
+import 'package:dnd_character_tool/core/units/measure_markup.dart';
 import 'package:dnd_character_tool/core/units/unit_system_provider.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 String _render(String text, String language, UnitSystem system) =>
-    DistanceMarkup.render(text, languageCode: language, system: system);
+    MeasureMarkup.render(text, languageCode: language, system: system);
 
 void main() {
   test('renders the example in each unit system', () {
@@ -33,6 +33,24 @@ void main() {
     expect(_render('a {{distance:0.5in|adj}} bar', 'en', UnitSystem.imperial), 'a 1/2-inch bar');
     expect(_render('{{distance:0.5in}}', 'en', UnitSystem.metric), '1.3 centimeters');
     expect(_render('{{distance:0.5mi}}', 'ru', UnitSystem.imperial), '1/2 мили');
+  });
+
+  test('renders areas and volumes', () {
+    expect(_render('{{area:2500sqft}}', 'en', UnitSystem.imperial), '2,500 square feet');
+    expect(_render('{{area:2500sqft}}', 'pt', UnitSystem.metric), '225 metros quadrados');
+    expect(_render('{{area:2500sqft}}', 'en', UnitSystem.squares), '100 squares');
+    expect(_render('{{area:1sqft}}', 'en', UnitSystem.metric), '900 square centimeters');
+    expect(_render('{{volume:12cuft}}', 'pt', UnitSystem.metric), '324 litros');
+    expect(_render('{{volume:64cuft}}', 'de', UnitSystem.metric), '1,7 Kubikmeter');
+    expect(_render('{{volume:0.2cuft}}', 'en', UnitSystem.imperial), '1/5 cubic foot');
+    expect(_render('{{volume:10gal}}', 'es', UnitSystem.metric), '40 litros');
+    expect(_render('{{volume:10gal}}', 'es', UnitSystem.squares), '10 galones');
+    expect(_render('{{volume:1pint}}', 'fr', UnitSystem.metric), '0,5 litre');
+    expect(_render('a {{volume:4floz|adj}} vial', 'en', UnitSystem.metric), 'a 120-milliliter vial');
+    expect(_render('{{volume:10gal|gen}}', 'ru', UnitSystem.metric), '40 литров');
+    expect(_render('{{volume:10gal|obj}}', 'ko', UnitSystem.imperial), '10갤런을');
+    expect(_render('{{volume:10gal|lik}}', 'tr', UnitSystem.metric), '40 litrelik');
+    expect(_render('{{volume:3sqft}}', 'en', UnitSystem.imperial), '{{volume:3sqft}}');
   });
 
   test('uses the official system when a distance is not whole squares', () {
@@ -81,8 +99,8 @@ void main() {
           node.values.forEach(walk);
         } else if (node is List) {
           node.forEach(walk);
-        } else if (node is String && DistanceMarkup.hasMarkers(node)) {
-          markers += DistanceMarkup.pattern.allMatches(node).length;
+        } else if (node is String && MeasureMarkup.hasMarkers(node)) {
+          markers += MeasureMarkup.pattern.allMatches(node).length;
           for (final system in UnitSystem.values) {
             final rendered = _render(node, language, system);
             expect(rendered.contains('{{'), isFalse, reason: '${file.path}: $node');

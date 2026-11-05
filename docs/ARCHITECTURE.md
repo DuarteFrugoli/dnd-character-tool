@@ -878,6 +878,13 @@ Entries keep the published text plus structured `attack` (kind, bonus, reach,
 range), `damage` (average, formula, type), `save` (ability, DC, damage on a
 failure, half on success) and `usage` (recharge, per day). The import notes
 values that differ from the usual math and keeps them as published.
+
+Spell `description` and `higherLevels` hold the official text, imported from
+the PDFs by `tools/import_srd_spells.py`; every other spell field is kept.
+Tables and the 2024 spell stat blocks are laid out by
+`tools/srd_spell_tables.py` as one row or field per line. The 5.1 catalog
+keeps the Player's Handbook names (e.g. "Leomund's Tiny Hut" for the SRD's
+"Tiny Hut").
 Overlays translate names, entry names and descriptions, and language text,
 keyed by entry ID; numbers stay in the English file. Both manifests describe
 `monsters` in `catalogScope` as the Beasts up to CR 1 until other creatures are
@@ -1185,24 +1192,30 @@ official books of the device language (`officialUnitSystem`): metric for
 Portuguese, French, German and Italian, imperial otherwise. Metric uses the
 official factor, 5 ft = 1.5 m.
 
-### Distances in rules text
+### Measures in rules text
 
-SRD descriptions and their overlays write distances as markers, in the book's
-imperial units: `{{distance:30ft}}`, `{{distance:20/60ft}}`,
-`{{distance:10+ft}}`, with an optional form (`|adj`, `|short`, `|num`, or a
-grammatical case of one language such as German `|dat`, Russian `|gen`,
-Turkish `|abl` or Korean `|obj`). `core/units/distance_markup.dart` holds the
-words and plural rules of each language and renders a marker as imperial,
-metric (1 ft = 0.3 m, 1 in = 2.5 cm, 1 mi = 1.5 km, centimeters under a meter)
-or 5-ft squares; distances that are not whole squares use the language's
-official system.
+SRD descriptions and their overlays write distances, areas and volumes as
+markers, in the book's imperial units: `{{distance:30ft}}`,
+`{{distance:20/60ft}}`, `{{distance:10+ft}}`, `{{area:2500sqft}}`,
+`{{volume:12cuft}}`, `{{volume:10gal}}`, with an optional form (`|adj`,
+`|short`, `|num`, or a grammatical case of one language such as German `|dat`,
+Russian `|gen`, Turkish `|abl` or Korean `|obj`).
+`core/units/measure_markup.dart` holds the words and plural rules of each
+language and renders a marker as imperial, metric or 5-ft squares. Metric
+follows the official translations' 5 ft = 1.5 m: 1 in = 2.5 cm, 1 mi =
+1.5 km, 1 sq ft = 0.09 m², 1 cu ft = 27 L, 1 gal = 4 L, 1 pint = 0.5 L,
+1 oz = 30 mL, with centimeters under a meter and cubic meters from 1,000 L.
+Measures that are not whole squares, and volumes, use the language's official
+system in squares mode. `tools/srd_markup.py` writes the markers of English
+text and renders them back, so importers can check that only the markup
+changed.
 
 Rendering happens at display time, so copies saved on sheets (item and feature
 descriptions) keep their markers and follow later preference changes. Widgets
 show rules text with `RulesText` or `ref.watch(rulesTextProvider)`. Fields read
 as keys or parsed as data (`name`, `range`, `castingTime`, `breathShape`,
-`startingEquipment`, `id`) keep plain distances. Volumes, areas and dice
-distances ("1d3 feet") are not markers yet.
+`startingEquipment`, `id`) keep plain measures. Dice distances ("1d3 feet")
+and weights are not markers yet.
 
 ---
 

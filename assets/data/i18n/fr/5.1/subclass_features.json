@@ -859,7 +859,7 @@
       },
       "Minor Alchemy": {
         "name": "Alchimie mineure",
-        "description": "À partir du niveau 2, vous pouvez modifier temporairement les propriétés physiques d'un objet non magique, en le transformant d'une substance en une autre. Vous effectuez une procédure alchimique spéciale sur un objet entièrement composé de bois, de pierre (mais pas de pierre précieuse), de fer, de cuivre ou d'argent. Pour chaque tranche de 10 minutes que vous passez à effectuer la procédure, vous pouvez transformer jusqu'à 28 litres de matériau. Après 1 heure, ou jusqu'à ce que vous perdiez votre concentration, le matériau retrouve sa substance d'origine."
+        "description": "À partir du niveau 2, vous pouvez modifier temporairement les propriétés physiques d'un objet non magique, en le transformant d'une substance en une autre. Vous effectuez une procédure alchimique spéciale sur un objet entièrement composé de bois, de pierre (mais pas de pierre précieuse), de fer, de cuivre ou d'argent. Pour chaque tranche de 10 minutes que vous passez à effectuer la procédure, vous pouvez transformer jusqu'à {{volume:1cuft}} de matériau. Après 1 heure, ou jusqu'à ce que vous perdiez votre concentration, le matériau retrouve sa substance d'origine."
       },
       "Transmuter's Stone": {
         "name": "Pierre du Transmutateur",

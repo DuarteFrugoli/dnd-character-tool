@@ -906,27 +906,35 @@ def eval_challenge(rating):
     return int(numerator) / int(denominator or 1)
 
 
-DISTANCE_MARKER = re.compile(
-    r"\{\{distance:(\d+(?:\.\d+)?(?:/\d+(?:\.\d+)?)?\+?(?:ft|in|mi))(?:\|([a-z]+))?\}\}"
+MEASURE_MARKER = re.compile(
+    r"\{\{(distance|area|volume):(\d+(?:\.\d+)?(?:/\d+(?:\.\d+)?)?\+?)([a-z]+)(?:\|([a-z]+))?\}\}"
 )
-# Forms understood by lib/core/units/distance_markup.dart.
-DISTANCE_FORMS = {
+# Units and forms understood by lib/core/units/measure_markup.dart.
+MEASURE_UNITS = {
+    "distance": {"ft", "in", "mi"},
+    "area": {"sqft", "sqmi"},
+    "volume": {"cuft", "cuin", "gal", "pint", "floz"},
+}
+MEASURE_FORMS = {
     "num", "short", "adj", "shortadj", "cop", "dat", "acc", "gen", "inst", "prep",
     "lik", "loc", "abl", "ins", "obj", "subj", "top", "dir", "and",
 }
-# Fields read as keys or parsed as data, which keep plain distances.
+# Fields read as keys or parsed as data, which keep plain measures.
 PLAIN_DISTANCE_FIELDS = {"name", "range", "castingTime", "breathShape", "startingEquipment", "id"}
 
 
 def distance_markers(text, location, errors):
-    """Returns the marker values in text, reporting malformed markers."""
+    """Returns the measure markers in text, reporting malformed markers."""
     values = []
-    for match in DISTANCE_MARKER.finditer(text):
-        if match.group(2) is not None and match.group(2) not in DISTANCE_FORMS:
-            errors.append(f"{location}: unknown distance form {match.group(2)!r}")
-        values.append(match.group(1))
+    for match in MEASURE_MARKER.finditer(text):
+        kind, value, unit, form = match.groups()
+        if unit not in MEASURE_UNITS[kind]:
+            errors.append(f"{location}: unknown {kind} unit {unit!r}")
+        if form is not None and form not in MEASURE_FORMS:
+            errors.append(f"{location}: unknown measure form {form!r}")
+        values.append(f"{kind}:{value}{unit}")
     if text.count("{{") != len(values):
-        errors.append(f"{location}: malformed distance marker")
+        errors.append(f"{location}: malformed measure marker")
     return sorted(values)
 
 
@@ -950,7 +958,7 @@ def validate_distance_markers(pack, errors):
         elif isinstance(node, str):
             markers = distance_markers(node, location, errors)
             if markers and key in PLAIN_DISTANCE_FIELDS:
-                errors.append(f"{location}: {key} must keep plain distances")
+                errors.append(f"{location}: {key} must keep plain measures")
 
     for filename, value in english.items():
         check_english(value, filename)
@@ -988,7 +996,7 @@ def validate_distance_markers(pack, errors):
             if isinstance(english_node, str):
                 expected = distance_markers(english_node, location, [])
                 if markers != expected:
-                    errors.append(f"{location}: distances {markers} differ from English {expected}")
+                    errors.append(f"{location}: measures {markers} differ from English {expected}")
 
     for locale_dir in sorted((ROOT / "assets" / "data" / "i18n").iterdir()):
         pack_dir = locale_dir / pack

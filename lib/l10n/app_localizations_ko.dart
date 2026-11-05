@@ -473,7 +473,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get whatsNew2024Body =>
-      '2014년 규칙의 캐릭터를 계속 사용할 수 있도록 하면서, 클래스, 서브클래스, 종족, 주문, 장비, 마법 아이템을 업데이트한 별도의 2024년 규칙 모드를 개발하고 있습니다. 선택형 안내 변환 기능도 계획 중입니다. 2024년 규칙으로 캐릭터를 생성하거나 변환하는 기능은 아직 제공되지 않습니다.';
+      '2014년 규칙의 캐릭터를 계속 사용할 수 있도록 하면서, 클래스, 하위 클래스, 종족, 주문, 장비, 마법 아이템을 업데이트한 별도의 2024년 규칙 모드를 개발하고 있습니다. 선택형 안내 변환 기능도 계획 중입니다. 2024년 규칙으로 캐릭터를 생성하거나 변환하는 기능은 아직 제공되지 않습니다.';
 
   @override
   String get whatsNewSettingsSubtitle => '최신 소식을 다시 읽어보세요.';
@@ -1449,7 +1449,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String levelUpSummarySubclass(String name) {
-    return '서브클래스: $name';
+    return '하위 클래스: $name';
   }
 
   @override
@@ -1464,7 +1464,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String levelUpSubclassAlreadyHas(String name) {
-    return '이전에 고른 서브클래스: $name. 그대로 두거나 다른 것을 고르세요.';
+    return '이전에 고른 하위 클래스: $name. 그대로 두거나 다른 것을 고르세요.';
   }
 
   @override
@@ -1570,7 +1570,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get labelSubclass => '아강';
+  String get labelSubclass => '하위 클래스';
 
   @override
   String get labelLanguages => '언어';
@@ -2768,7 +2768,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get reviewRowPlayer => '플레이어';
 
   @override
-  String get reviewRowSubclass => '아강';
+  String get reviewRowSubclass => '하위 클래스';
 
   @override
   String get reviewRowHitDie => '히트 다이';

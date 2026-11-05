@@ -5,7 +5,20 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [3.0.0] - In development
+## [3.0.1] - In development
+
+### Added
+- **Conversao pela lista**: o menu de cada personagem 2014 na lista tambem oferece a conversao para D&D 2024.
+
+### Fixed
+- **Subclasse em coreano**: a interface mostrava um termo de biologia; agora usa "하위 클래스" em todas as telas, como a Wizards em coreano.
+
+### Internal
+- **Versionamento**: versao do app preparada como `3.0.1+36`.
+
+---
+
+## [3.0.0] - 2026-11-05
 
 ### Added
 - **D&D 2024 (5.5e)**: personagens podem ser criados com as regras de 2014 (SRD 5.1) ou de 2024 (SRD 5.2.1); cada ficha mantem a sua edicao, e fichas 2014 continuam com seus dados e calculos.
@@ -27,6 +40,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Forma Selvagem**: Druidas assumem formas de Fera pela ficha, com confirmacao do que muda, CA, deslocamento, atributos fisicos, ataques rolaveis e o bloco de estatisticas completo. Em 2014, qualquer Fera permitida pela tabela, com PV proprios da forma e dano excedente passando para o Druida; em 2024, formas conhecidas escolhidas no level up (4/6/8) e PV temporarios iguais ao nivel de Druida.
 - **Conversao de ficha 2014 para 2024**: o menu da ficha 2014 cria uma nova ficha 2024 a partir dela, sem alterar a original. A criacao 2024 abre preenchida (classe, especie, antecedente, atributos sem os bonus raciais, pericias e idiomas), mantem inventario, dinheiro, historia, notas, aparencia e experiencia, reconstroi os niveis um a um ate o nivel original e mostra todas as mudancas antes de salvar.
 - **Medidas na unidade escolhida**: todas as distancias, areas e volumes das descricoes (magias, talentos, caracteristicas, itens, condicoes e feras), nos onze idiomas, seguem a preferencia de unidade: pes, metros (5 pes = 1,5 m, como nas traducoes oficiais) ou quadrados de 5 pes; areas em metros quadrados e volumes em litros. O padrao de cada idioma segue os livros oficiais: metros em portugues, frances, alemao e italiano; pes nos demais.
+- **Magias que faltavam no 2014**: 17 magias do SRD 5.1, como Aid, Blink e Spike Growth, entraram no catalogo, nas listas de classe e subclasse e nos onze idiomas.
 - **Weapon Mastery nas rolagens**: ao rolar uma arma de um tipo dominado, a rolagem mostra a maestria com os valores calculados (dano do Graze no erro, CD do Topple, segundo ataque do Cleave) e, no Guerreiro 9+, as opcoes do Tactical Master.
 - **Agonizing Blast**: o truque escolhido como alvo soma o modificador de Carisma ao dano, e a rolagem do Eldritch Blast indica quantos raios ele dispara no nivel atual.
 - **Creditos e licencas**: nova tela nas configuracoes com os avisos de atribuicao do SRD 5.1 e do SRD 5.2.1 (CC-BY-4.0), lidos do manifesto de cada pacote, e o aviso de nao afiliacao com a Wizards of the Coast.
@@ -34,7 +48,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Changed
 - **Criacao 2024 mais informativa**: as etapas de classe, especie e antecedente mostram dado de vida, salvaguardas, atributo principal e de conjuracao, pericias, tamanho, tracos, aumentos de atributo, ferramentas e o talento de Origem com sua descricao; classe e especie abrem a mesma ficha de detalhes da criacao 2014, com caracteristicas por nivel, subclasses, tracos e linhagens. A subclasse pode ser escolhida ja na criacao, como na 2014: ela vale a partir do nivel 3, e no level up desse nivel o app pergunta se o jogador quer mante-la ou escolher outra (o mesmo vale para a 2014); converter uma ficha 2014 sugere a subclasse 2024 correspondente.
-- **Texto oficial das magias**: as descricoes das magias do SRD 5.1 e do SRD 5.2.1 agora trazem o texto oficial completo, com tabelas e blocos de estatisticas, em vez de resumos, nos onze idiomas. As 17 magias do SRD 5.1 que faltavam (como Aid, Blink e Spike Growth) entraram no catalogo 2014, nas listas de classe e subclasse.
+- **Texto oficial das magias**: as descricoes das magias do SRD 5.1 e do SRD 5.2.1 agora trazem o texto oficial completo, com tabelas e blocos de estatisticas, em vez de resumos, nos onze idiomas.
 - **Reinicio de niveis 2014**: desfaz o que as escolhas removidas concediam, remove proficiencias de multiclasse e so zera o XP com o rastreio ligado; com historico completo, tambem desfaz aumentos de atributo e troca as pericias da classe.
 - **Descanso curto**: e possivel descansar sem gastar Dados de Vida, por exemplo para recuperar Pact Magic.
 - **Escolhas editadas na aba de habilidades**: alterar uma escolha agora adiciona e remove o que ela concede.
@@ -56,11 +70,11 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ### Internal
 - **Manifestos dos pacotes**: o SRD 5.2.1 passa a `complete` (escolhas, usos e feras concluidos), o SRD 5.1 ganha manifesto com fonte e atribuicao, e o validador confere os dois.
 - **Ferramentas de tradução removidas**: `translate_i18n.py`, `check_srd_i18n.py`, `check_feature_choices_i18n.py`, `reuse_pack_translations.py` e `patch_spell_material.py` sairam do repositorio; overlays passam a ser escritos e revisados manualmente.
+- **Importacao de magias**: `tools/import_srd_spells.py` gera as descricoes de `spells.json` a partir dos PDFs oficiais, com medidas em marcadores.
 - **Importacao de monstros**: `tools/import_srd_monsters.py` gera `monsters.json` a partir dos PDFs oficiais, e o validador do pack confere os blocos de estatisticas.
 - **Atualizacao de personagens**: versao de dados 11 grava o historico do nivel 1 e as pericias da classe de fichas 2024 antigas; fichas 2014 recebem apenas a nova versao. A atualizacao continua explicita, com backup antes.
 - **Historico de niveis**: novas fichas e cada subida de nivel registram classe, PV, subclasse, talento e aumentos, usados para reiniciar niveis.
 - **Pacotes de regras**: dados SRD e traducoes separados por versao; catalogos SRD 5.2.1 completos em ingles e traducoes nos idiomas do app, ainda em revisao linguistica.
-- **Ferramentas de traducao**: verificacao de campos ausentes por pacote e reaproveitamento de traducoes apenas quando o registro ingles completo for identico.
 - **Versionamento**: versao do app preparada como `3.0.0+35`.
 
 ---

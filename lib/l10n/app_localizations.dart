@@ -1091,7 +1091,7 @@ abstract class AppLocalizations {
   /// 3.0.0 announcement: one-time character update details.
   ///
   /// In en, this message translates to:
-  /// **'When you open a character, the app asks to update all of them and opens a backup first. 2014 characters keep their rules and data; 2024 characters save the level history used for leveling up and resets.'**
+  /// **'Opening a character may require a one-time update. The app keeps the three latest local backups in Settings. Sharing is optional; cancelling it does not stop the update.'**
   String get whatsNew3UpdateBody;
 
   /// Snackbar after successful import.
@@ -5956,7 +5956,7 @@ abstract class AppLocalizations {
   /// Dialog body before applying character migrations.
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, =1{1 character needs an update. The app will open a backup for you to save or share before applying changes.} other{{count} characters need updates. The app will open a backup for you to save or share before applying changes.}}'**
+  /// **'Characters needing updates: {count}. A local backup will be saved first. Sharing it is optional; cancelling sharing will not stop the update.'**
   String settingsMaintenanceConfirmBody(int count);
 
   /// Dialog title shown when opening an outdated saved character.
@@ -5968,7 +5968,7 @@ abstract class AppLocalizations {
   /// Dialog body shown when opening an outdated saved character.
   ///
   /// In en, this message translates to:
-  /// **'This character needs an update before it can open. You can back up your characters or update them all now. A backup opens before any update is applied.'**
+  /// **'This character needs an update. A local backup is saved first, and sharing is optional. Cancelling sharing still lets the update continue.'**
   String get characterUpdateRequiredBody;
 
   /// Action on a directly opened outdated character to show the update dialog.
@@ -6174,6 +6174,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not export the character file.'**
   String get exportFileError;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Local backups'**
+  String get settingsLocalBackupsTitle;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Your three latest local character backups.'**
+  String get settingsLocalBackupsSubtitle;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'No local backups yet.'**
+  String get settingsLocalBackupsEmpty;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Save a copy now'**
+  String get settingsLocalBackupsCreate;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Local backup saved.'**
+  String get settingsLocalBackupsSaved;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not load local backups.'**
+  String get settingsLocalBackupsError;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Characters: {count}'**
+  String settingsLocalBackupCharacters(int count);
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore this backup?'**
+  String get settingsLocalBackupRestoreTitle;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Characters will be added as new copies. Your current characters will be kept.'**
+  String get settingsLocalBackupRestoreBody;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore copies'**
+  String get settingsLocalBackupRestoreAction;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'These copies stay on this device. Use Export backup to keep a copy outside the app.'**
+  String get settingsLocalBackupsDeviceNotice;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Saving local backup...'**
+  String get settingsLocalBackupSaving;
+
+  /// On-device backup history and optional sharing before character updates.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not save a local backup. Please try again.'**
+  String get settingsLocalBackupSaveError;
 }
 
 class _AppLocalizationsDelegate

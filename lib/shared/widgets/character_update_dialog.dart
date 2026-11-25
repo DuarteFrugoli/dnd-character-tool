@@ -81,10 +81,12 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
       _message = null;
       _hasError = false;
     });
+    var localSaved = false;
     try {
       final fileJson = await ref
           .read(characterRepositoryProvider)
-          .exportBackupToFileJson();
+          .createLocalBackup();
+      localSaved = true;
       await widget.exportBackup(fileJson);
       if (!mounted) return;
       setState(
@@ -93,11 +95,20 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
         )!.settingsBackupExportSuccess,
       );
     } on FileExportCancelled {
-      // Keep the dialog open without claiming a backup was saved.
+      if (mounted) {
+        setState(
+          () => _message = AppLocalizations.of(
+            context,
+          )!.settingsLocalBackupsSaved,
+        );
+      }
     } catch (_) {
       if (!mounted) return;
       setState(() {
-        _message = AppLocalizations.of(context)!.settingsBackupExportError;
+        final l10n = AppLocalizations.of(context)!;
+        _message = localSaved
+            ? '${l10n.settingsLocalBackupsSaved} ${l10n.settingsBackupExportError}'
+            : l10n.settingsLocalBackupSaveError;
         _hasError = true;
       });
     } finally {
@@ -118,21 +129,22 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
     });
     try {
       final repository = ref.read(characterRepositoryProvider);
-      final fileJson = await repository.exportBackupToFileJson();
-      await widget.exportBackup(fileJson);
-      if (!mounted) return;
-      setState(() => _task = _UpdateTask.updating);
-
-      final report = await repository.applyMigrations();
+      final report = await repository.applyMigrations(
+        shareBackup: (fileJson) async {
+          try {
+            if (mounted) await widget.exportBackup(fileJson);
+          } finally {
+            if (mounted) setState(() => _task = _UpdateTask.updating);
+          }
+        },
+      );
       if (!mounted) return;
       setState(() => _result = report);
-    } on FileExportCancelled {
-      // Updating must not proceed when the required backup was cancelled.
     } catch (_) {
       if (!mounted) return;
       setState(() {
         _message = _task == _UpdateTask.backingUp
-            ? AppLocalizations.of(context)!.settingsBackupExportError
+            ? AppLocalizations.of(context)!.settingsLocalBackupSaveError
             : AppLocalizations.of(context)!.settingsMaintenanceError;
         _hasError = true;
       });
@@ -190,7 +202,7 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                     const SizedBox(height: 8),
                     Text(
                       _task == _UpdateTask.backingUp
-                          ? l10n.settingsBackupExporting
+                          ? l10n.settingsLocalBackupSaving
                           : _task == _UpdateTask.updating
                           ? l10n.characterUpdateApplying
                           : l10n.settingsMaintenanceWorking,

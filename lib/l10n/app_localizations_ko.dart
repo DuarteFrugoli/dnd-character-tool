@@ -587,7 +587,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      '캐릭터를 열면 앱이 모든 캐릭터의 업데이트를 요청하고 먼저 백업을 엽니다. 2014 캐릭터는 규칙과 데이터를 유지하고, 2024 캐릭터는 레벨 업과 초기화에 쓰는 레벨 기록을 저장합니다.';
+      '캐릭터를 열 때 한 번의 업데이트가 필요할 수 있습니다. 설정에서 최신 로컬 백업 3개를 이용할 수 있습니다. 공유는 선택 사항이며 취소해도 업데이트는 계속됩니다.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3288,13 +3288,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '캐릭터 $count명에 업데이트가 필요합니다. 변경 사항을 적용하기 전에 저장하거나 공유할 수 있는 백업을 엽니다.',
-      one: '캐릭터 1명에 업데이트가 필요합니다. 변경 사항을 적용하기 전에 저장하거나 공유할 수 있는 백업을 엽니다.',
-    );
-    return '$_temp0';
+    return '업데이트가 필요한 캐릭터: $count. 먼저 로컬 백업을 저장합니다. 공유는 선택 사항이며 취소해도 업데이트가 중단되지 않습니다.';
   }
 
   @override
@@ -3302,7 +3296,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      '이 캐릭터를 열기 전에 업데이트해야 합니다. 캐릭터를 백업하거나 모두 업데이트할 수 있습니다. 업데이트를 적용하기 전에 백업 화면이 열립니다.';
+      '이 캐릭터는 업데이트가 필요합니다. 먼저 로컬 백업을 저장하며 공유는 선택 사항입니다. 공유를 취소해도 업데이트는 계속됩니다.';
 
   @override
   String get characterUpdateRequiredAction => '업데이트 옵션';
@@ -3486,4 +3480,47 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get exportFileError => '캐릭터 파일을 내보내지 못했습니다.';
+
+  @override
+  String get settingsLocalBackupsTitle => '로컬 백업';
+
+  @override
+  String get settingsLocalBackupsSubtitle => '캐릭터의 최신 로컬 백업 3개입니다.';
+
+  @override
+  String get settingsLocalBackupsEmpty => '아직 로컬 백업이 없습니다.';
+
+  @override
+  String get settingsLocalBackupsCreate => '지금 사본 저장';
+
+  @override
+  String get settingsLocalBackupsSaved => '로컬 백업을 저장했습니다.';
+
+  @override
+  String get settingsLocalBackupsError => '로컬 백업을 불러오지 못했습니다.';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return '캐릭터: $count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => '이 백업을 복원할까요?';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      '캐릭터가 새 사본으로 추가됩니다. 현재 캐릭터는 유지됩니다.';
+
+  @override
+  String get settingsLocalBackupRestoreAction => '사본 복원';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      '이 사본은 이 기기에 저장됩니다. 앱 밖에 보관하려면 백업을 내보내세요.';
+
+  @override
+  String get settingsLocalBackupSaving => '로컬 백업 저장 중...';
+
+  @override
+  String get settingsLocalBackupSaveError => '로컬 백업을 저장하지 못했습니다. 다시 시도해 주세요.';
 }

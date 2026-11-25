@@ -405,7 +405,7 @@
 
   "@whatsNew3UpdateTitle": { "description": "3.0.0 announcement: one-time character update title." },
 
-  "whatsNew3UpdateBody": "When you open a character, the app asks to update all of them and opens a backup first. 2014 characters keep their rules and data; 2024 characters save the level history used for leveling up and resets.",
+  "whatsNew3UpdateBody": "Opening a character may require a one-time update. The app keeps the three latest local backups in Settings. Sharing is optional; cancelling it does not stop the update.",
 
   "@whatsNew3UpdateBody": { "description": "3.0.0 announcement: one-time character update details." },
 
@@ -2450,11 +2450,11 @@
   "@settingsMaintenanceCompleteTitle": { "description": "Dialog title after applying character migrations." },
   "settingsMaintenanceUpdatesFound": "{count, plural, =1{1 character needs an update.} other{{count} characters need updates.}}",
   "@settingsMaintenanceUpdatesFound": { "description": "Message shown when character migrations are available.", "placeholders": { "count": { "type": "int" } } },
-  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 character needs an update. The app will open a backup for you to save or share before applying changes.} other{{count} characters need updates. The app will open a backup for you to save or share before applying changes.}}",
+  "settingsMaintenanceConfirmBody": "Characters needing updates: {count}. A local backup will be saved first. Sharing it is optional; cancelling sharing will not stop the update.",
   "@settingsMaintenanceConfirmBody": { "description": "Dialog body before applying character migrations.", "placeholders": { "count": { "type": "int" } } },
   "characterUpdateRequiredTitle": "Character update required",
   "@characterUpdateRequiredTitle": { "description": "Dialog title shown when opening an outdated saved character." },
-  "characterUpdateRequiredBody": "This character needs an update before it can open. You can back up your characters or update them all now. A backup opens before any update is applied.",
+  "characterUpdateRequiredBody": "This character needs an update. A local backup is saved first, and sharing is optional. Cancelling sharing still lets the update continue.",
   "@characterUpdateRequiredBody": { "description": "Dialog body shown when opening an outdated saved character." },
   "characterUpdateRequiredAction": "Update options",
   "@characterUpdateRequiredAction": { "description": "Action on a directly opened outdated character to show the update dialog." },
@@ -2541,5 +2541,62 @@
   "exportFileError": "Could not export the character file.",
   "@exportFileError": {
     "description": "Character export failed to open or complete native sharing."
+  },
+  "settingsLocalBackupsTitle": "Local backups",
+  "@settingsLocalBackupsTitle": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupsSubtitle": "Your three latest local character backups.",
+  "@settingsLocalBackupsSubtitle": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupsEmpty": "No local backups yet.",
+  "@settingsLocalBackupsEmpty": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupsCreate": "Save a copy now",
+  "@settingsLocalBackupsCreate": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupsSaved": "Local backup saved.",
+  "@settingsLocalBackupsSaved": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupsError": "Could not load local backups.",
+  "@settingsLocalBackupsError": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupCharacters": "Characters: {count}",
+  "@settingsLocalBackupCharacters": {
+    "description": "On-device backup history and optional sharing before character updates.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "settingsLocalBackupRestoreTitle": "Restore this backup?",
+  "@settingsLocalBackupRestoreTitle": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupRestoreBody": "Characters will be added as new copies. Your current characters will be kept.",
+  "@settingsLocalBackupRestoreBody": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupRestoreAction": "Restore copies",
+  "@settingsLocalBackupRestoreAction": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupsDeviceNotice": "These copies stay on this device. Use Export backup to keep a copy outside the app.",
+  "@settingsLocalBackupsDeviceNotice": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupSaving": "Saving local backup...",
+  "@settingsLocalBackupSaving": {
+    "description": "On-device backup history and optional sharing before character updates."
+  },
+  "settingsLocalBackupSaveError": "Could not save a local backup. Please try again.",
+  "@settingsLocalBackupSaveError": {
+    "description": "On-device backup history and optional sharing before character updates."
   }
 }

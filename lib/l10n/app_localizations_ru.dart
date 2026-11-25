@@ -601,7 +601,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'При открытии персонажа приложение предложит обновить всех и сначала откроет резервную копию. Персонажи 2014 сохраняют правила и данные; персонажи 2024 сохраняют историю уровней для повышения и сброса.';
+      'При открытии персонажа может потребоваться разовое обновление. В настройках доступны три последние локальные копии. Отправка необязательна; её отмена не останавливает обновление.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3369,15 +3369,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other:
-          '$count персонажам требуется обновление. Перед применением изменений приложение откроет резервную копию, которую можно сохранить или отправить.',
-      one:
-          '1 персонажу требуется обновление. Перед применением изменений приложение откроет резервную копию, которую можно сохранить или отправить.',
-    );
-    return '$_temp0';
+    return 'Персонажей для обновления: $count. Сначала будет сохранена локальная копия. Отправка необязательна; её отмена не остановит обновление.';
   }
 
   @override
@@ -3385,7 +3377,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Перед открытием этого персонажа требуется обновление. Вы можете сохранить резервную копию или обновить всех персонажей. Перед обновлением откроется создание резервной копии.';
+      'Этому персонажу нужно обновление. Сначала сохраняется локальная копия. Отправка необязательна; её отмена не мешает обновлению.';
 
   @override
   String get characterUpdateRequiredAction => 'Параметры обновления';
@@ -3573,4 +3565,50 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get exportFileError => 'Не удалось экспортировать файл персонажа.';
+
+  @override
+  String get settingsLocalBackupsTitle => 'Локальные копии';
+
+  @override
+  String get settingsLocalBackupsSubtitle =>
+      'Три последние локальные резервные копии персонажей.';
+
+  @override
+  String get settingsLocalBackupsEmpty => 'Локальных копий пока нет.';
+
+  @override
+  String get settingsLocalBackupsCreate => 'Сохранить копию сейчас';
+
+  @override
+  String get settingsLocalBackupsSaved => 'Локальная копия сохранена.';
+
+  @override
+  String get settingsLocalBackupsError =>
+      'Не удалось загрузить локальные копии.';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return 'Персонажей: $count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => 'Восстановить эту копию?';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      'Персонажи будут добавлены как новые копии. Текущие персонажи сохранятся.';
+
+  @override
+  String get settingsLocalBackupRestoreAction => 'Восстановить копии';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      'Эти копии хранятся на этом устройстве. Экспортируйте резервную копию, чтобы сохранить её вне приложения.';
+
+  @override
+  String get settingsLocalBackupSaving => 'Сохранение локальной копии...';
+
+  @override
+  String get settingsLocalBackupSaveError =>
+      'Не удалось сохранить локальную копию. Повторите попытку.';
 }

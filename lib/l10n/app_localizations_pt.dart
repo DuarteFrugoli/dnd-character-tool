@@ -602,7 +602,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Ao abrir um personagem, o app pede para atualizar todos e abre um backup antes. Personagens 2014 mantêm suas regras e dados; personagens 2024 salvam o histórico de níveis usado para subir e reiniciar níveis.';
+      'Ao abrir um personagem, pode ser necessária uma atualização única. O app mantém os três backups locais mais recentes nas Configurações. Compartilhar é opcional; cancelar não interrompe a atualização.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3368,15 +3368,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other:
-          '$count personagens precisam de atualização. O app vai abrir um backup para você salvar ou compartilhar antes de aplicar as mudanças.',
-      one:
-          '1 personagem precisa de atualização. O app vai abrir um backup para você salvar ou compartilhar antes de aplicar as mudanças.',
-    );
-    return '$_temp0';
+    return 'Personagens que precisam de atualização: $count. Um backup local será salvo primeiro. Compartilhar é opcional; cancelar o compartilhamento não interrompe a atualização.';
   }
 
   @override
@@ -3385,7 +3377,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Este personagem precisa ser atualizado antes de abrir. Você pode fazer um backup ou atualizar todos os personagens agora. Um backup será aberto antes de aplicar a atualização.';
+      'Este personagem precisa de uma atualização. Um backup local é salvo primeiro, e compartilhar é opcional. Cancelar o compartilhamento permite continuar a atualização.';
 
   @override
   String get characterUpdateRequiredAction => 'Opções de atualização';
@@ -3575,4 +3567,50 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get exportFileError =>
       'Não foi possível exportar o arquivo do personagem.';
+
+  @override
+  String get settingsLocalBackupsTitle => 'Backups locais';
+
+  @override
+  String get settingsLocalBackupsSubtitle =>
+      'As três cópias locais mais recentes dos seus personagens.';
+
+  @override
+  String get settingsLocalBackupsEmpty => 'Nenhum backup local ainda.';
+
+  @override
+  String get settingsLocalBackupsCreate => 'Salvar cópia agora';
+
+  @override
+  String get settingsLocalBackupsSaved => 'Backup local salvo.';
+
+  @override
+  String get settingsLocalBackupsError =>
+      'Não foi possível carregar os backups locais.';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return 'Personagens: $count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => 'Restaurar este backup?';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      'Os personagens serão adicionados como novas cópias. Seus personagens atuais serão mantidos.';
+
+  @override
+  String get settingsLocalBackupRestoreAction => 'Restaurar cópias';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      'Estas cópias ficam neste aparelho. Use Exportar backup para guardar uma cópia fora do app.';
+
+  @override
+  String get settingsLocalBackupSaving => 'Salvando backup local...';
+
+  @override
+  String get settingsLocalBackupSaveError =>
+      'Não foi possível salvar um backup local. Tente novamente.';
 }

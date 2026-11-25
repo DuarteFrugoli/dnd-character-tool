@@ -586,7 +586,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'キャラクターを開くと、アプリが全員の更新を求め、先にバックアップを開きます。2014年版のキャラクターはルールとデータを保持し、2024年版のキャラクターはレベルアップとリセットに使うレベル履歴を保存します。';
+      'キャラクターを開く際に一度だけ更新が必要な場合があります。設定から最新3件のローカルバックアップを利用できます。共有は任意で、キャンセルしても更新は続行されます。';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3287,13 +3287,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count人のキャラクターに更新が必要です。変更を適用する前に、保存または共有できるバックアップを開きます。',
-      one: '1人のキャラクターに更新が必要です。変更を適用する前に、保存または共有できるバックアップを開きます。',
-    );
-    return '$_temp0';
+    return '更新が必要なキャラクター数：$count。最初にローカルバックアップを保存します。共有は任意で、キャンセルしても更新は中止されません。';
   }
 
   @override
@@ -3301,7 +3295,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'このキャラクターを開くには更新が必要です。キャラクターをバックアップするか、すべて更新できます。更新前にバックアップ画面が開きます。';
+      'このキャラクターは更新が必要です。最初にローカルバックアップを保存します。共有は任意で、キャンセルしても更新は続行されます。';
 
   @override
   String get characterUpdateRequiredAction => '更新オプション';
@@ -3485,4 +3479,48 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get exportFileError => 'キャラクターファイルをエクスポートできませんでした。';
+
+  @override
+  String get settingsLocalBackupsTitle => 'ローカルバックアップ';
+
+  @override
+  String get settingsLocalBackupsSubtitle => 'キャラクターの最新3件のローカルバックアップです。';
+
+  @override
+  String get settingsLocalBackupsEmpty => 'ローカルバックアップはまだありません。';
+
+  @override
+  String get settingsLocalBackupsCreate => '今すぐコピーを保存';
+
+  @override
+  String get settingsLocalBackupsSaved => 'ローカルバックアップを保存しました。';
+
+  @override
+  String get settingsLocalBackupsError => 'ローカルバックアップを読み込めませんでした。';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return 'キャラクター数：$count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => 'このバックアップを復元しますか？';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      'キャラクターは新しいコピーとして追加されます。現在のキャラクターは保持されます。';
+
+  @override
+  String get settingsLocalBackupRestoreAction => 'コピーを復元';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      'これらのコピーはこの端末に保存されます。アプリの外に保管するにはバックアップをエクスポートしてください。';
+
+  @override
+  String get settingsLocalBackupSaving => 'ローカルバックアップを保存中...';
+
+  @override
+  String get settingsLocalBackupSaveError =>
+      'ローカルバックアップを保存できませんでした。もう一度お試しください。';
 }

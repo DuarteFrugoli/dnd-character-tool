@@ -7,9 +7,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- **Backups locais**: o app guarda as tres copias completas mais recentes antes de atualizar personagens ou exportar um backup, incluindo fotos. Configuracoes > Backups locais permite salvar uma copia agora, exportar e restaurar como novos personagens, preservando as fichas atuais.
+
 ### Fixed
 - **Arquivos no iOS**: fichas `.dndchar` e backups `.dndbackup` registrados para abertura externa, com leitura em segundo plano e acesso coordenado a Arquivos/iCloud. A inicializacao por arquivo aguarda a tela de importacao; arquivos recebidos em sequencia nao empilham confirmacoes.
-- **Exportacao no iPhone/iPad**: compartilhamento com origem visivel para o popover, arquivos temporarios separados e tratamento de cancelamento e erro. Cancelar o backup obrigatorio impede a atualizacao dos personagens. Roteiro de validacao em `docs/IOS_FILE_TESTING.md`.
+- **Exportacao no iPhone/iPad**: compartilhamento com origem visivel para o popover, arquivos temporarios separados e tratamento de cancelamento e erro. Antes de atualizar, uma copia local e salva; cancelar ou falhar o compartilhamento opcional permite continuar a atualizacao. Roteiro de validacao em `docs/IOS_FILE_TESTING.md`.
 - **Importacao Android sem bloquear a interface**: arquivos de ficha e backup abertos por outros apps passam a ser lidos em segundo plano. A entrega ao Flutter aguarda a tela estar pronta, preserva a ordem dos arquivos e descarta resultados ao encerrar a Activity. Correcao preventiva de um risco de ANR; o relatorio da 2.1.2 nao confirma essa causa.
 
 ---

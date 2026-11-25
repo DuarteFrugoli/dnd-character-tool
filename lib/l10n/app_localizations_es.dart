@@ -602,7 +602,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Al abrir un personaje, la app pide actualizarlos todos y abre antes una copia de seguridad. Los personajes de 2014 conservan sus reglas y datos; los de 2024 guardan el historial de niveles usado para subir y reiniciar niveles.';
+      'Al abrir un personaje puede ser necesaria una actualización única. La app conserva las tres últimas copias locales en Ajustes. Compartirlas es opcional; cancelar no detiene la actualización.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3370,15 +3370,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other:
-          '$count personajes necesitan actualizaciones. La app abrirá una copia de seguridad para que la guardes o compartas antes de aplicar los cambios.',
-      one:
-          '1 personaje necesita una actualización. La app abrirá una copia de seguridad para que la guardes o compartas antes de aplicar los cambios.',
-    );
-    return '$_temp0';
+    return 'Personajes que necesitan actualizarse: $count. Primero se guardará una copia local. Compartirla es opcional; cancelar el envío no detiene la actualización.';
   }
 
   @override
@@ -3387,7 +3379,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Este personaje debe actualizarse antes de abrirlo. Puedes hacer una copia de seguridad o actualizar todos los personajes ahora. Se abrirá una copia de seguridad antes de aplicar los cambios.';
+      'Este personaje necesita una actualización. Primero se guarda una copia local y compartirla es opcional. Cancelar el envío permite continuar la actualización.';
 
   @override
   String get characterUpdateRequiredAction => 'Opciones de actualización';
@@ -3577,4 +3569,50 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get exportFileError => 'No se pudo exportar el archivo del personaje.';
+
+  @override
+  String get settingsLocalBackupsTitle => 'Copias locales';
+
+  @override
+  String get settingsLocalBackupsSubtitle =>
+      'Las tres copias locales más recientes de tus personajes.';
+
+  @override
+  String get settingsLocalBackupsEmpty => 'Aún no hay copias locales.';
+
+  @override
+  String get settingsLocalBackupsCreate => 'Guardar una copia ahora';
+
+  @override
+  String get settingsLocalBackupsSaved => 'Copia local guardada.';
+
+  @override
+  String get settingsLocalBackupsError =>
+      'No se pudieron cargar las copias locales.';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return 'Personajes: $count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => '¿Restaurar esta copia?';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      'Los personajes se añadirán como copias nuevas. Se conservarán tus personajes actuales.';
+
+  @override
+  String get settingsLocalBackupRestoreAction => 'Restaurar copias';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      'Estas copias permanecen en este dispositivo. Usa Exportar copia de seguridad para guardar una fuera de la app.';
+
+  @override
+  String get settingsLocalBackupSaving => 'Guardando copia local...';
+
+  @override
+  String get settingsLocalBackupSaveError =>
+      'No se pudo guardar una copia local. Inténtalo de nuevo.';
 }

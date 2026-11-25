@@ -228,7 +228,7 @@
   "whatsNew3ResetTitle": "Daha güvenli seviye sıfırlama",
   "whatsNew3ResetBody": "Kaydetmeden önce her değişiklik listelenir. Sıfırlama, kaldırılan sınıfların verdiklerini geri alır ve iki kural setinde de önceki seviyene yeniden kurabilirsin.",
   "whatsNew3UpdateTitle": "Tek seferlik karakter güncellemesi",
-  "whatsNew3UpdateBody": "Bir karakteri açtığında uygulama hepsini güncellemeyi ister ve önce yedek açar. 2014 karakterleri kurallarını ve verilerini korur; 2024 karakterleri seviye atlama ve sıfırlama için seviye geçmişini kaydeder.",
+  "whatsNew3UpdateBody": "Bir karakteri açarken tek seferlik güncelleme gerekebilir. Son üç yerel yedek Ayarlar’da tutulur. Paylaşım isteğe bağlıdır; iptal etmek güncellemeyi durdurmaz.",
   "@whatsNewThanks": {"description":"Turkish translation for the 2.1.1 announcement."},
   "charListImportedSuccess": "{name} başarıyla içe aktarıldı!",
   "@charListImportedSuccess": {
@@ -3824,7 +3824,7 @@
       }
     }
   },
-  "settingsMaintenanceConfirmBody": "{count, plural, =1{1 karakterin güncellenmesi gerekiyor. Değişiklikler uygulanmadan önce kaydetmeniz veya paylaşmanız için bir yedek açılacak.} other{{count} karakterin güncellenmesi gerekiyor. Değişiklikler uygulanmadan önce kaydetmeniz veya paylaşmanız için bir yedek açılacak.}}",
+  "settingsMaintenanceConfirmBody": "Güncellenecek karakterler: {count}. Önce yerel bir yedek kaydedilir. Paylaşmak isteğe bağlıdır; iptal etmek güncellemeyi durdurmaz.",
   "@settingsMaintenanceConfirmBody": {
     "description": "Dialog body before applying character migrations.",
     "placeholders": {
@@ -3837,7 +3837,7 @@
   "@characterUpdateRequiredTitle": {
     "description": "Dialog title shown when opening an outdated saved character."
   },
-  "characterUpdateRequiredBody": "Bu karakter açılmadan önce güncellenmeli. Şimdi karakterlerinizi yedekleyebilir veya hepsini güncelleyebilirsiniz. Herhangi bir güncelleme uygulanmadan önce bir yedek açılır.",
+  "characterUpdateRequiredBody": "Bu karakterin güncellenmesi gerekiyor. Önce yerel bir yedek kaydedilir; paylaşmak isteğe bağlıdır. Paylaşımı iptal etmek güncellemeyi durdurmaz.",
   "@characterUpdateRequiredBody": {
     "description": "Dialog body shown when opening an outdated saved character."
   },
@@ -3979,5 +3979,18 @@
   "whatsNew301LimitsTitle": "Kalan işler",
   "whatsNew301LimitsBody": "Bazı özellikler hâlâ elle uygulanmalıdır. Katalog, 2014 sürümünün tüm ek kitaplarını içermez. Yeni 2014 içeriklerinin uygulamanın diğer dillerine çevrilmesi gerekmektedir.",
   "creationRuleset2024BetaDescription": "Beta: içerik ve çeviriler eksik. Geçmişler, türler ve yeteneklerde hâlâ eksikler var.",
-  "exportFileError": "Karakter dosyası dışa aktarılamadı."
+  "exportFileError": "Karakter dosyası dışa aktarılamadı.",
+  "settingsLocalBackupsTitle": "Yerel yedekler",
+  "settingsLocalBackupsSubtitle": "Karakterlerinizin son üç yerel yedeği.",
+  "settingsLocalBackupsEmpty": "Henüz yerel yedek yok.",
+  "settingsLocalBackupsCreate": "Şimdi bir kopya kaydet",
+  "settingsLocalBackupsSaved": "Yerel yedek kaydedildi.",
+  "settingsLocalBackupsError": "Yerel yedekler yüklenemedi.",
+  "settingsLocalBackupCharacters": "Karakterler: {count}",
+  "settingsLocalBackupRestoreTitle": "Bu yedek geri yüklensin mi?",
+  "settingsLocalBackupRestoreBody": "Karakterler yeni kopyalar olarak eklenir. Mevcut karakterleriniz korunur.",
+  "settingsLocalBackupRestoreAction": "Kopyaları geri yükle",
+  "settingsLocalBackupsDeviceNotice": "Bu kopyalar bu cihazda kalır. Uygulama dışında saklamak için bir yedeği dışa aktarın.",
+  "settingsLocalBackupSaving": "Yerel yedek kaydediliyor...",
+  "settingsLocalBackupSaveError": "Yerel yedek kaydedilemedi. Lütfen tekrar deneyin."
 }

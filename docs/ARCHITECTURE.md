@@ -213,9 +213,10 @@ prevents imported files from controlling local paths.
 - `importBackupFromFileJson()` imports every character from a `.dndbackup`,
   assigning new IDs just like single-character imports.
 
-The repository does not create the pre-migration backup itself. Both the
-character-update dialog and manual Settings maintenance export `.dndbackup`
-before calling `applyMigrations()`. Backing up alone does not migrate data.
+The repository creates a durable local `.dndbackup` before applying migrations,
+retaining three recovery points. The character-update dialog and manual Settings
+maintenance offer optional sharing after that local save; cancellation or sharing
+errors do not prevent the update. Backing up alone does not migrate data.
 
 ---
 
@@ -1108,7 +1109,8 @@ Feature choices and feature usages both surface mainly in `features_tab.dart`:
 Theme, locale, unit-system, and display preference state lives in `core/theme`,
 `core/locale`, `core/units`, and `core/display`. Backup and maintenance actions
 go through `CharacterRepository`. Settings maintenance and the character-update
-dialog both export a backup before applying migrations.
+dialog both save a local backup before applying migrations and offer optional
+external sharing. Settings also exposes the three-copy local recovery history.
 
 `AppTheme` defines explicit Material `ColorScheme` palettes instead of relying
 on a single generated seed color. Theme ids use canonical snake_case names that
@@ -1243,8 +1245,28 @@ in `docs/IOS_FILE_TESTING.md`; executing those requires macOS and Xcode.
 `IncomingFileService` buffers native notifications when the character list is
 absent, and the list serializes import confirmations. Native exporters require a
 visible share origin for iPad popovers and keep each export in its own temporary
-directory. A dismissed share raises `FileExportCancelled`: UI flows end quietly,
-and maintenance cannot apply migrations after a cancelled mandatory backup.
+directory. A dismissed manual share raises `FileExportCancelled`: UI flows end
+without reporting a successful external export. Character maintenance first
+saves a durable local backup, then offers optional sharing. Cancelled or failed
+sharing does not stop an update once the local copy exists.
+
+`LocalBackupRepository` serializes snapshot writes and retains three complete
+`.dndbackup` payloads, including photos. Native storage uses the app's support
+directory and publishes small metadata files only after an atomic payload rename;
+large payload writes run on a worker isolate. Web storage uses namespaced metadata
+and payload keys in a single IndexedDB transaction, preserving existing stores.
+Older copies are pruned after successful publication. A failed local write leaves
+the previous recovery points and character data untouched.
+Photo base64 encoding and JSON serialization of full backups also run in
+`compute()`, keeping this CPU work off the native UI thread.
+
+`CharacterRepository.applyMigrations` enforces the local snapshot before the first
+character write, with an optional sharing callback. No-op updates do not rotate
+recovery points, and partial character scans cannot create incomplete backups.
+Settings > Local backups lists dates and counts, supports creating/exporting
+copies, and restores characters with fresh IDs through the existing backup
+importer. Restoring adds copies and preserves current characters. Local copies
+stay in app storage; external sharing remains available for off-device recovery.
 
 Imported characters are assigned fresh IDs before saving.
 

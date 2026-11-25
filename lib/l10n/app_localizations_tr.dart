@@ -599,7 +599,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Bir karakteri açtığında uygulama hepsini güncellemeyi ister ve önce yedek açar. 2014 karakterleri kurallarını ve verilerini korur; 2024 karakterleri seviye atlama ve sıfırlama için seviye geçmişini kaydeder.';
+      'Bir karakteri açarken tek seferlik güncelleme gerekebilir. Son üç yerel yedek Ayarlar’da tutulur. Paylaşım isteğe bağlıdır; iptal etmek güncellemeyi durdurmaz.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3360,15 +3360,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other:
-          '$count karakterin güncellenmesi gerekiyor. Değişiklikler uygulanmadan önce kaydetmeniz veya paylaşmanız için bir yedek açılacak.',
-      one:
-          '1 karakterin güncellenmesi gerekiyor. Değişiklikler uygulanmadan önce kaydetmeniz veya paylaşmanız için bir yedek açılacak.',
-    );
-    return '$_temp0';
+    return 'Güncellenecek karakterler: $count. Önce yerel bir yedek kaydedilir. Paylaşmak isteğe bağlıdır; iptal etmek güncellemeyi durdurmaz.';
   }
 
   @override
@@ -3376,7 +3368,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Bu karakter açılmadan önce güncellenmeli. Şimdi karakterlerinizi yedekleyebilir veya hepsini güncelleyebilirsiniz. Herhangi bir güncelleme uygulanmadan önce bir yedek açılır.';
+      'Bu karakterin güncellenmesi gerekiyor. Önce yerel bir yedek kaydedilir; paylaşmak isteğe bağlıdır. Paylaşımı iptal etmek güncellemeyi durdurmaz.';
 
   @override
   String get characterUpdateRequiredAction => 'Güncelleme seçenekleri';
@@ -3565,4 +3557,49 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get exportFileError => 'Karakter dosyası dışa aktarılamadı.';
+
+  @override
+  String get settingsLocalBackupsTitle => 'Yerel yedekler';
+
+  @override
+  String get settingsLocalBackupsSubtitle =>
+      'Karakterlerinizin son üç yerel yedeği.';
+
+  @override
+  String get settingsLocalBackupsEmpty => 'Henüz yerel yedek yok.';
+
+  @override
+  String get settingsLocalBackupsCreate => 'Şimdi bir kopya kaydet';
+
+  @override
+  String get settingsLocalBackupsSaved => 'Yerel yedek kaydedildi.';
+
+  @override
+  String get settingsLocalBackupsError => 'Yerel yedekler yüklenemedi.';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return 'Karakterler: $count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => 'Bu yedek geri yüklensin mi?';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      'Karakterler yeni kopyalar olarak eklenir. Mevcut karakterleriniz korunur.';
+
+  @override
+  String get settingsLocalBackupRestoreAction => 'Kopyaları geri yükle';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      'Bu kopyalar bu cihazda kalır. Uygulama dışında saklamak için bir yedeği dışa aktarın.';
+
+  @override
+  String get settingsLocalBackupSaving => 'Yerel yedek kaydediliyor...';
+
+  @override
+  String get settingsLocalBackupSaveError =>
+      'Yerel yedek kaydedilemedi. Lütfen tekrar deneyin.';
 }

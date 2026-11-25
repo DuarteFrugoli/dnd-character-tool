@@ -5,8 +5,10 @@ import 'package:dnd_character_tool/data/datasources/local/character_local_data_s
 import 'package:dnd_character_tool/data/datasources/local/storage_backend_stub.dart';
 import 'package:dnd_character_tool/data/models/models.dart';
 import 'package:dnd_character_tool/data/repositories/character_repository.dart';
+import 'package:dnd_character_tool/data/repositories/local_backup_repository.dart';
 import 'package:dnd_character_tool/data/rulesets/ruleset_ids.dart';
 import 'package:flutter_test/flutter_test.dart';
+import '../../support/memory_local_backup_storage.dart';
 
 // ── Minimal fake storage backend ──────────────────────────────────────────────
 
@@ -119,25 +121,49 @@ void main() {
 
   late CharacterRepository repo;
   late _InMemoryBackend backend;
+  late MemoryLocalBackupStorage localBackupStorage;
 
   setUp(() {
     backend = _InMemoryBackend();
     final ds = CharacterLocalDataSource.fromBackend(backend);
-    repo = CharacterRepository(dataSource: ds);
+    localBackupStorage = MemoryLocalBackupStorage();
+    repo = CharacterRepository(
+      dataSource: ds,
+      localBackups: LocalBackupRepository(storage: localBackupStorage),
+    );
   });
 
-  test('rejects mismatched rules and pack before writing a character', () async {
-    final invalid = _makeCharacter().copyWith(
-      rulesetId: RulesetId.dnd2024,
-      contentPackId: ContentPackId.srd51,
-    );
-    await expectLater(repo.save(invalid), throwsStateError);
-    expect(backend._chars, isEmpty);
-  });
+  test(
+    'rejects mismatched rules and pack before writing a character',
+    () async {
+      final invalid = _makeCharacter().copyWith(
+        rulesetId: RulesetId.dnd2024,
+        contentPackId: ContentPackId.srd51,
+      );
+      await expectLater(repo.save(invalid), throwsStateError);
+      expect(backend._chars, isEmpty);
+    },
+  );
 
   tearDown(() {
     backend.dispose();
   });
+
+  test(
+    'local backup recovers a photo after its original image file is removed',
+    () async {
+      final photo = await backend.writeImage([1, 2, 3, 4]);
+      final original = await repo.save(_makeCharacter(imagePath: photo));
+      await repo.createLocalBackup();
+      final backup = (await repo.listLocalBackups()).single;
+      await repo.removeImage(original);
+      expect(await File(photo).exists(), isFalse);
+      final restored = (await repo.restoreLocalBackup(backup.id)).single;
+      expect(restored.imagePath, isNotNull);
+      expect(await File(restored.imagePath!).readAsBytes(), [1, 2, 3, 4]);
+      expect((await repo.getById(original.id))!.imagePath, isNull);
+    },
+  );
 
   group('importFromJson', () {
     test('always assigns a new ID, never uses the exported ID', () async {
@@ -274,8 +300,9 @@ void main() {
           (decoded['characters'] as List<dynamic>).first,
           containsPair('character', isA<Map<String, dynamic>>()),
         );
-        final firstEntry = (decoded['characters'] as List<dynamic>).first
-            as Map<String, dynamic>;
+        final firstEntry =
+            (decoded['characters'] as List<dynamic>).first
+                as Map<String, dynamic>;
         final savedCharacter = firstEntry['character'] as Map<String, dynamic>;
         expect(savedCharacter['rulesetId'], 'dnd_2014');
         expect(savedCharacter['contentPackId'], 'srd_5_1');
@@ -375,63 +402,73 @@ void main() {
   });
 
   group('dndchar file import', () {
-    test('2024 progression state survives .dndchar and backup round-trips', () async {
-      final now = DateTime(2024);
-      final original = Character(
-        id: 'leveled-2024',
-        rulesetId: RulesetId.dnd2024,
-        contentPackId: ContentPackId.srd521,
-        name: 'Leveled',
-        race: 'Human',
-        characterClass: 'Fighter',
-        level: 2,
-        abilityScores: const AbilityScores(strength: 16),
-        hitPoints: const HitPoints(maximum: 20, current: 20),
-        exhaustionLevel: 2,
-        levelHistory: const [
-          CharacterLevelRecord(
-            characterLevel: 1,
-            classEntryId: 'primary',
-            className: 'Fighter',
-            classLevel: 1,
-            hitPointsGained: 12,
-            hitPointMethod: HitPointGainMethod.maximum,
-            baseAbilityScores: {'strength': 15},
-          ),
-          CharacterLevelRecord(
-            characterLevel: 2,
-            classEntryId: 'primary',
-            className: 'Fighter',
-            classLevel: 2,
-            hitPointsGained: 8,
-            abilityIncreases: {'strength': 1},
-          ),
-        ],
-        createdAt: now,
-        updatedAt: now,
-      );
-      await repo.save(original);
+    test(
+      '2024 progression state survives .dndchar and backup round-trips',
+      () async {
+        final now = DateTime(2024);
+        final original = Character(
+          id: 'leveled-2024',
+          rulesetId: RulesetId.dnd2024,
+          contentPackId: ContentPackId.srd521,
+          name: 'Leveled',
+          race: 'Human',
+          characterClass: 'Fighter',
+          level: 2,
+          abilityScores: const AbilityScores(strength: 16),
+          hitPoints: const HitPoints(maximum: 20, current: 20),
+          exhaustionLevel: 2,
+          levelHistory: const [
+            CharacterLevelRecord(
+              characterLevel: 1,
+              classEntryId: 'primary',
+              className: 'Fighter',
+              classLevel: 1,
+              hitPointsGained: 12,
+              hitPointMethod: HitPointGainMethod.maximum,
+              baseAbilityScores: {'strength': 15},
+            ),
+            CharacterLevelRecord(
+              characterLevel: 2,
+              classEntryId: 'primary',
+              className: 'Fighter',
+              classLevel: 2,
+              hitPointsGained: 8,
+              abilityIncreases: {'strength': 1},
+            ),
+          ],
+          createdAt: now,
+          updatedAt: now,
+        );
+        await repo.save(original);
 
-      void expectSameProgression(Character imported) {
-        expect(imported.exhaustionLevel, 2);
-        expect(imported.levelHistory, hasLength(2));
-        expect(imported.levelHistory.first.baseAbilityScores, {'strength': 15});
-        expect(imported.levelHistory.first.hitPointMethod, HitPointGainMethod.maximum);
-        expect(imported.levelHistory.last.abilityIncreases, {'strength': 1});
-        expect(imported.levelHistory.last.hitPointsGained, 8);
-      }
+        void expectSameProgression(Character imported) {
+          expect(imported.exhaustionLevel, 2);
+          expect(imported.levelHistory, hasLength(2));
+          expect(imported.levelHistory.first.baseAbilityScores, {
+            'strength': 15,
+          });
+          expect(
+            imported.levelHistory.first.hitPointMethod,
+            HitPointGainMethod.maximum,
+          );
+          expect(imported.levelHistory.last.abilityIncreases, {'strength': 1});
+          expect(imported.levelHistory.last.hitPointsGained, 8);
+        }
 
-      expectSameProgression(
-        await repo.importFromDndCharFile(await repo.exportToFileJson(original)),
-      );
-      final restored = await repo.importBackupFromFileJson(
-        await repo.exportBackupToFileJson(),
-      );
-      // The backup holds the original and the .dndchar copy.
-      final copies = restored.where((c) => c.name == 'Leveled').toList();
-      expect(copies, hasLength(2));
-      copies.forEach(expectSameProgression);
-    });
+        expectSameProgression(
+          await repo.importFromDndCharFile(
+            await repo.exportToFileJson(original),
+          ),
+        );
+        final restored = await repo.importBackupFromFileJson(
+          await repo.exportBackupToFileJson(),
+        );
+        // The backup holds the original and the .dndchar copy.
+        final copies = restored.where((c) => c.name == 'Leveled').toList();
+        expect(copies, hasLength(2));
+        copies.forEach(expectSameProgression);
+      },
+    );
 
     test('export and import preserves the embedded character image', () async {
       final sourceImagePath = await backend.writeImage([
@@ -486,6 +523,91 @@ void main() {
       );
     });
   });
+
+  test(
+    'migration preserves the old data before optional sharing and continues on cancellation',
+    () async {
+      await repo.save(_makeCharacter().copyWith(dataVersion: 9));
+      var shared = false;
+      await repo.applyMigrations(
+        shareBackup: (fileJson) async {
+          shared = true;
+          expect(localBackupStorage.payloads.values, [fileJson]);
+          expect((await repo.getById('original-id'))!.dataVersion, 9);
+          expect(
+            (jsonDecode(fileJson)['characters'] as List)
+                .single['character']['dataVersion'],
+            9,
+          );
+          throw StateError('User closed sharing');
+        },
+      );
+      expect(shared, isTrue);
+      expect(
+        (await repo.getById('original-id'))!.dataVersion,
+        currentCharacterDataVersion,
+      );
+      expect(await repo.listLocalBackups(), hasLength(1));
+    },
+  );
+
+  test(
+    'migration can run without opening sharing and does not back up a no-op',
+    () async {
+      await repo.save(_makeCharacter().copyWith(dataVersion: 9));
+      await repo.applyMigrations();
+      expect(await repo.listLocalBackups(), hasLength(1));
+      await repo.applyMigrations();
+      expect(await repo.listLocalBackups(), hasLength(1));
+    },
+  );
+
+  test(
+    'a failed local save leaves all characters unchanged and does not open sharing',
+    () async {
+      await repo.save(_makeCharacter().copyWith(dataVersion: 9));
+      localBackupStorage.failWrites = true;
+      var shared = false;
+      await expectLater(
+        repo.applyMigrations(
+          shareBackup: (_) async {
+            shared = true;
+          },
+        ),
+        throwsStateError,
+      );
+      expect(shared, isFalse);
+      expect((await repo.getById('original-id'))!.dataVersion, 9);
+    },
+  );
+
+  test(
+    'restoring a local backup adds copies and keeps the current character',
+    () async {
+      await repo.save(_makeCharacter(name: 'Before'));
+      final fileJson = await repo.createLocalBackup();
+      final info = (await repo.listLocalBackups()).single;
+      expect(await repo.readLocalBackup(info.id), fileJson);
+      await repo.save(_makeCharacter(name: 'After'));
+      final restored = await repo.restoreLocalBackup(info.id);
+      expect(restored.single.name, 'Before');
+      expect(restored.single.id, isNot('original-id'));
+      expect((await repo.getById('original-id'))!.name, 'After');
+      expect(await repo.getAll(), hasLength(2));
+    },
+  );
+
+  test(
+    'backup refuses a partial scan without replacing earlier local copies',
+    () async {
+      await repo.save(_makeCharacter());
+      await repo.createLocalBackup();
+      final previous = {...localBackupStorage.payloads};
+      backend._chars['broken'] = {'id': 'broken', 'name': 1};
+      await expectLater(repo.createLocalBackup(), throwsStateError);
+      expect(localBackupStorage.payloads, previous);
+    },
+  );
 
   test('migration does not update a partial character scan', () async {
     await repo.save(_makeCharacter().copyWith(dataVersion: 9));

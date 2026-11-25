@@ -6,7 +6,9 @@ import '../datasources/srd/srd_data_source.dart';
 import '../migrations/character_migration.dart';
 import '../migrations/character_migration_runner.dart';
 import '../models/models.dart';
+import '../models/local_backup.dart';
 import '../rulesets/character_rules_context.dart';
+import 'local_backup_repository.dart';
 
 /// Ponto central de acesso a personagens no app.
 /// Isola as features do datasource concreto — facilitando testes e futura
@@ -16,13 +18,16 @@ class CharacterRepository {
     CharacterLocalDataSource? dataSource,
     SrdDataSource? srdDataSource,
     CharacterMigrationRunner? migrationRunner,
+    LocalBackupRepository? localBackups,
   }) : _local = dataSource ?? CharacterLocalDataSource.instance,
        _srd = srdDataSource ?? SrdDataSource.instance,
-       _migrationRunner = migrationRunner ?? CharacterMigrationRunner();
+       _migrationRunner = migrationRunner ?? CharacterMigrationRunner(),
+       _localBackups = localBackups ?? LocalBackupRepository.instance;
 
   final CharacterLocalDataSource _local;
   final SrdDataSource _srd;
   final CharacterMigrationRunner _migrationRunner;
+  final LocalBackupRepository _localBackups;
 
   // ---------------------------------------------------------------------------
   // Leitura
@@ -46,7 +51,10 @@ class CharacterRepository {
 
   /// Saves [converted], a new sheet built from [source] (e.g. its 2024
   /// version), with its own copy of the source image.
-  Future<Character> saveConversion(Character source, Character converted) async {
+  Future<Character> saveConversion(
+    Character source,
+    Character converted,
+  ) async {
     final copiedImagePath = await _local.copyImageForCharacter(
       source,
       imageOwnerId: converted.id,
@@ -142,7 +150,9 @@ class CharacterRepository {
         .withReadIssues(_migrationReadIssues(loadReport.issues));
   }
 
-  Future<CharacterMigrationBatchReport> applyMigrations() async {
+  Future<CharacterMigrationBatchReport> applyMigrations({
+    Future<void> Function(String fileJson)? shareBackup,
+  }) async {
     final loadReport = await _local.loadAllWithReport();
     final context = await _migrationContext();
     final report = _migrationRunner
@@ -150,6 +160,15 @@ class CharacterRepository {
         .withReadIssues(_migrationReadIssues(loadReport.issues));
     if (report.hasReadIssues) {
       throw StateError('Cannot migrate while character reads have errors.');
+    }
+
+    if (!report.hasUpdates) return report;
+    final fileJson = await createLocalBackup();
+    // A durable local recovery point already exists. Sharing is optional.
+    if (shareBackup != null) {
+      try {
+        await shareBackup(fileJson);
+      } catch (_) {}
     }
 
     for (final entry in report.characters) {
@@ -191,6 +210,17 @@ class CharacterRepository {
       _local.exportToFileJson(character);
 
   Future<String> exportBackupToFileJson() => _local.exportBackupToFileJson();
+
+  Future<String> createLocalBackup() async {
+    final fileJson = await exportBackupToFileJson();
+    await _localBackups.save(fileJson);
+    return fileJson;
+  }
+
+  Future<List<LocalBackupInfo>> listLocalBackups() => _localBackups.list();
+  Future<String> readLocalBackup(String id) => _localBackups.read(id);
+  Future<List<Character>> restoreLocalBackup(String id) async =>
+      importBackupFromFileJson(await readLocalBackup(id));
 
   /// Importa um personagem de um JSON exportado.
   /// O personagem importado *sempre* recebe um novo ID para garantir que o ID

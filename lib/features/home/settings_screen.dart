@@ -23,6 +23,7 @@ import '../../shared/providers/providers.dart';
 import '../../shared/widgets/character_maintenance_report.dart';
 import '../../shared/widgets/confirmation_dialog_styles.dart';
 import '../../shared/widgets/responsive_layout.dart';
+import 'local_backups_screen.dart';
 import '../../shared/widgets/whats_new_dialog.dart';
 import '../character_list/character_list_provider.dart';
 
@@ -202,6 +203,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   ),
                 ),
                 const _BackupTile(),
+                const LocalBackupsTile(),
                 const _ImportBackupTile(),
 
                 const Divider(height: 32),
@@ -295,13 +297,15 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
     final l10n = AppLocalizations.of(context)!;
     setState(() => _exporting = true);
 
+    var localSaved = false;
     try {
       final repo = ref.read(characterRepositoryProvider);
       final cachedCharacterCount = ref
           .read(characterListProvider)
           .valueOrNull
           ?.length;
-      final backupJson = await repo.exportBackupToFileJson();
+      final backupJson = await repo.createLocalBackup();
+      localSaved = true;
       if (!mounted) return;
       await exportDndBackupFile(
         backupJson,
@@ -324,13 +328,23 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
             ),
       );
     } on FileExportCancelled {
-      // Do not show success or request a review for a cancelled export.
+      if (mounted) {
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(l10n.settingsLocalBackupsSaved)));
+      }
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(l10n.settingsBackupExportError)));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            localSaved
+                ? '${l10n.settingsLocalBackupsSaved} ${l10n.settingsBackupExportError}'
+                : l10n.settingsLocalBackupSaveError,
+          ),
+        ),
+      );
     } finally {
       if (mounted) {
         setState(() => _exporting = false);
@@ -650,21 +664,27 @@ class _CharacterMaintenanceTileState
       _busy = true;
       _busyTask = _MaintenanceBusyTask.backingUp;
     });
+    final container = ProviderScope.containerOf(context, listen: false);
     try {
       final repo = ref.read(characterRepositoryProvider);
-      final backupJson = await repo.exportBackupToFileJson();
-      if (!mounted) return;
-      await exportDndBackupFile(
-        backupJson,
-        sharePositionOrigin: fileShareOrigin(context),
+      final report = await repo.applyMigrations(
+        shareBackup: (fileJson) async {
+          try {
+            if (mounted) {
+              await exportDndBackupFile(
+                fileJson,
+                sharePositionOrigin: fileShareOrigin(context),
+              );
+            }
+          } finally {
+            if (mounted) {
+              setState(() => _busyTask = _MaintenanceBusyTask.updating);
+            }
+          }
+        },
       );
-
-      if (!mounted) return;
-      setState(() => _busyTask = _MaintenanceBusyTask.updating);
-
-      final report = await repo.applyMigrations();
       final freshPreview = await repo.previewMigrations();
-      ref.invalidate(characterListProvider);
+      container.invalidate(characterListProvider);
       if (!mounted) return;
       setState(() => _preview = freshPreview);
       await showDialog<void>(
@@ -683,12 +703,10 @@ class _CharacterMaintenanceTileState
           ],
         ),
       );
-    } on FileExportCancelled {
-      // Leave characters untouched when the required backup is cancelled.
     } catch (_) {
       if (!mounted) return;
       final errorMessage = _busyTask == _MaintenanceBusyTask.backingUp
-          ? l10n.settingsBackupExportError
+          ? l10n.settingsLocalBackupSaveError
           : l10n.settingsMaintenanceError;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(
@@ -751,7 +769,7 @@ class _CharacterMaintenanceTileState
 
   String _busySubtitle(AppLocalizations l10n) {
     return switch (_busyTask) {
-      _MaintenanceBusyTask.backingUp => l10n.settingsBackupExporting,
+      _MaintenanceBusyTask.backingUp => l10n.settingsLocalBackupSaving,
       _ => l10n.settingsMaintenanceWorking,
     };
   }

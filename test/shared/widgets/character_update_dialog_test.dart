@@ -11,9 +11,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class _MaintenanceRepository extends CharacterRepository {
-  _MaintenanceRepository({this.hasReadIssues = false});
+  _MaintenanceRepository({
+    this.hasReadIssues = false,
+    this.failLocalBackup = false,
+  });
 
   final bool hasReadIssues;
+  final bool failLocalBackup;
   int backupCalls = 0;
   int updateCalls = 0;
   List<String>? events;
@@ -68,7 +72,21 @@ class _MaintenanceRepository extends CharacterRepository {
   }
 
   @override
-  Future<CharacterMigrationBatchReport> applyMigrations() async {
+  Future<String> createLocalBackup() async {
+    final payload = await exportBackupToFileJson();
+    if (failLocalBackup) throw StateError('Storage full');
+    events?.add('local');
+    return payload;
+  }
+
+  @override
+  Future<CharacterMigrationBatchReport> applyMigrations({
+    Future<void> Function(String)? shareBackup,
+  }) async {
+    final payload = await createLocalBackup();
+    try {
+      await shareBackup?.call(payload);
+    } catch (_) {}
     updateCalls++;
     events?.add('apply');
     return report;
@@ -157,7 +175,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(repository.backupCalls, 2);
     expect(repository.updateCalls, 1);
-    expect(events, ['export', 'export', 'apply']);
+    expect(events, ['local', 'export', 'local', 'export', 'apply']);
     expect(find.text('Update complete'), findsOneWidget);
 
     await tester.tap(find.text('Close'));
@@ -165,8 +183,8 @@ void main() {
     expect(result, isTrue);
   });
 
-  testWidgets('failed backup keeps characters unchanged', (tester) async {
-    final repository = _MaintenanceRepository();
+  testWidgets('failed local backup keeps characters unchanged', (tester) async {
+    final repository = _MaintenanceRepository(failLocalBackup: true);
     bool? result;
     await _showHarness(
       tester,
@@ -185,25 +203,24 @@ void main() {
     expect(result, isFalse);
   });
 
-  testWidgets(
-    'cancelled backup leaves characters unchanged without showing an error',
-    (tester) async {
-      final repository = _MaintenanceRepository();
-      await _showHarness(
-        tester,
-        repository,
-        exportBackup: (_) async => throw const FileExportCancelled(),
-        onClosed: (_) {},
-      );
-      await tester.tap(find.text('Update all characters'));
-      await tester.pumpAndSettle();
-      expect(repository.backupCalls, 1);
-      expect(repository.updateCalls, 0);
-      expect(find.text('Could not export backup.'), findsNothing);
-      expect(find.text('Update all characters'), findsOneWidget);
-      expect(tester.takeException(), isNull);
-    },
-  );
+  testWidgets('cancelled sharing still updates after saving the local backup', (
+    tester,
+  ) async {
+    final repository = _MaintenanceRepository();
+    await _showHarness(
+      tester,
+      repository,
+      exportBackup: (_) async => throw const FileExportCancelled(),
+      onClosed: (_) {},
+    );
+    await tester.tap(find.text('Update all characters'));
+    await tester.pumpAndSettle();
+    expect(repository.backupCalls, 1);
+    expect(repository.updateCalls, 1);
+    expect(find.text('Could not export backup.'), findsNothing);
+    expect(find.text('Update complete'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 
   testWidgets('read issues disable backup and update', (tester) async {
     final repository = _MaintenanceRepository(hasReadIssues: true);

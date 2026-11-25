@@ -1,10 +1,11 @@
 # Validação de arquivos no iOS
 
-As correções estão na `developer`. O lançamento aguarda a validação no Mac e
-no aparelho. Compilação iOS, testes XCTest e compartilhamento real ainda não
+As correções estão na `developer`. O lançamento iOS aguarda a validação no Mac e
+no aparelho; a publicação Android segue a validação no Android. Compilação iOS,
+testes XCTest e compartilhamento real ainda não
 foram executados no ambiente Windows usado para implementar estas mudanças.
 
-Verificações locais concluídas: 607 testes Flutter aprovados, análise estática
+Verificações locais concluídas: 624 testes Flutter aprovados, análise estática
 dos arquivos Dart alterados sem problemas, plist e referências de fontes do
 Xcode consistentes, e compilação web em modo release concluída. Os oito testes
 XCTest e os cenários reais abaixo continuam pendentes no Mac/iPhone.
@@ -88,8 +89,11 @@ em beta; aqui a verificação é de preservação de dados.
   por vez, sem perder um arquivo nem duplicar a importação.
 - [ ] Cancele o seletor, a confirmação de importação e a folha de exportação.
   Nenhum personagem deve mudar, e exportação cancelada não deve mostrar sucesso.
-- [ ] Se houver personagens aguardando atualização, cancele a folha do backup
-  obrigatório: a atualização dos personagens deve permanecer pendente.
+- [ ] Se houver personagens aguardando atualização, cancele o compartilhamento
+  oferecido: a atualização deve continuar, com uma cópia anterior às mudanças
+  acessível em Configurações > Backups locais.
+- [ ] Crie quatro backups locais e confira que apenas os três mais recentes
+  aparecem. Exporte um deles e restaure outro como cópias, conferindo as fotos.
 - [ ] Escolha um arquivo inválido no seletor: o app deve informar erro sem
   alterar os personagens existentes. Um arquivo externo sem conteúdo de ficha
   ou backup pode ser ignorado antes de abrir a confirmação.
@@ -102,7 +106,7 @@ em beta; aqui a verificação é de preservação de dados.
   Mail ou aplicativo de mensagens e importe no iPhone.
 - [ ] iOS → Android: faça o caminho inverso e confira os mesmos dados e fotos.
 - [ ] No iPad ou no simulador iPad, abra a folha de exportação do personagem,
-  do backup e do backup obrigatório da manutenção. O popover deve aparecer
+  do backup e do compartilhamento opcional da manutenção. O popover deve aparecer
   corretamente; cancelar e tentar novamente deve funcionar.
 
 ## Registrar o resultado antes do lançamento

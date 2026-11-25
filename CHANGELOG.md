@@ -7,14 +7,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-### Added
-- **Backups locais**: o app guarda as tres copias completas mais recentes antes de atualizar personagens ou exportar um backup, incluindo fotos. Configuracoes > Backups locais permite salvar uma copia agora, exportar e restaurar como novos personagens, preservando as fichas atuais.
-
-### Fixed
-- **Arquivos no iOS**: fichas `.dndchar` e backups `.dndbackup` registrados para abertura externa, com leitura em segundo plano e acesso coordenado a Arquivos/iCloud. A inicializacao por arquivo aguarda a tela de importacao; arquivos recebidos em sequencia nao empilham confirmacoes.
-- **Exportacao no iPhone/iPad**: compartilhamento com origem visivel para o popover, arquivos temporarios separados e tratamento de cancelamento e erro. Antes de atualizar, uma copia local e salva; cancelar ou falhar o compartilhamento opcional permite continuar a atualizacao. Roteiro de validacao em `docs/IOS_FILE_TESTING.md`.
-- **Importacao Android sem bloquear a interface**: arquivos de ficha e backup abertos por outros apps passam a ser lidos em segundo plano. A entrega ao Flutter aguarda a tela estar pronta, preserva a ordem dos arquivos e descarta resultados ao encerrar a Activity. Correcao preventiva de um risco de ANR; o relatorio da 2.1.2 nao confirma essa causa.
-
 ---
 
 ## [3.0.2] - 2026-11-25
@@ -25,19 +17,29 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Materiais 2014 em ingles**: 32 invocacoes, 17 disciplinas elementais (incluindo Elemental Attunement), terrenos e magias do Circle of the Land, totens, tabela de Wild Magic, cinco variantes de antecedente, sugestoes originais de personalidade e 34 itens de foco/transporte. Circle of the Moon recebe feras ate ND 6 e quatro elementais, com gasto de duas utilizacoes. Pendencias por idioma estao em `docs/CONTENT_COVERAGE.md`.
 - **Magias do PHB 2014**: adicionadas Armor of Agathys e as outras 29 magias que faltavam, com descricoes em ingles, listas de classe e subclasse, componentes, concentracao e escalonamento da edicao 2014. O catalogo passa a incluir todas as 361 magias do PHB 2014.
 - **Subclasses 2024**: as 48 subclasses do Player's Handbook 2024, com resumos em ingles para as 36 novas, escolhas, recursos e magias adicionais. Eldritch Knight e Arcane Trickster recebem conjuracao e espacos de multiclasse; College of Dance recebe sua CA sem armadura; Circle of the Moon recebe limites de forma, PV temporarios e feras ate CR 6.
+- **Backups locais**: o app guarda as tres copias completas mais recentes antes de atualizar personagens ou exportar um backup, incluindo fotos. Configuracoes > Backups locais permite salvar uma copia agora, exportar e restaurar como novos personagens, preservando as fichas atuais.
 
 ### Changed
 - **D&D 2024 em beta**: a escolha de edicao avisa que o conteudo e as traducoes estao incompletos; ainda ha lacunas em antecedentes, especies e talentos. As 48 subclasses estao cadastradas, mas muitos dos novos textos estao apenas em ingles.
 - **Novidades da 3.0.2**: novo anuncio nos onze idiomas explica as adicoes de 2014, a cobertura em ingles/portugues/espanhol, o beta de 2024 e as habilidades que ainda exigem aplicacao manual. Quem ja leu os anuncios anteriores recebe o novo aviso uma vez.
+- **Backups nas novidades**: o aviso da 3.0.2 tambem apresenta os tres backups locais e o compartilhamento opcional nos onze idiomas.
 
 ### Fixed
 - **Magias do Patrulheiro (2014)**: corrigida a progressao de magias conhecidas usada na subida de nivel, incluindo personagens multiclasse.
 - **Pacto do Tomo (2014)**: escolher o pacto passa a exigir tres truques de qualquer lista de classe. Os truques ficam vinculados ao Bruxo e sao removidos ao trocar o pacto ou desfazer a escolha; as regras extras do Tomo de 2024 nao se aplicam a 2014.
+- **Arquivos no iOS**: fichas `.dndchar` e backups `.dndbackup` registrados para abertura externa, com leitura em segundo plano e acesso coordenado a Arquivos/iCloud. A inicializacao por arquivo aguarda a tela de importacao; arquivos recebidos em sequencia nao empilham confirmacoes.
+- **Exportacao no iPhone/iPad**: compartilhamento com origem visivel para o popover, arquivos temporarios separados e tratamento de cancelamento e erro. Roteiro de validacao em `docs/IOS_FILE_TESTING.md`.
+- **Atualizacao de fichas e compartilhamento**: a copia local e gravada antes de alterar os personagens. Cancelar ou falhar o compartilhamento opcional permite continuar; falhas ao salvar a copia local interrompem a atualizacao. Backups com erros de leitura de fichas nao substituem as copias anteriores.
+- **Importacao Android sem bloquear a interface**: arquivos de ficha e backup abertos por outros apps passam a ser lidos em segundo plano. A entrega ao Flutter aguarda a tela estar pronta, preserva a ordem dos arquivos e descarta resultados ao encerrar a Activity. Correcao preventiva de um risco de ANR; o relatorio da 2.1.2 nao confirma essa causa.
+- **Build de debug Android**: a ausencia de `android/key.properties` deixa de provocar o erro `null cannot be cast to non-null type kotlin.String`. Builds de release continuam exigindo as credenciais de assinatura, com uma mensagem indicando os campos ausentes.
 
 ### Internal
 - **Versionamento**: versao do app preparada como `3.0.2+37`.
 - **Cobertura e limites**: o escopo do catalogo 2014 e o trabalho de traducao pendente seguem documentados em `docs/CONTENT_COVERAGE.md`. Suplementos posteriores e automacao de todas as regras nao estao incluidos; a validacao em aparelho fisico continua pendente.
 - **Notas da Play Store**: textos para os onze idiomas em `docs/releases/3.0.2-play-store.txt`.
+- **FVM**: Flutter `3.41.9` fixado em `.fvmrc`, alinhado aos testes e ao deploy existentes. A pasta local `.fvm/` permanece ignorada.
+- **Arquivos locais**: `.env` e variantes, chaves Android/iOS e perfis de provisionamento adicionados ao `.gitignore`, preservando `.env.example`. O relatorio gerado `analyze_out.txt` deixa de ser versionado.
+- **Validacao Android e limites de iOS**: APK de debug compilado sem credenciais de release; a verificacao de release rejeita corretamente a ausencia de assinatura. A compilacao iOS, os oito testes XCTest e os testes reais de importacao e compartilhamento seguem pendentes no Mac/iPhone; a publicacao desta versao e somente para Android.
 
 ---
 

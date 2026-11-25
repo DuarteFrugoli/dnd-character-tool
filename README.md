@@ -136,8 +136,9 @@ A cross-platform app for creating and managing D&D 5e (2014) and 5.5e (2024) cha
 ## Getting Started
 
 ```bash
-flutter pub get
-flutter run
+fvm use 3.41.9
+fvm flutter pub get
+fvm flutter run
 ```
 
 ## Development workflow
@@ -150,7 +151,7 @@ flutter run
 
 - [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, notes, dice rolling, level-up rules, review prompts, display preferences, maintenance migrations and import/export flows.
 - [Changelog](CHANGELOG.md) tracks release history.
-- [iOS file testing](docs/IOS_FILE_TESTING.md) covers Mac setup, native tests and the iPhone/iPad import/export checks required before release.
+- [iOS file testing](docs/IOS_FILE_TESTING.md) covers Mac setup, native tests and the iPhone/iPad import/export checks required before an iOS release.
 
 > The built-in rules cover D&D 5e (2014), with material from **SRD 5.1**, and D&D 5.5e (2024), with material from **SRD 5.2.1**.
 
@@ -298,8 +299,9 @@ Aplicativo multiplataforma para criar e gerenciar personagens de D&D 5e (2014) e
 ## Como rodar
 
 ```bash
-flutter pub get
-flutter run
+fvm use 3.41.9
+fvm flutter pub get
+fvm flutter run
 ```
 
 ## Fluxo de desenvolvimento

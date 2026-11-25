@@ -56,3 +56,21 @@ untranslated.json
 
 # Claude Code
 .claude/
+
+# FVM Version Cache
+.fvm/
+
+# Local environment variables (keep shareable examples)
+.env
+.env.*
+!.env.example
+
+# Signing keys and provisioning profiles
+*.jks
+*.keystore
+*.p12
+*.p8
+*.mobileprovision
+
+# Local analysis output
+/analyze_out.txt

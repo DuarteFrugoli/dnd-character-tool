@@ -1,6 +1,6 @@
 # Validação de arquivos no iOS
 
-As correções estão na `developer`. O lançamento iOS aguarda a validação no Mac e
+As correções estão incluídas na versão 3.0.2. O lançamento iOS aguarda a validação no Mac e
 no aparelho; a publicação Android segue a validação no Android. Compilação iOS,
 testes XCTest e compartilhamento real ainda não
 foram executados no ambiente Windows usado para implementar estas mudanças.

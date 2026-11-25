@@ -154,7 +154,8 @@ class _IdleWildShape extends ConsumerWidget {
       showDragHandle: true,
       builder: (_) => _FormPicker(
         character: character,
-        forms: available,
+        forms: available.where((form) => uses!.isUnlimited ||
+            (uses!.current ?? 0) >= WildShapeEngine.formCost(character, form)).toList(),
         i18n: i18n,
       ),
     );
@@ -197,7 +198,7 @@ Future<void> confirmAndAssumeWildShape(
     if (uses.isUnlimited)
       l10n.wildShapeConfirmUnlimited
     else
-      l10n.wildShapeConfirmUse(uses.current!, uses.current! - 1, uses.max!),
+      l10n.wildShapeConfirmUse(uses.current!, uses.current! - WildShapeEngine.formCost(character, form), uses.max!),
     if (character.wildShape != null) l10n.wildShapeConfirmReplace,
     if (rules.usesBeastHitPoints)
       l10n.wildShapeConfirmFormHp(form.hitPoints)
@@ -399,7 +400,7 @@ class _ActiveWildShape extends ConsumerWidget {
           spacing: 8,
           runSpacing: 4,
           children: [
-            Chip(label: Text('${l10n.statAC} ${form.armorClass}')),
+            Chip(label: Text('${l10n.statAC} ${WildShapeEngine.armorClassFor(character, form)}')),
             if (active.hitPoints != null)
               Chip(
                 label: Text(

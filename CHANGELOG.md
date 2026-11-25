@@ -5,7 +5,31 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
-## [3.0.1] - In development
+## [3.0.2] - 2026-11-25
+
+### Added
+- **Familiares do Pacto da Corrente (2014)**: blocos de estatisticas de Imp, Pseudodragon, Quasit e Sprite adicionados ao catalogo, com textos em ingles, portugues e espanhol, preservando as resistencias condicionais de 2014.
+- **Traducoes 2014 em portugues e espanhol**: novos materiais de magias, invocacoes, disciplinas, terrenos, totens, tabela de Magia Selvagem, criaturas, equipamento, variantes de antecedente e sugestoes de personalidade traduzidos e integrados a interface.
+- **Materiais 2014 em ingles**: 32 invocacoes, 17 disciplinas elementais (incluindo Elemental Attunement), terrenos e magias do Circle of the Land, totens, tabela de Wild Magic, cinco variantes de antecedente, sugestoes originais de personalidade e 34 itens de foco/transporte. Circle of the Moon recebe feras ate ND 6 e quatro elementais, com gasto de duas utilizacoes. Pendencias por idioma estao em `docs/CONTENT_COVERAGE.md`.
+- **Magias do PHB 2014**: adicionadas Armor of Agathys e as outras 29 magias que faltavam, com descricoes em ingles, listas de classe e subclasse, componentes, concentracao e escalonamento da edicao 2014. O catalogo passa a incluir todas as 361 magias do PHB 2014.
+- **Subclasses 2024**: as 48 subclasses do Player's Handbook 2024, com resumos em ingles para as 36 novas, escolhas, recursos e magias adicionais. Eldritch Knight e Arcane Trickster recebem conjuracao e espacos de multiclasse; College of Dance recebe sua CA sem armadura; Circle of the Moon recebe limites de forma, PV temporarios e feras ate CR 6.
+
+### Changed
+- **D&D 2024 em beta**: a escolha de edicao avisa que o conteudo e as traducoes estao incompletos; ainda ha lacunas em antecedentes, especies e talentos. As 48 subclasses estao cadastradas, mas muitos dos novos textos estao apenas em ingles.
+- **Novidades da 3.0.2**: novo anuncio nos onze idiomas explica as adicoes de 2014, a cobertura em ingles/portugues/espanhol, o beta de 2024 e as habilidades que ainda exigem aplicacao manual. Quem ja leu os anuncios anteriores recebe o novo aviso uma vez.
+
+### Fixed
+- **Magias do Patrulheiro (2014)**: corrigida a progressao de magias conhecidas usada na subida de nivel, incluindo personagens multiclasse.
+- **Pacto do Tomo (2014)**: escolher o pacto passa a exigir tres truques de qualquer lista de classe. Os truques ficam vinculados ao Bruxo e sao removidos ao trocar o pacto ou desfazer a escolha; as regras extras do Tomo de 2024 nao se aplicam a 2014.
+
+### Internal
+- **Versionamento**: versao do app preparada como `3.0.2+37`.
+- **Cobertura e limites**: o escopo do catalogo 2014 e o trabalho de traducao pendente seguem documentados em `docs/CONTENT_COVERAGE.md`. Suplementos posteriores e automacao de todas as regras nao estao incluidos; a validacao em aparelho fisico continua pendente.
+- **Notas da Play Store**: textos para os onze idiomas em `docs/releases/3.0.2-play-store.txt`.
+
+---
+
+## [3.0.1] - Previous preparation
 
 ### Added
 - **Conversao pela lista**: o menu de cada personagem 2014 na lista tambem oferece a conversao para D&D 2024.

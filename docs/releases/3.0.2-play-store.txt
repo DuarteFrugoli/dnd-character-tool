@@ -1,0 +1,55 @@
+<en-US>
+Expanded 2014 content: spells, invocations, disciplines, totems, backgrounds and creatures, with new text in English, Portuguese and Spanish.
+Fixed Ranger spell progression and Pact of the Tome cantrip choices.
+All 48 Player’s Handbook 2024 subclasses are registered. 2024 remains in beta: content and translations are incomplete, and some features require manual application.
+</en-US>
+<pt-BR>
+Mais conteúdo de 2014: magias, invocações, disciplinas, totens, antecedentes e criaturas, com novos textos em inglês, português e espanhol.
+Corrigidas a progressão de magias do Patrulheiro e a escolha de truques do Pacto do Tomo.
+As 48 subclasses do Livro do Jogador 2024 estão cadastradas. A edição 2024 segue em beta: conteúdo e traduções incompletos, com algumas habilidades de aplicação manual.
+</pt-BR>
+<es-ES>
+Más contenido de 2014: conjuros, invocaciones, disciplinas, tótems, trasfondos y criaturas, con nuevos textos en inglés, portugués y español.
+Corregidas la progresión de conjuros del explorador y la elección de trucos del Pacto del Tomo.
+Registradas las 48 subclases del Manual del Jugador 2024. La edición 2024 sigue en beta: contenido y traducciones incompletos; algunos rasgos requieren aplicación manual.
+</es-ES>
+<fr-FR>
+Catalogue 2014 enrichi : sorts, invocations, disciplines, totems, historiques et créatures, avec de nouveaux textes en anglais, portugais et espagnol.
+Correction des sorts du rôdeur et du choix des sorts mineurs du Pacte du Grimoire.
+Les 48 sous-classes du Manuel des Joueurs 2024 sont répertoriées. L’édition 2024 reste en bêta : contenu et traductions incomplets ; certaines capacités restent à appliquer manuellement.
+</fr-FR>
+<de-DE>
+Mehr Inhalte für 2014: Zauber, Anrufungen, Disziplinen, Totems, Hintergründe und Kreaturen. Neue Texte auf Englisch, Portugiesisch und Spanisch.
+Zauberfortschritt des Waldläufers und Zaubertrickauswahl beim Pakt des Buches korrigiert.
+Alle 48 Unterklassen des Spielerhandbuchs 2024 sind erfasst. 2024 bleibt in der Beta: Inhalte und Übersetzungen sind unvollständig; einige Merkmale müssen manuell angewendet werden.
+</de-DE>
+<it-IT>
+Più contenuti per il 2014: incantesimi, invocazioni, discipline, totem, background e creature, con nuovi testi in inglese, portoghese e spagnolo.
+Corretti la progressione degli incantesimi del ranger e i trucchetti del Patto del Tomo.
+Registrate tutte le 48 sottoclassi del Manuale del Giocatore 2024. Il 2024 resta in beta: contenuti e traduzioni incompleti; alcuni privilegi vanno applicati manualmente.
+</it-IT>
+<ja-JP>
+2014年版の呪文、妖術、奥義、トーテム、背景、クリーチャーを追加。新しいテキストは英語・ポルトガル語・スペイン語に対応しています。
+レンジャーの呪文習得数と、書の契約の初級呪文選択を修正しました。
+2024年版プレイヤーズ・ハンドブックのサブクラス48種を登録。2024年版は引き続きベータ版で、内容と翻訳は未完成です。一部の特徴は手動で適用する必要があります。
+</ja-JP>
+<ko-KR>
+2014 규칙의 주문, 영창, 원소 수련, 토템, 배경, 크리처를 추가했습니다. 새 텍스트는 영어, 포르투갈어, 스페인어로 제공됩니다.
+레인저의 주문 습득 수와 책의 계약 소마법 선택을 수정했습니다.
+2024 플레이어 핸드북의 하위 클래스 48개를 모두 등록했습니다. 2024는 아직 베타이며 콘텐츠와 번역이 미완성입니다. 일부 특성은 수동으로 적용해야 합니다.
+</ko-KR>
+<ru-RU>
+Каталог 2014 расширен: заклинания, воззвания, дисциплины, тотемы, предыстории и существа. Новые тексты — на английском, португальском и испанском.
+Исправлены число заклинаний следопыта и выбор заговоров Договора гримуара.
+Добавлены все 48 подклассов Книги игрока 2024. Редакция 2024 остаётся в бета-версии: материалы и переводы неполны, некоторые умения применяются вручную.
+</ru-RU>
+<tr-TR>
+2014 kataloğu genişletildi: büyüler, yakarışlar, disiplinler, totemler, geçmişler ve yaratıklar. Yeni metinler İngilizce, Portekizce ve İspanyolca sunulur.
+Kolcunun büyü ilerlemesi ve Kitap Paktı’nın basit büyü seçimi düzeltildi.
+2024 Oyuncunun El Kitabı’ndaki 48 alt sınıf kayıtlıdır. 2024 hâlâ betadır: içerik ve çeviriler eksiktir; bazı özellikler elle uygulanmalıdır.
+</tr-TR>
+<zh-CN>
+扩充2014版资料：新增法术、魔能祈唤、宗法、图腾、背景和生物。新增文本提供英语、葡萄牙语和西班牙语版本。
+修复游侠的法术习得数量及书之魔契的戏法选择。
+已登记2024版《玩家手册》的全部48个子职业。2024版仍处于测试阶段，内容和翻译尚不完整，部分特性仍需手动应用。
+</zh-CN>

@@ -1261,5 +1261,535 @@
         "description": "O lobo tem vantagem em jogadas de ataque contra uma criatura se pelo menos um dos aliados do lobo estiver a até {{distance:5ft}} da criatura e esse aliado não estiver incapacitado."
       }
     }
+  },
+  "Air Elemental": {
+    "name": "Elemental do Ar",
+    "traits": {
+      "air_form": {
+        "name": "Forma de Ar",
+        "description": "O elemental pode entrar no espaço de uma criatura hostil e parar ali. Atravessa espaços de apenas {{distance:1in}} de largura sem se espremer."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistência a Dano Não Mágico",
+        "description": "O elemental tem resistência a dano de concussão, perfurante e cortante de ataques não mágicos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataques Múltiplos",
+        "description": "O elemental faz dois ataques de pancada."
+      },
+      "slam": {
+        "name": "Pancada",
+        "description": "Ataque Corpo a Corpo com Arma: +8 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 14 (2d8 + 5) de dano de concussão."
+      },
+      "whirlwind": {
+        "name": "Redemoinho",
+        "description": "Cada criatura no espaço do elemental faz um teste de resistência de Força CD 13. Se falhar, sofre 15 (3d8 + 2) de dano de concussão, é lançada até {{distance:20ft}} em uma direção aleatória e fica caída. Se atingir um objeto, como parede ou chão, sofre 3 (1d6) de concussão a cada {{distance:10ft}} lançados. Se for lançada contra outra criatura, essa criatura deve passar em resistência de Destreza CD 13 ou sofrer o mesmo dano e ficar caída. Se passar no teste inicial, sofre metade do dano de concussão e não é lançada nem derrubada."
+      }
+    }
+  },
+  "Earth Elemental": {
+    "name": "Elemental da Terra",
+    "traits": {
+      "earth_glide": {
+        "name": "Deslizar pela Terra",
+        "description": "O elemental pode escavar terra e pedra não mágicas e não trabalhadas sem perturbar o material por onde passa."
+      },
+      "siege_monster": {
+        "name": "Monstro de Cerco",
+        "description": "O elemental causa o dobro de dano a objetos e estruturas."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistência a Dano Não Mágico",
+        "description": "O elemental tem resistência a dano de concussão, perfurante e cortante de ataques não mágicos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataques Múltiplos",
+        "description": "O elemental faz dois ataques de pancada."
+      },
+      "slam": {
+        "name": "Pancada",
+        "description": "Ataque Corpo a Corpo com Arma: +8 para acertar, alcance {{distance:10ft|short}}, um alvo. Acerto: 14 (2d8 + 5) de dano de concussão."
+      }
+    }
+  },
+  "Elephant": {
+    "name": "Elefante",
+    "traits": {
+      "trampling_charge": {
+        "name": "Investida Atropeladora",
+        "description": "Se a criatura se mover pelo menos {{distance:20ft}} em linha reta em direção a um alvo e o acertar com chifrada no mesmo turno, ele deve passar em um teste de resistência de Força CD 12 ou ficar caído. Se o alvo estiver caído, a criatura pode fazer um ataque de pisoteio contra ele como ação bônus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Chifrada",
+        "description": "Ataque Corpo a Corpo com Arma: +8 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 19 (3d8 + 6) de dano perfurante."
+      },
+      "stomp": {
+        "name": "Pisotear",
+        "description": "Ataque Corpo a Corpo com Arma: +8 para acertar, alcance {{distance:5ft|short}}, uma criatura caída. Acerto: 22 (3d10 + 6) de dano de concussão."
+      }
+    }
+  },
+  "Fire Elemental": {
+    "name": "Elemental do Fogo",
+    "traits": {
+      "fire_form": {
+        "name": "Forma de Fogo",
+        "description": "O elemental atravessa espaços de apenas {{distance:1in}} de largura sem se espremer. Uma criatura que o toca ou o acerta com um ataque corpo a corpo a até {{distance:5ft}} sofre 5 (1d10) de dano de fogo. Ele pode entrar no espaço de uma criatura hostil e parar ali. Na primeira vez que entra no espaço de uma criatura em um turno, ela sofre 5 (1d10) de dano de fogo e pega fogo; até alguém usar uma ação para apagar as chamas, sofre 5 (1d10) de dano de fogo no início de cada turno dela."
+      },
+      "illumination": {
+        "name": "Iluminação",
+        "description": "O elemental emite luz plena em um raio de {{distance:30ft|adj}} e penumbra por mais {{distance:30ft}}."
+      },
+      "water_susceptibility": {
+        "name": "Suscetibilidade à Água",
+        "description": "A cada {{distance:5ft}} que o elemental se move na água, ou por galão de água jogado nele, sofre 1 de dano de frio."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistência a Dano Não Mágico",
+        "description": "O elemental tem resistência a dano de concussão, perfurante e cortante de ataques não mágicos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataques Múltiplos",
+        "description": "O elemental faz dois ataques de toque."
+      },
+      "touch": {
+        "name": "Toque",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 10 (2d6 + 3) de dano de fogo. Se o alvo for uma criatura ou objeto inflamável, pega fogo. Até uma criatura usar uma ação para apagar as chamas, o alvo sofre 5 (1d10) de dano de fogo no início de cada turno dele."
+      }
+    }
+  },
+  "Giant Boar": {
+    "name": "Javali Gigante",
+    "traits": {
+      "charge": {
+        "name": "Investida",
+        "description": "Se a criatura se mover pelo menos {{distance:20ft}} em linha reta em direção a um alvo e o acertar com seu ataque de presas no mesmo turno, o alvo sofre mais 7 (2d6) de dano cortante. Se for uma criatura, deve passar em um teste de resistência de Força CD 13 ou ficar caído."
+      },
+      "relentless": {
+        "name": "Implacável",
+        "description": "Se o javali sofrer 10 de dano ou menos que o reduziria a 0 pontos de vida, ele fica com 1 ponto de vida em vez disso."
+      }
+    },
+    "actions": {
+      "tusk": {
+        "name": "Presa",
+        "description": "Ataque Corpo a Corpo com Arma: +5 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 10 (2d6 + 3) de dano cortante."
+      }
+    }
+  },
+  "Giant Constrictor Snake": {
+    "name": "Serpente Constritora Gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:10ft|short}}, uma criatura. Acerto: 11 (2d6 + 4) de dano perfurante."
+      },
+      "constrict": {
+        "name": "Constrição",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:5ft|short}}, uma criatura. Acerto: 13 (2d8 + 4) de dano de concussão, e o alvo fica agarrado (CD 16 para escapar). Até o agarrão terminar, ele fica impedido e a serpente não pode constringir outro alvo."
+      }
+    }
+  },
+  "Giant Crocodile": {
+    "name": "Crocodilo Gigante",
+    "traits": {
+      "hold_breath": {
+        "name": "Prender a Respiração",
+        "description": "A criatura pode prender a respiração por 30 minutos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataques Múltiplos",
+        "description": "O crocodilo faz dois ataques: uma mordida e um com a cauda."
+      },
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +8 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 21 (3d10 + 5) de dano perfurante, e o alvo fica agarrado (CD 16 para escapar). Até o agarrão terminar, ele fica impedido e o crocodilo não pode morder outro alvo."
+      },
+      "tail": {
+        "name": "Cauda",
+        "description": "Ataque Corpo a Corpo com Arma: +8 para acertar, alcance {{distance:10ft|short}}, um alvo não agarrado pelo crocodilo. Acerto: 14 (2d8 + 5) de dano de concussão. Se o alvo for uma criatura, deve passar em um teste de resistência de Força CD 16 ou ficar caído."
+      }
+    }
+  },
+  "Giant Elk": {
+    "name": "Alce Gigante",
+    "traits": {
+      "charge": {
+        "name": "Investida",
+        "description": "Se a criatura se mover pelo menos {{distance:20ft}} em linha reta em direção a um alvo e o acertar com seu ataque de cabeçada no mesmo turno, o alvo sofre mais 7 (2d6) de dano. Se for uma criatura, deve passar em um teste de resistência de Força CD 14 ou ficar caído."
+      }
+    },
+    "actions": {
+      "ram": {
+        "name": "Cabeçada",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:10ft|short}}, um alvo. Acerto: 11 (2d6 + 4) de dano de concussão."
+      },
+      "hooves": {
+        "name": "Cascos",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:5ft|short}}, uma criatura caída. Acerto: 22 (4d8 + 4) de dano de concussão. O raro e majestoso alce gigante costuma ser visto como presságio de um acontecimento importante, como o nascimento de um rei. Lendas falam de deuses que assumem essa forma ao visitar o Plano Material. Muitas culturas consideram sua caça um convite à ira divina."
+      }
+    }
+  },
+  "Giant Scorpion": {
+    "name": "Escorpião Gigante",
+    "actions": {
+      "multiattack": {
+        "name": "Ataques Múltiplos",
+        "description": "O escorpião faz três ataques: dois com as garras e um com o ferrão."
+      },
+      "claw": {
+        "name": "Garra",
+        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 6 (1d8 + 2) de dano de concussão, e o alvo fica agarrado (CD 12 para escapar). O escorpião tem duas garras, e cada uma pode agarrar apenas um alvo."
+      },
+      "sting": {
+        "name": "Ferrão",
+        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance {{distance:5ft|short}}, uma criatura. Acerto: 7 (1d10 + 2) de dano perfurante, e o alvo faz um teste de resistência de Constituição CD 12, sofrendo 22 (4d10) de dano de veneno se falhar, ou metade se passar."
+      }
+    }
+  },
+  "Giant Shark": {
+    "name": "Tubarão Gigante",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frenesi de Sangue",
+        "description": "O tubarão tem vantagem nas jogadas de ataque corpo a corpo contra criaturas que não estejam com todos os pontos de vida."
+      },
+      "water_breathing": {
+        "name": "Respiração Aquática",
+        "description": "O tubarão só pode respirar debaixo d’água."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +9 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 22 (3d10 + 6) de dano perfurante. Um tubarão gigante mede {{distance:30ft}} de comprimento e costuma viver em oceanos profundos. Sem medo, ataca tudo que cruza seu caminho, incluindo baleias e navios."
+      }
+    }
+  },
+  "Hunter Shark": {
+    "name": "Tubarão Caçador",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frenesi de Sangue",
+        "description": "O tubarão tem vantagem nas jogadas de ataque corpo a corpo contra criaturas que não estejam com todos os pontos de vida."
+      },
+      "water_breathing": {
+        "name": "Respiração Aquática",
+        "description": "O tubarão só pode respirar debaixo d’água."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 13 (2d8 + 4) de dano perfurante. Maior e mais feroz que um tubarão de recife, mas menor que um tubarão gigante, vive em águas profundas. Costuma caçar sozinho, embora vários possam se alimentar na mesma área. Um adulto mede de {{distance:15ft|num}} a {{distance:20ft}}."
+      }
+    }
+  },
+  "Killer Whale": {
+    "name": "Orca",
+    "traits": {
+      "echolocation": {
+        "name": "Ecolocalização",
+        "description": "A orca não pode usar sua percepção às cegas enquanto estiver surda."
+      },
+      "hold_breath": {
+        "name": "Prender a Respiração",
+        "description": "A criatura pode prender a respiração por 30 minutos."
+      },
+      "keen_hearing": {
+        "name": "Audição Aguçada",
+        "description": "A orca tem vantagem nos testes de Sabedoria (Percepção) que dependam da audição."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 21 (5d6 + 4) de dano perfurante."
+      }
+    }
+  },
+  "Mammoth": {
+    "name": "Mamute",
+    "traits": {
+      "trampling_charge": {
+        "name": "Investida Atropeladora",
+        "description": "Se a criatura se mover pelo menos {{distance:20ft}} em linha reta em direção a um alvo e o acertar com chifrada no mesmo turno, ele deve passar em um teste de resistência de Força CD 18 ou ficar caído. Se o alvo estiver caído, a criatura pode fazer um ataque de pisoteio contra ele como ação bônus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Chifrada",
+        "description": "Ataque Corpo a Corpo com Arma: +10 para acertar, alcance {{distance:10ft|short}}, um alvo. Acerto: 25 (4d8 + 7) de dano perfurante."
+      },
+      "stomp": {
+        "name": "Pisotear",
+        "description": "Ataque Corpo a Corpo com Arma: +10 para acertar, alcance {{distance:5ft|short}}, uma criatura caída. Acerto: 29 (4d10 + 7) de dano de concussão. O mamute se assemelha a um elefante de pelagem espessa e presas longas. Mais robusto e feroz que elefantes comuns, vive em climas que vão do subártico ao subtropical."
+      }
+    }
+  },
+  "Plesiosaurus": {
+    "name": "Plesiossauro",
+    "traits": {
+      "hold_breath": {
+        "name": "Prender a Respiração",
+        "description": "A criatura pode prender a respiração por 1 hora."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:10ft|short}}, um alvo. Acerto: 14 (3d6 + 4) de dano perfurante."
+      }
+    }
+  },
+  "Polar Bear": {
+    "name": "Urso Polar",
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato Aguçado",
+        "description": "A criatura tem vantagem nos testes de Sabedoria (Percepção) que dependam do olfato."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataques Múltiplos",
+        "description": "O urso faz dois ataques: uma mordida e um com as garras."
+      },
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +7 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 9 (1d8 + 5) de dano perfurante."
+      },
+      "claws": {
+        "name": "Garras",
+        "description": "Ataque Corpo a Corpo com Arma: +7 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 12 (2d6 + 5) de dano cortante."
+      }
+    }
+  },
+  "Rhinoceros": {
+    "name": "Rinoceronte",
+    "traits": {
+      "charge": {
+        "name": "Investida",
+        "description": "Se a criatura se mover pelo menos {{distance:20ft}} em linha reta em direção a um alvo e o acertar com seu ataque de chifrada no mesmo turno, o alvo sofre mais 9 (2d8) de dano de concussão. Se for uma criatura, deve passar em um teste de resistência de Força CD 15 ou ficar caído."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Chifrada",
+        "description": "Ataque Corpo a Corpo com Arma: +7 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 14 (2d8 + 5) de dano de concussão."
+      }
+    }
+  },
+  "Saber-Toothed Tiger": {
+    "name": "Tigre Dentes-de-Sabre",
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato Aguçado",
+        "description": "A criatura tem vantagem nos testes de Sabedoria (Percepção) que dependam do olfato."
+      },
+      "pounce": {
+        "name": "Bote",
+        "description": "Se a criatura se mover pelo menos {{distance:20ft}} em linha reta em direção a um alvo e o acertar com garra no mesmo turno, ele deve passar em um teste de resistência de Força CD 14 ou ficar caído. Se o alvo estiver caído, a criatura pode fazer um ataque de mordida contra ele como ação bônus."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 10 (1d10 + 5) de dano perfurante."
+      },
+      "claw": {
+        "name": "Garra",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 12 (2d6 + 5) de dano cortante."
+      }
+    }
+  },
+  "Swarm of Poisonous Snakes": {
+    "name": "Enxame de Serpentes Venenosas",
+    "traits": {
+      "swarm": {
+        "name": "Enxame",
+        "description": "O enxame pode ocupar o espaço de outra criatura e vice-versa, e atravessa qualquer abertura grande o bastante para uma serpente Minúscula. O enxame não pode recuperar pontos de vida nem receber pontos de vida temporários."
+      }
+    },
+    "actions": {
+      "bites": {
+        "name": "Mordidas",
+        "description": "Ataque Corpo a Corpo com Arma: +6 para acertar, alcance {{distance:0ft|short}}, uma criatura no espaço do enxame. Acerto: 7 (2d6) de dano perfurante, ou 3 (1d6) de dano perfurante se o enxame tiver metade dos pontos de vida ou menos. O alvo faz um teste de resistência de Constituição CD 10, sofrendo 14 (4d6) de dano de veneno se falhar, ou metade se passar."
+      }
+    }
+  },
+  "Triceratops": {
+    "name": "Tricerátops",
+    "traits": {
+      "trampling_charge": {
+        "name": "Investida Atropeladora",
+        "description": "Se a criatura se mover pelo menos {{distance:20ft}} em linha reta em direção a um alvo e o acertar com chifrada no mesmo turno, ele deve passar em um teste de resistência de Força CD 13 ou ficar caído. Se o alvo estiver caído, a criatura pode fazer um ataque de pisoteio contra ele como ação bônus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Chifrada",
+        "description": "Ataque Corpo a Corpo com Arma: +9 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 24 (4d8 + 6) de dano perfurante."
+      },
+      "stomp": {
+        "name": "Pisotear",
+        "description": "Ataque Corpo a Corpo com Arma: +9 para acertar, alcance {{distance:5ft|short}}, uma criatura caída. Acerto: 22 (3d10 + 6) de dano de concussão."
+      }
+    }
+  },
+  "Water Elemental": {
+    "name": "Elemental da Água",
+    "traits": {
+      "water_form": {
+        "name": "Forma de Água",
+        "description": "O elemental pode entrar no espaço de uma criatura hostil e parar ali. Atravessa espaços de apenas {{distance:1in}} de largura sem se espremer."
+      },
+      "freeze": {
+        "name": "Congelar",
+        "description": "Se o elemental sofrer dano de frio, congela parcialmente; seu deslocamento é reduzido em {{distance:20ft}} até o fim do próximo turno dele."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistência a Dano Não Mágico",
+        "description": "O elemental tem resistência a dano de concussão, perfurante e cortante de ataques não mágicos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataques Múltiplos",
+        "description": "O elemental faz dois ataques de pancada."
+      },
+      "slam": {
+        "name": "Pancada",
+        "description": "Ataque Corpo a Corpo com Arma: +7 para acertar, alcance {{distance:5ft|short}}, um alvo. Acerto: 13 (2d8 + 4) de dano de concussão."
+      },
+      "whelm": {
+        "name": "Envolver",
+        "description": "Cada criatura no espaço do elemental faz um teste de resistência de Força CD 15. Se falhar, sofre 13 (2d8 + 4) de concussão. Se for Grande ou menor, também fica agarrada (CD 14 para escapar). Até o agarrão terminar, fica impedida e não pode respirar, a menos que respire água. Se passar no teste, é empurrada para fora do espaço do elemental. Ele pode agarrar uma criatura Grande ou até duas Médias ou menores de cada vez. No início de cada turno do elemental, cada alvo agarrado sofre 13 (2d8 + 4) de concussão. Uma criatura a até {{distance:5ft}} pode retirar uma criatura ou objeto de dentro dele usando uma ação e passando em um teste de Força CD 14."
+      }
+    }
+  },
+  "Imp": {
+    "name": "Diabrete",
+    "traits": {
+      "shapechanger": {
+        "name": "Metamorfo",
+        "description": "O diabrete pode usar sua ação para se transformar em uma fera semelhante a um rato (deslocamento de {{distance:20ft|short}}), corvo ({{distance:20ft|short}}, voo de {{distance:60ft|short}}) ou aranha ({{distance:20ft|short}}, escalada de {{distance:20ft|short}}), ou voltar à sua forma verdadeira. Suas estatísticas permanecem iguais, exceto pelos deslocamentos indicados. Seu equipamento não se transforma. Ele retorna à forma verdadeira se morrer."
+      },
+      "devil_s_sight": {
+        "name": "Visão Diabólica",
+        "description": "Escuridão mágica não impede a visão no escuro do diabrete."
+      },
+      "magic_resistance": {
+        "name": "Resistência à Magia",
+        "description": "O diabrete tem vantagem em salvaguardas contra magias e outros efeitos mágicos."
+      },
+      "conditional_damage_resistance": {
+        "name": "Resistência a Dano",
+        "description": "O diabrete tem resistência a dano de concussão, perfurante e cortante causado por ataques não mágicos que não sejam feitos com armas de prata."
+      }
+    },
+    "actions": {
+      "sting_bite_in_beast_form": {
+        "name": "Ferrão (Mordida na Forma de Fera)",
+        "description": "Ataque Corpo a Corpo com Arma: +5 para acertar, alcance de {{distance:5ft|short}}, um alvo. Acerto: 5 (1d4 + 3) de dano perfurante. O alvo deve fazer uma salvaguarda de Constituição CD 11, sofrendo 10 (3d6) de dano de veneno se falhar, ou metade desse dano se obtiver sucesso."
+      },
+      "invisibility": {
+        "name": "Invisibilidade",
+        "description": "O diabrete fica magicamente invisível até atacar ou perder a concentração (como se estivesse se concentrando em uma magia). Seu equipamento também fica invisível."
+      }
+    }
+  },
+  "Quasit": {
+    "name": "Quasit",
+    "traits": {
+      "shapechanger": {
+        "name": "Metamorfo",
+        "description": "O quasit pode usar sua ação para se transformar em uma fera semelhante a um morcego (deslocamento de {{distance:10ft|short}}, voo de {{distance:40ft|short}}), centopeia ({{distance:40ft|short}}, escalada de {{distance:40ft|short}}) ou sapo ({{distance:40ft|short}}, natação de {{distance:40ft|short}}), ou voltar à sua forma verdadeira. Suas estatísticas permanecem iguais, exceto pelos deslocamentos indicados. Seu equipamento não se transforma. Ele retorna à forma verdadeira se morrer."
+      },
+      "magic_resistance": {
+        "name": "Resistência à Magia",
+        "description": "O quasit tem vantagem em salvaguardas contra magias e outros efeitos mágicos."
+      },
+      "nonmagical_damage_resistance": {
+        "name": "Resistência a Dano Não Mágico",
+        "description": "O quasit tem resistência a dano de concussão, perfurante e cortante causado por ataques não mágicos."
+      }
+    },
+    "actions": {
+      "claws_bite_in_beast_form": {
+        "name": "Garras (Mordida na Forma de Fera)",
+        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance de {{distance:5ft|short}}, um alvo. Acerto: 5 (1d4 + 3) de dano perfurante. O alvo deve passar em uma salvaguarda de Constituição CD 10 ou sofrer 5 (2d4) de dano de veneno e ficar Envenenado por 1 minuto. O alvo pode repetir a salvaguarda ao final de cada turno dele, encerrando o efeito se obtiver sucesso."
+      },
+      "scare": {
+        "name": "Assustar",
+        "description": "Uma criatura à escolha do quasit a até {{distance:20ft}} dele deve passar em uma salvaguarda de Sabedoria CD 10 ou ficar Amedrontada por 1 minuto. Ela pode repetir a salvaguarda ao final de cada turno dela, com desvantagem se puder ver o quasit, encerrando o efeito se obtiver sucesso."
+      },
+      "invisibility": {
+        "name": "Invisibilidade",
+        "description": "O quasit fica magicamente invisível até atacar, usar Assustar ou perder a concentração (como se estivesse se concentrando em uma magia). Seu equipamento também fica invisível."
+      }
+    }
+  },
+  "Pseudodragon": {
+    "name": "Pseudodragão",
+    "traits": {
+      "keen_senses": {
+        "name": "Sentidos Aguçados",
+        "description": "O pseudodragão tem vantagem em testes de Sabedoria (Percepção) que dependam da visão, audição ou olfato."
+      },
+      "magic_resistance": {
+        "name": "Resistência à Magia",
+        "description": "O pseudodragão tem vantagem em salvaguardas contra magias e outros efeitos mágicos."
+      },
+      "limited_telepathy": {
+        "name": "Telepatia Limitada",
+        "description": "O pseudodragão pode comunicar magicamente ideias simples, emoções e imagens por telepatia a qualquer criatura a até {{distance:100ft}} dele que compreenda um idioma."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordida",
+        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance de {{distance:5ft|short}}, um alvo. Acerto: 4 (1d4 + 2) de dano perfurante."
+      },
+      "sting": {
+        "name": "Ferrão",
+        "description": "Ataque Corpo a Corpo com Arma: +4 para acertar, alcance de {{distance:5ft|short}}, uma criatura. Acerto: 4 (1d4 + 2) de dano perfurante. O alvo deve passar em uma salvaguarda de Constituição CD 11 ou ficar Envenenado por 1 hora. Se falhar por 5 ou mais, também fica Inconsciente pelo mesmo período, até sofrer dano ou até outra criatura usar uma ação para acordá-lo."
+      }
+    },
+    "languages": [
+      "compreende Comum e Dracônico, mas não pode falar"
+    ]
+  },
+  "Sprite": {
+    "name": "Sprite",
+    "traits": {},
+    "actions": {
+      "longsword": {
+        "name": "Espada Longa",
+        "description": "Ataque Corpo a Corpo com Arma: +2 para acertar, alcance de {{distance:5ft|short}}, um alvo. Acerto: 1 de dano cortante."
+      },
+      "shortbow": {
+        "name": "Arco Curto",
+        "description": "Ataque à Distância com Arma: +6 para acertar, distância de {{distance:40/160ft|short}}, um alvo. Acerto: 1 de dano perfurante. O alvo deve passar em uma salvaguarda de Constituição CD 10 ou ficar Envenenado por 1 minuto. Se o resultado da salvaguarda for 5 ou menos, o alvo Envenenado também fica Inconsciente pelo mesmo período, até sofrer dano ou até outra criatura usar uma ação para acordá-lo."
+      },
+      "heart_sight": {
+        "name": "Visão do Coração",
+        "description": "O sprite toca uma criatura e conhece magicamente o estado emocional atual dela. Se o alvo falhar em uma salvaguarda de Carisma CD 10, o sprite também descobre seu alinhamento. Celestiais, ínferos e mortos-vivos falham automaticamente nessa salvaguarda."
+      },
+      "invisibility": {
+        "name": "Invisibilidade",
+        "description": "O sprite fica magicamente invisível até atacar, conjurar uma magia ou perder a concentração (como se estivesse se concentrando em uma magia). Seu equipamento também fica invisível."
+      }
+    }
   }
 }

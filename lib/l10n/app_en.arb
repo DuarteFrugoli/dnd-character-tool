@@ -4,7 +4,7 @@
   "@creationRulesetTitle": { "description": "Title before guided character creation ruleset selection." },
   "creationRuleset2014": "D&D 5e (2014)",
   "@creationRuleset2014": { "description": "Guided character creation option for 2014 rules." },
-  "creationRuleset2024": "D&D 5.5e (2024)",
+  "creationRuleset2024": "D&D 5.5e (2024) — Beta",
   "@creationRuleset2024": { "description": "Guided character creation option for 2024 rules." },
   "rulesetShort2014": "5e",
   "@rulesetShort2014": { "description": "Short edition label shown on 2014 characters." },
@@ -2499,5 +2499,43 @@
   "incomingBackupPrompt": "Import backup from file?",
   "@incomingBackupPrompt": { "description": "Dialog title when the app receives a backup file from Android share/open with." },
   "incomingBackupSuccess": "{count, plural, =1{1 character imported from backup.} other{{count} characters imported from backup.}}",
-  "@incomingBackupSuccess": { "description": "Snackbar shown after importing a backup from an incoming file.", "placeholders": { "count": { "type": "int" } } }
+  "@incomingBackupSuccess": { "description": "Snackbar shown after importing a backup from an incoming file.", "placeholders": { "count": { "type": "int" } } },
+  "backgroundPersonalitySuggestions": "Personality suggestions",
+  "@backgroundPersonalitySuggestions": {"description": "2014 supplemental material interface label."},
+  "featureChoiceReplacementLimit": "You may replace at most one previously known invocation or elemental discipline at this level.",
+  "@featureChoiceReplacementLimit": {"description": "2014 supplemental material interface label."},
+  "monsterNonmagicalAttacks": "nonmagical attacks",
+  "@monsterNonmagicalAttacks": {"description": "2014 supplemental material interface label."},
+  "whatsNew301Summary": "This update expands the 2014 catalog and fixes character choices. D&D 2024 remains in beta, with incomplete content.",
+  "@whatsNew301Summary": {
+    "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  },
+  "whatsNew301ContentTitle": "More 2014 content",
+  "@whatsNew301ContentTitle": {
+    "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  },
+  "whatsNew301ContentBody": "Added missing Player’s Handbook spells, invocations, disciplines, totems and background variants in English, Portuguese and Spanish. Pact of the Tome now guides your three cantrip choices, and the catalog includes the four special Pact of the Chain familiars.",
+  "@whatsNew301ContentBody": {
+    "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  },
+  "whatsNew301BetaTitle": "D&D 2024: beta",
+  "@whatsNew301BetaTitle": {
+    "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  },
+  "whatsNew301BetaBody": "All 48 Player’s Handbook subclasses are registered. Backgrounds, species, feats and translations still have gaps; much of the new subclass text is available only in English.",
+  "@whatsNew301BetaBody": {
+    "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  },
+  "whatsNew301LimitsTitle": "What still needs work",
+  "@whatsNew301LimitsTitle": {
+    "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  },
+  "whatsNew301LimitsBody": "Some features still require manual application. The catalog does not include every 2014 supplement. The new 2014 material still needs translation into the other app languages.",
+  "@whatsNew301LimitsBody": {
+    "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  },
+  "creationRuleset2024BetaDescription": "Beta: incomplete content and translations. Backgrounds, species and feats still have gaps.",
+  "@creationRuleset2024BetaDescription": {
+    "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  }
 }

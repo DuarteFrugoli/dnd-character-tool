@@ -335,7 +335,10 @@ class FeatureChoiceEngine {
     final requests = <FeatureChoiceRequest>[];
     for (final entry in classMap.entries) {
       for (final choice in entry.value.choices) {
-        if (!choice.countByLevel.containsKey(level)) continue;
+        final canReplace2014Invocation =
+            choice.optionsSource == 'eldritch_invocations_2014' &&
+            choice.replaceOneOnLevelUp && choice.isActiveAtLevel(level);
+        if (!choice.countByLevel.containsKey(level) && !canReplace2014Invocation) continue;
         requests.add(
           FeatureChoiceRequest(
             sourceType: FeatureChoiceSourceType.classFeature,
@@ -358,6 +361,17 @@ class FeatureChoiceEngine {
   ) {
     return requests.every((request) => request.isComplete(choices));
   }
+
+  static bool replacementsWithinLimit(
+    List<FeatureChoiceRequest> requests,
+    List<CharacterFeatureChoice> previous,
+    List<CharacterFeatureChoice> current,
+  ) => requests.every((request) {
+    if (!request.requirement.replaceOneOnLevelUp) return true;
+    final old = request.findIn(previous)?.values.toSet() ?? const <String>{};
+    final now = request.findIn(current)?.values.toSet() ?? const <String>{};
+    return old.difference(now).length <= 1;
+  });
 
   static List<CharacterFeatureChoice> upsertChoices(
     List<CharacterFeatureChoice> current,

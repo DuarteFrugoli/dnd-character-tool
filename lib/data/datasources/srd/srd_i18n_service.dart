@@ -130,6 +130,12 @@ class SrdI18nService {
     try {
       final srdRaw = await rootBundle.loadString(pack.srdAsset('backgrounds'));
       final srdBackgrounds = jsonDecode(srdRaw) as List<dynamic>;
+      if (pack.id == ContentPackId.srd51) {
+        final supplemental = jsonDecode(await rootBundle.loadString(
+          'assets/data/2014/phb_backgrounds.json',
+        )) as Map<String, dynamic>;
+        srdBackgrounds.addAll(supplemental['variants'] as List);
+      }
       final i18nBackgrounds = data['backgrounds'];
       if (i18nBackgrounds != null) {
         for (final srdBg in srdBackgrounds) {
@@ -355,6 +361,21 @@ class SrdI18nService {
     final feature = entry['feature'];
     if (feature is! Map) return null;
     return feature['description'] as String?;
+  }
+
+  Map<String, List<String>> backgroundPersonalitySuggestions(
+    String backgroundEn,
+    Map<String, List<String>> fallback,
+  ) {
+    final entry = _data['backgrounds']?[backgroundEn.toLowerCase()];
+    final translated = entry is Map ? entry['personalitysuggestions'] : null;
+    if (translated is! Map) return fallback;
+    return {
+      for (final category in fallback.entries)
+        category.key: translated[category.key] is List
+            ? List<String>.from(translated[category.key] as List)
+            : category.value,
+    };
   }
 
   // ── Class features ─────────────────────────────────────────────────────────

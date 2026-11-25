@@ -1,0 +1,946 @@
+{
+  "source": "Player's Handbook (2014)",
+  "contentType": "Original English mechanical summaries; supplemental options outside the SRD.",
+  "sources": [
+    "https://media.wizards.com/2023/downloads/dnd/SRD_CC_v5.1.pdf",
+    "https://dnd5e.wikidot.com/monk:four-elements:disciplines",
+    "https://dnd5e.wikidot.com/druid:land",
+    "https://dnd5e.wikidot.com/sorcerer:wild-magic",
+    "https://www.tsaurus.com/tools/tool/wild-magic",
+    "https://www.shivath.com/dossiers/wild-magic"
+  ],
+  "featureChoices": {
+    "optionSources": {
+      "eldritch_invocations_2014": [
+        {
+          "id": "agonizing_blast",
+          "name": "Agonizing Blast",
+          "description": "Add your Charisma modifier to the damage of each Eldritch Blast hit.",
+          "minClassLevel": 2,
+          "requiresSpell": "Eldritch Blast"
+        },
+        {
+          "id": "armor_of_shadows",
+          "name": "Armor of Shadows",
+          "description": "Cast Mage Armor on yourself at will without a slot or material components.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "ascendant_step",
+          "name": "Ascendant Step",
+          "description": "Cast Levitate on yourself at will without a slot or material components.",
+          "minClassLevel": 9
+        },
+        {
+          "id": "beast_speech",
+          "name": "Beast Speech",
+          "description": "Cast Speak with Animals at will without a slot.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "beguiling_influence",
+          "name": "Beguiling Influence",
+          "description": "Gain proficiency in Deception and Persuasion.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "bewitching_whispers",
+          "name": "Bewitching Whispers",
+          "description": "Cast Compulsion using a warlock slot; once per long rest.",
+          "minClassLevel": 7
+        },
+        {
+          "id": "book_of_ancient_secrets",
+          "name": "Book of Ancient Secrets",
+          "description": "Pact of the Tome required. Add two 1st-level rituals from any lists to your book; cast them only as rituals unless learned another way. You may also ritually cast known warlock ritual spells. Copy found rituals of level no higher than half your warlock level, rounded up: 2 hours and 50 gp per spell level.",
+          "minClassLevel": 2,
+          "requiresPact": "pact_of_the_tome"
+        },
+        {
+          "id": "chains_of_carceri",
+          "name": "Chains of Carceri",
+          "description": "Pact of the Chain required. Cast Hold Monster at will without a slot or material components, only against celestials, fiends or elementals. A long rest is required before targeting the same creature again.",
+          "minClassLevel": 15,
+          "requiresPact": "pact_of_the_chain"
+        },
+        {
+          "id": "devil_s_sight",
+          "name": "Devil's Sight",
+          "description": "See normally through magical and nonmagical darkness within {{distance:120ft}}.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "dreadful_word",
+          "name": "Dreadful Word",
+          "description": "Cast Confusion using a warlock slot; once per long rest.",
+          "minClassLevel": 7
+        },
+        {
+          "id": "eldritch_sight",
+          "name": "Eldritch Sight",
+          "description": "Cast Detect Magic at will without a slot or material components.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "eldritch_spear",
+          "name": "Eldritch Spear",
+          "description": "Eldritch Blast has a range of {{distance:300ft}}.",
+          "minClassLevel": 2,
+          "requiresSpell": "Eldritch Blast"
+        },
+        {
+          "id": "eyes_of_the_rune_keeper",
+          "name": "Eyes of the Rune Keeper",
+          "description": "You can read any writing.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "fiendish_vigor",
+          "name": "Fiendish Vigor",
+          "description": "Cast False Life on yourself at will as a 1st-level spell without a slot or material components.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "gaze_of_two_minds",
+          "name": "Gaze of Two Minds",
+          "description": "Use an action to touch a willing humanoid and perceive through its senses until the end of your next turn. Spend an action on later turns to extend the link. You gain its special senses but are blinded and deafened to your own surroundings while linked.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "lifedrinker",
+          "name": "Lifedrinker",
+          "description": "Pact of the Blade required. Pact weapon hits add necrotic damage equal to your Charisma modifier, minimum 1.",
+          "minClassLevel": 12,
+          "requiresPact": "pact_of_the_blade"
+        },
+        {
+          "id": "mask_of_many_faces",
+          "name": "Mask of Many Faces",
+          "description": "Cast Disguise Self at will without a slot.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "master_of_myriad_forms",
+          "name": "Master of Myriad Forms",
+          "description": "Cast Alter Self at will without a slot.",
+          "minClassLevel": 15
+        },
+        {
+          "id": "minions_of_chaos",
+          "name": "Minions of Chaos",
+          "description": "Cast Conjure Elemental using a warlock slot; once per long rest.",
+          "minClassLevel": 9
+        },
+        {
+          "id": "mire_the_mind",
+          "name": "Mire the Mind",
+          "description": "Cast Slow using a warlock slot; once per long rest.",
+          "minClassLevel": 5
+        },
+        {
+          "id": "misty_visions",
+          "name": "Misty Visions",
+          "description": "Cast Silent Image at will without a slot or material components.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "one_with_shadows",
+          "name": "One with Shadows",
+          "description": "In dim light or darkness, use an action to become invisible until you move or take an action or reaction.",
+          "minClassLevel": 5
+        },
+        {
+          "id": "otherworldly_leap",
+          "name": "Otherworldly Leap",
+          "description": "Cast Jump on yourself at will without a slot or material components.",
+          "minClassLevel": 9
+        },
+        {
+          "id": "repelling_blast",
+          "name": "Repelling Blast",
+          "description": "On each Eldritch Blast hit, you may push the creature up to {{distance:10ft}} straight away from you.",
+          "minClassLevel": 2,
+          "requiresSpell": "Eldritch Blast"
+        },
+        {
+          "id": "sculptor_of_flesh",
+          "name": "Sculptor of Flesh",
+          "description": "Cast Polymorph using a warlock slot; once per long rest.",
+          "minClassLevel": 7
+        },
+        {
+          "id": "sign_of_ill_omen",
+          "name": "Sign of Ill Omen",
+          "description": "Cast Bestow Curse using a warlock slot; once per long rest.",
+          "minClassLevel": 5
+        },
+        {
+          "id": "thief_of_five_fates",
+          "name": "Thief of Five Fates",
+          "description": "Cast Bane using a warlock slot; once per long rest.",
+          "minClassLevel": 2
+        },
+        {
+          "id": "thirsting_blade",
+          "name": "Thirsting Blade",
+          "description": "Pact of the Blade required. When you take the Attack action, attack twice with your pact weapon instead of once.",
+          "minClassLevel": 5,
+          "requiresPact": "pact_of_the_blade"
+        },
+        {
+          "id": "visions_of_distant_realms",
+          "name": "Visions of Distant Realms",
+          "description": "Cast Arcane Eye at will without a slot.",
+          "minClassLevel": 15
+        },
+        {
+          "id": "voice_of_the_chain_master",
+          "name": "Voice of the Chain Master",
+          "description": "Pact of the Chain required. Communicate telepathically and perceive through your familiar on the same plane. While perceiving through it, you may speak through it in your own voice.",
+          "minClassLevel": 2,
+          "requiresPact": "pact_of_the_chain"
+        },
+        {
+          "id": "whispers_of_the_grave",
+          "name": "Whispers of the Grave",
+          "description": "Cast Speak with Dead at will without a slot.",
+          "minClassLevel": 9
+        },
+        {
+          "id": "witch_sight",
+          "name": "Witch Sight",
+          "description": "Within {{distance:30ft}} and line of sight, see the true forms of shapechangers and creatures concealed by illusion or transmutation.",
+          "minClassLevel": 15
+        }
+      ],
+      "elemental_disciplines_2014": [
+        {
+          "id": "breath_of_winter",
+          "name": "Breath of Winter",
+          "description": "6 ki: Cone of Cold.",
+          "kiCost": 6,
+          "minClassLevel": 17
+        },
+        {
+          "id": "clench_of_the_north_wind",
+          "name": "Clench of the North Wind",
+          "description": "3 ki: Hold Person.",
+          "kiCost": 3,
+          "minClassLevel": 6
+        },
+        {
+          "id": "eternal_mountain_defense",
+          "name": "Eternal Mountain Defense",
+          "description": "5 ki: Stoneskin, self only.",
+          "kiCost": 5,
+          "minClassLevel": 17
+        },
+        {
+          "id": "fangs_of_the_fire_snake",
+          "name": "Fangs of the Fire Snake",
+          "description": "Attack action: 1 ki adds {{distance:10ft}} of unarmed reach this turn; hits deal fire. Each hit may spend 1 more ki for +1d10 fire.",
+          "kiCost": 1,
+          "minClassLevel": 3
+        },
+        {
+          "id": "fist_of_four_thunders",
+          "name": "Fist of Four Thunders",
+          "description": "2 ki: Thunderwave.",
+          "kiCost": 2,
+          "minClassLevel": 3
+        },
+        {
+          "id": "fist_of_unbroken_air",
+          "name": "Fist of Unbroken Air",
+          "description": "Action, 2 ki, target within {{distance:30ft}}: Strength save; failure takes 3d10 bludgeoning, push up to {{distance:20ft}} and prone. Success halves damage and prevents movement/prone. Each extra ki adds 1d10.",
+          "kiCost": 2,
+          "minClassLevel": 3
+        },
+        {
+          "id": "flames_of_the_phoenix",
+          "name": "Flames of the Phoenix",
+          "description": "4 ki: Fireball.",
+          "kiCost": 4,
+          "minClassLevel": 11
+        },
+        {
+          "id": "gong_of_the_summit",
+          "name": "Gong of the Summit",
+          "description": "3 ki: Shatter.",
+          "kiCost": 3,
+          "minClassLevel": 6
+        },
+        {
+          "id": "mist_stance",
+          "name": "Mist Stance",
+          "description": "4 ki: Gaseous Form, self only.",
+          "kiCost": 4,
+          "minClassLevel": 11
+        },
+        {
+          "id": "ride_the_wind",
+          "name": "Ride the Wind",
+          "description": "4 ki: Fly, self only.",
+          "kiCost": 4,
+          "minClassLevel": 11
+        },
+        {
+          "id": "river_of_hungry_flame",
+          "name": "River of Hungry Flame",
+          "description": "5 ki: Wall of Fire.",
+          "kiCost": 5,
+          "minClassLevel": 17
+        },
+        {
+          "id": "rush_of_the_gale_spirits",
+          "name": "Rush of the Gale Spirits",
+          "description": "2 ki: Gust of Wind.",
+          "kiCost": 2,
+          "minClassLevel": 3
+        },
+        {
+          "id": "shape_the_flowing_river",
+          "name": "Shape the Flowing River",
+          "description": "Action, 1 ki: reshape water or ice within {{distance:120ft}}, up to {{distance:30ft}} on a side. Freeze/thaw or reshape ice; height changes cannot exceed half the area size. Cannot trap or injure creatures.",
+          "kiCost": 1,
+          "minClassLevel": 3
+        },
+        {
+          "id": "sweeping_cinder_strike",
+          "name": "Sweeping Cinder Strike",
+          "description": "2 ki: Burning Hands.",
+          "kiCost": 2,
+          "minClassLevel": 3
+        },
+        {
+          "id": "water_whip",
+          "name": "Water Whip",
+          "description": "Action, 2 ki, visible target within {{distance:30ft}}: Dexterity save; failure takes 3d10 bludgeoning and either prone or pull up to {{distance:25ft}}. Success halves damage and prevents movement/prone. Each extra ki adds 1d10.",
+          "kiCost": 2,
+          "minClassLevel": 3
+        },
+        {
+          "id": "wave_of_rolling_earth",
+          "name": "Wave of Rolling Earth",
+          "description": "6 ki: Wall of Stone.",
+          "kiCost": 6,
+          "minClassLevel": 17
+        }
+      ],
+      "circle_lands_2014": [
+        {
+          "id": "arctic",
+          "name": "Arctic",
+          "description": "Always-prepared circle spells at druid levels 3, 5, 7 and 9; these do not count against your preparation limit.",
+          "alwaysPreparedSpellsByLevel": {
+            "3": [
+              "Hold Person",
+              "Spike Growth"
+            ],
+            "5": [
+              "Sleet Storm",
+              "Slow"
+            ],
+            "7": [
+              "Freedom of Movement",
+              "Ice Storm"
+            ],
+            "9": [
+              "Commune with Nature",
+              "Cone of Cold"
+            ]
+          }
+        },
+        {
+          "id": "coast",
+          "name": "Coast",
+          "description": "Always-prepared circle spells at druid levels 3, 5, 7 and 9; these do not count against your preparation limit.",
+          "alwaysPreparedSpellsByLevel": {
+            "3": [
+              "Mirror Image",
+              "Misty Step"
+            ],
+            "5": [
+              "Water Breathing",
+              "Water Walk"
+            ],
+            "7": [
+              "Control Water",
+              "Freedom of Movement"
+            ],
+            "9": [
+              "Conjure Elemental",
+              "Scrying"
+            ]
+          }
+        },
+        {
+          "id": "desert",
+          "name": "Desert",
+          "description": "Always-prepared circle spells at druid levels 3, 5, 7 and 9; these do not count against your preparation limit.",
+          "alwaysPreparedSpellsByLevel": {
+            "3": [
+              "Blur",
+              "Silence"
+            ],
+            "5": [
+              "Create Food and Water",
+              "Protection from Energy"
+            ],
+            "7": [
+              "Blight",
+              "Hallucinatory Terrain"
+            ],
+            "9": [
+              "Insect Plague",
+              "Wall of Stone"
+            ]
+          }
+        },
+        {
+          "id": "forest",
+          "name": "Forest",
+          "description": "Always-prepared circle spells at druid levels 3, 5, 7 and 9; these do not count against your preparation limit.",
+          "alwaysPreparedSpellsByLevel": {
+            "3": [
+              "Barkskin",
+              "Spider Climb"
+            ],
+            "5": [
+              "Call Lightning",
+              "Plant Growth"
+            ],
+            "7": [
+              "Divination",
+              "Freedom of Movement"
+            ],
+            "9": [
+              "Commune with Nature",
+              "Tree Stride"
+            ]
+          }
+        },
+        {
+          "id": "grassland",
+          "name": "Grassland",
+          "description": "Always-prepared circle spells at druid levels 3, 5, 7 and 9; these do not count against your preparation limit.",
+          "alwaysPreparedSpellsByLevel": {
+            "3": [
+              "Invisibility",
+              "Pass without Trace"
+            ],
+            "5": [
+              "Daylight",
+              "Haste"
+            ],
+            "7": [
+              "Divination",
+              "Freedom of Movement"
+            ],
+            "9": [
+              "Dream",
+              "Insect Plague"
+            ]
+          }
+        },
+        {
+          "id": "mountain",
+          "name": "Mountain",
+          "description": "Always-prepared circle spells at druid levels 3, 5, 7 and 9; these do not count against your preparation limit.",
+          "alwaysPreparedSpellsByLevel": {
+            "3": [
+              "Spider Climb",
+              "Spike Growth"
+            ],
+            "5": [
+              "Lightning Bolt",
+              "Meld into Stone"
+            ],
+            "7": [
+              "Stone Shape",
+              "Stoneskin"
+            ],
+            "9": [
+              "Passwall",
+              "Wall of Stone"
+            ]
+          }
+        },
+        {
+          "id": "swamp",
+          "name": "Swamp",
+          "description": "Always-prepared circle spells at druid levels 3, 5, 7 and 9; these do not count against your preparation limit.",
+          "alwaysPreparedSpellsByLevel": {
+            "3": [
+              "Darkness",
+              "Acid Arrow"
+            ],
+            "5": [
+              "Water Walk",
+              "Stinking Cloud"
+            ],
+            "7": [
+              "Freedom of Movement",
+              "Locate Creature"
+            ],
+            "9": [
+              "Insect Plague",
+              "Scrying"
+            ]
+          }
+        },
+        {
+          "id": "underdark",
+          "name": "Underdark",
+          "description": "Always-prepared circle spells at druid levels 3, 5, 7 and 9; these do not count against your preparation limit.",
+          "alwaysPreparedSpellsByLevel": {
+            "3": [
+              "Spider Climb",
+              "Web"
+            ],
+            "5": [
+              "Gaseous Form",
+              "Stinking Cloud"
+            ],
+            "7": [
+              "Greater Invisibility",
+              "Stone Shape"
+            ],
+            "9": [
+              "Cloudkill",
+              "Insect Plague"
+            ]
+          }
+        }
+      ],
+      "totem_spirits_2014": [
+        {
+          "id": "bear",
+          "name": "Bear",
+          "description": "While raging, resist all damage except psychic."
+        },
+        {
+          "id": "eagle",
+          "name": "Eagle",
+          "description": "While raging without heavy armor, opportunity attacks against you have disadvantage and you may Dash as a bonus action."
+        },
+        {
+          "id": "wolf",
+          "name": "Wolf",
+          "description": "While raging, allies have advantage on melee attacks against hostile creatures within {{distance:5ft}} of you."
+        }
+      ],
+      "totem_aspects_2014": [
+        {
+          "id": "bear",
+          "name": "Bear",
+          "description": "Double carrying capacity; advantage on Strength checks to push, pull, lift or break objects."
+        },
+        {
+          "id": "eagle",
+          "name": "Eagle",
+          "description": "See up to {{distance:1mi}} without difficulty; discern fine details as if within {{distance:100ft}}. Dim light no longer hinders visual Perception checks."
+        },
+        {
+          "id": "wolf",
+          "name": "Wolf",
+          "description": "Track at a fast travel pace and move stealthily at a normal travel pace."
+        }
+      ],
+      "totem_attunements_2014": [
+        {
+          "id": "bear",
+          "name": "Bear",
+          "description": "While raging, hostile creatures within {{distance:5ft}} have disadvantage attacking others. Creatures immune to fear, or unable to see or hear you, are unaffected."
+        },
+        {
+          "id": "eagle",
+          "name": "Eagle",
+          "description": "While raging, fly at walking speed; fall if airborne when your turn ends unless another effect holds you aloft."
+        },
+        {
+          "id": "wolf",
+          "name": "Wolf",
+          "description": "While raging, after hitting a Large or smaller creature with a melee weapon attack, use a bonus action to knock it prone."
+        }
+      ]
+    },
+    "classFeatures": {
+      "Warlock": {
+        "Eldritch Invocations": {
+          "choices": [
+            {
+              "id": "invocations",
+              "type": "option",
+              "optionsSource": "eldritch_invocations_2014",
+              "countByLevel": {
+                "2": 2,
+                "5": 1,
+                "7": 1,
+                "9": 1,
+                "12": 1,
+                "15": 1,
+                "18": 1
+              },
+              "replaceOneOnLevelUp": true
+            }
+          ]
+        }
+      }
+    },
+    "subclassFeatures": {
+      "Druid": {
+        "Circle of the Land": {
+          "Bonus Cantrip": {
+            "choices": [
+              {
+                "id": "bonus_cantrip",
+                "type": "cantrip",
+                "spellClass": "druid",
+                "spellLevel": 0,
+                "countByLevel": {
+                  "2": 1
+                }
+              }
+            ]
+          },
+          "Circle Spells": {
+            "choices": [
+              {
+                "id": "terrain",
+                "type": "option",
+                "optionsSource": "circle_lands_2014",
+                "countByLevel": {
+                  "3": 1
+                }
+              }
+            ]
+          }
+        }
+      },
+      "Monk": {
+        "Way of the Four Elements": {
+          "Disciple of the Elements": {
+            "choices": [
+              {
+                "id": "disciplines",
+                "type": "option",
+                "optionsSource": "elemental_disciplines_2014",
+                "countByLevel": {
+                  "3": 1,
+                  "6": 1,
+                  "11": 1,
+                  "17": 1
+                },
+                "replaceOneOnLevelUp": true
+              }
+            ]
+          }
+        }
+      },
+      "Barbarian": {
+        "Path of the Totem Warrior": {
+          "Totem Spirit": {
+            "choices": [
+              {
+                "id": "totem_spirit",
+                "type": "option",
+                "optionsSource": "totem_spirits_2014",
+                "countByLevel": {
+                  "3": 1
+                }
+              }
+            ]
+          },
+          "Aspect of the Beast": {
+            "choices": [
+              {
+                "id": "aspect_of_the_beast",
+                "type": "option",
+                "optionsSource": "totem_aspects_2014",
+                "countByLevel": {
+                  "6": 1
+                }
+              }
+            ]
+          },
+          "Totemic Attunement": {
+            "choices": [
+              {
+                "id": "totemic_attunement",
+                "type": "option",
+                "optionsSource": "totem_attunements_2014",
+                "countByLevel": {
+                  "14": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "wildMagicSurge": {
+    "die": 100,
+    "description": "2014: the DM may request a d20 after a leveled sorcerer spell, at most once per turn; a 1 triggers this table. Spells caused by a surge cannot use Metamagic and need no concentration, lasting their full duration.",
+    "outcomes": [
+      {
+        "min": 1,
+        "max": 2,
+        "description": "For 1 minute, roll another surge at the start of every turn; ignore this result on those rolls."
+      },
+      {
+        "min": 3,
+        "max": 4,
+        "description": "See invisible creatures in line of sight for 1 minute."
+      },
+      {
+        "min": 5,
+        "max": 6,
+        "description": "A DM-controlled modron appears within {{distance:5ft}}; disappears after 1 minute."
+      },
+      {
+        "min": 7,
+        "max": 8,
+        "description": "Cast Fireball at 3rd level, centered on yourself."
+      },
+      {
+        "min": 9,
+        "max": 10,
+        "description": "Cast Magic Missile at 5th level."
+      },
+      {
+        "min": 11,
+        "max": 12,
+        "description": "Height changes by 1d10 inches: odd shrinks, even grows."
+      },
+      {
+        "min": 13,
+        "max": 14,
+        "description": "Cast Confusion centered on yourself."
+      },
+      {
+        "min": 15,
+        "max": 16,
+        "description": "Regain 5 hit points at each turn start for 1 minute."
+      },
+      {
+        "min": 17,
+        "max": 18,
+        "description": "Grow a feather beard; sneezing makes it explode harmlessly."
+      },
+      {
+        "min": 19,
+        "max": 20,
+        "description": "Cast Grease centered on yourself."
+      },
+      {
+        "min": 21,
+        "max": 22,
+        "description": "For 1 minute, the next spell you cast that requires a save imposes disadvantage on those saves."
+      },
+      {
+        "min": 23,
+        "max": 24,
+        "description": "Your skin turns blue until Remove Curse."
+      },
+      {
+        "min": 25,
+        "max": 26,
+        "description": "For 1 minute, a forehead eye grants advantage on sight-based Perception."
+      },
+      {
+        "min": 27,
+        "max": 28,
+        "description": "For 1 minute, action spells take a bonus action instead."
+      },
+      {
+        "min": 29,
+        "max": 30,
+        "description": "Teleport up to {{distance:60ft}} to a visible unoccupied space."
+      },
+      {
+        "min": 31,
+        "max": 32,
+        "description": "Visit the Astral Plane until your next turn ends; return to your former or nearest free space."
+      },
+      {
+        "min": 33,
+        "max": 34,
+        "description": "Maximize your next damaging spell within 1 minute."
+      },
+      {
+        "min": 35,
+        "max": 36,
+        "description": "Age changes by 1d10 years: odd younger, even older; minimum age 1."
+      },
+      {
+        "min": 37,
+        "max": 38,
+        "description": "1d6 DM-controlled flumphs appear within {{distance:60ft}}, frightened of you; vanish after 1 minute."
+      },
+      {
+        "min": 39,
+        "max": 40,
+        "description": "Regain 2d10 hit points."
+      },
+      {
+        "min": 41,
+        "max": 42,
+        "description": "Become an incapacitated potted plant until next turn starts, vulnerable to all damage. At 0 hit points, break and revert."
+      },
+      {
+        "min": 43,
+        "max": 44,
+        "description": "For 1 minute, teleport up to {{distance:20ft}} as a bonus action each turn."
+      },
+      {
+        "min": 45,
+        "max": 46,
+        "description": "Cast Levitate on yourself."
+      },
+      {
+        "min": 47,
+        "max": 48,
+        "description": "A DM-controlled unicorn appears within {{distance:5ft}}; disappears after 1 minute."
+      },
+      {
+        "min": 49,
+        "max": 50,
+        "description": "For 1 minute, speech produces pink bubbles instead of sound."
+      },
+      {
+        "min": 51,
+        "max": 52,
+        "description": "For 1 minute, gain +2 AC and immunity to Magic Missile."
+      },
+      {
+        "min": 53,
+        "max": 54,
+        "description": "Alcohol cannot intoxicate you for 5d6 days."
+      },
+      {
+        "min": 55,
+        "max": 56,
+        "description": "Lose your hair; it returns within 24 hours."
+      },
+      {
+        "min": 57,
+        "max": 58,
+        "description": "For 1 minute, unattended flammable objects you touch ignite."
+      },
+      {
+        "min": 59,
+        "max": 60,
+        "description": "Recover your lowest-level expended spell slot."
+      },
+      {
+        "min": 61,
+        "max": 62,
+        "description": "For 1 minute, you must shout when speaking."
+      },
+      {
+        "min": 63,
+        "max": 64,
+        "description": "Cast Fog Cloud centered on yourself."
+      },
+      {
+        "min": 65,
+        "max": 66,
+        "description": "Up to three chosen creatures within {{distance:30ft}} take 4d10 lightning damage."
+      },
+      {
+        "min": 67,
+        "max": 68,
+        "description": "Fear the nearest creature until your next turn ends."
+      },
+      {
+        "min": 69,
+        "max": 70,
+        "description": "Creatures within {{distance:30ft}} become invisible for 1 minute; attacking or casting ends their invisibility."
+      },
+      {
+        "min": 71,
+        "max": 72,
+        "description": "Resist all damage for 1 minute."
+      },
+      {
+        "min": 73,
+        "max": 74,
+        "description": "A random creature within {{distance:60ft}} is poisoned for 1d4 hours."
+      },
+      {
+        "min": 75,
+        "max": 76,
+        "description": "For 1 minute, emit bright light in a {{distance:30ft|adj}} radius; creatures ending turns within {{distance:5ft}} are blinded until next turn ends."
+      },
+      {
+        "min": 77,
+        "max": 78,
+        "description": "Cast Polymorph on yourself; failing its save makes you a sheep."
+      },
+      {
+        "min": 79,
+        "max": 80,
+        "description": "For 1 minute, harmless illusory petals and butterflies flutter within {{distance:10ft}}."
+      },
+      {
+        "min": 81,
+        "max": 82,
+        "description": "Immediately take one additional action."
+      },
+      {
+        "min": 83,
+        "max": 84,
+        "description": "Creatures within {{distance:30ft}} take 1d10 necrotic damage; regain hit points equal to total damage dealt."
+      },
+      {
+        "min": 85,
+        "max": 86,
+        "description": "Cast Mirror Image."
+      },
+      {
+        "min": 87,
+        "max": 88,
+        "description": "Cast Fly on a random creature within {{distance:60ft}}."
+      },
+      {
+        "min": 89,
+        "max": 90,
+        "description": "For 1 minute, become invisible and inaudible to others; attacking or casting ends invisibility."
+      },
+      {
+        "min": 91,
+        "max": 92,
+        "description": "If you die within 1 minute, immediately return through Reincarnate."
+      },
+      {
+        "min": 93,
+        "max": 94,
+        "description": "Grow one size category for 1 minute."
+      },
+      {
+        "min": 95,
+        "max": 96,
+        "description": "You and creatures within {{distance:30ft}} become vulnerable to piercing damage for 1 minute."
+      },
+      {
+        "min": 97,
+        "max": 98,
+        "description": "Faint ethereal music surrounds you for 1 minute."
+      },
+      {
+        "min": 99,
+        "max": 100,
+        "description": "Recover all spent sorcery points."
+      }
+    ]
+  },
+  "elementalAttunement": "Known at monk level 3 without using a discipline choice. As an action, affect elemental forces within {{distance:30ft}}: a harmless momentary sensory effect; light or extinguish a candle, torch or small campfire; warm/chill up to 1 pound of nonliving material for 1 hour; or shape earth, fire, water or mist within a {{distance:1ft|adj}} cube for 1 minute. No ki cost.",
+  "elementalSpellKiLimits": {
+    "5": 3,
+    "9": 4,
+    "13": 5,
+    "17": 6
+  }
+}

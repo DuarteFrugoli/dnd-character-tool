@@ -166,6 +166,51 @@ void main() {
   });
 
   group('Ranger', () {
+    test(
+      'first class level does not require spell choices when multiclassing',
+      () {
+        final engine = SpellcastingEngine.forClass(
+          className: 'Ranger',
+          classLevel: 1,
+          abilityScores: _wis16,
+          proficiencyBonus: 3, // Total character level 8, ranger level 1.
+        )!;
+
+        expect(engine.maxKnown, 0);
+        expect(engine.maxSpellLevel, 0);
+        expect(engine.slotsPerLevel, everyElement(0));
+      },
+    );
+
+    test('second class level grants the first two spells and spell slots', () {
+      final before = _engine('ranger', 1, _wis16);
+      final after = _engine('ranger', 2, _wis16);
+
+      expect(after.maxKnown, 2);
+      expect(after.maxKnown! - before.maxKnown!, 2);
+      expect(after.maxSpellLevel, 1);
+      expect(after.slotsPerLevel, [2, 0, 0, 0, 0, 0, 0, 0, 0]);
+    });
+
+    test('third class level adds one spell, fourth adds none', () {
+      final second = _engine('ranger', 2, _wis16);
+      final third = _engine('ranger', 3, _wis16);
+      final fourth = _engine('ranger', 4, _wis16);
+
+      expect(third.maxKnown, 3);
+      expect(third.maxKnown! - second.maxKnown!, 1);
+      expect(fourth.maxKnown! - third.maxKnown!, 0);
+    });
+
+    test('fifth class level adds a spell when second-level spells unlock', () {
+      final before = _engine('ranger', 4, _wis16);
+      final after = _engine('ranger', 5, _wis16);
+
+      expect(after.maxKnown, 4);
+      expect(after.maxKnown! - before.maxKnown!, 1);
+      expect(after.maxSpellLevel, 2);
+    });
+
     test('has no cantrips in base SRD', () {
       expect(_engine('ranger', 3, _wis16).maxCantrips, 0);
     });

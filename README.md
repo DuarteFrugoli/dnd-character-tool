@@ -5,7 +5,7 @@ A cross-platform app for creating and managing D&D 5e (2014) and 5.5e (2024) cha
 [![Get it on Google Play](https://img.shields.io/badge/Google%20Play-Download-green?logo=google-play)](https://play.google.com/store/apps/details?id=com.duartefrugoli.dnd_character_tool)
 ![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?logo=flutter&logoColor=white)
 ![Dart](https://img.shields.io/badge/Dart-3.11.5-0175C2?logo=dart&logoColor=white)
-![Version](https://img.shields.io/badge/version-3.0.0-orange)
+![Version](https://img.shields.io/badge/version-3.0.2-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-Android%20%7C%20iOS%20%7C%20Web-lightgrey)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 [![Tests](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml/badge.svg)](https://github.com/DuarteFrugoli/dnd-character-tool/actions/workflows/test.yml)
@@ -56,6 +56,7 @@ A cross-platform app for creating and managing D&D 5e (2014) and 5.5e (2024) cha
 
 ### Level Up Wizard
 - **2024** — levels 2 to 20 with subclasses at level 3, Ability Score Improvement and other feats, Epic Boons at level 19, 2024 multiclassing, Weapon Mastery and Eldritch Invocation choices, and spell or invocation swaps where the rules allow
+- All 48 Player's Handbook 2024 subclasses are selectable. The 36 options outside the SRD have original English summaries, feature choices, usage resources, and bonus spells; Eldritch Knight and Arcane Trickster also have subclass spellcasting.
 - **2014** — full level-up flow as a fullscreen modal with step indicators
 - Multiclass support: level an existing class or add a new class when prerequisites are met
 - Multiclass spell slots combine full, half and third caster levels while keeping Warlock Pact Magic separate
@@ -138,6 +139,12 @@ A cross-platform app for creating and managing D&D 5e (2014) and 5.5e (2024) cha
 flutter pub get
 flutter run
 ```
+
+## Development workflow
+
+- **`developer`**: development and open testing; changes are committed directly to this branch.
+- **`main`**: releases; validated changes are promoted from `developer` when releasing a version.
+- Promotion and open-test publishing are manual for now. Continue development on `developer` after a release.
 
 ## Documentation
 
@@ -293,6 +300,12 @@ Aplicativo multiplataforma para criar e gerenciar personagens de D&D 5e (2014) e
 flutter pub get
 flutter run
 ```
+
+## Fluxo de desenvolvimento
+
+- **`developer`**: desenvolvimento e teste aberto; os commits são feitos diretamente nesta branch.
+- **`main`**: lançamentos; recebe as mudanças validadas da `developer` ao lançar uma versão.
+- A promoção e a publicação para teste aberto são manuais por enquanto. Após um lançamento, o desenvolvimento continua na `developer`.
 
 ## Documentação
 

@@ -183,7 +183,8 @@ class FeatureChoiceOptionResolver {
   /// description carries the challenge rating for the subtitle.
   List<SrdFeatureChoiceOption> _beastFormOptions() {
     final rules = WildShapeRules.forRuleset(character?.rulesetId ?? RulesetId.dnd2024);
-    final limits = rules.limitsAt(request.level);
+    final limits = rules.limitsAt(request.level,
+        subclass: character?.subclassFor('Druid'));
     if (limits == null) return const [];
     return [
       for (final monster in monsters)
@@ -211,6 +212,19 @@ class FeatureChoiceOptionResolver {
               return false;
             }
             if (!selectedIds.containsAll(option.requiresInvocations)) {
+              return false;
+            }
+            if (option.requiresPact != null &&
+                !FeatureChoiceEngine.upsertChoices(character?.featureChoices ?? const [], choices).any((choice) =>
+                    choice.sourceClass == request.sourceClass &&
+                    choice.sourceClassEntryId == request.sourceClassEntryId &&
+                    choice.featureName == 'Pact Boon' &&
+                    choice.values.contains(option.requiresPact))) {
+              return false;
+            }
+            if (option.requiresSpell != null &&
+                !(character?.spells.any((spell) =>
+                    spell.name.toLowerCase() == option.requiresSpell!.toLowerCase()) ?? false)) {
               return false;
             }
           }
@@ -246,6 +260,10 @@ class FeatureChoiceOptionResolver {
             requiresInvocations: option.requiresInvocations,
             target: option.target,
             repeatableWithDifferentTarget: option.repeatableWithDifferentTarget,
+            requiresPact: option.requiresPact,
+            requiresSpell: option.requiresSpell,
+            kiCost: option.kiCost,
+            alwaysPreparedSpellsByLevel: option.alwaysPreparedSpellsByLevel,
           ),
         )
         .toList();
@@ -372,6 +390,8 @@ class FeatureChoiceOptionResolver {
               req.spellClasses.any((name) => spell.classes.contains(name.toLowerCase())),
         )
         .where((spell) => !req.ritualOnly || spell.ritual)
+        .where((spell) => !req.excludedSpellNames.any(
+            (name) => name.toLowerCase() == spell.name.toLowerCase()))
         .where((spell) => !req.excludePreparedSpells ||
             !(character?.spells.any((known) =>
                 known.name == spell.name &&

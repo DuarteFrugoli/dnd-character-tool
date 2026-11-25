@@ -1,0 +1,3834 @@
+{
+  "source": "Player's Handbook (2024)",
+  "contentType": "Original English summaries; supplemental options, not SRD content.",
+  "subclasses": [
+    {
+      "id": "path_of_the_wild_heart",
+      "class": "Barbarian",
+      "name": "Path of the Wild Heart",
+      "description": "Channel animal spirits through Rage.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Wild%20Heart?expansion=32231",
+      "features": [
+        {
+          "name": "Animal Speaker",
+          "level": 3,
+          "type": "passive",
+          "description": "Cast Beast Sense and Speak with Animals as rituals, using Wisdom."
+        },
+        {
+          "name": "Rage of the Wilds",
+          "level": 3,
+          "type": "passive",
+          "description": "Choose Bear, Eagle, or Wolf whenever you enter Rage for resistance, mobility, or allied attacks."
+        },
+        {
+          "name": "Aspect of the Wilds",
+          "level": 6,
+          "type": "passive",
+          "description": "Choose Owl, Panther, or Salmon after a Long Rest to improve perception, climbing, or swimming."
+        },
+        {
+          "name": "Nature Speaker",
+          "level": 10,
+          "type": "passive",
+          "description": "Cast Commune with Nature as a ritual using Wisdom."
+        },
+        {
+          "name": "Power of the Wilds",
+          "level": 14,
+          "type": "passive",
+          "description": "Choose Falcon, Lion, or Ram when entering Rage for flight, protection, or knocking enemies Prone."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Beast Sense",
+          "Speak with Animals"
+        ],
+        "10": [
+          "Commune with Nature"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1750-2024-barbarian-vs-2014-barbarian-whats-new"
+    },
+    {
+      "id": "path_of_the_world_tree",
+      "class": "Barbarian",
+      "name": "Path of the World Tree",
+      "description": "Protect companions and teleport through supernatural roots.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20World%20Tree?expansion=32231",
+      "features": [
+        {
+          "name": "Vitality of the Tree",
+          "level": 3,
+          "type": "passive",
+          "description": "Entering Rage grants Temporary Hit Points; during Rage, share temporary vitality with nearby allies."
+        },
+        {
+          "name": "Branches of the Tree",
+          "level": 6,
+          "type": "active",
+          "description": "While Raging, use a Reaction to teleport a nearby creature beside you and potentially stop its movement."
+        },
+        {
+          "name": "Battering Roots",
+          "level": 10,
+          "type": "passive",
+          "description": "Heavy or Versatile Melee weapons gain reach and can add Push or Topple mastery."
+        },
+        {
+          "name": "Travel Along the Tree",
+          "level": 14,
+          "type": "active",
+          "description": "Teleport during Rage, with a longer journey that can carry nearby willing companions."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1786-path-of-the-world-tree-barbarian-rage-with"
+    },
+    {
+      "id": "path_of_the_zealot",
+      "class": "Barbarian",
+      "name": "Path of the Zealot",
+      "description": "Combine divine damage with supernatural endurance.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Path%20of%20the%20Zealot?expansion=32231",
+      "features": [
+        {
+          "name": "Divine Fury",
+          "level": 3,
+          "type": "passive",
+          "description": "While Raging, your first weapon or Unarmed Strike hit each turn adds Radiant or Necrotic damage."
+        },
+        {
+          "name": "Warrior of the Gods",
+          "level": 3,
+          "type": "active",
+          "description": "Spend healing dice as a Bonus Action to recover Hit Points; regain the pool after a Long Rest."
+        },
+        {
+          "name": "Fanatical Focus",
+          "level": 6,
+          "type": "active",
+          "description": "Once per Rage, reroll a failed saving throw with a Rage Damage bonus."
+        },
+        {
+          "name": "Zealous Presence",
+          "level": 10,
+          "type": "active",
+          "description": "A Bonus Action grants nearby allies Advantage on attacks and saves until your next turn."
+        },
+        {
+          "name": "Rage of the Gods",
+          "level": 14,
+          "type": "active",
+          "description": "Empower a Rage with flight and resistances; expend Rage to rescue an ally from dropping."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1750-2024-barbarian-vs-2014-barbarian-whats-new"
+    },
+    {
+      "id": "college_of_dance",
+      "class": "Bard",
+      "name": "College of Dance",
+      "description": "Use movement and unarmed combat to inspire allies.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Dance?expansion=32231",
+      "features": [
+        {
+          "name": "Dazzling Footwork",
+          "level": 3,
+          "type": "passive",
+          "description": "Gain unarmored defense, dance proficiency benefits, and Bardic Inspiration-powered Unarmed Strikes."
+        },
+        {
+          "name": "Inspiring Movement",
+          "level": 6,
+          "type": "active",
+          "description": "Spend Bardic Inspiration as a Reaction to move yourself and an ally without Opportunity Attacks."
+        },
+        {
+          "name": "Tandem Footwork",
+          "level": 6,
+          "type": "active",
+          "description": "Spend Bardic Inspiration when rolling Initiative to improve nearby allies' Initiative."
+        },
+        {
+          "name": "Leading Evasion",
+          "level": 14,
+          "type": "passive",
+          "description": "Successful Dexterity saves avoid damage; nearby companions can share this protection."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1751-college-of-dance-bard-unleash-killer-choreography"
+    },
+    {
+      "id": "college_of_glamour",
+      "class": "Bard",
+      "name": "College of Glamour",
+      "description": "Weave fey enchantment into inspiring performances.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Glamour?expansion=32231",
+      "features": [
+        {
+          "name": "Beguiling Magic",
+          "level": 3,
+          "type": "active",
+          "description": "Enchantments and illusions can Charm or Frighten a witness; gain Charm Person and Mirror Image."
+        },
+        {
+          "name": "Mantle of Inspiration",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Bardic Inspiration to grant Temporary Hit Points and let allies reposition."
+        },
+        {
+          "name": "Mantle of Majesty",
+          "level": 6,
+          "type": "active",
+          "description": "Cast Command through a magical mantle; a level 3+ slot can restore its use."
+        },
+        {
+          "name": "Unbreakable Majesty",
+          "level": 14,
+          "type": "active",
+          "description": "Manifest fey majesty that can make incoming attacks miss."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Charm Person",
+          "Mirror Image"
+        ],
+        "6": [
+          "Command"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1768-2024-bard-vs-2014-bard-whats-new"
+    },
+    {
+      "id": "college_of_valor",
+      "class": "Bard",
+      "name": "College of Valor",
+      "description": "Blend weapons, armor, and spellcasting.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:College%20of%20Valor?expansion=32231",
+      "features": [
+        {
+          "name": "Combat Inspiration",
+          "level": 3,
+          "type": "passive",
+          "description": "Your Bardic Inspiration can improve weapon damage or Armor Class."
+        },
+        {
+          "name": "Martial Training",
+          "level": 3,
+          "type": "passive",
+          "description": "Gain Martial weapon proficiency and Medium armor and Shield training; weapons can serve as spellcasting foci."
+        },
+        {
+          "name": "Extra Attack",
+          "level": 6,
+          "type": "passive",
+          "description": "Attack twice; one attack can be replaced by an action cantrip."
+        },
+        {
+          "name": "Battle Magic",
+          "level": 14,
+          "type": "passive",
+          "description": "After casting an action spell, make one weapon attack as a Bonus Action."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1768-2024-bard-vs-2014-bard-whats-new"
+    },
+    {
+      "id": "light_domain",
+      "class": "Cleric",
+      "name": "Light Domain",
+      "description": "Defend allies and burn enemies with divine light.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Light%20Domain?expansion=32231",
+      "features": [
+        {
+          "name": "Light Domain Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your domain spells are always prepared."
+        },
+        {
+          "name": "Warding Flare",
+          "level": 3,
+          "type": "active",
+          "description": "Use a Reaction to impose Disadvantage on an attack against a nearby creature."
+        },
+        {
+          "name": "Radiance of the Dawn",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Channel Divinity to dispel magical darkness and damage nearby enemies with Radiant light."
+        },
+        {
+          "name": "Improved Warding Flare",
+          "level": 6,
+          "type": "passive",
+          "description": "Warding Flare also grants Temporary Hit Points and recharges on Short Rests."
+        },
+        {
+          "name": "Corona of Light",
+          "level": 17,
+          "type": "active",
+          "description": "Create a radiant aura that weakens saves against your Fire, Radiant, and Radiance of the Dawn effects."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Burning Hands",
+          "Faerie Fire",
+          "Scorching Ray",
+          "See Invisibility"
+        ],
+        "5": [
+          "Daylight",
+          "Fireball"
+        ],
+        "7": [
+          "Arcane Eye",
+          "Wall of Fire"
+        ],
+        "9": [
+          "Flame Strike",
+          "Scrying"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1767-2024-cleric-vs-2014-cleric-whats-new"
+    },
+    {
+      "id": "trickery_domain",
+      "class": "Cleric",
+      "name": "Trickery Domain",
+      "description": "Use deception and a divine duplicate.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Trickery%20Domain?expansion=32231",
+      "features": [
+        {
+          "name": "Trickery Domain Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your domain spells are always prepared."
+        },
+        {
+          "name": "Blessing of the Trickster",
+          "level": 3,
+          "type": "active",
+          "description": "Grant yourself or another creature Advantage on Stealth checks until your next Long Rest."
+        },
+        {
+          "name": "Invoke Duplicity",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Channel Divinity as a Bonus Action to create a duplicate without Concentration."
+        },
+        {
+          "name": "Trickster's Transposition",
+          "level": 6,
+          "type": "passive",
+          "description": "Swap places with your duplicate when creating or moving it."
+        },
+        {
+          "name": "Improved Duplicity",
+          "level": 17,
+          "type": "passive",
+          "description": "The duplicate helps allies attack nearby foes and can restore Hit Points when it ends."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Charm Person",
+          "Disguise Self",
+          "Invisibility",
+          "Pass without Trace"
+        ],
+        "5": [
+          "Hypnotic Pattern",
+          "Nondetection"
+        ],
+        "7": [
+          "Confusion",
+          "Dimension Door"
+        ],
+        "9": [
+          "Dominate Person",
+          "Modify Memory"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1767-2024-cleric-vs-2014-cleric-whats-new"
+    },
+    {
+      "id": "war_domain",
+      "class": "Cleric",
+      "name": "War Domain",
+      "description": "Turn divine power into martial strength.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:War%20Domain?expansion=32231",
+      "features": [
+        {
+          "name": "War Domain Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your domain spells are always prepared."
+        },
+        {
+          "name": "War Priest",
+          "level": 3,
+          "type": "active",
+          "description": "Make a weapon attack or Unarmed Strike as a Bonus Action; recharge on Short or Long Rests."
+        },
+        {
+          "name": "Guided Strike",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Channel Divinity to add +10 to a failed attack roll."
+        },
+        {
+          "name": "War God's Blessing",
+          "level": 6,
+          "type": "active",
+          "description": "Spend Channel Divinity to cast Shield of Faith or Spiritual Weapon without a slot or Concentration."
+        },
+        {
+          "name": "Avatar of Battle",
+          "level": 17,
+          "type": "passive",
+          "description": "Gain Resistance to Bludgeoning, Piercing, and Slashing damage."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Guiding Bolt",
+          "Shield of Faith",
+          "Magic Weapon",
+          "Spiritual Weapon"
+        ],
+        "5": [
+          "Crusader's Mantle",
+          "Spirit Guardians"
+        ],
+        "7": [
+          "Fire Shield",
+          "Freedom of Movement"
+        ],
+        "9": [
+          "Hold Monster",
+          "Steel Wind Strike"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1767-2024-cleric-vs-2014-cleric-whats-new"
+    },
+    {
+      "id": "circle_of_the_moon",
+      "class": "Druid",
+      "name": "Circle of the Moon",
+      "description": "Specialize in powerful Beast transformations.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Moon?expansion=32231",
+      "features": [
+        {
+          "name": "Circle Forms",
+          "level": 3,
+          "type": "passive",
+          "description": "Wild Shape permits CR equal to Druid level divided by three, improved Armor Class, and triple-level Temporary Hit Points."
+        },
+        {
+          "name": "Circle of the Moon Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your circle spells are always prepared and can be cast in Wild Shape."
+        },
+        {
+          "name": "Improved Circle Forms",
+          "level": 6,
+          "type": "passive",
+          "description": "Beast attacks can deal Radiant damage; add Wisdom to Constitution saves while transformed."
+        },
+        {
+          "name": "Moonlight Step",
+          "level": 10,
+          "type": "active",
+          "description": "Teleport as a Bonus Action and gain Advantage on your next attack this turn."
+        },
+        {
+          "name": "Lunar Form",
+          "level": 14,
+          "type": "passive",
+          "description": "Beast attacks add Radiant damage once per turn; Moonlight Step can carry a willing companion."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Cure Wounds",
+          "Moonbeam",
+          "Starry Wisp"
+        ],
+        "5": [
+          "Conjure Animals"
+        ],
+        "7": [
+          "Fount of Moonlight"
+        ],
+        "9": [
+          "Mass Cure Wounds"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1755-the-2024-circle-of-the-moon-druid-and-changes-to"
+    },
+    {
+      "id": "circle_of_the_sea",
+      "class": "Druid",
+      "name": "Circle of the Sea",
+      "description": "Harness storms and crashing waves.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Sea?expansion=32231",
+      "features": [
+        {
+          "name": "Circle of the Sea Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your circle spells are always prepared."
+        },
+        {
+          "name": "Wrath of the Sea",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Wild Shape for an ocean aura; a Bonus Action can damage and push a nearby creature."
+        },
+        {
+          "name": "Aquatic Affinity",
+          "level": 6,
+          "type": "passive",
+          "description": "Gain a Swim Speed and expand the reach of Wrath of the Sea."
+        },
+        {
+          "name": "Stormborn",
+          "level": 10,
+          "type": "passive",
+          "description": "Wrath of the Sea grants flight and Resistance to Cold, Lightning, and Thunder."
+        },
+        {
+          "name": "Oceanic Gift",
+          "level": 14,
+          "type": "active",
+          "description": "Share Wrath of the Sea with a willing creature; spend additional Wild Shape to protect both."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Fog Cloud",
+          "Gust of Wind",
+          "Ray of Frost",
+          "Shatter",
+          "Thunderwave"
+        ],
+        "5": [
+          "Lightning Bolt",
+          "Water Breathing"
+        ],
+        "7": [
+          "Control Water",
+          "Ice Storm"
+        ],
+        "9": [
+          "Conjure Elemental",
+          "Hold Monster"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1799-circle-of-the-sea-druid-channel-raging-waves-and"
+    },
+    {
+      "id": "circle_of_the_stars",
+      "class": "Druid",
+      "name": "Circle of the Stars",
+      "description": "Read constellations and assume celestial forms.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Circle%20of%20the%20Stars?expansion=32231",
+      "features": [
+        {
+          "name": "Star Map",
+          "level": 3,
+          "type": "passive",
+          "description": "Gain a star-map focus, Guidance, and Guiding Bolt with limited free castings."
+        },
+        {
+          "name": "Starry Form",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Wild Shape for an Archer, Chalice, or Dragon constellation that improves attacks, healing, or concentration."
+        },
+        {
+          "name": "Cosmic Omen",
+          "level": 6,
+          "type": "active",
+          "description": "After a Long Rest, an omen lets Reactions improve allies' rolls or hinder enemies."
+        },
+        {
+          "name": "Twinkling Constellations",
+          "level": 10,
+          "type": "passive",
+          "description": "Improve your constellation benefits and change constellation at the start of each turn."
+        },
+        {
+          "name": "Full of Stars",
+          "level": 14,
+          "type": "passive",
+          "description": "Starry Form grants Resistance to Bludgeoning, Piercing, and Slashing damage."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Guidance",
+          "Guiding Bolt"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1755-the-2024-circle-of-the-moon-druid-and-changes-to"
+    },
+    {
+      "id": "battle_master",
+      "class": "Fighter",
+      "name": "Battle Master",
+      "description": "Control combat with tactical maneuvers.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Battle%20Master?expansion=32231",
+      "features": [
+        {
+          "name": "Combat Superiority",
+          "level": 3,
+          "type": "active",
+          "description": "Learn maneuvers fueled by Superiority Dice, recovered after a Short or Long Rest."
+        },
+        {
+          "name": "Student of War",
+          "level": 3,
+          "type": "passive",
+          "description": "Gain one skill and one Artisan's Tools proficiency."
+        },
+        {
+          "name": "Know Your Enemy",
+          "level": 7,
+          "type": "active",
+          "description": "A Bonus Action reveals a creature's damage Immunities, Resistances, and Vulnerabilities."
+        },
+        {
+          "name": "Improved Combat Superiority",
+          "level": 10,
+          "type": "passive",
+          "description": "Your Superiority Dice become d10s."
+        },
+        {
+          "name": "Relentless",
+          "level": 15,
+          "type": "passive",
+          "description": "Once per turn, use a d8 for a maneuver instead of expending a Superiority Die."
+        },
+        {
+          "name": "Ultimate Combat Superiority",
+          "level": 18,
+          "type": "passive",
+          "description": "Your Superiority Dice become d12s."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1746-2024-fighter-vs-2014-fighter-whats-new"
+    },
+    {
+      "id": "eldritch_knight",
+      "class": "Fighter",
+      "name": "Eldritch Knight",
+      "description": "Combine Fighter attacks with Wizard magic.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Eldritch%20Knight?expansion=32231",
+      "features": [
+        {
+          "name": "Spellcasting",
+          "level": 3,
+          "type": "passive",
+          "description": "Prepare Wizard spells using Intelligence and the subclass spellcasting table, without school restrictions."
+        },
+        {
+          "name": "War Bond",
+          "level": 3,
+          "type": "active",
+          "description": "Bond with weapons to resist disarming and summon a bonded weapon."
+        },
+        {
+          "name": "War Magic",
+          "level": 7,
+          "type": "passive",
+          "description": "Replace one attack in the Attack action with an action Wizard cantrip."
+        },
+        {
+          "name": "Eldritch Strike",
+          "level": 10,
+          "type": "passive",
+          "description": "A weapon hit hinders the target's next saving throw against your magic."
+        },
+        {
+          "name": "Arcane Charge",
+          "level": 15,
+          "type": "passive",
+          "description": "Teleport when you use Action Surge."
+        },
+        {
+          "name": "Improved War Magic",
+          "level": 18,
+          "type": "passive",
+          "description": "Replace two attacks with an action level 1 or 2 Wizard spell."
+        }
+      ],
+      "spellcasting": {
+        "ability": "intelligence",
+        "spellClass": "wizard",
+        "fixedCantrips": [],
+        "progression": [
+          {
+            "level": 1,
+            "cantripsKnown": 0,
+            "preparedSpells": 0,
+            "spellSlots": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 2,
+            "cantripsKnown": 0,
+            "preparedSpells": 0,
+            "spellSlots": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 3,
+            "cantripsKnown": 2,
+            "preparedSpells": 3,
+            "spellSlots": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 4,
+            "cantripsKnown": 2,
+            "preparedSpells": 4,
+            "spellSlots": [
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 5,
+            "cantripsKnown": 2,
+            "preparedSpells": 4,
+            "spellSlots": [
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 6,
+            "cantripsKnown": 2,
+            "preparedSpells": 4,
+            "spellSlots": [
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 7,
+            "cantripsKnown": 2,
+            "preparedSpells": 5,
+            "spellSlots": [
+              4,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 8,
+            "cantripsKnown": 2,
+            "preparedSpells": 6,
+            "spellSlots": [
+              4,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 9,
+            "cantripsKnown": 2,
+            "preparedSpells": 6,
+            "spellSlots": [
+              4,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 10,
+            "cantripsKnown": 3,
+            "preparedSpells": 7,
+            "spellSlots": [
+              4,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 11,
+            "cantripsKnown": 3,
+            "preparedSpells": 8,
+            "spellSlots": [
+              4,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 12,
+            "cantripsKnown": 3,
+            "preparedSpells": 8,
+            "spellSlots": [
+              4,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 13,
+            "cantripsKnown": 3,
+            "preparedSpells": 9,
+            "spellSlots": [
+              4,
+              3,
+              2,
+              0
+            ]
+          },
+          {
+            "level": 14,
+            "cantripsKnown": 3,
+            "preparedSpells": 10,
+            "spellSlots": [
+              4,
+              3,
+              2,
+              0
+            ]
+          },
+          {
+            "level": 15,
+            "cantripsKnown": 3,
+            "preparedSpells": 10,
+            "spellSlots": [
+              4,
+              3,
+              2,
+              0
+            ]
+          },
+          {
+            "level": 16,
+            "cantripsKnown": 3,
+            "preparedSpells": 11,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              0
+            ]
+          },
+          {
+            "level": 17,
+            "cantripsKnown": 3,
+            "preparedSpells": 11,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              0
+            ]
+          },
+          {
+            "level": 18,
+            "cantripsKnown": 3,
+            "preparedSpells": 11,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              0
+            ]
+          },
+          {
+            "level": 19,
+            "cantripsKnown": 3,
+            "preparedSpells": 12,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              1
+            ]
+          },
+          {
+            "level": 20,
+            "cantripsKnown": 3,
+            "preparedSpells": 13,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              1
+            ]
+          }
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1746-2024-fighter-vs-2014-fighter-whats-new"
+    },
+    {
+      "id": "psi_warrior",
+      "class": "Fighter",
+      "name": "Psi Warrior",
+      "description": "Enhance combat through psionic power.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Psi%20Warrior?expansion=32231",
+      "features": [
+        {
+          "name": "Psionic Power",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Psionic Energy Dice on Protective Field, Psionic Strike, and Telekinetic Movement."
+        },
+        {
+          "name": "Telekinetic Adept",
+          "level": 7,
+          "type": "active",
+          "description": "Gain Psi-Powered Leap and the ability to move or topple targets with Psionic Strike."
+        },
+        {
+          "name": "Guarded Mind",
+          "level": 10,
+          "type": "passive",
+          "description": "Resist Psychic damage and expend psionic energy to end Charmed or Frightened."
+        },
+        {
+          "name": "Bulwark of Force",
+          "level": 15,
+          "type": "active",
+          "description": "Protect nearby creatures with Half Cover."
+        },
+        {
+          "name": "Telekinetic Master",
+          "level": 18,
+          "type": "active",
+          "description": "Cast Telekinesis using Intelligence and combine its control with weapon attacks."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "18": [
+          "Telekinesis"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1746-2024-fighter-vs-2014-fighter-whats-new"
+    },
+    {
+      "id": "warrior_of_mercy",
+      "class": "Monk",
+      "name": "Warrior of Mercy",
+      "description": "Use martial arts to heal or inflict suffering.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Mercy?expansion=32231",
+      "features": [
+        {
+          "name": "Hand of Harm",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Focus to add Necrotic damage to an Unarmed Strike once per turn."
+        },
+        {
+          "name": "Hand of Healing",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Focus to heal a touched creature, or replace a Flurry of Blows strike with healing."
+        },
+        {
+          "name": "Implements of Mercy",
+          "level": 3,
+          "type": "passive",
+          "description": "Gain Insight, Medicine, and Herbalism Kit proficiency."
+        },
+        {
+          "name": "Physician's Touch",
+          "level": 6,
+          "type": "passive",
+          "description": "Hand of Healing removes harmful conditions; Hand of Harm can inflict Poisoned."
+        },
+        {
+          "name": "Flurry of Healing and Harm",
+          "level": 11,
+          "type": "passive",
+          "description": "Flurry of Blows can provide additional healing and harm without their usual Focus costs."
+        },
+        {
+          "name": "Hand of Ultimate Mercy",
+          "level": 17,
+          "type": "active",
+          "description": "Spend 5 Focus to revive a creature dead less than 24 hours; once per Long Rest."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1758-2024-monk-vs-2014-monk-whats-new"
+    },
+    {
+      "id": "warrior_of_shadow",
+      "class": "Monk",
+      "name": "Warrior of Shadow",
+      "description": "Control darkness and teleport between shadows.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20Shadow?expansion=32231",
+      "features": [
+        {
+          "name": "Shadow Arts",
+          "level": 3,
+          "type": "active",
+          "description": "Learn Minor Illusion, gain Darkvision, and spend Focus to cast and reposition Darkness you can see through."
+        },
+        {
+          "name": "Shadow Step",
+          "level": 6,
+          "type": "active",
+          "description": "Teleport between areas of Dim Light or Darkness and gain Advantage on your next melee attack."
+        },
+        {
+          "name": "Improved Shadow Step",
+          "level": 11,
+          "type": "active",
+          "description": "Spend Focus to ignore Shadow Step's lighting restriction and make an Unarmed Strike after teleporting."
+        },
+        {
+          "name": "Cloak of Shadows",
+          "level": 17,
+          "type": "active",
+          "description": "Spend Focus for invisibility, movement through creatures, and free Flurry of Blows while shadows persist."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Minor Illusion",
+          "Darkness"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1758-2024-monk-vs-2014-monk-whats-new"
+    },
+    {
+      "id": "warrior_of_the_elements",
+      "class": "Monk",
+      "name": "Warrior of the Elements",
+      "description": "Infuse unarmed combat with elemental power.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Warrior%20of%20the%20Elements?expansion=32231",
+      "features": [
+        {
+          "name": "Elemental Attunement",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Focus to extend Unarmed Strike reach, change elemental damage, and push or pull targets."
+        },
+        {
+          "name": "Manipulate Elements",
+          "level": 3,
+          "type": "passive",
+          "description": "Learn Elementalism, using Wisdom."
+        },
+        {
+          "name": "Elemental Burst",
+          "level": 6,
+          "type": "active",
+          "description": "Spend Focus to damage creatures in an elemental Sphere."
+        },
+        {
+          "name": "Stride of the Elements",
+          "level": 11,
+          "type": "passive",
+          "description": "Elemental Attunement grants Fly and Swim Speeds."
+        },
+        {
+          "name": "Elemental Epitome",
+          "level": 17,
+          "type": "passive",
+          "description": "Attunement grants elemental Resistance, increased damage, and damaging movement."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Elementalism"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1763-warrior-of-the-elements-monk-bend-the-elements-to"
+    },
+    {
+      "id": "oath_of_glory",
+      "class": "Paladin",
+      "name": "Oath of Glory",
+      "description": "Inspire heroic deeds through athletic prowess.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Glory?expansion=32231",
+      "features": [
+        {
+          "name": "Oath of Glory Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your oath spells are always prepared."
+        },
+        {
+          "name": "Inspiring Smite",
+          "level": 3,
+          "type": "active",
+          "description": "After Divine Smite, spend Channel Divinity to distribute Temporary Hit Points."
+        },
+        {
+          "name": "Peerless Athlete",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Channel Divinity to improve athletic checks, carrying, and jumping for an hour."
+        },
+        {
+          "name": "Aura of Alacrity",
+          "level": 7,
+          "type": "passive",
+          "description": "Increase your Speed and the Speed of allies in your Aura of Protection."
+        },
+        {
+          "name": "Glorious Defense",
+          "level": 15,
+          "type": "active",
+          "description": "Use a Reaction to protect a nearby ally and potentially counterattack."
+        },
+        {
+          "name": "Living Legend",
+          "level": 20,
+          "type": "active",
+          "description": "Assume a legendary form with enhanced Charisma checks, attacks, and saving throws."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Guiding Bolt",
+          "Heroism"
+        ],
+        "5": [
+          "Enhance Ability",
+          "Magic Weapon"
+        ],
+        "9": [
+          "Haste",
+          "Protection from Energy"
+        ],
+        "13": [
+          "Compulsion",
+          "Freedom of Movement"
+        ],
+        "17": [
+          "Legend Lore",
+          "Yolande's Regal Presence"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1749-2024-paladin-vs-2014-paladin-whats-new"
+    },
+    {
+      "id": "oath_of_the_ancients",
+      "class": "Paladin",
+      "name": "Oath of the Ancients",
+      "description": "Protect life with primal divine magic.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20the%20Ancients?expansion=32231",
+      "features": [
+        {
+          "name": "Oath of the Ancients Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your oath spells are always prepared."
+        },
+        {
+          "name": "Nature's Wrath",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Channel Divinity to Restrain nearby enemies with spectral vines."
+        },
+        {
+          "name": "Aura of Warding",
+          "level": 7,
+          "type": "passive",
+          "description": "Your Aura of Protection grants Resistance to Necrotic, Psychic, and Radiant damage."
+        },
+        {
+          "name": "Undying Sentinel",
+          "level": 15,
+          "type": "passive",
+          "description": "Survive dropping to zero Hit Points with substantial healing; resist aging."
+        },
+        {
+          "name": "Elder Champion",
+          "level": 20,
+          "type": "active",
+          "description": "Assume a primal form with regeneration, faster spellcasting, and stronger magic."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Ensnaring Strike",
+          "Speak with Animals"
+        ],
+        "5": [
+          "Misty Step",
+          "Moonbeam"
+        ],
+        "9": [
+          "Plant Growth",
+          "Protection from Energy"
+        ],
+        "13": [
+          "Ice Storm",
+          "Stoneskin"
+        ],
+        "17": [
+          "Commune with Nature",
+          "Tree Stride"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1749-2024-paladin-vs-2014-paladin-whats-new"
+    },
+    {
+      "id": "oath_of_vengeance",
+      "class": "Paladin",
+      "name": "Oath of Vengeance",
+      "description": "Pursue and punish a chosen enemy.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Oath%20of%20Vengeance?expansion=32231",
+      "features": [
+        {
+          "name": "Oath of Vengeance Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your oath spells are always prepared."
+        },
+        {
+          "name": "Vow of Enmity",
+          "level": 3,
+          "type": "active",
+          "description": "Spend Channel Divinity during an attack to gain Advantage against a foe; transfer the vow after its defeat."
+        },
+        {
+          "name": "Relentless Avenger",
+          "level": 7,
+          "type": "passive",
+          "description": "Opportunity Attack hits halt the target and let you move without provoking."
+        },
+        {
+          "name": "Soul of Vengeance",
+          "level": 15,
+          "type": "active",
+          "description": "React to an attack by your vowed enemy with a melee attack."
+        },
+        {
+          "name": "Avenging Angel",
+          "level": 20,
+          "type": "active",
+          "description": "Gain flight and a terrifying aura; a level 5 spell slot restores this transformation."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Bane",
+          "Hunter's Mark"
+        ],
+        "5": [
+          "Hold Person",
+          "Misty Step"
+        ],
+        "9": [
+          "Haste",
+          "Protection from Energy"
+        ],
+        "13": [
+          "Banishment",
+          "Dimension Door"
+        ],
+        "17": [
+          "Hold Monster",
+          "Scrying"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1749-2024-paladin-vs-2014-paladin-whats-new"
+    },
+    {
+      "id": "beast_master",
+      "class": "Ranger",
+      "name": "Beast Master",
+      "description": "Fight beside a primal Beast companion.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Beast%20Master?expansion=32231",
+      "features": [
+        {
+          "name": "Primal Companion",
+          "level": 3,
+          "type": "active",
+          "description": "Summon a Beast of the Land, Sea, or Sky; command it using a Bonus Action or an attack."
+        },
+        {
+          "name": "Exceptional Training",
+          "level": 7,
+          "type": "passive",
+          "description": "Your companion can take additional mobility actions and deal Force damage."
+        },
+        {
+          "name": "Bestial Fury",
+          "level": 11,
+          "type": "passive",
+          "description": "The companion attacks twice and benefits from your Hunter's Mark damage."
+        },
+        {
+          "name": "Share Spells",
+          "level": 15,
+          "type": "passive",
+          "description": "Spells targeting yourself can also affect your nearby companion."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1759-2024-ranger-vs-2014-ranger-whats-new"
+    },
+    {
+      "id": "fey_wanderer",
+      "class": "Ranger",
+      "name": "Fey Wanderer",
+      "description": "Mix fey charm with psychic weapon strikes.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Fey%20Wanderer?expansion=32231",
+      "features": [
+        {
+          "name": "Dreadful Strikes",
+          "level": 3,
+          "type": "passive",
+          "description": "Weapon hits add Psychic damage, once per target each turn."
+        },
+        {
+          "name": "Fey Wanderer Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your fey spells are always prepared."
+        },
+        {
+          "name": "Otherworldly Glamour",
+          "level": 3,
+          "type": "passive",
+          "description": "Add Wisdom to Charisma checks and gain one social skill proficiency."
+        },
+        {
+          "name": "Beguiling Twist",
+          "level": 7,
+          "type": "active",
+          "description": "Resist charm and fear; redirect those effects when nearby creatures resist them."
+        },
+        {
+          "name": "Fey Reinforcements",
+          "level": 11,
+          "type": "active",
+          "description": "Gain Summon Fey, a free casting, and the option to remove its Concentration."
+        },
+        {
+          "name": "Misty Wanderer",
+          "level": 15,
+          "type": "active",
+          "description": "Cast Misty Step freely a limited number of times and bring a nearby companion."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Charm Person"
+        ],
+        "5": [
+          "Misty Step"
+        ],
+        "9": [
+          "Dispel Magic"
+        ],
+        "11": [
+          "Summon Fey"
+        ],
+        "13": [
+          "Dimension Door"
+        ],
+        "17": [
+          "Mislead"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1759-2024-ranger-vs-2014-ranger-whats-new"
+    },
+    {
+      "id": "gloom_stalker",
+      "class": "Ranger",
+      "name": "Gloom Stalker",
+      "description": "Ambush enemies and evade their sight.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Gloom%20Stalker?expansion=32231",
+      "features": [
+        {
+          "name": "Dread Ambusher",
+          "level": 3,
+          "type": "passive",
+          "description": "Improve Initiative and opening movement; Dreadful Strike adds Psychic damage a limited number of times."
+        },
+        {
+          "name": "Gloom Stalker Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your gloom spells are always prepared."
+        },
+        {
+          "name": "Umbral Sight",
+          "level": 3,
+          "type": "passive",
+          "description": "Gain Darkvision and evade creatures relying on Darkvision to see you in darkness."
+        },
+        {
+          "name": "Iron Mind",
+          "level": 7,
+          "type": "passive",
+          "description": "Gain Wisdom saving throw proficiency, or another eligible save if already proficient."
+        },
+        {
+          "name": "Stalker's Flurry",
+          "level": 11,
+          "type": "passive",
+          "description": "Dreadful Strike can trigger an additional attack or frighten nearby enemies."
+        },
+        {
+          "name": "Shadowy Dodge",
+          "level": 15,
+          "type": "active",
+          "description": "Use a Reaction to hinder an incoming attack and teleport."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Disguise Self"
+        ],
+        "5": [
+          "Rope Trick"
+        ],
+        "9": [
+          "Fear"
+        ],
+        "13": [
+          "Greater Invisibility"
+        ],
+        "17": [
+          "Seeming"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1759-2024-ranger-vs-2014-ranger-whats-new"
+    },
+    {
+      "id": "arcane_trickster",
+      "class": "Rogue",
+      "name": "Arcane Trickster",
+      "description": "Use Wizard magic to enhance stealth and trickery.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Arcane%20Trickster?expansion=32231",
+      "features": [
+        {
+          "name": "Spellcasting",
+          "level": 3,
+          "type": "passive",
+          "description": "Prepare Wizard spells using Intelligence; learn Mage Hand and additional cantrips."
+        },
+        {
+          "name": "Mage Hand Legerdemain",
+          "level": 3,
+          "type": "passive",
+          "description": "Your invisible Mage Hand can perform delicate tasks and be controlled with Cunning Action."
+        },
+        {
+          "name": "Magical Ambush",
+          "level": 9,
+          "type": "passive",
+          "description": "Casting while hidden can impose Disadvantage on enemies' saves against your spell."
+        },
+        {
+          "name": "Versatile Trickster",
+          "level": 13,
+          "type": "passive",
+          "description": "Cunning Strike's Trip can target another creature near Mage Hand."
+        },
+        {
+          "name": "Spell Thief",
+          "level": 17,
+          "type": "active",
+          "description": "Use a Reaction to steal an eligible enemy spell after resisting it."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Mage Hand"
+        ]
+      },
+      "spellcasting": {
+        "ability": "intelligence",
+        "spellClass": "wizard",
+        "fixedCantrips": [
+          "Mage Hand"
+        ],
+        "progression": [
+          {
+            "level": 1,
+            "cantripsKnown": 0,
+            "preparedSpells": 0,
+            "spellSlots": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 2,
+            "cantripsKnown": 0,
+            "preparedSpells": 0,
+            "spellSlots": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 3,
+            "cantripsKnown": 2,
+            "preparedSpells": 3,
+            "spellSlots": [
+              2,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 4,
+            "cantripsKnown": 2,
+            "preparedSpells": 4,
+            "spellSlots": [
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 5,
+            "cantripsKnown": 2,
+            "preparedSpells": 4,
+            "spellSlots": [
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 6,
+            "cantripsKnown": 2,
+            "preparedSpells": 4,
+            "spellSlots": [
+              3,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 7,
+            "cantripsKnown": 2,
+            "preparedSpells": 5,
+            "spellSlots": [
+              4,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 8,
+            "cantripsKnown": 2,
+            "preparedSpells": 6,
+            "spellSlots": [
+              4,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 9,
+            "cantripsKnown": 2,
+            "preparedSpells": 6,
+            "spellSlots": [
+              4,
+              2,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 10,
+            "cantripsKnown": 3,
+            "preparedSpells": 7,
+            "spellSlots": [
+              4,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 11,
+            "cantripsKnown": 3,
+            "preparedSpells": 8,
+            "spellSlots": [
+              4,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 12,
+            "cantripsKnown": 3,
+            "preparedSpells": 8,
+            "spellSlots": [
+              4,
+              3,
+              0,
+              0
+            ]
+          },
+          {
+            "level": 13,
+            "cantripsKnown": 3,
+            "preparedSpells": 9,
+            "spellSlots": [
+              4,
+              3,
+              2,
+              0
+            ]
+          },
+          {
+            "level": 14,
+            "cantripsKnown": 3,
+            "preparedSpells": 10,
+            "spellSlots": [
+              4,
+              3,
+              2,
+              0
+            ]
+          },
+          {
+            "level": 15,
+            "cantripsKnown": 3,
+            "preparedSpells": 10,
+            "spellSlots": [
+              4,
+              3,
+              2,
+              0
+            ]
+          },
+          {
+            "level": 16,
+            "cantripsKnown": 3,
+            "preparedSpells": 11,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              0
+            ]
+          },
+          {
+            "level": 17,
+            "cantripsKnown": 3,
+            "preparedSpells": 11,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              0
+            ]
+          },
+          {
+            "level": 18,
+            "cantripsKnown": 3,
+            "preparedSpells": 11,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              0
+            ]
+          },
+          {
+            "level": 19,
+            "cantripsKnown": 3,
+            "preparedSpells": 12,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              1
+            ]
+          },
+          {
+            "level": 20,
+            "cantripsKnown": 3,
+            "preparedSpells": 13,
+            "spellSlots": [
+              4,
+              3,
+              3,
+              1
+            ]
+          }
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1752-2024-rogue-vs-2014-rogue-whats-new"
+    },
+    {
+      "id": "assassin",
+      "class": "Rogue",
+      "name": "Assassin",
+      "description": "Excel at ambushes, poisons, and infiltration.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Assassin?expansion=32231",
+      "features": [
+        {
+          "name": "Assassinate",
+          "level": 3,
+          "type": "passive",
+          "description": "Gain Initiative Advantage, first-round attack benefits, and additional Sneak Attack damage equal to Rogue level."
+        },
+        {
+          "name": "Assassin's Tools",
+          "level": 3,
+          "type": "passive",
+          "description": "Gain Disguise Kit and Poisoner's Kit proficiency."
+        },
+        {
+          "name": "Infiltration Expertise",
+          "level": 9,
+          "type": "passive",
+          "description": "Improve impersonation and retain movement after Steady Aim."
+        },
+        {
+          "name": "Envenom Weapons",
+          "level": 13,
+          "type": "passive",
+          "description": "Your Poison Cunning Strike deals extra Poison damage and ignores Poison Resistance."
+        },
+        {
+          "name": "Death Strike",
+          "level": 17,
+          "type": "passive",
+          "description": "First-round Sneak Attacks can deal doubled damage after a failed Constitution save."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1752-2024-rogue-vs-2014-rogue-whats-new"
+    },
+    {
+      "id": "soulknife",
+      "class": "Rogue",
+      "name": "Soulknife",
+      "description": "Manifest psychic blades and telepathic talents.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Soulknife?expansion=32231",
+      "features": [
+        {
+          "name": "Psionic Power",
+          "level": 3,
+          "type": "active",
+          "description": "Use Psionic Energy Dice to improve failed proficient checks and establish telepathic communication."
+        },
+        {
+          "name": "Psychic Blades",
+          "level": 3,
+          "type": "active",
+          "description": "Create Psychic blades with Vex mastery; use them for attacks, including Opportunity Attacks."
+        },
+        {
+          "name": "Soul Blades",
+          "level": 9,
+          "type": "active",
+          "description": "Use psionic energy to guide missed blade attacks or teleport."
+        },
+        {
+          "name": "Psychic Veil",
+          "level": 13,
+          "type": "active",
+          "description": "Become Invisible, ending when you damage a creature or force a save."
+        },
+        {
+          "name": "Rend Mind",
+          "level": 17,
+          "type": "active",
+          "description": "A Psychic Blade Sneak Attack can Stun a target."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1752-2024-rogue-vs-2014-rogue-whats-new"
+    },
+    {
+      "id": "aberrant_sorcery",
+      "class": "Sorcerer",
+      "name": "Aberrant Sorcery",
+      "description": "Manifest telepathy and alien psychic magic.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Aberrant%20Sorcery?expansion=32231",
+      "features": [
+        {
+          "name": "Psionic Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your psionic spells are always prepared."
+        },
+        {
+          "name": "Telepathic Speech",
+          "level": 3,
+          "type": "active",
+          "description": "Create a temporary two-way telepathic connection with another creature."
+        },
+        {
+          "name": "Psionic Sorcery",
+          "level": 6,
+          "type": "passive",
+          "description": "Cast psionic spells using Sorcery Points instead of slots and bypass most components."
+        },
+        {
+          "name": "Psychic Defenses",
+          "level": 6,
+          "type": "passive",
+          "description": "Resist Psychic damage and gain Advantage against Charmed and Frightened."
+        },
+        {
+          "name": "Revelation in Flesh",
+          "level": 14,
+          "type": "active",
+          "description": "Spend Sorcery Points to gain supernatural senses, flight, swimming, or an amorphous body."
+        },
+        {
+          "name": "Warping Implosion",
+          "level": 18,
+          "type": "active",
+          "description": "Teleport and drag nearby creatures toward your former position with Force damage."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Arms of Hadar",
+          "Calm Emotions",
+          "Detect Thoughts",
+          "Dissonant Whispers",
+          "Mind Sliver"
+        ],
+        "5": [
+          "Hunger of Hadar",
+          "Sending"
+        ],
+        "7": [
+          "Black Tentacles",
+          "Summon Aberration"
+        ],
+        "9": [
+          "Telepathic Bond",
+          "Telekinesis"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1769-2024-sorcerer-vs-2014-sorcerer-whats-new"
+    },
+    {
+      "id": "clockwork_sorcery",
+      "class": "Sorcerer",
+      "name": "Clockwork Sorcery",
+      "description": "Restore cosmic order through protective magic.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Clockwork%20Sorcery?expansion=32231",
+      "features": [
+        {
+          "name": "Clockwork Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your clockwork spells are always prepared."
+        },
+        {
+          "name": "Restore Balance",
+          "level": 3,
+          "type": "active",
+          "description": "Use a Reaction to cancel Advantage or Disadvantage on a nearby creature's d20 roll."
+        },
+        {
+          "name": "Bastion of Law",
+          "level": 6,
+          "type": "active",
+          "description": "Spend Sorcery Points to grant protective dice that reduce damage."
+        },
+        {
+          "name": "Trance of Order",
+          "level": 14,
+          "type": "active",
+          "description": "Enter a state that neutralizes enemy Advantage and treats your low d20 rolls as 10."
+        },
+        {
+          "name": "Clockwork Cavalcade",
+          "level": 18,
+          "type": "active",
+          "description": "Summon spirits that heal, repair objects, and end qualifying spells."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Aid",
+          "Alarm",
+          "Lesser Restoration",
+          "Protection from Evil and Good"
+        ],
+        "5": [
+          "Dispel Magic",
+          "Protection from Energy"
+        ],
+        "7": [
+          "Freedom of Movement",
+          "Summon Construct"
+        ],
+        "9": [
+          "Greater Restoration",
+          "Wall of Force"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1769-2024-sorcerer-vs-2014-sorcerer-whats-new"
+    },
+    {
+      "id": "wild_magic_sorcery",
+      "class": "Sorcerer",
+      "name": "Wild Magic Sorcery",
+      "description": "Channel unpredictable magic and influence fate.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Wild%20Magic%20Sorcery?expansion=32231",
+      "features": [
+        {
+          "name": "Wild Magic Surge",
+          "level": 3,
+          "type": "active",
+          "description": "Your spells can trigger a roll on the Wild Magic Surge table."
+        },
+        {
+          "name": "Tides of Chaos",
+          "level": 3,
+          "type": "active",
+          "description": "Gain Advantage on a d20 Test; a later spell triggers a surge and restores this benefit."
+        },
+        {
+          "name": "Bend Luck",
+          "level": 6,
+          "type": "active",
+          "description": "Spend 1 Sorcery Point as a Reaction to add or subtract 1d4 from another creature's d20 roll."
+        },
+        {
+          "name": "Controlled Chaos",
+          "level": 14,
+          "type": "passive",
+          "description": "Roll twice for a Wild Magic Surge and choose the result."
+        },
+        {
+          "name": "Tamed Surge",
+          "level": 18,
+          "type": "active",
+          "description": "Once per Long Rest, select a qualifying Wild Magic Surge outcome instead of rolling."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1769-2024-sorcerer-vs-2014-sorcerer-whats-new"
+    },
+    {
+      "id": "archfey_patron",
+      "class": "Warlock",
+      "name": "Archfey Patron",
+      "description": "Teleport through the battlefield with fey magic.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Archfey%20Patron?expansion=32231",
+      "features": [
+        {
+          "name": "Archfey Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your patron spells are always prepared."
+        },
+        {
+          "name": "Steps of the Fey",
+          "level": 3,
+          "type": "active",
+          "description": "Gain free Misty Step castings and additional effects when you teleport."
+        },
+        {
+          "name": "Misty Escape",
+          "level": 6,
+          "type": "active",
+          "description": "Cast Misty Step as a Reaction to taking damage, with additional teleport effects."
+        },
+        {
+          "name": "Beguiling Defenses",
+          "level": 10,
+          "type": "active",
+          "description": "Become immune to Charmed; reduce incoming damage and potentially redirect it."
+        },
+        {
+          "name": "Bewitching Magic",
+          "level": 14,
+          "type": "passive",
+          "description": "Casting an action Enchantment or Illusion spell can include a free Misty Step."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Calm Emotions",
+          "Faerie Fire",
+          "Misty Step",
+          "Phantasmal Force",
+          "Sleep"
+        ],
+        "5": [
+          "Blink",
+          "Plant Growth"
+        ],
+        "7": [
+          "Dominate Beast",
+          "Greater Invisibility"
+        ],
+        "9": [
+          "Dominate Person",
+          "Seeming"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1756-2024-warlock-vs-2014-warlock-whats-new"
+    },
+    {
+      "id": "celestial_patron",
+      "class": "Warlock",
+      "name": "Celestial Patron",
+      "description": "Draw on radiant power to heal and protect.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Celestial%20Patron?expansion=32231",
+      "features": [
+        {
+          "name": "Celestial Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your patron spells and bonus cantrips are always prepared."
+        },
+        {
+          "name": "Healing Light",
+          "level": 3,
+          "type": "active",
+          "description": "Spend a pool of d6s as a Bonus Action to heal a nearby creature."
+        },
+        {
+          "name": "Radiant Soul",
+          "level": 6,
+          "type": "passive",
+          "description": "Resist Radiant damage and add Charisma to one Fire or Radiant spell damage roll per turn."
+        },
+        {
+          "name": "Celestial Resilience",
+          "level": 10,
+          "type": "passive",
+          "description": "Magical Cunning and rests grant Temporary Hit Points to you and companions."
+        },
+        {
+          "name": "Searing Vengeance",
+          "level": 14,
+          "type": "active",
+          "description": "Rescue yourself or an ally from a death saving throw with healing and a radiant burst."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Aid",
+          "Cure Wounds",
+          "Guiding Bolt",
+          "Lesser Restoration",
+          "Light",
+          "Sacred Flame"
+        ],
+        "5": [
+          "Daylight",
+          "Revivify"
+        ],
+        "7": [
+          "Guardian of Faith",
+          "Wall of Fire"
+        ],
+        "9": [
+          "Greater Restoration",
+          "Summon Celestial"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1756-2024-warlock-vs-2014-warlock-whats-new"
+    },
+    {
+      "id": "great_old_one_patron",
+      "class": "Warlock",
+      "name": "Great Old One Patron",
+      "description": "Assault minds and command aberrant power.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Great%20Old%20One%20Patron?expansion=32231",
+      "features": [
+        {
+          "name": "Great Old One Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Your patron spells are always prepared."
+        },
+        {
+          "name": "Awakened Mind",
+          "level": 3,
+          "type": "active",
+          "description": "Create a two-way telepathic connection."
+        },
+        {
+          "name": "Psychic Spells",
+          "level": 3,
+          "type": "passive",
+          "description": "Change spell damage to Psychic and cast Enchantment or Illusion Warlock spells without Verbal or Somatic components."
+        },
+        {
+          "name": "Clairvoyant Combatant",
+          "level": 6,
+          "type": "active",
+          "description": "Use Awakened Mind to predict a creature's attacks and improve your own against it."
+        },
+        {
+          "name": "Eldritch Hex",
+          "level": 10,
+          "type": "passive",
+          "description": "Hex also hinders saves of the chosen ability."
+        },
+        {
+          "name": "Thought Shield",
+          "level": 10,
+          "type": "passive",
+          "description": "Resist Psychic damage, protect your thoughts, and reflect Psychic damage."
+        },
+        {
+          "name": "Create Thrall",
+          "level": 14,
+          "type": "active",
+          "description": "Empower Summon Aberration with reduced Concentration requirements, temporary vitality, and Hex synergy."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "3": [
+          "Detect Thoughts",
+          "Dissonant Whispers",
+          "Phantasmal Force",
+          "Hideous Laughter"
+        ],
+        "5": [
+          "Clairvoyance",
+          "Hunger of Hadar"
+        ],
+        "7": [
+          "Confusion",
+          "Summon Aberration"
+        ],
+        "9": [
+          "Modify Memory",
+          "Telekinesis"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1756-2024-warlock-vs-2014-warlock-whats-new"
+    },
+    {
+      "id": "abjurer",
+      "class": "Wizard",
+      "name": "Abjurer",
+      "description": "Protect yourself and allies with an arcane ward.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Abjurer?expansion=32231",
+      "features": [
+        {
+          "name": "Abjuration Savant",
+          "level": 3,
+          "type": "passive",
+          "description": "Add free Abjuration spells to your spellbook now and when unlocking new spell levels."
+        },
+        {
+          "name": "Arcane Ward",
+          "level": 3,
+          "type": "passive",
+          "description": "Abjuration spells create a protective ward; spell slots can directly replenish it."
+        },
+        {
+          "name": "Projected Ward",
+          "level": 6,
+          "type": "active",
+          "description": "Use a Reaction to let your ward absorb damage to a nearby creature."
+        },
+        {
+          "name": "Spell Breaker",
+          "level": 10,
+          "type": "passive",
+          "description": "Counterspell and Dispel Magic are always prepared; failed castings preserve slots and Dispel Magic can use a Bonus Action."
+        },
+        {
+          "name": "Spell Resistance",
+          "level": 14,
+          "type": "passive",
+          "description": "Gain Advantage on saves against spells and Resistance to spell damage."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "10": [
+          "Counterspell",
+          "Dispel Magic"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1753-2024-wizard-vs-2014-wizard-whats-new"
+    },
+    {
+      "id": "diviner",
+      "class": "Wizard",
+      "name": "Diviner",
+      "description": "Foresee outcomes and reveal hidden truths.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Diviner?expansion=32231",
+      "features": [
+        {
+          "name": "Divination Savant",
+          "level": 3,
+          "type": "passive",
+          "description": "Add free Divination spells to your spellbook now and when unlocking new spell levels."
+        },
+        {
+          "name": "Portent",
+          "level": 3,
+          "type": "active",
+          "description": "Record two d20 rolls after a Long Rest and substitute them for eligible d20 Tests."
+        },
+        {
+          "name": "Expert Divination",
+          "level": 6,
+          "type": "passive",
+          "description": "Casting a Divination spell with a slot recovers a lower-level spell slot."
+        },
+        {
+          "name": "The Third Eye",
+          "level": 10,
+          "type": "active",
+          "description": "A Bonus Action grants a supernatural sight option, including enhanced Darkvision or See Invisibility."
+        },
+        {
+          "name": "Greater Portent",
+          "level": 14,
+          "type": "passive",
+          "description": "Record three Portent rolls instead of two."
+        }
+      ],
+      "previewUrl": "https://www.dndbeyond.com/posts/1753-2024-wizard-vs-2014-wizard-whats-new"
+    },
+    {
+      "id": "illusionist",
+      "class": "Wizard",
+      "name": "Illusionist",
+      "description": "Create convincing illusions and phantasmal allies.",
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Subclasses:Illusionist?expansion=32231",
+      "features": [
+        {
+          "name": "Illusion Savant",
+          "level": 3,
+          "type": "passive",
+          "description": "Add free Illusion spells to your spellbook now and when unlocking new spell levels."
+        },
+        {
+          "name": "Improved Illusions",
+          "level": 3,
+          "type": "passive",
+          "description": "Enhance Minor Illusion, ignore Illusion Verbal components, and improve qualifying spell ranges."
+        },
+        {
+          "name": "Phantasmal Creatures",
+          "level": 6,
+          "type": "active",
+          "description": "Gain Summon Beast and Summon Fey, including free illusion-based castings with modified creatures."
+        },
+        {
+          "name": "Illusory Self",
+          "level": 10,
+          "type": "active",
+          "description": "Use a Reaction to make a triggering hit miss; a level 2+ slot restores this feature."
+        },
+        {
+          "name": "Illusory Reality",
+          "level": 14,
+          "type": "active",
+          "description": "Temporarily make one nonmagical object in an illusion real without dealing direct harm."
+        }
+      ],
+      "alwaysPreparedSpells": {
+        "6": [
+          "Summon Beast",
+          "Summon Fey"
+        ],
+        "3": [
+          "Minor Illusion"
+        ]
+      },
+      "previewUrl": "https://www.dndbeyond.com/posts/1753-2024-wizard-vs-2014-wizard-whats-new"
+    }
+  ],
+  "featureChoices": {
+    "optionSources": {},
+    "subclassFeatures": {
+      "Barbarian": {
+        "Path of the Wild Heart": {
+          "Rage of the Wilds": {
+            "choices": [
+              {
+                "id": "animal",
+                "type": "option",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "bear",
+                    "name": "Bear"
+                  },
+                  {
+                    "id": "eagle",
+                    "name": "Eagle"
+                  },
+                  {
+                    "id": "wolf",
+                    "name": "Wolf"
+                  }
+                ]
+              }
+            ]
+          },
+          "Aspect of the Wilds": {
+            "choices": [
+              {
+                "id": "aspect",
+                "type": "option",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "owl",
+                    "name": "Owl"
+                  },
+                  {
+                    "id": "panther",
+                    "name": "Panther"
+                  },
+                  {
+                    "id": "salmon",
+                    "name": "Salmon"
+                  }
+                ]
+              }
+            ]
+          },
+          "Power of the Wilds": {
+            "choices": [
+              {
+                "id": "power",
+                "type": "option",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "falcon",
+                    "name": "Falcon"
+                  },
+                  {
+                    "id": "lion",
+                    "name": "Lion"
+                  },
+                  {
+                    "id": "ram",
+                    "name": "Ram"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Druid": {
+        "Circle of the Stars": {
+          "Starry Form": {
+            "choices": [
+              {
+                "id": "constellation",
+                "type": "option",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "archer",
+                    "name": "Archer"
+                  },
+                  {
+                    "id": "chalice",
+                    "name": "Chalice"
+                  },
+                  {
+                    "id": "dragon",
+                    "name": "Dragon"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Ranger": {
+        "Beast Master": {
+          "Primal Companion": {
+            "choices": [
+              {
+                "id": "companion",
+                "type": "option",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "beast_of_the_land",
+                    "name": "Beast of the Land"
+                  },
+                  {
+                    "id": "beast_of_the_sea",
+                    "name": "Beast of the Sea"
+                  },
+                  {
+                    "id": "beast_of_the_sky",
+                    "name": "Beast of the Sky"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "Fey Wanderer": {
+          "Otherworldly Glamour": {
+            "choices": [
+              {
+                "id": "skill",
+                "type": "skill",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "deception",
+                    "name": "Deception"
+                  },
+                  {
+                    "id": "performance",
+                    "name": "Performance"
+                  },
+                  {
+                    "id": "persuasion",
+                    "name": "Persuasion"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "Gloom Stalker": {
+          "Iron Mind": {
+            "choices": [
+              {
+                "id": "saving_throw",
+                "type": "saving_throw",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "wisdom",
+                    "name": "Wisdom"
+                  },
+                  {
+                    "id": "intelligence",
+                    "name": "Intelligence"
+                  },
+                  {
+                    "id": "charisma",
+                    "name": "Charisma"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Monk": {
+        "Warrior of Mercy": {
+          "Implements of Mercy": {
+            "choices": [
+              {
+                "id": "skills",
+                "type": "skill",
+                "count": 2,
+                "options": [
+                  {
+                    "id": "insight",
+                    "name": "Insight"
+                  },
+                  {
+                    "id": "medicine",
+                    "name": "Medicine"
+                  }
+                ]
+              },
+              {
+                "id": "tool",
+                "type": "tool",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "herbalism_kit",
+                    "name": "Herbalism Kit"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Rogue": {
+        "Assassin": {
+          "Assassin's Tools": {
+            "choices": [
+              {
+                "id": "tools",
+                "type": "tool",
+                "count": 2,
+                "options": [
+                  {
+                    "id": "disguise_kit",
+                    "name": "Disguise Kit"
+                  },
+                  {
+                    "id": "poisoners_kit",
+                    "name": "Poisoner's Kit"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "Fighter": {
+        "Battle Master": {
+          "Student of War": {
+            "choices": [
+              {
+                "id": "skill",
+                "type": "skill",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "acrobatics",
+                    "name": "Acrobatics"
+                  },
+                  {
+                    "id": "animal_handling",
+                    "name": "Animal Handling"
+                  },
+                  {
+                    "id": "athletics",
+                    "name": "Athletics"
+                  },
+                  {
+                    "id": "history",
+                    "name": "History"
+                  },
+                  {
+                    "id": "insight",
+                    "name": "Insight"
+                  },
+                  {
+                    "id": "intimidation",
+                    "name": "Intimidation"
+                  },
+                  {
+                    "id": "persuasion",
+                    "name": "Persuasion"
+                  },
+                  {
+                    "id": "perception",
+                    "name": "Perception"
+                  },
+                  {
+                    "id": "survival",
+                    "name": "Survival"
+                  }
+                ]
+              },
+              {
+                "id": "tool",
+                "type": "tool",
+                "count": 1,
+                "options": [
+                  {
+                    "id": "alchemist_s_supplies",
+                    "name": "Alchemist's Supplies"
+                  },
+                  {
+                    "id": "brewer_s_supplies",
+                    "name": "Brewer's Supplies"
+                  },
+                  {
+                    "id": "calligrapher_s_supplies",
+                    "name": "Calligrapher's Supplies"
+                  },
+                  {
+                    "id": "carpenter_s_tools",
+                    "name": "Carpenter's Tools"
+                  },
+                  {
+                    "id": "cartographer_s_tools",
+                    "name": "Cartographer's Tools"
+                  },
+                  {
+                    "id": "cobbler_s_tools",
+                    "name": "Cobbler's Tools"
+                  },
+                  {
+                    "id": "cook_s_utensils",
+                    "name": "Cook's Utensils"
+                  },
+                  {
+                    "id": "glassblower_s_tools",
+                    "name": "Glassblower's Tools"
+                  },
+                  {
+                    "id": "jeweler_s_tools",
+                    "name": "Jeweler's Tools"
+                  },
+                  {
+                    "id": "leatherworker_s_tools",
+                    "name": "Leatherworker's Tools"
+                  },
+                  {
+                    "id": "mason_s_tools",
+                    "name": "Mason's Tools"
+                  },
+                  {
+                    "id": "painter_s_supplies",
+                    "name": "Painter's Supplies"
+                  },
+                  {
+                    "id": "potter_s_tools",
+                    "name": "Potter's Tools"
+                  },
+                  {
+                    "id": "smith_s_tools",
+                    "name": "Smith's Tools"
+                  },
+                  {
+                    "id": "tinker_s_tools",
+                    "name": "Tinker's Tools"
+                  },
+                  {
+                    "id": "weaver_s_tools",
+                    "name": "Weaver's Tools"
+                  },
+                  {
+                    "id": "woodcarver_s_tools",
+                    "name": "Woodcarver's Tools"
+                  }
+                ]
+              }
+            ]
+          },
+          "Combat Superiority": {
+            "choices": [
+              {
+                "id": "maneuvers",
+                "type": "option",
+                "count": 3,
+                "options": [
+                  {
+                    "id": "ambush",
+                    "name": "Ambush"
+                  },
+                  {
+                    "id": "bait_and_switch",
+                    "name": "Bait and Switch"
+                  },
+                  {
+                    "id": "commanding_presence",
+                    "name": "Commanding Presence"
+                  },
+                  {
+                    "id": "commander_s_strike",
+                    "name": "Commander's Strike"
+                  },
+                  {
+                    "id": "disarming_attack",
+                    "name": "Disarming Attack"
+                  },
+                  {
+                    "id": "distracting_strike",
+                    "name": "Distracting Strike"
+                  },
+                  {
+                    "id": "evasive_footwork",
+                    "name": "Evasive Footwork"
+                  },
+                  {
+                    "id": "feinting_attack",
+                    "name": "Feinting Attack"
+                  },
+                  {
+                    "id": "goading_attack",
+                    "name": "Goading Attack"
+                  },
+                  {
+                    "id": "lunging_attack",
+                    "name": "Lunging Attack"
+                  },
+                  {
+                    "id": "maneuvering_attack",
+                    "name": "Maneuvering Attack"
+                  },
+                  {
+                    "id": "menacing_attack",
+                    "name": "Menacing Attack"
+                  },
+                  {
+                    "id": "parry",
+                    "name": "Parry"
+                  },
+                  {
+                    "id": "precision_attack",
+                    "name": "Precision Attack"
+                  },
+                  {
+                    "id": "pushing_attack",
+                    "name": "Pushing Attack"
+                  },
+                  {
+                    "id": "rally",
+                    "name": "Rally"
+                  },
+                  {
+                    "id": "riposte",
+                    "name": "Riposte"
+                  },
+                  {
+                    "id": "sweeping_attack",
+                    "name": "Sweeping Attack"
+                  },
+                  {
+                    "id": "tactical_assessment",
+                    "name": "Tactical Assessment"
+                  },
+                  {
+                    "id": "trip_attack",
+                    "name": "Trip Attack"
+                  }
+                ],
+                "countByLevel": {
+                  "3": 3,
+                  "7": 2,
+                  "10": 2,
+                  "15": 2
+                },
+                "replaceOneOnLevelUp": true
+              }
+            ]
+          }
+        }
+      },
+      "Wizard": {
+        "Abjurer": {
+          "Abjuration Savant": {
+            "choices": [
+              {
+                "id": "savant_spells",
+                "type": "spell",
+                "count": 2,
+                "countByLevel": {
+                  "3": 2,
+                  "5": 1,
+                  "7": 1,
+                  "9": 1,
+                  "11": 1,
+                  "13": 1,
+                  "15": 1,
+                  "17": 1
+                },
+                "spellClass": "wizard",
+                "spellSchool": "abjuration",
+                "maxSpellLevelByLevel": {
+                  "3": 2,
+                  "5": 3,
+                  "7": 4,
+                  "9": 5,
+                  "11": 6,
+                  "13": 7,
+                  "15": 8,
+                  "17": 9
+                }
+              }
+            ]
+          }
+        },
+        "Diviner": {
+          "Divination Savant": {
+            "choices": [
+              {
+                "id": "savant_spells",
+                "type": "spell",
+                "count": 2,
+                "countByLevel": {
+                  "3": 2,
+                  "5": 1,
+                  "7": 1,
+                  "9": 1,
+                  "11": 1,
+                  "13": 1,
+                  "15": 1,
+                  "17": 1
+                },
+                "spellClass": "wizard",
+                "spellSchool": "divination",
+                "maxSpellLevelByLevel": {
+                  "3": 2,
+                  "5": 3,
+                  "7": 4,
+                  "9": 5,
+                  "11": 6,
+                  "13": 7,
+                  "15": 8,
+                  "17": 9
+                }
+              }
+            ]
+          }
+        },
+        "Illusionist": {
+          "Illusion Savant": {
+            "choices": [
+              {
+                "id": "savant_spells",
+                "type": "spell",
+                "count": 2,
+                "countByLevel": {
+                  "3": 2,
+                  "5": 1,
+                  "7": 1,
+                  "9": 1,
+                  "11": 1,
+                  "13": 1,
+                  "15": 1,
+                  "17": 1
+                },
+                "spellClass": "wizard",
+                "spellSchool": "illusion",
+                "maxSpellLevelByLevel": {
+                  "3": 2,
+                  "5": 3,
+                  "7": 4,
+                  "9": 5,
+                  "11": 6,
+                  "13": 7,
+                  "15": 8,
+                  "17": 9
+                }
+              }
+            ]
+          }
+        },
+        "Evoker": {
+          "Evocation Savant": {
+            "choices": [
+              {
+                "id": "savant_spells",
+                "type": "spell",
+                "count": 2,
+                "countByLevel": {
+                  "3": 2,
+                  "5": 1,
+                  "7": 1,
+                  "9": 1,
+                  "11": 1,
+                  "13": 1,
+                  "15": 1,
+                  "17": 1
+                },
+                "spellClass": "wizard",
+                "spellSchool": "evocation",
+                "maxSpellLevelByLevel": {
+                  "3": 2,
+                  "5": 3,
+                  "7": 4,
+                  "9": 5,
+                  "11": 6,
+                  "13": 7,
+                  "15": 8,
+                  "17": 9
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "featureUsages": {
+    "resources": {
+      "2024_beguiling_magic": {
+        "name": "Beguiling Magic",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_mantle_of_majesty": {
+        "name": "Mantle of Majesty",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_unbreakable_majesty": {
+        "name": "Unbreakable Majesty",
+        "max": "1",
+        "recharge": "short_rest"
+      },
+      "2024_warding_flare": {
+        "name": "Warding Flare",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "light_warding_flare_recharge"
+      },
+      "2024_war_priest": {
+        "name": "War Priest",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "short_rest"
+      },
+      "2024_moonlight_step": {
+        "name": "Moonlight Step",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_star_map": {
+        "name": "Star Map",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_cosmic_omen": {
+        "name": "Cosmic Omen",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_superiority_dice": {
+        "name": "Combat Superiority",
+        "max": "battle_master_superiority_dice",
+        "recharge": "short_rest"
+      },
+      "2024_know_your_enemy": {
+        "name": "Know Your Enemy",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_psi_warrior_psionic_dice": {
+        "name": "Psionic Power",
+        "max": "1",
+        "recharge": "short_rest_one",
+        "maxByLevel": {
+          "3": 4,
+          "5": 6,
+          "9": 8,
+          "13": 10,
+          "17": 12
+        }
+      },
+      "2024_soulknife_psionic_dice": {
+        "name": "Psionic Power",
+        "max": "1",
+        "recharge": "short_rest_one",
+        "maxByLevel": {
+          "3": 4,
+          "5": 6,
+          "9": 8,
+          "13": 10,
+          "17": 12
+        }
+      },
+      "2024_psi_powered_leap": {
+        "name": "Telekinetic Adept",
+        "max": "1",
+        "recharge": "short_rest"
+      },
+      "2024_bulwark_of_force": {
+        "name": "Bulwark of Force",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_telekinetic_master": {
+        "name": "Telekinetic Master",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_flurry_of_healing_and_harm": {
+        "name": "Flurry of Healing and Harm",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_hand_of_ultimate_mercy": {
+        "name": "Hand of Ultimate Mercy",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_living_legend": {
+        "name": "Living Legend",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_elder_champion": {
+        "name": "Elder Champion",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_avenging_angel": {
+        "name": "Avenging Angel",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_glorious_defense": {
+        "name": "Glorious Defense",
+        "max": "charisma_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_fey_reinforcements": {
+        "name": "Fey Reinforcements",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_misty_wanderer": {
+        "name": "Misty Wanderer",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_dreadful_strikes": {
+        "name": "Dread Ambusher",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_spell_thief": {
+        "name": "Spell Thief",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_psychic_veil": {
+        "name": "Psychic Veil",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_rend_mind": {
+        "name": "Rend Mind",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_restore_balance": {
+        "name": "Restore Balance",
+        "max": "charisma_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_trance_of_order": {
+        "name": "Trance of Order",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_clockwork_cavalcade": {
+        "name": "Clockwork Cavalcade",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_warping_implosion": {
+        "name": "Warping Implosion",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_tides_of_chaos": {
+        "name": "Tides of Chaos",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_tamed_surge": {
+        "name": "Tamed Surge",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_steps_of_the_fey": {
+        "name": "Steps of the Fey",
+        "max": "charisma_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_beguiling_defenses": {
+        "name": "Beguiling Defenses",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_healing_light": {
+        "name": "Healing Light",
+        "max": "source_class_level_plus_one",
+        "recharge": "long_rest"
+      },
+      "2024_searing_vengeance": {
+        "name": "Searing Vengeance",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_clairvoyant_combatant": {
+        "name": "Clairvoyant Combatant",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_portent": {
+        "name": "Portent",
+        "max": "wizard_portent_dice",
+        "recharge": "long_rest"
+      },
+      "2024_illusory_self": {
+        "name": "Illusory Self",
+        "max": "1",
+        "recharge": "short_rest"
+      },
+      "2024_phantasmal_beast": {
+        "name": "Summon Beast (Free Cast)",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_phantasmal_fey": {
+        "name": "Summon Fey (Free Cast)",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_warrior_of_the_gods": {
+        "name": "Warrior of the Gods",
+        "max": "1",
+        "recharge": "long_rest",
+        "maxByLevel": {
+          "3": 4,
+          "6": 5,
+          "12": 6,
+          "17": 7
+        }
+      },
+      "2024_zealous_presence": {
+        "name": "Zealous Presence",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_rage_of_the_gods": {
+        "name": "Rage of the Gods",
+        "max": "1",
+        "recharge": "long_rest"
+      },
+      "2024_corona_of_light": {
+        "name": "Corona of Light",
+        "max": "wisdom_modifier_min_1",
+        "recharge": "long_rest"
+      },
+      "2024_telekinetic_movement": {
+        "name": "Telekinetic Movement (Free Use)",
+        "max": "1",
+        "recharge": "short_rest"
+      }
+    },
+    "subclassFeatures": {
+      "Bard": {
+        "College of Dance": {
+          "Dazzling Footwork": {
+            "resourceId": "2024_bardic_inspiration"
+          },
+          "Inspiring Movement": {
+            "resourceId": "2024_bardic_inspiration"
+          },
+          "Tandem Footwork": {
+            "resourceId": "2024_bardic_inspiration"
+          }
+        },
+        "College of Glamour": {
+          "Mantle of Inspiration": {
+            "resourceId": "2024_bardic_inspiration"
+          },
+          "Beguiling Magic": {
+            "resourceId": "2024_beguiling_magic"
+          },
+          "Mantle of Majesty": {
+            "resourceId": "2024_mantle_of_majesty"
+          },
+          "Unbreakable Majesty": {
+            "resourceId": "2024_unbreakable_majesty"
+          }
+        }
+      },
+      "Cleric": {
+        "Light Domain": {
+          "Radiance of the Dawn": {
+            "resourceId": "2024_cleric_channel_divinity"
+          },
+          "Warding Flare": {
+            "resourceId": "2024_warding_flare"
+          },
+          "Corona of Light": {
+            "resourceId": "2024_corona_of_light"
+          }
+        },
+        "Trickery Domain": {
+          "Invoke Duplicity": {
+            "resourceId": "2024_cleric_channel_divinity"
+          }
+        },
+        "War Domain": {
+          "Guided Strike": {
+            "resourceId": "2024_cleric_channel_divinity"
+          },
+          "War God's Blessing": {
+            "resourceId": "2024_cleric_channel_divinity"
+          },
+          "War Priest": {
+            "resourceId": "2024_war_priest"
+          }
+        }
+      },
+      "Druid": {
+        "Circle of the Sea": {
+          "Wrath of the Sea": {
+            "resourceId": "2024_wild_shape"
+          }
+        },
+        "Circle of the Stars": {
+          "Starry Form": {
+            "resourceId": "2024_wild_shape"
+          },
+          "Star Map": {
+            "resourceId": "2024_star_map"
+          },
+          "Cosmic Omen": {
+            "resourceId": "2024_cosmic_omen"
+          }
+        },
+        "Circle of the Moon": {
+          "Moonlight Step": {
+            "resourceId": "2024_moonlight_step"
+          }
+        }
+      },
+      "Fighter": {
+        "Battle Master": {
+          "Combat Superiority": {
+            "resourceId": "2024_superiority_dice"
+          },
+          "Know Your Enemy": {
+            "resourceId": "2024_know_your_enemy"
+          }
+        },
+        "Psi Warrior": {
+          "Psionic Power": {
+            "resourceId": "2024_psi_warrior_psionic_dice",
+            "additionalResources": [
+              {
+                "resourceId": "2024_telekinetic_movement"
+              }
+            ]
+          },
+          "Telekinetic Adept": {
+            "resourceId": "2024_psi_powered_leap"
+          },
+          "Bulwark of Force": {
+            "resourceId": "2024_bulwark_of_force"
+          },
+          "Telekinetic Master": {
+            "resourceId": "2024_telekinetic_master"
+          }
+        }
+      },
+      "Rogue": {
+        "Soulknife": {
+          "Psionic Power": {
+            "resourceId": "2024_soulknife_psionic_dice"
+          },
+          "Psychic Veil": {
+            "resourceId": "2024_psychic_veil"
+          },
+          "Rend Mind": {
+            "resourceId": "2024_rend_mind"
+          }
+        },
+        "Arcane Trickster": {
+          "Spell Thief": {
+            "resourceId": "2024_spell_thief"
+          }
+        }
+      },
+      "Monk": {
+        "Warrior of Mercy": {
+          "Hand of Harm": {
+            "resourceId": "2024_focus_points",
+            "spend": 1
+          },
+          "Hand of Healing": {
+            "resourceId": "2024_focus_points",
+            "spend": 1
+          },
+          "Flurry of Healing and Harm": {
+            "resourceId": "2024_flurry_of_healing_and_harm"
+          },
+          "Hand of Ultimate Mercy": {
+            "resourceId": "2024_hand_of_ultimate_mercy",
+            "additionalResources": [
+              {
+                "resourceId": "2024_focus_points",
+                "spend": 5
+              }
+            ]
+          }
+        },
+        "Warrior of Shadow": {
+          "Shadow Arts": {
+            "resourceId": "2024_focus_points",
+            "spend": 1
+          },
+          "Improved Shadow Step": {
+            "resourceId": "2024_focus_points",
+            "spend": 1
+          },
+          "Cloak of Shadows": {
+            "resourceId": "2024_focus_points",
+            "spend": 3
+          }
+        },
+        "Warrior of the Elements": {
+          "Elemental Attunement": {
+            "resourceId": "2024_focus_points",
+            "spend": 1
+          },
+          "Elemental Burst": {
+            "resourceId": "2024_focus_points",
+            "spend": 2
+          }
+        }
+      },
+      "Paladin": {
+        "Oath of Glory": {
+          "Inspiring Smite": {
+            "resourceId": "2024_paladin_channel_divinity"
+          },
+          "Peerless Athlete": {
+            "resourceId": "2024_paladin_channel_divinity"
+          },
+          "Living Legend": {
+            "resourceId": "2024_living_legend"
+          },
+          "Glorious Defense": {
+            "resourceId": "2024_glorious_defense"
+          }
+        },
+        "Oath of the Ancients": {
+          "Nature's Wrath": {
+            "resourceId": "2024_paladin_channel_divinity"
+          },
+          "Elder Champion": {
+            "resourceId": "2024_elder_champion"
+          }
+        },
+        "Oath of Vengeance": {
+          "Vow of Enmity": {
+            "resourceId": "2024_paladin_channel_divinity"
+          },
+          "Avenging Angel": {
+            "resourceId": "2024_avenging_angel"
+          }
+        }
+      },
+      "Ranger": {
+        "Fey Wanderer": {
+          "Fey Reinforcements": {
+            "resourceId": "2024_fey_reinforcements"
+          },
+          "Misty Wanderer": {
+            "resourceId": "2024_misty_wanderer"
+          }
+        },
+        "Gloom Stalker": {
+          "Dread Ambusher": {
+            "resourceId": "2024_dreadful_strikes"
+          }
+        }
+      },
+      "Sorcerer": {
+        "Clockwork Sorcery": {
+          "Restore Balance": {
+            "resourceId": "2024_restore_balance"
+          },
+          "Trance of Order": {
+            "resourceId": "2024_trance_of_order"
+          },
+          "Clockwork Cavalcade": {
+            "resourceId": "2024_clockwork_cavalcade"
+          }
+        },
+        "Aberrant Sorcery": {
+          "Warping Implosion": {
+            "resourceId": "2024_warping_implosion"
+          }
+        },
+        "Wild Magic Sorcery": {
+          "Tides of Chaos": {
+            "resourceId": "2024_tides_of_chaos"
+          },
+          "Tamed Surge": {
+            "resourceId": "2024_tamed_surge"
+          },
+          "Bend Luck": {
+            "resourceId": "2024_sorcery_points"
+          }
+        }
+      },
+      "Warlock": {
+        "Archfey Patron": {
+          "Steps of the Fey": {
+            "resourceId": "2024_steps_of_the_fey"
+          },
+          "Beguiling Defenses": {
+            "resourceId": "2024_beguiling_defenses"
+          }
+        },
+        "Celestial Patron": {
+          "Healing Light": {
+            "resourceId": "2024_healing_light"
+          },
+          "Searing Vengeance": {
+            "resourceId": "2024_searing_vengeance"
+          }
+        },
+        "Great Old One Patron": {
+          "Clairvoyant Combatant": {
+            "resourceId": "2024_clairvoyant_combatant"
+          }
+        }
+      },
+      "Wizard": {
+        "Diviner": {
+          "Portent": {
+            "resourceId": "2024_portent"
+          }
+        },
+        "Illusionist": {
+          "Illusory Self": {
+            "resourceId": "2024_illusory_self"
+          },
+          "Phantasmal Creatures": {
+            "resourceId": "2024_phantasmal_beast",
+            "additionalResources": [
+              {
+                "resourceId": "2024_phantasmal_fey"
+              }
+            ]
+          }
+        }
+      },
+      "Barbarian": {
+        "Path of the Zealot": {
+          "Warrior of the Gods": {
+            "resourceId": "2024_warrior_of_the_gods"
+          },
+          "Zealous Presence": {
+            "resourceId": "2024_zealous_presence"
+          },
+          "Rage of the Gods": {
+            "resourceId": "2024_rage_of_the_gods"
+          }
+        }
+      }
+    }
+  },
+  "spells": [
+    {
+      "name": "Arms of Hadar",
+      "level": 1,
+      "school": "conjuration",
+      "range": "Self",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S"
+      ],
+      "duration": "Instantaneous",
+      "classes": [
+        "warlock"
+      ],
+      "description": "Dark tendrils strike nearby creatures. A failed Strength save deals Necrotic damage and prevents Reactions until the next turn.",
+      "concentration": false,
+      "source": "Player's Handbook (2024)",
+      "saveAttribute": "STR",
+      "damageTypes": [
+        "necrotic"
+      ],
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Arms%20of%20Hadar?expansion=32231"
+    },
+    {
+      "name": "Crusader's Mantle",
+      "level": 3,
+      "school": "evocation",
+      "range": "Self",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V"
+      ],
+      "duration": "1 minute",
+      "classes": [
+        "paladin"
+      ],
+      "description": "An aura empowers nearby allies: weapon and Unarmed Strike hits deal additional Radiant damage.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "damageTypes": [
+        "radiant"
+      ],
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Crusader%27s%20Mantle?expansion=32231"
+    },
+    {
+      "name": "Fount of Moonlight",
+      "level": 4,
+      "school": "evocation",
+      "range": "Self",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S"
+      ],
+      "duration": "10 minutes",
+      "classes": [
+        "bard",
+        "druid"
+      ],
+      "description": "Moonlight grants Radiant Resistance and extra Radiant damage on melee hits. React to damage to potentially Blind the attacker.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "radiant"
+      ],
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Fount%20of%20Moonlight?expansion=32231"
+    },
+    {
+      "name": "Hunger of Hadar",
+      "level": 3,
+      "school": "conjuration",
+      "range": "150 feet",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "duration": "1 minute",
+      "classes": [
+        "warlock"
+      ],
+      "description": "Create an otherworldly sphere of darkness and Difficult Terrain that harms creatures with Cold and Acid damage.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "cold",
+        "acid"
+      ],
+      "material": "A pickled tentacle.",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Hunger%20of%20Hadar?expansion=32231"
+    },
+    {
+      "name": "Mind Sliver",
+      "level": 0,
+      "school": "enchantment",
+      "range": "60 feet",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V"
+      ],
+      "duration": "1 round",
+      "classes": [
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "description": "An Intelligence save resists Psychic damage and a 1d4 penalty to the next saving throw before your next turn ends.",
+      "concentration": false,
+      "source": "Player's Handbook (2024)",
+      "saveAttribute": "INT",
+      "damageTypes": [
+        "psychic"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "kind": "damage",
+          "label": "Psychic damage",
+          "formula": "1d6",
+          "damageType": "psychic",
+          "characterLevelScaling": {
+            "5": "2d6",
+            "11": "3d6",
+            "17": "4d6"
+          }
+        }
+      ],
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Mind%20Sliver?expansion=32231"
+    },
+    {
+      "name": "Steel Wind Strike",
+      "level": 5,
+      "school": "conjuration",
+      "range": "30 feet",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "S",
+        "M"
+      ],
+      "duration": "Instantaneous",
+      "classes": [
+        "ranger",
+        "wizard"
+      ],
+      "description": "Make melee spell attacks against up to five creatures, dealing Force damage on hits, then teleport beside a target.",
+      "concentration": false,
+      "source": "Player's Handbook (2024)",
+      "attackType": "melee",
+      "damageTypes": [
+        "force"
+      ],
+      "material": "A Melee weapon worth at least 1 GP.",
+      "materialCost": 1,
+      "rolls": [
+        {
+          "id": "attack",
+          "kind": "spell_attack",
+          "label": "Spell attack"
+        },
+        {
+          "id": "damage",
+          "kind": "damage",
+          "label": "Force damage",
+          "formula": "6d10",
+          "damageType": "force",
+          "critical": true
+        }
+      ],
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Steel%20Wind%20Strike?expansion=32231"
+    },
+    {
+      "name": "Summon Aberration",
+      "level": 4,
+      "school": "conjuration",
+      "range": "90 feet",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "duration": "1 hour",
+      "classes": [
+        "warlock",
+        "wizard"
+      ],
+      "description": "Summon a spirit using the spell's stat block. Choose Beholderkin, Mind Flayer, or Slaad; its statistics scale with the slot used.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "material": "The spell-specific component worth at least 400 GP.",
+      "materialCost": 400,
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Aberration?expansion=32231"
+    },
+    {
+      "name": "Summon Beast",
+      "level": 2,
+      "school": "conjuration",
+      "range": "90 feet",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "duration": "1 hour",
+      "classes": [
+        "druid",
+        "ranger"
+      ],
+      "description": "Summon a spirit using the spell's stat block. Choose Air, Land, or Water; its statistics scale with the slot used.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "material": "The spell-specific component worth at least 200 GP.",
+      "materialCost": 200,
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Beast?expansion=32231"
+    },
+    {
+      "name": "Summon Celestial",
+      "level": 5,
+      "school": "conjuration",
+      "range": "90 feet",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "duration": "1 hour",
+      "classes": [
+        "cleric",
+        "paladin"
+      ],
+      "description": "Summon a spirit using the spell's stat block. Choose Avenger or Defender; its statistics scale with the slot used.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "material": "The spell-specific component worth at least 500 GP.",
+      "materialCost": 500,
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Celestial?expansion=32231"
+    },
+    {
+      "name": "Summon Construct",
+      "level": 4,
+      "school": "conjuration",
+      "range": "90 feet",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "duration": "1 hour",
+      "classes": [
+        "wizard"
+      ],
+      "description": "Summon a spirit using the spell's stat block. Choose Clay, Metal, or Stone; its statistics scale with the slot used.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "material": "The spell-specific component worth at least 400 GP.",
+      "materialCost": 400,
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Construct?expansion=32231"
+    },
+    {
+      "name": "Summon Fey",
+      "level": 3,
+      "school": "conjuration",
+      "range": "90 feet",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "duration": "1 hour",
+      "classes": [
+        "druid",
+        "ranger",
+        "warlock",
+        "wizard"
+      ],
+      "description": "Summon a spirit using the spell's stat block. Choose Fuming, Mirthful, or Tricksy; its statistics scale with the slot used.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "material": "The spell-specific component worth at least 300 GP.",
+      "materialCost": 300,
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Summon%20Fey?expansion=32231"
+    },
+    {
+      "name": "Yolande's Regal Presence",
+      "level": 5,
+      "school": "enchantment",
+      "range": "Self",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "duration": "1 minute",
+      "classes": [
+        "bard",
+        "wizard"
+      ],
+      "description": "A majestic emanation can inflict Psychic damage, knock creatures Prone, and push them away after a failed Wisdom save.",
+      "concentration": true,
+      "source": "Player's Handbook (2024)",
+      "saveAttribute": "WIS",
+      "damageTypes": [
+        "psychic"
+      ],
+      "material": "A miniature tiara.",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Yolande%27s%20Regal%20Presence?expansion=32231"
+    },
+    {
+      "name": "Beast Sense",
+      "level": 2,
+      "school": "divination",
+      "range": "Touch",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "components": [
+        "S"
+      ],
+      "duration": "1 hour",
+      "classes": [
+        "druid",
+        "ranger"
+      ],
+      "description": "Perceive through a willing Beast you touch. While sharing its senses, you cannot use your own sight or hearing.",
+      "concentration": true,
+      "ritual": true,
+      "source": "Player's Handbook (2024)",
+      "sourceUrl": "https://roll20.net/compendium/dnd5e/Spells:Beast%20Sense?expansion=32231"
+    }
+  ]
+}

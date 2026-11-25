@@ -15,7 +15,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3421,4 +3421,42 @@ class AppLocalizationsZh extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => '性格建议';
+
+  @override
+  String get featureChoiceReplacementLimit => '本等级最多可以替换一个已掌握的魔能祈唤或元素法门。';
+
+  @override
+  String get monsterNonmagicalAttacks => '非魔法攻击';
+
+  @override
+  String get whatsNew301Summary =>
+      '本次更新扩充了2014版资料，并修复了角色选项的处理。D&D 2024仍处于测试阶段，内容尚不完整。';
+
+  @override
+  String get whatsNew301ContentTitle => '更多2014版内容';
+
+  @override
+  String get whatsNew301ContentBody =>
+      '新增了《玩家手册》中缺失的法术、魔能祈唤、宗法、图腾和背景变体，提供英语、葡萄牙语和西班牙语文本。书之魔契现在可以选择三个戏法，资料库也已收录链之魔契的四种特殊魔宠。';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024：测试版';
+
+  @override
+  String get whatsNew301BetaBody =>
+      '已登记《玩家手册》的全部48个子职业。背景、物种、专长和翻译仍有缺漏，许多新增子职业的说明目前仅提供英语版本。';
+
+  @override
+  String get whatsNew301LimitsTitle => '待完成的内容';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      '部分特性仍需手动应用。资料库并未涵盖2014版的所有扩展书。新增的2014版内容尚待翻译成应用支持的其他语言。';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Beta 测试版：内容和翻译尚不完整，背景、物种和专长仍有缺漏。';
 }

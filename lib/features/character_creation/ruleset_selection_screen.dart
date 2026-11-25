@@ -22,6 +22,7 @@ class RulesetSelectionScreen extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.auto_stories_outlined),
             title: Text(l10n.creationRuleset2024),
+            subtitle: Text(l10n.creationRuleset2024BetaDescription),
             trailing: const Icon(Icons.chevron_right),
             onTap: () => context.push('/create/2024'),
           ),

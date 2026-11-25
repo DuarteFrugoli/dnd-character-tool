@@ -1,5 +1,6 @@
 import '../json_helpers.dart';
 import '../models/models.dart';
+import '../rulesets/ruleset_ids.dart';
 
 /// Calculates armor class for [c].
 ///
@@ -58,7 +59,20 @@ int calcArmorClass(Character c, {List<EquipmentItem>? equipment}) {
   final draconicAc = _hasDraconicResilience(c)
       ? 13 + dexMod + shieldBonus
       : unarmoredAc;
-  return unarmoredAc > draconicAc ? unarmoredAc : draconicAc;
+  var best = unarmoredAc > draconicAc ? unarmoredAc : draconicAc;
+  if (c.rulesetId == RulesetId.dnd2024 && shieldBonus == 0) {
+    for (final entry in c.classEntries) {
+      if (entry.className == 'Bard' && entry.level >= 3 &&
+          entry.subclassName == 'College of Dance' &&
+          !c.disabledFeatures.contains('Dazzling Footwork') &&
+          !_subclassFeatureDisabled(c.disabledFeatures, entry.id,
+              'College of Dance', 'Dazzling Footwork')) {
+        final dancing = 10 + dexMod + c.abilityScores.charismaModifier;
+        if (dancing > best) best = dancing;
+      }
+    }
+  }
+  return best;
 }
 
 int calcUnarmoredArmorClass({

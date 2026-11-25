@@ -209,6 +209,31 @@ class _BackgroundCard extends StatelessWidget {
                           color: scheme.onPrimaryContainer,
                         ),
                       ),
+                      if (bg.personalitySuggestions.isNotEmpty)
+                        ExpansionTile(
+                          tilePadding: EdgeInsets.zero,
+                          title: Text(l10n.backgroundPersonalitySuggestions),
+                          children: [
+                            for (final entry in i18n.backgroundPersonalitySuggestions(
+                              bg.name, bg.personalitySuggestions,
+                            ).entries)
+                              Padding(
+                                padding: const EdgeInsets.only(bottom: 8),
+                                child: Text(
+                                  '${switch (entry.key) {
+                                    'traits' => l10n.sectionPersonalityTraits,
+                                    'ideals' => l10n.sectionIdeals,
+                                    'bonds' => l10n.sectionBonds,
+                                    'flaws' => l10n.sectionFlaws,
+                                    _ => entry.key,
+                                  }}\n${[
+                                    for (var i = 0; i < entry.value.length; i++)
+                                      '${i + 1}. ${entry.value[i]}',
+                                  ].join('\n')}',
+                                ),
+                              ),
+                          ],
+                        ),
                     ],
                   ],
                 ),

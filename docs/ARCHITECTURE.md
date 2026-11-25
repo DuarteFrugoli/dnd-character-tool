@@ -820,10 +820,10 @@ damage carried over. Level resets end the form and the change review says so.
 
 ## SRD Data And Translation Data
 
-`SrdContentPackRegistry` resolves asset paths by content-pack ID. At present,
-only `srd_5_1` is bundled; asking for SRD 5.2.1 fails rather than silently
-loading 2014 rules. `SrdDataSource` loads canonical English JSON assets from
-`assets/data/srd/5.1/`, parses them into `Srd*` models, and caches them by pack.
+`SrdContentPackRegistry` resolves asset paths by content-pack ID for the bundled
+SRD 5.1 and 5.2.1 catalogs. `SrdDataSource` loads canonical English JSON assets
+from each pack's directory under `assets/data/srd/`, parses them into `Srd*`
+models, and caches them by pack without falling back to another edition.
 `SrdContentRef` represents a catalog reference as pack, kind, and English ID.
 Existing character content IDs are not converted to those references yet.
 
@@ -838,8 +838,7 @@ Important SRD files:
 - `feats.json`, `conditions.json`, `skills.json`
 - `languages.json`
 - `feature_choices.json`, `feature_usages.json`
-- `monsters.json` (both packs): stat blocks, for now the Beasts up to CR 1
-  that Wild Shape can use
+- `monsters.json`: Beast stat blocks through CR 1 for 2014 and CR 6 for 2024
 
 `getItems()` builds a normalized item lookup used by creation and inventory. It
 adds aliases for common starting-equipment strings, such as stripped ammunition
@@ -887,8 +886,57 @@ keeps the Player's Handbook names (e.g. "Leomund's Tiny Hut" for the SRD's
 "Tiny Hut").
 Overlays translate names, entry names and descriptions, and language text,
 keyed by entry ID; numbers stay in the English file. Both manifests describe
-`monsters` in `catalogScope` as the Beasts up to CR 1 until other creatures are
-imported.
+`monsters` in `catalogScope`: 2014 includes Beasts through CR 6 and the four
+Moon elementals; 2024 includes Beasts through CR 6 for Circle of the Moon.
+
+### Supplemental 2014 spells
+
+`assets/data/2014/phb_spells.json` contains original English summaries of the
+30 PHB 2014 spells missing from the base catalog, including Armor of Agathys.
+`Supplemental2014Catalog` adds them through `SrdDataSource.getSpells()` only for
+SRD 5.1 characters. Combined with the base catalog, all 361 PHB 2014 spell names
+are represented; the existing Whirlwind entry brings the total to 362.
+Entries include PHB class lists, expanded subclass references, components,
+concentration, unit markers, and structured damage rolls where supported.
+Their descriptions are summaries rather than imported SRD text. Missing
+translations fall back to English; optional class lists from later books are
+not added to these entries.
+
+`assets/data/2014/phb_options.json` extends feature choices with 32 legacy
+invocations, Four Elements disciplines, Land terrains, and Totem animals.
+The 2014 loader augments subclass descriptions with the Wild Magic table and
+corrected discipline rules. `ChoiceEffects` maintains Land terrain spell
+grants at the owning druid level on progression, reset, and later edits.
+Invocation prerequisites include known spells and the owning class's saved
+Pact Boon; legacy invocation replacement requests are generated every level.
+
+`phb_backgrounds.json` adds five selectable background variants and original
+personality suggestions exposed in creation. It does not transcribe the PHB
+personality tables. English-only additions and translations are tracked in
+`docs/CONTENT_COVERAGE.md`. Elemental stat blocks distinguish unconditional
+damage resistance from `nonmagicalDamageResistances`; the stat block displays
+that restriction explicitly. Legacy Moon elemental forms require two Wild
+Shape uses and only become available at druid level 10.
+
+### Supplemental 2024 subclasses
+
+`assets/data/2024/phb_subclasses.json` adds the 36 Player's Handbook 2024
+subclasses outside the SRD. These are original English summaries with source
+links, kept separate from the CC-BY SRD assets. The file also contains feature
+choices, resource definitions, and summaries of missing bonus spells.
+`Supplemental2024Catalog` merges these definitions only into the 2024 loaders;
+conflicts with existing SRD definitions fail explicitly. Missing translations
+fall back to English.
+
+Eldritch Knight and Arcane Trickster supply their own Intelligence/Wizard
+spellcasting tables. Their slots use the subclass table when single-classed
+and contribute class level divided by three, rounded down, when multiclassed.
+Mage Hand is a fixed Arcane Trickster bonus rather than a selectable cantrip.
+Wizard Savant choices add school spells to the spellbook without automatically
+preparing them. College of Dance adds its unarmored Armor Class formula;
+Circle of the Moon adjusts shape eligibility, Temporary Hit Points, and form
+Armor Class. Combat features otherwise use the app's existing feature text,
+choice editor, and resource controls.
 
 ### UI strings
 

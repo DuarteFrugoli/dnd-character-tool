@@ -713,7 +713,8 @@ class _LevelUp2024WizardState extends ConsumerState<_LevelUp2024Wizard> {
         classes: [
           for (final entry in character.classEntries)
             if (entry.id == plan.classEntryId)
-              entry.copyWith(level: plan.newClassLevel)
+              entry.copyWith(level: plan.newClassLevel,
+                subclassName: _subclass ?? entry.subclassName)
             else
               entry,
           if (plan.isNewClass)

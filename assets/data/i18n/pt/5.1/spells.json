@@ -1656,5 +1656,185 @@
     "name": "Tentáculos Negros de Evard",
     "description": "Tentáculos de ébano que se contorcem preenchem um quadrado de {{distance:20ft}} no chão que você possa ver dentro do alcance. Pela duração, esses tentáculos transformam o chão na área em terreno difícil.\n\nQuando uma criatura entra na área afetada pela primeira vez em um turno ou começa seu turno nela, a criatura deve ser bem-sucedida em um teste de resistência de Destreza ou sofrerá 3d6 de dano de concussão e ficará impedida pelos tentáculos até a magia terminar. Uma criatura que comece seu turno na área e já esteja impedida pelos tentáculos sofre 3d6 de dano de concussão.\n\nUma criatura impedida pelos tentáculos pode usar sua ação para fazer um teste de Força ou de Destreza (à escolha dela) contra a CD de resistência das suas magias. Em um sucesso, ela se liberta.",
     "material": "um pedaço de tentáculo de um polvo gigante ou de uma lula gigante"
+  },
+  "Thorn Whip": {
+    "name": "Chicote de Espinhos",
+    "description": "Uma vinha mágica coberta de espinhos golpeia uma criatura ao alcance. Faça um ataque corpo a corpo com magia, mesmo com alcance de {{distance:30ft}}. Se acertar, causa 1d6 de dano perfurante. Se a criatura for Grande ou menor, você também a puxa até {{distance:10ft}} em sua direção. O dano aumenta para 2d6 no nível de personagem 5, 3d6 no nível 11 e 4d6 no nível 17.",
+    "higherLevels": null,
+    "material": "o caule de uma planta com espinhos"
+  },
+  "Armor of Agathys": {
+    "name": "Armadura de Agathys",
+    "description": "Gelo espectral envolve você e seu equipamento, concedendo 5 pontos de vida temporários por até 1 hora. Quando uma criatura acerta você com um ataque corpo a corpo enquanto ainda restam pontos de vida temporários desta magia, ela sofre 5 de dano de frio. A retaliação não exige ataque nem teste de resistência. Perder ou substituir esses pontos de vida temporários remove a proteção.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta 5 aos pontos de vida temporários e ao dano de frio de cada acerto que ativa o efeito. Um espaço de 3º nível concede 15 pontos de vida temporários e causa 15 de dano por acerto.",
+    "material": "uma xícara de água"
+  },
+  "Arms of Hadar": {
+    "name": "Braços de Hadar",
+    "description": "Tentáculos sombrios golpeiam criaturas a até {{distance:10ft}} de você. Cada alvo faz um teste de resistência de Força: se falhar, sofre 2d6 de dano necrótico e não pode realizar reações até o próximo turno dele; se passar, sofre metade do dano e mantém suas reações.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta 1d6 de dano necrótico.",
+    "material": null
+  },
+  "Chromatic Orb": {
+    "name": "Orbe Cromática",
+    "description": "Escolha uma criatura que você possa ver ao alcance e faça um ataque à distância com magia. Escolha ácido, frio, fogo, elétrico, veneno ou trovejante; um acerto causa 3d8 de dano do tipo escolhido. O diamante é necessário, mas não é consumido.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta 1d8 de dano.",
+    "material": "um diamante no valor mínimo de 50 po"
+  },
+  "Compelled Duel": {
+    "name": "Duelo Compelido",
+    "description": "Escolha uma criatura que você possa ver ao alcance. Se falhar em um teste de resistência de Sabedoria, ela tem desvantagem nos ataques contra qualquer criatura exceto você. Sempre que tentar se afastar mais de {{distance:30ft}} de você, deve passar em outro teste de resistência de Sabedoria; um sucesso remove essa restrição de movimento naquele turno.\n\nA magia termina se você atacar outra criatura, conjurar uma magia que tenha outra criatura hostil como alvo ou encerrar seu turno a mais de {{distance:30ft}} do alvo. Também termina se um aliado seu causar dano ao alvo ou o afetar com uma magia nociva.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Dissonant Whispers": {
+    "name": "Sussurros Dissonantes",
+    "description": "Sussurre uma melodia dolorosa para uma criatura ao alcance. Se falhar em um teste de resistência de Sabedoria, ela sofre 3d6 de dano psíquico e imediatamente usa sua reação, se disponível, para se afastar de você o máximo que seu deslocamento permitir. Ela evita terreno obviamente perigoso nesse movimento. Um sucesso reduz o dano à metade e impede esse movimento. Um alvo surdo passa automaticamente.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta 1d6 de dano psíquico.",
+    "material": null
+  },
+  "Ensnaring Strike": {
+    "name": "Golpe Constritor",
+    "description": "Seu próximo ataque com arma que acertar uma criatura antes do fim da magia cria vinhas que a prendem. O alvo faz um teste de resistência de Força, com vantagem se for Grande ou maior. Se falhar, fica impedido pelo restante da duração; se passar, as vinhas desaparecem. Enquanto impedido, sofre 1d6 de dano perfurante no início de cada turno dele. O alvo ou uma criatura capaz de tocá-lo pode usar uma ação para fazer um teste de Força contra sua CD de resistência de magia, libertando-o em caso de sucesso.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta 1d6 ao dano perfurante recorrente.",
+    "material": null
+  },
+  "Hail of Thorns": {
+    "name": "Saraivada de Espinhos",
+    "description": "Seu próximo ataque à distância com arma que acertar uma criatura antes do fim da magia também libera espinhos. O ataque mantém seus efeitos normais. O alvo e cada criatura a até {{distance:5ft}} dele fazem testes de resistência de Destreza: sofrem 1d10 de dano perfurante se falharem, ou metade se passarem.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta 1d10 de dano perfurante, até o máximo de 6d10.",
+    "material": null
+  },
+  "Ray of Sickness": {
+    "name": "Raio Adoecente",
+    "description": "Faça um ataque à distância com magia contra uma criatura ao alcance. Um acerto causa 2d8 de dano de veneno e exige um teste de resistência de Constituição. Se o alvo falhar, também fica envenenado até o final do seu próximo turno. Passar no teste impede a condição, mas não o dano do acerto.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta 1d8 de dano de veneno.",
+    "material": null
+  },
+  "Searing Smite": {
+    "name": "Destruição Lancinante",
+    "description": "Seu próximo ataque corpo a corpo com arma que acertar uma criatura antes do fim da magia acrescenta 1d6 de dano de fogo e incendeia o alvo. No início de cada turno dele, o alvo faz um teste de resistência de Constituição: se falhar, sofre 1d6 de dano de fogo; se passar, a magia termina. O alvo ou outra criatura a até {{distance:5ft}} pode usar uma ação para apagar as chamas e encerrar a magia. Sufocar as chamas, por exemplo submergindo o alvo, também a encerra.",
+    "higherLevels": "Cada nível de espaço acima do 1º acrescenta 1d6 apenas ao dano adicional do acerto inicial. O dano de fogo recorrente continua sendo 1d6.",
+    "material": null
+  },
+  "Thunderous Smite": {
+    "name": "Destruição Trovejante",
+    "description": "O primeiro ataque corpo a corpo com arma que você acertar antes do fim da magia acrescenta 2d6 de dano trovejante e produz um estrondo audível a até {{distance:300ft}} de você. Se o alvo for uma criatura, também deve passar em um teste de resistência de Força ou ser empurrado {{distance:10ft}} para longe de você e ficar caído.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Beast Sense": {
+    "name": "Sentido Bestial",
+    "description": "Toque uma fera voluntária. Enquanto mantiver concentração, você pode usar uma ação para ver e ouvir através dela, beneficiando-se de seus sentidos especiais. A ligação dura até você usar outra ação para retomar seus sentidos ou até a magia terminar. Enquanto usa os sentidos da fera, você fica cego e surdo aos seus próprios arredores.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Cordon of Arrows": {
+    "name": "Cordão de Flechas",
+    "description": "Finque quatro flechas ou virotes não mágicos no chão ao alcance. Você e as criaturas que designar ao conjurar são ignorados. Quando outra criatura se aproxima pela primeira vez em um turno a até {{distance:30ft}} da munição ou termina o turno nessa área, uma peça a ataca. Se falhar em um teste de resistência de Destreza, sofre 1d6 de dano perfurante; se passar, evita o dano. A peça é destruída em ambos os casos. A magia termina quando toda a munição encantada for usada ou a duração expirar.",
+    "higherLevels": "Cada nível de espaço acima do 2º permite encantar duas peças adicionais de munição. O dano por peça continua sendo 1d6.",
+    "material": "quatro ou mais flechas ou virotes"
+  },
+  "Phantasmal Force": {
+    "name": "Força Fantasmagórica",
+    "description": "Escolha uma criatura que você possa ver ao alcance; mortos-vivos e constructos não são afetados. Se falhar em um teste de resistência de Inteligência, apenas ela percebe um objeto, criatura ou fenômeno visível ilusório que caiba em um cubo de {{distance:10ft|adj}}. A ilusão inclui detalhes sensoriais, como som e temperatura. O alvo acredita que ela é real e racionaliza acontecimentos contraditórios.\n\nO alvo pode usar uma ação para fazer um teste de Inteligência (Investigação) contra sua CD de resistência de magia. Um sucesso revela a ilusão e encerra a magia. Uma vez por rodada, no seu turno, uma ameaça ilusória plausível pode causar 1d6 de dano psíquico se o alvo estiver dentro dela ou a até {{distance:5ft}} dela. O alvo percebe o dano como apropriado à ameaça imaginada.",
+    "higherLevels": null,
+    "material": "um pouco de lã"
+  },
+  "Aura of Vitality": {
+    "name": "Aura de Vitalidade",
+    "description": "Uma aura de cura se estende por {{distance:30ft}} a partir de você e acompanha seu movimento. Enquanto durar, você pode usar uma ação bônus para restaurar 2d6 pontos de vida de uma criatura dentro dela, incluindo você.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Blinding Smite": {
+    "name": "Destruição Cegante",
+    "description": "Seu próximo ataque corpo a corpo com arma que acertar uma criatura antes do fim da magia acrescenta 3d8 de dano radiante. O alvo também deve passar em um teste de resistência de Constituição ou ficar cego pelo restante da duração. No final de cada turno dele, um alvo cego repete o teste, encerrando a cegueira em caso de sucesso.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Barrage": {
+    "name": "Conjurar Rajada",
+    "description": "Arremesse uma arma não mágica ou dispare munição não mágica para o alto. Cópias mágicas atravessam um cone de {{distance:60ft|adj}} que parte de você e depois desaparecem. Cada criatura no cone faz um teste de resistência de Destreza: sofre 3d8 de dano se falhar, ou metade se passar. Use o tipo de dano da arma ou munição usada como componente.",
+    "higherLevels": null,
+    "material": "uma peça de munição ou uma arma de arremesso"
+  },
+  "Crusader's Mantle": {
+    "name": "Manto do Cruzado",
+    "description": "Uma aura fortalecedora se estende por {{distance:30ft}} a partir de você e acompanha seu movimento. Criaturas não hostis dentro dela, incluindo você, acrescentam 1d4 de dano radiante sempre que acertarem um ataque com arma.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Elemental Weapon": {
+    "name": "Arma Elemental",
+    "description": "Toque uma arma não mágica e escolha ácido, frio, fogo, elétrico ou trovejante. Enquanto mantiver concentração, a arma se torna mágica, recebe +1 nas jogadas de ataque e acrescenta 1d4 de dano do tipo escolhido quando acerta.",
+    "higherLevels": "Com um espaço de 5º ou 6º nível, o bônus de ataque passa a +2 e o dano adicional a 2d4. Com um espaço de 7º nível ou superior, passam a +3 e 3d4.",
+    "material": null
+  },
+  "Hunger of Hadar": {
+    "name": "Fome de Hadar",
+    "description": "Escolha um ponto ao alcance para abrir um vazio sem estrelas em uma esfera de {{distance:20ft|adj}} de raio. Seus sussurros e ruídos são audíveis a até {{distance:30ft}}. Nenhuma luz, nem mesmo mágica, ilumina a esfera. Criaturas inteiramente dentro ficam cegas, e a área é terreno difícil.\n\nUma criatura que começa o turno dentro sofre automaticamente 2d6 de dano de frio. Uma criatura que termina o turno dentro deve passar em um teste de resistência de Destreza ou sofrer 2d6 de dano de ácido. São gatilhos separados; esta magia não aumenta seu dano com espaços superiores nas regras de 2014.",
+    "higherLevels": null,
+    "material": "um tentáculo de polvo em conserva"
+  },
+  "Lightning Arrow": {
+    "name": "Flecha Relampejante",
+    "description": "Seu próximo ataque à distância com arma antes do fim da magia transforma a munição ou arma arremessada em um relâmpago. Use a jogada de ataque normal da arma: substitua o dano normal por 4d8 de dano elétrico se acertar, ou metade desse dano se errar. Acerte ou erre, cada criatura a até {{distance:10ft}} do alvo faz um teste de resistência de Destreza, sofrendo 2d8 de dano elétrico se falhar, ou metade se passar. A munição ou arma arremessada então volta ao normal.",
+    "higherLevels": "Cada nível de espaço acima do 3º acrescenta 1d8 ao dano principal e 1d8 ao dano das criaturas próximas.",
+    "material": null
+  },
+  "Aura of Life": {
+    "name": "Aura de Vida",
+    "description": "Uma aura que sustenta a vida se estende por {{distance:30ft}} a partir de você e acompanha seu movimento. Criaturas não hostis dentro dela, incluindo você, têm resistência a dano necrótico e não podem ter seu máximo de pontos de vida reduzido. Uma criatura viva e não hostil que começa o turno dentro com 0 pontos de vida recupera 1 ponto de vida.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Aura of Purity": {
+    "name": "Aura de Pureza",
+    "description": "Uma aura purificadora se estende por {{distance:30ft}} a partir de você e acompanha seu movimento. Criaturas não hostis dentro dela, incluindo você, não podem contrair doenças e têm resistência a dano de veneno. Elas têm vantagem nos testes de resistência contra efeitos que as deixariam cegas, enfeitiçadas, surdas, amedrontadas, paralisadas, envenenadas ou atordoadas.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Grasping Vine": {
+    "name": "Vinha Esmagadora",
+    "description": "Crie uma vinha em um espaço desocupado no chão que você possa ver ao alcance. Como parte da conjuração, direcione-a contra uma criatura que você possa ver a até {{distance:30ft}} da vinha. Se falhar em um teste de resistência de Destreza, essa criatura é puxada {{distance:20ft}} diretamente em direção à vinha. Em cada turno posterior, enquanto mantiver concentração, você pode usar uma ação bônus para direcionar outro golpe contra a mesma criatura ou outra que seja um alvo válido.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Staggering Smite": {
+    "name": "Destruição Estonteante",
+    "description": "Seu próximo ataque corpo a corpo com arma que acertar uma criatura antes do fim da magia acrescenta 4d6 de dano psíquico. O alvo também faz um teste de resistência de Sabedoria. Se falhar, até o final do próximo turno dele, tem desvantagem nas jogadas de ataque e testes de habilidade e não pode realizar reações.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Banishing Smite": {
+    "name": "Destruição Banidora",
+    "description": "Seu próximo ataque com arma que acertar uma criatura antes do fim da magia acrescenta 5d10 de dano de energia. Se esse ataque deixar o alvo com 50 pontos de vida ou menos, ele é banido sem teste de resistência. Uma criatura nativa de outro plano retorna ao seu plano de origem. Uma criatura nativa do plano atual entra em um semiplano inofensivo, onde fica incapacitada até o fim da magia. Ela então retorna ao local anterior ou ao espaço desocupado mais próximo, se necessário.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Circle of Power": {
+    "name": "Círculo de Poder",
+    "description": "Uma esfera protetora se estende por {{distance:30ft}} a partir de você e acompanha seu movimento. Criaturas amistosas dentro dela, incluindo você, têm vantagem nos testes de resistência contra magias e outros efeitos mágicos. Se um desses efeitos permitir um teste para sofrer metade do dano, uma criatura afetada que passar não sofre dano. Uma falha ainda causa o dano normal.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Volley": {
+    "name": "Conjurar Saraivada",
+    "description": "Dispare munição não mágica de uma arma à distância ou arremesse uma arma não mágica para o alto. Escolha um ponto ao alcance: cópias caem em um cilindro com {{distance:40ft|adj}} de raio e {{distance:20ft|adj}} de altura e depois desaparecem. Cada criatura dentro faz um teste de resistência de Destreza: sofre 8d8 de dano se falhar, ou metade se passar. A arma ou munição usada como componente determina o tipo de dano.",
+    "higherLevels": null,
+    "material": "uma peça de munição ou uma arma de arremesso"
+  },
+  "Destructive Wave": {
+    "name": "Onda Destrutiva",
+    "description": "Golpeie o chão e escolha quaisquer criaturas a até {{distance:30ft}} de você. Cada criatura escolhida faz um teste de resistência de Constituição. Se falhar, sofre 5d6 de dano trovejante mais 5d6 de dano radiante ou necrótico, à sua escolha, e fica caída. Se passar, sofre metade das duas parcelas de dano e não é derrubada.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Swift Quiver": {
+    "name": "Aljava Veloz",
+    "description": "Encante uma aljava que contenha munição. Em cada um dos seus turnos, enquanto mantiver concentração, você pode usar uma ação bônus para fazer dois ataques com uma arma que use munição dessa aljava. Ela repõe cada peça usada nesses ataques com munição não mágica semelhante. A munição criada se desintegra quando a magia termina. Perder a posse da aljava encerra a magia. Conjurar usa sua ação bônus; os dois ataques exigem uma ação bônus própria em um turno.",
+    "higherLevels": null,
+    "material": "uma aljava contendo pelo menos uma peça de munição"
   }
 }

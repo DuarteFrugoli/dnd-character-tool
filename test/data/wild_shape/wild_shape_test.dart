@@ -45,13 +45,20 @@ Character _druid({
   return Character(
     id: 'druid',
     rulesetId: ruleset,
-    contentPackId: ruleset == RulesetId.dnd2024 ? ContentPackId.srd521 : ContentPackId.srd51,
+    contentPackId: ruleset == RulesetId.dnd2024
+        ? ContentPackId.srd521
+        : ContentPackId.srd51,
     name: 'Druid',
     race: 'Human',
     characterClass: 'Druid',
     level: level,
     classes: [
-      CharacterClassEntry(id: 'primary', className: 'Druid', level: level, isStartingClass: true),
+      CharacterClassEntry(
+        id: 'primary',
+        className: 'Druid',
+        level: level,
+        isStartingClass: true,
+      ),
     ],
     abilityScores: const AbilityScores(
       strength: 10,
@@ -84,13 +91,29 @@ void main() {
   });
 
   group('monster catalogs', () {
-    test('both packs hold the Beasts Wild Shape can use', () {
-      for (final beasts in [_beasts2014, _beasts2024]) {
-        expect(beasts, isNotEmpty);
-        expect(beasts.every((beast) => beast.isBeast && beast.challengeValue <= 1), isTrue);
-        expect({for (final beast in beasts) beast.id}, hasLength(beasts.length));
-      }
-    });
+    test(
+      'both packs hold Wild Shape forms and 2014 also holds Chain familiars',
+      () {
+        const familiars = {'imp', 'pseudodragon', 'quasit', 'sprite'};
+        for (final (beasts, maxCr) in [(_beasts2014, 6), (_beasts2024, 6)]) {
+          expect(beasts, isNotEmpty);
+          expect(
+            beasts.every(
+              (beast) =>
+                  (beast.isBeast ||
+                      (beasts == _beasts2014 &&
+                          (WildShapeEngine.elementalForms.contains(beast.id) ||
+                              familiars.contains(beast.id)))) &&
+                  beast.challengeValue <= maxCr,
+            ),
+            isTrue,
+          );
+          expect({
+            for (final beast in beasts) beast.id,
+          }, hasLength(beasts.length));
+        }
+      },
+    );
 
     test('stat blocks keep structured attacks and edition differences', () {
       final wolf2014 = _beast(_beasts2014, 'wolf');
@@ -110,7 +133,9 @@ void main() {
       final web = spider.actions.firstWhere((action) => action.id == 'web');
       expect(web.usage?.type, 'recharge');
       expect(web.usage?.rechargeMin, 5);
-      final venom = spider.actions.firstWhere((action) => action.id == 'bite').save!;
+      final venom = spider.actions
+          .firstWhere((action) => action.id == 'bite')
+          .save!;
       expect(venom.dc, 11);
       expect(venom.damage.single.formula, '2d8');
       expect(venom.halfOnSuccess, isTrue);
@@ -128,7 +153,11 @@ void main() {
       expect(rules.limitsAt(1), isNull);
       final level2 = rules.limitsAt(2)!;
       expect(level2.allows(wolf), isTrue);
-      expect(level2.allows(octopus), isFalse, reason: 'no Swim Speed at level 2');
+      expect(
+        level2.allows(octopus),
+        isFalse,
+        reason: 'no Swim Speed at level 2',
+      );
       expect(level2.allows(crocodile), isFalse);
       final level4 = rules.limitsAt(4)!;
       expect(level4.allows(octopus), isTrue);
@@ -146,7 +175,11 @@ void main() {
       expect(rules.limitsAt(4)!.knownForms, 6);
       expect(rules.limitsAt(8)!.knownForms, 8);
       expect(rules.limitsAt(2)!.allows(_beast(_beasts2024, 'octopus')), isTrue);
-      expect(rules.limitsAt(4)!.allows(insects), isFalse, reason: 'Climb or Fly counts as Fly');
+      expect(
+        rules.limitsAt(4)!.allows(insects),
+        isFalse,
+        reason: 'Climb or Fly counts as Fly',
+      );
       expect(rules.limitsAt(8)!.allows(insects), isTrue);
       expect(rules.durationHours(5), 2);
     });
@@ -154,19 +187,28 @@ void main() {
 
   group('2024 known forms choice', () {
     test('level 2 asks for four forms and level 4 for six', () {
-      final druid = _druid(ruleset: RulesetId.dnd2024, level: 1)
-          .copyWith(levelHistory: const [
-        CharacterLevelRecord(
-          characterLevel: 1,
-          classEntryId: 'primary',
-          className: 'Druid',
-          classLevel: 1,
-          hitPointsGained: 10,
-        ),
-      ]);
-      final plan = Progression2024Engine.plan(druid, _rules2024, className: 'Druid', classEntryId: 'primary');
-      final request = Progression2024Engine.requestsFor(druid, _rules2024, plan)
-          .firstWhere((r) => r.choiceId == WildShape2024Rules.knownFormsChoice);
+      final druid = _druid(ruleset: RulesetId.dnd2024, level: 1).copyWith(
+        levelHistory: const [
+          CharacterLevelRecord(
+            characterLevel: 1,
+            classEntryId: 'primary',
+            className: 'Druid',
+            classLevel: 1,
+            hitPointsGained: 10,
+          ),
+        ],
+      );
+      final plan = Progression2024Engine.plan(
+        druid,
+        _rules2024,
+        className: 'Druid',
+        classEntryId: 'primary',
+      );
+      final request = Progression2024Engine.requestsFor(
+        druid,
+        _rules2024,
+        plan,
+      ).firstWhere((r) => r.choiceId == WildShape2024Rules.knownFormsChoice);
       expect(request.requiredCount, 4);
 
       final resolver = FeatureChoiceOptionResolver(
@@ -187,28 +229,36 @@ void main() {
       expect(ids, isNot(contains('eagle')));
       expect(ids, isNot(contains('crocodile')));
 
-      final level3 = _druid(
-        ruleset: RulesetId.dnd2024,
-        level: 3,
-        choices: [_knownForms(['rat', 'riding_horse', 'spider', 'wolf'])],
-      ).copyWith(levelHistory: [
-        for (var level = 1; level <= 3; level++)
-          CharacterLevelRecord(
-            characterLevel: level,
-            classEntryId: 'primary',
-            className: 'Druid',
-            classLevel: level,
-            hitPointsGained: 6,
-          ),
-      ]);
+      final level3 =
+          _druid(
+            ruleset: RulesetId.dnd2024,
+            level: 3,
+            choices: [
+              _knownForms(['rat', 'riding_horse', 'spider', 'wolf']),
+            ],
+          ).copyWith(
+            levelHistory: [
+              for (var level = 1; level <= 3; level++)
+                CharacterLevelRecord(
+                  characterLevel: level,
+                  classEntryId: 'primary',
+                  className: 'Druid',
+                  classLevel: level,
+                  hitPointsGained: 6,
+                ),
+            ],
+          );
       final level4Plan = Progression2024Engine.plan(
         level3,
         _rules2024,
         className: 'Druid',
         classEntryId: 'primary',
       );
-      final level4 = Progression2024Engine.requestsFor(level3, _rules2024, level4Plan)
-          .firstWhere((r) => r.choiceId == WildShape2024Rules.knownFormsChoice);
+      final level4 = Progression2024Engine.requestsFor(
+        level3,
+        _rules2024,
+        level4Plan,
+      ).firstWhere((r) => r.choiceId == WildShape2024Rules.knownFormsChoice);
       expect(level4.requiredCount, 6);
     });
 
@@ -224,14 +274,26 @@ void main() {
           ),
         ],
       );
-      final plan = Progression2024Engine.plan(druid, _rules2024, className: 'Druid', classEntryId: 'primary');
-      final requests = Progression2024Engine.requestsFor(druid, _rules2024, plan);
+      final plan = Progression2024Engine.plan(
+        druid,
+        _rules2024,
+        className: 'Druid',
+        classEntryId: 'primary',
+      );
+      final requests = Progression2024Engine.requestsFor(
+        druid,
+        _rules2024,
+        plan,
+      );
       List<CharacterFeatureChoice> choicesWith(List<String> forms) => [
         for (final request in requests)
           request.toChoice(
             request.choiceId == WildShape2024Rules.knownFormsChoice
                 ? forms
-                : [for (var i = 0; i < request.requiredCount; i++) '${request.choiceId}_$i'],
+                : [
+                    for (var i = 0; i < request.requiredCount; i++)
+                      '${request.choiceId}_$i',
+                  ],
           ),
       ];
       LevelUp2024Result result(List<String> forms) => LevelUp2024Result(
@@ -246,7 +308,11 @@ void main() {
           result(['rat', 'riding_horse', 'spider', 'eagle']),
         ),
         throwsA(
-          isA<ArgumentError>().having((e) => '${e.message}', 'message', contains('Wild Shape')),
+          isA<ArgumentError>().having(
+            (e) => '${e.message}',
+            'message',
+            contains('Wild Shape'),
+          ),
         ),
       );
       final leveled = Progression2024Engine.applyLevelUp(
@@ -254,7 +320,12 @@ void main() {
         _rules2024,
         result(['rat', 'riding_horse', 'spider', 'wolf']),
       );
-      expect(WildShapeEngine.knownFormIds(leveled), ['rat', 'riding_horse', 'spider', 'wolf']);
+      expect(WildShapeEngine.knownFormIds(leveled), [
+        'rat',
+        'riding_horse',
+        'spider',
+        'wolf',
+      ]);
     });
   });
 
@@ -263,13 +334,20 @@ void main() {
       final druid = _druid(
         ruleset: RulesetId.dnd2024,
         level: 3,
-        choices: [_knownForms(['wolf', 'rat'])],
+        choices: [
+          _knownForms(['wolf', 'rat']),
+        ],
       );
       expect(
         WildShapeEngine.availableForms(druid, _beasts2024).map((b) => b.id),
         unorderedEquals(['wolf', 'rat']),
       );
-      final shaped = WildShapeEngine.assume(druid, _beast(_beasts2024, 'wolf'), _beasts2024, _usages2024);
+      final shaped = WildShapeEngine.assume(
+        druid,
+        _beast(_beasts2024, 'wolf'),
+        _beasts2024,
+        _usages2024,
+      );
       expect(shaped.wildShape?.monsterId, 'wolf');
       expect(shaped.wildShape?.hitPoints, isNull);
       expect(shaped.hitPoints.temporary, 3);
@@ -277,7 +355,12 @@ void main() {
       expect(shaped.featureResources['2024_wild_shape'], 1);
 
       expect(
-        () => WildShapeEngine.assume(druid, _beast(_beasts2024, 'riding_horse'), _beasts2024, _usages2024),
+        () => WildShapeEngine.assume(
+          druid,
+          _beast(_beasts2024, 'riding_horse'),
+          _beasts2024,
+          _usages2024,
+        ),
         throwsArgumentError,
         reason: 'not a known form',
       );
@@ -293,57 +376,98 @@ void main() {
     test('no uses left blocks a new form', () {
       final druid = _druid(
         ruleset: RulesetId.dnd2024,
-        choices: [_knownForms(['wolf'])],
+        choices: [
+          _knownForms(['wolf']),
+        ],
         resources: const {'2024_wild_shape': 0},
       );
       expect(
-        () => WildShapeEngine.assume(druid, _beast(_beasts2024, 'wolf'), _beasts2024, _usages2024),
+        () => WildShapeEngine.assume(
+          druid,
+          _beast(_beasts2024, 'wolf'),
+          _beasts2024,
+          _usages2024,
+        ),
         throwsStateError,
       );
     });
 
-    test('2014 forms use their own hit points and excess damage carries over', () {
-      final druid = _druid(ruleset: RulesetId.dnd2014, hp: 17, temporaryHp: 2);
-      final wolf = _beast(_beasts2014, 'wolf');
-      final shaped = WildShapeEngine.assume(druid, wolf, _beasts2014, _usages2014);
-      expect(shaped.wildShape?.hitPoints, 11);
-      expect(shaped.featureResources['wild_shape'], 1);
+    test(
+      '2014 forms use their own hit points and excess damage carries over',
+      () {
+        final druid = _druid(
+          ruleset: RulesetId.dnd2014,
+          hp: 17,
+          temporaryHp: 2,
+        );
+        final wolf = _beast(_beasts2014, 'wolf');
+        final shaped = WildShapeEngine.assume(
+          druid,
+          wolf,
+          _beasts2014,
+          _usages2014,
+        );
+        expect(shaped.wildShape?.hitPoints, 11);
+        expect(shaped.featureResources['wild_shape'], 1);
 
-      final hurt = HitPointChanges.apply(shaped, -5);
-      expect(hurt.hitPoints.temporary, 0);
-      expect(hurt.wildShape?.hitPoints, 8);
-      expect(HitPointChanges.apply(hurt, 10).wildShape?.hitPoints, 11);
+        final hurt = HitPointChanges.apply(shaped, -5);
+        expect(hurt.hitPoints.temporary, 0);
+        expect(hurt.wildShape?.hitPoints, 8);
+        expect(HitPointChanges.apply(hurt, 10).wildShape?.hitPoints, 11);
 
-      final reverted = HitPointChanges.apply(hurt, -12);
-      expect(reverted.wildShape, isNull);
-      expect(reverted.hitPoints.current, 13);
-    });
+        final reverted = HitPointChanges.apply(hurt, -12);
+        expect(reverted.wildShape, isNull);
+        expect(reverted.hitPoints.current, 13);
+      },
+    );
 
     test('2014 Archdruid has unlimited uses', () {
       final druid = _druid(ruleset: RulesetId.dnd2014, level: 20);
-      final shaped = WildShapeEngine.assume(druid, _beast(_beasts2014, 'brown_bear'), _beasts2014, _usages2014);
+      final shaped = WildShapeEngine.assume(
+        druid,
+        _beast(_beasts2014, 'brown_bear'),
+        _beasts2014,
+        _usages2014,
+      );
       expect(shaped.featureResources.containsKey('wild_shape'), isFalse);
     });
 
     test('leaving the form and the reset review say the form ends', () {
       final druid = _druid(
         ruleset: RulesetId.dnd2024,
-        choices: [_knownForms(['wolf'])],
+        choices: [
+          _knownForms(['wolf']),
+        ],
       );
-      final shaped = WildShapeEngine.assume(druid, _beast(_beasts2024, 'wolf'), _beasts2024, _usages2024);
+      final shaped = WildShapeEngine.assume(
+        druid,
+        _beast(_beasts2024, 'wolf'),
+        _beasts2024,
+        _usages2024,
+      );
       final left = WildShapeEngine.leave(shaped);
       expect(left.wildShape, isNull);
       final kinds = CharacterChangeSummary.compare(
         shaped,
         left.copyWith(featureChoices: const []),
       ).map((change) => change.kind);
-      expect(kinds, containsAll([CharacterChangeKind.wildShapeEnds, CharacterChangeKind.wildShapeKnownForms]));
+      expect(
+        kinds,
+        containsAll([
+          CharacterChangeKind.wildShapeEnds,
+          CharacterChangeKind.wildShapeKnownForms,
+        ]),
+      );
     });
 
     test('the active form survives a save round trip', () {
       final druid = _druid(
         ruleset: RulesetId.dnd2014,
-        wildShape: const ActiveWildShape(monsterId: 'wolf', hitPoints: 7, maxHitPoints: 11),
+        wildShape: const ActiveWildShape(
+          monsterId: 'wolf',
+          hitPoints: 7,
+          maxHitPoints: 11,
+        ),
       );
       final restored = Character.fromJson(druid.toJson());
       expect(restored.wildShape?.monsterId, 'wolf');

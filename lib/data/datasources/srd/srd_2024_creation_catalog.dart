@@ -6,6 +6,7 @@ import '../../rulesets/srd_content_pack.dart';
 import '../../custom_background.dart';
 import 'srd_data_source.dart';
 import 'srd_models.dart';
+import 'supplemental_2024_catalog.dart';
 
 class Creation2024Item {
   const Creation2024Item({this.name, this.category, this.selection, this.choiceFrom, this.variant, required this.quantity});
@@ -108,6 +109,7 @@ class Creation2024Class {
     this.multiclass = const Creation2024MulticlassProficiencies(),
     this.levelUpCantripSwaps = 0,
     this.levelUpSpellSwaps = 0,
+    this.subclassSpellcasting = const {},
   });
 
   final String name;
@@ -138,6 +140,8 @@ class Creation2024Class {
   /// Cantrips and prepared spells that may be replaced on gaining a level.
   final int levelUpCantripSwaps;
   final int levelUpSpellSwaps;
+
+  final Map<String, Creation2024SubclassSpellcasting> subclassSpellcasting;
 
   Map<String, dynamic> rowAt(int classLevel) {
     if (progression.isEmpty) return levelOne;
@@ -175,6 +179,10 @@ class Creation2024Class {
           ((json['levelUpSpellSwaps'] as Map?)?['cantrips'] as num?)?.toInt() ?? 0,
       levelUpSpellSwaps:
           ((json['levelUpSpellSwaps'] as Map?)?['spells'] as num?)?.toInt() ?? 0,
+      subclassSpellcasting: {
+        for (final entry in (json['subclassSpellcasting'] as Map<String, dynamic>? ?? const {}).entries)
+          entry.key: Creation2024SubclassSpellcasting.fromJson(entry.value as Map<String, dynamic>),
+      },
     );
   }
 }
@@ -186,6 +194,7 @@ class Creation2024Subclass {
     required this.description,
     this.alwaysPreparedSpells = const {},
     this.spellsByChoice,
+    this.spellcasting,
   });
 
   final String className;
@@ -198,6 +207,9 @@ class Creation2024Subclass {
   /// Spells that depend on a feature choice (Circle of the Land terrain).
   final Creation2024SubclassChoiceSpells? spellsByChoice;
 
+  /// Spellcasting granted by a subclass rather than its base class.
+  final Creation2024SubclassSpellcasting? spellcasting;
+
   factory Creation2024Subclass.fromJson(String className, Map<String, dynamic> json) {
     final byChoice = json['alwaysPreparedSpellsByChoice'] as Map<String, dynamic>?;
     return Creation2024Subclass(
@@ -205,6 +217,11 @@ class Creation2024Subclass {
       name: json['name'] as String,
       description: json['description'] as String? ?? '',
       alwaysPreparedSpells: _spellLevels(json['alwaysPreparedSpells']),
+      spellcasting: json['spellcasting'] is Map<String, dynamic>
+          ? Creation2024SubclassSpellcasting.fromJson(
+              json['spellcasting'] as Map<String, dynamic>,
+            )
+          : null,
       spellsByChoice: byChoice == null
           ? null
           : Creation2024SubclassChoiceSpells(
@@ -224,6 +241,30 @@ class Creation2024Subclass {
             int.parse(entry.key.toString()): List<String>.from(entry.value as List),
         }
       : const {};
+}
+
+class Creation2024SubclassSpellcasting {
+  const Creation2024SubclassSpellcasting({
+    required this.ability,
+    required this.spellClass,
+    required this.progression,
+    this.fixedCantrips = const [],
+  });
+
+  final String ability;
+  final String spellClass;
+  final List<Map<String, dynamic>> progression;
+  final List<String> fixedCantrips;
+
+  Map<String, dynamic> rowAt(int level) => progression[level.clamp(1, 20) - 1];
+
+  factory Creation2024SubclassSpellcasting.fromJson(Map<String, dynamic> json) =>
+      Creation2024SubclassSpellcasting(
+        ability: json['ability'] as String,
+        spellClass: json['spellClass'] as String,
+        progression: (json['progression'] as List).cast<Map<String, dynamic>>(),
+        fixedCantrips: List<String>.from(json['fixedCantrips'] as List? ?? const []),
+      );
 }
 
 class Creation2024SubclassChoiceSpells {
@@ -329,8 +370,16 @@ class Creation2024Catalog {
     final raw = await rootBundle.loadString(
       SrdContentPackRegistry.srd521.srdAsset('classes'),
     );
+    final supplemental = await Supplemental2024Catalog.subclasses();
     return (jsonDecode(raw) as List<dynamic>)
-        .map((entry) => Creation2024Class.fromJson(entry as Map<String, dynamic>))
+        .map((entry) => Creation2024Class.fromJson({
+          ...entry as Map<String, dynamic>,
+          'subclassSpellcasting': {
+            for (final subclass in supplemental)
+              if (subclass['class'] == entry['name'] && subclass['spellcasting'] != null)
+                subclass['name'] as String: subclass['spellcasting'],
+          },
+        }))
         .toList();
   }
 
@@ -347,13 +396,20 @@ class Creation2024Catalog {
     final raw = await rootBundle.loadString(
       SrdContentPackRegistry.srd521.srdAsset('subclasses'),
     );
-    return {
+    final result = {
       for (final entry in (jsonDecode(raw) as Map<String, dynamic>).entries)
         entry.key: [
           for (final subclass in entry.value as List<dynamic>)
             Creation2024Subclass.fromJson(entry.key, subclass as Map<String, dynamic>),
         ],
     };
+    for (final entry in await Supplemental2024Catalog.subclasses()) {
+      final className = entry['class'] as String;
+      (result[className] ??= []).add(
+        Creation2024Subclass.fromJson(className, entry),
+      );
+    }
+    return result;
   }
 
   static Future<List<Creation2024Species>> loadSpecies() async {

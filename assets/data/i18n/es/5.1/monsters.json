@@ -1261,5 +1261,535 @@
         "description": "El lobo tiene ventaja en las tiradas de ataque contra una criatura si al menos uno de sus aliados está a {{distance:5ft}} o menos de ella y ese aliado no está incapacitado."
       }
     }
+  },
+  "Air Elemental": {
+    "name": "Elemental de aire",
+    "traits": {
+      "air_form": {
+        "name": "Forma de aire",
+        "description": "El elemental puede entrar en el espacio de una criatura hostil y detenerse allí. Atraviesa espacios de solo {{distance:1in}} de ancho sin apretujarse."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistencia al daño no mágico",
+        "description": "El elemental tiene resistencia al daño contundente, perforante y cortante de ataques no mágicos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El elemental realiza dos ataques de golpetazo."
+      },
+      "slam": {
+        "name": "Golpetazo",
+        "description": "Ataque con arma cuerpo a cuerpo: +8 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 14 (2d8 + 5) de daño contundente."
+      },
+      "whirlwind": {
+        "name": "Torbellino",
+        "description": "Cada criatura en el espacio del elemental realiza una salvación de Fuerza CD 13. Si falla, sufre 15 (3d8 + 2) de daño contundente, es arrojada hasta {{distance:20ft}} en una dirección aleatoria y queda derribada. Si golpea un objeto, como una pared o el suelo, sufre 3 (1d6) de daño contundente por cada {{distance:10ft}} que fue arrojada. Si es lanzada contra otra criatura, esta debe superar una salvación de Destreza CD 13 o sufrir el mismo daño y quedar derribada. Si supera la salvación inicial, sufre la mitad del daño contundente y no es arrojada ni derribada."
+      }
+    }
+  },
+  "Earth Elemental": {
+    "name": "Elemental de tierra",
+    "traits": {
+      "earth_glide": {
+        "name": "Deslizamiento por tierra",
+        "description": "El elemental puede excavar tierra y piedra no mágicas y sin trabajar sin alterar el material que atraviesa."
+      },
+      "siege_monster": {
+        "name": "Monstruo de asedio",
+        "description": "El elemental inflige el doble de daño a objetos y estructuras."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistencia al daño no mágico",
+        "description": "El elemental tiene resistencia al daño contundente, perforante y cortante de ataques no mágicos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El elemental realiza dos ataques de golpetazo."
+      },
+      "slam": {
+        "name": "Golpetazo",
+        "description": "Ataque con arma cuerpo a cuerpo: +8 a impactar, alcance {{distance:10ft|short}}, un objetivo. Impacto: 14 (2d8 + 5) de daño contundente."
+      }
+    }
+  },
+  "Elephant": {
+    "name": "Elefante",
+    "traits": {
+      "trampling_charge": {
+        "name": "Carga arrolladora",
+        "description": "Si la criatura se mueve al menos {{distance:20ft}} en línea recta hacia un objetivo y lo impacta con cornada en el mismo turno, este debe superar una salvación de Fuerza CD 12 o quedar derribado. Si el objetivo está derribado, la criatura puede realizar un ataque de pisotón contra él como acción adicional."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Cornada",
+        "description": "Ataque con arma cuerpo a cuerpo: +8 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 19 (3d8 + 6) de daño perforante."
+      },
+      "stomp": {
+        "name": "Pisotón",
+        "description": "Ataque con arma cuerpo a cuerpo: +8 a impactar, alcance {{distance:5ft|short}}, una criatura derribada. Impacto: 22 (3d10 + 6) de daño contundente."
+      }
+    }
+  },
+  "Fire Elemental": {
+    "name": "Elemental de fuego",
+    "traits": {
+      "fire_form": {
+        "name": "Forma de fuego",
+        "description": "El elemental atraviesa espacios de solo {{distance:1in}} de ancho sin apretujarse. Una criatura que lo toca o lo impacta con un ataque cuerpo a cuerpo a {{distance:5ft}} o menos sufre 5 (1d10) de daño de fuego. Puede entrar en el espacio de una criatura hostil y detenerse allí. La primera vez que entra en el espacio de una criatura en un turno, esta sufre 5 (1d10) de daño de fuego y prende; hasta que alguien use una acción para apagar las llamas, sufre 5 (1d10) de daño de fuego al inicio de cada turno."
+      },
+      "illumination": {
+        "name": "Iluminación",
+        "description": "El elemental emite luz brillante en un radio de {{distance:30ft|adj}} y luz tenue durante otros {{distance:30ft}}."
+      },
+      "water_susceptibility": {
+        "name": "Susceptibilidad al agua",
+        "description": "Por cada {{distance:5ft}} que el elemental se mueve por el agua, o por cada galón de agua que se le arroje, sufre 1 de daño de frío."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistencia al daño no mágico",
+        "description": "El elemental tiene resistencia al daño contundente, perforante y cortante de ataques no mágicos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El elemental realiza dos ataques de toque."
+      },
+      "touch": {
+        "name": "Toque",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 10 (2d6 + 3) de daño de fuego. Si el objetivo es una criatura o un objeto inflamable, prende. Hasta que una criatura use una acción para apagar las llamas, el objetivo sufre 5 (1d10) de daño de fuego al inicio de cada turno."
+      }
+    }
+  },
+  "Giant Boar": {
+    "name": "Jabalí gigante",
+    "traits": {
+      "charge": {
+        "name": "Carga",
+        "description": "Si la criatura se mueve al menos {{distance:20ft}} en línea recta hacia un objetivo y lo impacta con su ataque de colmillo en el mismo turno, este sufre 7 (2d6) de daño cortante adicional. Si es una criatura, debe superar una salvación de Fuerza CD 13 o quedar derribado."
+      },
+      "relentless": {
+        "name": "Implacable",
+        "description": "Si el jabalí sufre 10 de daño o menos que lo reduciría a 0 puntos de golpe, queda con 1 punto de golpe en su lugar."
+      }
+    },
+    "actions": {
+      "tusk": {
+        "name": "Colmillo",
+        "description": "Ataque con arma cuerpo a cuerpo: +5 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 10 (2d6 + 3) de daño cortante."
+      }
+    }
+  },
+  "Giant Constrictor Snake": {
+    "name": "Serpiente constrictora gigante",
+    "actions": {
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:10ft|short}}, una criatura. Impacto: 11 (2d6 + 4) de daño perforante."
+      },
+      "constrict": {
+        "name": "Constricción",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:5ft|short}}, una criatura. Impacto: 13 (2d8 + 4) de daño contundente, y el objetivo queda agarrado (CD 16 para escapar). Hasta que termine el agarre, queda apresado y la serpiente no puede constreñir a otro objetivo."
+      }
+    }
+  },
+  "Giant Crocodile": {
+    "name": "Cocodrilo gigante",
+    "traits": {
+      "hold_breath": {
+        "name": "Aguantar la respiración",
+        "description": "La criatura puede aguantar la respiración durante 30 minutos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El cocodrilo realiza dos ataques: un mordisco y uno con la cola."
+      },
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +8 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 21 (3d10 + 5) de daño perforante, y el objetivo queda agarrado (CD 16 para escapar). Hasta que termine el agarre, queda apresado y el cocodrilo no puede morder a otro objetivo."
+      },
+      "tail": {
+        "name": "Cola",
+        "description": "Ataque con arma cuerpo a cuerpo: +8 a impactar, alcance {{distance:10ft|short}}, un objetivo no agarrado por el cocodrilo. Impacto: 14 (2d8 + 5) de daño contundente. Si el objetivo es una criatura, debe superar una salvación de Fuerza CD 16 o quedar derribado."
+      }
+    }
+  },
+  "Giant Elk": {
+    "name": "Alce gigante",
+    "traits": {
+      "charge": {
+        "name": "Carga",
+        "description": "Si la criatura se mueve al menos {{distance:20ft}} en línea recta hacia un objetivo y lo impacta con su ataque de embestida en el mismo turno, este sufre 7 (2d6) de daño adicional. Si es una criatura, debe superar una salvación de Fuerza CD 14 o quedar derribado."
+      }
+    },
+    "actions": {
+      "ram": {
+        "name": "Embestida",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:10ft|short}}, un objetivo. Impacto: 11 (2d6 + 4) de daño contundente."
+      },
+      "hooves": {
+        "name": "Cascos",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:5ft|short}}, una criatura derribada. Impacto: 22 (4d8 + 4) de daño contundente. El raro y majestuoso alce gigante suele verse como presagio de un acontecimiento importante, como el nacimiento de un rey. Las leyendas hablan de dioses que adoptan esa forma al visitar el Plano Material. Muchas culturas consideran su caza una invitación a la ira divina."
+      }
+    }
+  },
+  "Giant Scorpion": {
+    "name": "Escorpión gigante",
+    "actions": {
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El escorpión realiza tres ataques: dos con las pinzas y uno con el aguijón."
+      },
+      "claw": {
+        "name": "Pinza",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 6 (1d8 + 2) de daño contundente, y el objetivo queda agarrado (CD 12 para escapar). El escorpión tiene dos pinzas y cada una puede agarrar solo a un objetivo."
+      },
+      "sting": {
+        "name": "Aguijón",
+        "description": "Ataque con arma cuerpo a cuerpo: +4 a impactar, alcance {{distance:5ft|short}}, una criatura. Impacto: 7 (1d10 + 2) de daño perforante, y el objetivo realiza una salvación de Constitución CD 12; sufre 22 (4d10) de daño de veneno si falla, o la mitad si tiene éxito."
+      }
+    }
+  },
+  "Giant Shark": {
+    "name": "Tiburón gigante",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frenesí sangriento",
+        "description": "El tiburón tiene ventaja en las tiradas de ataque cuerpo a cuerpo contra criaturas que no tengan todos sus puntos de golpe."
+      },
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El tiburón solo puede respirar bajo el agua."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +9 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 22 (3d10 + 6) de daño perforante. Un tiburón gigante mide {{distance:30ft}} de largo y suele vivir en océanos profundos. Sin miedo, ataca todo lo que cruza su camino, incluidas ballenas y barcos."
+      }
+    }
+  },
+  "Hunter Shark": {
+    "name": "Tiburón cazador",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frenesí sangriento",
+        "description": "El tiburón tiene ventaja en las tiradas de ataque cuerpo a cuerpo contra criaturas que no tengan todos sus puntos de golpe."
+      },
+      "water_breathing": {
+        "name": "Respiración acuática",
+        "description": "El tiburón solo puede respirar bajo el agua."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 13 (2d8 + 4) de daño perforante. Mayor y más feroz que un tiburón de arrecife, pero menor que un tiburón gigante, vive en aguas profundas. Suele cazar solo, aunque varios pueden alimentarse en la misma zona. Un adulto mide de {{distance:15ft|num}} a {{distance:20ft}}."
+      }
+    }
+  },
+  "Killer Whale": {
+    "name": "Orca",
+    "traits": {
+      "echolocation": {
+        "name": "Ecolocalización",
+        "description": "La orca no puede usar su vista ciega mientras esté ensordecida."
+      },
+      "hold_breath": {
+        "name": "Aguantar la respiración",
+        "description": "La criatura puede aguantar la respiración durante 30 minutos."
+      },
+      "keen_hearing": {
+        "name": "Oído agudo",
+        "description": "La orca tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del oído."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 21 (5d6 + 4) de daño perforante."
+      }
+    }
+  },
+  "Mammoth": {
+    "name": "Mamut",
+    "traits": {
+      "trampling_charge": {
+        "name": "Carga arrolladora",
+        "description": "Si la criatura se mueve al menos {{distance:20ft}} en línea recta hacia un objetivo y lo impacta con cornada en el mismo turno, este debe superar una salvación de Fuerza CD 18 o quedar derribado. Si el objetivo está derribado, la criatura puede realizar un ataque de pisotón contra él como acción adicional."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Cornada",
+        "description": "Ataque con arma cuerpo a cuerpo: +10 a impactar, alcance {{distance:10ft|short}}, un objetivo. Impacto: 25 (4d8 + 7) de daño perforante."
+      },
+      "stomp": {
+        "name": "Pisotón",
+        "description": "Ataque con arma cuerpo a cuerpo: +10 a impactar, alcance {{distance:5ft|short}}, una criatura derribada. Impacto: 29 (4d10 + 7) de daño contundente. El mamut se asemeja a un elefante de pelaje espeso y colmillos largos. Más robusto y feroz que los elefantes corrientes, vive en climas que van del subártico al subtropical."
+      }
+    }
+  },
+  "Plesiosaurus": {
+    "name": "Plesiosaurio",
+    "traits": {
+      "hold_breath": {
+        "name": "Aguantar la respiración",
+        "description": "La criatura puede aguantar la respiración durante 1 hora."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:10ft|short}}, un objetivo. Impacto: 14 (3d6 + 4) de daño perforante."
+      }
+    }
+  },
+  "Polar Bear": {
+    "name": "Oso polar",
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "La criatura tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El oso realiza dos ataques: un mordisco y uno con las garras."
+      },
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +7 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 9 (1d8 + 5) de daño perforante."
+      },
+      "claws": {
+        "name": "Garras",
+        "description": "Ataque con arma cuerpo a cuerpo: +7 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 12 (2d6 + 5) de daño cortante."
+      }
+    }
+  },
+  "Rhinoceros": {
+    "name": "Rinoceronte",
+    "traits": {
+      "charge": {
+        "name": "Carga",
+        "description": "Si la criatura se mueve al menos {{distance:20ft}} en línea recta hacia un objetivo y lo impacta con su ataque de cornada en el mismo turno, este sufre 9 (2d8) de daño contundente adicional. Si es una criatura, debe superar una salvación de Fuerza CD 15 o quedar derribado."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Cornada",
+        "description": "Ataque con arma cuerpo a cuerpo: +7 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 14 (2d8 + 5) de daño contundente."
+      }
+    }
+  },
+  "Saber-Toothed Tiger": {
+    "name": "Tigre dientes de sable",
+    "traits": {
+      "keen_smell": {
+        "name": "Olfato agudo",
+        "description": "La criatura tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan del olfato."
+      },
+      "pounce": {
+        "name": "Salto ofensivo",
+        "description": "Si la criatura se mueve al menos {{distance:20ft}} en línea recta hacia un objetivo y lo impacta con garra en el mismo turno, este debe superar una salvación de Fuerza CD 14 o quedar derribado. Si el objetivo está derribado, la criatura puede realizar un ataque de mordisco contra él como acción adicional."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 10 (1d10 + 5) de daño perforante."
+      },
+      "claw": {
+        "name": "Garra",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 12 (2d6 + 5) de daño cortante."
+      }
+    }
+  },
+  "Swarm of Poisonous Snakes": {
+    "name": "Enjambre de serpientes venenosas",
+    "traits": {
+      "swarm": {
+        "name": "Enjambre",
+        "description": "El enjambre puede ocupar el espacio de otra criatura y viceversa, y atraviesa cualquier abertura lo bastante grande para una serpiente Diminuta. El enjambre no puede recuperar puntos de golpe ni obtener puntos de golpe temporales."
+      }
+    },
+    "actions": {
+      "bites": {
+        "name": "Mordiscos",
+        "description": "Ataque con arma cuerpo a cuerpo: +6 a impactar, alcance {{distance:0ft|short}}, una criatura en el espacio del enjambre. Impacto: 7 (2d6) de daño perforante, o 3 (1d6) de daño perforante si el enjambre tiene la mitad de sus puntos de golpe o menos. El objetivo realiza una salvación de Constitución CD 10; sufre 14 (4d6) de daño de veneno si falla, o la mitad si tiene éxito."
+      }
+    }
+  },
+  "Triceratops": {
+    "name": "Triceratops",
+    "traits": {
+      "trampling_charge": {
+        "name": "Carga arrolladora",
+        "description": "Si la criatura se mueve al menos {{distance:20ft}} en línea recta hacia un objetivo y lo impacta con cornada en el mismo turno, este debe superar una salvación de Fuerza CD 13 o quedar derribado. Si el objetivo está derribado, la criatura puede realizar un ataque de pisotón contra él como acción adicional."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Cornada",
+        "description": "Ataque con arma cuerpo a cuerpo: +9 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 24 (4d8 + 6) de daño perforante."
+      },
+      "stomp": {
+        "name": "Pisotón",
+        "description": "Ataque con arma cuerpo a cuerpo: +9 a impactar, alcance {{distance:5ft|short}}, una criatura derribada. Impacto: 22 (3d10 + 6) de daño contundente."
+      }
+    }
+  },
+  "Water Elemental": {
+    "name": "Elemental de agua",
+    "traits": {
+      "water_form": {
+        "name": "Forma de agua",
+        "description": "El elemental puede entrar en el espacio de una criatura hostil y detenerse allí. Atraviesa espacios de solo {{distance:1in}} de ancho sin apretujarse."
+      },
+      "freeze": {
+        "name": "Congelación",
+        "description": "Si el elemental sufre daño de frío, se congela parcialmente; su velocidad se reduce en {{distance:20ft}} hasta el final de su siguiente turno."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistencia al daño no mágico",
+        "description": "El elemental tiene resistencia al daño contundente, perforante y cortante de ataques no mágicos."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Ataque múltiple",
+        "description": "El elemental realiza dos ataques de golpetazo."
+      },
+      "slam": {
+        "name": "Golpetazo",
+        "description": "Ataque con arma cuerpo a cuerpo: +7 a impactar, alcance {{distance:5ft|short}}, un objetivo. Impacto: 13 (2d8 + 4) de daño contundente."
+      },
+      "whelm": {
+        "name": "Envolver",
+        "description": "Cada criatura en el espacio del elemental realiza una salvación de Fuerza CD 15. Si falla, sufre 13 (2d8 + 4) de daño contundente. Si es Grande o menor, también queda agarrada (CD 14 para escapar). Hasta que termine el agarre, queda apresada y no puede respirar salvo que respire agua. Si supera la salvación, es empujada fuera del espacio del elemental. Este puede agarrar a una criatura Grande o hasta dos Medianas o menores a la vez. Al inicio de cada turno del elemental, cada objetivo agarrado sufre 13 (2d8 + 4) de daño contundente. Una criatura a {{distance:5ft}} o menos puede extraer una criatura u objeto usando una acción y superando una prueba de Fuerza CD 14."
+      }
+    }
+  },
+  "Imp": {
+    "name": "Diablillo",
+    "traits": {
+      "shapechanger": {
+        "name": "Cambiaformas",
+        "description": "El diablillo puede usar su acción para transformarse en una bestia similar a una rata (velocidad de {{distance:20ft|short}}), cuervo ({{distance:20ft|short}}, vuelo de {{distance:60ft|short}}) o araña ({{distance:20ft|short}}, trepar de {{distance:20ft|short}}), o recuperar su forma verdadera. Sus estadísticas no cambian, salvo las velocidades indicadas. Su equipo no se transforma. Recupera su forma verdadera si muere."
+      },
+      "devil_s_sight": {
+        "name": "Visión del Diablo",
+        "description": "La oscuridad mágica no impide la visión en la oscuridad del diablillo."
+      },
+      "magic_resistance": {
+        "name": "Resistencia Mágica",
+        "description": "El diablillo tiene ventaja en las tiradas de salvación contra conjuros y otros efectos mágicos."
+      },
+      "conditional_damage_resistance": {
+        "name": "Resistencia al Daño",
+        "description": "El diablillo tiene resistencia al daño contundente, perforante y cortante de ataques no mágicos que no se realicen con armas de plata."
+      }
+    },
+    "actions": {
+      "sting_bite_in_beast_form": {
+        "name": "Aguijón (Mordisco en Forma de Bestia)",
+        "description": "Ataque de Arma Cuerpo a Cuerpo: +5 a impactar, alcance de {{distance:5ft|short}}, un objetivo. Impacto: 5 (1d4 + 3) de daño perforante. El objetivo debe hacer una tirada de salvación de Constitución CD 11; sufre 10 (3d6) de daño de veneno si falla, o la mitad si tiene éxito."
+      },
+      "invisibility": {
+        "name": "Invisibilidad",
+        "description": "El diablillo se vuelve invisible mágicamente hasta que ataca o pierde la concentración (como si se concentrara en un conjuro). Su equipo también es invisible."
+      }
+    }
+  },
+  "Quasit": {
+    "name": "Quasit",
+    "traits": {
+      "shapechanger": {
+        "name": "Cambiaformas",
+        "description": "El quasit puede usar su acción para transformarse en una bestia similar a un murciélago (velocidad de {{distance:10ft|short}}, vuelo de {{distance:40ft|short}}), ciempiés ({{distance:40ft|short}}, trepar de {{distance:40ft|short}}) o sapo ({{distance:40ft|short}}, nadar de {{distance:40ft|short}}), o recuperar su forma verdadera. Sus estadísticas no cambian, salvo las velocidades indicadas. Su equipo no se transforma. Recupera su forma verdadera si muere."
+      },
+      "magic_resistance": {
+        "name": "Resistencia Mágica",
+        "description": "El quasit tiene ventaja en las tiradas de salvación contra conjuros y otros efectos mágicos."
+      },
+      "nonmagical_damage_resistance": {
+        "name": "Resistencia al Daño No Mágico",
+        "description": "El quasit tiene resistencia al daño contundente, perforante y cortante de ataques no mágicos."
+      }
+    },
+    "actions": {
+      "claws_bite_in_beast_form": {
+        "name": "Garras (Mordisco en Forma de Bestia)",
+        "description": "Ataque de Arma Cuerpo a Cuerpo: +4 a impactar, alcance de {{distance:5ft|short}}, un objetivo. Impacto: 5 (1d4 + 3) de daño perforante. El objetivo debe superar una tirada de salvación de Constitución CD 10 o sufrir 5 (2d4) de daño de veneno y quedar envenenado durante 1 minuto. Puede repetir la tirada al final de cada uno de sus turnos y terminar el efecto si tiene éxito."
+      },
+      "scare": {
+        "name": "Asustar",
+        "description": "Una criatura elegida por el quasit a un máximo de {{distance:20ft}} de él debe superar una tirada de salvación de Sabiduría CD 10 o quedar asustada durante 1 minuto. Puede repetir la tirada al final de cada uno de sus turnos, con desventaja si puede ver al quasit, y terminar el efecto si tiene éxito."
+      },
+      "invisibility": {
+        "name": "Invisibilidad",
+        "description": "El quasit se vuelve invisible mágicamente hasta que ataca, usa Asustar o pierde la concentración (como si se concentrara en un conjuro). Su equipo también es invisible."
+      }
+    }
+  },
+  "Pseudodragon": {
+    "name": "Pseudodragón",
+    "traits": {
+      "keen_senses": {
+        "name": "Sentidos Agudos",
+        "description": "El pseudodragón tiene ventaja en las pruebas de Sabiduría (Percepción) que dependan de la vista, el oído o el olfato."
+      },
+      "magic_resistance": {
+        "name": "Resistencia Mágica",
+        "description": "El pseudodragón tiene ventaja en las tiradas de salvación contra conjuros y otros efectos mágicos."
+      },
+      "limited_telepathy": {
+        "name": "Telepatía Limitada",
+        "description": "El pseudodragón puede comunicar mágicamente ideas sencillas, emociones e imágenes por telepatía a cualquier criatura a un máximo de {{distance:100ft}} de él que comprenda un idioma."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Mordisco",
+        "description": "Ataque de Arma Cuerpo a Cuerpo: +4 a impactar, alcance de {{distance:5ft|short}}, un objetivo. Impacto: 4 (1d4 + 2) de daño perforante."
+      },
+      "sting": {
+        "name": "Aguijón",
+        "description": "Ataque de Arma Cuerpo a Cuerpo: +4 a impactar, alcance de {{distance:5ft|short}}, una criatura. Impacto: 4 (1d4 + 2) de daño perforante. El objetivo debe superar una tirada de salvación de Constitución CD 11 o quedar envenenado durante 1 hora. Si falla por 5 o más, también queda inconsciente durante ese tiempo, hasta que sufre daño o hasta que otra criatura usa una acción para despertarlo."
+      }
+    },
+    "languages": [
+      "entiende común y dracónico, pero no puede hablar"
+    ]
+  },
+  "Sprite": {
+    "name": "Duende",
+    "traits": {},
+    "actions": {
+      "longsword": {
+        "name": "Espada Larga",
+        "description": "Ataque de Arma Cuerpo a Cuerpo: +2 a impactar, alcance de {{distance:5ft|short}}, un objetivo. Impacto: 1 de daño cortante."
+      },
+      "shortbow": {
+        "name": "Arco Corto",
+        "description": "Ataque de Arma a Distancia: +6 a impactar, alcance de {{distance:40/160ft|short}}, un objetivo. Impacto: 1 de daño perforante. El objetivo debe superar una tirada de salvación de Constitución CD 10 o quedar envenenado durante 1 minuto. Si el resultado de la tirada es 5 o menos, el objetivo envenenado también queda inconsciente durante ese tiempo, hasta que sufre daño o hasta que otra criatura usa una acción para despertarlo."
+      },
+      "heart_sight": {
+        "name": "Visión del Corazón",
+        "description": "El duende toca a una criatura y conoce mágicamente su estado emocional actual. Si el objetivo falla una tirada de salvación de Carisma CD 10, el duende también conoce su alineamiento. Los celestiales, infernales y muertos vivientes fallan automáticamente esta tirada."
+      },
+      "invisibility": {
+        "name": "Invisibilidad",
+        "description": "El duende se vuelve invisible mágicamente hasta que ataca, lanza un conjuro o pierde la concentración (como si se concentrara en un conjuro). Su equipo también es invisible."
+      }
+    }
   }
 }

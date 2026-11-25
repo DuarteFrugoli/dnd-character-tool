@@ -2,7 +2,7 @@
   "@@locale": "it",
   "creationRulesetTitle": "Scegli le regole",
   "creationRuleset2014": "D&D 5e (2014)",
-  "creationRuleset2024": "D&D 5.5e (2024)",
+  "creationRuleset2024": "D&D 5.5e (2024) — Beta",
   "rulesetShort2014": "5e",
   "rulesetShort2024": "5.5e",
   "customBackgroundTitle": "Background personalizzato",
@@ -1040,5 +1040,16 @@
   "settingsMaintenanceChangeClassSkills": "Salvate le abilità ottenute dalla classe al livello 1.",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{1 modifica applicata.} other{{count} modifiche applicate.}}",
   "incomingBackupPrompt": "Importare il backup dal file?",
-  "incomingBackupSuccess": "{count, plural, =1{1 personaggio importato dal backup.} other{{count} personaggi importati dal backup.}}"
+  "incomingBackupSuccess": "{count, plural, =1{1 personaggio importato dal backup.} other{{count} personaggi importati dal backup.}}",
+  "backgroundPersonalitySuggestions": "Suggerimenti per la personalità",
+  "featureChoiceReplacementLimit": "A questo livello puoi sostituire al massimo una supplica o disciplina elementale già conosciuta.",
+  "monsterNonmagicalAttacks": "attacchi non magici",
+  "whatsNew301Summary": "Questo aggiornamento amplia il catalogo 2014 e corregge alcune scelte del personaggio. D&D 2024 rimane in beta, con contenuti incompleti.",
+  "whatsNew301ContentTitle": "Più contenuti per il 2014",
+  "whatsNew301ContentBody": "Aggiunti incantesimi mancanti del Manuale del Giocatore, invocazioni, discipline, totem e varianti dei background in inglese, portoghese e spagnolo. Il Patto del Tomo ora permette di scegliere i suoi tre trucchetti. Il catalogo comprende i quattro famigli speciali del Patto della Catena.",
+  "whatsNew301BetaTitle": "D&D 2024: beta",
+  "whatsNew301BetaBody": "Sono registrate tutte le 48 sottoclassi del Manuale del Giocatore. Background, specie, talenti e traduzioni sono ancora incompleti. Molti nuovi testi delle sottoclassi sono disponibili solo in inglese.",
+  "whatsNew301LimitsTitle": "Cosa manca ancora",
+  "whatsNew301LimitsBody": "Alcuni privilegi devono ancora essere applicati manualmente. Il catalogo non include tutti i supplementi del 2014. I nuovi contenuti del 2014 devono ancora essere tradotti nelle altre lingue dell’app.",
+  "creationRuleset2024BetaDescription": "Beta: contenuti e traduzioni incompleti. Mancano ancora background, specie e talenti."
 }

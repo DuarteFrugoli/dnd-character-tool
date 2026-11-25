@@ -544,5 +544,141 @@
   "Whetstone": {
     "name": "Piedra de afilar",
     "description": "Se utiliza para afilar cuchillas."
+  },
+  "Crystal": {
+    "name": "Cristal",
+    "description": "Canalizador arcano para conjuros de hechicero, brujo o mago. Sustituye componentes materiales corrientes, pero no los que tienen coste ni los consumidos por el conjuro."
+  },
+  "Orb": {
+    "name": "Orbe",
+    "description": "Canalizador arcano para conjuros de hechicero, brujo o mago. Sustituye componentes materiales corrientes, pero no los que tienen coste ni los consumidos por el conjuro."
+  },
+  "Rod": {
+    "name": "Vara",
+    "description": "Canalizador arcano para conjuros de hechicero, brujo o mago. Sustituye componentes materiales corrientes, pero no los que tienen coste ni los consumidos por el conjuro."
+  },
+  "Staff": {
+    "name": "Bastón",
+    "description": "Canalizador arcano para conjuros de hechicero, brujo o mago. Sustituye componentes materiales corrientes, pero no los que tienen coste ni los consumidos por el conjuro."
+  },
+  "Wand": {
+    "name": "Varita",
+    "description": "Canalizador arcano para conjuros de hechicero, brujo o mago. Sustituye componentes materiales corrientes, pero no los que tienen coste ni los consumidos por el conjuro."
+  },
+  "Camel": {
+    "name": "Camello",
+    "description": "Montura con velocidad de {{distance:50ft}} y capacidad de carga de 480 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Donkey": {
+    "name": "Burro",
+    "description": "Montura con velocidad de {{distance:40ft}} y capacidad de carga de 420 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Mule": {
+    "name": "Mula",
+    "description": "Montura con velocidad de {{distance:40ft}} y capacidad de carga de 420 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Elephant": {
+    "name": "Elefante",
+    "description": "Montura con velocidad de {{distance:40ft}} y capacidad de carga de 1320 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Draft Horse": {
+    "name": "Caballo de tiro",
+    "description": "Montura con velocidad de {{distance:40ft}} y capacidad de carga de 540 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Riding Horse": {
+    "name": "Caballo de monta",
+    "description": "Montura con velocidad de {{distance:60ft}} y capacidad de carga de 480 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Mastiff": {
+    "name": "Mastín",
+    "description": "Montura con velocidad de {{distance:40ft}} y capacidad de carga de 195 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Pony": {
+    "name": "Poni",
+    "description": "Montura con velocidad de {{distance:40ft}} y capacidad de carga de 225 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Warhorse": {
+    "name": "Caballo de guerra",
+    "description": "Montura con velocidad de {{distance:60ft}} y capacidad de carga de 540 libras. Su peso corporal no se incluye en el peso transportado del inventario. Un equipo que tira de un vehículo puede arrastrar cinco veces su capacidad normal combinada, incluido el peso del vehículo."
+  },
+  "Bit and Bridle": {
+    "name": "Bocado y brida",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Carriage": {
+    "name": "Carruaje",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Cart": {
+    "name": "Carro",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Chariot": {
+    "name": "Carro de guerra",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Feed (per day)": {
+    "name": "Pienso (por día)",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Saddlebags": {
+    "name": "Alforjas",
+    "description": "Recipientes transportados por una montura."
+  },
+  "Sled": {
+    "name": "Trineo",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Stabling (per day)": {
+    "name": "Estabulación (por día)",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Wagon": {
+    "name": "Carromato",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Exotic Saddle": {
+    "name": "Silla exótica",
+    "description": "Necesaria para montar una criatura acuática o voladora."
+  },
+  "Military Saddle": {
+    "name": "Silla militar",
+    "description": "Concede ventaja en las pruebas para permanecer montado en una montura activa en combate."
+  },
+  "Pack Saddle": {
+    "name": "Silla de carga",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Riding Saddle": {
+    "name": "Silla de monta",
+    "description": "Arreos, suministros o transporte para viajar con monturas."
+  },
+  "Galley": {
+    "name": "Galera",
+    "description": "Vehículo acuático; velocidad normal de {{distance:4mi}} por hora. Los botes de remos y barcos de quilla suman la corriente al bajar un río y no pueden remar contra una corriente fuerte. El peso no está especificado, salvo el bote de remos de 100 libras."
+  },
+  "Keelboat": {
+    "name": "Barco de quilla",
+    "description": "Vehículo acuático; velocidad normal de {{distance:1mi}} por hora. Los botes de remos y barcos de quilla suman la corriente al bajar un río y no pueden remar contra una corriente fuerte. El peso no está especificado, salvo el bote de remos de 100 libras."
+  },
+  "Longship": {
+    "name": "Drakkar",
+    "description": "Vehículo acuático; velocidad normal de {{distance:3mi}} por hora. Los botes de remos y barcos de quilla suman la corriente al bajar un río y no pueden remar contra una corriente fuerte. El peso no está especificado, salvo el bote de remos de 100 libras."
+  },
+  "Rowboat": {
+    "name": "Bote de remos",
+    "description": "Vehículo acuático; velocidad normal de {{distance:1.5mi}} por hora. Los botes de remos y barcos de quilla suman la corriente al bajar un río y no pueden remar contra una corriente fuerte. El peso no está especificado, salvo el bote de remos de 100 libras."
+  },
+  "Sailing Ship": {
+    "name": "Velero",
+    "description": "Vehículo acuático; velocidad normal de {{distance:2mi}} por hora. Los botes de remos y barcos de quilla suman la corriente al bajar un río y no pueden remar contra una corriente fuerte. El peso no está especificado, salvo el bote de remos de 100 libras."
+  },
+  "Warship": {
+    "name": "Buque de guerra",
+    "description": "Vehículo acuático; velocidad normal de {{distance:2.5mi}} por hora. Los botes de remos y barcos de quilla suman la corriente al bajar un río y no pueden remar contra una corriente fuerte. El peso no está especificado, salvo el bote de remos de 100 libras."
+  },
+  "Barding": {
+    "name": "Barda",
+    "description": "Armadura para animal: cuatro veces el coste y dos veces el peso de la armadura humanoide equivalente. El peso cero es un marcador; usa la armadura elegida para determinar el peso real."
   }
 }

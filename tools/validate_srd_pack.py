@@ -2,6 +2,7 @@
 """Validate the structure and references of an English SRD pack."""
 
 import argparse
+import copy
 import json
 import re
 from pathlib import Path
@@ -787,6 +788,7 @@ def validate_monsters(monsters, conditions, pack, errors):
         for key, known in (
             ("damageVulnerabilities", MONSTER_DAMAGE_TYPES),
             ("damageResistances", MONSTER_DAMAGE_TYPES),
+            ("nonmagicalDamageResistances", MONSTER_DAMAGE_TYPES),
             ("damageImmunities", MONSTER_DAMAGE_TYPES),
             ("conditionImmunities", conditions),
         ):
@@ -963,6 +965,51 @@ def validate_distance_markers(pack, errors):
     for filename, value in english.items():
         check_english(value, filename)
 
+    # Runtime 2014 descriptions can include supplemental tables. Older locale
+    # overlays still translate the base summary; completed overlays translate
+    # the composed description. Both must retain their actual source measures.
+    supplemental = copy.deepcopy(english)
+    if pack == "5.1":
+        folder = ROOT / "assets" / "data" / "2014"
+        def read_extra(name):
+            return json.loads((folder / name).read_text(encoding="utf-8"))
+
+        supplemental["spells"].extend(read_extra("phb_spells.json")["spells"])
+        supplemental["equipment"]["gear"].extend(read_extra("phb_equipment.json")["gear"])
+        backgrounds = read_extra("phb_backgrounds.json")
+        supplemental["backgrounds"].extend(backgrounds["variants"])
+        for background in supplemental["backgrounds"]:
+            background["personalitySuggestions"] = backgrounds["personalities"].get(background["name"], {})
+        options = read_extra("phb_options.json")
+
+        def merge(target, extra):
+            for key, value in extra.items():
+                if isinstance(value, dict) and isinstance(target.get(key), dict):
+                    merge(target[key], value)
+                else:
+                    target[key] = value
+
+        merge(supplemental["feature_choices"], options["featureChoices"])
+        sources = options["featureChoices"]["optionSources"]
+        for row in supplemental["subclass_features"]:
+            for feature in row["features"]:
+                if row["subclass"] == "Way of the Four Elements" and feature["name"] == "Disciple of the Elements":
+                    # The remaining runtime explanatory paragraphs contain no
+                    # measures; these are all the assembled measurable parts.
+                    feature["description"] = options["elementalAttunement"] + "\n" + "\n".join(
+                        option["description"] for option in sources["elemental_disciplines_2014"]
+                    )
+                elif row["subclass"] == "Wild Magic" and feature["name"] == "Wild Magic Surge":
+                    feature["description"] = options["wildMagicSurge"]["description"] + "\n" + "\n".join(
+                        outcome["description"] for outcome in options["wildMagicSurge"]["outcomes"]
+                    )
+                elif row["subclass"] == "Path of the Totem Warrior":
+                    choice = {"Totem Spirit": "totem_spirits_2014", "Aspect of the Beast": "totem_aspects_2014", "Totemic Attunement": "totem_attunements_2014"}.get(feature["name"])
+                    if choice:
+                        feature["description"] = "\n".join(option["description"] for option in sources[choice])
+        for filename, value in supplemental.items():
+            check_english(value, f"supplemental.{filename}")
+
     def counterpart(english_node, key):
         if isinstance(english_node, dict):
             for english_key, child in english_node.items():
@@ -977,10 +1024,11 @@ def validate_distance_markers(pack, errors):
                     return child
         return None
 
-    def compare(overlay, english_node, location, key=None):
+    def compare(overlay, english_node, location, key=None, supplemental_node=None):
         if isinstance(overlay, dict):
             for child_key, child in overlay.items():
-                compare(child, counterpart(english_node, child_key), f"{location}.{child_key}", child_key)
+                compare(child, counterpart(english_node, child_key), f"{location}.{child_key}", child_key,
+                        counterpart(supplemental_node, child_key))
         elif isinstance(overlay, list):
             for index, child in enumerate(overlay):
                 english_child = (
@@ -988,15 +1036,17 @@ def validate_distance_markers(pack, errors):
                     if isinstance(english_node, list) and index < len(english_node)
                     else None
                 )
-                compare(child, english_child, f"{location}[{index}]", key)
+                supplemental_child = supplemental_node[index] if isinstance(supplemental_node, list) and index < len(supplemental_node) else None
+                compare(child, english_child, f"{location}[{index}]", key, supplemental_child)
         elif isinstance(overlay, str):
             markers = distance_markers(overlay, location, errors)
             if key in PLAIN_DISTANCE_FIELDS:
                 return
-            if isinstance(english_node, str):
-                expected = distance_markers(english_node, location, [])
-                if markers != expected:
-                    errors.append(f"{location}: measures {markers} differ from English {expected}")
+            references = [value for value in (english_node, supplemental_node) if isinstance(value, str)]
+            if references:
+                expected = [distance_markers(value, location, []) for value in references]
+                if markers not in expected:
+                    errors.append(f"{location}: measures {markers} differ from English source measures {expected}")
 
     for locale_dir in sorted((ROOT / "assets" / "data" / "i18n").iterdir()):
         pack_dir = locale_dir / pack
@@ -1004,7 +1054,8 @@ def validate_distance_markers(pack, errors):
             continue
         for path in sorted(pack_dir.glob("*.json")):
             overlay = json.loads(path.read_text(encoding="utf-8"))
-            compare(overlay, by_feature_name(path.stem, english.get(path.stem)), f"i18n/{locale_dir.name}/{pack}/{path.stem}")
+            compare(overlay, by_feature_name(path.stem, english.get(path.stem)), f"i18n/{locale_dir.name}/{pack}/{path.stem}",
+                    supplemental_node=by_feature_name(path.stem, supplemental.get(path.stem)))
 
 
 def by_feature_name(filename, rows):

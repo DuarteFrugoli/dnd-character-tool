@@ -6121,49 +6121,49 @@ abstract class AppLocalizations {
   /// **'nonmagical attacks'**
   String get monsterNonmagicalAttacks;
 
-  /// 3.0.1 release notice and incomplete 2024 content disclosure.
+  /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
   /// **'This update expands the 2014 catalog and fixes character choices. D&D 2024 remains in beta, with incomplete content.'**
   String get whatsNew301Summary;
 
-  /// 3.0.1 release notice and incomplete 2024 content disclosure.
+  /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
   /// **'More 2014 content'**
   String get whatsNew301ContentTitle;
 
-  /// 3.0.1 release notice and incomplete 2024 content disclosure.
+  /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
   /// **'Added missing Player’s Handbook spells, invocations, disciplines, totems and background variants in English, Portuguese and Spanish. Pact of the Tome now guides your three cantrip choices, and the catalog includes the four special Pact of the Chain familiars.'**
   String get whatsNew301ContentBody;
 
-  /// 3.0.1 release notice and incomplete 2024 content disclosure.
+  /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
   /// **'D&D 2024: beta'**
   String get whatsNew301BetaTitle;
 
-  /// 3.0.1 release notice and incomplete 2024 content disclosure.
+  /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
   /// **'All 48 Player’s Handbook subclasses are registered. Backgrounds, species, feats and translations still have gaps; much of the new subclass text is available only in English.'**
   String get whatsNew301BetaBody;
 
-  /// 3.0.1 release notice and incomplete 2024 content disclosure.
+  /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
   /// **'What still needs work'**
   String get whatsNew301LimitsTitle;
 
-  /// 3.0.1 release notice and incomplete 2024 content disclosure.
+  /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
   /// **'Some features still require manual application. The catalog does not include every 2014 supplement. The new 2014 material still needs translation into the other app languages.'**
   String get whatsNew301LimitsBody;
 
-  /// 3.0.1 release notice and incomplete 2024 content disclosure.
+  /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
   /// **'Beta: incomplete content and translations. Backgrounds, species and feats still have gaps.'**

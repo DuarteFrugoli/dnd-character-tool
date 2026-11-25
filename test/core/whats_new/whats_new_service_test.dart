@@ -7,7 +7,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test(
-    'users who read 3.0.0 see 3.0.1 once, with the installed version',
+    'users who read 3.0.0 see 3.0.2 once, with the installed version',
     () async {
       SharedPreferences.setMockInitialValues({
         'whats_new_last_seen_announcement': '3.0.0-whats-new',
@@ -17,13 +17,13 @@ void main() {
         packageInfo: () async => PackageInfo(
           appName: 'D&D Character Tool',
           packageName: 'test',
-          version: '3.0.1',
-          buildNumber: '36',
+          version: '3.0.2',
+          buildNumber: '37',
         ),
       );
       final pending = await service.pendingInfo();
-      expect(pending!.id, '3.0.1-whats-new');
-      expect(pending.version, '3.0.1');
+      expect(pending!.id, '3.0.2-whats-new');
+      expect(pending.version, '3.0.2');
       await service.markSeen(pending.id);
       expect(await service.pendingInfo(), isNull);
       expect((await service.currentInfo()).id, pending.id);

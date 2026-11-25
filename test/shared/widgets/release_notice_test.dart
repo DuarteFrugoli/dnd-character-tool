@@ -36,7 +36,7 @@ void main() {
         home: Builder(
           builder: (context) => Scaffold(
             body: TextButton(
-              onPressed: () => showWhatsNewDialog(context, version: '3.0.1'),
+              onPressed: () => showWhatsNewDialog(context, version: '3.0.2'),
               child: const Text('Open'),
             ),
           ),
@@ -50,7 +50,7 @@ void main() {
     expect(find.text('D&D 2024: beta'), findsOneWidget);
     expect(find.textContaining('manual application'), findsOneWidget);
     expect(find.textContaining('three cantrip choices'), findsOneWidget);
-    expect(find.text('Version 3.0.1'), findsOneWidget);
+    expect(find.text('Version 3.0.2'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }

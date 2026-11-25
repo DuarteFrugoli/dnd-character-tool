@@ -74,7 +74,7 @@ PHB spells. Existing translations of older content are retained.
 
 The pre-release review's Tome choice and four Chain familiar catalog gaps
 have been addressed above. The edition picker now labels 2024 as Beta and
-discloses incomplete content before selection. The 3.0.1 announcement explains
+discloses incomplete content before selection. The 3.0.2 announcement explains
 2014 additions, the 2024 beta and remaining manual effects in all 11 UI languages.
 A signed release build and smoke test on a physical device remain unverified.
 

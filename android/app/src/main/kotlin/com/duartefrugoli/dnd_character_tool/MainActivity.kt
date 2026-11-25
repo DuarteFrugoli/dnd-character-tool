@@ -1,18 +1,27 @@
 package com.duartefrugoli.dnd_character_tool
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.WindowManager
 import androidx.core.view.WindowCompat
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import java.util.concurrent.Executor
+import java.util.concurrent.Executors
 
 class MainActivity : FlutterActivity() {
     private val fileChannelName = "dnd.character/file_import"
     private val screenChannelName = "dnd.character/screen"
-    private var pendingFileContent: String? = null
+    private var fileChannel: MethodChannel? = null
+    private val fileCallbacks = Handler(Looper.getMainLooper())
+    private val fileReader = IncomingFileReader(
+        worker = Executors.newSingleThreadExecutor(),
+        main = Executor { callback -> fileCallbacks.post(callback) },
+        onFileReceived = { content -> fileChannel?.invokeMethod("onFileReceived", content) },
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,16 +37,15 @@ class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, fileChannelName)
-            .setMethodCallHandler { call, result ->
-                when (call.method) {
-                    "getPendingFile" -> {
-                        result.success(pendingFileContent)
-                        pendingFileContent = null
-                    }
-                    else -> result.notImplemented()
+        fileChannel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, fileChannelName)
+        fileChannel?.setMethodCallHandler { call, result ->
+            when (call.method) {
+                "getPendingFile" -> {
+                    result.success(fileReader.takePendingFile())
                 }
+                else -> result.notImplemented()
             }
+        }
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, screenChannelName)
             .setMethodCallHandler { call, result ->
                 when (call.method) {
@@ -60,33 +68,29 @@ class MainActivity : FlutterActivity() {
 
     override fun onNewIntent(intent: Intent) {
         if (intent.action == Intent.ACTION_VIEW) {
-            handleIntent(intent)
             // Strip the data URI before passing to super so Flutter's navigation
             // channel does not forward the content:// URI to go_router.
             super.onNewIntent(Intent(intent).apply { data = null })
-            flutterEngine?.dartExecutor?.binaryMessenger?.let { messenger ->
-                val content = pendingFileContent
-                if (content != null) {
-                    MethodChannel(messenger, fileChannelName).invokeMethod("onFileReceived", content)
-                    pendingFileContent = null
-                }
-            }
+            handleIntent(intent)
             return
         }
         super.onNewIntent(intent)
     }
 
     private fun handleIntent(intent: Intent) {
-        if (intent.action == Intent.ACTION_VIEW) {
-            val uri: Uri = intent.data ?: return
-            try {
-                val stream = contentResolver.openInputStream(uri) ?: return
-                val content = stream.bufferedReader().use { it.readText() }
-                // Only accept content that looks like a character export or backup.
-                if (content.contains("\"character\"") || content.contains("\"characters\"")) {
-                    pendingFileContent = content
-                }
-            } catch (_: Exception) {}
+        if (intent.action != Intent.ACTION_VIEW) return
+        val uri = intent.data ?: return
+        val resolver = contentResolver
+        fileReader.read {
+            resolver.openInputStream(uri)?.bufferedReader()?.use { it.readText() }
         }
+    }
+
+    override fun onDestroy() {
+        fileReader.close()
+        fileCallbacks.removeCallbacksAndMessages(null)
+        fileChannel?.setMethodCallHandler(null)
+        fileChannel = null
+        super.onDestroy()
     }
 }

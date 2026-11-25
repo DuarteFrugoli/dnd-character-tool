@@ -5,6 +5,13 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [Unreleased]
+
+### Fixed
+- **Importacao Android sem bloquear a interface**: arquivos de ficha e backup abertos por outros apps passam a ser lidos em segundo plano. A entrega ao Flutter aguarda a tela estar pronta, preserva a ordem dos arquivos e descarta resultados ao encerrar a Activity. Correcao preventiva de um risco de ANR; o relatorio da 2.1.2 nao confirma essa causa.
+
+---
+
 ## [3.0.2] - 2026-11-25
 
 ### Added

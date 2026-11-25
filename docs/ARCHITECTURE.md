@@ -1220,6 +1220,16 @@ Import paths:
 - Platform channel `dnd.character/file_import` through `IncomingFileService`
   when the app is opened from a `.dndchar` or `.dndbackup` file.
 
+Android intent imports read their URI through `IncomingFileReader` on a serial
+worker executor. Neither opening the content provider nor reading/scanning the
+file runs on the Activity's main thread. Results return through a main-thread
+handler, as required by Flutter's method channel. `getPendingFile` marks the
+import listener ready: earlier results remain queued, while later results are
+notified asynchronously. Files keep their arrival order, and Activity destruction
+stops queued work and suppresses pending callbacks. JVM tests in
+`android/app/src/test/kotlin` cover slow providers, both cold-start orderings,
+warm starts, queued files, read failures and Activity destruction.
+
 Imported characters are assigned fresh IDs before saving.
 
 ---

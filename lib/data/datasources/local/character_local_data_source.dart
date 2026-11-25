@@ -206,7 +206,11 @@ class CharacterLocalDataSource {
   }
 
   Future<String> exportBackupToFileJson() async {
-    final characters = await loadAll();
+    final loaded = await loadAllWithReport();
+    if (loaded.hasIssues) {
+      throw StateError('Cannot back up a partial character scan.');
+    }
+    final characters = loaded.characters;
     final exportedCharacters = <Map<String, dynamic>>[];
 
     for (final character in characters) {
@@ -216,7 +220,7 @@ class CharacterLocalDataSource {
       };
       final imageBytes = image.bytes;
       if (imageBytes != null) {
-        exportedCharacter['imageData'] = base64Encode(imageBytes);
+        exportedCharacter['imageBytes'] = imageBytes;
       }
       final imageMimeType = image.mimeType;
       if (imageMimeType != null) {
@@ -423,7 +427,17 @@ String _encodeExportPayload(Map<String, dynamic> args) {
 }
 
 String _encodeBackupPayload(Map<String, dynamic> args) {
-  final characters = args['characters'] as List<Map<String, dynamic>>;
+  final entries = args['characters'] as List<Map<String, dynamic>>;
+  final characters = [
+    for (final entry in entries)
+      <String, dynamic>{
+        'character': entry['character'],
+        if (entry['imageBytes'] case final Uint8List bytes)
+          'imageData': base64Encode(bytes),
+        if (entry['imageMimeType'] case final String mimeType)
+          'imageMimeType': mimeType,
+      },
+  ];
   final exportedAt = args['exportedAt'] as String;
 
   final payload = <String, dynamic>{

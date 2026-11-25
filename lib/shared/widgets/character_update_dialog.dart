@@ -17,8 +17,13 @@ Future<bool> showCharacterUpdateDialog(
   return await showDialog<bool>(
         context: context,
         barrierDismissible: false,
-        builder: (_) => CharacterUpdateDialog(
-          exportBackup: exportBackup ?? exportDndBackupFile,
+        builder: (dialogContext) => CharacterUpdateDialog(
+          exportBackup:
+              exportBackup ??
+              (fileJson) => exportDndBackupFile(
+                fileJson,
+                sharePositionOrigin: fileShareOrigin(dialogContext),
+              ),
         ),
       ) ??
       false;
@@ -76,19 +81,34 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
       _message = null;
       _hasError = false;
     });
+    var localSaved = false;
     try {
       final fileJson = await ref
           .read(characterRepositoryProvider)
-          .exportBackupToFileJson();
+          .createLocalBackup();
+      localSaved = true;
       await widget.exportBackup(fileJson);
       if (!mounted) return;
       setState(
-        () => _message = AppLocalizations.of(context)!.settingsBackupExportSuccess,
+        () => _message = AppLocalizations.of(
+          context,
+        )!.settingsBackupExportSuccess,
       );
+    } on FileExportCancelled {
+      if (mounted) {
+        setState(
+          () => _message = AppLocalizations.of(
+            context,
+          )!.settingsLocalBackupsSaved,
+        );
+      }
     } catch (_) {
       if (!mounted) return;
       setState(() {
-        _message = AppLocalizations.of(context)!.settingsBackupExportError;
+        final l10n = AppLocalizations.of(context)!;
+        _message = localSaved
+            ? '${l10n.settingsLocalBackupsSaved} ${l10n.settingsBackupExportError}'
+            : l10n.settingsLocalBackupSaveError;
         _hasError = true;
       });
     } finally {
@@ -109,19 +129,22 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
     });
     try {
       final repository = ref.read(characterRepositoryProvider);
-      final fileJson = await repository.exportBackupToFileJson();
-      await widget.exportBackup(fileJson);
-      if (!mounted) return;
-      setState(() => _task = _UpdateTask.updating);
-
-      final report = await repository.applyMigrations();
+      final report = await repository.applyMigrations(
+        shareBackup: (fileJson) async {
+          try {
+            if (mounted) await widget.exportBackup(fileJson);
+          } finally {
+            if (mounted) setState(() => _task = _UpdateTask.updating);
+          }
+        },
+      );
       if (!mounted) return;
       setState(() => _result = report);
     } catch (_) {
       if (!mounted) return;
       setState(() {
         _message = _task == _UpdateTask.backingUp
-            ? AppLocalizations.of(context)!.settingsBackupExportError
+            ? AppLocalizations.of(context)!.settingsLocalBackupSaveError
             : AppLocalizations.of(context)!.settingsMaintenanceError;
         _hasError = true;
       });
@@ -137,8 +160,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
     final preview = _preview;
     final result = _result;
     final busy = _task != null;
-    final blocking = _task == _UpdateTask.backingUp ||
-        _task == _UpdateTask.updating;
+    final blocking =
+        _task == _UpdateTask.backingUp || _task == _UpdateTask.updating;
 
     return PopScope(
       canPop: !blocking && result == null,
@@ -179,7 +202,7 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                     const SizedBox(height: 8),
                     Text(
                       _task == _UpdateTask.backingUp
-                          ? l10n.settingsBackupExporting
+                          ? l10n.settingsLocalBackupSaving
                           : _task == _UpdateTask.updating
                           ? l10n.characterUpdateApplying
                           : l10n.settingsMaintenanceWorking,
@@ -200,7 +223,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton.icon(
-                      onPressed: busy || preview == null || preview.hasReadIssues
+                      onPressed:
+                          busy || preview == null || preview.hasReadIssues
                           ? null
                           : _backup,
                       icon: const Icon(Icons.backup_outlined),
@@ -211,7 +235,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton.icon(
-                      onPressed: busy ||
+                      onPressed:
+                          busy ||
                               _preview?.hasUpdates != true ||
                               _preview?.hasReadIssues == true
                           ? null

@@ -603,7 +603,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'À l\'ouverture d\'un personnage, l\'app propose de tous les mettre à jour et ouvre d\'abord une sauvegarde. Les personnages 2014 gardent leurs règles et données ; les personnages 2024 enregistrent l\'historique de niveaux utilisé pour monter et réinitialiser.';
+      'Une mise à jour unique peut être nécessaire à l’ouverture d’un personnage. L’application conserve les trois dernières sauvegardes locales dans les paramètres. Annuler leur partage n’arrête pas la mise à jour.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3378,15 +3378,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other:
-          '$count personnages nécessitent une mise à jour. Une sauvegarde sera ouverte pour être enregistrée ou partagée avant application des changements.',
-      one:
-          '1 personnage nécessite une mise à jour. Une sauvegarde sera ouverte pour être enregistrée ou partagée avant application des changements.',
-    );
-    return '$_temp0';
+    return 'Personnages à mettre à jour : $count. Une sauvegarde locale sera enregistrée d’abord. Son partage est facultatif ; l’annuler n’arrête pas la mise à jour.';
   }
 
   @override
@@ -3395,7 +3387,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Ce personnage doit être mis à jour avant d\'être ouvert. Vous pouvez sauvegarder vos personnages ou tous les mettre à jour. Une sauvegarde s\'ouvrira avant toute mise à jour.';
+      'Ce personnage doit être mis à jour. Une sauvegarde locale est enregistrée d’abord et son partage est facultatif. Annuler le partage permet de poursuivre la mise à jour.';
 
   @override
   String get characterUpdateRequiredAction => 'Options de mise à jour';
@@ -3582,4 +3574,56 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'Bêta : contenu et traductions incomplets. Il manque encore des historiques, espèces et dons.';
+
+  @override
+  String get exportFileError =>
+      'Impossible d’exporter le fichier du personnage.';
+
+  @override
+  String get settingsLocalBackupsTitle => 'Sauvegardes locales';
+
+  @override
+  String get settingsLocalBackupsSubtitle =>
+      'Les trois sauvegardes locales les plus récentes de vos personnages.';
+
+  @override
+  String get settingsLocalBackupsEmpty =>
+      'Aucune sauvegarde locale pour le moment.';
+
+  @override
+  String get settingsLocalBackupsCreate => 'Enregistrer une copie';
+
+  @override
+  String get settingsLocalBackupsSaved => 'Sauvegarde locale enregistrée.';
+
+  @override
+  String get settingsLocalBackupsError =>
+      'Impossible de charger les sauvegardes locales.';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return 'Personnages : $count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => 'Restaurer cette sauvegarde ?';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      'Les personnages seront ajoutés comme nouvelles copies. Vos personnages actuels seront conservés.';
+
+  @override
+  String get settingsLocalBackupRestoreAction => 'Restaurer des copies';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      'Ces copies restent sur cet appareil. Exportez une sauvegarde pour en conserver une hors de l’application.';
+
+  @override
+  String get settingsLocalBackupSaving =>
+      'Enregistrement de la sauvegarde locale...';
+
+  @override
+  String get settingsLocalBackupSaveError =>
+      'Impossible d’enregistrer une sauvegarde locale. Réessayez.';
 }

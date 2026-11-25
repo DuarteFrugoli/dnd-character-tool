@@ -598,7 +598,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'When you open a character, the app asks to update all of them and opens a backup first. 2014 characters keep their rules and data; 2024 characters save the level history used for leveling up and resets.';
+      'Opening a character may require a one-time update. The app keeps the three latest local backups in Settings. Sharing is optional; cancelling it does not stop the update.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3344,15 +3344,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other:
-          '$count characters need updates. The app will open a backup for you to save or share before applying changes.',
-      one:
-          '1 character needs an update. The app will open a backup for you to save or share before applying changes.',
-    );
-    return '$_temp0';
+    return 'Characters needing updates: $count. A local backup will be saved first. Sharing it is optional; cancelling sharing will not stop the update.';
   }
 
   @override
@@ -3360,7 +3352,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'This character needs an update before it can open. You can back up your characters or update them all now. A backup opens before any update is applied.';
+      'This character needs an update. A local backup is saved first, and sharing is optional. Cancelling sharing still lets the update continue.';
 
   @override
   String get characterUpdateRequiredAction => 'Update options';
@@ -3544,4 +3536,52 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'Beta: incomplete content and translations. Backgrounds, species and feats still have gaps.';
+
+  @override
+  String get exportFileError => 'Could not export the character file.';
+
+  @override
+  String get settingsLocalBackupsTitle => 'Local backups';
+
+  @override
+  String get settingsLocalBackupsSubtitle =>
+      'Your three latest local character backups.';
+
+  @override
+  String get settingsLocalBackupsEmpty => 'No local backups yet.';
+
+  @override
+  String get settingsLocalBackupsCreate => 'Save a copy now';
+
+  @override
+  String get settingsLocalBackupsSaved => 'Local backup saved.';
+
+  @override
+  String get settingsLocalBackupsError => 'Could not load local backups.';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return 'Characters: $count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => 'Restore this backup?';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      'Characters will be added as new copies. Your current characters will be kept.';
+
+  @override
+  String get settingsLocalBackupRestoreAction => 'Restore copies';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      'These copies stay on this device. Use Export backup to keep a copy outside the app.';
+
+  @override
+  String get settingsLocalBackupSaving => 'Saving local backup...';
+
+  @override
+  String get settingsLocalBackupSaveError =>
+      'Could not save a local backup. Please try again.';
 }

@@ -579,7 +579,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      '打开角色时，应用会请求更新所有角色并先打开备份。2014角色保留其规则和数据；2024角色会保存用于升级和重置的等级记录。';
+      '打开角色时可能需要进行一次更新。设置中会保留最近三份本地备份。分享是可选的，取消分享不会中断更新。';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3267,13 +3267,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count 个角色需要更新。应用更改前，应用会打开一个可保存或分享的备份。',
-      one: '1 个角色需要更新。应用更改前，应用会打开一个可保存或分享的备份。',
-    );
-    return '$_temp0';
+    return '需要更新的角色数量：$count。应用会先保存本地备份。分享是可选的，取消分享不会中断更新。';
   }
 
   @override
@@ -3281,7 +3275,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      '打开此角色前需要更新。你可以先备份角色，或立即更新所有角色。应用更新前会打开备份界面。';
+      '此角色需要更新。应用会先保存本地备份，分享是可选的。取消分享后，更新仍会继续。';
 
   @override
   String get characterUpdateRequiredAction => '更新选项';
@@ -3459,4 +3453,48 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'Beta 测试版：内容和翻译尚不完整，背景、物种和专长仍有缺漏。';
+
+  @override
+  String get exportFileError => '无法导出角色文件。';
+
+  @override
+  String get settingsLocalBackupsTitle => '本地备份';
+
+  @override
+  String get settingsLocalBackupsSubtitle => '保留角色最近三份本地备份。';
+
+  @override
+  String get settingsLocalBackupsEmpty => '尚无本地备份。';
+
+  @override
+  String get settingsLocalBackupsCreate => '立即保存副本';
+
+  @override
+  String get settingsLocalBackupsSaved => '本地备份已保存。';
+
+  @override
+  String get settingsLocalBackupsError => '无法加载本地备份。';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return '角色数量：$count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => '恢复此备份？';
+
+  @override
+  String get settingsLocalBackupRestoreBody => '角色将作为新副本添加，现有角色会保留。';
+
+  @override
+  String get settingsLocalBackupRestoreAction => '恢复副本';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice => '这些副本保存在此设备上。如需保存在应用之外，请导出备份。';
+
+  @override
+  String get settingsLocalBackupSaving => '正在保存本地备份...';
+
+  @override
+  String get settingsLocalBackupSaveError => '无法保存本地备份，请重试。';
 }

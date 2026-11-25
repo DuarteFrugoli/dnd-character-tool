@@ -603,7 +603,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Aprendo un personaggio, l\'app chiede di aggiornarli tutti e apre prima un backup. I personaggi 2014 mantengono regole e dati; i personaggi 2024 salvano la cronologia dei livelli usata per salire e reimpostare i livelli.';
+      'Aprendo un personaggio potrebbe servire un aggiornamento una tantum. L’app conserva i tre backup locali più recenti nelle impostazioni. La condivisione è facoltativa; annullarla non interrompe l’aggiornamento.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3413,15 +3413,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other:
-          '$count personaggi richiedono aggiornamenti. Il backup verrà aperto per salvarlo o condividerlo prima di applicare le modifiche.',
-      one:
-          '1 personaggio richiede un aggiornamento. Il backup verrà aperto per salvarlo o condividerlo prima di applicare le modifiche.',
-    );
-    return '$_temp0';
+    return 'Personaggi da aggiornare: $count. Prima verrà salvato un backup locale. Condividerlo è facoltativo; annullare la condivisione non interrompe l’aggiornamento.';
   }
 
   @override
@@ -3430,7 +3422,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Questo personaggio deve essere aggiornato prima di aprirlo. Puoi eseguire un backup oppure aggiornare tutti i personaggi. Prima dell\'aggiornamento si aprirà un backup.';
+      'Questo personaggio deve essere aggiornato. Prima viene salvato un backup locale; condividerlo è facoltativo. Annullare la condivisione consente di continuare l’aggiornamento.';
 
   @override
   String get characterUpdateRequiredAction => 'Opzioni di aggiornamento';
@@ -3617,4 +3609,54 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'Beta: contenuti e traduzioni incompleti. Mancano ancora background, specie e talenti.';
+
+  @override
+  String get exportFileError =>
+      'Impossibile esportare il file del personaggio.';
+
+  @override
+  String get settingsLocalBackupsTitle => 'Backup locali';
+
+  @override
+  String get settingsLocalBackupsSubtitle =>
+      'I tre backup locali più recenti dei tuoi personaggi.';
+
+  @override
+  String get settingsLocalBackupsEmpty => 'Nessun backup locale disponibile.';
+
+  @override
+  String get settingsLocalBackupsCreate => 'Salva una copia ora';
+
+  @override
+  String get settingsLocalBackupsSaved => 'Backup locale salvato.';
+
+  @override
+  String get settingsLocalBackupsError =>
+      'Impossibile caricare i backup locali.';
+
+  @override
+  String settingsLocalBackupCharacters(int count) {
+    return 'Personaggi: $count';
+  }
+
+  @override
+  String get settingsLocalBackupRestoreTitle => 'Ripristinare questo backup?';
+
+  @override
+  String get settingsLocalBackupRestoreBody =>
+      'I personaggi verranno aggiunti come nuove copie. I personaggi attuali saranno conservati.';
+
+  @override
+  String get settingsLocalBackupRestoreAction => 'Ripristina copie';
+
+  @override
+  String get settingsLocalBackupsDeviceNotice =>
+      'Queste copie restano su questo dispositivo. Esporta un backup per conservarne una fuori dall’app.';
+
+  @override
+  String get settingsLocalBackupSaving => 'Salvataggio del backup locale...';
+
+  @override
+  String get settingsLocalBackupSaveError =>
+      'Impossibile salvare un backup locale. Riprova.';
 }

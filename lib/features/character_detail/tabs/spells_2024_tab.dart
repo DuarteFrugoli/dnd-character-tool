@@ -418,7 +418,7 @@ class _Add2024SpellSheetState extends ConsumerState<_Add2024SpellSheet> {
     final current = ref.watch(characterDetailProvider(widget.characterId)).valueOrNull;
     if (current == null) return const SizedBox.shrink();
     final casting = widget.casting;
-    final className = casting.cls.name.toLowerCase();
+    final className = casting.spellListClass;
     final spellLimit = casting.spellbookSize ?? casting.preparedSpells;
     final counts = _classSpellCounts(current, casting.entry);
     final names = current.spells.map((spell) => spell.name.toLowerCase()).toSet();

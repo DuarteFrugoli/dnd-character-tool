@@ -15,8 +15,15 @@ class SpellRollRules {
   /// each cantrip chosen as its target (`agonizing_blast@<cantrip>`). A
   /// modifier of 0 or less adds nothing, since adding it is optional.
   static int damageBonus(Character character, String spellName) {
-    if (character.rulesetId != RulesetId.dnd2024) return 0;
     final modifier = character.abilityScores.charismaModifier;
+    if (character.rulesetId == RulesetId.dnd2014) {
+      final hasInvocation = character.featureChoices.any((choice) =>
+          choice.sourceClass == 'Warlock' &&
+          choice.featureName == invocationsFeature &&
+          choice.values.contains(agonizingBlast));
+      return hasInvocation && spellName.toLowerCase() == eldritchBlast.toLowerCase()
+          ? modifier : 0;
+    }
     if (modifier <= 0) return 0;
     final target = spellName.toLowerCase();
     for (final choice in character.featureChoices) {

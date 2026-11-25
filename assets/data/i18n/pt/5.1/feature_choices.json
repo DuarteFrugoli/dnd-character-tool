@@ -339,6 +339,278 @@
         "name": "Branco",
         "description": "Escolha a ancestralidade do dragão branco, associada ao dano de frio."
       }
+    },
+    "eldritch_invocations_2014": {
+      "agonizing_blast": {
+        "name": "Rajada Agonizante",
+        "description": "Adicione seu modificador de Carisma ao dano de cada acerto de Rajada Mística."
+      },
+      "armor_of_shadows": {
+        "name": "Armadura das Sombras",
+        "description": "Conjure Armadura Arcana em si mesmo à vontade, sem espaço de magia nem componentes materiais."
+      },
+      "ascendant_step": {
+        "name": "Passo Ascendente",
+        "description": "Conjure Levitar em si mesmo à vontade, sem espaço de magia nem componentes materiais."
+      },
+      "beast_speech": {
+        "name": "Fala Bestial",
+        "description": "Conjure Falar com Animais à vontade, sem espaço de magia."
+      },
+      "beguiling_influence": {
+        "name": "Influência Enganadora",
+        "description": "Ganhe proficiência em Enganação e Persuasão."
+      },
+      "bewitching_whispers": {
+        "name": "Sussurros Sedutores",
+        "description": "Conjure Compulsão usando um espaço de bruxo; uma vez por descanso longo."
+      },
+      "book_of_ancient_secrets": {
+        "name": "Livro de Segredos Antigos",
+        "description": "Exige Pacto do Tomo. Adicione ao livro dois rituais de 1º nível de quaisquer listas; conjure-os apenas como rituais, a menos que os aprenda de outra forma. Você também pode conjurar como rituais as magias de bruxo conhecidas que sejam rituais. Copie rituais encontrados de nível até metade do seu nível de bruxo, arredondada para cima: 2 horas e 50 po por nível da magia."
+      },
+      "chains_of_carceri": {
+        "name": "Correntes de Cárceri",
+        "description": "Exige Pacto da Corrente. Conjure Imobilizar Monstro à vontade, sem espaço de magia nem componentes materiais, apenas contra celestiais, corruptores ou elementais. Você precisa de um descanso longo antes de afetar a mesma criatura novamente."
+      },
+      "devil_s_sight": {
+        "name": "Visão Diabólica",
+        "description": "Enxergue normalmente em escuridão mágica e não mágica a até {{distance:120ft}}."
+      },
+      "dreadful_word": {
+        "name": "Palavra Terrível",
+        "description": "Conjure Confusão usando um espaço de bruxo; uma vez por descanso longo."
+      },
+      "eldritch_sight": {
+        "name": "Visão Mística",
+        "description": "Conjure Detectar Magia à vontade, sem espaço de magia nem componentes materiais."
+      },
+      "eldritch_spear": {
+        "name": "Lança Mística",
+        "description": "Rajada Mística passa a ter alcance de {{distance:300ft}}."
+      },
+      "eyes_of_the_rune_keeper": {
+        "name": "Olhos do Guardião das Runas",
+        "description": "Você pode ler qualquer escrita."
+      },
+      "fiendish_vigor": {
+        "name": "Vigor Infernal",
+        "description": "Conjure Vitalidade Falsa em si mesmo à vontade como magia de 1º nível, sem espaço de magia nem componentes materiais."
+      },
+      "gaze_of_two_minds": {
+        "name": "Olhar de Duas Mentes",
+        "description": "Use uma ação para tocar um humanoide voluntário e perceber através dos sentidos dele até o final do seu próximo turno. Use uma ação em turnos posteriores para prolongar a ligação. Você recebe os sentidos especiais dele, mas fica cego e surdo aos próprios arredores durante a ligação."
+      },
+      "lifedrinker": {
+        "name": "Bebedor de Vida",
+        "description": "Exige Pacto da Lâmina. Acertos com sua arma de pacto acrescentam dano necrótico igual ao seu modificador de Carisma, mínimo 1."
+      },
+      "mask_of_many_faces": {
+        "name": "Máscara das Muitas Faces",
+        "description": "Conjure Disfarçar-se à vontade, sem espaço de magia."
+      },
+      "master_of_myriad_forms": {
+        "name": "Mestre das Muitas Formas",
+        "description": "Conjure Alterar-se à vontade, sem espaço de magia."
+      },
+      "minions_of_chaos": {
+        "name": "Servos do Caos",
+        "description": "Conjure a magia Conjurar Elemental usando um espaço de bruxo; uma vez por descanso longo."
+      },
+      "mire_the_mind": {
+        "name": "Lentidão da Mente",
+        "description": "Conjure Lentidão usando um espaço de bruxo; uma vez por descanso longo."
+      },
+      "misty_visions": {
+        "name": "Visões Nebulosas",
+        "description": "Conjure Imagem Silenciosa à vontade, sem espaço de magia nem componentes materiais."
+      },
+      "one_with_shadows": {
+        "name": "Uno com as Sombras",
+        "description": "Na penumbra ou escuridão, use uma ação para ficar invisível até se mover ou realizar uma ação ou reação."
+      },
+      "otherworldly_leap": {
+        "name": "Salto Sobrenatural",
+        "description": "Conjure Salto em si mesmo à vontade, sem espaço de magia nem componentes materiais."
+      },
+      "repelling_blast": {
+        "name": "Rajada Repulsiva",
+        "description": "A cada acerto de Rajada Mística, você pode empurrar a criatura até {{distance:10ft}} diretamente para longe de você."
+      },
+      "sculptor_of_flesh": {
+        "name": "Escultor de Carne",
+        "description": "Conjure Metamorfose usando um espaço de bruxo; uma vez por descanso longo."
+      },
+      "sign_of_ill_omen": {
+        "name": "Sinal de Mau Agouro",
+        "description": "Conjure Rogar Maldição usando um espaço de bruxo; uma vez por descanso longo."
+      },
+      "thief_of_five_fates": {
+        "name": "Ladrão dos Cinco Destinos",
+        "description": "Conjure Perdição usando um espaço de bruxo; uma vez por descanso longo."
+      },
+      "thirsting_blade": {
+        "name": "Lâmina Sedenta",
+        "description": "Exige Pacto da Lâmina. Ao realizar a ação de Ataque, ataque duas vezes com sua arma de pacto em vez de uma."
+      },
+      "visions_of_distant_realms": {
+        "name": "Visões de Reinos Distantes",
+        "description": "Conjure Olho Arcano à vontade, sem espaço de magia."
+      },
+      "voice_of_the_chain_master": {
+        "name": "Voz do Mestre das Correntes",
+        "description": "Exige Pacto da Corrente. Comunique-se telepaticamente e perceba através do familiar no mesmo plano. Enquanto perceber através dele, você pode falar através dele com sua própria voz."
+      },
+      "whispers_of_the_grave": {
+        "name": "Sussurros do Túmulo",
+        "description": "Conjure Falar com os Mortos à vontade, sem espaço de magia."
+      },
+      "witch_sight": {
+        "name": "Visão de Bruxa",
+        "description": "A até {{distance:30ft}} e dentro da linha de visão, enxergue as formas verdadeiras de metamorfos e criaturas ocultas por ilusão ou transmutação."
+      }
+    },
+    "elemental_disciplines_2014": {
+      "breath_of_winter": {
+        "name": "Sopro do Inverno",
+        "description": "6 ki: Cone de Frio."
+      },
+      "clench_of_the_north_wind": {
+        "name": "Garra do Vento Norte",
+        "description": "3 ki: Imobilizar Pessoa."
+      },
+      "eternal_mountain_defense": {
+        "name": "Defesa da Montanha Eterna",
+        "description": "5 ki: Pele de Pedra, apenas em você."
+      },
+      "fangs_of_the_fire_snake": {
+        "name": "Presas da Serpente de Fogo",
+        "description": "Ação de Ataque: 1 ki aumenta em {{distance:10ft}} o alcance dos golpes desarmados neste turno; acertos causam dano de fogo. Cada acerto pode gastar mais 1 ki para causar +1d10 de fogo."
+      },
+      "fist_of_four_thunders": {
+        "name": "Punho dos Quatro Trovões",
+        "description": "2 ki: Onda Trovejante."
+      },
+      "fist_of_unbroken_air": {
+        "name": "Punho do Ar Inabalável",
+        "description": "Ação, 2 ki, alvo a até {{distance:30ft}}: teste de resistência de Força; se falhar, sofre 3d10 de concussão, é empurrado até {{distance:20ft}} e fica caído. Um sucesso reduz o dano à metade e impede o empurrão e a queda. Cada ki adicional acrescenta 1d10."
+      },
+      "flames_of_the_phoenix": {
+        "name": "Chamas da Fênix",
+        "description": "4 ki: Bola de Fogo."
+      },
+      "gong_of_the_summit": {
+        "name": "Gongo do Cume",
+        "description": "3 ki: Despedaçar."
+      },
+      "mist_stance": {
+        "name": "Postura da Névoa",
+        "description": "4 ki: Forma Gasosa, apenas em você."
+      },
+      "ride_the_wind": {
+        "name": "Cavalgar o Vento",
+        "description": "4 ki: Voo, apenas em você."
+      },
+      "river_of_hungry_flame": {
+        "name": "Rio de Chamas Famintas",
+        "description": "5 ki: Muralha de Fogo."
+      },
+      "rush_of_the_gale_spirits": {
+        "name": "Ímpeto dos Espíritos do Vendaval",
+        "description": "2 ki: Lufada de Vento."
+      },
+      "shape_the_flowing_river": {
+        "name": "Moldar o Rio Fluente",
+        "description": "Ação, 1 ki: molde água ou gelo a até {{distance:120ft}}, em uma área de até {{distance:30ft}} de lado. Congele, derreta ou remodele gelo; mudanças de altura não podem exceder metade do tamanho da área. Não pode prender nem ferir criaturas."
+      },
+      "sweeping_cinder_strike": {
+        "name": "Golpe de Cinzas",
+        "description": "2 ki: Mãos Flamejantes."
+      },
+      "water_whip": {
+        "name": "Chicote de Água",
+        "description": "Ação, 2 ki, alvo visível a até {{distance:30ft}}: teste de resistência de Destreza; se falhar, sofre 3d10 de concussão e fica caído ou é puxado até {{distance:25ft}}. Um sucesso reduz o dano à metade e impede o movimento e a queda. Cada ki adicional acrescenta 1d10."
+      },
+      "wave_of_rolling_earth": {
+        "name": "Onda da Terra Ondulante",
+        "description": "6 ki: Muralha de Pedra."
+      }
+    },
+    "circle_lands_2014": {
+      "arctic": {
+        "name": "Ártico",
+        "description": "Magias de círculo sempre preparadas nos níveis de druida 3, 5, 7 e 9; não contam para seu limite de preparação."
+      },
+      "coast": {
+        "name": "Litoral",
+        "description": "Magias de círculo sempre preparadas nos níveis de druida 3, 5, 7 e 9; não contam para seu limite de preparação."
+      },
+      "desert": {
+        "name": "Deserto",
+        "description": "Magias de círculo sempre preparadas nos níveis de druida 3, 5, 7 e 9; não contam para seu limite de preparação."
+      },
+      "forest": {
+        "name": "Floresta",
+        "description": "Magias de círculo sempre preparadas nos níveis de druida 3, 5, 7 e 9; não contam para seu limite de preparação."
+      },
+      "grassland": {
+        "name": "Pradaria",
+        "description": "Magias de círculo sempre preparadas nos níveis de druida 3, 5, 7 e 9; não contam para seu limite de preparação."
+      },
+      "mountain": {
+        "name": "Montanha",
+        "description": "Magias de círculo sempre preparadas nos níveis de druida 3, 5, 7 e 9; não contam para seu limite de preparação."
+      },
+      "swamp": {
+        "name": "Pântano",
+        "description": "Magias de círculo sempre preparadas nos níveis de druida 3, 5, 7 e 9; não contam para seu limite de preparação."
+      },
+      "underdark": {
+        "name": "Subterrâneo",
+        "description": "Magias de círculo sempre preparadas nos níveis de druida 3, 5, 7 e 9; não contam para seu limite de preparação."
+      }
+    },
+    "totem_spirits_2014": {
+      "bear": {
+        "name": "Urso",
+        "description": "Enquanto estiver em fúria, resista a todo dano exceto psíquico."
+      },
+      "eagle": {
+        "name": "Águia",
+        "description": "Enquanto estiver em fúria sem armadura pesada, ataques de oportunidade contra você têm desvantagem e você pode Disparar como ação bônus."
+      },
+      "wolf": {
+        "name": "Lobo",
+        "description": "Enquanto estiver em fúria, aliados têm vantagem nos ataques corpo a corpo contra criaturas hostis a até {{distance:5ft}} de você."
+      }
+    },
+    "totem_aspects_2014": {
+      "bear": {
+        "name": "Urso",
+        "description": "Dobre sua capacidade de carga; vantagem nos testes de Força para empurrar, puxar, erguer ou quebrar objetos."
+      },
+      "eagle": {
+        "name": "Águia",
+        "description": "Enxergue até {{distance:1mi}} sem dificuldade; distinga detalhes como se estivessem a {{distance:100ft}}. A penumbra não prejudica mais seus testes visuais de Percepção."
+      },
+      "wolf": {
+        "name": "Lobo",
+        "description": "Rastreie em ritmo rápido de viagem e mova-se furtivamente em ritmo normal de viagem."
+      }
+    },
+    "totem_attunements_2014": {
+      "bear": {
+        "name": "Urso",
+        "description": "Enquanto estiver em fúria, criaturas hostis a até {{distance:5ft}} têm desvantagem para atacar outros. Criaturas imunes a medo ou incapazes de ver ou ouvir você não são afetadas."
+      },
+      "eagle": {
+        "name": "Águia",
+        "description": "Enquanto estiver em fúria, voe com seu deslocamento de caminhada; você cai se estiver no ar ao fim do turno, a menos que outro efeito o sustente."
+      },
+      "wolf": {
+        "name": "Lobo",
+        "description": "Enquanto estiver em fúria, após acertar uma criatura Grande ou menor com um ataque corpo a corpo com arma, use uma ação bônus para derrubá-la."
+      }
     }
   },
   "classFeatures": {

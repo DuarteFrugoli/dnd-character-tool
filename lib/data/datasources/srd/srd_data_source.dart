@@ -8,6 +8,8 @@ import '../../rulesets/srd_content_pack.dart';
 import 'srd_models.dart';
 import 'srd_monster.dart';
 import 'srd_pack_manifest.dart';
+import 'supplemental_2014_catalog.dart';
+import 'supplemental_2024_catalog.dart';
 
 /// Lê e parseia os assets SRD bundados no app.
 /// Os dados são carregados sob demanda e cacheados em memória após a primeira leitura.
@@ -115,18 +117,33 @@ class SrdDataSource {
 
   Future<List<SrdBackground>> getBackgrounds() async {
     _requireLegacyOriginSchema();
-    _backgrounds ??= await _loadList(
-      _asset('backgrounds'),
-      SrdBackground.fromJson,
-    );
+    if (_backgrounds == null) {
+      final entries = jsonDecode(await rootBundle.loadString(_asset('backgrounds'))) as List;
+      final extra = jsonDecode(await rootBundle.loadString('assets/data/2014/phb_backgrounds.json')) as Map<String, dynamic>;
+      entries.addAll(extra['variants'] as List);
+      final personalities = extra['personalities'] as Map<String, dynamic>;
+      _backgrounds = [
+        for (final entry in entries.cast<Map<String, dynamic>>())
+          SrdBackground.fromJson({...entry, 'personalitySuggestions': personalities[entry['name']]}),
+      ];
+    }
     return _backgrounds!;
   }
 
   Future<List<SrdSpell>> getSpells() async {
-    _spells ??= await _loadList(
-      _asset('spells'),
-      SrdSpell.fromJson,
-    );
+    if (_spells == null) {
+      final spells = await _loadList(_asset('spells'), SrdSpell.fromJson);
+      if (pack.id == ContentPackId.srd51) {
+        spells.addAll(
+          (await Supplemental2014Catalog.spells()).map(SrdSpell.fromJson),
+        );
+      }
+      if (pack.id == ContentPackId.srd521) {
+        final extra = (await Supplemental2024Catalog.load())['spells'] as List;
+        spells.addAll(extra.map((spell) => SrdSpell.fromJson(spell as Map<String, dynamic>)));
+      }
+      _spells = spells;
+    }
     return _spells!;
   }
 
@@ -230,6 +247,12 @@ class SrdDataSource {
       _asset('feature_usages'),
     );
     final json = jsonDecode(raw) as Map<String, dynamic>;
+    if (pack.id == ContentPackId.srd521) {
+      Supplemental2024Catalog.merge(
+        json,
+        (await Supplemental2024Catalog.load())['featureUsages'] as Map<String, dynamic>,
+      );
+    }
     final catalog = FeatureUsageCatalog.fromJson(json);
     _featureUsageCatalog = catalog;
     return catalog;
@@ -239,17 +262,27 @@ class SrdDataSource {
     final raw = await rootBundle.loadString(
       _asset('feature_choices'),
     );
-    final catalog = SrdFeatureChoiceCatalog.fromJson(
-      jsonDecode(raw) as Map<String, dynamic>,
-    );
+    final json = jsonDecode(raw) as Map<String, dynamic>;
+    if (pack.id == ContentPackId.srd51) {
+      Supplemental2014Catalog.merge(
+        json,
+        (await Supplemental2014Catalog.options())['featureChoices'] as Map<String, dynamic>,
+      );
+    }
+    if (pack.id == ContentPackId.srd521) {
+      Supplemental2024Catalog.merge(
+        json,
+        (await Supplemental2024Catalog.load())['featureChoices'] as Map<String, dynamic>,
+      );
+    }
+    final catalog = SrdFeatureChoiceCatalog.fromJson(json);
     _featureChoiceCatalog = catalog;
     return catalog;
   }
 
   Future<Map<String, SrdItemData>> getItems() async {
     if (_items == null) {
-      final raw = await rootBundle.loadString(_asset('equipment'));
-      final json = jsonDecode(raw) as Map<String, dynamic>;
+      final json = await _equipmentJson();
       final result = <String, SrdItemData>{};
 
       // ── Weapons ──────────────────────────────────────────────────────
@@ -456,6 +489,19 @@ class SrdDataSource {
         _asset('subclass_features'),
       );
       final list = jsonDecode(raw) as List<dynamic>;
+      if (pack.id == ContentPackId.srd51) {
+        await Supplemental2014Catalog.completeSubclassFeatures(list);
+      }
+      if (pack.id == ContentPackId.srd521) {
+        list.addAll([
+          for (final entry in await Supplemental2024Catalog.subclasses())
+            {
+              'class': entry['class'],
+              'subclass': entry['name'],
+              'features': entry['features'],
+            },
+        ]);
+      }
       _subclassFeatures = {};
       for (final entry in list) {
         final map = entry as Map<String, dynamic>;
@@ -491,8 +537,7 @@ class SrdDataSource {
   }
 
   Future<void> _doLoadEquipment() async {
-    final raw = await rootBundle.loadString(_asset('equipment'));
-    final json = jsonDecode(raw) as Map<String, dynamic>;
+    final json = await _equipmentJson();
     _weapons = (json['weapons'] as List<dynamic>)
         .map((e) => SrdWeapon.fromJson(e as Map<String, dynamic>))
         .toList();
@@ -506,6 +551,18 @@ class SrdDataSource {
       for (final entry in (json['weaponMasteries'] as Map? ?? const {}).entries)
         if (entry.value is String) entry.key as String: entry.value as String,
     };
+  }
+
+  Future<Map<String, dynamic>> _equipmentJson() async {
+    final json = jsonDecode(await rootBundle.loadString(_asset('equipment')))
+        as Map<String, dynamic>;
+    if (pack.id == ContentPackId.srd51) {
+      final extra = jsonDecode(await rootBundle.loadString(
+        'assets/data/2014/phb_equipment.json',
+      )) as Map<String, dynamic>;
+      (json['gear'] as List).addAll(extra['gear'] as List);
+    }
+    return json;
   }
 
   Future<List<T>> _loadList<T>(

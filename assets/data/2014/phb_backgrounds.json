@@ -1,0 +1,770 @@
+{
+  "source": "Player's Handbook (2014)",
+  "contentType": "Original English summaries of background variants; personality prompts are original suggestions, not the published PHB tables.",
+  "variants": [
+    {
+      "name": "Spy",
+      "skillProficiencies": [
+        "deception",
+        "stealth"
+      ],
+      "toolProficiencies": [
+        "One type of gaming set",
+        "Thieves' tools"
+      ],
+      "languages": 0,
+      "startingEquipment": [
+        "Crowbar",
+        "Dark common clothes with hood",
+        "15 gp"
+      ],
+      "feature": {
+        "name": "Criminal Contact",
+        "description": "You use a network of agents, messengers and informants to exchange intelligence. Your background otherwise uses the Criminal proficiencies and equipment."
+      },
+      "variants": []
+    },
+    {
+      "name": "Gladiator",
+      "skillProficiencies": [
+        "acrobatics",
+        "performance"
+      ],
+      "toolProficiencies": [
+        "Disguise kit",
+        "One type of musical instrument"
+      ],
+      "languages": 0,
+      "startingEquipment": [
+        "Trident",
+        "The favor of an admirer",
+        "Costume",
+        "15 gp"
+      ],
+      "feature": {
+        "name": "By Popular Demand",
+        "description": "Find performance work and modest or comfortable food and lodging in arenas, fighting pits or other venues for combat entertainment. Perform nightly to keep the benefit. This background grants no additional weapon proficiency."
+      },
+      "variants": []
+    },
+    {
+      "name": "Guild Merchant",
+      "skillProficiencies": [
+        "insight",
+        "persuasion"
+      ],
+      "toolProficiencies": [
+        "Navigator's tools"
+      ],
+      "languages": 1,
+      "startingEquipment": [
+        "Mule",
+        "Cart",
+        "Letter of introduction",
+        "Traveler's clothes",
+        "15 gp"
+      ],
+      "feature": {
+        "name": "Guild Membership",
+        "description": "Your trading guild offers professional contacts, lodging, support and political influence where it has a presence. Legal support requires a credible case. Pay 5 gp monthly dues; overdue dues must be repaid to restore benefits. This variant uses navigator's tools instead of artisan's tools; a custom background can choose the alternative extra language."
+      },
+      "variants": []
+    },
+    {
+      "name": "Knight",
+      "skillProficiencies": [
+        "history",
+        "persuasion"
+      ],
+      "toolProficiencies": [
+        "One type of gaming set"
+      ],
+      "languages": 1,
+      "startingEquipment": [
+        "Fine clothes",
+        "Signet ring",
+        "Scroll of pedigree",
+        "25 gp"
+      ],
+      "feature": {
+        "name": "Retainers",
+        "description": "Three loyal commoner retainers assist with routine work. One may be a noble squire. They do not fight, accompany you into obvious danger or risk abuse; mistreatment can make them leave. They can tend your mount, carry messages and maintain equipment. With your DM, identify your knightly order and the noble who has your service."
+      },
+      "variants": []
+    },
+    {
+      "name": "Pirate",
+      "skillProficiencies": [
+        "athletics",
+        "perception"
+      ],
+      "toolProficiencies": [
+        "Navigator's tools",
+        "Vehicles (water)"
+      ],
+      "languages": 0,
+      "startingEquipment": [
+        "Belaying pin (club)",
+        "50 feet of silk rope",
+        "Lucky charm",
+        "Common clothes",
+        "10 gp"
+      ],
+      "feature": {
+        "name": "Bad Reputation",
+        "description": "Your feared reputation lets you get away with minor offenses, such as refusing an inn bill or breaking a shop door, because witnesses often hesitate to report you. In a civilized settlement, people who know your reputation may be too afraid to confront you. This is not immunity from consequences or serious crimes."
+      },
+      "variants": []
+    }
+  ],
+  "personalities": {
+    "Acolyte": {
+      "traits": [
+        "I quote a prayer for every occasion.",
+        "I listen patiently to confessions.",
+        "I observe unfamiliar religious customs.",
+        "I offer food before offering advice.",
+        "I treat sacred objects with care.",
+        "I look for meaning in small coincidences.",
+        "I answer insults with formal courtesy.",
+        "I ask travelers about their gods."
+      ],
+      "ideals": [
+        "Compassion: my faith should help vulnerable people.",
+        "Order: I honor fair agreements connected to my faith.",
+        "Freedom: no authority should dictate my faith.",
+        "Ambition: I will become influential through my faith.",
+        "Balance: I seek a sustainable place for my faith.",
+        "Integrity: I will not betray my faith for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my temple.",
+        "I protect a reminder of a sacred promise.",
+        "I want to return honorably to my temple.",
+        "I owe my freedom to someone who understands a sacred promise.",
+        "I will protect the people threatened by a sacred promise.",
+        "I must finish work begun at my temple."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my temple.",
+        "I become reckless when someone mocks my faith.",
+        "I trust people who remind me of my temple too readily.",
+        "I postpone admitting how much a sacred promise costs me.",
+        "I excuse my own mistakes in the name of my faith.",
+        "I refuse help when dealing with a sacred promise."
+      ]
+    },
+    "Charlatan": {
+      "traits": [
+        "I introduce myself under a new name.",
+        "I collect rumors before making an offer.",
+        "I flatter strangers with precise compliments.",
+        "I practice signatures while waiting.",
+        "I always propose a convenient wager.",
+        "I notice who controls the room.",
+        "I dress just above my means.",
+        "I tell elaborate stories about ordinary events."
+      ],
+      "ideals": [
+        "Compassion: my independence should help vulnerable people.",
+        "Order: I honor fair agreements connected to my independence.",
+        "Freedom: no authority should dictate my independence.",
+        "Ambition: I will become influential through my independence.",
+        "Balance: I seek a sustainable place for my independence.",
+        "Integrity: I will not betray my independence for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my former partner.",
+        "I protect a reminder of a false identity.",
+        "I want to return honorably to my former partner.",
+        "I owe my freedom to someone who understands a false identity.",
+        "I will protect the people threatened by a false identity.",
+        "I must finish work begun at my former partner."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my former partner.",
+        "I become reckless when someone mocks my independence.",
+        "I trust people who remind me of my former partner too readily.",
+        "I postpone admitting how much a false identity costs me.",
+        "I excuse my own mistakes in the name of my independence.",
+        "I refuse help when dealing with a false identity."
+      ]
+    },
+    "Criminal": {
+      "traits": [
+        "I watch exits before taking a seat.",
+        "I keep my voice low in crowds.",
+        "I remember every face that owes me.",
+        "I hide my tools in ordinary objects.",
+        "I distrust offers made without conditions.",
+        "I share meals with people nobody notices.",
+        "I use slang from my old neighborhood.",
+        "I count guards without appearing to look."
+      ],
+      "ideals": [
+        "Compassion: loyalty to my crew should help vulnerable people.",
+        "Order: I honor fair agreements connected to loyalty to my crew.",
+        "Freedom: no authority should dictate loyalty to my crew.",
+        "Ambition: I will become influential through loyalty to my crew.",
+        "Balance: I seek a sustainable place for loyalty to my crew.",
+        "Integrity: I will not betray loyalty to my crew for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from an old accomplice.",
+        "I protect a reminder of an unpaid debt.",
+        "I want to return honorably to an old accomplice.",
+        "I owe my freedom to someone who understands an unpaid debt.",
+        "I will protect the people threatened by an unpaid debt.",
+        "I must finish work begun at an old accomplice."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving an old accomplice.",
+        "I become reckless when someone mocks loyalty to my crew.",
+        "I trust people who remind me of an old accomplice too readily.",
+        "I postpone admitting how much an unpaid debt costs me.",
+        "I excuse my own mistakes in the name of loyalty to my crew.",
+        "I refuse help when dealing with an unpaid debt."
+      ]
+    },
+    "Entertainer": {
+      "traits": [
+        "I turn introductions into little performances.",
+        "I remember audiences better than dates.",
+        "I keep practicing during quiet moments.",
+        "I imitate voices when telling stories.",
+        "I praise another performer generously.",
+        "I struggle to let a silence remain silent.",
+        "I notice rhythm in everyday work.",
+        "I save small gifts from admirers."
+      ],
+      "ideals": [
+        "Compassion: my art should help vulnerable people.",
+        "Order: I honor fair agreements connected to my art.",
+        "Freedom: no authority should dictate my art.",
+        "Ambition: I will become influential through my art.",
+        "Balance: I seek a sustainable place for my art.",
+        "Integrity: I will not betray my art for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my first patron.",
+        "I protect a reminder of a lost performance.",
+        "I want to return honorably to my first patron.",
+        "I owe my freedom to someone who understands a lost performance.",
+        "I will protect the people threatened by a lost performance.",
+        "I must finish work begun at my first patron."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my first patron.",
+        "I become reckless when someone mocks my art.",
+        "I trust people who remind me of my first patron too readily.",
+        "I postpone admitting how much a lost performance costs me.",
+        "I excuse my own mistakes in the name of my art.",
+        "I refuse help when dealing with a lost performance."
+      ]
+    },
+    "Folk Hero": {
+      "traits": [
+        "I judge leaders by how they treat workers.",
+        "I lend my hands before discussing payment.",
+        "I use practical examples to explain problems.",
+        "I remember the names of ordinary helpers.",
+        "I share the credit for my successes.",
+        "I repair broken things when nervous.",
+        "I am uncomfortable with elaborate ceremony.",
+        "I tell stories about people back home."
+      ],
+      "ideals": [
+        "Compassion: the common people should help vulnerable people.",
+        "Order: I honor fair agreements connected to the common people.",
+        "Freedom: no authority should dictate the common people.",
+        "Ambition: I will become influential through the common people.",
+        "Balance: I seek a sustainable place for the common people.",
+        "Integrity: I will not betray the common people for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my home village.",
+        "I protect a reminder of a promise to protect others.",
+        "I want to return honorably to my home village.",
+        "I owe my freedom to someone who understands a promise to protect others.",
+        "I will protect the people threatened by a promise to protect others.",
+        "I must finish work begun at my home village."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my home village.",
+        "I become reckless when someone mocks the common people.",
+        "I trust people who remind me of my home village too readily.",
+        "I postpone admitting how much a promise to protect others costs me.",
+        "I excuse my own mistakes in the name of the common people.",
+        "I refuse help when dealing with a promise to protect others."
+      ]
+    },
+    "Guild Artisan": {
+      "traits": [
+        "I inspect the joinery in unfamiliar rooms.",
+        "I explain the labor behind fine objects.",
+        "I carry a small unfinished project.",
+        "I respect anyone who knows a trade.",
+        "I bargain with careful patience.",
+        "I notice counterfeit marks immediately.",
+        "I keep meticulous work records.",
+        "I cannot leave a crooked fitting alone."
+      ],
+      "ideals": [
+        "Compassion: honest craftsmanship should help vulnerable people.",
+        "Order: I honor fair agreements connected to honest craftsmanship.",
+        "Freedom: no authority should dictate honest craftsmanship.",
+        "Ambition: I will become influential through honest craftsmanship.",
+        "Balance: I seek a sustainable place for honest craftsmanship.",
+        "Integrity: I will not betray honest craftsmanship for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my old workshop.",
+        "I protect a reminder of a masterwork.",
+        "I want to return honorably to my old workshop.",
+        "I owe my freedom to someone who understands a masterwork.",
+        "I will protect the people threatened by a masterwork.",
+        "I must finish work begun at my old workshop."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my old workshop.",
+        "I become reckless when someone mocks honest craftsmanship.",
+        "I trust people who remind me of my old workshop too readily.",
+        "I postpone admitting how much a masterwork costs me.",
+        "I excuse my own mistakes in the name of honest craftsmanship.",
+        "I refuse help when dealing with a masterwork."
+      ]
+    },
+    "Hermit": {
+      "traits": [
+        "I pause before answering simple questions.",
+        "I record dreams in a small notebook.",
+        "I am fascinated by ordinary social habits.",
+        "I prefer dawn to crowded evenings.",
+        "I explain events through natural cycles.",
+        "I forget how long a conversation has lasted.",
+        "I keep a familiar daily ritual.",
+        "I listen more closely than I speak."
+      ],
+      "ideals": [
+        "Compassion: inner understanding should help vulnerable people.",
+        "Order: I honor fair agreements connected to inner understanding.",
+        "Freedom: no authority should dictate inner understanding.",
+        "Ambition: I will become influential through inner understanding.",
+        "Balance: I seek a sustainable place for inner understanding.",
+        "Integrity: I will not betray inner understanding for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my former refuge.",
+        "I protect a reminder of a dangerous discovery.",
+        "I want to return honorably to my former refuge.",
+        "I owe my freedom to someone who understands a dangerous discovery.",
+        "I will protect the people threatened by a dangerous discovery.",
+        "I must finish work begun at my former refuge."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my former refuge.",
+        "I become reckless when someone mocks inner understanding.",
+        "I trust people who remind me of my former refuge too readily.",
+        "I postpone admitting how much a dangerous discovery costs me.",
+        "I excuse my own mistakes in the name of inner understanding.",
+        "I refuse help when dealing with a dangerous discovery."
+      ]
+    },
+    "Noble": {
+      "traits": [
+        "I greet people with practiced formality.",
+        "I remember family names and connections.",
+        "I take care of my appearance even on the road.",
+        "I expect agreements to be honored publicly.",
+        "I compliment good service by name.",
+        "I disguise uncertainty with perfect manners.",
+        "I am curious about lives beyond my estate.",
+        "I notice symbols of rank immediately."
+      ],
+      "ideals": [
+        "Compassion: my responsibilities should help vulnerable people.",
+        "Order: I honor fair agreements connected to my responsibilities.",
+        "Freedom: no authority should dictate my responsibilities.",
+        "Ambition: I will become influential through my responsibilities.",
+        "Balance: I seek a sustainable place for my responsibilities.",
+        "Integrity: I will not betray my responsibilities for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my household.",
+        "I protect a reminder of a family obligation.",
+        "I want to return honorably to my household.",
+        "I owe my freedom to someone who understands a family obligation.",
+        "I will protect the people threatened by a family obligation.",
+        "I must finish work begun at my household."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my household.",
+        "I become reckless when someone mocks my responsibilities.",
+        "I trust people who remind me of my household too readily.",
+        "I postpone admitting how much a family obligation costs me.",
+        "I excuse my own mistakes in the name of my responsibilities.",
+        "I refuse help when dealing with a family obligation."
+      ]
+    },
+    "Outlander": {
+      "traits": [
+        "I check the weather before making plans.",
+        "I describe distances by a day of walking.",
+        "I collect useful plants along the road.",
+        "I sleep lightly near unfamiliar noises.",
+        "I offer strangers directions before conversation.",
+        "I notice tracks others walk past.",
+        "I feel uneasy without a view of the sky.",
+        "I preserve the stories of my people."
+      ],
+      "ideals": [
+        "Compassion: the natural world should help vulnerable people.",
+        "Order: I honor fair agreements connected to the natural world.",
+        "Freedom: no authority should dictate the natural world.",
+        "Ambition: I will become influential through the natural world.",
+        "Balance: I seek a sustainable place for the natural world.",
+        "Integrity: I will not betray the natural world for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my traveling kin.",
+        "I protect a reminder of a duty to my homeland.",
+        "I want to return honorably to my traveling kin.",
+        "I owe my freedom to someone who understands a duty to my homeland.",
+        "I will protect the people threatened by a duty to my homeland.",
+        "I must finish work begun at my traveling kin."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my traveling kin.",
+        "I become reckless when someone mocks the natural world.",
+        "I trust people who remind me of my traveling kin too readily.",
+        "I postpone admitting how much a duty to my homeland costs me.",
+        "I excuse my own mistakes in the name of the natural world.",
+        "I refuse help when dealing with a duty to my homeland."
+      ]
+    },
+    "Sage": {
+      "traits": [
+        "I ask for definitions before arguing.",
+        "I take notes during introductions.",
+        "I become animated by obscure subjects.",
+        "I admit when a question defeats me.",
+        "I compare new events to old accounts.",
+        "I carry too many reading materials.",
+        "I value a useful question over a clever reply.",
+        "I check an interesting claim twice."
+      ],
+      "ideals": [
+        "Compassion: the pursuit of knowledge should help vulnerable people.",
+        "Order: I honor fair agreements connected to the pursuit of knowledge.",
+        "Freedom: no authority should dictate the pursuit of knowledge.",
+        "Ambition: I will become influential through the pursuit of knowledge.",
+        "Balance: I seek a sustainable place for the pursuit of knowledge.",
+        "Integrity: I will not betray the pursuit of knowledge for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my mentor.",
+        "I protect a reminder of an unanswered question.",
+        "I want to return honorably to my mentor.",
+        "I owe my freedom to someone who understands an unanswered question.",
+        "I will protect the people threatened by an unanswered question.",
+        "I must finish work begun at my mentor."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my mentor.",
+        "I become reckless when someone mocks the pursuit of knowledge.",
+        "I trust people who remind me of my mentor too readily.",
+        "I postpone admitting how much an unanswered question costs me.",
+        "I excuse my own mistakes in the name of the pursuit of knowledge.",
+        "I refuse help when dealing with an unanswered question."
+      ]
+    },
+    "Sailor": {
+      "traits": [
+        "I judge danger by the movement of the air.",
+        "I enjoy a story told over shared food.",
+        "I check knots without thinking.",
+        "I refer to directions as though aboard ship.",
+        "I keep a small good-luck charm.",
+        "I sing while doing repetitive work.",
+        "I make friends quickly in unfamiliar ports.",
+        "I feel responsible for those traveling with me."
+      ],
+      "ideals": [
+        "Compassion: my freedom should help vulnerable people.",
+        "Order: I honor fair agreements connected to my freedom.",
+        "Freedom: no authority should dictate my freedom.",
+        "Ambition: I will become influential through my freedom.",
+        "Balance: I seek a sustainable place for my freedom.",
+        "Integrity: I will not betray my freedom for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my former crew.",
+        "I protect a reminder of a promise made at sea.",
+        "I want to return honorably to my former crew.",
+        "I owe my freedom to someone who understands a promise made at sea.",
+        "I will protect the people threatened by a promise made at sea.",
+        "I must finish work begun at my former crew."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my former crew.",
+        "I become reckless when someone mocks my freedom.",
+        "I trust people who remind me of my former crew too readily.",
+        "I postpone admitting how much a promise made at sea costs me.",
+        "I excuse my own mistakes in the name of my freedom.",
+        "I refuse help when dealing with a promise made at sea."
+      ]
+    },
+    "Soldier": {
+      "traits": [
+        "I keep my equipment ready before resting.",
+        "I speak directly when a decision is needed.",
+        "I notice a good defensive position.",
+        "I respect competence more than rank.",
+        "I maintain a routine during confusion.",
+        "I remember the names of fallen comrades.",
+        "I divide difficult work into clear tasks.",
+        "I check that nobody has been left behind."
+      ],
+      "ideals": [
+        "Compassion: my duty should help vulnerable people.",
+        "Order: I honor fair agreements connected to my duty.",
+        "Freedom: no authority should dictate my duty.",
+        "Ambition: I will become influential through my duty.",
+        "Balance: I seek a sustainable place for my duty.",
+        "Integrity: I will not betray my duty for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my former unit.",
+        "I protect a reminder of an unfinished mission.",
+        "I want to return honorably to my former unit.",
+        "I owe my freedom to someone who understands an unfinished mission.",
+        "I will protect the people threatened by an unfinished mission.",
+        "I must finish work begun at my former unit."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my former unit.",
+        "I become reckless when someone mocks my duty.",
+        "I trust people who remind me of my former unit too readily.",
+        "I postpone admitting how much an unfinished mission costs me.",
+        "I excuse my own mistakes in the name of my duty.",
+        "I refuse help when dealing with an unfinished mission."
+      ]
+    },
+    "Urchin": {
+      "traits": [
+        "I save food for later.",
+        "I know where a crowd is about to form.",
+        "I distrust doors locked from the outside.",
+        "I share small kindnesses quietly.",
+        "I remember hidden paths through busy places.",
+        "I keep my belongings close while sleeping.",
+        "I ask street workers for reliable news.",
+        "I value a safe corner more than fine furniture."
+      ],
+      "ideals": [
+        "Compassion: my survival should help vulnerable people.",
+        "Order: I honor fair agreements connected to my survival.",
+        "Freedom: no authority should dictate my survival.",
+        "Ambition: I will become influential through my survival.",
+        "Balance: I seek a sustainable place for my survival.",
+        "Integrity: I will not betray my survival for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from the people of my old street.",
+        "I protect a reminder of a debt to a childhood friend.",
+        "I want to return honorably to the people of my old street.",
+        "I owe my freedom to someone who understands a debt to a childhood friend.",
+        "I will protect the people threatened by a debt to a childhood friend.",
+        "I must finish work begun at the people of my old street."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving the people of my old street.",
+        "I become reckless when someone mocks my survival.",
+        "I trust people who remind me of the people of my old street too readily.",
+        "I postpone admitting how much a debt to a childhood friend costs me.",
+        "I excuse my own mistakes in the name of my survival.",
+        "I refuse help when dealing with a debt to a childhood friend."
+      ]
+    },
+    "Spy": {
+      "traits": [
+        "I watch exits before taking a seat.",
+        "I keep my voice low in crowds.",
+        "I remember every face that owes me.",
+        "I hide my tools in ordinary objects.",
+        "I distrust offers made without conditions.",
+        "I share meals with people nobody notices.",
+        "I use slang from my old neighborhood.",
+        "I count guards without appearing to look."
+      ],
+      "ideals": [
+        "Compassion: loyalty to my crew should help vulnerable people.",
+        "Order: I honor fair agreements connected to loyalty to my crew.",
+        "Freedom: no authority should dictate loyalty to my crew.",
+        "Ambition: I will become influential through loyalty to my crew.",
+        "Balance: I seek a sustainable place for loyalty to my crew.",
+        "Integrity: I will not betray loyalty to my crew for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from an old accomplice.",
+        "I protect a reminder of an unpaid debt.",
+        "I want to return honorably to an old accomplice.",
+        "I owe my freedom to someone who understands an unpaid debt.",
+        "I will protect the people threatened by an unpaid debt.",
+        "I must finish work begun at an old accomplice."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving an old accomplice.",
+        "I become reckless when someone mocks loyalty to my crew.",
+        "I trust people who remind me of an old accomplice too readily.",
+        "I postpone admitting how much an unpaid debt costs me.",
+        "I excuse my own mistakes in the name of loyalty to my crew.",
+        "I refuse help when dealing with an unpaid debt."
+      ]
+    },
+    "Gladiator": {
+      "traits": [
+        "I turn introductions into little performances.",
+        "I remember audiences better than dates.",
+        "I keep practicing during quiet moments.",
+        "I imitate voices when telling stories.",
+        "I praise another performer generously.",
+        "I struggle to let a silence remain silent.",
+        "I notice rhythm in everyday work.",
+        "I save small gifts from admirers."
+      ],
+      "ideals": [
+        "Compassion: my art should help vulnerable people.",
+        "Order: I honor fair agreements connected to my art.",
+        "Freedom: no authority should dictate my art.",
+        "Ambition: I will become influential through my art.",
+        "Balance: I seek a sustainable place for my art.",
+        "Integrity: I will not betray my art for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my first patron.",
+        "I protect a reminder of a lost performance.",
+        "I want to return honorably to my first patron.",
+        "I owe my freedom to someone who understands a lost performance.",
+        "I will protect the people threatened by a lost performance.",
+        "I must finish work begun at my first patron."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my first patron.",
+        "I become reckless when someone mocks my art.",
+        "I trust people who remind me of my first patron too readily.",
+        "I postpone admitting how much a lost performance costs me.",
+        "I excuse my own mistakes in the name of my art.",
+        "I refuse help when dealing with a lost performance."
+      ]
+    },
+    "Guild Merchant": {
+      "traits": [
+        "I inspect the joinery in unfamiliar rooms.",
+        "I explain the labor behind fine objects.",
+        "I carry a small unfinished project.",
+        "I respect anyone who knows a trade.",
+        "I bargain with careful patience.",
+        "I notice counterfeit marks immediately.",
+        "I keep meticulous work records.",
+        "I cannot leave a crooked fitting alone."
+      ],
+      "ideals": [
+        "Compassion: honest craftsmanship should help vulnerable people.",
+        "Order: I honor fair agreements connected to honest craftsmanship.",
+        "Freedom: no authority should dictate honest craftsmanship.",
+        "Ambition: I will become influential through honest craftsmanship.",
+        "Balance: I seek a sustainable place for honest craftsmanship.",
+        "Integrity: I will not betray honest craftsmanship for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my old workshop.",
+        "I protect a reminder of a masterwork.",
+        "I want to return honorably to my old workshop.",
+        "I owe my freedom to someone who understands a masterwork.",
+        "I will protect the people threatened by a masterwork.",
+        "I must finish work begun at my old workshop."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my old workshop.",
+        "I become reckless when someone mocks honest craftsmanship.",
+        "I trust people who remind me of my old workshop too readily.",
+        "I postpone admitting how much a masterwork costs me.",
+        "I excuse my own mistakes in the name of honest craftsmanship.",
+        "I refuse help when dealing with a masterwork."
+      ]
+    },
+    "Knight": {
+      "traits": [
+        "I greet people with practiced formality.",
+        "I remember family names and connections.",
+        "I take care of my appearance even on the road.",
+        "I expect agreements to be honored publicly.",
+        "I compliment good service by name.",
+        "I disguise uncertainty with perfect manners.",
+        "I am curious about lives beyond my estate.",
+        "I notice symbols of rank immediately."
+      ],
+      "ideals": [
+        "Compassion: my responsibilities should help vulnerable people.",
+        "Order: I honor fair agreements connected to my responsibilities.",
+        "Freedom: no authority should dictate my responsibilities.",
+        "Ambition: I will become influential through my responsibilities.",
+        "Balance: I seek a sustainable place for my responsibilities.",
+        "Integrity: I will not betray my responsibilities for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my household.",
+        "I protect a reminder of a family obligation.",
+        "I want to return honorably to my household.",
+        "I owe my freedom to someone who understands a family obligation.",
+        "I will protect the people threatened by a family obligation.",
+        "I must finish work begun at my household."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my household.",
+        "I become reckless when someone mocks my responsibilities.",
+        "I trust people who remind me of my household too readily.",
+        "I postpone admitting how much a family obligation costs me.",
+        "I excuse my own mistakes in the name of my responsibilities.",
+        "I refuse help when dealing with a family obligation."
+      ]
+    },
+    "Pirate": {
+      "traits": [
+        "I judge danger by the movement of the air.",
+        "I enjoy a story told over shared food.",
+        "I check knots without thinking.",
+        "I refer to directions as though aboard ship.",
+        "I keep a small good-luck charm.",
+        "I sing while doing repetitive work.",
+        "I make friends quickly in unfamiliar ports.",
+        "I feel responsible for those traveling with me."
+      ],
+      "ideals": [
+        "Compassion: my freedom should help vulnerable people.",
+        "Order: I honor fair agreements connected to my freedom.",
+        "Freedom: no authority should dictate my freedom.",
+        "Ambition: I will become influential through my freedom.",
+        "Balance: I seek a sustainable place for my freedom.",
+        "Integrity: I will not betray my freedom for convenience."
+      ],
+      "bonds": [
+        "I must repay someone from my former crew.",
+        "I protect a reminder of a promise made at sea.",
+        "I want to return honorably to my former crew.",
+        "I owe my freedom to someone who understands a promise made at sea.",
+        "I will protect the people threatened by a promise made at sea.",
+        "I must finish work begun at my former crew."
+      ],
+      "flaws": [
+        "I conceal an embarrassing failure involving my former crew.",
+        "I become reckless when someone mocks my freedom.",
+        "I trust people who remind me of my former crew too readily.",
+        "I postpone admitting how much a promise made at sea costs me.",
+        "I excuse my own mistakes in the name of my freedom.",
+        "I refuse help when dealing with a promise made at sea."
+      ]
+    }
+  }
+}

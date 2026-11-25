@@ -47,10 +47,10 @@ sealed class WildShapeRules {
       forRuleset(character.rulesetId);
 
   /// Row of the Beast Shapes table, or null before Druid level 2.
-  WildShapeLimits? limitsAt(int druidLevel);
+  WildShapeLimits? limitsAt(int druidLevel, {String? subclass});
 
   WildShapeLimits? limitsFor(Character character) =>
-      limitsAt(character.classLevel(druid));
+      limitsAt(character.classLevel(druid), subclass: character.subclassFor(druid));
 
   /// Hours a form lasts: half the Druid level, rounded down.
   int durationHours(int druidLevel) => druidLevel ~/ 2;
@@ -59,7 +59,7 @@ sealed class WildShapeRules {
   bool get usesBeastHitPoints;
 
   /// Temporary hit points gained when assuming a form.
-  int temporaryHitPointsOnAssume(int druidLevel);
+  int temporaryHitPointsOnAssume(int druidLevel, {String? subclass});
 }
 
 /// SRD 5.1: any Beast the Druid has seen, within the table's limits.
@@ -67,7 +67,14 @@ class WildShape2014Rules extends WildShapeRules {
   const WildShape2014Rules();
 
   @override
-  WildShapeLimits? limitsAt(int druidLevel) {
+  WildShapeLimits? limitsAt(int druidLevel, {String? subclass}) {
+    if (subclass == 'Circle of the Moon' && druidLevel >= 2) {
+      return WildShapeLimits(
+        maxChallengeRating: druidLevel < 6 ? '1' : '${druidLevel ~/ 3}',
+        allowsFly: druidLevel >= 8,
+        allowsSwim: druidLevel >= 4,
+      );
+    }
     if (druidLevel >= 8) {
       return const WildShapeLimits(maxChallengeRating: '1', allowsFly: true, allowsSwim: true);
     }
@@ -84,7 +91,7 @@ class WildShape2014Rules extends WildShapeRules {
   bool get usesBeastHitPoints => true;
 
   @override
-  int temporaryHitPointsOnAssume(int druidLevel) => 0;
+  int temporaryHitPointsOnAssume(int druidLevel, {String? subclass}) => 0;
 }
 
 /// SRD 5.2.1: known forms chosen within the table's limits; a form keeps the
@@ -96,7 +103,15 @@ class WildShape2024Rules extends WildShapeRules {
   static const knownFormsChoice = 'known_forms';
 
   @override
-  WildShapeLimits? limitsAt(int druidLevel) {
+  WildShapeLimits? limitsAt(int druidLevel, {String? subclass}) {
+    if (subclass == 'Circle of the Moon' && druidLevel >= 3) {
+      return WildShapeLimits(
+        maxChallengeRating: '${druidLevel ~/ 3}',
+        allowsFly: druidLevel >= 8,
+        allowsSwim: true,
+        knownForms: druidLevel >= 8 ? 8 : druidLevel >= 4 ? 6 : 4,
+      );
+    }
     if (druidLevel >= 8) {
       return const WildShapeLimits(
         maxChallengeRating: '1',
@@ -128,5 +143,6 @@ class WildShape2024Rules extends WildShapeRules {
   bool get usesBeastHitPoints => false;
 
   @override
-  int temporaryHitPointsOnAssume(int druidLevel) => druidLevel;
+  int temporaryHitPointsOnAssume(int druidLevel, {String? subclass}) =>
+      druidLevel * (subclass == 'Circle of the Moon' && druidLevel >= 3 ? 3 : 1);
 }

@@ -15,7 +15,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3531,4 +3531,43 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => 'Рекомендации по характеру';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'На этом уровне можно заменить не более одного ранее изученного воззвания или стихийной дисциплины.';
+
+  @override
+  String get monsterNonmagicalAttacks => 'немагические атаки';
+
+  @override
+  String get whatsNew301Summary =>
+      'Обновление расширяет каталог 2014 года и исправляет выбор умений персонажа. D&D 2024 остаётся в бета-версии с неполным содержимым.';
+
+  @override
+  String get whatsNew301ContentTitle => 'Больше материалов 2014 года';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'Добавлены недостающие заклинания из Книги игрока, воззвания, дисциплины, тотемы и варианты предысторий на английском, португальском и испанском. Договор гримуара теперь позволяет выбрать три заговора. В каталог включены четыре особых фамильяра Договора цепи.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024: бета';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'Зарегистрированы все 48 подклассов из Книги игрока. Предыстории, виды, черты и переводы пока неполны. Многие новые описания подклассов доступны только на английском.';
+
+  @override
+  String get whatsNew301LimitsTitle => 'Что ещё предстоит';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      'Некоторые умения по-прежнему нужно применять вручную. Каталог не включает все дополнения к редакции 2014 года. Новые материалы 2014 года ещё предстоит перевести на остальные языки приложения.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Бета: содержимое и переводы неполны. В предысториях, видах и чертах ещё есть пробелы.';
 }

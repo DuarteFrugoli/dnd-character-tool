@@ -544,5 +544,141 @@
   "Whetstone": {
     "name": "Pedra de amolar",
     "description": "Usada para afiar lâminas."
+  },
+  "Crystal": {
+    "name": "Cristal",
+    "description": "Foco arcano para magias de feiticeiro, bruxo ou mago. Substitui componentes materiais comuns, mas não componentes com custo nem os consumidos pela magia."
+  },
+  "Orb": {
+    "name": "Orbe",
+    "description": "Foco arcano para magias de feiticeiro, bruxo ou mago. Substitui componentes materiais comuns, mas não componentes com custo nem os consumidos pela magia."
+  },
+  "Rod": {
+    "name": "Bastão",
+    "description": "Foco arcano para magias de feiticeiro, bruxo ou mago. Substitui componentes materiais comuns, mas não componentes com custo nem os consumidos pela magia."
+  },
+  "Staff": {
+    "name": "Cajado",
+    "description": "Foco arcano para magias de feiticeiro, bruxo ou mago. Substitui componentes materiais comuns, mas não componentes com custo nem os consumidos pela magia."
+  },
+  "Wand": {
+    "name": "Varinha",
+    "description": "Foco arcano para magias de feiticeiro, bruxo ou mago. Substitui componentes materiais comuns, mas não componentes com custo nem os consumidos pela magia."
+  },
+  "Camel": {
+    "name": "Camelo",
+    "description": "Montaria com deslocamento de {{distance:50ft}} e capacidade de carga de 480 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Donkey": {
+    "name": "Asno",
+    "description": "Montaria com deslocamento de {{distance:40ft}} e capacidade de carga de 420 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Mule": {
+    "name": "Mula",
+    "description": "Montaria com deslocamento de {{distance:40ft}} e capacidade de carga de 420 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Elephant": {
+    "name": "Elefante",
+    "description": "Montaria com deslocamento de {{distance:40ft}} e capacidade de carga de 1320 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Draft Horse": {
+    "name": "Cavalo de Tração",
+    "description": "Montaria com deslocamento de {{distance:40ft}} e capacidade de carga de 540 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Riding Horse": {
+    "name": "Cavalo de Montaria",
+    "description": "Montaria com deslocamento de {{distance:60ft}} e capacidade de carga de 480 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Mastiff": {
+    "name": "Mastim",
+    "description": "Montaria com deslocamento de {{distance:40ft}} e capacidade de carga de 195 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Pony": {
+    "name": "Pônei",
+    "description": "Montaria com deslocamento de {{distance:40ft}} e capacidade de carga de 225 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Warhorse": {
+    "name": "Cavalo de Guerra",
+    "description": "Montaria com deslocamento de {{distance:60ft}} e capacidade de carga de 540 libras. Seu peso corporal não entra no peso carregado do inventário. Uma equipe puxando um veículo pode puxar cinco vezes a capacidade normal combinada, incluindo o peso do veículo."
+  },
+  "Bit and Bridle": {
+    "name": "Freio e Rédeas",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Carriage": {
+    "name": "Carruagem",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Cart": {
+    "name": "Carroça",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Chariot": {
+    "name": "Biga",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Feed (per day)": {
+    "name": "Ração para Montaria (por dia)",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Saddlebags": {
+    "name": "Alforjes",
+    "description": "Recipientes carregados por uma montaria."
+  },
+  "Sled": {
+    "name": "Trenó",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Stabling (per day)": {
+    "name": "Estabulação (por dia)",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Wagon": {
+    "name": "Carroção",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Exotic Saddle": {
+    "name": "Sela Exótica",
+    "description": "Necessária para montar uma criatura aquática ou voadora."
+  },
+  "Military Saddle": {
+    "name": "Sela Militar",
+    "description": "Concede vantagem nos testes para permanecer montado em uma montaria ativa em combate."
+  },
+  "Pack Saddle": {
+    "name": "Sela de Carga",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Riding Saddle": {
+    "name": "Sela de Montaria",
+    "description": "Arreios, suprimentos ou transporte para viagens com montarias."
+  },
+  "Galley": {
+    "name": "Galé",
+    "description": "Veículo aquático; velocidade normal de {{distance:4mi}} por hora. Barcos a remo e de quilha somam a corrente ao descer um rio e não podem remar contra corrente forte. O peso não é especificado, exceto o barco a remo de 100 libras."
+  },
+  "Keelboat": {
+    "name": "Barco de Quilha",
+    "description": "Veículo aquático; velocidade normal de {{distance:1mi}} por hora. Barcos a remo e de quilha somam a corrente ao descer um rio e não podem remar contra corrente forte. O peso não é especificado, exceto o barco a remo de 100 libras."
+  },
+  "Longship": {
+    "name": "Navio Longo",
+    "description": "Veículo aquático; velocidade normal de {{distance:3mi}} por hora. Barcos a remo e de quilha somam a corrente ao descer um rio e não podem remar contra corrente forte. O peso não é especificado, exceto o barco a remo de 100 libras."
+  },
+  "Rowboat": {
+    "name": "Barco a Remo",
+    "description": "Veículo aquático; velocidade normal de {{distance:1.5mi}} por hora. Barcos a remo e de quilha somam a corrente ao descer um rio e não podem remar contra corrente forte. O peso não é especificado, exceto o barco a remo de 100 libras."
+  },
+  "Sailing Ship": {
+    "name": "Veleiro",
+    "description": "Veículo aquático; velocidade normal de {{distance:2mi}} por hora. Barcos a remo e de quilha somam a corrente ao descer um rio e não podem remar contra corrente forte. O peso não é especificado, exceto o barco a remo de 100 libras."
+  },
+  "Warship": {
+    "name": "Navio de Guerra",
+    "description": "Veículo aquático; velocidade normal de {{distance:2.5mi}} por hora. Barcos a remo e de quilha somam a corrente ao descer um rio e não podem remar contra corrente forte. O peso não é especificado, exceto o barco a remo de 100 libras."
+  },
+  "Barding": {
+    "name": "Armadura de Montaria",
+    "description": "Armadura para animal: quatro vezes o custo e duas vezes o peso da armadura humanoide equivalente. O peso zero é um marcador; use a armadura escolhida para determinar o peso real."
   }
 }

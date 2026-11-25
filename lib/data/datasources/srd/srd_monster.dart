@@ -25,6 +25,7 @@ class SrdMonster {
     this.skills = const {},
     this.damageVulnerabilities = const [],
     this.damageResistances = const [],
+    this.nonmagicalDamageResistances = const [],
     this.damageImmunities = const [],
     this.conditionImmunities = const [],
     this.senses = const {},
@@ -68,6 +69,7 @@ class SrdMonster {
   final Map<String, int> skills;
   final List<String> damageVulnerabilities;
   final List<String> damageResistances;
+  final List<String> nonmagicalDamageResistances;
   final List<String> damageImmunities;
   final List<String> conditionImmunities;
 
@@ -134,6 +136,7 @@ class SrdMonster {
       skills: _intMap(json['skills']),
       damageVulnerabilities: _strings(json['damageVulnerabilities']),
       damageResistances: _strings(json['damageResistances']),
+      nonmagicalDamageResistances: _strings(json['nonmagicalDamageResistances']),
       damageImmunities: _strings(json['damageImmunities']),
       conditionImmunities: _strings(json['conditionImmunities']),
       senses: {...senses}..remove('passivePerception'),

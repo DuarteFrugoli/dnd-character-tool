@@ -894,6 +894,10 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
         return FeatureChoiceEngine.allComplete(
           _featureChoiceRequests,
           _state.featureChoices,
+        ) && FeatureChoiceEngine.replacementsWithinLimit(
+          _featureChoiceRequests,
+          widget.character.featureChoices,
+          _state.featureChoices,
         );
       case LevelUpWizardPage.hp:
         return _state.hpChosen;
@@ -988,7 +992,15 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
       case LevelUpWizardPage.featureChoices:
         final i18n =
             ref.watch(srdI18nProvider).valueOrNull ?? SrdI18nService.english;
-        return FeatureChoiceEditor(
+        return Column(children: [
+          if (!FeatureChoiceEngine.replacementsWithinLimit(
+            _featureChoiceRequests, widget.character.featureChoices, _state.featureChoices,
+          ))
+            Padding(
+              padding: EdgeInsets.all(16),
+              child: Text(AppLocalizations.of(context)!.featureChoiceReplacementLimit),
+            ),
+          Expanded(child: FeatureChoiceEditor(
           requests: _featureChoiceRequests,
           initialChoices: _state.featureChoices,
           catalog: _featureChoiceCatalog!,
@@ -1005,7 +1017,8 @@ class _LevelUpWizardState extends ConsumerState<_LevelUpWizard> {
           onChanged: (choices) {
             setState(() => _state = _state.copyWith(featureChoices: choices));
           },
-        );
+          )),
+        ]);
       case LevelUpWizardPage.hp:
         return _HpPage(
           character: widget.character,

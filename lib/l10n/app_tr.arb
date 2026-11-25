@@ -2,7 +2,7 @@
   "@@locale": "tr",
   "creationRulesetTitle": "Kural setini seç",
   "creationRuleset2014": "D&D 5e (2014)",
-  "creationRuleset2024": "D&D 5.5e (2024)",
+  "creationRuleset2024": "D&D 5.5e (2024) — Beta",
   "rulesetShort2014": "5e",
   "rulesetShort2024": "5.5e",
   "customBackgroundTitle": "Özel geçmiş",
@@ -3967,5 +3967,16 @@
         "type": "int"
       }
     }
-  }
+  },
+  "backgroundPersonalitySuggestions": "Kişilik önerileri",
+  "featureChoiceReplacementLimit": "Bu seviyede önceden bildiğin en fazla bir yakarışı veya element disiplinini değiştirebilirsin.",
+  "monsterNonmagicalAttacks": "büyülü olmayan saldırılar",
+  "whatsNew301Summary": "Bu güncelleme 2014 kataloğunu genişletir ve karakter seçimlerini düzeltir. D&D 2024, eksik içerikle beta aşamasındadır.",
+  "whatsNew301ContentTitle": "Daha fazla 2014 içeriği",
+  "whatsNew301ContentBody": "Oyuncunun El Kitabı’ndaki eksik büyüler, yakarışlar, disiplinler, totemler ve geçmiş çeşitleri İngilizce, Portekizce ve İspanyolca olarak eklendi. Kitap Paktı artık üç basit büyü seçmenizi sağlar. Zincir Paktı’nın dört özel yoldaşı da katalogda yer alır.",
+  "whatsNew301BetaTitle": "D&D 2024: beta",
+  "whatsNew301BetaBody": "Oyuncunun El Kitabı’ndaki 48 alt sınıfın tamamı kayıtlıdır. Geçmişler, türler, yetenekler ve çeviriler hâlâ eksiktir. Yeni alt sınıf metinlerinin büyük bölümü yalnızca İngilizce sunulur.",
+  "whatsNew301LimitsTitle": "Kalan işler",
+  "whatsNew301LimitsBody": "Bazı özellikler hâlâ elle uygulanmalıdır. Katalog, 2014 sürümünün tüm ek kitaplarını içermez. Yeni 2014 içeriklerinin uygulamanın diğer dillerine çevrilmesi gerekmektedir.",
+  "creationRuleset2024BetaDescription": "Beta: içerik ve çeviriler eksik. Geçmişler, türler ve yeteneklerde hâlâ eksikler var."
 }

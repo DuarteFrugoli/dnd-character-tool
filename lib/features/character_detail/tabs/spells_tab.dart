@@ -1,6 +1,7 @@
 import '../character_detail_dependencies.dart';
 import '../widgets/dice/contextual_roll_sheet.dart';
 import '../widgets/spells/spell_widgets.dart';
+import '../../../data/rulesets/spell_roll_rules.dart';
 
 /// Classes that have access to their full class spell list and prepare daily.
 /// Wizard is not included: it uses a spellbook and the player adds spells.
@@ -228,6 +229,7 @@ class _SpellsTabState extends ConsumerState<SpellsTab>
       damageTypeLabel: i18n.damageType,
       spellcastingEngine: origin?.engine,
       availableSlotLevels: _availableSlotLevels(widget.spellcastingSummary),
+      damageBonus: SpellRollRules.damageBonus(widget.character, spell.name),
       subtitle: origin == null
           ? null
           : i18n.className(origin.classEntry.className),

@@ -15,7 +15,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3577,4 +3577,44 @@ class AppLocalizationsIt extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions =>
+      'Suggerimenti per la personalità';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'A questo livello puoi sostituire al massimo una supplica o disciplina elementale già conosciuta.';
+
+  @override
+  String get monsterNonmagicalAttacks => 'attacchi non magici';
+
+  @override
+  String get whatsNew301Summary =>
+      'Questo aggiornamento amplia il catalogo 2014 e corregge alcune scelte del personaggio. D&D 2024 rimane in beta, con contenuti incompleti.';
+
+  @override
+  String get whatsNew301ContentTitle => 'Più contenuti per il 2014';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'Aggiunti incantesimi mancanti del Manuale del Giocatore, invocazioni, discipline, totem e varianti dei background in inglese, portoghese e spagnolo. Il Patto del Tomo ora permette di scegliere i suoi tre trucchetti. Il catalogo comprende i quattro famigli speciali del Patto della Catena.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024: beta';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'Sono registrate tutte le 48 sottoclassi del Manuale del Giocatore. Background, specie, talenti e traduzioni sono ancora incompleti. Molti nuovi testi delle sottoclassi sono disponibili solo in inglese.';
+
+  @override
+  String get whatsNew301LimitsTitle => 'Cosa manca ancora';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      'Alcuni privilegi devono ancora essere applicati manualmente. Il catalogo non include tutti i supplementi del 2014. I nuovi contenuti del 2014 devono ancora essere tradotti nelle altre lingue dell’app.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Beta: contenuti e traduzioni incompleti. Mancano ancora background, specie e talenti.';
 }

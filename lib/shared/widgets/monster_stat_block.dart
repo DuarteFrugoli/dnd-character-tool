@@ -161,8 +161,12 @@ class MonsterStatBlock extends ConsumerWidget {
         ),
       if (monster.damageVulnerabilities.isNotEmpty)
         (l10n.monsterVulnerabilities, _damageTypes(monster.damageVulnerabilities)),
-      if (monster.damageResistances.isNotEmpty)
-        (l10n.monsterResistances, _damageTypes(monster.damageResistances)),
+      if (monster.damageResistances.isNotEmpty || monster.nonmagicalDamageResistances.isNotEmpty)
+        (l10n.monsterResistances, [
+          if (monster.damageResistances.isNotEmpty) _damageTypes(monster.damageResistances),
+          if (monster.nonmagicalDamageResistances.isNotEmpty)
+            '${_damageTypes(monster.nonmagicalDamageResistances)} (${l10n.monsterNonmagicalAttacks})',
+        ].join('; ')),
       if (monster.damageImmunities.isNotEmpty)
         (l10n.monsterImmunities, _damageTypes(monster.damageImmunities)),
       if (monster.conditionImmunities.isNotEmpty)

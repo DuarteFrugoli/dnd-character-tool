@@ -15,7 +15,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3532,4 +3532,43 @@ class AppLocalizationsPt extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => 'Sugestões de personalidade';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'Você pode substituir no máximo uma invocação ou disciplina elemental já conhecida neste nível.';
+
+  @override
+  String get monsterNonmagicalAttacks => 'ataques não mágicos';
+
+  @override
+  String get whatsNew301Summary =>
+      'Esta atualização amplia o catálogo de 2014 e corrige escolhas da ficha. D&D 2024 continua em beta, com conteúdo incompleto.';
+
+  @override
+  String get whatsNew301ContentTitle => 'Mais conteúdo de 2014';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'Adicionamos magias que faltavam do Livro do Jogador, invocações, disciplinas, totens e variantes de antecedente em inglês, português e espanhol. O Pacto do Tomo agora permite escolher seus três truques, e o catálogo inclui os quatro familiares especiais do Pacto da Corrente.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024: beta';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'As 48 subclasses do Livro do Jogador estão cadastradas. Ainda faltam antecedentes, espécies, talentos e traduções; boa parte dos novos textos de subclasses está disponível apenas em inglês.';
+
+  @override
+  String get whatsNew301LimitsTitle => 'O que ainda falta';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      'Algumas habilidades ainda precisam ser aplicadas manualmente. O catálogo não inclui todos os suplementos de 2014. Os novos materiais de 2014 ainda precisam de tradução para os outros idiomas do app.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Beta: conteúdo e traduções incompletos. Ainda faltam antecedentes, espécies e talentos.';
 }

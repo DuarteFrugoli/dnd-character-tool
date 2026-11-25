@@ -58,6 +58,7 @@ class ChoiceEffects {
     final expertise = _CaseInsensitiveList(after.skillExpertises);
     final features = _CaseInsensitiveList(after.features);
     final languages = _CaseInsensitiveList(after.languages);
+    final savingThrows = _CaseInsensitiveList(after.savingThrowProficiencies);
     final spells = [...after.spells];
     final extraFeatures = [...after.extraFeatures];
     final spellsByName = {
@@ -112,6 +113,8 @@ class ChoiceEffects {
           features.remove(_weaponLabel(data, value));
         case 'language':
           languages.remove(data.languageName(value));
+        case 'saving_throw':
+          savingThrows.remove(value);
         case 'cantrip' || 'spell':
           spells.removeWhere(
             (spell) =>
@@ -145,6 +148,8 @@ class ChoiceEffects {
           features.add(_weaponLabel(data, value));
         case 'language':
           languages.add(data.languageName(value));
+        case 'saving_throw':
+          savingThrows.add(value);
         case 'cantrip' || 'spell':
           final spell = spellsByName[value.toLowerCase()];
           final spellName = spell?.name ?? value;
@@ -152,12 +157,14 @@ class ChoiceEffects {
             continue;
           }
           final fromClassTable = classSpellFeatures.contains(choice.featureName);
+          final fromSpellbook = choice.sourceClass == 'Wizard' &&
+              choice.featureName.endsWith(' Savant');
           spells.add(
             KnownSpell(
               name: spellName,
               level: spell?.level ?? (type == 'cantrip' ? 0 : 1),
-              isPrepared: true,
-              isAlwaysPrepared: type == 'spell' && !fromClassTable,
+              isPrepared: !fromSpellbook,
+              isAlwaysPrepared: type == 'spell' && !fromClassTable && !fromSpellbook,
               sourceType: choice.sourceType,
               sourceClass: choice.sourceClass.isEmpty ? null : choice.sourceClass,
               sourceSubclass: choice.sourceSubclass,
@@ -198,9 +205,55 @@ class ChoiceEffects {
       skillExpertises: expertise.values,
       features: features.values,
       languages: languages.values,
-      spells: spells,
+      savingThrowProficiencies: savingThrows.values,
+      spells: _syncOptionSpells(after, spells, data),
       extraFeatures: extraFeatures,
     );
+  }
+
+  /// Terrain grants follow the owning class level, including later levels,
+  /// edits and resets that do not change the saved terrain choice itself.
+  static List<KnownSpell> _syncOptionSpells(
+    Character character,
+    List<KnownSpell> spells,
+    ChoiceEffectsData data,
+  ) {
+    if (!data.weaponChoicesGrantProficiency) return spells;
+    final result = [...spells];
+    // Only this supplemental feature owns these generated spell records.
+    result.removeWhere((spell) => spell.sourceFeature == 'Circle Spells' &&
+        spell.sourceSubclass == 'Circle of the Land');
+    for (final choice in character.featureChoices) {
+      final req = requirementFor(data, choice);
+      final options = req?.optionsSource == null
+          ? req?.options ?? const <SrdFeatureChoiceOption>[]
+          : data.choices.optionSources[req!.optionsSource] ?? const <SrdFeatureChoiceOption>[];
+      for (final value in choice.values) {
+        final option = options.where((option) => option.id == value).firstOrNull;
+        if (option == null || option.alwaysPreparedSpellsByLevel.isEmpty) continue;
+        final classLevel = character.classLevel(choice.sourceClass);
+        if (classLevel < 3 || character.subclassFor(choice.sourceClass) != choice.sourceSubclass) continue;
+        for (final entry in option.alwaysPreparedSpellsByLevel.entries) {
+          if (entry.key > classLevel) continue;
+          for (final name in entry.value) {
+            final spell = data.spells.where((spell) => spell.name == name).firstOrNull;
+            if (spell == null) throw StateError('Missing circle spell: $name');
+            result.add(KnownSpell(
+              name: name,
+              level: spell.level,
+              isPrepared: true,
+              isAlwaysPrepared: true,
+              sourceType: choice.sourceType,
+              sourceClass: choice.sourceClass,
+              sourceClassEntryId: choice.sourceClassEntryId,
+              sourceSubclass: choice.sourceSubclass,
+              sourceFeature: choice.featureName,
+            ));
+          }
+        }
+      }
+    }
+    return result;
   }
 
   /// The effect kind of a saved choice, or null when it grants nothing that

@@ -15,7 +15,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3541,4 +3541,43 @@ class AppLocalizationsDe extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => 'Persönlichkeitsvorschläge';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'Auf dieser Stufe kannst du höchstens eine bereits bekannte Anrufung oder elementare Disziplin ersetzen.';
+
+  @override
+  String get monsterNonmagicalAttacks => 'nichtmagische Angriffe';
+
+  @override
+  String get whatsNew301Summary =>
+      'Dieses Update erweitert den Katalog von 2014 und korrigiert Charakterauswahlen. D&D 2024 bleibt in der Beta mit unvollständigen Inhalten.';
+
+  @override
+  String get whatsNew301ContentTitle => 'Mehr Inhalte für 2014';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'Fehlende Zauber aus dem Spielerhandbuch, Anrufungen, Disziplinen, Totems und Hintergrundvarianten wurden auf Englisch, Portugiesisch und Spanisch ergänzt. Beim Pakt des Buches lassen sich jetzt drei Zaubertricks wählen. Der Katalog enthält die vier besonderen Vertrauten des Kettenpakts.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024: Beta';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'Alle 48 Unterklassen des Spielerhandbuchs sind erfasst. Hintergründe, Spezies, Talente und Übersetzungen sind noch unvollständig. Viele neue Unterklassentexte sind nur auf Englisch verfügbar.';
+
+  @override
+  String get whatsNew301LimitsTitle => 'Was noch fehlt';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      'Einige Merkmale müssen weiterhin manuell angewendet werden. Der Katalog enthält nicht alle Ergänzungsbände von 2014. Die neuen Inhalte für 2014 müssen noch in die übrigen App-Sprachen übersetzt werden.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Beta: Inhalte und Übersetzungen sind unvollständig. Bei Hintergründen, Spezies und Talenten gibt es noch Lücken.';
 }

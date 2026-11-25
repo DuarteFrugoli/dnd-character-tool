@@ -15,7 +15,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3444,4 +3444,43 @@ class AppLocalizationsKo extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => '성격 제안';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      '이 레벨에서는 이미 습득한 영창이나 원소 수련을 최대 하나까지 교체할 수 있습니다.';
+
+  @override
+  String get monsterNonmagicalAttacks => '비마법 공격';
+
+  @override
+  String get whatsNew301Summary =>
+      '이번 업데이트는 2014 규칙의 콘텐츠를 확장하고 캐릭터 선택 처리를 수정합니다. D&D 2024는 아직 콘텐츠가 완성되지 않은 베타 버전입니다.';
+
+  @override
+  String get whatsNew301ContentTitle => '2014 콘텐츠 추가';
+
+  @override
+  String get whatsNew301ContentBody =>
+      '플레이어 핸드북의 누락된 주문, 영창, 원소 수련, 토템, 배경 변형을 영어, 포르투갈어, 스페인어로 추가했습니다. 책의 계약에서 소마법 3개를 선택할 수 있으며, 사슬의 계약의 특수 패밀리어 4종도 목록에 포함됩니다.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024: 베타';
+
+  @override
+  String get whatsNew301BetaBody =>
+      '플레이어 핸드북의 하위 클래스 48개가 모두 등록되어 있습니다. 배경, 종족, 재주와 번역에는 아직 누락이 있습니다. 새 하위 클래스 설명의 상당 부분은 영어로만 제공됩니다.';
+
+  @override
+  String get whatsNew301LimitsTitle => '남은 작업';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      '일부 특성은 여전히 수동으로 적용해야 합니다. 모든 2014 보충책이 포함된 것은 아닙니다. 새로 추가된 2014 콘텐츠는 앱의 다른 언어로 번역하는 작업이 남아 있습니다.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      '베타: 콘텐츠와 번역이 미완성입니다. 배경, 종족, 재주에 아직 누락이 있습니다.';
 }

@@ -15,7 +15,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3505,4 +3505,43 @@ class AppLocalizationsEn extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => 'Personality suggestions';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'You may replace at most one previously known invocation or elemental discipline at this level.';
+
+  @override
+  String get monsterNonmagicalAttacks => 'nonmagical attacks';
+
+  @override
+  String get whatsNew301Summary =>
+      'This update expands the 2014 catalog and fixes character choices. D&D 2024 remains in beta, with incomplete content.';
+
+  @override
+  String get whatsNew301ContentTitle => 'More 2014 content';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'Added missing Player’s Handbook spells, invocations, disciplines, totems and background variants in English, Portuguese and Spanish. Pact of the Tome now guides your three cantrip choices, and the catalog includes the four special Pact of the Chain familiars.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024: beta';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'All 48 Player’s Handbook subclasses are registered. Backgrounds, species, feats and translations still have gaps; much of the new subclass text is available only in English.';
+
+  @override
+  String get whatsNew301LimitsTitle => 'What still needs work';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      'Some features still require manual application. The catalog does not include every 2014 supplement. The new 2014 material still needs translation into the other app languages.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Beta: incomplete content and translations. Backgrounds, species and feats still have gaps.';
 }

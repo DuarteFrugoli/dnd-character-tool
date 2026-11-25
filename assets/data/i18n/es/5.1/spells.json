@@ -1656,5 +1656,185 @@
   "Wish": {
     "name": "Deseo",
     "description": "Deseo es el conjuro más poderoso que puede lanzar una criatura mortal. Con solo pronunciarlo en voz alta, puedes alterar los cimientos mismos de la realidad de acuerdo con tus deseos.\n\nEl uso básico de este conjuro es duplicar cualquier otro conjuro de nivel 8 o inferior. No necesitas cumplir ninguno de los requisitos de ese conjuro, incluidos los componentes costosos. El conjuro simplemente surte efecto.\n\nComo alternativa, puedes crear uno de los siguientes efectos de tu elección:\n- Creas un objeto de un valor de hasta 25 000 po que no sea un objeto mágico. El objeto no puede medir más de {{distance:300ft}} en ninguna dimensión, y aparece en un espacio desocupado que puedas ver en el suelo.\n- Permites que hasta veinte criaturas que puedas ver recuperen todos sus puntos de golpe, y pones fin a todos los efectos sobre ellas descritos en el conjuro Restablecimiento mayor.\n- Otorgas a hasta diez criaturas que puedas ver resistencia a un tipo de daño que elijas.\n- Otorgas a hasta diez criaturas que puedas ver inmunidad a un único conjuro u otro efecto mágico durante 8 horas. Por ejemplo, podrías hacer que tú y todos tus compañeros fuerais inmunes al ataque de drenaje de vida de un liche.\n- Deshaces un único suceso reciente obligando a repetir cualquier tirada hecha durante el último asalto (incluido tu último turno). La realidad se remodela para adaptarse al nuevo resultado. Por ejemplo, un conjuro de Deseo podría deshacer una tirada de salvación superada por un adversario, un impacto crítico de un enemigo o una tirada de salvación fallida por un amigo. Puedes obligar a que la nueva tirada se haga con ventaja o con desventaja, y puedes elegir si usar la nueva tirada o la original. Podrías conseguir algo que vaya más allá de los ejemplos anteriores. Expón tu deseo al DM con la mayor precisión posible. El DM tiene un amplio margen para decidir lo que ocurre en tal caso; cuanto mayor sea el deseo, mayor será la probabilidad de que algo salga mal. Este conjuro podría simplemente fallar, el efecto que deseas podría lograrse solo en parte o podrías sufrir alguna consecuencia imprevista debido a la forma en que formulaste el deseo. Por ejemplo, desear que un villano estuviera muerto podría lanzarte hacia delante en el tiempo hasta una época en la que ese villano ya no esté vivo, lo que te sacaría efectivamente de la partida. Del mismo modo, desear un objeto mágico legendario o un artefacto podría transportarte al instante ante el propietario actual del objeto.\n\nEl esfuerzo de lanzar este conjuro para producir cualquier efecto que no sea duplicar otro conjuro te debilita. Tras soportar ese esfuerzo, cada vez que lances un conjuro hasta que termines un descanso largo, recibes 1d10 de daño necrótico por cada nivel de ese conjuro. Este daño no puede reducirse ni evitarse de ninguna manera. Además, tu Fuerza baja a 3, si no es ya de 3 o menos, durante 2d4 días. Por cada uno de esos días que pases descansando y sin hacer más que actividades ligeras, el tiempo de recuperación que te queda se reduce en 2 días. Por último, hay una probabilidad del 33 % de que no puedas volver a lanzar Deseo nunca más si sufres este esfuerzo."
+  },
+  "Thorn Whip": {
+    "name": "Látigo de espinas",
+    "description": "Una enredadera mágica cubierta de espinas golpea a una criatura dentro del alcance. Realiza un ataque de conjuro cuerpo a cuerpo, aunque el alcance sea de {{distance:30ft}}. Si impacta, inflige 1d6 de daño perforante. Si la criatura es Grande o menor, también la acercas hasta {{distance:10ft}} hacia ti. El daño aumenta a 2d6 al nivel de personaje 5, 3d6 al nivel 11 y 4d6 al nivel 17.",
+    "higherLevels": null,
+    "material": "el tallo de una planta con espinas"
+  },
+  "Armor of Agathys": {
+    "name": "Armadura de Agathys",
+    "description": "Un hielo espectral te envuelve a ti y a tu equipo y concede 5 puntos de golpe temporales durante un máximo de 1 hora. Cuando una criatura te impacta con un ataque cuerpo a cuerpo mientras conservas puntos de golpe temporales de este conjuro, sufre 5 de daño de frío. La represalia no requiere ataque ni tirada de salvación. Perder o sustituir esos puntos de golpe temporales elimina la protección.",
+    "higherLevels": "Cada nivel de espacio por encima del 1.º añade 5 a los puntos de golpe temporales y al daño de frío por impacto que activa el efecto. Un espacio de nivel 3 concede 15 puntos de golpe temporales e inflige 15 de daño por impacto.",
+    "material": "una taza de agua"
+  },
+  "Arms of Hadar": {
+    "name": "Brazos de Hadar",
+    "description": "Unos tentáculos oscuros golpean a las criaturas a {{distance:10ft}} o menos de ti. Cada objetivo realiza una salvación de Fuerza: si falla, sufre 2d6 de daño necrótico y no puede usar reacciones hasta su siguiente turno; si tiene éxito, sufre la mitad del daño y conserva sus reacciones.",
+    "higherLevels": "Cada nivel de espacio por encima del 1.º añade 1d6 de daño necrótico.",
+    "material": null
+  },
+  "Chromatic Orb": {
+    "name": "Orbe cromático",
+    "description": "Elige una criatura que puedas ver dentro del alcance y realiza un ataque de conjuro a distancia. Elige ácido, frío, fuego, relámpago, veneno o trueno; un impacto inflige 3d8 de daño del tipo elegido. El diamante es obligatorio, pero no se consume.",
+    "higherLevels": "Cada nivel de espacio por encima del 1.º añade 1d8 de daño.",
+    "material": "un diamante de al menos 50 po"
+  },
+  "Compelled Duel": {
+    "name": "Duelo forzado",
+    "description": "Elige una criatura que puedas ver dentro del alcance. Si falla una salvación de Sabiduría, tiene desventaja en los ataques contra cualquiera excepto tú. Cada vez que intente alejarse más de {{distance:30ft}} de ti, debe superar otra salvación de Sabiduría; un éxito elimina esa restricción de movimiento durante ese turno.\n\nEl conjuro termina si atacas a otra criatura, lanzas un conjuro dirigido a otra criatura hostil o acabas tu turno a más de {{distance:30ft}} del objetivo. También termina si un aliado tuyo daña al objetivo o lo afecta con un conjuro perjudicial.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Dissonant Whispers": {
+    "name": "Susurros disonantes",
+    "description": "Susurra una melodía dolorosa a una criatura dentro del alcance. Si falla una salvación de Sabiduría, sufre 3d6 de daño psíquico y usa inmediatamente su reacción, si dispone de ella, para alejarse de ti tanto como permita su velocidad. Evita terreno obviamente peligroso durante ese movimiento. Un éxito reduce el daño a la mitad y evita el movimiento. Un objetivo ensordecido supera la salvación automáticamente.",
+    "higherLevels": "Cada nivel de espacio por encima del 1.º añade 1d6 de daño psíquico.",
+    "material": null
+  },
+  "Ensnaring Strike": {
+    "name": "Golpe apresador",
+    "description": "Tu siguiente ataque con arma que impacte a una criatura antes de terminar el conjuro crea unas enredaderas que la atrapan. El objetivo realiza una salvación de Fuerza, con ventaja si es Grande o mayor. Si falla, queda apresado durante el tiempo restante; si tiene éxito, desaparecen las enredaderas. Mientras esté apresado, sufre 1d6 de daño perforante al inicio de cada turno. El objetivo o una criatura que pueda tocarlo puede usar una acción para realizar una prueba de Fuerza contra tu CD de salvación de conjuros y liberarlo si tiene éxito.",
+    "higherLevels": "Cada nivel de espacio por encima del 1.º añade 1d6 al daño perforante recurrente.",
+    "material": null
+  },
+  "Hail of Thorns": {
+    "name": "Lluvia de espinas",
+    "description": "Tu siguiente ataque con arma a distancia que impacte a una criatura antes de terminar el conjuro libera también unas espinas. El ataque conserva sus efectos normales. El objetivo y cada criatura a {{distance:5ft}} o menos de él realizan salvaciones de Destreza: sufren 1d10 de daño perforante si fallan, o la mitad si tienen éxito.",
+    "higherLevels": "Cada nivel de espacio por encima del 1.º añade 1d10 de daño perforante, hasta un máximo de 6d10.",
+    "material": null
+  },
+  "Ray of Sickness": {
+    "name": "Rayo nauseabundo",
+    "description": "Realiza un ataque de conjuro a distancia contra una criatura dentro del alcance. Un impacto inflige 2d8 de daño de veneno y exige una salvación de Constitución. Si el objetivo falla, también queda envenenado hasta el final de tu siguiente turno. Superar la salvación evita el estado, pero no el daño del impacto.",
+    "higherLevels": "Cada nivel de espacio por encima del 1.º añade 1d8 de daño de veneno.",
+    "material": null
+  },
+  "Searing Smite": {
+    "name": "Castigo abrasador",
+    "description": "Tu siguiente ataque con arma cuerpo a cuerpo que impacte a una criatura antes de terminar el conjuro añade 1d6 de daño de fuego y prende al objetivo. Al inicio de cada turno, este realiza una salvación de Constitución: si falla, sufre 1d6 de daño de fuego; si tiene éxito, termina el conjuro. El objetivo u otra criatura a {{distance:5ft}} o menos puede usar una acción para apagar las llamas y terminar el conjuro. Sofocar las llamas, por ejemplo sumergiendo al objetivo, también lo termina.",
+    "higherLevels": "Cada nivel de espacio por encima del 1.º añade 1d6 solo al daño adicional del impacto inicial. El daño de fuego recurrente sigue siendo 1d6.",
+    "material": null
+  },
+  "Thunderous Smite": {
+    "name": "Castigo atronador",
+    "description": "El primer ataque con arma cuerpo a cuerpo que aciertes antes de terminar el conjuro añade 2d6 de daño de trueno y produce un estruendo audible a {{distance:300ft}} o menos de ti. Si el objetivo es una criatura, también debe superar una salvación de Fuerza o ser empujado {{distance:10ft}} lejos de ti y quedar derribado.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Beast Sense": {
+    "name": "Sentidos de la bestia",
+    "description": "Toca a una bestia voluntaria. Mientras mantengas la concentración, puedes usar una acción para ver y oír a través de ella, beneficiándote de sus sentidos especiales. El vínculo dura hasta que uses otra acción para recuperar tus sentidos o termine el conjuro. Mientras usas los sentidos de la bestia, estás cegado y ensordecido respecto a tu propio entorno.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Cordon of Arrows": {
+    "name": "Cordón de flechas",
+    "description": "Clava cuatro flechas o virotes no mágicos en el suelo dentro del alcance. Tú y las criaturas que designes al lanzar el conjuro sois ignorados. Cuando otra criatura se acerca por primera vez en un turno a {{distance:30ft}} o menos de la munición, o acaba su turno allí, una pieza la ataca. Si falla una salvación de Destreza, sufre 1d6 de daño perforante; si tiene éxito, evita el daño. La pieza se destruye en ambos casos. El conjuro termina cuando se agota la munición encantada o expira su duración.",
+    "higherLevels": "Cada nivel de espacio por encima del 2.º permite encantar dos piezas adicionales de munición. El daño por pieza sigue siendo 1d6.",
+    "material": "cuatro o más flechas o virotes"
+  },
+  "Phantasmal Force": {
+    "name": "Fuerza fantasmal",
+    "description": "Elige una criatura que puedas ver dentro del alcance; los muertos vivientes y los constructos no se ven afectados. Si falla una salvación de Inteligencia, solo ella percibe un objeto, criatura o fenómeno visible ilusorio que quepa en un cubo de {{distance:10ft|adj}}. La ilusión incluye detalles sensoriales, como sonido y temperatura. El objetivo cree que es real y racionaliza los sucesos contradictorios.\n\nEl objetivo puede usar una acción para realizar una prueba de Inteligencia (Investigación) contra tu CD de salvación de conjuros. Un éxito revela la ilusión y termina el conjuro. Una vez por asalto, en tu turno, una amenaza ilusoria plausible puede infligir 1d6 de daño psíquico si el objetivo está dentro de ella o a {{distance:5ft}} o menos. El objetivo percibe un daño acorde con la amenaza imaginada.",
+    "higherLevels": null,
+    "material": "un poco de vellón"
+  },
+  "Aura of Vitality": {
+    "name": "Aura de vitalidad",
+    "description": "Un aura curativa se extiende {{distance:30ft}} desde ti y acompaña tu movimiento. Mientras dure, puedes usar una acción adicional para restaurar 2d6 puntos de golpe a una criatura que esté dentro, incluyéndote a ti.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Blinding Smite": {
+    "name": "Castigo cegador",
+    "description": "Tu siguiente ataque con arma cuerpo a cuerpo que impacte a una criatura antes de terminar el conjuro añade 3d8 de daño radiante. El objetivo también debe superar una salvación de Constitución o quedar cegado durante el tiempo restante. Al final de cada turno, un objetivo cegado repite la salvación y termina la ceguera si tiene éxito.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Barrage": {
+    "name": "Conjurar descarga",
+    "description": "Lanza un arma no mágica o dispara munición no mágica al aire. Unas copias mágicas recorren un cono de {{distance:60ft|adj}} que parte de ti y luego desaparecen. Cada criatura en el cono realiza una salvación de Destreza: sufre 3d8 de daño si falla, o la mitad si tiene éxito. Usa el tipo de daño del arma o la munición empleada como componente.",
+    "higherLevels": null,
+    "material": "una pieza de munición o un arma arrojadiza"
+  },
+  "Crusader's Mantle": {
+    "name": "Manto del cruzado",
+    "description": "Un aura fortalecedora se extiende {{distance:30ft}} desde ti y acompaña tu movimiento. Las criaturas no hostiles que estén dentro, incluyéndote a ti, añaden 1d4 de daño radiante cada vez que impactan con un ataque con arma.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Elemental Weapon": {
+    "name": "Arma elemental",
+    "description": "Toca un arma no mágica y elige ácido, frío, fuego, relámpago o trueno. Mientras mantengas la concentración, el arma se vuelve mágica, obtiene +1 a las tiradas de ataque y añade 1d4 de daño del tipo elegido cuando impacta.",
+    "higherLevels": "Con un espacio de nivel 5 o 6, el bonificador al ataque aumenta a +2 y el daño adicional a 2d4. Con un espacio de nivel 7 o superior, aumentan a +3 y 3d4.",
+    "material": null
+  },
+  "Hunger of Hadar": {
+    "name": "Hambre de Hadar",
+    "description": "Elige un punto dentro del alcance para abrir un vacío sin estrellas en una esfera de {{distance:20ft|adj}} de radio. Sus susurros y ruidos se oyen hasta a {{distance:30ft}}. Ninguna luz, ni siquiera mágica, ilumina la esfera. Las criaturas completamente dentro quedan cegadas y el área es terreno difícil.\n\nUna criatura que comienza su turno dentro sufre automáticamente 2d6 de daño de frío. Una criatura que termina su turno dentro debe superar una salvación de Destreza o sufrir 2d6 de daño de ácido. Son activaciones separadas; este conjuro no aumenta su daño con espacios superiores en las reglas de 2014.",
+    "higherLevels": null,
+    "material": "un tentáculo de pulpo en conserva"
+  },
+  "Lightning Arrow": {
+    "name": "Flecha relampagueante",
+    "description": "Tu siguiente ataque con arma a distancia antes de terminar el conjuro transforma la munición o el arma arrojadiza en un relámpago. Usa la tirada de ataque normal del arma: sustituye su daño habitual por 4d8 de daño de relámpago si impacta, o la mitad de ese daño si falla. Tanto si impactas como si fallas, cada criatura a {{distance:10ft}} o menos del objetivo realiza una salvación de Destreza y sufre 2d8 de daño de relámpago si falla, o la mitad si tiene éxito. La munición o el arma arrojadiza vuelve después a la normalidad.",
+    "higherLevels": "Cada nivel de espacio por encima del 3.º añade 1d8 al daño principal y 1d8 al daño de las criaturas cercanas.",
+    "material": null
+  },
+  "Aura of Life": {
+    "name": "Aura de vida",
+    "description": "Un aura que sostiene la vida se extiende {{distance:30ft}} desde ti y acompaña tu movimiento. Las criaturas no hostiles que estén dentro, incluyéndote a ti, tienen resistencia al daño necrótico y su máximo de puntos de golpe no puede reducirse. Una criatura viva y no hostil que comienza su turno dentro con 0 puntos de golpe recupera 1 punto de golpe.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Aura of Purity": {
+    "name": "Aura de pureza",
+    "description": "Un aura purificadora se extiende {{distance:30ft}} desde ti y acompaña tu movimiento. Las criaturas no hostiles que estén dentro, incluyéndote a ti, no pueden contraer enfermedades y tienen resistencia al daño de veneno. Tienen ventaja en las salvaciones contra efectos que las dejarían cegadas, hechizadas, ensordecidas, asustadas, paralizadas, envenenadas o aturdidas.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Grasping Vine": {
+    "name": "Enredadera apresadora",
+    "description": "Crea una enredadera en un espacio desocupado del suelo que puedas ver dentro del alcance. Como parte del lanzamiento, dirígela contra una criatura que puedas ver a {{distance:30ft}} o menos de la enredadera. Si falla una salvación de Destreza, esa criatura es arrastrada {{distance:20ft}} directamente hacia la enredadera. En cada turno posterior, mientras mantengas la concentración, puedes usar una acción adicional para dirigir otro golpe contra la misma criatura u otro objetivo válido.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Staggering Smite": {
+    "name": "Castigo abrumador",
+    "description": "Tu siguiente ataque con arma cuerpo a cuerpo que impacte a una criatura antes de terminar el conjuro añade 4d6 de daño psíquico. El objetivo también realiza una salvación de Sabiduría. Si falla, hasta el final de su siguiente turno tiene desventaja en las tiradas de ataque y pruebas de característica y no puede usar reacciones.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Banishing Smite": {
+    "name": "Castigo desterrador",
+    "description": "Tu siguiente ataque con arma que impacte a una criatura antes de terminar el conjuro añade 5d10 de daño de fuerza. Si ese ataque deja al objetivo con 50 puntos de golpe o menos, es desterrado sin salvación. Una criatura nativa de otro plano regresa a su plano de origen. Una criatura nativa del plano actual entra en un semiplano inofensivo, donde queda incapacitada hasta que termina el conjuro. Después vuelve a su lugar anterior o al espacio desocupado más cercano si es necesario.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Circle of Power": {
+    "name": "Círculo de poder",
+    "description": "Una esfera protectora se extiende {{distance:30ft}} desde ti y acompaña tu movimiento. Las criaturas amistosas que estén dentro, incluyéndote a ti, tienen ventaja en las salvaciones contra conjuros y otros efectos mágicos. Si uno de esos efectos permite una salvación para recibir la mitad del daño, una criatura afectada que la supere no recibe daño. Un fallo sigue causando el daño normal.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Volley": {
+    "name": "Conjurar lluvia de proyectiles",
+    "description": "Dispara munición no mágica desde un arma a distancia o lanza un arma no mágica al aire. Elige un punto dentro del alcance: unas copias caen en un cilindro de {{distance:40ft|adj}} de radio y {{distance:20ft|adj}} de altura y luego desaparecen. Cada criatura dentro realiza una salvación de Destreza: sufre 8d8 de daño si falla, o la mitad si tiene éxito. El arma o la munición usada como componente determina el tipo de daño.",
+    "higherLevels": null,
+    "material": "una pieza de munición o un arma arrojadiza"
+  },
+  "Destructive Wave": {
+    "name": "Ola destructora",
+    "description": "Golpea el suelo y elige las criaturas que quieras a {{distance:30ft}} o menos de ti. Cada criatura elegida realiza una salvación de Constitución. Si falla, sufre 5d6 de daño de trueno más 5d6 de daño radiante o necrótico, a tu elección, y queda derribada. Si tiene éxito, recibe la mitad de ambas partes del daño y no es derribada.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Swift Quiver": {
+    "name": "Carcaj veloz",
+    "description": "Encanta un carcaj que contenga munición. En cada uno de tus turnos, mientras mantengas la concentración, puedes usar una acción adicional para realizar dos ataques con un arma que use munición de ese carcaj. Este repone cada pieza usada en esos ataques con munición no mágica similar. La munición creada se desintegra al terminar el conjuro. Perder la posesión del carcaj termina el conjuro. Lanzarlo usa tu acción adicional; los dos ataques requieren su propia acción adicional en un turno.",
+    "higherLevels": null,
+    "material": "un carcaj que contenga al menos una pieza de munición"
   }
 }

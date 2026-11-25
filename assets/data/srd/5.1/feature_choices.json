@@ -242,6 +242,14 @@
               { "id": "pact_of_the_blade", "name": "Pact of the Blade", "description": "Create a pact weapon in your empty hand or bind a magic weapon as your pact weapon." },
               { "id": "pact_of_the_tome", "name": "Pact of the Tome", "description": "Gain a Book of Shadows with three cantrips from any class's spell list." }
             ]
+          },
+          {
+            "id": "tome_cantrips",
+            "type": "cantrip",
+            "count": 3,
+            "spellClass": "any",
+            "whenChoiceId": "pact_boon",
+            "whenOptionId": "pact_of_the_tome"
           }
         ]
       },

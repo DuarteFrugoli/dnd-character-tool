@@ -107,7 +107,7 @@ class _WhatsNewDialog extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 20, 24, 12),
                 child: Text(
-                  l10n.whatsNew3Summary,
+                  l10n.whatsNew301Summary,
                   style: theme.textTheme.bodyLarge?.copyWith(
                     color: cs.onSurface,
                     fontWeight: FontWeight.w600,
@@ -117,18 +117,18 @@ class _WhatsNewDialog extends StatelessWidget {
               ),
               _WhatsNewItem(
                 icon: Icons.menu_book_outlined,
-                title: l10n.whatsNew3RulesTitle,
-                body: l10n.whatsNew3RulesBody,
+                title: l10n.whatsNew301ContentTitle,
+                body: l10n.whatsNew301ContentBody,
               ),
               _WhatsNewItem(
-                icon: Icons.bedtime_outlined,
-                title: l10n.whatsNew3RestsTitle,
-                body: l10n.whatsNew3RestsBody,
+                icon: Icons.construction_outlined,
+                title: l10n.whatsNew301BetaTitle,
+                body: l10n.whatsNew301BetaBody,
               ),
               _WhatsNewItem(
                 icon: Icons.fact_check_outlined,
-                title: l10n.whatsNew3ResetTitle,
-                body: l10n.whatsNew3ResetBody,
+                title: l10n.whatsNew301LimitsTitle,
+                body: l10n.whatsNew301LimitsBody,
               ),
               _WhatsNewItem(
                 icon: Icons.verified_user_outlined,

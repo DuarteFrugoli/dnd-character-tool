@@ -79,6 +79,8 @@ flutter:
   generate: true
 
   assets:
+    - assets/data/2014/
+    - assets/data/2024/
     - assets/data/srd/5.1/
     - assets/data/srd/5.2.1/
     - assets/data/i18n/de/5.1/

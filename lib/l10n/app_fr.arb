@@ -2,7 +2,7 @@
   "@@locale": "fr",
   "creationRulesetTitle": "Choisir les règles",
   "creationRuleset2014": "D&D 5e (2014)",
-  "creationRuleset2024": "D&D 5.5e (2024)",
+  "creationRuleset2024": "D&D 5.5e (2024) — Beta",
   "rulesetShort2014": "5e",
   "rulesetShort2024": "5.5e",
   "customBackgroundTitle": "Historique personnalisé",
@@ -1040,5 +1040,16 @@
   "settingsMaintenanceChangeClassSkills": "Compétences obtenues de la classe au niveau 1 enregistrées.",
   "settingsMaintenanceChangeGeneric": "{count, plural, =1{1 modification appliquée.} other{{count} modifications appliquées.}}",
   "incomingBackupPrompt": "Importer la sauvegarde depuis le fichier ?",
-  "incomingBackupSuccess": "{count, plural, =1{1 personnage importé depuis la sauvegarde.} other{{count} personnages importés depuis la sauvegarde.}}"
+  "incomingBackupSuccess": "{count, plural, =1{1 personnage importé depuis la sauvegarde.} other{{count} personnages importés depuis la sauvegarde.}}",
+  "backgroundPersonalitySuggestions": "Suggestions de personnalité",
+  "featureChoiceReplacementLimit": "Vous pouvez remplacer au maximum une invocation ou discipline élémentaire déjà connue à ce niveau.",
+  "monsterNonmagicalAttacks": "attaques non magiques",
+  "whatsNew301Summary": "Cette mise à jour enrichit le catalogue 2014 et corrige des choix de personnage. D&D 2024 reste en bêta, avec un contenu incomplet.",
+  "whatsNew301ContentTitle": "Plus de contenu pour 2014",
+  "whatsNew301ContentBody": "Des sorts manquants du Manuel des Joueurs, invocations, disciplines, totems et variantes d’historique ont été ajoutés en anglais, portugais et espagnol. Le Pacte du Grimoire permet désormais de choisir ses trois sorts mineurs. Le catalogue comprend les quatre familiers spéciaux du Pacte de la Chaîne.",
+  "whatsNew301BetaTitle": "D&D 2024 : bêta",
+  "whatsNew301BetaBody": "Les 48 sous-classes du Manuel des Joueurs sont répertoriées. Les historiques, espèces, dons et traductions restent incomplets. Une grande partie des nouveaux textes de sous-classe est disponible uniquement en anglais.",
+  "whatsNew301LimitsTitle": "Ce qui reste à faire",
+  "whatsNew301LimitsBody": "Certaines capacités doivent encore être appliquées manuellement. Le catalogue ne comprend pas tous les suppléments de 2014. Les nouveaux contenus de 2014 doivent encore être traduits dans les autres langues de l’application.",
+  "creationRuleset2024BetaDescription": "Bêta : contenu et traductions incomplets. Il manque encore des historiques, espèces et dons."
 }

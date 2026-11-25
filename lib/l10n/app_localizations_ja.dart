@@ -15,7 +15,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3443,4 +3443,43 @@ class AppLocalizationsJa extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => '性格の例';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'このレベルでは、習得済みの妖術または元素の技法を最大1つまで入れ替えられます。';
+
+  @override
+  String get monsterNonmagicalAttacks => '非魔法の攻撃';
+
+  @override
+  String get whatsNew301Summary =>
+      '今回の更新では2014年版のカタログを拡充し、キャラクターの選択処理を修正しました。D&D 2024は引き続きベータ版で、未収録の内容があります。';
+
+  @override
+  String get whatsNew301ContentTitle => '2014年版のコンテンツを追加';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'プレイヤーズ・ハンドブックの未収録呪文、妖術、奥義、トーテム、背景のバリエーションを英語・ポルトガル語・スペイン語で追加しました。書の契約では初級呪文を3つ選べるようになり、鎖の契約の特殊な使い魔4種もカタログに追加しました。';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024：ベータ版';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'プレイヤーズ・ハンドブックのサブクラス48種を登録済みです。背景、種族、特技、翻訳にはまだ不足があります。新しいサブクラスの説明文の多くは英語のみです。';
+
+  @override
+  String get whatsNew301LimitsTitle => '今後の対応';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      '一部の特徴は引き続き手動で適用する必要があります。2014年版の全サプリメントを収録しているわけではありません。2014年版の新しい内容は、アプリのその他の言語への翻訳が未完了です。';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'ベータ版：内容と翻訳が未完成です。背景、種族、特技には未収録の項目があります。';
 }

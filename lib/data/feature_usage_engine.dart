@@ -567,6 +567,8 @@ class FeatureUsageEngine {
       case 'monk_level':
       case 'sorcerer_level':
         return level;
+      case 'source_class_level_plus_one':
+        return level + 1;
       case 'proficiency_bonus':
         return character.proficiencyBonus;
       case 'paladin_level_x5':
@@ -595,6 +597,10 @@ class FeatureUsageEngine {
       final context =
           usageContext ?? FeatureUsageContext.forCharacter(character);
       return context.effectiveClassLevel >= 5 ? 'short_rest' : 'long_rest';
+    }
+    if (resource.recharge == 'light_warding_flare_recharge') {
+      final context = usageContext ?? FeatureUsageContext.forCharacter(character);
+      return context.effectiveClassLevel >= 6 ? 'short_rest' : 'long_rest';
     }
     return resource.recharge;
   }

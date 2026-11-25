@@ -15,7 +15,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3523,4 +3523,43 @@ class AppLocalizationsTr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => 'Kişilik önerileri';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'Bu seviyede önceden bildiğin en fazla bir yakarışı veya element disiplinini değiştirebilirsin.';
+
+  @override
+  String get monsterNonmagicalAttacks => 'büyülü olmayan saldırılar';
+
+  @override
+  String get whatsNew301Summary =>
+      'Bu güncelleme 2014 kataloğunu genişletir ve karakter seçimlerini düzeltir. D&D 2024, eksik içerikle beta aşamasındadır.';
+
+  @override
+  String get whatsNew301ContentTitle => 'Daha fazla 2014 içeriği';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'Oyuncunun El Kitabı’ndaki eksik büyüler, yakarışlar, disiplinler, totemler ve geçmiş çeşitleri İngilizce, Portekizce ve İspanyolca olarak eklendi. Kitap Paktı artık üç basit büyü seçmenizi sağlar. Zincir Paktı’nın dört özel yoldaşı da katalogda yer alır.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024: beta';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'Oyuncunun El Kitabı’ndaki 48 alt sınıfın tamamı kayıtlıdır. Geçmişler, türler, yetenekler ve çeviriler hâlâ eksiktir. Yeni alt sınıf metinlerinin büyük bölümü yalnızca İngilizce sunulur.';
+
+  @override
+  String get whatsNew301LimitsTitle => 'Kalan işler';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      'Bazı özellikler hâlâ elle uygulanmalıdır. Katalog, 2014 sürümünün tüm ek kitaplarını içermez. Yeni 2014 içeriklerinin uygulamanın diğer dillerine çevrilmesi gerekmektedir.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Beta: içerik ve çeviriler eksik. Geçmişler, türler ve yeteneklerde hâlâ eksikler var.';
 }

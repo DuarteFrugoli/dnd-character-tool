@@ -1,0 +1,1377 @@
+{
+  "source": "Player's Handbook (2014)",
+  "sourceUrl": "https://media.wizards.com/2015/downloads/dnd/DnD_SpellLists_1.01.pdf",
+  "contentType": "Original English summaries; supplemental options, not SRD content.",
+  "spells": [
+    {
+      "name": "Thorn Whip",
+      "level": 0,
+      "school": "transmutation",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "30 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "the stem of a plant with thorns",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": "melee",
+      "saveAttribute": null,
+      "damageTypes": [
+        "piercing"
+      ],
+      "rolls": [
+        {
+          "id": "attack",
+          "label": "Attack",
+          "kind": "spell_attack"
+        },
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "critical": true,
+          "damageType": "piercing",
+          "characterLevelScaling": {
+            "5": "2d6",
+            "11": "3d6",
+            "17": "4d6"
+          }
+        }
+      ],
+      "classes": [
+        "druid"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Lash a creature within range with a thorn-covered magical vine. Make a melee spell attack, even though the range is {{distance:30ft}}. A hit deals 1d6 piercing damage. If the creature is Large or smaller, you also pull it up to {{distance:10ft}} toward you. Damage becomes 2d6 at character level 5, 3d6 at level 11, and 4d6 at level 17.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:thorn-whip"
+    },
+    {
+      "name": "Armor of Agathys",
+      "level": 1,
+      "school": "abjuration",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a cup of water",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 hour",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "cold"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "5",
+          "damageType": "cold",
+          "critical": false,
+          "slotLevelScaling": {
+            "2": "10",
+            "3": "15",
+            "4": "20",
+            "5": "25",
+            "6": "30",
+            "7": "35",
+            "8": "40",
+            "9": "45"
+          }
+        }
+      ],
+      "classes": [
+        "warlock"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Spectral ice envelops you and your equipment, granting 5 temporary hit points for up to 1 hour. Whenever a creature lands a melee attack against you while any of this spell's temporary hit points remain, it suffers 5 cold damage. The retaliation requires no attack roll or saving throw. Losing or replacing these temporary hit points removes this protection.",
+      "higherLevels": "For each slot level above 1st, add 5 to both the temporary hit points granted and the cold damage dealt on each triggering hit. For example, a 3rd-level slot grants 15 temporary hit points and deals 15 cold damage per hit."
+    },
+    {
+      "name": "Arms of Hadar",
+      "level": 1,
+      "school": "conjuration",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 10
+      },
+      "attackType": null,
+      "saveAttribute": "STR",
+      "damageTypes": [
+        "necrotic"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "2d6",
+          "critical": false,
+          "damageType": "necrotic",
+          "slotLevelScaling": {
+            "2": "3d6",
+            "3": "4d6",
+            "4": "5d6",
+            "5": "6d6",
+            "6": "7d6",
+            "7": "8d6",
+            "8": "9d6",
+            "9": "10d6"
+          }
+        }
+      ],
+      "classes": [
+        "warlock"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Dark tendrils lash creatures within {{distance:10ft}} of you. Each target makes a Strength save: failure deals 2d6 necrotic damage and prevents reactions until its next turn; success deals half damage without preventing reactions.",
+      "higherLevels": "Each slot level above 1st adds 1d6 necrotic damage.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:arms-of-hadar"
+    },
+    {
+      "name": "Chromatic Orb",
+      "level": 1,
+      "school": "evocation",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "90 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a diamond worth at least 50 gp",
+      "materialCost": 50,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": "ranged",
+      "saveAttribute": null,
+      "damageTypes": [
+        "acid",
+        "cold",
+        "fire",
+        "lightning",
+        "poison",
+        "thunder"
+      ],
+      "rolls": [
+        {
+          "id": "attack",
+          "label": "Attack",
+          "kind": "spell_attack"
+        },
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "3d8",
+          "critical": true,
+          "damageTypes": [
+            "acid",
+            "cold",
+            "fire",
+            "lightning",
+            "poison",
+            "thunder"
+          ],
+          "slotLevelScaling": {
+            "2": "4d8",
+            "3": "5d8",
+            "4": "6d8",
+            "5": "7d8",
+            "6": "8d8",
+            "7": "9d8",
+            "8": "10d8",
+            "9": "11d8"
+          }
+        }
+      ],
+      "classes": [
+        "sorcerer",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Choose a creature you can see within range and make a ranged spell attack. Choose acid, cold, fire, lightning, poison, or thunder; a hit deals 3d8 damage of that type. The diamond component is required but is not consumed.",
+      "higherLevels": "Each slot level above 1st adds 1d8 damage.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:chromatic-orb"
+    },
+    {
+      "name": "Compelled Duel",
+      "level": 1,
+      "school": "enchantment",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "30 feet",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [],
+      "rolls": [],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Choose a creature you can see within range. On a failed Wisdom save, it has disadvantage on attacks against anyone except you. Whenever it attempts to move more than {{distance:30ft}} away from you, it must pass another Wisdom save; success removes this movement restriction for that turn.\n\nThe spell ends if you attack another creature, cast a spell targeting another hostile creature, or end your turn more than {{distance:30ft}} from the target. It also ends if one of your allies damages the target or subjects it to a harmful spell.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:compelled-duel"
+    },
+    {
+      "name": "Dissonant Whispers",
+      "level": 1,
+      "school": "enchantment",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "60 feet",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [
+        "psychic"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "3d6",
+          "critical": false,
+          "damageType": "psychic",
+          "slotLevelScaling": {
+            "2": "4d6",
+            "3": "5d6",
+            "4": "6d6",
+            "5": "7d6",
+            "6": "8d6",
+            "7": "9d6",
+            "8": "10d6",
+            "9": "11d6"
+          }
+        }
+      ],
+      "classes": [
+        "bard"
+      ],
+      "subclassSpells": [
+        {
+          "class": "warlock",
+          "subclass": "The Great Old One"
+        }
+      ],
+      "raceSpells": [],
+      "description": "Whisper a painful melody to a creature within range. On a failed Wisdom save, it takes 3d6 psychic damage and immediately spends its reaction, if available, to move as far from you as its speed permits. It avoids obviously hazardous ground during this movement. A successful save halves the damage and prevents the movement. A deafened target automatically succeeds.",
+      "higherLevels": "Each slot level above 1st adds 1d6 psychic damage.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:dissonant-whispers"
+    },
+    {
+      "name": "Ensnaring Strike",
+      "level": 1,
+      "school": "conjuration",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "STR",
+      "damageTypes": [
+        "piercing"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "critical": false,
+          "damageType": "piercing",
+          "slotLevelScaling": {
+            "2": "2d6",
+            "3": "3d6",
+            "4": "4d6",
+            "5": "5d6",
+            "6": "6d6",
+            "7": "7d6",
+            "8": "8d6",
+            "9": "9d6"
+          }
+        }
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [
+        {
+          "class": "paladin",
+          "subclass": "Oath of the Ancients"
+        }
+      ],
+      "raceSpells": [],
+      "description": "Your next weapon attack that hits a creature before the spell expires creates binding vines. The target makes a Strength save, with advantage if Large or larger. Failure restrains it for the remaining duration; success destroys the vines. A restrained target takes 1d6 piercing damage at the start of each of its turns. The target, or a creature able to touch it, may spend an action on a Strength check against your spell save DC, freeing the target on success.",
+      "higherLevels": "Each slot level above 1st adds 1d6 to the recurring piercing damage.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:ensnaring-strike"
+    },
+    {
+      "name": "Hail of Thorns",
+      "level": 1,
+      "school": "conjuration",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "piercing"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d10",
+          "critical": false,
+          "damageType": "piercing",
+          "slotLevelScaling": {
+            "2": "2d10",
+            "3": "3d10",
+            "4": "4d10",
+            "5": "5d10",
+            "6": "6d10",
+            "7": "6d10",
+            "8": "6d10",
+            "9": "6d10"
+          }
+        }
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your next ranged weapon attack that hits a creature before the spell expires also bursts into thorns. The attack keeps its normal effects. Its target and every creature within {{distance:5ft}} of that target make Dexterity saves, taking 1d10 piercing damage on failure or half on success.",
+      "higherLevels": "Each slot level above 1st adds 1d10 piercing damage, up to a maximum of 6d10.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:hail-of-thorns"
+    },
+    {
+      "name": "Ray of Sickness",
+      "level": 1,
+      "school": "necromancy",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "60 feet",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": "ranged",
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "poison"
+      ],
+      "rolls": [
+        {
+          "id": "attack",
+          "label": "Attack",
+          "kind": "spell_attack"
+        },
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "2d8",
+          "critical": true,
+          "damageType": "poison",
+          "slotLevelScaling": {
+            "2": "3d8",
+            "3": "4d8",
+            "4": "5d8",
+            "5": "6d8",
+            "6": "7d8",
+            "7": "8d8",
+            "8": "9d8",
+            "9": "10d8"
+          }
+        }
+      ],
+      "classes": [
+        "sorcerer",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Make a ranged spell attack against a creature within range. A hit deals 2d8 poison damage and forces a Constitution save. If that save fails, the target is also poisoned until the end of your next turn. Passing the save prevents the condition, not the damage from the hit.",
+      "higherLevels": "Each slot level above 1st adds 1d8 poison damage.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:ray-of-sickness"
+    },
+    {
+      "name": "Searing Smite",
+      "level": 1,
+      "school": "evocation",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "fire"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "critical": true,
+          "damageType": "fire",
+          "slotLevelScaling": {
+            "2": "2d6",
+            "3": "3d6",
+            "4": "4d6",
+            "5": "5d6",
+            "6": "6d6",
+            "7": "7d6",
+            "8": "8d6",
+            "9": "9d6"
+          }
+        }
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your next melee weapon attack that hits a creature before the spell expires adds 1d6 fire damage and ignites the target. At the start of each of its turns, the burning target makes a Constitution save: failure deals 1d6 fire damage; success ends the spell. The target or another creature within {{distance:5ft}} may spend an action extinguishing the flames to end the spell. Dousing the flames, for example by submerging the target, also ends it.",
+      "higherLevels": "Each slot level above 1st adds 1d6 only to the initial hit's extra damage. The recurring fire damage stays 1d6.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:searing-smite"
+    },
+    {
+      "name": "Thunderous Smite",
+      "level": 1,
+      "school": "evocation",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "STR",
+      "damageTypes": [
+        "thunder"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "2d6",
+          "critical": true,
+          "damageType": "thunder"
+        }
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "The first melee weapon attack you hit with before the spell expires adds 2d6 thunder damage and creates a boom audible within {{distance:300ft}} of you. If the target is a creature, it must also pass a Strength save or be pushed {{distance:10ft}} away from you and knocked prone.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:thunderous-smite"
+    },
+    {
+      "name": "Beast Sense",
+      "level": 2,
+      "school": "divination",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": true,
+      "range": "Touch",
+      "components": [
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 hour",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "rolls": [],
+      "classes": [
+        "druid",
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Touch a willing beast. While concentrating, you may spend an action to see and hear through it, benefiting from its special senses. You remain linked until you spend another action to resume your own senses or the spell ends. While using the beast's senses, you are blinded and deafened to your own surroundings.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:beast-sense"
+    },
+    {
+      "name": "Cordon of Arrows",
+      "level": 2,
+      "school": "transmutation",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "5 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "four or more arrows or bolts",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "8 hours",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "piercing"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "critical": false,
+          "damageType": "piercing"
+        }
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Plant four nonmagical arrows or crossbow bolts in the ground within range. You and creatures you designate when casting are ignored. Whenever another creature first comes within {{distance:30ft}} of the ammunition on a turn, or ends its turn there, one piece attacks it. A failed Dexterity save deals 1d6 piercing damage; a successful save avoids the damage. The attacking piece is destroyed regardless. The spell ends when all enchanted ammunition has been used or its duration expires.",
+      "higherLevels": "Each slot level above 2nd lets you enchant two additional pieces of ammunition. Damage per piece remains 1d6.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:cordon-of-arrows"
+    },
+    {
+      "name": "Phantasmal Force",
+      "level": 2,
+      "school": "illusion",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "60 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a bit of fleece",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "cube",
+        "size": 10
+      },
+      "attackType": null,
+      "saveAttribute": "INT",
+      "damageTypes": [
+        "psychic"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "critical": false,
+          "damageType": "psychic"
+        }
+      ],
+      "classes": [
+        "bard",
+        "sorcerer",
+        "wizard"
+      ],
+      "subclassSpells": [
+        {
+          "class": "warlock",
+          "subclass": "The Archfey"
+        },
+        {
+          "class": "warlock",
+          "subclass": "The Great Old One"
+        }
+      ],
+      "raceSpells": [],
+      "description": "Choose a creature you can see within range; undead and constructs are unaffected. On a failed Intelligence save, it alone perceives an illusory object, creature, or visible phenomenon fitting in a {{distance:10ft|adj}} cube. The illusion includes sensory details such as sound and temperature. The target believes it is real and rationalizes contradictory events.\n\nThe target may spend an action on an Intelligence (Investigation) check against your spell save DC. Success reveals the illusion and ends the spell. Once per round on your turn, a plausible illusory threat may deal 1d6 psychic damage if the target is inside it or within {{distance:5ft}} of it. The target experiences this as damage appropriate to the imagined threat.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:phantasmal-force"
+    },
+    {
+      "name": "Aura of Vitality",
+      "level": 3,
+      "school": "evocation",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "rolls": [],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A healing aura extends {{distance:30ft}} from you and follows your movement. While it lasts, you may spend a bonus action to restore 2d6 hit points to one creature inside, including yourself.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:aura-of-vitality"
+    },
+    {
+      "name": "Blinding Smite",
+      "level": 3,
+      "school": "evocation",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "radiant"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "3d8",
+          "critical": true,
+          "damageType": "radiant"
+        }
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your next melee weapon attack that hits a creature before the spell expires adds 3d8 radiant damage. The target must also pass a Constitution save or become blinded for the remaining duration. At the end of each of its turns, a blinded target repeats the save, ending the blindness on success.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:blinding-smite"
+    },
+    {
+      "name": "Conjure Barrage",
+      "level": 3,
+      "school": "conjuration",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "one piece of ammunition or a thrown weapon",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "cone",
+        "size": 60
+      },
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "3d8",
+          "critical": false,
+          "damageTypes": [
+            "bludgeoning",
+            "piercing",
+            "slashing"
+          ]
+        }
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Throw a nonmagical weapon or fire nonmagical ammunition into the air. Magical copies sweep through a {{distance:60ft|adj}} cone originating from you, then vanish. Each creature in the cone makes a Dexterity save, taking 3d8 damage on failure or half on success. Use the damage type of the weapon or ammunition that supplied the component.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:conjure-barrage"
+    },
+    {
+      "name": "Crusader's Mantle",
+      "level": 3,
+      "school": "evocation",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "radiant"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d4",
+          "critical": true,
+          "damageType": "radiant"
+        }
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [
+        {
+          "class": "cleric",
+          "subclass": "War Domain"
+        }
+      ],
+      "raceSpells": [],
+      "description": "An empowering aura extends {{distance:30ft}} from you and follows your movement. Non-hostile creatures inside, including you, add 1d4 radiant damage whenever they hit with a weapon attack.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:crusaders-mantle"
+    },
+    {
+      "name": "Elemental Weapon",
+      "level": 3,
+      "school": "transmutation",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Touch",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 hour",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "acid",
+        "cold",
+        "fire",
+        "lightning",
+        "thunder"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d4",
+          "critical": true,
+          "damageTypes": [
+            "acid",
+            "cold",
+            "fire",
+            "lightning",
+            "thunder"
+          ],
+          "slotLevelScaling": {
+            "4": "1d4",
+            "5": "2d4",
+            "6": "2d4",
+            "7": "3d4",
+            "8": "3d4",
+            "9": "3d4"
+          }
+        }
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Touch a nonmagical weapon and choose acid, cold, fire, lightning, or thunder. While you concentrate, the weapon becomes magical, gains +1 to attack rolls, and adds 1d4 damage of the chosen type on a hit.",
+      "higherLevels": "With a 5th- or 6th-level slot, the attack bonus becomes +2 and the extra damage becomes 2d4. With a slot of 7th level or higher, they become +3 and 3d4.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:elemental-weapon"
+    },
+    {
+      "name": "Hunger of Hadar",
+      "level": 3,
+      "school": "conjuration",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "150 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a pickled octopus tentacle",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 20
+      },
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "cold",
+        "acid"
+      ],
+      "rolls": [],
+      "classes": [
+        "warlock"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Choose a point within range to open a starless void in a {{distance:20ft|adj}}-radius sphere. Its whispers and slurping can be heard within {{distance:30ft}}. No light, including magical light, illuminates the sphere. Creatures entirely inside are blinded, and the area is difficult terrain.\n\nA creature starting its turn inside takes 2d6 cold damage automatically. A creature ending its turn inside must pass a Dexterity save or take 2d6 acid damage. These are separate triggers; this spell has no higher-slot damage increase in the 2014 rules.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:hunger-of-hadar"
+    },
+    {
+      "name": "Lightning Arrow",
+      "level": 3,
+      "school": "transmutation",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "lightning"
+      ],
+      "rolls": [],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your next ranged weapon attack before the spell expires transforms its ammunition or thrown weapon into lightning. Use the normal weapon attack roll: replace the weapon's usual damage with 4d8 lightning on a hit, or half that damage on a miss. Hit or miss, every creature within {{distance:10ft}} of the target makes a Dexterity save, taking 2d8 lightning damage on failure or half on success. The ammunition or thrown weapon then returns to normal.",
+      "higherLevels": "Each slot level above 3rd adds 1d8 to the primary damage and 1d8 to the nearby creatures' damage.",
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:lightning-arrow"
+    },
+    {
+      "name": "Aura of Life",
+      "level": 4,
+      "school": "abjuration",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "10 minutes",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "rolls": [],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A life-sustaining aura extends {{distance:30ft}} from you and follows your movement. Non-hostile creatures inside, including you, resist necrotic damage and cannot have their hit point maximum reduced. A living, non-hostile creature that begins its turn inside with 0 hit points regains 1 hit point.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:aura-of-life"
+    },
+    {
+      "name": "Aura of Purity",
+      "level": 4,
+      "school": "abjuration",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "10 minutes",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "rolls": [],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A cleansing aura extends {{distance:30ft}} from you and follows your movement. Non-hostile creatures inside, including you, cannot contract diseases and resist poison damage. They have advantage on saves against effects that would make them blinded, charmed, deafened, frightened, paralyzed, poisoned, or stunned.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:aura-of-purity"
+    },
+    {
+      "name": "Grasping Vine",
+      "level": 4,
+      "school": "conjuration",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "30 feet",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [],
+      "rolls": [],
+      "classes": [
+        "druid",
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Create a vine in an unoccupied ground space you can see within range. As part of casting, direct it at a creature you can see within {{distance:30ft}} of the vine. A failed Dexterity save pulls that creature {{distance:20ft}} straight toward the vine. On each later turn while concentrating, you may use a bonus action to direct another lash at the same or a different eligible creature.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:grasping-vine"
+    },
+    {
+      "name": "Staggering Smite",
+      "level": 4,
+      "school": "evocation",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [
+        "psychic"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "4d6",
+          "critical": true,
+          "damageType": "psychic"
+        }
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your next melee weapon attack that hits a creature before the spell expires adds 4d6 psychic damage. The target also makes a Wisdom save. On failure, until the end of its next turn, it has disadvantage on attack rolls and ability checks and cannot take reactions.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:staggering-smite"
+    },
+    {
+      "name": "Banishing Smite",
+      "level": 5,
+      "school": "abjuration",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "force"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "5d10",
+          "critical": true,
+          "damageType": "force"
+        }
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your next weapon attack that hits a creature before the spell expires adds 5d10 force damage. If that attack leaves the target with 50 hit points or fewer, it is banished without a saving throw. A creature native to another plane returns to its home plane. A creature native to your current plane instead enters a harmless demiplane, where it is incapacitated until the spell ends. That creature then returns to its previous location, or the closest unoccupied space if necessary.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:banishing-smite"
+    },
+    {
+      "name": "Circle of Power",
+      "level": 5,
+      "school": "abjuration",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "10 minutes",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "rolls": [],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A protective sphere extends {{distance:30ft}} from you and moves with you. Friendly creatures inside, including you, have advantage on saves against spells and other magical effects. If such an effect permits a save for half damage, an affected creature that succeeds takes no damage instead. A failed save still causes the usual damage.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:circle-of-power"
+    },
+    {
+      "name": "Conjure Volley",
+      "level": 5,
+      "school": "conjuration",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "150 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "one piece of ammunition or a thrown weapon",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "cylinder",
+        "size": 40
+      },
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "bludgeoning",
+        "piercing",
+        "slashing"
+      ],
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "8d8",
+          "critical": false,
+          "damageTypes": [
+            "bludgeoning",
+            "piercing",
+            "slashing"
+          ]
+        }
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Fire nonmagical ammunition from a ranged weapon or throw a nonmagical weapon into the air. Choose a point within range: copies rain down in a cylinder with a {{distance:40ft|adj}} radius and {{distance:20ft|adj}} height, then vanish. Each creature inside makes a Dexterity save, taking 8d8 damage on failure or half on success. The component weapon or ammunition determines the damage type.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:conjure-volley"
+    },
+    {
+      "name": "Destructive Wave",
+      "level": 5,
+      "school": "evocation",
+      "castingTime": "1 action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "thunder",
+        "radiant",
+        "necrotic"
+      ],
+      "rolls": [
+        {
+          "id": "thunder",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "5d6",
+          "critical": false,
+          "damageType": "thunder"
+        },
+        {
+          "id": "divine",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "5d6",
+          "critical": false,
+          "damageTypes": [
+            "radiant",
+            "necrotic"
+          ]
+        }
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [
+        {
+          "class": "cleric",
+          "subclass": "Tempest Domain"
+        }
+      ],
+      "raceSpells": [],
+      "description": "Strike the ground and choose any creatures within {{distance:30ft}} of you. Each chosen creature makes a Constitution save. Failure deals 5d6 thunder damage plus 5d6 radiant or necrotic damage, your choice, and knocks the creature prone. Success halves both portions of damage and prevents the knockdown.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:destructive-wave"
+    },
+    {
+      "name": "Swift Quiver",
+      "level": 5,
+      "school": "transmutation",
+      "castingTime": "1 bonus action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Touch",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a quiver containing at least one piece of ammunition",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "rolls": [],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Enchant a quiver containing ammunition. On each of your turns while concentrating, you may spend a bonus action to make two attacks with a weapon using ammunition from that quiver. It replaces each piece used for these attacks with similar nonmagical ammunition. Created ammunition disintegrates when the spell ends. Losing possession of the quiver ends the spell. Casting uses your bonus action; the two attacks require their own bonus action on a turn.",
+      "higherLevels": null,
+      "sourceUrl": "https://dnd5e.wikidot.com/spell:swift-quiver"
+    }
+  ]
+}

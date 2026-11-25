@@ -15,7 +15,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -3543,4 +3543,43 @@ class AppLocalizationsFr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => 'Suggestions de personnalité';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'Vous pouvez remplacer au maximum une invocation ou discipline élémentaire déjà connue à ce niveau.';
+
+  @override
+  String get monsterNonmagicalAttacks => 'attaques non magiques';
+
+  @override
+  String get whatsNew301Summary =>
+      'Cette mise à jour enrichit le catalogue 2014 et corrige des choix de personnage. D&D 2024 reste en bêta, avec un contenu incomplet.';
+
+  @override
+  String get whatsNew301ContentTitle => 'Plus de contenu pour 2014';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'Des sorts manquants du Manuel des Joueurs, invocations, disciplines, totems et variantes d’historique ont été ajoutés en anglais, portugais et espagnol. Le Pacte du Grimoire permet désormais de choisir ses trois sorts mineurs. Le catalogue comprend les quatre familiers spéciaux du Pacte de la Chaîne.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024 : bêta';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'Les 48 sous-classes du Manuel des Joueurs sont répertoriées. Les historiques, espèces, dons et traductions restent incomplets. Une grande partie des nouveaux textes de sous-classe est disponible uniquement en anglais.';
+
+  @override
+  String get whatsNew301LimitsTitle => 'Ce qui reste à faire';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      'Certaines capacités doivent encore être appliquées manuellement. Le catalogue ne comprend pas tous les suppléments de 2014. Les nouveaux contenus de 2014 doivent encore être traduits dans les autres langues de l’application.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Bêta : contenu et traductions incomplets. Il manque encore des historiques, espèces et dons.';
 }

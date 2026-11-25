@@ -335,6 +335,7 @@ class SrdBackground {
   final List<String> startingEquipment;
   final SrdBackgroundFeature feature;
   final List<String> variants;
+  final Map<String, List<String>> personalitySuggestions;
 
   /// Set on a custom background: the catalog background whose feature it
   /// uses. Null for catalog backgrounds.
@@ -350,6 +351,7 @@ class SrdBackground {
     required this.startingEquipment,
     required this.feature,
     required this.variants,
+    this.personalitySuggestions = const {},
     this.featureSource,
   });
 
@@ -363,6 +365,10 @@ class SrdBackground {
       json['feature'] as Map<String, dynamic>,
     ),
     variants: List<String>.from(json['variants'] ?? []),
+    personalitySuggestions: {
+      for (final entry in (json['personalitySuggestions'] as Map? ?? const {}).entries)
+        entry.key.toString(): List<String>.from(entry.value as List),
+    },
   );
 }
 
@@ -987,6 +993,7 @@ class SrdFeatureChoiceRequirement {
   final List<String> spellClasses;
   final String? spellClassFromChoice;
   final String? spellSchool;
+  final List<String> excludedSpellNames;
   final String? whenChoiceId;
   final String? whenOptionId;
   final String? featCategory;
@@ -1019,6 +1026,7 @@ class SrdFeatureChoiceRequirement {
     this.spellClasses = const [],
     this.spellClassFromChoice,
     this.spellSchool,
+    this.excludedSpellNames = const [],
     this.whenChoiceId,
     this.whenOptionId,
     this.featCategory,
@@ -1054,6 +1062,7 @@ class SrdFeatureChoiceRequirement {
           .toList(),
       spellClassFromChoice: json['spellClassFromChoice'] as String?,
       spellSchool: json['spellSchool'] as String?,
+      excludedSpellNames: List<String>.from(json['excludedSpellNames'] as List? ?? const []),
       whenChoiceId: json['whenChoiceId'] as String?,
       whenOptionId: json['whenOptionId'] as String?,
       featCategory: json['featCategory'] as String?,
@@ -1124,6 +1133,10 @@ class SrdFeatureChoiceOption {
   final List<String> requiresInvocations;
   final String? target;
   final bool repeatableWithDifferentTarget;
+  final String? requiresPact;
+  final String? requiresSpell;
+  final int? kiCost;
+  final Map<int, List<String>> alwaysPreparedSpellsByLevel;
 
   const SrdFeatureChoiceOption({
     required this.id,
@@ -1133,6 +1146,10 @@ class SrdFeatureChoiceOption {
     this.requiresInvocations = const [],
     this.target,
     this.repeatableWithDifferentTarget = false,
+    this.requiresPact,
+    this.requiresSpell,
+    this.kiCost,
+    this.alwaysPreparedSpellsByLevel = const {},
   });
 
   factory SrdFeatureChoiceOption.fromJson(Map<String, dynamic> json) {
@@ -1146,6 +1163,13 @@ class SrdFeatureChoiceOption {
           .toList(),
       target: json['target'] as String?,
       repeatableWithDifferentTarget: readBool(json['repeatableWithDifferentTarget']),
+      requiresPact: json['requiresPact'] as String?,
+      requiresSpell: json['requiresSpell'] as String?,
+      kiCost: (json['kiCost'] as num?)?.toInt(),
+      alwaysPreparedSpellsByLevel: {
+        for (final entry in (json['alwaysPreparedSpellsByLevel'] as Map? ?? const {}).entries)
+          int.parse(entry.key.toString()): List<String>.from(entry.value as List),
+      },
     );
   }
 }

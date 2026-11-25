@@ -240,9 +240,20 @@ class ClassSpellcasting2024 {
   final int preparedSpells;
   final int maxSpellLevel;
 
+  String get spellListClass =>
+      cls.subclassSpellcasting[entry.subclassName]?.spellClass ??
+      cls.name.toLowerCase();
+
   /// Wizard spellbooks start with six spells and gain two per level.
   int? get spellbookSize =>
-      cls.name == 'Wizard' ? 6 + 2 * (entry.level - 1) : null;
+      cls.name == 'Wizard'
+          ? 6 + 2 * (entry.level - 1) +
+              (entry.level >= 3 &&
+                      const {'Abjurer', 'Diviner', 'Evoker', 'Illusionist'}
+                          .contains(entry.subclassName)
+                  ? 2 + ((entry.level - 3) ~/ 2).clamp(0, 7)
+                  : 0)
+          : null;
 }
 
 class Progression2024Engine {
@@ -371,6 +382,10 @@ class Progression2024Engine {
   ) {
     for (final entry in entries) {
       final cls = data.classNamed(entry.className);
+      if (featureName == 'Spellcasting' && entry.level >= 3 &&
+          cls.subclassSpellcasting.containsKey(entry.subclassName)) {
+        return true;
+      }
       for (var level = 1; level <= entry.level; level++) {
         if (cls.featuresAt(level).contains(featureName)) return true;
       }
@@ -572,6 +587,61 @@ class Progression2024Engine {
       requests.addAll(featRequests(data, featName, plan.newTotalLevel, character));
     }
     if (plan.isNewClass) requests.addAll(_multiclassRequests(character, data, plan));
+    if (subclass == 'Gloom Stalker' && plan.newClassLevel == 7) {
+      final already = character.savingThrowProficiencies.contains('wisdom');
+      final definition = data.choices.subclassFeature('Ranger', 'Gloom Stalker', 'Iron Mind');
+      if (definition != null) {
+        requests.removeWhere((request) => request.sourceSubclass == subclass &&
+            request.featureName == 'Iron Mind');
+        requests.add(FeatureChoiceRequest(
+          sourceType: FeatureChoiceSourceType.subclassFeature,
+          sourceClass: plan.cls.name,
+          sourceClassEntryId: plan.classEntryId,
+          sourceSubclass: subclass,
+          featureName: 'Iron Mind',
+          level: plan.newClassLevel,
+          requirement: SrdFeatureChoiceRequirement(
+            id: 'saving_throw',
+            type: 'saving_throw',
+            options: [
+              for (final ability in already ? ['intelligence', 'charisma'] : ['wisdom'])
+                SrdFeatureChoiceOption(id: ability, name: _titleCase(ability)),
+            ],
+          ),
+          requiredCount: 1,
+        ));
+      }
+    }
+    final casting = plan.cls.subclassSpellcasting[subclass];
+    if (casting != null && plan.newClassLevel >= 3) {
+      final row = casting.rowAt(plan.newClassLevel);
+      final slots = _nine(row['spellSlots'] as List?);
+      final maxLevel = slots.lastIndexWhere((count) => count > 0) + 1;
+      for (final (id, type, count) in [
+        ('cantrips', 'cantrip', (row['cantripsKnown'] as num).toInt()),
+        ('prepared_spells', 'spell', (row['preparedSpells'] as num).toInt()),
+      ]) {
+        addRequest(FeatureChoiceRequest(
+          sourceType: FeatureChoiceSourceType.subclassFeature,
+          sourceClass: plan.cls.name,
+          sourceClassEntryId: plan.classEntryId,
+          sourceSubclass: subclass,
+          featureName: 'Spellcasting',
+          level: plan.newClassLevel,
+          requirement: SrdFeatureChoiceRequirement(
+            id: id,
+            type: type,
+            count: count,
+            spellClass: casting.spellClass,
+            excludedSpellNames: type == 'cantrip' ? casting.fixedCantrips : const [],
+            minSpellLevel: type == 'spell' ? 1 : 0,
+            maxSpellLevel: type == 'spell' ? maxLevel : 0,
+            replaceOneOnLevelUp: true,
+          ),
+          requiredCount: count,
+        ));
+      }
+    }
     return requests;
   }
 
@@ -751,8 +821,24 @@ class Progression2024Engine {
       if (removed > allowed) {
         throw ArgumentError('Only $allowed earlier ${request.choiceId} can change.');
       }
+      if (request.sourceType == FeatureChoiceSourceType.subclassFeature &&
+          request.featureName == 'Spellcasting') {
+        final requirement = request.requirement;
+        final eligible = {
+          for (final spell in data.spells)
+            if (spell.classes.contains(requirement.spellClass) &&
+                spell.level >= (requirement.minSpellLevel ?? 0) &&
+                spell.level <= (requirement.maxSpellLevel ?? 9) &&
+                !requirement.excludedSpellNames.contains(spell.name))
+              spell.name,
+        };
+        if (!eligible.containsAll(after)) {
+          throw ArgumentError('Choose eligible spells for ${request.sourceSubclass}.');
+        }
+      }
       if (request.requirement.type == 'beast_form') {
-        final limits = const WildShape2024Rules().limitsAt(request.level);
+        final limits = const WildShape2024Rules().limitsAt(request.level,
+            subclass: character.subclassFor('Druid'));
         final eligible = {
           for (final monster in data.monsters)
             if (limits != null && limits.allows(monster)) monster.id,
@@ -843,7 +929,8 @@ class Progression2024Engine {
     CharacterClassEntry? warlock;
     for (final entry in character.classEntries) {
       final cls = data.classNamed(entry.className);
-      if (cls.spellcastingType == 'full' || cls.spellcastingType == 'half') {
+      if (cls.spellcastingType == 'full' || cls.spellcastingType == 'half' ||
+          (entry.level >= 3 && cls.subclassSpellcasting.containsKey(entry.subclassName))) {
         casters.add((entry, cls));
       } else if (cls.spellcastingType == 'warlock') {
         warlock = entry;
@@ -852,13 +939,17 @@ class Progression2024Engine {
     var standard = List<int>.filled(9, 0);
     if (casters.length == 1) {
       final (entry, cls) = casters.single;
-      standard = _nine(cls.rowAt(entry.level)['spellSlots'] as List?);
+      final row = cls.subclassSpellcasting[entry.subclassName]?.rowAt(entry.level) ??
+          cls.rowAt(entry.level);
+      standard = _nine(row['spellSlots'] as List?);
     } else if (casters.length > 1) {
       var casterLevel = 0;
       for (final (entry, cls) in casters) {
-        casterLevel += cls.spellcastingType == 'full'
-            ? entry.level
-            : (entry.level + 1) ~/ 2;
+        casterLevel += cls.subclassSpellcasting.containsKey(entry.subclassName)
+            ? entry.level ~/ 3
+            : cls.spellcastingType == 'full'
+                ? entry.level
+                : (entry.level + 1) ~/ 2;
       }
       final fullTable = data.classes.firstWhere(
         (cls) => cls.spellcastingType == 'full',
@@ -886,9 +977,11 @@ class Progression2024Engine {
     final result = <ClassSpellcasting2024>[];
     for (final entry in character.classEntries) {
       final cls = classes.where((c) => c.name == entry.className).firstOrNull;
-      final ability = cls?.spellcastingAbility;
+      final subclassCasting = cls?.subclassSpellcasting[entry.subclassName];
+      final ability = subclassCasting?.ability ?? cls?.spellcastingAbility;
       if (cls == null || ability == null) continue;
-      final row = cls.rowAt(entry.level);
+      if (subclassCasting != null && entry.level < 3) continue;
+      final row = subclassCasting?.rowAt(entry.level) ?? cls.rowAt(entry.level);
       final slots = _nine(row['spellSlots'] as List?);
       var maxSpellLevel = 0;
       for (var i = 0; i < 9; i++) {
@@ -920,6 +1013,8 @@ class Progression2024Engine {
         : spell.sourceClassEntryId == entry.id;
     return sameEntry &&
         (spell.sourceType == 'class' ||
+            (spell.sourceClass == 'Wizard' &&
+                (spell.sourceFeature?.endsWith(' Savant') ?? false)) ||
             ChoiceEffects.classSpellFeatures.contains(spell.sourceFeature));
   }
 

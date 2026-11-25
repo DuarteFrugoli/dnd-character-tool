@@ -15,7 +15,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get creationRuleset2014 => 'D&D 5e (2014)';
 
   @override
-  String get creationRuleset2024 => 'D&D 5.5e (2024)';
+  String get creationRuleset2024 => 'D&D 5.5e (2024) — Beta';
 
   @override
   String get rulesetShort2014 => '5e';
@@ -1912,7 +1912,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get sectionIdeals => 'Ideales';
 
   @override
-  String get sectionBonds => 'Cautiverio';
+  String get sectionBonds => 'Vínculos';
 
   @override
   String get sectionFlaws => 'Defectos';
@@ -3535,4 +3535,43 @@ class AppLocalizationsEs extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get backgroundPersonalitySuggestions => 'Sugerencias de personalidad';
+
+  @override
+  String get featureChoiceReplacementLimit =>
+      'Puedes sustituir como máximo una invocación o disciplina elemental ya conocida en este nivel.';
+
+  @override
+  String get monsterNonmagicalAttacks => 'ataques no mágicos';
+
+  @override
+  String get whatsNew301Summary =>
+      'Esta actualización amplía el catálogo de 2014 y corrige elecciones de la ficha. D&D 2024 sigue en beta, con contenido incompleto.';
+
+  @override
+  String get whatsNew301ContentTitle => 'Más contenido de 2014';
+
+  @override
+  String get whatsNew301ContentBody =>
+      'Añadimos conjuros que faltaban del Manual del Jugador, invocaciones, disciplinas, tótems y variantes de trasfondo en inglés, portugués y español. El Pacto del Tomo ahora permite elegir sus tres trucos, y el catálogo incluye los cuatro familiares especiales del Pacto de la Cadena.';
+
+  @override
+  String get whatsNew301BetaTitle => 'D&D 2024: beta';
+
+  @override
+  String get whatsNew301BetaBody =>
+      'Las 48 subclases del Manual del Jugador están registradas. Aún faltan trasfondos, especies, dotes y traducciones; buena parte de los nuevos textos de subclase solo está disponible en inglés.';
+
+  @override
+  String get whatsNew301LimitsTitle => 'Lo que queda pendiente';
+
+  @override
+  String get whatsNew301LimitsBody =>
+      'Algunos rasgos aún deben aplicarse manualmente. El catálogo no incluye todos los suplementos de 2014. Los nuevos materiales de 2014 todavía necesitan traducción a los demás idiomas de la app.';
+
+  @override
+  String get creationRuleset2024BetaDescription =>
+      'Beta: contenido y traducciones incompletos. Aún faltan trasfondos, especies y dotes.';
 }

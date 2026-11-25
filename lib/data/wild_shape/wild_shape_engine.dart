@@ -8,6 +8,26 @@ import '../rulesets/wild_shape_rules.dart';
 class WildShapeEngine {
   const WildShapeEngine._();
 
+  static const elementalForms = {
+    'air_elemental', 'earth_elemental', 'fire_elemental', 'water_elemental',
+  };
+
+  static bool _elementalMoon(Character character) =>
+      WildShapeRules.forCharacter(character) is WildShape2014Rules &&
+      character.subclassFor('Druid') == 'Circle of the Moon' &&
+      character.classLevel('Druid') >= 10;
+
+  static int formCost(Character character, SrdMonster form) =>
+      _elementalMoon(character) && elementalForms.contains(form.id) ? 2 : 1;
+
+  static int armorClassFor(Character character, SrdMonster form) {
+    final isMoon = WildShapeRules.forCharacter(character) is WildShape2024Rules &&
+        character.classLevel('Druid') >= 3 &&
+        character.subclassFor('Druid') == 'Circle of the Moon';
+    final moonAc = 13 + character.abilityScores.wisdomModifier;
+    return isMoon && moonAc > form.armorClass ? moonAc : form.armorClass;
+  }
+
   /// 2024 known forms saved as the Wild Shape feature choice.
   static List<String> knownFormIds(Character character) => [
     for (final choice in character.featureChoices)
@@ -27,7 +47,13 @@ class WildShapeEngine {
     final rules = WildShapeRules.forCharacter(character);
     final limits = rules.limitsFor(character);
     if (limits == null) return const [];
-    final allowed = [for (final monster in monsters) if (limits.allows(monster)) monster];
+    final allowed = [
+      for (final monster in monsters)
+        if ((limits.allows(monster) &&
+                (rules is! WildShape2014Rules || !monster.isSwarm)) ||
+            (_elementalMoon(character) && elementalForms.contains(monster.id)))
+          monster,
+    ];
     if (rules is! WildShape2024Rules) return allowed;
     final known = knownFormIds(character).toSet();
     return [for (final monster in allowed) if (known.contains(monster.id)) monster];
@@ -57,17 +83,21 @@ class WildShapeEngine {
       throw ArgumentError('${form.name} is not an available Wild Shape form.');
     }
     final uses = usage(character, catalog);
+    final cost = formCost(character, form);
     if (uses == null) throw StateError('This character has no Wild Shape uses.');
-    if (!uses.isUnlimited && !uses.canSpend) {
+    if (!uses.isUnlimited && (uses.current ?? 0) < cost) {
       throw StateError('No Wild Shape uses left.');
     }
     final druidLevel = character.classLevel(WildShapeRules.druid);
-    final temporary = rules.temporaryHitPointsOnAssume(druidLevel);
+    final temporary = rules.temporaryHitPointsOnAssume(
+      druidLevel,
+      subclass: character.subclassFor('Druid'),
+    );
     final hp = character.hitPoints;
     return character.copyWith(
       featureResources: uses.isUnlimited
           ? null
-          : {...character.featureResources, uses.resource.id: uses.current! - 1},
+          : {...character.featureResources, uses.resource.id: uses.current! - cost},
       hitPoints: temporary > hp.temporary ? hp.copyWith(temporary: temporary) : null,
       wildShape: ActiveWildShape(
         monsterId: form.id,

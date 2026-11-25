@@ -2537,5 +2537,9 @@
   "creationRuleset2024BetaDescription": "Beta: incomplete content and translations. Backgrounds, species and feats still have gaps.",
   "@creationRuleset2024BetaDescription": {
     "description": "3.0.2 release notice and incomplete 2024 content disclosure."
+  },
+  "exportFileError": "Could not export the character file.",
+  "@exportFileError": {
+    "description": "Character export failed to open or complete native sharing."
   }
 }

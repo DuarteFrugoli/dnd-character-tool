@@ -150,6 +150,7 @@ flutter run
 
 - [Technical Architecture](docs/ARCHITECTURE.md) explains state management, persistence, SRD data loading, inventory item types, notes, dice rolling, level-up rules, review prompts, display preferences, maintenance migrations and import/export flows.
 - [Changelog](CHANGELOG.md) tracks release history.
+- [iOS file testing](docs/IOS_FILE_TESTING.md) covers Mac setup, native tests and the iPhone/iPad import/export checks required before release.
 
 > The built-in rules cover D&D 5e (2014), with material from **SRD 5.1**, and D&D 5.5e (2024), with material from **SRD 5.2.1**.
 
@@ -311,6 +312,7 @@ flutter run
 
 - [Arquitetura técnica](docs/ARCHITECTURE.md) explica gerenciamento de estado, persistência, dados SRD, tipos de item do inventário, notas, rolagem de dados, regras de level up, pedidos de avaliação, preferências de tela, migrações de manutenção e fluxos de import/export.
 - [Changelog](CHANGELOG.md) registra o histórico de versões.
+- [Testes de arquivos no iOS](docs/IOS_FILE_TESTING.md) reúne a preparação do Mac, os testes nativos e a validação de importação/exportação no iPhone/iPad antes do lançamento.
 
 > As regras incluídas cobrem D&D 5e (2014), com material do **SRD 5.1**, e D&D 5.5e (2024), com material do **SRD 5.2.1**.
 

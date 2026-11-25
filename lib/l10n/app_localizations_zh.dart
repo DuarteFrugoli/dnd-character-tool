@@ -3459,4 +3459,7 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'Beta 测试版：内容和翻译尚不完整，背景、物种和专长仍有缺漏。';
+
+  @override
+  String get exportFileError => '无法导出角色文件。';
 }

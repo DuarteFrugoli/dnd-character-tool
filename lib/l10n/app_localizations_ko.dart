@@ -3483,4 +3483,7 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       '베타: 콘텐츠와 번역이 미완성입니다. 배경, 종족, 재주에 아직 누락이 있습니다.';
+
+  @override
+  String get exportFileError => '캐릭터 파일을 내보내지 못했습니다.';
 }

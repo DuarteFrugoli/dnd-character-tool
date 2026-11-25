@@ -1051,5 +1051,6 @@
   "whatsNew301BetaBody": "As 48 subclasses do Livro do Jogador estão cadastradas. Ainda faltam antecedentes, espécies, talentos e traduções; boa parte dos novos textos de subclasses está disponível apenas em inglês.",
   "whatsNew301LimitsTitle": "O que ainda falta",
   "whatsNew301LimitsBody": "Algumas habilidades ainda precisam ser aplicadas manualmente. O catálogo não inclui todos os suplementos de 2014. Os novos materiais de 2014 ainda precisam de tradução para os outros idiomas do app.",
-  "creationRuleset2024BetaDescription": "Beta: conteúdo e traduções incompletos. Ainda faltam antecedentes, espécies e talentos."
+  "creationRuleset2024BetaDescription": "Beta: conteúdo e traduções incompletos. Ainda faltam antecedentes, espécies e talentos.",
+  "exportFileError": "Não foi possível exportar o arquivo do personagem."
 }

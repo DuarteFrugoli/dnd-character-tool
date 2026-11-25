@@ -302,7 +302,11 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
           .valueOrNull
           ?.length;
       final backupJson = await repo.exportBackupToFileJson();
-      await exportDndBackupFile(backupJson);
+      if (!mounted) return;
+      await exportDndBackupFile(
+        backupJson,
+        sharePositionOrigin: fileShareOrigin(context),
+      );
       final characterCount =
           cachedCharacterCount ?? (await repo.getAll()).length;
 
@@ -319,6 +323,8 @@ class _BackupTileState extends ConsumerState<_BackupTile> {
               characterCount: characterCount,
             ),
       );
+    } on FileExportCancelled {
+      // Do not show success or request a review for a cancelled export.
     } catch (_) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
@@ -647,7 +653,11 @@ class _CharacterMaintenanceTileState
     try {
       final repo = ref.read(characterRepositoryProvider);
       final backupJson = await repo.exportBackupToFileJson();
-      await exportDndBackupFile(backupJson);
+      if (!mounted) return;
+      await exportDndBackupFile(
+        backupJson,
+        sharePositionOrigin: fileShareOrigin(context),
+      );
 
       if (!mounted) return;
       setState(() => _busyTask = _MaintenanceBusyTask.updating);
@@ -673,6 +683,8 @@ class _CharacterMaintenanceTileState
           ],
         ),
       );
+    } on FileExportCancelled {
+      // Leave characters untouched when the required backup is cancelled.
     } catch (_) {
       if (!mounted) return;
       final errorMessage = _busyTask == _MaintenanceBusyTask.backingUp
@@ -731,9 +743,7 @@ class _CharacterMaintenanceTileState
       trailing: _busy
           ? null
           : Icon(
-              hasUpdates
-                  ? Icons.chevron_right
-                  : Icons.manage_search_outlined,
+              hasUpdates ? Icons.chevron_right : Icons.manage_search_outlined,
             ),
       onTap: _busy ? null : (hasUpdates && !hasReadIssues ? _apply : _check),
     );
@@ -1247,11 +1257,8 @@ class _ContextualCriticalRuleTile extends ConsumerWidget {
         '${l10n.settingsContextualCriticalRuleSubtitle}\n$currentLabel',
       ),
       isThreeLine: true,
-      onTap: () => _showCriticalRulePicker(
-        context,
-        ref,
-        preferences.criticalMode,
-      ),
+      onTap: () =>
+          _showCriticalRulePicker(context, ref, preferences.criticalMode),
     );
   }
 
@@ -1269,9 +1276,7 @@ class _ContextualCriticalRuleTile extends ConsumerWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ListTile(
-              title: Text(l10n.settingsContextualCriticalRuleChoose),
-            ),
+            ListTile(title: Text(l10n.settingsContextualCriticalRuleChoose)),
             ListTile(
               title: Text(l10n.settingsContextualCriticalRuleDoubleDice),
               trailing: current == ContextualCriticalMode.doubleDice

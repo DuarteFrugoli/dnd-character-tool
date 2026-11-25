@@ -30,6 +30,10 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>FlutterDeepLinkingEnabled</key>
+	<false/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -87,6 +91,25 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+		</dict>
+		<dict>
+			<key>UTTypeDescription</key>
+			<string>D&amp;D Character Backup</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.duartefrugoli.dndbackup</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>dndbackup</string>
+				</array>
+			</dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
 			</array>
 		</dict>
 	</array>
@@ -102,6 +125,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.duartefrugoli.dndchar</string>
+				<string>com.duartefrugoli.dndbackup</string>
 			</array>
 		</dict>
 	</array>

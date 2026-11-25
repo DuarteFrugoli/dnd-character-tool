@@ -3571,4 +3571,8 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'Beta: conteúdo e traduções incompletos. Ainda faltam antecedentes, espécies e talentos.';
+
+  @override
+  String get exportFileError =>
+      'Não foi possível exportar o arquivo do personagem.';
 }

@@ -17,8 +17,13 @@ Future<bool> showCharacterUpdateDialog(
   return await showDialog<bool>(
         context: context,
         barrierDismissible: false,
-        builder: (_) => CharacterUpdateDialog(
-          exportBackup: exportBackup ?? exportDndBackupFile,
+        builder: (dialogContext) => CharacterUpdateDialog(
+          exportBackup:
+              exportBackup ??
+              (fileJson) => exportDndBackupFile(
+                fileJson,
+                sharePositionOrigin: fileShareOrigin(dialogContext),
+              ),
         ),
       ) ??
       false;
@@ -83,8 +88,12 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
       await widget.exportBackup(fileJson);
       if (!mounted) return;
       setState(
-        () => _message = AppLocalizations.of(context)!.settingsBackupExportSuccess,
+        () => _message = AppLocalizations.of(
+          context,
+        )!.settingsBackupExportSuccess,
       );
+    } on FileExportCancelled {
+      // Keep the dialog open without claiming a backup was saved.
     } catch (_) {
       if (!mounted) return;
       setState(() {
@@ -117,6 +126,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
       final report = await repository.applyMigrations();
       if (!mounted) return;
       setState(() => _result = report);
+    } on FileExportCancelled {
+      // Updating must not proceed when the required backup was cancelled.
     } catch (_) {
       if (!mounted) return;
       setState(() {
@@ -137,8 +148,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
     final preview = _preview;
     final result = _result;
     final busy = _task != null;
-    final blocking = _task == _UpdateTask.backingUp ||
-        _task == _UpdateTask.updating;
+    final blocking =
+        _task == _UpdateTask.backingUp || _task == _UpdateTask.updating;
 
     return PopScope(
       canPop: !blocking && result == null,
@@ -200,7 +211,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                   SizedBox(
                     width: double.infinity,
                     child: OutlinedButton.icon(
-                      onPressed: busy || preview == null || preview.hasReadIssues
+                      onPressed:
+                          busy || preview == null || preview.hasReadIssues
                           ? null
                           : _backup,
                       icon: const Icon(Icons.backup_outlined),
@@ -211,7 +223,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                   SizedBox(
                     width: double.infinity,
                     child: FilledButton.icon(
-                      onPressed: busy ||
+                      onPressed:
+                          busy ||
                               _preview?.hasUpdates != true ||
                               _preview?.hasReadIssues == true
                           ? null

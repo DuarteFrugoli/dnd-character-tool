@@ -48,12 +48,13 @@ class CharacterListScreen extends ConsumerStatefulWidget {
 
 class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
   StreamSubscription<String>? _fileSub;
+  Future<void> _incomingFileTask = Future.value();
 
   @override
   void initState() {
     super.initState();
     _fileSub = IncomingFileService.instance.fileStream.listen(
-      _handleIncomingFile,
+      _queueIncomingFile,
     );
     WidgetsBinding.instance.addPostFrameCallback((_) {
       IncomingFileService.instance.checkPendingFile();
@@ -65,6 +66,22 @@ class _CharacterListScreenState extends ConsumerState<CharacterListScreen> {
   void dispose() {
     _fileSub?.cancel();
     super.dispose();
+  }
+
+  void _queueIncomingFile(String fileJson) {
+    // Native callbacks can deliver a batch. Ask about one import at a time.
+    _incomingFileTask = _incomingFileTask.then((_) async {
+      try {
+        await _handleIncomingFile(fileJson);
+      } catch (_) {
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(AppLocalizations.of(context)!.charListImportError),
+          ),
+        );
+      }
+    });
   }
 
   Future<void> _handleIncomingFile(String fileJson) async {
@@ -434,9 +451,16 @@ class _CharacterCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
-    final rules = ref.watch(characterRulesContextProvider((character.rulesetId, character.contentPackId)));
-    final i18n = ref.watch(srdI18nForPackProvider(rules.contentPackId)).valueOrNull ??
+    final rules = ref.watch(
+      characterRulesContextProvider((
+        character.rulesetId,
+        character.contentPackId,
+      )),
+    );
+    final i18n =
+        ref.watch(srdI18nForPackProvider(rules.contentPackId)).valueOrNull ??
         SrdI18nService.englishForPack(rules.pack);
+
     /// Sheets waiting for a data update stay closed until the player updates.
     Future<bool> ensureUpdated() async {
       if (!character.needsDataUpdate) return true;
@@ -725,7 +749,18 @@ class _ExportDialogState extends State<_ExportDialog> {
   Future<void> _shareFile() async {
     setState(() => _sharingFile = true);
     try {
-      await exportDndCharFile(widget.characterName, widget.fileJson);
+      await exportDndCharFile(
+        widget.characterName,
+        widget.fileJson,
+        sharePositionOrigin: fileShareOrigin(context),
+      );
+    } on FileExportCancelled {
+      // The user closed the share sheet.
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(AppLocalizations.of(context)!.exportFileError)),
+      );
     } finally {
       if (mounted) setState(() => _sharingFile = false);
     }

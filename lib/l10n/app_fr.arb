@@ -1051,5 +1051,6 @@
   "whatsNew301BetaBody": "Les 48 sous-classes du Manuel des Joueurs sont répertoriées. Les historiques, espèces, dons et traductions restent incomplets. Une grande partie des nouveaux textes de sous-classe est disponible uniquement en anglais.",
   "whatsNew301LimitsTitle": "Ce qui reste à faire",
   "whatsNew301LimitsBody": "Certaines capacités doivent encore être appliquées manuellement. Le catalogue ne comprend pas tous les suppléments de 2014. Les nouveaux contenus de 2014 doivent encore être traduits dans les autres langues de l’application.",
-  "creationRuleset2024BetaDescription": "Bêta : contenu et traductions incomplets. Il manque encore des historiques, espèces et dons."
+  "creationRuleset2024BetaDescription": "Bêta : contenu et traductions incomplets. Il manque encore des historiques, espèces et dons.",
+  "exportFileError": "Impossible d’exporter le fichier du personnage."
 }

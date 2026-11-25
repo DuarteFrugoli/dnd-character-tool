@@ -1230,6 +1230,22 @@ stops queued work and suppresses pending callbacks. JVM tests in
 `android/app/src/test/kotlin` cover slow providers, both cold-start orderings,
 warm starts, queued files, read failures and Activity destruction.
 
+On iOS, `SceneDelegate` accepts both document types on a new scene through
+`connectionOptions.urlContexts` and on an existing scene through
+`scene(_:openURLContexts:)`. Unhandled URLs still reach Flutter's scene delegate.
+`AppDelegate` registers the import method channel through the implicit engine
+registrar. `IncomingFileHandler` reads on a serial queue, balances security-scoped
+access and coordinates reads with Files/iCloud providers. It uses the same
+`getPendingFile` readiness handshake as Android. iOS file URLs are not routed
+into GoRouter. Native XCTest coverage and the Mac/device checklist are described
+in `docs/IOS_FILE_TESTING.md`; executing those requires macOS and Xcode.
+
+`IncomingFileService` buffers native notifications when the character list is
+absent, and the list serializes import confirmations. Native exporters require a
+visible share origin for iPad popovers and keep each export in its own temporary
+directory. A dismissed share raises `FileExportCancelled`: UI flows end quietly,
+and maintenance cannot apply migrations after a cancelled mandatory backup.
+
 Imported characters are assigned fresh IDs before saving.
 
 ---

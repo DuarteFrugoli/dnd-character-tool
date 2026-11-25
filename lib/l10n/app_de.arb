@@ -1051,5 +1051,6 @@
   "whatsNew301BetaBody": "Alle 48 Unterklassen des Spielerhandbuchs sind erfasst. Hintergründe, Spezies, Talente und Übersetzungen sind noch unvollständig. Viele neue Unterklassentexte sind nur auf Englisch verfügbar.",
   "whatsNew301LimitsTitle": "Was noch fehlt",
   "whatsNew301LimitsBody": "Einige Merkmale müssen weiterhin manuell angewendet werden. Der Katalog enthält nicht alle Ergänzungsbände von 2014. Die neuen Inhalte für 2014 müssen noch in die übrigen App-Sprachen übersetzt werden.",
-  "creationRuleset2024BetaDescription": "Beta: Inhalte und Übersetzungen sind unvollständig. Bei Hintergründen, Spezies und Talenten gibt es noch Lücken."
+  "creationRuleset2024BetaDescription": "Beta: Inhalte und Übersetzungen sind unvollständig. Bei Hintergründen, Spezies und Talenten gibt es noch Lücken.",
+  "exportFileError": "Die Charakterdatei konnte nicht exportiert werden."
 }

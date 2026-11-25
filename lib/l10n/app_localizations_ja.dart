@@ -3482,4 +3482,7 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'ベータ版：内容と翻訳が未完成です。背景、種族、特技には未収録の項目があります。';
+
+  @override
+  String get exportFileError => 'キャラクターファイルをエクスポートできませんでした。';
 }

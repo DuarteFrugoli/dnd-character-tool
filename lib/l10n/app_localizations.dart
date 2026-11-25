@@ -6168,6 +6168,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Beta: incomplete content and translations. Backgrounds, species and feats still have gaps.'**
   String get creationRuleset2024BetaDescription;
+
+  /// Character export failed to open or complete native sharing.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not export the character file.'**
+  String get exportFileError;
 }
 
 class _AppLocalizationsDelegate

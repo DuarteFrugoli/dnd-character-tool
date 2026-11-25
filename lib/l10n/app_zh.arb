@@ -1050,5 +1050,6 @@
   "whatsNew301BetaBody": "已登记《玩家手册》的全部48个子职业。背景、物种、专长和翻译仍有缺漏，许多新增子职业的说明目前仅提供英语版本。",
   "whatsNew301LimitsTitle": "待完成的内容",
   "whatsNew301LimitsBody": "部分特性仍需手动应用。资料库并未涵盖2014版的所有扩展书。新增的2014版内容尚待翻译成应用支持的其他语言。",
-  "creationRuleset2024BetaDescription": "Beta 测试版：内容和翻译尚不完整，背景、物种和专长仍有缺漏。"
+  "creationRuleset2024BetaDescription": "Beta 测试版：内容和翻译尚不完整，背景、物种和专长仍有缺漏。",
+  "exportFileError": "无法导出角色文件。"
 }

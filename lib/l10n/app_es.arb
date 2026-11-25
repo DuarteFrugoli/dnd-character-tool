@@ -1051,5 +1051,6 @@
   "whatsNew301BetaBody": "Las 48 subclases del Manual del Jugador están registradas. Aún faltan trasfondos, especies, dotes y traducciones; buena parte de los nuevos textos de subclase solo está disponible en inglés.",
   "whatsNew301LimitsTitle": "Lo que queda pendiente",
   "whatsNew301LimitsBody": "Algunos rasgos aún deben aplicarse manualmente. El catálogo no incluye todos los suplementos de 2014. Los nuevos materiales de 2014 todavía necesitan traducción a los demás idiomas de la app.",
-  "creationRuleset2024BetaDescription": "Beta: contenido y traducciones incompletos. Aún faltan trasfondos, especies y dotes."
+  "creationRuleset2024BetaDescription": "Beta: contenido y traducciones incompletos. Aún faltan trasfondos, especies y dotes.",
+  "exportFileError": "No se pudo exportar el archivo del personaje."
 }

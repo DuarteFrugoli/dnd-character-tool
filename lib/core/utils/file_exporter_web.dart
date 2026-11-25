@@ -1,8 +1,13 @@
 import 'dart:js_interop';
+import 'dart:ui';
 
 import 'package:web/web.dart' as web;
 
-Future<void> exportDndCharFile(String characterName, String fileJson) async {
+Future<void> exportDndCharFile(
+  String characterName,
+  String fileJson, {
+  required Rect sharePositionOrigin,
+}) async {
   final safeName = characterName.replaceAll(RegExp(r'[^\w]'), '_');
   final blob = web.Blob(
     [fileJson.toJS].toJS,
@@ -16,7 +21,10 @@ Future<void> exportDndCharFile(String characterName, String fileJson) async {
   web.URL.revokeObjectURL(url);
 }
 
-Future<void> exportDndBackupFile(String fileJson) async {
+Future<void> exportDndBackupFile(
+  String fileJson, {
+  required Rect sharePositionOrigin,
+}) async {
   final timestamp = DateTime.now().toIso8601String().replaceAll(
     RegExp(r'[:.]'),
     '-',

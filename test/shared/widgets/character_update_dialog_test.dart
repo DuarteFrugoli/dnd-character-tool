@@ -1,4 +1,5 @@
 import 'package:dnd_character_tool/data/migrations/character_migration.dart';
+import 'package:dnd_character_tool/core/utils/file_exporter.dart';
 import 'package:dnd_character_tool/data/migrations/character_migration_runner.dart';
 import 'package:dnd_character_tool/data/models/models.dart';
 import 'package:dnd_character_tool/data/repositories/character_repository.dart';
@@ -50,10 +51,7 @@ class _MaintenanceRepository extends CharacterRepository {
           toVersion: currentCharacterDataVersion,
           appliedMigrationIds: const ['assign_2014_ruleset'],
           changes: const [
-            CharacterMigrationChange(
-              code: 'ruleset_2014_assigned',
-              count: 1,
-            ),
+            CharacterMigrationChange(code: 'ruleset_2014_assigned', count: 1),
           ],
         ),
       ],
@@ -186,6 +184,26 @@ void main() {
     await tester.pumpAndSettle();
     expect(result, isFalse);
   });
+
+  testWidgets(
+    'cancelled backup leaves characters unchanged without showing an error',
+    (tester) async {
+      final repository = _MaintenanceRepository();
+      await _showHarness(
+        tester,
+        repository,
+        exportBackup: (_) async => throw const FileExportCancelled(),
+        onClosed: (_) {},
+      );
+      await tester.tap(find.text('Update all characters'));
+      await tester.pumpAndSettle();
+      expect(repository.backupCalls, 1);
+      expect(repository.updateCalls, 0);
+      expect(find.text('Could not export backup.'), findsNothing);
+      expect(find.text('Update all characters'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    },
+  );
 
   testWidgets('read issues disable backup and update', (tester) async {
     final repository = _MaintenanceRepository(hasReadIssues: true);

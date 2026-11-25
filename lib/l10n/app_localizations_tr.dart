@@ -3562,4 +3562,7 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'Beta: içerik ve çeviriler eksik. Geçmişler, türler ve yeteneklerde hâlâ eksikler var.';
+
+  @override
+  String get exportFileError => 'Karakter dosyası dışa aktarılamadı.';
 }

@@ -3978,5 +3978,6 @@
   "whatsNew301BetaBody": "Oyuncunun El Kitabı’ndaki 48 alt sınıfın tamamı kayıtlıdır. Geçmişler, türler, yetenekler ve çeviriler hâlâ eksiktir. Yeni alt sınıf metinlerinin büyük bölümü yalnızca İngilizce sunulur.",
   "whatsNew301LimitsTitle": "Kalan işler",
   "whatsNew301LimitsBody": "Bazı özellikler hâlâ elle uygulanmalıdır. Katalog, 2014 sürümünün tüm ek kitaplarını içermez. Yeni 2014 içeriklerinin uygulamanın diğer dillerine çevrilmesi gerekmektedir.",
-  "creationRuleset2024BetaDescription": "Beta: içerik ve çeviriler eksik. Geçmişler, türler ve yeteneklerde hâlâ eksikler var."
+  "creationRuleset2024BetaDescription": "Beta: içerik ve çeviriler eksik. Geçmişler, türler ve yeteneklerde hâlâ eksikler var.",
+  "exportFileError": "Karakter dosyası dışa aktarılamadı."
 }

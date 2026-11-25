@@ -1051,5 +1051,6 @@
   "whatsNew301BetaBody": "Sono registrate tutte le 48 sottoclassi del Manuale del Giocatore. Background, specie, talenti e traduzioni sono ancora incompleti. Molti nuovi testi delle sottoclassi sono disponibili solo in inglese.",
   "whatsNew301LimitsTitle": "Cosa manca ancora",
   "whatsNew301LimitsBody": "Alcuni privilegi devono ancora essere applicati manualmente. Il catalogo non include tutti i supplementi del 2014. I nuovi contenuti del 2014 devono ancora essere tradotti nelle altre lingue dell’app.",
-  "creationRuleset2024BetaDescription": "Beta: contenuti e traduzioni incompleti. Mancano ancora background, specie e talenti."
+  "creationRuleset2024BetaDescription": "Beta: contenuti e traduzioni incompleti. Mancano ancora background, specie e talenti.",
+  "exportFileError": "Impossibile esportare il file del personaggio."
 }

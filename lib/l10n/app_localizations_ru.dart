@@ -3570,4 +3570,7 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get creationRuleset2024BetaDescription =>
       'Бета: содержимое и переводы неполны. В предысториях, видах и чертах ещё есть пробелы.';
+
+  @override
+  String get exportFileError => 'Не удалось экспортировать файл персонажа.';
 }

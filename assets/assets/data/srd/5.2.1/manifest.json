@@ -23,7 +23,7 @@
   "completeCatalogs": ["backgrounds", "class_features", "classes", "conditions", "equipment", "feats", "feature_choices", "feature_usages", "languages", "magic_items", "monsters", "race_traits", "races", "skills", "spells", "subclass_features", "subclasses", "tools"],
   "pendingCatalogs": [],
   "catalogScope": {
-    "monsters": "Beasts up to CR 1, the Wild Shape forms. Other creatures will be imported for the tabletop."
+    "monsters": "Beasts up to CR 6, including Circle of the Moon Wild Shape forms. Other creatures will be imported for the tabletop."
   },
   "license": "CC-BY-4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by/4.0/legalcode",

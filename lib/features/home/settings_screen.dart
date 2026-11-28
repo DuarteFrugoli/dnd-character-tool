@@ -668,18 +668,9 @@ class _CharacterMaintenanceTileState
     try {
       final repo = ref.read(characterRepositoryProvider);
       final report = await repo.applyMigrations(
-        shareBackup: (fileJson) async {
-          try {
-            if (mounted) {
-              await exportDndBackupFile(
-                fileJson,
-                sharePositionOrigin: fileShareOrigin(context),
-              );
-            }
-          } finally {
-            if (mounted) {
-              setState(() => _busyTask = _MaintenanceBusyTask.updating);
-            }
+        onLocalBackupSaved: () async {
+          if (mounted) {
+            setState(() => _busyTask = _MaintenanceBusyTask.updating);
           }
         },
       );

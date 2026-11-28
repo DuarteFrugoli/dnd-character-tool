@@ -525,24 +525,23 @@ void main() {
   });
 
   test(
-    'migration preserves the old data before optional sharing and continues on cancellation',
+    'migration saves a durable copy of the old data before applying updates',
     () async {
       await repo.save(_makeCharacter().copyWith(dataVersion: 9));
-      var shared = false;
+      var backupSaved = false;
       await repo.applyMigrations(
-        shareBackup: (fileJson) async {
-          shared = true;
-          expect(localBackupStorage.payloads.values, [fileJson]);
+        onLocalBackupSaved: () async {
+          backupSaved = true;
+          final fileJson = localBackupStorage.payloads.values.single;
           expect((await repo.getById('original-id'))!.dataVersion, 9);
           expect(
             (jsonDecode(fileJson)['characters'] as List)
                 .single['character']['dataVersion'],
             9,
           );
-          throw StateError('User closed sharing');
         },
       );
-      expect(shared, isTrue);
+      expect(backupSaved, isTrue);
       expect(
         (await repo.getById('original-id'))!.dataVersion,
         currentCharacterDataVersion,
@@ -563,20 +562,20 @@ void main() {
   );
 
   test(
-    'a failed local save leaves all characters unchanged and does not open sharing',
+    'a failed local save leaves all characters unchanged and does not signal success',
     () async {
       await repo.save(_makeCharacter().copyWith(dataVersion: 9));
       localBackupStorage.failWrites = true;
-      var shared = false;
+      var backupSaved = false;
       await expectLater(
         repo.applyMigrations(
-          shareBackup: (_) async {
-            shared = true;
+          onLocalBackupSaved: () async {
+            backupSaved = true;
           },
         ),
         throwsStateError,
       );
-      expect(shared, isFalse);
+      expect(backupSaved, isFalse);
       expect((await repo.getById('original-id'))!.dataVersion, 9);
     },
   );

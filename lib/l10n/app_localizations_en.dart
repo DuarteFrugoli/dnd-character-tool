@@ -598,7 +598,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Opening a character may require a one-time update. The app keeps the three latest local backups in Settings. Sharing is optional; cancelling it does not stop the update.';
+      'Opening a character may require a one-time update. The app saves a local backup before updating and keeps the three latest copies in Settings. Use Back up and share to share a copy without updating.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3344,7 +3344,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    return 'Characters needing updates: $count. A local backup will be saved first. Sharing it is optional; cancelling sharing will not stop the update.';
+    return 'Characters needing updates: $count. A local backup will be saved before updating all characters, without opening sharing. The three latest copies are available in Settings.';
   }
 
   @override
@@ -3352,16 +3352,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'This character needs an update. A local backup is saved first, and sharing is optional. Cancelling sharing still lets the update continue.';
+      'You can save a local copy and share it without updating your characters.\n\nUpdating all saves a local backup and then applies the update directly. The three latest local copies are available in Settings.';
 
   @override
   String get characterUpdateRequiredAction => 'Update options';
 
   @override
-  String get characterUpdateBackupAction => 'Back up characters';
+  String get characterUpdateBackupAction => 'Back up and share';
 
   @override
-  String get characterUpdateAllAction => 'Update all characters';
+  String get characterUpdateAllAction => 'Update all with local backup';
 
   @override
   String get characterUpdateApplying => 'Updating characters...';

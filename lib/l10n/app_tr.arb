@@ -228,7 +228,7 @@
   "whatsNew3ResetTitle": "Daha güvenli seviye sıfırlama",
   "whatsNew3ResetBody": "Kaydetmeden önce her değişiklik listelenir. Sıfırlama, kaldırılan sınıfların verdiklerini geri alır ve iki kural setinde de önceki seviyene yeniden kurabilirsin.",
   "whatsNew3UpdateTitle": "Tek seferlik karakter güncellemesi",
-  "whatsNew3UpdateBody": "Bir karakteri açarken tek seferlik güncelleme gerekebilir. Son üç yerel yedek Ayarlar’da tutulur. Paylaşım isteğe bağlıdır; iptal etmek güncellemeyi durdurmaz.",
+  "whatsNew3UpdateBody": "Karakter açılırken bir defalık güncelleme gerekebilir. Uygulama güncellemeden önce yerel yedek kaydeder ve son üç kopyayı Ayarlar’da tutar. Güncellemeden paylaşmak için Yedekle ve paylaş seçeneğini kullan.",
   "@whatsNewThanks": {"description":"Turkish translation for the 2.1.1 announcement."},
   "charListImportedSuccess": "{name} başarıyla içe aktarıldı!",
   "@charListImportedSuccess": {
@@ -3824,7 +3824,7 @@
       }
     }
   },
-  "settingsMaintenanceConfirmBody": "Güncellenecek karakterler: {count}. Önce yerel bir yedek kaydedilir. Paylaşmak isteğe bağlıdır; iptal etmek güncellemeyi durdurmaz.",
+  "settingsMaintenanceConfirmBody": "Güncelleme gereken karakter sayısı: {count}. Tüm karakterler güncellenmeden önce yerel yedek kaydedilir; paylaşım açılmaz. Son üç kopya Ayarlar’da bulunur.",
   "@settingsMaintenanceConfirmBody": {
     "description": "Dialog body before applying character migrations.",
     "placeholders": {
@@ -3837,7 +3837,7 @@
   "@characterUpdateRequiredTitle": {
     "description": "Dialog title shown when opening an outdated saved character."
   },
-  "characterUpdateRequiredBody": "Bu karakterin güncellenmesi gerekiyor. Önce yerel bir yedek kaydedilir; paylaşmak isteğe bağlıdır. Paylaşımı iptal etmek güncellemeyi durdurmaz.",
+  "characterUpdateRequiredBody": "Karakterleri güncellemeden yerel bir kopya kaydedip paylaşabilirsin.\n\nTümünü güncellediğinde uygulama önce yerel yedek kaydeder ve ardından doğrudan günceller. Son üç yerel kopya Ayarlar’da bulunur.",
   "@characterUpdateRequiredBody": {
     "description": "Dialog body shown when opening an outdated saved character."
   },
@@ -3845,13 +3845,13 @@
   "@characterUpdateRequiredAction": {
     "description": "Action on a directly opened outdated character to show the update dialog."
   },
-  "characterUpdateBackupAction": "Karakterleri yedekle",
+  "characterUpdateBackupAction": "Yedekle ve paylaş",
   "@characterUpdateBackupAction": {
     "description": "Exports a backup without updating characters in the update dialog."
   },
-  "characterUpdateAllAction": "Tüm karakterleri güncelle",
+  "characterUpdateAllAction": "Yerel yedekle tümünü güncelle",
   "@characterUpdateAllAction": {
-    "description": "Applies pending migrations to all characters after opening a backup."
+    "description": "Saves a local backup and applies pending migrations to all characters without sharing."
   },
   "characterUpdateApplying": "Karakterler güncelleniyor...",
   "@characterUpdateApplying": {

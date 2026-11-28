@@ -601,7 +601,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'При открытии персонажа может потребоваться разовое обновление. В настройках доступны три последние локальные копии. Отправка необязательна; её отмена не останавливает обновление.';
+      'При открытии персонажа может потребоваться однократное обновление. Приложение сначала сохраняет локальную копию и хранит три последние копии в настройках. Чтобы отправить копию без обновления, выберите «Создать копию и отправить».';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3369,7 +3369,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    return 'Персонажей для обновления: $count. Сначала будет сохранена локальная копия. Отправка необязательна; её отмена не остановит обновление.';
+    return 'Персонажей для обновления: $count. Перед обновлением всех персонажей будет сохранена локальная копия, без открытия отправки. Три последние копии доступны в настройках.';
   }
 
   @override
@@ -3377,16 +3377,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Этому персонажу нужно обновление. Сначала сохраняется локальная копия. Отправка необязательна; её отмена не мешает обновлению.';
+      'Можно сохранить локальную копию и отправить её, не обновляя персонажей.\n\nПри обновлении всех персонажей приложение сначала сохраняет локальную копию, а затем сразу применяет обновление. Три последние копии доступны в настройках.';
 
   @override
   String get characterUpdateRequiredAction => 'Параметры обновления';
 
   @override
-  String get characterUpdateBackupAction => 'Сохранить копию персонажей';
+  String get characterUpdateBackupAction => 'Создать копию и отправить';
 
   @override
-  String get characterUpdateAllAction => 'Обновить всех персонажей';
+  String get characterUpdateAllAction => 'Обновить всех с локальной копией';
 
   @override
   String get characterUpdateApplying => 'Обновление персонажей...';

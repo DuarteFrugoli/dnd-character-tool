@@ -151,7 +151,7 @@ class CharacterRepository {
   }
 
   Future<CharacterMigrationBatchReport> applyMigrations({
-    Future<void> Function(String fileJson)? shareBackup,
+    Future<void> Function()? onLocalBackupSaved,
   }) async {
     final loadReport = await _local.loadAllWithReport();
     final context = await _migrationContext();
@@ -163,13 +163,8 @@ class CharacterRepository {
     }
 
     if (!report.hasUpdates) return report;
-    final fileJson = await createLocalBackup();
-    // A durable local recovery point already exists. Sharing is optional.
-    if (shareBackup != null) {
-      try {
-        await shareBackup(fileJson);
-      } catch (_) {}
-    }
+    await createLocalBackup();
+    await onLocalBackupSaved?.call();
 
     for (final entry in report.characters) {
       if (!entry.needsMigration) continue;

@@ -586,7 +586,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'キャラクターを開く際に一度だけ更新が必要な場合があります。設定から最新3件のローカルバックアップを利用できます。共有は任意で、キャンセルしても更新は続行されます。';
+      'キャラクターを開く際に、一度だけ更新が必要になる場合があります。更新前にローカルバックアップを保存し、直近3件を設定に保持します。更新せずに共有する場合は「バックアップして共有」を選んでください。';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3287,7 +3287,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    return '更新が必要なキャラクター数：$count。最初にローカルバックアップを保存します。共有は任意で、キャンセルしても更新は中止されません。';
+    return '更新が必要なキャラクター：$count。すべてのキャラクターを更新する前にローカルバックアップを保存します。共有画面は開きません。直近3件のコピーは設定から確認できます。';
   }
 
   @override
@@ -3295,16 +3295,16 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'このキャラクターは更新が必要です。最初にローカルバックアップを保存します。共有は任意で、キャンセルしても更新は続行されます。';
+      'キャラクターを更新せずに、ローカルコピーを保存して共有できます。\n\nすべてのキャラクターを更新する場合は、ローカルバックアップを保存してから、そのまま更新します。直近3件のコピーは設定から確認できます。';
 
   @override
   String get characterUpdateRequiredAction => '更新オプション';
 
   @override
-  String get characterUpdateBackupAction => 'キャラクターをバックアップ';
+  String get characterUpdateBackupAction => 'バックアップして共有';
 
   @override
-  String get characterUpdateAllAction => 'すべてのキャラクターを更新';
+  String get characterUpdateAllAction => 'ローカルバックアップ後にすべて更新';
 
   @override
   String get characterUpdateApplying => 'キャラクターを更新しています...';

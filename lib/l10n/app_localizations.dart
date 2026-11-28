@@ -1091,7 +1091,7 @@ abstract class AppLocalizations {
   /// 3.0.0 announcement: one-time character update details.
   ///
   /// In en, this message translates to:
-  /// **'Opening a character may require a one-time update. The app keeps the three latest local backups in Settings. Sharing is optional; cancelling it does not stop the update.'**
+  /// **'Opening a character may require a one-time update. The app saves a local backup before updating and keeps the three latest copies in Settings. Use Back up and share to share a copy without updating.'**
   String get whatsNew3UpdateBody;
 
   /// Snackbar after successful import.
@@ -5956,7 +5956,7 @@ abstract class AppLocalizations {
   /// Dialog body before applying character migrations.
   ///
   /// In en, this message translates to:
-  /// **'Characters needing updates: {count}. A local backup will be saved first. Sharing it is optional; cancelling sharing will not stop the update.'**
+  /// **'Characters needing updates: {count}. A local backup will be saved before updating all characters, without opening sharing. The three latest copies are available in Settings.'**
   String settingsMaintenanceConfirmBody(int count);
 
   /// Dialog title shown when opening an outdated saved character.
@@ -5968,7 +5968,7 @@ abstract class AppLocalizations {
   /// Dialog body shown when opening an outdated saved character.
   ///
   /// In en, this message translates to:
-  /// **'This character needs an update. A local backup is saved first, and sharing is optional. Cancelling sharing still lets the update continue.'**
+  /// **'You can save a local copy and share it without updating your characters.\n\nUpdating all saves a local backup and then applies the update directly. The three latest local copies are available in Settings.'**
   String get characterUpdateRequiredBody;
 
   /// Action on a directly opened outdated character to show the update dialog.
@@ -5980,13 +5980,13 @@ abstract class AppLocalizations {
   /// Exports a backup without updating characters in the update dialog.
   ///
   /// In en, this message translates to:
-  /// **'Back up characters'**
+  /// **'Back up and share'**
   String get characterUpdateBackupAction;
 
-  /// Applies pending migrations to all characters after opening a backup.
+  /// Saves a local backup and applies pending migrations to all characters without sharing.
   ///
   /// In en, this message translates to:
-  /// **'Update all characters'**
+  /// **'Update all with local backup'**
   String get characterUpdateAllAction;
 
   /// Progress text while character migrations are being applied.

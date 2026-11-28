@@ -603,7 +603,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Aprendo un personaggio potrebbe servire un aggiornamento una tantum. L’app conserva i tre backup locali più recenti nelle impostazioni. La condivisione è facoltativa; annullarla non interrompe l’aggiornamento.';
+      'Aprendo un personaggio potrebbe servire un aggiornamento una tantum. L’app salva prima un backup locale e conserva le tre copie più recenti nelle impostazioni. Usa Crea backup e condividi per condividere senza aggiornare.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3413,7 +3413,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    return 'Personaggi da aggiornare: $count. Prima verrà salvato un backup locale. Condividerlo è facoltativo; annullare la condivisione non interrompe l’aggiornamento.';
+    return 'Personaggi da aggiornare: $count. Prima di aggiornarli tutti verrà salvato un backup locale, senza aprire la condivisione. Le tre copie più recenti sono disponibili nelle impostazioni.';
   }
 
   @override
@@ -3422,16 +3422,16 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Questo personaggio deve essere aggiornato. Prima viene salvato un backup locale; condividerlo è facoltativo. Annullare la condivisione consente di continuare l’aggiornamento.';
+      'Puoi salvare una copia locale e condividerla senza aggiornare i personaggi.\n\nAggiornando tutti, l’app salva un backup locale e applica direttamente l’aggiornamento. Le tre copie più recenti sono disponibili nelle impostazioni.';
 
   @override
   String get characterUpdateRequiredAction => 'Opzioni di aggiornamento';
 
   @override
-  String get characterUpdateBackupAction => 'Esegui backup dei personaggi';
+  String get characterUpdateBackupAction => 'Crea backup e condividi';
 
   @override
-  String get characterUpdateAllAction => 'Aggiorna tutti i personaggi';
+  String get characterUpdateAllAction => 'Aggiorna tutti con backup locale';
 
   @override
   String get characterUpdateApplying => 'Aggiornamento dei personaggi...';

@@ -605,7 +605,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Beim Öffnen kann eine einmalige Charakteraktualisierung nötig sein. Die App behält die drei neuesten lokalen Sicherungen in den Einstellungen. Das Teilen ist optional; ein Abbruch stoppt die Aktualisierung nicht.';
+      'Beim Öffnen eines Charakters kann eine einmalige Aktualisierung nötig sein. Die App sichert vorher lokal und behält die drei neuesten Kopien in den Einstellungen. Mit Sichern und teilen kannst du eine Kopie ohne Aktualisierung teilen.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3377,7 +3377,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    return 'Zu aktualisierende Charaktere: $count. Zuerst wird eine lokale Sicherung gespeichert. Das Teilen ist optional; ein Abbruch stoppt die Aktualisierung nicht.';
+    return 'Charaktere mit ausstehenden Aktualisierungen: $count. Vor dem Aktualisieren aller Charaktere wird lokal gesichert, ohne den Teilen-Dialog zu öffnen. Die drei neuesten Kopien findest du in den Einstellungen.';
   }
 
   @override
@@ -3386,16 +3386,17 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Dieser Charakter muss aktualisiert werden. Zuerst wird eine lokale Sicherung gespeichert. Das Teilen ist optional; auch nach einem Abbruch wird die Aktualisierung fortgesetzt.';
+      'Du kannst eine lokale Kopie speichern und teilen, ohne die Charaktere zu aktualisieren.\n\nBeim Aktualisieren aller Charaktere wird zuerst lokal gesichert und danach direkt aktualisiert. Die drei neuesten Kopien findest du in den Einstellungen.';
 
   @override
   String get characterUpdateRequiredAction => 'Update-Optionen';
 
   @override
-  String get characterUpdateBackupAction => 'Charaktere sichern';
+  String get characterUpdateBackupAction => 'Sichern und teilen';
 
   @override
-  String get characterUpdateAllAction => 'Alle Charaktere aktualisieren';
+  String get characterUpdateAllAction =>
+      'Alle mit lokaler Sicherung aktualisieren';
 
   @override
   String get characterUpdateApplying => 'Charaktere werden aktualisiert...';

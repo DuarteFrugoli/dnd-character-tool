@@ -130,12 +130,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
     try {
       final repository = ref.read(characterRepositoryProvider);
       final report = await repository.applyMigrations(
-        shareBackup: (fileJson) async {
-          try {
-            if (mounted) await widget.exportBackup(fileJson);
-          } finally {
-            if (mounted) setState(() => _task = _UpdateTask.updating);
-          }
+        onLocalBackupSaved: () async {
+          if (mounted) setState(() => _task = _UpdateTask.updating);
         },
       );
       if (!mounted) return;
@@ -228,7 +224,10 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                           ? null
                           : _backup,
                       icon: const Icon(Icons.backup_outlined),
-                      label: Text(l10n.characterUpdateBackupAction),
+                      label: Text(
+                        l10n.characterUpdateBackupAction,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -246,7 +245,10 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                         foregroundColor: scheme.onTertiary,
                       ),
                       icon: const Icon(Icons.system_update_alt_outlined),
-                      label: Text(l10n.characterUpdateAllAction),
+                      label: Text(
+                        l10n.characterUpdateAllAction,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ],

@@ -579,7 +579,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      '打开角色时可能需要进行一次更新。设置中会保留最近三份本地备份。分享是可选的，取消分享不会中断更新。';
+      '打开角色时可能需要进行一次性更新。应用会在更新前保存本地备份，并在设置中保留最近三份副本。若想分享而不更新，请选择“备份并分享”。';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3267,7 +3267,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String settingsMaintenanceConfirmBody(int count) {
-    return '需要更新的角色数量：$count。应用会先保存本地备份。分享是可选的，取消分享不会中断更新。';
+    return '需要更新的角色：$count。更新全部角色前会保存本地备份，不会打开分享界面。最近三份副本可在设置中找到。';
   }
 
   @override
@@ -3275,16 +3275,16 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      '此角色需要更新。应用会先保存本地备份，分享是可选的。取消分享后，更新仍会继续。';
+      '你可以保存本地副本并分享，而不更新角色。\n\n更新全部角色时，应用先保存本地备份，再直接应用更新。最近三份本地副本可在设置中找到。';
 
   @override
   String get characterUpdateRequiredAction => '更新选项';
 
   @override
-  String get characterUpdateBackupAction => '备份角色';
+  String get characterUpdateBackupAction => '备份并分享';
 
   @override
-  String get characterUpdateAllAction => '更新所有角色';
+  String get characterUpdateAllAction => '本地备份后更新全部角色';
 
   @override
   String get characterUpdateApplying => '正在更新角色...';

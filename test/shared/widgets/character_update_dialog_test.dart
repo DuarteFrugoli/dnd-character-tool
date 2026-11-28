@@ -81,12 +81,10 @@ class _MaintenanceRepository extends CharacterRepository {
 
   @override
   Future<CharacterMigrationBatchReport> applyMigrations({
-    Future<void> Function(String)? shareBackup,
+    Future<void> Function()? onLocalBackupSaved,
   }) async {
-    final payload = await createLocalBackup();
-    try {
-      await shareBackup?.call(payload);
-    } catch (_) {}
+    await createLocalBackup();
+    await onLocalBackupSaved?.call();
     updateCalls++;
     events?.add('apply');
     return report;
@@ -139,7 +137,7 @@ void main() {
       onClosed: (value) => result = value,
     );
 
-    expect(find.text('Update all characters'), findsOneWidget);
+    expect(find.text('Update all with local backup'), findsOneWidget);
     await tester.tap(find.text('Cancel'));
     await tester.pumpAndSettle();
 
@@ -165,17 +163,17 @@ void main() {
       onClosed: (value) => result = value,
     );
 
-    await tester.tap(find.text('Back up characters'));
+    await tester.tap(find.text('Back up and share'));
     await tester.pumpAndSettle();
     expect(repository.backupCalls, 1);
     expect(repository.updateCalls, 0);
-    expect(find.text('Update all characters'), findsOneWidget);
+    expect(find.text('Update all with local backup'), findsOneWidget);
 
-    await tester.tap(find.text('Update all characters'));
+    await tester.tap(find.text('Update all with local backup'));
     await tester.pumpAndSettle();
     expect(repository.backupCalls, 2);
     expect(repository.updateCalls, 1);
-    expect(events, ['local', 'export', 'local', 'export', 'apply']);
+    expect(events, ['local', 'export', 'local', 'apply']);
     expect(find.text('Update complete'), findsOneWidget);
 
     await tester.tap(find.text('Close'));
@@ -193,7 +191,7 @@ void main() {
       onClosed: (value) => result = value,
     );
 
-    await tester.tap(find.text('Update all characters'));
+    await tester.tap(find.text('Update all with local backup'));
     await tester.pumpAndSettle();
 
     expect(repository.backupCalls, 1);
@@ -203,22 +201,53 @@ void main() {
     expect(result, isFalse);
   });
 
-  testWidgets('cancelled sharing still updates after saving the local backup', (
-    tester,
-  ) async {
+  testWidgets('update saves locally without opening sharing', (tester) async {
     final repository = _MaintenanceRepository();
+    final events = <String>[];
+    repository.events = events;
+    var shareCalls = 0;
     await _showHarness(
       tester,
       repository,
-      exportBackup: (_) async => throw const FileExportCancelled(),
+      exportBackup: (_) async {
+        shareCalls++;
+        throw StateError('Updating must not open sharing');
+      },
       onClosed: (_) {},
     );
-    await tester.tap(find.text('Update all characters'));
+    await tester.tap(find.text('Update all with local backup'));
     await tester.pumpAndSettle();
+    expect(shareCalls, 0);
     expect(repository.backupCalls, 1);
     expect(repository.updateCalls, 1);
+    expect(events, ['local', 'apply']);
     expect(find.text('Could not export backup.'), findsNothing);
     expect(find.text('Update complete'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('cancelled sharing keeps the local copy without updating', (
+    tester,
+  ) async {
+    final repository = _MaintenanceRepository();
+    final events = <String>[];
+    repository.events = events;
+    await _showHarness(
+      tester,
+      repository,
+      exportBackup: (_) async {
+        events.add('share');
+        throw const FileExportCancelled();
+      },
+      onClosed: (_) {},
+    );
+    await tester.tap(find.text('Back up and share'));
+    await tester.pumpAndSettle();
+    expect(events, ['local', 'share']);
+    expect(repository.backupCalls, 1);
+    expect(repository.updateCalls, 0);
+    expect(find.text('Local backup saved.'), findsOneWidget);
+    expect(find.text('Update complete'), findsNothing);
     expect(tester.takeException(), isNull);
   });
 
@@ -231,7 +260,7 @@ void main() {
       onClosed: (_) {},
     );
 
-    expect(find.text('Update all characters'), findsOneWidget);
+    expect(find.text('Update all with local backup'), findsOneWidget);
     expect(
       tester.widget<OutlinedButton>(find.byType(OutlinedButton)).onPressed,
       isNull,

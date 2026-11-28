@@ -50,6 +50,7 @@ void main() {
     expect(find.text('D&D 2024: beta'), findsOneWidget);
     expect(find.textContaining('manual application'), findsOneWidget);
     expect(find.textContaining('three cantrip choices'), findsOneWidget);
+    expect(find.textContaining('all 11 app languages'), findsOneWidget);
     expect(find.text('Version 3.0.2'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });

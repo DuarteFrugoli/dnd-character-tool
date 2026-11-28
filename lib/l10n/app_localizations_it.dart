@@ -3590,7 +3590,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      'Aggiunti incantesimi mancanti del Manuale del Giocatore, invocazioni, discipline, totem e varianti dei background in inglese, portoghese e spagnolo. Il Patto del Tomo ora permette di scegliere i suoi tre trucchetti. Il catalogo comprende i quattro famigli speciali del Patto della Catena.';
+      'Aggiunti incantesimi mancanti del Manuale del Giocatore 2014, invocazioni, discipline elementali, totem, background, equipaggiamento e creature. Queste aggiunte sono ora disponibili in tutte le 11 lingue dell’app. Il Patto del Tomo permette di scegliere i suoi tre trucchetti, e il catalogo include i quattro famigli speciali del Patto della Catena.';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024: beta';
@@ -3604,7 +3604,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get whatsNew301LimitsBody =>
-      'Alcuni privilegi devono ancora essere applicati manualmente. Il catalogo non include tutti i supplementi del 2014. I nuovi contenuti del 2014 devono ancora essere tradotti nelle altre lingue dell’app.';
+      'Alcuni privilegi richiedono ancora un’applicazione manuale. Il catalogo non include tutti i supplementi del 2014.';
 
   @override
   String get creationRuleset2024BetaDescription =>

@@ -3458,7 +3458,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      '플레이어 핸드북의 누락된 주문, 영창, 원소 수련, 토템, 배경 변형을 영어, 포르투갈어, 스페인어로 추가했습니다. 책의 계약에서 소마법 3개를 선택할 수 있으며, 사슬의 계약의 특수 패밀리어 4종도 목록에 포함됩니다.';
+      '2014 플레이어 핸드북에서 빠져 있던 주문, 섬뜩한 영창, 원소 수련, 토템, 배경, 장비, 크리처를 추가했습니다. 이번 추가 콘텐츠는 이제 앱의 11개 언어로 제공됩니다. 고서의 계약에서는 소마법 세 개를 선택할 수 있으며, 사슬의 계약의 특별한 사역마 네 종류도 목록에 포함되어 있습니다.';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024: 베타';
@@ -3472,7 +3472,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get whatsNew301LimitsBody =>
-      '일부 특성은 여전히 수동으로 적용해야 합니다. 모든 2014 보충책이 포함된 것은 아닙니다. 새로 추가된 2014 콘텐츠는 앱의 다른 언어로 번역하는 작업이 남아 있습니다.';
+      '일부 특성은 여전히 수동으로 적용해야 합니다. 목록에는 2014 규칙의 모든 확장 자료가 포함되어 있지는 않습니다.';
 
   @override
   String get creationRuleset2024BetaDescription =>

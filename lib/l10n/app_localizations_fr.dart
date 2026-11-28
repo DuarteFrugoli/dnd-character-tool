@@ -3555,7 +3555,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      'Des sorts manquants du Manuel des Joueurs, invocations, disciplines, totems et variantes d’historique ont été ajoutés en anglais, portugais et espagnol. Le Pacte du Grimoire permet désormais de choisir ses trois sorts mineurs. Le catalogue comprend les quatre familiers spéciaux du Pacte de la Chaîne.';
+      'Des sorts manquants du Manuel des Joueurs 2014, invocations, disciplines élémentaires, totems, historiques, équipements et créatures ont été ajoutés. Ces ajouts sont désormais disponibles dans les 11 langues de l’application. Le Pacte du Grimoire permet de choisir ses trois sorts mineurs, et le catalogue comprend les quatre familiers spéciaux du Pacte de la Chaîne.';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024 : bêta';
@@ -3569,7 +3569,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get whatsNew301LimitsBody =>
-      'Certaines capacités doivent encore être appliquées manuellement. Le catalogue ne comprend pas tous les suppléments de 2014. Les nouveaux contenus de 2014 doivent encore être traduits dans les autres langues de l’application.';
+      'Certaines capacités doivent encore être appliquées manuellement. Le catalogue ne comprend pas tous les suppléments de 2014.';
 
   @override
   String get creationRuleset2024BetaDescription =>

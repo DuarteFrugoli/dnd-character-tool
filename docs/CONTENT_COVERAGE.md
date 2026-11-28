@@ -76,7 +76,9 @@ The pre-release review's Tome choice and four Chain familiar catalog gaps
 have been addressed above. The edition picker now labels 2024 as Beta and
 discloses incomplete content before selection. The 3.0.2 announcement explains
 2014 additions, the 2024 beta and remaining manual effects in all 11 UI languages.
-A signed release build and smoke test on a physical device remain unverified.
+A signed Android App Bundle for 3.0.2+37 has been built, and its JAR signature
+has been verified against the new upload certificate. A smoke test on a
+physical device remains unverified here.
 
 - Later 2014-compatible books, including Artificer and additional subclasses,
   races, feats, backgrounds, spells, and optional class features.

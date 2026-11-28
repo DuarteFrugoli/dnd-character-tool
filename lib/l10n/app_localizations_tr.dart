@@ -3535,7 +3535,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      'Oyuncunun El Kitabı’ndaki eksik büyüler, yakarışlar, disiplinler, totemler ve geçmiş çeşitleri İngilizce, Portekizce ve İspanyolca olarak eklendi. Kitap Paktı artık üç basit büyü seçmenizi sağlar. Zincir Paktı’nın dört özel yoldaşı da katalogda yer alır.';
+      '2014 Oyuncunun El Kitabı’ndaki eksik büyüler, yakarışlar, element disiplinleri, totemler, geçmişler, ekipman ve yaratıklar eklendi. Bu eklemeler artık uygulamanın 11 dilinin tamamında sunuluyor. Kitap Paktı üç basit büyünü seçmeni sağlar; katalogda Zincir Paktı’nın dört özel yoldaşı da bulunur.';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024: beta';
@@ -3549,7 +3549,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get whatsNew301LimitsBody =>
-      'Bazı özellikler hâlâ elle uygulanmalıdır. Katalog, 2014 sürümünün tüm ek kitaplarını içermez. Yeni 2014 içeriklerinin uygulamanın diğer dillerine çevrilmesi gerekmektedir.';
+      'Bazı özellikleri hâlâ elle uygulaman gerekir. Katalog, 2014 kurallarının bütün ek kitaplarını içermez.';
 
   @override
   String get creationRuleset2024BetaDescription =>

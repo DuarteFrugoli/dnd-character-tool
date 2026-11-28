@@ -339,6 +339,278 @@
         "name": "Bianco",
         "description": "Scegli la discendenza del drago bianco, associata al danno da freddo."
       }
+    },
+    "eldritch_invocations_2014": {
+      "agonizing_blast": {
+        "name": "Deflagrazione Agonizzante",
+        "description": "Aggiungi il tuo modificatore di Carisma ai danni di ogni colpo di Deflagrazione occulta."
+      },
+      "armor_of_shadows": {
+        "name": "Armatura delle Ombre",
+        "description": "Lancia Armatura magica su te stesso a volontà, senza slot né componenti materiali."
+      },
+      "ascendant_step": {
+        "name": "Passo Ascendente",
+        "description": "Lancia Levitazione su te stesso a volontà, senza slot né componenti materiali."
+      },
+      "beast_speech": {
+        "name": "Linguaggio Bestiale",
+        "description": "Lancia Parlare con gli animali a volontà, senza slot."
+      },
+      "beguiling_influence": {
+        "name": "Influenza Ammaliatrice",
+        "description": "Ottieni competenza in Inganno e Persuasione."
+      },
+      "bewitching_whispers": {
+        "name": "Sussurri Stregati",
+        "description": "Lancia Compulsione usando uno slot da warlock, una volta per riposo lungo."
+      },
+      "book_of_ancient_secrets": {
+        "name": "Libro degli Antichi Segreti",
+        "description": "Richiede il Patto del Tomo. Aggiungi al libro due rituali di 1° livello da qualsiasi lista; puoi lanciarli solo come rituali, a meno che non li apprenda in altro modo. Puoi anche lanciare come rituali gli incantesimi da warlock conosciuti che possiedono tale descrittore. Puoi copiare i rituali trovati di livello non superiore alla metà del tuo livello da warlock, arrotondata per eccesso: 2 ore e 50 mo per livello dell'incantesimo."
+      },
+      "chains_of_carceri": {
+        "name": "Catene di Carceri",
+        "description": "Richiede il Patto della Catena. Lancia Blocca mostri a volontà, senza slot né componenti materiali, solo contro celestiali, immondi o elementali. È necessario un riposo lungo prima di bersagliare di nuovo la stessa creatura."
+      },
+      "devil_s_sight": {
+        "name": "Vista del Diavolo",
+        "description": "Vedi normalmente attraverso oscurità magica e non magica entro {{distance:120ft}}."
+      },
+      "dreadful_word": {
+        "name": "Parola Terrificante",
+        "description": "Lancia Confusione usando uno slot da warlock, una volta per riposo lungo."
+      },
+      "eldritch_sight": {
+        "name": "Vista Occulta",
+        "description": "Lancia Individuazione del magico a volontà, senza slot né componenti materiali."
+      },
+      "eldritch_spear": {
+        "name": "Lancia Occulta",
+        "description": "La gittata di Deflagrazione occulta diventa {{distance:300ft}}."
+      },
+      "eyes_of_the_rune_keeper": {
+        "name": "Occhi del Custode delle Rune",
+        "description": "Puoi leggere qualsiasi scrittura."
+      },
+      "fiendish_vigor": {
+        "name": "Vigore Immondo",
+        "description": "Lancia Vita falsata su te stesso a volontà come incantesimo di 1° livello, senza slot né componenti materiali."
+      },
+      "gaze_of_two_minds": {
+        "name": "Sguardo delle Due Menti",
+        "description": "Usa un'azione per toccare un umanoide consenziente e percepire attraverso i suoi sensi fino alla fine del tuo turno successivo. Nei turni seguenti puoi usare un'azione per prolungare il collegamento. Ottieni i suoi sensi speciali, ma sei accecato e assordato rispetto a ciò che ti circonda durante il collegamento."
+      },
+      "lifedrinker": {
+        "name": "Succhiavita",
+        "description": "Richiede il Patto della Lama. I colpi della tua arma del patto infliggono danni necrotici extra pari al tuo modificatore di Carisma, minimo 1."
+      },
+      "mask_of_many_faces": {
+        "name": "Maschera dei Molti Volti",
+        "description": "Lancia Camuffare se stesso a volontà, senza slot."
+      },
+      "master_of_myriad_forms": {
+        "name": "Maestro delle Mille Forme",
+        "description": "Lancia Alterare se stesso a volontà, senza slot."
+      },
+      "minions_of_chaos": {
+        "name": "Servitori del Caos",
+        "description": "Lancia Evoca elementale usando uno slot da warlock, una volta per riposo lungo."
+      },
+      "mire_the_mind": {
+        "name": "Mente Impantanata",
+        "description": "Lancia Lentezza usando uno slot da warlock, una volta per riposo lungo."
+      },
+      "misty_visions": {
+        "name": "Visioni Velate",
+        "description": "Lancia Immagine silenziosa a volontà, senza slot né componenti materiali."
+      },
+      "one_with_shadows": {
+        "name": "Tutt’Uno con le Ombre",
+        "description": "In luce fioca o nell'oscurità, usa un'azione per diventare invisibile finché non ti muovi o usi un'azione o una reazione."
+      },
+      "otherworldly_leap": {
+        "name": "Salto Ultraterreno",
+        "description": "Lancia Saltare su te stesso a volontà, senza slot né componenti materiali."
+      },
+      "repelling_blast": {
+        "name": "Deflagrazione Respingente",
+        "description": "Ogni volta che colpisci con Deflagrazione occulta, puoi spingere la creatura fino a {{distance:10ft}} in linea retta lontano da te."
+      },
+      "sculptor_of_flesh": {
+        "name": "Scultore della Carne",
+        "description": "Lancia Metamorfosi usando uno slot da warlock, una volta per riposo lungo."
+      },
+      "sign_of_ill_omen": {
+        "name": "Segno di Cattivo Presagio",
+        "description": "Lancia Scagliare maledizione usando uno slot da warlock, una volta per riposo lungo."
+      },
+      "thief_of_five_fates": {
+        "name": "Ladro dei Cinque Fati",
+        "description": "Lancia Anatema usando uno slot da warlock, una volta per riposo lungo."
+      },
+      "thirsting_blade": {
+        "name": "Lama Assetata",
+        "description": "Richiede il Patto della Lama. Quando effettui l'azione Attacco, attacchi due volte con la tua arma del patto anziché una."
+      },
+      "visions_of_distant_realms": {
+        "name": "Visioni dei Reami Lontani",
+        "description": "Lancia Occhio arcano a volontà, senza slot."
+      },
+      "voice_of_the_chain_master": {
+        "name": "Voce del Signore delle Catene",
+        "description": "Richiede il Patto della Catena. Comunichi telepaticamente con il tuo famiglio e percepisci attraverso i suoi sensi finché siete sullo stesso piano. Mentre percepisci attraverso di esso, puoi parlare attraverso di lui con la tua voce."
+      },
+      "whispers_of_the_grave": {
+        "name": "Sussurri della Tomba",
+        "description": "Lancia Parlare con i morti a volontà, senza slot."
+      },
+      "witch_sight": {
+        "name": "Vista Stregata",
+        "description": "Entro {{distance:30ft}} e nella tua linea di vista, vedi la vera forma dei mutaforma e delle creature nascoste da illusioni o trasmutazioni."
+      }
+    },
+    "elemental_disciplines_2014": {
+      "breath_of_winter": {
+        "name": "Soffio dell'Inverno",
+        "description": "6 punti ki: lancia Cono di freddo."
+      },
+      "clench_of_the_north_wind": {
+        "name": "Morsa del Vento del Nord",
+        "description": "3 punti ki: lancia Blocca persone."
+      },
+      "eternal_mountain_defense": {
+        "name": "Difesa della Montagna Eterna",
+        "description": "5 punti ki: lancia Pelle di pietra solo su te stesso."
+      },
+      "fangs_of_the_fire_snake": {
+        "name": "Zanne del Serpente di Fuoco",
+        "description": "Azione Attacco: spendi 1 punto ki per aumentare di {{distance:10ft}} la portata dei tuoi colpi senz'armi in questo turno; i colpi infliggono danni da fuoco. Per ogni colpo a segno puoi spendere 1 ulteriore punto ki per infliggere +1d10 danni da fuoco."
+      },
+      "fist_of_four_thunders": {
+        "name": "Pugno dei Quattro Tuoni",
+        "description": "2 punti ki: lancia Onda tonante."
+      },
+      "fist_of_unbroken_air": {
+        "name": "Pugno dell'Aria Ininterrotta",
+        "description": "Azione, 2 punti ki, bersaglio entro {{distance:30ft}}: tiro salvezza su Forza. Se fallisce, subisce 3d10 danni contundenti, viene spinto fino a {{distance:20ft}} e cade prono. Un successo dimezza i danni e impedisce lo spostamento e la caduta. Ogni punto ki aggiuntivo infligge 1d10 danni extra."
+      },
+      "flames_of_the_phoenix": {
+        "name": "Fiamme della Fenice",
+        "description": "4 punti ki: lancia Palla di fuoco."
+      },
+      "gong_of_the_summit": {
+        "name": "Gong della Vetta",
+        "description": "3 punti ki: lancia Frantumare."
+      },
+      "mist_stance": {
+        "name": "Posizione della Nebbia",
+        "description": "4 punti ki: lancia Forma gassosa solo su te stesso."
+      },
+      "ride_the_wind": {
+        "name": "Cavalcare il Vento",
+        "description": "4 punti ki: lancia Volare solo su te stesso."
+      },
+      "river_of_hungry_flame": {
+        "name": "Fiume della Fiamma Affamata",
+        "description": "5 punti ki: lancia Muro di fuoco."
+      },
+      "rush_of_the_gale_spirits": {
+        "name": "Impeto degli Spiriti della Burrasca",
+        "description": "2 punti ki: lancia Folata di vento."
+      },
+      "shape_the_flowing_river": {
+        "name": "Plasmare il Fiume Fluente",
+        "description": "Azione, 1 punto ki: modella acqua o ghiaccio entro {{distance:120ft}}, in un'area fino a {{distance:30ft}} di lato. Congela, sciogli o rimodella il ghiaccio; le variazioni di altezza non possono superare la metà delle dimensioni dell'area. Non puoi intrappolare né ferire creature."
+      },
+      "sweeping_cinder_strike": {
+        "name": "Colpo della Cenere",
+        "description": "2 punti ki: lancia Mani brucianti."
+      },
+      "water_whip": {
+        "name": "Frusta d'Acqua",
+        "description": "Azione, 2 punti ki, bersaglio visibile entro {{distance:30ft}}: tiro salvezza su Destrezza. Se fallisce, subisce 3d10 danni contundenti e, a tua scelta, cade prono o viene trascinato fino a {{distance:25ft}}. Un successo dimezza i danni e impedisce lo spostamento e la caduta. Ogni punto ki aggiuntivo infligge 1d10 danni extra."
+      },
+      "wave_of_rolling_earth": {
+        "name": "Onda della Terra Ondeggiante",
+        "description": "6 punti ki: lancia Muro di pietra."
+      }
+    },
+    "circle_lands_2014": {
+      "arctic": {
+        "name": "Artico",
+        "description": "Incantesimi del circolo sempre preparati ai livelli da druido 3, 5, 7 e 9; non contano ai fini del limite di incantesimi preparati."
+      },
+      "coast": {
+        "name": "Costa",
+        "description": "Incantesimi del circolo sempre preparati ai livelli da druido 3, 5, 7 e 9; non contano ai fini del limite di incantesimi preparati."
+      },
+      "desert": {
+        "name": "Deserto",
+        "description": "Incantesimi del circolo sempre preparati ai livelli da druido 3, 5, 7 e 9; non contano ai fini del limite di incantesimi preparati."
+      },
+      "forest": {
+        "name": "Foresta",
+        "description": "Incantesimi del circolo sempre preparati ai livelli da druido 3, 5, 7 e 9; non contano ai fini del limite di incantesimi preparati."
+      },
+      "grassland": {
+        "name": "Prateria",
+        "description": "Incantesimi del circolo sempre preparati ai livelli da druido 3, 5, 7 e 9; non contano ai fini del limite di incantesimi preparati."
+      },
+      "mountain": {
+        "name": "Montagna",
+        "description": "Incantesimi del circolo sempre preparati ai livelli da druido 3, 5, 7 e 9; non contano ai fini del limite di incantesimi preparati."
+      },
+      "swamp": {
+        "name": "Palude",
+        "description": "Incantesimi del circolo sempre preparati ai livelli da druido 3, 5, 7 e 9; non contano ai fini del limite di incantesimi preparati."
+      },
+      "underdark": {
+        "name": "Sottosuolo",
+        "description": "Incantesimi del circolo sempre preparati ai livelli da druido 3, 5, 7 e 9; non contano ai fini del limite di incantesimi preparati."
+      }
+    },
+    "totem_spirits_2014": {
+      "bear": {
+        "name": "Orso",
+        "description": "Mentre sei in ira, hai resistenza a tutti i danni tranne quelli psichici."
+      },
+      "eagle": {
+        "name": "Aquila",
+        "description": "Mentre sei in ira e non indossi armature pesanti, gli attacchi di opportunità contro di te subiscono svantaggio e puoi usare Scatto come azione bonus."
+      },
+      "wolf": {
+        "name": "Lupo",
+        "description": "Mentre sei in ira, gli alleati hanno vantaggio agli attacchi in mischia contro le creature ostili entro {{distance:5ft}} da te."
+      }
+    },
+    "totem_aspects_2014": {
+      "bear": {
+        "name": "Orso",
+        "description": "La capacità di carico raddoppia; hai vantaggio alle prove di Forza per spingere, trascinare, sollevare o spezzare oggetti."
+      },
+      "eagle": {
+        "name": "Aquila",
+        "description": "Vedi fino a {{distance:1mi}} senza difficoltà e distingui i dettagli come se fossi entro {{distance:100ft}}. La luce fioca non ostacola più le prove di Percezione basate sulla vista."
+      },
+      "wolf": {
+        "name": "Lupo",
+        "description": "Puoi seguire tracce viaggiando a passo veloce e muoverti furtivamente a passo normale."
+      }
+    },
+    "totem_attunements_2014": {
+      "bear": {
+        "name": "Orso",
+        "description": "Mentre sei in ira, le creature ostili entro {{distance:5ft}} subiscono svantaggio quando attaccano altri. Le creature immuni alla paura o incapaci di vederti o sentirti non sono influenzate."
+      },
+      "eagle": {
+        "name": "Aquila",
+        "description": "Mentre sei in ira, voli alla tua velocità base sul terreno; cadi se sei in aria alla fine del tuo turno, a meno che un altro effetto non ti sostenga."
+      },
+      "wolf": {
+        "name": "Lupo",
+        "description": "Mentre sei in ira, dopo aver colpito una creatura di taglia Grande o inferiore con un attacco in mischia con un'arma, usa un'azione bonus per buttarla a terra prona."
+      }
     }
   },
   "classFeatures": {

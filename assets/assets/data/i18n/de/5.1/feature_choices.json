@@ -339,6 +339,278 @@
         "name": "Weiß",
         "description": "Wähle die Abstammung vom weißen Drachen, verbunden mit Kälteschaden."
       }
+    },
+    "eldritch_invocations_2014": {
+      "agonizing_blast": {
+        "name": "Quälender Strahl",
+        "description": "Addiere deinen Charismamodifikator zum Schaden jedes Treffers mit Schauriger Strahl."
+      },
+      "armor_of_shadows": {
+        "name": "Schattenrüstung",
+        "description": "Wirke Magierrüstung auf dich selbst beliebig oft ohne Zauberplatz oder Materialkomponenten."
+      },
+      "ascendant_step": {
+        "name": "Aufsteigender Schritt",
+        "description": "Wirke Schweben auf dich selbst beliebig oft ohne Zauberplatz oder Materialkomponenten."
+      },
+      "beast_speech": {
+        "name": "Tiersprache",
+        "description": "Wirke Mit Tieren sprechen beliebig oft ohne Zauberplatz."
+      },
+      "beguiling_influence": {
+        "name": "Betörender Einfluss",
+        "description": "Du erhältst Übung in Täuschen und Überzeugen."
+      },
+      "bewitching_whispers": {
+        "name": "Behexendes Flüstern",
+        "description": "Wirke Zwang mit einem Hexenmeister-Zauberplatz, einmal pro langer Rast."
+      },
+      "book_of_ancient_secrets": {
+        "name": "Buch der uralten Geheimnisse",
+        "description": "Pakt des Buches erforderlich. Trage zwei Rituale des 1. Grades aus beliebigen Zauberlisten in dein Buch ein. Du kannst sie nur als Rituale wirken, sofern du sie nicht anderweitig lernst. Auch bekannte Hexenmeisterzauber mit dem Ritualmerkmal kannst du als Rituale wirken. Gefundene Rituale bis zu einem Grad in Höhe deiner halben Hexenmeisterstufe, aufgerundet, kannst du abschreiben: 2 Stunden und 50 GM pro Zaubergrad."
+      },
+      "chains_of_carceri": {
+        "name": "Ketten von Carceri",
+        "description": "Pakt der Kette erforderlich. Wirke Monster festhalten beliebig oft ohne Zauberplatz oder Materialkomponenten, aber nur gegen himmlische Wesen, Unholde oder Elementare. Bevor du dieselbe Kreatur erneut zum Ziel machst, musst du eine lange Rast beenden."
+      },
+      "devil_s_sight": {
+        "name": "Teufelssicht",
+        "description": "Du siehst in magischer und nichtmagischer Dunkelheit innerhalb von {{distance:120ft}} normal."
+      },
+      "dreadful_word": {
+        "name": "Schreckliches Wort",
+        "description": "Wirke Verwirrung mit einem Hexenmeister-Zauberplatz, einmal pro langer Rast."
+      },
+      "eldritch_sight": {
+        "name": "Magische Sicht",
+        "description": "Wirke Magie entdecken beliebig oft ohne Zauberplatz oder Materialkomponenten."
+      },
+      "eldritch_spear": {
+        "name": "Schauriger Speer",
+        "description": "Schauriger Strahl hat eine Reichweite von {{distance:300ft}}."
+      },
+      "eyes_of_the_rune_keeper": {
+        "name": "Augen des Runenwächters",
+        "description": "Du kannst jede Schrift lesen."
+      },
+      "fiendish_vigor": {
+        "name": "Teuflische Vitalität",
+        "description": "Wirke Falsches Leben beliebig oft als Zauber des 1. Grades auf dich selbst, ohne Zauberplatz oder Materialkomponenten."
+      },
+      "gaze_of_two_minds": {
+        "name": "Blick zweier Geister",
+        "description": "Berühre mit einer Aktion einen willigen Humanoiden, um bis zum Ende deines nächsten Zuges durch seine Sinne wahrzunehmen. Mit einer Aktion in späteren Zügen kannst du die Verbindung verlängern. Du erhältst seine besonderen Sinne, bist aber während der Verbindung gegenüber deiner eigenen Umgebung blind und taub."
+      },
+      "lifedrinker": {
+        "name": "Lebensraub",
+        "description": "Pakt der Klinge erforderlich. Treffer mit deiner Paktwaffe verursachen zusätzlich nekrotischen Schaden in Höhe deines Charismamodifikators, mindestens 1."
+      },
+      "mask_of_many_faces": {
+        "name": "Maske der vielen Gesichter",
+        "description": "Wirke Selbstverkleidung beliebig oft ohne Zauberplatz."
+      },
+      "master_of_myriad_forms": {
+        "name": "Meister der unzähligen Gestalten",
+        "description": "Wirke Selbstverwandlung beliebig oft ohne Zauberplatz."
+      },
+      "minions_of_chaos": {
+        "name": "Diener des Chaos",
+        "description": "Wirke Elementar beschwören mit einem Hexenmeister-Zauberplatz, einmal pro langer Rast."
+      },
+      "mire_the_mind": {
+        "name": "Geist verlangsamen",
+        "description": "Wirke Verlangsamen mit einem Hexenmeister-Zauberplatz, einmal pro langer Rast."
+      },
+      "misty_visions": {
+        "name": "Nebelbilder",
+        "description": "Wirke Lautloses Trugbild beliebig oft ohne Zauberplatz oder Materialkomponenten."
+      },
+      "one_with_shadows": {
+        "name": "Eins mit den Schatten",
+        "description": "Bei dämmrigem Licht oder Dunkelheit kannst du mit einer Aktion unsichtbar werden, bis du dich bewegst oder eine Aktion oder Reaktion ausführst."
+      },
+      "otherworldly_leap": {
+        "name": "Jenseitiger Sprung",
+        "description": "Wirke Springen auf dich selbst beliebig oft ohne Zauberplatz oder Materialkomponenten."
+      },
+      "repelling_blast": {
+        "name": "Zurückstoßender Strahl",
+        "description": "Bei jedem Treffer mit Schauriger Strahl kannst du die Kreatur bis zu {{distance:10ft}} in gerader Linie von dir wegstoßen."
+      },
+      "sculptor_of_flesh": {
+        "name": "Bildhauer des Fleisches",
+        "description": "Wirke Verwandlung mit einem Hexenmeister-Zauberplatz, einmal pro langer Rast."
+      },
+      "sign_of_ill_omen": {
+        "name": "Zeichen des bösen Omens",
+        "description": "Wirke Fluch auferlegen mit einem Hexenmeister-Zauberplatz, einmal pro langer Rast."
+      },
+      "thief_of_five_fates": {
+        "name": "Dieb der fünf Schicksale",
+        "description": "Wirke Verderben mit einem Hexenmeister-Zauberplatz, einmal pro langer Rast."
+      },
+      "thirsting_blade": {
+        "name": "Dürstende Klinge",
+        "description": "Pakt der Klinge erforderlich. Wenn du die Angriffsaktion ausführst, greifst du mit deiner Paktwaffe zweimal statt einmal an."
+      },
+      "visions_of_distant_realms": {
+        "name": "Visionen ferner Reiche",
+        "description": "Wirke Arkanes Auge beliebig oft ohne Zauberplatz."
+      },
+      "voice_of_the_chain_master": {
+        "name": "Stimme des Kettenmeisters",
+        "description": "Pakt der Kette erforderlich. Auf derselben Ebene kannst du telepathisch mit deinem Vertrauten kommunizieren und durch seine Sinne wahrnehmen. Währenddessen kannst du mit deiner eigenen Stimme durch ihn sprechen."
+      },
+      "whispers_of_the_grave": {
+        "name": "Flüstern des Grabes",
+        "description": "Wirke Mit Toten sprechen beliebig oft ohne Zauberplatz."
+      },
+      "witch_sight": {
+        "name": "Hexensicht",
+        "description": "Innerhalb von {{distance:30ft}} und deiner Sichtlinie erkennst du die wahre Gestalt von Gestaltwandlern und Kreaturen, die durch Illusions- oder Verwandlungsmagie verborgen sind."
+      }
+    },
+    "elemental_disciplines_2014": {
+      "breath_of_winter": {
+        "name": "Atem des Winters",
+        "description": "6 Ki-Punkte: Wirke Kältekegel."
+      },
+      "clench_of_the_north_wind": {
+        "name": "Griff des Nordwinds",
+        "description": "3 Ki-Punkte: Wirke Person festhalten."
+      },
+      "eternal_mountain_defense": {
+        "name": "Verteidigung des ewigen Berges",
+        "description": "5 Ki-Punkte: Wirke Steinhaut nur auf dich selbst."
+      },
+      "fangs_of_the_fire_snake": {
+        "name": "Fänge der Feuerschlange",
+        "description": "Angriffsaktion: Für 1 Ki-Punkt steigt die Reichweite deiner waffenlosen Angriffe in diesem Zug um {{distance:10ft}}; Treffer verursachen Feuerschaden. Bei jedem Treffer kannst du 1 weiteren Ki-Punkt für +1d10 Feuerschaden ausgeben."
+      },
+      "fist_of_four_thunders": {
+        "name": "Faust der vier Donner",
+        "description": "2 Ki-Punkte: Wirke Donnerwoge."
+      },
+      "fist_of_unbroken_air": {
+        "name": "Faust der ungebrochenen Luft",
+        "description": "Aktion, 2 Ki-Punkte, Ziel innerhalb von {{distance:30ft}}: Stärkerettungswurf. Bei einem Fehlschlag erleidet das Ziel 3d10 Wuchtschaden, wird bis zu {{distance:20ft}} weggestoßen und zu Boden geworfen. Bei Erfolg erleidet es halben Schaden und wird weder bewegt noch zu Boden geworfen. Jeder zusätzliche Ki-Punkt erhöht den Schaden um 1d10."
+      },
+      "flames_of_the_phoenix": {
+        "name": "Flammen des Phönix",
+        "description": "4 Ki-Punkte: Wirke Feuerball."
+      },
+      "gong_of_the_summit": {
+        "name": "Gong des Gipfels",
+        "description": "3 Ki-Punkte: Wirke Zerschmettern."
+      },
+      "mist_stance": {
+        "name": "Nebelgestalt",
+        "description": "4 Ki-Punkte: Wirke Gasförmige Gestalt nur auf dich selbst."
+      },
+      "ride_the_wind": {
+        "name": "Den Wind reiten",
+        "description": "4 Ki-Punkte: Wirke Fliegen nur auf dich selbst."
+      },
+      "river_of_hungry_flame": {
+        "name": "Fluss der hungrigen Flamme",
+        "description": "5 Ki-Punkte: Wirke Feuerwand."
+      },
+      "rush_of_the_gale_spirits": {
+        "name": "Ansturm der Sturmgeister",
+        "description": "2 Ki-Punkte: Wirke Windstoß."
+      },
+      "shape_the_flowing_river": {
+        "name": "Den fließenden Fluss formen",
+        "description": "Aktion, 1 Ki-Punkt: Forme Wasser oder Eis innerhalb von {{distance:120ft}} in einem Bereich von bis zu {{distance:30ft}} Seitenlänge. Du kannst Wasser gefrieren lassen, Eis auftauen oder umformen; Höhenänderungen dürfen die halbe Ausdehnung des Bereichs nicht überschreiten. Du kannst keine Kreaturen einschließen oder verletzen."
+      },
+      "sweeping_cinder_strike": {
+        "name": "Fegender Aschenschlag",
+        "description": "2 Ki-Punkte: Wirke Brennende Hände."
+      },
+      "water_whip": {
+        "name": "Wasserpeitsche",
+        "description": "Aktion, 2 Ki-Punkte, sichtbares Ziel innerhalb von {{distance:30ft}}: Geschicklichkeitsrettungswurf. Bei einem Fehlschlag erleidet es 3d10 Wuchtschaden und wird nach deiner Wahl zu Boden geworfen oder bis zu {{distance:25ft}} herangezogen. Bei Erfolg erleidet es halben Schaden und wird weder bewegt noch zu Boden geworfen. Jeder zusätzliche Ki-Punkt erhöht den Schaden um 1d10."
+      },
+      "wave_of_rolling_earth": {
+        "name": "Welle der rollenden Erde",
+        "description": "6 Ki-Punkte: Wirke Steinwand."
+      }
+    },
+    "circle_lands_2014": {
+      "arctic": {
+        "name": "Arktis",
+        "description": "Auf Druidenstufe 3, 5, 7 und 9 erhältst du stets vorbereitete Zirkelzauber. Diese zählen nicht gegen dein Vorbereitungslimit."
+      },
+      "coast": {
+        "name": "Küste",
+        "description": "Auf Druidenstufe 3, 5, 7 und 9 erhältst du stets vorbereitete Zirkelzauber. Diese zählen nicht gegen dein Vorbereitungslimit."
+      },
+      "desert": {
+        "name": "Wüste",
+        "description": "Auf Druidenstufe 3, 5, 7 und 9 erhältst du stets vorbereitete Zirkelzauber. Diese zählen nicht gegen dein Vorbereitungslimit."
+      },
+      "forest": {
+        "name": "Wald",
+        "description": "Auf Druidenstufe 3, 5, 7 und 9 erhältst du stets vorbereitete Zirkelzauber. Diese zählen nicht gegen dein Vorbereitungslimit."
+      },
+      "grassland": {
+        "name": "Grasland",
+        "description": "Auf Druidenstufe 3, 5, 7 und 9 erhältst du stets vorbereitete Zirkelzauber. Diese zählen nicht gegen dein Vorbereitungslimit."
+      },
+      "mountain": {
+        "name": "Gebirge",
+        "description": "Auf Druidenstufe 3, 5, 7 und 9 erhältst du stets vorbereitete Zirkelzauber. Diese zählen nicht gegen dein Vorbereitungslimit."
+      },
+      "swamp": {
+        "name": "Sumpf",
+        "description": "Auf Druidenstufe 3, 5, 7 und 9 erhältst du stets vorbereitete Zirkelzauber. Diese zählen nicht gegen dein Vorbereitungslimit."
+      },
+      "underdark": {
+        "name": "Unterreich",
+        "description": "Auf Druidenstufe 3, 5, 7 und 9 erhältst du stets vorbereitete Zirkelzauber. Diese zählen nicht gegen dein Vorbereitungslimit."
+      }
+    },
+    "totem_spirits_2014": {
+      "bear": {
+        "name": "Bär",
+        "description": "Im Kampfrausch hast du Resistenz gegen jeden Schaden außer psychischem Schaden."
+      },
+      "eagle": {
+        "name": "Adler",
+        "description": "Im Kampfrausch ohne schwere Rüstung haben Gelegenheitsangriffe gegen dich Nachteil, und du kannst die Spurtaktion als Bonusaktion ausführen."
+      },
+      "wolf": {
+        "name": "Wolf",
+        "description": "Im Kampfrausch haben Verbündete Vorteil auf Nahkampfangriffe gegen feindliche Kreaturen innerhalb von {{distance:5ft}} um dich."
+      }
+    },
+    "totem_aspects_2014": {
+      "bear": {
+        "name": "Bär",
+        "description": "Deine Traglast verdoppelt sich. Du hast Vorteil auf Stärkewürfe, um Gegenstände zu schieben, zu ziehen, zu heben oder zu zerbrechen."
+      },
+      "eagle": {
+        "name": "Adler",
+        "description": "Du siehst bis zu {{distance:1mi}} weit ohne Schwierigkeiten und erkennst feine Einzelheiten wie aus {{distance:100ft}} Entfernung. Dämmriges Licht behindert keine sichtbasierten Wahrnehmungswürfe mehr."
+      },
+      "wolf": {
+        "name": "Wolf",
+        "description": "Du kannst bei schnellem Reisetempo Spuren verfolgen und dich bei normalem Reisetempo heimlich bewegen."
+      }
+    },
+    "totem_attunements_2014": {
+      "bear": {
+        "name": "Bär",
+        "description": "Im Kampfrausch haben feindliche Kreaturen innerhalb von {{distance:5ft}} Nachteil auf Angriffe gegen andere Ziele. Kreaturen, die gegen Furcht immun sind oder dich weder sehen noch hören können, sind nicht betroffen."
+      },
+      "eagle": {
+        "name": "Adler",
+        "description": "Im Kampfrausch erhältst du eine Flugbewegungsrate in Höhe deiner Schrittbewegungsrate. Beendest du deinen Zug in der Luft, fällst du, sofern dich kein anderer Effekt oben hält."
+      },
+      "wolf": {
+        "name": "Wolf",
+        "description": "Im Kampfrausch kannst du eine große oder kleinere Kreatur, die du mit einem Nahkampf-Waffenangriff getroffen hast, mit einer Bonusaktion zu Boden werfen."
+      }
     }
   },
   "classFeatures": {

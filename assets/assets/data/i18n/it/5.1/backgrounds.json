@@ -12,6 +12,42 @@
     "feature": {
       "name": "Rifugio dei Fedeli",
       "description": "Tu e i tuoi compagni potete ricevere gratuitamente cure e assistenza nei luoghi di culto della tua fede, ma le componenti materiali degli incantesimi restano a tuo carico. I fedeli possono provvedere alle tue necessità modeste e i sacerdoti del tuo tempio possono aiutarti, purché tu sia in buoni rapporti con loro."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Cito una preghiera per ogni occasione.",
+        "Ascolto pazientemente le confessioni.",
+        "Osservo le usanze religiose che non conosco.",
+        "Offro cibo prima di offrire consigli.",
+        "Tratto gli oggetti sacri con cura.",
+        "Cerco un significato nelle piccole coincidenze.",
+        "Rispondo agli insulti con cortesia formale.",
+        "Chiedo ai viaggiatori dei loro dei."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia fede aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia fede.",
+        "Libertà: Nessuna autorità dovrebbe impormi la mia fede.",
+        "Ambizione: userò la mia fede per ottenere influenza.",
+        "Equilibrio: Cerco di conciliare la fede con le esigenze della vita.",
+        "Integrità: non tradirò la mia fede per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio tempio.",
+        "Proteggo un ricordo legato a questa promessa sacra.",
+        "Voglio riallacciare con onore i rapporti con il mio tempio.",
+        "Devo la mia libertà a qualcuno che comprende questa promessa sacra.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa promessa sacra.",
+        "Devo terminare il lavoro iniziato con il mio tempio."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio tempio.",
+        "Divento avventato quando qualcuno deride la mia fede.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio tempio.",
+        "Rimando il momento di ammettere quanto mi costa questa promessa sacra.",
+        "Giustifico i miei errori invocando la mia fede.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa promessa sacra."
+      ]
     }
   },
   "Charlatan": {
@@ -25,6 +61,42 @@
     "feature": {
       "name": "Falsa Identità",
       "description": "Possiedi una seconda identità completa di documenti, conoscenze e travestimenti. Puoi inoltre falsificare documenti e lettere, purché tu abbia visto un esempio dell'originale."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Mi presento con un nome nuovo.",
+        "Raccolgo voci prima di fare una proposta.",
+        "Adulo gli sconosciuti con complimenti precisi.",
+        "Mi esercito con le firme mentre aspetto.",
+        "Propongo sempre una scommessa conveniente per me.",
+        "Noto chi controlla la situazione.",
+        "Mi vesto appena al di sopra delle mie possibilità.",
+        "Racconto storie elaborate su eventi ordinari."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia indipendenza aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia indipendenza.",
+        "Libertà: Non permetterò a nessuno di decidere la mia vita al posto mio.",
+        "Ambizione: userò la mia indipendenza per ottenere influenza.",
+        "Equilibrio: Voglio mantenere la mia indipendenza senza danneggiare gli altri.",
+        "Integrità: non tradirò la mia indipendenza per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio vecchio socio.",
+        "Proteggo un ricordo legato a questa falsa identità.",
+        "Voglio riallacciare con onore i rapporti con il mio vecchio socio.",
+        "Devo la mia libertà a qualcuno che comprende questa falsa identità.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa falsa identità.",
+        "Devo terminare il lavoro iniziato con il mio vecchio socio."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio vecchio socio.",
+        "Divento avventato quando qualcuno deride la mia indipendenza.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio vecchio socio.",
+        "Rimando il momento di ammettere quanto mi costa questa falsa identità.",
+        "Giustifico i miei errori invocando la mia indipendenza.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa falsa identità."
+      ]
     }
   },
   "Criminal": {
@@ -37,6 +109,42 @@
     "feature": {
       "name": "Contatto Criminale",
       "description": "Hai un contatto fidato che ti collega a una rete criminale. Conosci i metodi per inviare e ricevere messaggi attraverso questa rete, anche a grandi distanze."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Controllo le uscite prima di sedermi.",
+        "Tengo la voce bassa tra la folla.",
+        "Ricordo ogni persona che mi deve qualcosa.",
+        "Nascondo i miei attrezzi negli oggetti comuni.",
+        "Diffido delle offerte prive di condizioni.",
+        "Condivido i pasti con chi passa inosservato.",
+        "Uso il gergo del mio vecchio quartiere.",
+        "Conto le guardie senza dare a vedere che le osservo."
+      ],
+      "ideals": [
+        "Compassione: voglio che la lealtà alla mia banda aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la lealtà alla mia banda.",
+        "Libertà: La lealtà non dovrebbe rendermi prigioniero della banda.",
+        "Ambizione: userò la lealtà alla mia banda per ottenere influenza.",
+        "Equilibrio: Cerco un equilibrio tra la lealtà alla banda e i miei limiti.",
+        "Integrità: non tradirò la lealtà alla mia banda per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio vecchio complice.",
+        "Proteggo un ricordo legato a questo debito non saldato.",
+        "Voglio riallacciare con onore i rapporti con il mio vecchio complice.",
+        "Devo la mia libertà a qualcuno che comprende questo debito non saldato.",
+        "Proteggerò le persone minacciate dalle conseguenze di questo debito non saldato.",
+        "Devo terminare il lavoro iniziato con il mio vecchio complice."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio vecchio complice.",
+        "Divento avventato quando qualcuno deride la lealtà alla mia banda.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio vecchio complice.",
+        "Rimando il momento di ammettere quanto mi costa questo debito non saldato.",
+        "Giustifico i miei errori invocando la lealtà alla mia banda.",
+        "Rifiuto aiuto quando affronto le conseguenze di questo debito non saldato."
+      ]
     }
   },
   "Entertainer": {
@@ -50,6 +158,42 @@
     "feature": {
       "name": "A Grande Richiesta",
       "description": "Puoi trovare facilmente un luogo in cui esibirti, come una locanda, una taverna o un teatro. In cambio di esibizioni regolari, puoi ricevere gratuitamente vitto e alloggio di livello modesto o confortevole, a seconda del locale."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Trasformo le presentazioni in piccoli spettacoli.",
+        "Ricordo il pubblico meglio delle date.",
+        "Continuo a esercitarmi nei momenti tranquilli.",
+        "Imito le voci quando racconto storie.",
+        "Lodo generosamente gli altri artisti.",
+        "Fatico a lasciare che un silenzio rimanga tale.",
+        "Noto un ritmo nelle attività quotidiane.",
+        "Conservo i piccoli doni degli ammiratori."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia arte aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia arte.",
+        "Libertà: La mia arte deve potersi esprimere senza censura.",
+        "Ambizione: userò la mia arte per ottenere influenza.",
+        "Equilibrio: Voglio vivere della mia arte senza lasciare che consumi tutta la mia vita.",
+        "Integrità: non tradirò la mia arte per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio primo mecenate.",
+        "Proteggo un ricordo legato a questa esibizione perduta.",
+        "Voglio riallacciare con onore i rapporti con il mio primo mecenate.",
+        "Devo la mia libertà a qualcuno che comprende questa esibizione perduta.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa esibizione perduta.",
+        "Devo terminare il lavoro iniziato con il mio primo mecenate."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio primo mecenate.",
+        "Divento avventato quando qualcuno deride la mia arte.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio primo mecenate.",
+        "Rimando il momento di ammettere quanto mi costa questa esibizione perduta.",
+        "Giustifico i miei errori invocando la mia arte.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa esibizione perduta."
+      ]
     }
   },
   "Folk Hero": {
@@ -64,6 +208,42 @@
     "feature": {
       "name": "Ospitalità Rurale",
       "description": "Tra la gente comune puoi trovare rifugio, riposo e ospitalità. I popolani sono disposti a nascondere te e i tuoi compagni e a proteggervi da chi vi cerca, purché non debbano mettere a rischio la propria vita."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Giudico i governanti da come trattano i lavoratori.",
+        "Offro il mio aiuto prima di parlare di compenso.",
+        "Uso esempi pratici per spiegare i problemi.",
+        "Ricordo i nomi delle persone comuni che mi aiutano.",
+        "Condivido il merito dei miei successi.",
+        "Riparo oggetti rotti quando sono nervoso.",
+        "Le cerimonie elaborate mi mettono a disagio.",
+        "Racconto storie sulle persone del mio paese."
+      ],
+      "ideals": [
+        "Compassione: voglio che il mio impegno per la gente comune aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano il mio impegno per la gente comune.",
+        "Libertà: La gente comune deve poter scegliere il proprio futuro.",
+        "Ambizione: userò il mio impegno per la gente comune per ottenere influenza.",
+        "Equilibrio: Cerco soluzioni utili alla gente nel lungo periodo.",
+        "Integrità: non tradirò il mio impegno per la gente comune per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio villaggio natale.",
+        "Proteggo un ricordo legato a questa promessa di proteggere gli altri.",
+        "Voglio riallacciare con onore i rapporti con il mio villaggio natale.",
+        "Devo la mia libertà a qualcuno che comprende questa promessa di proteggere gli altri.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa promessa di proteggere gli altri.",
+        "Devo terminare il lavoro iniziato con il mio villaggio natale."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio villaggio natale.",
+        "Divento avventato quando qualcuno deride il mio impegno per la gente comune.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio villaggio natale.",
+        "Rimando il momento di ammettere quanto mi costa questa promessa di proteggere gli altri.",
+        "Giustifico i miei errori invocando il mio impegno per la gente comune.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa promessa di proteggere gli altri."
+      ]
     }
   },
   "Guild Artisan": {
@@ -77,6 +257,42 @@
     "feature": {
       "name": "Appartenenza alla Gilda",
       "description": "La tua gilda può offrirti vitto e alloggio, sostegno legale e contatti influenti. In cambio, devi rispettare i suoi obblighi e versare una quota di 5 mo al mese."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Esamino le giunture del legno nei luoghi sconosciuti.",
+        "Spiego il lavoro necessario per creare gli oggetti raffinati.",
+        "Porto con me un piccolo progetto incompiuto.",
+        "Rispetto chiunque conosca un mestiere.",
+        "Contratto con pazienza e attenzione.",
+        "Noto subito i marchi contraffatti.",
+        "Tengo registri di lavoro meticolosi.",
+        "Non riesco a ignorare un pezzo montato storto."
+      ],
+      "ideals": [
+        "Compassione: voglio che il mio lavoro onesto aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano il mio lavoro onesto.",
+        "Libertà: Devo poter esercitare il mio mestiere senza essere sfruttato.",
+        "Ambizione: userò il mio lavoro onesto per ottenere influenza.",
+        "Equilibrio: Voglio vivere del mio mestiere senza sacrificare qualità e onestà.",
+        "Integrità: non tradirò il mio lavoro onesto per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con la mia vecchia bottega.",
+        "Proteggo un ricordo legato a questo capolavoro.",
+        "Voglio riallacciare con onore i rapporti con la mia vecchia bottega.",
+        "Devo la mia libertà a qualcuno che comprende questo capolavoro.",
+        "Proteggerò le persone minacciate dalle conseguenze di questo capolavoro.",
+        "Devo terminare il lavoro iniziato con la mia vecchia bottega."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda la mia vecchia bottega.",
+        "Divento avventato quando qualcuno deride il mio lavoro onesto.",
+        "Mi fido troppo facilmente di chi mi ricorda la mia vecchia bottega.",
+        "Rimando il momento di ammettere quanto mi costa questo capolavoro.",
+        "Giustifico i miei errori invocando il mio lavoro onesto.",
+        "Rifiuto aiuto quando affronto le conseguenze di questo capolavoro."
+      ]
     }
   },
   "Hermit": {
@@ -91,6 +307,42 @@
     "feature": {
       "name": "Scoperta",
       "description": "Durante il tuo isolamento hai fatto una scoperta importante e unica, come una verità nascosta, un segreto dimenticato o un luogo sconosciuto. Il significato della scoperta viene definito insieme al Dungeon Master."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Rifletto prima di rispondere alle domande semplici.",
+        "Annoto i sogni in un piccolo quaderno.",
+        "Le normali abitudini sociali mi affascinano.",
+        "Preferisco l'alba alle serate affollate.",
+        "Spiego gli eventi attraverso i cicli naturali.",
+        "Dimentico da quanto tempo dura una conversazione.",
+        "Mantengo un rituale quotidiano familiare.",
+        "Ascolto con più attenzione di quanta ne dedichi al parlare."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia comprensione interiore aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia comprensione interiore.",
+        "Libertà: Devo poter cercare le mie risposte.",
+        "Ambizione: userò la mia comprensione interiore per ottenere influenza.",
+        "Equilibrio: Cerco di conciliare la riflessione interiore con la vita tra le persone.",
+        "Integrità: non tradirò la mia comprensione interiore per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio vecchio rifugio.",
+        "Proteggo un ricordo legato a questa scoperta pericolosa.",
+        "Voglio riallacciare con onore i rapporti con il mio vecchio rifugio.",
+        "Devo la mia libertà a qualcuno che comprende questa scoperta pericolosa.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa scoperta pericolosa.",
+        "Devo terminare il lavoro iniziato con il mio vecchio rifugio."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio vecchio rifugio.",
+        "Divento avventato quando qualcuno deride la mia comprensione interiore.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio vecchio rifugio.",
+        "Rimando il momento di ammettere quanto mi costa questa scoperta pericolosa.",
+        "Giustifico i miei errori invocando la mia comprensione interiore.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa scoperta pericolosa."
+      ]
     }
   },
   "Noble": {
@@ -104,6 +356,42 @@
     "feature": {
       "name": "Posizione Privilegiata",
       "description": "Grazie al tuo rango, le persone tendono a presumere che tu abbia buone intenzioni. Sei accolto nell'alta società e puoi ottenere un'udienza con un nobile locale."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Saluto le persone con formalità studiata.",
+        "Ricordo i cognomi e i legami familiari.",
+        "Curo il mio aspetto anche in viaggio.",
+        "Mi aspetto che gli accordi vengano rispettati pubblicamente.",
+        "Ringrazio per nome chi mi offre un buon servizio.",
+        "Nascondo i dubbi dietro maniere impeccabili.",
+        "Sono curioso della vita oltre la mia tenuta.",
+        "Noto subito i simboli di rango."
+      ],
+      "ideals": [
+        "Compassione: voglio che le mie responsabilità aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano le mie responsabilità.",
+        "Libertà: Il mio rango non deve decidere tutti i miei rapporti.",
+        "Ambizione: userò le mie responsabilità per ottenere influenza.",
+        "Equilibrio: Cerco un equilibrio tra le mie responsabilità e i miei bisogni.",
+        "Integrità: non tradirò le mie responsabilità per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con la mia casata.",
+        "Proteggo un ricordo legato a questo obbligo familiare.",
+        "Voglio riallacciare con onore i rapporti con la mia casata.",
+        "Devo la mia libertà a qualcuno che comprende questo obbligo familiare.",
+        "Proteggerò le persone minacciate dalle conseguenze di questo obbligo familiare.",
+        "Devo terminare il lavoro iniziato con la mia casata."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda la mia casata.",
+        "Divento avventato quando qualcuno deride le mie responsabilità.",
+        "Mi fido troppo facilmente di chi mi ricorda la mia casata.",
+        "Rimando il momento di ammettere quanto mi costa questo obbligo familiare.",
+        "Giustifico i miei errori invocando le mie responsabilità.",
+        "Rifiuto aiuto quando affronto le conseguenze di questo obbligo familiare."
+      ]
     }
   },
   "Outlander": {
@@ -118,6 +406,42 @@
     "feature": {
       "name": "Viandante",
       "description": "Hai un'eccellente memoria geografica e ricordi la disposizione generale dei territori, degli insediamenti e dei punti di riferimento. Puoi inoltre trovare ogni giorno cibo e acqua fresca per te e fino ad altre cinque persone, purché il territorio offra risorse sufficienti."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Controllo il tempo prima di fare piani.",
+        "Descrivo le distanze in giornate di cammino.",
+        "Raccolgo piante utili lungo la strada.",
+        "Dormo leggero quando sento rumori sconosciuti.",
+        "Offro indicazioni agli estranei prima di fare conversazione.",
+        "Noto le tracce che gli altri ignorano.",
+        "Mi sento a disagio senza vedere il cielo.",
+        "Conservo le storie del mio popolo."
+      ],
+      "ideals": [
+        "Compassione: voglio che il mio legame con la natura aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano il mio legame con la natura.",
+        "Libertà: Nessun confine dovrebbe separarmi dal mondo naturale.",
+        "Ambizione: userò il mio legame con la natura per ottenere influenza.",
+        "Equilibrio: Voglio vivere in armonia con il mondo naturale.",
+        "Integrità: non tradirò il mio legame con la natura per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con la mia famiglia nomade.",
+        "Proteggo un ricordo legato a questo dovere verso la mia patria.",
+        "Voglio riallacciare con onore i rapporti con la mia famiglia nomade.",
+        "Devo la mia libertà a qualcuno che comprende questo dovere verso la mia patria.",
+        "Proteggerò le persone minacciate dalle conseguenze di questo dovere verso la mia patria.",
+        "Devo terminare il lavoro iniziato con la mia famiglia nomade."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda la mia famiglia nomade.",
+        "Divento avventato quando qualcuno deride il mio legame con la natura.",
+        "Mi fido troppo facilmente di chi mi ricorda la mia famiglia nomade.",
+        "Rimando il momento di ammettere quanto mi costa questo dovere verso la mia patria.",
+        "Giustifico i miei errori invocando il mio legame con la natura.",
+        "Rifiuto aiuto quando affronto le conseguenze di questo dovere verso la mia patria."
+      ]
     }
   },
   "Sage": {
@@ -133,6 +457,42 @@
     "feature": {
       "name": "Ricercatore",
       "description": "Quando cerchi un'informazione che non conosci, generalmente sai dove trovarla o a chi rivolgerti per ottenerla. Alcune conoscenze potrebbero comunque essere custodite in luoghi difficili da raggiungere."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Chiedo definizioni prima di discutere.",
+        "Prendo appunti durante le presentazioni.",
+        "Mi entusiasmo per gli argomenti oscuri.",
+        "Ammetto quando una domanda mi mette in difficoltà.",
+        "Confronto i nuovi eventi con i resoconti antichi.",
+        "Porto con me troppe letture.",
+        "Preferisco una domanda utile a una risposta brillante.",
+        "Verifico due volte un'affermazione interessante."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia ricerca del sapere aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia ricerca del sapere.",
+        "Libertà: Il sapere deve poter essere cercato senza divieti arbitrari.",
+        "Ambizione: userò la mia ricerca del sapere per ottenere influenza.",
+        "Equilibrio: Cerco la conoscenza senza dimenticarne le conseguenze.",
+        "Integrità: non tradirò la mia ricerca del sapere per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio mentore.",
+        "Proteggo un ricordo legato a questa domanda senza risposta.",
+        "Voglio riallacciare con onore i rapporti con il mio mentore.",
+        "Devo la mia libertà a qualcuno che comprende questa domanda senza risposta.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa domanda senza risposta.",
+        "Devo terminare il lavoro iniziato con il mio mentore."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio mentore.",
+        "Divento avventato quando qualcuno deride la mia ricerca del sapere.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio mentore.",
+        "Rimando il momento di ammettere quanto mi costa questa domanda senza risposta.",
+        "Giustifico i miei errori invocando la mia ricerca del sapere.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa domanda senza risposta."
+      ]
     }
   },
   "Sailor": {
@@ -147,6 +507,42 @@
     "feature": {
       "name": "Passaggio Via Nave",
       "description": "Grazie alla tua esperienza e ai tuoi contatti tra i marinai, puoi trovare un passaggio gratuito su una nave per te e i tuoi compagni. Durante il viaggio potrebbe esservi richiesto di aiutare l'equipaggio."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Valuto il pericolo dal movimento dell'aria.",
+        "Apprezzo le storie raccontate durante un pasto condiviso.",
+        "Controllo i nodi senza pensarci.",
+        "Indico le direzioni come se fossi a bordo di una nave.",
+        "Conservo un piccolo portafortuna.",
+        "Canto durante i lavori ripetitivi.",
+        "Faccio amicizia rapidamente nei porti sconosciuti.",
+        "Mi sento responsabile di chi viaggia con me."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia libertà aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia libertà.",
+        "Libertà: Voglio scegliere la mia rotta e i miei compagni.",
+        "Ambizione: userò la mia libertà per ottenere influenza.",
+        "Equilibrio: Voglio conservare la mia libertà senza abbandonare chi dipende da me.",
+        "Integrità: non tradirò la mia libertà per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio vecchio equipaggio.",
+        "Proteggo un ricordo legato a questa promessa fatta in mare.",
+        "Voglio riallacciare con onore i rapporti con il mio vecchio equipaggio.",
+        "Devo la mia libertà a qualcuno che comprende questa promessa fatta in mare.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa promessa fatta in mare.",
+        "Devo terminare il lavoro iniziato con il mio vecchio equipaggio."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio vecchio equipaggio.",
+        "Divento avventato quando qualcuno deride la mia libertà.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio vecchio equipaggio.",
+        "Rimando il momento di ammettere quanto mi costa questa promessa fatta in mare.",
+        "Giustifico i miei errori invocando la mia libertà.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa promessa fatta in mare."
+      ]
     }
   },
   "Soldier": {
@@ -161,6 +557,42 @@
     "feature": {
       "name": "Grado Militare",
       "description": "I soldati della tua precedente organizzazione militare riconoscono il tuo grado. Puoi esercitare la tua autorità sui militari, ottenere accesso ad accampamenti e fortezze amiche e richiedere temporaneamente equipaggiamento o cavalli."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Preparo l'equipaggiamento prima di riposare.",
+        "Parlo direttamente quando serve una decisione.",
+        "Noto le buone posizioni difensive.",
+        "Rispetto la competenza più del grado.",
+        "Mantengo le mie abitudini nella confusione.",
+        "Ricordo i nomi dei compagni caduti.",
+        "Divido i lavori difficili in compiti chiari.",
+        "Controllo che nessuno sia rimasto indietro."
+      ],
+      "ideals": [
+        "Compassione: voglio che il mio dovere aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano il mio dovere.",
+        "Libertà: Il dovere non giustifica l'obbedienza cieca.",
+        "Ambizione: userò il mio dovere per ottenere influenza.",
+        "Equilibrio: Voglio compiere il mio dovere senza perdere la mia umanità.",
+        "Integrità: non tradirò il mio dovere per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con la mia vecchia unità.",
+        "Proteggo un ricordo legato a questa missione incompiuta.",
+        "Voglio riallacciare con onore i rapporti con la mia vecchia unità.",
+        "Devo la mia libertà a qualcuno che comprende questa missione incompiuta.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa missione incompiuta.",
+        "Devo terminare il lavoro iniziato con la mia vecchia unità."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda la mia vecchia unità.",
+        "Divento avventato quando qualcuno deride il mio dovere.",
+        "Mi fido troppo facilmente di chi mi ricorda la mia vecchia unità.",
+        "Rimando il momento di ammettere quanto mi costa questa missione incompiuta.",
+        "Giustifico i miei errori invocando il mio dovere.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa missione incompiuta."
+      ]
     }
   },
   "Urchin": {
@@ -176,6 +608,288 @@
     "feature": {
       "name": "Segreti Cittadini",
       "description": "Conosci i vicoli nascosti, le scorciatoie e i passaggi segreti delle città. Fuori dal combattimento, tu e i compagni che guidi potete spostarvi tra due luoghi della stessa città al doppio della velocità normale."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Conservo cibo per dopo.",
+        "So dove sta per formarsi una folla.",
+        "Diffido delle porte chiuse dall'esterno.",
+        "Condivido piccoli gesti di gentilezza in silenzio.",
+        "Ricordo passaggi nascosti nei luoghi affollati.",
+        "Tengo i miei averi vicini mentre dormo.",
+        "Chiedo notizie affidabili a chi lavora per strada.",
+        "Apprezzo un angolo sicuro più di mobili raffinati."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia sopravvivenza aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia sopravvivenza.",
+        "Libertà: La povertà non deve privarmi del diritto di scegliere.",
+        "Ambizione: userò la mia sopravvivenza per ottenere influenza.",
+        "Equilibrio: Voglio sopravvivere senza togliere agli altri ciò di cui hanno bisogno.",
+        "Integrità: non tradirò la mia sopravvivenza per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con la gente della mia vecchia strada.",
+        "Proteggo un ricordo legato a questo debito verso un amico d’infanzia.",
+        "Voglio riallacciare con onore i rapporti con la gente della mia vecchia strada.",
+        "Devo la mia libertà a qualcuno che comprende questo debito verso un amico d’infanzia.",
+        "Proteggerò le persone minacciate dalle conseguenze di questo debito verso un amico d’infanzia.",
+        "Devo terminare il lavoro iniziato con la gente della mia vecchia strada."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda la gente della mia vecchia strada.",
+        "Divento avventato quando qualcuno deride la mia sopravvivenza.",
+        "Mi fido troppo facilmente di chi mi ricorda la gente della mia vecchia strada.",
+        "Rimando il momento di ammettere quanto mi costa questo debito verso un amico d’infanzia.",
+        "Giustifico i miei errori invocando la mia sopravvivenza.",
+        "Rifiuto aiuto quando affronto le conseguenze di questo debito verso un amico d’infanzia."
+      ]
+    }
+  },
+  "Spy": {
+    "name": "Spia",
+    "startingEquipment": [
+      "Piede di porco",
+      "Abiti comuni scuri con cappuccio",
+      "15 mo"
+    ],
+    "feature": {
+      "name": "Contatto Criminale",
+      "description": "Usi una rete di agenti, messaggeri e informatori per scambiare informazioni. Per il resto, questo background usa le competenze e l'equipaggiamento del Criminale."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Controllo le uscite prima di sedermi.",
+        "Tengo la voce bassa tra la folla.",
+        "Ricordo ogni persona che mi deve qualcosa.",
+        "Nascondo i miei attrezzi negli oggetti comuni.",
+        "Diffido delle offerte prive di condizioni.",
+        "Condivido i pasti con chi passa inosservato.",
+        "Uso il gergo del mio vecchio quartiere.",
+        "Conto le guardie senza dare a vedere che le osservo."
+      ],
+      "ideals": [
+        "Compassione: voglio che la lealtà alla mia banda aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la lealtà alla mia banda.",
+        "Libertà: La lealtà non dovrebbe rendermi prigioniero della banda.",
+        "Ambizione: userò la lealtà alla mia banda per ottenere influenza.",
+        "Equilibrio: Cerco un equilibrio tra la lealtà alla banda e i miei limiti.",
+        "Integrità: non tradirò la lealtà alla mia banda per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio vecchio complice.",
+        "Proteggo un ricordo legato a questo debito non saldato.",
+        "Voglio riallacciare con onore i rapporti con il mio vecchio complice.",
+        "Devo la mia libertà a qualcuno che comprende questo debito non saldato.",
+        "Proteggerò le persone minacciate dalle conseguenze di questo debito non saldato.",
+        "Devo terminare il lavoro iniziato con il mio vecchio complice."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio vecchio complice.",
+        "Divento avventato quando qualcuno deride la lealtà alla mia banda.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio vecchio complice.",
+        "Rimando il momento di ammettere quanto mi costa questo debito non saldato.",
+        "Giustifico i miei errori invocando la lealtà alla mia banda.",
+        "Rifiuto aiuto quando affronto le conseguenze di questo debito non saldato."
+      ]
+    }
+  },
+  "Gladiator": {
+    "name": "Gladiatore",
+    "startingEquipment": [
+      "Tridente",
+      "Pegno di un ammiratore",
+      "Costume",
+      "15 mo"
+    ],
+    "feature": {
+      "name": "A Grande Richiesta",
+      "description": "Trovi lavoro come artista, vitto e alloggio modesti o confortevoli nelle arene, nelle fosse da combattimento e in altri luoghi dedicati agli spettacoli di lotta. Esibisciti ogni sera per conservare il beneficio. Questo background non conferisce competenze aggiuntive nelle armi."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Trasformo le presentazioni in piccoli spettacoli.",
+        "Ricordo il pubblico meglio delle date.",
+        "Continuo a esercitarmi nei momenti tranquilli.",
+        "Imito le voci quando racconto storie.",
+        "Lodo generosamente gli altri artisti.",
+        "Fatico a lasciare che un silenzio rimanga tale.",
+        "Noto un ritmo nelle attività quotidiane.",
+        "Conservo i piccoli doni degli ammiratori."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia arte aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia arte.",
+        "Libertà: La mia arte deve potersi esprimere senza censura.",
+        "Ambizione: userò la mia arte per ottenere influenza.",
+        "Equilibrio: Voglio vivere della mia arte senza lasciare che consumi tutta la mia vita.",
+        "Integrità: non tradirò la mia arte per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio primo mecenate.",
+        "Proteggo un ricordo legato a questa esibizione perduta.",
+        "Voglio riallacciare con onore i rapporti con il mio primo mecenate.",
+        "Devo la mia libertà a qualcuno che comprende questa esibizione perduta.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa esibizione perduta.",
+        "Devo terminare il lavoro iniziato con il mio primo mecenate."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio primo mecenate.",
+        "Divento avventato quando qualcuno deride la mia arte.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio primo mecenate.",
+        "Rimando il momento di ammettere quanto mi costa questa esibizione perduta.",
+        "Giustifico i miei errori invocando la mia arte.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa esibizione perduta."
+      ]
+    }
+  },
+  "Guild Merchant": {
+    "name": "Mercante di Gilda",
+    "startingEquipment": [
+      "Mulo",
+      "Carretto",
+      "Lettera di presentazione",
+      "Abiti da viaggiatore",
+      "15 mo"
+    ],
+    "feature": {
+      "name": "Appartenenza alla Gilda",
+      "description": "La tua gilda commerciale offre contatti professionali, alloggio, sostegno e influenza politica dove è presente. L'assistenza legale richiede un caso credibile. La quota mensile è di 5 mo; le quote arretrate devono essere pagate per ripristinare i benefici. Questa variante usa gli strumenti da navigatore al posto degli strumenti da artigiano; un background personalizzato può scegliere l'alternativa di una lingua aggiuntiva."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Esamino le giunture del legno nei luoghi sconosciuti.",
+        "Spiego il lavoro necessario per creare gli oggetti raffinati.",
+        "Porto con me un piccolo progetto incompiuto.",
+        "Rispetto chiunque conosca un mestiere.",
+        "Contratto con pazienza e attenzione.",
+        "Noto subito i marchi contraffatti.",
+        "Tengo registri di lavoro meticolosi.",
+        "Non riesco a ignorare un pezzo montato storto."
+      ],
+      "ideals": [
+        "Compassione: voglio che il mio lavoro onesto aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano il mio lavoro onesto.",
+        "Libertà: Devo poter esercitare il mio mestiere senza essere sfruttato.",
+        "Ambizione: userò il mio lavoro onesto per ottenere influenza.",
+        "Equilibrio: Voglio vivere del mio mestiere senza sacrificare qualità e onestà.",
+        "Integrità: non tradirò il mio lavoro onesto per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con la mia vecchia bottega.",
+        "Proteggo un ricordo legato a questo capolavoro.",
+        "Voglio riallacciare con onore i rapporti con la mia vecchia bottega.",
+        "Devo la mia libertà a qualcuno che comprende questo capolavoro.",
+        "Proteggerò le persone minacciate dalle conseguenze di questo capolavoro.",
+        "Devo terminare il lavoro iniziato con la mia vecchia bottega."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda la mia vecchia bottega.",
+        "Divento avventato quando qualcuno deride il mio lavoro onesto.",
+        "Mi fido troppo facilmente di chi mi ricorda la mia vecchia bottega.",
+        "Rimando il momento di ammettere quanto mi costa questo capolavoro.",
+        "Giustifico i miei errori invocando il mio lavoro onesto.",
+        "Rifiuto aiuto quando affronto le conseguenze di questo capolavoro."
+      ]
+    }
+  },
+  "Knight": {
+    "name": "Cavaliere",
+    "startingEquipment": [
+      "Abiti pregiati",
+      "Anello con sigillo",
+      "Pergamena con il tuo albero genealogico",
+      "25 mo"
+    ],
+    "feature": {
+      "name": "Servitori",
+      "description": "Tre fedeli servitori popolani ti assistono nelle attività quotidiane. Uno può essere uno scudiero nobile. Non combattono, non ti seguono nei pericoli evidenti e non accettano abusi; i maltrattamenti possono indurli ad andarsene. Possono accudire la cavalcatura, consegnare messaggi e mantenere l'equipaggiamento. Concorda con il DM il tuo ordine cavalleresco e il nobile che servi."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Saluto le persone con formalità studiata.",
+        "Ricordo i cognomi e i legami familiari.",
+        "Curo il mio aspetto anche in viaggio.",
+        "Mi aspetto che gli accordi vengano rispettati pubblicamente.",
+        "Ringrazio per nome chi mi offre un buon servizio.",
+        "Nascondo i dubbi dietro maniere impeccabili.",
+        "Sono curioso della vita oltre la mia tenuta.",
+        "Noto subito i simboli di rango."
+      ],
+      "ideals": [
+        "Compassione: voglio che le mie responsabilità aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano le mie responsabilità.",
+        "Libertà: Il mio rango non deve decidere tutti i miei rapporti.",
+        "Ambizione: userò le mie responsabilità per ottenere influenza.",
+        "Equilibrio: Cerco un equilibrio tra le mie responsabilità e i miei bisogni.",
+        "Integrità: non tradirò le mie responsabilità per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con la mia casata.",
+        "Proteggo un ricordo legato a questo obbligo familiare.",
+        "Voglio riallacciare con onore i rapporti con la mia casata.",
+        "Devo la mia libertà a qualcuno che comprende questo obbligo familiare.",
+        "Proteggerò le persone minacciate dalle conseguenze di questo obbligo familiare.",
+        "Devo terminare il lavoro iniziato con la mia casata."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda la mia casata.",
+        "Divento avventato quando qualcuno deride le mie responsabilità.",
+        "Mi fido troppo facilmente di chi mi ricorda la mia casata.",
+        "Rimando il momento di ammettere quanto mi costa questo obbligo familiare.",
+        "Giustifico i miei errori invocando le mie responsabilità.",
+        "Rifiuto aiuto quando affronto le conseguenze di questo obbligo familiare."
+      ]
+    }
+  },
+  "Pirate": {
+    "name": "Pirata",
+    "startingEquipment": [
+      "Caviglia da ormeggio (randello)",
+      "15 metri di corda di seta",
+      "Portafortuna",
+      "Abiti comuni",
+      "10 mo"
+    ],
+    "feature": {
+      "name": "Cattiva Reputazione",
+      "description": "La tua temuta reputazione ti permette di farla franca per piccole infrazioni, come rifiutare di pagare una locanda o sfondare la porta di un negozio, perché i testimoni esitano a denunciarti. In un insediamento civilizzato, chi conosce la tua reputazione può avere troppa paura per affrontarti. Questo non ti rende immune dalle conseguenze né dai crimini gravi."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Valuto il pericolo dal movimento dell'aria.",
+        "Apprezzo le storie raccontate durante un pasto condiviso.",
+        "Controllo i nodi senza pensarci.",
+        "Indico le direzioni come se fossi a bordo di una nave.",
+        "Conservo un piccolo portafortuna.",
+        "Canto durante i lavori ripetitivi.",
+        "Faccio amicizia rapidamente nei porti sconosciuti.",
+        "Mi sento responsabile di chi viaggia con me."
+      ],
+      "ideals": [
+        "Compassione: voglio che la mia libertà aiuti le persone vulnerabili.",
+        "Ordine: rispetto gli accordi equi che riguardano la mia libertà.",
+        "Libertà: Voglio scegliere la mia rotta e i miei compagni.",
+        "Ambizione: userò la mia libertà per ottenere influenza.",
+        "Equilibrio: Voglio conservare la mia libertà senza abbandonare chi dipende da me.",
+        "Integrità: non tradirò la mia libertà per convenienza."
+      ],
+      "bonds": [
+        "Devo ricambiare qualcuno che ha un legame con il mio vecchio equipaggio.",
+        "Proteggo un ricordo legato a questa promessa fatta in mare.",
+        "Voglio riallacciare con onore i rapporti con il mio vecchio equipaggio.",
+        "Devo la mia libertà a qualcuno che comprende questa promessa fatta in mare.",
+        "Proteggerò le persone minacciate dalle conseguenze di questa promessa fatta in mare.",
+        "Devo terminare il lavoro iniziato con il mio vecchio equipaggio."
+      ],
+      "flaws": [
+        "Nascondo un fallimento imbarazzante che riguarda il mio vecchio equipaggio.",
+        "Divento avventato quando qualcuno deride la mia libertà.",
+        "Mi fido troppo facilmente di chi mi ricorda il mio vecchio equipaggio.",
+        "Rimando il momento di ammettere quanto mi costa questa promessa fatta in mare.",
+        "Giustifico i miei errori invocando la mia libertà.",
+        "Rifiuto aiuto quando affronto le conseguenze di questa promessa fatta in mare."
+      ]
     }
   }
 }

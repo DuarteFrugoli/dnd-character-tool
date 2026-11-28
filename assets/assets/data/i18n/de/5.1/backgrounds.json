@@ -12,6 +12,42 @@
     "feature": {
       "name": "Zufluchtsort der Gläubigen",
       "description": "Du und deine Begleiter könnt in den Tempeln deines Glaubens kostenlose Heilung und Pflege erhalten, und du kannst Priester um Hilfe bitten."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich zitiere zu jeder Gelegenheit ein Gebet.",
+        "Ich höre Beichten geduldig an.",
+        "Ich beobachte mir fremde religiöse Bräuche.",
+        "Ich biete Essen an, bevor ich Rat gebe.",
+        "Ich behandle heilige Gegenstände sorgsam.",
+        "Ich suche in kleinen Zufällen nach Bedeutung.",
+        "Ich beantworte Beleidigungen mit förmlicher Höflichkeit.",
+        "Ich frage Reisende nach ihren Göttern."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meinen Glauben, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meinen Glauben betreffen.",
+        "Freiheit: Keine Obrigkeit soll mir meinen Glauben vorschreiben.",
+        "Ehrgeiz: Durch meinen Glauben will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich versuche, meinen Glauben mit den Anforderungen des Lebens zu vereinbaren.",
+        "Aufrichtigkeit: Ich werde meinen Glauben nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem Tempel verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese heilige Zusage für mich bedeutet.",
+        "Ich will die Verbindung zu meinem Tempel mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese heilige Zusage bedeutet.",
+        "Ich beschütze die Menschen, die diese heilige Zusage in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem Tempel begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem Tempel.",
+        "Ich werde unbesonnen, wenn jemand meinen Glauben verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen Tempel erinnern.",
+        "Ich gebe ungern zu, was diese heilige Zusage mich kostet.",
+        "Ich rechtfertige meine Fehler mit meinem Glauben.",
+        "Wenn diese heilige Zusage mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Charlatan": {
@@ -25,6 +61,42 @@
     "feature": {
       "name": "Falsche Identität",
       "description": "Du hast dir eine zweite Identität geschaffen, einschließlich Dokumenten, fester Bekanntschaften und Verkleidungen."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich stelle mich mit einem neuen Namen vor.",
+        "Ich sammle Gerüchte, bevor ich ein Angebot mache.",
+        "Ich schmeichle Fremden mit gezielten Komplimenten.",
+        "Beim Warten übe ich Unterschriften.",
+        "Ich schlage immer eine für mich günstige Wette vor.",
+        "Ich bemerke, wer den Raum beherrscht.",
+        "Ich kleide mich etwas über meinen Verhältnissen.",
+        "Ich erzähle ausgeschmückte Geschichten über gewöhnliche Ereignisse."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Unabhängigkeit, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Unabhängigkeit betreffen.",
+        "Freiheit: Ich lasse niemanden über mein Leben bestimmen.",
+        "Ehrgeiz: Durch meine Unabhängigkeit will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will unabhängig bleiben, ohne anderen zu schaden.",
+        "Aufrichtigkeit: Ich werde meine Unabhängigkeit nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem früheren Partner verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese falsche Identität für mich bedeutet.",
+        "Ich will die Verbindung zu meinem früheren Partner mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese falsche Identität bedeutet.",
+        "Ich beschütze die Menschen, die diese falsche Identität in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem früheren Partner begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem früheren Partner.",
+        "Ich werde unbesonnen, wenn jemand meine Unabhängigkeit verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen früheren Partner erinnern.",
+        "Ich gebe ungern zu, was diese falsche Identität mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Unabhängigkeit.",
+        "Wenn diese falsche Identität mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Criminal": {
@@ -37,6 +109,42 @@
     "feature": {
       "name": "Krimineller Kontakt",
       "description": "Du hast einen zuverlässigen Kontakt, der als Verbindung zu einem Netzwerk von Kriminellen dient."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich prüfe die Ausgänge, bevor ich mich setze.",
+        "In Menschenmengen spreche ich leise.",
+        "Ich merke mir jeden, der mir etwas schuldet.",
+        "Ich verstecke mein Werkzeug in gewöhnlichen Gegenständen.",
+        "Ich misstraue Angeboten ohne Bedingungen.",
+        "Ich teile Mahlzeiten mit Menschen, die niemand beachtet.",
+        "Ich benutze den Slang meines alten Viertels.",
+        "Ich zähle Wachen, ohne hinzusehen zu scheinen."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Treue zur Gruppe, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Treue zur Gruppe betreffen.",
+        "Freiheit: Treue soll mich nicht zum Gefangenen meiner Gruppe machen.",
+        "Ehrgeiz: Durch meine Treue zur Gruppe will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich suche ein Gleichgewicht zwischen Gruppentreue und meinen Grenzen.",
+        "Aufrichtigkeit: Ich werde meine Treue zur Gruppe nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem alten Komplizen verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese unbezahlte Schuld für mich bedeutet.",
+        "Ich will die Verbindung zu meinem alten Komplizen mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese unbezahlte Schuld bedeutet.",
+        "Ich beschütze die Menschen, die diese unbezahlte Schuld in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem alten Komplizen begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem alten Komplizen.",
+        "Ich werde unbesonnen, wenn jemand meine Treue zur Gruppe verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen alten Komplizen erinnern.",
+        "Ich gebe ungern zu, was diese unbezahlte Schuld mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Treue zur Gruppe.",
+        "Wenn diese unbezahlte Schuld mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Entertainer": {
@@ -50,6 +158,42 @@
     "feature": {
       "name": "Auf vielfachen Wunsch",
       "description": "Du findest immer einen Ort, an dem du auftreten kannst, und erhältst kostenlose Unterkunft und Verpflegung von bescheidener Qualität."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich mache aus Vorstellungen kleine Auftritte.",
+        "Ich erinnere mich besser an mein Publikum als an Daten.",
+        "In ruhigen Momenten übe ich weiter.",
+        "Beim Erzählen ahme ich Stimmen nach.",
+        "Ich lobe andere Künstler großzügig.",
+        "Ich kann Stille nur schwer bestehen lassen.",
+        "Ich bemerke Rhythmus in alltäglicher Arbeit.",
+        "Ich bewahre kleine Geschenke meiner Bewunderer auf."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Kunst, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Kunst betreffen.",
+        "Freiheit: Meine Kunst muss sich ohne Zensur entfalten können.",
+        "Ehrgeiz: Durch meine Kunst will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will von meiner Kunst leben, ohne dass sie mein ganzes Leben verschlingt.",
+        "Aufrichtigkeit: Ich werde meine Kunst nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem ersten Förderer verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese verlorene Darbietung für mich bedeutet.",
+        "Ich will die Verbindung zu meinem ersten Förderer mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese verlorene Darbietung bedeutet.",
+        "Ich beschütze die Menschen, die diese verlorene Darbietung in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem ersten Förderer begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem ersten Förderer.",
+        "Ich werde unbesonnen, wenn jemand meine Kunst verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen ersten Förderer erinnern.",
+        "Ich gebe ungern zu, was diese verlorene Darbietung mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Kunst.",
+        "Wenn diese verlorene Darbietung mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Folk Hero": {
@@ -64,6 +208,42 @@
     "feature": {
       "name": "Rustikale Gastfreundschaft",
       "description": "Das einfache Volk wird dir und deinen Gefährten Schutz bieten, dich verstecken und dich nicht verraten."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich beurteile Anführer danach, wie sie Arbeiter behandeln.",
+        "Ich packe an, bevor ich über Bezahlung spreche.",
+        "Ich erkläre Probleme anhand praktischer Beispiele.",
+        "Ich merke mir die Namen gewöhnlicher Helfer.",
+        "Ich teile die Anerkennung für meine Erfolge.",
+        "Wenn ich nervös bin, repariere ich Dinge.",
+        "Aufwendige Zeremonien sind mir unangenehm.",
+        "Ich erzähle Geschichten über Menschen aus meiner Heimat."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meinen Einsatz für einfache Leute, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meinen Einsatz für einfache Leute betreffen.",
+        "Freiheit: Einfache Menschen sollen ihre Zukunft selbst wählen können.",
+        "Ehrgeiz: Durch meinen Einsatz für einfache Leute will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich suche Lösungen, die den Menschen langfristig helfen.",
+        "Aufrichtigkeit: Ich werde meinen Einsatz für einfache Leute nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem Heimatdorf verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese Verpflichtung zum Schutz anderer für mich bedeutet.",
+        "Ich will die Verbindung zu meinem Heimatdorf mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese Verpflichtung zum Schutz anderer bedeutet.",
+        "Ich beschütze die Menschen, die diese Verpflichtung zum Schutz anderer in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem Heimatdorf begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem Heimatdorf.",
+        "Ich werde unbesonnen, wenn jemand meinen Einsatz für einfache Leute verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an mein Heimatdorf erinnern.",
+        "Ich gebe ungern zu, was diese Verpflichtung zum Schutz anderer mich kostet.",
+        "Ich rechtfertige meine Fehler mit meinem Einsatz für einfache Leute.",
+        "Wenn diese Verpflichtung zum Schutz anderer mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Guild Artisan": {
@@ -77,6 +257,42 @@
     "feature": {
       "name": "Gildenmitgliedschaft",
       "description": "Deine Gilde bietet dir Unterkunft, Rechtsbeistand und Unterstützung – und erwartet im Gegenzug Beiträge und Loyalität."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "In fremden Räumen prüfe ich die Holzverbindungen.",
+        "Ich erkläre, wie viel Arbeit in schönen Gegenständen steckt.",
+        "Ich trage ein kleines, unfertiges Werk bei mir.",
+        "Ich respektiere jeden, der ein Handwerk beherrscht.",
+        "Ich handle mit sorgsamer Geduld.",
+        "Ich erkenne gefälschte Marken sofort.",
+        "Ich führe genaue Arbeitsaufzeichnungen.",
+        "Eine schief sitzende Verbindung kann ich nicht in Ruhe lassen."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze mein ehrliches Handwerk, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die mein ehrliches Handwerk betreffen.",
+        "Freiheit: Ich will mein Handwerk ohne Ausbeutung ausüben.",
+        "Ehrgeiz: Durch mein ehrliches Handwerk will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will von meinem Handwerk leben, ohne Qualität oder Ehrlichkeit zu opfern.",
+        "Aufrichtigkeit: Ich werde mein ehrliches Handwerk nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meiner alten Werkstatt verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese meisterhafte Arbeit für mich bedeutet.",
+        "Ich will die Verbindung zu meiner alten Werkstatt mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese meisterhafte Arbeit bedeutet.",
+        "Ich beschütze die Menschen, die diese meisterhafte Arbeit in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meiner alten Werkstatt begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meiner alten Werkstatt.",
+        "Ich werde unbesonnen, wenn jemand mein ehrliches Handwerk verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meine alte Werkstatt erinnern.",
+        "Ich gebe ungern zu, was diese meisterhafte Arbeit mich kostet.",
+        "Ich rechtfertige meine Fehler mit meinem ehrlichen Handwerk.",
+        "Wenn diese meisterhafte Arbeit mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Hermit": {
@@ -91,6 +307,42 @@
     "feature": {
       "name": "Entdeckung",
       "description": "Deine Einsamkeit führte zu einer einzigartigen Entdeckung – einer großen Wahrheit, einem Geheimnis oder einem verborgenen Ort."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Vor Antworten auf einfache Fragen halte ich inne.",
+        "Ich notiere Träume in einem kleinen Heft.",
+        "Gewöhnliche gesellschaftliche Gewohnheiten faszinieren mich.",
+        "Ich bevorzuge die Morgendämmerung gegenüber überfüllten Abenden.",
+        "Ich erkläre Ereignisse durch natürliche Kreisläufe.",
+        "Ich vergesse, wie lange ein Gespräch schon dauert.",
+        "Ich halte an einem vertrauten täglichen Ritual fest.",
+        "Ich höre aufmerksamer zu, als ich spreche."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine innere Erkenntnis, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine innere Erkenntnis betreffen.",
+        "Freiheit: Ich muss meine eigenen Antworten suchen dürfen.",
+        "Ehrgeiz: Durch meine innere Erkenntnis will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich suche ein Gleichgewicht zwischen innerer Einkehr und dem Leben unter Menschen.",
+        "Aufrichtigkeit: Ich werde meine innere Erkenntnis nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem früheren Rückzugsort verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese gefährliche Entdeckung für mich bedeutet.",
+        "Ich will die Verbindung zu meinem früheren Rückzugsort mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese gefährliche Entdeckung bedeutet.",
+        "Ich beschütze die Menschen, die diese gefährliche Entdeckung in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem früheren Rückzugsort begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem früheren Rückzugsort.",
+        "Ich werde unbesonnen, wenn jemand meine innere Erkenntnis verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen früheren Rückzugsort erinnern.",
+        "Ich gebe ungern zu, was diese gefährliche Entdeckung mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner inneren Erkenntnis.",
+        "Wenn diese gefährliche Entdeckung mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Noble": {
@@ -104,6 +356,42 @@
     "feature": {
       "name": "Privilegierte Position",
       "description": "Die Leute nehmen von dir das Beste an. Du bist in der feinen Gesellschaft willkommen und kannst dir eine Audienz bei einem örtlichen Adligen verschaffen."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich begrüße Menschen mit eingeübter Förmlichkeit.",
+        "Ich merke mir Familiennamen und Verbindungen.",
+        "Auch auf Reisen pflege ich mein Aussehen.",
+        "Ich erwarte, dass Abmachungen öffentlich eingehalten werden.",
+        "Ich lobe gute Dienste unter Nennung des Namens.",
+        "Ich verberge Unsicherheit hinter tadellosen Manieren.",
+        "Das Leben jenseits meines Anwesens macht mich neugierig.",
+        "Ich bemerke Rangabzeichen sofort."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Pflichten, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Pflichten betreffen.",
+        "Freiheit: Mein Rang soll nicht jede meiner Beziehungen bestimmen.",
+        "Ehrgeiz: Durch meine Pflichten will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich suche ein Gleichgewicht zwischen meinen Pflichten und meinen Bedürfnissen.",
+        "Aufrichtigkeit: Ich werde meine Pflichten nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem Haushalt verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese familiäre Verpflichtung für mich bedeutet.",
+        "Ich will die Verbindung zu meinem Haushalt mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese familiäre Verpflichtung bedeutet.",
+        "Ich beschütze die Menschen, die diese familiäre Verpflichtung in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem Haushalt begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem Haushalt.",
+        "Ich werde unbesonnen, wenn jemand meine Pflichten verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen Haushalt erinnern.",
+        "Ich gebe ungern zu, was diese familiäre Verpflichtung mich kostet.",
+        "Ich rechtfertige meine Fehler mit meinen Pflichten.",
+        "Wenn diese familiäre Verpflichtung mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Outlander": {
@@ -118,6 +406,42 @@
     "feature": {
       "name": "Wanderer",
       "description": "Du kannst jeden Tag Nahrung und frisches Wasser für dich und bis zu fünf andere finden und dich an die allgemeine Beschaffenheit von Gelände erinnern."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich prüfe das Wetter, bevor ich Pläne mache.",
+        "Ich beschreibe Entfernungen in Tagesmärschen.",
+        "Unterwegs sammle ich nützliche Pflanzen.",
+        "Bei unbekannten Geräuschen schlafe ich leicht.",
+        "Ich biete Fremden zuerst eine Wegbeschreibung an.",
+        "Ich bemerke Spuren, an denen andere vorbeigehen.",
+        "Ohne Blick auf den Himmel fühle ich mich unwohl.",
+        "Ich bewahre die Geschichten meines Volkes."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Verbundenheit mit der Natur, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Verbundenheit mit der Natur betreffen.",
+        "Freiheit: Keine Grenze soll mich von der Natur abschneiden.",
+        "Ehrgeiz: Durch meine Verbundenheit mit der Natur will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will im Einklang mit der Natur leben.",
+        "Aufrichtigkeit: Ich werde meine Verbundenheit mit der Natur nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meiner reisenden Familie verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese Pflicht gegenüber meiner Heimat für mich bedeutet.",
+        "Ich will die Verbindung zu meiner reisenden Familie mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese Pflicht gegenüber meiner Heimat bedeutet.",
+        "Ich beschütze die Menschen, die diese Pflicht gegenüber meiner Heimat in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meiner reisenden Familie begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meiner reisenden Familie.",
+        "Ich werde unbesonnen, wenn jemand meine Verbundenheit mit der Natur verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meine reisende Familie erinnern.",
+        "Ich gebe ungern zu, was diese Pflicht gegenüber meiner Heimat mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Verbundenheit mit der Natur.",
+        "Wenn diese Pflicht gegenüber meiner Heimat mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Sage": {
@@ -133,6 +457,42 @@
     "feature": {
       "name": "Forscher",
       "description": "Du weißt, wo du obskure Informationen findest. Wenn du etwas nicht weißt, weißt du, wer es weiß."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Vor einer Diskussion frage ich nach Definitionen.",
+        "Bei Vorstellungen mache ich mir Notizen.",
+        "Abgelegene Themen begeistern mich.",
+        "Ich gebe zu, wenn mich eine Frage überfordert.",
+        "Ich vergleiche neue Ereignisse mit alten Berichten.",
+        "Ich trage zu viel Lesestoff bei mir.",
+        "Eine nützliche Frage ist mir lieber als eine geistreiche Antwort.",
+        "Ich prüfe eine interessante Behauptung zweimal."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Wissenssuche, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Wissenssuche betreffen.",
+        "Freiheit: Wissen muss ohne willkürliche Verbote erforscht werden dürfen.",
+        "Ehrgeiz: Durch meine Wissenssuche will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich suche Wissen, ohne seine Folgen aus den Augen zu verlieren.",
+        "Aufrichtigkeit: Ich werde meine Wissenssuche nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem Mentor verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese unbeantwortete Frage für mich bedeutet.",
+        "Ich will die Verbindung zu meinem Mentor mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese unbeantwortete Frage bedeutet.",
+        "Ich beschütze die Menschen, die diese unbeantwortete Frage in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem Mentor begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem Mentor.",
+        "Ich werde unbesonnen, wenn jemand meine Wissenssuche verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen Mentor erinnern.",
+        "Ich gebe ungern zu, was diese unbeantwortete Frage mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Wissenssuche.",
+        "Wenn diese unbeantwortete Frage mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Sailor": {
@@ -147,6 +507,42 @@
     "feature": {
       "name": "Schiffspassage",
       "description": "Im Austausch gegen deine Arbeitskraft kannst du dir und deinen Begleitern eine kostenlose Überfahrt auf Segelschiffen sichern."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich beurteile Gefahr nach der Bewegung der Luft.",
+        "Ich mag Geschichten bei einem gemeinsamen Essen.",
+        "Ich prüfe Knoten, ohne darüber nachzudenken.",
+        "Ich gebe Richtungen an, als wäre ich an Bord.",
+        "Ich bewahre einen kleinen Glücksbringer auf.",
+        "Bei eintöniger Arbeit singe ich.",
+        "In fremden Häfen finde ich schnell Freunde.",
+        "Ich fühle mich für meine Mitreisenden verantwortlich."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Freiheit, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Freiheit betreffen.",
+        "Freiheit: Ich will meinen Kurs und meine Gefährten selbst wählen.",
+        "Ehrgeiz: Durch meine Freiheit will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will frei bleiben, ohne Menschen im Stich zu lassen, die mich brauchen.",
+        "Aufrichtigkeit: Ich werde meine Freiheit nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meiner früheren Mannschaft verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese auf See gegebene Zusage für mich bedeutet.",
+        "Ich will die Verbindung zu meiner früheren Mannschaft mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese auf See gegebene Zusage bedeutet.",
+        "Ich beschütze die Menschen, die diese auf See gegebene Zusage in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meiner früheren Mannschaft begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meiner früheren Mannschaft.",
+        "Ich werde unbesonnen, wenn jemand meine Freiheit verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meine frühere Mannschaft erinnern.",
+        "Ich gebe ungern zu, was diese auf See gegebene Zusage mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Freiheit.",
+        "Wenn diese auf See gegebene Zusage mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Soldier": {
@@ -161,6 +557,42 @@
     "feature": {
       "name": "Militärischer Rang",
       "description": "Soldaten, die deiner ehemaligen Fraktion treu sind, erkennen deinen Rang an. Du kannst dich auf deinen Rang berufen, um Einfluss und Zugang zu Militärlagern zu erhalten."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Vor dem Ausruhen mache ich meine Ausrüstung bereit.",
+        "Wenn eine Entscheidung nötig ist, spreche ich direkt.",
+        "Ich erkenne gute Verteidigungsstellungen.",
+        "Ich respektiere Können mehr als Rang.",
+        "Im Durcheinander halte ich an einer Routine fest.",
+        "Ich erinnere mich an die Namen gefallener Kameraden.",
+        "Schwierige Arbeit teile ich in klare Aufgaben auf.",
+        "Ich prüfe, dass niemand zurückgelassen wurde."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Pflicht, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Pflicht betreffen.",
+        "Freiheit: Pflicht rechtfertigt keinen blinden Gehorsam.",
+        "Ehrgeiz: Durch meine Pflicht will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will meine Pflicht erfüllen, ohne meine Menschlichkeit zu verlieren.",
+        "Aufrichtigkeit: Ich werde meine Pflicht nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meiner früheren Einheit verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese unerledigte Mission für mich bedeutet.",
+        "Ich will die Verbindung zu meiner früheren Einheit mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese unerledigte Mission bedeutet.",
+        "Ich beschütze die Menschen, die diese unerledigte Mission in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meiner früheren Einheit begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meiner früheren Einheit.",
+        "Ich werde unbesonnen, wenn jemand meine Pflicht verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meine frühere Einheit erinnern.",
+        "Ich gebe ungern zu, was diese unerledigte Mission mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Pflicht.",
+        "Wenn diese unerledigte Mission mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   },
   "Urchin": {
@@ -176,6 +608,288 @@
     "feature": {
       "name": "Stadtgeheimnisse",
       "description": "Du kennst die geheimen Muster von Städten und kannst Wege durch Stadtgebiete doppelt so schnell wie normal finden."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich hebe Essen für später auf.",
+        "Ich weiß, wo sich gleich eine Menschenmenge bildet.",
+        "Ich misstraue Türen, die von außen verschlossen sind.",
+        "Ich teile kleine Freundlichkeiten unauffällig.",
+        "Ich kenne versteckte Wege durch belebte Orte.",
+        "Beim Schlafen halte ich meine Sachen nahe bei mir.",
+        "Ich frage Straßenarbeiter nach verlässlichen Neuigkeiten.",
+        "Eine sichere Ecke ist mir lieber als schöne Möbel."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze mein Überleben, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die mein Überleben betreffen.",
+        "Freiheit: Armut soll mir nicht das Recht auf eigene Entscheidungen nehmen.",
+        "Ehrgeiz: Durch mein Überleben will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will überleben, ohne anderen das Nötigste zu nehmen.",
+        "Aufrichtigkeit: Ich werde mein Überleben nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit den Menschen meiner alten Straße verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese Schuld gegenüber einem Kindheitsfreund für mich bedeutet.",
+        "Ich will die Verbindung zu den Menschen meiner alten Straße mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese Schuld gegenüber einem Kindheitsfreund bedeutet.",
+        "Ich beschütze die Menschen, die diese Schuld gegenüber einem Kindheitsfreund in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit den Menschen meiner alten Straße begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit den Menschen meiner alten Straße.",
+        "Ich werde unbesonnen, wenn jemand mein Überleben verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an die Menschen meiner alten Straße erinnern.",
+        "Ich gebe ungern zu, was diese Schuld gegenüber einem Kindheitsfreund mich kostet.",
+        "Ich rechtfertige meine Fehler mit meinem Überleben.",
+        "Wenn diese Schuld gegenüber einem Kindheitsfreund mich betrifft, lehne ich Hilfe ab."
+      ]
+    }
+  },
+  "Spy": {
+    "name": "Spion",
+    "startingEquipment": [
+      "Brecheisen",
+      "Dunkle Alltagskleidung mit Kapuze",
+      "15 GM"
+    ],
+    "feature": {
+      "name": "Krimineller Kontakt",
+      "description": "Du nutzt ein Netz aus Agenten, Boten und Informanten zum Austausch von Informationen. Ansonsten verwendet dieser Hintergrund die Fertigkeits- und Werkzeugübungen sowie die Ausrüstung des Kriminellen."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich prüfe die Ausgänge, bevor ich mich setze.",
+        "In Menschenmengen spreche ich leise.",
+        "Ich merke mir jeden, der mir etwas schuldet.",
+        "Ich verstecke mein Werkzeug in gewöhnlichen Gegenständen.",
+        "Ich misstraue Angeboten ohne Bedingungen.",
+        "Ich teile Mahlzeiten mit Menschen, die niemand beachtet.",
+        "Ich benutze den Slang meines alten Viertels.",
+        "Ich zähle Wachen, ohne hinzusehen zu scheinen."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Treue zur Gruppe, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Treue zur Gruppe betreffen.",
+        "Freiheit: Treue soll mich nicht zum Gefangenen meiner Gruppe machen.",
+        "Ehrgeiz: Durch meine Treue zur Gruppe will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich suche ein Gleichgewicht zwischen Gruppentreue und meinen Grenzen.",
+        "Aufrichtigkeit: Ich werde meine Treue zur Gruppe nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem alten Komplizen verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese unbezahlte Schuld für mich bedeutet.",
+        "Ich will die Verbindung zu meinem alten Komplizen mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese unbezahlte Schuld bedeutet.",
+        "Ich beschütze die Menschen, die diese unbezahlte Schuld in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem alten Komplizen begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem alten Komplizen.",
+        "Ich werde unbesonnen, wenn jemand meine Treue zur Gruppe verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen alten Komplizen erinnern.",
+        "Ich gebe ungern zu, was diese unbezahlte Schuld mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Treue zur Gruppe.",
+        "Wenn diese unbezahlte Schuld mich betrifft, lehne ich Hilfe ab."
+      ]
+    }
+  },
+  "Gladiator": {
+    "name": "Gladiator",
+    "startingEquipment": [
+      "Dreizack",
+      "Die Gunst eines Bewunderers",
+      "Kostüm",
+      "15 GM"
+    ],
+    "feature": {
+      "name": "Auf vielfachen Wunsch",
+      "description": "In Arenen, Kampfgruben und anderen Orten für Schaukämpfe findest du Auftrittsarbeit sowie bescheidene oder komfortable Verpflegung und Unterkunft. Tritt jeden Abend auf, um diesen Vorteil zu behalten. Dieser Hintergrund gewährt keine zusätzliche Waffenübung."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich mache aus Vorstellungen kleine Auftritte.",
+        "Ich erinnere mich besser an mein Publikum als an Daten.",
+        "In ruhigen Momenten übe ich weiter.",
+        "Beim Erzählen ahme ich Stimmen nach.",
+        "Ich lobe andere Künstler großzügig.",
+        "Ich kann Stille nur schwer bestehen lassen.",
+        "Ich bemerke Rhythmus in alltäglicher Arbeit.",
+        "Ich bewahre kleine Geschenke meiner Bewunderer auf."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Kunst, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Kunst betreffen.",
+        "Freiheit: Meine Kunst muss sich ohne Zensur entfalten können.",
+        "Ehrgeiz: Durch meine Kunst will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will von meiner Kunst leben, ohne dass sie mein ganzes Leben verschlingt.",
+        "Aufrichtigkeit: Ich werde meine Kunst nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem ersten Förderer verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese verlorene Darbietung für mich bedeutet.",
+        "Ich will die Verbindung zu meinem ersten Förderer mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese verlorene Darbietung bedeutet.",
+        "Ich beschütze die Menschen, die diese verlorene Darbietung in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem ersten Förderer begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem ersten Förderer.",
+        "Ich werde unbesonnen, wenn jemand meine Kunst verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen ersten Förderer erinnern.",
+        "Ich gebe ungern zu, was diese verlorene Darbietung mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Kunst.",
+        "Wenn diese verlorene Darbietung mich betrifft, lehne ich Hilfe ab."
+      ]
+    }
+  },
+  "Guild Merchant": {
+    "name": "Gildenhändler",
+    "startingEquipment": [
+      "Maultier",
+      "Karren",
+      "Empfehlungsschreiben",
+      "Reisekleidung",
+      "15 GM"
+    ],
+    "feature": {
+      "name": "Gildenmitgliedschaft",
+      "description": "Deine Handelsgilde bietet berufliche Kontakte, Unterkunft, Unterstützung und politischen Einfluss, wo sie vertreten ist. Rechtlicher Beistand erfordert einen glaubwürdigen Fall. Der monatliche Beitrag beträgt 5 GM; Rückstände musst du begleichen, um Vorteile wiederzuerlangen. Diese Variante nutzt Navigationswerkzeuge statt Handwerkszeug. Ein eigener Hintergrund kann die alternative zusätzliche Sprache wählen."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "In fremden Räumen prüfe ich die Holzverbindungen.",
+        "Ich erkläre, wie viel Arbeit in schönen Gegenständen steckt.",
+        "Ich trage ein kleines, unfertiges Werk bei mir.",
+        "Ich respektiere jeden, der ein Handwerk beherrscht.",
+        "Ich handle mit sorgsamer Geduld.",
+        "Ich erkenne gefälschte Marken sofort.",
+        "Ich führe genaue Arbeitsaufzeichnungen.",
+        "Eine schief sitzende Verbindung kann ich nicht in Ruhe lassen."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze mein ehrliches Handwerk, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die mein ehrliches Handwerk betreffen.",
+        "Freiheit: Ich will mein Handwerk ohne Ausbeutung ausüben.",
+        "Ehrgeiz: Durch mein ehrliches Handwerk will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will von meinem Handwerk leben, ohne Qualität oder Ehrlichkeit zu opfern.",
+        "Aufrichtigkeit: Ich werde mein ehrliches Handwerk nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meiner alten Werkstatt verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese meisterhafte Arbeit für mich bedeutet.",
+        "Ich will die Verbindung zu meiner alten Werkstatt mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese meisterhafte Arbeit bedeutet.",
+        "Ich beschütze die Menschen, die diese meisterhafte Arbeit in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meiner alten Werkstatt begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meiner alten Werkstatt.",
+        "Ich werde unbesonnen, wenn jemand mein ehrliches Handwerk verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meine alte Werkstatt erinnern.",
+        "Ich gebe ungern zu, was diese meisterhafte Arbeit mich kostet.",
+        "Ich rechtfertige meine Fehler mit meinem ehrlichen Handwerk.",
+        "Wenn diese meisterhafte Arbeit mich betrifft, lehne ich Hilfe ab."
+      ]
+    }
+  },
+  "Knight": {
+    "name": "Ritter",
+    "startingEquipment": [
+      "Feine Kleidung",
+      "Siegelring",
+      "Stammbaumrolle",
+      "25 GM"
+    ],
+    "feature": {
+      "name": "Gefolgsleute",
+      "description": "Drei treue Gefolgsleute aus dem einfachen Volk helfen dir bei alltäglichen Aufgaben. Einer kann ein adliger Knappe sein. Sie kämpfen nicht, folgen dir nicht in offensichtliche Gefahr und dulden keine Misshandlung; bei schlechter Behandlung können sie gehen. Sie können dein Reittier versorgen, Nachrichten tragen und Ausrüstung pflegen. Lege mit dem SL deinen Ritterorden und den Adligen fest, dem du dienst."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich begrüße Menschen mit eingeübter Förmlichkeit.",
+        "Ich merke mir Familiennamen und Verbindungen.",
+        "Auch auf Reisen pflege ich mein Aussehen.",
+        "Ich erwarte, dass Abmachungen öffentlich eingehalten werden.",
+        "Ich lobe gute Dienste unter Nennung des Namens.",
+        "Ich verberge Unsicherheit hinter tadellosen Manieren.",
+        "Das Leben jenseits meines Anwesens macht mich neugierig.",
+        "Ich bemerke Rangabzeichen sofort."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Pflichten, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Pflichten betreffen.",
+        "Freiheit: Mein Rang soll nicht jede meiner Beziehungen bestimmen.",
+        "Ehrgeiz: Durch meine Pflichten will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich suche ein Gleichgewicht zwischen meinen Pflichten und meinen Bedürfnissen.",
+        "Aufrichtigkeit: Ich werde meine Pflichten nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meinem Haushalt verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese familiäre Verpflichtung für mich bedeutet.",
+        "Ich will die Verbindung zu meinem Haushalt mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese familiäre Verpflichtung bedeutet.",
+        "Ich beschütze die Menschen, die diese familiäre Verpflichtung in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meinem Haushalt begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meinem Haushalt.",
+        "Ich werde unbesonnen, wenn jemand meine Pflichten verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meinen Haushalt erinnern.",
+        "Ich gebe ungern zu, was diese familiäre Verpflichtung mich kostet.",
+        "Ich rechtfertige meine Fehler mit meinen Pflichten.",
+        "Wenn diese familiäre Verpflichtung mich betrifft, lehne ich Hilfe ab."
+      ]
+    }
+  },
+  "Pirate": {
+    "name": "Pirat",
+    "startingEquipment": [
+      "Belegnagel (Knüppel)",
+      "15 Meter Seidenseil",
+      "Glücksbringer",
+      "Gewöhnliche Kleidung",
+      "10 GM"
+    ],
+    "feature": {
+      "name": "Schlechter Ruf",
+      "description": "Dein gefürchteter Ruf lässt dich mit kleineren Vergehen davonkommen, etwa einer verweigerten Gasthausrechnung oder einer aufgebrochenen Ladentür, weil Zeugen dich oft nicht melden wollen. In zivilisierten Siedlungen können Menschen, die deinen Ruf kennen, zu verängstigt sein, um sich dir entgegenzustellen. Das schützt dich nicht vor Konsequenzen oder den Folgen schwerer Verbrechen."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Ich beurteile Gefahr nach der Bewegung der Luft.",
+        "Ich mag Geschichten bei einem gemeinsamen Essen.",
+        "Ich prüfe Knoten, ohne darüber nachzudenken.",
+        "Ich gebe Richtungen an, als wäre ich an Bord.",
+        "Ich bewahre einen kleinen Glücksbringer auf.",
+        "Bei eintöniger Arbeit singe ich.",
+        "In fremden Häfen finde ich schnell Freunde.",
+        "Ich fühle mich für meine Mitreisenden verantwortlich."
+      ],
+      "ideals": [
+        "Mitgefühl: Ich nutze meine Freiheit, um schutzbedürftigen Menschen zu helfen.",
+        "Ordnung: Ich halte faire Vereinbarungen ein, die meine Freiheit betreffen.",
+        "Freiheit: Ich will meinen Kurs und meine Gefährten selbst wählen.",
+        "Ehrgeiz: Durch meine Freiheit will ich Einfluss gewinnen.",
+        "Gleichgewicht: Ich will frei bleiben, ohne Menschen im Stich zu lassen, die mich brauchen.",
+        "Aufrichtigkeit: Ich werde meine Freiheit nicht aus Bequemlichkeit verraten."
+      ],
+      "bonds": [
+        "Ich muss jemandem etwas zurückgeben, der mit meiner früheren Mannschaft verbunden ist.",
+        "Ich bewahre eine Erinnerung daran, was diese auf See gegebene Zusage für mich bedeutet.",
+        "Ich will die Verbindung zu meiner früheren Mannschaft mit gutem Gewissen erneuern.",
+        "Ich verdanke meine Freiheit jemandem, der versteht, was diese auf See gegebene Zusage bedeutet.",
+        "Ich beschütze die Menschen, die diese auf See gegebene Zusage in Gefahr bringt.",
+        "Ich muss die Arbeit vollenden, die mit meiner früheren Mannschaft begann."
+      ],
+      "flaws": [
+        "Ich verberge ein peinliches Versagen im Zusammenhang mit meiner früheren Mannschaft.",
+        "Ich werde unbesonnen, wenn jemand meine Freiheit verhöhnt.",
+        "Ich vertraue Menschen zu schnell, die mich an meine frühere Mannschaft erinnern.",
+        "Ich gebe ungern zu, was diese auf See gegebene Zusage mich kostet.",
+        "Ich rechtfertige meine Fehler mit meiner Freiheit.",
+        "Wenn diese auf See gegebene Zusage mich betrifft, lehne ich Hilfe ab."
+      ]
     }
   }
 }

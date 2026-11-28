@@ -339,6 +339,278 @@
         "name": "白色的",
         "description": "选择白龙血统，与寒冷伤害相关。"
       }
+    },
+    "eldritch_invocations_2014": {
+      "agonizing_blast": {
+        "name": "苦痛魔爆",
+        "description": "每次魔能爆命中造成的伤害都加上你的魅力调整值。"
+      },
+      "armor_of_shadows": {
+        "name": "幽影护甲",
+        "description": "你可以随意对自己施放法师护甲，无需法术位或材料成分。"
+      },
+      "ascendant_step": {
+        "name": "升腾步伐",
+        "description": "你可以随意对自己施放浮空术，无需法术位或材料成分。"
+      },
+      "beast_speech": {
+        "name": "野兽之语",
+        "description": "你可以随意施放动物交谈，无需法术位。"
+      },
+      "beguiling_influence": {
+        "name": "蛊惑影响",
+        "description": "你获得欺瞒与游说技能熟练。"
+      },
+      "bewitching_whispers": {
+        "name": "惑心低语",
+        "description": "消耗邪术师法术位施放强迫术，每次长休可使用一次。"
+      },
+      "book_of_ancient_secrets": {
+        "name": "远古奥秘之书",
+        "description": "需要书之魔契。从任意法术列表中选择两个1环仪式加入魔法书；除非通过其他方式学会，否则只能以仪式施放。你已知且带有仪式标签的邪术师法术也可以仪式施放。发现的仪式法术若环阶不高于你邪术师等级的一半（向上取整），就能抄录；每环需要2小时和50金币。"
+      },
+      "chains_of_carceri": {
+        "name": "卡瑟利之链",
+        "description": "需要链之魔契。你可以随意施放怪物定身术，无需法术位或材料成分，但只能以天界生物、邪魔或元素生物为目标。再次选择同一生物为目标前，你必须完成一次长休。"
+      },
+      "devil_s_sight": {
+        "name": "魔鬼视界",
+        "description": "你可以正常看穿{{distance:120ft}}内的魔法与非魔法黑暗。"
+      },
+      "dreadful_word": {
+        "name": "恐怖之言",
+        "description": "消耗邪术师法术位施放困惑术，每次长休可使用一次。"
+      },
+      "eldritch_sight": {
+        "name": "魔能视界",
+        "description": "你可以随意施放侦测魔法，无需法术位或材料成分。"
+      },
+      "eldritch_spear": {
+        "name": "魔能长矛",
+        "description": "魔能爆的射程变为{{distance:300ft}}。"
+      },
+      "eyes_of_the_rune_keeper": {
+        "name": "符文守卫之眼",
+        "description": "你可以阅读任何文字。"
+      },
+      "fiendish_vigor": {
+        "name": "邪魔活力",
+        "description": "你可以随意对自己施放1环的虚假生命，无需法术位或材料成分。"
+      },
+      "gaze_of_two_minds": {
+        "name": "双心凝视",
+        "description": "你可以用一个动作触碰一个自愿的类人生物，通过其感官感知，直到你的下个回合结束。后续回合可以继续消耗动作延长连接。你能使用其特殊感官，但连接期间对自身周围环境视为目盲且耳聋。"
+      },
+      "lifedrinker": {
+        "name": "饮命者",
+        "description": "需要刃之魔契。契约武器命中时造成等于你魅力调整值的额外暗蚀伤害，至少为1点。"
+      },
+      "mask_of_many_faces": {
+        "name": "千面之术",
+        "description": "你可以随意施放易容术，无需法术位。"
+      },
+      "master_of_myriad_forms": {
+        "name": "万形之主",
+        "description": "你可以随意施放变身术，无需法术位。"
+      },
+      "minions_of_chaos": {
+        "name": "混沌仆从",
+        "description": "消耗邪术师法术位施放召唤元素，每次长休可使用一次。"
+      },
+      "mire_the_mind": {
+        "name": "心智泥沼",
+        "description": "消耗邪术师法术位施放缓慢术，每次长休可使用一次。"
+      },
+      "misty_visions": {
+        "name": "迷雾幻象",
+        "description": "你可以随意施放无声幻象，无需法术位或材料成分。"
+      },
+      "one_with_shadows": {
+        "name": "融身幽影",
+        "description": "在微光或黑暗中，你可以用一个动作隐形，直到你移动、执行动作或反应。"
+      },
+      "otherworldly_leap": {
+        "name": "异界跃步",
+        "description": "你可以随意对自己施放跳跃术，无需法术位或材料成分。"
+      },
+      "repelling_blast": {
+        "name": "斥力魔爆",
+        "description": "每次魔能爆命中生物时，你可以将其沿直线推离你至多{{distance:10ft}}。"
+      },
+      "sculptor_of_flesh": {
+        "name": "塑肉者",
+        "description": "消耗邪术师法术位施放变形术，每次长休可使用一次。"
+      },
+      "sign_of_ill_omen": {
+        "name": "凶兆印记",
+        "description": "消耗邪术师法术位施放降咒术，每次长休可使用一次。"
+      },
+      "thief_of_five_fates": {
+        "name": "窃取五运",
+        "description": "消耗邪术师法术位施放灾祸术，每次长休可使用一次。"
+      },
+      "thirsting_blade": {
+        "name": "饥渴之刃",
+        "description": "需要刃之魔契。执行攻击动作时，你可以用契约武器攻击两次，而非一次。"
+      },
+      "visions_of_distant_realms": {
+        "name": "遥远国度之景",
+        "description": "你可以随意施放秘法眼，无需法术位。"
+      },
+      "voice_of_the_chain_master": {
+        "name": "链主之声",
+        "description": "需要链之魔契。只要处于同一位面，你便能与魔宠心灵交流并通过它的感官感知。使用魔宠感官时，你还可以通过它以自己的声音说话。"
+      },
+      "whispers_of_the_grave": {
+        "name": "墓中低语",
+        "description": "你可以随意施放死者交谈，无需法术位。"
+      },
+      "witch_sight": {
+        "name": "女巫视界",
+        "description": "你能看见{{distance:30ft}}内视线所及的变形生物，以及被幻术或变化魔法隐藏的生物的真实形态。"
+      }
+    },
+    "elemental_disciplines_2014": {
+      "breath_of_winter": {
+        "name": "寒冬之息",
+        "description": "6点气：施放寒冰锥。"
+      },
+      "clench_of_the_north_wind": {
+        "name": "北风之握",
+        "description": "3点气：施放人类定身术。"
+      },
+      "eternal_mountain_defense": {
+        "name": "永山之御",
+        "description": "5点气：仅对自己施放石肤术。"
+      },
+      "fangs_of_the_fire_snake": {
+        "name": "炎蛇之牙",
+        "description": "执行攻击动作时消耗1点气，使本回合徒手打击触及增加{{distance:10ft}}，命中时改为造成火焰伤害。每次命中时还可以额外消耗1点气，造成额外1d10点火焰伤害。"
+      },
+      "fist_of_four_thunders": {
+        "name": "四雷之拳",
+        "description": "2点气：施放雷鸣波。"
+      },
+      "fist_of_unbroken_air": {
+        "name": "不屈气劲",
+        "description": "动作，2点气，目标在{{distance:30ft}}内：进行力量豁免。失败则受到3d10点钝击伤害，被推开至多{{distance:20ft}}并倒地。成功则伤害减半，且不会移动或倒地。每额外消耗1点气，伤害增加1d10。"
+      },
+      "flames_of_the_phoenix": {
+        "name": "凤凰之焰",
+        "description": "4点气：施放火球术。"
+      },
+      "gong_of_the_summit": {
+        "name": "山巅鸣钟",
+        "description": "3点气：施放粉碎音波。"
+      },
+      "mist_stance": {
+        "name": "薄雾之姿",
+        "description": "4点气：仅对自己施放气化形体。"
+      },
+      "ride_the_wind": {
+        "name": "乘风而行",
+        "description": "4点气：仅对自己施放飞行术。"
+      },
+      "river_of_hungry_flame": {
+        "name": "贪焰之河",
+        "description": "5点气：施放火墙术。"
+      },
+      "rush_of_the_gale_spirits": {
+        "name": "疾风精魂",
+        "description": "2点气：施放造风术。"
+      },
+      "shape_the_flowing_river": {
+        "name": "塑形流水",
+        "description": "动作，1点气：改变{{distance:120ft}}内一片边长至多{{distance:30ft}}区域内的水或冰。你可以将水冻结、融化冰或改变冰的形状；高度变化不得超过区域边长的一半。不能以此囚禁或伤害生物。"
+      },
+      "sweeping_cinder_strike": {
+        "name": "灼烬横扫",
+        "description": "2点气：施放燃烧之手。"
+      },
+      "water_whip": {
+        "name": "水鞭",
+        "description": "动作，2点气，目标为{{distance:30ft}}内你能看见的生物：进行敏捷豁免。失败则受到3d10点钝击伤害，并由你选择将其击倒，或向你拉近至多{{distance:25ft}}。成功则伤害减半，且不会移动或倒地。每额外消耗1点气，伤害增加1d10。"
+      },
+      "wave_of_rolling_earth": {
+        "name": "大地波涛",
+        "description": "6点气：施放石墙术。"
+      }
+    },
+    "circle_lands_2014": {
+      "arctic": {
+        "name": "极地",
+        "description": "在德鲁伊3、5、7、9级时获得始终准备的结社法术，不计入你可准备的法术数量。"
+      },
+      "coast": {
+        "name": "海岸",
+        "description": "在德鲁伊3、5、7、9级时获得始终准备的结社法术，不计入你可准备的法术数量。"
+      },
+      "desert": {
+        "name": "沙漠",
+        "description": "在德鲁伊3、5、7、9级时获得始终准备的结社法术，不计入你可准备的法术数量。"
+      },
+      "forest": {
+        "name": "森林",
+        "description": "在德鲁伊3、5、7、9级时获得始终准备的结社法术，不计入你可准备的法术数量。"
+      },
+      "grassland": {
+        "name": "草原",
+        "description": "在德鲁伊3、5、7、9级时获得始终准备的结社法术，不计入你可准备的法术数量。"
+      },
+      "mountain": {
+        "name": "山地",
+        "description": "在德鲁伊3、5、7、9级时获得始终准备的结社法术，不计入你可准备的法术数量。"
+      },
+      "swamp": {
+        "name": "沼泽",
+        "description": "在德鲁伊3、5、7、9级时获得始终准备的结社法术，不计入你可准备的法术数量。"
+      },
+      "underdark": {
+        "name": "幽暗地域",
+        "description": "在德鲁伊3、5、7、9级时获得始终准备的结社法术，不计入你可准备的法术数量。"
+      }
+    },
+    "totem_spirits_2014": {
+      "bear": {
+        "name": "熊",
+        "description": "狂暴期间，你具有除心灵伤害外所有伤害的抗性。"
+      },
+      "eagle": {
+        "name": "鹰",
+        "description": "未穿重甲且处于狂暴时，对你进行的借机攻击具有劣势，你还可以用附赠动作疾走。"
+      },
+      "wolf": {
+        "name": "狼",
+        "description": "狂暴期间，盟友对你周围{{distance:5ft}}内的敌对生物进行近战攻击时具有优势。"
+      }
+    },
+    "totem_aspects_2014": {
+      "bear": {
+        "name": "熊",
+        "description": "你的载重加倍，推动、拖曳、抬起或破坏物件时进行的力量检定具有优势。"
+      },
+      "eagle": {
+        "name": "鹰",
+        "description": "你可以轻松看清至多{{distance:1mi}}外的事物，辨认细节时如同它位于{{distance:100ft}}内。微光不再使你基于视觉的察觉检定具有劣势。"
+      },
+      "wolf": {
+        "name": "狼",
+        "description": "你可以在快速旅行时追踪，在正常旅行速度下隐匿行进。"
+      }
+    },
+    "totem_attunements_2014": {
+      "bear": {
+        "name": "熊",
+        "description": "狂暴期间，你周围{{distance:5ft}}内的敌对生物攻击其他目标时具有劣势。免疫恐慌，或既看不见你也听不见你的生物不受影响。"
+      },
+      "eagle": {
+        "name": "鹰",
+        "description": "狂暴期间，你获得等于步行速度的飞行速度。若在空中结束回合则会坠落，除非有其他效应使你悬空。"
+      },
+      "wolf": {
+        "name": "狼",
+        "description": "狂暴期间，以近战武器攻击命中大型或更小的生物后，你可以用一个附赠动作将其击倒。"
+      }
     }
   },
   "classFeatures": {

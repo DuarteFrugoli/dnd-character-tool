@@ -1261,5 +1261,531 @@
         "description": "如果狼至少有一名盟友位于某生物{{distance:5ft}}内，且该盟友未失能，则狼对该生物进行的攻击检定具有优势。"
       }
     }
+  },
+  "Air Elemental": {
+    "name": "气元素",
+    "traits": {
+      "air_form": {
+        "name": "气体形态",
+        "description": "元素可以进入敌对生物的空间并停留。它可以穿过宽仅{{distance:1in}}的缝隙，无需挤过。"
+      },
+      "nonmagical_resistance": {
+        "name": "非魔法伤害抗性",
+        "description": "元素对非魔法攻击造成的钝击、穿刺和挥砍伤害具有抗性。"
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "多重攻击",
+        "description": "元素进行两次挥击攻击。"
+      },
+      "slam": {
+        "name": "挥击",
+        "description": "近战武器攻击：命中+8，触及{{distance:5ft|short}}，一个目标。命中：14 (2d8 + 5)点钝击伤害。"
+      },
+      "whirlwind": {
+        "name": "旋风",
+        "description": "元素空间内的每个生物进行DC13力量豁免。失败则受到15（3d8 + 2）点钝击伤害，被向随机方向抛出至多{{distance:20ft}}并倒地。若撞上墙壁或地面等物件，每被抛出{{distance:10ft}}便受到3（1d6）点钝击伤害。若撞上另一个生物，该生物必须通过DC13敏捷豁免，否则受到同样伤害并倒地。首次豁免成功的目标只受一半钝击伤害，不会被抛出或倒地。"
+      }
+    }
+  },
+  "Earth Elemental": {
+    "name": "土元素",
+    "traits": {
+      "earth_glide": {
+        "name": "土行",
+        "description": "元素可以掘行穿过非魔法、未经加工的土石，且不会扰动所穿过的物质。"
+      },
+      "siege_monster": {
+        "name": "攻城怪物",
+        "description": "元素对物件与建筑造成双倍伤害。"
+      },
+      "nonmagical_resistance": {
+        "name": "非魔法伤害抗性",
+        "description": "元素对非魔法攻击造成的钝击、穿刺和挥砍伤害具有抗性。"
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "多重攻击",
+        "description": "元素进行两次挥击攻击。"
+      },
+      "slam": {
+        "name": "挥击",
+        "description": "近战武器攻击：命中+8，触及{{distance:10ft|short}}，一个目标。命中：14 (2d8 + 5)点钝击伤害。"
+      }
+    }
+  },
+  "Elephant": {
+    "name": "象",
+    "traits": {
+      "trampling_charge": {
+        "name": "践踏冲锋",
+        "description": "生物朝目标直线移动至少{{distance:20ft}}，并在同一回合以长牙抵撞命中它时，目标必须通过DC12力量豁免，否则倒地。若目标已倒地，生物可以用一个附赠动作对其进行一次践踏攻击。"
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "长牙抵撞",
+        "description": "近战武器攻击：命中+8，触及{{distance:5ft|short}}，一个目标。命中：19 (3d8 + 6)点穿刺伤害。"
+      },
+      "stomp": {
+        "name": "践踏",
+        "description": "近战武器攻击：命中+8，触及{{distance:5ft|short}}，一个已倒地的生物。命中：22 (3d10 + 6)点钝击伤害。"
+      }
+    }
+  },
+  "Fire Elemental": {
+    "name": "火元素",
+    "traits": {
+      "fire_form": {
+        "name": "火焰形态",
+        "description": "元素可以穿过宽仅{{distance:1in}}的缝隙，无需挤过。触碰它，或在{{distance:5ft}}内以近战攻击命中它的生物受到5（1d10）点火焰伤害。它可以进入敌对生物的空间并停留。每回合首次进入某生物的空间时，该生物受到5（1d10）点火焰伤害并被点燃。燃烧的生物在其每个回合开始时受到5（1d10）点火焰伤害，直到有人用一个动作灭火。"
+      },
+      "illumination": {
+        "name": "照明",
+        "description": "元素发出半径{{distance:30ft|adj}}的明亮光照，以及再向外延伸{{distance:30ft}}的微光。"
+      },
+      "water_susceptibility": {
+        "name": "遇水受损",
+        "description": "元素在水中每移动{{distance:5ft}}，或每被泼上一加仑水，就受到1点冷冻伤害。"
+      },
+      "nonmagical_resistance": {
+        "name": "非魔法伤害抗性",
+        "description": "元素对非魔法攻击造成的钝击、穿刺和挥砍伤害具有抗性。"
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "多重攻击",
+        "description": "元素进行两次触碰攻击。"
+      },
+      "touch": {
+        "name": "触碰",
+        "description": "近战武器攻击：命中+6，触及{{distance:5ft|short}}，一个目标。命中：10 (2d6 + 3)点火焰伤害。若目标是生物或易燃物件，它会被点燃，且在其每个回合开始时受到5（1d10）点火焰伤害，直到有生物用一个动作灭火。"
+      }
+    }
+  },
+  "Giant Boar": {
+    "name": "巨野猪",
+    "traits": {
+      "charge": {
+        "name": "冲锋",
+        "description": "生物朝目标直线移动至少{{distance:20ft}}，并在同一回合以獠牙命中它时，目标受到额外7 (2d6)点挥砍伤害。若目标是生物，它必须通过DC13力量豁免，否则倒地。"
+      },
+      "relentless": {
+        "name": "坚韧不屈",
+        "description": "若不超过10点的伤害会使野猪的生命值降至0，则改为降至1。"
+      }
+    },
+    "actions": {
+      "tusk": {
+        "name": "獠牙",
+        "description": "近战武器攻击：命中+5，触及{{distance:5ft|short}}，一个目标。命中：10 (2d6 + 3)点挥砍伤害。"
+      }
+    }
+  },
+  "Giant Constrictor Snake": {
+    "name": "巨蟒",
+    "actions": {
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+6，触及{{distance:10ft|short}}，一个生物。命中：11 (2d6 + 4)点穿刺伤害。"
+      },
+      "constrict": {
+        "name": "缠绕",
+        "description": "近战武器攻击：命中+6，触及{{distance:5ft|short}}，一个生物。命中：13 (2d8 + 4)点钝击伤害。目标还会被擒抱（逃脱DC16）。擒抱持续期间，目标陷入束缚，蛇无法缠绕其他目标。"
+      }
+    }
+  },
+  "Giant Crocodile": {
+    "name": "巨鳄",
+    "traits": {
+      "hold_breath": {
+        "name": "屏息",
+        "description": "生物可以屏息30分钟。"
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "多重攻击",
+        "description": "鳄鱼进行两次攻击：一次啃咬和一次尾击。"
+      },
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+8，触及{{distance:5ft|short}}，一个目标。命中：21 (3d10 + 5)点穿刺伤害。目标还会被擒抱（逃脱DC16）。擒抱持续期间，目标陷入束缚，鳄鱼无法啃咬其他目标。"
+      },
+      "tail": {
+        "name": "尾击",
+        "description": "近战武器攻击：命中+8，触及{{distance:10ft|short}}，一个未被鳄鱼擒抱的目标。命中：14 (2d8 + 5)点钝击伤害。若目标是生物，它必须通过DC16力量豁免，否则倒地。"
+      }
+    }
+  },
+  "Giant Elk": {
+    "name": "巨麋鹿",
+    "traits": {
+      "charge": {
+        "name": "冲锋",
+        "description": "生物朝目标直线移动至少{{distance:20ft}}，并在同一回合以冲撞命中它时，目标受到额外7 (2d6)点伤害。若目标是生物，它必须通过DC14力量豁免，否则倒地。"
+      }
+    },
+    "actions": {
+      "ram": {
+        "name": "冲撞",
+        "description": "近战武器攻击：命中+6，触及{{distance:10ft|short}}，一个目标。命中：11 (2d6 + 4)点钝击伤害。"
+      },
+      "hooves": {
+        "name": "蹄击",
+        "description": "近战武器攻击：命中+6，触及{{distance:5ft|short}}，一个已倒地的生物。命中：22 (4d8 + 4)点钝击伤害。威严的巨麋鹿极其罕见，人们常将它的出现视为国王诞生等重大事件的征兆。传说有神祇会以此形态造访物质位面，因此许多文化相信猎杀它会招致神怒。"
+      }
+    }
+  },
+  "Giant Scorpion": {
+    "name": "巨蝎",
+    "actions": {
+      "multiattack": {
+        "name": "多重攻击",
+        "description": "蝎子进行三次攻击：两次钳击和一次蛰刺。"
+      },
+      "claw": {
+        "name": "钳击",
+        "description": "近战武器攻击：命中+4，触及{{distance:5ft|short}}，一个目标。命中：6 (1d8 + 2)点钝击伤害。目标还会被擒抱（逃脱DC12）。蝎子有两只钳子，每只只能擒抱一个目标。"
+      },
+      "sting": {
+        "name": "蛰刺",
+        "description": "近战武器攻击：命中+4，触及{{distance:5ft|short}}，一个生物。命中：7 (1d10 + 2)点穿刺伤害。目标还进行DC12体质豁免，失败则受到22（4d10）点毒素伤害，成功则伤害减半。"
+      }
+    }
+  },
+  "Giant Shark": {
+    "name": "巨鲨",
+    "traits": {
+      "blood_frenzy": {
+        "name": "嗜血狂暴",
+        "description": "鲨鱼对生命值低于上限的生物进行近战攻击检定时具有优势。"
+      },
+      "water_breathing": {
+        "name": "水下呼吸",
+        "description": "鲨鱼只能在水下呼吸。"
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+9，触及{{distance:5ft|short}}，一个目标。命中：22 (3d10 + 6)点穿刺伤害。巨鲨体长{{distance:30ft}}，通常栖息在深海。它毫无畏惧，会攻击任何挡路的事物，包括鲸鱼和船只。"
+      }
+    }
+  },
+  "Hunter Shark": {
+    "name": "猎鲨",
+    "traits": {
+      "blood_frenzy": {
+        "name": "嗜血狂暴",
+        "description": "鲨鱼对生命值低于上限的生物进行近战攻击检定时具有优势。"
+      },
+      "water_breathing": {
+        "name": "水下呼吸",
+        "description": "鲨鱼只能在水下呼吸。"
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+6，触及{{distance:5ft|short}}，一个目标。命中：13 (2d8 + 4)点穿刺伤害。猎鲨比礁鲨更大更凶猛，但比巨鲨小，栖息在深水中。它通常独自狩猎，但多只也可能在同一地点进食。成体长{{distance:15ft|num}}至{{distance:20ft}}。"
+      }
+    }
+  },
+  "Imp": {
+    "name": "小魔鬼",
+    "traits": {
+      "shapechanger": {
+        "name": "变形生物",
+        "description": "小魔鬼可以用一个动作变成类似老鼠（速度{{distance:20ft|short}}）、渡鸦（{{distance:20ft|short}}，飞行{{distance:60ft|short}}）或蜘蛛（{{distance:20ft|short}}，攀爬{{distance:20ft|short}}）的野兽形态，或恢复真身。除所列速度外，其数据不变。穿戴或携带的装备不会变化。死亡时恢复真身。"
+      },
+      "devil_s_sight": {
+        "name": "魔鬼视界",
+        "description": "魔法黑暗不会妨碍小魔鬼的黑暗视觉。"
+      },
+      "magic_resistance": {
+        "name": "魔法抗性",
+        "description": "生物对法术及其他魔法效应进行豁免时具有优势。"
+      },
+      "conditional_damage_resistance": {
+        "name": "条件伤害抗性",
+        "description": "小魔鬼对非魔法且非镀银攻击造成的钝击、穿刺和挥砍伤害具有抗性。"
+      }
+    },
+    "actions": {
+      "sting_bite_in_beast_form": {
+        "name": "蛰刺（野兽形态下为啃咬）",
+        "description": "近战武器攻击：命中+5，触及{{distance:5ft|short}}，一个目标。命中：5（1d4 + 3）点穿刺伤害。目标还进行DC11体质豁免，失败则受到10（3d6）点毒素伤害，成功则伤害减半。"
+      },
+      "invisibility": {
+        "name": "隐形",
+        "description": "小魔鬼以魔法隐形，直到它攻击或专注结束（视同维持法术专注）。它穿戴或携带的装备也一起隐形。"
+      }
+    }
+  },
+  "Killer Whale": {
+    "name": "虎鲸",
+    "traits": {
+      "echolocation": {
+        "name": "回声定位",
+        "description": "虎鲸耳聋时无法使用盲视。"
+      },
+      "hold_breath": {
+        "name": "屏息",
+        "description": "生物可以屏息30分钟。"
+      },
+      "keen_hearing": {
+        "name": "敏锐听觉",
+        "description": "生物进行依赖听觉的感知（察觉）检定时具有优势。"
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+6，触及{{distance:5ft|short}}，一个目标。命中：21 (5d6 + 4)点穿刺伤害。"
+      }
+    }
+  },
+  "Mammoth": {
+    "name": "猛犸象",
+    "traits": {
+      "trampling_charge": {
+        "name": "践踏冲锋",
+        "description": "生物朝目标直线移动至少{{distance:20ft}}，并在同一回合以长牙抵撞命中它时，目标必须通过DC18力量豁免，否则倒地。若目标已倒地，生物可以用一个附赠动作对其进行一次践踏攻击。"
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "长牙抵撞",
+        "description": "近战武器攻击：命中+10，触及{{distance:10ft|short}}，一个目标。命中：25 (4d8 + 7)点穿刺伤害。"
+      },
+      "stomp": {
+        "name": "践踏",
+        "description": "近战武器攻击：命中+10，触及{{distance:5ft|short}}，一个已倒地的生物。命中：29 (4d10 + 7)点钝击伤害。猛犸象类似披着厚毛、长有长牙的象，比普通象更粗壮凶猛，生活在从亚寒带到亚热带的多种气候中。"
+      }
+    }
+  },
+  "Plesiosaurus": {
+    "name": "蛇颈龙",
+    "traits": {
+      "hold_breath": {
+        "name": "屏息",
+        "description": "生物可以屏息1小时。"
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+6，触及{{distance:10ft|short}}，一个目标。命中：14 (3d6 + 4)点穿刺伤害。"
+      }
+    }
+  },
+  "Polar Bear": {
+    "name": "北极熊",
+    "traits": {
+      "keen_smell": {
+        "name": "敏锐嗅觉",
+        "description": "生物进行依赖嗅觉的感知（察觉）检定时具有优势。"
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "多重攻击",
+        "description": "熊进行两次攻击：一次啃咬和一次爪击。"
+      },
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+7，触及{{distance:5ft|short}}，一个目标。命中：9 (1d8 + 5)点穿刺伤害。"
+      },
+      "claws": {
+        "name": "爪击",
+        "description": "近战武器攻击：命中+7，触及{{distance:5ft|short}}，一个目标。命中：12 (2d6 + 5)点挥砍伤害。"
+      }
+    }
+  },
+  "Pseudodragon": {
+    "name": "伪龙",
+    "traits": {
+      "keen_senses": {
+        "name": "敏锐感官",
+        "description": "伪龙进行依赖视觉、听觉或嗅觉的感知（察觉）检定时具有优势。"
+      },
+      "magic_resistance": {
+        "name": "魔法抗性",
+        "description": "生物对法术及其他魔法效应进行豁免时具有优势。"
+      },
+      "limited_telepathy": {
+        "name": "有限心灵感应",
+        "description": "伪龙可以用魔法心灵感应，向{{distance:100ft}}内任何至少能理解一种语言的生物传达简单的想法、情绪和图像。"
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+4，触及{{distance:5ft|short}}，一个目标。命中：4 (1d4 + 2)点穿刺伤害。"
+      },
+      "sting": {
+        "name": "蛰刺",
+        "description": "近战武器攻击：命中+4，触及{{distance:5ft|short}}，一个生物。命中：4（1d4 + 2）点穿刺伤害。目标必须通过DC11体质豁免，否则中毒1小时。若豁免结果比DC低5或更多，还会昏迷同样的时间；受到伤害，或其他生物用一个动作将其摇醒时，此昏迷状态结束。"
+      }
+    }
+  },
+  "Quasit": {
+    "name": "夸塞魔",
+    "traits": {
+      "shapechanger": {
+        "name": "变形生物",
+        "description": "夸塞魔可以用一个动作变成类似蝙蝠（速度{{distance:10ft|short}}，飞行{{distance:40ft|short}}）、蜈蚣（{{distance:40ft|short}}，攀爬{{distance:40ft|short}}）或蟾蜍（{{distance:40ft|short}}，游泳{{distance:40ft|short}}）的野兽形态，或恢复真身。除所列速度外，其数据不变。穿戴或携带的装备不会变化。死亡时恢复真身。"
+      },
+      "magic_resistance": {
+        "name": "魔法抗性",
+        "description": "生物对法术及其他魔法效应进行豁免时具有优势。"
+      },
+      "nonmagical_damage_resistance": {
+        "name": "非魔法伤害抗性",
+        "description": "夸塞魔对非魔法攻击造成的钝击、穿刺和挥砍伤害具有抗性。"
+      }
+    },
+    "actions": {
+      "claws_bite_in_beast_form": {
+        "name": "爪击（野兽形态下为啃咬）",
+        "description": "近战武器攻击：命中+4，触及{{distance:5ft|short}}，一个目标。命中：5（1d4 + 3）点穿刺伤害。目标必须通过DC10体质豁免，否则受到5（2d4）点毒素伤害并中毒1分钟。目标可以在其每个回合结束时重复豁免，成功则结束自身所受的效应。"
+      },
+      "scare": {
+        "name": "惊吓",
+        "description": "夸塞魔选择{{distance:20ft}}内的一个生物。目标必须通过DC10感知豁免，否则恐慌1分钟。目标可以在其每个回合结束时重复豁免；若夸塞魔位于其视线内，则该次豁免具有劣势。成功则结束目标所受的效应。"
+      },
+      "invisibility": {
+        "name": "隐形",
+        "description": "夸塞魔以魔法隐形，直到它攻击、使用惊吓，或专注结束（视同维持法术专注）。它穿戴或携带的装备也一起隐形。"
+      }
+    }
+  },
+  "Rhinoceros": {
+    "name": "犀牛",
+    "traits": {
+      "charge": {
+        "name": "冲锋",
+        "description": "生物朝目标直线移动至少{{distance:20ft}}，并在同一回合以抵撞命中它时，目标受到额外9 (2d8)点钝击伤害。若目标是生物，它必须通过DC15力量豁免，否则倒地。"
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "抵撞",
+        "description": "近战武器攻击：命中+7，触及{{distance:5ft|short}}，一个目标。命中：14 (2d8 + 5)点钝击伤害。"
+      }
+    }
+  },
+  "Saber-Toothed Tiger": {
+    "name": "剑齿虎",
+    "traits": {
+      "keen_smell": {
+        "name": "敏锐嗅觉",
+        "description": "生物进行依赖嗅觉的感知（察觉）检定时具有优势。"
+      },
+      "pounce": {
+        "name": "猛扑",
+        "description": "生物朝目标直线移动至少{{distance:20ft}}，并在同一回合以爪击命中它时，目标必须通过DC14力量豁免，否则倒地。若目标已倒地，生物可以用一个附赠动作对其进行一次啃咬攻击。"
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "啃咬",
+        "description": "近战武器攻击：命中+6，触及{{distance:5ft|short}}，一个目标。命中：10 (1d10 + 5)点穿刺伤害。"
+      },
+      "claw": {
+        "name": "爪击",
+        "description": "近战武器攻击：命中+6，触及{{distance:5ft|short}}，一个目标。命中：12 (2d6 + 5)点挥砍伤害。"
+      }
+    }
+  },
+  "Sprite": {
+    "name": "小妖精",
+    "actions": {
+      "longsword": {
+        "name": "长剑",
+        "description": "近战武器攻击：命中+2，触及{{distance:5ft|short}}，一个目标。命中：1点挥砍伤害。"
+      },
+      "shortbow": {
+        "name": "短弓",
+        "description": "远程武器攻击：命中+6，射程{{distance:40/160ft|short}}，一个目标。命中：1点穿刺伤害。目标必须通过DC10体质豁免，否则中毒1分钟。若豁免总结果不超过5，中毒的目标还会昏迷同样的时间；受到伤害，或其他生物用一个动作将其摇醒时，此昏迷状态结束。"
+      },
+      "heart_sight": {
+        "name": "观心",
+        "description": "小妖精触碰一个生物，以魔法得知其当前情绪状态。若目标未通过DC10魅力豁免，小妖精还会得知其阵营。天界生物、邪魔和不死生物自动失败。"
+      },
+      "invisibility": {
+        "name": "隐形",
+        "description": "小妖精以魔法隐形，直到它攻击、施法或专注结束（视同维持法术专注）。它穿戴或携带的装备也一起隐形。"
+      }
+    }
+  },
+  "Swarm of Poisonous Snakes": {
+    "name": "毒蛇集群",
+    "traits": {
+      "swarm": {
+        "name": "集群",
+        "description": "集群可以占据其他生物的空间，反之亦然。它可以通过任何能容纳一条微型蛇的开口。集群不能恢复生命值或获得临时生命值。"
+      }
+    },
+    "actions": {
+      "bites": {
+        "name": "群咬",
+        "description": "近战武器攻击：命中+6，触及{{distance:0ft|short}}，集群空间内的一个生物。命中：7 (2d6)点穿刺伤害。若集群的生命值不超过上限的一半，则改为造成3（1d6）点穿刺伤害。目标进行DC10体质豁免，失败则受到14（4d6）点毒素伤害，成功则伤害减半。"
+      }
+    }
+  },
+  "Triceratops": {
+    "name": "三角龙",
+    "traits": {
+      "trampling_charge": {
+        "name": "践踏冲锋",
+        "description": "生物朝目标直线移动至少{{distance:20ft}}，并在同一回合以抵撞命中它时，目标必须通过DC13力量豁免，否则倒地。若目标已倒地，生物可以用一个附赠动作对其进行一次践踏攻击。"
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "抵撞",
+        "description": "近战武器攻击：命中+9，触及{{distance:5ft|short}}，一个目标。命中：24 (4d8 + 6)点穿刺伤害。"
+      },
+      "stomp": {
+        "name": "践踏",
+        "description": "近战武器攻击：命中+9，触及{{distance:5ft|short}}，一个已倒地的生物。命中：22 (3d10 + 6)点钝击伤害。"
+      }
+    }
+  },
+  "Water Elemental": {
+    "name": "水元素",
+    "traits": {
+      "water_form": {
+        "name": "水体形态",
+        "description": "元素可以进入敌对生物的空间并停留。它可以穿过宽仅{{distance:1in}}的缝隙，无需挤过。"
+      },
+      "freeze": {
+        "name": "冻结",
+        "description": "元素受到冷冻伤害时会部分冻结，速度降低{{distance:20ft}}，直到其下个回合结束。"
+      },
+      "nonmagical_resistance": {
+        "name": "非魔法伤害抗性",
+        "description": "元素对非魔法攻击造成的钝击、穿刺和挥砍伤害具有抗性。"
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "多重攻击",
+        "description": "元素进行两次挥击攻击。"
+      },
+      "slam": {
+        "name": "挥击",
+        "description": "近战武器攻击：命中+7，触及{{distance:5ft|short}}，一个目标。命中：13 (2d8 + 4)点钝击伤害。"
+      },
+      "whelm": {
+        "name": "淹没",
+        "description": "元素空间内的每个生物进行DC15力量豁免。失败则受到13（2d8 + 4）点钝击伤害；若体型为大型或更小，还会被元素擒抱（逃脱DC14）。被擒抱期间，目标陷入束缚，且除非能在水下呼吸，否则无法呼吸。豁免成功则被推出元素的空间。元素同时可擒抱一个大型生物，或至多两个中型或更小的生物。在元素的每个回合开始时，被它擒抱的每个目标受到13（2d8 + 4）点钝击伤害。元素周围{{distance:5ft}}内的生物可以用一个动作进行DC14力量检定，成功则从中拉出一个生物或物件。"
+      }
+    }
   }
 }

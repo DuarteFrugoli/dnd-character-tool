@@ -544,5 +544,141 @@
   "Whetstone": {
     "name": "Wetzstein",
     "description": "Wird zum Schärfen von Klingen verwendet."
+  },
+  "Crystal": {
+    "name": "Kristall",
+    "description": "Arkaner Fokus für Zauberer-, Hexenmeister- oder Magierzauber. Ersetzt gewöhnliche Materialkomponenten, aber keine Komponenten mit angegebenem Preis oder solche, die ein Zauber verbraucht."
+  },
+  "Orb": {
+    "name": "Kugel",
+    "description": "Arkaner Fokus für Zauberer-, Hexenmeister- oder Magierzauber. Ersetzt gewöhnliche Materialkomponenten, aber keine Komponenten mit angegebenem Preis oder solche, die ein Zauber verbraucht."
+  },
+  "Rod": {
+    "name": "Rute",
+    "description": "Arkaner Fokus für Zauberer-, Hexenmeister- oder Magierzauber. Ersetzt gewöhnliche Materialkomponenten, aber keine Komponenten mit angegebenem Preis oder solche, die ein Zauber verbraucht."
+  },
+  "Staff": {
+    "name": "Stab",
+    "description": "Arkaner Fokus für Zauberer-, Hexenmeister- oder Magierzauber. Ersetzt gewöhnliche Materialkomponenten, aber keine Komponenten mit angegebenem Preis oder solche, die ein Zauber verbraucht."
+  },
+  "Wand": {
+    "name": "Zauberstab",
+    "description": "Arkaner Fokus für Zauberer-, Hexenmeister- oder Magierzauber. Ersetzt gewöhnliche Materialkomponenten, aber keine Komponenten mit angegebenem Preis oder solche, die ein Zauber verbraucht."
+  },
+  "Camel": {
+    "name": "Kamel",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:50ft}} und einer Traglast von 480 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Donkey": {
+    "name": "Esel",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:40ft}} und einer Traglast von 420 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Mule": {
+    "name": "Maultier",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:40ft}} und einer Traglast von 420 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Elephant": {
+    "name": "Elefant",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:40ft}} und einer Traglast von 1320 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Draft Horse": {
+    "name": "Zugpferd",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:40ft}} und einer Traglast von 540 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Riding Horse": {
+    "name": "Reitpferd",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:60ft}} und einer Traglast von 480 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Mastiff": {
+    "name": "Dogge",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:40ft}} und einer Traglast von 195 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Pony": {
+    "name": "Pony",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:40ft}} und einer Traglast von 225 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Warhorse": {
+    "name": "Schlachtross",
+    "description": "Reittier mit einer Bewegungsrate von {{distance:60ft}} und einer Traglast von 540 Pfund. Sein eigenes Körpergewicht zählt nicht zum getragenen Inventargewicht. Ein Gespann kann das Fünffache seiner gemeinsamen normalen Traglast ziehen, einschließlich des Fahrzeuggewichts."
+  },
+  "Bit and Bridle": {
+    "name": "Zaumzeug",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Carriage": {
+    "name": "Kutsche",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Cart": {
+    "name": "Karren",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Chariot": {
+    "name": "Streitwagen",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Feed (per day)": {
+    "name": "Futter (pro Tag)",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Saddlebags": {
+    "name": "Satteltaschen",
+    "description": "Behälter, die ein Reittier trägt."
+  },
+  "Sled": {
+    "name": "Schlitten",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Stabling (per day)": {
+    "name": "Stallplatz (pro Tag)",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Wagon": {
+    "name": "Wagen",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Exotic Saddle": {
+    "name": "Exotischer Sattel",
+    "description": "Erforderlich, um ein fliegendes oder aquatisches Reittier zu reiten."
+  },
+  "Military Saddle": {
+    "name": "Militärsattel",
+    "description": "Gewährt Vorteil auf Würfe, um auf einem im Kampf aktiven Reittier sitzen zu bleiben."
+  },
+  "Pack Saddle": {
+    "name": "Packsattel",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Riding Saddle": {
+    "name": "Reitsattel",
+    "description": "Zaumzeug, Vorräte oder Transportmittel für Reisen mit Reittieren."
+  },
+  "Galley": {
+    "name": "Galeere",
+    "description": "Wasserfahrzeug; normale Geschwindigkeit {{distance:4mi}} pro Stunde. Ruder- und Kielboote können flussabwärts die Strömung hinzuaddieren, aber nicht gegen eine starke Strömung rudern. Das Schiffsgewicht ist nicht angegeben, außer beim 100 Pfund schweren Ruderboot."
+  },
+  "Keelboat": {
+    "name": "Kielboot",
+    "description": "Wasserfahrzeug; normale Geschwindigkeit {{distance:1mi}} pro Stunde. Ruder- und Kielboote können flussabwärts die Strömung hinzuaddieren, aber nicht gegen eine starke Strömung rudern. Das Schiffsgewicht ist nicht angegeben, außer beim 100 Pfund schweren Ruderboot."
+  },
+  "Longship": {
+    "name": "Langschiff",
+    "description": "Wasserfahrzeug; normale Geschwindigkeit {{distance:3mi}} pro Stunde. Ruder- und Kielboote können flussabwärts die Strömung hinzuaddieren, aber nicht gegen eine starke Strömung rudern. Das Schiffsgewicht ist nicht angegeben, außer beim 100 Pfund schweren Ruderboot."
+  },
+  "Rowboat": {
+    "name": "Ruderboot",
+    "description": "Wasserfahrzeug; normale Geschwindigkeit {{distance:1.5mi}} pro Stunde. Ruder- und Kielboote können flussabwärts die Strömung hinzuaddieren, aber nicht gegen eine starke Strömung rudern. Das Schiffsgewicht ist nicht angegeben, außer beim 100 Pfund schweren Ruderboot."
+  },
+  "Sailing Ship": {
+    "name": "Segelschiff",
+    "description": "Wasserfahrzeug; normale Geschwindigkeit {{distance:2mi}} pro Stunde. Ruder- und Kielboote können flussabwärts die Strömung hinzuaddieren, aber nicht gegen eine starke Strömung rudern. Das Schiffsgewicht ist nicht angegeben, außer beim 100 Pfund schweren Ruderboot."
+  },
+  "Warship": {
+    "name": "Kriegsschiff",
+    "description": "Wasserfahrzeug; normale Geschwindigkeit {{distance:2.5mi}} pro Stunde. Ruder- und Kielboote können flussabwärts die Strömung hinzuaddieren, aber nicht gegen eine starke Strömung rudern. Das Schiffsgewicht ist nicht angegeben, außer beim 100 Pfund schweren Ruderboot."
+  },
+  "Barding": {
+    "name": "Harnisch",
+    "description": "Rüstung für ein Tier: vierfacher Preis und doppeltes Gewicht der entsprechenden humanoiden Rüstung. Das angegebene Gewicht von null ist ein Platzhalter; bestimme das tatsächliche Gewicht anhand der gewählten Rüstung."
   }
 }

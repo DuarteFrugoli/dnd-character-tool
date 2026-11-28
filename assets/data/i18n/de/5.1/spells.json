@@ -1656,5 +1656,185 @@
   "Wish": {
     "name": "Wunsch",
     "description": "Wunsch ist der mächtigste Zauber, den eine sterbliche Kreatur wirken kann. Indem du einfach laut sprichst, kannst du die Grundfesten der Wirklichkeit nach deinen Wünschen verändern.\n\nDie grundlegende Verwendung dieses Zaubers besteht darin, einen beliebigen anderen Zauber des 8. Grades oder niedriger nachzuahmen. Du musst keine der Voraussetzungen dieses Zaubers erfüllen, auch keine kostspieligen Komponenten. Der Zauber tritt einfach in Kraft.\n\nAlternativ kannst du einen der folgenden Effekte deiner Wahl erschaffen:\n- Du erschaffst einen Gegenstand im Wert von bis zu 25.000 GM, der kein magischer Gegenstand ist. Der Gegenstand darf in keiner Dimension größer als {{distance:300ft}} sein und erscheint in einem freien Bereich auf dem Boden, den du sehen kannst.\n- Du lässt bis zu zwanzig Kreaturen, die du sehen kannst, alle Trefferpunkte zurückerhalten und beendest bei ihnen alle Effekte, die im Zauber Mächtige Genesung beschrieben sind.\n- Du verleihst bis zu zehn Kreaturen, die du sehen kannst, Resistenz gegen eine Schadensart deiner Wahl.\n- Du verleihst bis zu zehn Kreaturen, die du sehen kannst, für 8 Stunden Immunität gegen einen einzelnen Zauber oder einen anderen magischen Effekt. Du könntest zum Beispiel dich und alle deine Gefährten gegen den Lebensentzug-Angriff eines Lichs immun machen.\n- Du machst ein einzelnes kürzlich eingetretenes Ereignis ungeschehen, indem du die Wiederholung eines beliebigen Wurfs erzwingst, der innerhalb der letzten Runde (einschließlich deines letzten Zugs) ausgeführt wurde. Die Wirklichkeit formt sich neu, um dem neuen Ergebnis Rechnung zu tragen. Ein Wunsch-Zauber könnte zum Beispiel den erfolgreichen Rettungswurf eines Gegners, den kritischen Treffer eines Feindes oder den misslungenen Rettungswurf eines Freundes ungeschehen machen. Du kannst festlegen, dass der wiederholte Wurf im Vorteil oder im Nachteil ausgeführt wird, und du kannst wählen, ob das neue oder das ursprüngliche Ergebnis verwendet wird. Möglicherweise kannst du etwas erreichen, das über den Rahmen der obigen Beispiele hinausgeht. Teile dem SL deinen Wunsch so genau wie möglich mit. Der SL hat großen Spielraum bei der Entscheidung, was in einem solchen Fall geschieht; je größer der Wunsch, desto größer die Wahrscheinlichkeit, dass etwas schiefgeht. Der Zauber könnte einfach fehlschlagen, der gewünschte Effekt könnte nur teilweise eintreten, oder du könntest aufgrund der Formulierung deines Wunsches eine unvorhergesehene Folge erleiden. Der Wunsch, ein Schurke wäre tot, könnte dich zum Beispiel in eine Zeit in der Zukunft versetzen, in der dieser Schurke nicht mehr lebt, wodurch du praktisch aus dem Spiel entfernt wirst. Ebenso könnte der Wunsch nach einem legendären magischen Gegenstand oder Artefakt dich sofort zum aktuellen Besitzer des Gegenstands befördern.\n\nDie Belastung, diesen Zauber zu wirken, um einen anderen Effekt zu erzielen als einen anderen Zauber nachzuahmen, schwächt dich. Nachdem du diese Belastung erlitten hast, erleidest du jedes Mal, wenn du einen Zauber wirkst, bis du eine lange Rast beendest, 1d10 nekrotischen Schaden pro Grad dieses Zaubers. Dieser Schaden kann auf keine Weise verringert oder verhindert werden. Außerdem sinkt deine Stärke für 2d4 Tage auf 3, sofern sie nicht bereits 3 oder niedriger ist. Für jeden dieser Tage, den du mit Ausruhen verbringst und an dem du nichts weiter als leichte Tätigkeiten ausübst, verringert sich deine verbleibende Erholungszeit um 2 Tage. Schließlich besteht eine Wahrscheinlichkeit von 33 Prozent, dass du Wunsch nie wieder wirken kannst, wenn du diese Belastung erleidest."
+  },
+  "Thorn Whip": {
+    "name": "Dornenpeitsche",
+    "description": "Eine magische, dornenbesetzte Ranke peitscht nach einer Kreatur in Reichweite. Führe einen Nahkampf-Zauberangriff aus, obwohl die Reichweite {{distance:30ft}} beträgt. Ein Treffer verursacht 1d6 Stichschaden. Ist die Kreatur groß oder kleiner, ziehst du sie außerdem bis zu {{distance:10ft}} zu dir. Der Schaden steigt auf Charakterstufe 5 auf 2d6, auf Stufe 11 auf 3d6 und auf Stufe 17 auf 4d6.",
+    "higherLevels": null,
+    "material": "der Stängel einer dornenbesetzten Pflanze"
+  },
+  "Armor of Agathys": {
+    "name": "Rüstung des Agathys",
+    "description": "Geisterhaftes Eis umhüllt dich und deine Ausrüstung und gewährt dir bis zu 1 Stunde lang 5 temporäre Trefferpunkte. Trifft dich eine Kreatur mit einem Nahkampfangriff, solange temporäre Trefferpunkte dieses Zaubers übrig sind, erleidet sie 5 Kälteschaden. Diese Vergeltung erfordert weder Angriffswurf noch Rettungswurf. Wenn du diese temporären Trefferpunkte verlierst oder ersetzt, endet der Schutz.",
+    "higherLevels": "Für jeden Zauberplatzgrad über dem 1. erhöhen sich die temporären Trefferpunkte und der Kälteschaden jedes auslösenden Treffers jeweils um 5. Ein Zauberplatz des 3. Grades gewährt beispielsweise 15 temporäre Trefferpunkte und verursacht 15 Kälteschaden pro auslösendem Treffer.",
+    "material": "eine Tasse Wasser"
+  },
+  "Arms of Hadar": {
+    "name": "Arme von Hadar",
+    "description": "Dunkle Ranken schlagen nach Kreaturen innerhalb von {{distance:10ft}} um dich. Jedes Ziel legt einen Stärkerettungswurf ab. Bei einem Fehlschlag erleidet es 2d6 nekrotischen Schaden und kann bis zu seinem nächsten Zug keine Reaktionen ausführen. Bei Erfolg erleidet es halben Schaden und behält seine Reaktionen.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 1. erhöht den nekrotischen Schaden um 1d6.",
+    "material": null
+  },
+  "Chromatic Orb": {
+    "name": "Chromatische Kugel",
+    "description": "Wähle eine sichtbare Kreatur in Reichweite und führe einen Fernkampf-Zauberangriff aus. Wähle Blitz-, Feuer-, Gift-, Kälte-, Säure- oder Schallschaden; ein Treffer verursacht 3d8 Schaden dieses Typs. Der Diamant ist erforderlich, wird aber nicht verbraucht.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 1. erhöht den Schaden um 1d8.",
+    "material": "ein Diamant im Wert von mindestens 50 GM"
+  },
+  "Compelled Duel": {
+    "name": "Erzwungenes Duell",
+    "description": "Wähle eine sichtbare Kreatur in Reichweite. Misslingt ihr Weisheitsrettungswurf, hat sie Nachteil auf Angriffe gegen andere Kreaturen als dich. Wenn sie versucht, sich weiter als {{distance:30ft}} von dir zu entfernen, muss sie einen weiteren Weisheitsrettungswurf bestehen. Bei Erfolg gilt diese Bewegungsbeschränkung für diesen Zug nicht.\n\nDer Zauber endet, wenn du eine andere Kreatur angreifst, einen Zauber auf eine andere feindliche Kreatur wirkst oder deinen Zug mehr als {{distance:30ft}} vom Ziel entfernt beendest. Er endet auch, wenn einer deiner Verbündeten das Ziel verletzt oder mit einem schädlichen Zauber beeinflusst.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Dissonant Whispers": {
+    "name": "Dissonantes Flüstern",
+    "description": "Du flüsterst einer Kreatur in Reichweite eine schmerzhafte Melodie zu. Misslingt ihr Weisheitsrettungswurf, erleidet sie 3d6 psychischen Schaden und nutzt sofort ihre Reaktion, falls verfügbar, um sich so weit wie ihre Bewegungsrate erlaubt von dir zu entfernen. Dabei meidet sie offensichtlich gefährliches Gelände. Bei Erfolg erleidet sie halben Schaden und bewegt sich nicht. Ein taubes Ziel besteht den Rettungswurf automatisch.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 1. erhöht den psychischen Schaden um 1d6.",
+    "material": null
+  },
+  "Ensnaring Strike": {
+    "name": "Fesselnder Schlag",
+    "description": "Dein nächster Waffenangriff, der vor Ende des Zaubers eine Kreatur trifft, erzeugt fesselnde Ranken. Das Ziel legt einen Stärkerettungswurf ab, mit Vorteil, falls es groß oder größer ist. Bei einem Fehlschlag ist es für die restliche Wirkungsdauer festgesetzt; bei Erfolg verschwinden die Ranken. Solange es festgesetzt ist, erleidet es zu Beginn jedes seiner Züge 1d6 Stichschaden. Das Ziel oder eine Kreatur, die es berühren kann, kann eine Aktion für einen Stärkewurf gegen deinen Zauberrettungswurf-SG aufwenden, um es bei Erfolg zu befreien.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 1. erhöht den wiederkehrenden Stichschaden um 1d6.",
+    "material": null
+  },
+  "Hail of Thorns": {
+    "name": "Dornenhagel",
+    "description": "Dein nächster Fernkampf-Waffenangriff, der vor Ende des Zaubers eine Kreatur trifft, löst zusätzlich einen Dornenhagel aus. Der Angriff behält seine normalen Effekte. Das Ziel und jede Kreatur innerhalb von {{distance:5ft}} um das Ziel legen einen Geschicklichkeitsrettungswurf ab. Bei einem Fehlschlag erleiden sie 1d10 Stichschaden, bei Erfolg die Hälfte.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 1. erhöht den Stichschaden um 1d10, bis zu einem Maximum von 6d10.",
+    "material": null
+  },
+  "Ray of Sickness": {
+    "name": "Krankheitsstrahl",
+    "description": "Führe einen Fernkampf-Zauberangriff gegen eine Kreatur in Reichweite aus. Ein Treffer verursacht 2d8 Giftschaden und erzwingt einen Konstitutionsrettungswurf. Bei einem Fehlschlag ist das Ziel außerdem bis zum Ende deines nächsten Zuges vergiftet. Ein erfolgreicher Rettungswurf verhindert den Zustand, aber nicht den Trefferschaden.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 1. erhöht den Giftschaden um 1d8.",
+    "material": null
+  },
+  "Searing Smite": {
+    "name": "Sengendes Niederstrecken",
+    "description": "Dein nächster Nahkampf-Waffenangriff, der vor Ende des Zaubers eine Kreatur trifft, verursacht zusätzlich 1d6 Feuerschaden und setzt das Ziel in Brand. Zu Beginn jedes seiner Züge legt das brennende Ziel einen Konstitutionsrettungswurf ab: Bei einem Fehlschlag erleidet es 1d6 Feuerschaden, bei Erfolg endet der Zauber. Das Ziel oder eine andere Kreatur innerhalb von {{distance:5ft}} kann eine Aktion nutzen, um die Flammen zu löschen und den Zauber zu beenden. Auch das Ersticken der Flammen, etwa durch Untertauchen, beendet ihn.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 1. erhöht nur den zusätzlichen Schaden des ersten Treffers um 1d6. Der wiederkehrende Feuerschaden bleibt 1d6.",
+    "material": null
+  },
+  "Thunderous Smite": {
+    "name": "Donnerndes Niederstrecken",
+    "description": "Der erste Nahkampf-Waffenangriff, mit dem du vor Ende des Zaubers triffst, verursacht zusätzlich 2d6 Schallschaden und erzeugt einen Knall, der innerhalb von {{distance:300ft}} um dich hörbar ist. Ist das Ziel eine Kreatur, muss es außerdem einen Stärkerettungswurf bestehen oder wird {{distance:10ft}} von dir weggestoßen und zu Boden geworfen.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Beast Sense": {
+    "name": "Tiersinn",
+    "description": "Berühre ein williges Tier. Solange du dich konzentrierst, kannst du eine Aktion aufwenden, um durch seine Augen zu sehen und durch seine Ohren zu hören; dabei erhältst du seine besonderen Sinne. Die Verbindung bleibt bestehen, bis du mit einer weiteren Aktion zu deinen eigenen Sinnen zurückkehrst oder der Zauber endet. Während du die Sinne des Tiers nutzt, bist du gegenüber deiner eigenen Umgebung blind und taub.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Cordon of Arrows": {
+    "name": "Pfeilspalier",
+    "description": "Stecke vier nichtmagische Pfeile oder Armbrustbolzen innerhalb der Reichweite in den Boden. Du und beim Wirken bestimmte Kreaturen werden ignoriert. Kommt eine andere Kreatur zum ersten Mal in einem Zug auf {{distance:30ft}} an die Munition heran oder beendet dort ihren Zug, greift ein Geschoss sie an. Misslingt ihr Geschicklichkeitsrettungswurf, erleidet sie 1d6 Stichschaden; bei Erfolg keinen Schaden. Das Geschoss wird in jedem Fall zerstört. Der Zauber endet, wenn alle verzauberten Geschosse verbraucht sind oder die Wirkungsdauer abläuft.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 2. erlaubt dir, zwei weitere Geschosse zu verzaubern. Der Schaden pro Geschoss bleibt 1d6.",
+    "material": "mindestens vier Pfeile oder Bolzen"
+  },
+  "Phantasmal Force": {
+    "name": "Phantasmagorische Kraft",
+    "description": "Wähle eine sichtbare Kreatur in Reichweite; Untote und Konstrukte sind nicht betroffen. Misslingt ihr Intelligenzrettungswurf, nimmt nur sie einen illusorischen Gegenstand, eine Kreatur oder ein sichtbares Phänomen wahr, das in einen Würfel mit {{distance:10ft|adj}} Kantenlänge passt. Die Illusion umfasst Sinneseindrücke wie Geräusche und Temperatur. Das Ziel hält sie für echt und erklärt sich widersprüchliche Ereignisse entsprechend.\n\nDas Ziel kann eine Aktion für einen Wurf auf Intelligenz (Nachforschungen) gegen deinen Zauberrettungswurf-SG nutzen. Bei Erfolg durchschaut es die Illusion und der Zauber endet. Einmal pro Runde in deinem Zug kann eine glaubhafte illusorische Bedrohung 1d6 psychischen Schaden verursachen, wenn sich das Ziel in ihr oder innerhalb von {{distance:5ft}} um sie befindet. Das Ziel erlebt den Schaden als passend zur vorgestellten Bedrohung.",
+    "higherLevels": null,
+    "material": "ein wenig Wolle"
+  },
+  "Aura of Vitality": {
+    "name": "Aura der Lebenskraft",
+    "description": "Eine heilende Aura reicht {{distance:30ft}} um dich und bewegt sich mit dir. Während ihrer Wirkungsdauer kannst du mit einer Bonusaktion einer Kreatur in der Aura, auch dir selbst, 2d6 Trefferpunkte zurückgeben.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Blinding Smite": {
+    "name": "Blendendes Niederstrecken",
+    "description": "Dein nächster Nahkampf-Waffenangriff, der vor Ende des Zaubers eine Kreatur trifft, verursacht zusätzlich 3d8 gleißenden Schaden. Das Ziel muss außerdem einen Konstitutionsrettungswurf bestehen oder ist für die restliche Wirkungsdauer blind. Am Ende jedes seiner Züge wiederholt ein blindes Ziel den Rettungswurf und beendet die Blindheit bei Erfolg.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Barrage": {
+    "name": "Geschosshagel beschwören",
+    "description": "Wirf eine nichtmagische Waffe oder schieße nichtmagische Munition in die Luft. Magische Kopien durchziehen einen von dir ausgehenden {{distance:60ft|adj}} Kegel und verschwinden dann. Jede Kreatur im Kegel legt einen Geschicklichkeitsrettungswurf ab: Bei einem Fehlschlag erleidet sie 3d8 Schaden, bei Erfolg die Hälfte. Der Schadenstyp entspricht der als Komponente verwendeten Waffe oder Munition.",
+    "higherLevels": null,
+    "material": "ein Geschoss oder eine Wurfwaffe"
+  },
+  "Crusader's Mantle": {
+    "name": "Mantel des Kreuzfahrers",
+    "description": "Eine stärkende Aura reicht {{distance:30ft}} um dich und bewegt sich mit dir. Nichtfeindliche Kreaturen in der Aura, einschließlich dir selbst, verursachen bei jedem Treffer mit einem Waffenangriff zusätzlich 1d4 gleißenden Schaden.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Elemental Weapon": {
+    "name": "Elementare Waffe",
+    "description": "Berühre eine nichtmagische Waffe und wähle Blitz, Feuer, Kälte, Säure oder Schall. Solange du dich konzentrierst, wird die Waffe magisch, erhält +1 auf Angriffswürfe und verursacht bei einem Treffer zusätzlich 1d4 Schaden des gewählten Typs.",
+    "higherLevels": "Mit einem Zauberplatz des 5. oder 6. Grades beträgt der Angriffsbonus +2 und der zusätzliche Schaden 2d4. Ab dem 7. Grad sind es +3 und 3d4.",
+    "material": null
+  },
+  "Hunger of Hadar": {
+    "name": "Hunger von Hadar",
+    "description": "Wähle einen Punkt in Reichweite, um eine sternenlose Leere in einer Kugel mit {{distance:20ft|adj}} Radius zu öffnen. Ihr Flüstern und Schmatzen ist innerhalb von {{distance:30ft}} hörbar. Kein Licht, auch kein magisches, erhellt die Kugel. Kreaturen, die vollständig darin sind, sind blind; das Gebiet ist schwieriges Gelände.\n\nEine Kreatur, die ihren Zug darin beginnt, erleidet automatisch 2d6 Kälteschaden. Beendet sie ihren Zug darin, muss sie einen Geschicklichkeitsrettungswurf bestehen oder erleidet 2d6 Säureschaden. Dies sind getrennte Auslöser; nach den Regeln von 2014 erhöhen höherstufige Zauberplätze den Schaden dieses Zaubers nicht.",
+    "higherLevels": null,
+    "material": "ein eingelegter Oktopustentakel"
+  },
+  "Lightning Arrow": {
+    "name": "Blitzpfeil",
+    "description": "Dein nächster Fernkampf-Waffenangriff vor Ende des Zaubers verwandelt seine Munition oder Wurfwaffe in einen Blitz. Nutze den normalen Waffenangriffswurf: Statt des üblichen Waffenschadens verursachst du bei einem Treffer 4d8 Blitzschaden, bei einem Fehlschlag die Hälfte. Unabhängig vom Treffer legen alle Kreaturen innerhalb von {{distance:10ft}} um das Ziel einen Geschicklichkeitsrettungswurf ab und erleiden bei einem Fehlschlag 2d8 Blitzschaden, bei Erfolg die Hälfte. Danach wird die Munition oder Wurfwaffe wieder normal.",
+    "higherLevels": "Jeder Zauberplatzgrad über dem 3. erhöht den Hauptschaden um 1d8 und den Schaden an nahen Kreaturen ebenfalls um 1d8.",
+    "material": null
+  },
+  "Aura of Life": {
+    "name": "Aura des Lebens",
+    "description": "Eine lebenserhaltende Aura reicht {{distance:30ft}} um dich und bewegt sich mit dir. Nichtfeindliche Kreaturen in der Aura, einschließlich dir selbst, haben Resistenz gegen nekrotischen Schaden und ihr Trefferpunktemaximum kann nicht verringert werden. Eine lebende, nichtfeindliche Kreatur, die ihren Zug mit 0 Trefferpunkten in der Aura beginnt, erhält 1 Trefferpunkt zurück.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Aura of Purity": {
+    "name": "Aura der Reinheit",
+    "description": "Eine reinigende Aura reicht {{distance:30ft}} um dich und bewegt sich mit dir. Nichtfeindliche Kreaturen in der Aura, einschließlich dir selbst, können nicht erkranken und haben Resistenz gegen Giftschaden. Sie haben Vorteil auf Rettungswürfe gegen Effekte, die sie betäuben, bezaubern, blenden, lähmen, taub machen, vergiften oder verängstigen würden.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Grasping Vine": {
+    "name": "Greifende Ranke",
+    "description": "Erschaffe eine Ranke an einer sichtbaren, unbesetzten Stelle am Boden innerhalb der Reichweite. Beim Wirken lenkst du sie gegen eine sichtbare Kreatur innerhalb von {{distance:30ft}} um die Ranke. Misslingt deren Geschicklichkeitsrettungswurf, wird sie {{distance:20ft}} gerade auf die Ranke zugezogen. In jedem späteren Zug kannst du, solange du dich konzentrierst, mit einer Bonusaktion einen weiteren Hieb gegen dieselbe oder eine andere zulässige Kreatur richten.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Staggering Smite": {
+    "name": "Wankendmachendes Niederstrecken",
+    "description": "Dein nächster Nahkampf-Waffenangriff, der vor Ende des Zaubers eine Kreatur trifft, verursacht zusätzlich 4d6 psychischen Schaden. Das Ziel legt außerdem einen Weisheitsrettungswurf ab. Bei einem Fehlschlag hat es bis zum Ende seines nächsten Zuges Nachteil auf Angriffs- und Attributswürfe und kann keine Reaktionen ausführen.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Banishing Smite": {
+    "name": "Verbannendes Niederstrecken",
+    "description": "Dein nächster Waffenangriff, der vor Ende des Zaubers eine Kreatur trifft, verursacht zusätzlich 5d10 Energieschaden. Bleiben dem Ziel nach diesem Angriff höchstens 50 Trefferpunkte, wird es ohne Rettungswurf verbannt. Eine Kreatur von einer anderen Ebene kehrt auf ihre Heimatebene zurück. Eine Kreatur von deiner derzeitigen Ebene gelangt stattdessen auf eine harmlose Halbebene, auf der sie bis zum Ende des Zaubers kampfunfähig ist. Danach kehrt sie an ihren früheren Ort oder, falls nötig, auf den nächsten unbesetzten Platz zurück.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Circle of Power": {
+    "name": "Kreis der Macht",
+    "description": "Eine schützende Kugel reicht {{distance:30ft}} um dich und bewegt sich mit dir. Freundliche Kreaturen darin, einschließlich dir selbst, haben Vorteil auf Rettungswürfe gegen Zauber und andere magische Effekte. Erlaubt ein solcher Effekt einen Rettungswurf für halben Schaden, erleidet eine Kreatur bei Erfolg stattdessen keinen Schaden. Bei einem Fehlschlag erleidet sie den üblichen Schaden.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Volley": {
+    "name": "Geschosssalve beschwören",
+    "description": "Verschieße nichtmagische Munition aus einer Fernkampfwaffe oder wirf eine nichtmagische Waffe in die Luft. Wähle einen Punkt in Reichweite: Kopien regnen in einem Zylinder mit {{distance:40ft|adj}} Radius und {{distance:20ft|adj}} Höhe herab und verschwinden dann. Jede Kreatur darin legt einen Geschicklichkeitsrettungswurf ab und erleidet bei einem Fehlschlag 8d8 Schaden, bei Erfolg die Hälfte. Die als Komponente verwendete Waffe oder Munition bestimmt den Schadenstyp.",
+    "higherLevels": null,
+    "material": "ein Geschoss oder eine Wurfwaffe"
+  },
+  "Destructive Wave": {
+    "name": "Zerstörerische Woge",
+    "description": "Schlage auf den Boden und wähle beliebige Kreaturen innerhalb von {{distance:30ft}} um dich. Jede gewählte Kreatur legt einen Konstitutionsrettungswurf ab. Bei einem Fehlschlag erleidet sie 5d6 Schallschaden sowie nach deiner Wahl 5d6 gleißenden oder nekrotischen Schaden und wird zu Boden geworfen. Bei Erfolg werden beide Schadensanteile halbiert und die Kreatur fällt nicht zu Boden.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Swift Quiver": {
+    "name": "Schneller Köcher",
+    "description": "Verzaubere einen Köcher mit Munition. In jedem deiner Züge kannst du, solange du dich konzentrierst, mit einer Bonusaktion zwei Angriffe mit einer Waffe ausführen, die Munition aus diesem Köcher nutzt. Der Köcher ersetzt jedes dafür verwendete Geschoss durch ähnliche, nichtmagische Munition. Erzeugte Munition zerfällt, wenn der Zauber endet. Verlierst du den Köcher, endet der Zauber. Das Wirken nutzt deine Bonusaktion; die zwei Angriffe benötigen eine eigene Bonusaktion in einem Zug.",
+    "higherLevels": null,
+    "material": "ein Köcher mit mindestens einem Geschoss"
   }
 }

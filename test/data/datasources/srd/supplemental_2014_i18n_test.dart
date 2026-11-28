@@ -12,9 +12,9 @@ List<String> markers(String s) =>
     RegExp(r'\{\{[^}]+\}\}').allMatches(s).map((m) => m.group(0)!).toList()
       ..sort();
 
-List<String> dice(String s) =>
-    RegExp(r'\b\d+d\d+\b').allMatches(s).map((m) => m.group(0)!).toList()
-      ..sort();
+List<String> dice(String s) => RegExp(
+  r'(?<![A-Za-z0-9])\d+d\d+(?![A-Za-z0-9])',
+).allMatches(s).map((m) => m.group(0)!).toList()..sort();
 
 // Grammar flags such as |adj vary by language; values and units must not.
 List<String> distances(String s) => markers(
@@ -91,6 +91,20 @@ void main() {
       'retainers': 'Servitori',
       'badReputation': 'Cattiva Reputazione',
       'letter': 'Lettera di presentazione',
+    },
+    'de': {
+      'sorceryPoints': 'Zaubereipunkte',
+      'waterWhip': 'Wasserpeitsche',
+      'retainers': 'Gefolgsleute',
+      'badReputation': 'Schlechter Ruf',
+      'letter': 'Empfehlungsschreiben',
+    },
+    'ja': {
+      'sorceryPoints': '魔力点',
+      'waterWhip': '水の鞭',
+      'retainers': '従者',
+      'badReputation': '悪名',
+      'letter': '紹介状',
     },
   };
   for (final locale in localized.keys) {

@@ -969,6 +969,39 @@ class AppLocalizationsRu extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => 'Двумя руками';
 
   @override
+  String get contextualRollAttackMode => 'Тип атаки';
+
+  @override
+  String get contextualRollMelee => 'Ближний бой';
+
+  @override
+  String get contextualRollThrown => 'Бросок';
+
+  @override
+  String get fightingStyleArchery => 'Стрельба';
+
+  @override
+  String get fightingStyleDueling => 'Дуэль';
+
+  @override
+  String get fightingStyleThrownWeaponFighting => 'Бой метательным оружием';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return 'Бонус +$bonus к броску атаки дальнобойным оружием уже учтён.';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return 'Бонус +$bonus к урону уже учтён, если вы атакуете этим оружием, держа его в одной руке. Он действует, только пока вы не держите другое оружие.';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return 'Бонус +$bonus к урону уже учтён в атаках броском.';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Недопустимое выражение броска: $message';
   }

@@ -948,6 +948,39 @@ class AppLocalizationsKo extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => '두 손';
 
   @override
+  String get contextualRollAttackMode => '공격 방식';
+
+  @override
+  String get contextualRollMelee => '근접';
+
+  @override
+  String get contextualRollThrown => '투척';
+
+  @override
+  String get fightingStyleArchery => '궁술';
+
+  @override
+  String get fightingStyleDueling => '결투';
+
+  @override
+  String get fightingStyleThrownWeaponFighting => '투척 무기 전투';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return '원거리 무기 명중 굴림의 +$bonus 보너스가 포함되어 있습니다.';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return '이 무기를 한 손으로 들고 공격할 때 피해 +$bonus 보너스가 포함되어 있습니다. 다른 무기를 들고 있지 않을 때만 적용됩니다.';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return '투척 공격의 피해에 +$bonus 보너스가 포함되어 있습니다.';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return '잘못된 주사위 식: $message';
   }

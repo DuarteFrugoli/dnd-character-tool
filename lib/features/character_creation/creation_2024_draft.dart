@@ -428,7 +428,7 @@ class Creation2024Draft {
     ];
     final attrs = finalAbilities;
     final con = attrs['constitution']!;
-    final hp = cls.hitDie + ((con - 10) / 2).floor() +
+    final baseHp = cls.hitDie + ((con - 10) / 2).floor() +
         (species!.traits.contains('Dwarven Toughness') ? 1 : 0);
     final spellsByName = {for (final spell in catalog.spells) spell.name.toLowerCase(): spell};
     final toolById = {
@@ -450,6 +450,10 @@ class Creation2024Draft {
       for (final choice in featureChoices.where((choice) => choice.featureName == 'Versatile'))
         for (final value in choice.values) ('Species', value),
     ];
+    final hp = baseHp +
+        (originFeats.any((entry) => entry.$2 == Progression2024Engine.toughFeat)
+            ? Progression2024Engine.toughHitPointsPerLevel
+            : 0);
     for (final (origin, feat) in originFeats) {
       final data = catalog.feats.where((entry) => entry.name == feat).firstOrNull;
       if (data == null) continue;
@@ -527,6 +531,8 @@ class Creation2024Draft {
     for (final (spellName, sourceType, sourceClass, feature) in [
       if (species!.name == 'Tiefling')
         ('Thaumaturgy', FeatureChoiceSourceType.raceTrait, null, 'Otherworldly Presence'),
+      for (final fixed in species!.fixedSpells)
+        (fixed.spell, FeatureChoiceSourceType.raceTrait, null, fixed.trait),
       if (classSpell != null)
         (classSpell.$1, FeatureChoiceSourceType.classFeature, cls.name, classSpell.$2),
     ]) {

@@ -1,0 +1,1637 @@
+{
+  "source": "Player's Handbook (2024)",
+  "contentType": "Original English summaries of spells outside the SRD; not SRD content.",
+  "spells": [
+    {
+      "name": "Blade Ward",
+      "level": 0,
+      "school": "abjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "bard",
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Until the spell ends, any creature that makes an attack roll against you subtracts 1d4 from the roll.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Friends",
+      "level": 0,
+      "school": "enchantment",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "10 feet",
+      "components": [
+        "S",
+        "M"
+      ],
+      "material": "some makeup",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [],
+      "classes": [
+        "bard",
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "One creature you can see makes a Wisdom saving throw or has the Charmed condition for the duration. It succeeds automatically if it isn't a Humanoid, if you are fighting it, or if you cast this spell on it in the last 24 hours. The spell ends early if the target takes damage or if you make an attack roll, deal damage, or force anyone to make a saving throw. When it ends, the creature knows it was Charmed by you.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Thorn Whip",
+      "level": 0,
+      "school": "transmutation",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "30 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "the stem of a plant with thorns",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": "melee",
+      "saveAttribute": null,
+      "damageTypes": [
+        "piercing"
+      ],
+      "classes": [
+        "druid"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A thorny vine lashes one creature in range. Make a melee spell attack; on a hit, the target takes 1d6 Piercing damage, and if it is Large or smaller you can pull it up to {{distance:10ft}} closer to you.\n\nCantrip Upgrade. The damage increases by 1d6 at levels 5 (2d6), 11 (3d6), and 17 (4d6).",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "attack",
+          "label": "Attack",
+          "kind": "spell_attack"
+        },
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "damageType": "piercing",
+          "critical": true,
+          "characterLevelScaling": {
+            "5": "2d6",
+            "11": "3d6",
+            "17": "4d6"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Thunderclap",
+      "level": 0,
+      "school": "evocation",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "emanation",
+        "size": 5
+      },
+      "attackType": null,
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "thunder"
+      ],
+      "classes": [
+        "bard",
+        "druid",
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Each creature in a {{distance:5ft|adj}} Emanation around you makes a Constitution saving throw, taking 1d6 Thunder damage on a failure. The boom can be heard up to {{distance:100ft}} away.\n\nCantrip Upgrade. The damage increases by 1d6 at levels 5 (2d6), 11 (3d6), and 17 (4d6).",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "damageType": "thunder",
+          "characterLevelScaling": {
+            "5": "2d6",
+            "11": "3d6",
+            "17": "4d6"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Toll the Dead",
+      "level": 0,
+      "school": "necromancy",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "60 feet",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [
+        "necrotic"
+      ],
+      "classes": [
+        "cleric",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A mournful bell tolls for one creature you can see in range. It makes a Wisdom saving throw, taking 1d8 Necrotic damage on a failure, or 1d12 Necrotic damage if it is already missing any Hit Points.\n\nCantrip Upgrade. The damage increases by one die at levels 5, 11, and 17 (to 2, 3 and 4 dice).",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Word of Radiance",
+      "level": 0,
+      "school": "evocation",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "M"
+      ],
+      "material": "a sunburst token",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "emanation",
+        "size": 5
+      },
+      "attackType": null,
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "radiant"
+      ],
+      "classes": [
+        "cleric"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Each creature of your choice that you can see in a {{distance:5ft|adj}} Emanation around you makes a Constitution saving throw, taking 1d6 Radiant damage on a failure.\n\nCantrip Upgrade. The damage increases by 1d6 at levels 5 (2d6), 11 (3d6), and 17 (4d6).",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "damageType": "radiant",
+          "characterLevelScaling": {
+            "5": "2d6",
+            "11": "3d6",
+            "17": "4d6"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Armor of Agathys",
+      "level": 1,
+      "school": "abjuration",
+      "castingTime": "Bonus Action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a shard of blue glass",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 hour",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "cold"
+      ],
+      "classes": [
+        "warlock"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You gain 5 Temporary Hit Points. Until the spell ends, a creature that hits you with a melee attack roll takes 5 Cold damage. The spell ends early if you have no Temporary Hit Points left.",
+      "higherLevels": "The Temporary Hit Points and the Cold damage both increase by 5 for each spell slot level above 1.",
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Compelled Duel",
+      "level": 1,
+      "school": "enchantment",
+      "castingTime": "Bonus Action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "30 feet",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "One creature you can see makes a Wisdom saving throw. On a failure, it has Disadvantage on attack rolls against creatures other than you and can't willingly move to a space more than {{distance:30ft}} away from you. The spell ends if you attack or cast a spell on another enemy, if an ally of yours damages the target, or if you end your turn more than {{distance:30ft}} from it.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Hail of Thorns",
+      "level": 1,
+      "school": "conjuration",
+      "castingTime": "Bonus Action, which you take immediately after hitting a creature with a Ranged weapon",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "piercing"
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "As your ranged attack hits, thorns burst from the shot. The target and each creature within {{distance:5ft}} of it make a Dexterity saving throw, taking 1d10 Piercing damage on a failure or half as much on a success.",
+      "higherLevels": "The damage increases by 1d10 for each spell slot level above 1.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d10",
+          "damageType": "piercing",
+          "slotLevelScaling": {
+            "2": "2d10",
+            "3": "3d10",
+            "4": "4d10",
+            "5": "5d10",
+            "6": "6d10",
+            "7": "7d10",
+            "8": "8d10",
+            "9": "9d10"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Thunderous Smite",
+      "level": 1,
+      "school": "evocation",
+      "castingTime": "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "STR",
+      "damageTypes": [
+        "thunder"
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your strike rings out, audible up to {{distance:300ft}} away, and deals an extra 2d6 Thunder damage. If the target is a creature, it makes a Strength saving throw or is pushed {{distance:10ft}} away from you and has the Prone condition.",
+      "higherLevels": "The damage increases by 1d6 for each spell slot level above 1.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "2d6",
+          "damageType": "thunder",
+          "critical": true,
+          "slotLevelScaling": {
+            "2": "3d6",
+            "3": "4d6",
+            "4": "5d6",
+            "5": "6d6",
+            "6": "7d6",
+            "7": "8d6",
+            "8": "9d6",
+            "9": "10d6"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Witch Bolt",
+      "level": 1,
+      "school": "evocation",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "60 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a twig struck by lightning",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": "ranged",
+      "saveAttribute": null,
+      "damageTypes": [
+        "lightning"
+      ],
+      "classes": [
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A beam of crackling energy links you to one creature in range. Make a ranged spell attack; on a hit, it takes 2d12 Lightning damage. On each of your later turns, you can take a Bonus Action to deal 1d12 Lightning damage to it automatically, even if the first attack missed. The spell ends if the target is ever outside range or has Total Cover from you.",
+      "higherLevels": "The initial damage increases by 1d12 for each spell slot level above 1.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "attack",
+          "label": "Attack",
+          "kind": "spell_attack"
+        },
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "2d12",
+          "damageType": "lightning",
+          "critical": true,
+          "slotLevelScaling": {
+            "2": "3d12",
+            "3": "4d12",
+            "4": "5d12",
+            "5": "6d12",
+            "6": "7d12",
+            "7": "8d12",
+            "8": "9d12",
+            "9": "10d12"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wrathful Smite",
+      "level": 1,
+      "school": "necromancy",
+      "castingTime": "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [
+        "necrotic"
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your strike deals an extra 1d6 Necrotic damage, and the target makes a Wisdom saving throw or has the Frightened condition until the spell ends. At the end of each of its turns, the Frightened target repeats the save, ending the spell on itself on a success.",
+      "higherLevels": "The damage increases by 1d6 for each spell slot level above 1.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "1d6",
+          "damageType": "necrotic",
+          "critical": true,
+          "slotLevelScaling": {
+            "2": "2d6",
+            "3": "3d6",
+            "4": "4d6",
+            "5": "5d6",
+            "6": "6d6",
+            "7": "7d6",
+            "8": "8d6",
+            "9": "9d6"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Arcane Vigor",
+      "level": 2,
+      "school": "abjuration",
+      "castingTime": "Bonus Action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "sorcerer",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You expend up to two of your unspent Hit Point Dice, roll them, and regain Hit Points equal to the total plus your spellcasting ability modifier.",
+      "higherLevels": "You can expend one more Hit Point Die for each spell slot level above 2.",
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Cloud of Daggers",
+      "level": 2,
+      "school": "conjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "60 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a sliver of glass",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "cube",
+        "size": 5
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "slashing"
+      ],
+      "classes": [
+        "bard",
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Spinning daggers fill a {{distance:5ft|adj}} Cube centered on a point in range. A creature takes 4d4 Slashing damage when the Cube appears in its space, when it enters the Cube, when the Cube moves into its space, or when it ends its turn there; a creature takes this damage only once per turn. On your later turns, you can take a Magic action to move the Cube up to {{distance:30ft}}.",
+      "higherLevels": "The damage increases by 2d4 for each spell slot level above 2.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "4d4",
+          "damageType": "slashing",
+          "slotLevelScaling": {
+            "3": "6d4",
+            "4": "8d4",
+            "5": "10d4",
+            "6": "12d4",
+            "7": "14d4",
+            "8": "16d4",
+            "9": "18d4"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cordon of Arrows",
+      "level": 2,
+      "school": "transmutation",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Touch",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "an ornamental braid",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "8 hours",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "piercing"
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You plant up to four nonmagical arrows or bolts in the ground in your space. When a creature other than you enters a space within {{distance:30ft}} of the ammunition for the first time on a turn or ends its turn there, one piece flies at it: the creature makes a Dexterity saving throw or takes 2d4 Piercing damage, and that piece is destroyed. When you cast the spell, you can choose creatures it ignores. The spell ends when no ammunition remains.",
+      "higherLevels": "You plant two more pieces of ammunition for each spell slot level above 2.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "2d4",
+          "damageType": "piercing"
+        }
+      ]
+    },
+    {
+      "name": "Crown of Madness",
+      "level": 2,
+      "school": "enchantment",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "120 feet",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [],
+      "classes": [
+        "bard",
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "One creature you can see makes a Wisdom saving throw or has the Charmed condition for the duration; it succeeds automatically if it isn't a Humanoid. While Charmed, on each of its turns before moving it must take an action to make a melee attack against a creature other than itself that you choose mentally. It repeats the save at the end of each of its turns, ending the spell on itself on a success. On each of your later turns, you must take the Magic action to keep control, or the spell ends.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Aura of Vitality",
+      "level": 3,
+      "school": "abjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "emanation",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "cleric",
+        "druid",
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Healing energy fills a {{distance:30ft|adj}} Emanation around you. When you cast the spell and at the start of each of your turns until it ends, you can restore 2d6 Hit Points to one creature in the aura.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Blinding Smite",
+      "level": 3,
+      "school": "evocation",
+      "castingTime": "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 minute",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "radiant"
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your strike deals an extra 3d8 Radiant damage, and the target has the Blinded condition until the spell ends. At the end of each of its turns, the target makes a Constitution saving throw, ending the spell on itself on a success.",
+      "higherLevels": "The extra damage increases by 1d8 for each spell slot level above 3.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "3d8",
+          "damageType": "radiant",
+          "critical": true,
+          "slotLevelScaling": {
+            "4": "4d8",
+            "5": "5d8",
+            "6": "6d8",
+            "7": "7d8",
+            "8": "8d8",
+            "9": "9d8"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Conjure Barrage",
+      "level": 3,
+      "school": "conjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a Melee or Ranged weapon worth at least 1 CP",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "cone",
+        "size": 60
+      },
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "force"
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You brandish the weapon and conjure a storm of copies of it. Each creature of your choice that you can see in a {{distance:60ft|adj}} Cone makes a Dexterity saving throw, taking 5d8 Force damage on a failure or half as much on a success.",
+      "higherLevels": "The damage increases by 1d8 for each spell slot level above 3.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "5d8",
+          "damageType": "force",
+          "slotLevelScaling": {
+            "4": "6d8",
+            "5": "7d8",
+            "6": "8d8",
+            "7": "9d8",
+            "8": "10d8",
+            "9": "11d8"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Elemental Weapon",
+      "level": 3,
+      "school": "transmutation",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Touch",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 hour",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "acid",
+        "cold",
+        "fire",
+        "lightning",
+        "thunder"
+      ],
+      "classes": [
+        "druid",
+        "paladin",
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A nonmagical weapon you touch becomes a magic weapon. Choose Acid, Cold, Fire, Lightning, or Thunder: until the spell ends, the weapon has a +1 bonus to attack rolls and deals an extra 1d4 damage of that type when it hits.",
+      "higherLevels": "With a level 5-6 spell slot, the bonus is +2 and the extra damage 2d4; with a level 7+ slot, +3 and 3d4.",
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Feign Death",
+      "level": 3,
+      "school": "necromancy",
+      "castingTime": "Action or Ritual",
+      "castingTimeType": "action",
+      "ritual": true,
+      "range": "Touch",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a pinch of graveyard dirt",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "1 hour",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "bard",
+        "cleric",
+        "druid",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A willing creature you touch appears dead to outward inspection. For the duration, it has the Blinded and Incapacitated conditions, its Speed is 0, it has Resistance to all damage except Psychic damage, and it has Immunity to the Poisoned condition.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Lightning Arrow",
+      "level": 3,
+      "school": "transmutation",
+      "castingTime": "Bonus Action, which you take immediately after making a ranged weapon attack",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "lightning"
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your shot turns into a bolt of lightning. On a hit, the target takes 4d8 Lightning damage instead of the weapon's normal damage; on a miss, it takes half as much. Hit or miss, each creature within {{distance:10ft}} of the target makes a Dexterity saving throw, taking 2d8 Lightning damage on a failure or half as much on a success.",
+      "higherLevels": "Both damage rolls increase by 1d8 for each spell slot level above 3.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "4d8",
+          "damageType": "lightning",
+          "critical": true,
+          "slotLevelScaling": {
+            "4": "5d8",
+            "5": "6d8",
+            "6": "7d8",
+            "7": "8d8",
+            "8": "9d8",
+            "9": "10d8"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Summon Undead",
+      "level": 3,
+      "school": "necromancy",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "90 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a gilded skull worth 300+ GP",
+      "materialCost": 300,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 hour",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "necrotic",
+        "slashing"
+      ],
+      "classes": [
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You call forth a Medium Undead spirit, Ghostly, Putrid, or Skeletal, in an unoccupied space you can see. It is an ally to you and your companions, shares your Initiative and acts right after you, and obeys your commands; if you give none, it takes the Dodge action. It disappears at 0 Hit Points or when the spell ends.\n\nUndead Spirit: AC 11 + spell level; Hit Points 30 (Ghostly or Putrid) or 20 (Skeletal) + 10 for each spell level above 3; Speed {{distance:30ft|short}} (Ghostly also flies {{distance:40ft|short}} and hovers). Str 12, Dex 16, Con 15, Int 4, Wis 10, Cha 9. Immune to Necrotic and Poison damage and to the Exhaustion, Frightened, Paralyzed and Poisoned conditions; Darkvision {{distance:60ft|short}}. It makes a number of attacks equal to half the spell level (round down), using your spell attack modifier. Ghostly, Deathly Touch: melee, 1d8 + 3 + spell level Necrotic, and the target is Frightened until the end of its next turn. Putrid, Rotting Claw: melee, 1d6 + 3 + spell level Slashing, and a Poisoned target is also Paralyzed until the end of its next turn; creatures that start their turn within {{distance:5ft}} of it make a Constitution save against your spell save DC or are Poisoned until the start of their next turn. Skeletal, Grave Bolt: ranged {{distance:150ft|short}}, 2d4 + 3 + spell level Necrotic.",
+      "higherLevels": "Use the spell slot's level for the spell's level in the stat block.",
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Aura of Purity",
+      "level": 4,
+      "school": "abjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 10 minutes",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "emanation",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "cleric",
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You and your allies in a {{distance:30ft|adj}} Emanation around you have Resistance to Poison damage and Advantage on saving throws to avoid or end the Blinded, Charmed, Deafened, Frightened, Paralyzed, Poisoned, and Stunned conditions.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Grasping Vine",
+      "level": 4,
+      "school": "conjuration",
+      "castingTime": "Bonus Action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "60 feet",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": "melee",
+      "saveAttribute": null,
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "classes": [
+        "druid",
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A vine sprouts in an unoccupied space you can see in range. When you cast the spell, and as a Bonus Action on your later turns, you can make a melee spell attack against a creature within {{distance:30ft}} of the vine. On a hit, it takes 4d8 Bludgeoning damage and is pulled up to {{distance:30ft}} toward the vine; a Huge or smaller target also has the Grappled condition (escape DC equals your spell save DC). The vine can grapple one creature at a time, and you can release it at any time.",
+      "higherLevels": "The vine can grapple one more creature for each spell slot level above 4.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "attack",
+          "label": "Attack",
+          "kind": "spell_attack"
+        },
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "4d8",
+          "damageType": "bludgeoning",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "name": "Staggering Smite",
+      "level": 4,
+      "school": "enchantment",
+      "castingTime": "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "WIS",
+      "damageTypes": [
+        "psychic"
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your strike deals an extra 4d6 Psychic damage, and the target makes a Wisdom saving throw or has the Stunned condition until the end of your next turn.",
+      "higherLevels": "The damage increases by 1d6 for each spell slot level above 4.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "4d6",
+          "damageType": "psychic",
+          "critical": true,
+          "slotLevelScaling": {
+            "5": "5d6",
+            "6": "6d6",
+            "7": "7d6",
+            "8": "8d6",
+            "9": "9d6"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Summon Elemental",
+      "level": 4,
+      "school": "conjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "90 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "air, a pebble, ash, and water inside a gold-inlaid vial worth 400+ GP",
+      "materialCost": 400,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 hour",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "bludgeoning",
+        "cold",
+        "lightning",
+        "fire"
+      ],
+      "classes": [
+        "druid",
+        "ranger",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You call forth a Medium Elemental spirit of Air, Earth, Fire, or Water in an unoccupied space you can see. It is an ally to you and your companions, shares your Initiative and acts right after you, and obeys your commands; if you give none, it takes the Dodge action. It disappears at 0 Hit Points or when the spell ends.\n\nElemental Spirit: AC 11 + spell level; Hit Points 50 + 10 for each spell level above 4; Speed {{distance:40ft|short}}, plus Burrow {{distance:40ft|short}} (Earth), Fly {{distance:40ft|short}} with hover (Air) or Swim {{distance:40ft|short}} (Water). Str 18, Dex 15, Con 17, Int 4, Wis 10, Cha 16. Resistance to Acid (Water), Lightning and Thunder (Air), or Piercing and Slashing (Earth); Immune to Poison damage, Fire damage (Fire), and the Exhaustion, Paralyzed, Petrified and Poisoned conditions; Darkvision {{distance:60ft|short}}; speaks Primordial. Air, Fire and Water spirits can pass through spaces as narrow as {{distance:1in}}. It makes a number of Slam attacks equal to half the spell level (round down): melee, using your spell attack modifier, 1d10 + 4 + spell level damage of its element (Bludgeoning for Earth, Cold for Water, Lightning for Air, Fire for Fire).",
+      "higherLevels": "Use the spell slot's level for the spell's level in the stat block.",
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Banishing Smite",
+      "level": 5,
+      "school": "conjuration",
+      "castingTime": "Bonus Action, which you take immediately after hitting a target with a Melee weapon or an Unarmed Strike",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": "CHA",
+      "damageTypes": [
+        "force"
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Your strike deals an extra 5d10 Force damage. If the attack leaves the target with 50 Hit Points or fewer, it makes a Charisma saving throw or is sent to a harmless demiplane, where it has the Incapacitated condition, until the spell ends. It then returns to the space it left or the nearest unoccupied space.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "5d10",
+          "damageType": "force",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "name": "Circle of Power",
+      "level": 5,
+      "school": "abjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 10 minutes",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "emanation",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "cleric",
+        "paladin",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You and your allies in a {{distance:30ft|adj}} Emanation around you have Advantage on saving throws against spells and other magical effects. When an affected creature succeeds on a save against a spell or magical effect that deals half damage on a success, it takes no damage instead.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Conjure Volley",
+      "level": 5,
+      "school": "conjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "150 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a Melee or Ranged weapon worth at least 1 CP",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "cylinder",
+        "size": 40
+      },
+      "attackType": null,
+      "saveAttribute": "DEX",
+      "damageTypes": [
+        "force"
+      ],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You fire the weapon at a point in range and copies of it rain down. Each creature of your choice that you can see in a {{distance:40ft|adj}}-radius, {{distance:20ft|adj}}-high Cylinder centered on that point makes a Dexterity saving throw, taking 8d8 Force damage on a failure or half as much on a success.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "8d8",
+          "damageType": "force"
+        }
+      ]
+    },
+    {
+      "name": "Destructive Wave",
+      "level": 5,
+      "school": "evocation",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "emanation",
+        "size": 30
+      },
+      "attackType": null,
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "thunder",
+        "radiant",
+        "necrotic"
+      ],
+      "classes": [
+        "paladin"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Divine energy bursts from you. Each creature you choose in a {{distance:30ft|adj}} Emanation makes a Constitution saving throw. On a failure, it takes 5d6 Thunder damage and 5d6 Radiant or Necrotic damage (your choice) and has the Prone condition. On a success, it takes half as much damage only.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "thunder",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "5d6",
+          "damageType": "thunder"
+        },
+        {
+          "id": "divine",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "5d6",
+          "damageTypes": [
+            "radiant",
+            "necrotic"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jallarzi's Storm of Radiance",
+      "level": 5,
+      "school": "evocation",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "120 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a pinch of phosphorus",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": {
+        "type": "cylinder",
+        "size": 10
+      },
+      "attackType": null,
+      "saveAttribute": "CON",
+      "damageTypes": [
+        "radiant",
+        "thunder"
+      ],
+      "classes": [
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "A storm of flashing light and thunder fills a {{distance:10ft|adj}}-radius, {{distance:40ft|adj}}-high Cylinder centered on a point you can see in range. While in it, creatures have the Blinded and Deafened conditions and can't cast spells with a Verbal component. When the storm appears, each creature in it makes a Constitution saving throw, taking 2d10 Radiant and 2d10 Thunder damage on a failure or half as much on a success. A creature also makes this save when it enters the area for the first time on a turn or ends its turn there, at most once per turn.",
+      "higherLevels": "The Radiant and the Thunder damage each increase by 1d10 for each spell slot level above 5.",
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "radiant",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "2d10",
+          "damageType": "radiant",
+          "slotLevelScaling": {
+            "6": "3d10",
+            "7": "4d10",
+            "8": "5d10",
+            "9": "6d10"
+          }
+        },
+        {
+          "id": "thunder",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "2d10",
+          "damageType": "thunder",
+          "slotLevelScaling": {
+            "6": "3d10",
+            "7": "4d10",
+            "8": "5d10",
+            "9": "6d10"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Swift Quiver",
+      "level": 5,
+      "school": "transmutation",
+      "castingTime": "Bonus Action",
+      "castingTimeType": "bonus_action",
+      "ritual": false,
+      "range": "Self",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a Quiver worth 1+ GP",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 minute",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "ranger"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "When you cast the spell, and as a Bonus Action on each of your turns until it ends, you can make two attacks with a weapon that fires arrows or bolts. The spell creates the ammunition for each attack; it deals the normal damage and vanishes after the attack.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Synaptic Static",
+      "level": 5,
+      "school": "enchantment",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "120 feet",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": {
+        "type": "sphere",
+        "size": 20
+      },
+      "attackType": null,
+      "saveAttribute": "INT",
+      "damageTypes": [
+        "psychic"
+      ],
+      "classes": [
+        "bard",
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "Psychic energy erupts in a {{distance:20ft|adj}}-radius Sphere centered on a point in range. Each creature in it makes an Intelligence saving throw, taking 8d6 Psychic damage on a failure or half as much on a success. On a failure, the creature is also muddled for 1 minute: it subtracts 1d6 from its attack rolls, ability checks, and Constitution saving throws to maintain Concentration. It repeats the save at the end of each of its turns, ending the effect on itself on a success.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)",
+      "rolls": [
+        {
+          "id": "damage",
+          "label": "Damage",
+          "kind": "damage",
+          "formula": "8d6",
+          "damageType": "psychic"
+        }
+      ]
+    },
+    {
+      "name": "Arcane Gate",
+      "level": 6,
+      "school": "conjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "500 feet",
+      "components": [
+        "V",
+        "S"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 10 minutes",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "sorcerer",
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You create two linked teleportation portals on the ground in unoccupied spaces you can see, each filling a Large space: one within {{distance:10ft}} of you and one within {{distance:500ft}}. Each portal opens on one side of your choice; anything entering that side appears at the other portal. As a Bonus Action, you can rotate the open sides.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Summon Fiend",
+      "level": 6,
+      "school": "conjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "90 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a bloody vial worth 600+ GP",
+      "materialCost": 600,
+      "materialConsumed": false,
+      "duration": "Concentration, up to 1 hour",
+      "concentration": true,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [
+        "necrotic",
+        "fire",
+        "slashing"
+      ],
+      "classes": [
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You call forth a Large Fiend spirit, Demon, Devil, or Yugoloth, in an unoccupied space you can see. It is an ally to you and your companions, shares your Initiative and acts right after you, and obeys your commands; if you give none, it takes the Dodge action. It disappears at 0 Hit Points or when the spell ends.\n\nFiendish Spirit: AC 12 + spell level; Hit Points 50 (Demon), 40 (Devil) or 60 (Yugoloth) + 15 for each spell level above 6; Speed {{distance:40ft|short}}, plus Climb {{distance:40ft|short}} (Demon) or Fly {{distance:60ft|short}} (Devil). Str 13, Dex 16, Con 15, Int 10, Wis 10, Cha 16. Resistance to Fire damage; Immune to Poison damage and the Poisoned condition; Darkvision {{distance:60ft|short}}; speaks Abyssal and Infernal, with Telepathy {{distance:60ft|short}}; Advantage on saving throws against spells. It makes a number of attacks equal to half the spell level (round down), using your spell attack modifier. Demon, Bite: melee, 1d12 + 3 + spell level Necrotic; when it drops to 0 Hit Points or the spell ends, it explodes, and creatures within {{distance:10ft}} make a Dexterity save against your spell save DC, taking 2d10 + spell level Fire damage on a failure or half on a success. Devil, Fiery Strike: melee or ranged {{distance:150ft|short}}, 2d6 + 3 + spell level Fire. Yugoloth, Claws: melee, 1d8 + 3 + spell level Slashing, and it can then teleport up to {{distance:30ft}} to an unoccupied space it can see.",
+      "higherLevels": "Use the spell slot's level for the spell's level in the stat block.",
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Tasha's Bubbling Cauldron",
+      "level": 6,
+      "school": "conjuration",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "5 feet",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a gilded ladle worth 500+ GP",
+      "materialCost": 500,
+      "materialConsumed": false,
+      "duration": "10 minutes",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "warlock",
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "An immovable cauldron appears on the ground within range, filled with copies of one Common or Uncommon potion of your choice. As a Bonus Action, you or an ally can reach in and take one potion. It holds a number of potions equal to your spellcasting ability modifier (minimum 1), and the spell ends when the last one is taken or the duration ends. Potions not drunk vanish when you cast this spell again.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Power Word Fortify",
+      "level": 7,
+      "school": "enchantment",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "60 feet",
+      "components": [
+        "V"
+      ],
+      "material": null,
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "Instantaneous",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "bard",
+        "cleric"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You speak a word of power that grants 120 Temporary Hit Points, divided as you choose among up to six creatures you can see in range.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    },
+    {
+      "name": "Telepathy",
+      "level": 8,
+      "school": "divination",
+      "castingTime": "Action",
+      "castingTimeType": "action",
+      "ritual": false,
+      "range": "Unlimited",
+      "components": [
+        "V",
+        "S",
+        "M"
+      ],
+      "material": "a pair of linked silver rings",
+      "materialCost": null,
+      "materialConsumed": false,
+      "duration": "24 hours",
+      "concentration": false,
+      "areaOfEffect": null,
+      "attackType": null,
+      "saveAttribute": null,
+      "damageTypes": [],
+      "classes": [
+        "wizard"
+      ],
+      "subclassSpells": [],
+      "raceSpells": [],
+      "description": "You create a telepathic link with one willing creature you are familiar with on the same plane of existence. Until the spell ends, you and the target can instantly share words, images, sounds, and other sensory messages with each other. The spell ends if either of you leaves that plane.",
+      "higherLevels": null,
+      "source": "Player's Handbook (2024)"
+    }
+  ]
+}

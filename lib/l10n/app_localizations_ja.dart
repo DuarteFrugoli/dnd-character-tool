@@ -946,6 +946,39 @@ class AppLocalizationsJa extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => '両手';
 
   @override
+  String get contextualRollAttackMode => '攻撃方法';
+
+  @override
+  String get contextualRollMelee => '近接';
+
+  @override
+  String get contextualRollThrown => '投擲';
+
+  @override
+  String get fightingStyleArchery => '弓術';
+
+  @override
+  String get fightingStyleDueling => '決闘';
+
+  @override
+  String get fightingStyleThrownWeaponFighting => '投擲武器戦闘';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return '遠隔武器による攻撃ロールの+$bonusボーナスは含まれています。';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return 'この武器を片手で持って攻撃するとき、ダメージの+$bonusボーナスが含まれています。ほかの武器を持っていない場合にのみ適用されます。';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return '投擲攻撃のダメージに+$bonusボーナスが含まれています。';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return '無効なダイス式: $message';
   }

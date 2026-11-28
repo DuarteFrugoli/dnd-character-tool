@@ -29,8 +29,8 @@ void main() {
 
   test('loads all level-one classes, species and backgrounds', () {
     expect(catalog.classes, hasLength(12));
-    expect(catalog.species, hasLength(9));
-    expect(catalog.backgrounds, hasLength(4));
+    expect(catalog.species, hasLength(10));
+    expect(catalog.backgrounds, hasLength(16));
     expect(catalog.classes.every((entry) => entry.levelOne['level'] == 1), isTrue);
     expect(
       catalog.classes.firstWhere((entry) => entry.name == 'Fighter').weaponProficiencies,
@@ -200,6 +200,37 @@ void main() {
     expect(draft.proficienciesComplete, isTrue);
   });
 
+  test("Fighting Style lists every Player's Handbook style", () {
+    const styles = [
+      'archery', 'blind_fighting', 'defense', 'dueling', 'great_weapon_fighting',
+      'interception', 'protection', 'thrown_weapon_fighting', 'two_weapon_fighting',
+      'unarmed_fighting',
+    ];
+    for (final (className, extra) in [
+      ('Fighter', null),
+      ('Paladin', 'blessed_warrior'),
+      ('Ranger', 'druidic_warrior'),
+    ]) {
+      final requirement = catalog.choices.classFeatures[className]!['Fighting Style']!
+          .choices
+          .singleWhere((choice) => choice.id == 'fighting_style');
+      final source = catalog.choices.optionSources[requirement.optionsSource]!;
+      expect(
+        source.map((option) => option.id).toSet(),
+        {...styles, ?extra},
+        reason: className,
+      );
+    }
+    // Every style option is also a Fighting Style feat with the same name.
+    final feats = {
+      for (final feat in catalog.feats)
+        if (feat.category == 'fighting_style') feat.name,
+    };
+    for (final option in catalog.choices.optionSources['fighting_styles_2024']!) {
+      expect(feats, contains(option.name));
+    }
+  });
+
   test('level-one spell choices come from the 2024 progression tables', () {
     final draft = Creation2024Draft()
       ..selectSpecies(catalog.species.firstWhere((entry) => entry.name == 'Dwarf'))
@@ -322,5 +353,111 @@ void main() {
           choice,
     ]);
     expect(humanCantrips.findIn(draft.featureChoices)?.values, isEmpty);
+  });
+  group("Player's Handbook origins", () {
+    Creation2024Draft monkDraft({
+      required String species,
+      required String background,
+    }) {
+      final draft = Creation2024Draft()
+        ..selectClass(catalog.classes.firstWhere((entry) => entry.name == 'Monk'))
+        ..selectSpecies(catalog.species.firstWhere((entry) => entry.name == species))
+        ..selectBackground(catalog.backgrounds.firstWhere((entry) => entry.name == background));
+      draft.name = 'Origin Test';
+      draft.baseAbilities.addAll({
+        'strength': 8,
+        'dexterity': 15,
+        'constitution': 13,
+        'intelligence': 10,
+        'wisdom': 14,
+        'charisma': 12,
+      });
+      draft.skills.addAll(['history', 'insight']);
+      draft.classTools.add("Brewer's Supplies");
+      draft.languages.addAll(['Elvish', 'Dwarvish']);
+      draft.classEquipmentId = 'b';
+      draft.backgroundEquipmentId = 'b';
+      return draft;
+    }
+
+    test('every background points to an Origin feat in the catalog', () {
+      final origin = {
+        for (final feat in catalog.feats)
+          if (feat.category == 'origin') feat.name,
+      };
+      expect(origin, containsAll([
+        'Alert', 'Crafter', 'Healer', 'Lucky', 'Magic Initiate',
+        'Musician', 'Savage Attacker', 'Skilled', 'Tavern Brawler', 'Tough',
+      ]));
+      for (final background in catalog.backgrounds) {
+        expect(origin, contains(background.featName), reason: background.name);
+      }
+      final guide = catalog.backgrounds.firstWhere((entry) => entry.name == 'Guide');
+      expect(guide.featChoices, {'spell_class': 'druid'});
+      expect(
+        catalog.backgrounds.firstWhere((entry) => entry.name == 'Farmer').featName,
+        'Tough',
+      );
+    });
+
+    test('Tough from a background adds 2 hit points at level 1', () {
+      final draft = monkDraft(species: 'Halfling', background: 'Farmer')
+        ..backgroundBonuses.addAll({'constitution': 1, 'wisdom': 2});
+      draft.reconcileChoices(catalog);
+
+      final character = draft.build(catalog, fallbackName: 'Farmer');
+      // d8 + Constitution 14 (+2) + Tough 2.
+      expect(character.hitPoints.maximum, 12);
+      expect(character.levelHistory.single.hitPointsGained, 12);
+      expect(character.extraFeatures.map((feature) => feature.name), contains('Tough'));
+      expect(character.features, contains("Tool Proficiency: Carpenter's Tools"));
+    });
+
+    test('Aasimar knows Light through Light Bearer', () {
+      final draft = monkDraft(species: 'Aasimar', background: 'Sailor')
+        ..size = 'Medium'
+        ..backgroundBonuses.addAll({'dexterity': 2, 'wisdom': 1});
+      draft.reconcileChoices(catalog);
+
+      final character = draft.build(catalog, fallbackName: 'Aasimar');
+      final light = character.spells.singleWhere((spell) => spell.name == 'Light');
+      expect(light.level, 0);
+      expect(light.isAlwaysPrepared, isTrue);
+      expect(light.sourceFeature, 'Light Bearer');
+      expect(
+        catalog.species.firstWhere((entry) => entry.name == 'Aasimar').traits,
+        containsAll(['Celestial Resistance', 'Healing Hands', 'Celestial Revelation']),
+      );
+    });
+
+    test('Artisan picks its tool and Crafter asks for three artisan tools', () {
+      final draft = monkDraft(species: 'Halfling', background: 'Artisan')
+        ..backgroundBonuses.addAll({'dexterity': 2, 'intelligence': 1})
+        ..backgroundTools.add("Smith's Tools");
+      draft.reconcileChoices(catalog);
+      final crafter = draft.requests(catalog).singleWhere((entry) =>
+          entry.sourceClassEntryId == 'background' && entry.featureName == 'Crafter');
+      expect(crafter.requirement.type, 'tool');
+      expect(crafter.requiredCount, 3);
+      expect(
+        catalog.choices.optionSources['crafter_tools_2024']!.map((option) => option.id),
+        hasLength(8),
+      );
+      draft.setChoices(catalog, [
+        for (final choice in draft.featureChoices)
+          if (crafter.findIn([choice]) != null)
+            crafter.toChoice(['carpenter_s_tools', 'mason_s_tools', 'tinker_s_tools'])
+          else
+            choice,
+      ]);
+      draft.backgroundEquipmentId = 'a';
+
+      final character = draft.build(catalog, fallbackName: 'Artisan');
+      expect(character.features, containsAll([
+        for (final tool in ["Smith's Tools", "Carpenter's Tools", "Mason's Tools", "Tinker's Tools"])
+          'Tool Proficiency: $tool',
+      ]));
+      expect(character.equipment.map((item) => item.name), contains("Smith's Tools"));
+    });
   });
 }

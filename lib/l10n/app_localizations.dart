@@ -1742,6 +1742,60 @@ abstract class AppLocalizations {
   /// **'Two-handed'**
   String get contextualRollVersatileTwoHanded;
 
+  /// Contextual roll option group label for choosing a melee or thrown attack.
+  ///
+  /// In en, this message translates to:
+  /// **'Attack type'**
+  String get contextualRollAttackMode;
+
+  /// Contextual roll option label for a melee attack with a thrown weapon.
+  ///
+  /// In en, this message translates to:
+  /// **'Melee'**
+  String get contextualRollMelee;
+
+  /// Contextual roll option label for a thrown attack.
+  ///
+  /// In en, this message translates to:
+  /// **'Thrown'**
+  String get contextualRollThrown;
+
+  /// Name of the Archery Fighting Style in roll notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Archery'**
+  String get fightingStyleArchery;
+
+  /// Name of the Dueling Fighting Style in roll notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Dueling'**
+  String get fightingStyleDueling;
+
+  /// Name of the Thrown Weapon Fighting Style in roll notes.
+  ///
+  /// In en, this message translates to:
+  /// **'Thrown Weapon Fighting'**
+  String get fightingStyleThrownWeaponFighting;
+
+  /// Roll note for the Archery attack bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'+{bonus} to the attack roll with a Ranged weapon is included.'**
+  String fightingStyleArcheryNote(int bonus);
+
+  /// Roll note for the Dueling damage bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'+{bonus} damage is included when you attack with this weapon in one hand. It applies only while you hold no other weapon.'**
+  String fightingStyleDuelingNote(int bonus);
+
+  /// Roll note for the Thrown Weapon Fighting damage bonus.
+  ///
+  /// In en, this message translates to:
+  /// **'+{bonus} damage is included in thrown attacks.'**
+  String fightingStyleThrownNote(int bonus);
+
   /// Dice roller invalid expression error message.
   ///
   /// In en, this message translates to:

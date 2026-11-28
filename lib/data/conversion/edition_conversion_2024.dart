@@ -49,6 +49,12 @@ class EditionConversion2024 {
   /// 2014 races renamed or folded into a 2024 species.
   static const _speciesFor2014Race = {'Variant Human': 'Human'};
 
+  /// 2014 backgrounds whose 2024 counterpart has another name.
+  static const _backgroundFor2014 = {
+    'Guild Artisan': 'Artisan',
+    'Guild Merchant': 'Merchant',
+  };
+
   /// 2014 subclasses renamed in 2024.
   static const _subclassFor2014 = {
     'Way of the Open Hand': 'Warrior of the Open Hand',
@@ -100,7 +106,8 @@ class EditionConversion2024 {
     final subclass = subclasses[cls?.name]?.where((sub) => sub.name == subclassName).firstOrNull;
     final speciesName = _speciesFor2014Race[old.race] ?? old.race;
     final species = catalog.species.where((s) => s.name == speciesName).firstOrNull;
-    final background = catalog.backgrounds.where((b) => b.name == old.background).firstOrNull;
+    final backgroundName = _backgroundFor2014[old.background] ?? old.background;
+    final background = catalog.backgrounds.where((b) => b.name == backgroundName).firstOrNull;
     final known = {for (final skill in old.skillProficiencies) skill.toLowerCase()};
     final allowed = cls == null
         ? const <String>[]

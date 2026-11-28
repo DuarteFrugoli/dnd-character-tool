@@ -969,6 +969,39 @@ class AppLocalizationsTr extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => 'İki elle';
 
   @override
+  String get contextualRollAttackMode => 'Saldırı türü';
+
+  @override
+  String get contextualRollMelee => 'Yakın dövüş';
+
+  @override
+  String get contextualRollThrown => 'Fırlatma';
+
+  @override
+  String get fightingStyleArchery => 'Okçuluk';
+
+  @override
+  String get fightingStyleDueling => 'Düello';
+
+  @override
+  String get fightingStyleThrownWeaponFighting => 'Fırlatma Silahıyla Dövüş';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return 'Menzilli silahla saldırı zarına +$bonus bonus dahildir.';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return 'Bu silahla tek elle saldırdığında hasara +$bonus bonus dahildir. Yalnızca başka bir silah tutmadığın sürece geçerlidir.';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return 'Fırlatma saldırılarının hasarına +$bonus bonus dahildir.';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Geçersiz zar ifadesi: $message';
   }

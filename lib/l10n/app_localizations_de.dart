@@ -975,6 +975,39 @@ class AppLocalizationsDe extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => 'Zweihändig';
 
   @override
+  String get contextualRollAttackMode => 'Angriffsart';
+
+  @override
+  String get contextualRollMelee => 'Nahkampf';
+
+  @override
+  String get contextualRollThrown => 'Wurf';
+
+  @override
+  String get fightingStyleArchery => 'Bogenschießen';
+
+  @override
+  String get fightingStyleDueling => 'Duell';
+
+  @override
+  String get fightingStyleThrownWeaponFighting => 'Kampf mit Wurfwaffen';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return 'Der Bonus von +$bonus auf den Angriffswurf mit einer Fernkampfwaffe ist enthalten.';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return 'Der Bonus von +$bonus auf den Schaden ist enthalten, wenn du mit dieser Waffe einhändig angreifst. Er gilt nur, solange du keine andere Waffe hältst.';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return 'Der Bonus von +$bonus auf den Schaden ist bei Wurfangriffen enthalten.';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Ungültiger Würfelausdruck: $message';
   }

@@ -306,6 +306,16 @@ class SrdI18nService {
 
   String? spellMaterial(String en) => _str('spells', en, 'material');
 
+  /// Casting time of the spell named [spellName]: the overlay's translation
+  /// when it has one, otherwise the term translation of [en].
+  String spellCastingTime(String spellName, String en) =>
+      _str('spells', spellName, 'castingTime') ?? castingTime(en);
+
+  /// Duration of the spell named [spellName]: the overlay's translation when
+  /// it has one, otherwise the term translation of [en].
+  String spellDurationOf(String spellName, String en) =>
+      _str('spells', spellName, 'duration') ?? spellDuration(en);
+
   // ── Races ──────────────────────────────────────────────────────────────────
 
   String raceName(String en) => _str('races', en, 'name') ?? en;

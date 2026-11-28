@@ -652,6 +652,57 @@
   "@contextualRollVersatileTwoHanded": {
     "description": "Contextual roll option label for two-handed versatile weapon damage."
   },
+  "contextualRollAttackMode": "Saldırı türü",
+  "@contextualRollAttackMode": {
+    "description": "Contextual roll option group label for choosing a melee or thrown attack."
+  },
+  "contextualRollMelee": "Yakın dövüş",
+  "@contextualRollMelee": {
+    "description": "Contextual roll option label for a melee attack with a thrown weapon."
+  },
+  "contextualRollThrown": "Fırlatma",
+  "@contextualRollThrown": {
+    "description": "Contextual roll option label for a thrown attack."
+  },
+  "fightingStyleArchery": "Okçuluk",
+  "@fightingStyleArchery": {
+    "description": "Name of the Archery Fighting Style in roll notes."
+  },
+  "fightingStyleDueling": "Düello",
+  "@fightingStyleDueling": {
+    "description": "Name of the Dueling Fighting Style in roll notes."
+  },
+  "fightingStyleThrownWeaponFighting": "Fırlatma Silahıyla Dövüş",
+  "@fightingStyleThrownWeaponFighting": {
+    "description": "Name of the Thrown Weapon Fighting Style in roll notes."
+  },
+  "fightingStyleArcheryNote": "Menzilli silahla saldırı zarına +{bonus} bonus dahildir.",
+  "@fightingStyleArcheryNote": {
+    "description": "Roll note for the Archery attack bonus.",
+    "placeholders": {
+      "bonus": {
+        "type": "int"
+      }
+    }
+  },
+  "fightingStyleDuelingNote": "Bu silahla tek elle saldırdığında hasara +{bonus} bonus dahildir. Yalnızca başka bir silah tutmadığın sürece geçerlidir.",
+  "@fightingStyleDuelingNote": {
+    "description": "Roll note for the Dueling damage bonus.",
+    "placeholders": {
+      "bonus": {
+        "type": "int"
+      }
+    }
+  },
+  "fightingStyleThrownNote": "Fırlatma saldırılarının hasarına +{bonus} bonus dahildir.",
+  "@fightingStyleThrownNote": {
+    "description": "Roll note for the Thrown Weapon Fighting damage bonus.",
+    "placeholders": {
+      "bonus": {
+        "type": "int"
+      }
+    }
+  },
   "diceInvalidExpression": "Geçersiz zar ifadesi: {message}",
   "@diceInvalidExpression": {
     "description": "Dice roller invalid expression error message.",

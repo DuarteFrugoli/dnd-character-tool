@@ -280,7 +280,7 @@ class Creation2024SubclassChoiceSpells {
 }
 
 class Creation2024Species {
-  const Creation2024Species({required this.name, required this.speed, required this.sizes, required this.traits, required this.lineages});
+  const Creation2024Species({required this.name, required this.speed, required this.sizes, required this.traits, required this.lineages, this.fixedSpells = const []});
 
   final String name;
   final int speed;
@@ -288,12 +288,20 @@ class Creation2024Species {
   final List<String> traits;
   final List<Map<String, dynamic>> lineages;
 
+  /// Spells every member of the species knows, with the granting trait,
+  /// e.g. the Aasimar's Light cantrip from Light Bearer.
+  final List<({String spell, String trait})> fixedSpells;
+
   factory Creation2024Species.fromJson(Map<String, dynamic> json) => Creation2024Species(
     name: json['name'] as String,
     speed: json['speed'] as int,
     sizes: List<String>.from(json['sizeOptions'] as List),
     traits: List<String>.from(json['traits'] as List),
     lineages: (json['lineages'] as List<dynamic>? ?? const []).cast<Map<String, dynamic>>(),
+    fixedSpells: [
+      for (final entry in (json['fixedSpells'] as List<dynamic>? ?? const []).cast<Map<String, dynamic>>())
+        (spell: entry['name'] as String, trait: entry['trait'] as String),
+    ],
   );
 }
 
@@ -387,9 +395,13 @@ class Creation2024Catalog {
     final raw = await rootBundle.loadString(
       SrdContentPackRegistry.srd521.srdAsset('backgrounds'),
     );
-    return (jsonDecode(raw) as List<dynamic>)
-        .map((entry) => Creation2024Background.fromJson(entry as Map<String, dynamic>))
-        .toList();
+    return [
+      for (final entry in [
+        ...(jsonDecode(raw) as List<dynamic>).cast<Map<String, dynamic>>(),
+        ...await Supplemental2024Catalog.backgrounds(),
+      ])
+        Creation2024Background.fromJson(entry),
+    ];
   }
 
   static Future<Map<String, List<Creation2024Subclass>>> loadSubclasses() async {
@@ -416,9 +428,13 @@ class Creation2024Catalog {
     final raw = await rootBundle.loadString(
       SrdContentPackRegistry.srd521.srdAsset('races'),
     );
-    return (jsonDecode(raw) as List<dynamic>)
-        .map((entry) => Creation2024Species.fromJson(entry as Map<String, dynamic>))
-        .toList();
+    return [
+      for (final entry in [
+        ...(jsonDecode(raw) as List<dynamic>).cast<Map<String, dynamic>>(),
+        ...await Supplemental2024Catalog.species(),
+      ])
+        Creation2024Species.fromJson(entry),
+    ];
   }
 
   static Future<Creation2024Catalog> load({
@@ -430,15 +446,10 @@ class Creation2024Catalog {
     if (srd.pack.id != SrdContentPackRegistry.srd521.id) {
       throw StateError('The 2024 creation catalog requires SRD 5.2.1.');
     }
-    Future<List<Map<String, dynamic>>> read(String name) async {
-      final raw = await rootBundle.loadString(srd.pack.srdAsset(name));
-      return (jsonDecode(raw) as List<dynamic>).cast<Map<String, dynamic>>();
-    }
-    final backgrounds = await read('backgrounds');
     return Creation2024Catalog(
       classes: classes ?? await loadClasses(),
       species: species ?? await loadSpecies(),
-      backgrounds: backgrounds.map(Creation2024Background.fromJson).toList(),
+      backgrounds: await loadBackgrounds(),
       skills: await srd.getSkills(),
       languages: await srd.getLanguages(),
       tools: await srd.getTools(),

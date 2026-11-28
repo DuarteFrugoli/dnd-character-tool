@@ -5,6 +5,7 @@ import 'datasources/srd/srd_models.dart';
 import 'datasources/srd/srd_monster.dart';
 import 'feature_choice_engine.dart';
 import 'models/models.dart';
+import 'rulesets/fighting_style_rules.dart';
 import 'rulesets/ruleset_ids.dart';
 import 'rulesets/wild_shape_rules.dart';
 
@@ -205,9 +206,11 @@ class FeatureChoiceOptionResolver {
         .map((name) => name.toLowerCase())
         .toSet();
     final selectedIds = request.findIn(choices)?.values.toSet() ?? const <String>{};
+    final takenStyles = _takenFightingStyles();
     return options
         .where((option) {
           if (!selectedIds.contains(option.id)) {
+            if (takenStyles.contains(option.id)) return false;
             if (option.minClassLevel != null && request.level < option.minClassLevel!) {
               return false;
             }
@@ -267,6 +270,26 @@ class FeatureChoiceOptionResolver {
           ),
         )
         .toList();
+  }
+
+  /// Styles the character already has from other Fighting Style choices or
+  /// feats; Fighting Styles cannot be taken twice.
+  Set<String> _takenFightingStyles() {
+    if (!FightingStyleRules.choiceIds.contains(request.choiceId)) return const {};
+    final others = [
+      for (final choice in FeatureChoiceEngine.upsertChoices(
+        character?.featureChoices ?? const [],
+        choices,
+      ))
+        if (request.findIn([choice]) == null) choice,
+    ];
+    final sheet = character;
+    return sheet == null
+        ? {
+            for (final choice in others)
+              if (FightingStyleRules.isStyleChoice(choice)) ...choice.values,
+          }
+        : FightingStyleRules.stylesOf(sheet, choices: others);
   }
 
   String _explicitOptionName(

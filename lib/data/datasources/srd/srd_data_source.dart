@@ -139,8 +139,9 @@ class SrdDataSource {
         );
       }
       if (pack.id == ContentPackId.srd521) {
-        final extra = (await Supplemental2024Catalog.load())['spells'] as List;
-        spells.addAll(extra.map((spell) => SrdSpell.fromJson(spell as Map<String, dynamic>)));
+        spells.addAll(
+          (await Supplemental2024Catalog.spells()).map(SrdSpell.fromJson),
+        );
       }
       _spells = spells;
     }
@@ -212,7 +213,15 @@ class SrdDataSource {
   }
 
   Future<List<SrdFeat>> getFeats() async {
-    _feats ??= await _loadList(_asset('feats'), SrdFeat.fromJson);
+    if (_feats == null) {
+      final feats = await _loadList(_asset('feats'), SrdFeat.fromJson);
+      if (pack.id == ContentPackId.srd521) {
+        feats.addAll(
+          (await Supplemental2024Catalog.feats()).map(SrdFeat.fromJson),
+        );
+      }
+      _feats = feats;
+    }
     return _feats!;
   }
 
@@ -248,10 +257,7 @@ class SrdDataSource {
     );
     final json = jsonDecode(raw) as Map<String, dynamic>;
     if (pack.id == ContentPackId.srd521) {
-      Supplemental2024Catalog.merge(
-        json,
-        (await Supplemental2024Catalog.load())['featureUsages'] as Map<String, dynamic>,
-      );
+      await Supplemental2024Catalog.mergeSection(json, 'featureUsages');
     }
     final catalog = FeatureUsageCatalog.fromJson(json);
     _featureUsageCatalog = catalog;
@@ -270,10 +276,7 @@ class SrdDataSource {
       );
     }
     if (pack.id == ContentPackId.srd521) {
-      Supplemental2024Catalog.merge(
-        json,
-        (await Supplemental2024Catalog.load())['featureChoices'] as Map<String, dynamic>,
-      );
+      await Supplemental2024Catalog.mergeSection(json, 'featureChoices');
     }
     final catalog = SrdFeatureChoiceCatalog.fromJson(json);
     _featureChoiceCatalog = catalog;
@@ -458,7 +461,16 @@ class SrdDataSource {
         _asset('race_traits'),
       );
       final map = jsonDecode(raw) as Map<String, dynamic>;
-      _raceTraits = map.map((k, v) => MapEntry(k, v as String));
+      final traits = map.map((k, v) => MapEntry(k, v as String));
+      if (pack.id == ContentPackId.srd521) {
+        for (final entry in (await Supplemental2024Catalog.raceTraits()).entries) {
+          if (traits.containsKey(entry.key)) {
+            throw StateError('Supplemental trait conflicts with ${entry.key}.');
+          }
+          traits[entry.key] = entry.value;
+        }
+      }
+      _raceTraits = traits;
     }
     return _raceTraits!;
   }

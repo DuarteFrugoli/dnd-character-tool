@@ -1,5 +1,6 @@
 import '../datasources/srd/srd_models.dart';
 import '../models/models.dart';
+import '../rulesets/fighting_style_rules.dart';
 import '../rulesets/ruleset_ids.dart';
 import '../rulesets/weapon_mastery_rules.dart';
 import 'contextual_roll.dart';
@@ -17,6 +18,9 @@ class ContextualWeaponRollBuilder {
     required String versatileGripLabel,
     required String versatileOneHandedLabel,
     required String versatileTwoHandedLabel,
+    String? attackModeLabel,
+    String? meleeLabel,
+    String? thrownLabel,
     List<SrdClass>? classes,
     List<String>? weaponProficiencies,
     String? subtitle,
@@ -33,6 +37,7 @@ class ContextualWeaponRollBuilder {
     final abilityModifier = stats.abilityModifier;
     final magicBonus = stats.magicBonus;
     final attackBonus = stats.attackBonus;
+    final style = FightingStyleRules.weaponEffect(character, item);
 
     final parts = <ContextualRollPart>[
       ContextualRollPart.d20(
@@ -42,37 +47,61 @@ class ContextualWeaponRollBuilder {
     ];
 
     if (!_isZeroExpression(damageDice)) {
+      final baseModifier = abilityModifier + magicBonus;
+      // A Ranged Thrown weapon (Dart) is always thrown; a Melee one held in
+      // one hand gets Dueling.
       final baseDamageExpression = _withModifier(
         damageDice,
-        abilityModifier + magicBonus,
+        baseModifier +
+            style.duelingDamageBonus +
+            (style.alwaysThrown ? style.thrownDamageBonus : 0),
       );
       final versatileDamage = _propertyText(item, 'versatileDamage');
-      final choices = versatileDamage != null &&
-              versatileDamage.isNotEmpty &&
-              !_isZeroExpression(versatileDamage)
-          ? [
-              ContextualRollExpressionChoice(
-                key: 'one_handed',
-                label: '$versatileOneHandedLabel ($damageDice)',
-                expression: baseDamageExpression,
-              ),
-              ContextualRollExpressionChoice(
-                key: 'two_handed',
-                label: '$versatileTwoHandedLabel ($versatileDamage)',
-                expression: _withModifier(
-                  versatileDamage,
-                  abilityModifier + magicBonus,
-                ),
-              ),
-            ]
-          : const <ContextualRollExpressionChoice>[];
+      final versatile = versatileDamage != null &&
+          versatileDamage.isNotEmpty &&
+          !_isZeroExpression(versatileDamage);
+      final thrownChoice = thrownLabel != null &&
+          !style.alwaysThrown &&
+          style.thrownDamageBonus > 0;
+      final choices = [
+        if (versatile) ...[
+          ContextualRollExpressionChoice(
+            key: 'one_handed',
+            label: '$versatileOneHandedLabel ($damageDice)',
+            expression: baseDamageExpression,
+          ),
+          ContextualRollExpressionChoice(
+            key: 'two_handed',
+            label: '$versatileTwoHandedLabel ($versatileDamage)',
+            expression: _withModifier(versatileDamage, baseModifier),
+          ),
+        ] else if (thrownChoice)
+          ContextualRollExpressionChoice(
+            key: 'melee',
+            label: meleeLabel ?? versatileOneHandedLabel,
+            expression: baseDamageExpression,
+          ),
+        if (thrownChoice)
+          ContextualRollExpressionChoice(
+            key: 'thrown',
+            label: '$thrownLabel ($damageDice)',
+            expression: _withModifier(
+              damageDice,
+              baseModifier + style.duelingDamageBonus + style.thrownDamageBonus,
+            ),
+          ),
+      ];
       parts.add(
         ContextualRollPart.expression(
           id: 'damage',
           label: damageLabel,
           expression: baseDamageExpression,
           critical: true,
-          choiceLabel: choices.isEmpty ? null : versatileGripLabel,
+          choiceLabel: choices.isEmpty
+              ? null
+              : thrownChoice
+                  ? attackModeLabel ?? versatileGripLabel
+                  : versatileGripLabel,
           choices: choices,
         ),
       );
@@ -124,6 +153,7 @@ class ContextualWeaponRollBuilder {
       magicBonus: magicBonus,
       attackBonus: abilityModifier +
           magicBonus +
+          FightingStyleRules.weaponEffect(character, item).archeryAttackBonus +
           (_isProficientWithWeapon(character, item, classes, weaponProficiencies)
               ? character.proficiencyBonus
               : 0),

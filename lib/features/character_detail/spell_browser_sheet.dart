@@ -849,7 +849,7 @@ class _SpellBrowserTile extends ConsumerWidget {
     final levelStr = spell.level == 0
         ? l10n.spellCantrip
         : l10n.spellLevelN(spell.level);
-    final castStr = i18n.castingTime(spell.castingTime);
+    final castStr = i18n.spellCastingTime(spell.name, spell.castingTime);
 
     final extras = [
       if (spell.concentration) 'C',
@@ -1074,7 +1074,7 @@ class SpellDetailSheet extends ConsumerWidget {
           // ── Stat rows ─────────────────────────────────────────────────────
           _StatRow(
             l10n.spellDetailCastingTime,
-            i18n.castingTime(spell.castingTime),
+            i18n.spellCastingTime(spell.name, spell.castingTime),
           ),
           _StatRow(
             l10n.spellDetailRange,
@@ -1082,7 +1082,7 @@ class SpellDetailSheet extends ConsumerWidget {
           ),
           _StatRow(
             l10n.spellDetailDuration,
-            i18n.spellDuration(spell.duration),
+            i18n.spellDurationOf(spell.name, spell.duration),
           ),
           _StatRow(l10n.spellDetailComponents, rules(_componentsStr(i18n))),
           if (spell.concentration) ...[

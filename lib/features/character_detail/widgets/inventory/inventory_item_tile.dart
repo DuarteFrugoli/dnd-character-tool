@@ -1,5 +1,6 @@
 import '../../character_detail_dependencies.dart';
 import '../../../../data/json_helpers.dart';
+import '../../../../data/rulesets/fighting_style_rules.dart';
 import '../../../../data/rulesets/weapon_mastery_rules.dart';
 import '../dice/contextual_roll_sheet.dart';
 import '../dice/roll_notes.dart';
@@ -540,18 +541,26 @@ class ItemTile extends ConsumerWidget {
             versatileGripLabel: l10n.contextualRollVersatileGrip,
             versatileOneHandedLabel: l10n.contextualRollVersatileOneHanded,
             versatileTwoHandedLabel: l10n.contextualRollVersatileTwoHanded,
+            attackModeLabel: l10n.contextualRollAttackMode,
+            meleeLabel: l10n.contextualRollMelee,
+            thrownLabel: l10n.contextualRollThrown,
             classes: classes,
             weaponProficiencies: weaponProficiencies,
             subtitle: meta,
-            notes: mastery == null
-                ? const []
-                : weaponMasteryNotes(
-                    l10n: l10n,
-                    i18n: i18n,
-                    effect: mastery,
-                    descriptions: masteryDescriptions,
-                    damageType: stats!.damageType,
-                  ),
+            notes: [
+              if (mastery != null)
+                ...weaponMasteryNotes(
+                  l10n: l10n,
+                  i18n: i18n,
+                  effect: mastery,
+                  descriptions: masteryDescriptions,
+                  damageType: stats!.damageType,
+                ),
+              ...fightingStyleNotes(
+                l10n: l10n,
+                effect: FightingStyleRules.weaponEffect(character, item),
+              ),
+            ],
           );
     final widgetsL10n = WidgetsLocalizations.of(context);
     final reorderTooltip =

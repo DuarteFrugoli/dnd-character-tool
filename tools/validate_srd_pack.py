@@ -209,19 +209,27 @@ def validate_2024_spells(data, errors):
             errors.append(
                 f"spells: expected {expected} SRD level {level} spells, found {count}"
             )
+    validate_2024_spell_entries(spells, "spells", errors)
+
+
+def validate_2024_spell_entries(spells, prefix, errors, *, optional_flags=()):
+    """Field checks shared by SRD and supplemental 2024 spells. Flags named in
+    optional_flags may be absent; the app reads a missing flag as false."""
     classes = {
         "bard", "cleric", "druid", "paladin", "ranger",
         "sorcerer", "warlock", "wizard",
     }
     for index, spell in enumerate(spells):
         if not isinstance(spell, dict):
-            errors.append(f"spells[{index}]: expected object")
+            errors.append(f"{prefix}[{index}]: expected object")
             continue
-        location = f"spells[{index}]"
+        location = f"{prefix}[{index}]"
         for field in ("school", "castingTime", "range", "duration", "description"):
             if not isinstance(spell.get(field), str) or not spell[field].strip():
                 errors.append(f"{location}: missing {field}")
         for field in ("ritual", "materialConsumed", "concentration"):
+            if field in optional_flags and field not in spell:
+                continue
             if not isinstance(spell.get(field), bool):
                 errors.append(f"{location}: invalid {field}")
         components = spell.get("components")
@@ -496,6 +504,128 @@ def validate_2024_feature_catalogs(data, errors):
             errors.append(f"feature_usages.resources.{resource_id}: invalid maxByLevel")
 
 
+# SRD feats and the supplemental PHB 2024 Origin feats.
+ORIGIN_FEAT_PREFIXES = ("srd_5_2_1/feat/", "phb_2024/feat/")
+
+
+def validate_2024_supplemental_origins(data, errors):
+    """Validates the SRD origins and feats merged with the supplemental 2024
+    catalogs (assets/data/2024/phb_origins.json and phb_feats.json), as the
+    app loads them."""
+    folder = ROOT / "assets" / "data" / "2024"
+    extra = {
+        "feats": [], "backgrounds": [], "species": [], "raceTraits": {},
+        "featureChoices": {}, "featureUsages": {},
+    }
+    merged = copy.deepcopy(data)
+
+    def merge(target, source, location):
+        for key, value in source.items():
+            if isinstance(value, dict) and isinstance(target.get(key), dict):
+                merge(target[key], value, f"{location}.{key}")
+            elif isinstance(value, list) and isinstance(target.get(key), list):
+                ids = {item.get("id") for item in target[key] if isinstance(item, dict)}
+                for item in value:
+                    if isinstance(item, dict) and item.get("id") in ids:
+                        errors.append(f"{location}.{key}: repeats {item.get('id')!r}")
+                target[key] = target[key] + value
+            elif key in target:
+                errors.append(f"{location}.{key}: conflicts with the SRD")
+            else:
+                target[key] = value
+
+    for name in ("phb_origins.json", "phb_feats.json"):
+        path = folder / name
+        try:
+            catalog = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_pairs)
+        except (OSError, UnicodeError, ValueError) as exc:
+            errors.append(f"{path}: {exc}")
+            return
+        for key in ("feats", "backgrounds", "species"):
+            extra[key].extend(catalog.get(key, []))
+        extra["raceTraits"].update(catalog.get("raceTraits", {}))
+        for key in ("featureChoices", "featureUsages"):
+            merge(extra[key], catalog.get(key, {}), f"{name}.{key}")
+        for filename, key in (("feature_choices", "featureChoices"), ("feature_usages", "featureUsages")):
+            if filename in merged:
+                merge(merged[filename], catalog.get(key, {}), f"{name}.{key}")
+
+    for filename, key in (("backgrounds", "backgrounds"), ("feats", "feats"), ("races", "species")):
+        if filename in merged:
+            merged[filename].extend(extra[key])
+    if "race_traits" in merged:
+        for name, text in extra["raceTraits"].items():
+            if name in merged["race_traits"]:
+                errors.append(f"phb_origins.raceTraits: {name!r} conflicts with the SRD")
+            merged["race_traits"][name] = text
+
+    origin_errors = []
+    validate_2024_origins(merged, origin_errors)
+
+    # Spells outside the SRD: subclass spells and the other PHB spells.
+    extra_spells = []
+    for name in ("phb_subclasses.json", "phb_spells.json"):
+        try:
+            catalog = json.loads((folder / name).read_text(encoding="utf-8"), object_pairs_hook=unique_pairs)
+        except (OSError, UnicodeError, ValueError) as exc:
+            errors.append(f"{folder / name}: {exc}")
+            return
+        extra_spells.extend(catalog.get("spells", []))
+    validate_2024_spell_entries(
+        extra_spells, "supplemental.spells", origin_errors,
+        optional_flags=("ritual", "materialConsumed"),
+    )
+    srd_names = {spell.get("name") for spell in data.get("spells", [])}
+    seen_names = set()
+    for spell in extra_spells:
+        name = spell.get("name")
+        if name in srd_names or name in seen_names:
+            origin_errors.append(f"supplemental.spells: duplicate spell {name!r}")
+        seen_names.add(name)
+        for key in ("description", "higherLevels"):
+            if isinstance(spell.get(key), str):
+                distance_markers(spell[key], f"supplemental.spells.{name}.{key}", origin_errors)
+        for roll in spell.get("rolls", []):
+            for formula in [roll.get("formula"), *roll.get("slotLevelScaling", {}).values(),
+                            *roll.get("characterLevelScaling", {}).values()]:
+                if formula is not None and not re.fullmatch(r"\d+d\d+(?:[+-]\d+)?", str(formula)):
+                    origin_errors.append(f"supplemental.spells.{name}: invalid roll formula {formula!r}")
+            levels = [int(level) for level in roll.get("slotLevelScaling", {})]
+            if levels and (min(levels) <= spell.get("level", 0) or max(levels) > 9):
+                origin_errors.append(f"supplemental.spells.{name}: invalid slot scaling levels")
+    for name, levels in (
+        ("Blade Ward", 0), ("Toll the Dead", 0), ("Witch Bolt", 1), ("Telepathy", 8),
+    ):
+        match = next((spell for spell in extra_spells if spell.get("name") == name), None)
+        if match is None or match.get("level") != levels:
+            origin_errors.append(f"supplemental.spells: expected {name} at level {levels}")
+    sources = merged.get("feature_choices", {}).get("optionSources", {})
+    validate_choice_refs(extra.get("featureChoices", {}), sources, "phb_origins.featureChoices", origin_errors)
+    resources = merged.get("feature_usages", {}).get("resources", {})
+    for section in ("feats", "raceTraits"):
+        for name, usage in extra.get("featureUsages", {}).get(section, {}).items():
+            if usage.get("resourceId") not in resources:
+                origin_errors.append(f"phb_origins.featureUsages.{section}.{name}: unknown resourceId")
+    for index, race in enumerate(extra.get("species", [])):
+        for spell in race.get("fixedSpells", []):
+            if spell.get("trait") not in race.get("traits", []):
+                origin_errors.append(f"phb_origins.species[{index}]: fixed spell trait is not a species trait")
+            if "spells" in merged and spell.get("name") not in {s["name"] for s in merged["spells"]}:
+                origin_errors.append(f"phb_origins.species[{index}]: unknown fixed spell {spell.get('name')!r}")
+    option_texts = [
+        (f"supplemental.optionSources.{source}.{option.get('id')}", option.get("description", ""))
+        for source, options in extra["featureChoices"].get("optionSources", {}).items()
+        for option in options
+    ]
+    for text_location, text in [
+        *((f"supplemental.feats.{feat.get('name')}", feat.get("description", "")) for feat in extra.get("feats", [])),
+        *((f"supplemental.raceTraits.{name}", text) for name, text in extra.get("raceTraits", {}).items()),
+        *option_texts,
+    ]:
+        distance_markers(text, text_location, origin_errors)
+    errors.extend(f"supplemental: {error}" for error in origin_errors)
+
+
 def validate_2024_origins(data, errors):
     feats = data.get("feats")
     feat_ids = set()
@@ -582,8 +712,11 @@ def validate_2024_origins(data, errors):
                     errors.append(f"{location}: unknown tool choice category")
 
             feat_ref = background.get("originFeatRef")
-            prefix = "srd_5_2_1/feat/"
-            if not isinstance(feat_ref, str) or not feat_ref.startswith(prefix):
+            prefix = next(
+                (p for p in ORIGIN_FEAT_PREFIXES if isinstance(feat_ref, str) and feat_ref.startswith(p)),
+                None,
+            )
+            if prefix is None:
                 errors.append(f"{location}: invalid origin feat reference")
             elif feats is not None and feat_ref[len(prefix):] not in feat_ids:
                 errors.append(f"{location}: unknown origin feat {feat_ref!r}")
@@ -591,7 +724,7 @@ def validate_2024_origins(data, errors):
             if not isinstance(fixed_choices, dict):
                 errors.append(f"{location}: invalid origin feat choices")
             elif isinstance(feat_ref, str) and "feature_choices" in data:
-                feat = feats_by_id.get(feat_ref.removeprefix(prefix))
+                feat = feats_by_id.get(feat_ref.removeprefix(prefix or ""))
                 choice_catalog = data["feature_choices"]
                 feat_choices = choice_catalog.get("feats", {}).get(
                     feat.get("name") if feat else None, {}
@@ -632,7 +765,7 @@ def validate_2024_origins(data, errors):
                         or item["quantity"] < 1
                     ):
                         errors.append(f"{location}: invalid equipment item")
-                    elif known_items and not item.get("choiceFrom"):
+                    elif known_items and not item.get("choiceFrom") and not item.get("category"):
                         if item["name"] not in known_items:
                             errors.append(f"{location}: unknown starting item {item['name']!r}")
 
@@ -1009,6 +1142,12 @@ def validate_distance_markers(pack, errors):
                         feature["description"] = "\n".join(option["description"] for option in sources[choice])
         for filename, value in supplemental.items():
             check_english(value, f"supplemental.{filename}")
+    if pack == "5.2.1":
+        # Overlays also translate the supplemental 2024 spells.
+        folder = ROOT / "assets" / "data" / "2024"
+        for name in ("phb_subclasses.json", "phb_spells.json"):
+            extra = json.loads((folder / name).read_text(encoding="utf-8"))
+            supplemental["spells"].extend(extra.get("spells", []))
 
     def counterpart(english_node, key):
         if isinstance(english_node, dict):
@@ -1277,6 +1416,8 @@ def validate(pack, only=None):
 
     if pack == "5.2.1":
         validate_2024_origins(data, errors)
+        if only is None:
+            validate_2024_supplemental_origins(data, errors)
         validate_2024_classes(data, errors)
         validate_2024_features(data, errors)
         validate_2024_feature_catalogs(data, errors)

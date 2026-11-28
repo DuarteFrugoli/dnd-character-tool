@@ -85,6 +85,23 @@ void main() {
     expect(prefill.languages, ['Halfling']);
   });
 
+  test('prefill maps 2014 backgrounds to their 2024 counterparts', () {
+    for (final (old, expected) in [
+      ('Hermit', 'Hermit'),
+      ('Sailor', 'Sailor'),
+      ('Guild Artisan', 'Artisan'),
+      ('Guild Merchant', 'Merchant'),
+      ('Folk Hero', null),
+    ]) {
+      final prefill = EditionConversion2024.prefill(
+        _monk().copyWith(background: old),
+        races2014: _races,
+        catalog: _catalog,
+      );
+      expect(prefill.backgroundName, expected, reason: old);
+    }
+  });
+
   test('prefill flags increases it cannot identify', () {
     final halfElf = EditionConversion2024.prefill(
       _monk(race: 'Half-Elf', subrace: null),

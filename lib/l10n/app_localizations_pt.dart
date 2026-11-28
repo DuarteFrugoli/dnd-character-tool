@@ -971,6 +971,40 @@ class AppLocalizationsPt extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => 'Duas mãos';
 
   @override
+  String get contextualRollAttackMode => 'Tipo de ataque';
+
+  @override
+  String get contextualRollMelee => 'Corpo a corpo';
+
+  @override
+  String get contextualRollThrown => 'Arremesso';
+
+  @override
+  String get fightingStyleArchery => 'Arquearia';
+
+  @override
+  String get fightingStyleDueling => 'Duelo';
+
+  @override
+  String get fightingStyleThrownWeaponFighting =>
+      'Combate com Armas de Arremesso';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return 'O bônus de +$bonus no ataque com arma à distância já está incluído.';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return 'O bônus de +$bonus no dano já está incluído ao atacar com esta arma em uma mão. Ele vale apenas enquanto você não empunha outra arma.';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return 'O bônus de +$bonus no dano já está incluído nos ataques por arremesso.';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Expressão de dados inválida: $message';
   }

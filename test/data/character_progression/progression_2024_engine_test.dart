@@ -201,6 +201,53 @@ void main() {
       );
     });
 
+    test('Tough taken as a level feat counts every level', () {
+      final level3 = _fighterAt(3);
+      final level4 = _levelUp(level3, feat: 'Tough');
+
+      // 8 for the level plus 2 for each of the 4 levels.
+      expect(level4.hitPoints.maximum, level3.hitPoints.maximum + 8 + 8);
+      expect(level4.levelHistory.last.hitPointsGained, 8);
+      final level5 = _levelUp(level4);
+      expect(level5.hitPoints.maximum, level4.hitPoints.maximum + 8 + 2);
+      expect(level5.levelHistory.last.hitPointsGained, 10);
+    });
+
+    test('Tough from the background survives a reset to level 1', () {
+      final base = _character();
+      final tough = base.copyWith(
+        hitPoints: HitPoints(
+          maximum: base.hitPoints.maximum + 2,
+          current: base.hitPoints.maximum + 2,
+        ),
+        extraFeatures: const [
+          CharacterExtraFeature(
+            sourceClass: 'Feat',
+            sourceType: FeatureChoiceSourceType.feat,
+            sourceFeature: 'Background',
+            sourceClassEntryId: 'background',
+            name: 'Tough',
+            level: 1,
+            type: 'passive',
+            description: '',
+          ),
+        ],
+      );
+      final level2 = _levelUp(tough);
+      expect(level2.hitPoints.maximum, 14 + 8 + 2);
+
+      final reset = Progression2024Engine.resetToLevelOne(
+        level2,
+        _data,
+        choices: _fill(
+          Progression2024Engine.levelOneRequests(level2, _data, 'Fighter'),
+          level2,
+        ),
+      );
+      expect(reset.hitPoints.maximum, 14);
+      expect(reset.extraFeatures.map((f) => f.name), contains('Tough'));
+    });
+
     test('subclass is required at level 3', () {
       final level2 = _levelUp(_character());
 
@@ -270,6 +317,102 @@ void main() {
       ).where((r) => r.choiceId == 'weapon_masteries').single;
 
       expect(mastery.requiredCount, 4);
+    });
+
+    test("Player's Handbook Fighting Style feats are level feats", () {
+      final level3 = _fighterAt(3);
+      final plan = Progression2024Engine.plan(
+        level3,
+        _data,
+        className: 'Fighter',
+        classEntryId: 'primary',
+      );
+      const styles = [
+        'Blind Fighting', 'Dueling', 'Interception',
+        'Protection', 'Thrown Weapon Fighting', 'Unarmed Fighting',
+      ];
+      expect(
+        Progression2024Engine.eligibleFeats(level3, _data, plan).map((f) => f.name),
+        containsAll(styles),
+      );
+      for (final style in styles) {
+        final feat = _data.featNamed(style)!;
+        expect(feat.category, 'fighting_style');
+        expect(feat.structuredPrerequisite, {'feature': 'Fighting Style'});
+      }
+      final level4 = _levelUp(level3, feat: 'Dueling');
+      expect(level4.extraFeatures.map((f) => f.name), contains('Dueling'));
+    });
+
+    test('a style from the Fighting Style feature is not offered again', () {
+      final level3 = _fighterAt(3);
+      final dueling = level3.copyWith(
+        featureChoices: [
+          for (final choice in level3.featureChoices)
+            if (choice.choiceId != 'fighting_style') choice,
+          const CharacterFeatureChoice(
+            sourceType: FeatureChoiceSourceType.classFeature,
+            sourceClass: 'Fighter',
+            sourceClassEntryId: 'primary',
+            featureName: 'Fighting Style',
+            choiceId: 'fighting_style',
+            values: ['dueling'],
+          ),
+        ],
+      );
+      final plan = Progression2024Engine.plan(
+        dueling,
+        _data,
+        className: 'Fighter',
+        classEntryId: 'primary',
+      );
+      final names = Progression2024Engine.eligibleFeats(dueling, _data, plan)
+          .map((f) => f.name);
+      expect(names, isNot(contains('Dueling')));
+      expect(names, contains('Protection'));
+    });
+
+    test('the Champion cannot take a style the sheet already has', () {
+      final level6 = _fighterAt(6);
+      final dueling = level6.copyWith(featureChoices: [
+        for (final choice in level6.featureChoices)
+          if (choice.choiceId != 'fighting_style') choice,
+        const CharacterFeatureChoice(
+          sourceType: FeatureChoiceSourceType.classFeature,
+          sourceClass: 'Fighter',
+          sourceClassEntryId: 'primary',
+          featureName: 'Fighting Style',
+          choiceId: 'fighting_style',
+          values: ['dueling'],
+        ),
+      ]);
+      final plan = Progression2024Engine.plan(
+        dueling,
+        _data,
+        className: 'Fighter',
+        classEntryId: 'primary',
+      );
+      final requests = Progression2024Engine.requestsFor(dueling, _data, plan);
+      Character pick(String style) => Progression2024Engine.applyLevelUp(
+        dueling,
+        _data,
+        LevelUp2024Result(
+          className: 'Fighter',
+          classEntryId: 'primary',
+          featureChoices: [
+            for (final choice in _fill(requests, dueling))
+              choice.choiceId == 'additional_fighting_style'
+                  ? choice.copyWith(values: [style])
+                  : choice,
+          ],
+        ),
+      );
+      expect(
+        requests.map((r) => r.choiceId),
+        contains('additional_fighting_style'),
+      );
+      expect(() => pick('dueling'), throwsArgumentError);
+      expect(pick('archery').totalLevel, 7);
     });
 
     test('Epic Boon feats are only eligible at level 19', () {

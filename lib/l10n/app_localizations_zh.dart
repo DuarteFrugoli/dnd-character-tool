@@ -933,6 +933,39 @@ class AppLocalizationsZh extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => '双手';
 
   @override
+  String get contextualRollAttackMode => '攻击方式';
+
+  @override
+  String get contextualRollMelee => '近战';
+
+  @override
+  String get contextualRollThrown => '投掷';
+
+  @override
+  String get fightingStyleArchery => '箭术';
+
+  @override
+  String get fightingStyleDueling => '决斗';
+
+  @override
+  String get fightingStyleThrownWeaponFighting => '投掷武器战斗';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return '远程武器攻击检定的 +$bonus 加值已计入。';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return '单手持用此武器攻击时，伤害的 +$bonus 加值已计入。仅在你未持有其他武器时适用。';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return '投掷攻击的伤害已计入 +$bonus 加值。';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return '无效的骰子表达式：$message';
   }

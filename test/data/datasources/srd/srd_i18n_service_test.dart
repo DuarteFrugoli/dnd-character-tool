@@ -1,4 +1,5 @@
 import 'package:dnd_character_tool/data/datasources/srd/srd_i18n_service.dart';
+import 'package:dnd_character_tool/data/rulesets/srd_content_pack.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -32,6 +33,12 @@ void main() {
 
     test('spellHigherLevels returns null', () {
       expect(svc.spellHigherLevels('Cure Wounds'), isNull);
+    });
+
+    test('spell casting time and duration return the English text', () {
+      expect(svc.spellCastingTime('Fire Bolt', 'Action'), 'Action');
+      expect(svc.spellDurationOf('Bless', 'Concentration, up to 1 minute'),
+          'Concentration, up to 1 minute');
     });
 
     test('raceName returns input unchanged', () {
@@ -114,4 +121,42 @@ void main() {
       expect(svc.backgroundEquipmentName('Arrows'), isNot('Arrows'));
     });
   });
+
+  group('2024 spell casting time and duration', () {
+    TestWidgetsFlutterBinding.ensureInitialized();
+
+    for (final (locale, action, smite, minute) in [
+      ('pt', 'Ação', 'Ação Bônus, realizada imediatamente após acertar uma criatura com uma arma à Distância', 'Concentração, até 1 minuto'),
+      ('de', 'Aktion', 'Bonusaktion, unmittelbar nachdem du eine Kreatur mit einer Fernkampfwaffe getroffen hast', 'Konzentration, bis zu 1 Minute'),
+      ('ja', 'アクション', '遠隔武器でクリーチャーに命中した直後に行うボーナス・アクション', '精神集中、最大1分'),
+    ]) {
+      test('$locale reads them from the 2024 overlay', () async {
+        final i18n = await SrdI18nService.load(
+          locale,
+          pack: SrdContentPackRegistry.srd521,
+        );
+        expect(i18n.spellCastingTime('Fire Bolt', 'Action'), action);
+        expect(
+          i18n.spellCastingTime(
+            'Hail of Thorns',
+            'Bonus Action, which you take immediately after hitting a creature with a Ranged weapon',
+          ),
+          smite,
+        );
+        expect(
+          i18n.spellDurationOf('Bless', 'Concentration, up to 1 minute'),
+          minute,
+        );
+        // Spells without an overlay entry fall back to the term translation.
+        expect(i18n.spellCastingTime('Unknown Spell', 'Action'), i18n.castingTime('Action'));
+      });
+    }
+
+    test('2014 sheets keep the Portuguese term translation', () async {
+      final i18n = await SrdI18nService.load('pt');
+      expect(i18n.spellCastingTime('Fire Bolt', '1 action'), i18n.castingTime('1 action'));
+      expect(i18n.castingTime('1 action'), isNot('1 action'));
+    });
+  });
 }
+

@@ -1,0 +1,400 @@
+{
+  "source": "Player's Handbook (2024)",
+  "contentType": "Original English summaries; supplemental origin options, not SRD content.",
+  "feats": [
+    {
+      "id": "crafter",
+      "name": "Crafter",
+      "category": "origin",
+      "prerequisite": null,
+      "repeatable": false,
+      "description": "Gain proficiency with three different Artisan's Tools from the Fast Crafting list. Nonmagical items you buy cost you 20% less. When you finish a Long Rest, you can use one of those tools to make one simple piece of gear tied to it, such as a Ladder, Shovel or Lamp; it falls apart when you finish your next Long Rest."
+    },
+    {
+      "id": "healer",
+      "name": "Healer",
+      "category": "origin",
+      "prerequisite": null,
+      "repeatable": false,
+      "description": "With a Healer's Kit, you can take the Utilize action and expend one use of the kit to tend a creature within {{distance:5ft}}. That creature can spend one Hit Die; you roll it, and the creature regains Hit Points equal to the roll plus your Proficiency Bonus. Whenever you roll dice to restore Hit Points with a spell or this feat, you can reroll any die that shows a 1 and must use the new roll."
+    },
+    {
+      "id": "lucky",
+      "name": "Lucky",
+      "category": "origin",
+      "prerequisite": null,
+      "repeatable": false,
+      "description": "You have Luck Points equal to your Proficiency Bonus and regain them all when you finish a Long Rest. Spend one to give yourself Advantage on a D20 Test, or to give Disadvantage to an attack roll made against you."
+    },
+    {
+      "id": "musician",
+      "name": "Musician",
+      "category": "origin",
+      "prerequisite": null,
+      "repeatable": false,
+      "description": "Gain proficiency with three Musical Instruments of your choice. As you finish a Short or Long Rest, you can play one of them and give Heroic Inspiration to allies who hear the song, up to a number equal to your Proficiency Bonus."
+    },
+    {
+      "id": "tavern_brawler",
+      "name": "Tavern Brawler",
+      "category": "origin",
+      "prerequisite": null,
+      "repeatable": false,
+      "description": "Your Unarmed Strike can deal Bludgeoning damage equal to 1d4 + your Strength modifier, and you can reroll a 1 on that die, using the new roll. You have proficiency with improvised weapons. Once per turn, when you hit a creature with an Unarmed Strike as part of the Attack action, you can also push it {{distance:5ft}} straight away from you."
+    },
+    {
+      "id": "tough",
+      "name": "Tough",
+      "category": "origin",
+      "prerequisite": null,
+      "repeatable": false,
+      "description": "Your Hit Point maximum increases by twice your character level when you gain this feat, and by 2 more each time you gain a character level afterward."
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "artisan",
+      "name": "Artisan",
+      "abilityScoreOptions": ["strength", "dexterity", "intelligence"],
+      "originFeatRef": "phb_2024/feat/crafter",
+      "skillProficiencies": ["investigation", "persuasion"],
+      "toolProficiencies": [],
+      "toolProficiencyChoices": [{"category": "artisans_tools", "count": 1}],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Artisan's Tools", "choiceFrom": "toolProficiencyChoices", "quantity": 1},
+            {"name": "Pouch", "quantity": 2},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 32
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "charlatan",
+      "name": "Charlatan",
+      "abilityScoreOptions": ["dexterity", "constitution", "charisma"],
+      "originFeatRef": "phb_2024/feat/skilled",
+      "skillProficiencies": ["deception", "sleight of hand"],
+      "toolProficiencies": ["Forgery Kit"],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Forgery Kit", "quantity": 1},
+            {"name": "Costume", "quantity": 1},
+            {"name": "Clothes, Fine", "quantity": 1}
+          ],
+          "gp": 15
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "entertainer",
+      "name": "Entertainer",
+      "abilityScoreOptions": ["strength", "dexterity", "charisma"],
+      "originFeatRef": "phb_2024/feat/musician",
+      "skillProficiencies": ["acrobatics", "performance"],
+      "toolProficiencies": [],
+      "toolProficiencyChoices": [{"category": "musical_instruments", "count": 1}],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Musical Instrument", "choiceFrom": "toolProficiencyChoices", "quantity": 1},
+            {"name": "Costume", "quantity": 2},
+            {"name": "Mirror", "quantity": 1},
+            {"name": "Perfume", "quantity": 1},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 11
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "farmer",
+      "name": "Farmer",
+      "abilityScoreOptions": ["strength", "constitution", "wisdom"],
+      "originFeatRef": "phb_2024/feat/tough",
+      "skillProficiencies": ["animal handling", "nature"],
+      "toolProficiencies": ["Carpenter's Tools"],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Sickle", "quantity": 1},
+            {"name": "Carpenter's Tools", "quantity": 1},
+            {"name": "Healer's Kit", "quantity": 1},
+            {"name": "Pot, Iron", "quantity": 1},
+            {"name": "Shovel", "quantity": 1},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 30
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "guard",
+      "name": "Guard",
+      "abilityScoreOptions": ["strength", "intelligence", "wisdom"],
+      "originFeatRef": "srd_5_2_1/feat/alert",
+      "skillProficiencies": ["athletics", "perception"],
+      "toolProficiencies": [],
+      "toolProficiencyChoices": [{"category": "gaming_sets", "count": 1}],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Spear", "quantity": 1},
+            {"name": "Light Crossbow", "quantity": 1},
+            {"name": "Bolt", "quantity": 20},
+            {"name": "Gaming Set", "choiceFrom": "toolProficiencyChoices", "quantity": 1},
+            {"name": "Lantern, Hooded", "quantity": 1},
+            {"name": "Manacles", "quantity": 1},
+            {"name": "Quiver", "quantity": 1},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 12
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "guide",
+      "name": "Guide",
+      "abilityScoreOptions": ["dexterity", "constitution", "wisdom"],
+      "originFeatRef": "srd_5_2_1/feat/magic_initiate",
+      "originFeatChoices": {"spell_class": "druid"},
+      "skillProficiencies": ["stealth", "survival"],
+      "toolProficiencies": ["Cartographer's Tools"],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Shortbow", "quantity": 1},
+            {"name": "Arrow", "quantity": 20},
+            {"name": "Cartographer's Tools", "quantity": 1},
+            {"name": "Bedroll", "quantity": 1},
+            {"name": "Quiver", "quantity": 1},
+            {"name": "Tent", "quantity": 1},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 3
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "hermit",
+      "name": "Hermit",
+      "abilityScoreOptions": ["constitution", "wisdom", "charisma"],
+      "originFeatRef": "phb_2024/feat/healer",
+      "skillProficiencies": ["medicine", "religion"],
+      "toolProficiencies": ["Herbalism Kit"],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Quarterstaff", "quantity": 1},
+            {"name": "Herbalism Kit", "quantity": 1},
+            {"name": "Bedroll", "quantity": 1},
+            {"name": "Book", "variant": "philosophy", "quantity": 1},
+            {"name": "Lamp", "quantity": 1},
+            {"name": "Oil", "quantity": 3},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 16
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "merchant",
+      "name": "Merchant",
+      "abilityScoreOptions": ["constitution", "intelligence", "charisma"],
+      "originFeatRef": "phb_2024/feat/lucky",
+      "skillProficiencies": ["animal handling", "persuasion"],
+      "toolProficiencies": ["Navigator's Tools"],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Navigator's Tools", "quantity": 1},
+            {"name": "Pouch", "quantity": 2},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 22
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "noble",
+      "name": "Noble",
+      "abilityScoreOptions": ["strength", "intelligence", "charisma"],
+      "originFeatRef": "srd_5_2_1/feat/skilled",
+      "skillProficiencies": ["history", "persuasion"],
+      "toolProficiencies": [],
+      "toolProficiencyChoices": [{"category": "gaming_sets", "count": 1}],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Gaming Set", "choiceFrom": "toolProficiencyChoices", "quantity": 1},
+            {"name": "Clothes, Fine", "quantity": 1},
+            {"name": "Perfume", "quantity": 1}
+          ],
+          "gp": 29
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "sailor",
+      "name": "Sailor",
+      "abilityScoreOptions": ["strength", "dexterity", "wisdom"],
+      "originFeatRef": "phb_2024/feat/tavern_brawler",
+      "skillProficiencies": ["acrobatics", "perception"],
+      "toolProficiencies": ["Navigator's Tools"],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Dagger", "quantity": 1},
+            {"name": "Navigator's Tools", "quantity": 1},
+            {"name": "Rope", "quantity": 1},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 20
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "scribe",
+      "name": "Scribe",
+      "abilityScoreOptions": ["dexterity", "intelligence", "wisdom"],
+      "originFeatRef": "srd_5_2_1/feat/skilled",
+      "skillProficiencies": ["investigation", "perception"],
+      "toolProficiencies": ["Calligrapher's Supplies"],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Calligrapher's Supplies", "quantity": 1},
+            {"name": "Clothes, Fine", "quantity": 1},
+            {"name": "Lamp", "quantity": 1},
+            {"name": "Oil", "quantity": 3},
+            {"name": "Parchment", "quantity": 12}
+          ],
+          "gp": 23
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    },
+    {
+      "id": "wayfarer",
+      "name": "Wayfarer",
+      "abilityScoreOptions": ["dexterity", "wisdom", "charisma"],
+      "originFeatRef": "phb_2024/feat/lucky",
+      "skillProficiencies": ["insight", "stealth"],
+      "toolProficiencies": ["Thieves' Tools"],
+      "equipmentChoices": [
+        {
+          "id": "a",
+          "items": [
+            {"name": "Dagger", "quantity": 2},
+            {"name": "Thieves' Tools", "quantity": 1},
+            {"name": "Gaming Set", "category": "gaming_sets", "quantity": 1},
+            {"name": "Bedroll", "quantity": 1},
+            {"name": "Pouch", "quantity": 2},
+            {"name": "Clothes, Traveler's", "quantity": 1}
+          ],
+          "gp": 16
+        },
+        {"id": "b", "items": [], "gp": 50}
+      ]
+    }
+  ],
+  "species": [
+    {
+      "id": "aasimar",
+      "name": "Aasimar",
+      "creatureType": "Humanoid",
+      "sizeOptions": ["Small", "Medium"],
+      "speed": 30,
+      "traits": [
+        "Celestial Resistance",
+        "Darkvision",
+        "Healing Hands",
+        "Light Bearer",
+        "Celestial Revelation"
+      ],
+      "fixedSpells": [{"name": "Light", "trait": "Light Bearer"}]
+    }
+  ],
+  "raceTraits": {
+    "Celestial Resistance": "You have Resistance to Necrotic damage and Radiant damage.",
+    "Healing Hands": "As a Magic action, touch a creature and roll a number of d4s equal to your Proficiency Bonus. The creature regains Hit Points equal to the total. Once per Long Rest.",
+    "Light Bearer": "You know the Light cantrip, using Charisma as your spellcasting ability for it.",
+    "Celestial Revelation": "From character level 3, take a Bonus Action to transform for 1 minute or until you end it (no action required). Choose an option each time. While transformed, once on each of your turns you can deal extra damage equal to your Proficiency Bonus to one target you damage with an attack or a spell; it is Necrotic for Necrotic Shroud and Radiant otherwise. Heavenly Wings: you gain a Fly Speed equal to your Speed. Inner Radiance: you shed Bright Light in a {{distance:10ft|adj}} radius and Dim Light for {{distance:10ft}} more, and at the end of each of your turns every other creature within {{distance:10ft}} takes Radiant damage equal to your Proficiency Bonus. Necrotic Shroud: when you transform, creatures other than your allies within {{distance:10ft}} succeed on a Charisma save (DC 8 + your Charisma modifier + Proficiency Bonus) or have the Frightened condition until the end of your next turn. Once per Long Rest."
+  },
+  "featureChoices": {
+    "optionSources": {
+      "crafter_tools_2024": [
+        {"id": "carpenter_s_tools", "name": "Carpenter's Tools"},
+        {"id": "leatherworker_s_tools", "name": "Leatherworker's Tools"},
+        {"id": "mason_s_tools", "name": "Mason's Tools"},
+        {"id": "potter_s_tools", "name": "Potter's Tools"},
+        {"id": "smith_s_tools", "name": "Smith's Tools"},
+        {"id": "tinker_s_tools", "name": "Tinker's Tools"},
+        {"id": "weaver_s_tools", "name": "Weaver's Tools"},
+        {"id": "woodcarver_s_tools", "name": "Woodcarver's Tools"}
+      ],
+      "musical_instruments_2024": [
+        {"id": "bagpipes", "name": "Bagpipes"},
+        {"id": "drum", "name": "Drum"},
+        {"id": "dulcimer", "name": "Dulcimer"},
+        {"id": "flute", "name": "Flute"},
+        {"id": "horn", "name": "Horn"},
+        {"id": "lute", "name": "Lute"},
+        {"id": "lyre", "name": "Lyre"},
+        {"id": "pan_flute", "name": "Pan Flute"},
+        {"id": "shawm", "name": "Shawm"},
+        {"id": "viol", "name": "Viol"}
+      ]
+    },
+    "feats": {
+      "Crafter": {
+        "choices": [
+          {"id": "tools", "type": "tool", "count": 3, "optionsSource": "crafter_tools_2024"}
+        ]
+      },
+      "Musician": {
+        "choices": [
+          {"id": "instruments", "type": "tool", "count": 3, "optionsSource": "musical_instruments_2024"}
+        ]
+      }
+    }
+  },
+  "featureUsages": {
+    "resources": {
+      "2024_lucky": {"name": "Luck Points", "max": "proficiency_bonus", "recharge": "long_rest"},
+      "2024_healing_hands": {"name": "Healing Hands", "max": "1", "recharge": "long_rest"},
+      "2024_celestial_revelation": {"name": "Celestial Revelation", "max": "1", "recharge": "long_rest"}
+    },
+    "feats": {
+      "Lucky": {"resourceId": "2024_lucky"}
+    },
+    "raceTraits": {
+      "Healing Hands": {"resourceId": "2024_healing_hands"},
+      "Celestial Revelation": {"resourceId": "2024_celestial_revelation", "minCharacterLevel": 3}
+    }
+  }
+}

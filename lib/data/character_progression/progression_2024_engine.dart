@@ -9,6 +9,7 @@ import '../dice/dice.dart';
 import '../feature_choice_engine.dart';
 import '../feature_choice_option_resolver.dart';
 import '../models/models.dart';
+import '../rulesets/fighting_style_rules.dart';
 import '../rulesets/ruleset_ids.dart';
 import '../rulesets/srd_content_pack.dart';
 import '../rulesets/wild_shape_rules.dart';
@@ -413,10 +414,16 @@ class Progression2024Engine {
         if (feature.effectiveSourceType == FeatureChoiceSourceType.feat)
           feature.name,
     };
+    // Styles from the Fighting Style features are feats the sheet already has.
+    final styles = FightingStyleRules.stylesOf(character);
+    bool hasFeat(SrdFeat feat) =>
+        taken.contains(feat.name) ||
+        feat.category == 'fighting_style' &&
+            styles.contains(FeatureChoiceOptionResolver.idFromName(feat.name));
     return [
       for (final feat in data.feats)
         if (categories.contains(feat.category) &&
-            (feat.repeatable || !taken.contains(feat.name)) &&
+            (feat.repeatable || !hasFeat(feat)) &&
             _meetsPrerequisite(feat, character, data, plan, entriesAfter))
           feat,
     ];
@@ -821,6 +828,19 @@ class Progression2024Engine {
       if (removed > allowed) {
         throw ArgumentError('Only $allowed earlier ${request.choiceId} can change.');
       }
+      if (FightingStyleRules.choiceIds.contains(request.choiceId)) {
+        final others = [
+          for (final choice in FeatureChoiceEngine.upsertChoices(
+            character.featureChoices,
+            next,
+          ))
+            if (request.findIn([choice]) == null) choice,
+        ];
+        final taken = FightingStyleRules.stylesOf(character, choices: others);
+        if (after.difference(before).any(taken.contains)) {
+          throw ArgumentError('A Fighting Style cannot be taken twice.');
+        }
+      }
       if (request.sourceType == FeatureChoiceSourceType.subclassFeature &&
           request.featureName == 'Spellcasting') {
         final requirement = request.requirement;
@@ -879,7 +899,23 @@ class Progression2024Engine {
   static bool _hasDwarvenToughness(Rules2024Data data) =>
       data.speciesTraits.contains('Dwarven Toughness');
 
-  /// Hit points of the level before any Constitution change from its feat.
+  /// Origin feat that adds Hit Points for every character level.
+  static const toughFeat = 'Tough';
+  static const toughHitPointsPerLevel = 2;
+
+  static bool _hasTough(Character character) => character.extraFeatures.any(
+    (feature) =>
+        feature.effectiveSourceType == FeatureChoiceSourceType.feat &&
+        feature.name == toughFeat,
+  );
+
+  /// Hit points added to every level by species traits and feats.
+  static int _hitPointBonusPerLevel(Character character, Rules2024Data data) =>
+      (_hasDwarvenToughness(data) ? 1 : 0) +
+      (_hasTough(character) ? toughHitPointsPerLevel : 0);
+
+  /// Hit points of the level before any Constitution change or Tough bonus
+  /// from its feat.
   static int hitPointsGained(
     Character character,
     Rules2024Data data,
@@ -891,14 +927,17 @@ class Progression2024Engine {
         ? (roll ?? 0).clamp(1, plan.cls.hitDie).toInt()
         : averageHitDie(plan.cls.hitDie);
     final gained = die + character.abilityScores.constitutionModifier;
-    return (gained < 1 ? 1 : gained) + (_hasDwarvenToughness(data) ? 1 : 0);
+    return (gained < 1 ? 1 : gained) + _hitPointBonusPerLevel(character, data);
   }
 
   static int _levelOneHitPoints(
     Creation2024Class cls,
-    AbilityScores scores,
+    Character base,
     Rules2024Data data,
-  ) => cls.hitDie + scores.constitutionModifier + (_hasDwarvenToughness(data) ? 1 : 0);
+  ) =>
+      cls.hitDie +
+      base.abilityScores.constitutionModifier +
+      _hitPointBonusPerLevel(base, data);
 
   // ── Spellcasting ─────────────────────────────────────────────────────────
 
@@ -1275,7 +1314,12 @@ class Progression2024Engine {
     }
     final conDelta = scores.constitutionModifier -
         character.abilityScores.constitutionModifier;
-    final hpIncrease = hpGained + conDelta * plan.newTotalLevel;
+    // Tough counts every level, including the ones before it was taken.
+    final toughIncrease = feat?.name == toughFeat
+        ? toughHitPointsPerLevel * plan.newTotalLevel
+        : 0;
+    final hpIncrease =
+        hpGained + conDelta * plan.newTotalLevel + toughIncrease;
     final maxHp = character.hitPoints.maximum + hpIncrease;
 
     final entries = _entriesAfter(character, plan, subclassName);
@@ -1642,7 +1686,7 @@ class Progression2024Engine {
       level: 1,
       isStartingClass: true,
     );
-    final maxHp = _levelOneHitPoints(cls, base.abilityScores, data);
+    final maxHp = _levelOneHitPoints(cls, base, data);
     final fixedSpell = classLevelOneSpells[cls.name];
     final language = classLanguages[cls.name];
     var reset = base.copyWith(

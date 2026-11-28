@@ -974,6 +974,39 @@ class AppLocalizationsFr extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => 'Deux mains';
 
   @override
+  String get contextualRollAttackMode => 'Type d\'attaque';
+
+  @override
+  String get contextualRollMelee => 'Corps à corps';
+
+  @override
+  String get contextualRollThrown => 'Lancer';
+
+  @override
+  String get fightingStyleArchery => 'Tir à l\'arc';
+
+  @override
+  String get fightingStyleDueling => 'Duel';
+
+  @override
+  String get fightingStyleThrownWeaponFighting => 'Combat avec arme de lancer';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return 'Le bonus de +$bonus au jet d\'attaque avec une arme à distance est inclus.';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return 'Le bonus de +$bonus aux dégâts est inclus quand vous attaquez avec cette arme à une main. Il ne s\'applique que si vous ne tenez aucune autre arme.';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return 'Le bonus de +$bonus aux dégâts est inclus dans les attaques de lancer.';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Expression de dés invalide : $message';
   }

@@ -1,0 +1,82 @@
+{
+  "source": "Player's Handbook (2024)",
+  "contentType": "Original English summaries; supplemental feats, not SRD content.",
+  "feats": [
+    {
+      "id": "blind_fighting",
+      "name": "Blind Fighting",
+      "category": "fighting_style",
+      "prerequisite": {"feature": "Fighting Style"},
+      "repeatable": false,
+      "description": "You have Blindsight with a range of {{distance:10ft}}."
+    },
+    {
+      "id": "dueling",
+      "name": "Dueling",
+      "category": "fighting_style",
+      "prerequisite": {"feature": "Fighting Style"},
+      "repeatable": false,
+      "description": "While you hold a Melee weapon in one hand and no other weapon, you gain a +2 bonus to damage rolls with that weapon."
+    },
+    {
+      "id": "interception",
+      "name": "Interception",
+      "category": "fighting_style",
+      "prerequisite": {"feature": "Fighting Style"},
+      "repeatable": false,
+      "description": "When a creature you can see hits another creature within {{distance:5ft}} of you with an attack roll, you can take a Reaction to reduce the damage that target takes by 1d10 + your Proficiency Bonus. You must be holding a Shield or a Simple or Martial weapon."
+    },
+    {
+      "id": "protection",
+      "name": "Protection",
+      "category": "fighting_style",
+      "prerequisite": {"feature": "Fighting Style"},
+      "repeatable": false,
+      "description": "While holding a Shield, when a creature you can see attacks a target other than you within {{distance:5ft}} of you, you can take a Reaction to give Disadvantage to that attack roll and to every other attack roll against the target until the start of your next turn, as long as you stay within {{distance:5ft}} of it."
+    },
+    {
+      "id": "thrown_weapon_fighting",
+      "name": "Thrown Weapon Fighting",
+      "category": "fighting_style",
+      "prerequisite": {"feature": "Fighting Style"},
+      "repeatable": false,
+      "description": "When you hit with a ranged attack roll using a weapon that has the Thrown property, you gain a +2 bonus to the damage roll."
+    },
+    {
+      "id": "unarmed_fighting",
+      "name": "Unarmed Fighting",
+      "category": "fighting_style",
+      "prerequisite": {"feature": "Fighting Style"},
+      "repeatable": false,
+      "description": "When you hit with an Unarmed Strike, you can deal Bludgeoning damage equal to 1d6 + your Strength modifier instead of its normal damage, or 1d8 + your Strength modifier if you hold no weapon or Shield when you attack. At the start of each of your turns, you can deal 1d4 Bludgeoning damage to one creature you have Grappled."
+    }
+  ],
+  "featureChoices": {
+    "optionSources": {
+      "fighting_styles_2024": [
+        {"id": "blind_fighting", "name": "Blind Fighting", "description": "Gain Blindsight out to {{distance:10ft}}."},
+        {"id": "dueling", "name": "Dueling", "description": "Gain +2 damage with a one-handed Melee weapon when you hold no other weapon."},
+        {"id": "interception", "name": "Interception", "description": "Use a Reaction to reduce damage to a nearby ally by 1d10 + Proficiency Bonus."},
+        {"id": "protection", "name": "Protection", "description": "Use a Reaction and your Shield to give Disadvantage to attacks against a nearby ally."},
+        {"id": "thrown_weapon_fighting", "name": "Thrown Weapon Fighting", "description": "Gain +2 damage on ranged attacks with Thrown weapons."},
+        {"id": "unarmed_fighting", "name": "Unarmed Fighting", "description": "Unarmed Strikes deal 1d6 or 1d8 + Strength; damage a creature you have Grappled."}
+      ],
+      "paladin_fighting_styles_2024": [
+        {"id": "blind_fighting", "name": "Blind Fighting", "description": "Gain Blindsight out to {{distance:10ft}}."},
+        {"id": "dueling", "name": "Dueling", "description": "Gain +2 damage with a one-handed Melee weapon when you hold no other weapon."},
+        {"id": "interception", "name": "Interception", "description": "Use a Reaction to reduce damage to a nearby ally by 1d10 + Proficiency Bonus."},
+        {"id": "protection", "name": "Protection", "description": "Use a Reaction and your Shield to give Disadvantage to attacks against a nearby ally."},
+        {"id": "thrown_weapon_fighting", "name": "Thrown Weapon Fighting", "description": "Gain +2 damage on ranged attacks with Thrown weapons."},
+        {"id": "unarmed_fighting", "name": "Unarmed Fighting", "description": "Unarmed Strikes deal 1d6 or 1d8 + Strength; damage a creature you have Grappled."}
+      ],
+      "ranger_fighting_styles_2024": [
+        {"id": "blind_fighting", "name": "Blind Fighting", "description": "Gain Blindsight out to {{distance:10ft}}."},
+        {"id": "dueling", "name": "Dueling", "description": "Gain +2 damage with a one-handed Melee weapon when you hold no other weapon."},
+        {"id": "interception", "name": "Interception", "description": "Use a Reaction to reduce damage to a nearby ally by 1d10 + Proficiency Bonus."},
+        {"id": "protection", "name": "Protection", "description": "Use a Reaction and your Shield to give Disadvantage to attacks against a nearby ally."},
+        {"id": "thrown_weapon_fighting", "name": "Thrown Weapon Fighting", "description": "Gain +2 damage on ranged attacks with Thrown weapons."},
+        {"id": "unarmed_fighting", "name": "Unarmed Fighting", "description": "Unarmed Strikes deal 1d6 or 1d8 + Strength; damage a creature you have Grappled."}
+      ]
+    }
+  }
+}

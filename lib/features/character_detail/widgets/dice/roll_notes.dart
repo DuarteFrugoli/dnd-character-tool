@@ -3,6 +3,7 @@ import 'package:dnd_character_tool/l10n/app_localizations.dart';
 import '../../../../data/datasources/srd/srd_i18n_service.dart';
 import '../../../../data/dice/contextual_roll.dart';
 import '../../../../data/feature_choice_engine.dart';
+import '../../../../data/rulesets/fighting_style_rules.dart';
 import '../../../../data/rulesets/spell_roll_rules.dart';
 import '../../../../data/rulesets/weapon_mastery_rules.dart';
 
@@ -50,6 +51,28 @@ List<ContextualRollNote> weaponMasteryNotes({
       ),
   ];
 }
+
+/// Fighting Style bonuses included in a weapon roll.
+List<ContextualRollNote> fightingStyleNotes({
+  required AppLocalizations l10n,
+  required FightingStyleWeaponEffect effect,
+}) => [
+  if (effect.archeryAttackBonus > 0)
+    ContextualRollNote(
+      title: l10n.fightingStyleArchery,
+      text: l10n.fightingStyleArcheryNote(effect.archeryAttackBonus),
+    ),
+  if (effect.duelingDamageBonus > 0)
+    ContextualRollNote(
+      title: l10n.fightingStyleDueling,
+      text: l10n.fightingStyleDuelingNote(effect.duelingDamageBonus),
+    ),
+  if (effect.thrownDamageBonus > 0)
+    ContextualRollNote(
+      title: l10n.fightingStyleThrownWeaponFighting,
+      text: l10n.fightingStyleThrownNote(effect.thrownDamageBonus),
+    ),
+];
 
 /// Agonizing Blast damage and Eldritch Blast beams of a spell roll.
 List<ContextualRollNote> spellRollNotes({

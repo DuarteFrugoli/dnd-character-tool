@@ -168,6 +168,18 @@ Dungeon Master's Guide 2024 material comes later with the GM area.
   270 magic items, 88 creatures (mostly Wild Shape beasts).
 - `assets/data/2024/phb_subclasses.json`: the other 36 PHB subclasses and
   13 spells they need, as original English summaries. No translations yet.
+- `assets/data/2024/phb_origins.json`: the other 12 PHB backgrounds, 6 Origin
+  feats and the Aasimar, as original English summaries with P1 translations
+  in all 10 translation languages. The pack validator checks it merged with
+  the SRD catalogs.
+- `assets/data/2024/phb_feats.json`: the other 6 Fighting Style feats, added
+  to the three class style lists, as original English summaries with P2
+  translations in all 10 translation languages. Later general feats and
+  Epic Boons go here too.
+- `assets/data/2024/phb_spells.json`: the other 39 PHB spells, as original
+  English summaries with attack and damage rolls where a single formula
+  applies. With the SRD and subclass spells, the 2024 catalog has 391 spells.
+  Translated in all 11 app languages.
 
 ### Prioritized gaps
 
@@ -175,38 +187,76 @@ Order follows how early a player meets the gap: creation first, then low
 levels, then high levels. Entries outside the SRD are written as original
 English summaries, like the existing supplemental catalogs.
 
-**P1 - Origin (every new character)**
+**P1 - Origin (every new character)** - implemented and translated
 
 Backgrounds depend on their origin feats, so both ship together.
 
-- [ ] 6 origin feats: Crafter, Healer, Lucky, Musician, Tavern Brawler, Tough.
-- [ ] 12 backgrounds: Artisan, Charlatan, Entertainer, Farmer, Guard, Guide,
-  Hermit, Merchant, Noble, Sailor, Scribe, Wayfarer.
-- [ ] Species: Aasimar.
+- [x] 6 origin feats: Crafter, Healer, Lucky, Musician, Tavern Brawler, Tough.
+  Tough adds 2 HP per level, retroactively when taken at a feat level and
+  through level resets; Lucky tracks Luck Points; Crafter and Musician ask for
+  three tools. Healer, Tavern Brawler, the Crafter discount and Musician's
+  Heroic Inspiration for allies are descriptive.
+- [x] 12 backgrounds: Artisan, Charlatan, Entertainer, Farmer, Guard, Guide,
+  Hermit, Merchant, Noble, Sailor, Scribe, Wayfarer, with their equipment
+  packages (option A is worth 50 GP, like option B). The 2014 conversion maps Guild
+  Artisan to Artisan and Guild Merchant to Merchant.
+- [x] Species: Aasimar, with the Light cantrip, Healing Hands and Celestial
+  Revelation uses. Resistances and the transformation are descriptive.
+- [x] P1 translations in all 10 translation languages: names of the 12
+  backgrounds; names and descriptions of the 6 Origin feats and 4 new Aasimar
+  traits; Aasimar's name, 18 tool/instrument choices, 3 tracked resource names
+  and missing generic equipment labels. Runtime tests check every language,
+  distance markers, damage dice and the localized inventory names. Existing
+  tool, skill and Light cantrip translations are reused. This is not a native
+  editorial audit or completion of the other 2024 priorities.
 
-**P2 - Fighting Style feats (Fighter, Paladin, Ranger at levels 1-2)**
+**P2 - Fighting Style feats (Fighter, Paladin, Ranger at levels 1-2)** - implemented and translated
 
-- [ ] Blind Fighting, Dueling, Interception, Protection, Thrown Weapon
-  Fighting, Unarmed Fighting.
+- [x] Blind Fighting, Dueling, Interception, Protection, Thrown Weapon
+  Fighting, Unarmed Fighting: in the Fighter, Paladin and Ranger Fighting
+  Style lists, the Champion's Additional Fighting Style and as level feats.
+  A style the sheet already has, from a Fighting Style feature or a feat, is
+  not offered again (also for the 2014 Champion). Weapon rolls apply Archery
+  (+2 attack with Ranged weapons), Dueling (+2 one-handed Melee damage while
+  no other Melee weapon is equipped) and Thrown Weapon Fighting (+2 damage,
+  with a thrown option for Melee Thrown weapons) in both editions where the
+  style exists; Defense changes AC. The other styles are descriptive.
+- [x] P2 translations in all 10 translation languages: full names and
+  descriptions of the 6 feats and summaries in the Fighter, Paladin and
+  Ranger choice lists, also used by the Champion. Dueling and Thrown Weapon
+  Fighting share their names with the existing weapon-roll notes. Runtime
+  tests check every language, all 18 list entries, distances, dice and +2
+  damage bonuses. Protection retains its 2024 duration and proximity
+  condition; Unarmed Fighting retains its damage dice and start-of-turn effect.
 
-**P3 - Spells**
+**P3 - Spells** - done in English
 
-Present in the 2014 PHB catalog but absent from the 2024 catalog. Verify each
-against the PHB 2024 spell list before adding; Branding Smite and Whirlwind
-are believed to have been dropped in 2024 and are not listed.
+Checked against a public 2024 spell index (each page's source line read as
+"Player's Handbook"): every SRD and subclass spell already in the app is on
+it at the same level, and these 39 were missing. Branding Smite (replaced by
+Shining Smite), Whirlwind (not a PHB spell) and Shadow Blade are not in the
+2024 book; Feeblemind is Befuddlement.
 
-- [ ] Cantrips: Blade Ward, Friends, Thorn Whip.
-- [ ] Paladin smites and auras: Banishing Smite, Blinding Smite, Staggering
-  Smite, Thunderous Smite, Wrathful Smite, Aura of Purity, Aura of Vitality,
-  Circle of Power, Compelled Duel, Destructive Wave.
-- [ ] Ranger: Conjure Barrage, Conjure Volley, Cordon of Arrows, Hail of
-  Thorns, Lightning Arrow, Swift Quiver, Grasping Vine.
-- [ ] Others: Arcane Gate, Armor of Agathys, Cloud of Daggers, Crown of
-  Madness, Elemental Weapon, Feign Death, Telepathy, Witch Bolt.
-- [ ] New in the PHB 2024 and outside the SRD (candidates, verify): Summon
-  Elemental, Summon Fiend, Summon Undead, Toll the Dead, Shadow Blade, Power
-  Word Fortify, Synaptic Static, Tasha's Bubbling Cauldron, Jallarzi's Storm
-  of Radiance.
+- [x] Cantrips: Blade Ward, Friends, Thorn Whip, Thunderclap, Toll the Dead,
+  Word of Radiance.
+- [x] Paladin: Compelled Duel, Thunderous Smite, Wrathful Smite, Blinding
+  Smite, Aura of Vitality, Aura of Purity, Staggering Smite, Banishing Smite,
+  Circle of Power, Destructive Wave.
+- [x] Ranger: Hail of Thorns, Cordon of Arrows, Conjure Barrage, Lightning
+  Arrow, Elemental Weapon, Grasping Vine, Conjure Volley, Swift Quiver.
+- [x] Others: Armor of Agathys, Witch Bolt, Arcane Vigor, Cloud of Daggers,
+  Crown of Madness, Feign Death, Summon Undead, Summon Elemental, Jallarzi's
+  Storm of Radiance, Synaptic Static, Arcane Gate, Summon Fiend, Tasha's
+  Bubbling Cauldron, Power Word Fortify, Telepathy.
+- [x] Rolls: attack and damage with slot or cantrip scaling for the damage
+  spells, except Toll the Dead (two damage dice by target state), Witch Bolt's
+  later 1d12 and Lightning Arrow's 2d8 burst, which stay in the description.
+- [x] Translations of P3 in the 10 translation languages: name,
+  description, higher-level text, material, casting time, range, duration and
+  roll labels. The 28 spells that also exist in 2014 keep their 2014 names in
+  each language. Dice and measures match the English source (pack validator
+  and `supplemental_2024_spells_i18n_test.dart`), and no new name repeats
+  another spell's name in the same language.
 
 **P4 - General feats (level 4 and later)**
 
@@ -243,14 +293,14 @@ Weapon Master.
 
 | Language | Code | Status |
 | --- | --- | --- |
-| English | en | Placeholder — not audited here |
-| German | de | Placeholder |
-| Spanish | es | Placeholder |
-| French | fr | Placeholder |
-| Italian | it | Placeholder |
-| Japanese | ja | Placeholder |
-| Korean | ko | Placeholder |
-| Portuguese | pt | Placeholder |
-| Russian | ru | Placeholder |
-| Turkish | tr | Placeholder |
-| Chinese | zh | Placeholder |
+| English | en | P1/P2 implemented; remaining checklist pending |
+| German | de | P1/P2 translated and validated; remaining 2024 content pending |
+| Spanish | es | P1/P2 translated and validated; remaining 2024 content pending |
+| French | fr | P1/P2 translated and validated; remaining 2024 content pending |
+| Italian | it | P1/P2 translated and validated; remaining 2024 content pending |
+| Japanese | ja | P1/P2 translated and validated; remaining 2024 content pending |
+| Korean | ko | P1/P2 translated and validated; remaining 2024 content pending |
+| Portuguese | pt | P1/P2 translated and validated; remaining 2024 content pending |
+| Russian | ru | P1/P2 translated and validated; remaining 2024 content pending |
+| Turkish | tr | P1/P2 translated and validated; remaining 2024 content pending |
+| Chinese | zh | P1/P2 translated and validated; remaining 2024 content pending |

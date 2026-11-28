@@ -966,6 +966,39 @@ class AppLocalizationsEn extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => 'Two-handed';
 
   @override
+  String get contextualRollAttackMode => 'Attack type';
+
+  @override
+  String get contextualRollMelee => 'Melee';
+
+  @override
+  String get contextualRollThrown => 'Thrown';
+
+  @override
+  String get fightingStyleArchery => 'Archery';
+
+  @override
+  String get fightingStyleDueling => 'Dueling';
+
+  @override
+  String get fightingStyleThrownWeaponFighting => 'Thrown Weapon Fighting';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return '+$bonus to the attack roll with a Ranged weapon is included.';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return '+$bonus damage is included when you attack with this weapon in one hand. It applies only while you hold no other weapon.';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return '+$bonus damage is included in thrown attacks.';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Invalid dice expression: $message';
   }

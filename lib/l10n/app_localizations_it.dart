@@ -973,6 +973,40 @@ class AppLocalizationsIt extends AppLocalizations {
   String get contextualRollVersatileTwoHanded => 'Due mani';
 
   @override
+  String get contextualRollAttackMode => 'Tipo di attacco';
+
+  @override
+  String get contextualRollMelee => 'Mischia';
+
+  @override
+  String get contextualRollThrown => 'Lancio';
+
+  @override
+  String get fightingStyleArchery => 'Tiro con l\'Arco';
+
+  @override
+  String get fightingStyleDueling => 'Duello';
+
+  @override
+  String get fightingStyleThrownWeaponFighting =>
+      'Combattere con Armi da Lancio';
+
+  @override
+  String fightingStyleArcheryNote(int bonus) {
+    return 'Il bonus di +$bonus al tiro per colpire con un\'arma a distanza è incluso.';
+  }
+
+  @override
+  String fightingStyleDuelingNote(int bonus) {
+    return 'Il bonus di +$bonus ai danni è incluso quando attacchi impugnando quest\'arma in una mano. Si applica solo se non impugni altre armi.';
+  }
+
+  @override
+  String fightingStyleThrownNote(int bonus) {
+    return 'Il bonus di +$bonus ai danni è incluso negli attacchi con lancio.';
+  }
+
+  @override
   String diceInvalidExpression(String message) {
     return 'Espressione dei dadi non valida: $message';
   }

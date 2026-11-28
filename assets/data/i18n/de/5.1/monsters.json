@@ -1261,5 +1261,531 @@
         "description": "Der Wolf hat Vorteil bei Angriffswürfen gegen eine Kreatur, wenn sich mindestens ein Verbündeter des Wolfs innerhalb von {{distance:5ft|dat}} von der Kreatur befindet und dieser Verbündete nicht handlungsunfähig ist."
       }
     }
+  },
+  "Air Elemental": {
+    "name": "Luftelementar",
+    "traits": {
+      "air_form": {
+        "name": "Luftgestalt",
+        "description": "Der Elementar kann den Bereich einer feindlichen Kreatur betreten und dort bleiben. Er kann sich ohne Zwängen durch nur {{distance:1in}} breite Öffnungen bewegen."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistenz gegen nichtmagischen Schaden",
+        "description": "Der Elementar hat Resistenz gegen Hieb-, Stich- und Wuchtschaden durch nichtmagische Angriffe."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Mehrfachangriff",
+        "description": "Der Elementar führt zwei Hiebangriffe aus."
+      },
+      "slam": {
+        "name": "Hieb",
+        "description": "Nahkampf-Waffenangriff: +8 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 14 (2d8 + 5) Wuchtschaden."
+      },
+      "whirlwind": {
+        "name": "Wirbelwind",
+        "description": "Jede Kreatur im Bereich des Elementars legt einen Stärkerettungswurf gegen SG 13 ab. Bei einem Fehlschlag erleidet sie 15 (3d8 + 2) Wuchtschaden, wird bis zu {{distance:20ft}} in eine zufällige Richtung geschleudert und zu Boden geworfen. Trifft sie auf einen Gegenstand wie eine Wand oder den Boden, erleidet sie pro {{distance:10ft}} Wurfstrecke 3 (1d6) Wuchtschaden. Wird sie gegen eine andere Kreatur geschleudert, muss diese einen Geschicklichkeitsrettungswurf gegen SG 13 bestehen oder erleidet denselben Schaden und wird zu Boden geworfen. Bei Erfolg auf den ursprünglichen Rettungswurf erleidet das Ziel halben Wuchtschaden und wird weder geschleudert noch zu Boden geworfen."
+      }
+    }
+  },
+  "Earth Elemental": {
+    "name": "Erdelementar",
+    "traits": {
+      "earth_glide": {
+        "name": "Erdgleiten",
+        "description": "Der Elementar kann sich durch nichtmagische, unbearbeitete Erde und Stein graben. Dabei hinterlässt er keine Spuren im durchquerten Material."
+      },
+      "siege_monster": {
+        "name": "Belagerungsmonster",
+        "description": "Der Elementar verursacht doppelten Schaden an Gegenständen und Bauwerken."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistenz gegen nichtmagischen Schaden",
+        "description": "Der Elementar hat Resistenz gegen Hieb-, Stich- und Wuchtschaden durch nichtmagische Angriffe."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Mehrfachangriff",
+        "description": "Der Elementar führt zwei Hiebangriffe aus."
+      },
+      "slam": {
+        "name": "Hieb",
+        "description": "Nahkampf-Waffenangriff: +8 zum Treffen, Reichweite {{distance:10ft|short}}, ein Ziel. Treffer: 14 (2d8 + 5) Wuchtschaden."
+      }
+    }
+  },
+  "Elephant": {
+    "name": "Elefant",
+    "traits": {
+      "trampling_charge": {
+        "name": "Trampelnder Sturmangriff",
+        "description": "Bewegt sich die Kreatur mindestens {{distance:20ft}} gerade auf ein Ziel zu und trifft es im selben Zug mit einem Stoßzahnangriff, muss das Ziel einen Stärkerettungswurf gegen SG 12 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann die Kreatur als Bonusaktion einen Stampfangriff gegen es ausführen."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Stoßzähne",
+        "description": "Nahkampf-Waffenangriff: +8 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 19 (3d8 + 6) Stichschaden."
+      },
+      "stomp": {
+        "name": "Stampfen",
+        "description": "Nahkampf-Waffenangriff: +8 zum Treffen, Reichweite {{distance:5ft|short}}, eine am Boden liegende Kreatur. Treffer: 22 (3d10 + 6) Wuchtschaden."
+      }
+    }
+  },
+  "Fire Elemental": {
+    "name": "Feuerelementar",
+    "traits": {
+      "fire_form": {
+        "name": "Feuergestalt",
+        "description": "Der Elementar kann sich ohne Zwängen durch nur {{distance:1in}} breite Öffnungen bewegen. Eine Kreatur, die ihn berührt oder aus höchstens {{distance:5ft}} Entfernung mit einem Nahkampfangriff trifft, erleidet 5 (1d10) Feuerschaden. Er kann den Bereich einer feindlichen Kreatur betreten und dort bleiben. Beim ersten Betreten des Bereichs einer Kreatur in einem Zug erleidet diese 5 (1d10) Feuerschaden und fängt Feuer. Bis jemand eine Aktion zum Löschen aufwendet, erleidet sie zu Beginn jedes ihrer Züge 5 (1d10) Feuerschaden."
+      },
+      "illumination": {
+        "name": "Beleuchtung",
+        "description": "Der Elementar verbreitet helles Licht in einem Radius von {{distance:30ft|adj}} und dämmriges Licht für weitere {{distance:30ft}}."
+      },
+      "water_susceptibility": {
+        "name": "Wasserempfindlichkeit",
+        "description": "Für jeweils {{distance:5ft}}, die sich der Elementar im Wasser bewegt, oder jede über ihn gegossene Gallone Wasser erleidet er 1 Kälteschaden."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistenz gegen nichtmagischen Schaden",
+        "description": "Der Elementar hat Resistenz gegen Hieb-, Stich- und Wuchtschaden durch nichtmagische Angriffe."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Mehrfachangriff",
+        "description": "Der Elementar führt zwei Berührungsangriffe aus."
+      },
+      "touch": {
+        "name": "Berührung",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 10 (2d6 + 3) Feuerschaden. Ist das Ziel eine Kreatur oder ein brennbarer Gegenstand, fängt es Feuer. Bis eine Kreatur eine Aktion zum Löschen aufwendet, erleidet das Ziel zu Beginn jedes seiner Züge 5 (1d10) Feuerschaden."
+      }
+    }
+  },
+  "Giant Boar": {
+    "name": "Rieseneber",
+    "traits": {
+      "charge": {
+        "name": "Sturmangriff",
+        "description": "Bewegt sich die Kreatur mindestens {{distance:20ft}} gerade auf ein Ziel zu und trifft es im selben Zug mit ihrem Hauerangriff, erleidet das Ziel zusätzlich 7 (2d6) Hiebschaden. Ist das Ziel eine Kreatur, muss es einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen."
+      },
+      "relentless": {
+        "name": "Unnachgiebig",
+        "description": "Würde Schaden von höchstens 10 den Eber auf 0 Trefferpunkte reduzieren, sinkt er stattdessen auf 1 Trefferpunkt."
+      }
+    },
+    "actions": {
+      "tusk": {
+        "name": "Hauer",
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 10 (2d6 + 3) Hiebschaden."
+      }
+    }
+  },
+  "Giant Constrictor Snake": {
+    "name": "Riesenwürgeschlange",
+    "actions": {
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:10ft|short}}, eine Kreatur. Treffer: 11 (2d6 + 4) Stichschaden."
+      },
+      "constrict": {
+        "name": "Umschlingen",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft|short}}, eine Kreatur. Treffer: 13 (2d8 + 4) Wuchtschaden, und das Ziel wird gepackt (Entkommen-SG 16). Solange es gepackt ist, ist es festgesetzt, und die Schlange kann kein anderes Ziel umschlingen."
+      }
+    }
+  },
+  "Giant Crocodile": {
+    "name": "Riesenkrokodil",
+    "traits": {
+      "hold_breath": {
+        "name": "Luft anhalten",
+        "description": "Die Kreatur kann 30 Minuten lang die Luft anhalten."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Mehrfachangriff",
+        "description": "Das Krokodil führt zwei Angriffe aus: einen Biss und einen Schwanzangriff."
+      },
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +8 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 21 (3d10 + 5) Stichschaden, und das Ziel wird gepackt (Entkommen-SG 16). Solange es gepackt ist, ist es festgesetzt, und das Krokodil kann kein anderes Ziel beißen."
+      },
+      "tail": {
+        "name": "Schwanz",
+        "description": "Nahkampf-Waffenangriff: +8 zum Treffen, Reichweite {{distance:10ft|short}}, ein nicht vom Krokodil gepacktes Ziel. Treffer: 14 (2d8 + 5) Wuchtschaden. Ist das Ziel eine Kreatur, muss es einen Stärkerettungswurf gegen SG 16 bestehen oder wird zu Boden geworfen."
+      }
+    }
+  },
+  "Giant Elk": {
+    "name": "Riesenelch",
+    "traits": {
+      "charge": {
+        "name": "Sturmangriff",
+        "description": "Bewegt sich die Kreatur mindestens {{distance:20ft}} gerade auf ein Ziel zu und trifft es im selben Zug mit ihrem Rammangriff, erleidet das Ziel zusätzlich 7 (2d6) Schaden. Ist das Ziel eine Kreatur, muss es einen Stärkerettungswurf gegen SG 14 bestehen oder wird zu Boden geworfen."
+      }
+    },
+    "actions": {
+      "ram": {
+        "name": "Rammen",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:10ft|short}}, ein Ziel. Treffer: 11 (2d6 + 4) Wuchtschaden."
+      },
+      "hooves": {
+        "name": "Hufe",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft|short}}, eine am Boden liegende Kreatur. Treffer: 22 (4d8 + 4) Wuchtschaden. Der majestätische Riesenelch ist so selten, dass sein Erscheinen oft als Vorzeichen eines bedeutenden Ereignisses wie der Geburt eines Königs gilt. Legenden berichten von Göttern, die bei Besuchen auf der Materiellen Ebene diese Gestalt annehmen. Viele Kulturen glauben deshalb, seine Jagd ziehe göttlichen Zorn nach sich."
+      }
+    }
+  },
+  "Giant Scorpion": {
+    "name": "Riesenskorpion",
+    "actions": {
+      "multiattack": {
+        "name": "Mehrfachangriff",
+        "description": "Der Skorpion führt drei Angriffe aus: zwei mit den Scheren und einen mit dem Stachel."
+      },
+      "claw": {
+        "name": "Schere",
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 6 (1d8 + 2) Wuchtschaden, und das Ziel wird gepackt (Entkommen-SG 12). Der Skorpion hat zwei Scheren, die jeweils nur ein Ziel packen können."
+      },
+      "sting": {
+        "name": "Stachel",
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft|short}}, eine Kreatur. Treffer: 7 (1d10 + 2) Stichschaden, und das Ziel legt einen Konstitutionsrettungswurf gegen SG 12 ab. Bei einem Fehlschlag erleidet es 22 (4d10) Giftschaden, bei Erfolg die Hälfte."
+      }
+    }
+  },
+  "Giant Shark": {
+    "name": "Riesenhai",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Blutrausch",
+        "description": "Der Hai hat Vorteil auf Nahkampfangriffswürfe gegen Kreaturen, denen Trefferpunkte fehlen."
+      },
+      "water_breathing": {
+        "name": "Wasseratmung",
+        "description": "Der Hai kann nur unter Wasser atmen."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +9 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 22 (3d10 + 6) Stichschaden. Ein Riesenhai ist {{distance:30ft}} lang und lebt gewöhnlich in tiefen Ozeanen. Völlig furchtlos greift er alles an, was seinen Weg kreuzt, auch Wale und Schiffe."
+      }
+    }
+  },
+  "Hunter Shark": {
+    "name": "Jägerhai",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Blutrausch",
+        "description": "Der Hai hat Vorteil auf Nahkampfangriffswürfe gegen Kreaturen, denen Trefferpunkte fehlen."
+      },
+      "water_breathing": {
+        "name": "Wasseratmung",
+        "description": "Der Hai kann nur unter Wasser atmen."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 13 (2d8 + 4) Stichschaden. Größer und wilder als ein Riffhai, aber kleiner als ein Riesenhai, bewohnt der Jägerhai tiefe Gewässer. Er jagt meist allein, doch mehrere können im selben Gebiet fressen. Ein ausgewachsenes Tier ist {{distance:15ft|num}} bis {{distance:20ft}} lang."
+      }
+    }
+  },
+  "Imp": {
+    "name": "Teufelchen",
+    "traits": {
+      "shapechanger": {
+        "name": "Gestaltwandler",
+        "description": "Das Teufelchen kann sich mit einer Aktion in eine Ratte (Bewegungsrate {{distance:20ft|short}}), einen Raben ({{distance:20ft|short}}, Fliegen {{distance:60ft|short}}) oder eine Spinne ({{distance:20ft|short}}, Klettern {{distance:20ft|short}}) oder in seine wahre Gestalt verwandeln. Seine Werte bleiben bis auf die genannten Bewegungsraten gleich. Getragene Ausrüstung verwandelt sich nicht. Stirbt es, nimmt es seine wahre Gestalt an."
+      },
+      "devil_s_sight": {
+        "name": "Teufelssicht",
+        "description": "Magische Dunkelheit behindert die Dunkelsicht des Teufelchens nicht."
+      },
+      "magic_resistance": {
+        "name": "Magieresistenz",
+        "description": "Die Kreatur hat Vorteil auf Rettungswürfe gegen Zauber und andere magische Effekte."
+      },
+      "conditional_damage_resistance": {
+        "name": "Schadensresistenz",
+        "description": "Das Teufelchen hat Resistenz gegen Hieb-, Stich- und Wuchtschaden durch nichtmagische Angriffe, die nicht versilbert sind."
+      }
+    },
+    "actions": {
+      "sting_bite_in_beast_form": {
+        "name": "Stachel (Biss in Tiergestalt)",
+        "description": "Nahkampf-Waffenangriff: +5 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 5 (1d4 + 3) Stichschaden. Das Ziel legt einen Konstitutionsrettungswurf gegen SG 11 ab und erleidet bei einem Fehlschlag 10 (3d6) Giftschaden, bei Erfolg die Hälfte."
+      },
+      "invisibility": {
+        "name": "Unsichtbarkeit",
+        "description": "Das Teufelchen wird magisch unsichtbar, bis es angreift oder seine Konzentration endet, als würde es sich auf einen Zauber konzentrieren. Getragene Ausrüstung wird mit ihm unsichtbar."
+      }
+    }
+  },
+  "Killer Whale": {
+    "name": "Schwertwal",
+    "traits": {
+      "echolocation": {
+        "name": "Echoortung",
+        "description": "Der Wal kann seinen Blindsinn nicht nutzen, solange er taub ist."
+      },
+      "hold_breath": {
+        "name": "Luft anhalten",
+        "description": "Die Kreatur kann 30 Minuten lang die Luft anhalten."
+      },
+      "keen_hearing": {
+        "name": "Scharfes Gehör",
+        "description": "Die Kreatur hat Vorteil auf Würfe auf Weisheit (Wahrnehmung), die auf dem Gehör beruhen."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 21 (5d6 + 4) Stichschaden."
+      }
+    }
+  },
+  "Mammoth": {
+    "name": "Mammut",
+    "traits": {
+      "trampling_charge": {
+        "name": "Trampelnder Sturmangriff",
+        "description": "Bewegt sich die Kreatur mindestens {{distance:20ft}} gerade auf ein Ziel zu und trifft es im selben Zug mit einem Stoßzahnangriff, muss das Ziel einen Stärkerettungswurf gegen SG 18 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann die Kreatur als Bonusaktion einen Stampfangriff gegen es ausführen."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Stoßzähne",
+        "description": "Nahkampf-Waffenangriff: +10 zum Treffen, Reichweite {{distance:10ft|short}}, ein Ziel. Treffer: 25 (4d8 + 7) Stichschaden."
+      },
+      "stomp": {
+        "name": "Stampfen",
+        "description": "Nahkampf-Waffenangriff: +10 zum Treffen, Reichweite {{distance:5ft|short}}, eine am Boden liegende Kreatur. Treffer: 29 (4d10 + 7) Wuchtschaden. Ein Mammut ähnelt einem Elefanten mit dichtem Fell und langen Stoßzähnen. Mammuts sind kräftiger und wilder als gewöhnliche Elefanten und bewohnen Klimazonen von subarktisch bis subtropisch."
+      }
+    }
+  },
+  "Plesiosaurus": {
+    "name": "Plesiosaurus",
+    "traits": {
+      "hold_breath": {
+        "name": "Luft anhalten",
+        "description": "Die Kreatur kann 1 Stunde lang die Luft anhalten."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:10ft|short}}, ein Ziel. Treffer: 14 (3d6 + 4) Stichschaden."
+      }
+    }
+  },
+  "Polar Bear": {
+    "name": "Eisbär",
+    "traits": {
+      "keen_smell": {
+        "name": "Scharfer Geruchssinn",
+        "description": "Die Kreatur hat Vorteil auf Würfe auf Weisheit (Wahrnehmung), die auf dem Geruchssinn beruhen."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Mehrfachangriff",
+        "description": "Der Bär führt zwei Angriffe aus: einen Biss und einen Klauenangriff."
+      },
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +7 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 9 (1d8 + 5) Stichschaden."
+      },
+      "claws": {
+        "name": "Klauen",
+        "description": "Nahkampf-Waffenangriff: +7 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 12 (2d6 + 5) Hiebschaden."
+      }
+    }
+  },
+  "Pseudodragon": {
+    "name": "Pseudodrache",
+    "traits": {
+      "keen_senses": {
+        "name": "Scharfe Sinne",
+        "description": "Der Pseudodrache hat Vorteil auf Würfe auf Weisheit (Wahrnehmung), die auf Sehen, Hören oder Riechen beruhen."
+      },
+      "magic_resistance": {
+        "name": "Magieresistenz",
+        "description": "Die Kreatur hat Vorteil auf Rettungswürfe gegen Zauber und andere magische Effekte."
+      },
+      "limited_telepathy": {
+        "name": "Begrenzte Telepathie",
+        "description": "Der Pseudodrache kann einfache Gedanken, Gefühle und Bilder magisch telepathisch mit jeder Kreatur innerhalb von {{distance:100ft}} austauschen, die eine Sprache versteht."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 4 (1d4 + 2) Stichschaden."
+      },
+      "sting": {
+        "name": "Stachel",
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft|short}}, eine Kreatur. Treffer: 4 (1d4 + 2) Stichschaden. Das Ziel muss einen Konstitutionsrettungswurf gegen SG 11 bestehen oder ist 1 Stunde lang vergiftet. Misslingt der Rettungswurf um mindestens 5, wird es für dieselbe Dauer bewusstlos, bis es Schaden erleidet oder eine andere Kreatur eine Aktion nutzt, um es wachzurütteln."
+      }
+    }
+  },
+  "Quasit": {
+    "name": "Quasit",
+    "traits": {
+      "shapechanger": {
+        "name": "Gestaltwandler",
+        "description": "Der Quasit kann sich mit einer Aktion in eine Fledermaus (Bewegungsrate {{distance:10ft|short}}, Fliegen {{distance:40ft|short}}), einen Hundertfüßer ({{distance:40ft|short}}, Klettern {{distance:40ft|short}}), eine Kröte ({{distance:40ft|short}}, Schwimmen {{distance:40ft|short}}) oder in seine wahre Gestalt verwandeln. Seine Werte bleiben bis auf die genannten Bewegungsraten gleich. Getragene Ausrüstung verwandelt sich nicht. Stirbt er, nimmt er seine wahre Gestalt an."
+      },
+      "magic_resistance": {
+        "name": "Magieresistenz",
+        "description": "Die Kreatur hat Vorteil auf Rettungswürfe gegen Zauber und andere magische Effekte."
+      },
+      "nonmagical_damage_resistance": {
+        "name": "Resistenz gegen nichtmagischen Schaden",
+        "description": "Der Quasit hat Resistenz gegen Hieb-, Stich- und Wuchtschaden durch nichtmagische Angriffe."
+      }
+    },
+    "actions": {
+      "claws_bite_in_beast_form": {
+        "name": "Klauen (Biss in Tiergestalt)",
+        "description": "Nahkampf-Waffenangriff: +4 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 5 (1d4 + 3) Stichschaden. Das Ziel muss einen Konstitutionsrettungswurf gegen SG 10 bestehen oder erleidet 5 (2d4) Giftschaden und ist 1 Minute lang vergiftet. Es kann den Rettungswurf am Ende jedes seiner Züge wiederholen und beendet den Effekt bei Erfolg."
+      },
+      "scare": {
+        "name": "Schrecken",
+        "description": "Eine vom Quasit gewählte Kreatur innerhalb von {{distance:20ft}} muss einen Weisheitsrettungswurf gegen SG 10 bestehen oder ist 1 Minute lang verängstigt. Am Ende jedes ihrer Züge kann sie den Rettungswurf wiederholen, mit Nachteil, solange der Quasit in ihrer Sichtlinie ist, und beendet den Effekt bei Erfolg."
+      },
+      "invisibility": {
+        "name": "Unsichtbarkeit",
+        "description": "Der Quasit wird magisch unsichtbar, bis er angreift, Schrecken nutzt oder seine Konzentration endet, als würde er sich auf einen Zauber konzentrieren. Getragene Ausrüstung wird mit ihm unsichtbar."
+      }
+    }
+  },
+  "Rhinoceros": {
+    "name": "Nashorn",
+    "traits": {
+      "charge": {
+        "name": "Sturmangriff",
+        "description": "Bewegt sich die Kreatur mindestens {{distance:20ft}} gerade auf ein Ziel zu und trifft es im selben Zug mit ihrem Hornangriff, erleidet das Ziel zusätzlich 9 (2d8) Wuchtschaden. Ist das Ziel eine Kreatur, muss es einen Stärkerettungswurf gegen SG 15 bestehen oder wird zu Boden geworfen."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Horn",
+        "description": "Nahkampf-Waffenangriff: +7 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 14 (2d8 + 5) Wuchtschaden."
+      }
+    }
+  },
+  "Saber-Toothed Tiger": {
+    "name": "Säbelzahntiger",
+    "traits": {
+      "keen_smell": {
+        "name": "Scharfer Geruchssinn",
+        "description": "Die Kreatur hat Vorteil auf Würfe auf Weisheit (Wahrnehmung), die auf dem Geruchssinn beruhen."
+      },
+      "pounce": {
+        "name": "Anspringen",
+        "description": "Bewegt sich die Kreatur mindestens {{distance:20ft}} gerade auf ein Ziel zu und trifft es im selben Zug mit einem Klauenangriff, muss das Ziel einen Stärkerettungswurf gegen SG 14 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann die Kreatur als Bonusaktion einen Bissangriff gegen es ausführen."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Biss",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 10 (1d10 + 5) Stichschaden."
+      },
+      "claw": {
+        "name": "Klauen",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 12 (2d6 + 5) Hiebschaden."
+      }
+    }
+  },
+  "Sprite": {
+    "name": "Feengeist",
+    "actions": {
+      "longsword": {
+        "name": "Langschwert",
+        "description": "Nahkampf-Waffenangriff: +2 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 1 Hiebschaden."
+      },
+      "shortbow": {
+        "name": "Kurzbogen",
+        "description": "Fernkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:40/160ft|short}}, ein Ziel. Treffer: 1 Stichschaden. Das Ziel muss einen Konstitutionsrettungswurf gegen SG 10 bestehen oder ist 1 Minute lang vergiftet. Beträgt sein Rettungswurfergebnis höchstens 5, wird das vergiftete Ziel für dieselbe Dauer bewusstlos, bis es Schaden erleidet oder eine andere Kreatur eine Aktion zum Wachrütteln nutzt."
+      },
+      "heart_sight": {
+        "name": "Herzblick",
+        "description": "Der Feengeist berührt eine Kreatur und erkennt magisch ihren derzeitigen Gefühlszustand. Misslingt dem Ziel ein Charismarettungswurf gegen SG 10, erkennt der Feengeist auch seine Gesinnung. Himmlische Wesen, Unholde und Untote scheitern automatisch an diesem Rettungswurf."
+      },
+      "invisibility": {
+        "name": "Unsichtbarkeit",
+        "description": "Der Feengeist wird magisch unsichtbar, bis er angreift, einen Zauber wirkt oder seine Konzentration endet, als würde er sich auf einen Zauber konzentrieren. Getragene Ausrüstung wird mit ihm unsichtbar."
+      }
+    }
+  },
+  "Swarm of Poisonous Snakes": {
+    "name": "Giftschlangenschwarm",
+    "traits": {
+      "swarm": {
+        "name": "Schwarm",
+        "description": "Der Schwarm kann den Bereich anderer Kreaturen besetzen und umgekehrt. Er passt durch jede Öffnung, die für eine winzige Schlange groß genug ist. Er kann weder Trefferpunkte zurückerhalten noch temporäre Trefferpunkte erhalten."
+      }
+    },
+    "actions": {
+      "bites": {
+        "name": "Bisse",
+        "description": "Nahkampf-Waffenangriff: +6 zum Treffen, Reichweite {{distance:0ft|short}}, eine Kreatur im Bereich des Schwarms. Treffer: 7 (2d6) Stichschaden, oder 3 (1d6) Stichschaden, wenn der Schwarm höchstens die Hälfte seiner Trefferpunkte hat. Das Ziel legt einen Konstitutionsrettungswurf gegen SG 10 ab und erleidet bei einem Fehlschlag 14 (4d6) Giftschaden, bei Erfolg die Hälfte."
+      }
+    }
+  },
+  "Triceratops": {
+    "name": "Triceratops",
+    "traits": {
+      "trampling_charge": {
+        "name": "Trampelnder Sturmangriff",
+        "description": "Bewegt sich die Kreatur mindestens {{distance:20ft}} gerade auf ein Ziel zu und trifft es im selben Zug mit einem Hornangriff, muss das Ziel einen Stärkerettungswurf gegen SG 13 bestehen oder wird zu Boden geworfen. Liegt das Ziel am Boden, kann die Kreatur als Bonusaktion einen Stampfangriff gegen es ausführen."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Horn",
+        "description": "Nahkampf-Waffenangriff: +9 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 24 (4d8 + 6) Stichschaden."
+      },
+      "stomp": {
+        "name": "Stampfen",
+        "description": "Nahkampf-Waffenangriff: +9 zum Treffen, Reichweite {{distance:5ft|short}}, eine am Boden liegende Kreatur. Treffer: 22 (3d10 + 6) Wuchtschaden."
+      }
+    }
+  },
+  "Water Elemental": {
+    "name": "Wasserelementar",
+    "traits": {
+      "water_form": {
+        "name": "Wassergestalt",
+        "description": "Der Elementar kann den Bereich einer feindlichen Kreatur betreten und dort bleiben. Er kann sich ohne Zwängen durch nur {{distance:1in}} breite Öffnungen bewegen."
+      },
+      "freeze": {
+        "name": "Gefrieren",
+        "description": "Erleidet der Elementar Kälteschaden, gefriert er teilweise. Seine Bewegungsrate wird bis zum Ende seines nächsten Zuges um {{distance:20ft}} verringert."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistenz gegen nichtmagischen Schaden",
+        "description": "Der Elementar hat Resistenz gegen Hieb-, Stich- und Wuchtschaden durch nichtmagische Angriffe."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Mehrfachangriff",
+        "description": "Der Elementar führt zwei Hiebangriffe aus."
+      },
+      "slam": {
+        "name": "Hieb",
+        "description": "Nahkampf-Waffenangriff: +7 zum Treffen, Reichweite {{distance:5ft|short}}, ein Ziel. Treffer: 13 (2d8 + 4) Wuchtschaden."
+      },
+      "whelm": {
+        "name": "Überwältigen",
+        "description": "Jede Kreatur im Bereich des Elementars legt einen Stärkerettungswurf gegen SG 15 ab. Bei einem Fehlschlag erleidet sie 13 (2d8 + 4) Wuchtschaden. Ist sie groß oder kleiner, wird sie außerdem gepackt (Entkommen-SG 14). Solange sie gepackt ist, ist sie festgesetzt und kann nicht atmen, außer sie kann unter Wasser atmen. Bei Erfolg wird sie aus dem Bereich des Elementars gestoßen. Er kann gleichzeitig eine große oder bis zu zwei mittelgroße oder kleinere Kreaturen packen. Zu Beginn jedes seiner Züge erleidet jedes von ihm gepackte Ziel 13 (2d8 + 4) Wuchtschaden. Eine Kreatur innerhalb von {{distance:5ft}} kann mit einer Aktion und einem erfolgreichen Stärkewurf gegen SG 14 eine Kreatur oder einen Gegenstand herausziehen."
+      }
+    }
   }
 }

@@ -3544,7 +3544,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      'Adicionamos magias que faltavam do Livro do Jogador, invocações, disciplinas, totens e variantes de antecedente em inglês, português e espanhol. O Pacto do Tomo agora permite escolher seus três truques, e o catálogo inclui os quatro familiares especiais do Pacto da Corrente.';
+      'Adicionamos magias que faltavam do Livro do Jogador 2014, invocações, disciplinas elementais, totens, antecedentes, equipamentos e criaturas. Essas adições agora estão disponíveis nos 11 idiomas do app. O Pacto do Tomo permite escolher seus três truques, e o catálogo inclui os quatro familiares especiais do Pacto da Corrente.';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024: beta';
@@ -3558,7 +3558,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get whatsNew301LimitsBody =>
-      'Algumas habilidades ainda precisam ser aplicadas manualmente. O catálogo não inclui todos os suplementos de 2014. Os novos materiais de 2014 ainda precisam de tradução para os outros idiomas do app.';
+      'Algumas habilidades ainda precisam ser aplicadas manualmente. O catálogo não inclui todos os suplementos de 2014.';
 
   @override
   String get creationRuleset2024BetaDescription =>

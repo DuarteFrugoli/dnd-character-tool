@@ -544,5 +544,141 @@
   "Whetstone": {
     "name": "Cote",
     "description": "Utilizzato per affilare le lame."
+  },
+  "Crystal": {
+    "name": "Cristallo",
+    "description": "Focus arcano per gli incantesimi da stregone, warlock o mago. Sostituisce le normali componenti materiali, ma non quelle con un costo indicato né quelle consumate da un incantesimo."
+  },
+  "Orb": {
+    "name": "Globo",
+    "description": "Focus arcano per gli incantesimi da stregone, warlock o mago. Sostituisce le normali componenti materiali, ma non quelle con un costo indicato né quelle consumate da un incantesimo."
+  },
+  "Rod": {
+    "name": "Verga",
+    "description": "Focus arcano per gli incantesimi da stregone, warlock o mago. Sostituisce le normali componenti materiali, ma non quelle con un costo indicato né quelle consumate da un incantesimo."
+  },
+  "Staff": {
+    "name": "Bastone",
+    "description": "Focus arcano per gli incantesimi da stregone, warlock o mago. Sostituisce le normali componenti materiali, ma non quelle con un costo indicato né quelle consumate da un incantesimo."
+  },
+  "Wand": {
+    "name": "Bacchetta",
+    "description": "Focus arcano per gli incantesimi da stregone, warlock o mago. Sostituisce le normali componenti materiali, ma non quelle con un costo indicato né quelle consumate da un incantesimo."
+  },
+  "Camel": {
+    "name": "Cammello",
+    "description": "Cavalcatura con velocità di {{distance:50ft}} e capacità di carico di 480 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Donkey": {
+    "name": "Asino",
+    "description": "Cavalcatura con velocità di {{distance:40ft}} e capacità di carico di 420 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Mule": {
+    "name": "Mulo",
+    "description": "Cavalcatura con velocità di {{distance:40ft}} e capacità di carico di 420 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Elephant": {
+    "name": "Elefante",
+    "description": "Cavalcatura con velocità di {{distance:40ft}} e capacità di carico di 1320 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Draft Horse": {
+    "name": "Cavallo da Tiro",
+    "description": "Cavalcatura con velocità di {{distance:40ft}} e capacità di carico di 540 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Riding Horse": {
+    "name": "Cavallo da Galoppo",
+    "description": "Cavalcatura con velocità di {{distance:60ft}} e capacità di carico di 480 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Mastiff": {
+    "name": "Mastino",
+    "description": "Cavalcatura con velocità di {{distance:40ft}} e capacità di carico di 195 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Pony": {
+    "name": "Pony",
+    "description": "Cavalcatura con velocità di {{distance:40ft}} e capacità di carico di 225 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Warhorse": {
+    "name": "Cavallo da Guerra",
+    "description": "Cavalcatura con velocità di {{distance:60ft}} e capacità di carico di 540 libbre. Il suo peso corporeo non rientra nel peso trasportato nell'inventario. Un gruppo che traina un veicolo può trascinare cinque volte la capacità normale complessiva, incluso il peso del veicolo."
+  },
+  "Bit and Bridle": {
+    "name": "Morso e Briglie",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Carriage": {
+    "name": "Carrozza",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Cart": {
+    "name": "Carretto",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Chariot": {
+    "name": "Cocchio",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Feed (per day)": {
+    "name": "Mangime (al giorno)",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Saddlebags": {
+    "name": "Borse da Sella",
+    "description": "Contenitori trasportati da una cavalcatura."
+  },
+  "Sled": {
+    "name": "Slitta",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Stabling (per day)": {
+    "name": "Stallaggio (al giorno)",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Wagon": {
+    "name": "Carro",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Exotic Saddle": {
+    "name": "Sella Esotica",
+    "description": "Necessaria per cavalcare una creatura acquatica o volante."
+  },
+  "Military Saddle": {
+    "name": "Sella Militare",
+    "description": "Conferisce vantaggio alle prove per restare in sella su una cavalcatura attiva in battaglia."
+  },
+  "Pack Saddle": {
+    "name": "Sella da Soma",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Riding Saddle": {
+    "name": "Sella da Galoppo",
+    "description": "Finimenti, provviste o mezzi di trasporto per viaggiare con cavalcature."
+  },
+  "Galley": {
+    "name": "Galea",
+    "description": "Veicolo acquatico; velocità normale di {{distance:4mi}} all'ora. Le barche a remi e a chiglia possono aggiungere la corrente scendendo un fiume, ma non possono remare contro una corrente forte. Il peso del natante non è specificato, salvo la barca a remi da 100 libbre."
+  },
+  "Keelboat": {
+    "name": "Barca a Chiglia",
+    "description": "Veicolo acquatico; velocità normale di {{distance:1mi}} all'ora. Le barche a remi e a chiglia possono aggiungere la corrente scendendo un fiume, ma non possono remare contro una corrente forte. Il peso del natante non è specificato, salvo la barca a remi da 100 libbre."
+  },
+  "Longship": {
+    "name": "Drakkar",
+    "description": "Veicolo acquatico; velocità normale di {{distance:3mi}} all'ora. Le barche a remi e a chiglia possono aggiungere la corrente scendendo un fiume, ma non possono remare contro una corrente forte. Il peso del natante non è specificato, salvo la barca a remi da 100 libbre."
+  },
+  "Rowboat": {
+    "name": "Barca a Remi",
+    "description": "Veicolo acquatico; velocità normale di {{distance:1.5mi}} all'ora. Le barche a remi e a chiglia possono aggiungere la corrente scendendo un fiume, ma non possono remare contro una corrente forte. Il peso del natante non è specificato, salvo la barca a remi da 100 libbre."
+  },
+  "Sailing Ship": {
+    "name": "Nave a Vela",
+    "description": "Veicolo acquatico; velocità normale di {{distance:2mi}} all'ora. Le barche a remi e a chiglia possono aggiungere la corrente scendendo un fiume, ma non possono remare contro una corrente forte. Il peso del natante non è specificato, salvo la barca a remi da 100 libbre."
+  },
+  "Warship": {
+    "name": "Nave da Guerra",
+    "description": "Veicolo acquatico; velocità normale di {{distance:2.5mi}} all'ora. Le barche a remi e a chiglia possono aggiungere la corrente scendendo un fiume, ma non possono remare contro una corrente forte. Il peso del natante non è specificato, salvo la barca a remi da 100 libbre."
+  },
+  "Barding": {
+    "name": "Bardatura",
+    "description": "Armatura per un animale: quattro volte il costo e due volte il peso dell'armatura equivalente per umanoidi. Il peso zero indicato è un segnaposto; usa l'armatura scelta per determinarne il peso effettivo."
   }
 }

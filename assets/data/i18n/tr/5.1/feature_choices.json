@@ -99,6 +99,278 @@
       "red": { "name": "Kırmızı", "description": "Ateş hasarıyla ilişkili kırmızı ejderha soyunu seç." },
       "silver": { "name": "Gümüş", "description": "Soğuk hasarıyla ilişkili gümüş ejderha soyunu seç." },
       "white": { "name": "Beyaz", "description": "Soğuk hasarıyla ilişkili beyaz ejderha soyunu seç." }
+    },
+    "eldritch_invocations_2014": {
+      "agonizing_blast": {
+        "name": "Acı Veren Işın",
+        "description": "Gizemli Işın büyüsünün her isabetinin hasarına Karizma değiştiricini ekle."
+      },
+      "armor_of_shadows": {
+        "name": "Gölgelerin Zırhı",
+        "description": "Büyücü Zırhı büyüsünü kendine istediğin kadar yapabilirsin; büyü yuvası veya maddi bileşen harcamazsın."
+      },
+      "ascendant_step": {
+        "name": "Yükselen Adım",
+        "description": "Havaya Kaldırma büyüsünü kendine istediğin kadar yapabilirsin; büyü yuvası veya maddi bileşen harcamazsın."
+      },
+      "beast_speech": {
+        "name": "Hayvan Dili",
+        "description": "Hayvanlarla Konuşma büyüsünü istediğin kadar yapabilirsin; büyü yuvası harcamazsın."
+      },
+      "beguiling_influence": {
+        "name": "Büyüleyici Etki",
+        "description": "Aldatma ve İkna becerilerinde yetkinlik kazan."
+      },
+      "bewitching_whispers": {
+        "name": "Efsunlu Fısıltılar",
+        "description": "Pakt büyücüsü yuvası harcayarak Zorlama büyüsünü yap; her uzun dinlenmede bir kez."
+      },
+      "book_of_ancient_secrets": {
+        "name": "Kadim Sırlar Kitabı",
+        "description": "Kitap Paktı gerektirir. Herhangi bir listeden iki adet 1. seviye ritüeli kitabına ekle; başka yoldan öğrenmedikçe bunları yalnızca ritüel olarak yapabilirsin. Bildiğin ritüel etiketli pakt büyücüsü büyülerini de ritüel olarak yapabilirsin. Bulduğun ritüelleri, seviyeleri pakt büyücüsü seviyenin yukarı yuvarlanmış yarısını aşmıyorsa kopyalayabilirsin; her büyü seviyesi için 2 saat ve 50 altın sikke gerekir."
+      },
+      "chains_of_carceri": {
+        "name": "Carceri’nin Zincirleri",
+        "description": "Zincir Paktı gerektirir. Canavarı Felç Etme büyüsünü yuva veya maddi bileşen harcamadan istediğin kadar yapabilirsin, ancak yalnızca gökselleri, iblisleri veya elementalleri hedefleyebilirsin. Aynı yaratığı tekrar hedeflemeden önce uzun dinlenme bitirmelisin."
+      },
+      "devil_s_sight": {
+        "name": "Şeytan Görüşü",
+        "description": "{{distance:120ft}} mesafe içindeki büyülü ve büyüsüz karanlıkta normal şekilde görürsün."
+      },
+      "dreadful_word": {
+        "name": "Dehşet Sözcüğü",
+        "description": "Pakt büyücüsü yuvası harcayarak Şaşkınlık büyüsünü yap; her uzun dinlenmede bir kez."
+      },
+      "eldritch_sight": {
+        "name": "Gizemli Görüş",
+        "description": "Büyüyü Algılama büyüsünü istediğin kadar yapabilirsin; büyü yuvası veya maddi bileşen harcamazsın."
+      },
+      "eldritch_spear": {
+        "name": "Gizemli Mızrak",
+        "description": "Gizemli Işın büyüsünün menzili {{distance:300ft}} olur."
+      },
+      "eyes_of_the_rune_keeper": {
+        "name": "Rün Muhafızının Gözleri",
+        "description": "Her türlü yazıyı okuyabilirsin."
+      },
+      "fiendish_vigor": {
+        "name": "İblis Canlılığı",
+        "description": "Sahte Yaşam büyüsünü yuva veya maddi bileşen harcamadan, 1. seviye bir büyü olarak kendine istediğin kadar yapabilirsin."
+      },
+      "gaze_of_two_minds": {
+        "name": "İki Zihnin Bakışı",
+        "description": "Bir eylemle istekli bir insansıya dokunarak sonraki turunun sonuna kadar onun duyularıyla algılayabilirsin. Sonraki turlarda eylem harcayarak bağlantıyı uzatabilirsin. Özel duyularını da kazanırsın; fakat bağlantı sürerken kendi çevrene karşı kör ve sağırsın."
+      },
+      "lifedrinker": {
+        "name": "Yaşam İçen",
+        "description": "Kılıç Paktı gerektirir. Pakt silahının isabetleri Karizma değiştiricine eşit ek nekrotik hasar verir; en az 1."
+      },
+      "mask_of_many_faces": {
+        "name": "Bin Yüz Maskesi",
+        "description": "Kılık Değiştirme büyüsünü istediğin kadar yapabilirsin; büyü yuvası harcamazsın."
+      },
+      "master_of_myriad_forms": {
+        "name": "Sayısız Biçimin Ustası",
+        "description": "Kendini Değiştirme büyüsünü istediğin kadar yapabilirsin; büyü yuvası harcamazsın."
+      },
+      "minions_of_chaos": {
+        "name": "Kaos Hizmetkârları",
+        "description": "Pakt büyücüsü yuvası harcayarak Elemental Çağırma büyüsünü yap; her uzun dinlenmede bir kez."
+      },
+      "mire_the_mind": {
+        "name": "Zihin Bataklığı",
+        "description": "Pakt büyücüsü yuvası harcayarak Yavaşlatma büyüsünü yap; her uzun dinlenmede bir kez."
+      },
+      "misty_visions": {
+        "name": "Sisli Hayaller",
+        "description": "Sessiz Görüntü büyüsünü istediğin kadar yapabilirsin; büyü yuvası veya maddi bileşen harcamazsın."
+      },
+      "one_with_shadows": {
+        "name": "Gölgelerle Bir",
+        "description": "Loş ışıkta veya karanlıkta eylem harcayarak görünmez olabilirsin. Hareket edene, eylem veya tepki kullanana kadar sürer."
+      },
+      "otherworldly_leap": {
+        "name": "Öte Âlem Sıçrayışı",
+        "description": "Sıçrama büyüsünü kendine istediğin kadar yapabilirsin; büyü yuvası veya maddi bileşen harcamazsın."
+      },
+      "repelling_blast": {
+        "name": "İtici Işın",
+        "description": "Gizemli Işın ile her isabetinde yaratığı senden düz bir çizgide en fazla {{distance:10ft}} uzağa itebilirsin."
+      },
+      "sculptor_of_flesh": {
+        "name": "Et Biçimlendirici",
+        "description": "Pakt büyücüsü yuvası harcayarak Dönüştürme büyüsünü yap; her uzun dinlenmede bir kez."
+      },
+      "sign_of_ill_omen": {
+        "name": "Uğursuz İşaret",
+        "description": "Pakt büyücüsü yuvası harcayarak Lanetleme büyüsünü yap; her uzun dinlenmede bir kez."
+      },
+      "thief_of_five_fates": {
+        "name": "Beş Kader Hırsızı",
+        "description": "Pakt büyücüsü yuvası harcayarak Uğursuzluk büyüsünü yap; her uzun dinlenmede bir kez."
+      },
+      "thirsting_blade": {
+        "name": "Susamış Kılıç",
+        "description": "Kılıç Paktı gerektirir. Saldırı eylemini kullandığında pakt silahınla bir yerine iki kez saldırırsın."
+      },
+      "visions_of_distant_realms": {
+        "name": "Uzak Diyarların Görüntüleri",
+        "description": "Arkan Göz büyüsünü istediğin kadar yapabilirsin; büyü yuvası harcamazsın."
+      },
+      "voice_of_the_chain_master": {
+        "name": "Zincir Efendisinin Sesi",
+        "description": "Zincir Paktı gerektirir. Aynı düzlemde olduğunuz sürece yoldaşınla telepatik iletişim kurabilir ve onun duyularıyla algılayabilirsin. Onun duyularını kullanırken onun aracılığıyla kendi sesinle de konuşabilirsin."
+      },
+      "whispers_of_the_grave": {
+        "name": "Mezarın Fısıltıları",
+        "description": "Ölülerle Konuşma büyüsünü istediğin kadar yapabilirsin; büyü yuvası harcamazsın."
+      },
+      "witch_sight": {
+        "name": "Cadı Görüşü",
+        "description": "{{distance:30ft}} mesafe içinde ve görüş hattındaki şekil değiştiricilerin ve yanılsama ya da dönüşüm büyüsüyle gizlenmiş yaratıkların gerçek biçimini görürsün."
+      }
+    },
+    "elemental_disciplines_2014": {
+      "breath_of_winter": {
+        "name": "Kışın Nefesi",
+        "description": "6 ki puanı: Soğuk Konisi büyüsünü yap."
+      },
+      "clench_of_the_north_wind": {
+        "name": "Kuzey Rüzgârının Kavrayışı",
+        "description": "3 ki puanı: Kişiyi Felç Etme büyüsünü yap."
+      },
+      "eternal_mountain_defense": {
+        "name": "Ebedî Dağın Savunması",
+        "description": "5 ki puanı: Taş Deri büyüsünü yalnızca kendine yap."
+      },
+      "fangs_of_the_fire_snake": {
+        "name": "Ateş Yılanının Dişleri",
+        "description": "Saldırı eyleminde 1 ki puanı harcayarak bu tur silahsız saldırılarının erişimini {{distance:10ft}} artır ve isabet hasarını ateşe çevir. Her isabette 1 ki puanı daha harcayarak fazladan 1d10 ateş hasarı verebilirsin."
+      },
+      "fist_of_four_thunders": {
+        "name": "Dört Gök Gürültüsünün Yumruğu",
+        "description": "2 ki puanı: Gök Gürültüsü Dalgası büyüsünü yap."
+      },
+      "fist_of_unbroken_air": {
+        "name": "Sarsılmaz Havanın Yumruğu",
+        "description": "Eylem, 2 ki puanı, {{distance:30ft}} mesafe içindeki bir hedef: Kuvvet kurtulma atışı yapar. Başarısızsa 3d10 ezici hasar alır, en fazla {{distance:20ft}} itilir ve yere serilir. Başarıda yarı hasar alır, hareket ettirilmez ve yere serilmez. Harcanan her ek ki puanı hasarı 1d10 artırır."
+      },
+      "flames_of_the_phoenix": {
+        "name": "Ankanın Alevleri",
+        "description": "4 ki puanı: Ateş Topu büyüsünü yap."
+      },
+      "gong_of_the_summit": {
+        "name": "Zirvenin Gongu",
+        "description": "3 ki puanı: Parçalama büyüsünü yap."
+      },
+      "mist_stance": {
+        "name": "Sis Duruşu",
+        "description": "4 ki puanı: Gaz Biçimi büyüsünü yalnızca kendine yap."
+      },
+      "ride_the_wind": {
+        "name": "Rüzgârı Sürmek",
+        "description": "4 ki puanı: Uçuş büyüsünü yalnızca kendine yap."
+      },
+      "river_of_hungry_flame": {
+        "name": "Aç Alev Nehri",
+        "description": "5 ki puanı: Ateş Duvarı büyüsünü yap."
+      },
+      "rush_of_the_gale_spirits": {
+        "name": "Fırtına Ruhlarının Hücumu",
+        "description": "2 ki puanı: Sert Rüzgâr büyüsünü yap."
+      },
+      "shape_the_flowing_river": {
+        "name": "Akan Nehri Biçimlendirme",
+        "description": "Eylem, 1 ki puanı: {{distance:120ft}} mesafe içinde, bir kenarı en fazla {{distance:30ft}} olan alandaki suyu veya buzu değiştir. Suyu dondurabilir, buzu eritebilir veya biçimlendirebilirsin; yükseklik değişimi alan boyutunun yarısını aşamaz. Yaratıkları hapsedemez veya yaralayamazsın."
+      },
+      "sweeping_cinder_strike": {
+        "name": "Savuran Köz Darbesi",
+        "description": "2 ki puanı: Yanan Eller büyüsünü yap."
+      },
+      "water_whip": {
+        "name": "Su Kırbacı",
+        "description": "Eylem, 2 ki puanı, {{distance:30ft}} mesafe içinde gördüğün bir hedef: Çeviklik kurtulma atışı yapar. Başarısızsa 3d10 ezici hasar alır ve seçimine göre yere serilir veya en fazla {{distance:25ft}} sana çekilir. Başarıda yarı hasar alır, hareket ettirilmez ve yere serilmez. Harcanan her ek ki puanı hasarı 1d10 artırır."
+      },
+      "wave_of_rolling_earth": {
+        "name": "Yuvarlanan Toprak Dalgası",
+        "description": "6 ki puanı: Taş Duvar büyüsünü yap."
+      }
+    },
+    "circle_lands_2014": {
+      "arctic": {
+        "name": "Kutup",
+        "description": "Druid seviyeleri 3, 5, 7 ve 9 olduğunda daima hazır çember büyüleri kazanırsın. Bunlar hazırlayabileceğin büyü sayısına dâhil değildir."
+      },
+      "coast": {
+        "name": "Kıyı",
+        "description": "Druid seviyeleri 3, 5, 7 ve 9 olduğunda daima hazır çember büyüleri kazanırsın. Bunlar hazırlayabileceğin büyü sayısına dâhil değildir."
+      },
+      "desert": {
+        "name": "Çöl",
+        "description": "Druid seviyeleri 3, 5, 7 ve 9 olduğunda daima hazır çember büyüleri kazanırsın. Bunlar hazırlayabileceğin büyü sayısına dâhil değildir."
+      },
+      "forest": {
+        "name": "Orman",
+        "description": "Druid seviyeleri 3, 5, 7 ve 9 olduğunda daima hazır çember büyüleri kazanırsın. Bunlar hazırlayabileceğin büyü sayısına dâhil değildir."
+      },
+      "grassland": {
+        "name": "Çayır",
+        "description": "Druid seviyeleri 3, 5, 7 ve 9 olduğunda daima hazır çember büyüleri kazanırsın. Bunlar hazırlayabileceğin büyü sayısına dâhil değildir."
+      },
+      "mountain": {
+        "name": "Dağ",
+        "description": "Druid seviyeleri 3, 5, 7 ve 9 olduğunda daima hazır çember büyüleri kazanırsın. Bunlar hazırlayabileceğin büyü sayısına dâhil değildir."
+      },
+      "swamp": {
+        "name": "Bataklık",
+        "description": "Druid seviyeleri 3, 5, 7 ve 9 olduğunda daima hazır çember büyüleri kazanırsın. Bunlar hazırlayabileceğin büyü sayısına dâhil değildir."
+      },
+      "underdark": {
+        "name": "Karanlıkaltı",
+        "description": "Druid seviyeleri 3, 5, 7 ve 9 olduğunda daima hazır çember büyüleri kazanırsın. Bunlar hazırlayabileceğin büyü sayısına dâhil değildir."
+      }
+    },
+    "totem_spirits_2014": {
+      "bear": {
+        "name": "Ayı",
+        "description": "Öfkeliyken ruhsal hasar dışındaki tüm hasarlara direnç kazanırsın."
+      },
+      "eagle": {
+        "name": "Kartal",
+        "description": "Ağır zırh giymeden öfkeliyken sana karşı fırsat saldırıları dezavantajlıdır ve bonus eylemle Atılma yapabilirsin."
+      },
+      "wolf": {
+        "name": "Kurt",
+        "description": "Öfkeliyken müttefiklerin senden {{distance:5ft}} mesafe içindeki düşman yaratıklara karşı yakın dövüş saldırılarında avantaj kazanır."
+      }
+    },
+    "totem_aspects_2014": {
+      "bear": {
+        "name": "Ayı",
+        "description": "Taşıma kapasiten ikiye katlanır; nesneleri itmek, çekmek, kaldırmak veya kırmak için Kuvvet kontrollerinde avantaj kazanırsın."
+      },
+      "eagle": {
+        "name": "Kartal",
+        "description": "{{distance:1mi}} uzağa kadar rahatça görür, küçük ayrıntıları {{distance:100ft}} mesafedeymiş gibi ayırt edersin. Loş ışık görmeye dayalı Algı kontrollerinde dezavantaj vermez."
+      },
+      "wolf": {
+        "name": "Kurt",
+        "description": "Hızlı yolculuk temposunda iz sürebilir, normal tempoda gizlice ilerleyebilirsin."
+      }
+    },
+    "totem_attunements_2014": {
+      "bear": {
+        "name": "Ayı",
+        "description": "Öfkeliyken senden {{distance:5ft}} mesafe içindeki düşman yaratıklar başka hedeflere saldırırken dezavantaj kazanır. Korkuya bağışık olanlar veya seni ne görebilen ne de işitebilenler etkilenmez."
+      },
+      "eagle": {
+        "name": "Kartal",
+        "description": "Öfkeliyken yürüme hızına eşit uçma hızı kazanırsın; başka bir etki seni havada tutmuyorsa turunu havada bitirdiğinde düşersin."
+      },
+      "wolf": {
+        "name": "Kurt",
+        "description": "Öfkeliyken yakın dövüş silah saldırısıyla Büyük veya daha küçük bir yaratığa isabet ettikten sonra bonus eylemle onu yere serebilirsin."
+      }
     }
   },
   "classFeatures": {

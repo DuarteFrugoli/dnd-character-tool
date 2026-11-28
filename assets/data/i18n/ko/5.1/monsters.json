@@ -1261,5 +1261,531 @@
         "description": "늑대의 아군 중 최소 하나가 어떤 생물로부터 {{distance:5ft}} 이내에 있고 그 아군이 행동 불능 상태가 아니라면, 늑대는 그 생물에 대한 명중 굴림에 이점을 얻습니다."
       }
     }
+  },
+  "Air Elemental": {
+    "name": "공기 정령",
+    "traits": {
+      "air_form": {
+        "name": "공기의 형체",
+        "description": "정령은 적대적인 크리처의 공간에 들어가 머무를 수 있습니다. 몸을 비집고 들어가지 않아도 폭 {{distance:1in}}의 틈을 통과할 수 있습니다."
+      },
+      "nonmagical_resistance": {
+        "name": "비마법 피해 저항",
+        "description": "정령은 비마법 공격에 의한 타격, 관통, 참격 피해에 저항을 가집니다."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "다중 공격",
+        "description": "정령은 후려치기 공격을 두 번 합니다."
+      },
+      "slam": {
+        "name": "후려치기",
+        "description": "근접 무기 공격: 명중 +8, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 타격 피해 14 (2d8 + 5)."
+      },
+      "whirlwind": {
+        "name": "회오리바람",
+        "description": "정령의 공간에 있는 각 크리처는 DC 13 근력 내성 굴림을 합니다. 실패하면 타격 피해 15(3d8 + 2)를 받고 무작위 방향으로 최대 {{distance:20ft}} 던져지며 넘어집니다. 벽이나 바닥 같은 물체에 부딪히면 던져진 거리 {{distance:10ft}}마다 타격 피해 3(1d6)를 받습니다. 다른 크리처에 부딪히면 그 크리처도 DC 13 민첩 내성 굴림에 성공하지 않는 한 같은 피해를 받고 넘어집니다. 최초 내성 굴림에 성공하면 타격 피해의 절반만 받고 던져지거나 넘어지지 않습니다."
+      }
+    }
+  },
+  "Earth Elemental": {
+    "name": "대지 정령",
+    "traits": {
+      "earth_glide": {
+        "name": "대지 활주",
+        "description": "정령은 비마법적이며 가공되지 않은 흙과 돌을 파고들어 이동할 수 있습니다. 이때 통과한 물질을 흐트러뜨리지 않습니다."
+      },
+      "siege_monster": {
+        "name": "공성 괴물",
+        "description": "정령은 물체와 구조물에 두 배의 피해를 줍니다."
+      },
+      "nonmagical_resistance": {
+        "name": "비마법 피해 저항",
+        "description": "정령은 비마법 공격에 의한 타격, 관통, 참격 피해에 저항을 가집니다."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "다중 공격",
+        "description": "정령은 후려치기 공격을 두 번 합니다."
+      },
+      "slam": {
+        "name": "후려치기",
+        "description": "근접 무기 공격: 명중 +8, 사정거리 {{distance:10ft|short}}, 대상 하나. 명중: 타격 피해 14 (2d8 + 5)."
+      }
+    }
+  },
+  "Elephant": {
+    "name": "코끼리",
+    "traits": {
+      "trampling_charge": {
+        "name": "짓밟는 돌진",
+        "description": "크리처가 대상을 향해 최소 {{distance:20ft}} 똑바로 이동한 뒤 같은 턴에 엄니 공격을 적중시키면, 대상은 DC 12 근력 내성 굴림에 성공하지 않는 한 넘어집니다. 대상이 넘어져 있으면 크리처는 추가 행동으로 그 대상에게 짓밟기 공격을 한 번 할 수 있습니다."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "들이받기",
+        "description": "근접 무기 공격: 명중 +8, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 19 (3d8 + 6)."
+      },
+      "stomp": {
+        "name": "짓밟기",
+        "description": "근접 무기 공격: 명중 +8, 사정거리 {{distance:5ft|short}}, 넘어진 크리처 하나. 명중: 타격 피해 22 (3d10 + 6)."
+      }
+    }
+  },
+  "Fire Elemental": {
+    "name": "불 정령",
+    "traits": {
+      "fire_form": {
+        "name": "불의 형체",
+        "description": "정령은 몸을 비집고 들어가지 않아도 폭 {{distance:1in}}의 틈을 통과할 수 있습니다. 정령을 만지거나 {{distance:5ft}} 이내에서 근접 공격을 적중시킨 크리처는 화염 피해 5(1d10)를 받습니다. 정령은 적대적인 크리처의 공간에 들어가 머무를 수 있습니다. 한 턴에 처음으로 다른 크리처의 공간에 들어가면 그 크리처는 화염 피해 5(1d10)를 받고 불이 붙습니다. 누군가 행동을 사용하여 불을 끌 때까지, 불붙은 크리처는 자기 턴이 시작될 때마다 화염 피해 5(1d10)를 받습니다."
+      },
+      "illumination": {
+        "name": "발광",
+        "description": "정령은 반경 {{distance:30ft|adj}}에 밝은 빛을, 그 바깥 {{distance:30ft}}에 희미한 빛을 비춥니다."
+      },
+      "water_susceptibility": {
+        "name": "물에 대한 취약성",
+        "description": "정령은 물속에서 {{distance:5ft}} 이동할 때마다, 또는 물 1갤런을 뒤집어쓸 때마다 냉기 피해 1을 받습니다."
+      },
+      "nonmagical_resistance": {
+        "name": "비마법 피해 저항",
+        "description": "정령은 비마법 공격에 의한 타격, 관통, 참격 피해에 저항을 가집니다."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "다중 공격",
+        "description": "정령은 접촉 공격을 두 번 합니다."
+      },
+      "touch": {
+        "name": "접촉",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 화염 피해 10 (2d6 + 3). 대상이 크리처나 가연성 물체라면 불이 붙습니다. 크리처가 행동을 사용하여 불을 끌 때까지, 대상은 자기 턴이 시작될 때마다 화염 피해 5(1d10)를 받습니다."
+      }
+    }
+  },
+  "Giant Boar": {
+    "name": "거대 멧돼지",
+    "traits": {
+      "charge": {
+        "name": "돌진",
+        "description": "크리처가 대상을 향해 최소 {{distance:20ft}} 똑바로 이동한 뒤 같은 턴에 엄니 공격을 적중시키면, 대상은 추가로 참격 피해 7 (2d6)를 받습니다. 대상이 크리처라면 DC 13 근력 내성 굴림에 성공하지 않는 한 넘어집니다."
+      },
+      "relentless": {
+        "name": "끈질김",
+        "description": "피해 10 이하를 받아 멧돼지의 히트 포인트가 0이 된다면, 대신 히트 포인트가 1이 됩니다."
+      }
+    },
+    "actions": {
+      "tusk": {
+        "name": "엄니",
+        "description": "근접 무기 공격: 명중 +5, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 참격 피해 10 (2d6 + 3)."
+      }
+    }
+  },
+  "Giant Constrictor Snake": {
+    "name": "거대 조임뱀",
+    "actions": {
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:10ft|short}}, 크리처 하나. 명중: 관통 피해 11 (2d6 + 4)."
+      },
+      "constrict": {
+        "name": "휘감기",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:5ft|short}}, 크리처 하나. 명중: 타격 피해 13 (2d8 + 4). 또한 대상은 붙잡힙니다(탈출 DC 16). 붙잡힌 동안 대상은 구속 상태이며, 뱀은 다른 대상을 휘감을 수 없습니다."
+      }
+    }
+  },
+  "Giant Crocodile": {
+    "name": "거대 악어",
+    "traits": {
+      "hold_breath": {
+        "name": "숨 참기",
+        "description": "크리처는 30분 동안 숨을 참을 수 있습니다."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "다중 공격",
+        "description": "악어는 물기 한 번과 꼬리 한 번, 총 두 번 공격합니다."
+      },
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +8, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 21 (3d10 + 5). 또한 대상은 붙잡힙니다(탈출 DC 16). 붙잡힌 동안 대상은 구속 상태이며, 악어는 다른 대상을 물 수 없습니다."
+      },
+      "tail": {
+        "name": "꼬리",
+        "description": "근접 무기 공격: 명중 +8, 사정거리 {{distance:10ft|short}}, 악어에게 붙잡혀 있지 않은 대상 하나. 명중: 타격 피해 14 (2d8 + 5). 대상이 크리처라면 DC 16 근력 내성 굴림에 성공하지 않는 한 넘어집니다."
+      }
+    }
+  },
+  "Giant Elk": {
+    "name": "거대 엘크",
+    "traits": {
+      "charge": {
+        "name": "돌진",
+        "description": "크리처가 대상을 향해 최소 {{distance:20ft}} 똑바로 이동한 뒤 같은 턴에 들이받기 공격을 적중시키면, 대상은 추가로 피해 7 (2d6)를 받습니다. 대상이 크리처라면 DC 14 근력 내성 굴림에 성공하지 않는 한 넘어집니다."
+      }
+    },
+    "actions": {
+      "ram": {
+        "name": "들이받기",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:10ft|short}}, 대상 하나. 명중: 타격 피해 11 (2d6 + 4)."
+      },
+      "hooves": {
+        "name": "발굽",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:5ft|short}}, 넘어진 크리처 하나. 명중: 타격 피해 22 (4d8 + 4). 위엄 있는 거대 엘크는 매우 희귀하여 왕의 탄생 같은 중대한 사건을 예고한다고 여겨집니다. 신들이 물질계를 방문할 때 이 모습을 취한다는 전설이 있어, 많은 문화권에서는 거대 엘크를 사냥하면 신의 분노를 산다고 믿습니다."
+      }
+    }
+  },
+  "Giant Scorpion": {
+    "name": "거대 전갈",
+    "actions": {
+      "multiattack": {
+        "name": "다중 공격",
+        "description": "전갈은 집게로 두 번, 독침으로 한 번, 총 세 번 공격합니다."
+      },
+      "claw": {
+        "name": "집게",
+        "description": "근접 무기 공격: 명중 +4, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 타격 피해 6 (1d8 + 2). 또한 대상은 붙잡힙니다(탈출 DC 12). 전갈은 집게가 두 개 있으며, 각 집게로 대상 하나씩만 붙잡을 수 있습니다."
+      },
+      "sting": {
+        "name": "독침",
+        "description": "근접 무기 공격: 명중 +4, 사정거리 {{distance:5ft|short}}, 크리처 하나. 명중: 관통 피해 7 (1d10 + 2). 또한 대상은 DC 12 건강 내성 굴림을 하여, 실패하면 독 피해 22(4d10)를, 성공하면 절반의 피해를 받습니다."
+      }
+    }
+  },
+  "Giant Shark": {
+    "name": "거대 상어",
+    "traits": {
+      "blood_frenzy": {
+        "name": "피의 광란",
+        "description": "상어는 히트 포인트가 최대치보다 낮은 크리처를 대상으로 하는 근접 공격 굴림에 이점을 받습니다."
+      },
+      "water_breathing": {
+        "name": "수중 호흡",
+        "description": "상어는 물속에서만 호흡할 수 있습니다."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +9, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 22 (3d10 + 6). 거대 상어는 길이가 {{distance:30ft}}에 이르며 보통 깊은 바다에 삽니다. 전혀 두려움을 모르고 고래나 배를 포함하여 앞을 가로지르는 것은 무엇이든 공격합니다."
+      }
+    }
+  },
+  "Hunter Shark": {
+    "name": "사냥 상어",
+    "traits": {
+      "blood_frenzy": {
+        "name": "피의 광란",
+        "description": "상어는 히트 포인트가 최대치보다 낮은 크리처를 대상으로 하는 근접 공격 굴림에 이점을 받습니다."
+      },
+      "water_breathing": {
+        "name": "수중 호흡",
+        "description": "상어는 물속에서만 호흡할 수 있습니다."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 13 (2d8 + 4). 사냥 상어는 암초 상어보다 크고 사납지만 거대 상어보다 작으며 깊은 물에 삽니다. 대개 혼자 사냥하지만 여러 마리가 같은 곳에서 먹이를 먹기도 합니다. 성체의 길이는 {{distance:15ft|num}}~{{distance:20ft}}입니다."
+      }
+    }
+  },
+  "Imp": {
+    "name": "임프",
+    "traits": {
+      "shapechanger": {
+        "name": "변신 생물",
+        "description": "임프는 행동을 사용하여 쥐(이동속도 {{distance:20ft|short}}), 큰까마귀({{distance:20ft|short}}, 비행 {{distance:60ft|short}}), 거미({{distance:20ft|short}}, 등반 {{distance:20ft|short}})와 닮은 야수 형태로 변하거나 본래 모습으로 돌아올 수 있습니다. 명시된 이동속도 외의 능력치는 같습니다. 착용하거나 운반하는 장비는 변하지 않습니다. 죽으면 본래 모습으로 돌아옵니다."
+      },
+      "devil_s_sight": {
+        "name": "악마의 시야",
+        "description": "마법적 어둠은 임프의 암시야를 방해하지 않습니다."
+      },
+      "magic_resistance": {
+        "name": "마법 저항",
+        "description": "크리처는 주문과 기타 마법 효과에 대한 내성 굴림에 이점을 받습니다."
+      },
+      "conditional_damage_resistance": {
+        "name": "조건부 피해 저항",
+        "description": "임프는 은을 사용한 공격을 제외한 비마법 공격에 의한 타격, 관통, 참격 피해에 저항을 가집니다."
+      }
+    },
+    "actions": {
+      "sting_bite_in_beast_form": {
+        "name": "독침 (야수 형태에서는 물기)",
+        "description": "근접 무기 공격: 명중 +5, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 5(1d4 + 3). 대상은 DC 11 건강 내성 굴림을 하여, 실패하면 독 피해 10(3d6)를, 성공하면 절반의 피해를 받습니다."
+      },
+      "invisibility": {
+        "name": "투명화",
+        "description": "임프는 마법으로 투명해집니다. 공격하거나 주문에 집중할 때와 같은 방식으로 집중이 끝나면 투명화가 끝납니다. 착용하거나 운반하는 장비도 함께 투명해집니다."
+      }
+    }
+  },
+  "Killer Whale": {
+    "name": "범고래",
+    "traits": {
+      "echolocation": {
+        "name": "반향 정위",
+        "description": "범고래는 청각상실 상태일 때 맹시를 사용할 수 없습니다."
+      },
+      "hold_breath": {
+        "name": "숨 참기",
+        "description": "크리처는 30분 동안 숨을 참을 수 있습니다."
+      },
+      "keen_hearing": {
+        "name": "예민한 청각",
+        "description": "크리처는 청각에 의존하는 지혜(지각) 판정에 이점을 받습니다."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 21 (5d6 + 4)."
+      }
+    }
+  },
+  "Mammoth": {
+    "name": "매머드",
+    "traits": {
+      "trampling_charge": {
+        "name": "짓밟는 돌진",
+        "description": "크리처가 대상을 향해 최소 {{distance:20ft}} 똑바로 이동한 뒤 같은 턴에 엄니 공격을 적중시키면, 대상은 DC 18 근력 내성 굴림에 성공하지 않는 한 넘어집니다. 대상이 넘어져 있으면 크리처는 추가 행동으로 그 대상에게 짓밟기 공격을 한 번 할 수 있습니다."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "엄니로 들이받기",
+        "description": "근접 무기 공격: 명중 +10, 사정거리 {{distance:10ft|short}}, 대상 하나. 명중: 관통 피해 25 (4d8 + 7)."
+      },
+      "stomp": {
+        "name": "짓밟기",
+        "description": "근접 무기 공격: 명중 +10, 사정거리 {{distance:5ft|short}}, 넘어진 크리처 하나. 명중: 타격 피해 29 (4d10 + 7). 매머드는 두꺼운 털과 긴 엄니를 가진 코끼리와 비슷한 동물입니다. 일반 코끼리보다 튼튼하고 사나우며 아한대부터 아열대까지 다양한 기후에 삽니다."
+      }
+    }
+  },
+  "Plesiosaurus": {
+    "name": "플레시오사우루스",
+    "traits": {
+      "hold_breath": {
+        "name": "숨 참기",
+        "description": "크리처는 1시간 동안 숨을 참을 수 있습니다."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:10ft|short}}, 대상 하나. 명중: 관통 피해 14 (3d6 + 4)."
+      }
+    }
+  },
+  "Polar Bear": {
+    "name": "북극곰",
+    "traits": {
+      "keen_smell": {
+        "name": "예민한 후각",
+        "description": "크리처는 후각에 의존하는 지혜(지각) 판정에 이점을 받습니다."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "다중 공격",
+        "description": "곰은 물기 한 번과 발톱 한 번, 총 두 번 공격합니다."
+      },
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +7, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 9 (1d8 + 5)."
+      },
+      "claws": {
+        "name": "발톱",
+        "description": "근접 무기 공격: 명중 +7, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 참격 피해 12 (2d6 + 5)."
+      }
+    }
+  },
+  "Pseudodragon": {
+    "name": "슈도드래곤",
+    "traits": {
+      "keen_senses": {
+        "name": "예민한 감각",
+        "description": "슈도드래곤은 시각, 청각, 후각에 의존하는 지혜(지각) 판정에 이점을 받습니다."
+      },
+      "magic_resistance": {
+        "name": "마법 저항",
+        "description": "크리처는 주문과 기타 마법 효과에 대한 내성 굴림에 이점을 받습니다."
+      },
+      "limited_telepathy": {
+        "name": "제한적 텔레파시",
+        "description": "슈도드래곤은 {{distance:100ft}} 이내에서 언어 하나 이상을 이해하는 크리처에게 간단한 생각, 감정, 이미지를 마법적 텔레파시로 전할 수 있습니다."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +4, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 4 (1d4 + 2)."
+      },
+      "sting": {
+        "name": "독침",
+        "description": "근접 무기 공격: 명중 +4, 사정거리 {{distance:5ft|short}}, 크리처 하나. 명중: 관통 피해 4(1d4 + 2). 대상은 DC 11 건강 내성 굴림에 성공하지 않는 한 1시간 동안 중독됩니다. 내성 굴림이 DC보다 5 이상 낮으면 같은 시간 동안 의식불명 상태도 됩니다. 피해를 받거나 다른 크리처가 행동을 사용하여 흔들어 깨우면 의식불명 상태가 끝납니다."
+      }
+    }
+  },
+  "Quasit": {
+    "name": "콰짓",
+    "traits": {
+      "shapechanger": {
+        "name": "변신 생물",
+        "description": "콰짓은 행동을 사용하여 박쥐(이동속도 {{distance:10ft|short}}, 비행 {{distance:40ft|short}}), 지네({{distance:40ft|short}}, 등반 {{distance:40ft|short}}), 두꺼비({{distance:40ft|short}}, 수영 {{distance:40ft|short}})와 닮은 야수 형태로 변하거나 본래 모습으로 돌아올 수 있습니다. 명시된 이동속도 외의 능력치는 같습니다. 착용하거나 운반하는 장비는 변하지 않습니다. 죽으면 본래 모습으로 돌아옵니다."
+      },
+      "magic_resistance": {
+        "name": "마법 저항",
+        "description": "크리처는 주문과 기타 마법 효과에 대한 내성 굴림에 이점을 받습니다."
+      },
+      "nonmagical_damage_resistance": {
+        "name": "비마법 피해 저항",
+        "description": "콰짓은 비마법 공격에 의한 타격, 관통, 참격 피해에 저항을 가집니다."
+      }
+    },
+    "actions": {
+      "claws_bite_in_beast_form": {
+        "name": "발톱 (야수 형태에서는 물기)",
+        "description": "근접 무기 공격: 명중 +4, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 5(1d4 + 3). 대상은 DC 10 건강 내성 굴림에 성공하지 않는 한 독 피해 5(2d4)를 받고 1분 동안 중독됩니다. 대상은 자기 턴이 끝날 때마다 내성 굴림을 반복하여 성공하면 자신에게 걸린 효과를 끝낼 수 있습니다."
+      },
+      "scare": {
+        "name": "겁주기",
+        "description": "콰짓이 선택한 {{distance:20ft}} 이내의 크리처 하나는 DC 10 지혜 내성 굴림에 성공하지 않는 한 1분 동안 공포 상태가 됩니다. 대상은 자기 턴이 끝날 때마다 내성 굴림을 반복할 수 있으며, 콰짓이 시선이 닿는 곳에 있으면 이 굴림에 불리점을 받습니다. 성공하면 자신에게 걸린 효과가 끝납니다."
+      },
+      "invisibility": {
+        "name": "투명화",
+        "description": "콰짓은 마법으로 투명해집니다. 공격하거나 겁주기를 사용하거나 주문에 집중할 때와 같은 방식으로 집중이 끝나면 투명화가 끝납니다. 착용하거나 운반하는 장비도 함께 투명해집니다."
+      }
+    }
+  },
+  "Rhinoceros": {
+    "name": "코뿔소",
+    "traits": {
+      "charge": {
+        "name": "돌진",
+        "description": "크리처가 대상을 향해 최소 {{distance:20ft}} 똑바로 이동한 뒤 같은 턴에 뿔 공격을 적중시키면, 대상은 추가로 타격 피해 9 (2d8)를 받습니다. 대상이 크리처라면 DC 15 근력 내성 굴림에 성공하지 않는 한 넘어집니다."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "들이받기",
+        "description": "근접 무기 공격: 명중 +7, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 타격 피해 14 (2d8 + 5)."
+      }
+    }
+  },
+  "Saber-Toothed Tiger": {
+    "name": "검치호",
+    "traits": {
+      "keen_smell": {
+        "name": "예민한 후각",
+        "description": "크리처는 후각에 의존하는 지혜(지각) 판정에 이점을 받습니다."
+      },
+      "pounce": {
+        "name": "덮치기",
+        "description": "크리처가 대상을 향해 최소 {{distance:20ft}} 똑바로 이동한 뒤 같은 턴에 발톱 공격을 적중시키면, 대상은 DC 14 근력 내성 굴림에 성공하지 않는 한 넘어집니다. 대상이 넘어져 있으면 크리처는 추가 행동으로 그 대상에게 물기 공격을 한 번 할 수 있습니다."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 10 (1d10 + 5)."
+      },
+      "claw": {
+        "name": "발톱",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 참격 피해 12 (2d6 + 5)."
+      }
+    }
+  },
+  "Sprite": {
+    "name": "스프라이트",
+    "actions": {
+      "longsword": {
+        "name": "장검",
+        "description": "근접 무기 공격: 명중 +2, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 참격 피해 1."
+      },
+      "shortbow": {
+        "name": "단궁",
+        "description": "원거리 무기 공격: 명중 +6, 사거리 {{distance:40/160ft|short}}, 대상 하나. 명중: 관통 피해 1. 대상은 DC 10 건강 내성 굴림에 성공하지 않는 한 1분 동안 중독됩니다. 내성 굴림 결과가 5 이하라면 중독된 대상은 같은 시간 동안 의식불명 상태도 됩니다. 피해를 받거나 다른 크리처가 행동을 사용하여 흔들어 깨우면 의식불명 상태가 끝납니다."
+      },
+      "heart_sight": {
+        "name": "마음 꿰뚫기",
+        "description": "스프라이트는 크리처를 만져 현재 감정 상태를 마법적으로 알아냅니다. 대상이 DC 10 매력 내성 굴림에 실패하면 성향도 알아냅니다. 천상체, 악마류, 언데드는 이 내성 굴림에 자동으로 실패합니다."
+      },
+      "invisibility": {
+        "name": "투명화",
+        "description": "스프라이트는 마법으로 투명해집니다. 공격하거나 주문을 시전하거나 주문에 집중할 때와 같은 방식으로 집중이 끝나면 투명화가 끝납니다. 착용하거나 운반하는 장비도 함께 투명해집니다."
+      }
+    }
+  },
+  "Swarm of Poisonous Snakes": {
+    "name": "독사 무리",
+    "traits": {
+      "swarm": {
+        "name": "무리",
+        "description": "무리는 다른 크리처의 공간을 차지할 수 있고, 다른 크리처도 무리의 공간을 차지할 수 있습니다. 초소형 뱀이 통과할 수 있는 틈이라면 어디든 통과할 수 있습니다. 히트 포인트를 회복하거나 임시 히트 포인트를 얻을 수 없습니다."
+      }
+    },
+    "actions": {
+      "bites": {
+        "name": "물기",
+        "description": "근접 무기 공격: 명중 +6, 사정거리 {{distance:0ft|short}}, 무리의 공간에 있는 크리처 하나. 명중: 관통 피해 7 (2d6). 무리의 현재 히트 포인트가 최대치의 절반 이하라면 대신 관통 피해 3(1d6)를 줍니다. 대상은 DC 10 건강 내성 굴림을 하여, 실패하면 독 피해 14(4d6)를, 성공하면 절반의 피해를 받습니다."
+      }
+    }
+  },
+  "Triceratops": {
+    "name": "트리케라톱스",
+    "traits": {
+      "trampling_charge": {
+        "name": "짓밟는 돌진",
+        "description": "크리처가 대상을 향해 최소 {{distance:20ft}} 똑바로 이동한 뒤 같은 턴에 뿔 공격을 적중시키면, 대상은 DC 13 근력 내성 굴림에 성공하지 않는 한 넘어집니다. 대상이 넘어져 있으면 크리처는 추가 행동으로 그 대상에게 짓밟기 공격을 한 번 할 수 있습니다."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "들이받기",
+        "description": "근접 무기 공격: 명중 +9, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 관통 피해 24 (4d8 + 6)."
+      },
+      "stomp": {
+        "name": "짓밟기",
+        "description": "근접 무기 공격: 명중 +9, 사정거리 {{distance:5ft|short}}, 넘어진 크리처 하나. 명중: 타격 피해 22 (3d10 + 6)."
+      }
+    }
+  },
+  "Water Elemental": {
+    "name": "물 정령",
+    "traits": {
+      "water_form": {
+        "name": "물의 형체",
+        "description": "정령은 적대적인 크리처의 공간에 들어가 머무를 수 있습니다. 몸을 비집고 들어가지 않아도 폭 {{distance:1in}}의 틈을 통과할 수 있습니다."
+      },
+      "freeze": {
+        "name": "동결",
+        "description": "정령은 냉기 피해를 받으면 일부가 얼어붙어 자기 다음 턴이 끝날 때까지 이동속도가 {{distance:20ft}} 감소합니다."
+      },
+      "nonmagical_resistance": {
+        "name": "비마법 피해 저항",
+        "description": "정령은 비마법 공격에 의한 타격, 관통, 참격 피해에 저항을 가집니다."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "다중 공격",
+        "description": "정령은 후려치기 공격을 두 번 합니다."
+      },
+      "slam": {
+        "name": "후려치기",
+        "description": "근접 무기 공격: 명중 +7, 사정거리 {{distance:5ft|short}}, 대상 하나. 명중: 타격 피해 13 (2d8 + 4)."
+      },
+      "whelm": {
+        "name": "집어삼키기",
+        "description": "정령의 공간에 있는 각 크리처는 DC 15 근력 내성 굴림을 합니다. 실패하면 타격 피해 13(2d8 + 4)를 받습니다. 크기가 대형 이하라면 정령에게 붙잡히기도 합니다(탈출 DC 14). 붙잡힌 동안 구속 상태가 되며 수중 호흡 능력이 없다면 숨을 쉴 수 없습니다. 내성 굴림에 성공하면 정령의 공간 밖으로 밀려납니다. 정령은 동시에 대형 크리처 하나 또는 중형 이하 크리처 최대 둘을 붙잡을 수 있습니다. 정령의 턴이 시작될 때마다 붙잡힌 각 대상은 타격 피해 13(2d8 + 4)를 받습니다. 정령으로부터 {{distance:5ft}} 이내의 크리처는 행동을 사용하고 DC 14 근력 판정에 성공하여 정령 안에 있는 크리처나 물체를 끌어낼 수 있습니다."
+      }
+    }
   }
 }

@@ -3434,7 +3434,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      '新增了《玩家手册》中缺失的法术、魔能祈唤、宗法、图腾和背景变体，提供英语、葡萄牙语和西班牙语文本。书之魔契现在可以选择三个戏法，资料库也已收录链之魔契的四种特殊魔宠。';
+      '新增了2014版《玩家手册》中缺失的法术、魔能祈唤、元素修习、图腾、背景、装备和生物。这些新增内容现已支持应用的全部11种语言。书之魔契可以选择三个戏法，资料库也已收录链之魔契的四种特殊魔宠。';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024：测试版';
@@ -3447,8 +3447,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get whatsNew301LimitsTitle => '待完成的内容';
 
   @override
-  String get whatsNew301LimitsBody =>
-      '部分特性仍需手动应用。资料库并未涵盖2014版的所有扩展书。新增的2014版内容尚待翻译成应用支持的其他语言。';
+  String get whatsNew301LimitsBody => '部分特性仍需手动应用。资料库并未涵盖2014版的所有扩展书。';
 
   @override
   String get creationRuleset2024BetaDescription =>

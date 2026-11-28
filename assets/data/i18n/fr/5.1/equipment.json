@@ -544,5 +544,141 @@
   "Whetstone": {
     "name": "Pierre à aiguiser",
     "description": "Utilisé pour affûter les lames."
+  },
+  "Crystal": {
+    "name": "Cristal",
+    "description": "Focaliseur arcanique pour les sorts d'ensorceleur, de sorcier ou de magicien. Remplace les composantes matérielles ordinaires, mais pas celles ayant un coût indiqué ni celles consommées par le sort."
+  },
+  "Orb": {
+    "name": "Orbe",
+    "description": "Focaliseur arcanique pour les sorts d'ensorceleur, de sorcier ou de magicien. Remplace les composantes matérielles ordinaires, mais pas celles ayant un coût indiqué ni celles consommées par le sort."
+  },
+  "Rod": {
+    "name": "Sceptre",
+    "description": "Focaliseur arcanique pour les sorts d'ensorceleur, de sorcier ou de magicien. Remplace les composantes matérielles ordinaires, mais pas celles ayant un coût indiqué ni celles consommées par le sort."
+  },
+  "Staff": {
+    "name": "Bâton",
+    "description": "Focaliseur arcanique pour les sorts d'ensorceleur, de sorcier ou de magicien. Remplace les composantes matérielles ordinaires, mais pas celles ayant un coût indiqué ni celles consommées par le sort."
+  },
+  "Wand": {
+    "name": "Baguette",
+    "description": "Focaliseur arcanique pour les sorts d'ensorceleur, de sorcier ou de magicien. Remplace les composantes matérielles ordinaires, mais pas celles ayant un coût indiqué ni celles consommées par le sort."
+  },
+  "Camel": {
+    "name": "Chameau",
+    "description": "Monture avec une vitesse de {{distance:50ft}} et une capacité de charge de 480 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Donkey": {
+    "name": "Âne",
+    "description": "Monture avec une vitesse de {{distance:40ft}} et une capacité de charge de 420 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Mule": {
+    "name": "Mule",
+    "description": "Monture avec une vitesse de {{distance:40ft}} et une capacité de charge de 420 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Elephant": {
+    "name": "Éléphant",
+    "description": "Monture avec une vitesse de {{distance:40ft}} et une capacité de charge de 1320 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Draft Horse": {
+    "name": "Cheval de trait",
+    "description": "Monture avec une vitesse de {{distance:40ft}} et une capacité de charge de 540 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Riding Horse": {
+    "name": "Cheval de selle",
+    "description": "Monture avec une vitesse de {{distance:60ft}} et une capacité de charge de 480 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Mastiff": {
+    "name": "Mâtin",
+    "description": "Monture avec une vitesse de {{distance:40ft}} et une capacité de charge de 195 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Pony": {
+    "name": "Poney",
+    "description": "Monture avec une vitesse de {{distance:40ft}} et une capacité de charge de 225 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Warhorse": {
+    "name": "Cheval de guerre",
+    "description": "Monture avec une vitesse de {{distance:60ft}} et une capacité de charge de 540 livres. Son propre poids n'entre pas dans la charge transportée de l'inventaire. Un attelage tirant un véhicule peut tirer cinq fois sa capacité normale totale, poids du véhicule compris."
+  },
+  "Bit and Bridle": {
+    "name": "Mors et bride",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Carriage": {
+    "name": "Carrosse",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Cart": {
+    "name": "Charrette",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Chariot": {
+    "name": "Char",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Feed (per day)": {
+    "name": "Fourrage (par jour)",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Saddlebags": {
+    "name": "Fontes",
+    "description": "Contenants portés par une monture."
+  },
+  "Sled": {
+    "name": "Traîneau",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Stabling (per day)": {
+    "name": "Écurie (par jour)",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Wagon": {
+    "name": "Chariot",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Exotic Saddle": {
+    "name": "Selle exotique",
+    "description": "Nécessaire pour monter une créature aquatique ou volante."
+  },
+  "Military Saddle": {
+    "name": "Selle militaire",
+    "description": "Confère l'avantage aux tests pour rester en selle sur une monture active au combat."
+  },
+  "Pack Saddle": {
+    "name": "Selle de bât",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Riding Saddle": {
+    "name": "Selle d'équitation",
+    "description": "Harnachement, provisions ou véhicule pour voyager avec des montures."
+  },
+  "Galley": {
+    "name": "Galère",
+    "description": "Véhicule nautique ; vitesse normale de {{distance:4mi}} par heure. Les barques et bateaux à quille peuvent ajouter la vitesse du courant en descendant une rivière, mais ne peuvent pas ramer contre un courant important. Le poids du navire n'est pas précisé, sauf pour la barque de 100 livres."
+  },
+  "Keelboat": {
+    "name": "Bateau à quille",
+    "description": "Véhicule nautique ; vitesse normale de {{distance:1mi}} par heure. Les barques et bateaux à quille peuvent ajouter la vitesse du courant en descendant une rivière, mais ne peuvent pas ramer contre un courant important. Le poids du navire n'est pas précisé, sauf pour la barque de 100 livres."
+  },
+  "Longship": {
+    "name": "Drakkar",
+    "description": "Véhicule nautique ; vitesse normale de {{distance:3mi}} par heure. Les barques et bateaux à quille peuvent ajouter la vitesse du courant en descendant une rivière, mais ne peuvent pas ramer contre un courant important. Le poids du navire n'est pas précisé, sauf pour la barque de 100 livres."
+  },
+  "Rowboat": {
+    "name": "Barque",
+    "description": "Véhicule nautique ; vitesse normale de {{distance:1.5mi}} par heure. Les barques et bateaux à quille peuvent ajouter la vitesse du courant en descendant une rivière, mais ne peuvent pas ramer contre un courant important. Le poids du navire n'est pas précisé, sauf pour la barque de 100 livres."
+  },
+  "Sailing Ship": {
+    "name": "Voilier",
+    "description": "Véhicule nautique ; vitesse normale de {{distance:2mi}} par heure. Les barques et bateaux à quille peuvent ajouter la vitesse du courant en descendant une rivière, mais ne peuvent pas ramer contre un courant important. Le poids du navire n'est pas précisé, sauf pour la barque de 100 livres."
+  },
+  "Warship": {
+    "name": "Navire de guerre",
+    "description": "Véhicule nautique ; vitesse normale de {{distance:2.5mi}} par heure. Les barques et bateaux à quille peuvent ajouter la vitesse du courant en descendant une rivière, mais ne peuvent pas ramer contre un courant important. Le poids du navire n'est pas précisé, sauf pour la barque de 100 livres."
+  },
+  "Barding": {
+    "name": "Barde",
+    "description": "Armure conçue pour un animal : quatre fois le prix et deux fois le poids de l'armure humanoïde correspondante. Le poids nul indiqué est une valeur provisoire ; utilisez l'armure choisie pour déterminer son poids réel."
   }
 }

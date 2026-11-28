@@ -3517,7 +3517,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      'Added missing Player’s Handbook spells, invocations, disciplines, totems and background variants in English, Portuguese and Spanish. Pact of the Tome now guides your three cantrip choices, and the catalog includes the four special Pact of the Chain familiars.';
+      'Added missing Player’s Handbook 2014 spells, invocations, elemental disciplines, totems, backgrounds, equipment and creatures. These additions are now available in all 11 app languages. Pact of the Tome now guides your three cantrip choices, and the catalog includes the four special Pact of the Chain familiars.';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024: beta';
@@ -3531,7 +3531,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get whatsNew301LimitsBody =>
-      'Some features still require manual application. The catalog does not include every 2014 supplement. The new 2014 material still needs translation into the other app languages.';
+      'Some features still require manual application. The catalog does not include every 2014 supplement.';
 
   @override
   String get creationRuleset2024BetaDescription =>

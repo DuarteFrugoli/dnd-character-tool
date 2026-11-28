@@ -3553,7 +3553,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      'Fehlende Zauber aus dem Spielerhandbuch, Anrufungen, Disziplinen, Totems und Hintergrundvarianten wurden auf Englisch, Portugiesisch und Spanisch ergänzt. Beim Pakt des Buches lassen sich jetzt drei Zaubertricks wählen. Der Katalog enthält die vier besonderen Vertrauten des Kettenpakts.';
+      'Fehlende Zauber aus dem Spielerhandbuch 2014, Anrufungen, Elementardisziplinen, Totems, Hintergründe, Ausrüstung und Kreaturen wurden ergänzt. Diese Ergänzungen gibt es jetzt in allen 11 App-Sprachen. Beim Pakt des Buches kannst du deine drei Zaubertricks auswählen; der Katalog enthält die vier besonderen Vertrauten des Pakts der Kette.';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024: Beta';
@@ -3567,7 +3567,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get whatsNew301LimitsBody =>
-      'Einige Merkmale müssen weiterhin manuell angewendet werden. Der Katalog enthält nicht alle Ergänzungsbände von 2014. Die neuen Inhalte für 2014 müssen noch in die übrigen App-Sprachen übersetzt werden.';
+      'Einige Merkmale musst du weiterhin manuell anwenden. Der Katalog enthält nicht alle Ergänzungsbände für 2014.';
 
   @override
   String get creationRuleset2024BetaDescription =>

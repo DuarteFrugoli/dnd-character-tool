@@ -1261,5 +1261,531 @@
         "description": "Il lupo ha vantaggio ai tiri per colpire contro una creatura se almeno uno dei suoi alleati si trova entro {{distance:5ft}} dalla creatura e non è incapacitato."
       }
     }
+  },
+  "Air Elemental": {
+    "name": "Elementale dell'Aria",
+    "traits": {
+      "air_form": {
+        "name": "Forma d'Aria",
+        "description": "L'elementale può entrare nello spazio di una creatura ostile e fermarvisi. Può attraversare uno spazio largo appena {{distance:1in}} senza stringersi."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistenza ai Danni Non Magici",
+        "description": "L'elementale ha resistenza ai danni contundenti, perforanti e taglienti degli attacchi non magici."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "L'elementale effettua due attacchi di schianto."
+      },
+      "slam": {
+        "name": "Schianto",
+        "description": "Attacco in mischia con arma: +8 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 14 (2d8 + 5) danni contundenti."
+      },
+      "whirlwind": {
+        "name": "Turbine",
+        "description": "Ogni creatura nello spazio dell'elementale effettua un tiro salvezza su Forza con CD 13. Se fallisce, subisce 15 (3d8 + 2) danni contundenti, viene scagliata fino a {{distance:20ft}} in una direzione casuale e cade prona. Se urta un oggetto, come un muro o il terreno, subisce 3 (1d6) danni contundenti per ogni {{distance:10ft}} percorsi. Se viene scagliata contro un'altra creatura, questa deve superare un tiro salvezza su Destrezza con CD 13 o subire gli stessi danni e cadere prona. Un successo nel tiro salvezza iniziale dimezza i danni contundenti e impedisce lo spostamento e la caduta."
+      }
+    }
+  },
+  "Earth Elemental": {
+    "name": "Elementale della Terra",
+    "traits": {
+      "earth_glide": {
+        "name": "Scorrere nella Terra",
+        "description": "L'elementale può scavare attraverso terra e pietra non magiche e non lavorate, senza disturbare il materiale che attraversa."
+      },
+      "siege_monster": {
+        "name": "Mostro da Assedio",
+        "description": "L'elementale infligge danni doppi agli oggetti e alle strutture."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistenza ai Danni Non Magici",
+        "description": "L'elementale ha resistenza ai danni contundenti, perforanti e taglienti degli attacchi non magici."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "L'elementale effettua due attacchi di schianto."
+      },
+      "slam": {
+        "name": "Schianto",
+        "description": "Attacco in mischia con arma: +8 al tiro per colpire, portata {{distance:10ft|short}}, un bersaglio. Colpito: 14 (2d8 + 5) danni contundenti."
+      }
+    }
+  },
+  "Elephant": {
+    "name": "Elefante",
+    "traits": {
+      "trampling_charge": {
+        "name": "Carica Travolgente",
+        "description": "Se la creatura si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di incornata nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 12 o cadere prono. Se è prono, la creatura può effettuare un attacco di pestone contro di esso come azione bonus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Zanne",
+        "description": "Attacco in mischia con arma: +8 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 19 (3d8 + 6) danni perforanti."
+      },
+      "stomp": {
+        "name": "Pestone",
+        "description": "Attacco in mischia con arma: +8 al tiro per colpire, portata {{distance:5ft|short}}, una creatura prona. Colpito: 22 (3d10 + 6) danni contundenti."
+      }
+    }
+  },
+  "Fire Elemental": {
+    "name": "Elementale del Fuoco",
+    "traits": {
+      "fire_form": {
+        "name": "Forma di Fuoco",
+        "description": "L'elementale può attraversare uno spazio largo appena {{distance:1in}} senza stringersi. Una creatura che lo tocca o lo colpisce con un attacco in mischia mentre si trova entro {{distance:5ft}} da esso subisce 5 (1d10) danni da fuoco. L'elementale può anche entrare nello spazio di una creatura ostile e fermarvisi. La prima volta che entra nello spazio di una creatura in un turno, essa subisce 5 (1d10) danni da fuoco e prende fuoco; finché qualcuno non usa un'azione per spegnere le fiamme, subisce 5 (1d10) danni da fuoco all'inizio di ogni suo turno."
+      },
+      "illumination": {
+        "name": "Illuminazione",
+        "description": "L'elementale emette luce intensa in un raggio di {{distance:30ft|adj}} e luce fioca per ulteriori {{distance:30ft}}."
+      },
+      "water_susceptibility": {
+        "name": "Suscettibilità all'Acqua",
+        "description": "Per ogni {{distance:5ft}} che percorre nell'acqua, o per ogni gallone d'acqua che gli viene versato addosso, l'elementale subisce 1 danno da freddo."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistenza ai Danni Non Magici",
+        "description": "L'elementale ha resistenza ai danni contundenti, perforanti e taglienti degli attacchi non magici."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "L'elementale effettua due attacchi di tocco."
+      },
+      "touch": {
+        "name": "Tocco",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 10 (2d6 + 3) danni da fuoco. Se il bersaglio è una creatura o un oggetto infiammabile, prende fuoco. Finché una creatura non usa un'azione per spegnere le fiamme, il bersaglio subisce 5 (1d10) danni da fuoco all'inizio di ogni suo turno."
+      }
+    }
+  },
+  "Giant Boar": {
+    "name": "Cinghiale Gigante",
+    "traits": {
+      "charge": {
+        "name": "Carica",
+        "description": "Se la creatura si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con il suo attacco di carica nello stesso turno, il bersaglio subisce 7 (2d6) danni taglienti extra. Se è una creatura, deve superare un tiro salvezza su Forza con CD 13 o cadere prono."
+      },
+      "relentless": {
+        "name": "Implacabile",
+        "description": "Se il cinghiale subisce 10 danni o meno che lo ridurrebbero a 0 punti ferita, viene invece ridotto a 1 punto ferita."
+      }
+    },
+    "actions": {
+      "tusk": {
+        "name": "Zanne",
+        "description": "Attacco in mischia con arma: +5 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 10 (2d6 + 3) danni taglienti."
+      }
+    }
+  },
+  "Giant Constrictor Snake": {
+    "name": "Serpente Stritolatore Gigante",
+    "actions": {
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:10ft|short}}, una creatura. Colpito: 11 (2d6 + 4) danni perforanti."
+      },
+      "constrict": {
+        "name": "Stritolamento",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:5ft|short}}, una creatura. Colpito: 13 (2d8 + 4) danni contundenti, e il bersaglio è afferrato (CD 16 per sfuggire). Finché dura la lotta, è trattenuto e il serpente non può stritolare un altro bersaglio."
+      }
+    }
+  },
+  "Giant Crocodile": {
+    "name": "Coccodrillo Gigante",
+    "traits": {
+      "hold_breath": {
+        "name": "Trattenere il Fiato",
+        "description": "La creatura può trattenere il fiato per 30 minuti."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "Il coccodrillo effettua due attacchi: uno con il morso e uno con la coda."
+      },
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +8 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 21 (3d10 + 5) danni perforanti, e il bersaglio è afferrato (CD 16 per sfuggire). Finché dura la lotta, è trattenuto e il coccodrillo non può mordere un altro bersaglio."
+      },
+      "tail": {
+        "name": "Coda",
+        "description": "Attacco in mischia con arma: +8 al tiro per colpire, portata {{distance:10ft|short}}, un bersaglio non afferrato dal coccodrillo. Colpito: 14 (2d8 + 5) danni contundenti. Se il bersaglio è una creatura, deve superare un tiro salvezza su Forza con CD 16 o cadere prono."
+      }
+    }
+  },
+  "Giant Elk": {
+    "name": "Alce Gigante",
+    "traits": {
+      "charge": {
+        "name": "Carica",
+        "description": "Se la creatura si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con il suo attacco di carica nello stesso turno, il bersaglio subisce 7 (2d6) danni extra. Se è una creatura, deve superare un tiro salvezza su Forza con CD 14 o cadere prono."
+      }
+    },
+    "actions": {
+      "ram": {
+        "name": "Incornata",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:10ft|short}}, un bersaglio. Colpito: 11 (2d6 + 4) danni contundenti."
+      },
+      "hooves": {
+        "name": "Zoccoli",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:5ft|short}}, una creatura prona. Colpito: 22 (4d8 + 4) danni contundenti. Il raro e maestoso alce gigante è spesso considerato il presagio di un evento importante, come la nascita di un re. Le leggende narrano di dei che assumono questa forma visitando il Piano Materiale. Molte culture credono quindi che cacciare queste creature attiri la collera divina."
+      }
+    }
+  },
+  "Giant Scorpion": {
+    "name": "Scorpione Gigante",
+    "actions": {
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "Lo scorpione effettua tre attacchi: due con le chele e uno con il pungiglione."
+      },
+      "claw": {
+        "name": "Chele",
+        "description": "Attacco in mischia con arma: +4 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 6 (1d8 + 2) danni contundenti, e il bersaglio è afferrato (CD 12 per sfuggire). Lo scorpione ha due chele, ognuna delle quali può afferrare un solo bersaglio."
+      },
+      "sting": {
+        "name": "Pungiglione",
+        "description": "Attacco in mischia con arma: +4 al tiro per colpire, portata {{distance:5ft|short}}, una creatura. Colpito: 7 (1d10 + 2) danni perforanti, e il bersaglio effettua un tiro salvezza su Costituzione con CD 12, subendo 22 (4d10) danni da veleno se fallisce, o metà se riesce."
+      }
+    }
+  },
+  "Giant Shark": {
+    "name": "Squalo Gigante",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frenesia di Sangue",
+        "description": "Lo squalo ha vantaggio ai tiri per colpire in mischia contro le creature che non possiedono tutti i loro punti ferita."
+      },
+      "water_breathing": {
+        "name": "Respirare Sott’Acqua",
+        "description": "Lo squalo può respirare solo sott'acqua."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +9 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 22 (3d10 + 6) danni perforanti. Uno squalo gigante è lungo {{distance:30ft}} e vive normalmente negli oceani profondi. Privo di paura, attacca qualsiasi cosa incroci il suo cammino, comprese balene e navi."
+      }
+    }
+  },
+  "Hunter Shark": {
+    "name": "Squalo Cacciatore",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frenesia di Sangue",
+        "description": "Lo squalo ha vantaggio ai tiri per colpire in mischia contro le creature che non possiedono tutti i loro punti ferita."
+      },
+      "water_breathing": {
+        "name": "Respirare Sott’Acqua",
+        "description": "Lo squalo può respirare solo sott'acqua."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 13 (2d8 + 4) danni perforanti. Più piccolo di uno squalo gigante ma più grande e feroce di uno squalo dei coralli, lo squalo cacciatore vive in acque profonde. Di solito caccia da solo, anche se più esemplari possono nutrirsi nella stessa area. Un adulto è lungo da {{distance:15ft|num}} a {{distance:20ft}}."
+      }
+    }
+  },
+  "Imp": {
+    "name": "Imp",
+    "traits": {
+      "shapechanger": {
+        "name": "Mutaforma",
+        "description": "L'imp può usare un'azione per trasformarsi in un ratto (velocità {{distance:20ft|short}}), un corvo ({{distance:20ft|short}}, volare {{distance:60ft|short}}) o un ragno ({{distance:20ft|short}}, scalare {{distance:20ft|short}}), oppure tornare alla sua vera forma. Le statistiche restano identiche, tranne le velocità indicate. L'equipaggiamento indossato o trasportato non si trasforma. Se muore, torna alla sua vera forma."
+      },
+      "devil_s_sight": {
+        "name": "Vista del Diavolo",
+        "description": "L'oscurità magica non ostacola la scurovisione dell'imp."
+      },
+      "magic_resistance": {
+        "name": "Resistenza alla Magia",
+        "description": "La creatura ha vantaggio ai tiri salvezza contro incantesimi e altri effetti magici."
+      },
+      "conditional_damage_resistance": {
+        "name": "Resistenza ai Danni",
+        "description": "L'imp ha resistenza ai danni contundenti, perforanti e taglienti degli attacchi non magici che non sono argentati."
+      }
+    },
+    "actions": {
+      "sting_bite_in_beast_form": {
+        "name": "Pungiglione (Morso in Forma di Bestia)",
+        "description": "Attacco in mischia con arma: +5 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 5 (1d4 + 3) danni perforanti, e il bersaglio effettua un tiro salvezza su Costituzione con CD 11, subendo 10 (3d6) danni da veleno se fallisce, o metà se riesce."
+      },
+      "invisibility": {
+        "name": "Invisibilità",
+        "description": "L'imp diventa magicamente invisibile finché non attacca o la sua concentrazione non termina, come se si concentrasse su un incantesimo. Anche l'equipaggiamento indossato o trasportato diventa invisibile."
+      }
+    }
+  },
+  "Killer Whale": {
+    "name": "Orca Assassina",
+    "traits": {
+      "echolocation": {
+        "name": "Ecolocalizzazione",
+        "description": "L'orca non può usare la vista cieca mentre è assordata."
+      },
+      "hold_breath": {
+        "name": "Trattenere il Fiato",
+        "description": "La creatura può trattenere il fiato per 30 minuti."
+      },
+      "keen_hearing": {
+        "name": "Udito Acuto",
+        "description": "La creatura ha vantaggio alle prove di Saggezza (Percezione) basate sull'udito."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 21 (5d6 + 4) danni perforanti."
+      }
+    }
+  },
+  "Mammoth": {
+    "name": "Mammut",
+    "traits": {
+      "trampling_charge": {
+        "name": "Carica Travolgente",
+        "description": "Se la creatura si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di incornata nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 18 o cadere prono. Se è prono, la creatura può effettuare un attacco di pestone contro di esso come azione bonus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Zanne",
+        "description": "Attacco in mischia con arma: +10 al tiro per colpire, portata {{distance:10ft|short}}, un bersaglio. Colpito: 25 (4d8 + 7) danni perforanti."
+      },
+      "stomp": {
+        "name": "Pestone",
+        "description": "Attacco in mischia con arma: +10 al tiro per colpire, portata {{distance:5ft|short}}, una creatura prona. Colpito: 29 (4d10 + 7) danni contundenti. Il mammut assomiglia a un elefante dal folto pelo e dalle lunghe zanne. Più robusto e feroce degli elefanti comuni, vive in climi che vanno dal subartico al subtropicale."
+      }
+    }
+  },
+  "Plesiosaurus": {
+    "name": "Plesiosauro",
+    "traits": {
+      "hold_breath": {
+        "name": "Trattenere il Fiato",
+        "description": "La creatura può trattenere il fiato per 1 ora."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:10ft|short}}, un bersaglio. Colpito: 14 (3d6 + 4) danni perforanti."
+      }
+    }
+  },
+  "Polar Bear": {
+    "name": "Orso Polare",
+    "traits": {
+      "keen_smell": {
+        "name": "Olfatto Acuto",
+        "description": "La creatura ha vantaggio alle prove di Saggezza (Percezione) basate sull'olfatto."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "L'orso effettua due attacchi: uno con il morso e uno con gli artigli."
+      },
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +7 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 9 (1d8 + 5) danni perforanti."
+      },
+      "claws": {
+        "name": "Artigli",
+        "description": "Attacco in mischia con arma: +7 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 12 (2d6 + 5) danni taglienti."
+      }
+    }
+  },
+  "Pseudodragon": {
+    "name": "Pseudodrago",
+    "traits": {
+      "keen_senses": {
+        "name": "Sensi Acuti",
+        "description": "Lo pseudodrago ha vantaggio alle prove di Saggezza (Percezione) basate sulla vista, sull'udito o sull'olfatto."
+      },
+      "magic_resistance": {
+        "name": "Resistenza alla Magia",
+        "description": "La creatura ha vantaggio ai tiri salvezza contro incantesimi e altri effetti magici."
+      },
+      "limited_telepathy": {
+        "name": "Telepatia Limitata",
+        "description": "Lo pseudodrago può comunicare magicamente idee, emozioni e immagini semplici tramite telepatia a qualsiasi creatura entro {{distance:100ft}} che comprenda una lingua."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +4 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 4 (1d4 + 2) danni perforanti."
+      },
+      "sting": {
+        "name": "Pungiglione",
+        "description": "Attacco in mischia con arma: +4 al tiro per colpire, portata {{distance:5ft|short}}, una creatura. Colpito: 4 (1d4 + 2) danni perforanti, e il bersaglio deve superare un tiro salvezza su Costituzione con CD 11 o essere avvelenato per 1 ora. Se fallisce di 5 o più, cade privo di sensi per la stessa durata, finché non subisce danni o un'altra creatura usa un'azione per scuoterlo e svegliarlo."
+      }
+    }
+  },
+  "Quasit": {
+    "name": "Quasit",
+    "traits": {
+      "shapechanger": {
+        "name": "Mutaforma",
+        "description": "Il quasit può usare un'azione per trasformarsi in un pipistrello (velocità {{distance:10ft|short}}, volare {{distance:40ft|short}}), un centopiedi ({{distance:40ft|short}}, scalare {{distance:40ft|short}}) o un rospo ({{distance:40ft|short}}, nuotare {{distance:40ft|short}}), oppure tornare alla sua vera forma. Le statistiche restano identiche, tranne le velocità indicate. L'equipaggiamento indossato o trasportato non si trasforma. Se muore, torna alla sua vera forma."
+      },
+      "magic_resistance": {
+        "name": "Resistenza alla Magia",
+        "description": "La creatura ha vantaggio ai tiri salvezza contro incantesimi e altri effetti magici."
+      },
+      "nonmagical_damage_resistance": {
+        "name": "Resistenza ai Danni Non Magici",
+        "description": "Il quasit ha resistenza ai danni contundenti, perforanti e taglienti degli attacchi non magici."
+      }
+    },
+    "actions": {
+      "claws_bite_in_beast_form": {
+        "name": "Artigli (Morso in Forma di Bestia)",
+        "description": "Attacco in mischia con arma: +4 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 5 (1d4 + 3) danni perforanti, e il bersaglio deve superare un tiro salvezza su Costituzione con CD 10 o subire 5 (2d4) danni da veleno ed essere avvelenato per 1 minuto. Il bersaglio può ripetere il tiro salvezza alla fine di ogni suo turno, terminando l’effetto su di sé in caso di successo."
+      },
+      "scare": {
+        "name": "Spaventare",
+        "description": "Una creatura scelta dal quasit entro {{distance:20ft}} deve superare un tiro salvezza su Saggezza con CD 10 o essere spaventata per 1 minuto. Può ripetere il tiro salvezza alla fine di ogni suo turno, con svantaggio se il quasit è nella sua linea di vista, terminando l’effetto su di sé in caso di successo."
+      },
+      "invisibility": {
+        "name": "Invisibilità",
+        "description": "Il quasit diventa magicamente invisibile finché non attacca, usa Spaventare o la sua concentrazione termina, come se si concentrasse su un incantesimo. Anche l’equipaggiamento indossato o trasportato diventa invisibile."
+      }
+    }
+  },
+  "Rhinoceros": {
+    "name": "Rinoceronte",
+    "traits": {
+      "charge": {
+        "name": "Carica",
+        "description": "Se la creatura si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con il suo attacco di carica nello stesso turno, il bersaglio subisce 9 (2d8) danni contundenti extra. Se è una creatura, deve superare un tiro salvezza su Forza con CD 15 o cadere prono."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Corno",
+        "description": "Attacco in mischia con arma: +7 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 14 (2d8 + 5) danni contundenti."
+      }
+    }
+  },
+  "Saber-Toothed Tiger": {
+    "name": "Tigre dai Denti a Sciabola",
+    "traits": {
+      "keen_smell": {
+        "name": "Olfatto Acuto",
+        "description": "La creatura ha vantaggio alle prove di Saggezza (Percezione) basate sull'olfatto."
+      },
+      "pounce": {
+        "name": "Balzo",
+        "description": "Se la creatura si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di artigli nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 14 o cadere prono. Se è prono, la creatura può effettuare un attacco di morso contro di esso come azione bonus."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morso",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 10 (1d10 + 5) danni perforanti."
+      },
+      "claw": {
+        "name": "Artigli",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 12 (2d6 + 5) danni taglienti."
+      }
+    }
+  },
+  "Sprite": {
+    "name": "Spiritello",
+    "actions": {
+      "longsword": {
+        "name": "Spada Lunga",
+        "description": "Attacco in mischia con arma: +2 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 1 danno tagliente."
+      },
+      "shortbow": {
+        "name": "Arco Corto",
+        "description": "Attacco a distanza con arma: +6 al tiro per colpire, gittata {{distance:40/160ft|short}}, un bersaglio. Colpito: 1 danno perforante, e il bersaglio deve superare un tiro salvezza su Costituzione con CD 10 o essere avvelenato per 1 minuto. Se il risultato del tiro salvezza è 5 o inferiore, il bersaglio avvelenato cade privo di sensi per la stessa durata, finché non subisce danni o un'altra creatura usa un'azione per scuoterlo e svegliarlo."
+      },
+      "heart_sight": {
+        "name": "Vista del Cuore",
+        "description": "Lo spiritello tocca una creatura e ne conosce magicamente lo stato emotivo attuale. Se il bersaglio fallisce un tiro salvezza su Carisma con CD 10, lo spiritello ne conosce anche l’allineamento. Celestiali, immondi e non morti falliscono automaticamente il tiro salvezza."
+      },
+      "invisibility": {
+        "name": "Invisibilità",
+        "description": "Lo spiritello diventa magicamente invisibile finché non attacca, lancia un incantesimo o la sua concentrazione termina, come se si concentrasse su un incantesimo. Anche l’equipaggiamento indossato o trasportato diventa invisibile."
+      }
+    }
+  },
+  "Swarm of Poisonous Snakes": {
+    "name": "Sciame di Serpenti Velenosi",
+    "traits": {
+      "swarm": {
+        "name": "Sciame",
+        "description": "Lo sciame può occupare lo spazio di un'altra creatura e viceversa. Può attraversare qualsiasi apertura abbastanza grande per un serpente di taglia Minuscola. Non può recuperare punti ferita né ottenere punti ferita temporanei."
+      }
+    },
+    "actions": {
+      "bites": {
+        "name": "Morsi",
+        "description": "Attacco in mischia con arma: +6 al tiro per colpire, portata {{distance:0ft|short}}, una creatura nello spazio dello sciame. Colpito: 7 (2d6) danni perforanti, oppure 3 (1d6) danni perforanti se lo sciame ha metà dei suoi punti ferita o meno. Il bersaglio effettua un tiro salvezza su Costituzione con CD 10, subendo 14 (4d6) danni da veleno se fallisce, o metà se riesce."
+      }
+    }
+  },
+  "Triceratops": {
+    "name": "Triceratopo",
+    "traits": {
+      "trampling_charge": {
+        "name": "Carica Travolgente",
+        "description": "Se la creatura si muove di almeno {{distance:20ft}} in linea retta verso un bersaglio e poi lo colpisce con un attacco di incornata nello stesso turno, il bersaglio deve superare un tiro salvezza su Forza con CD 13 o cadere prono. Se è prono, la creatura può effettuare un attacco di pestone contro di esso come azione bonus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Corno",
+        "description": "Attacco in mischia con arma: +9 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 24 (4d8 + 6) danni perforanti."
+      },
+      "stomp": {
+        "name": "Pestone",
+        "description": "Attacco in mischia con arma: +9 al tiro per colpire, portata {{distance:5ft|short}}, una creatura prona. Colpito: 22 (3d10 + 6) danni contundenti."
+      }
+    }
+  },
+  "Water Elemental": {
+    "name": "Elementale dell'Acqua",
+    "traits": {
+      "water_form": {
+        "name": "Forma d'Acqua",
+        "description": "L'elementale può entrare nello spazio di una creatura ostile e fermarvisi. Può attraversare uno spazio largo appena {{distance:1in}} senza stringersi."
+      },
+      "freeze": {
+        "name": "Congelamento",
+        "description": "Se l'elementale subisce danni da freddo, congela parzialmente; la sua velocità si riduce di {{distance:20ft}} fino alla fine del suo turno successivo."
+      },
+      "nonmagical_resistance": {
+        "name": "Resistenza ai Danni Non Magici",
+        "description": "L'elementale ha resistenza ai danni contundenti, perforanti e taglienti degli attacchi non magici."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Multiattacco",
+        "description": "L'elementale effettua due attacchi di schianto."
+      },
+      "slam": {
+        "name": "Schianto",
+        "description": "Attacco in mischia con arma: +7 al tiro per colpire, portata {{distance:5ft|short}}, un bersaglio. Colpito: 13 (2d8 + 4) danni contundenti."
+      },
+      "whelm": {
+        "name": "Travolgere",
+        "description": "Ogni creatura nello spazio dell'elementale effettua un tiro salvezza su Forza con CD 15. Se fallisce, subisce 13 (2d8 + 4) danni contundenti. Se è di taglia Grande o inferiore, è anche afferrata (CD 14 per sfuggire). Finché dura la lotta, è trattenuta e non può respirare, a meno che non respiri sott'acqua. Se riesce nel tiro salvezza, viene spinta fuori dallo spazio dell'elementale. Esso può afferrare una creatura Grande o fino a due Medie o più piccole alla volta. All'inizio di ogni turno dell'elementale, ogni bersaglio afferrato subisce 13 (2d8 + 4) danni contundenti. Una creatura entro {{distance:5ft}} può usare un'azione ed effettuare con successo una prova di Forza con CD 14 per estrarre una creatura o un oggetto."
+      }
+    }
   }
 }

@@ -1656,5 +1656,185 @@
   "Wish": {
     "name": "Souhait",
     "description": "Souhait est le sort le plus puissant qu'une créature mortelle puisse lancer. Rien qu'en parlant à voix haute, vous pouvez modifier les fondements mêmes de la réalité selon vos désirs.\n\nL'utilisation de base de ce sort consiste à reproduire n'importe quel autre sort de niveau 8 ou inférieur. Vous n'avez à satisfaire aucune des conditions requises par ce sort, y compris les composantes coûteuses. Le sort prend tout simplement effet.\n\nVous pouvez aussi créer l'un des effets suivants, à votre choix :\n- Vous créez un objet d'une valeur maximale de 25 000 po qui n'est pas un objet magique. Aucune dimension de l'objet ne peut dépasser {{distance:300ft}}, et il apparaît dans un espace inoccupé que vous pouvez voir, sur le sol.\n- Vous permettez à jusqu'à vingt créatures que vous pouvez voir de récupérer tous leurs points de vie, et vous mettez fin à tous les effets qui les affectent décrits dans le sort Restauration supérieure.\n- Vous conférez à jusqu'à dix créatures que vous pouvez voir la résistance à un type de dégâts de votre choix.\n- Vous conférez à jusqu'à dix créatures que vous pouvez voir l'immunité contre un seul sort ou autre effet magique pendant 8 heures. Par exemple, vous pourriez vous immuniser, vous et tous vos compagnons, contre l'attaque de drain de vie d'une liche.\n- Vous annulez un seul événement récent en imposant de relancer n'importe quel jet effectué au cours du dernier round (y compris lors de votre dernier tour). La réalité se remodèle pour s'adapter au nouveau résultat. Par exemple, un sort de Souhait pourrait annuler la réussite d'un adversaire à un jet de sauvegarde, le coup critique d'un ennemi ou l'échec d'un ami à un jet de sauvegarde. Vous pouvez imposer que le nouveau jet soit effectué avec un avantage ou un désavantage, et vous pouvez choisir d'utiliser le nouveau jet ou le jet d'origine. Vous pourriez parvenir à accomplir quelque chose qui dépasse le cadre des exemples ci-dessus. Formulez votre souhait au MD de la manière la plus précise possible. Le MD dispose d'une grande latitude pour décider de ce qui se produit dans un tel cas ; plus le souhait est important, plus il est probable que quelque chose tourne mal. Le sort peut tout simplement échouer, l'effet désiré peut n'être que partiellement obtenu, ou vous pourriez subir une conséquence imprévue en raison de la formulation de votre souhait. Par exemple, souhaiter la mort d'un scélérat pourrait vous projeter dans le futur, à une époque où ce scélérat n'est plus en vie, ce qui vous retirerait de fait de la partie. De même, souhaiter obtenir un objet magique légendaire ou un artefact pourrait vous transporter instantanément en présence du propriétaire actuel de l'objet.\n\nL'effort que représente le lancement de ce sort pour produire un effet autre que la reproduction d'un autre sort vous affaiblit. Après avoir enduré cet effort, chaque fois que vous lancez un sort avant d'avoir terminé un repos long, vous subissez 1d10 dégâts nécrotiques par niveau de ce sort. Ces dégâts ne peuvent être ni réduits ni évités de quelque manière que ce soit. De plus, votre Force tombe à 3, si elle n'est pas déjà de 3 ou moins, pendant 2d4 jours. Pour chacun de ces jours que vous passez à vous reposer sans vous livrer à autre chose qu'une activité légère, le temps de récupération qu'il vous reste diminue de 2 jours. Enfin, si vous subissez cet effort, il y a 33 % de chances que vous soyez incapable de lancer de nouveau Souhait."
+  },
+  "Thorn Whip": {
+    "name": "Fouet épineux",
+    "description": "Une liane magique couverte d'épines frappe une créature à portée. Effectuez une attaque de sort au corps à corps, malgré la portée de {{distance:30ft}}. Si elle touche, elle inflige 1d6 dégâts perforants. Si la créature est de taille G ou inférieure, vous la rapprochez aussi de vous de {{distance:10ft}} au maximum. Les dégâts passent à 2d6 au niveau de personnage 5, à 3d6 au niveau 11 et à 4d6 au niveau 17.",
+    "higherLevels": null,
+    "material": "la tige d'une plante épineuse"
+  },
+  "Armor of Agathys": {
+    "name": "Armure d'Agathys",
+    "description": "Une glace spectrale vous enveloppe, vous et votre équipement, et vous confère 5 points de vie temporaires pendant 1 heure au maximum. Lorsqu'une créature vous touche avec une attaque au corps à corps alors qu'il vous reste des points de vie temporaires de ce sort, elle subit 5 dégâts de froid. Cette riposte ne demande ni jet d'attaque ni jet de sauvegarde. Perdre ou remplacer ces points de vie temporaires met fin à cette protection.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 5 aux points de vie temporaires accordés et aux dégâts de froid de chaque riposte. Un emplacement de niveau 3 confère ainsi 15 points de vie temporaires et inflige 15 dégâts de froid par coup déclencheur.",
+    "material": "une tasse d'eau"
+  },
+  "Arms of Hadar": {
+    "name": "Bras de Hadar",
+    "description": "Des vrilles obscures frappent les créatures à {{distance:10ft}} ou moins de vous. Chaque cible effectue un jet de sauvegarde de Force : en cas d'échec, elle subit 2d6 dégâts nécrotiques et ne peut pas utiliser de réaction jusqu'à son prochain tour ; en cas de réussite, elle subit la moitié des dégâts et conserve ses réactions.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6 dégâts nécrotiques.",
+    "material": null
+  },
+  "Chromatic Orb": {
+    "name": "Orbe chromatique",
+    "description": "Choisissez une créature visible à portée et effectuez une attaque de sort à distance. Choisissez les dégâts d'acide, de froid, de feu, de foudre, de poison ou de tonnerre ; si l'attaque touche, elle inflige 3d8 dégâts de ce type. Le diamant est nécessaire mais n'est pas consommé.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d8 dégâts.",
+    "material": "un diamant d'une valeur minimale de 50 po"
+  },
+  "Compelled Duel": {
+    "name": "Duel forcé",
+    "description": "Choisissez une créature visible à portée. Si elle rate un jet de sauvegarde de Sagesse, elle est désavantagée aux attaques contre toute créature autre que vous. Chaque fois qu'elle tente de s'éloigner à plus de {{distance:30ft}} de vous, elle doit réussir un autre jet de sauvegarde de Sagesse ; une réussite lève cette restriction de déplacement pour ce tour.\n\nLe sort prend fin si vous attaquez une autre créature, lancez un sort ciblant une autre créature hostile ou terminez votre tour à plus de {{distance:30ft}} de la cible. Il prend aussi fin si un de vos alliés blesse la cible ou lui fait subir un sort nuisible.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Dissonant Whispers": {
+    "name": "Murmures dissonants",
+    "description": "Vous murmurez une mélodie douloureuse à une créature à portée. Si elle rate un jet de sauvegarde de Sagesse, elle subit 3d6 dégâts psychiques et utilise immédiatement sa réaction, si elle en dispose, pour s'éloigner de vous autant que sa vitesse le permet. Elle évite les terrains manifestement dangereux. Une sauvegarde réussie réduit les dégâts de moitié et empêche ce déplacement. Une cible assourdie réussit automatiquement.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6 dégâts psychiques.",
+    "material": null
+  },
+  "Ensnaring Strike": {
+    "name": "Frappe piégeuse",
+    "description": "Votre prochaine attaque avec une arme qui touche une créature avant la fin du sort fait apparaître des lianes qui l'enserrent. La cible effectue un jet de sauvegarde de Force, avec avantage si elle est de taille G ou supérieure. Un échec la rend entravée pour le reste de la durée ; une réussite détruit les lianes. Une cible entravée subit 1d6 dégâts perforants au début de chacun de ses tours. La cible ou une créature pouvant la toucher peut consacrer une action à un test de Force contre votre DD de sauvegarde des sorts pour la libérer en cas de réussite.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6 aux dégâts perforants récurrents.",
+    "material": null
+  },
+  "Hail of Thorns": {
+    "name": "Grêle d'épines",
+    "description": "Votre prochaine attaque à distance avec une arme qui touche une créature avant la fin du sort produit aussi une gerbe d'épines. L'attaque conserve ses effets normaux. La cible et chaque créature à {{distance:5ft}} ou moins d'elle effectuent un jet de sauvegarde de Dextérité : elles subissent 1d10 dégâts perforants en cas d'échec, ou la moitié en cas de réussite.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d10 dégâts perforants, jusqu'à un maximum de 6d10.",
+    "material": null
+  },
+  "Ray of Sickness": {
+    "name": "Rayon empoisonné",
+    "description": "Effectuez une attaque de sort à distance contre une créature à portée. Si elle touche, elle inflige 2d8 dégâts de poison et impose un jet de sauvegarde de Constitution. Si la cible le rate, elle est aussi empoisonnée jusqu'à la fin de votre prochain tour. Réussir la sauvegarde empêche cet état, mais pas les dégâts de l'attaque.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d8 dégâts de poison.",
+    "material": null
+  },
+  "Searing Smite": {
+    "name": "Châtiment ardent",
+    "description": "Votre prochaine attaque au corps à corps avec une arme qui touche une créature avant la fin du sort inflige 1d6 dégâts de feu supplémentaires et embrase la cible. Au début de chacun de ses tours, elle effectue un jet de sauvegarde de Constitution : un échec lui inflige 1d6 dégâts de feu ; une réussite met fin au sort. La cible ou une autre créature à {{distance:5ft}} ou moins peut utiliser une action pour éteindre les flammes et mettre fin au sort. Étouffer les flammes, par exemple en immergeant la cible, y met également fin.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 1er ajoute 1d6 uniquement aux dégâts supplémentaires du coup initial. Les dégâts de feu récurrents restent à 1d6.",
+    "material": null
+  },
+  "Thunderous Smite": {
+    "name": "Châtiment tonitruant",
+    "description": "La première attaque au corps à corps avec une arme que vous réussissez avant la fin du sort inflige 2d6 dégâts de tonnerre supplémentaires et produit une détonation audible à {{distance:300ft}} de vous. Si la cible est une créature, elle doit aussi réussir un jet de sauvegarde de Force ou être repoussée de {{distance:10ft}} et jetée à terre.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Beast Sense": {
+    "name": "Sens animal",
+    "description": "Touchez une bête consentante. Tant que vous maintenez votre concentration, vous pouvez utiliser une action pour voir et entendre par ses sens, en bénéficiant de ses sens spéciaux. Le lien dure jusqu'à ce que vous utilisiez une autre action pour retrouver vos propres sens ou que le sort prenne fin. Pendant que vous utilisez les sens de la bête, vous êtes aveuglé et assourdi à votre propre environnement.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Cordon of Arrows": {
+    "name": "Cordon de flèches",
+    "description": "Plantez quatre flèches ou carreaux non magiques dans le sol à portée. Vous et les créatures désignées lors de l'incantation êtes ignorés. Lorsqu'une autre créature arrive pour la première fois dans un tour à {{distance:30ft}} ou moins des munitions, ou y termine son tour, une munition l'attaque. Une sauvegarde de Dextérité ratée inflige 1d6 dégâts perforants ; une réussite évite les dégâts. La munition est détruite dans les deux cas. Le sort prend fin lorsque toutes les munitions enchantées ont été utilisées ou à la fin de sa durée.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 2e permet d'enchanter deux munitions supplémentaires. Les dégâts par munition restent à 1d6.",
+    "material": "au moins quatre flèches ou carreaux"
+  },
+  "Phantasmal Force": {
+    "name": "Force fantasmagorique",
+    "description": "Choisissez une créature visible à portée ; les morts-vivants et les artificiels ne sont pas affectés. Si elle rate un jet de sauvegarde d'Intelligence, elle seule perçoit un objet, une créature ou un phénomène visible illusoire tenant dans un cube de {{distance:10ft|adj}} d'arête. L'illusion comporte des détails sensoriels, comme les sons et la température. La cible la croit réelle et rationalise les événements contradictoires.\n\nLa cible peut utiliser une action pour effectuer un test d'Intelligence (Investigation) contre votre DD de sauvegarde des sorts. Une réussite révèle l'illusion et met fin au sort. Une fois par round, pendant votre tour, une menace illusoire plausible peut infliger 1d6 dégâts psychiques si la cible est à l'intérieur ou à {{distance:5ft}} ou moins. La cible les ressent comme des dégâts appropriés à la menace imaginée.",
+    "higherLevels": null,
+    "material": "un peu de laine"
+  },
+  "Aura of Vitality": {
+    "name": "Aura de vitalité",
+    "description": "Une aura de guérison s'étend à {{distance:30ft}} de vous et suit vos déplacements. Pendant sa durée, vous pouvez utiliser une action bonus pour rendre 2d6 points de vie à une créature dans l'aura, y compris vous-même.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Blinding Smite": {
+    "name": "Châtiment aveuglant",
+    "description": "Votre prochaine attaque au corps à corps avec une arme qui touche une créature avant la fin du sort inflige 3d8 dégâts radiants supplémentaires. La cible doit aussi réussir un jet de sauvegarde de Constitution ou être aveuglée pour le reste de la durée. À la fin de chacun de ses tours, une cible aveuglée répète la sauvegarde et met fin à cet état en cas de réussite.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Barrage": {
+    "name": "Invocation de barrage",
+    "description": "Lancez une arme non magique ou tirez une munition non magique dans les airs. Des copies magiques balaient un cône de {{distance:60ft|adj}} partant de vous, puis disparaissent. Chaque créature dans le cône effectue un jet de sauvegarde de Dextérité : elle subit 3d8 dégâts en cas d'échec, ou la moitié en cas de réussite. Le type de dégâts est celui de l'arme ou de la munition utilisée comme composante.",
+    "higherLevels": null,
+    "material": "une munition ou une arme de jet"
+  },
+  "Crusader's Mantle": {
+    "name": "Manteau du croisé",
+    "description": "Une aura exaltante s'étend à {{distance:30ft}} de vous et suit vos déplacements. Les créatures non hostiles dans l'aura, y compris vous-même, infligent 1d4 dégâts radiants supplémentaires chaque fois qu'elles touchent avec une attaque avec une arme.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Elemental Weapon": {
+    "name": "Arme élémentaire",
+    "description": "Touchez une arme non magique et choisissez l'acide, le froid, le feu, la foudre ou le tonnerre. Tant que vous maintenez votre concentration, l'arme devient magique, confère un bonus de +1 aux jets d'attaque et inflige 1d4 dégâts supplémentaires du type choisi lorsqu'elle touche.",
+    "higherLevels": "Avec un emplacement de niveau 5 ou 6, le bonus d'attaque devient +2 et les dégâts supplémentaires 2d4. Avec un emplacement de niveau 7 ou supérieur, ils deviennent +3 et 3d4.",
+    "material": null
+  },
+  "Hunger of Hadar": {
+    "name": "Faim de Hadar",
+    "description": "Choisissez un point à portée pour ouvrir un vide sans étoiles dans une sphère de {{distance:20ft|adj}} de rayon. Ses murmures et bruits de succion sont audibles à {{distance:30ft}}. Aucune lumière, même magique, n'éclaire la sphère. Les créatures entièrement à l'intérieur sont aveuglées et la zone est un terrain difficile.\n\nUne créature qui commence son tour à l'intérieur subit automatiquement 2d6 dégâts de froid. Une créature qui y termine son tour doit réussir un jet de sauvegarde de Dextérité ou subir 2d6 dégâts d'acide. Ces déclenchements sont distincts ; les règles de 2014 ne prévoient aucune augmentation des dégâts avec un emplacement supérieur.",
+    "higherLevels": null,
+    "material": "un tentacule de pieuvre conservé dans le vinaigre"
+  },
+  "Lightning Arrow": {
+    "name": "Flèche de foudre",
+    "description": "Votre prochaine attaque à distance avec une arme avant la fin du sort transforme sa munition ou son arme de jet en foudre. Effectuez le jet d'attaque normal : remplacez les dégâts habituels de l'arme par 4d8 dégâts de foudre si vous touchez, ou la moitié si vous ratez. Dans les deux cas, chaque créature à {{distance:10ft}} ou moins de la cible effectue un jet de sauvegarde de Dextérité : elle subit 2d8 dégâts de foudre en cas d'échec, ou la moitié en cas de réussite. La munition ou l'arme de jet retrouve ensuite sa forme normale.",
+    "higherLevels": "Chaque niveau d'emplacement au-delà du 3e ajoute 1d8 aux dégâts principaux et 1d8 aux dégâts subis par les créatures proches.",
+    "material": null
+  },
+  "Aura of Life": {
+    "name": "Aura de vie",
+    "description": "Une aura protectrice de vie s'étend à {{distance:30ft}} de vous et suit vos déplacements. Les créatures non hostiles dans l'aura, y compris vous-même, ont la résistance aux dégâts nécrotiques et leur maximum de points de vie ne peut pas être réduit. Une créature vivante non hostile qui commence son tour dans l'aura avec 0 point de vie récupère 1 point de vie.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Aura of Purity": {
+    "name": "Aura de pureté",
+    "description": "Une aura purificatrice s'étend à {{distance:30ft}} de vous et suit vos déplacements. Les créatures non hostiles dans l'aura, y compris vous-même, ne peuvent pas contracter de maladie et ont la résistance aux dégâts de poison. Elles sont avantagées aux sauvegardes contre les effets qui les rendraient aveuglées, charmées, assourdies, effrayées, paralysées, empoisonnées ou étourdies.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Grasping Vine": {
+    "name": "Liane avide",
+    "description": "Créez une liane dans un espace inoccupé au sol, visible à portée. Lors de l'incantation, dirigez-la vers une créature visible à {{distance:30ft}} ou moins de la liane. Si elle rate un jet de sauvegarde de Dextérité, elle est tirée de {{distance:20ft}} en ligne droite vers la liane. À chacun de vos tours suivants, tant que vous maintenez votre concentration, vous pouvez utiliser une action bonus pour diriger un autre coup vers la même créature ou une autre cible admissible.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Staggering Smite": {
+    "name": "Châtiment déstabilisant",
+    "description": "Votre prochaine attaque au corps à corps avec une arme qui touche une créature avant la fin du sort inflige 4d6 dégâts psychiques supplémentaires. La cible effectue aussi un jet de sauvegarde de Sagesse. En cas d'échec, jusqu'à la fin de son prochain tour, elle est désavantagée aux jets d'attaque et aux tests de caractéristique et ne peut pas utiliser de réaction.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Banishing Smite": {
+    "name": "Châtiment bannissant",
+    "description": "Votre prochaine attaque avec une arme qui touche une créature avant la fin du sort inflige 5d10 dégâts de force supplémentaires. Si cette attaque laisse à la cible 50 points de vie ou moins, elle est bannie sans jet de sauvegarde. Une créature originaire d'un autre plan retourne sur son plan d'origine. Une créature originaire de votre plan actuel entre dans un demi-plan inoffensif, où elle est neutralisée jusqu'à la fin du sort. Elle revient ensuite à son emplacement précédent ou à l'espace inoccupé le plus proche si nécessaire.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Circle of Power": {
+    "name": "Cercle de pouvoir",
+    "description": "Une sphère protectrice s'étend à {{distance:30ft}} de vous et se déplace avec vous. Les créatures amicales dans la sphère, y compris vous-même, sont avantagées aux sauvegardes contre les sorts et autres effets magiques. Si un tel effet permet une sauvegarde pour réduire les dégâts de moitié, une créature qui la réussit ne subit aucun dégât à la place. Un échec inflige les dégâts habituels.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Volley": {
+    "name": "Invocation de volée",
+    "description": "Tirez une munition non magique avec une arme à distance ou lancez une arme non magique dans les airs. Choisissez un point à portée : des copies pleuvent dans un cylindre de {{distance:40ft|adj}} de rayon et de {{distance:20ft|adj}} de hauteur, puis disparaissent. Chaque créature à l'intérieur effectue un jet de sauvegarde de Dextérité : elle subit 8d8 dégâts en cas d'échec, ou la moitié en cas de réussite. Le type de dégâts est celui de l'arme ou de la munition utilisée comme composante.",
+    "higherLevels": null,
+    "material": "une munition ou une arme de jet"
+  },
+  "Destructive Wave": {
+    "name": "Vague destructrice",
+    "description": "Frappez le sol et choisissez des créatures à {{distance:30ft}} ou moins de vous. Chacune effectue un jet de sauvegarde de Constitution. Un échec inflige 5d6 dégâts de tonnerre plus 5d6 dégâts radiants ou nécrotiques, au choix, et jette la créature à terre. Une réussite réduit de moitié les deux types de dégâts et empêche la chute.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Swift Quiver": {
+    "name": "Carquois véloce",
+    "description": "Enchantez un carquois contenant des munitions. À chacun de vos tours, tant que vous maintenez votre concentration, vous pouvez utiliser une action bonus pour effectuer deux attaques avec une arme utilisant les munitions du carquois. Celui-ci remplace chaque munition ainsi utilisée par une munition non magique similaire. Les munitions créées se désintègrent à la fin du sort. Perdre le carquois met fin au sort. L'incantation utilise votre action bonus ; les deux attaques demandent leur propre action bonus pendant un tour.",
+    "higherLevels": null,
+    "material": "un carquois contenant au moins une munition"
   }
 }

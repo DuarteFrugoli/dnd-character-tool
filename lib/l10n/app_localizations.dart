@@ -6136,7 +6136,7 @@ abstract class AppLocalizations {
   /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
-  /// **'Added missing Player’s Handbook spells, invocations, disciplines, totems and background variants in English, Portuguese and Spanish. Pact of the Tome now guides your three cantrip choices, and the catalog includes the four special Pact of the Chain familiars.'**
+  /// **'Added missing Player’s Handbook 2014 spells, invocations, elemental disciplines, totems, backgrounds, equipment and creatures. These additions are now available in all 11 app languages. Pact of the Tome now guides your three cantrip choices, and the catalog includes the four special Pact of the Chain familiars.'**
   String get whatsNew301ContentBody;
 
   /// 3.0.2 release notice and incomplete 2024 content disclosure.
@@ -6160,7 +6160,7 @@ abstract class AppLocalizations {
   /// 3.0.2 release notice and incomplete 2024 content disclosure.
   ///
   /// In en, this message translates to:
-  /// **'Some features still require manual application. The catalog does not include every 2014 supplement. The new 2014 material still needs translation into the other app languages.'**
+  /// **'Some features still require manual application. The catalog does not include every 2014 supplement.'**
   String get whatsNew301LimitsBody;
 
   /// 3.0.2 release notice and incomplete 2024 content disclosure.

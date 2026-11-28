@@ -7,21 +7,23 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+No unreleased changes.
+
 ---
 
-## [3.0.2] - 2026-11-25
+## [3.0.2] - 2026-11-28
 
 ### Added
-- **Familiares do Pacto da Corrente (2014)**: blocos de estatisticas de Imp, Pseudodragon, Quasit e Sprite adicionados ao catalogo, com textos em ingles, portugues e espanhol, preservando as resistencias condicionais de 2014.
-- **Traducoes 2014 em portugues e espanhol**: novos materiais de magias, invocacoes, disciplinas, terrenos, totens, tabela de Magia Selvagem, criaturas, equipamento, variantes de antecedente e sugestoes de personalidade traduzidos e integrados a interface.
-- **Materiais 2014 em ingles**: 32 invocacoes, 17 disciplinas elementais (incluindo Elemental Attunement), terrenos e magias do Circle of the Land, totens, tabela de Wild Magic, cinco variantes de antecedente, sugestoes originais de personalidade e 34 itens de foco/transporte. Circle of the Moon recebe feras ate ND 6 e quatro elementais, com gasto de duas utilizacoes. Pendencias por idioma estao em `docs/CONTENT_COVERAGE.md`.
-- **Magias do PHB 2014**: adicionadas Armor of Agathys e as outras 29 magias que faltavam, com descricoes em ingles, listas de classe e subclasse, componentes, concentracao e escalonamento da edicao 2014. O catalogo passa a incluir todas as 361 magias do PHB 2014.
+- **Familiares do Pacto da Corrente (2014)**: blocos de estatisticas de Imp, Pseudodragon, Quasit e Sprite adicionados ao catalogo, com textos nos 11 idiomas do app, preservando as resistencias condicionais de 2014.
+- **Complementos 2014 nos 11 idiomas**: as 30 magias complementares, 65 opcoes de classe, 17 disciplinas elementais incluindo Sintonia Elemental, 50 resultados de Magia Selvagem, textos expandidos de subclasses, cinco variantes de antecedente e sugestoes de personalidade, 34 equipamentos e 24 criaturas estao cobertos em ingles e nos dez idiomas traduzidos: portugues, espanhol, frances, italiano, alemao, japones, coreano, russo, turco e chines. Esse escopo nao inclui todos os suplementos nem uma revisao de todos os textos antigos.
+- **Materiais 2014**: 32 invocacoes, 17 disciplinas elementais (incluindo Elemental Attunement), terrenos e magias do Circle of the Land, totens, tabela de Wild Magic, cinco variantes de antecedente, sugestoes originais de personalidade e 34 itens de foco/transporte. Circle of the Moon recebe feras ate ND 6 e quatro elementais, com gasto de duas utilizacoes. Cobertura e limites estao em `docs/CONTENT_COVERAGE.md`.
+- **Magias do PHB 2014**: adicionadas Armor of Agathys e as outras 29 magias que faltavam, com resumos nos 11 idiomas, listas de classe e subclasse, componentes, concentracao e escalonamento da edicao 2014. O catalogo passa a incluir todas as 361 magias do PHB 2014.
 - **Subclasses 2024**: as 48 subclasses do Player's Handbook 2024, com resumos em ingles para as 36 novas, escolhas, recursos e magias adicionais. Eldritch Knight e Arcane Trickster recebem conjuracao e espacos de multiclasse; College of Dance recebe sua CA sem armadura; Circle of the Moon recebe limites de forma, PV temporarios e feras ate CR 6.
 - **Backups locais**: o app guarda as tres copias completas mais recentes antes de atualizar personagens ou exportar um backup, incluindo fotos. Configuracoes > Backups locais permite salvar uma copia agora, exportar e restaurar como novos personagens, preservando as fichas atuais.
 
 ### Changed
 - **D&D 2024 em beta**: a escolha de edicao avisa que o conteudo e as traducoes estao incompletos; ainda ha lacunas em antecedentes, especies e talentos. As 48 subclasses estao cadastradas, mas muitos dos novos textos estao apenas em ingles.
-- **Novidades da 3.0.2**: novo anuncio nos onze idiomas explica as adicoes de 2014, a cobertura em ingles/portugues/espanhol, o beta de 2024 e as habilidades que ainda exigem aplicacao manual. Quem ja leu os anuncios anteriores recebe o novo aviso uma vez.
+- **Novidades da 3.0.2**: anuncio nos onze idiomas informa que os complementos recentes de 2014 estao disponiveis em todos os idiomas do app, explica o beta de 2024 e as habilidades que ainda exigem aplicacao manual. Quem ja leu os anuncios de versoes anteriores recebe o aviso da 3.0.2 uma vez.
 - **Backups nas novidades**: o aviso da 3.0.2 tambem apresenta os tres backups locais e o compartilhamento opcional nos onze idiomas.
 
 ### Fixed
@@ -35,11 +37,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Internal
 - **Versionamento**: versao do app preparada como `3.0.2+37`.
-- **Cobertura e limites**: o escopo do catalogo 2014 e o trabalho de traducao pendente seguem documentados em `docs/CONTENT_COVERAGE.md`. Suplementos posteriores e automacao de todas as regras nao estao incluidos; a validacao em aparelho fisico continua pendente.
-- **Notas da Play Store**: textos para os onze idiomas em `docs/releases/3.0.2-play-store.txt`.
+- **Validacao das traducoes**: testes de integracao dos complementos 2014 cobrem os dez idiomas traduzidos, incluindo faixas da tabela de Magia Selvagem, distancias e dados de dano. Suite completa com 672 testes aprovados; validadores dos dois pacotes SRD e analise dos arquivos Dart alterados sem problemas.
+- **Cobertura e limites**: o escopo do catalogo 2014, os complementos traduzidos e as pendencias de 2024 seguem documentados em `docs/CONTENT_COVERAGE.md`. Suplementos posteriores e automacao de todas as regras nao estao incluidos; a validacao em aparelho fisico continua pendente.
+- **Notas da Play Store**: textos atualizados nos onze idiomas em `docs/releases/3.0.2-play-store.txt`, com a cobertura das traducoes de 2014, os tres backups locais e o beta de 2024.
 - **FVM**: Flutter `3.41.9` fixado em `.fvmrc`, alinhado aos testes e ao deploy existentes. A pasta local `.fvm/` permanece ignorada.
 - **Arquivos locais**: `.env` e variantes, chaves Android/iOS e perfis de provisionamento adicionados ao `.gitignore`, preservando `.env.example`. O relatorio gerado `analyze_out.txt` deixa de ser versionado.
-- **Validacao Android e limites de iOS**: APK de debug compilado sem credenciais de release; a verificacao de release rejeita corretamente a ausencia de assinatura. A compilacao iOS, os oito testes XCTest e os testes reais de importacao e compartilhamento seguem pendentes no Mac/iPhone; a publicacao desta versao e somente para Android.
+- **Validacao Android e limites de iOS**: APK de debug compilado sem credenciais de release; a verificacao de release rejeita corretamente a ausencia de assinatura. App Bundle `3.0.2+37` compilado em release com os 11 idiomas, com assinatura JAR verificada e certificado correspondente a nova chave de upload. A compilacao iOS, os oito testes XCTest e os testes reais de importacao e compartilhamento seguem pendentes no Mac/iPhone; a publicacao desta versao e somente para Android.
 
 ---
 

@@ -12,6 +12,15 @@ List<String> markers(String s) =>
     RegExp(r'\{\{[^}]+\}\}').allMatches(s).map((m) => m.group(0)!).toList()
       ..sort();
 
+List<String> dice(String s) => RegExp(
+  r'(?<![A-Za-z0-9])\d+d\d+(?![A-Za-z0-9])',
+).allMatches(s).map((m) => m.group(0)!).toList()..sort();
+
+// Grammar flags such as |adj vary by language; values and units must not.
+List<String> distances(String s) => markers(
+  s,
+).map((marker) => marker.replaceAll(RegExp(r'\|[^}]+'), '')).toList();
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   test(
@@ -54,7 +63,79 @@ void main() {
     },
   );
   final source = SrdDataSource.forPack(SrdContentPackRegistry.srd51);
-  for (final locale in ['pt', 'es']) {
+  const localized = {
+    'pt': {
+      'sorceryPoints': 'pontos de feitiçaria',
+      'waterWhip': 'Chicote de Água',
+      'retainers': 'Serviçais',
+      'badReputation': 'Má Reputação',
+      'letter': 'Carta de apresentação',
+    },
+    'es': {
+      'sorceryPoints': 'puntos de hechicería',
+      'waterWhip': 'Látigo de agua',
+      'retainers': 'Sirvientes',
+      'badReputation': 'Mala reputación',
+      'letter': 'Carta de presentación',
+    },
+    'fr': {
+      'sorceryPoints': 'points de sorcellerie',
+      'waterWhip': "Fouet d'eau",
+      'retainers': 'Serviteurs',
+      'badReputation': 'Mauvaise réputation',
+      'letter': 'Lettre de recommandation',
+    },
+    'it': {
+      'sorceryPoints': 'punti stregoneria',
+      'waterWhip': "Frusta d'Acqua",
+      'retainers': 'Servitori',
+      'badReputation': 'Cattiva Reputazione',
+      'letter': 'Lettera di presentazione',
+    },
+    'de': {
+      'sorceryPoints': 'Zaubereipunkte',
+      'waterWhip': 'Wasserpeitsche',
+      'retainers': 'Gefolgsleute',
+      'badReputation': 'Schlechter Ruf',
+      'letter': 'Empfehlungsschreiben',
+    },
+    'ja': {
+      'sorceryPoints': '魔力点',
+      'waterWhip': '水の鞭',
+      'retainers': '従者',
+      'badReputation': '悪名',
+      'letter': '紹介状',
+    },
+    'ko': {
+      'sorceryPoints': '마법 포인트',
+      'waterWhip': '물 채찍',
+      'retainers': '수행원',
+      'badReputation': '악명',
+      'letter': '소개장',
+    },
+    'ru': {
+      'sorceryPoints': 'очки волшебства',
+      'waterWhip': 'Водяной кнут',
+      'retainers': 'Слуги',
+      'badReputation': 'Дурная репутация',
+      'letter': 'Рекомендательное письмо',
+    },
+    'tr': {
+      'sorceryPoints': 'büyücülük puanlarını',
+      'waterWhip': 'Su Kırbacı',
+      'retainers': 'Hizmetkârlar',
+      'badReputation': 'Kötü Şöhret',
+      'letter': 'Tanıtım mektubu',
+    },
+    'zh': {
+      'sorceryPoints': '术法点',
+      'waterWhip': '水鞭',
+      'retainers': '侍从',
+      'badReputation': '恶名',
+      'letter': '介绍信',
+    },
+  };
+  for (final locale in localized.keys) {
     group('2014 supplemental $locale', () {
       late SrdI18nService i18n;
       setUpAll(() async {
@@ -76,11 +157,21 @@ void main() {
               markers(spell['description'] as String),
               reason: name,
             );
+            expect(
+              dice(text),
+              dice(spell['description'] as String),
+              reason: name,
+            );
             if (spell['higherLevels'] != null) {
               expect(i18n.spellHigherLevels(name), isNotNull, reason: name);
               expect(
                 i18n.spellHigherLevels(name),
                 isNot(spell['higherLevels']),
+                reason: name,
+              );
+              expect(
+                dice(i18n.spellHigherLevels(name)!),
+                dice(spell['higherLevels'] as String),
                 reason: name,
               );
             }
@@ -122,6 +213,11 @@ void main() {
                 markers(row['description'] as String),
                 reason: row['id'] as String,
               );
+              expect(
+                dice(text),
+                dice(row['description'] as String),
+                reason: row['id'] as String,
+              );
             }
           }
         },
@@ -129,7 +225,7 @@ void main() {
 
       test(
         'Wild Magic table and complete discipline feature are displayed in the selected language',
-        () {
+        () async {
           final surge = i18n.subclassFeatureDescription(
             'Sorcerer',
             'Wild Magic',
@@ -139,22 +235,38 @@ void main() {
             RegExp(r'^\d{2}-\d{2}:', multiLine: true).allMatches(surge),
             hasLength(50),
           );
-          expect(
-            surge,
-            contains(
-              locale == 'pt' ? 'pontos de feitiçaria' : 'puntos de hechicería',
-            ),
-          );
+          expect(surge, contains(localized[locale]!['sorceryPoints']));
           expect(surge, isNot(contains('Cast Fireball')));
+          final original = await Supplemental2014Catalog.options();
+          final outcomes =
+              (original['wildMagicSurge'] as Map)['outcomes'] as List;
+          final rows = RegExp(
+            r'^(\d{2}-\d{2}): (.*)$',
+            multiLine: true,
+          ).allMatches(surge).toList();
+          for (var i = 0; i < outcomes.length; i++) {
+            final outcome = outcomes[i] as Map;
+            final min = (outcome['min'] as int).toString().padLeft(2, '0');
+            final max = outcome['max'] == 100
+                ? '00'
+                : (outcome['max'] as int).toString().padLeft(2, '0');
+            expect(rows[i].group(1), '$min-$max');
+            final text = rows[i].group(2)!;
+            final reference = outcome['description'] as String;
+            expect(
+              distances(text),
+              distances(reference),
+              reason: '$locale.$min',
+            );
+            expect(dice(text), dice(reference), reason: '$locale.$min');
+            expect(text, isNot(reference), reason: '$locale.$min');
+          }
           final disciplines = i18n.subclassFeatureDescription(
             'Monk',
             'Way of the Four Elements',
             'Disciple of the Elements',
           )!;
-          expect(
-            disciplines,
-            contains(locale == 'pt' ? 'Chicote de Água' : 'Látigo de agua'),
-          );
+          expect(disciplines, contains(localized[locale]!['waterWhip']));
           expect(disciplines, contains('17-20: 6'));
           expect(
             i18n.subclassFeatureDescription(
@@ -191,15 +303,15 @@ void main() {
           }
           expect(
             i18n.backgroundFeatureName('Knight'),
-            locale == 'pt' ? 'Serviçais' : 'Sirvientes',
+            localized[locale]!['retainers'],
           );
           expect(
             i18n.backgroundFeatureName('Pirate'),
-            locale == 'pt' ? 'Má Reputação' : 'Mala reputación',
+            localized[locale]!['badReputation'],
           );
           expect(
             i18n.backgroundEquipmentName('Letter of introduction'),
-            locale == 'pt' ? 'Carta de apresentação' : 'Carta de presentación',
+            localized[locale]!['letter'],
           );
         },
       );
@@ -281,6 +393,11 @@ void main() {
                 expect(
                   markers(text!),
                   markers(entry.description),
+                  reason: '${monster.name}.${entry.id}',
+                );
+                expect(
+                  dice(text),
+                  dice(entry.description),
                   reason: '${monster.name}.${entry.id}',
                 );
                 expect(

@@ -1261,5 +1261,531 @@
         "description": "Kurdun en az bir müttefiki yaratığın {{distance:5ft}} yakınındaysa ve bu müttefik eylemsiz değilse, kurt o yaratığa karşı yaptığı saldırı atışlarında avantajlıdır."
       }
     }
+  },
+  "Air Elemental": {
+    "name": "Hava Elementali",
+    "traits": {
+      "air_form": {
+        "name": "Hava Biçimi",
+        "description": "Elemental, düşman bir yaratığın alanına girip orada durabilir. Yalnızca {{distance:1in}} genişliğindeki açıklıklardan sıkışmadan geçebilir."
+      },
+      "nonmagical_resistance": {
+        "name": "Büyüsüz Hasar Direnci",
+        "description": "Elemental, büyüsüz saldırıların ezici, delici ve kesici hasarına dirençlidir."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Elemental iki çarpma saldırısı yapar."
+      },
+      "slam": {
+        "name": "Çarpma",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +8, erişim {{distance:5ft|short}}, bir hedef. İsabet: 14 (2d8 + 5) ezici hasar."
+      },
+      "whirlwind": {
+        "name": "Kasırga",
+        "description": "Elementalin alanındaki her yaratık ZD 13 Kuvvet kurtulma atışı yapar. Başarısızlıkta 15 (3d8 + 2) ezici hasar alır, rastgele yönde en fazla {{distance:20ft}} savrulur ve yere serilir. Duvar veya zemin gibi bir nesneye çarparsa savrulduğu her {{distance:10ft}} için 3 (1d6) ezici hasar alır. Başka bir yaratığa savrulursa o yaratık ZD 13 Çeviklik kurtulma atışını başaramazsa aynı hasarı alır ve yere serilir. İlk kurtulmada başarı hedefin ezici hasarını yarıya indirir; savrulmaz ve yere serilmez."
+      }
+    }
+  },
+  "Earth Elemental": {
+    "name": "Toprak Elementali",
+    "traits": {
+      "earth_glide": {
+        "name": "Toprakta Süzülme",
+        "description": "Elemental, büyüsüz ve işlenmemiş toprak ve taşın içinden kazılarak geçebilir. Bunu yaparken geçtiği malzemeyi bozmaz."
+      },
+      "siege_monster": {
+        "name": "Kuşatma Canavarı",
+        "description": "Elemental, nesnelere ve yapılara iki kat hasar verir."
+      },
+      "nonmagical_resistance": {
+        "name": "Büyüsüz Hasar Direnci",
+        "description": "Elemental, büyüsüz saldırıların ezici, delici ve kesici hasarına dirençlidir."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Elemental iki çarpma saldırısı yapar."
+      },
+      "slam": {
+        "name": "Çarpma",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +8, erişim {{distance:10ft|short}}, bir hedef. İsabet: 14 (2d8 + 5) ezici hasar."
+      }
+    }
+  },
+  "Elephant": {
+    "name": "Fil",
+    "traits": {
+      "trampling_charge": {
+        "name": "Ezici Hücum",
+        "description": "Yaratık bir hedefe doğru en az {{distance:20ft}} düz ilerleyip aynı turda fildişi saldırısıyla isabet ettirirse hedef ZD 12 Kuvvet kurtulma atışını başaramazsa yere serilir. Hedef yerdeyse yaratık ona bonus eylemle bir ezme saldırısı yapabilir."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Fildişi Darbesi",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +8, erişim {{distance:5ft|short}}, bir hedef. İsabet: 19 (3d8 + 6) delici hasar."
+      },
+      "stomp": {
+        "name": "Ezme",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +8, erişim {{distance:5ft|short}}, yerdeki bir yaratık. İsabet: 22 (3d10 + 6) ezici hasar."
+      }
+    }
+  },
+  "Fire Elemental": {
+    "name": "Ateş Elementali",
+    "traits": {
+      "fire_form": {
+        "name": "Ateş Biçimi",
+        "description": "Elemental, yalnızca {{distance:1in}} genişliğindeki açıklıklardan sıkışmadan geçebilir. Ona dokunan veya en fazla {{distance:5ft}} uzaktan yakın dövüş saldırısıyla isabet ettiren yaratık 5 (1d10) ateş hasarı alır. Düşman yaratığın alanına girip orada durabilir. Bir turda bir yaratığın alanına ilk girişinde o yaratık 5 (1d10) ateş hasarı alır ve tutuşur. Biri söndürmek için eylem harcayana kadar yanan yaratık kendi her turunun başında 5 (1d10) ateş hasarı alır."
+      },
+      "illumination": {
+        "name": "Aydınlatma",
+        "description": "Elemental, yarıçapı {{distance:30ft|adj}} olan parlak ışık ve bunun ötesine {{distance:30ft}} loş ışık yayar."
+      },
+      "water_susceptibility": {
+        "name": "Suya Duyarlılık",
+        "description": "Elemental suda her {{distance:5ft}} ilerlediğinde veya üzerine her bir galon su döküldüğünde 1 soğuk hasarı alır."
+      },
+      "nonmagical_resistance": {
+        "name": "Büyüsüz Hasar Direnci",
+        "description": "Elemental, büyüsüz saldırıların ezici, delici ve kesici hasarına dirençlidir."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Elemental iki dokunuş saldırısı yapar."
+      },
+      "touch": {
+        "name": "Dokunuş",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:5ft|short}}, bir hedef. İsabet: 10 (2d6 + 3) ateş hasar. Hedef yaratık veya yanıcı nesneyse tutuşur. Bir yaratık söndürmek için eylem harcayana kadar hedef kendi her turunun başında 5 (1d10) ateş hasarı alır."
+      }
+    }
+  },
+  "Giant Boar": {
+    "name": "Dev Yaban Domuzu",
+    "traits": {
+      "charge": {
+        "name": "Hücum",
+        "description": "Yaratık bir hedefe doğru en az {{distance:20ft}} düz ilerleyip aynı turda uzun diş saldırısıyla isabet ettirirse hedef fazladan 7 (2d6) kesici hasar alır. Hedef bir yaratıksa ZD 13 Kuvvet kurtulma atışını başaramazsa yere serilir."
+      },
+      "relentless": {
+        "name": "Yılmazlık",
+        "description": "En fazla 10 hasar yaban domuzunun can puanını 0’a indirecekse bunun yerine 1 can puanına iner."
+      }
+    },
+    "actions": {
+      "tusk": {
+        "name": "Uzun Diş",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +5, erişim {{distance:5ft|short}}, bir hedef. İsabet: 10 (2d6 + 3) kesici hasar."
+      }
+    }
+  },
+  "Giant Constrictor Snake": {
+    "name": "Dev Boa Yılanı",
+    "actions": {
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:10ft|short}}, bir yaratık. İsabet: 11 (2d6 + 4) delici hasar."
+      },
+      "constrict": {
+        "name": "Sıkıştırma",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:5ft|short}}, bir yaratık. İsabet: 13 (2d8 + 4) ezici hasar ve hedef kavranır (kurtulma ZD 16). Kavrama sürerken hedef zapt edilir ve yılan başka hedefi sıkıştıramaz."
+      }
+    }
+  },
+  "Giant Crocodile": {
+    "name": "Dev Timsah",
+    "traits": {
+      "hold_breath": {
+        "name": "Nefes Tutma",
+        "description": "Yaratık 30 dakika nefesini tutabilir."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Timsah iki saldırı yapar: bir ısırık ve bir kuyruk."
+      },
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +8, erişim {{distance:5ft|short}}, bir hedef. İsabet: 21 (3d10 + 5) delici hasar ve hedef kavranır (kurtulma ZD 16). Kavrama sürerken hedef zapt edilir ve timsah başka hedefi ısıramaz."
+      },
+      "tail": {
+        "name": "Kuyruk",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +8, erişim {{distance:10ft|short}}, timsahın kavramadığı bir hedef. İsabet: 14 (2d8 + 5) ezici hasar. Hedef bir yaratıksa ZD 16 Kuvvet kurtulma atışını başaramazsa yere serilir."
+      }
+    }
+  },
+  "Giant Elk": {
+    "name": "Dev Kanada Geyiği",
+    "traits": {
+      "charge": {
+        "name": "Hücum",
+        "description": "Yaratık bir hedefe doğru en az {{distance:20ft}} düz ilerleyip aynı turda toslama saldırısıyla isabet ettirirse hedef fazladan 7 (2d6) hasar alır. Hedef bir yaratıksa ZD 14 Kuvvet kurtulma atışını başaramazsa yere serilir."
+      }
+    },
+    "actions": {
+      "ram": {
+        "name": "Toslama",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:10ft|short}}, bir hedef. İsabet: 11 (2d6 + 4) ezici hasar."
+      },
+      "hooves": {
+        "name": "Toynaklar",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:5ft|short}}, yerdeki bir yaratık. İsabet: 22 (4d8 + 4) ezici hasar. Görkemli dev Kanada geyiği o kadar enderdir ki görülmesi bir kralın doğumu gibi önemli olayların habercisi sayılır. Efsaneler, tanrıların Maddi Düzlemi ziyaret ederken bu biçime girdiğini anlatır. Bu yüzden birçok kültür onu avlamanın tanrıların öfkesini çekeceğine inanır."
+      }
+    }
+  },
+  "Giant Scorpion": {
+    "name": "Dev Akrep",
+    "actions": {
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Akrep üç saldırı yapar: iki kıskaç ve bir iğne."
+      },
+      "claw": {
+        "name": "Kıskaç",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +4, erişim {{distance:5ft|short}}, bir hedef. İsabet: 6 (1d8 + 2) ezici hasar ve hedef kavranır (kurtulma ZD 12). Akrebin iki kıskacı vardır; her biri yalnızca bir hedef kavrayabilir."
+      },
+      "sting": {
+        "name": "İğne",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +4, erişim {{distance:5ft|short}}, bir yaratık. İsabet: 7 (1d10 + 2) delici hasar. Hedef ZD 12 Dayanıklılık kurtulma atışı yapar; başarısızlıkta 22 (4d10) zehir hasarı, başarıda yarısını alır."
+      }
+    }
+  },
+  "Giant Shark": {
+    "name": "Dev Köpekbalığı",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Kan Çılgınlığı",
+        "description": "Köpekbalığı, can puanı azami değerinin altında olan yaratıklara karşı yakın dövüş saldırı atışlarında avantaj kazanır."
+      },
+      "water_breathing": {
+        "name": "Suda Soluma",
+        "description": "Köpekbalığı yalnızca su altında soluyabilir."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +9, erişim {{distance:5ft|short}}, bir hedef. İsabet: 22 (3d10 + 6) delici hasar. Dev köpekbalığı {{distance:30ft}} uzunluğundadır ve genellikle okyanus derinliklerinde yaşar. Tamamen korkusuzdur; balinalar ve gemiler dâhil yoluna çıkan her şeye saldırır."
+      }
+    }
+  },
+  "Hunter Shark": {
+    "name": "Avcı Köpekbalığı",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Kan Çılgınlığı",
+        "description": "Köpekbalığı, can puanı azami değerinin altında olan yaratıklara karşı yakın dövüş saldırı atışlarında avantaj kazanır."
+      },
+      "water_breathing": {
+        "name": "Suda Soluma",
+        "description": "Köpekbalığı yalnızca su altında soluyabilir."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:5ft|short}}, bir hedef. İsabet: 13 (2d8 + 4) delici hasar. Resif köpekbalığından büyük ve vahşi, dev köpekbalığından küçüktür ve derin sularda yaşar. Genellikle yalnız avlanır, ancak birkaçı aynı yerde beslenebilir. Yetişkininin boyu {{distance:15ft|num}} ile {{distance:20ft}} arasındadır."
+      }
+    }
+  },
+  "Imp": {
+    "name": "İmp",
+    "traits": {
+      "shapechanger": {
+        "name": "Şekil Değiştirici",
+        "description": "İmp eylem harcayarak sıçan (hız {{distance:20ft|short}}), kuzgun ({{distance:20ft|short}}, uçma {{distance:60ft|short}}) veya örümceğe ({{distance:20ft|short}}, tırmanma {{distance:20ft|short}}) benzeyen hayvan biçimine ya da gerçek biçimine dönüşebilir. Belirtilen hızlar dışında değerleri değişmez. Giydiği veya taşıdığı eşyalar dönüşmez. Ölürse gerçek biçimine döner."
+      },
+      "devil_s_sight": {
+        "name": "Şeytan Görüşü",
+        "description": "Büyülü karanlık impin karanlık görüşünü engellemez."
+      },
+      "magic_resistance": {
+        "name": "Büyü Direnci",
+        "description": "Yaratık, büyülere ve diğer büyülü etkilere karşı kurtulma atışlarında avantaj kazanır."
+      },
+      "conditional_damage_resistance": {
+        "name": "Koşullu Hasar Direnci",
+        "description": "İmp, gümüşlenmemiş büyüsüz saldırıların ezici, delici ve kesici hasarına dirençlidir."
+      }
+    },
+    "actions": {
+      "sting_bite_in_beast_form": {
+        "name": "İğne (hayvan biçiminde ısırık)",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +5, erişim {{distance:5ft|short}}, bir hedef. İsabet: 5 (1d4 + 3) delici hasar. Hedef ZD 11 Dayanıklılık kurtulma atışı yapar; başarısızlıkta 10 (3d6) zehir hasarı, başarıda yarısını alır."
+      },
+      "invisibility": {
+        "name": "Görünmezlik",
+        "description": "İmp saldırana veya bir büyüye konsantre olur gibi sürdürdüğü konsantrasyonu bitene kadar büyülü biçimde görünmez olur. Giydiği veya taşıdığı eşyalar da onunla görünmez olur."
+      }
+    }
+  },
+  "Killer Whale": {
+    "name": "Katil Balina",
+    "traits": {
+      "echolocation": {
+        "name": "Yankıyla Konumlama",
+        "description": "Balina sağırken kör görüşünü kullanamaz."
+      },
+      "hold_breath": {
+        "name": "Nefes Tutma",
+        "description": "Yaratık 30 dakika nefesini tutabilir."
+      },
+      "keen_hearing": {
+        "name": "Keskin İşitme",
+        "description": "Yaratık, işitmeye dayalı Bilgelik (Algı) kontrollerinde avantaj kazanır."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:5ft|short}}, bir hedef. İsabet: 21 (5d6 + 4) delici hasar."
+      }
+    }
+  },
+  "Mammoth": {
+    "name": "Mamut",
+    "traits": {
+      "trampling_charge": {
+        "name": "Ezici Hücum",
+        "description": "Yaratık bir hedefe doğru en az {{distance:20ft}} düz ilerleyip aynı turda fildişi saldırısıyla isabet ettirirse hedef ZD 18 Kuvvet kurtulma atışını başaramazsa yere serilir. Hedef yerdeyse yaratık ona bonus eylemle bir ezme saldırısı yapabilir."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Fildişi Darbesi",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +10, erişim {{distance:10ft|short}}, bir hedef. İsabet: 25 (4d8 + 7) delici hasar."
+      },
+      "stomp": {
+        "name": "Ezme",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +10, erişim {{distance:5ft|short}}, yerdeki bir yaratık. İsabet: 29 (4d10 + 7) ezici hasar. Mamut, kalın kürklü ve uzun fildişli bir file benzer. Sıradan fillerden daha iri yapılı ve vahşidir; subarktik bölgelerden subtropik bölgelere kadar farklı iklimlerde yaşar."
+      }
+    }
+  },
+  "Plesiosaurus": {
+    "name": "Plesiyozor",
+    "traits": {
+      "hold_breath": {
+        "name": "Nefes Tutma",
+        "description": "Yaratık 1 saat nefesini tutabilir."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:10ft|short}}, bir hedef. İsabet: 14 (3d6 + 4) delici hasar."
+      }
+    }
+  },
+  "Polar Bear": {
+    "name": "Kutup Ayısı",
+    "traits": {
+      "keen_smell": {
+        "name": "Keskin Koku Alma",
+        "description": "Yaratık, kokuya dayalı Bilgelik (Algı) kontrollerinde avantaj kazanır."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Ayı iki saldırı yapar: bir ısırık ve bir pençe."
+      },
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +7, erişim {{distance:5ft|short}}, bir hedef. İsabet: 9 (1d8 + 5) delici hasar."
+      },
+      "claws": {
+        "name": "Pençeler",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +7, erişim {{distance:5ft|short}}, bir hedef. İsabet: 12 (2d6 + 5) kesici hasar."
+      }
+    }
+  },
+  "Pseudodragon": {
+    "name": "Yalancı Ejderha",
+    "traits": {
+      "keen_senses": {
+        "name": "Keskin Duyular",
+        "description": "Yalancı ejderha, görmeye, işitmeye veya kokuya dayalı Bilgelik (Algı) kontrollerinde avantaj kazanır."
+      },
+      "magic_resistance": {
+        "name": "Büyü Direnci",
+        "description": "Yaratık, büyülere ve diğer büyülü etkilere karşı kurtulma atışlarında avantaj kazanır."
+      },
+      "limited_telepathy": {
+        "name": "Sınırlı Telepati",
+        "description": "Yalancı ejderha {{distance:100ft}} mesafe içindeki, en az bir dil anlayan her yaratığa basit düşünce, duygu ve görüntüleri büyülü telepatiyle iletebilir."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +4, erişim {{distance:5ft|short}}, bir hedef. İsabet: 4 (1d4 + 2) delici hasar."
+      },
+      "sting": {
+        "name": "İğne",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +4, erişim {{distance:5ft|short}}, bir yaratık. İsabet: 4 (1d4 + 2) delici hasar. Hedef ZD 11 Dayanıklılık kurtulma atışını başaramazsa 1 saat zehirlenir. Atışı en az 5 farkla başarısızsa aynı süre boyunca ayrıca bilincini yitirir. Bu bilinçsizlik, hasar alırsa veya başka bir yaratık eylem harcayıp onu sarsarak uyandırırsa biter."
+      }
+    }
+  },
+  "Quasit": {
+    "name": "Kuazit",
+    "traits": {
+      "shapechanger": {
+        "name": "Şekil Değiştirici",
+        "description": "Kuazit eylem harcayarak yarasa (hız {{distance:10ft|short}}, uçma {{distance:40ft|short}}), çıyan ({{distance:40ft|short}}, tırmanma {{distance:40ft|short}}) veya kurbağaya ({{distance:40ft|short}}, yüzme {{distance:40ft|short}}) benzeyen hayvan biçimine ya da gerçek biçimine dönüşebilir. Belirtilen hızlar dışında değerleri değişmez. Giydiği veya taşıdığı eşyalar dönüşmez. Ölürse gerçek biçimine döner."
+      },
+      "magic_resistance": {
+        "name": "Büyü Direnci",
+        "description": "Yaratık, büyülere ve diğer büyülü etkilere karşı kurtulma atışlarında avantaj kazanır."
+      },
+      "nonmagical_damage_resistance": {
+        "name": "Büyüsüz Hasar Direnci",
+        "description": "Kuazit, büyüsüz saldırıların ezici, delici ve kesici hasarına dirençlidir."
+      }
+    },
+    "actions": {
+      "claws_bite_in_beast_form": {
+        "name": "Pençeler (hayvan biçiminde ısırık)",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +4, erişim {{distance:5ft|short}}, bir hedef. İsabet: 5 (1d4 + 3) delici hasar. Hedef ZD 10 Dayanıklılık kurtulma atışını başaramazsa 5 (2d4) zehir hasarı alır ve 1 dakika zehirlenir. Kendi her turunun sonunda kurtulma atışını tekrarlayabilir; başarı kendisindeki etkiyi bitirir."
+      },
+      "scare": {
+        "name": "Korkutma",
+        "description": "Kuazitin seçtiği, {{distance:20ft}} mesafe içindeki bir yaratık ZD 10 Bilgelik kurtulma atışını başaramazsa 1 dakika korkar. Hedef kendi her turunun sonunda atışı tekrarlayabilir; kuazit görüş hattındaysa bu atış dezavantajlıdır. Başarı kendisindeki etkiyi bitirir."
+      },
+      "invisibility": {
+        "name": "Görünmezlik",
+        "description": "Kuazit saldırana, Korkutma kullanana veya bir büyüye konsantre olur gibi sürdürdüğü konsantrasyonu bitene kadar büyülü biçimde görünmez olur. Giydiği veya taşıdığı eşyalar da onunla görünmez olur."
+      }
+    }
+  },
+  "Rhinoceros": {
+    "name": "Gergedan",
+    "traits": {
+      "charge": {
+        "name": "Hücum",
+        "description": "Yaratık bir hedefe doğru en az {{distance:20ft}} düz ilerleyip aynı turda boynuz saldırısıyla isabet ettirirse hedef fazladan 9 (2d8) ezici hasar alır. Hedef bir yaratıksa ZD 15 Kuvvet kurtulma atışını başaramazsa yere serilir."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Boynuzlama",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +7, erişim {{distance:5ft|short}}, bir hedef. İsabet: 14 (2d8 + 5) ezici hasar."
+      }
+    }
+  },
+  "Saber-Toothed Tiger": {
+    "name": "Kılıç Dişli Kaplan",
+    "traits": {
+      "keen_smell": {
+        "name": "Keskin Koku Alma",
+        "description": "Yaratık, kokuya dayalı Bilgelik (Algı) kontrollerinde avantaj kazanır."
+      },
+      "pounce": {
+        "name": "Atılma",
+        "description": "Yaratık bir hedefe doğru en az {{distance:20ft}} düz ilerleyip aynı turda pençe saldırısıyla isabet ettirirse hedef ZD 14 Kuvvet kurtulma atışını başaramazsa yere serilir. Hedef yerdeyse yaratık ona bonus eylemle bir ısırık saldırısı yapabilir."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Isırık",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:5ft|short}}, bir hedef. İsabet: 10 (1d10 + 5) delici hasar."
+      },
+      "claw": {
+        "name": "Pençe",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:5ft|short}}, bir hedef. İsabet: 12 (2d6 + 5) kesici hasar."
+      }
+    }
+  },
+  "Sprite": {
+    "name": "Pericik",
+    "actions": {
+      "longsword": {
+        "name": "Uzun Kılıç",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +2, erişim {{distance:5ft|short}}, bir hedef. İsabet: 1 kesici hasar."
+      },
+      "shortbow": {
+        "name": "Kısa Yay",
+        "description": "Menzilli Silah Saldırısı: isabet +6, menzil {{distance:40/160ft|short}}, bir hedef. İsabet: 1 delici hasar. Hedef ZD 10 Dayanıklılık kurtulma atışını başaramazsa 1 dakika zehirlenir. Kurtulma atışının toplam sonucu 5 veya daha düşükse zehirlenen hedef aynı süre boyunca ayrıca bilincini yitirir. Bu bilinçsizlik, hasar alırsa veya başka bir yaratık eylem harcayıp onu sarsarak uyandırırsa biter."
+      },
+      "heart_sight": {
+        "name": "Kalp Görüşü",
+        "description": "Pericik bir yaratığa dokunarak o anki duygusal durumunu büyüyle öğrenir. Hedef ZD 10 Karizma kurtulma atışında başarısızsa onun yönelimini de öğrenir. Gökseller, iblisler ve ölümsüzler bu atışta otomatik olarak başarısız olur."
+      },
+      "invisibility": {
+        "name": "Görünmezlik",
+        "description": "Pericik saldırana, büyü yapana veya bir büyüye konsantre olur gibi sürdürdüğü konsantrasyonu bitene kadar büyülü biçimde görünmez olur. Giydiği veya taşıdığı eşyalar da onunla görünmez olur."
+      }
+    }
+  },
+  "Swarm of Poisonous Snakes": {
+    "name": "Zehirli Yılan Sürüsü",
+    "traits": {
+      "swarm": {
+        "name": "Sürü",
+        "description": "Sürü başka yaratığın alanında durabilir, başka yaratık da onun alanında durabilir. Minik bir yılanın geçebildiği her açıklıktan geçebilir. Can puanı iyileştiremez veya geçici can puanı kazanamaz."
+      }
+    },
+    "actions": {
+      "bites": {
+        "name": "Isırıklar",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +6, erişim {{distance:0ft|short}}, sürünün alanındaki bir yaratık. İsabet: 7 (2d6) delici hasar; sürünün can puanı en fazla yarıdaysa bunun yerine 3 (1d6) delici hasar verir. Hedef ZD 10 Dayanıklılık kurtulma atışı yapar; başarısızlıkta 14 (4d6) zehir hasarı, başarıda yarısını alır."
+      }
+    }
+  },
+  "Triceratops": {
+    "name": "Triseratops",
+    "traits": {
+      "trampling_charge": {
+        "name": "Ezici Hücum",
+        "description": "Yaratık bir hedefe doğru en az {{distance:20ft}} düz ilerleyip aynı turda boynuz saldırısıyla isabet ettirirse hedef ZD 13 Kuvvet kurtulma atışını başaramazsa yere serilir. Hedef yerdeyse yaratık ona bonus eylemle bir ezme saldırısı yapabilir."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Boynuzlama",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +9, erişim {{distance:5ft|short}}, bir hedef. İsabet: 24 (4d8 + 6) delici hasar."
+      },
+      "stomp": {
+        "name": "Ezme",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +9, erişim {{distance:5ft|short}}, yerdeki bir yaratık. İsabet: 22 (3d10 + 6) ezici hasar."
+      }
+    }
+  },
+  "Water Elemental": {
+    "name": "Su Elementali",
+    "traits": {
+      "water_form": {
+        "name": "Su Biçimi",
+        "description": "Elemental, düşman bir yaratığın alanına girip orada durabilir. Yalnızca {{distance:1in}} genişliğindeki açıklıklardan sıkışmadan geçebilir."
+      },
+      "freeze": {
+        "name": "Donma",
+        "description": "Elemental soğuk hasarı alınca kısmen donar ve sonraki turunun sonuna kadar hızı {{distance:20ft}} azalır."
+      },
+      "nonmagical_resistance": {
+        "name": "Büyüsüz Hasar Direnci",
+        "description": "Elemental, büyüsüz saldırıların ezici, delici ve kesici hasarına dirençlidir."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Çoklu Saldırı",
+        "description": "Elemental iki çarpma saldırısı yapar."
+      },
+      "slam": {
+        "name": "Çarpma",
+        "description": "Yakın Dövüş Silah Saldırısı: isabet +7, erişim {{distance:5ft|short}}, bir hedef. İsabet: 13 (2d8 + 4) ezici hasar."
+      },
+      "whelm": {
+        "name": "Yutma",
+        "description": "Elementalin alanındaki her yaratık ZD 15 Kuvvet kurtulma atışı yapar. Başarısızsa 13 (2d8 + 4) ezici hasar alır; Büyük veya daha küçükse ayrıca kavranır (kurtulma ZD 14). Kavranmışken zapt edilir ve su altında soluyamıyorsa nefes alamaz. Başarıda elementalin alanından dışarı itilir. Elemental aynı anda bir Büyük veya en fazla iki Orta ya da daha küçük yaratığı kavrayabilir. Kendi her turunun başında kavradığı her hedef 13 (2d8 + 4) ezici hasar alır. Elementalden {{distance:5ft}} mesafe içindeki yaratık eylem harcayıp ZD 14 Kuvvet kontrolünü başararak içinden bir yaratık veya nesne çekebilir."
+      }
+    }
   }
 }

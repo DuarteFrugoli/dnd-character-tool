@@ -3457,7 +3457,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get whatsNew301ContentBody =>
-      'プレイヤーズ・ハンドブックの未収録呪文、妖術、奥義、トーテム、背景のバリエーションを英語・ポルトガル語・スペイン語で追加しました。書の契約では初級呪文を3つ選べるようになり、鎖の契約の特殊な使い魔4種もカタログに追加しました。';
+      '2014年版プレイヤーズ・ハンドブックで不足していた呪文、妖術、元素の奥義、トーテム、背景、装備、クリーチャーを追加。これらの追加内容は、アプリの全11言語に対応した。書の契約では3つの初級呪文を選択でき、鎖の契約の特別な使い魔4種もカタログに収録されている。';
 
   @override
   String get whatsNew301BetaTitle => 'D&D 2024：ベータ版';
@@ -3471,7 +3471,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get whatsNew301LimitsBody =>
-      '一部の特徴は引き続き手動で適用する必要があります。2014年版の全サプリメントを収録しているわけではありません。2014年版の新しい内容は、アプリのその他の言語への翻訳が未完了です。';
+      '一部の特徴は引き続き手動で適用する必要がある。カタログには2014年版のすべてのサプリメントが含まれているわけではない。';
 
   @override
   String get creationRuleset2024BetaDescription =>

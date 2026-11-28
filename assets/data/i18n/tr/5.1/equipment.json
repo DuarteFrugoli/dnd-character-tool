@@ -147,5 +147,141 @@
   "Vial": { "name": "Küçük şişe", "description": "4 ons sıvı alır." },
   "Vestments": { "name": "Dinî giysiler", "description": "Dinî törenlerde giyilen giysiler." },
   "Waterskin": { "name": "Matara", "description": "{{volume:4pint}} sıvı alır. Doluyken 5 lb ağırlığındadır." },
-  "Whetstone": { "name": "Bileği taşı", "description": "Bıçak ve kılıç ağızlarını bilemek için kullanılır." }
+  "Whetstone": { "name": "Bileği taşı", "description": "Bıçak ve kılıç ağızlarını bilemek için kullanılır." },
+  "Crystal": {
+    "name": "Kristal",
+    "description": "Doğuştan büyücü, pakt büyücüsü ve büyücü büyüleri için gizemli odak. Normal maddi bileşenlerin yerini alır; fiyatı belirtilmiş veya büyünün tükettiği bileşenlerin yerini alamaz."
+  },
+  "Orb": {
+    "name": "Küre",
+    "description": "Doğuştan büyücü, pakt büyücüsü ve büyücü büyüleri için gizemli odak. Normal maddi bileşenlerin yerini alır; fiyatı belirtilmiş veya büyünün tükettiği bileşenlerin yerini alamaz."
+  },
+  "Rod": {
+    "name": "Çubuk",
+    "description": "Doğuştan büyücü, pakt büyücüsü ve büyücü büyüleri için gizemli odak. Normal maddi bileşenlerin yerini alır; fiyatı belirtilmiş veya büyünün tükettiği bileşenlerin yerini alamaz."
+  },
+  "Staff": {
+    "name": "Asa",
+    "description": "Doğuştan büyücü, pakt büyücüsü ve büyücü büyüleri için gizemli odak. Normal maddi bileşenlerin yerini alır; fiyatı belirtilmiş veya büyünün tükettiği bileşenlerin yerini alamaz."
+  },
+  "Wand": {
+    "name": "Değnek",
+    "description": "Doğuştan büyücü, pakt büyücüsü ve büyücü büyüleri için gizemli odak. Normal maddi bileşenlerin yerini alır; fiyatı belirtilmiş veya büyünün tükettiği bileşenlerin yerini alamaz."
+  },
+  "Camel": {
+    "name": "Deve",
+    "description": "Hızı {{distance:50ft}}, taşıma kapasitesi 480 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Donkey": {
+    "name": "Eşek",
+    "description": "Hızı {{distance:40ft}}, taşıma kapasitesi 420 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Mule": {
+    "name": "Katır",
+    "description": "Hızı {{distance:40ft}}, taşıma kapasitesi 420 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Elephant": {
+    "name": "Fil",
+    "description": "Hızı {{distance:40ft}}, taşıma kapasitesi 1320 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Draft Horse": {
+    "name": "Yük Atı",
+    "description": "Hızı {{distance:40ft}}, taşıma kapasitesi 540 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Riding Horse": {
+    "name": "Binek Atı",
+    "description": "Hızı {{distance:60ft}}, taşıma kapasitesi 480 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Mastiff": {
+    "name": "Mastif",
+    "description": "Hızı {{distance:40ft}}, taşıma kapasitesi 195 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Pony": {
+    "name": "Midilli",
+    "description": "Hızı {{distance:40ft}}, taşıma kapasitesi 225 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Warhorse": {
+    "name": "Savaş Atı",
+    "description": "Hızı {{distance:60ft}}, taşıma kapasitesi 540 libre olan bir binek. Kendi ağırlığı taşınan eşya ağırlığına eklenmez. Araç çeken bir takım, araç ağırlığı da dâhil olmak üzere normal toplam taşıma kapasitesinin beş katını çekebilir."
+  },
+  "Bit and Bridle": {
+    "name": "Gem ve Dizgin",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Carriage": {
+    "name": "Yolcu Arabası",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Cart": {
+    "name": "İki Tekerlekli Araba",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Chariot": {
+    "name": "Savaş Arabası",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Feed (per day)": {
+    "name": "Yem (günlük)",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Saddlebags": {
+    "name": "Heybe",
+    "description": "Bineğin taşıdığı eşya kaplarıdır."
+  },
+  "Sled": {
+    "name": "Kızak",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Stabling (per day)": {
+    "name": "Ahır (günlük)",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Wagon": {
+    "name": "Yük Arabası",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Exotic Saddle": {
+    "name": "Egzotik Eyer",
+    "description": "Suda yaşayan veya uçan bir bineğe binmek için gerekir."
+  },
+  "Military Saddle": {
+    "name": "Askerî Eyer",
+    "description": "Savaşta hareketli bir bineğin üzerinde kalmak için yapılan kontrollerde avantaj verir."
+  },
+  "Pack Saddle": {
+    "name": "Yük Eyeri",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Riding Saddle": {
+    "name": "Binek Eyeri",
+    "description": "Bineklerle yolculukta kullanılan koşum, erzak veya taşıma teçhizatı."
+  },
+  "Galley": {
+    "name": "Kadırga",
+    "description": "Su aracı; normal hızı saatte {{distance:4mi}}. Kürekli kayıklar ve omurgalı tekneler akıntı yönünde akıntı hızını ekleyebilir, fakat güçlü akıntıya karşı kürek çekemez. 100 librelik kürekli kayık dışında gövde ağırlığı belirtilmemiştir."
+  },
+  "Keelboat": {
+    "name": "Omurgalı Tekne",
+    "description": "Su aracı; normal hızı saatte {{distance:1mi}}. Kürekli kayıklar ve omurgalı tekneler akıntı yönünde akıntı hızını ekleyebilir, fakat güçlü akıntıya karşı kürek çekemez. 100 librelik kürekli kayık dışında gövde ağırlığı belirtilmemiştir."
+  },
+  "Longship": {
+    "name": "Uzun Gemi",
+    "description": "Su aracı; normal hızı saatte {{distance:3mi}}. Kürekli kayıklar ve omurgalı tekneler akıntı yönünde akıntı hızını ekleyebilir, fakat güçlü akıntıya karşı kürek çekemez. 100 librelik kürekli kayık dışında gövde ağırlığı belirtilmemiştir."
+  },
+  "Rowboat": {
+    "name": "Kürekli Kayık",
+    "description": "Su aracı; normal hızı saatte {{distance:1.5mi}}. Kürekli kayıklar ve omurgalı tekneler akıntı yönünde akıntı hızını ekleyebilir, fakat güçlü akıntıya karşı kürek çekemez. 100 librelik kürekli kayık dışında gövde ağırlığı belirtilmemiştir."
+  },
+  "Sailing Ship": {
+    "name": "Yelkenli",
+    "description": "Su aracı; normal hızı saatte {{distance:2mi}}. Kürekli kayıklar ve omurgalı tekneler akıntı yönünde akıntı hızını ekleyebilir, fakat güçlü akıntıya karşı kürek çekemez. 100 librelik kürekli kayık dışında gövde ağırlığı belirtilmemiştir."
+  },
+  "Warship": {
+    "name": "Savaş Gemisi",
+    "description": "Su aracı; normal hızı saatte {{distance:2.5mi}}. Kürekli kayıklar ve omurgalı tekneler akıntı yönünde akıntı hızını ekleyebilir, fakat güçlü akıntıya karşı kürek çekemez. 100 librelik kürekli kayık dışında gövde ağırlığı belirtilmemiştir."
+  },
+  "Barding": {
+    "name": "Binek Zırhı",
+    "description": "Hayvanlar için zırh; eşdeğer insansı zırhın dört katı fiyat ve iki katı ağırlığa sahiptir. Gösterilen 0 ağırlık yer tutucudur; gerçek ağırlığı seçilen zırha göre belirle."
+  }
 }

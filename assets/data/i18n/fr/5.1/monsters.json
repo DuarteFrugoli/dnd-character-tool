@@ -1261,5 +1261,531 @@
         "description": "Le loup a l'avantage aux jets d'attaque contre une créature si au moins un de ses alliés se trouve à {{distance:5ft}} ou moins de cette créature et que cet allié n'est pas incapable d'agir."
       }
     }
+  },
+  "Air Elemental": {
+    "name": "Élémentaire de l'air",
+    "traits": {
+      "air_form": {
+        "name": "Forme d'air",
+        "description": "L'élémentaire peut entrer dans l'espace d'une créature hostile et s'y arrêter. Il peut traverser un passage de seulement {{distance:1in}} de large sans se faufiler."
+      },
+      "nonmagical_resistance": {
+        "name": "Résistance aux dégâts non magiques",
+        "description": "L'élémentaire a la résistance aux dégâts contondants, perforants et tranchants des attaques non magiques."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "L'élémentaire effectue deux attaques de coup."
+      },
+      "slam": {
+        "name": "Coup",
+        "description": "Attaque au corps à corps avec une arme : +8 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 14 (2d8 + 5) dégâts contondants."
+      },
+      "whirlwind": {
+        "name": "Tourbillon",
+        "description": "Chaque créature dans l'espace de l'élémentaire effectue une sauvegarde de Force DD 13. En cas d'échec, elle subit 15 (3d8 + 2) dégâts contondants, est projetée de {{distance:20ft}} au maximum dans une direction aléatoire et tombe à terre. Si elle heurte un objet, tel qu'un mur ou le sol, elle subit 3 (1d6) dégâts contondants par tranche de {{distance:10ft}} parcourue. Si elle est projetée contre une autre créature, celle-ci doit réussir une sauvegarde de Dextérité DD 13 ou subir les mêmes dégâts et tomber à terre. Une réussite à la sauvegarde initiale réduit les dégâts contondants de moitié et empêche la projection et la chute."
+      }
+    }
+  },
+  "Earth Elemental": {
+    "name": "Élémentaire de la terre",
+    "traits": {
+      "earth_glide": {
+        "name": "Déplacement dans la terre",
+        "description": "L'élémentaire peut creuser à travers la terre et la pierre non magiques et non travaillées, sans perturber la matière qu'il traverse."
+      },
+      "siege_monster": {
+        "name": "Monstre de siège",
+        "description": "L'élémentaire inflige le double de dégâts aux objets et aux structures."
+      },
+      "nonmagical_resistance": {
+        "name": "Résistance aux dégâts non magiques",
+        "description": "L'élémentaire a la résistance aux dégâts contondants, perforants et tranchants des attaques non magiques."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "L'élémentaire effectue deux attaques de coup."
+      },
+      "slam": {
+        "name": "Coup",
+        "description": "Attaque au corps à corps avec une arme : +8 au toucher, allonge {{distance:10ft|short}}, une cible. Touché : 14 (2d8 + 5) dégâts contondants."
+      }
+    }
+  },
+  "Elephant": {
+    "name": "Éléphant",
+    "traits": {
+      "trampling_charge": {
+        "name": "Charge écrasante",
+        "description": "Si la créature se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible, puis la touche avec une attaque d'encornement au même tour, cette cible doit réussir une sauvegarde de Force DD 12 ou tomber à terre. Si la cible est à terre, la créature peut effectuer une attaque de piétinement contre elle par une action bonus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Défenses",
+        "description": "Attaque au corps à corps avec une arme : +8 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 19 (3d8 + 6) dégâts perforants."
+      },
+      "stomp": {
+        "name": "Piétinement",
+        "description": "Attaque au corps à corps avec une arme : +8 au toucher, allonge {{distance:5ft|short}}, une créature à terre. Touché : 22 (3d10 + 6) dégâts contondants."
+      }
+    }
+  },
+  "Fire Elemental": {
+    "name": "Élémentaire du feu",
+    "traits": {
+      "fire_form": {
+        "name": "Forme de feu",
+        "description": "L'élémentaire peut traverser un passage de seulement {{distance:1in}} de large sans se faufiler. Une créature qui le touche ou le frappe avec une attaque au corps à corps à {{distance:5ft}} ou moins subit 5 (1d10) dégâts de feu. L'élémentaire peut aussi entrer dans l'espace d'une créature hostile et s'y arrêter. La première fois qu'il entre dans l'espace d'une créature lors d'un tour, elle subit 5 (1d10) dégâts de feu et s'embrase ; jusqu'à ce que quelqu'un utilise une action pour éteindre le feu, elle subit 5 (1d10) dégâts de feu au début de chacun de ses tours."
+      },
+      "illumination": {
+        "name": "Illumination",
+        "description": "L'élémentaire émet une lumière vive dans un rayon de {{distance:30ft|adj}} et une lumière faible sur {{distance:30ft}} supplémentaires."
+      },
+      "water_susceptibility": {
+        "name": "Vulnérabilité à l'eau",
+        "description": "Pour chaque {{distance:5ft}} parcourus dans l'eau, ou pour chaque gallon d'eau dont il est aspergé, l'élémentaire subit 1 dégât de froid."
+      },
+      "nonmagical_resistance": {
+        "name": "Résistance aux dégâts non magiques",
+        "description": "L'élémentaire a la résistance aux dégâts contondants, perforants et tranchants des attaques non magiques."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "L'élémentaire effectue deux attaques de contact."
+      },
+      "touch": {
+        "name": "Contact",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 10 (2d6 + 3) dégâts de feu. Si la cible est une créature ou un objet inflammable, elle s'embrase. Jusqu'à ce qu'une créature utilise une action pour éteindre les flammes, la cible subit 5 (1d10) dégâts de feu au début de chacun de ses tours."
+      }
+    }
+  },
+  "Giant Boar": {
+    "name": "Sanglier géant",
+    "traits": {
+      "charge": {
+        "name": "Charge",
+        "description": "Si la créature se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible, puis la touche avec son attaque de charge au même tour, la cible subit 7 (2d6) dégâts tranchants supplémentaires. Si la cible est une créature, elle doit réussir une sauvegarde de Force DD 13 ou tomber à terre."
+      },
+      "relentless": {
+        "name": "Acharnement",
+        "description": "Si le sanglier subit 10 dégâts ou moins qui devraient le réduire à 0 point de vie, il est réduit à 1 point de vie à la place."
+      }
+    },
+    "actions": {
+      "tusk": {
+        "name": "Défenses",
+        "description": "Attaque au corps à corps avec une arme : +5 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 10 (2d6 + 3) dégâts tranchants."
+      }
+    }
+  },
+  "Giant Constrictor Snake": {
+    "name": "Serpent constricteur géant",
+    "actions": {
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:10ft|short}}, une créature. Touché : 11 (2d6 + 4) dégâts perforants."
+      },
+      "constrict": {
+        "name": "Constriction",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:5ft|short}}, une créature. Touché : 13 (2d8 + 4) dégâts contondants, et la cible est agrippée (évasion DD 16). Tant que cette prise dure, elle est entravée et le serpent ne peut pas enserrer une autre cible."
+      }
+    }
+  },
+  "Giant Crocodile": {
+    "name": "Crocodile géant",
+    "traits": {
+      "hold_breath": {
+        "name": "Apnée",
+        "description": "La créature peut retenir son souffle pendant 30 minutes."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "Le crocodile effectue deux attaques : une morsure et un coup de queue."
+      },
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +8 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 21 (3d10 + 5) dégâts perforants, et la cible est agrippée (évasion DD 16). Tant que cette prise dure, elle est entravée et le crocodile ne peut pas mordre une autre cible."
+      },
+      "tail": {
+        "name": "Queue",
+        "description": "Attaque au corps à corps avec une arme : +8 au toucher, allonge {{distance:10ft|short}}, une cible non agrippée par le crocodile. Touché : 14 (2d8 + 5) dégâts contondants. Si la cible est une créature, elle doit réussir une sauvegarde de Force DD 16 ou tomber à terre."
+      }
+    }
+  },
+  "Giant Elk": {
+    "name": "Élan géant",
+    "traits": {
+      "charge": {
+        "name": "Charge",
+        "description": "Si la créature se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible, puis la touche avec son attaque de charge au même tour, la cible subit 7 (2d6) dégâts supplémentaires. Si la cible est une créature, elle doit réussir une sauvegarde de Force DD 14 ou tomber à terre."
+      }
+    },
+    "actions": {
+      "ram": {
+        "name": "Coup de bélier",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:10ft|short}}, une cible. Touché : 11 (2d6 + 4) dégâts contondants."
+      },
+      "hooves": {
+        "name": "Sabots",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:5ft|short}}, une créature à terre. Touché : 22 (4d8 + 4) dégâts contondants. L'élan géant, rare et majestueux, est souvent considéré comme le présage d'un événement important, tel que la naissance d'un roi. Selon les légendes, des dieux prennent cette forme pour visiter le plan Matériel. De nombreuses cultures pensent donc que chasser ces créatures attire la colère divine."
+      }
+    }
+  },
+  "Giant Scorpion": {
+    "name": "Scorpion géant",
+    "actions": {
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "Le scorpion effectue trois attaques : deux avec ses pinces et une avec son dard."
+      },
+      "claw": {
+        "name": "Pinces",
+        "description": "Attaque au corps à corps avec une arme : +4 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 6 (1d8 + 2) dégâts contondants, et la cible est agrippée (évasion DD 12). Le scorpion a deux pinces, chacune pouvant agripper une seule cible."
+      },
+      "sting": {
+        "name": "Dard",
+        "description": "Attaque au corps à corps avec une arme : +4 au toucher, allonge {{distance:5ft|short}}, une créature. Touché : 7 (1d10 + 2) dégâts perforants, et la cible effectue une sauvegarde de Constitution DD 12 : elle subit 22 (4d10) dégâts de poison en cas d'échec, ou la moitié en cas de réussite."
+      }
+    }
+  },
+  "Giant Shark": {
+    "name": "Requin géant",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frénésie sanguinaire",
+        "description": "Le requin est avantagé aux jets d'attaque au corps à corps contre une créature qui n'a pas tous ses points de vie."
+      },
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "Le requin ne peut respirer que sous l'eau."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +9 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 22 (3d10 + 6) dégâts perforants. Un requin géant mesure {{distance:30ft}} de long et vit généralement dans les océans profonds. Dépourvu de peur, il s'attaque à tout ce qui croise sa route, y compris les baleines et les navires."
+      }
+    }
+  },
+  "Hunter Shark": {
+    "name": "Requin chasseur",
+    "traits": {
+      "blood_frenzy": {
+        "name": "Frénésie sanguinaire",
+        "description": "Le requin est avantagé aux jets d'attaque au corps à corps contre une créature qui n'a pas tous ses points de vie."
+      },
+      "water_breathing": {
+        "name": "Respiration aquatique",
+        "description": "Le requin ne peut respirer que sous l'eau."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 13 (2d8 + 4) dégâts perforants. Plus petit qu'un requin géant, mais plus grand et plus féroce qu'un requin de récif, le requin chasseur vit dans les eaux profondes. Il chasse généralement seul, bien que plusieurs puissent se nourrir au même endroit. Un adulte mesure de {{distance:15ft|num}} à {{distance:20ft}} de long."
+      }
+    }
+  },
+  "Imp": {
+    "name": "Diablotin",
+    "traits": {
+      "shapechanger": {
+        "name": "Métamorphe",
+        "description": "Le diablotin peut utiliser son action pour prendre la forme d'un rat (vitesse {{distance:20ft|short}}), d'un corbeau ({{distance:20ft|short}}, vol {{distance:60ft|short}}) ou d'une araignée ({{distance:20ft|short}}, escalade {{distance:20ft|short}}), ou retrouver sa véritable forme. Ses statistiques restent identiques, sauf les vitesses indiquées. L'équipement porté ou transporté ne se transforme pas. Il retrouve sa véritable forme s'il meurt."
+      },
+      "devil_s_sight": {
+        "name": "Vision du diable",
+        "description": "Les ténèbres magiques ne gênent pas la vision dans le noir du diablotin."
+      },
+      "magic_resistance": {
+        "name": "Résistance à la magie",
+        "description": "La créature est avantagée aux jets de sauvegarde contre les sorts et autres effets magiques."
+      },
+      "conditional_damage_resistance": {
+        "name": "Résistance aux dégâts",
+        "description": "Le diablotin a la résistance aux dégâts contondants, perforants et tranchants des attaques non magiques qui ne sont pas argentées."
+      }
+    },
+    "actions": {
+      "sting_bite_in_beast_form": {
+        "name": "Dard (morsure sous forme de bête)",
+        "description": "Attaque au corps à corps avec une arme : +5 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 5 (1d4 + 3) dégâts perforants, et la cible effectue une sauvegarde de Constitution DD 11 : elle subit 10 (3d6) dégâts de poison en cas d'échec, ou la moitié en cas de réussite."
+      },
+      "invisibility": {
+        "name": "Invisibilité",
+        "description": "Le diablotin devient magiquement invisible jusqu'à ce qu'il attaque ou que sa concentration prenne fin, comme pour un sort. Tout équipement porté ou transporté devient invisible avec lui."
+      }
+    }
+  },
+  "Killer Whale": {
+    "name": "Orque",
+    "traits": {
+      "echolocation": {
+        "name": "Écholocalisation",
+        "description": "L'orque ne peut pas utiliser sa vision aveugle lorsqu'elle est assourdie."
+      },
+      "hold_breath": {
+        "name": "Apnée",
+        "description": "La créature peut retenir son souffle pendant 30 minutes."
+      },
+      "keen_hearing": {
+        "name": "Ouïe aiguisée",
+        "description": "La créature est avantagée aux tests de Sagesse (Perception) fondés sur l'ouïe."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 21 (5d6 + 4) dégâts perforants."
+      }
+    }
+  },
+  "Mammoth": {
+    "name": "Mammouth",
+    "traits": {
+      "trampling_charge": {
+        "name": "Charge écrasante",
+        "description": "Si la créature se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible, puis la touche avec une attaque d'encornement au même tour, cette cible doit réussir une sauvegarde de Force DD 18 ou tomber à terre. Si la cible est à terre, la créature peut effectuer une attaque de piétinement contre elle par une action bonus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Défenses",
+        "description": "Attaque au corps à corps avec une arme : +10 au toucher, allonge {{distance:10ft|short}}, une cible. Touché : 25 (4d8 + 7) dégâts perforants."
+      },
+      "stomp": {
+        "name": "Piétinement",
+        "description": "Attaque au corps à corps avec une arme : +10 au toucher, allonge {{distance:5ft|short}}, une créature à terre. Touché : 29 (4d10 + 7) dégâts contondants. Le mammouth ressemble à un éléphant au pelage épais et aux longues défenses. Plus trapu et plus féroce que les éléphants ordinaires, il vit dans des climats allant du subarctique au subtropical."
+      }
+    }
+  },
+  "Plesiosaurus": {
+    "name": "Plésiosaure",
+    "traits": {
+      "hold_breath": {
+        "name": "Apnée",
+        "description": "La créature peut retenir son souffle pendant 1 heure."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:10ft|short}}, une cible. Touché : 14 (3d6 + 4) dégâts perforants."
+      }
+    }
+  },
+  "Polar Bear": {
+    "name": "Ours polaire",
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "La créature est avantagée aux tests de Sagesse (Perception) fondés sur l'odorat."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "L'ours effectue deux attaques : une morsure et une attaque de griffes."
+      },
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +7 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 9 (1d8 + 5) dégâts perforants."
+      },
+      "claws": {
+        "name": "Griffes",
+        "description": "Attaque au corps à corps avec une arme : +7 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 12 (2d6 + 5) dégâts tranchants."
+      }
+    }
+  },
+  "Pseudodragon": {
+    "name": "Pseudo-dragon",
+    "traits": {
+      "keen_senses": {
+        "name": "Sens aiguisés",
+        "description": "Le pseudo-dragon est avantagé aux tests de Sagesse (Perception) fondés sur la vue, l'ouïe ou l'odorat."
+      },
+      "magic_resistance": {
+        "name": "Résistance à la magie",
+        "description": "La créature est avantagée aux jets de sauvegarde contre les sorts et autres effets magiques."
+      },
+      "limited_telepathy": {
+        "name": "Télépathie limitée",
+        "description": "Le pseudo-dragon peut transmettre magiquement par télépathie des idées, émotions et images simples à toute créature située à {{distance:100ft}} ou moins qui comprend une langue."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +4 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 4 (1d4 + 2) dégâts perforants."
+      },
+      "sting": {
+        "name": "Dard",
+        "description": "Attaque au corps à corps avec une arme : +4 au toucher, allonge {{distance:5ft|short}}, une créature. Touché : 4 (1d4 + 2) dégâts perforants, et la cible doit réussir une sauvegarde de Constitution DD 11 ou être empoisonnée pendant 1 heure. Si elle rate la sauvegarde de 5 ou plus, elle tombe inconsciente pour la même durée, jusqu'à ce qu'elle subisse des dégâts ou qu'une autre créature utilise une action pour la réveiller en la secouant."
+      }
+    }
+  },
+  "Quasit": {
+    "name": "Quasit",
+    "traits": {
+      "shapechanger": {
+        "name": "Métamorphe",
+        "description": "Le quasit peut utiliser son action pour prendre la forme d'une chauve-souris (vitesse {{distance:10ft|short}}, vol {{distance:40ft|short}}), d'un mille-pattes ({{distance:40ft|short}}, escalade {{distance:40ft|short}}) ou d'un crapaud ({{distance:40ft|short}}, nage {{distance:40ft|short}}), ou retrouver sa véritable forme. Ses statistiques restent identiques, sauf les vitesses indiquées. L'équipement porté ou transporté ne se transforme pas. Il retrouve sa véritable forme s'il meurt."
+      },
+      "magic_resistance": {
+        "name": "Résistance à la magie",
+        "description": "La créature est avantagée aux jets de sauvegarde contre les sorts et autres effets magiques."
+      },
+      "nonmagical_damage_resistance": {
+        "name": "Résistance aux dégâts non magiques",
+        "description": "Le quasit a la résistance aux dégâts contondants, perforants et tranchants des attaques non magiques."
+      }
+    },
+    "actions": {
+      "claws_bite_in_beast_form": {
+        "name": "Griffes (morsure sous forme de bête)",
+        "description": "Attaque au corps à corps avec une arme : +4 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 5 (1d4 + 3) dégâts perforants, et la cible doit réussir une sauvegarde de Constitution DD 10 ou subir 5 (2d4) dégâts de poison et être empoisonnée pendant 1 minute. La cible peut répéter la sauvegarde à la fin de chacun de ses tours et mettre fin à l'effet sur elle-même en cas de réussite."
+      },
+      "scare": {
+        "name": "Frayeur",
+        "description": "Une créature choisie par le quasit à {{distance:20ft}} ou moins doit réussir une sauvegarde de Sagesse DD 10 ou être effrayée pendant 1 minute. Elle peut répéter la sauvegarde à la fin de chacun de ses tours, avec désavantage si elle voit le quasit, et mettre fin à l'effet sur elle-même en cas de réussite."
+      },
+      "invisibility": {
+        "name": "Invisibilité",
+        "description": "Le quasit devient magiquement invisible jusqu'à ce qu'il attaque, utilise Frayeur ou que sa concentration prenne fin, comme pour un sort. Tout équipement porté ou transporté devient invisible avec lui."
+      }
+    }
+  },
+  "Rhinoceros": {
+    "name": "Rhinocéros",
+    "traits": {
+      "charge": {
+        "name": "Charge",
+        "description": "Si la créature se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible, puis la touche avec son attaque de charge au même tour, la cible subit 9 (2d8) dégâts contondants supplémentaires. Si la cible est une créature, elle doit réussir une sauvegarde de Force DD 15 ou tomber à terre."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Corne",
+        "description": "Attaque au corps à corps avec une arme : +7 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 14 (2d8 + 5) dégâts contondants."
+      }
+    }
+  },
+  "Saber-Toothed Tiger": {
+    "name": "Tigre à dents de sabre",
+    "traits": {
+      "keen_smell": {
+        "name": "Odorat aiguisé",
+        "description": "La créature est avantagée aux tests de Sagesse (Perception) fondés sur l'odorat."
+      },
+      "pounce": {
+        "name": "Bond",
+        "description": "Si la créature se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible, puis la touche avec une attaque de griffes au même tour, cette cible doit réussir une sauvegarde de Force DD 14 ou tomber à terre. Si la cible est à terre, la créature peut effectuer une attaque de morsure contre elle par une action bonus."
+      }
+    },
+    "actions": {
+      "bite": {
+        "name": "Morsure",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 10 (1d10 + 5) dégâts perforants."
+      },
+      "claw": {
+        "name": "Griffes",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 12 (2d6 + 5) dégâts tranchants."
+      }
+    }
+  },
+  "Sprite": {
+    "name": "Esprit follet",
+    "actions": {
+      "longsword": {
+        "name": "Épée longue",
+        "description": "Attaque au corps à corps avec une arme : +2 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 1 dégât tranchant."
+      },
+      "shortbow": {
+        "name": "Arc court",
+        "description": "Attaque à distance avec une arme : +6 au toucher, portée {{distance:40/160ft|short}}, une cible. Touché : 1 dégât perforant, et la cible doit réussir une sauvegarde de Constitution DD 10 ou être empoisonnée pendant 1 minute. Si le résultat de sa sauvegarde est de 5 ou moins, la cible empoisonnée tombe inconsciente pour la même durée, jusqu'à ce qu'elle subisse des dégâts ou qu'une autre créature utilise une action pour la réveiller en la secouant."
+      },
+      "heart_sight": {
+        "name": "Lecture du cœur",
+        "description": "L'esprit follet touche une créature et connaît magiquement son état émotionnel actuel. Si la cible rate une sauvegarde de Charisme DD 10, l'esprit follet connaît aussi son alignement. Les célestes, fiélons et morts-vivants ratent automatiquement cette sauvegarde."
+      },
+      "invisibility": {
+        "name": "Invisibilité",
+        "description": "L'esprit follet devient magiquement invisible jusqu'à ce qu'il attaque, lance un sort ou que sa concentration prenne fin, comme pour un sort. Tout équipement porté ou transporté devient invisible avec lui."
+      }
+    }
+  },
+  "Swarm of Poisonous Snakes": {
+    "name": "Nuée de serpents venimeux",
+    "traits": {
+      "swarm": {
+        "name": "Nuée",
+        "description": "La nuée peut occuper l'espace d'une autre créature, et inversement. Elle peut traverser toute ouverture assez grande pour un serpent de taille TP. Elle ne peut ni récupérer de points de vie ni gagner de points de vie temporaires."
+      }
+    },
+    "actions": {
+      "bites": {
+        "name": "Morsures",
+        "description": "Attaque au corps à corps avec une arme : +6 au toucher, allonge {{distance:0ft|short}}, une créature dans l'espace de la nuée. Touché : 7 (2d6) dégâts perforants, ou 3 (1d6) dégâts perforants si la nuée n'a plus que la moitié de ses points de vie ou moins. La cible effectue une sauvegarde de Constitution DD 10 : elle subit 14 (4d6) dégâts de poison en cas d'échec, ou la moitié en cas de réussite."
+      }
+    }
+  },
+  "Triceratops": {
+    "name": "Tricératops",
+    "traits": {
+      "trampling_charge": {
+        "name": "Charge écrasante",
+        "description": "Si la créature se déplace d'au moins {{distance:20ft}} en ligne droite vers une cible, puis la touche avec une attaque d'encornement au même tour, cette cible doit réussir une sauvegarde de Force DD 13 ou tomber à terre. Si la cible est à terre, la créature peut effectuer une attaque de piétinement contre elle par une action bonus."
+      }
+    },
+    "actions": {
+      "gore": {
+        "name": "Corne",
+        "description": "Attaque au corps à corps avec une arme : +9 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 24 (4d8 + 6) dégâts perforants."
+      },
+      "stomp": {
+        "name": "Piétinement",
+        "description": "Attaque au corps à corps avec une arme : +9 au toucher, allonge {{distance:5ft|short}}, une créature à terre. Touché : 22 (3d10 + 6) dégâts contondants."
+      }
+    }
+  },
+  "Water Elemental": {
+    "name": "Élémentaire de l'eau",
+    "traits": {
+      "water_form": {
+        "name": "Forme d'eau",
+        "description": "L'élémentaire peut entrer dans l'espace d'une créature hostile et s'y arrêter. Il peut traverser un passage de seulement {{distance:1in}} de large sans se faufiler."
+      },
+      "freeze": {
+        "name": "Gel",
+        "description": "Si l'élémentaire subit des dégâts de froid, il gèle partiellement ; sa vitesse est réduite de {{distance:20ft}} jusqu'à la fin de son prochain tour."
+      },
+      "nonmagical_resistance": {
+        "name": "Résistance aux dégâts non magiques",
+        "description": "L'élémentaire a la résistance aux dégâts contondants, perforants et tranchants des attaques non magiques."
+      }
+    },
+    "actions": {
+      "multiattack": {
+        "name": "Attaques multiples",
+        "description": "L'élémentaire effectue deux attaques de coup."
+      },
+      "slam": {
+        "name": "Coup",
+        "description": "Attaque au corps à corps avec une arme : +7 au toucher, allonge {{distance:5ft|short}}, une cible. Touché : 13 (2d8 + 4) dégâts contondants."
+      },
+      "whelm": {
+        "name": "Engloutissement",
+        "description": "Chaque créature dans l'espace de l'élémentaire effectue une sauvegarde de Force DD 15. En cas d'échec, elle subit 13 (2d8 + 4) dégâts contondants. Si elle est de taille G ou inférieure, elle est aussi agrippée (évasion DD 14). Tant que cette prise dure, elle est entravée et ne peut pas respirer, sauf si elle respire sous l'eau. En cas de réussite, elle est repoussée hors de l'espace de l'élémentaire. Celui-ci peut agripper une créature de taille G ou jusqu'à deux créatures de taille M ou inférieure à la fois. Au début de chacun de ses tours, chaque cible qu'il agrippe subit 13 (2d8 + 4) dégâts contondants. Une créature à {{distance:5ft}} ou moins peut utiliser une action et réussir un test de Force DD 14 pour en extraire une créature ou un objet."
+      }
+    }
   }
 }

@@ -291,6 +291,7 @@ void main() {
         await repo.save(_makeCharacter(id: 'two', name: 'Two'));
 
         final backupJson = await repo.exportBackupToFileJson();
+        expect(await repo.listLocalBackups(), isEmpty);
         final decoded = jsonDecode(backupJson) as Map<String, dynamic>;
 
         expect(decoded['type'], 'dnd-character-tool-backup');

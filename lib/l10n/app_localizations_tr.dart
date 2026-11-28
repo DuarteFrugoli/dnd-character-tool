@@ -599,7 +599,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Karakter açılırken bir defalık güncelleme gerekebilir. Uygulama güncellemeden önce yerel yedek kaydeder ve son üç kopyayı Ayarlar’da tutar. Güncellemeden paylaşmak için Yerel yedek kaydet ve paylaş seçeneğini kullan.';
+      'Karakter açılırken bir defalık güncelleme gerekebilir. Uygulama güncellemeden önce yerel yedek kaydeder ve son üç kopyayı Ayarlar’da tutar. Güncellemeden paylaşmak için Yedeği paylaş seçeneğini kullan.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3368,13 +3368,13 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Paylaşım açılmadan önce bu cihaza yedek kaydedilir. Bu işlem karakterleri güncellemez.\n\nTüm karakterler güncellenirken önce yerel yedek kaydedilir, ardından paylaşım açılmadan güncelleme uygulanır. Son üç kopya Ayarlar’da bulunur.';
+      'Yedeği paylaş seçeneği, karakterleri güncellemeden veya yerel yedek geçmişine kopya eklemeden paylaşımı açar.\n\nTüm karakterler güncellenirken önce yerel yedek kaydedilir, ardından paylaşım açılmadan güncelleme uygulanır. Son üç yerel kopya Ayarlar’da bulunur.';
 
   @override
   String get characterUpdateRequiredAction => 'Güncelleme seçenekleri';
 
   @override
-  String get characterUpdateBackupAction => 'Yerel yedek kaydet ve paylaş';
+  String get characterUpdateBackupAction => 'Yedeği paylaş';
 
   @override
   String get characterUpdateAllAction =>

@@ -587,7 +587,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      '캐릭터를 열 때 한 번의 업데이트가 필요할 수 있습니다. 업데이트 전에 로컬 백업을 저장하며 최근 사본 3개를 설정에 보관합니다. 업데이트 없이 공유하려면 로컬 백업 저장 후 공유를 선택하세요.';
+      '캐릭터를 열 때 한 번의 업데이트가 필요할 수 있습니다. 업데이트 전에 로컬 백업을 저장하며 최근 사본 3개를 설정에 보관합니다. 업데이트 없이 공유하려면 백업 공유를 선택하세요.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3296,13 +3296,13 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      '공유 화면을 열기 전에 이 기기에 백업을 저장합니다. 이 작업은 캐릭터를 업데이트하지 않습니다.\n\n모두 업데이트할 때는 먼저 로컬 백업을 저장한 뒤 공유 화면을 열지 않고 업데이트합니다. 최근 사본 3개는 설정에서 확인할 수 있습니다.';
+      '백업 공유는 캐릭터를 업데이트하거나 로컬 백업 기록에 사본을 추가하지 않고 공유 화면만 엽니다.\n\n모두 업데이트할 때는 먼저 로컬 백업을 저장한 뒤 공유 화면을 열지 않고 업데이트합니다. 최근 로컬 사본 3개는 설정에서 확인할 수 있습니다.';
 
   @override
   String get characterUpdateRequiredAction => '업데이트 옵션';
 
   @override
-  String get characterUpdateBackupAction => '로컬 백업 저장 후 공유';
+  String get characterUpdateBackupAction => '백업 공유';
 
   @override
   String get characterUpdateAllAction => '로컬 백업 저장 후 모두 업데이트';

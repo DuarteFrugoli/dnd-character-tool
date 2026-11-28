@@ -602,7 +602,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Al abrir un personaje puede ser necesaria una actualización única. La app guarda una copia local antes de actualizar y conserva las tres más recientes en Ajustes. Usa Guardar copia local y compartir para compartir sin actualizar.';
+      'Al abrir un personaje puede ser necesaria una actualización única. La app guarda una copia local antes de actualizar y conserva las tres más recientes en Ajustes. Usa Compartir copia de seguridad para compartir sin actualizar.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3379,13 +3379,13 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'La copia se guarda en este dispositivo antes de abrir el menú para compartir. Esta acción no actualiza los personajes.\n\nAl actualizar todos, primero se guarda una copia local y después se aplica la actualización sin abrir el menú para compartir. Las tres copias más recientes están en Ajustes.';
+      'Compartir la copia de seguridad abre el menú para compartir sin actualizar los personajes ni añadir una copia al historial local.\n\nAl actualizar todos, primero se guarda una copia local y después se aplica la actualización sin abrir el menú para compartir. Las tres copias locales más recientes están en Ajustes.';
 
   @override
   String get characterUpdateRequiredAction => 'Opciones de actualización';
 
   @override
-  String get characterUpdateBackupAction => 'Guardar copia local y compartir';
+  String get characterUpdateBackupAction => 'Compartir copia de seguridad';
 
   @override
   String get characterUpdateAllAction =>

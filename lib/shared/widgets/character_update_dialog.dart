@@ -39,7 +39,7 @@ class CharacterUpdateDialog extends ConsumerStatefulWidget {
       _CharacterUpdateDialogState();
 }
 
-enum _UpdateTask { checking, backingUp, updating }
+enum _UpdateTask { checking, sharing, backingUp, updating }
 
 class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
   _UpdateTask? _task = _UpdateTask.checking;
@@ -74,19 +74,18 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
     }
   }
 
-  Future<void> _backup() async {
+  Future<void> _shareBackup() async {
     if (_task != null || _preview == null || _preview!.hasReadIssues) return;
     setState(() {
-      _task = _UpdateTask.backingUp;
+      _task = _UpdateTask.sharing;
       _message = null;
       _hasError = false;
     });
-    var localSaved = false;
     try {
       final fileJson = await ref
           .read(characterRepositoryProvider)
-          .createLocalBackup();
-      localSaved = true;
+          .exportBackupToFileJson();
+      if (!mounted) return;
       await widget.exportBackup(fileJson);
       if (!mounted) return;
       setState(
@@ -95,20 +94,11 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
         )!.settingsBackupExportSuccess,
       );
     } on FileExportCancelled {
-      if (mounted) {
-        setState(
-          () => _message = AppLocalizations.of(
-            context,
-          )!.settingsLocalBackupsSaved,
-        );
-      }
+      return;
     } catch (_) {
       if (!mounted) return;
       setState(() {
-        final l10n = AppLocalizations.of(context)!;
-        _message = localSaved
-            ? '${l10n.settingsLocalBackupsSaved} ${l10n.settingsBackupExportError}'
-            : l10n.settingsLocalBackupSaveError;
+        _message = AppLocalizations.of(context)!.settingsBackupExportError;
         _hasError = true;
       });
     } finally {
@@ -157,7 +147,9 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
     final result = _result;
     final busy = _task != null;
     final blocking =
-        _task == _UpdateTask.backingUp || _task == _UpdateTask.updating;
+        _task == _UpdateTask.sharing ||
+        _task == _UpdateTask.backingUp ||
+        _task == _UpdateTask.updating;
 
     return PopScope(
       canPop: !blocking && result == null,
@@ -196,13 +188,12 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                     const SizedBox(height: 16),
                     const LinearProgressIndicator(),
                     const SizedBox(height: 8),
-                    Text(
-                      _task == _UpdateTask.backingUp
-                          ? l10n.settingsLocalBackupSaving
-                          : _task == _UpdateTask.updating
-                          ? l10n.characterUpdateApplying
-                          : l10n.settingsMaintenanceWorking,
-                    ),
+                    Text(switch (_task) {
+                      _UpdateTask.sharing => l10n.settingsBackupExporting,
+                      _UpdateTask.backingUp => l10n.settingsLocalBackupSaving,
+                      _UpdateTask.updating => l10n.characterUpdateApplying,
+                      _ => l10n.settingsMaintenanceWorking,
+                    }),
                   ],
                   if (_message != null) ...[
                     const SizedBox(height: 12),
@@ -222,8 +213,8 @@ class _CharacterUpdateDialogState extends ConsumerState<CharacterUpdateDialog> {
                       onPressed:
                           busy || preview == null || preview.hasReadIssues
                           ? null
-                          : _backup,
-                      icon: const Icon(Icons.backup_outlined),
+                          : _shareBackup,
+                      icon: const Icon(Icons.share_outlined),
                       label: Text(
                         l10n.characterUpdateBackupAction,
                         textAlign: TextAlign.center,

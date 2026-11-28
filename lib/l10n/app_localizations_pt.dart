@@ -602,7 +602,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Ao abrir um personagem, pode ser necessária uma atualização única. O app salva um backup local antes de atualizar e mantém as três cópias mais recentes nas Configurações. Use Salvar backup local e compartilhar para compartilhar uma cópia sem atualizar.';
+      'Ao abrir um personagem, pode ser necessária uma atualização única. O app salva um backup local antes de atualizar e mantém as três cópias mais recentes nas Configurações. Use Compartilhar backup para compartilhar uma cópia sem atualizar.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3377,14 +3377,13 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'O backup é salvo neste aparelho antes de abrir o compartilhamento. Essa opção não atualiza as fichas.\n\nA atualização de todos os personagens salva um backup local e depois atualiza, sem abrir o compartilhamento. As três cópias mais recentes ficam nas Configurações.';
+      'Compartilhar backup abre o compartilhamento das fichas, sem atualizar e sem adicionar uma cópia ao histórico de backups locais.\n\nAo atualizar todos, o app salva um backup local e depois atualiza, sem abrir o compartilhamento. As três cópias locais mais recentes ficam nas Configurações.';
 
   @override
   String get characterUpdateRequiredAction => 'Opções de atualização';
 
   @override
-  String get characterUpdateBackupAction =>
-      'Salvar backup local e compartilhar';
+  String get characterUpdateBackupAction => 'Compartilhar backup';
 
   @override
   String get characterUpdateAllAction =>

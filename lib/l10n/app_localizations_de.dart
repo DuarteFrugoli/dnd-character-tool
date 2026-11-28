@@ -605,7 +605,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Beim Öffnen eines Charakters kann eine einmalige Aktualisierung nötig sein. Die App sichert vorher lokal und behält die drei neuesten Kopien in den Einstellungen. Mit Lokal sichern und teilen kannst du eine Kopie ohne Aktualisierung teilen.';
+      'Beim Öffnen eines Charakters kann eine einmalige Aktualisierung nötig sein. Die App sichert vorher lokal und behält die drei neuesten Kopien in den Einstellungen. Mit Sicherung teilen kannst du eine Kopie ohne Aktualisierung teilen.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3386,13 +3386,13 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Die Sicherung wird auf diesem Gerät gespeichert, bevor sich der Teilen-Dialog öffnet. Dabei werden die Charaktere nicht aktualisiert.\n\nBeim Aktualisieren aller Charaktere wird zuerst lokal gesichert und danach aktualisiert, ohne den Teilen-Dialog zu öffnen. Die drei neuesten Kopien findest du in den Einstellungen.';
+      'Sicherung teilen öffnet den Teilen-Dialog, ohne die Charaktere zu aktualisieren oder eine Kopie zum lokalen Sicherungsverlauf hinzuzufügen.\n\nBeim Aktualisieren aller Charaktere wird zuerst lokal gesichert und danach aktualisiert, ohne den Teilen-Dialog zu öffnen. Die drei neuesten lokalen Kopien findest du in den Einstellungen.';
 
   @override
   String get characterUpdateRequiredAction => 'Update-Optionen';
 
   @override
-  String get characterUpdateBackupAction => 'Lokal sichern und teilen';
+  String get characterUpdateBackupAction => 'Sicherung teilen';
 
   @override
   String get characterUpdateAllAction => 'Lokal sichern und alle aktualisieren';

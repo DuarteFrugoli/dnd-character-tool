@@ -228,7 +228,7 @@
   "whatsNew3ResetTitle": "Daha güvenli seviye sıfırlama",
   "whatsNew3ResetBody": "Kaydetmeden önce her değişiklik listelenir. Sıfırlama, kaldırılan sınıfların verdiklerini geri alır ve iki kural setinde de önceki seviyene yeniden kurabilirsin.",
   "whatsNew3UpdateTitle": "Tek seferlik karakter güncellemesi",
-  "whatsNew3UpdateBody": "Karakter açılırken bir defalık güncelleme gerekebilir. Uygulama güncellemeden önce yerel yedek kaydeder ve son üç kopyayı Ayarlar’da tutar. Güncellemeden paylaşmak için Yerel yedek kaydet ve paylaş seçeneğini kullan.",
+  "whatsNew3UpdateBody": "Karakter açılırken bir defalık güncelleme gerekebilir. Uygulama güncellemeden önce yerel yedek kaydeder ve son üç kopyayı Ayarlar’da tutar. Güncellemeden paylaşmak için Yedeği paylaş seçeneğini kullan.",
   "@whatsNewThanks": {"description":"Turkish translation for the 2.1.1 announcement."},
   "charListImportedSuccess": "{name} başarıyla içe aktarıldı!",
   "@charListImportedSuccess": {
@@ -3837,7 +3837,7 @@
   "@characterUpdateRequiredTitle": {
     "description": "Dialog title shown when opening an outdated saved character."
   },
-  "characterUpdateRequiredBody": "Paylaşım açılmadan önce bu cihaza yedek kaydedilir. Bu işlem karakterleri güncellemez.\n\nTüm karakterler güncellenirken önce yerel yedek kaydedilir, ardından paylaşım açılmadan güncelleme uygulanır. Son üç kopya Ayarlar’da bulunur.",
+  "characterUpdateRequiredBody": "Yedeği paylaş seçeneği, karakterleri güncellemeden veya yerel yedek geçmişine kopya eklemeden paylaşımı açar.\n\nTüm karakterler güncellenirken önce yerel yedek kaydedilir, ardından paylaşım açılmadan güncelleme uygulanır. Son üç yerel kopya Ayarlar’da bulunur.",
   "@characterUpdateRequiredBody": {
     "description": "Dialog body shown when opening an outdated saved character."
   },
@@ -3845,9 +3845,9 @@
   "@characterUpdateRequiredAction": {
     "description": "Action on a directly opened outdated character to show the update dialog."
   },
-  "characterUpdateBackupAction": "Yerel yedek kaydet ve paylaş",
+  "characterUpdateBackupAction": "Yedeği paylaş",
   "@characterUpdateBackupAction": {
-    "description": "Exports a backup without updating characters in the update dialog."
+    "description": "Shares a backup without updating characters or adding a copy to local backup history."
   },
   "characterUpdateAllAction": "Yerel yedek kaydet ve tümünü güncelle",
   "@characterUpdateAllAction": {

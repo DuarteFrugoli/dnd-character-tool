@@ -19,6 +19,7 @@ class _MaintenanceRepository extends CharacterRepository {
   final bool hasReadIssues;
   final bool failLocalBackup;
   int backupCalls = 0;
+  int localBackupCalls = 0;
   int updateCalls = 0;
   List<String>? events;
 
@@ -73,6 +74,7 @@ class _MaintenanceRepository extends CharacterRepository {
 
   @override
   Future<String> createLocalBackup() async {
+    localBackupCalls++;
     final payload = await exportBackupToFileJson();
     if (failLocalBackup) throw StateError('Storage full');
     events?.add('local');
@@ -143,10 +145,11 @@ void main() {
 
     expect(result, isFalse);
     expect(repository.backupCalls, 0);
+    expect(repository.localBackupCalls, 0);
     expect(repository.updateCalls, 0);
   });
 
-  testWidgets('backup alone does not update; update backs up before applying', (
+  testWidgets('sharing then updating creates only one local backup', (
     tester,
   ) async {
     final repository = _MaintenanceRepository();
@@ -163,17 +166,19 @@ void main() {
       onClosed: (value) => result = value,
     );
 
-    await tester.tap(find.text('Save local backup and share'));
+    await tester.tap(find.text('Share backup'));
     await tester.pumpAndSettle();
     expect(repository.backupCalls, 1);
+    expect(repository.localBackupCalls, 0);
     expect(repository.updateCalls, 0);
     expect(find.text('Save local backup and update all'), findsOneWidget);
 
     await tester.tap(find.text('Save local backup and update all'));
     await tester.pumpAndSettle();
     expect(repository.backupCalls, 2);
+    expect(repository.localBackupCalls, 1);
     expect(repository.updateCalls, 1);
-    expect(events, ['local', 'export', 'local', 'apply']);
+    expect(events, ['export', 'local', 'apply']);
     expect(find.text('Update complete'), findsOneWidget);
 
     await tester.tap(find.text('Close'));
@@ -195,6 +200,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(repository.backupCalls, 1);
+    expect(repository.localBackupCalls, 1);
     expect(repository.updateCalls, 0);
     await tester.tap(find.text('Cancel'));
     await tester.pumpAndSettle();
@@ -219,6 +225,7 @@ void main() {
     await tester.pumpAndSettle();
     expect(shareCalls, 0);
     expect(repository.backupCalls, 1);
+    expect(repository.localBackupCalls, 1);
     expect(repository.updateCalls, 1);
     expect(events, ['local', 'apply']);
     expect(find.text('Could not export backup.'), findsNothing);
@@ -226,7 +233,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('cancelled sharing keeps the local copy without updating', (
+  testWidgets('cancelled sharing neither saves locally nor updates', (
     tester,
   ) async {
     final repository = _MaintenanceRepository();
@@ -241,12 +248,14 @@ void main() {
       },
       onClosed: (_) {},
     );
-    await tester.tap(find.text('Save local backup and share'));
+    await tester.tap(find.text('Share backup'));
     await tester.pumpAndSettle();
-    expect(events, ['local', 'share']);
+    expect(events, ['share']);
     expect(repository.backupCalls, 1);
+    expect(repository.localBackupCalls, 0);
     expect(repository.updateCalls, 0);
-    expect(find.text('Local backup saved.'), findsOneWidget);
+    expect(find.text('Local backup saved.'), findsNothing);
+    expect(find.text('Could not export backup.'), findsNothing);
     expect(find.text('Update complete'), findsNothing);
     expect(tester.takeException(), isNull);
   });
@@ -270,6 +279,32 @@ void main() {
       isNull,
     );
     expect(repository.backupCalls, 0);
+    expect(repository.localBackupCalls, 0);
     expect(repository.updateCalls, 0);
+  });
+
+  testWidgets('failed sharing saves no local copy and still allows updating', (
+    tester,
+  ) async {
+    final repository = _MaintenanceRepository();
+    await _showHarness(
+      tester,
+      repository,
+      exportBackup: (_) async => throw StateError('Sharing unavailable'),
+      onClosed: (_) {},
+    );
+    await tester.tap(find.text('Share backup'));
+    await tester.pumpAndSettle();
+    expect(repository.backupCalls, 1);
+    expect(repository.localBackupCalls, 0);
+    expect(repository.updateCalls, 0);
+    expect(find.text('Could not export backup.'), findsOneWidget);
+    expect(find.text('Local backup saved.'), findsNothing);
+
+    await tester.tap(find.text('Save local backup and update all'));
+    await tester.pumpAndSettle();
+    expect(repository.localBackupCalls, 1);
+    expect(repository.updateCalls, 1);
+    expect(find.text('Update complete'), findsOneWidget);
   });
 }

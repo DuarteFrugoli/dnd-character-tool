@@ -405,7 +405,7 @@
 
   "@whatsNew3UpdateTitle": { "description": "3.0.0 announcement: one-time character update title." },
 
-  "whatsNew3UpdateBody": "Opening a character may require a one-time update. The app saves a local backup before updating and keeps the three latest copies in Settings. Use Save local backup and share to share a copy without updating.",
+  "whatsNew3UpdateBody": "Opening a character may require a one-time update. The app saves a local backup before updating and keeps the three latest copies in Settings. Use Share backup to share a copy without updating.",
 
   "@whatsNew3UpdateBody": { "description": "3.0.0 announcement: one-time character update details." },
 
@@ -2454,12 +2454,12 @@
   "@settingsMaintenanceConfirmBody": { "description": "Dialog body before applying character migrations.", "placeholders": { "count": { "type": "int" } } },
   "characterUpdateRequiredTitle": "Character update required",
   "@characterUpdateRequiredTitle": { "description": "Dialog title shown when opening an outdated saved character." },
-  "characterUpdateRequiredBody": "A backup is saved locally before sharing opens. This action does not update your characters.\n\nUpdating all first saves a local backup, then applies the update without opening sharing. The three latest copies are available in Settings.",
+  "characterUpdateRequiredBody": "Share backup opens sharing without updating your characters or adding a copy to local backup history.\n\nUpdating all first saves a local backup, then applies the update without opening sharing. The three latest local copies are available in Settings.",
   "@characterUpdateRequiredBody": { "description": "Dialog body shown when opening an outdated saved character." },
   "characterUpdateRequiredAction": "Update options",
   "@characterUpdateRequiredAction": { "description": "Action on a directly opened outdated character to show the update dialog." },
-  "characterUpdateBackupAction": "Save local backup and share",
-  "@characterUpdateBackupAction": { "description": "Exports a backup without updating characters in the update dialog." },
+  "characterUpdateBackupAction": "Share backup",
+  "@characterUpdateBackupAction": { "description": "Shares a backup without updating characters or adding a copy to local backup history." },
   "characterUpdateAllAction": "Save local backup and update all",
   "@characterUpdateAllAction": { "description": "Saves a local backup and applies pending migrations to all characters without sharing." },
   "characterUpdateApplying": "Updating characters...",

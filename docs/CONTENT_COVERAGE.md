@@ -1,6 +1,6 @@
 # D&D content coverage by edition and language
 
-Updated: 2026-11-27.
+Updated: 2026-11-28.
 
 This tracks the gaps identified in the bundled catalogs, not every published
 D&D supplement. English is the source catalog. Translations are separate work:
@@ -47,7 +47,7 @@ Dungeon Master's Guide item, Monster Manual entry, or later supplement.
   and six flaws per base background, inherited by variants. These are
   **original English roleplaying prompts**, not the published PHB tables.
 - [x] Five arcane focuses and 29 mount/tack/transport entries in the inventory.
-- [x] Regression tests and catalog validation: 660 Flutter tests passed;
+- [x] Regression tests and catalog validation: 672 Flutter tests passed;
   analysis of the changed Dart files reported no issues; both SRD pack
   validators passed their 18 base JSON integrity checks.
 
@@ -67,8 +67,8 @@ PHB spells. Existing translations of older content are retained.
 | Korean | ko | Listed additions translated and validated |
 | Portuguese | pt | Listed additions translated and validated |
 | Russian | ru | Listed additions translated and validated |
-| Turkish | tr | Pending translation and review |
-| Chinese | zh | Pending translation and review |
+| Turkish | tr | Listed additions translated and validated |
+| Chinese | zh | Listed additions translated and validated |
 
 ### Outside this completion scope
 
@@ -107,46 +107,45 @@ English supplemental catalogs:
 - `assets/data/2014/phb_equipment.json`: 34 added equipment entries, merged
   into the gear browser and inventory index only for 2014.
 
-Portuguese, Spanish, French, Italian, German, Japanese, Korean and Russian cover all 30 spell
-summaries, 65 choice options, expanded subclass descriptions and the 50-row
-Wild Magic table, all 24 added creature stat blocks, 34 equipment entries,
-five background variants and personality suggestions. The interface reads
-these localized suggestions
-and indexes variant equipment in the selected language.
+All ten translation languages (Portuguese, Spanish, French, Italian, German,
+Japanese, Korean, Russian, Turkish and Chinese) cover all 30 spell summaries,
+65 choice options, expanded subclass descriptions and the 50-row Wild Magic
+table, all 24 added creature stat blocks, 34 equipment entries, five background
+variants and personality suggestions. The interface reads these localized
+suggestions and indexes variant equipment in the selected language.
 
-Each of the two pending content languages (Turkish and Chinese) still needs names, descriptions,
-new choice options, creature traits/actions, background prompts and expanded
-feature tables. Their older feature summaries may still appear until revised.
-Shared interface labels are present in all app languages. English remains
+The listed additions are now covered in all 11 app languages, including the
+English source. No language remains pending for this supplemental 2014 scope.
+Shared interface labels are also present in all app languages. English remains
 the source and fallback. This does not certify the accuracy of every older
 translation or change the implementation limitations listed above.
 
 Translation validation checks the 30 spells, all 65 option descriptions,
 the 50 Wild Magic rows, background suggestions, equipment and creature
 trait/action text through the runtime i18n service. Distance markers are
-compared with the English source, including composed supplemental tables;
-the validator continues to accept the older base summaries in languages
-whose full tables are still pending. A changed translated surge distance
-is rejected. Both pack validators and analysis of the changed Dart files pass.
+compared with the English source, including composed supplemental tables.
+A changed translated surge distance is rejected. Both pack validators and
+analysis of the changed Dart files pass.
 
 An editorial spot review corrected awkward Portuguese/Spanish narrative
 prompts and restored Unicode accents in the shared interface labels. The
 translation checks are technical safeguards; terminology has not been
 certified against every officially localized book or by a native editor.
 
-French, Italian, German, Japanese, Korean and Russian cover the same supplemental 2014 scope,
-including all 50 Wild Magic outcomes, Elemental Attunement, the full discipline list,
-the five background variants and their inherited personality suggestions.
-Runtime translation tests cover all eight completed translation languages
-and check the surge ranges, distance values and damage dice. This is not
-a review of every older translation or an expansion of the 2024 scope.
+Runtime translation tests cover all ten completed translation languages,
+including all 50 Wild Magic outcomes, Elemental Attunement, the full discipline
+list, the five background variants and their inherited personality suggestions.
+They check the surge ranges, distance values and damage dice. This is not a
+review of every older translation or an expansion of the 2024 scope.
 
 German additions use informal player instructions, and Japanese additions
 use the existing plain style. Damage-dice checks accept notation adjacent
 to Japanese characters without requiring unnatural spaces in the text.
 Korean additions handle particles after spell names; Russian additions retain
-the grammatical endings needed by localized measurement markers. The two new
-languages preserve the 2014 damage dice, distances and condition durations.
+the grammatical endings needed by localized measurement markers. Turkish
+additions use informal player instructions and retain Turkish dotted/dotless
+letters; Chinese additions use simplified characters. All preserve the 2014
+damage dice, distances and condition durations.
 
 Reference sources:
 

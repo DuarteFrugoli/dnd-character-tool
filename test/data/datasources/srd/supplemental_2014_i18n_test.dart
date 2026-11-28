@@ -120,6 +120,20 @@ void main() {
       'badReputation': 'Дурная репутация',
       'letter': 'Рекомендательное письмо',
     },
+    'tr': {
+      'sorceryPoints': 'büyücülük puanlarını',
+      'waterWhip': 'Su Kırbacı',
+      'retainers': 'Hizmetkârlar',
+      'badReputation': 'Kötü Şöhret',
+      'letter': 'Tanıtım mektubu',
+    },
+    'zh': {
+      'sorceryPoints': '术法点',
+      'waterWhip': '水鞭',
+      'retainers': '侍从',
+      'badReputation': '恶名',
+      'letter': '介绍信',
+    },
   };
   for (final locale in localized.keys) {
     group('2014 supplemental $locale', () {

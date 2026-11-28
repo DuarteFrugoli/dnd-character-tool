@@ -5,6 +5,42 @@
     "feature": {
       "name": "İnananların Sığınağı",
       "description": "Siz ve yoldaşlarınız, inancınıza ait tapınaklarda ücretsiz şifa ve bakım görebilir, rahiplerden yardım isteyebilirsiniz."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Her duruma uygun bir dua alıntılarım.",
+        "İtirafları sabırla dinlerim.",
+        "Tanımadığım dinî gelenekleri incelerim.",
+        "Öğüt vermeden önce yemek sunarım.",
+        "Kutsal nesnelere özenle davranırım.",
+        "Küçük rastlantılarda anlam ararım.",
+        "Hakaretlere bile resmî bir nezaketle karşılık veririm.",
+        "Yolculara tanrılarını sorarım."
+      ],
+      "ideals": [
+        "Merhamet: İnancım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: İnancım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Hiçbir otorite inancımı bana dayatmamalı.",
+        "Hırs: İnancım sayesinde nüfuz kazanmak isterim.",
+        "Denge: İnancımla yaşamın ihtiyaçlarını dengelemek isterim.",
+        "Dürüstlük: Kolaylık uğruna inancımı feda etmem."
+      ],
+      "bonds": [
+        "Tapınağım ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu kutsal söz ile ilgili bir anı eşyasını korurum.",
+        "Tapınağım ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu kutsal söz ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu kutsal söz yüzünden tehlikeye giren insanları koruyacağım.",
+        "Tapınağım ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Tapınağım ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "İnancım alaya alındığında düşüncesizce davranırım.",
+        "Tapınağım ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu kutsal söz yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "İnancım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu kutsal söz ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Charlatan": {
@@ -13,6 +49,42 @@
     "feature": {
       "name": "Sahte Kimlik",
       "description": "Belgeleri, tanıdıkları ve kılıklarıyla birlikte ikinci bir kimlik oluşturdunuz."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Kendimi yeni bir adla tanıtırım.",
+        "Teklif yapmadan önce söylenti toplarım.",
+        "Yabancıları yerinde iltifatlarla överim.",
+        "Beklerken imza taklidi çalışırım.",
+        "Hep kendi lehime bir bahis öneririm.",
+        "Bir ortamı kimin yönettiğini fark ederim.",
+        "Gelirimin biraz üzerinde giyinirim.",
+        "Sıradan olayları ayrıntılı hikâyelere dönüştürürüm."
+      ],
+      "ideals": [
+        "Merhamet: Bağımsızlığım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Bağımsızlığım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Hayatımı başkalarının belirlemesine izin vermem.",
+        "Hırs: Bağımsızlığım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Başkalarına zarar vermeden bağımsız kalmak isterim.",
+        "Dürüstlük: Kolaylık uğruna bağımsızlığımı feda etmem."
+      ],
+      "bonds": [
+        "Eski ortağım ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu sahte kimlik ile ilgili bir anı eşyasını korurum.",
+        "Eski ortağım ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu sahte kimlik ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu sahte kimlik yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski ortağım ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski ortağım ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Bağımsızlığım alaya alındığında düşüncesizce davranırım.",
+        "Eski ortağım ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu sahte kimlik yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Bağımsızlığım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu sahte kimlik ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Criminal": {
@@ -21,6 +93,42 @@
     "feature": {
       "name": "Suç Dünyası Bağlantısı",
       "description": "Bir suç ağıyla aranızda aracılık eden güvenilir bir bağlantınız var."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Oturmadan önce çıkışları incelerim.",
+        "Kalabalıkta alçak sesle konuşurum.",
+        "Bana borçlu olan herkesin yüzünü hatırlarım.",
+        "Aletleri sıradan eşyaların içine saklarım.",
+        "Koşulsuz tekliflerden kuşkulanırım.",
+        "Kimsenin önemsemediği insanlarla yemeğimi paylaşırım.",
+        "Eski mahallemin argosunu kullanırım.",
+        "Baktığımı belli etmeden muhafızları sayarım."
+      ],
+      "ideals": [
+        "Merhamet: Çeteme sadakatim savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Çeteme sadakatim ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Sadakatim beni çetemin tutsağına çevirmemeli.",
+        "Hırs: Çeteme sadakatim sayesinde nüfuz kazanmak isterim.",
+        "Denge: Çeteye sadakatimle kişisel sınırlarımı dengelemek isterim.",
+        "Dürüstlük: Kolaylık uğruna çeteme sadakatimi feda etmem."
+      ],
+      "bonds": [
+        "Eski suç ortağım ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu ödenmemiş borç ile ilgili bir anı eşyasını korurum.",
+        "Eski suç ortağım ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu ödenmemiş borç ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu ödenmemiş borç yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski suç ortağım ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski suç ortağım ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Çeteme sadakatim alaya alındığında düşüncesizce davranırım.",
+        "Eski suç ortağım ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu ödenmemiş borç yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Çeteme sadakatim adına kendi hatalarımı haklı çıkarırım.",
+        "Bu ödenmemiş borç ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Entertainer": {
@@ -29,6 +137,42 @@
     "feature": {
       "name": "Halkın Talebiyle",
       "description": "Gösteri yapacak bir yer her zaman bulabilir, mütevazı düzeyde ücretsiz konaklama ve yiyecek elde edebilirsiniz."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Tanışmaları küçük gösterilere dönüştürürüm.",
+        "Tarihlerden çok seyircileri hatırlarım.",
+        "Sessiz zamanlarda bile prova yaparım.",
+        "Hikâye anlatırken sesleri taklit ederim.",
+        "Diğer sanatçıları cömertçe överim.",
+        "Sessizliğin sürmesine izin vermekte zorlanırım.",
+        "Gündelik işlerde ritim duyarım.",
+        "Hayranlarımdan gelen küçük hediyeleri saklarım."
+      ],
+      "ideals": [
+        "Merhamet: Sanatım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Sanatım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Sanatım sansür olmadan ifade edilebilmeli.",
+        "Hırs: Sanatım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Sanatımın hayatımı yutmasına izin vermeden ondan geçinmek isterim.",
+        "Dürüstlük: Kolaylık uğruna sanatımı feda etmem."
+      ],
+      "bonds": [
+        "İlk hamim ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu kayıp gösteri ile ilgili bir anı eşyasını korurum.",
+        "İlk hamim ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu kayıp gösteri ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu kayıp gösteri yüzünden tehlikeye giren insanları koruyacağım.",
+        "İlk hamim ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "İlk hamim ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Sanatım alaya alındığında düşüncesizce davranırım.",
+        "İlk hamim ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu kayıp gösteri yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Sanatım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu kayıp gösteri ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Folk Hero": {
@@ -37,6 +181,42 @@
     "feature": {
       "name": "Kırsal Misafirperverlik",
       "description": "Sıradan insanlar sizi ve yoldaşlarınızı barındırıp saklar ve size ihanet etmez."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Yöneticileri işçilere davranışlarına göre değerlendiririm.",
+        "Ücreti konuşmadan önce yardım ederim.",
+        "Sorunları pratik örneklerle açıklarım.",
+        "Yardım eden sıradan insanların adlarını hatırlarım.",
+        "Başarılarımın onurunu paylaşırım.",
+        "Gerginken bozuk şeyleri onarırım.",
+        "Gösterişli törenlerde huzursuz olurum.",
+        "Memleketimin insanlarını anlatırım."
+      ],
+      "ideals": [
+        "Merhamet: Halka bağlılığım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Halka bağlılığım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Sıradan insanlar kendi geleceklerini seçebilmeli.",
+        "Hırs: Halka bağlılığım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Halka uzun vadede yararlı çözümler ararım.",
+        "Dürüstlük: Kolaylık uğruna halka bağlılığımı feda etmem."
+      ],
+      "bonds": [
+        "Doğduğum köy ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Başkalarını koruma sözüm ile ilgili bir anı eşyasını korurum.",
+        "Doğduğum köy ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, başkalarını koruma sözüm ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Başkalarını koruma sözüm yüzünden tehlikeye giren insanları koruyacağım.",
+        "Doğduğum köy ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Doğduğum köy ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Halka bağlılığım alaya alındığında düşüncesizce davranırım.",
+        "Doğduğum köy ile benzerliği olan kişilere kolayca güvenirim.",
+        "Başkalarını koruma sözüm yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Halka bağlılığım adına kendi hatalarımı haklı çıkarırım.",
+        "Başkalarını koruma sözüm ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Guild Artisan": {
@@ -45,6 +225,42 @@
     "feature": {
       "name": "Lonca Üyeliği",
       "description": "Loncanız konaklama, hukuki yardım ve destek sağlar; karşılığında aidat ve sadakat bekler."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Tanımadığım odalarda ahşap bağlantılarını incelerim.",
+        "İyi yapılmış eşyalara harcanan emeği açıklarım.",
+        "Yanımda bitmemiş küçük bir eser taşırım.",
+        "Zanaatını bilen herkese saygı duyarım.",
+        "Sabırlı ve dikkatli pazarlık yaparım.",
+        "Sahte damgaları hemen fark ederim.",
+        "İşimle ilgili ayrıntılı notlar tutarım.",
+        "Eğri takılmış bir parçayı öylece bırakamam."
+      ],
+      "ideals": [
+        "Merhamet: Dürüst zanaatım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Dürüst zanaatım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Sömürülmeden çalışabilmeliyim.",
+        "Hırs: Dürüst zanaatım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Kaliteden ve dürüstlükten ödün vermeden işimden geçinmek isterim.",
+        "Dürüstlük: Kolaylık uğruna dürüst zanaatımı feda etmem."
+      ],
+      "bonds": [
+        "Eski atölyem ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu başyapıt ile ilgili bir anı eşyasını korurum.",
+        "Eski atölyem ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu başyapıt ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu başyapıt yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski atölyem ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski atölyem ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Dürüst zanaatım alaya alındığında düşüncesizce davranırım.",
+        "Eski atölyem ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu başyapıt yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Dürüst zanaatım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu başyapıt ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Hermit": {
@@ -53,6 +269,42 @@
     "feature": {
       "name": "Keşif",
       "description": "Yalnızlık döneminiz size büyük bir gerçek, sır veya gizli bir yer gibi eşsiz bir keşif kazandırdı."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Basit sorulara bile duraksayarak cevap veririm.",
+        "Düşlerimi küçük bir deftere kaydederim.",
+        "Sıradan toplumsal alışkanlıkları ilginç bulurum.",
+        "Kalabalık akşamlar yerine şafağı severim.",
+        "Olayları doğanın döngüleriyle açıklarım.",
+        "Konuşmaların ne kadar sürdüğünü unuturum.",
+        "Alıştığım günlük ritüeli sürdürürüm.",
+        "Konuştuğumdan daha dikkatli dinlerim."
+      ],
+      "ideals": [
+        "Merhamet: İçsel anlayışım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: İçsel anlayışım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Kendi cevaplarımı arama hakkım var.",
+        "Hırs: İçsel anlayışım sayesinde nüfuz kazanmak isterim.",
+        "Denge: İçe dönük düşünceyle insanlar arasındaki yaşamı dengelemek isterim.",
+        "Dürüstlük: Kolaylık uğruna içsel anlayışımı feda etmem."
+      ],
+      "bonds": [
+        "Eski sığınağım ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu tehlikeli keşif ile ilgili bir anı eşyasını korurum.",
+        "Eski sığınağım ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu tehlikeli keşif ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu tehlikeli keşif yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski sığınağım ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski sığınağım ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "İçsel anlayışım alaya alındığında düşüncesizce davranırım.",
+        "Eski sığınağım ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu tehlikeli keşif yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "İçsel anlayışım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu tehlikeli keşif ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Noble": {
@@ -61,6 +313,42 @@
     "feature": {
       "name": "Ayrıcalıklı Konum",
       "description": "İnsanlar sizin hakkınızda iyi şeyler varsayar. Yüksek sosyetede kabul görür ve yerel bir soyluyla görüşme sağlayabilirsiniz."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "İnsanları alışılmış bir resmiyetle selamlarım.",
+        "Aile adlarını ve akrabalıkları hatırlarım.",
+        "Yolda bile görünüşüme özen gösteririm.",
+        "Verilen sözlerin herkesin önünde tutulmasını beklerim.",
+        "İyi hizmeti kişinin adını söyleyerek överim.",
+        "Kararsızlığımı kusursuz görgüyle gizlerim.",
+        "Malikânemin dışındaki yaşamı merak ederim.",
+        "Mevki simgelerini hemen tanırım."
+      ],
+      "ideals": [
+        "Merhamet: Sorumluluklarım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Sorumluluklarım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Mevkim bütün ilişkilerimi belirlememeli.",
+        "Hırs: Sorumluluklarım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Sorumluluklarımla kendi ihtiyaçlarımı dengelemek isterim.",
+        "Dürüstlük: Kolaylık uğruna sorumluluklarımı feda etmem."
+      ],
+      "bonds": [
+        "Ailem ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu aile yükümlülüğü ile ilgili bir anı eşyasını korurum.",
+        "Ailem ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu aile yükümlülüğü ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu aile yükümlülüğü yüzünden tehlikeye giren insanları koruyacağım.",
+        "Ailem ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Ailem ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Sorumluluklarım alaya alındığında düşüncesizce davranırım.",
+        "Ailem ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu aile yükümlülüğü yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Sorumluluklarım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu aile yükümlülüğü ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Outlander": {
@@ -69,6 +357,42 @@
     "feature": {
       "name": "Gezgin",
       "description": "Her gün kendiniz ve en fazla 5 kişi için yiyecek ve temiz su bulabilir, arazinin genel düzenini hatırlayabilirsiniz."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Plan yapmadan önce havayı incelerim.",
+        "Mesafeleri yürüme günleriyle anlatırım.",
+        "Yol boyunca yararlı bitkiler toplarım.",
+        "Tanımadığım seslerin yakınında hafif uyurum.",
+        "Sohbetten önce yol tarifi öneririm.",
+        "Başkalarının kaçırdığı izleri görürüm.",
+        "Gökyüzünü göremeyince huzursuz olurum.",
+        "Halkımın hikâyelerini korurum."
+      ],
+      "ideals": [
+        "Merhamet: Doğayla bağım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Doğayla bağım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Hiçbir sınır beni doğadan koparmamalı.",
+        "Hırs: Doğayla bağım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Doğayla uyum içinde yaşamak isterim.",
+        "Dürüstlük: Kolaylık uğruna doğayla bağımı feda etmem."
+      ],
+      "bonds": [
+        "Gezgin ailem ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Yurduma borcum ile ilgili bir anı eşyasını korurum.",
+        "Gezgin ailem ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, yurduma borcum ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Yurduma borcum yüzünden tehlikeye giren insanları koruyacağım.",
+        "Gezgin ailem ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Gezgin ailem ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Doğayla bağım alaya alındığında düşüncesizce davranırım.",
+        "Gezgin ailem ile benzerliği olan kişilere kolayca güvenirim.",
+        "Yurduma borcum yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Doğayla bağım adına kendi hatalarımı haklı çıkarırım.",
+        "Yurduma borcum ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Sage": {
@@ -77,6 +401,42 @@
     "feature": {
       "name": "Araştırmacı",
       "description": "Az bilinen bilgileri nerede bulacağınızı bilirsiniz. Siz bilmiyorsanız, bilen kişiyi tanırsınız."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Tartışmadan önce terimleri tanımlatırım.",
+        "Tanışırken not alırım.",
+        "Az bilinen konulardan söz ederken canlanırım.",
+        "Bir soru beni aştığında bunu kabul ederim.",
+        "Yeni olayları eski kayıtlarla karşılaştırırım.",
+        "Yanımda gereğinden çok okuma malzemesi taşırım.",
+        "Yararlı soruyu zekice cevaptan üstün tutarım.",
+        "İlginç bir iddiayı iki kez kontrol ederim."
+      ],
+      "ideals": [
+        "Merhamet: Bilgi arayışım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Bilgi arayışım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Bilgi keyfî yasaklar olmadan araştırılabilmeli.",
+        "Hırs: Bilgi arayışım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Bilgiyi, sonuçlarını unutmadan ararım.",
+        "Dürüstlük: Kolaylık uğruna bilgi arayışımı feda etmem."
+      ],
+      "bonds": [
+        "Akıl hocam ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu yanıtsız soru ile ilgili bir anı eşyasını korurum.",
+        "Akıl hocam ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu yanıtsız soru ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu yanıtsız soru yüzünden tehlikeye giren insanları koruyacağım.",
+        "Akıl hocam ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Akıl hocam ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Bilgi arayışım alaya alındığında düşüncesizce davranırım.",
+        "Akıl hocam ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu yanıtsız soru yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Bilgi arayışım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu yanıtsız soru ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Sailor": {
@@ -85,6 +445,42 @@
     "feature": {
       "name": "Gemi Yolculuğu",
       "description": "Çalışma karşılığında kendiniz ve yoldaşlarınız için yelkenli gemilerde ücretsiz yolculuk ayarlayabilirsiniz."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Tehlikeyi havanın hareketinden değerlendiririm.",
+        "Paylaşılan sofralardaki hikâyeleri severim.",
+        "Düğümleri düşünmeden kontrol ederim.",
+        "Yönleri hâlâ gemideymişim gibi tarif ederim.",
+        "Küçük bir uğur tılsımı saklarım.",
+        "Tekrarlayan işleri yaparken şarkı söylerim.",
+        "Yabancı limanlarda çabuk arkadaş edinirim.",
+        "Yol arkadaşlarımdan sorumlu hissederim."
+      ],
+      "ideals": [
+        "Merhamet: Özgürlüğüm savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Özgürlüğüm ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Rotamı ve yoldaşlarımı kendim seçmek isterim.",
+        "Hırs: Özgürlüğüm sayesinde nüfuz kazanmak isterim.",
+        "Denge: Bana güvenenleri terk etmeden özgür kalmak isterim.",
+        "Dürüstlük: Kolaylık uğruna özgürlüğümü feda etmem."
+      ],
+      "bonds": [
+        "Eski mürettebatım ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Denizde verdiğim söz ile ilgili bir anı eşyasını korurum.",
+        "Eski mürettebatım ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, denizde verdiğim söz ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Denizde verdiğim söz yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski mürettebatım ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski mürettebatım ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Özgürlüğüm alaya alındığında düşüncesizce davranırım.",
+        "Eski mürettebatım ile benzerliği olan kişilere kolayca güvenirim.",
+        "Denizde verdiğim söz yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Özgürlüğüm adına kendi hatalarımı haklı çıkarırım.",
+        "Denizde verdiğim söz ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Soldier": {
@@ -93,6 +489,42 @@
     "feature": {
       "name": "Askerî Rütbe",
       "description": "Eski birliğinize sadık askerler rütbenizi tanır. Etki kazanmak ve askerî kamplara girmek için rütbenizi kullanabilirsiniz."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Dinlenmeden önce teçhizatımı hazırlarım.",
+        "Karar gerektiğinde açık konuşurum.",
+        "Savunmaya uygun yerleri fark ederim.",
+        "Rütbeden çok beceriye saygı duyarım.",
+        "Kargaşada bile rutinimi sürdürürüm.",
+        "Ölen yoldaşlarımın adlarını hatırlarım.",
+        "Zor işleri açık görevlere bölerim.",
+        "Kimsenin geride kalmadığını kontrol ederim."
+      ],
+      "ideals": [
+        "Merhamet: Görevim savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Görevim ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Görev, körü körüne itaati haklı çıkarmaz.",
+        "Hırs: Görevim sayesinde nüfuz kazanmak isterim.",
+        "Denge: İnsanlığımı yitirmeden görevimi yapmak isterim.",
+        "Dürüstlük: Kolaylık uğruna görevimi feda etmem."
+      ],
+      "bonds": [
+        "Eski birliğim ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu bitmemiş görev ile ilgili bir anı eşyasını korurum.",
+        "Eski birliğim ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu bitmemiş görev ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu bitmemiş görev yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski birliğim ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski birliğim ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Görevim alaya alındığında düşüncesizce davranırım.",
+        "Eski birliğim ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu bitmemiş görev yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Görevim adına kendi hatalarımı haklı çıkarırım.",
+        "Bu bitmemiş görev ile ilgili konularda yardımı reddederim."
+      ]
     }
   },
   "Urchin": {
@@ -101,6 +533,288 @@
     "feature": {
       "name": "Şehir Sırları",
       "description": "Şehirlerin gizli düzenini bilirsiniz ve kentsel alanlarda normalden iki kat hızlı geçit bulabilirsiniz."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Sonrası için yiyecek ayırırım.",
+        "Kalabalığın nerede toplanacağını bilirim.",
+        "Dışarıdan kilitlenen kapılara güvenmem.",
+        "Küçük iyilikleri sessizce paylaşırım.",
+        "Kalabalık yerlerdeki gizli yolları hatırlarım.",
+        "Uyurken eşyalarımı yakınımda tutarım.",
+        "Sokakta çalışanlardan güvenilir haber sorarım.",
+        "Güvenli bir köşeyi iyi mobilyadan üstün tutarım."
+      ],
+      "ideals": [
+        "Merhamet: Hayatta kalma çabam savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Hayatta kalma çabam ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Yoksulluk seçim hakkımı elimden almamalı.",
+        "Hırs: Hayatta kalma çabam sayesinde nüfuz kazanmak isterim.",
+        "Denge: Başkalarının ihtiyaçlarını ellerinden almadan yaşamak isterim.",
+        "Dürüstlük: Kolaylık uğruna hayatta kalma çabamı feda etmem."
+      ],
+      "bonds": [
+        "Eski sokağımın insanları ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Çocukluk arkadaşıma borcum ile ilgili bir anı eşyasını korurum.",
+        "Eski sokağımın insanları ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, çocukluk arkadaşıma borcum ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Çocukluk arkadaşıma borcum yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski sokağımın insanları ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski sokağımın insanları ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Hayatta kalma çabam alaya alındığında düşüncesizce davranırım.",
+        "Eski sokağımın insanları ile benzerliği olan kişilere kolayca güvenirim.",
+        "Çocukluk arkadaşıma borcum yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Hayatta kalma çabam adına kendi hatalarımı haklı çıkarırım.",
+        "Çocukluk arkadaşıma borcum ile ilgili konularda yardımı reddederim."
+      ]
+    }
+  },
+  "Spy": {
+    "name": "Casus",
+    "startingEquipment": [
+      "Levye",
+      "Kapüşonlu koyu renk sıradan giysiler",
+      "15 altın sikke"
+    ],
+    "feature": {
+      "name": "Suç Bağlantısı",
+      "description": "Ajan, haberci ve muhbir ağın üzerinden bilgi alışverişi yaparsın. Bunun dışında Suçlu geçmişinin yetkinliklerini ve eşyalarını kullanırsın."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Oturmadan önce çıkışları incelerim.",
+        "Kalabalıkta alçak sesle konuşurum.",
+        "Bana borçlu olan herkesin yüzünü hatırlarım.",
+        "Aletleri sıradan eşyaların içine saklarım.",
+        "Koşulsuz tekliflerden kuşkulanırım.",
+        "Kimsenin önemsemediği insanlarla yemeğimi paylaşırım.",
+        "Eski mahallemin argosunu kullanırım.",
+        "Baktığımı belli etmeden muhafızları sayarım."
+      ],
+      "ideals": [
+        "Merhamet: Çeteme sadakatim savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Çeteme sadakatim ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Sadakatim beni çetemin tutsağına çevirmemeli.",
+        "Hırs: Çeteme sadakatim sayesinde nüfuz kazanmak isterim.",
+        "Denge: Çeteye sadakatimle kişisel sınırlarımı dengelemek isterim.",
+        "Dürüstlük: Kolaylık uğruna çeteme sadakatimi feda etmem."
+      ],
+      "bonds": [
+        "Eski suç ortağım ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu ödenmemiş borç ile ilgili bir anı eşyasını korurum.",
+        "Eski suç ortağım ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu ödenmemiş borç ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu ödenmemiş borç yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski suç ortağım ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski suç ortağım ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Çeteme sadakatim alaya alındığında düşüncesizce davranırım.",
+        "Eski suç ortağım ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu ödenmemiş borç yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Çeteme sadakatim adına kendi hatalarımı haklı çıkarırım.",
+        "Bu ödenmemiş borç ile ilgili konularda yardımı reddederim."
+      ]
+    }
+  },
+  "Gladiator": {
+    "name": "Gladyatör",
+    "startingEquipment": [
+      "Üç dişli mızrak",
+      "Bir hayranın armağanı",
+      "Sahne kostümü",
+      "15 altın sikke"
+    ],
+    "feature": {
+      "name": "Halkın Talebi",
+      "description": "Arenalarda, dövüş çukurlarında ve savaş gösterisi sunan yerlerde iş, mütevazı veya rahat düzeyde yemek ve konaklama bulabilirsin. Bu faydayı sürdürmek için her akşam gösteri yapmalısın. Bu geçmiş ek silah yetkinliği vermez."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Tanışmaları küçük gösterilere dönüştürürüm.",
+        "Tarihlerden çok seyircileri hatırlarım.",
+        "Sessiz zamanlarda bile prova yaparım.",
+        "Hikâye anlatırken sesleri taklit ederim.",
+        "Diğer sanatçıları cömertçe överim.",
+        "Sessizliğin sürmesine izin vermekte zorlanırım.",
+        "Gündelik işlerde ritim duyarım.",
+        "Hayranlarımdan gelen küçük hediyeleri saklarım."
+      ],
+      "ideals": [
+        "Merhamet: Sanatım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Sanatım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Sanatım sansür olmadan ifade edilebilmeli.",
+        "Hırs: Sanatım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Sanatımın hayatımı yutmasına izin vermeden ondan geçinmek isterim.",
+        "Dürüstlük: Kolaylık uğruna sanatımı feda etmem."
+      ],
+      "bonds": [
+        "İlk hamim ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu kayıp gösteri ile ilgili bir anı eşyasını korurum.",
+        "İlk hamim ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu kayıp gösteri ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu kayıp gösteri yüzünden tehlikeye giren insanları koruyacağım.",
+        "İlk hamim ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "İlk hamim ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Sanatım alaya alındığında düşüncesizce davranırım.",
+        "İlk hamim ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu kayıp gösteri yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Sanatım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu kayıp gösteri ile ilgili konularda yardımı reddederim."
+      ]
+    }
+  },
+  "Guild Merchant": {
+    "name": "Lonca Tüccarı",
+    "startingEquipment": [
+      "Katır",
+      "İki tekerlekli araba",
+      "Tanıtım mektubu",
+      "Yolcu giysileri",
+      "15 altın sikke"
+    ],
+    "feature": {
+      "name": "Lonca Üyeliği",
+      "description": "Tüccar loncanın bulunduğu yerlerde mesleki bağlantılar, konaklama, destek ve siyasi nüfuz bulursun. Hukuki yardım için ikna edici bir durum gerekir. Aylık aidat 5 altın sikkedir; ayrıcalıkları geri kazanmak için birikmiş aidatı ödemelisin. Bu seçenek zanaatkâr aletleri yerine denizci aletleri kullanır; ek dil seçeneği için özel geçmiş oluşturabilirsin."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Tanımadığım odalarda ahşap bağlantılarını incelerim.",
+        "İyi yapılmış eşyalara harcanan emeği açıklarım.",
+        "Yanımda bitmemiş küçük bir eser taşırım.",
+        "Zanaatını bilen herkese saygı duyarım.",
+        "Sabırlı ve dikkatli pazarlık yaparım.",
+        "Sahte damgaları hemen fark ederim.",
+        "İşimle ilgili ayrıntılı notlar tutarım.",
+        "Eğri takılmış bir parçayı öylece bırakamam."
+      ],
+      "ideals": [
+        "Merhamet: Dürüst zanaatım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Dürüst zanaatım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Sömürülmeden çalışabilmeliyim.",
+        "Hırs: Dürüst zanaatım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Kaliteden ve dürüstlükten ödün vermeden işimden geçinmek isterim.",
+        "Dürüstlük: Kolaylık uğruna dürüst zanaatımı feda etmem."
+      ],
+      "bonds": [
+        "Eski atölyem ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu başyapıt ile ilgili bir anı eşyasını korurum.",
+        "Eski atölyem ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu başyapıt ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu başyapıt yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski atölyem ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski atölyem ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Dürüst zanaatım alaya alındığında düşüncesizce davranırım.",
+        "Eski atölyem ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu başyapıt yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Dürüst zanaatım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu başyapıt ile ilgili konularda yardımı reddederim."
+      ]
+    }
+  },
+  "Knight": {
+    "name": "Şövalye",
+    "startingEquipment": [
+      "Şık giysiler",
+      "Mühür yüzüğü",
+      "Soy kütüğü tomarı",
+      "25 altın sikke"
+    ],
+    "feature": {
+      "name": "Hizmetkârlar",
+      "description": "Üç sadık sıradan hizmetkâr gündelik işlerde yardım eder; biri soylu bir silahtar olabilir. Savaşmazlar, açık tehlikeye girmezler ve kötü muameleyi kabul etmezler. Kötü davranırsan ayrılabilirler. Bineğe bakabilir, haber götürebilir ve teçhizatı koruyabilirler. Şövalye tarikatını ve hizmet ettiğin soyluyu Oyun Yöneticisiyle belirle."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "İnsanları alışılmış bir resmiyetle selamlarım.",
+        "Aile adlarını ve akrabalıkları hatırlarım.",
+        "Yolda bile görünüşüme özen gösteririm.",
+        "Verilen sözlerin herkesin önünde tutulmasını beklerim.",
+        "İyi hizmeti kişinin adını söyleyerek överim.",
+        "Kararsızlığımı kusursuz görgüyle gizlerim.",
+        "Malikânemin dışındaki yaşamı merak ederim.",
+        "Mevki simgelerini hemen tanırım."
+      ],
+      "ideals": [
+        "Merhamet: Sorumluluklarım savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Sorumluluklarım ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Mevkim bütün ilişkilerimi belirlememeli.",
+        "Hırs: Sorumluluklarım sayesinde nüfuz kazanmak isterim.",
+        "Denge: Sorumluluklarımla kendi ihtiyaçlarımı dengelemek isterim.",
+        "Dürüstlük: Kolaylık uğruna sorumluluklarımı feda etmem."
+      ],
+      "bonds": [
+        "Ailem ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Bu aile yükümlülüğü ile ilgili bir anı eşyasını korurum.",
+        "Ailem ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, bu aile yükümlülüğü ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Bu aile yükümlülüğü yüzünden tehlikeye giren insanları koruyacağım.",
+        "Ailem ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Ailem ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Sorumluluklarım alaya alındığında düşüncesizce davranırım.",
+        "Ailem ile benzerliği olan kişilere kolayca güvenirim.",
+        "Bu aile yükümlülüğü yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Sorumluluklarım adına kendi hatalarımı haklı çıkarırım.",
+        "Bu aile yükümlülüğü ile ilgili konularda yardımı reddederim."
+      ]
+    }
+  },
+  "Pirate": {
+    "name": "Korsan",
+    "startingEquipment": [
+      "Bağlama pimi (sopa)",
+      "50 fit ipek halat",
+      "Uğur tılsımı",
+      "Sıradan giysiler",
+      "10 altın sikke"
+    ],
+    "feature": {
+      "name": "Kötü Şöhret",
+      "description": "Korkutucu şöhretin, tanıkların seni ihbar etmekten çekinmesi sayesinde hancının ücretini ödememek veya dükkân kapısı kırmak gibi küçük kabahatlerden sıyrılmanı sağlayabilir. Uygar bir yerleşimde şöhretini bilenler sana karşı çıkmaya korkabilir. Ağır suçlardan veya davranışlarının sonuçlarından muaf değilsin."
+    },
+    "personalitySuggestions": {
+      "traits": [
+        "Tehlikeyi havanın hareketinden değerlendiririm.",
+        "Paylaşılan sofralardaki hikâyeleri severim.",
+        "Düğümleri düşünmeden kontrol ederim.",
+        "Yönleri hâlâ gemideymişim gibi tarif ederim.",
+        "Küçük bir uğur tılsımı saklarım.",
+        "Tekrarlayan işleri yaparken şarkı söylerim.",
+        "Yabancı limanlarda çabuk arkadaş edinirim.",
+        "Yol arkadaşlarımdan sorumlu hissederim."
+      ],
+      "ideals": [
+        "Merhamet: Özgürlüğüm savunmasızlara yardım etmeye hizmet etmeli.",
+        "Düzen: Özgürlüğüm ile ilgili adil anlaşmalara uyarım.",
+        "Özgürlük: Rotamı ve yoldaşlarımı kendim seçmek isterim.",
+        "Hırs: Özgürlüğüm sayesinde nüfuz kazanmak isterim.",
+        "Denge: Bana güvenenleri terk etmeden özgür kalmak isterim.",
+        "Dürüstlük: Kolaylık uğruna özgürlüğümü feda etmem."
+      ],
+      "bonds": [
+        "Eski mürettebatım ile bağlantılı birine iyilik borcumu ödemeliyim.",
+        "Denizde verdiğim söz ile ilgili bir anı eşyasını korurum.",
+        "Eski mürettebatım ile bağımı onurlu biçimde yeniden kurmak isterim.",
+        "Özgürlüğümü, denizde verdiğim söz ile neyi kastettiğimi anlayan birine borçluyum.",
+        "Denizde verdiğim söz yüzünden tehlikeye giren insanları koruyacağım.",
+        "Eski mürettebatım ile ilgili başladığım işi bitirmeliyim."
+      ],
+      "flaws": [
+        "Eski mürettebatım ile ilgili utanç verici bir başarısızlığı saklarım.",
+        "Özgürlüğüm alaya alındığında düşüncesizce davranırım.",
+        "Eski mürettebatım ile benzerliği olan kişilere kolayca güvenirim.",
+        "Denizde verdiğim söz yüzünden ödediğim bedeli kabullenmeyi ertelerim.",
+        "Özgürlüğüm adına kendi hatalarımı haklı çıkarırım.",
+        "Denizde verdiğim söz ile ilgili konularda yardımı reddederim."
+      ]
     }
   }
 }

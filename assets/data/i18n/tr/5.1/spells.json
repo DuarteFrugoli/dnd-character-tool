@@ -1612,5 +1612,185 @@
   "Zone of Truth": {
     "name": "Doğruluk Alanı",
     "description": "Menzil içinde seçtiğin bir noktayı merkez alan {{distance:15ft|lik}} yarıçaplı bir kürede aldatmaya karşı koruma sağlayan büyülü bir bölge yaratırsın. Büyü bitene kadar, bir turda büyünün alanına ilk kez giren ya da turuna orada başlayan bir yaratık bir Karizma kurtulma atışı yapmalıdır. Başarısız bir kurtulmada yaratık yarıçapın içindeyken kasıtlı olarak yalan söyleyemez. Her yaratığın kurtulma atışında başarılı mı yoksa başarısız mı olduğunu bilirsin.\n\nEtkilenen bir yaratık büyünün farkındadır ve bu yüzden normalde yalanla yanıt vereceği soruları yanıtlamaktan kaçınabilir. Böyle bir yaratık, gerçeğin sınırları içinde kaldığı sürece yanıtlarında kaçamak davranabilir."
+  },
+  "Thorn Whip": {
+    "name": "Dikenli Kırbaç",
+    "description": "Dikenlerle kaplı büyülü bir sarmaşıkla menzil içindeki bir yaratığa saldır. Menzil {{distance:30ft}} olsa da yakın dövüş büyü saldırısı yaparsın. İsabette hedef 1d6 delici hasar alır. Hedef Büyük veya daha küçükse onu ayrıca kendine doğru en fazla {{distance:10ft}} çekersin. Hasar, karakter seviyesi 5 olduğunda 2d6, 11 olduğunda 3d6 ve 17 olduğunda 4d6 olur.",
+    "higherLevels": null,
+    "material": "dikenli bir bitkinin sapı"
+  },
+  "Armor of Agathys": {
+    "name": "Agathys Zırhı",
+    "description": "Hayaletimsi buz seni ve eşyalarını sararak en fazla 1 saat boyunca 5 geçici can puanı verir. Bu büyünün verdiği geçici can puanların kaldığı sürece sana yakın dövüş saldırısıyla isabet ettiren yaratık 5 soğuk hasarı alır. Bu karşılık için saldırı veya kurtulma atışı gerekmez. Bu geçici can puanlarını kaybetmek veya başka geçici can puanlarıyla değiştirmek korumayı kaldırır.",
+    "higherLevels": "1. seviyenin üzerindeki her yuva seviyesi için geçici can puanları ve her karşılığın soğuk hasarı 5 artar. Örneğin 3. seviye yuva, 15 geçici can puanı ve her tetiklenmede 15 soğuk hasarı sağlar.",
+    "material": "bir bardak su"
+  },
+  "Arms of Hadar": {
+    "name": "Hadar’ın Kolları",
+    "description": "Karanlık dokunaçlar senden {{distance:10ft}} mesafe içindeki yaratıklara vurur. Her hedef Kuvvet kurtulma atışı yapar. Başarısızlıkta 2d6 nekrotik hasar alır ve kendi sonraki turuna kadar tepki kullanamaz; başarıda yarı hasar alır ve tepkileri kısıtlanmaz.",
+    "higherLevels": "1. seviyenin üzerindeki her yuva seviyesi için nekrotik hasar 1d6 artar.",
+    "material": null
+  },
+  "Chromatic Orb": {
+    "name": "Renkli Küre",
+    "description": "Menzilde görebildiğin bir yaratığı seç ve menzilli büyü saldırısı yap. Asit, soğuk, ateş, yıldırım, zehir veya gök gürültüsü türlerinden birini seç; isabette hedef seçilen türde 3d8 hasar alır. Elmas gereklidir ama tüketilmez.",
+    "higherLevels": "1. seviyenin üzerindeki her yuva seviyesi için hasar 1d8 artar.",
+    "material": "en az 50 altın sikke değerinde bir elmas"
+  },
+  "Compelled Duel": {
+    "name": "Zorunlu Düello",
+    "description": "Menzilde görebildiğin bir yaratığı seç. Bilgelik kurtulma atışında başarısızsa senden başka yaratıklara karşı saldırılarında dezavantaj kazanır. Senden {{distance:30ft}} mesafeden daha uzağa gitmeye her çalıştığında yeni bir Bilgelik kurtulma atışını başarmalıdır; başarı bu tur için hareket kısıtlamasını kaldırır.\n\nBaşka bir yaratığa saldırırsan, başka bir düşman yaratığı hedefleyen büyü yaparsan veya turunu hedeften {{distance:30ft}} mesafeden uzakta bitirirsen büyü sona erer. Müttefiklerinden biri hedefe hasar verirse ya da onu zararlı bir büyüyle etkilerse de sona erer.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Dissonant Whispers": {
+    "name": "Uyumsuz Fısıltılar",
+    "description": "Menzildeki bir yaratığa acı veren bir melodi fısılda. Bilgelik kurtulma atışında başarısızsa 3d6 ruhsal hasar alır ve tepkisi varsa onu hemen harcayarak hızı elverdiğince senden uzaklaşır; açıkça tehlikeli araziden kaçınır. Başarıda hasar yarıya iner ve hareket etmez. Sağır hedef otomatik olarak başarılı olur.",
+    "higherLevels": "1. seviyenin üzerindeki her yuva seviyesi için ruhsal hasar 1d6 artar.",
+    "material": null
+  },
+  "Ensnaring Strike": {
+    "name": "Dolaştıran Darbe",
+    "description": "Büyü sona ermeden bir yaratığa isabet ettirdiğin sonraki silah saldırısı, hedefi bağlayan sarmaşıklar yaratır. Hedef Kuvvet kurtulma atışı yapar; Büyük veya daha büyükse avantajlıdır. Başarısızsa kalan süre boyunca zapt edilir; başarılıysa sarmaşıklar kaybolur. Zapt edilen hedef kendi her turunun başında 1d6 delici hasar alır. Hedef veya ona erişebilen bir yaratık, eylem harcayıp büyü kurtulma ZD değerine karşı Kuvvet kontrolü yaparak başarıda hedefi kurtarabilir.",
+    "higherLevels": "1. seviyenin üzerindeki her yuva seviyesi için tekrarlayan delici hasar 1d6 artar.",
+    "material": null
+  },
+  "Hail of Thorns": {
+    "name": "Diken Yağmuru",
+    "description": "Büyü sona ermeden bir yaratığa isabet ettirdiğin sonraki menzilli silah saldırısı dikenler de saçar. Saldırının normal etkileri uygulanır. Hedef ve ondan {{distance:5ft}} mesafe içindeki her yaratık Çeviklik kurtulma atışı yapar; başarısızlıkta 1d10 delici hasar, başarıda yarısını alır.",
+    "higherLevels": "1. seviyenin üzerindeki her yuva seviyesi için delici hasar 1d10 artar; en fazla 6d10 olur.",
+    "material": null
+  },
+  "Ray of Sickness": {
+    "name": "Hastalık Işını",
+    "description": "Menzildeki bir yaratığa menzilli büyü saldırısı yap. İsabette 2d8 zehir hasarı ver ve hedefe Dayanıklılık kurtulma atışı yaptır. Başarısızsa senin sonraki turunun sonuna kadar zehirlenir. Başarı yalnızca durumu önler, isabet hasarını değil.",
+    "higherLevels": "1. seviyenin üzerindeki her yuva seviyesi için zehir hasarı 1d8 artar.",
+    "material": null
+  },
+  "Searing Smite": {
+    "name": "Kavurucu Darbe",
+    "description": "Büyü sona ermeden bir yaratığa isabet ettirdiğin sonraki yakın dövüş silah saldırısı fazladan 1d6 ateş hasarı verir ve hedefi tutuşturur. Hedef kendi her turunun başında Dayanıklılık kurtulma atışı yapar; başarısızsa 1d6 ateş hasarı alır, başarılıysa büyü sona erer. Hedef veya ondan {{distance:5ft}} mesafe içindeki başka bir yaratık eylem harcayarak alevleri söndürüp büyüyü bitirebilir. Suya batırmak gibi başka yöntemlerle söndürmek de büyüyü bitirir.",
+    "higherLevels": "1. seviyenin üzerindeki her yuva seviyesi için yalnızca ilk isabetin ek hasarı 1d6 artar. Tekrarlayan ateş hasarı 1d6 olarak kalır.",
+    "material": null
+  },
+  "Thunderous Smite": {
+    "name": "Gürleyen Darbe",
+    "description": "Büyü sona ermeden isabet ettirdiğin ilk yakın dövüş silah saldırısı fazladan 2d6 gök gürültüsü hasarı verir ve senden {{distance:300ft}} mesafe içinden duyulabilen bir patlama sesi çıkarır. Hedef bir yaratıksa Kuvvet kurtulma atışını da başarmalıdır; yoksa senden {{distance:10ft}} uzağa itilir ve yere serilir.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Beast Sense": {
+    "name": "Hayvan Duyuları",
+    "description": "İstekli bir hayvana dokun. Konsantrasyon sürerken bir eylemle onun duyularından görüp işitebilir ve özel duyularını kullanabilirsin. Başka bir eylemle kendi duyularına dönene veya büyü bitene kadar bağlantı sürer. Hayvanın duyularını kullanırken kendi çevrene karşı kör ve sağırsın.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Cordon of Arrows": {
+    "name": "Ok Nöbeti",
+    "description": "Menzildeki toprağa dört büyüsüz ok veya arbalet oku sapla. Sen ve büyüyü yaparken belirlediğin yaratıklar göz ardı edilirsiniz. Başka bir yaratık bir turda ilk kez mühimmatın {{distance:30ft}} yakınına geldiğinde veya turunu bu alanda bitirdiğinde bir mühimmat ona saldırır. Çeviklik kurtulma atışı başarısızsa 1d6 delici hasar alır; başarıda hasar almaz. Saldıran mühimmat sonuç ne olursa olsun yok olur. Tüm mühimmat kullanıldığında veya süre dolduğunda büyü biter.",
+    "higherLevels": "2. seviyenin üzerindeki her yuva seviyesi için iki ek mühimmat büyüleyebilirsin. Her birinin hasarı 1d6 olarak kalır.",
+    "material": "en az dört ok veya arbalet oku"
+  },
+  "Phantasmal Force": {
+    "name": "Hayali Kuvvet",
+    "description": "Menzilde görebildiğin bir yaratığı seç; ölümsüzler ve yapılar etkilenmez. Zekâ kurtulma atışında başarısızsa yalnızca hedef, kenarı {{distance:10ft|adj}} olan bir küpe sığan hayali nesne, yaratık veya görünür olguyu algılar. Yanılsama ses ve sıcaklık gibi duyusal ayrıntılar içerir. Hedef bunu gerçek kabul eder ve çelişkileri kendince açıklar.\n\nHedef eylem harcayıp büyü kurtulma ZD değerine karşı Zekâ (Araştırma) kontrolü yapabilir; başarı yanılsamayı fark ettirir ve büyüyü bitirir. Her raund senin turunda bir kez, hedef yanılsamanın içinde veya ondan {{distance:5ft}} mesafe içindeyse inandırıcı hayali bir tehdit 1d6 ruhsal hasar verebilir. Hedef bu hasarı hayali tehdide uygun türde algılar.",
+    "higherLevels": null,
+    "material": "bir parça yün"
+  },
+  "Aura of Vitality": {
+    "name": "Canlılık Aurası",
+    "description": "Şifa aurası senden {{distance:30ft}} uzağa yayılır ve seninle hareket eder. Süre boyunca bonus eylemle alan içindeki bir yaratığın 2d6 can puanını iyileştirebilirsin. Kendini de seçebilirsin.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Blinding Smite": {
+    "name": "Kör Edici Darbe",
+    "description": "Büyü sona ermeden bir yaratığa isabet ettirdiğin sonraki yakın dövüş silah saldırısı fazladan 3d8 ışın hasarı verir. Hedef ayrıca Dayanıklılık kurtulma atışını başarmalıdır; yoksa kalan süre boyunca kör olur. Kör hedef kendi her turunun sonunda kurtulma atışını tekrarlar ve başarıda bu körlük sona erer.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Barrage": {
+    "name": "Büyülü Yaylım",
+    "description": "Büyüsüz bir silahı havaya fırlat veya büyüsüz mühimmat ateşle. Büyülü kopyalar senden çıkan, uzunluğu {{distance:60ft|adj}} olan bir koniyi doldurup kaybolur. Konideki her yaratık Çeviklik kurtulma atışı yapar; başarısızlıkta 3d8 hasar, başarıda yarısını alır. Hasar türü, bileşen olarak kullanılan silah veya mühimmatınkiyle aynıdır.",
+    "higherLevels": null,
+    "material": "bir mühimmat veya fırlatılan bir silah"
+  },
+  "Crusader's Mantle": {
+    "name": "Kutsal Savaşçı Pelerini",
+    "description": "Güçlendirici aura senden {{distance:30ft}} uzağa yayılır ve seninle hareket eder. Alandaki düşman olmayan yaratıklar, sen dâhil, silah saldırısıyla her isabet ettirdiklerinde fazladan 1d4 ışın hasarı verir.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Elemental Weapon": {
+    "name": "Element Silahı",
+    "description": "Büyüsüz bir silaha dokun ve asit, soğuk, ateş, yıldırım veya gök gürültüsünü seç. Konsantrasyon sürdükçe silah büyülü olur, saldırı atışlarına +1 kazanır ve isabette seçilen türde fazladan 1d4 hasar verir.",
+    "higherLevels": "5. veya 6. seviye yuvada saldırı bonusu +2, ek hasar 2d4 olur. 7. seviye veya daha yüksek yuvada sırasıyla +3 ve 3d4 olur.",
+    "material": null
+  },
+  "Hunger of Hadar": {
+    "name": "Hadar’ın Açlığı",
+    "description": "Menzilde bir nokta seçip yarıçapı {{distance:20ft|adj}} olan bir kürede yıldızsız boşluk aç. Fısıltı ve emme sesleri {{distance:30ft}} mesafe içinden duyulur. Büyülü ışık dâhil hiçbir ışık küreyi aydınlatamaz. Tamamen içerideki yaratıklar kördür; alan zorlu arazidir.\n\nTuruna içeride başlayan yaratık otomatik olarak 2d6 soğuk hasarı alır. Turunu içeride bitiren yaratık Çeviklik kurtulma atışını başaramazsa 2d6 asit hasarı alır. Bunlar ayrı tetiklenir; 2014 kurallarında daha yüksek yuvalar bu büyünün hasarını artırmaz.",
+    "higherLevels": null,
+    "material": "salamura bir ahtapot dokunacı"
+  },
+  "Lightning Arrow": {
+    "name": "Yıldırım Oku",
+    "description": "Büyü sona ermeden yaptığın sonraki menzilli silah saldırısı mühimmatı veya fırlatılan silahı yıldırıma çevirir. Normal silah saldırı atışını kullan; olağan silah hasarı yerine isabette 4d8 yıldırım hasarı, ıskalamada yarısını ver. Sonuç ne olursa olsun hedeften {{distance:10ft}} mesafe içindeki her yaratık Çeviklik kurtulma atışı yapar; başarısızlıkta 2d8 yıldırım hasarı, başarıda yarısını alır. Ardından mühimmat veya silah eski hâline döner.",
+    "higherLevels": "3. seviyenin üzerindeki her yuva seviyesi için ana hedefin hasarı 1d8, yakındaki yaratıkların hasarı da 1d8 artar.",
+    "material": null
+  },
+  "Aura of Life": {
+    "name": "Yaşam Aurası",
+    "description": "Yaşamı koruyan aura senden {{distance:30ft}} uzağa yayılır ve seninle hareket eder. İçindeki düşman olmayan yaratıklar, sen dâhil, nekrotik hasara dirençlidir ve azami can puanları azaltılamaz. Alanda turuna 0 can puanıyla başlayan yaşayan, düşman olmayan bir yaratık 1 can puanı iyileştirir.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Aura of Purity": {
+    "name": "Arınma Aurası",
+    "description": "Arındırıcı aura senden {{distance:30ft}} uzağa yayılır ve seninle hareket eder. Alandaki düşman olmayan yaratıklar, sen dâhil, hastalanamaz ve zehir hasarına dirençlidir. Ayrıca kör, büyülenmiş, sağır, korkmuş, felçli, zehirlenmiş veya sersemlemiş durumuna yol açabilecek etkilere karşı kurtulma atışlarında avantaj kazanırlar.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Grasping Vine": {
+    "name": "Yakalayan Sarmaşık",
+    "description": "Menzilde görebildiğin boş bir zemin noktasında sarmaşık yarat. Büyüyü yaparken sarmaşıktan {{distance:30ft}} mesafe içinde görebildiğin bir yaratığı seç. Hedef Çeviklik kurtulma atışında başarısızsa sarmaşığa doğru düz bir çizgide {{distance:20ft}} çekilir. Sonraki turlarının her birinde konsantrasyon sürerken bonus eylemle aynı hedefe veya başka uygun bir yaratığa yeniden vurdurabilirsin.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Staggering Smite": {
+    "name": "Sendeleten Darbe",
+    "description": "Büyü sona ermeden bir yaratığa isabet ettirdiğin sonraki yakın dövüş silah saldırısı fazladan 4d6 ruhsal hasar verir. Hedef ayrıca Bilgelik kurtulma atışı yapar. Başarısızsa kendi sonraki turunun sonuna kadar saldırı atışlarında ve nitelik kontrollerinde dezavantaj kazanır ve tepki kullanamaz.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Banishing Smite": {
+    "name": "Sürgün Eden Darbe",
+    "description": "Büyü sona ermeden bir yaratığa isabet ettirdiğin sonraki silah saldırısı fazladan 5d10 kuvvet hasarı verir. Saldırıdan sonra hedefin en fazla 50 can puanı kaldıysa kurtulma atışı olmadan sürgün edilir. Başka bir düzlemden geldiyse kendi düzlemine döner. Mevcut düzlemden geldiyse zararsız bir yarı düzleme gider ve büyü bitene kadar eylemsiz kalır. Sonra eski yerine, orası doluysa en yakın boş yere döner.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Circle of Power": {
+    "name": "Kudret Çemberi",
+    "description": "Koruyucu küre senden {{distance:30ft}} uzağa yayılır ve seninle hareket eder. İçindeki dost yaratıklar, sen dâhil, büyülere ve diğer büyülü etkilere karşı kurtulma atışlarında avantaj kazanır. Böyle bir etki başarılı kurtulmada hasarı yarıya indiriyorsa, başarılı yaratık bunun yerine hiç hasar almaz. Başarısızlıkta normal hasarı alır.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Volley": {
+    "name": "Büyülü Ok Yağmuru",
+    "description": "Menzilli silahla büyüsüz mühimmat ateşle veya büyüsüz bir silahı havaya at. Menzilde bir nokta seç; kopyalar yarıçapı {{distance:40ft|adj}}, yüksekliği {{distance:20ft|adj}} olan bir silindire yağar ve kaybolur. İçerideki her yaratık Çeviklik kurtulma atışı yapar; başarısızlıkta 8d8 hasar, başarıda yarısını alır. Hasar türünü bileşen olarak kullanılan silah veya mühimmat belirler.",
+    "higherLevels": null,
+    "material": "bir mühimmat veya fırlatılan bir silah"
+  },
+  "Destructive Wave": {
+    "name": "Yıkıcı Dalga",
+    "description": "Yere vur ve senden {{distance:30ft}} mesafe içindeki istediğin yaratıkları seç. Her biri Dayanıklılık kurtulma atışı yapar. Başarısızlıkta 5d6 gök gürültüsü hasarı ve seçimine göre 5d6 ışın veya nekrotik hasar alır, ardından yere serilir. Başarı iki hasarı da yarıya indirir ve yere serilmeyi önler.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Swift Quiver": {
+    "name": "Hızlı Sadak",
+    "description": "İçinde mühimmat bulunan bir sadağı büyüle. Konsantrasyon sürerken kendi her turunda bonus eylemle bu sadaktan mühimmat kullanan bir silahla iki saldırı yapabilirsin. Bu saldırılarda harcanan her mühimmat benzer büyüsüz mühimmatla yenilenir. Oluşturulan mühimmat büyü bitince parçalanır. Sadak artık sende değilse büyü sona erer. Büyüyü yapmak bonus eylemini kullanır; iki saldırı için herhangi bir turda ayrı bir bonus eylem gerekir.",
+    "higherLevels": null,
+    "material": "içinde en az bir mühimmat olan sadak"
   }
 }

@@ -1656,5 +1656,185 @@
   "Wish": {
     "name": "Desiderio",
     "description": "Desiderio è l'incantesimo più potente che una creatura mortale possa lanciare. Semplicemente parlando ad alta voce, puoi alterare le fondamenta stesse della realtà secondo i tuoi desideri.\n\nL'uso base di questo incantesimo consiste nel duplicare qualsiasi altro incantesimo di 8° livello o inferiore. Non hai bisogno di soddisfare alcun requisito di quell'incantesimo, incluse le componenti costose. L'incantesimo ha semplicemente effetto.\n\nIn alternativa, puoi creare uno degli effetti seguenti a tua scelta:\n- Crei un oggetto del valore massimo di 25.000 mo che non sia un oggetto magico. L'oggetto non può superare {{distance:300ft}} in nessuna dimensione e appare in uno spazio libero sul terreno che puoi vedere.\n- Permetti a un massimo di venti creature che puoi vedere di recuperare tutti i punti ferita e poni fine su di esse a tutti gli effetti descritti nell'incantesimo ristorare superiore.\n- Conferisci a un massimo di dieci creature che puoi vedere resistenza a un tipo di danni a tua scelta.\n- Conferisci a un massimo di dieci creature che puoi vedere l'immunità a un singolo incantesimo o a un altro effetto magico per 8 ore. Per esempio, potresti rendere te stesso e tutti i tuoi compagni immuni all'attacco risucchio vitale di un lich.\n- Annulli un singolo evento recente costringendo a ripetere qualsiasi tiro effettuato nell'ultimo round (incluso il tuo ultimo turno). La realtà si rimodella per adattarsi al nuovo risultato. Per esempio, un incantesimo desiderio potrebbe annullare un tiro salvezza superato da un avversario, un colpo critico di un nemico o un tiro salvezza fallito da un amico. Puoi costringere a ripetere il tiro con vantaggio o con svantaggio e puoi scegliere se usare il nuovo tiro o quello originale. Potresti essere in grado di ottenere qualcosa che va oltre la portata degli esempi precedenti. Esponi il tuo desiderio al DM nel modo più preciso possibile. Il DM ha un ampio margine di discrezione nello stabilire cosa accade in un caso del genere; più grande è il desiderio, maggiore è la probabilità che qualcosa vada storto. Questo incantesimo potrebbe semplicemente fallire, l'effetto che desideri potrebbe realizzarsi solo in parte, oppure potresti subire qualche conseguenza imprevista a causa di come hai formulato il desiderio. Per esempio, desiderare che un malvagio sia morto potrebbe proiettarti avanti nel tempo fino a un periodo in cui quel malvagio non è più in vita, rimuovendoti di fatto dal gioco. Allo stesso modo, desiderare un oggetto magico leggendario o un artefatto potrebbe trasportarti istantaneamente al cospetto dell'attuale proprietario dell'oggetto.\n\nLo sforzo di lanciare questo incantesimo per produrre un effetto diverso dalla duplicazione di un altro incantesimo ti indebolisce. Dopo aver sopportato tale sforzo, ogni volta che lanci un incantesimo finché non completi un riposo lungo, subisci 1d10 danni necrotici per ogni livello di quell'incantesimo. Questi danni non possono essere ridotti o prevenuti in alcun modo. Inoltre, la tua Forza scende a 3, se non è già pari o inferiore a 3, per 2d4 giorni. Per ognuno di quei giorni che trascorri riposando e svolgendo nulla più che attività leggere, il tempo di recupero rimanente diminuisce di 2 giorni. Infine, se subisci questo sforzo, c'è una probabilità del 33 per cento che tu non sia mai più in grado di lanciare desiderio."
+  },
+  "Thorn Whip": {
+    "name": "Frusta di Spine",
+    "description": "Una liana magica coperta di spine colpisce una creatura a gittata. Effettua un attacco in mischia con incantesimo, anche se la gittata è di {{distance:30ft}}. Se colpisci, infliggi 1d6 danni perforanti. Se la creatura è di taglia Grande o inferiore, la trascini anche verso di te di un massimo di {{distance:10ft}}. I danni diventano 2d6 al livello del personaggio 5, 3d6 al livello 11 e 4d6 al livello 17.",
+    "higherLevels": null,
+    "material": "lo stelo di una pianta dotata di spine"
+  },
+  "Armor of Agathys": {
+    "name": "Armatura di Agathys",
+    "description": "Del ghiaccio spettrale avvolge te e il tuo equipaggiamento, conferendoti 5 punti ferita temporanei per un massimo di 1 ora. Quando una creatura ti colpisce con un attacco in mischia mentre possiedi ancora punti ferita temporanei di questo incantesimo, subisce 5 danni da freddo. La rappresaglia non richiede tiri per colpire né tiri salvezza. Perdere o sostituire questi punti ferita temporanei rimuove la protezione.",
+    "higherLevels": "Ogni livello dello slot oltre il 1° aggiunge 5 sia ai punti ferita temporanei conferiti sia ai danni da freddo di ogni rappresaglia. Per esempio, uno slot di 3° livello conferisce 15 punti ferita temporanei e infligge 15 danni da freddo per colpo che attiva l'effetto.",
+    "material": "una tazza d'acqua"
+  },
+  "Arms of Hadar": {
+    "name": "Braccia di Hadar",
+    "description": "Tentacoli oscuri sferzano le creature entro {{distance:10ft}} da te. Ogni bersaglio effettua un tiro salvezza su Forza: se fallisce, subisce 2d6 danni necrotici e non può usare reazioni fino al suo turno successivo; se riesce, subisce metà dei danni e conserva le reazioni.",
+    "higherLevels": "Ogni livello dello slot oltre il 1° aggiunge 1d6 danni necrotici.",
+    "material": null
+  },
+  "Chromatic Orb": {
+    "name": "Globo Cromatico",
+    "description": "Scegli una creatura che puoi vedere a gittata ed effettua un attacco a distanza con incantesimo. Scegli acido, freddo, fuoco, fulmine, veleno o tuono: se colpisci, infliggi 3d8 danni del tipo scelto. Il diamante è necessario, ma non viene consumato.",
+    "higherLevels": "Ogni livello dello slot oltre il 1° aggiunge 1d8 danni.",
+    "material": "un diamante del valore di almeno 50 mo"
+  },
+  "Compelled Duel": {
+    "name": "Duello Obbligato",
+    "description": "Scegli una creatura che puoi vedere a gittata. Se fallisce un tiro salvezza su Saggezza, subisce svantaggio agli attacchi contro chiunque tranne te. Ogni volta che tenta di allontanarsi oltre {{distance:30ft}} da te, deve superare un altro tiro salvezza su Saggezza; un successo rimuove questa restrizione al movimento per quel turno.\n\nL'incantesimo termina se attacchi un'altra creatura, lanci un incantesimo che bersaglia un'altra creatura ostile o termini il tuo turno a più di {{distance:30ft}} dal bersaglio. Termina anche se un tuo alleato danneggia il bersaglio o lo influenza con un incantesimo dannoso.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Dissonant Whispers": {
+    "name": "Sussurri Dissonanti",
+    "description": "Sussurri una melodia dolorosa a una creatura a gittata. Se fallisce un tiro salvezza su Saggezza, subisce 3d6 danni psichici e usa immediatamente la sua reazione, se disponibile, per allontanarsi da te quanto consentito dalla sua velocità. Evita i terreni palesemente pericolosi durante questo movimento. Un successo dimezza i danni e impedisce il movimento. Un bersaglio assordato supera automaticamente il tiro salvezza.",
+    "higherLevels": "Ogni livello dello slot oltre il 1° aggiunge 1d6 danni psichici.",
+    "material": null
+  },
+  "Ensnaring Strike": {
+    "name": "Colpo Intrappolante",
+    "description": "Il tuo prossimo attacco con un'arma che colpisce una creatura prima che l'incantesimo termini crea liane che la avvinghiano. Il bersaglio effettua un tiro salvezza su Forza, con vantaggio se è di taglia Grande o superiore. Se fallisce, è trattenuto per la durata restante; se riesce, le liane scompaiono. Mentre è trattenuto, subisce 1d6 danni perforanti all'inizio di ogni suo turno. Il bersaglio o una creatura in grado di toccarlo può usare un'azione per effettuare una prova di Forza contro la tua CD del tiro salvezza dell'incantesimo, liberandolo in caso di successo.",
+    "higherLevels": "Ogni livello dello slot oltre il 1° aggiunge 1d6 ai danni perforanti ricorrenti.",
+    "material": null
+  },
+  "Hail of Thorns": {
+    "name": "Raffica di Spine",
+    "description": "Il tuo prossimo attacco a distanza con un'arma che colpisce una creatura prima che l'incantesimo termini sprigiona anche una raffica di spine. L'attacco mantiene i suoi normali effetti. Il bersaglio e ogni creatura entro {{distance:5ft}} da esso effettuano un tiro salvezza su Destrezza: subiscono 1d10 danni perforanti se falliscono, o metà se riescono.",
+    "higherLevels": "Ogni livello dello slot oltre il 1° aggiunge 1d10 danni perforanti, fino a un massimo di 6d10.",
+    "material": null
+  },
+  "Ray of Sickness": {
+    "name": "Raggio di Infermità",
+    "description": "Effettua un attacco a distanza con incantesimo contro una creatura a gittata. Se colpisci, infliggi 2d8 danni da veleno e imponi un tiro salvezza su Costituzione. Se il bersaglio fallisce, è anche avvelenato fino alla fine del tuo turno successivo. Superare il tiro salvezza impedisce la condizione, ma non i danni dell'attacco.",
+    "higherLevels": "Ogni livello dello slot oltre il 1° aggiunge 1d8 danni da veleno.",
+    "material": null
+  },
+  "Searing Smite": {
+    "name": "Punizione Incandescente",
+    "description": "Il tuo prossimo attacco in mischia con un'arma che colpisce una creatura prima che l'incantesimo termini infligge 1d6 danni da fuoco extra e incendia il bersaglio. All'inizio di ogni suo turno, il bersaglio effettua un tiro salvezza su Costituzione: se fallisce, subisce 1d6 danni da fuoco; se riesce, l'incantesimo termina. Il bersaglio o un'altra creatura entro {{distance:5ft}} può usare un'azione per spegnere le fiamme e terminare l'incantesimo. Anche soffocare le fiamme, per esempio immergendo il bersaglio, pone fine all'effetto.",
+    "higherLevels": "Ogni livello dello slot oltre il 1° aggiunge 1d6 solo ai danni extra del colpo iniziale. I danni da fuoco ricorrenti restano 1d6.",
+    "material": null
+  },
+  "Thunderous Smite": {
+    "name": "Punizione Tonante",
+    "description": "Il primo attacco in mischia con un'arma con cui colpisci prima che l'incantesimo termini infligge 2d6 danni da tuono extra e produce un boato udibile entro {{distance:300ft}} da te. Se il bersaglio è una creatura, deve anche superare un tiro salvezza su Forza o essere spinto di {{distance:10ft}} lontano da te e cadere prono.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Beast Sense": {
+    "name": "Sensi della Bestia",
+    "description": "Tocchi una bestia consenziente. Finché mantieni la concentrazione, puoi usare un'azione per vedere e udire attraverso di essa, beneficiando dei suoi sensi speciali. Il collegamento dura finché non usi un'altra azione per tornare ai tuoi sensi o l'incantesimo termina. Mentre usi i sensi della bestia, sei accecato e assordato rispetto a ciò che ti circonda.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Cordon of Arrows": {
+    "name": "Cordone di Frecce",
+    "description": "Pianti nel terreno quattro frecce o quadrelli non magici a gittata. Tu e le creature designate al lancio siete ignorati. Quando un'altra creatura si avvicina per la prima volta in un turno entro {{distance:30ft}} dalle munizioni, o vi termina il turno, una munizione la attacca. Se fallisce un tiro salvezza su Destrezza, subisce 1d6 danni perforanti; se riesce, evita i danni. La munizione usata viene comunque distrutta. L'incantesimo termina quando tutte le munizioni incantate sono state usate o la sua durata scade.",
+    "higherLevels": "Ogni livello dello slot oltre il 2° permette di incantare due munizioni aggiuntive. I danni per munizione restano 1d6.",
+    "material": "quattro o più frecce o quadrelli"
+  },
+  "Phantasmal Force": {
+    "name": "Forza Fantasmagorica",
+    "description": "Scegli una creatura che puoi vedere a gittata; non morti e costrutti non sono influenzati. Se fallisce un tiro salvezza su Intelligenza, solo essa percepisce un oggetto, una creatura o un fenomeno visibile illusorio contenuto in un cubo con spigolo di {{distance:10ft|adj}}. L'illusione comprende dettagli sensoriali come suoni e temperatura. Il bersaglio la crede reale e giustifica gli eventi contraddittori.\n\nIl bersaglio può usare un'azione per effettuare una prova di Intelligenza (Indagare) contro la tua CD del tiro salvezza dell'incantesimo. Un successo rivela l'illusione e termina l'incantesimo. Una volta per round nel tuo turno, una minaccia illusoria plausibile può infliggere 1d6 danni psichici se il bersaglio è al suo interno o entro {{distance:5ft}} da essa. Il bersaglio li percepisce come danni appropriati alla minaccia immaginata.",
+    "higherLevels": null,
+    "material": "un ciuffo di lana"
+  },
+  "Aura of Vitality": {
+    "name": "Aura di Vitalità",
+    "description": "Un'aura curativa si estende per {{distance:30ft}} attorno a te e segue i tuoi movimenti. Finché dura, puoi usare un'azione bonus per ripristinare 2d6 punti ferita a una creatura nell'aura, incluso te stesso.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Blinding Smite": {
+    "name": "Punizione Accecante",
+    "description": "Il tuo prossimo attacco in mischia con un'arma che colpisce una creatura prima che l'incantesimo termini infligge 3d8 danni radiosi extra. Il bersaglio deve anche superare un tiro salvezza su Costituzione o essere accecato per la durata restante. Alla fine di ogni suo turno, ripete il tiro salvezza e, se riesce, termina la cecità.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Barrage": {
+    "name": "Evoca Raffica",
+    "description": "Lanci in aria un'arma non magica o scocchi una munizione non magica. Copie magiche attraversano un cono di {{distance:60ft|adj}} che parte da te, poi svaniscono. Ogni creatura nel cono effettua un tiro salvezza su Destrezza: subisce 3d8 danni se fallisce, o metà se riesce. Il tipo di danno è quello dell'arma o della munizione usata come componente.",
+    "higherLevels": null,
+    "material": "una munizione o un'arma da lancio"
+  },
+  "Crusader's Mantle": {
+    "name": "Manto del Crociato",
+    "description": "Un'aura rinvigorente si estende per {{distance:30ft}} attorno a te e segue i tuoi movimenti. Le creature non ostili nell'aura, incluso te stesso, infliggono 1d4 danni radiosi extra ogni volta che colpiscono con un attacco con un'arma.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Elemental Weapon": {
+    "name": "Arma Elementale",
+    "description": "Tocchi un'arma non magica e scegli acido, freddo, fuoco, fulmine o tuono. Finché mantieni la concentrazione, l'arma diventa magica, ottiene +1 ai tiri per colpire e infligge 1d4 danni extra del tipo scelto quando colpisce.",
+    "higherLevels": "Con uno slot di 5° o 6° livello, il bonus al tiro per colpire diventa +2 e i danni extra diventano 2d4. Con uno slot di 7° livello o superiore, diventano +3 e 3d4.",
+    "material": null
+  },
+  "Hunger of Hadar": {
+    "name": "Fame di Hadar",
+    "description": "Scegli un punto a gittata per aprire un vuoto senza stelle in una sfera di raggio {{distance:20ft|adj}}. Sussurri e risucchi sono udibili entro {{distance:30ft}}. Nessuna luce, nemmeno magica, illumina la sfera. Le creature interamente al suo interno sono accecate e l'area è terreno difficile.\n\nUna creatura che inizia il turno all'interno subisce automaticamente 2d6 danni da freddo. Una creatura che vi termina il turno deve superare un tiro salvezza su Destrezza o subire 2d6 danni da acido. Sono due effetti distinti; nelle regole del 2014, gli slot di livello superiore non aumentano i danni di questo incantesimo.",
+    "higherLevels": null,
+    "material": "un tentacolo di polpo in salamoia"
+  },
+  "Lightning Arrow": {
+    "name": "Freccia Folgorante",
+    "description": "Il tuo prossimo attacco a distanza con un'arma prima che l'incantesimo termini trasforma la munizione o l'arma da lancio in un fulmine. Usa il normale tiro per colpire dell'arma: sostituisci i suoi danni abituali con 4d8 danni da fulmine se colpisci, o metà se manchi. In entrambi i casi, ogni creatura entro {{distance:10ft}} dal bersaglio effettua un tiro salvezza su Destrezza, subendo 2d8 danni da fulmine se fallisce, o metà se riesce. La munizione o l'arma da lancio torna poi normale.",
+    "higherLevels": "Ogni livello dello slot oltre il 3° aggiunge 1d8 ai danni principali e 1d8 ai danni subiti dalle creature vicine.",
+    "material": null
+  },
+  "Aura of Life": {
+    "name": "Aura di Vita",
+    "description": "Un'aura che sostiene la vita si estende per {{distance:30ft}} attorno a te e segue i tuoi movimenti. Le creature non ostili nell'aura, incluso te stesso, hanno resistenza ai danni necrotici e il loro massimo dei punti ferita non può essere ridotto. Una creatura vivente non ostile che inizia il turno nell'aura con 0 punti ferita recupera 1 punto ferita.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Aura of Purity": {
+    "name": "Aura di Purezza",
+    "description": "Un'aura purificatrice si estende per {{distance:30ft}} attorno a te e segue i tuoi movimenti. Le creature non ostili nell'aura, incluso te stesso, non possono contrarre malattie e hanno resistenza ai danni da veleno. Hanno vantaggio ai tiri salvezza contro gli effetti che le renderebbero accecate, affascinate, assordate, spaventate, paralizzate, avvelenate o stordite.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Grasping Vine": {
+    "name": "Rampicante Afferrante",
+    "description": "Crei un rampicante in uno spazio libero a terra che puoi vedere a gittata. Come parte del lancio, lo dirigi contro una creatura che puoi vedere entro {{distance:30ft}} dal rampicante. Se fallisce un tiro salvezza su Destrezza, la creatura viene trascinata di {{distance:20ft}} in linea retta verso il rampicante. In ogni tuo turno successivo, finché mantieni la concentrazione, puoi usare un'azione bonus per sferrare un altro colpo contro la stessa creatura o un altro bersaglio idoneo.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Staggering Smite": {
+    "name": "Punizione Demoralizzante",
+    "description": "Il tuo prossimo attacco in mischia con un'arma che colpisce una creatura prima che l'incantesimo termini infligge 4d6 danni psichici extra. Il bersaglio effettua anche un tiro salvezza su Saggezza. Se fallisce, fino alla fine del suo turno successivo subisce svantaggio ai tiri per colpire e alle prove di caratteristica e non può usare reazioni.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Banishing Smite": {
+    "name": "Punizione Esiliante",
+    "description": "Il tuo prossimo attacco con un'arma che colpisce una creatura prima che l'incantesimo termini infligge 5d10 danni da forza extra. Se l'attacco lascia il bersaglio con 50 punti ferita o meno, esso viene esiliato senza tiro salvezza. Una creatura originaria di un altro piano torna al suo piano d'origine. Una creatura originaria del tuo piano attuale entra invece in un semipiano innocuo, dove è incapacitata fino al termine dell'incantesimo. Poi torna nella posizione precedente o, se necessario, nello spazio libero più vicino.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Circle of Power": {
+    "name": "Cerchio di Potere",
+    "description": "Una sfera protettiva si estende per {{distance:30ft}} attorno a te e si muove con te. Le creature amiche al suo interno, incluso te stesso, hanno vantaggio ai tiri salvezza contro incantesimi e altri effetti magici. Se uno di questi effetti permette un tiro salvezza per dimezzare i danni, una creatura che lo supera non subisce invece alcun danno. Un fallimento infligge i normali danni.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Conjure Volley": {
+    "name": "Evoca Pioggia di Proiettili",
+    "description": "Scocchi una munizione non magica con un'arma a distanza o lanci un'arma non magica in aria. Scegli un punto a gittata: copie piovono in un cilindro di raggio {{distance:40ft|adj}} e altezza {{distance:20ft|adj}}, poi svaniscono. Ogni creatura al suo interno effettua un tiro salvezza su Destrezza: subisce 8d8 danni se fallisce, o metà se riesce. L'arma o la munizione usata come componente determina il tipo di danno.",
+    "higherLevels": null,
+    "material": "una munizione o un'arma da lancio"
+  },
+  "Destructive Wave": {
+    "name": "Onda Distruttiva",
+    "description": "Colpisci il terreno e scegli le creature desiderate entro {{distance:30ft}} da te. Ognuna effettua un tiro salvezza su Costituzione. Se fallisce, subisce 5d6 danni da tuono più 5d6 danni radiosi o necrotici, a tua scelta, e cade prona. Un successo dimezza entrambe le parti dei danni e impedisce la caduta.",
+    "higherLevels": null,
+    "material": null
+  },
+  "Swift Quiver": {
+    "name": "Faretra Rapida",
+    "description": "Incanti una faretra contenente munizioni. In ogni tuo turno, finché mantieni la concentrazione, puoi usare un'azione bonus per effettuare due attacchi con un'arma che usa le munizioni della faretra. Essa sostituisce ogni munizione usata per questi attacchi con una munizione non magica simile. Le munizioni create si disintegrano quando l'incantesimo termina. Perdere il possesso della faretra pone fine all'incantesimo. Il lancio usa la tua azione bonus; i due attacchi richiedono una propria azione bonus in un turno.",
+    "higherLevels": null,
+    "material": "una faretra contenente almeno una munizione"
   }
 }

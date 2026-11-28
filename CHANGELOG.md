@@ -7,6 +7,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- **Traducoes 2014 em frances e italiano**: os dois idiomas passam a cobrir as 30 magias complementares, 65 opcoes de classe, 17 disciplinas elementais incluindo Sintonia Elemental, os 50 resultados de Magia Selvagem, cinco variantes de antecedente e sugestoes de personalidade, 34 equipamentos e os 24 blocos de criaturas adicionados. Textos expandidos de subclasses tambem foram traduzidos; o escopo de 2024 continua pendente.
+
+### Internal
+- **Validacao das traducoes**: testes de integracao dos complementos 2014 ampliados para portugues, espanhol, frances e italiano, incluindo faixas da tabela de Magia Selvagem, distancias e dados de dano. Suite completa com 636 testes aprovados; validadores dos dois pacotes SRD e analise do teste alterado sem problemas. Cobertura por idioma atualizada em `docs/CONTENT_COVERAGE.md`.
+
 ---
 
 ## [3.0.2] - 2026-11-25

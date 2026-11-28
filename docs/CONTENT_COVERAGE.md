@@ -1,6 +1,6 @@
 # D&D content coverage by edition and language
 
-Updated: 2026-11-25.
+Updated: 2026-11-27.
 
 This tracks the gaps identified in the bundled catalogs, not every published
 D&D supplement. English is the source catalog. Translations are separate work:
@@ -47,7 +47,7 @@ Dungeon Master's Guide item, Monster Manual entry, or later supplement.
   and six flaws per base background, inherited by variants. These are
   **original English roleplaying prompts**, not the published PHB tables.
 - [x] Five arcane focuses and 29 mount/tack/transport entries in the inventory.
-- [x] Regression tests and catalog validation: 594 Flutter tests passed;
+- [x] Regression tests and catalog validation: 636 Flutter tests passed;
   analysis of the changed Dart files reported no issues; both SRD pack
   validators passed their 18 base JSON integrity checks.
 
@@ -61,8 +61,8 @@ PHB spells. Existing translations of older content are retained.
 | English | en | Listed additions implemented and validated; limitations below |
 | German | de | Pending translation and review |
 | Spanish | es | Listed additions translated and validated |
-| French | fr | Pending translation and review |
-| Italian | it | Pending translation and review |
+| French | fr | Listed additions translated and validated |
+| Italian | it | Listed additions translated and validated |
 | Japanese | ja | Pending translation and review |
 | Korean | ko | Pending translation and review |
 | Portuguese | pt | Listed additions translated and validated |
@@ -107,13 +107,13 @@ English supplemental catalogs:
 - `assets/data/2014/phb_equipment.json`: 34 added equipment entries, merged
   into the gear browser and inventory index only for 2014.
 
-Portuguese and Spanish cover all 30 spell summaries, 65 choice options,
+Portuguese, Spanish, French and Italian cover all 30 spell summaries, 65 choice options,
 the expanded subclass descriptions and 50-row Wild Magic table, all 24 added
 creature stat blocks, 34 equipment entries, five background variants and the
 personality suggestions. The interface reads these localized suggestions
 and indexes variant equipment in the selected language.
 
-Each of the eight pending content languages still needs names, descriptions,
+Each of the six pending content languages still needs names, descriptions,
 new choice options, creature traits/actions, background prompts and expanded
 feature tables. Their older feature summaries may still appear until revised.
 Shared interface labels are present in all app languages. English remains
@@ -132,6 +132,13 @@ An editorial spot review corrected awkward Portuguese/Spanish narrative
 prompts and restored Unicode accents in the shared interface labels. The
 translation checks are technical safeguards; terminology has not been
 certified against every officially localized book or by a native editor.
+
+French and Italian now cover the same supplemental 2014 scope, including
+all 50 Wild Magic outcomes, Elemental Attunement, the full discipline list,
+the five background variants and their inherited personality suggestions.
+Runtime translation tests cover all four completed translation languages
+and check the surge ranges, distance values and damage dice. This is not
+a review of every older translation or an expansion of the 2024 scope.
 
 Reference sources:
 

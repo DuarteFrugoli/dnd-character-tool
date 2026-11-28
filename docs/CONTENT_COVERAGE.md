@@ -158,7 +158,88 @@ Reference sources:
 
 ## D&D 2024
 
-Placeholder only. Detailed content and language audit to be filled in later.
+Scope: Player's Handbook 2024 character options. Monster Manual 2025 and
+Dungeon Master's Guide 2024 material comes later with the GM area.
+
+### Current catalog (2026-11-28)
+
+- SRD 5.2.1: 12 classes, 12 subclasses, 9 species, 4 backgrounds, 17 feats
+  (4 origin, 2 general, 4 fighting style, 7 epic boons), 339 spells,
+  270 magic items, 88 creatures (mostly Wild Shape beasts).
+- `assets/data/2024/phb_subclasses.json`: the other 36 PHB subclasses and
+  13 spells they need, as original English summaries. No translations yet.
+
+### Prioritized gaps
+
+Order follows how early a player meets the gap: creation first, then low
+levels, then high levels. Entries outside the SRD are written as original
+English summaries, like the existing supplemental catalogs.
+
+**P1 - Origin (every new character)**
+
+Backgrounds depend on their origin feats, so both ship together.
+
+- [ ] 6 origin feats: Crafter, Healer, Lucky, Musician, Tavern Brawler, Tough.
+- [ ] 12 backgrounds: Artisan, Charlatan, Entertainer, Farmer, Guard, Guide,
+  Hermit, Merchant, Noble, Sailor, Scribe, Wayfarer.
+- [ ] Species: Aasimar.
+
+**P2 - Fighting Style feats (Fighter, Paladin, Ranger at levels 1-2)**
+
+- [ ] Blind Fighting, Dueling, Interception, Protection, Thrown Weapon
+  Fighting, Unarmed Fighting.
+
+**P3 - Spells**
+
+Present in the 2014 PHB catalog but absent from the 2024 catalog. Verify each
+against the PHB 2024 spell list before adding; Branding Smite and Whirlwind
+are believed to have been dropped in 2024 and are not listed.
+
+- [ ] Cantrips: Blade Ward, Friends, Thorn Whip.
+- [ ] Paladin smites and auras: Banishing Smite, Blinding Smite, Staggering
+  Smite, Thunderous Smite, Wrathful Smite, Aura of Purity, Aura of Vitality,
+  Circle of Power, Compelled Duel, Destructive Wave.
+- [ ] Ranger: Conjure Barrage, Conjure Volley, Cordon of Arrows, Hail of
+  Thorns, Lightning Arrow, Swift Quiver, Grasping Vine.
+- [ ] Others: Arcane Gate, Armor of Agathys, Cloud of Daggers, Crown of
+  Madness, Elemental Weapon, Feign Death, Telepathy, Witch Bolt.
+- [ ] New in the PHB 2024 and outside the SRD (candidates, verify): Summon
+  Elemental, Summon Fiend, Summon Undead, Toll the Dead, Shadow Blade, Power
+  Word Fortify, Synaptic Static, Tasha's Bubbling Cauldron, Jallarzi's Storm
+  of Radiance.
+
+**P4 - General feats (level 4 and later)**
+
+About 41 missing (verify against the PHB 2024 list): Actor, Athlete, Charger,
+Chef, Crossbow Expert, Crusher, Defensive Duelist, Dual Wielder, Durable,
+Elemental Adept, Fey Touched, Great Weapon Master, Heavily Armored, Heavy
+Armor Master, Inspiring Leader, Keen Mind, Lightly Armored, Mage Slayer,
+Martial Weapon Training, Medium Armor Master, Moderately Armored, Mounted
+Combatant, Observant, Piercer, Poisoner, Polearm Master, Resilient, Ritual
+Caster, Sentinel, Shadow Touched, Sharpshooter, Shield Master, Skill Expert,
+Skulker, Slasher, Speedy, Spell Sniper, Telekinetic, Telepathic, War Caster,
+Weapon Master.
+
+- [ ] Armor, weapon and ability feats that change calculated values first
+  (Heavily/Moderately/Lightly Armored, Resilient, Durable, Martial Weapon
+  Training, Skill Expert), then the rest.
+
+**P5 - Epic Boons (level 19)**
+
+- [ ] Energy Resistance, Fortitude, Recovery, Skill, Speed.
+
+**P6 - Translations**
+
+- [ ] The 36 non-SRD subclasses and their 13 spells in the 10 translation
+  languages.
+- [ ] Each P1-P5 batch translated before or with its release.
+- [ ] Audit of the existing SRD 5.2.1 overlays.
+
+**P7 - Leave Beta**
+
+- [ ] Remove the 2024 Beta label once P1-P6 are done.
+
+### Languages
 
 | Language | Code | Status |
 | --- | --- | --- |

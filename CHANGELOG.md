@@ -8,11 +8,12 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Added
+- **Traducoes 2014 em coreano e russo**: traduzidas as mesmas adicoes dos demais idiomas concluidos, com 30 magias, 65 opcoes de classe, disciplinas elementais, os 50 resultados de Magia Selvagem, cinco variantes de antecedente e sugestoes de personalidade, 34 equipamentos e 24 criaturas. Ajustadas as particulas coreanas e a concordancia das medidas em russo; turco e chines continuam pendentes nesse escopo.
 - **Traducoes 2014 em alemao e japones**: as mesmas adicoes passam a estar traduzidas nesses dois idiomas, incluindo 30 magias, 65 opcoes de classe, as disciplinas elementais, a tabela de Magia Selvagem, antecedentes e sugestoes de personalidade, 34 equipamentos e 24 criaturas. Preservados os valores de dano, distancias e condicoes das regras de 2014.
 - **Traducoes 2014 em frances e italiano**: os dois idiomas passam a cobrir as 30 magias complementares, 65 opcoes de classe, 17 disciplinas elementais incluindo Sintonia Elemental, os 50 resultados de Magia Selvagem, cinco variantes de antecedente e sugestoes de personalidade, 34 equipamentos e os 24 blocos de criaturas adicionados. Textos expandidos de subclasses tambem foram traduzidos; o escopo de 2024 continua pendente.
 
 ### Internal
-- **Validacao das traducoes**: testes de integracao dos complementos 2014 ampliados para portugues, espanhol, frances, italiano, alemao e japones, incluindo faixas da tabela de Magia Selvagem, distancias e dados de dano. Verificacao de dados de dano adaptada a escrita japonesa sem espacos. Suite completa com 648 testes aprovados; validadores dos dois pacotes SRD e analise do teste alterado sem problemas. Cobertura por idioma atualizada em `docs/CONTENT_COVERAGE.md`.
+- **Validacao das traducoes**: testes de integracao dos complementos 2014 ampliados para portugues, espanhol, frances, italiano, alemao, japones, coreano e russo, incluindo faixas da tabela de Magia Selvagem, distancias e dados de dano. Verificacao de dados de dano adaptada a escrita japonesa sem espacos. Suite completa com 660 testes aprovados; validadores dos dois pacotes SRD e analise do teste alterado sem problemas. Cobertura por idioma atualizada em `docs/CONTENT_COVERAGE.md`.
 
 ---
 

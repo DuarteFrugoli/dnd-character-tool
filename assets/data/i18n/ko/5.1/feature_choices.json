@@ -339,6 +339,278 @@
         "name": "하얀색",
         "description": "냉기 피해와 관련된 백룡의 조상을 선택하세요."
       }
+    },
+    "eldritch_invocations_2014": {
+      "agonizing_blast": {
+        "name": "고통의 파동",
+        "description": "섬뜩한 파동이 명중할 때마다 피해에 자신의 매력 수정치를 더합니다."
+      },
+      "armor_of_shadows": {
+        "name": "그림자 갑옷",
+        "description": "마법 갑옷을 자신에게 원하는 만큼 시전할 수 있으며 슬롯이나 물질 구성요소를 소모하지 않습니다."
+      },
+      "ascendant_step": {
+        "name": "상승의 발걸음",
+        "description": "공중 부양을 자신에게 원하는 만큼 시전할 수 있으며 슬롯이나 물질 구성요소를 소모하지 않습니다."
+      },
+      "beast_speech": {
+        "name": "야수의 언어",
+        "description": "동물과 대화를 원하는 만큼 시전할 수 있으며 슬롯을 소모하지 않습니다."
+      },
+      "beguiling_influence": {
+        "name": "현혹하는 영향력",
+        "description": "기만과 설득에 숙련을 얻습니다."
+      },
+      "bewitching_whispers": {
+        "name": "매혹의 속삭임",
+        "description": "워락 슬롯을 사용해 강박을 긴 휴식마다 한 번 시전할 수 있습니다."
+      },
+      "book_of_ancient_secrets": {
+        "name": "고대 비밀의 책",
+        "description": "고서의 계약이 필요합니다. 어떤 주문 목록에서든 1레벨 의식 주문 두 개를 책에 추가합니다. 다른 방식으로 배우지 않은 한 의식으로만 시전할 수 있습니다. 이미 아는 워락 주문 중 의식인 주문도 의식으로 시전할 수 있습니다. 발견한 의식 주문의 레벨이 워락 레벨의 절반(올림) 이하라면 베껴 쓸 수 있으며, 주문 레벨마다 2시간과 50gp를 소비합니다."
+      },
+      "chains_of_carceri": {
+        "name": "카르케리의 사슬",
+        "description": "사슬의 계약이 필요합니다. 천상체, 악마류, 정령을 대상으로만 괴물 포박을 슬롯이나 물질 구성요소 없이 원하는 만큼 시전할 수 있습니다. 같은 크리처를 다시 대상으로 삼으려면 긴 휴식을 마쳐야 합니다."
+      },
+      "devil_s_sight": {
+        "name": "악마의 시야",
+        "description": "{{distance:120ft}} 이내의 마법 및 비마법 어둠을 정상적으로 볼 수 있습니다."
+      },
+      "dreadful_word": {
+        "name": "공포의 단어",
+        "description": "워락 슬롯을 사용해 혼란을 긴 휴식마다 한 번 시전할 수 있습니다."
+      },
+      "eldritch_sight": {
+        "name": "섬뜩한 시야",
+        "description": "마법 탐지를 원하는 만큼 시전할 수 있으며 슬롯이나 물질 구성요소를 소모하지 않습니다."
+      },
+      "eldritch_spear": {
+        "name": "섬뜩한 창",
+        "description": "섬뜩한 파동의 사거리는 {{distance:300ft}}입니다."
+      },
+      "eyes_of_the_rune_keeper": {
+        "name": "룬 수호자의 눈",
+        "description": "어떤 문자로 쓰인 글도 읽을 수 있습니다."
+      },
+      "fiendish_vigor": {
+        "name": "악마의 활력",
+        "description": "가짜 생명을 자신에게 1레벨 주문으로 원하는 만큼 시전할 수 있으며 슬롯이나 물질 구성요소를 쓰지 않습니다."
+      },
+      "gaze_of_two_minds": {
+        "name": "두 정신의 시선",
+        "description": "행동을 사용해 동의하는 인간형 크리처를 만지면 자신의 다음 턴 종료까지 그 감각으로 인지할 수 있습니다. 이후 턴에도 행동을 사용해 연결을 연장할 수 있습니다. 그 특수 감각도 얻지만, 연결된 동안 자신의 주변에 대해서는 실명 및 청각 상실 상태가 됩니다."
+      },
+      "lifedrinker": {
+        "name": "생명 흡수",
+        "description": "칼날의 계약이 필요합니다. 계약 무기가 명중하면 매력 수정치와 같은 추가 사령 피해를 주며, 최소 피해는 1입니다."
+      },
+      "mask_of_many_faces": {
+        "name": "다양한 얼굴의 가면",
+        "description": "자기 변장을 원하는 만큼 시전할 수 있으며 슬롯을 소모하지 않습니다."
+      },
+      "master_of_myriad_forms": {
+        "name": "무수한 형상의 대가",
+        "description": "자기 변형을 원하는 만큼 시전할 수 있으며 슬롯을 소모하지 않습니다."
+      },
+      "minions_of_chaos": {
+        "name": "혼돈의 하수인",
+        "description": "워락 슬롯을 사용해 정령 소환을 긴 휴식마다 한 번 시전할 수 있습니다."
+      },
+      "mire_the_mind": {
+        "name": "정신의 수렁",
+        "description": "워락 슬롯을 사용해 감속을 긴 휴식마다 한 번 시전할 수 있습니다."
+      },
+      "misty_visions": {
+        "name": "안개의 환영",
+        "description": "무음 환영을 원하는 만큼 시전할 수 있으며 슬롯이나 물질 구성요소를 소모하지 않습니다."
+      },
+      "one_with_shadows": {
+        "name": "그림자와 하나",
+        "description": "희미한 빛이나 어둠 속에서 행동을 사용해 투명 상태가 될 수 있습니다. 이동하거나 행동 또는 반응행동을 하면 종료됩니다."
+      },
+      "otherworldly_leap": {
+        "name": "이계의 도약",
+        "description": "도약을 자신에게 원하는 만큼 시전할 수 있으며 슬롯이나 물질 구성요소를 소모하지 않습니다."
+      },
+      "repelling_blast": {
+        "name": "밀쳐내는 파동",
+        "description": "섬뜩한 파동이 명중할 때마다 대상을 자신에게서 일직선으로 최대 {{distance:10ft}} 밀어낼 수 있습니다."
+      },
+      "sculptor_of_flesh": {
+        "name": "육체의 조각가",
+        "description": "워락 슬롯을 사용해 변이를 긴 휴식마다 한 번 시전할 수 있습니다."
+      },
+      "sign_of_ill_omen": {
+        "name": "불길한 징조",
+        "description": "워락 슬롯을 사용해 저주 부여를 긴 휴식마다 한 번 시전할 수 있습니다."
+      },
+      "thief_of_five_fates": {
+        "name": "다섯 운명의 도둑",
+        "description": "워락 슬롯을 사용해 액운을 긴 휴식마다 한 번 시전할 수 있습니다."
+      },
+      "thirsting_blade": {
+        "name": "갈증의 칼날",
+        "description": "칼날의 계약이 필요합니다. 공격 행동을 할 때 계약 무기로 한 번 대신 두 번 공격합니다."
+      },
+      "visions_of_distant_realms": {
+        "name": "먼 세계의 환시",
+        "description": "비전의 눈을 원하는 만큼 시전할 수 있으며 슬롯을 소모하지 않습니다."
+      },
+      "voice_of_the_chain_master": {
+        "name": "사슬 주인의 목소리",
+        "description": "사슬의 계약이 필요합니다. 같은 차원에 있는 사역마와 정신으로 의사소통하고 그 감각으로 인지할 수 있습니다. 사역마의 감각을 이용하는 동안 사역마를 통해 자신의 목소리로 말할 수도 있습니다."
+      },
+      "whispers_of_the_grave": {
+        "name": "무덤의 속삭임",
+        "description": "시체와 대화를 원하는 만큼 시전할 수 있으며 슬롯을 소모하지 않습니다."
+      },
+      "witch_sight": {
+        "name": "마녀의 시야",
+        "description": "{{distance:30ft}} 이내에서 시야가 닿는 변신생물과 환영 또는 변환 마법으로 숨겨진 크리처의 진짜 모습을 볼 수 있습니다."
+      }
+    },
+    "elemental_disciplines_2014": {
+      "breath_of_winter": {
+        "name": "겨울의 숨결",
+        "description": "기 6점: 냉기 원뿔을 시전합니다."
+      },
+      "clench_of_the_north_wind": {
+        "name": "북풍의 움켜쥠",
+        "description": "기 3점: 인간형 포박을 시전합니다."
+      },
+      "eternal_mountain_defense": {
+        "name": "영원한 산의 방어",
+        "description": "기 5점: 돌 피부를 자신에게만 시전합니다."
+      },
+      "fangs_of_the_fire_snake": {
+        "name": "불뱀의 송곳니",
+        "description": "공격 행동을 할 때 기 1점을 쓰면 이번 턴 비무장 공격의 사거리가 {{distance:10ft}} 늘어나며 명중 피해가 화염이 됩니다. 명중할 때마다 기 1점을 더 써서 1d10의 추가 화염 피해를 줄 수 있습니다."
+      },
+      "fist_of_four_thunders": {
+        "name": "네 천둥의 주먹",
+        "description": "기 2점: 천둥파를 시전합니다."
+      },
+      "fist_of_unbroken_air": {
+        "name": "꺾이지 않는 바람의 주먹",
+        "description": "행동, 기 2점, {{distance:30ft}} 이내의 대상: 근력 내성 굴림을 합니다. 실패하면 3d10의 타격 피해를 받고 최대 {{distance:20ft}} 밀려나 넘어집니다. 성공하면 피해가 절반이 되고 이동하거나 넘어지지 않습니다. 기 1점을 더 쓸 때마다 피해가 1d10 증가합니다."
+      },
+      "flames_of_the_phoenix": {
+        "name": "불사조의 불꽃",
+        "description": "기 4점: 화염구를 시전합니다."
+      },
+      "gong_of_the_summit": {
+        "name": "정상의 징",
+        "description": "기 3점: 산산조각을 시전합니다."
+      },
+      "mist_stance": {
+        "name": "안개 자세",
+        "description": "기 4점: 기체 형태를 자신에게만 시전합니다."
+      },
+      "ride_the_wind": {
+        "name": "바람 타기",
+        "description": "기 4점: 비행을 자신에게만 시전합니다."
+      },
+      "river_of_hungry_flame": {
+        "name": "굶주린 불꽃의 강",
+        "description": "기 5점: 화염의 벽을 시전합니다."
+      },
+      "rush_of_the_gale_spirits": {
+        "name": "돌풍 정령의 쇄도",
+        "description": "기 2점: 돌풍을 시전합니다."
+      },
+      "shape_the_flowing_river": {
+        "name": "흐르는 강 빚기",
+        "description": "행동, 기 1점: {{distance:120ft}} 이내에서 한 변이 최대 {{distance:30ft}}인 범위의 물이나 얼음을 바꿉니다. 물을 얼리거나 얼음을 녹이고 형태를 바꿀 수 있으며, 높이 변화는 범위 크기의 절반을 넘을 수 없습니다. 크리처를 가두거나 다치게 할 수 없습니다."
+      },
+      "sweeping_cinder_strike": {
+        "name": "재를 휩쓰는 일격",
+        "description": "기 2점: 타오르는 손을 시전합니다."
+      },
+      "water_whip": {
+        "name": "물 채찍",
+        "description": "행동, 기 2점, {{distance:30ft}} 이내에서 보이는 대상: 민첩 내성 굴림을 합니다. 실패하면 3d10의 타격 피해를 받고, 선택에 따라 넘어지거나 최대 {{distance:25ft}} 끌려옵니다. 성공하면 피해가 절반이 되고 이동하거나 넘어지지 않습니다. 기 1점을 더 쓸 때마다 피해가 1d10 증가합니다."
+      },
+      "wave_of_rolling_earth": {
+        "name": "구르는 대지의 파도",
+        "description": "기 6점: 돌의 벽을 시전합니다."
+      }
+    },
+    "circle_lands_2014": {
+      "arctic": {
+        "name": "극지",
+        "description": "드루이드 3, 5, 7, 9레벨에 항상 준비된 회합 주문을 얻습니다. 이 주문은 준비할 수 있는 주문 수에 포함되지 않습니다."
+      },
+      "coast": {
+        "name": "해안",
+        "description": "드루이드 3, 5, 7, 9레벨에 항상 준비된 회합 주문을 얻습니다. 이 주문은 준비할 수 있는 주문 수에 포함되지 않습니다."
+      },
+      "desert": {
+        "name": "사막",
+        "description": "드루이드 3, 5, 7, 9레벨에 항상 준비된 회합 주문을 얻습니다. 이 주문은 준비할 수 있는 주문 수에 포함되지 않습니다."
+      },
+      "forest": {
+        "name": "숲",
+        "description": "드루이드 3, 5, 7, 9레벨에 항상 준비된 회합 주문을 얻습니다. 이 주문은 준비할 수 있는 주문 수에 포함되지 않습니다."
+      },
+      "grassland": {
+        "name": "초원",
+        "description": "드루이드 3, 5, 7, 9레벨에 항상 준비된 회합 주문을 얻습니다. 이 주문은 준비할 수 있는 주문 수에 포함되지 않습니다."
+      },
+      "mountain": {
+        "name": "산악",
+        "description": "드루이드 3, 5, 7, 9레벨에 항상 준비된 회합 주문을 얻습니다. 이 주문은 준비할 수 있는 주문 수에 포함되지 않습니다."
+      },
+      "swamp": {
+        "name": "늪",
+        "description": "드루이드 3, 5, 7, 9레벨에 항상 준비된 회합 주문을 얻습니다. 이 주문은 준비할 수 있는 주문 수에 포함되지 않습니다."
+      },
+      "underdark": {
+        "name": "언더다크",
+        "description": "드루이드 3, 5, 7, 9레벨에 항상 준비된 회합 주문을 얻습니다. 이 주문은 준비할 수 있는 주문 수에 포함되지 않습니다."
+      }
+    },
+    "totem_spirits_2014": {
+      "bear": {
+        "name": "곰",
+        "description": "격노 중 정신 피해를 제외한 모든 피해에 저항을 얻습니다."
+      },
+      "eagle": {
+        "name": "독수리",
+        "description": "중갑을 입지 않은 채 격노 중이면 자신을 향한 기회 공격은 불리점을 받고, 추가행동으로 질주할 수 있습니다."
+      },
+      "wolf": {
+        "name": "늑대",
+        "description": "격노 중 아군은 야만인으로부터 {{distance:5ft}} 이내의 적대적 크리처에 대한 근접 공격에 이점을 받습니다."
+      }
+    },
+    "totem_aspects_2014": {
+      "bear": {
+        "name": "곰",
+        "description": "운반 능력이 두 배가 되며, 물체를 밀고 당기고 들어 올리거나 부수는 근력 판정에 이점을 받습니다."
+      },
+      "eagle": {
+        "name": "독수리",
+        "description": "최대 {{distance:1mi}}까지 어려움 없이 볼 수 있고, 세부 사항은 {{distance:100ft}} 이내에 있는 것처럼 구분합니다. 희미한 빛이 시각에 의존하는 지각 판정에 불리점을 주지 않습니다."
+      },
+      "wolf": {
+        "name": "늑대",
+        "description": "빠른 이동 속도로 추적할 수 있고, 보통 이동 속도로 은밀하게 이동할 수 있습니다."
+      }
+    },
+    "totem_attunements_2014": {
+      "bear": {
+        "name": "곰",
+        "description": "격노 중 야만인으로부터 {{distance:5ft}} 이내의 적대적 크리처는 다른 대상을 공격할 때 불리점을 받습니다. 공포에 면역이거나 야만인을 보지도 그 소리를 듣지도 못하는 크리처는 영향을 받지 않습니다."
+      },
+      "eagle": {
+        "name": "독수리",
+        "description": "격노 중 보행속도와 같은 비행속도를 얻습니다. 다른 효과로 떠 있지 않는 한 턴 종료에 공중에 있으면 추락합니다."
+      },
+      "wolf": {
+        "name": "늑대",
+        "description": "격노 중 근접 무기 공격이 대형 이하의 크리처에게 명중한 뒤, 추가행동을 사용해 그 대상을 넘어짐 상태로 만들 수 있습니다."
+      }
     }
   },
   "classFeatures": {

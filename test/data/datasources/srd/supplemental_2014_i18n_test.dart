@@ -106,6 +106,20 @@ void main() {
       'badReputation': '悪名',
       'letter': '紹介状',
     },
+    'ko': {
+      'sorceryPoints': '마법 포인트',
+      'waterWhip': '물 채찍',
+      'retainers': '수행원',
+      'badReputation': '악명',
+      'letter': '소개장',
+    },
+    'ru': {
+      'sorceryPoints': 'очки волшебства',
+      'waterWhip': 'Водяной кнут',
+      'retainers': 'Слуги',
+      'badReputation': 'Дурная репутация',
+      'letter': 'Рекомендательное письмо',
+    },
   };
   for (final locale in localized.keys) {
     group('2014 supplemental $locale', () {

@@ -2989,5 +2989,423 @@
     "castingTime": "Aktion",
     "range": "Selbst",
     "duration": "Sofort"
+  },
+  "Blade Ward": {
+    "name": "Klingenbann",
+    "description": "Bis der Zauber endet, zieht jede Kreatur, die einen Angriffswurf gegen dich ausführt, 1d4 von ihrem Wurf ab.",
+    "castingTime": "Aktion",
+    "range": "Selbst",
+    "duration": "Konzentration, bis zu 1 Minute"
+  },
+  "Friends": {
+    "name": "Freunde",
+    "description": "Eine Kreatur, die du sehen kannst, legt einen Weisheitsrettungswurf ab, sonst hat sie für die Wirkungsdauer den Zustand Bezaubert. Sie ist automatisch erfolgreich, wenn sie kein Humanoider ist, wenn du gegen sie kämpfst oder wenn du diesen Zauber in den letzten 24 Stunden auf sie gewirkt hast. Der Zauber endet vorzeitig, wenn das Ziel Schaden erleidet oder wenn du einen Angriffswurf ausführst, Schaden zufügst oder jemanden zu einem Rettungswurf zwingst. Wenn der Zauber endet, weiß die Kreatur, dass sie von dir bezaubert wurde.",
+    "material": "etwas Schminke",
+    "castingTime": "Aktion",
+    "range": "3 Meter",
+    "duration": "Konzentration, bis zu 1 Minute"
+  },
+  "Thorn Whip": {
+    "name": "Dornenpeitsche",
+    "description": "Eine dornige Ranke peitscht nach einer Kreatur in Reichweite. Führe einen Nahkampf-Zauberangriff aus; bei einem Treffer erleidet das Ziel 1d6 Stichschaden, und wenn es höchstens groß ist, kannst du es bis zu {{distance:10ft}} näher zu dir ziehen.\n\nVerbesserung des Zaubertricks. Der Schaden steigt auf den Stufen 5 (2d6), 11 (3d6) und 17 (4d6) um 1d6.",
+    "material": "der Stängel einer dornigen Pflanze",
+    "castingTime": "Aktion",
+    "range": "9 Meter",
+    "duration": "Sofort",
+    "rolls": {
+      "attack": {
+        "label": "Angriff"
+      },
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Thunderclap": {
+    "name": "Donnerschlag",
+    "description": "Jede Kreatur in einer Emanation von {{distance:5ft|dat}} um dich legt einen Konstitutionsrettungswurf ab und erleidet bei einem Misserfolg 1d6 Schallschaden. Der Knall ist bis zu {{distance:100ft}} weit zu hören.\n\nVerbesserung des Zaubertricks. Der Schaden steigt auf den Stufen 5 (2d6), 11 (3d6) und 17 (4d6) um 1d6.",
+    "castingTime": "Aktion",
+    "range": "Selbst",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Toll the Dead": {
+    "name": "Totenglocke",
+    "description": "Eine düstere Glocke läutet für eine Kreatur in Reichweite, die du sehen kannst. Sie legt einen Weisheitsrettungswurf ab und erleidet bei einem Misserfolg 1d8 nekrotischen Schaden, oder 1d12 nekrotischen Schaden, wenn ihr bereits Trefferpunkte fehlen.\n\nVerbesserung des Zaubertricks. Der Schaden steigt auf den Stufen 5, 11 und 17 um einen Würfel (auf 2, 3 und 4 Würfel).",
+    "castingTime": "Aktion",
+    "range": "18 Meter",
+    "duration": "Sofort"
+  },
+  "Word of Radiance": {
+    "name": "Wort des Strahlens",
+    "description": "Jede Kreatur deiner Wahl, die du in einer Emanation von {{distance:5ft|dat}} um dich sehen kannst, legt einen Konstitutionsrettungswurf ab und erleidet bei einem Misserfolg 1d6 gleißenden Schaden.\n\nVerbesserung des Zaubertricks. Der Schaden steigt auf den Stufen 5 (2d6), 11 (3d6) und 17 (4d6) um 1d6.",
+    "material": "ein Sonnensymbol",
+    "castingTime": "Aktion",
+    "range": "Selbst",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Armor of Agathys": {
+    "name": "Rüstung des Agathys",
+    "description": "Du erhältst 5 temporäre Trefferpunkte. Bis der Zauber endet, erleidet eine Kreatur, die dich mit einem Nahkampf-Angriffswurf trifft, 5 Kälteschaden. Der Zauber endet vorzeitig, wenn du keine temporären Trefferpunkte mehr hast.",
+    "higherLevels": "Die temporären Trefferpunkte und der Kälteschaden steigen für jeden Zauberplatzgrad über 1 um 5.",
+    "material": "eine Scherbe blauen Glases",
+    "castingTime": "Bonusaktion",
+    "range": "Selbst",
+    "duration": "1 Stunde"
+  },
+  "Compelled Duel": {
+    "name": "Erzwungenes Duell",
+    "description": "Eine Kreatur, die du sehen kannst, legt einen Weisheitsrettungswurf ab. Bei einem Misserfolg hat sie Nachteil bei Angriffswürfen gegen andere Kreaturen als dich und kann sich nicht freiwillig in einen Bereich bewegen, der mehr als {{distance:30ft}} von dir entfernt ist. Der Zauber endet, wenn du einen anderen Feind angreifst oder einen Zauber auf ihn wirkst, wenn einer deiner Verbündeten dem Ziel Schaden zufügt oder wenn du deinen Zug mehr als {{distance:30ft}} von ihm entfernt beendest.",
+    "castingTime": "Bonusaktion",
+    "range": "9 Meter",
+    "duration": "Konzentration, bis zu 1 Minute"
+  },
+  "Hail of Thorns": {
+    "name": "Dornenhagel",
+    "description": "Wenn dein Fernkampfangriff trifft, brechen Dornen aus dem Geschoss hervor. Das Ziel und jede Kreatur innerhalb von {{distance:5ft|dat}} um es legen einen Geschicklichkeitsrettungswurf ab. Bei einem Misserfolg erleiden sie 1d10 Stichschaden, bei einem Erfolg die Hälfte.",
+    "higherLevels": "Der Schaden steigt für jeden Zauberplatzgrad über 1 um 1d10.",
+    "castingTime": "Bonusaktion, unmittelbar nachdem du eine Kreatur mit einer Fernkampfwaffe getroffen hast",
+    "range": "Selbst",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Thunderous Smite": {
+    "name": "Donnerndes Niederstrecken",
+    "description": "Dein Schlag hallt bis zu {{distance:300ft}} weit und fügt zusätzlich 2d6 Schallschaden zu. Ist das Ziel eine Kreatur, legt es einen Stärkerettungswurf ab, sonst wird es {{distance:10ft}} von dir weggestoßen und hat den Zustand Liegend.",
+    "higherLevels": "Der Schaden steigt für jeden Zauberplatzgrad über 1 um 1d6.",
+    "castingTime": "Bonusaktion, unmittelbar nachdem du ein Ziel mit einer Nahkampfwaffe oder einem unbewaffneten Schlag getroffen hast",
+    "range": "Selbst",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Witch Bolt": {
+    "name": "Hexenblitz",
+    "description": "Ein knisternder Energiestrahl verbindet dich mit einer Kreatur in Reichweite. Führe einen Fernkampf-Zauberangriff aus; bei einem Treffer erleidet sie 2d12 Blitzschaden. In jedem deiner späteren Züge kannst du eine Bonusaktion ausführen, um ihr automatisch 1d12 Blitzschaden zuzufügen, selbst wenn der erste Angriff verfehlt hat. Der Zauber endet, wenn sich das Ziel außerhalb der Reichweite befindet oder volle Deckung vor dir hat.",
+    "higherLevels": "Der anfängliche Schaden steigt für jeden Zauberplatzgrad über 1 um 1d12.",
+    "material": "ein vom Blitz getroffener Zweig",
+    "castingTime": "Aktion",
+    "range": "18 Meter",
+    "duration": "Konzentration, bis zu 1 Minute",
+    "rolls": {
+      "attack": {
+        "label": "Angriff"
+      },
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Wrathful Smite": {
+    "name": "Zorniges Niederstrecken",
+    "description": "Dein Schlag fügt zusätzlich 1d6 nekrotischen Schaden zu, und das Ziel legt einen Weisheitsrettungswurf ab, sonst hat es den Zustand Verängstigt, bis der Zauber endet. Am Ende jedes seiner Züge wiederholt das verängstigte Ziel den Rettungswurf und beendet den Zauber bei einem Erfolg für sich selbst.",
+    "higherLevels": "Der Schaden steigt für jeden Zauberplatzgrad über 1 um 1d6.",
+    "castingTime": "Bonusaktion, unmittelbar nachdem du ein Ziel mit einer Nahkampfwaffe oder einem unbewaffneten Schlag getroffen hast",
+    "range": "Selbst",
+    "duration": "1 Minute",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Arcane Vigor": {
+    "name": "Arkane Lebenskraft",
+    "description": "Du gibst bis zu zwei deiner nicht verbrauchten Trefferwürfel aus, würfelst sie und erhältst Trefferpunkte in Höhe der Summe plus deines Zauberattributsmodifikators zurück.",
+    "higherLevels": "Du kannst für jeden Zauberplatzgrad über 2 einen weiteren Trefferwürfel ausgeben.",
+    "castingTime": "Bonusaktion",
+    "range": "Selbst",
+    "duration": "Sofort"
+  },
+  "Cloud of Daggers": {
+    "name": "Dolchwolke",
+    "description": "Wirbelnde Dolche füllen einen {{distance:5ft|adj}}-Würfel um einen Punkt in Reichweite. Eine Kreatur erleidet 4d4 Hiebschaden, wenn der Würfel in ihrem Bereich erscheint, wenn sie den Würfel betritt, wenn sich der Würfel in ihren Bereich bewegt oder wenn sie ihren Zug darin beendet; eine Kreatur erleidet diesen Schaden nur einmal pro Zug. In deinen späteren Zügen kannst du eine Magieaktion ausführen, um den Würfel bis zu {{distance:30ft}} weit zu bewegen.",
+    "higherLevels": "Der Schaden steigt für jeden Zauberplatzgrad über 2 um 2d4.",
+    "material": "ein Glassplitter",
+    "castingTime": "Aktion",
+    "range": "18 Meter",
+    "duration": "Konzentration, bis zu 1 Minute",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Cordon of Arrows": {
+    "name": "Pfeilspalier",
+    "description": "Du steckst bis zu vier nichtmagische Pfeile oder Bolzen in deinem Bereich in den Boden. Wenn eine andere Kreatur als du zum ersten Mal in einem Zug einen Bereich innerhalb von {{distance:30ft|dat}} um die Munition betritt oder ihren Zug dort beendet, fliegt ein Geschoss auf sie zu: Die Kreatur legt einen Geschicklichkeitsrettungswurf ab, sonst erleidet sie 2d4 Stichschaden, und dieses Geschoss wird zerstört. Wenn du den Zauber wirkst, kannst du Kreaturen bestimmen, die er ignoriert. Der Zauber endet, wenn keine Munition mehr übrig ist.",
+    "higherLevels": "Du steckst für jeden Zauberplatzgrad über 2 zwei weitere Geschosse in den Boden.",
+    "material": "ein Zierzopf",
+    "castingTime": "Aktion",
+    "range": "Berührung",
+    "duration": "8 Stunden",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Crown of Madness": {
+    "name": "Krone des Wahnsinns",
+    "description": "Eine Kreatur, die du sehen kannst, legt einen Weisheitsrettungswurf ab, sonst hat sie für die Wirkungsdauer den Zustand Bezaubert; sie ist automatisch erfolgreich, wenn sie kein Humanoider ist. Solange sie bezaubert ist, muss sie in jedem ihrer Züge, bevor sie sich bewegt, eine Aktion ausführen, um einen Nahkampfangriff gegen eine andere Kreatur als sich selbst auszuführen, die du gedanklich wählst. Sie wiederholt den Rettungswurf am Ende jedes ihrer Züge und beendet den Zauber bei einem Erfolg für sich selbst. In jedem deiner späteren Züge musst du die Aktion Magie ausführen, um die Kontrolle zu behalten, sonst endet der Zauber.",
+    "castingTime": "Aktion",
+    "range": "36 Meter",
+    "duration": "Konzentration, bis zu 1 Minute"
+  },
+  "Aura of Vitality": {
+    "name": "Aura der Lebenskraft",
+    "description": "Heilende Energie erfüllt eine Emanation von {{distance:30ft|dat}} um dich. Wenn du den Zauber wirkst und zu Beginn jedes deiner Züge, bis er endet, kannst du einer Kreatur in der Aura 2d6 Trefferpunkte wiederherstellen.",
+    "castingTime": "Aktion",
+    "range": "Selbst",
+    "duration": "Konzentration, bis zu 1 Minute"
+  },
+  "Blinding Smite": {
+    "name": "Blendendes Niederstrecken",
+    "description": "Dein Schlag fügt zusätzlich 3d8 gleißenden Schaden zu, und das Ziel hat den Zustand Geblendet, bis der Zauber endet. Am Ende jedes seiner Züge legt das Ziel einen Konstitutionsrettungswurf ab und beendet den Zauber bei einem Erfolg für sich selbst.",
+    "higherLevels": "Der zusätzliche Schaden steigt für jeden Zauberplatzgrad über 3 um 1d8.",
+    "castingTime": "Bonusaktion, unmittelbar nachdem du ein Ziel mit einer Nahkampfwaffe oder einem unbewaffneten Schlag getroffen hast",
+    "range": "Selbst",
+    "duration": "1 Minute",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Conjure Barrage": {
+    "name": "Geschosshagel beschwören",
+    "description": "Du schwingst die Waffe und beschwörst einen Sturm aus Kopien von ihr. Jede Kreatur deiner Wahl, die du in einem {{distance:60ft|adj}}-Kegel sehen kannst, legt einen Geschicklichkeitsrettungswurf ab. Bei einem Misserfolg erleidet sie 5d8 Energieschaden, bei einem Erfolg die Hälfte.",
+    "higherLevels": "Der Schaden steigt für jeden Zauberplatzgrad über 3 um 1d8.",
+    "material": "eine Nahkampf- oder Fernkampfwaffe im Wert von mindestens 1 KM",
+    "castingTime": "Aktion",
+    "range": "Selbst",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Elemental Weapon": {
+    "name": "Elementare Waffe",
+    "description": "Eine nichtmagische Waffe, die du berührst, wird zu einer magischen Waffe. Wähle Säure, Kälte, Feuer, Blitz oder Schall: Bis der Zauber endet, gewährt die Waffe einen Bonus von +1 auf Angriffswürfe und fügt bei einem Treffer zusätzlich 1d4 Schaden dieser Art zu.",
+    "higherLevels": "Mit einem Zauberplatz des 5.–6. Grades beträgt der Bonus +2 und der zusätzliche Schaden 2d4; mit einem Zauberplatz des 7. oder höheren Grades +3 und 3d4.",
+    "castingTime": "Aktion",
+    "range": "Berührung",
+    "duration": "Konzentration, bis zu 1 Stunde"
+  },
+  "Feign Death": {
+    "name": "Scheintod",
+    "description": "Eine bereitwillige Kreatur, die du berührst, erscheint bei äußerer Betrachtung tot. Für die Wirkungsdauer hat sie die Zustände Geblendet und Handlungsunfähig, ihre Bewegungsrate beträgt 0, sie hat Resistenz gegen alle Schadensarten außer psychischem Schaden und Immunität gegen den Zustand Vergiftet.",
+    "material": "eine Prise Friedhofserde",
+    "castingTime": "Aktion oder Ritual",
+    "range": "Berührung",
+    "duration": "1 Stunde"
+  },
+  "Lightning Arrow": {
+    "name": "Blitzpfeil",
+    "description": "Dein Schuss verwandelt sich in einen Blitz. Bei einem Treffer erleidet das Ziel 4d8 Blitzschaden anstelle des normalen Schadens der Waffe, bei einem Fehlschlag die Hälfte. Ob Treffer oder nicht, jede Kreatur innerhalb von {{distance:10ft|dat}} um das Ziel legt einen Geschicklichkeitsrettungswurf ab. Bei einem Misserfolg erleidet sie 2d8 Blitzschaden, bei einem Erfolg die Hälfte.",
+    "higherLevels": "Beide Schadenswürfe steigen für jeden Zauberplatzgrad über 3 um 1d8.",
+    "castingTime": "Bonusaktion, unmittelbar nachdem du einen Fernkampf-Waffenangriff ausgeführt hast",
+    "range": "Selbst",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Summon Undead": {
+    "name": "Untoten herbeirufen",
+    "description": "Du rufst einen mittelgroßen untoten Geist herbei, geisterhaft, verwesend oder skelettartig, in einem freien Bereich, den du sehen kannst. Er ist dir und deinen Gefährten gegenüber verbündet, teilt deine Initiative und handelt direkt nach dir und befolgt deine Befehle; erteilst du keine, führt er die Aktion Ausweichen aus. Er verschwindet, wenn er auf 0 Trefferpunkte sinkt oder der Zauber endet.\n\nUntoter Geist: RK 11 + Zaubergrad; Trefferpunkte 30 (geisterhaft oder verwesend) oder 20 (skelettartig) + 10 für jeden Zaubergrad über 3; Bewegungsrate {{distance:30ft|short}} (der geisterhafte fliegt außerdem {{distance:40ft|short}} und kann schweben). ST 12, GE 16, KO 15, IN 4, WE 10, CH 9. Immun gegen nekrotischen Schaden und Giftschaden sowie gegen die Zustände Erschöpfung, Verängstigt, Gelähmt und Vergiftet; Dunkelsicht {{distance:60ft|short}}. Er führt eine Anzahl von Angriffen aus, die dem halben Zaubergrad entspricht (abgerundet), und nutzt deinen Zauberangriffsmodifikator. Geisterhaft, Tödliche Berührung: Nahkampf, 1d8 + 3 + Zaubergrad nekrotischer Schaden, und das Ziel ist bis zum Ende seines nächsten Zuges verängstigt. Verwesend, Faulende Klaue: Nahkampf, 1d6 + 3 + Zaubergrad Hiebschaden, und ein vergiftetes Ziel ist zudem bis zum Ende seines nächsten Zuges gelähmt; Kreaturen, die ihren Zug innerhalb von {{distance:5ft|dat}} um ihn beginnen, legen einen Konstitutionsrettungswurf gegen deinen Zauberrettungswurf-SG ab, sonst sind sie bis zum Beginn ihres nächsten Zuges vergiftet. Skelettartig, Grabesblitz: Fernkampf {{distance:150ft|short}}, 2d4 + 3 + Zaubergrad nekrotischer Schaden.",
+    "higherLevels": "Verwende den Grad des Zauberplatzes als Zaubergrad im Spielwerteblock.",
+    "material": "ein vergoldeter Schädel im Wert von mindestens 300 GM",
+    "castingTime": "Aktion",
+    "range": "27 Meter",
+    "duration": "Konzentration, bis zu 1 Stunde"
+  },
+  "Aura of Purity": {
+    "name": "Aura der Reinheit",
+    "description": "Du und deine Verbündeten in einer Emanation von {{distance:30ft|dat}} um dich habt Resistenz gegen Giftschaden und Vorteil bei Rettungswürfen, um die Zustände Geblendet, Bezaubert, Taub, Verängstigt, Gelähmt, Vergiftet und Betäubt zu vermeiden oder zu beenden.",
+    "castingTime": "Aktion",
+    "range": "Selbst",
+    "duration": "Konzentration, bis zu 10 Minuten"
+  },
+  "Grasping Vine": {
+    "name": "Greifende Ranke",
+    "description": "Eine Ranke sprießt in einem freien Bereich in Reichweite, den du sehen kannst. Wenn du den Zauber wirkst, und als Bonusaktion in deinen späteren Zügen, kannst du einen Nahkampf-Zauberangriff gegen eine Kreatur innerhalb von {{distance:30ft|dat}} um die Ranke ausführen. Bei einem Treffer erleidet sie 4d8 Wuchtschaden und wird bis zu {{distance:30ft}} zur Ranke gezogen; ein höchstens riesiges Ziel hat zudem den Zustand Gepackt (Entkommen-SG entspricht deinem Zauberrettungswurf-SG). Die Ranke kann jeweils eine Kreatur packen, und du kannst sie jederzeit loslassen.",
+    "higherLevels": "Die Ranke kann für jeden Zauberplatzgrad über 4 eine weitere Kreatur packen.",
+    "castingTime": "Bonusaktion",
+    "range": "18 Meter",
+    "duration": "Konzentration, bis zu 1 Minute",
+    "rolls": {
+      "attack": {
+        "label": "Angriff"
+      },
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Staggering Smite": {
+    "name": "Wankendmachendes Niederstrecken",
+    "description": "Dein Schlag fügt zusätzlich 4d6 psychischen Schaden zu, und das Ziel legt einen Weisheitsrettungswurf ab, sonst hat es bis zum Ende deines nächsten Zuges den Zustand Betäubt.",
+    "higherLevels": "Der Schaden steigt für jeden Zauberplatzgrad über 4 um 1d6.",
+    "castingTime": "Bonusaktion, unmittelbar nachdem du ein Ziel mit einer Nahkampfwaffe oder einem unbewaffneten Schlag getroffen hast",
+    "range": "Selbst",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Summon Elemental": {
+    "name": "Elementar herbeirufen",
+    "description": "Du rufst einen mittelgroßen Elementargeist der Luft, Erde, des Feuers oder des Wassers in einem freien Bereich herbei, den du sehen kannst. Er ist dir und deinen Gefährten gegenüber verbündet, teilt deine Initiative und handelt direkt nach dir und befolgt deine Befehle; erteilst du keine, führt er die Aktion Ausweichen aus. Er verschwindet, wenn er auf 0 Trefferpunkte sinkt oder der Zauber endet.\n\nElementargeist: RK 11 + Zaubergrad; Trefferpunkte 50 + 10 für jeden Zaubergrad über 4; Bewegungsrate {{distance:40ft|short}}, dazu Graben {{distance:40ft|short}} (Erde), Fliegen {{distance:40ft|short}} mit Schweben (Luft) oder Schwimmen {{distance:40ft|short}} (Wasser). ST 18, GE 15, KO 17, IN 4, WE 10, CH 16. Resistenz gegen Säure (Wasser), Blitz und Schall (Luft) oder Stich- und Hiebschaden (Erde); immun gegen Giftschaden, Feuerschaden (Feuer) und die Zustände Erschöpfung, Gelähmt, Versteinert und Vergiftet; Dunkelsicht {{distance:60ft|short}}; spricht Ursprache. Luft-, Feuer- und Wassergeister passen durch Lücken von nur {{distance:1in}}. Er führt eine Anzahl von Hieb-Angriffen aus, die dem halben Zaubergrad entspricht (abgerundet): Nahkampf, mit deinem Zauberangriffsmodifikator, 1d10 + 4 + Zaubergrad Schaden seines Elements (Wucht für Erde, Kälte für Wasser, Blitz für Luft, Feuer für Feuer).",
+    "higherLevels": "Verwende den Grad des Zauberplatzes als Zaubergrad im Spielwerteblock.",
+    "material": "Luft, ein Kieselstein, Asche und Wasser in einer goldverzierten Phiole im Wert von mindestens 400 GM",
+    "castingTime": "Aktion",
+    "range": "27 Meter",
+    "duration": "Konzentration, bis zu 1 Stunde"
+  },
+  "Banishing Smite": {
+    "name": "Verbannendes Niederstrecken",
+    "description": "Dein Schlag fügt zusätzlich 5d10 Energieschaden zu. Hat das Ziel nach dem Angriff höchstens 50 Trefferpunkte, legt es einen Charismarettungswurf ab, sonst wird es auf eine harmlose Halbebene geschickt, wo es den Zustand Handlungsunfähig hat, bis der Zauber endet. Danach kehrt es in den Bereich zurück, den es verlassen hat, oder in den nächsten freien Bereich.",
+    "castingTime": "Bonusaktion, unmittelbar nachdem du ein Ziel mit einer Nahkampfwaffe oder einem unbewaffneten Schlag getroffen hast",
+    "range": "Selbst",
+    "duration": "Konzentration, bis zu 1 Minute",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Circle of Power": {
+    "name": "Kreis der Macht",
+    "description": "Du und deine Verbündeten in einer Emanation von {{distance:30ft|dat}} um dich habt Vorteil bei Rettungswürfen gegen Zauber und andere magische Effekte. Wenn eine betroffene Kreatur einen Rettungswurf gegen einen Zauber oder magischen Effekt besteht, der bei einem Erfolg halben Schaden verursacht, erleidet sie stattdessen keinen Schaden.",
+    "castingTime": "Aktion",
+    "range": "Selbst",
+    "duration": "Konzentration, bis zu 10 Minuten"
+  },
+  "Conjure Volley": {
+    "name": "Geschosssalve beschwören",
+    "description": "Du feuerst die Waffe auf einen Punkt in Reichweite ab, und Kopien von ihr regnen herab. Jede Kreatur deiner Wahl, die du in einem Zylinder mit {{distance:40ft|dat}} Radius und {{distance:20ft|dat}} Höhe um diesen Punkt sehen kannst, legt einen Geschicklichkeitsrettungswurf ab. Bei einem Misserfolg erleidet sie 8d8 Energieschaden, bei einem Erfolg die Hälfte.",
+    "material": "eine Nahkampf- oder Fernkampfwaffe im Wert von mindestens 1 KM",
+    "castingTime": "Aktion",
+    "range": "45 Meter",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Destructive Wave": {
+    "name": "Zerstörerische Woge",
+    "description": "Göttliche Energie bricht aus dir hervor. Jede Kreatur deiner Wahl in einer Emanation von {{distance:30ft|dat}} legt einen Konstitutionsrettungswurf ab. Bei einem Misserfolg erleidet sie 5d6 Schallschaden und 5d6 gleißenden oder nekrotischen Schaden (nach deiner Wahl) und hat den Zustand Liegend. Bei einem Erfolg erleidet sie nur den halben Schaden.",
+    "castingTime": "Aktion",
+    "range": "Selbst",
+    "duration": "Sofort",
+    "rolls": {
+      "thunder": {
+        "label": "Schallschaden"
+      },
+      "divine": {
+        "label": "Gleißender oder nekrotischer Schaden"
+      }
+    }
+  },
+  "Jallarzi's Storm of Radiance": {
+    "name": "Jallarzis Strahlensturm",
+    "description": "Ein Sturm aus flackerndem Licht und Donner füllt einen Zylinder mit {{distance:10ft|dat}} Radius und {{distance:40ft|dat}} Höhe um einen Punkt in Reichweite, den du sehen kannst. Solange sie sich darin befinden, haben Kreaturen die Zustände Geblendet und Taub und können keine Zauber mit verbaler Komponente wirken. Wenn der Sturm erscheint, legt jede Kreatur darin einen Konstitutionsrettungswurf ab. Bei einem Misserfolg erleidet sie 2d10 gleißenden Schaden und 2d10 Schallschaden, bei einem Erfolg die Hälfte. Eine Kreatur legt diesen Rettungswurf auch ab, wenn sie den Bereich zum ersten Mal in einem Zug betritt oder ihren Zug dort beendet, höchstens einmal pro Zug.",
+    "higherLevels": "Der gleißende Schaden und der Schallschaden steigen für jeden Zauberplatzgrad über 5 jeweils um 1d10.",
+    "material": "eine Prise Phosphor",
+    "castingTime": "Aktion",
+    "range": "36 Meter",
+    "duration": "Konzentration, bis zu 1 Minute",
+    "rolls": {
+      "radiant": {
+        "label": "Gleißender Schaden"
+      },
+      "thunder": {
+        "label": "Schallschaden"
+      }
+    }
+  },
+  "Swift Quiver": {
+    "name": "Schneller Köcher",
+    "description": "Wenn du den Zauber wirkst, und als Bonusaktion in jedem deiner Züge, bis er endet, kannst du zwei Angriffe mit einer Waffe ausführen, die Pfeile oder Bolzen verschießt. Der Zauber erschafft die Munition für jeden Angriff; sie verursacht den normalen Schaden und verschwindet nach dem Angriff.",
+    "material": "ein Köcher im Wert von mindestens 1 GM",
+    "castingTime": "Bonusaktion",
+    "range": "Selbst",
+    "duration": "Konzentration, bis zu 1 Minute"
+  },
+  "Synaptic Static": {
+    "name": "Synaptische Störung",
+    "description": "Psychische Energie bricht in einer Kugel mit {{distance:20ft|dat}} Radius um einen Punkt in Reichweite hervor. Jede Kreatur darin legt einen Intelligenzrettungswurf ab. Bei einem Misserfolg erleidet sie 8d6 psychischen Schaden, bei einem Erfolg die Hälfte. Bei einem Misserfolg ist die Kreatur außerdem 1 Minute lang verwirrt: Sie zieht 1d6 von ihren Angriffswürfen, Attributsproben und Konstitutionsrettungswürfen zum Aufrechterhalten der Konzentration ab. Sie wiederholt den Rettungswurf am Ende jedes ihrer Züge und beendet den Effekt bei einem Erfolg für sich selbst.",
+    "castingTime": "Aktion",
+    "range": "36 Meter",
+    "duration": "Sofort",
+    "rolls": {
+      "damage": {
+        "label": "Schaden"
+      }
+    }
+  },
+  "Arcane Gate": {
+    "name": "Arkanes Tor",
+    "description": "Du erschaffst zwei verbundene Teleportationsportale auf dem Boden, in freien Bereichen, die du sehen kannst und die jeweils einen großen Bereich füllen: eines innerhalb von {{distance:10ft|dat}} um dich und eines innerhalb von {{distance:500ft|dat}}. Jedes Portal öffnet sich zu einer Seite deiner Wahl; was durch diese Seite eintritt, erscheint am anderen Portal. Als Bonusaktion kannst du die offenen Seiten drehen.",
+    "castingTime": "Aktion",
+    "range": "150 Meter",
+    "duration": "Konzentration, bis zu 10 Minuten"
+  },
+  "Summon Fiend": {
+    "name": "Unhold herbeirufen",
+    "description": "Du rufst einen großen Unholdgeist herbei, Dämon, Teufel oder Yugoloth, in einem freien Bereich, den du sehen kannst. Er ist dir und deinen Gefährten gegenüber verbündet, teilt deine Initiative und handelt direkt nach dir und befolgt deine Befehle; erteilst du keine, führt er die Aktion Ausweichen aus. Er verschwindet, wenn er auf 0 Trefferpunkte sinkt oder der Zauber endet.\n\nUnholdgeist: RK 12 + Zaubergrad; Trefferpunkte 50 (Dämon), 40 (Teufel) oder 60 (Yugoloth) + 15 für jeden Zaubergrad über 6; Bewegungsrate {{distance:40ft|short}}, dazu Klettern {{distance:40ft|short}} (Dämon) oder Fliegen {{distance:60ft|short}} (Teufel). ST 13, GE 16, KO 15, IN 10, WE 10, CH 16. Resistenz gegen Feuerschaden; immun gegen Giftschaden und den Zustand Vergiftet; Dunkelsicht {{distance:60ft|short}}; spricht Abyssisch und Infernalisch, mit Telepathie {{distance:60ft|short}}; Vorteil bei Rettungswürfen gegen Zauber. Er führt eine Anzahl von Angriffen aus, die dem halben Zaubergrad entspricht (abgerundet), und nutzt deinen Zauberangriffsmodifikator. Dämon, Biss: Nahkampf, 1d12 + 3 + Zaubergrad nekrotischer Schaden; wenn er auf 0 Trefferpunkte sinkt oder der Zauber endet, explodiert er, und Kreaturen innerhalb von {{distance:10ft|dat}} legen einen Geschicklichkeitsrettungswurf gegen deinen Zauberrettungswurf-SG ab. Bei einem Misserfolg erleiden sie 2d10 + Zaubergrad Feuerschaden, bei einem Erfolg die Hälfte. Teufel, Feuriger Schlag: Nahkampf oder Fernkampf {{distance:150ft|short}}, 2d6 + 3 + Zaubergrad Feuerschaden. Yugoloth, Klauen: Nahkampf, 1d8 + 3 + Zaubergrad Hiebschaden, danach kann er sich bis zu {{distance:30ft}} weit in einen freien Bereich teleportieren, den er sehen kann.",
+    "higherLevels": "Verwende den Grad des Zauberplatzes als Zaubergrad im Spielwerteblock.",
+    "material": "eine blutige Phiole im Wert von mindestens 600 GM",
+    "castingTime": "Aktion",
+    "range": "27 Meter",
+    "duration": "Konzentration, bis zu 1 Stunde"
+  },
+  "Tasha's Bubbling Cauldron": {
+    "name": "Tashas brodelnder Kessel",
+    "description": "Ein unbeweglicher Kessel erscheint in Reichweite auf dem Boden, gefüllt mit Kopien eines gewöhnlichen oder ungewöhnlichen Tranks deiner Wahl. Als Bonusaktion kannst du oder ein Verbündeter einen Trank herausnehmen. Er enthält eine Anzahl von Tränken in Höhe deines Zauberattributsmodifikators (mindestens 1), und der Zauber endet, wenn der letzte herausgenommen wird oder die Wirkungsdauer abläuft. Nicht getrunkene Tränke verschwinden, wenn du diesen Zauber erneut wirkst.",
+    "material": "eine vergoldete Schöpfkelle im Wert von mindestens 500 GM",
+    "castingTime": "Aktion",
+    "range": "1,5 Meter",
+    "duration": "10 Minuten"
+  },
+  "Power Word Fortify": {
+    "name": "Machtwort Stärkung",
+    "description": "Du sprichst ein Machtwort, das 120 temporäre Trefferpunkte gewährt, die du nach Belieben auf bis zu sechs Kreaturen in Reichweite verteilst, die du sehen kannst.",
+    "castingTime": "Aktion",
+    "range": "18 Meter",
+    "duration": "Sofort"
+  },
+  "Telepathy": {
+    "name": "Telepathie",
+    "description": "Du erschaffst eine telepathische Verbindung zu einer bereitwilligen Kreatur, die du kennst und die sich auf derselben Existenzebene befindet. Bis der Zauber endet, können du und das Ziel sofort Worte, Bilder, Geräusche und andere Sinneseindrücke austauschen. Der Zauber endet, wenn einer von euch diese Ebene verlässt.",
+    "material": "ein Paar miteinander verbundener Silberringe",
+    "castingTime": "Aktion",
+    "range": "Unbegrenzt",
+    "duration": "24 Stunden"
   }
 }

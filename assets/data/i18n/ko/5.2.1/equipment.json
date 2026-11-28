@@ -565,5 +565,17 @@
       "name": "교란",
       "description": "피해를 주며 명중하면 다음 자신의 턴이 끝나기 전 그 크리처를 상대로 하는 다음 공격 굴림에 이점을 얻습니다."
     }
+  },
+  "Artisan's Tools": {
+    "name": "장인 도구"
+  },
+  "Musical Instrument": {
+    "name": "악기"
+  },
+  "Gaming Set": {
+    "name": "게임 도구"
+  },
+  "Book (philosophy)": {
+    "name": "책 (철학)"
   }
 }

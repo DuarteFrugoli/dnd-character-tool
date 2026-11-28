@@ -142,5 +142,21 @@
   "Otherworldly Presence": {
     "name": "Öte Dünyalı Varlık",
     "description": "İfrit Mirası için seçilen büyü yapma niteliğini kullanarak Mucize basit büyüsünü bilirsin."
+  },
+  "Celestial Resistance": {
+    "name": "Göksel Direnç",
+    "description": "Nekrotik hasara ve ışın hasarına Direncin vardır."
+  },
+  "Healing Hands": {
+    "name": "Şifalı Eller",
+    "description": "Büyü eylemiyle bir yaratığa dokun ve Yetkinlik Bonusun kadar d4 at. Yaratık toplam sonuç kadar can puanı iyileştirir. Her Uzun Dinlenmede bir kez."
+  },
+  "Light Bearer": {
+    "name": "Işık Taşıyıcısı",
+    "description": "Işık basit büyüsünü bilirsin ve bu büyü için büyü yapma niteliğin Karizmadır."
+  },
+  "Celestial Revelation": {
+    "name": "Göksel Tezahür",
+    "description": "Karakter seviyesi 3 olduğunda, Bonus Eylemle 1 dakika veya eylem harcamadan bitirene kadar dönüşebilirsin. Her kullanımda bir seçenek seç. Dönüşümde kendi her turunda bir kez, saldırı veya büyüyle hasar verdiğin bir hedefe Yetkinlik Bonusun kadar ek hasar verebilirsin: Nekrotik Örtü için nekrotik, diğerleri için ışın hasarı. Göksel Kanatlar: Hızına eşit Uçma Hızı kazanırsın. İçsel Parıltı: Yarıçapı {{distance:10ft|adj}} olan Parlak Işık ve bunun ötesine {{distance:10ft}} Loş Işık yayarsın. Kendi her turunun sonunda {{distance:10ft}} mesafe içindeki senden başka her yaratık Yetkinlik Bonusun kadar ışın hasarı alır. Nekrotik Örtü: Dönüştüğünde {{distance:10ft}} mesafe içindeki müttefiklerin dışındaki yaratıklar Karizma kurtulma atışını (ZD 8 + senin Karizma değiştiricin + Yetkinlik Bonusun) başaramazlarsa senin sonraki turunun sonuna kadar Korkmuş olur. Her Uzun Dinlenmede bir kez."
   }
 }

@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "Eredità immonda (incantesimo al livello 5 del personaggio)"
+    },
+    "2024_lucky": {
+      "name": "Punti Fortuna"
+    },
+    "2024_healing_hands": {
+      "name": "Mani Guaritrici"
+    },
+    "2024_celestial_revelation": {
+      "name": "Rivelazione Celestiale"
     }
   }
 }

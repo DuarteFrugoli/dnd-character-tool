@@ -565,5 +565,17 @@
       "name": "扰乱",
       "description": "造成伤害的命中使你在下回合结束前对该生物的下一次攻击检定具有优势。"
     }
+  },
+  "Artisan's Tools": {
+    "name": "工匠工具"
+  },
+  "Musical Instrument": {
+    "name": "乐器"
+  },
+  "Gaming Set": {
+    "name": "游戏用具"
+  },
+  "Book (philosophy)": {
+    "name": "书 (哲学)"
   }
 }

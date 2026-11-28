@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "Şeytani Miras (Karakter 5. Seviyede Kazanılan Büyü)"
+    },
+    "2024_lucky": {
+      "name": "Şans Puanları"
+    },
+    "2024_healing_hands": {
+      "name": "Şifalı Eller"
+    },
+    "2024_celestial_revelation": {
+      "name": "Göksel Tezahür"
     }
   }
 }

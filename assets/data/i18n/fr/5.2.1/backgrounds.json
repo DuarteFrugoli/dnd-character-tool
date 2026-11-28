@@ -10,5 +10,41 @@
   },
   "Soldier": {
     "name": "Soldat"
+  },
+  "Artisan": {
+    "name": "Artisan"
+  },
+  "Charlatan": {
+    "name": "Charlatan"
+  },
+  "Entertainer": {
+    "name": "Artiste"
+  },
+  "Farmer": {
+    "name": "Fermier"
+  },
+  "Guard": {
+    "name": "Garde"
+  },
+  "Guide": {
+    "name": "Guide"
+  },
+  "Hermit": {
+    "name": "Ermite"
+  },
+  "Merchant": {
+    "name": "Marchand"
+  },
+  "Noble": {
+    "name": "Noble"
+  },
+  "Sailor": {
+    "name": "Marin"
+  },
+  "Scribe": {
+    "name": "Scribe"
+  },
+  "Wayfarer": {
+    "name": "Voyageur"
   }
 }

@@ -10,5 +10,41 @@
   },
   "Soldier": {
     "name": "士兵"
+  },
+  "Artisan": {
+    "name": "工匠"
+  },
+  "Charlatan": {
+    "name": "骗子"
+  },
+  "Entertainer": {
+    "name": "艺人"
+  },
+  "Farmer": {
+    "name": "农夫"
+  },
+  "Guard": {
+    "name": "卫兵"
+  },
+  "Guide": {
+    "name": "向导"
+  },
+  "Hermit": {
+    "name": "隐士"
+  },
+  "Merchant": {
+    "name": "商人"
+  },
+  "Noble": {
+    "name": "贵族"
+  },
+  "Sailor": {
+    "name": "水手"
+  },
+  "Scribe": {
+    "name": "抄写员"
+  },
+  "Wayfarer": {
+    "name": "流浪者"
   }
 }

@@ -2989,5 +2989,423 @@
     "castingTime": "Aksiyon",
     "range": "Kendin",
     "duration": "Anlık"
+  },
+  "Blade Ward": {
+    "name": "Kılıç Koruması",
+    "description": "Büyü bitene kadar sana karşı saldırı atışı yapan her yaratık atışından 1d4 çıkarır.",
+    "castingTime": "Aksiyon",
+    "range": "Kendin",
+    "duration": "Konsantrasyon, en fazla 1 dakika"
+  },
+  "Friends": {
+    "name": "Dostluk",
+    "description": "Görebildiğin bir yaratık bir Bilgelik kurtulma atışı yapar, aksi hâlde büyünün süresi boyunca Büyülenmiş durumuna girer. İnsansı değilse, onunla savaşıyorsan ya da son 24 saat içinde ona bu büyüyü yaptıysan otomatik olarak başarılı olur. Hedef hasar alırsa ya da sen bir saldırı atışı yapar, hasar verir veya birini kurtulma atışı yapmaya zorlarsan büyü erken sona erer. Büyü sona erdiğinde yaratık senin tarafından Büyülendiğini bilir.",
+    "material": "biraz makyaj",
+    "castingTime": "Aksiyon",
+    "range": "10 fit",
+    "duration": "Konsantrasyon, en fazla 1 dakika"
+  },
+  "Thorn Whip": {
+    "name": "Dikenli Kırbaç",
+    "description": "Dikenli bir sarmaşık menzil içindeki bir yaratığı kırbaçlar. Yakın dövüş büyü saldırısı yap; isabet hâlinde hedef 1d6 Delici hasar alır ve Büyük ya da daha küçükse onu en fazla {{distance:10ft}} kendine doğru çekebilirsin.\n\nBasit Büyü Gelişimi. Hasar 5. seviyede (2d6), 11. seviyede (3d6) ve 17. seviyede (4d6) 1d6 artar.",
+    "material": "dikenli bir bitkinin sapı",
+    "castingTime": "Aksiyon",
+    "range": "30 fit",
+    "duration": "Anlık",
+    "rolls": {
+      "attack": {
+        "label": "Saldırı"
+      },
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Thunderclap": {
+    "name": "Gök Gürlemesi",
+    "description": "Etrafındaki {{distance:5ft|lik}} bir Yayılımdaki her yaratık bir Dayanıklılık kurtulma atışı yapar; başarısız olursa 1d6 Gök Gürültüsü hasarı alır. Gümbürtü en fazla {{distance:100ft}} uzaktan duyulabilir.\n\nBasit Büyü Gelişimi. Hasar 5. seviyede (2d6), 11. seviyede (3d6) ve 17. seviyede (4d6) 1d6 artar.",
+    "castingTime": "Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Toll the Dead": {
+    "name": "Ölüler İçin Çan",
+    "description": "Menzil içinde görebildiğin bir yaratık için kasvetli bir çan çalar. Yaratık bir Bilgelik kurtulma atışı yapar; başarısız olursa 1d8 Nekrotik hasar alır, Can Puanlarından herhangi biri zaten eksikse bunun yerine 1d12 Nekrotik hasar alır.\n\nBasit Büyü Gelişimi. Hasar 5., 11. ve 17. seviyelerde birer zar artar (2, 3 ve 4 zar).",
+    "castingTime": "Aksiyon",
+    "range": "60 fit",
+    "duration": "Anlık"
+  },
+  "Word of Radiance": {
+    "name": "Işıltı Sözü",
+    "description": "Etrafındaki {{distance:5ft|lik}} bir Yayılımda görebildiğin ve seçtiğin her yaratık bir Dayanıklılık kurtulma atışı yapar; başarısız olursa 1d6 Işıltı hasarı alır.\n\nBasit Büyü Gelişimi. Hasar 5. seviyede (2d6), 11. seviyede (3d6) ve 17. seviyede (4d6) 1d6 artar.",
+    "material": "bir güneş simgesi",
+    "castingTime": "Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Armor of Agathys": {
+    "name": "Agathys Zırhı",
+    "description": "5 Geçici Can Puanı kazanırsın. Büyü bitene kadar sana yakın dövüş saldırı atışıyla isabet ettiren bir yaratık 5 Soğuk hasarı alır. Geçici Can Puanın kalmazsa büyü erken sona erer.",
+    "higherLevels": "Geçici Can Puanları ve Soğuk hasarı, 1. seviyenin üzerindeki her büyü yuvası seviyesi için 5 artar.",
+    "material": "bir parça mavi cam",
+    "castingTime": "Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "1 saat"
+  },
+  "Compelled Duel": {
+    "name": "Zorunlu Düello",
+    "description": "Görebildiğin bir yaratık bir Bilgelik kurtulma atışı yapar. Başarısız olursa senden başka yaratıklara karşı saldırı atışlarında Dezavantajlıdır ve senden {{distance:30ft}} daha uzaktaki bir alana isteyerek hareket edemez. Başka bir düşmana saldırırsan ya da ona büyü yaparsan, bir müttefikin hedefe hasar verirse veya turunu ondan {{distance:30ft}} daha uzakta bitirirsen büyü sona erer.",
+    "castingTime": "Bonus Aksiyon",
+    "range": "30 fit",
+    "duration": "Konsantrasyon, en fazla 1 dakika"
+  },
+  "Hail of Thorns": {
+    "name": "Diken Yağmuru",
+    "description": "Menzilli saldırın isabet ettiğinde atıştan dikenler fışkırır. Hedef ve ona {{distance:5ft}} mesafe içindeki her yaratık bir Çeviklik kurtulma atışı yapar; başarısız bir kurtulmada 1d10 Delici hasar, başarılı bir kurtulmada bunun yarısını alır.",
+    "higherLevels": "Hasar, 1. seviyenin üzerindeki her büyü yuvası seviyesi için 1d10 artar.",
+    "castingTime": "Bir yaratığa menzilli silahla isabet ettirdikten hemen sonra kullanılan Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Thunderous Smite": {
+    "name": "Gürleyen Darbe",
+    "description": "Darben en fazla {{distance:300ft}} uzaktan duyulacak şekilde yankılanır ve ek olarak 2d6 Gök Gürültüsü hasarı verir. Hedef bir yaratıksa bir Güç kurtulma atışı yapar, aksi hâlde senden {{distance:10ft}} uzağa itilir ve Yere Düşmüş durumuna girer.",
+    "higherLevels": "Hasar, 1. seviyenin üzerindeki her büyü yuvası seviyesi için 1d6 artar.",
+    "castingTime": "Bir hedefe yakın dövüş silahı veya Silahsız Vuruşla isabet ettirdikten hemen sonra kullanılan Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Witch Bolt": {
+    "name": "Cadı Işını",
+    "description": "Çatırdayan bir enerji ışını seni menzil içindeki bir yaratığa bağlar. Menzilli büyü saldırısı yap; isabet hâlinde yaratık 2d12 Yıldırım hasarı alır. Sonraki her turunda bir Bonus Aksiyon kullanarak, ilk saldırı ıskalamış olsa bile ona otomatik olarak 1d12 Yıldırım hasarı verebilirsin. Hedef menzil dışına çıkarsa ya da sana karşı Tam Siperi olursa büyü sona erer.",
+    "higherLevels": "İlk hasar, 1. seviyenin üzerindeki her büyü yuvası seviyesi için 1d12 artar.",
+    "material": "yıldırım çarpmış bir dal",
+    "castingTime": "Aksiyon",
+    "range": "60 fit",
+    "duration": "Konsantrasyon, en fazla 1 dakika",
+    "rolls": {
+      "attack": {
+        "label": "Saldırı"
+      },
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Wrathful Smite": {
+    "name": "Gazaplı Darbe",
+    "description": "Darben ek olarak 1d6 Nekrotik hasar verir ve hedef bir Bilgelik kurtulma atışı yapar, aksi hâlde büyü bitene kadar Korkmuş durumuna girer. Korkmuş hedef her turunun sonunda kurtulma atışını tekrarlar; başarılı olursa büyü onun üzerinde sona erer.",
+    "higherLevels": "Hasar, 1. seviyenin üzerindeki her büyü yuvası seviyesi için 1d6 artar.",
+    "castingTime": "Bir hedefe yakın dövüş silahı veya Silahsız Vuruşla isabet ettirdikten hemen sonra kullanılan Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "1 dakika",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Arcane Vigor": {
+    "name": "Arkan Dinçlik",
+    "description": "Harcanmamış Can Zarlarından en fazla ikisini harcayıp atarsın ve toplam artı büyü yapma yetenek değiştiricin kadar Can Puanı geri kazanırsın.",
+    "higherLevels": "2. seviyenin üzerindeki her büyü yuvası seviyesi için bir Can Zarı daha harcayabilirsin.",
+    "castingTime": "Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık"
+  },
+  "Cloud of Daggers": {
+    "name": "Hançer Bulutu",
+    "description": "Dönen hançerler menzil içindeki bir noktayı merkez alan {{distance:5ft|lik}} bir Küpü doldurur. Küp bir yaratığın alanında belirdiğinde, yaratık Küpe girdiğinde, Küp onun alanına hareket ettiğinde ya da yaratık turunu orada bitirdiğinde yaratık 4d4 Kesici hasar alır; bir yaratık bu hasarı tur başına yalnızca bir kez alır. Sonraki turlarında bir Büyü eylemi kullanarak Küpü en fazla {{distance:30ft}} hareket ettirebilirsin.",
+    "higherLevels": "Hasar, 2. seviyenin üzerindeki her büyü yuvası seviyesi için 2d4 artar.",
+    "material": "bir cam kıymığı",
+    "castingTime": "Aksiyon",
+    "range": "60 fit",
+    "duration": "Konsantrasyon, en fazla 1 dakika",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Cordon of Arrows": {
+    "name": "Ok Nöbeti",
+    "description": "Bulunduğun alanda yere en fazla dört büyülü olmayan ok veya cıvata saplarsın. Senden başka bir yaratık bir turda ilk kez cephaneye {{distance:30ft}} mesafe içindeki bir alana girdiğinde ya da turunu orada bitirdiğinde bir parça ona doğru uçar: yaratık bir Çeviklik kurtulma atışı yapar, aksi hâlde 2d4 Delici hasar alır ve o parça yok olur. Büyüyü yaptığında büyünün görmezden geleceği yaratıkları seçebilirsin. Cephane kalmadığında büyü sona erer.",
+    "higherLevels": "2. seviyenin üzerindeki her büyü yuvası seviyesi için iki parça daha cephane saplarsın.",
+    "material": "süslü bir örgü",
+    "castingTime": "Aksiyon",
+    "range": "Dokunma",
+    "duration": "8 saat",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Crown of Madness": {
+    "name": "Delilik Tacı",
+    "description": "Görebildiğin bir yaratık bir Bilgelik kurtulma atışı yapar, aksi hâlde büyünün süresi boyunca Büyülenmiş durumuna girer; İnsansı değilse otomatik olarak başarılı olur. Büyülenmiş olduğu sürece her turunda hareket etmeden önce zihninden seçtiğin, kendisi dışındaki bir yaratığa yakın dövüş saldırısı yapmak için bir eylem kullanmalıdır. Her turunun sonunda kurtulma atışını tekrarlar; başarılı olursa büyü onun üzerinde sona erer. Sonraki her turunda kontrolü sürdürmek için Büyü eylemini kullanmalısın, aksi hâlde büyü sona erer.",
+    "castingTime": "Aksiyon",
+    "range": "120 fit",
+    "duration": "Konsantrasyon, en fazla 1 dakika"
+  },
+  "Aura of Vitality": {
+    "name": "Canlılık Aurası",
+    "description": "İyileştirici enerji etrafındaki {{distance:30ft|lik}} bir Yayılımı doldurur. Büyüyü yaptığında ve büyü bitene kadar her turunun başında auradaki bir yaratığa 2d6 Can Puanı geri kazandırabilirsin.",
+    "castingTime": "Aksiyon",
+    "range": "Kendin",
+    "duration": "Konsantrasyon, en fazla 1 dakika"
+  },
+  "Blinding Smite": {
+    "name": "Kör Edici Darbe",
+    "description": "Darben ek olarak 3d8 Işıltı hasarı verir ve hedef büyü bitene kadar Kör durumuna girer. Hedef her turunun sonunda bir Dayanıklılık kurtulma atışı yapar; başarılı olursa büyü onun üzerinde sona erer.",
+    "higherLevels": "Ek hasar, 3. seviyenin üzerindeki her büyü yuvası seviyesi için 1d8 artar.",
+    "castingTime": "Bir hedefe yakın dövüş silahı veya Silahsız Vuruşla isabet ettirdikten hemen sonra kullanılan Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "1 dakika",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Conjure Barrage": {
+    "name": "Büyülü Yaylım",
+    "description": "Silahı savurur ve onun kopyalarından oluşan bir fırtına çağırırsın. {{distance:60ft|lik}} bir Konide görebildiğin ve seçtiğin her yaratık bir Çeviklik kurtulma atışı yapar; başarısız bir kurtulmada 5d8 Kuvvet hasarı, başarılı bir kurtulmada bunun yarısını alır.",
+    "higherLevels": "Hasar, 3. seviyenin üzerindeki her büyü yuvası seviyesi için 1d8 artar.",
+    "material": "en az 1 bp değerinde bir yakın dövüş veya menzilli silah",
+    "castingTime": "Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Elemental Weapon": {
+    "name": "Element Silahı",
+    "description": "Dokunduğun büyülü olmayan bir silah büyülü bir silaha dönüşür. Asit, Soğuk, Ateş, Yıldırım veya Gök Gürültüsü seç: büyü bitene kadar silah saldırı atışlarına +1 bonus verir ve isabet ettiğinde o türden ek olarak 1d4 hasar verir.",
+    "higherLevels": "5-6. seviye bir büyü yuvasıyla bonus +2, ek hasar 2d4 olur; 7. seviye veya daha yüksek bir yuvayla +3 ve 3d4 olur.",
+    "castingTime": "Aksiyon",
+    "range": "Dokunma",
+    "duration": "Konsantrasyon, en fazla 1 saat"
+  },
+  "Feign Death": {
+    "name": "Ölü Taklidi",
+    "description": "Dokunduğun gönüllü bir yaratık dışarıdan bakıldığında ölü görünür. Büyünün süresi boyunca Kör ve Eylemsiz durumlarındadır, Hızı 0 olur, Psişik hasar dışındaki tüm hasarlara karşı Direnci ve Zehirlenmiş durumuna karşı Bağışıklığı olur.",
+    "material": "bir tutam mezarlık toprağı",
+    "castingTime": "Aksiyon veya Ritüel",
+    "range": "Dokunma",
+    "duration": "1 saat"
+  },
+  "Lightning Arrow": {
+    "name": "Şimşek Oku",
+    "description": "Atışın bir yıldırıma dönüşür. İsabet hâlinde hedef silahın normal hasarı yerine 4d8 Yıldırım hasarı alır; ıskalarsa bunun yarısını alır. İsabet etsin ya da etmesin, hedefe {{distance:10ft}} mesafe içindeki her yaratık bir Çeviklik kurtulma atışı yapar; başarısız bir kurtulmada 2d8 Yıldırım hasarı, başarılı bir kurtulmada bunun yarısını alır.",
+    "higherLevels": "Her iki hasar atışı da 3. seviyenin üzerindeki her büyü yuvası seviyesi için 1d8 artar.",
+    "castingTime": "Menzilli bir silah saldırısı yaptıktan hemen sonra kullanılan Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Summon Undead": {
+    "name": "Ölümsüz Çağırma",
+    "description": "Görebildiğin boş bir alana Orta boyutta bir Ölümsüz ruh çağırırsın: Hayaletimsi, Çürümüş veya İskelet. Senin ve yoldaşlarının müttefikidir, İnisiyatifini paylaşır ve hemen senden sonra hareket eder, emirlerine uyar; emir vermezsen Kaçınma eylemini yapar. Can Puanı 0'a düştüğünde ya da büyü sona erdiğinde kaybolur.\n\nÖlümsüz Ruh: ZS 11 + büyü seviyesi; Can Puanı 30 (Hayaletimsi veya Çürümüş) ya da 20 (İskelet) + 3'ün üzerindeki her büyü seviyesi için 10; Hız {{distance:30ft|short}} (Hayaletimsi ayrıca {{distance:40ft|short}} uçar ve havada asılı kalabilir). Güç 12, Çev 16, Day 15, Zek 4, Bil 10, Kar 9. Nekrotik ve Zehir hasarına, ayrıca Bitkinlik, Korkmuş, Felçli ve Zehirlenmiş durumlarına Bağışık; Karanlık Görüş {{distance:60ft|short}}. Büyü seviyesinin yarısı kadar (aşağı yuvarlanır) saldırı yapar ve senin büyü saldırı değiştiricini kullanır. Hayaletimsi, Ölümcül Dokunuş: yakın dövüş, 1d8 + 3 + büyü seviyesi Nekrotik hasar ve hedef bir sonraki turunun sonuna kadar Korkmuş olur. Çürümüş, Çürük Pençe: yakın dövüş, 1d6 + 3 + büyü seviyesi Kesici hasar ve Zehirlenmiş bir hedef ayrıca bir sonraki turunun sonuna kadar Felçli olur; turuna ona {{distance:5ft}} mesafe içinde başlayan yaratıklar senin büyü kurtulma ZS'ne karşı bir Dayanıklılık kurtulma atışı yapar, aksi hâlde bir sonraki turlarının başına kadar Zehirlenmiş olur. İskelet, Mezar Işını: menzilli {{distance:150ft|short}}, 2d4 + 3 + büyü seviyesi Nekrotik hasar.",
+    "higherLevels": "İstatistik bloğundaki büyü seviyesi olarak büyü yuvasının seviyesini kullan.",
+    "material": "300+ AP değerinde yaldızlı bir kafatası",
+    "castingTime": "Aksiyon",
+    "range": "90 fit",
+    "duration": "Konsantrasyon, en fazla 1 saat"
+  },
+  "Aura of Purity": {
+    "name": "Arınma Aurası",
+    "description": "Sen ve etrafındaki {{distance:30ft|lik}} bir Yayılımdaki müttefiklerin Zehir hasarına karşı Dirence sahipsiniz ve Kör, Büyülenmiş, Sağır, Korkmuş, Felçli, Zehirlenmiş ve Sersemlemiş durumlarından kaçınmak ya da onları sona erdirmek için yapılan kurtulma atışlarında Avantajlısınız.",
+    "castingTime": "Aksiyon",
+    "range": "Kendin",
+    "duration": "Konsantrasyon, en fazla 10 dakika"
+  },
+  "Grasping Vine": {
+    "name": "Yakalayan Sarmaşık",
+    "description": "Menzil içinde görebildiğin boş bir alanda bir sarmaşık filizlenir. Büyüyü yaptığında ve sonraki turlarında bir Bonus Aksiyon olarak, sarmaşığa {{distance:30ft}} mesafe içindeki bir yaratığa yakın dövüş büyü saldırısı yapabilirsin. İsabet hâlinde yaratık 4d8 Ezici hasar alır ve sarmaşığa doğru en fazla {{distance:30ft}} çekilir; Devasa ya da daha küçük bir hedef ayrıca Kavranmış durumuna girer (kurtulma ZS'si büyü kurtulma ZS'ne eşittir). Sarmaşık aynı anda bir yaratığı kavrayabilir ve onu istediğin zaman bırakabilirsin.",
+    "higherLevels": "Sarmaşık, 4. seviyenin üzerindeki her büyü yuvası seviyesi için bir yaratık daha kavrayabilir.",
+    "castingTime": "Bonus Aksiyon",
+    "range": "60 fit",
+    "duration": "Konsantrasyon, en fazla 1 dakika",
+    "rolls": {
+      "attack": {
+        "label": "Saldırı"
+      },
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Staggering Smite": {
+    "name": "Sendeleten Darbe",
+    "description": "Darben ek olarak 4d6 Psişik hasar verir ve hedef bir Bilgelik kurtulma atışı yapar, aksi hâlde senin bir sonraki turunun sonuna kadar Sersemlemiş durumuna girer.",
+    "higherLevels": "Hasar, 4. seviyenin üzerindeki her büyü yuvası seviyesi için 1d6 artar.",
+    "castingTime": "Bir hedefe yakın dövüş silahı veya Silahsız Vuruşla isabet ettirdikten hemen sonra kullanılan Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Summon Elemental": {
+    "name": "Element Ruhu Çağırma",
+    "description": "Görebildiğin boş bir alana Orta boyutta bir Hava, Toprak, Ateş veya Su Element ruhu çağırırsın. Senin ve yoldaşlarının müttefikidir, İnisiyatifini paylaşır ve hemen senden sonra hareket eder, emirlerine uyar; emir vermezsen Kaçınma eylemini yapar. Can Puanı 0'a düştüğünde ya da büyü sona erdiğinde kaybolur.\n\nElement Ruhu: ZS 11 + büyü seviyesi; Can Puanı 50 + 4'ün üzerindeki her büyü seviyesi için 10; Hız {{distance:40ft|short}}, ayrıca Kazma {{distance:40ft|short}} (Toprak), havada asılı kalarak Uçma {{distance:40ft|short}} (Hava) ya da Yüzme {{distance:40ft|short}} (Su). Güç 18, Çev 15, Day 17, Zek 4, Bil 10, Kar 16. Asit (Su), Yıldırım ve Gök Gürültüsü (Hava) ya da Delici ve Kesici (Toprak) hasarına Direnç; Zehir hasarına, Ateş hasarına (Ateş) ve Bitkinlik, Felçli, Taşlaşmış ve Zehirlenmiş durumlarına Bağışık; Karanlık Görüş {{distance:60ft|short}}; İlkel dili konuşur. Hava, Ateş ve Su ruhları {{distance:1in}} genişliğindeki aralıklardan geçebilir. Büyü seviyesinin yarısı kadar (aşağı yuvarlanır) Çarpma saldırısı yapar: yakın dövüş, senin büyü saldırı değiştiricinle, 1d10 + 4 + büyü seviyesi kendi elementinin hasarı (Toprak için Ezici, Su için Soğuk, Hava için Yıldırım, Ateş için Ateş).",
+    "higherLevels": "İstatistik bloğundaki büyü seviyesi olarak büyü yuvasının seviyesini kullan.",
+    "material": "400+ AP değerinde altın kakmalı bir şişenin içinde hava, bir çakıl taşı, kül ve su",
+    "castingTime": "Aksiyon",
+    "range": "90 fit",
+    "duration": "Konsantrasyon, en fazla 1 saat"
+  },
+  "Banishing Smite": {
+    "name": "Sürgün Eden Darbe",
+    "description": "Darben ek olarak 5d10 Kuvvet hasarı verir. Saldırı hedefi 50 ya da daha az Can Puanıyla bırakırsa hedef bir Karizma kurtulma atışı yapar, aksi hâlde zararsız bir yarı-düzleme gönderilir ve büyü bitene kadar orada Eylemsiz durumunda olur. Ardından ayrıldığı alana ya da en yakın boş alana geri döner.",
+    "castingTime": "Bir hedefe yakın dövüş silahı veya Silahsız Vuruşla isabet ettirdikten hemen sonra kullanılan Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "Konsantrasyon, en fazla 1 dakika",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Circle of Power": {
+    "name": "Kudret Çemberi",
+    "description": "Sen ve etrafındaki {{distance:30ft|lik}} bir Yayılımdaki müttefiklerin büyülere ve diğer büyülü etkilere karşı kurtulma atışlarında Avantajlısınız. Etkilenen bir yaratık, başarılı olunca yarı hasar veren bir büyüye ya da büyülü etkiye karşı kurtulma atışında başarılı olursa bunun yerine hiç hasar almaz.",
+    "castingTime": "Aksiyon",
+    "range": "Kendin",
+    "duration": "Konsantrasyon, en fazla 10 dakika"
+  },
+  "Conjure Volley": {
+    "name": "Büyülü Ok Yağmuru",
+    "description": "Silahı menzil içindeki bir noktaya ateşlersin ve kopyaları yağmur gibi yağar. O noktayı merkez alan {{distance:40ft}} yarıçaplı ve {{distance:20ft}} yüksekliğinde bir Silindirde görebildiğin ve seçtiğin her yaratık bir Çeviklik kurtulma atışı yapar; başarısız bir kurtulmada 8d8 Kuvvet hasarı, başarılı bir kurtulmada bunun yarısını alır.",
+    "material": "en az 1 bp değerinde bir yakın dövüş veya menzilli silah",
+    "castingTime": "Aksiyon",
+    "range": "150 fit",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Destructive Wave": {
+    "name": "Yıkıcı Dalga",
+    "description": "İlahi enerji senden patlar. {{distance:30ft|lik}} bir Yayılımda seçtiğin her yaratık bir Dayanıklılık kurtulma atışı yapar. Başarısız olursa 5d6 Gök Gürültüsü hasarı ve 5d6 Işıltı ya da Nekrotik hasar (senin seçimin) alır ve Yere Düşmüş durumuna girer. Başarılı olursa yalnızca bu hasarın yarısını alır.",
+    "castingTime": "Aksiyon",
+    "range": "Kendin",
+    "duration": "Anlık",
+    "rolls": {
+      "thunder": {
+        "label": "Gök Gürültüsü hasarı"
+      },
+      "divine": {
+        "label": "Işıltı veya Nekrotik hasar"
+      }
+    }
+  },
+  "Jallarzi's Storm of Radiance": {
+    "name": "Jallarzi'nin Işıltı Fırtınası",
+    "description": "Titreşen ışık ve gök gürültüsünden oluşan bir fırtına, menzil içinde görebildiğin bir noktayı merkez alan {{distance:10ft}} yarıçaplı ve {{distance:40ft}} yüksekliğinde bir Silindiri doldurur. İçindeyken yaratıklar Kör ve Sağır durumlarındadır ve Sözlü bileşeni olan büyüler yapamaz. Fırtına belirdiğinde içindeki her yaratık bir Dayanıklılık kurtulma atışı yapar; başarısız bir kurtulmada 2d10 Işıltı ve 2d10 Gök Gürültüsü hasarı, başarılı bir kurtulmada bunun yarısını alır. Bir yaratık alana bir turda ilk kez girdiğinde ya da turunu orada bitirdiğinde de bu kurtulma atışını yapar, tur başına en fazla bir kez.",
+    "higherLevels": "Işıltı ve Gök Gürültüsü hasarı, 5. seviyenin üzerindeki her büyü yuvası seviyesi için ayrı ayrı 1d10 artar.",
+    "material": "bir tutam fosfor",
+    "castingTime": "Aksiyon",
+    "range": "120 fit",
+    "duration": "Konsantrasyon, en fazla 1 dakika",
+    "rolls": {
+      "radiant": {
+        "label": "Işıltı hasarı"
+      },
+      "thunder": {
+        "label": "Gök Gürültüsü hasarı"
+      }
+    }
+  },
+  "Swift Quiver": {
+    "name": "Hızlı Sadak",
+    "description": "Büyüyü yaptığında ve büyü bitene kadar her turunda bir Bonus Aksiyon olarak, ok veya cıvata atan bir silahla iki saldırı yapabilirsin. Büyü her saldırının cephanesini yaratır; cephane normal hasar verir ve saldırıdan sonra kaybolur.",
+    "material": "1+ AP değerinde bir Sadak",
+    "castingTime": "Bonus Aksiyon",
+    "range": "Kendin",
+    "duration": "Konsantrasyon, en fazla 1 dakika"
+  },
+  "Synaptic Static": {
+    "name": "Sinaptik Parazit",
+    "description": "Psişik enerji, menzil içindeki bir noktayı merkez alan {{distance:20ft}} yarıçaplı bir Kürede patlar. İçindeki her yaratık bir Zekâ kurtulma atışı yapar; başarısız bir kurtulmada 8d6 Psişik hasar, başarılı bir kurtulmada bunun yarısını alır. Başarısız olan yaratık ayrıca 1 dakika boyunca sersemler: saldırı atışlarından, yetenek kontrollerinden ve Konsantrasyonu sürdürmek için yaptığı Dayanıklılık kurtulma atışlarından 1d6 çıkarır. Her turunun sonunda kurtulma atışını tekrarlar; başarılı olursa etki onun üzerinde sona erer.",
+    "castingTime": "Aksiyon",
+    "range": "120 fit",
+    "duration": "Anlık",
+    "rolls": {
+      "damage": {
+        "label": "Hasar"
+      }
+    }
+  },
+  "Arcane Gate": {
+    "name": "Arkan Geçit",
+    "description": "Görebildiğin boş alanlarda yere, her biri Büyük bir alanı dolduran, birbirine bağlı iki ışınlanma geçidi yaratırsın: biri sana {{distance:10ft}} mesafe içinde, diğeri {{distance:500ft}} mesafe içinde. Her geçit seçtiğin bir yüzünden açıktır; o yüzden giren şey diğer geçitten çıkar. Bir Bonus Aksiyon olarak açık yüzleri döndürebilirsin.",
+    "castingTime": "Aksiyon",
+    "range": "500 fit",
+    "duration": "Konsantrasyon, en fazla 10 dakika"
+  },
+  "Summon Fiend": {
+    "name": "İblis Çağırma",
+    "description": "Görebildiğin boş bir alana Büyük boyutta bir İblis ruhu çağırırsın: Şeytan, Zebani veya Yugoloth. Senin ve yoldaşlarının müttefikidir, İnisiyatifini paylaşır ve hemen senden sonra hareket eder, emirlerine uyar; emir vermezsen Kaçınma eylemini yapar. Can Puanı 0'a düştüğünde ya da büyü sona erdiğinde kaybolur.\n\nİblis Ruhu: ZS 12 + büyü seviyesi; Can Puanı 50 (Şeytan), 40 (Zebani) ya da 60 (Yugoloth) + 6'nın üzerindeki her büyü seviyesi için 15; Hız {{distance:40ft|short}}, ayrıca Tırmanma {{distance:40ft|short}} (Şeytan) ya da Uçma {{distance:60ft|short}} (Zebani). Güç 13, Çev 16, Day 15, Zek 10, Bil 10, Kar 16. Ateş hasarına Direnç; Zehir hasarına ve Zehirlenmiş durumuna Bağışık; Karanlık Görüş {{distance:60ft|short}}; Abis dili ve Cehennem dili konuşur, Telepati {{distance:60ft|short}}; büyülere karşı kurtulma atışlarında Avantajlı. Büyü seviyesinin yarısı kadar (aşağı yuvarlanır) saldırı yapar ve senin büyü saldırı değiştiricini kullanır. Şeytan, Isırık: yakın dövüş, 1d12 + 3 + büyü seviyesi Nekrotik hasar; Can Puanı 0'a düştüğünde ya da büyü sona erdiğinde patlar ve {{distance:10ft}} mesafe içindeki yaratıklar senin büyü kurtulma ZS'ne karşı bir Çeviklik kurtulma atışı yapar; başarısız olursa 2d10 + büyü seviyesi Ateş hasarı, başarılı olursa bunun yarısını alır. Zebani, Alevli Darbe: yakın dövüş ya da menzilli {{distance:150ft|short}}, 2d6 + 3 + büyü seviyesi Ateş hasarı. Yugoloth, Pençeler: yakın dövüş, 1d8 + 3 + büyü seviyesi Kesici hasar, ardından görebildiği boş bir alana en fazla {{distance:30ft}} ışınlanabilir.",
+    "higherLevels": "İstatistik bloğundaki büyü seviyesi olarak büyü yuvasının seviyesini kullan.",
+    "material": "600+ AP değerinde kanlı bir şişe",
+    "castingTime": "Aksiyon",
+    "range": "90 fit",
+    "duration": "Konsantrasyon, en fazla 1 saat"
+  },
+  "Tasha's Bubbling Cauldron": {
+    "name": "Tasha'nın Fokurdayan Kazanı",
+    "description": "Menzil içinde yerde hareket ettirilemeyen bir kazan belirir; içi seçtiğin bir Yaygın ya da Nadir Olmayan iksirin kopyalarıyla doludur. Bir Bonus Aksiyon olarak sen ya da bir müttefikin ondan bir iksir alabilir. Kazanda büyü yapma yetenek değiştiricin kadar (en az 1) iksir bulunur ve sonuncusu alındığında ya da süre dolduğunda büyü sona erer. İçilmeyen iksirler bu büyüyü yeniden yaptığında kaybolur.",
+    "material": "500+ AP değerinde yaldızlı bir kepçe",
+    "castingTime": "Aksiyon",
+    "range": "5 fit",
+    "duration": "10 dakika"
+  },
+  "Power Word Fortify": {
+    "name": "Güç Sözü: Güçlendirme",
+    "description": "120 Geçici Can Puanı veren bir güç sözü söylersin; bunları menzil içinde görebildiğin en fazla altı yaratık arasında istediğin gibi paylaştırırsın.",
+    "castingTime": "Aksiyon",
+    "range": "60 fit",
+    "duration": "Anlık"
+  },
+  "Telepathy": {
+    "name": "Telepati",
+    "description": "Aynı varoluş düzleminde bulunan, tanıdığın gönüllü bir yaratıkla telepatik bir bağ kurarsın. Büyü bitene kadar sen ve hedef sözcükleri, görüntüleri, sesleri ve diğer duyusal mesajları anında paylaşabilirsiniz. İkinizden biri o düzlemden ayrılırsa büyü sona erer.",
+    "material": "birbirine bağlı bir çift gümüş yüzük",
+    "castingTime": "Aksiyon",
+    "range": "Sınırsız",
+    "duration": "24 saat"
   }
 }

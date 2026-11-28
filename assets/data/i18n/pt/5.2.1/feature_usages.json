@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "Legado Infernal (Magia Recebida no Nível 5)"
+    },
+    "2024_lucky": {
+      "name": "Pontos de Sorte"
+    },
+    "2024_healing_hands": {
+      "name": "Mãos Curativas"
+    },
+    "2024_celestial_revelation": {
+      "name": "Revelação Celestial"
     }
   }
 }

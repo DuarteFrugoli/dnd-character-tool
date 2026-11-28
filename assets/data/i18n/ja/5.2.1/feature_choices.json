@@ -44,6 +44,30 @@
       "two_weapon_fighting": {
         "name": "二刀流戦闘",
         "description": "「軽武器」の特性による追加攻撃のダメージに、能力値修正値を加える。"
+      },
+      "blind_fighting": {
+        "name": "無視覚戦闘",
+        "description": "距離{{distance:10ft}}の擬似視覚を得る。"
+      },
+      "dueling": {
+        "name": "決闘",
+        "description": "ほかの武器を持たず、近接武器を片手で使うとダメージに+2を得る。"
+      },
+      "interception": {
+        "name": "迎撃",
+        "description": "リアクションで近くの味方が受けるダメージを1d10＋習熟ボーナスだけ減らす。"
+      },
+      "protection": {
+        "name": "護衛",
+        "description": "リアクションと盾で、近くの味方に対する攻撃に不利を与える。"
+      },
+      "thrown_weapon_fighting": {
+        "name": "投擲武器戦闘",
+        "description": "投擲武器を用いた遠隔攻撃のダメージに+2を得る。"
+      },
+      "unarmed_fighting": {
+        "name": "素手戦闘",
+        "description": "素手打撃のダメージは1d6または1d8＋【筋力】修正値。自分がつかんでいるクリーチャーにダメージを与える。"
       }
     },
     "paladin_fighting_styles_2024": {
@@ -66,6 +90,30 @@
       "blessed_warrior": {
         "name": "祝福された戦士",
         "description": "クレリックの初級呪文を2つ学ぶ。それらは君にとってパラディン呪文として扱う。"
+      },
+      "blind_fighting": {
+        "name": "無視覚戦闘",
+        "description": "距離{{distance:10ft}}の擬似視覚を得る。"
+      },
+      "dueling": {
+        "name": "決闘",
+        "description": "ほかの武器を持たず、近接武器を片手で使うとダメージに+2を得る。"
+      },
+      "interception": {
+        "name": "迎撃",
+        "description": "リアクションで近くの味方が受けるダメージを1d10＋習熟ボーナスだけ減らす。"
+      },
+      "protection": {
+        "name": "護衛",
+        "description": "リアクションと盾で、近くの味方に対する攻撃に不利を与える。"
+      },
+      "thrown_weapon_fighting": {
+        "name": "投擲武器戦闘",
+        "description": "投擲武器を用いた遠隔攻撃のダメージに+2を得る。"
+      },
+      "unarmed_fighting": {
+        "name": "素手戦闘",
+        "description": "素手打撃のダメージは1d6または1d8＋【筋力】修正値。自分がつかんでいるクリーチャーにダメージを与える。"
       }
     },
     "ranger_fighting_styles_2024": {
@@ -88,6 +136,30 @@
       "druidic_warrior": {
         "name": "ドルイドの戦士",
         "description": "ドルイドの初級呪文を2つ学ぶ。それらは君にとってレンジャー呪文として扱う。"
+      },
+      "blind_fighting": {
+        "name": "無視覚戦闘",
+        "description": "距離{{distance:10ft}}の擬似視覚を得る。"
+      },
+      "dueling": {
+        "name": "決闘",
+        "description": "ほかの武器を持たず、近接武器を片手で使うとダメージに+2を得る。"
+      },
+      "interception": {
+        "name": "迎撃",
+        "description": "リアクションで近くの味方が受けるダメージを1d10＋習熟ボーナスだけ減らす。"
+      },
+      "protection": {
+        "name": "護衛",
+        "description": "リアクションと盾で、近くの味方に対する攻撃に不利を与える。"
+      },
+      "thrown_weapon_fighting": {
+        "name": "投擲武器戦闘",
+        "description": "投擲武器を用いた遠隔攻撃のダメージに+2を得る。"
+      },
+      "unarmed_fighting": {
+        "name": "素手戦闘",
+        "description": "素手打撃のダメージは1d6または1d8＋【筋力】修正値。自分がつかんでいるクリーチャーにダメージを与える。"
       }
     },
     "divine_orders": {
@@ -876,6 +948,64 @@
       "witch_sight": {
         "name": "魔女の視力",
         "description": "君は{{distance:30ft}}の射程を持つ真視を得る。"
+      }
+    },
+    "crafter_tools_2024": {
+      "carpenter_s_tools": {
+        "name": "大工道具"
+      },
+      "leatherworker_s_tools": {
+        "name": "革細工師の道具"
+      },
+      "mason_s_tools": {
+        "name": "石工の道具"
+      },
+      "potter_s_tools": {
+        "name": "陶芸道具"
+      },
+      "smith_s_tools": {
+        "name": "鍛冶道具"
+      },
+      "tinker_s_tools": {
+        "name": "修理屋の道具"
+      },
+      "weaver_s_tools": {
+        "name": "織り手の道具"
+      },
+      "woodcarver_s_tools": {
+        "name": "木彫りの道具"
+      }
+    },
+    "musical_instruments_2024": {
+      "bagpipes": {
+        "name": "バグパイプ"
+      },
+      "drum": {
+        "name": "ドラム"
+      },
+      "dulcimer": {
+        "name": "ダルシマー"
+      },
+      "flute": {
+        "name": "フルート"
+      },
+      "horn": {
+        "name": "ホルン"
+      },
+      "lute": {
+        "name": "リュート"
+      },
+      "lyre": {
+        "name": "リラ"
+      },
+      "pan_flute": {
+        "name": "パンフルート"
+      },
+      "shawm": {
+        "name": "ショーム"
+      },
+      "viol": {
+        "name": "ヴィオール"
       }
     }
   },

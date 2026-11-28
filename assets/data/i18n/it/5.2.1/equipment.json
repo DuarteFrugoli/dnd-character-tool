@@ -565,5 +565,17 @@
       "name": "Incalzare",
       "description": "Se colpisci e infliggi danni, hai Vantaggio al tuo prossimo tiro per colpire contro quella creatura prima della fine del tuo turno successivo."
     }
+  },
+  "Artisan's Tools": {
+    "name": "Strumenti da Artigiano"
+  },
+  "Musical Instrument": {
+    "name": "Strumento Musicale"
+  },
+  "Gaming Set": {
+    "name": "Gioco"
+  },
+  "Book (philosophy)": {
+    "name": "Libro (filosofia)"
   }
 }

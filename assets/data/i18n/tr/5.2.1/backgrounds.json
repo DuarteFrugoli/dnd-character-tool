@@ -10,5 +10,41 @@
   },
   "Soldier": {
     "name": "Asker"
+  },
+  "Artisan": {
+    "name": "Zanaatkâr"
+  },
+  "Charlatan": {
+    "name": "Şarlatan"
+  },
+  "Entertainer": {
+    "name": "Gösterici"
+  },
+  "Farmer": {
+    "name": "Çiftçi"
+  },
+  "Guard": {
+    "name": "Muhafız"
+  },
+  "Guide": {
+    "name": "Rehber"
+  },
+  "Hermit": {
+    "name": "Münzevi"
+  },
+  "Merchant": {
+    "name": "Tüccar"
+  },
+  "Noble": {
+    "name": "Soylu"
+  },
+  "Sailor": {
+    "name": "Denizci"
+  },
+  "Scribe": {
+    "name": "Kâtip"
+  },
+  "Wayfarer": {
+    "name": "Gezgin"
   }
 }

@@ -44,6 +44,30 @@
       "two_weapon_fighting": {
         "name": "Combattere con Due Armi",
         "description": "Aggiungi il tuo modificatore di caratteristica ai danni dell'attacco extra quando usi la proprietà Leggera."
+      },
+      "blind_fighting": {
+        "name": "Combattere alla Cieca",
+        "description": "Ottieni Vista Cieca con una portata di {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duello",
+        "description": "Ottieni +2 ai danni con un’arma da Mischia impugnata in una mano se non impugni altre armi."
+      },
+      "interception": {
+        "name": "Intercettazione",
+        "description": "Usa una Reazione per ridurre i danni subiti da un alleato vicino di 1d10 + Bonus di Competenza."
+      },
+      "protection": {
+        "name": "Protezione",
+        "description": "Usa una Reazione e il tuo Scudo per imporre Svantaggio agli attacchi contro un alleato vicino."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combattere con Armi da Lancio",
+        "description": "Ottieni +2 ai danni degli attacchi a distanza con armi dotate della proprietà Lancio."
+      },
+      "unarmed_fighting": {
+        "name": "Combattere Senz’Armi",
+        "description": "I Colpi Senz’Armi infliggono 1d6 o 1d8 + modificatore di Forza; danneggia una creatura che hai Afferrato."
       }
     },
     "paladin_fighting_styles_2024": {
@@ -66,6 +90,30 @@
       "blessed_warrior": {
         "name": "Guerriero benedetto",
         "description": "Impari due trucchetti da chierico che per te contano come incantesimi da paladino."
+      },
+      "blind_fighting": {
+        "name": "Combattere alla Cieca",
+        "description": "Ottieni Vista Cieca con una portata di {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duello",
+        "description": "Ottieni +2 ai danni con un’arma da Mischia impugnata in una mano se non impugni altre armi."
+      },
+      "interception": {
+        "name": "Intercettazione",
+        "description": "Usa una Reazione per ridurre i danni subiti da un alleato vicino di 1d10 + Bonus di Competenza."
+      },
+      "protection": {
+        "name": "Protezione",
+        "description": "Usa una Reazione e il tuo Scudo per imporre Svantaggio agli attacchi contro un alleato vicino."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combattere con Armi da Lancio",
+        "description": "Ottieni +2 ai danni degli attacchi a distanza con armi dotate della proprietà Lancio."
+      },
+      "unarmed_fighting": {
+        "name": "Combattere Senz’Armi",
+        "description": "I Colpi Senz’Armi infliggono 1d6 o 1d8 + modificatore di Forza; danneggia una creatura che hai Afferrato."
       }
     },
     "ranger_fighting_styles_2024": {
@@ -88,6 +136,30 @@
       "druidic_warrior": {
         "name": "Guerriero druidico",
         "description": "Impari due trucchetti da druido che per te contano come incantesimi da ranger."
+      },
+      "blind_fighting": {
+        "name": "Combattere alla Cieca",
+        "description": "Ottieni Vista Cieca con una portata di {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duello",
+        "description": "Ottieni +2 ai danni con un’arma da Mischia impugnata in una mano se non impugni altre armi."
+      },
+      "interception": {
+        "name": "Intercettazione",
+        "description": "Usa una Reazione per ridurre i danni subiti da un alleato vicino di 1d10 + Bonus di Competenza."
+      },
+      "protection": {
+        "name": "Protezione",
+        "description": "Usa una Reazione e il tuo Scudo per imporre Svantaggio agli attacchi contro un alleato vicino."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combattere con Armi da Lancio",
+        "description": "Ottieni +2 ai danni degli attacchi a distanza con armi dotate della proprietà Lancio."
+      },
+      "unarmed_fighting": {
+        "name": "Combattere Senz’Armi",
+        "description": "I Colpi Senz’Armi infliggono 1d6 o 1d8 + modificatore di Forza; danneggia una creatura che hai Afferrato."
       }
     },
     "divine_orders": {
@@ -876,6 +948,64 @@
       "witch_sight": {
         "name": "Vista stregonesca",
         "description": "Ottieni Vista Pura entro {{distance:30ft}}."
+      }
+    },
+    "crafter_tools_2024": {
+      "carpenter_s_tools": {
+        "name": "Strumenti del falegname"
+      },
+      "leatherworker_s_tools": {
+        "name": "Strumenti del conciatore"
+      },
+      "mason_s_tools": {
+        "name": "Gli strumenti del muratore"
+      },
+      "potter_s_tools": {
+        "name": "Strumenti da vasaio"
+      },
+      "smith_s_tools": {
+        "name": "Strumenti da fabbro"
+      },
+      "tinker_s_tools": {
+        "name": "Strumenti da stagnino"
+      },
+      "weaver_s_tools": {
+        "name": "Gli strumenti del tessitore"
+      },
+      "woodcarver_s_tools": {
+        "name": "Gli strumenti dell'intagliatore"
+      }
+    },
+    "musical_instruments_2024": {
+      "bagpipes": {
+        "name": "Cornamuse"
+      },
+      "drum": {
+        "name": "Tamburo"
+      },
+      "dulcimer": {
+        "name": "Dulcimer"
+      },
+      "flute": {
+        "name": "Flauto"
+      },
+      "horn": {
+        "name": "Corno"
+      },
+      "lute": {
+        "name": "Liuto"
+      },
+      "lyre": {
+        "name": "Lira"
+      },
+      "pan_flute": {
+        "name": "Flauto di Pan"
+      },
+      "shawm": {
+        "name": "Ciaramella"
+      },
+      "viol": {
+        "name": "Viola"
       }
     }
   },

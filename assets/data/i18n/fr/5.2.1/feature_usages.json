@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "Héritage infernal (sort au niveau 5 du personnage)"
+    },
+    "2024_lucky": {
+      "name": "Points de chance"
+    },
+    "2024_healing_hands": {
+      "name": "Mains guérisseuses"
+    },
+    "2024_celestial_revelation": {
+      "name": "Révélation céleste"
     }
   }
 }

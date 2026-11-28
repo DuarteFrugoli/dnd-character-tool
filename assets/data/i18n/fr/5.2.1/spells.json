@@ -2989,5 +2989,423 @@
     "castingTime": "Action",
     "range": "Personnel",
     "duration": "Instantanée"
+  },
+  "Blade Ward": {
+    "name": "Protection contre les armes",
+    "description": "Jusqu'à la fin du sort, toute créature qui effectue un jet d'attaque contre vous soustrait 1d4 au résultat.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Friends": {
+    "name": "Amis",
+    "description": "Une créature que vous pouvez voir effectue un jet de sauvegarde de Sagesse, sans quoi elle subit l'état Charmé pendant toute la durée du sort. Elle réussit automatiquement si ce n'est pas un Humanoïde, si vous êtes en train de la combattre ou si vous lui avez lancé ce sort au cours des dernières 24 heures. Le sort prend fin prématurément si la cible subit des dégâts ou si vous effectuez un jet d'attaque, infligez des dégâts ou forcez quiconque à effectuer un jet de sauvegarde. À la fin du sort, la créature sait qu'elle a été Charmée par vous.",
+    "material": "un peu de maquillage",
+    "castingTime": "Action",
+    "range": "3 mètres",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Thorn Whip": {
+    "name": "Fouet épineux",
+    "description": "Une liane épineuse fouette une créature à portée. Effectuez une attaque de sort au corps à corps ; en cas de réussite, la cible subit 1d6 dégâts perforants et, si elle est de taille G ou inférieure, vous pouvez l'attirer de {{distance:10ft}} au maximum vers vous.\n\nAmélioration de tour de magie. Les dégâts augmentent de 1d6 aux niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
+    "material": "la tige d'une plante épineuse",
+    "castingTime": "Action",
+    "range": "9 mètres",
+    "duration": "Instantanée",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Thunderclap": {
+    "name": "Coup de tonnerre",
+    "description": "Chaque créature se trouvant dans une Émanation de {{distance:5ft}} autour de vous effectue un jet de sauvegarde de Constitution et subit 1d6 dégâts de tonnerre en cas d'échec. Le fracas s'entend jusqu'à {{distance:100ft}}.\n\nAmélioration de tour de magie. Les dégâts augmentent de 1d6 aux niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Toll the Dead": {
+    "name": "Glas funèbre",
+    "description": "Une cloche lugubre sonne pour une créature que vous pouvez voir à portée. Elle effectue un jet de sauvegarde de Sagesse et subit 1d8 dégâts nécrotiques en cas d'échec, ou 1d12 dégâts nécrotiques s'il lui manque déjà des points de vie.\n\nAmélioration de tour de magie. Les dégâts augmentent d'un dé aux niveaux 5, 11 et 17 (2, 3 puis 4 dés).",
+    "castingTime": "Action",
+    "range": "18 mètres",
+    "duration": "Instantanée"
+  },
+  "Word of Radiance": {
+    "name": "Parole radieuse",
+    "description": "Chaque créature de votre choix que vous pouvez voir dans une Émanation de {{distance:5ft}} autour de vous effectue un jet de sauvegarde de Constitution et subit 1d6 dégâts radiants en cas d'échec.\n\nAmélioration de tour de magie. Les dégâts augmentent de 1d6 aux niveaux 5 (2d6), 11 (3d6) et 17 (4d6).",
+    "material": "un symbole solaire",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Armor of Agathys": {
+    "name": "Armure d'Agathys",
+    "description": "Vous gagnez 5 points de vie temporaires. Jusqu'à la fin du sort, une créature qui vous touche avec un jet d'attaque au corps à corps subit 5 dégâts de froid. Le sort prend fin prématurément s'il ne vous reste plus de points de vie temporaires.",
+    "higherLevels": "Les points de vie temporaires et les dégâts de froid augmentent de 5 pour chaque niveau d'emplacement de sort au-delà du niveau 1.",
+    "material": "un éclat de verre bleu",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "1 heure"
+  },
+  "Compelled Duel": {
+    "name": "Duel forcé",
+    "description": "Une créature que vous pouvez voir effectue un jet de sauvegarde de Sagesse. En cas d'échec, elle a le Désavantage aux jets d'attaque contre les créatures autres que vous et ne peut pas se déplacer volontairement vers un espace situé à plus de {{distance:30ft}} de vous. Le sort prend fin si vous attaquez un autre ennemi ou lui lancez un sort, si l'un de vos alliés inflige des dégâts à la cible ou si vous terminez votre tour à plus de {{distance:30ft}} d'elle.",
+    "castingTime": "Action bonus",
+    "range": "9 mètres",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Hail of Thorns": {
+    "name": "Grêle d'épines",
+    "description": "Lorsque votre attaque à distance touche, des épines jaillissent du projectile. La cible et chaque créature se trouvant à {{distance:5ft}} ou moins d'elle effectuent un jet de sauvegarde de Dextérité. Elles subissent 1d10 dégâts perforants en cas d'échec, ou la moitié de ces dégâts en cas de réussite.",
+    "higherLevels": "Les dégâts augmentent de 1d10 pour chaque niveau d'emplacement de sort au-delà du niveau 1.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une créature avec une arme à distance",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Thunderous Smite": {
+    "name": "Châtiment tonitruant",
+    "description": "Votre coup retentit jusqu'à {{distance:300ft}} et inflige 2d6 dégâts de tonnerre supplémentaires. Si la cible est une créature, elle effectue un jet de sauvegarde de Force, sans quoi elle est repoussée de {{distance:10ft}} et subit l'état À terre.",
+    "higherLevels": "Les dégâts augmentent de 1d6 pour chaque niveau d'emplacement de sort au-delà du niveau 1.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une cible avec une arme de corps à corps ou une attaque à mains nues",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Witch Bolt": {
+    "name": "Trait ensorcelé",
+    "description": "Un rayon d'énergie crépitante vous relie à une créature à portée. Effectuez une attaque de sort à distance ; en cas de réussite, elle subit 2d12 dégâts de foudre. À chacun de vos tours suivants, vous pouvez effectuer une Action bonus pour lui infliger automatiquement 1d12 dégâts de foudre, même si la première attaque a échoué. Le sort prend fin si la cible se trouve hors de portée ou bénéficie d'un abri total contre vous.",
+    "higherLevels": "Les dégâts initiaux augmentent de 1d12 pour chaque niveau d'emplacement de sort au-delà du niveau 1.",
+    "material": "une brindille frappée par la foudre",
+    "castingTime": "Action",
+    "range": "18 mètres",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Wrathful Smite": {
+    "name": "Frappe colérique",
+    "description": "Votre coup inflige 1d6 dégâts nécrotiques supplémentaires, et la cible effectue un jet de sauvegarde de Sagesse, sans quoi elle subit l'état Effrayé jusqu'à la fin du sort. À la fin de chacun de ses tours, la cible Effrayée répète le jet de sauvegarde et met fin au sort sur elle-même en cas de réussite.",
+    "higherLevels": "Les dégâts augmentent de 1d6 pour chaque niveau d'emplacement de sort au-delà du niveau 1.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une cible avec une arme de corps à corps ou une attaque à mains nues",
+    "range": "Personnel",
+    "duration": "1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Arcane Vigor": {
+    "name": "Vigueur arcanique",
+    "description": "Vous dépensez jusqu'à deux de vos dés de vie inutilisés, les lancez et récupérez un nombre de points de vie égal au total plus votre modificateur de caractéristique d'incantation.",
+    "higherLevels": "Vous pouvez dépenser un dé de vie de plus pour chaque niveau d'emplacement de sort au-delà du niveau 2.",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "Instantanée"
+  },
+  "Cloud of Daggers": {
+    "name": "Nuage de dagues",
+    "description": "Des dagues tourbillonnantes remplissent un Cube de {{distance:5ft}} centré sur un point à portée. Une créature subit 4d4 dégâts tranchants quand le Cube apparaît dans son espace, quand elle entre dans le Cube, quand le Cube entre dans son espace ou quand elle y termine son tour ; une créature ne subit ces dégâts qu'une fois par tour. Lors de vos tours suivants, vous pouvez effectuer une action Magie pour déplacer le Cube de {{distance:30ft}} au maximum.",
+    "higherLevels": "Les dégâts augmentent de 2d4 pour chaque niveau d'emplacement de sort au-delà du niveau 2.",
+    "material": "un éclat de verre",
+    "castingTime": "Action",
+    "range": "18 mètres",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Cordon of Arrows": {
+    "name": "Cordon de flèches",
+    "description": "Vous plantez dans le sol de votre espace jusqu'à quatre flèches ou carreaux non magiques. Quand une créature autre que vous entre pour la première fois lors d'un tour dans un espace situé à {{distance:30ft}} ou moins des munitions, ou y termine son tour, un projectile vole vers elle : la créature effectue un jet de sauvegarde de Dextérité, sans quoi elle subit 2d4 dégâts perforants, et ce projectile est détruit. Lorsque vous lancez le sort, vous pouvez choisir des créatures qu'il ignore. Le sort prend fin quand il ne reste plus de munitions.",
+    "higherLevels": "Vous plantez deux munitions de plus pour chaque niveau d'emplacement de sort au-delà du niveau 2.",
+    "material": "une tresse ornementale",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "8 heures",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Crown of Madness": {
+    "name": "Couronne du dément",
+    "description": "Une créature que vous pouvez voir effectue un jet de sauvegarde de Sagesse, sans quoi elle subit l'état Charmé pendant toute la durée du sort ; elle réussit automatiquement si ce n'est pas un Humanoïde. Tant qu'elle est Charmée, à chacun de ses tours, avant de se déplacer, elle doit effectuer une action pour attaquer au corps à corps une créature autre qu'elle-même que vous choisissez mentalement. Elle répète le jet de sauvegarde à la fin de chacun de ses tours et met fin au sort sur elle-même en cas de réussite. À chacun de vos tours suivants, vous devez effectuer l'action Magie pour garder le contrôle, sans quoi le sort prend fin.",
+    "castingTime": "Action",
+    "range": "36 mètres",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Aura of Vitality": {
+    "name": "Aura de vitalité",
+    "description": "Une énergie curative emplit une Émanation de {{distance:30ft}} autour de vous. Quand vous lancez le sort et au début de chacun de vos tours jusqu'à la fin du sort, vous pouvez rendre 2d6 points de vie à une créature dans l'aura.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Blinding Smite": {
+    "name": "Châtiment aveuglant",
+    "description": "Votre coup inflige 3d8 dégâts radiants supplémentaires, et la cible subit l'état Aveuglé jusqu'à la fin du sort. À la fin de chacun de ses tours, la cible effectue un jet de sauvegarde de Constitution et met fin au sort sur elle-même en cas de réussite.",
+    "higherLevels": "Les dégâts supplémentaires augmentent de 1d8 pour chaque niveau d'emplacement de sort au-delà du niveau 3.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une cible avec une arme de corps à corps ou une attaque à mains nues",
+    "range": "Personnel",
+    "duration": "1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Conjure Barrage": {
+    "name": "Invocation de barrage",
+    "description": "Vous brandissez l'arme et invoquez une tempête de copies de celle-ci. Chaque créature de votre choix que vous pouvez voir dans un Cône de {{distance:60ft}} effectue un jet de sauvegarde de Dextérité. Elle subit 5d8 dégâts de force en cas d'échec, ou la moitié de ces dégâts en cas de réussite.",
+    "higherLevels": "Les dégâts augmentent de 1d8 pour chaque niveau d'emplacement de sort au-delà du niveau 3.",
+    "material": "une arme de corps à corps ou à distance valant au moins 1 pc",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Elemental Weapon": {
+    "name": "Arme élémentaire",
+    "description": "Une arme non magique que vous touchez devient une arme magique. Choisissez acide, froid, feu, foudre ou tonnerre : jusqu'à la fin du sort, l'arme confère un bonus de +1 aux jets d'attaque et inflige 1d4 dégâts supplémentaires de ce type quand elle touche.",
+    "higherLevels": "Avec un emplacement de sort de niveau 5-6, le bonus est de +2 et les dégâts supplémentaires de 2d4 ; avec un emplacement de niveau 7 ou supérieur, +3 et 3d4.",
+    "castingTime": "Action",
+    "range": "Contact",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Feign Death": {
+    "name": "Feindre la mort",
+    "description": "Une créature consentante que vous touchez semble morte à toute inspection extérieure. Pendant toute la durée du sort, elle subit les états Aveuglé et Incapable d'agir, sa Vitesse est de 0, elle a la Résistance à tous les dégâts sauf les dégâts psychiques et l'Immunité à l'état Empoisonné.",
+    "material": "une pincée de terre de cimetière",
+    "castingTime": "Action ou rituel",
+    "range": "Contact",
+    "duration": "1 heure"
+  },
+  "Lightning Arrow": {
+    "name": "Flèche de foudre",
+    "description": "Votre tir se change en éclair. En cas de réussite, la cible subit 4d8 dégâts de foudre à la place des dégâts normaux de l'arme ; en cas d'échec, elle subit la moitié de ces dégâts. Que l'attaque touche ou non, chaque créature se trouvant à {{distance:10ft}} ou moins de la cible effectue un jet de sauvegarde de Dextérité. Elle subit 2d8 dégâts de foudre en cas d'échec, ou la moitié de ces dégâts en cas de réussite.",
+    "higherLevels": "Les deux jets de dégâts augmentent de 1d8 pour chaque niveau d'emplacement de sort au-delà du niveau 3.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir effectué une attaque avec une arme à distance",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Summon Undead": {
+    "name": "Convocation de mort-vivant",
+    "description": "Vous convoquez un esprit Mort-vivant de taille M, Spectral, Putride ou Squelettique, dans un espace inoccupé que vous pouvez voir. Il est l'allié de vous et de vos compagnons, partage votre Initiative et agit juste après vous, et obéit à vos ordres ; si vous n'en donnez aucun, il effectue l'action Esquiver. Il disparaît s'il tombe à 0 point de vie ou à la fin du sort.\n\nEsprit mort-vivant : CA 11 + niveau du sort ; points de vie 30 (Spectral ou Putride) ou 20 (Squelettique) + 10 par niveau du sort au-delà de 3 ; Vitesse {{distance:30ft|short}} (le Spectral vole aussi à {{distance:40ft|short}} et peut faire du surplace). For 12, Dex 16, Con 15, Int 4, Sag 10, Cha 9. Immunité aux dégâts nécrotiques et de poison ainsi qu'aux états Épuisement, Effrayé, Paralysé et Empoisonné ; vision dans le noir {{distance:60ft|short}}. Il effectue un nombre d'attaques égal à la moitié du niveau du sort (arrondi à l'inférieur), avec votre modificateur d'attaque de sort. Spectral, Toucher mortel : corps à corps, 1d8 + 3 + niveau du sort dégâts nécrotiques, et la cible est Effrayée jusqu'à la fin de son prochain tour. Putride, Griffe pourrissante : corps à corps, 1d6 + 3 + niveau du sort dégâts tranchants, et une cible Empoisonnée est aussi Paralysée jusqu'à la fin de son prochain tour ; les créatures qui commencent leur tour à {{distance:5ft}} ou moins de lui effectuent un jet de sauvegarde de Constitution contre le DD de vos sorts, sans quoi elles sont Empoisonnées jusqu'au début de leur prochain tour. Squelettique, Trait sépulcral : à distance {{distance:150ft|short}}, 2d4 + 3 + niveau du sort dégâts nécrotiques.",
+    "higherLevels": "Utilisez le niveau de l'emplacement de sort comme niveau du sort dans le profil.",
+    "material": "un crâne doré valant au moins 300 po",
+    "castingTime": "Action",
+    "range": "27 mètres",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Aura of Purity": {
+    "name": "Aura de pureté",
+    "description": "Vous et vos alliés se trouvant dans une Émanation de {{distance:30ft}} autour de vous avez la Résistance aux dégâts de poison et l'Avantage aux jets de sauvegarde pour éviter ou mettre fin aux états Aveuglé, Charmé, Assourdi, Effrayé, Paralysé, Empoisonné et Étourdi.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Grasping Vine": {
+    "name": "Liane avide",
+    "description": "Une liane pousse dans un espace inoccupé que vous pouvez voir à portée. Quand vous lancez le sort, puis par une Action bonus lors de vos tours suivants, vous pouvez effectuer une attaque de sort au corps à corps contre une créature se trouvant à {{distance:30ft}} ou moins de la liane. En cas de réussite, elle subit 4d8 dégâts contondants et est attirée de {{distance:30ft}} au maximum vers la liane ; une cible de taille TG ou inférieure subit aussi l'état Agrippé (DD d'évasion égal au DD de vos sorts). La liane ne peut agripper qu'une créature à la fois, et vous pouvez la relâcher à tout moment.",
+    "higherLevels": "La liane peut agripper une créature de plus pour chaque niveau d'emplacement de sort au-delà du niveau 4.",
+    "castingTime": "Action bonus",
+    "range": "18 mètres",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "attack": {
+        "label": "Attaque"
+      },
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Staggering Smite": {
+    "name": "Châtiment déstabilisant",
+    "description": "Votre coup inflige 4d6 dégâts psychiques supplémentaires, et la cible effectue un jet de sauvegarde de Sagesse, sans quoi elle subit l'état Étourdi jusqu'à la fin de votre prochain tour.",
+    "higherLevels": "Les dégâts augmentent de 1d6 pour chaque niveau d'emplacement de sort au-delà du niveau 4.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une cible avec une arme de corps à corps ou une attaque à mains nues",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Summon Elemental": {
+    "name": "Convocation d'élémentaire",
+    "description": "Vous convoquez un esprit Élémentaire de taille M d'air, de terre, de feu ou d'eau dans un espace inoccupé que vous pouvez voir. Il est l'allié de vous et de vos compagnons, partage votre Initiative et agit juste après vous, et obéit à vos ordres ; si vous n'en donnez aucun, il effectue l'action Esquiver. Il disparaît s'il tombe à 0 point de vie ou à la fin du sort.\n\nEsprit élémentaire : CA 11 + niveau du sort ; points de vie 50 + 10 par niveau du sort au-delà de 4 ; Vitesse {{distance:40ft|short}}, plus creusement {{distance:40ft|short}} (terre), vol {{distance:40ft|short}} avec surplace (air) ou nage {{distance:40ft|short}} (eau). For 18, Dex 15, Con 17, Int 4, Sag 10, Cha 16. Résistance à l'acide (eau), à la foudre et au tonnerre (air) ou aux dégâts perforants et tranchants (terre) ; immunité aux dégâts de poison, aux dégâts de feu (feu) et aux états Épuisement, Paralysé, Pétrifié et Empoisonné ; vision dans le noir {{distance:60ft|short}} ; parle le primordial. Les esprits d'air, de feu et d'eau passent par des interstices de {{distance:1in}}. Il effectue un nombre d'attaques de Coup égal à la moitié du niveau du sort (arrondi à l'inférieur) : corps à corps, avec votre modificateur d'attaque de sort, 1d10 + 4 + niveau du sort dégâts de son élément (contondants pour la terre, froid pour l'eau, foudre pour l'air, feu pour le feu).",
+    "higherLevels": "Utilisez le niveau de l'emplacement de sort comme niveau du sort dans le profil.",
+    "material": "de l'air, un caillou, de la cendre et de l'eau dans une fiole incrustée d'or valant au moins 400 po",
+    "castingTime": "Action",
+    "range": "27 mètres",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Banishing Smite": {
+    "name": "Châtiment bannissant",
+    "description": "Votre coup inflige 5d10 dégâts de force supplémentaires. Si l'attaque laisse la cible avec 50 points de vie ou moins, elle effectue un jet de sauvegarde de Charisme, sans quoi elle est envoyée dans un demi-plan inoffensif, où elle subit l'état Incapable d'agir, jusqu'à la fin du sort. Elle revient ensuite dans l'espace qu'elle a quitté ou dans l'espace inoccupé le plus proche.",
+    "castingTime": "Action bonus, à entreprendre immédiatement après avoir touché une cible avec une arme de corps à corps ou une attaque à mains nues",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Circle of Power": {
+    "name": "Cercle de pouvoir",
+    "description": "Vous et vos alliés se trouvant dans une Émanation de {{distance:30ft}} autour de vous avez l'Avantage aux jets de sauvegarde contre les sorts et autres effets magiques. Quand une créature affectée réussit un jet de sauvegarde contre un sort ou un effet magique qui inflige la moitié des dégâts en cas de réussite, elle ne subit aucun dégât.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Conjure Volley": {
+    "name": "Invocation de volée",
+    "description": "Vous tirez avec l'arme vers un point à portée et des copies de celle-ci s'abattent en pluie. Chaque créature de votre choix que vous pouvez voir dans un Cylindre de {{distance:40ft}} de rayon et de {{distance:20ft}} de haut centré sur ce point effectue un jet de sauvegarde de Dextérité. Elle subit 8d8 dégâts de force en cas d'échec, ou la moitié de ces dégâts en cas de réussite.",
+    "material": "une arme de corps à corps ou à distance valant au moins 1 pc",
+    "castingTime": "Action",
+    "range": "45 mètres",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Destructive Wave": {
+    "name": "Vague destructrice",
+    "description": "Une énergie divine jaillit de vous. Chaque créature de votre choix se trouvant dans une Émanation de {{distance:30ft}} effectue un jet de sauvegarde de Constitution. En cas d'échec, elle subit 5d6 dégâts de tonnerre et 5d6 dégâts radiants ou nécrotiques (à votre choix) et subit l'état À terre. En cas de réussite, elle ne subit que la moitié de ces dégâts.",
+    "castingTime": "Action",
+    "range": "Personnel",
+    "duration": "Instantanée",
+    "rolls": {
+      "thunder": {
+        "label": "Dégâts de tonnerre"
+      },
+      "divine": {
+        "label": "Dégâts radiants ou nécrotiques"
+      }
+    }
+  },
+  "Jallarzi's Storm of Radiance": {
+    "name": "Tempête radieuse de Jallarzi",
+    "description": "Une tempête de lumière scintillante et de tonnerre emplit un Cylindre de {{distance:10ft}} de rayon et de {{distance:40ft}} de haut centré sur un point que vous pouvez voir à portée. Tant qu'elles s'y trouvent, les créatures subissent les états Aveuglé et Assourdi et ne peuvent pas lancer de sorts à composante verbale. Quand la tempête apparaît, chaque créature qui s'y trouve effectue un jet de sauvegarde de Constitution. Elle subit 2d10 dégâts radiants et 2d10 dégâts de tonnerre en cas d'échec, ou la moitié de ces dégâts en cas de réussite. Une créature effectue aussi ce jet quand elle entre dans la zone pour la première fois lors d'un tour ou y termine son tour, au maximum une fois par tour.",
+    "higherLevels": "Les dégâts radiants et les dégâts de tonnerre augmentent chacun de 1d10 pour chaque niveau d'emplacement de sort au-delà du niveau 5.",
+    "material": "une pincée de phosphore",
+    "castingTime": "Action",
+    "range": "36 mètres",
+    "duration": "Concentration, jusqu'à 1 minute",
+    "rolls": {
+      "radiant": {
+        "label": "Dégâts radiants"
+      },
+      "thunder": {
+        "label": "Dégâts de tonnerre"
+      }
+    }
+  },
+  "Swift Quiver": {
+    "name": "Carquois véloce",
+    "description": "Quand vous lancez le sort, puis par une Action bonus à chacun de vos tours jusqu'à la fin du sort, vous pouvez effectuer deux attaques avec une arme qui tire des flèches ou des carreaux. Le sort crée les munitions de chaque attaque ; elles infligent les dégâts normaux et disparaissent après l'attaque.",
+    "material": "un carquois valant au moins 1 po",
+    "castingTime": "Action bonus",
+    "range": "Personnel",
+    "duration": "Concentration, jusqu'à 1 minute"
+  },
+  "Synaptic Static": {
+    "name": "Statique synaptique",
+    "description": "Une énergie psychique explose dans une Sphère de {{distance:20ft}} de rayon centrée sur un point à portée. Chaque créature qui s'y trouve effectue un jet de sauvegarde d'Intelligence. Elle subit 8d6 dégâts psychiques en cas d'échec, ou la moitié de ces dégâts en cas de réussite. En cas d'échec, la créature est aussi désorientée pendant 1 minute : elle soustrait 1d6 à ses jets d'attaque, à ses tests de caractéristique et à ses jets de sauvegarde de Constitution pour maintenir sa Concentration. Elle répète le jet de sauvegarde à la fin de chacun de ses tours et met fin à l'effet sur elle-même en cas de réussite.",
+    "castingTime": "Action",
+    "range": "36 mètres",
+    "duration": "Instantanée",
+    "rolls": {
+      "damage": {
+        "label": "Dégâts"
+      }
+    }
+  },
+  "Arcane Gate": {
+    "name": "Portail magique",
+    "description": "Vous créez deux portails de téléportation reliés sur le sol, dans des espaces inoccupés que vous pouvez voir, chacun occupant un espace de taille G : l'un à {{distance:10ft}} ou moins de vous, l'autre à {{distance:500ft}} ou moins. Chaque portail s'ouvre sur un côté de votre choix ; ce qui entre par ce côté ressort par l'autre portail. Par une Action bonus, vous pouvez faire pivoter les côtés ouverts.",
+    "castingTime": "Action",
+    "range": "150 mètres",
+    "duration": "Concentration, jusqu'à 10 minutes"
+  },
+  "Summon Fiend": {
+    "name": "Convocation de fiélon",
+    "description": "Vous convoquez un esprit Fiélon de taille G, démon, diable ou yugoloth, dans un espace inoccupé que vous pouvez voir. Il est l'allié de vous et de vos compagnons, partage votre Initiative et agit juste après vous, et obéit à vos ordres ; si vous n'en donnez aucun, il effectue l'action Esquiver. Il disparaît s'il tombe à 0 point de vie ou à la fin du sort.\n\nEsprit fiélon : CA 12 + niveau du sort ; points de vie 50 (démon), 40 (diable) ou 60 (yugoloth) + 15 par niveau du sort au-delà de 6 ; Vitesse {{distance:40ft|short}}, plus escalade {{distance:40ft|short}} (démon) ou vol {{distance:60ft|short}} (diable). For 13, Dex 16, Con 15, Int 10, Sag 10, Cha 16. Résistance aux dégâts de feu ; immunité aux dégâts de poison et à l'état Empoisonné ; vision dans le noir {{distance:60ft|short}} ; parle l'abyssal et l'infernal, avec télépathie {{distance:60ft|short}} ; Avantage aux jets de sauvegarde contre les sorts. Il effectue un nombre d'attaques égal à la moitié du niveau du sort (arrondi à l'inférieur), avec votre modificateur d'attaque de sort. Démon, Morsure : corps à corps, 1d12 + 3 + niveau du sort dégâts nécrotiques ; quand il tombe à 0 point de vie ou à la fin du sort, il explose, et les créatures à {{distance:10ft}} ou moins effectuent un jet de sauvegarde de Dextérité contre le DD de vos sorts. Elles subissent 2d10 + niveau du sort dégâts de feu en cas d'échec, ou la moitié en cas de réussite. Diable, Frappe ardente : corps à corps ou à distance {{distance:150ft|short}}, 2d6 + 3 + niveau du sort dégâts de feu. Yugoloth, Griffes : corps à corps, 1d8 + 3 + niveau du sort dégâts tranchants, puis il peut se téléporter de {{distance:30ft}} au maximum vers un espace inoccupé qu'il peut voir.",
+    "higherLevels": "Utilisez le niveau de l'emplacement de sort comme niveau du sort dans le profil.",
+    "material": "une fiole sanglante valant au moins 600 po",
+    "castingTime": "Action",
+    "range": "27 mètres",
+    "duration": "Concentration, jusqu'à 1 heure"
+  },
+  "Tasha's Bubbling Cauldron": {
+    "name": "Chaudron bouillonnant de Tasha",
+    "description": "Un chaudron immobile apparaît sur le sol à portée, rempli de copies d'une potion courante ou peu courante de votre choix. Par une Action bonus, vous ou un allié pouvez y prendre une potion. Il contient un nombre de potions égal à votre modificateur de caractéristique d'incantation (minimum 1), et le sort prend fin quand la dernière est retirée ou à la fin de sa durée. Les potions non bues disparaissent quand vous relancez ce sort.",
+    "material": "une louche dorée valant au moins 500 po",
+    "castingTime": "Action",
+    "range": "1,5 mètre",
+    "duration": "10 minutes"
+  },
+  "Power Word Fortify": {
+    "name": "Mot de pouvoir fortifiant",
+    "description": "Vous prononcez un mot de pouvoir qui confère 120 points de vie temporaires, répartis comme vous le souhaitez entre six créatures au maximum que vous pouvez voir à portée.",
+    "castingTime": "Action",
+    "range": "18 mètres",
+    "duration": "Instantanée"
+  },
+  "Telepathy": {
+    "name": "Télépathie",
+    "description": "Vous créez un lien télépathique avec une créature consentante que vous connaissez et qui se trouve sur le même plan d'existence. Jusqu'à la fin du sort, vous et la cible pouvez partager instantanément des mots, des images, des sons et d'autres messages sensoriels. Le sort prend fin si l'un de vous quitte ce plan.",
+    "material": "une paire d'anneaux d'argent reliés",
+    "castingTime": "Action",
+    "range": "Illimitée",
+    "duration": "24 heures"
   }
 }

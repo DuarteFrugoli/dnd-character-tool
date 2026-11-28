@@ -44,6 +44,30 @@
       "two_weapon_fighting": {
         "name": "쌍수 전투",
         "description": "경량 특성을 사용할 때 추가 공격의 피해에 능력 수정치를 더합니다."
+      },
+      "blind_fighting": {
+        "name": "맹시 전투",
+        "description": "{{distance:10ft}} 범위의 맹안시야를 얻습니다."
+      },
+      "dueling": {
+        "name": "결투",
+        "description": "근접 무기를 한 손에 들고 다른 무기를 들지 않으면 피해에 +2를 받습니다."
+      },
+      "interception": {
+        "name": "가로막기",
+        "description": "반응행동으로 가까운 아군이 받는 피해를 1d10 + 숙련 보너스만큼 줄입니다."
+      },
+      "protection": {
+        "name": "보호",
+        "description": "반응행동과 방패로 가까운 아군을 향한 공격에 불리점을 줍니다."
+      },
+      "thrown_weapon_fighting": {
+        "name": "투척 무기 전투",
+        "description": "투척 무기로 하는 원거리 공격의 피해에 +2를 받습니다."
+      },
+      "unarmed_fighting": {
+        "name": "비무장 전투",
+        "description": "비무장 타격 피해는 1d6 또는 1d8 + 근력 수정치입니다. 자신이 붙잡고 있는 크리처에게 피해를 줍니다."
       }
     },
     "paladin_fighting_styles_2024": {
@@ -66,6 +90,30 @@
       "blessed_warrior": {
         "name": "축복받은 전사",
         "description": "자신에게 팔라딘 주문으로 간주되는 클레릭 소마법 2개를 배웁니다."
+      },
+      "blind_fighting": {
+        "name": "맹시 전투",
+        "description": "{{distance:10ft}} 범위의 맹안시야를 얻습니다."
+      },
+      "dueling": {
+        "name": "결투",
+        "description": "근접 무기를 한 손에 들고 다른 무기를 들지 않으면 피해에 +2를 받습니다."
+      },
+      "interception": {
+        "name": "가로막기",
+        "description": "반응행동으로 가까운 아군이 받는 피해를 1d10 + 숙련 보너스만큼 줄입니다."
+      },
+      "protection": {
+        "name": "보호",
+        "description": "반응행동과 방패로 가까운 아군을 향한 공격에 불리점을 줍니다."
+      },
+      "thrown_weapon_fighting": {
+        "name": "투척 무기 전투",
+        "description": "투척 무기로 하는 원거리 공격의 피해에 +2를 받습니다."
+      },
+      "unarmed_fighting": {
+        "name": "비무장 전투",
+        "description": "비무장 타격 피해는 1d6 또는 1d8 + 근력 수정치입니다. 자신이 붙잡고 있는 크리처에게 피해를 줍니다."
       }
     },
     "ranger_fighting_styles_2024": {
@@ -88,6 +136,30 @@
       "druidic_warrior": {
         "name": "드루이드 전사",
         "description": "자신에게 레인저 주문으로 간주되는 드루이드 소마법 2개를 배웁니다."
+      },
+      "blind_fighting": {
+        "name": "맹시 전투",
+        "description": "{{distance:10ft}} 범위의 맹안시야를 얻습니다."
+      },
+      "dueling": {
+        "name": "결투",
+        "description": "근접 무기를 한 손에 들고 다른 무기를 들지 않으면 피해에 +2를 받습니다."
+      },
+      "interception": {
+        "name": "가로막기",
+        "description": "반응행동으로 가까운 아군이 받는 피해를 1d10 + 숙련 보너스만큼 줄입니다."
+      },
+      "protection": {
+        "name": "보호",
+        "description": "반응행동과 방패로 가까운 아군을 향한 공격에 불리점을 줍니다."
+      },
+      "thrown_weapon_fighting": {
+        "name": "투척 무기 전투",
+        "description": "투척 무기로 하는 원거리 공격의 피해에 +2를 받습니다."
+      },
+      "unarmed_fighting": {
+        "name": "비무장 전투",
+        "description": "비무장 타격 피해는 1d6 또는 1d8 + 근력 수정치입니다. 자신이 붙잡고 있는 크리처에게 피해를 줍니다."
       }
     },
     "divine_orders": {
@@ -876,6 +948,64 @@
       "witch_sight": {
         "name": "마녀의 시야",
         "description": "{{distance:30ft}} 범위의 진시야를 얻습니다."
+      }
+    },
+    "crafter_tools_2024": {
+      "carpenter_s_tools": {
+        "name": "목수의 도구"
+      },
+      "leatherworker_s_tools": {
+        "name": "가죽세공인의 도구"
+      },
+      "mason_s_tools": {
+        "name": "석공의 도구"
+      },
+      "potter_s_tools": {
+        "name": "도공의 도구"
+      },
+      "smith_s_tools": {
+        "name": "대장장이의 도구"
+      },
+      "tinker_s_tools": {
+        "name": "땜장이의 도구"
+      },
+      "weaver_s_tools": {
+        "name": "직조공의 도구"
+      },
+      "woodcarver_s_tools": {
+        "name": "목각가의 도구"
+      }
+    },
+    "musical_instruments_2024": {
+      "bagpipes": {
+        "name": "백파이프"
+      },
+      "drum": {
+        "name": "북"
+      },
+      "dulcimer": {
+        "name": "덜시머"
+      },
+      "flute": {
+        "name": "플루트"
+      },
+      "horn": {
+        "name": "뿔"
+      },
+      "lute": {
+        "name": "류트"
+      },
+      "lyre": {
+        "name": "리라"
+      },
+      "pan_flute": {
+        "name": "팬 플루트"
+      },
+      "shawm": {
+        "name": "숌"
+      },
+      "viol": {
+        "name": "비올"
       }
     }
   },

@@ -142,5 +142,21 @@
   "Otherworldly Presence": {
     "name": "Presencia de Otro Mundo",
     "description": "Conoces el truco Taumaturgia y utilizas la característica mágica elegida para Legado Diabólico."
+  },
+  "Celestial Resistance": {
+    "name": "Resistencia celestial",
+    "description": "Tienes Resistencia al daño Necrótico y Radiante."
+  },
+  "Healing Hands": {
+    "name": "Manos sanadoras",
+    "description": "Como acción Magia, toca a una criatura y tira tantos d4 como tu Bonificador por Competencia. La criatura recupera tantos Puntos de Golpe como el total. Una vez por Descanso Largo."
+  },
+  "Light Bearer": {
+    "name": "Portador de luz",
+    "description": "Conoces el truco Luz y usas Carisma como característica de lanzamiento para él."
+  },
+  "Celestial Revelation": {
+    "name": "Revelación celestial",
+    "description": "Desde el nivel 3 de personaje, usa una Acción Adicional para transformarte durante 1 minuto o hasta que termines el efecto, sin acción. Elige una opción en cada uso. Durante la transformación, una vez en cada uno de tus turnos, puedes infligir daño adicional igual a tu Bonificador por Competencia a un objetivo al que dañes con un ataque o conjuro: Necrótico con Sudario necrótico y Radiante con las demás opciones. Alas celestiales: obtienes una velocidad de vuelo igual a tu velocidad. Resplandor interior: emites Luz Brillante en un radio de {{distance:10ft|adj}} y Luz Tenue otros {{distance:10ft}}; al final de cada uno de tus turnos, todas las demás criaturas a {{distance:10ft}} o menos reciben daño Radiante igual a tu Bonificador por Competencia. Sudario necrótico: al transformarte, las criaturas a {{distance:10ft}} o menos, excepto tus aliados, deben superar una salvación de Carisma (CD 8 + tu modificador de Carisma + Bonificador por Competencia) o quedan Asustadas hasta el final de tu siguiente turno. Una vez por Descanso Largo."
   }
 }

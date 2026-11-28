@@ -44,6 +44,30 @@
       "two_weapon_fighting": {
         "name": "Kampf mit zwei Waffen",
         "description": "Addiere deinen Attributsmodifikator zum Schaden des zusätzlichen Angriffs durch die Eigenschaft Leicht."
+      },
+      "blind_fighting": {
+        "name": "Blinder Kampf",
+        "description": "Deine Blindsicht reicht {{distance:10ft}} weit."
+      },
+      "dueling": {
+        "name": "Duell",
+        "description": "Du erhältst +2 Schaden mit einer einhändig gehaltenen Nahkampfwaffe, wenn du keine andere Waffe hältst."
+      },
+      "interception": {
+        "name": "Abfangen",
+        "description": "Verringere mit einer Reaktion den Schaden eines nahen Verbündeten um 1d10 + Übungsbonus."
+      },
+      "protection": {
+        "name": "Schutz",
+        "description": "Gib mit einer Reaktion und deinem Schild Angriffen gegen einen nahen Verbündeten Nachteil."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Kampf mit Wurfwaffen",
+        "description": "Du erhältst +2 Schaden bei Fernkampfangriffen mit Wurfwaffen."
+      },
+      "unarmed_fighting": {
+        "name": "Waffenloser Kampf",
+        "description": "Waffenlose Schläge verursachen 1d6 oder 1d8 + Stärkemodifikator; füge einer von dir gepackten Kreatur Schaden zu."
       }
     },
     "paladin_fighting_styles_2024": {
@@ -66,6 +90,30 @@
       "blessed_warrior": {
         "name": "Gesegneter Krieger",
         "description": "Du lernst zwei Kleriker-Zaubertricks, die für dich als Paladinzauber gelten."
+      },
+      "blind_fighting": {
+        "name": "Blinder Kampf",
+        "description": "Deine Blindsicht reicht {{distance:10ft}} weit."
+      },
+      "dueling": {
+        "name": "Duell",
+        "description": "Du erhältst +2 Schaden mit einer einhändig gehaltenen Nahkampfwaffe, wenn du keine andere Waffe hältst."
+      },
+      "interception": {
+        "name": "Abfangen",
+        "description": "Verringere mit einer Reaktion den Schaden eines nahen Verbündeten um 1d10 + Übungsbonus."
+      },
+      "protection": {
+        "name": "Schutz",
+        "description": "Gib mit einer Reaktion und deinem Schild Angriffen gegen einen nahen Verbündeten Nachteil."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Kampf mit Wurfwaffen",
+        "description": "Du erhältst +2 Schaden bei Fernkampfangriffen mit Wurfwaffen."
+      },
+      "unarmed_fighting": {
+        "name": "Waffenloser Kampf",
+        "description": "Waffenlose Schläge verursachen 1d6 oder 1d8 + Stärkemodifikator; füge einer von dir gepackten Kreatur Schaden zu."
       }
     },
     "ranger_fighting_styles_2024": {
@@ -88,6 +136,30 @@
       "druidic_warrior": {
         "name": "Druidischer Krieger",
         "description": "Du lernst zwei Druiden-Zaubertricks, die für dich als Waldläuferzauber gelten."
+      },
+      "blind_fighting": {
+        "name": "Blinder Kampf",
+        "description": "Deine Blindsicht reicht {{distance:10ft}} weit."
+      },
+      "dueling": {
+        "name": "Duell",
+        "description": "Du erhältst +2 Schaden mit einer einhändig gehaltenen Nahkampfwaffe, wenn du keine andere Waffe hältst."
+      },
+      "interception": {
+        "name": "Abfangen",
+        "description": "Verringere mit einer Reaktion den Schaden eines nahen Verbündeten um 1d10 + Übungsbonus."
+      },
+      "protection": {
+        "name": "Schutz",
+        "description": "Gib mit einer Reaktion und deinem Schild Angriffen gegen einen nahen Verbündeten Nachteil."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Kampf mit Wurfwaffen",
+        "description": "Du erhältst +2 Schaden bei Fernkampfangriffen mit Wurfwaffen."
+      },
+      "unarmed_fighting": {
+        "name": "Waffenloser Kampf",
+        "description": "Waffenlose Schläge verursachen 1d6 oder 1d8 + Stärkemodifikator; füge einer von dir gepackten Kreatur Schaden zu."
       }
     },
     "divine_orders": {
@@ -876,6 +948,64 @@
       "witch_sight": {
         "name": "Hexensicht",
         "description": "Du erhältst Wahre Sicht mit einer Reichweite von {{distance:30ft|dat}}."
+      }
+    },
+    "crafter_tools_2024": {
+      "carpenter_s_tools": {
+        "name": "Zimmermannswerkzeuge"
+      },
+      "leatherworker_s_tools": {
+        "name": "Lederverarbeiterwerkzeug"
+      },
+      "mason_s_tools": {
+        "name": "Maurerwerkzeuge"
+      },
+      "potter_s_tools": {
+        "name": "Töpferwerkzeug"
+      },
+      "smith_s_tools": {
+        "name": "Schmiedewerkzeug"
+      },
+      "tinker_s_tools": {
+        "name": "Tüftlerwerkzeug"
+      },
+      "weaver_s_tools": {
+        "name": "Weberwerkzeuge"
+      },
+      "woodcarver_s_tools": {
+        "name": "Werkzeuge des Holzschnitzers"
+      }
+    },
+    "musical_instruments_2024": {
+      "bagpipes": {
+        "name": "Dudelsack"
+      },
+      "drum": {
+        "name": "Trommel"
+      },
+      "dulcimer": {
+        "name": "Hackbrett"
+      },
+      "flute": {
+        "name": "Flöte"
+      },
+      "horn": {
+        "name": "Horn"
+      },
+      "lute": {
+        "name": "Laute"
+      },
+      "lyre": {
+        "name": "Leier"
+      },
+      "pan_flute": {
+        "name": "Panflöte"
+      },
+      "shawm": {
+        "name": "Schalmei"
+      },
+      "viol": {
+        "name": "Gambe"
       }
     }
   },

@@ -2989,5 +2989,423 @@
     "castingTime": "Azione",
     "range": "Personale",
     "duration": "Istantanea"
+  },
+  "Blade Ward": {
+    "name": "Interdizione alle lame",
+    "description": "Fino al termine dell'incantesimo, qualsiasi creatura che effettua un tiro per colpire contro di te sottrae 1d4 dal tiro.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Friends": {
+    "name": "Amicizia",
+    "description": "Una creatura che puoi vedere effettua un tiro salvezza su Saggezza, altrimenti ha la condizione Affascinato per la durata. Lo supera automaticamente se non è un Umanoide, se la stai combattendo o se hai lanciato questo incantesimo su di essa nelle ultime 24 ore. L'incantesimo termina prima se il bersaglio subisce danni o se effettui un tiro per colpire, infliggi danni o costringi qualcuno a effettuare un tiro salvezza. Quando l'incantesimo termina, la creatura sa di essere stata Affascinata da te.",
+    "material": "un po' di trucco",
+    "castingTime": "Azione",
+    "range": "3 metri",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Thorn Whip": {
+    "name": "Frusta di Spine",
+    "description": "Un rampicante spinoso sferza una creatura entro la gittata. Effettua un tiro per colpire con incantesimo in mischia; se colpisci, il bersaglio subisce 1d6 danni perforanti e, se è di taglia Grande o inferiore, puoi tirarlo fino a {{distance:10ft}} più vicino a te.\n\nPotenziamento del trucchetto. I danni aumentano di 1d6 ai livelli 5 (2d6), 11 (3d6) e 17 (4d6).",
+    "material": "lo stelo di una pianta spinosa",
+    "castingTime": "Azione",
+    "range": "9 metri",
+    "duration": "Istantanea",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Thunderclap": {
+    "name": "Battito di tuono",
+    "description": "Ogni creatura in un'Emanazione di {{distance:5ft}} attorno a te effettua un tiro salvezza su Costituzione e, se lo fallisce, subisce 1d6 danni da tuono. Il boato si sente fino a {{distance:100ft}} di distanza.\n\nPotenziamento del trucchetto. I danni aumentano di 1d6 ai livelli 5 (2d6), 11 (3d6) e 17 (4d6).",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Toll the Dead": {
+    "name": "Rintocco funebre",
+    "description": "Una campana lugubre rintocca per una creatura che puoi vedere entro la gittata. Effettua un tiro salvezza su Saggezza e, se lo fallisce, subisce 1d8 danni necrotici, oppure 1d12 danni necrotici se le manca già qualche Punto Ferita.\n\nPotenziamento del trucchetto. I danni aumentano di un dado ai livelli 5, 11 e 17 (a 2, 3 e 4 dadi).",
+    "castingTime": "Azione",
+    "range": "18 metri",
+    "duration": "Istantanea"
+  },
+  "Word of Radiance": {
+    "name": "Parola radiosa",
+    "description": "Ogni creatura a tua scelta che puoi vedere in un'Emanazione di {{distance:5ft}} attorno a te effettua un tiro salvezza su Costituzione e, se lo fallisce, subisce 1d6 danni radiosi.\n\nPotenziamento del trucchetto. I danni aumentano di 1d6 ai livelli 5 (2d6), 11 (3d6) e 17 (4d6).",
+    "material": "un simbolo solare",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Armor of Agathys": {
+    "name": "Armatura di Agathys",
+    "description": "Ottieni 5 Punti Ferita Temporanei. Fino al termine dell'incantesimo, una creatura che ti colpisce con un tiro per colpire in mischia subisce 5 danni da freddo. L'incantesimo termina prima se non hai più Punti Ferita Temporanei.",
+    "higherLevels": "I Punti Ferita Temporanei e i danni da freddo aumentano di 5 per ogni livello dello slot incantesimo superiore al 1°.",
+    "material": "un frammento di vetro blu",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "1 ora"
+  },
+  "Compelled Duel": {
+    "name": "Duello Obbligato",
+    "description": "Una creatura che puoi vedere effettua un tiro salvezza su Saggezza. Se lo fallisce, ha Svantaggio ai tiri per colpire contro creature diverse da te e non può muoversi volontariamente in uno spazio a più di {{distance:30ft}} da te. L'incantesimo termina se attacchi un altro nemico o lanci un incantesimo su di esso, se un tuo alleato infligge danni al bersaglio o se termini il tuo turno a più di {{distance:30ft}} da esso.",
+    "castingTime": "Azione bonus",
+    "range": "9 metri",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Hail of Thorns": {
+    "name": "Raffica di Spine",
+    "description": "Quando il tuo attacco a distanza colpisce, delle spine esplodono dal colpo. Il bersaglio e ogni creatura entro {{distance:5ft}} da esso effettuano un tiro salvezza su Destrezza, subendo 1d10 danni perforanti se lo falliscono, o la metà di quei danni se lo superano.",
+    "higherLevels": "I danni aumentano di 1d10 per ogni livello dello slot incantesimo superiore al 1°.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito una creatura con un'arma a distanza",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Thunderous Smite": {
+    "name": "Punizione Tonante",
+    "description": "Il tuo colpo rimbomba fino a {{distance:300ft}} di distanza e infligge 2d6 danni da tuono extra. Se il bersaglio è una creatura, effettua un tiro salvezza su Forza, altrimenti viene spinto di {{distance:10ft}} lontano da te e ha la condizione Prono.",
+    "higherLevels": "I danni aumentano di 1d6 per ogni livello dello slot incantesimo superiore al 1°.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito un bersaglio con un'arma da mischia o un colpo senz'armi",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Witch Bolt": {
+    "name": "Dardo stregato",
+    "description": "Un fascio di energia crepitante ti collega a una creatura entro la gittata. Effettua un tiro per colpire con incantesimo a distanza; se colpisci, subisce 2d12 danni da fulmine. In ognuno dei tuoi turni successivi, puoi compiere un'Azione Bonus per infliggerle automaticamente 1d12 danni da fulmine, anche se il primo attacco ha mancato. L'incantesimo termina se il bersaglio si trova fuori gittata o ha copertura totale rispetto a te.",
+    "higherLevels": "I danni iniziali aumentano di 1d12 per ogni livello dello slot incantesimo superiore al 1°.",
+    "material": "un rametto colpito da un fulmine",
+    "castingTime": "Azione",
+    "range": "18 metri",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Wrathful Smite": {
+    "name": "Punizione irata",
+    "description": "Il tuo colpo infligge 1d6 danni necrotici extra e il bersaglio effettua un tiro salvezza su Saggezza, altrimenti ha la condizione Spaventato fino al termine dell'incantesimo. Alla fine di ognuno dei suoi turni, il bersaglio Spaventato ripete il tiro salvezza, terminando l'incantesimo su di sé se lo supera.",
+    "higherLevels": "I danni aumentano di 1d6 per ogni livello dello slot incantesimo superiore al 1°.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito un bersaglio con un'arma da mischia o un colpo senz'armi",
+    "range": "Personale",
+    "duration": "1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Arcane Vigor": {
+    "name": "Vigore arcano",
+    "description": "Spendi fino a due dei tuoi Dadi Vita non spesi, li tiri e recuperi Punti Ferita pari al totale più il tuo modificatore di caratteristica da incantatore.",
+    "higherLevels": "Puoi spendere un Dado Vita in più per ogni livello dello slot incantesimo superiore al 2°.",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "Istantanea"
+  },
+  "Cloud of Daggers": {
+    "name": "Nube di pugnali",
+    "description": "Pugnali rotanti riempiono un Cubo di {{distance:5ft}} centrato su un punto entro la gittata. Una creatura subisce 4d4 danni taglienti quando il Cubo appare nel suo spazio, quando entra nel Cubo, quando il Cubo si sposta nel suo spazio o quando vi termina il proprio turno; una creatura subisce questi danni solo una volta per turno. Nei tuoi turni successivi, puoi compiere un'azione Magia per spostare il Cubo fino a {{distance:30ft}}.",
+    "higherLevels": "I danni aumentano di 2d4 per ogni livello dello slot incantesimo superiore al 2°.",
+    "material": "una scheggia di vetro",
+    "castingTime": "Azione",
+    "range": "18 metri",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Cordon of Arrows": {
+    "name": "Cordone di Frecce",
+    "description": "Pianti nel terreno del tuo spazio fino a quattro frecce o quadrelli non magici. Quando una creatura diversa da te entra per la prima volta in un turno in uno spazio entro {{distance:30ft}} dalle munizioni o vi termina il proprio turno, una munizione vola verso di essa: la creatura effettua un tiro salvezza su Destrezza, altrimenti subisce 2d4 danni perforanti, e quella munizione viene distrutta. Quando lanci l'incantesimo, puoi scegliere creature che esso ignora. L'incantesimo termina quando non restano munizioni.",
+    "higherLevels": "Pianti due munizioni in più per ogni livello dello slot incantesimo superiore al 2°.",
+    "material": "una treccia ornamentale",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "8 ore",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Crown of Madness": {
+    "name": "Corona di follia",
+    "description": "Una creatura che puoi vedere effettua un tiro salvezza su Saggezza, altrimenti ha la condizione Affascinato per la durata; lo supera automaticamente se non è un Umanoide. Finché è Affascinata, in ognuno dei suoi turni, prima di muoversi, deve compiere un'azione per effettuare un attacco in mischia contro una creatura diversa da sé che scegli mentalmente. Ripete il tiro salvezza alla fine di ognuno dei suoi turni, terminando l'incantesimo su di sé se lo supera. In ognuno dei tuoi turni successivi, devi compiere l'azione Magia per mantenere il controllo, altrimenti l'incantesimo termina.",
+    "castingTime": "Azione",
+    "range": "36 metri",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Aura of Vitality": {
+    "name": "Aura di Vitalità",
+    "description": "Energia curativa riempie un'Emanazione di {{distance:30ft}} attorno a te. Quando lanci l'incantesimo e all'inizio di ognuno dei tuoi turni fino al suo termine, puoi ripristinare 2d6 Punti Ferita a una creatura nell'aura.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Blinding Smite": {
+    "name": "Punizione Accecante",
+    "description": "Il tuo colpo infligge 3d8 danni radiosi extra e il bersaglio ha la condizione Accecato fino al termine dell'incantesimo. Alla fine di ognuno dei suoi turni, il bersaglio effettua un tiro salvezza su Costituzione, terminando l'incantesimo su di sé se lo supera.",
+    "higherLevels": "I danni extra aumentano di 1d8 per ogni livello dello slot incantesimo superiore al 3°.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito un bersaglio con un'arma da mischia o un colpo senz'armi",
+    "range": "Personale",
+    "duration": "1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Conjure Barrage": {
+    "name": "Evoca Raffica",
+    "description": "Brandisci l'arma ed evochi una tempesta di sue copie. Ogni creatura a tua scelta che puoi vedere in un Cono di {{distance:60ft}} effettua un tiro salvezza su Destrezza, subendo 5d8 danni da forza se lo fallisce, o la metà di quei danni se lo supera.",
+    "higherLevels": "I danni aumentano di 1d8 per ogni livello dello slot incantesimo superiore al 3°.",
+    "material": "un'arma da mischia o a distanza del valore di almeno 1 mr",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Elemental Weapon": {
+    "name": "Arma Elementale",
+    "description": "Un'arma non magica che tocchi diventa un'arma magica. Scegli acido, freddo, fuoco, fulmine o tuono: fino al termine dell'incantesimo, l'arma conferisce un bonus di +1 ai tiri per colpire e infligge 1d4 danni extra di quel tipo quando colpisce.",
+    "higherLevels": "Con uno slot incantesimo di livello 5-6, il bonus è +2 e i danni extra 2d4; con uno slot di livello 7 o superiore, +3 e 3d4.",
+    "castingTime": "Azione",
+    "range": "Contatto",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Feign Death": {
+    "name": "Morte apparente",
+    "description": "Una creatura consenziente che tocchi sembra morta a un'ispezione esterna. Per la durata, ha le condizioni Accecato e Incapacitato, la sua Velocità è 0, ha Resistenza a tutti i danni tranne i danni psichici e ha Immunità alla condizione Avvelenato.",
+    "material": "un pizzico di terra di cimitero",
+    "castingTime": "Azione o Rituale",
+    "range": "Contatto",
+    "duration": "1 ora"
+  },
+  "Lightning Arrow": {
+    "name": "Freccia Folgorante",
+    "description": "Il tuo colpo si trasforma in un fulmine. Se colpisci, il bersaglio subisce 4d8 danni da fulmine invece dei normali danni dell'arma; se manchi, ne subisce la metà. Che il colpo vada a segno o meno, ogni creatura entro {{distance:10ft}} dal bersaglio effettua un tiro salvezza su Destrezza, subendo 2d8 danni da fulmine se lo fallisce, o la metà di quei danni se lo supera.",
+    "higherLevels": "Entrambi i tiri per i danni aumentano di 1d8 per ogni livello dello slot incantesimo superiore al 3°.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver effettuato un attacco con un'arma a distanza",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Summon Undead": {
+    "name": "Evocare non morto",
+    "description": "Evochi uno spirito Non Morto di taglia Media, Spettrale, Putrido o Scheletrico, in uno spazio libero che puoi vedere. È alleato tuo e dei tuoi compagni, condivide la tua Iniziativa e agisce subito dopo di te, e obbedisce ai tuoi comandi; se non ne dai, compie l'azione Schivata. Scompare quando scende a 0 Punti Ferita o al termine dell'incantesimo.\n\nSpirito non morto: CA 11 + livello dell'incantesimo; Punti Ferita 30 (Spettrale o Putrido) o 20 (Scheletrico) + 10 per ogni livello dell'incantesimo superiore al 3; Velocità {{distance:30ft|short}} (lo Spettrale vola anche a {{distance:40ft|short}} e può fluttuare). For 12, Des 16, Cos 15, Int 4, Sag 10, Car 9. Immune ai danni necrotici e da veleno e alle condizioni Esaurimento, Spaventato, Paralizzato e Avvelenato; Scurovisione {{distance:60ft|short}}. Effettua un numero di attacchi pari alla metà del livello dell'incantesimo (arrotondato per difetto), usando il tuo modificatore di attacco con incantesimo. Spettrale, Tocco mortale: mischia, 1d8 + 3 + livello dell'incantesimo danni necrotici, e il bersaglio è Spaventato fino alla fine del suo turno successivo. Putrido, Artiglio marcescente: mischia, 1d6 + 3 + livello dell'incantesimo danni taglienti, e un bersaglio Avvelenato è anche Paralizzato fino alla fine del suo turno successivo; le creature che iniziano il turno entro {{distance:5ft}} da esso effettuano un tiro salvezza su Costituzione contro la CD del tuo incantesimo, altrimenti sono Avvelenate fino all'inizio del loro turno successivo. Scheletrico, Dardo sepolcrale: distanza {{distance:150ft|short}}, 2d4 + 3 + livello dell'incantesimo danni necrotici.",
+    "higherLevels": "Usa il livello dello slot incantesimo come livello dell'incantesimo nel blocco statistiche.",
+    "material": "un teschio dorato del valore di almeno 300 mo",
+    "castingTime": "Azione",
+    "range": "27 metri",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Aura of Purity": {
+    "name": "Aura di Purezza",
+    "description": "Tu e i tuoi alleati in un'Emanazione di {{distance:30ft}} attorno a te avete Resistenza ai danni da veleno e Vantaggio ai tiri salvezza per evitare o terminare le condizioni Accecato, Affascinato, Assordato, Spaventato, Paralizzato, Avvelenato e Stordito.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Grasping Vine": {
+    "name": "Rampicante Afferrante",
+    "description": "Un rampicante spunta in uno spazio libero che puoi vedere entro la gittata. Quando lanci l'incantesimo, e come Azione Bonus nei tuoi turni successivi, puoi effettuare un tiro per colpire con incantesimo in mischia contro una creatura entro {{distance:30ft}} dal rampicante. Se colpisci, subisce 4d8 danni contundenti e viene tirata fino a {{distance:30ft}} verso il rampicante; un bersaglio di taglia Enorme o inferiore ha anche la condizione Afferrato (CD per liberarsi pari alla CD del tuo incantesimo). Il rampicante può afferrare una creatura alla volta, e puoi liberarla in qualsiasi momento.",
+    "higherLevels": "Il rampicante può afferrare una creatura in più per ogni livello dello slot incantesimo superiore al 4°.",
+    "castingTime": "Azione bonus",
+    "range": "18 metri",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "attack": {
+        "label": "Attacco"
+      },
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Staggering Smite": {
+    "name": "Punizione Demoralizzante",
+    "description": "Il tuo colpo infligge 4d6 danni psichici extra e il bersaglio effettua un tiro salvezza su Saggezza, altrimenti ha la condizione Stordito fino alla fine del tuo turno successivo.",
+    "higherLevels": "I danni aumentano di 1d6 per ogni livello dello slot incantesimo superiore al 4°.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito un bersaglio con un'arma da mischia o un colpo senz'armi",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Summon Elemental": {
+    "name": "Evocare spirito elementale",
+    "description": "Evochi uno spirito Elementale di taglia Media dell'aria, della terra, del fuoco o dell'acqua in uno spazio libero che puoi vedere. È alleato tuo e dei tuoi compagni, condivide la tua Iniziativa e agisce subito dopo di te, e obbedisce ai tuoi comandi; se non ne dai, compie l'azione Schivata. Scompare quando scende a 0 Punti Ferita o al termine dell'incantesimo.\n\nSpirito elementale: CA 11 + livello dell'incantesimo; Punti Ferita 50 + 10 per ogni livello dell'incantesimo superiore al 4; Velocità {{distance:40ft|short}}, più scavare {{distance:40ft|short}} (terra), volare {{distance:40ft|short}} fluttuando (aria) o nuotare {{distance:40ft|short}} (acqua). For 18, Des 15, Cos 17, Int 4, Sag 10, Car 16. Resistenza all'acido (acqua), al fulmine e al tuono (aria) o ai danni perforanti e taglienti (terra); immune ai danni da veleno, ai danni da fuoco (fuoco) e alle condizioni Esaurimento, Paralizzato, Pietrificato e Avvelenato; Scurovisione {{distance:60ft|short}}; parla Primordiale. Gli spiriti dell'aria, del fuoco e dell'acqua passano attraverso fessure di appena {{distance:1in}}. Effettua un numero di attacchi Schianto pari alla metà del livello dell'incantesimo (arrotondato per difetto): mischia, con il tuo modificatore di attacco con incantesimo, 1d10 + 4 + livello dell'incantesimo danni del suo elemento (contundenti per la terra, da freddo per l'acqua, da fulmine per l'aria, da fuoco per il fuoco).",
+    "higherLevels": "Usa il livello dello slot incantesimo come livello dell'incantesimo nel blocco statistiche.",
+    "material": "aria, un sassolino, cenere e acqua in una fiala intarsiata d'oro del valore di almeno 400 mo",
+    "castingTime": "Azione",
+    "range": "27 metri",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Banishing Smite": {
+    "name": "Punizione Esiliante",
+    "description": "Il tuo colpo infligge 5d10 danni da forza extra. Se l'attacco lascia il bersaglio con 50 Punti Ferita o meno, effettua un tiro salvezza su Carisma, altrimenti viene inviato in un semipiano innocuo, dove ha la condizione Incapacitato, fino al termine dell'incantesimo. Poi ritorna nello spazio che ha lasciato o nello spazio libero più vicino.",
+    "castingTime": "Azione bonus, da compiere subito dopo aver colpito un bersaglio con un'arma da mischia o un colpo senz'armi",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Circle of Power": {
+    "name": "Cerchio di Potere",
+    "description": "Tu e i tuoi alleati in un'Emanazione di {{distance:30ft}} attorno a te avete Vantaggio ai tiri salvezza contro incantesimi e altri effetti magici. Quando una creatura influenzata supera un tiro salvezza contro un incantesimo o un effetto magico che infligge la metà dei danni in caso di successo, non subisce alcun danno.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Conjure Volley": {
+    "name": "Evoca Pioggia di Proiettili",
+    "description": "Spari con l'arma verso un punto entro la gittata e sue copie piovono dall'alto. Ogni creatura a tua scelta che puoi vedere in un Cilindro di {{distance:40ft}} di raggio e {{distance:20ft}} di altezza centrato su quel punto effettua un tiro salvezza su Destrezza, subendo 8d8 danni da forza se lo fallisce, o la metà di quei danni se lo supera.",
+    "material": "un'arma da mischia o a distanza del valore di almeno 1 mr",
+    "castingTime": "Azione",
+    "range": "45 metri",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Destructive Wave": {
+    "name": "Onda Distruttiva",
+    "description": "Energia divina erompe da te. Ogni creatura che scegli in un'Emanazione di {{distance:30ft}} effettua un tiro salvezza su Costituzione. Se lo fallisce, subisce 5d6 danni da tuono e 5d6 danni radiosi o necrotici (a tua scelta) e ha la condizione Prono. Se lo supera, subisce solo la metà di quei danni.",
+    "castingTime": "Azione",
+    "range": "Personale",
+    "duration": "Istantanea",
+    "rolls": {
+      "thunder": {
+        "label": "Danni da tuono"
+      },
+      "divine": {
+        "label": "Danni radiosi o necrotici"
+      }
+    }
+  },
+  "Jallarzi's Storm of Radiance": {
+    "name": "Tempesta radiosa di Jallarzi",
+    "description": "Una tempesta di luce scintillante e tuoni riempie un Cilindro di {{distance:10ft}} di raggio e {{distance:40ft}} di altezza centrato su un punto che puoi vedere entro la gittata. Finché si trovano al suo interno, le creature hanno le condizioni Accecato e Assordato e non possono lanciare incantesimi con componente verbale. Quando la tempesta appare, ogni creatura al suo interno effettua un tiro salvezza su Costituzione, subendo 2d10 danni radiosi e 2d10 danni da tuono se lo fallisce, o la metà di quei danni se lo supera. Una creatura effettua questo tiro salvezza anche quando entra nell'area per la prima volta in un turno o vi termina il proprio turno, al massimo una volta per turno.",
+    "higherLevels": "I danni radiosi e quelli da tuono aumentano ciascuno di 1d10 per ogni livello dello slot incantesimo superiore al 5°.",
+    "material": "un pizzico di fosforo",
+    "castingTime": "Azione",
+    "range": "36 metri",
+    "duration": "Concentrazione, fino a 1 minuto",
+    "rolls": {
+      "radiant": {
+        "label": "Danni radiosi"
+      },
+      "thunder": {
+        "label": "Danni da tuono"
+      }
+    }
+  },
+  "Swift Quiver": {
+    "name": "Faretra Rapida",
+    "description": "Quando lanci l'incantesimo, e come Azione Bonus in ognuno dei tuoi turni fino al suo termine, puoi effettuare due attacchi con un'arma che scaglia frecce o quadrelli. L'incantesimo crea le munizioni di ogni attacco; infliggono i danni normali e svaniscono dopo l'attacco.",
+    "material": "una faretra del valore di almeno 1 mo",
+    "castingTime": "Azione bonus",
+    "range": "Personale",
+    "duration": "Concentrazione, fino a 1 minuto"
+  },
+  "Synaptic Static": {
+    "name": "Statica sinaptica",
+    "description": "Energia psichica erompe in una Sfera di {{distance:20ft}} di raggio centrata su un punto entro la gittata. Ogni creatura al suo interno effettua un tiro salvezza su Intelligenza, subendo 8d6 danni psichici se lo fallisce, o la metà di quei danni se lo supera. Se lo fallisce, la creatura è anche confusa per 1 minuto: sottrae 1d6 ai suoi tiri per colpire, alle prove di caratteristica e ai tiri salvezza su Costituzione per mantenere la Concentrazione. Ripete il tiro salvezza alla fine di ognuno dei suoi turni, terminando l'effetto su di sé se lo supera.",
+    "castingTime": "Azione",
+    "range": "36 metri",
+    "duration": "Istantanea",
+    "rolls": {
+      "damage": {
+        "label": "Danni"
+      }
+    }
+  },
+  "Arcane Gate": {
+    "name": "Portale arcano",
+    "description": "Crei due portali di teletrasporto collegati sul terreno, in spazi liberi che puoi vedere, ognuno dei quali occupa uno spazio Grande: uno entro {{distance:10ft}} da te e l'altro entro {{distance:500ft}}. Ogni portale si apre su un lato a tua scelta; ciò che entra da quel lato compare dall'altro portale. Come Azione Bonus, puoi ruotare i lati aperti.",
+    "castingTime": "Azione",
+    "range": "150 metri",
+    "duration": "Concentrazione, fino a 10 minuti"
+  },
+  "Summon Fiend": {
+    "name": "Evocare immondo",
+    "description": "Evochi uno spirito Immondo di taglia Grande, Demone, Diavolo o Yugoloth, in uno spazio libero che puoi vedere. È alleato tuo e dei tuoi compagni, condivide la tua Iniziativa e agisce subito dopo di te, e obbedisce ai tuoi comandi; se non ne dai, compie l'azione Schivata. Scompare quando scende a 0 Punti Ferita o al termine dell'incantesimo.\n\nSpirito immondo: CA 12 + livello dell'incantesimo; Punti Ferita 50 (Demone), 40 (Diavolo) o 60 (Yugoloth) + 15 per ogni livello dell'incantesimo superiore al 6; Velocità {{distance:40ft|short}}, più scalare {{distance:40ft|short}} (Demone) o volare {{distance:60ft|short}} (Diavolo). For 13, Des 16, Cos 15, Int 10, Sag 10, Car 16. Resistenza ai danni da fuoco; immune ai danni da veleno e alla condizione Avvelenato; Scurovisione {{distance:60ft|short}}; parla Abissale e Infernale, con telepatia {{distance:60ft|short}}; Vantaggio ai tiri salvezza contro gli incantesimi. Effettua un numero di attacchi pari alla metà del livello dell'incantesimo (arrotondato per difetto), usando il tuo modificatore di attacco con incantesimo. Demone, Morso: mischia, 1d12 + 3 + livello dell'incantesimo danni necrotici; quando scende a 0 Punti Ferita o l'incantesimo termina, esplode, e le creature entro {{distance:10ft}} effettuano un tiro salvezza su Destrezza contro la CD del tuo incantesimo, subendo 2d10 + livello dell'incantesimo danni da fuoco se lo falliscono, o la metà se lo superano. Diavolo, Colpo infuocato: mischia o distanza {{distance:150ft|short}}, 2d6 + 3 + livello dell'incantesimo danni da fuoco. Yugoloth, Artigli: mischia, 1d8 + 3 + livello dell'incantesimo danni taglienti, e poi può teletrasportarsi fino a {{distance:30ft}} in uno spazio libero che può vedere.",
+    "higherLevels": "Usa il livello dello slot incantesimo come livello dell'incantesimo nel blocco statistiche.",
+    "material": "una fiala insanguinata del valore di almeno 600 mo",
+    "castingTime": "Azione",
+    "range": "27 metri",
+    "duration": "Concentrazione, fino a 1 ora"
+  },
+  "Tasha's Bubbling Cauldron": {
+    "name": "Calderone gorgogliante di Tasha",
+    "description": "Un calderone inamovibile appare sul terreno entro la gittata, pieno di copie di una pozione comune o non comune a tua scelta. Come Azione Bonus, tu o un alleato potete prenderne una pozione. Contiene un numero di pozioni pari al tuo modificatore di caratteristica da incantatore (minimo 1), e l'incantesimo termina quando viene presa l'ultima o al termine della durata. Le pozioni non bevute svaniscono quando lanci di nuovo questo incantesimo.",
+    "material": "un mestolo dorato del valore di almeno 500 mo",
+    "castingTime": "Azione",
+    "range": "1,5 metro",
+    "duration": "10 minuti"
+  },
+  "Power Word Fortify": {
+    "name": "Parola del potere fortificare",
+    "description": "Pronunci una parola del potere che conferisce 120 Punti Ferita Temporanei, ripartiti come preferisci tra un massimo di sei creature che puoi vedere entro la gittata.",
+    "castingTime": "Azione",
+    "range": "18 metri",
+    "duration": "Istantanea"
+  },
+  "Telepathy": {
+    "name": "Telepatia",
+    "description": "Crei un legame telepatico con una creatura consenziente che conosci e che si trova sul tuo stesso piano di esistenza. Fino al termine dell'incantesimo, tu e il bersaglio potete condividere all'istante parole, immagini, suoni e altri messaggi sensoriali. L'incantesimo termina se uno di voi lascia quel piano.",
+    "material": "un paio di anelli d'argento collegati",
+    "castingTime": "Azione",
+    "range": "Illimitata",
+    "duration": "24 ore"
   }
 }

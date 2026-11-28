@@ -44,6 +44,30 @@
       "two_weapon_fighting": {
         "name": "双武器战斗",
         "description": "使用轻型属性进行额外攻击时，将属性调整值加入该次攻击的伤害。"
+      },
+      "blind_fighting": {
+        "name": "盲斗",
+        "description": "获得范围{{distance:10ft}}的盲视。"
+      },
+      "dueling": {
+        "name": "决斗",
+        "description": "以一只手持用近战武器且不持用其他武器时，伤害获得+2加值。"
+      },
+      "interception": {
+        "name": "拦截",
+        "description": "用一个反应，使附近盟友受到的伤害减少1d10 + 熟练加值。"
+      },
+      "protection": {
+        "name": "保护",
+        "description": "用一个反应及盾牌，使对附近盟友的攻击具有劣势。"
+      },
+      "thrown_weapon_fighting": {
+        "name": "投掷武器战斗",
+        "description": "使用投掷武器进行远程攻击时，伤害获得+2加值。"
+      },
+      "unarmed_fighting": {
+        "name": "徒手战斗",
+        "description": "徒手打击造成1d6或1d8 + 力量调整值的伤害，并可伤害一个正被你擒抱的生物。"
       }
     },
     "paladin_fighting_styles_2024": {
@@ -66,6 +90,30 @@
       "blessed_warrior": {
         "name": "受祝战士",
         "description": "学会两个牧师戏法，它们对你视为圣骑士法术。"
+      },
+      "blind_fighting": {
+        "name": "盲斗",
+        "description": "获得范围{{distance:10ft}}的盲视。"
+      },
+      "dueling": {
+        "name": "决斗",
+        "description": "以一只手持用近战武器且不持用其他武器时，伤害获得+2加值。"
+      },
+      "interception": {
+        "name": "拦截",
+        "description": "用一个反应，使附近盟友受到的伤害减少1d10 + 熟练加值。"
+      },
+      "protection": {
+        "name": "保护",
+        "description": "用一个反应及盾牌，使对附近盟友的攻击具有劣势。"
+      },
+      "thrown_weapon_fighting": {
+        "name": "投掷武器战斗",
+        "description": "使用投掷武器进行远程攻击时，伤害获得+2加值。"
+      },
+      "unarmed_fighting": {
+        "name": "徒手战斗",
+        "description": "徒手打击造成1d6或1d8 + 力量调整值的伤害，并可伤害一个正被你擒抱的生物。"
       }
     },
     "ranger_fighting_styles_2024": {
@@ -88,6 +136,30 @@
       "druidic_warrior": {
         "name": "德鲁伊战士",
         "description": "学会两个德鲁伊戏法，它们对你视为游侠法术。"
+      },
+      "blind_fighting": {
+        "name": "盲斗",
+        "description": "获得范围{{distance:10ft}}的盲视。"
+      },
+      "dueling": {
+        "name": "决斗",
+        "description": "以一只手持用近战武器且不持用其他武器时，伤害获得+2加值。"
+      },
+      "interception": {
+        "name": "拦截",
+        "description": "用一个反应，使附近盟友受到的伤害减少1d10 + 熟练加值。"
+      },
+      "protection": {
+        "name": "保护",
+        "description": "用一个反应及盾牌，使对附近盟友的攻击具有劣势。"
+      },
+      "thrown_weapon_fighting": {
+        "name": "投掷武器战斗",
+        "description": "使用投掷武器进行远程攻击时，伤害获得+2加值。"
+      },
+      "unarmed_fighting": {
+        "name": "徒手战斗",
+        "description": "徒手打击造成1d6或1d8 + 力量调整值的伤害，并可伤害一个正被你擒抱的生物。"
       }
     },
     "divine_orders": {
@@ -876,6 +948,64 @@
       "witch_sight": {
         "name": "巫眼",
         "description": "你获得{{distance:30ft|short}}范围的真实视觉。"
+      }
+    },
+    "crafter_tools_2024": {
+      "carpenter_s_tools": {
+        "name": "木匠的工具"
+      },
+      "leatherworker_s_tools": {
+        "name": "制革工具"
+      },
+      "mason_s_tools": {
+        "name": "石匠工具"
+      },
+      "potter_s_tools": {
+        "name": "陶工工具"
+      },
+      "smith_s_tools": {
+        "name": "铁匠工具"
+      },
+      "tinker_s_tools": {
+        "name": "修补匠工具"
+      },
+      "weaver_s_tools": {
+        "name": "织工的工具"
+      },
+      "woodcarver_s_tools": {
+        "name": "木雕师的工具"
+      }
+    },
+    "musical_instruments_2024": {
+      "bagpipes": {
+        "name": "风笛"
+      },
+      "drum": {
+        "name": "鼓"
+      },
+      "dulcimer": {
+        "name": "扬琴"
+      },
+      "flute": {
+        "name": "长笛"
+      },
+      "horn": {
+        "name": "号角"
+      },
+      "lute": {
+        "name": "鲁特琴"
+      },
+      "lyre": {
+        "name": "里拉琴"
+      },
+      "pan_flute": {
+        "name": "排笛"
+      },
+      "shawm": {
+        "name": "肖姆管"
+      },
+      "viol": {
+        "name": "维奥尔"
       }
     }
   },

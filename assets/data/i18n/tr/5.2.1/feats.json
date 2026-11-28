@@ -66,5 +66,53 @@
   "Boon of Truesight": {
     "name": "Gerçek Görüş Lütfu",
     "description": "Bir nitelik puanını 1 artır; en yüksek değer 30'dur. {{distance:60ft}} menzilli Gerçek Görüş kazan."
+  },
+  "Crafter": {
+    "name": "Zanaatkâr",
+    "description": "Hızlı Üretim listesinden üç farklı zanaatkâr aletinde yetkinlik kazanırsın. Satın aldığın büyüsüz eşyalar sana %20 daha ucuza mal olur. Uzun Dinlenmeyi bitirirken bu aletlerden biriyle ona bağlı basit bir eşya, örneğin merdiven, kürek veya lamba yapabilirsin. Eşya, sonraki Uzun Dinlenmeni bitirdiğinde parçalanır."
+  },
+  "Healer": {
+    "name": "Şifacı",
+    "description": "Şifacı çantasıyla Kullan eylemini yapıp çantanın bir kullanımını harcayarak {{distance:5ft}} mesafe içindeki bir yaratığa yardım edebilirsin. Yaratık bir Can Zarı harcayabilir; zarı sen atarsın ve yaratık sonuç artı senin Yetkinlik Bonusun kadar can puanı iyileştirir. Bir büyü veya bu yetenekle can puanı iyileştirmek için zar attığında, 1 gelen herhangi bir zarı yeniden atabilir ve yeni sonucu kullanmak zorundasın."
+  },
+  "Lucky": {
+    "name": "Şanslı",
+    "description": "Yetkinlik Bonusuna eşit Şans Puanın vardır; Uzun Dinlenmeyi bitirince hepsini geri kazanırsın. Birini harcayarak kendi D20 Testinde Avantaj kazanabilir veya sana karşı yapılan bir saldırı atışına Dezavantaj verebilirsin."
+  },
+  "Musician": {
+    "name": "Müzisyen",
+    "description": "Seçtiğin üç müzik aletinde yetkinlik kazanırsın. Kısa veya Uzun Dinlenmeyi bitirirken bunlardan birini çalıp şarkıyı duyan müttefiklerine Kahramanlık İlhamı verebilirsin. Etkilenebilecek müttefik sayısı en fazla Yetkinlik Bonusuna eşittir."
+  },
+  "Tavern Brawler": {
+    "name": "Meyhane Dövüşçüsü",
+    "description": "Silahsız Saldırın 1d4 + Kuvvet değiştiricin kadar ezici hasar verebilir. Bu zarda 1 gelirse yeniden atabilir ve yeni sonucu kullanmak zorundasın. Doğaçlama silahlarda yetkinliğin vardır. Tur başına bir kez, Saldırı eyleminin parçası olarak Silahsız Saldırıyla bir yaratığa isabet ettirdiğinde onu ayrıca senden düz bir çizgide {{distance:5ft}} uzağa itebilirsin."
+  },
+  "Tough": {
+    "name": "Sağlam",
+    "description": "Bu yeteneği aldığında azami can puanın karakter seviyenin iki katı artar. Sonradan kazandığın her karakter seviyesinde 2 daha artar."
+  },
+  "Blind Fighting": {
+    "name": "Kör Dövüş",
+    "description": "{{distance:10ft}} menzilli Kör Görüşün vardır."
+  },
+  "Dueling": {
+    "name": "Düello",
+    "description": "Bir elinde Yakın Dövüş silahı tutarken başka bir silah tutmuyorsan bu silahla hasar atışlarına +2 bonus kazanırsın."
+  },
+  "Interception": {
+    "name": "Araya Girme",
+    "description": "Görebildiğin bir yaratık, senden {{distance:5ft}} mesafe içindeki başka bir yaratığa saldırı atışıyla isabet ettirdiğinde Tepki kullanarak hedefin aldığı hasarı 1d10 + senin Yetkinlik Bonusun kadar azaltabilirsin. Kalkan ya da Basit veya Askerî silah tutmalısın."
+  },
+  "Protection": {
+    "name": "Koruma",
+    "description": "Kalkan tutarken, görebildiğin bir yaratık senden {{distance:5ft}} mesafe içinde bulunan, senden başka bir hedefe saldırdığında Tepki kullanarak bu saldırı atışına ve hedefe karşı diğer tüm saldırı atışlarına kendi sonraki turunun başına kadar Dezavantaj verebilirsin. Bunun için hedefin {{distance:5ft}} yakınında kalmalısın."
+  },
+  "Thrown Weapon Fighting": {
+    "name": "Fırlatma Silahıyla Dövüş",
+    "description": "Fırlatma özelliği olan bir silahla menzilli saldırı atışında isabet ettirdiğinde hasar atışına +2 bonus kazanırsın."
+  },
+  "Unarmed Fighting": {
+    "name": "Silahsız Dövüş",
+    "description": "Silahsız Saldırıda isabet ettirdiğinde normal hasar yerine 1d6 + Kuvvet değiştiricin kadar ezici hasar verebilirsin; saldırırken silah veya Kalkan tutmuyorsan bu 1d8 + Kuvvet değiştiricin olur. Kendi her turunun başında kavradığın bir yaratığa 1d4 ezici hasar verebilirsin."
   }
 }

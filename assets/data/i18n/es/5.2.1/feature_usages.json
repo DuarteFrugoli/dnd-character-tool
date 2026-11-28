@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "Legado infernal (conjuro al nivel 5 del personaje)"
+    },
+    "2024_lucky": {
+      "name": "Puntos de suerte"
+    },
+    "2024_healing_hands": {
+      "name": "Manos sanadoras"
+    },
+    "2024_celestial_revelation": {
+      "name": "Revelación celestial"
     }
   }
 }

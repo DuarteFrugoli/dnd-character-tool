@@ -44,6 +44,30 @@
       "two_weapon_fighting": {
         "name": "Combate con Dos Armas",
         "description": "Añade tu modificador de característica al daño del ataque adicional al usar la propiedad ligera."
+      },
+      "blind_fighting": {
+        "name": "Combate a ciegas",
+        "description": "Obtienes Vista ciega con un alcance de {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duelo",
+        "description": "Obtienes +2 al daño con un arma Cuerpo a Cuerpo en una mano si no empuñas otra arma."
+      },
+      "interception": {
+        "name": "Intercepción",
+        "description": "Usa una Reacción para reducir el daño de un aliado cercano en 1d10 + Bonificador por Competencia."
+      },
+      "protection": {
+        "name": "Protección",
+        "description": "Usa una Reacción y tu Escudo para imponer Desventaja a los ataques contra un aliado cercano."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combate con Armas Arrojadizas",
+        "description": "Obtienes +2 al daño de ataques a distancia con armas Arrojadizas."
+      },
+      "unarmed_fighting": {
+        "name": "Combate sin armas",
+        "description": "Los Golpes sin Armas causan 1d6 o 1d8 + modificador de Fuerza; daña a una criatura que tengas Agarrada."
       }
     },
     "paladin_fighting_styles_2024": {
@@ -66,6 +90,30 @@
       "blessed_warrior": {
         "name": "Guerrero bendecido",
         "description": "Aprendes dos trucos de clérigo que cuentan como conjuros de paladín para ti."
+      },
+      "blind_fighting": {
+        "name": "Combate a ciegas",
+        "description": "Obtienes Vista ciega con un alcance de {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duelo",
+        "description": "Obtienes +2 al daño con un arma Cuerpo a Cuerpo en una mano si no empuñas otra arma."
+      },
+      "interception": {
+        "name": "Intercepción",
+        "description": "Usa una Reacción para reducir el daño de un aliado cercano en 1d10 + Bonificador por Competencia."
+      },
+      "protection": {
+        "name": "Protección",
+        "description": "Usa una Reacción y tu Escudo para imponer Desventaja a los ataques contra un aliado cercano."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combate con Armas Arrojadizas",
+        "description": "Obtienes +2 al daño de ataques a distancia con armas Arrojadizas."
+      },
+      "unarmed_fighting": {
+        "name": "Combate sin armas",
+        "description": "Los Golpes sin Armas causan 1d6 o 1d8 + modificador de Fuerza; daña a una criatura que tengas Agarrada."
       }
     },
     "ranger_fighting_styles_2024": {
@@ -88,6 +136,30 @@
       "druidic_warrior": {
         "name": "Guerrero druídico",
         "description": "Aprendes dos trucos de druida que cuentan como conjuros de explorador para ti."
+      },
+      "blind_fighting": {
+        "name": "Combate a ciegas",
+        "description": "Obtienes Vista ciega con un alcance de {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duelo",
+        "description": "Obtienes +2 al daño con un arma Cuerpo a Cuerpo en una mano si no empuñas otra arma."
+      },
+      "interception": {
+        "name": "Intercepción",
+        "description": "Usa una Reacción para reducir el daño de un aliado cercano en 1d10 + Bonificador por Competencia."
+      },
+      "protection": {
+        "name": "Protección",
+        "description": "Usa una Reacción y tu Escudo para imponer Desventaja a los ataques contra un aliado cercano."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combate con Armas Arrojadizas",
+        "description": "Obtienes +2 al daño de ataques a distancia con armas Arrojadizas."
+      },
+      "unarmed_fighting": {
+        "name": "Combate sin armas",
+        "description": "Los Golpes sin Armas causan 1d6 o 1d8 + modificador de Fuerza; daña a una criatura que tengas Agarrada."
       }
     },
     "divine_orders": {
@@ -876,6 +948,64 @@
       "witch_sight": {
         "name": "Vista de bruja",
         "description": "Obtienes visión verdadera con un alcance de {{distance:30ft}}."
+      }
+    },
+    "crafter_tools_2024": {
+      "carpenter_s_tools": {
+        "name": "Herramientas de carpintero"
+      },
+      "leatherworker_s_tools": {
+        "name": "Herramientas de curtidor"
+      },
+      "mason_s_tools": {
+        "name": "Herramientas de albañil"
+      },
+      "potter_s_tools": {
+        "name": "Herramientas de alfarero"
+      },
+      "smith_s_tools": {
+        "name": "Herramientas de herrero"
+      },
+      "tinker_s_tools": {
+        "name": "Herramientas de hojalatero"
+      },
+      "weaver_s_tools": {
+        "name": "Herramientas de tejedor"
+      },
+      "woodcarver_s_tools": {
+        "name": "Herramientas de tallador de madera"
+      }
+    },
+    "musical_instruments_2024": {
+      "bagpipes": {
+        "name": "Gaita"
+      },
+      "drum": {
+        "name": "Tambor"
+      },
+      "dulcimer": {
+        "name": "Dulcémele"
+      },
+      "flute": {
+        "name": "Flauta"
+      },
+      "horn": {
+        "name": "Trompa"
+      },
+      "lute": {
+        "name": "Laúd"
+      },
+      "lyre": {
+        "name": "Lira"
+      },
+      "pan_flute": {
+        "name": "Flauta de pan"
+      },
+      "shawm": {
+        "name": "Caramillo"
+      },
+      "viol": {
+        "name": "Viola"
       }
     }
   },

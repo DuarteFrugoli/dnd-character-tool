@@ -66,5 +66,53 @@
   "Boon of Truesight": {
     "name": "Dádiva da Visão Verdadeira",
     "description": "Aumente um valor de habilidade em 1, até o máximo de 30. Ganhe Visão Verdadeira com alcance de {{distance:60ft}}."
+  },
+  "Crafter": {
+    "name": "Artesão",
+    "description": "Ganhe proficiência em três ferramentas de artesão diferentes da lista de Fabricação Rápida. Itens não mágicos que você compra custam 20% menos. Ao terminar um Descanso Longo, use uma dessas ferramentas para fabricar um equipamento simples associado a ela, como uma escada, pá ou lamparina; ele se desfaz ao terminar seu próximo Descanso Longo."
+  },
+  "Healer": {
+    "name": "Curandeiro",
+    "description": "Com um Kit de Curandeiro, use a ação Utilizar e gaste um uso do kit para tratar uma criatura a até {{distance:5ft}}. Ela pode gastar um Dado de Vida; você o rola e ela recupera Pontos de Vida iguais ao resultado mais seu Bônus de Proficiência. Sempre que rolar dados para recuperar Pontos de Vida com uma magia ou este talento, você pode rolar novamente qualquer dado que resulte em 1 e deve usar o novo resultado."
+  },
+  "Lucky": {
+    "name": "Sortudo",
+    "description": "Você tem Pontos de Sorte iguais ao seu Bônus de Proficiência e recupera todos ao terminar um Descanso Longo. Gaste um para ter Vantagem em um Teste de D20 ou impor Desvantagem a uma jogada de ataque feita contra você."
+  },
+  "Musician": {
+    "name": "Músico",
+    "description": "Ganhe proficiência em três instrumentos musicais à sua escolha. Ao terminar um Descanso Curto ou Longo, você pode tocar um deles e conceder Inspiração Heroica a aliados que ouçam a música, até um número igual ao seu Bônus de Proficiência."
+  },
+  "Tavern Brawler": {
+    "name": "Lutador de Taverna",
+    "description": "Seu Golpe Desarmado pode causar dano de Concussão igual a 1d4 + seu modificador de Força. Você pode rolar novamente um resultado 1 nesse dado, usando o novo resultado. Você tem proficiência em armas improvisadas. Uma vez por turno, ao atingir uma criatura com um Golpe Desarmado como parte da ação Atacar, você também pode empurrá-la {{distance:5ft}} em linha reta para longe de você."
+  },
+  "Tough": {
+    "name": "Robusto",
+    "description": "Seu máximo de Pontos de Vida aumenta em duas vezes seu nível de personagem ao receber este talento, e em mais 2 sempre que você ganhar um nível de personagem depois disso."
+  },
+  "Blind Fighting": {
+    "name": "Combate às Cegas",
+    "description": "Você tem Percepção às Cegas com alcance de {{distance:10ft}}."
+  },
+  "Dueling": {
+    "name": "Duelo",
+    "description": "Enquanto empunhar uma arma Corpo a Corpo em uma mão e nenhuma outra arma, você recebe +2 nas jogadas de dano com essa arma."
+  },
+  "Interception": {
+    "name": "Interceptação",
+    "description": "Quando uma criatura que você vê acerta, com uma jogada de ataque, outra criatura a até {{distance:5ft}} de você, use uma Reação para reduzir o dano sofrido pelo alvo em 1d10 + seu Bônus de Proficiência. Você deve estar empunhando um Escudo ou uma arma Simples ou Marcial."
+  },
+  "Protection": {
+    "name": "Proteção",
+    "description": "Enquanto empunhar um Escudo, quando uma criatura que você vê ataca um alvo diferente de você a até {{distance:5ft}} de você, use uma Reação para impor Desvantagem a essa jogada de ataque e a todas as outras jogadas de ataque contra o alvo até o início do seu próximo turno, desde que você permaneça a até {{distance:5ft}} dele."
+  },
+  "Thrown Weapon Fighting": {
+    "name": "Combate com Armas de Arremesso",
+    "description": "Quando acertar com uma jogada de ataque à distância usando uma arma com a propriedade Arremesso, você recebe +2 na jogada de dano."
+  },
+  "Unarmed Fighting": {
+    "name": "Combate Desarmado",
+    "description": "Ao acertar com um Golpe Desarmado, você pode causar dano de Concussão igual a 1d6 + seu modificador de Força em vez do dano normal, ou 1d8 + seu modificador de Força se não empunhar arma nem Escudo ao atacar. No início de cada um de seus turnos, você pode causar 1d4 de dano de Concussão a uma criatura que esteja Agarrando."
   }
 }

@@ -142,5 +142,21 @@
   "Otherworldly Presence": {
     "name": "Presença Extraplanar",
     "description": "Conheça o truque Taumaturgia, usando a habilidade de conjuração escolhida para Legado Ínfero."
+  },
+  "Celestial Resistance": {
+    "name": "Resistência Celestial",
+    "description": "Você tem Resistência a dano Necrótico e Radiante."
+  },
+  "Healing Hands": {
+    "name": "Mãos Curativas",
+    "description": "Como uma ação Magia, toque uma criatura e role uma quantidade de d4 igual ao seu Bônus de Proficiência. A criatura recupera Pontos de Vida iguais ao total. Uma vez por Descanso Longo."
+  },
+  "Light Bearer": {
+    "name": "Portador da Luz",
+    "description": "Você conhece o truque Luz e usa Carisma como atributo de conjuração dele."
+  },
+  "Celestial Revelation": {
+    "name": "Revelação Celestial",
+    "description": "A partir do nível 3 de personagem, use uma Ação Bônus para se transformar por 1 minuto ou até encerrar o efeito, sem ação. Escolha uma opção a cada uso. Durante a transformação, uma vez em cada um de seus turnos, você pode causar dano adicional igual ao seu Bônus de Proficiência a um alvo que ferir com um ataque ou magia: Necrótico com Mortalha Necrótica, Radiante nas demais opções. Asas Celestiais: ganhe Deslocamento de Voo igual ao seu Deslocamento. Radiância Interior: emita Luz Plena em um raio de {{distance:10ft|adj}} e Penumbra por mais {{distance:10ft}}; ao final de cada um de seus turnos, todas as outras criaturas a até {{distance:10ft}} sofrem dano Radiante igual ao seu Bônus de Proficiência. Mortalha Necrótica: ao se transformar, criaturas a até {{distance:10ft}}, exceto seus aliados, devem passar em um teste de resistência de Carisma (CD 8 + seu modificador de Carisma + Bônus de Proficiência) ou ficam Amedrontadas até o fim do seu próximo turno. Uma vez por Descanso Longo."
   }
 }

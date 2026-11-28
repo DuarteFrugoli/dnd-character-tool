@@ -66,5 +66,53 @@
   "Boon of Truesight": {
     "name": "Don de la Visión Verdadera",
     "description": "Aumenta una puntuación de característica en 1, hasta un máximo de 30. Obtienes Visión Verdadera hasta {{distance:60ft}}."
+  },
+  "Crafter": {
+    "name": "Artesano",
+    "description": "Obtienes competencia con tres herramientas de artesano distintas de la lista de Fabricación rápida. Los objetos no mágicos que compras te cuestan un 20% menos. Al terminar un Descanso Largo, puedes usar una de esas herramientas para fabricar una pieza de equipo sencilla asociada, como una escalera, pala o lámpara; se deshace cuando terminas tu siguiente Descanso Largo."
+  },
+  "Healer": {
+    "name": "Sanador",
+    "description": "Con un equipo de sanador, usa la acción Utilizar y gasta un uso del equipo para atender a una criatura a {{distance:5ft}} o menos. Puede gastar un Dado de Golpe; tú lo tiras y la criatura recupera tantos Puntos de Golpe como el resultado más tu Bonificador por Competencia. Siempre que tires dados para recuperar Puntos de Golpe con un conjuro o esta dote, puedes repetir cualquier dado cuyo resultado sea 1 y debes usar el nuevo resultado."
+  },
+  "Lucky": {
+    "name": "Afortunado",
+    "description": "Tienes tantos Puntos de suerte como tu Bonificador por Competencia y los recuperas todos al terminar un Descanso Largo. Gasta uno para tener Ventaja en una Prueba de D20 o imponer Desventaja a una tirada de ataque realizada contra ti."
+  },
+  "Musician": {
+    "name": "Músico",
+    "description": "Obtienes competencia con tres instrumentos musicales a tu elección. Al terminar un Descanso Corto o Largo, puedes tocar uno de ellos y otorgar Inspiración Heroica a aliados que oigan la canción, hasta un número igual a tu Bonificador por Competencia."
+  },
+  "Tavern Brawler": {
+    "name": "Luchador de taberna",
+    "description": "Tu Golpe sin Armas puede causar daño Contundente igual a 1d4 + tu modificador de Fuerza. Puedes repetir un resultado de 1 en ese dado y debes usar el nuevo resultado. Tienes competencia con armas improvisadas. Una vez por turno, al impactar a una criatura con un Golpe sin Armas como parte de la acción Atacar, también puedes empujarla {{distance:5ft}} en línea recta alejándola de ti."
+  },
+  "Tough": {
+    "name": "Duro",
+    "description": "Tu máximo de Puntos de Golpe aumenta en el doble de tu nivel de personaje al obtener esta dote y en 2 más cada vez que ganes otro nivel de personaje."
+  },
+  "Blind Fighting": {
+    "name": "Combate a ciegas",
+    "description": "Tienes Vista ciega con un alcance de {{distance:10ft}}."
+  },
+  "Dueling": {
+    "name": "Duelo",
+    "description": "Mientras empuñes un arma Cuerpo a Cuerpo en una mano y ninguna otra arma, obtienes un bonificador de +2 a las tiradas de daño con esa arma."
+  },
+  "Interception": {
+    "name": "Intercepción",
+    "description": "Cuando una criatura que puedes ver impacta, mediante una tirada de ataque, a otra criatura a {{distance:5ft}} o menos de ti, puedes usar una Reacción para reducir el daño que recibe el objetivo en 1d10 + tu Bonificador por Competencia. Debes empuñar un Escudo o un arma Sencilla o Marcial."
+  },
+  "Protection": {
+    "name": "Protección",
+    "description": "Mientras empuñes un Escudo, cuando una criatura que puedes ver ataca a un objetivo distinto de ti a {{distance:5ft}} o menos de ti, puedes usar una Reacción para imponer Desventaja a esa tirada de ataque y a todas las demás contra el objetivo hasta el inicio de tu siguiente turno, siempre que permanezcas a {{distance:5ft}} o menos de él."
+  },
+  "Thrown Weapon Fighting": {
+    "name": "Combate con Armas Arrojadizas",
+    "description": "Cuando impactes con una tirada de ataque a distancia usando un arma con la propiedad Arrojadiza, obtienes un bonificador de +2 a la tirada de daño."
+  },
+  "Unarmed Fighting": {
+    "name": "Combate sin armas",
+    "description": "Cuando impactes con un Golpe sin Armas, puedes infligir daño Contundente igual a 1d6 + tu modificador de Fuerza en lugar del daño normal, o 1d8 + tu modificador de Fuerza si no empuñas armas ni Escudo al atacar. Al inicio de cada uno de tus turnos, puedes infligir 1d4 de daño Contundente a una criatura que tengas Agarrada."
   }
 }

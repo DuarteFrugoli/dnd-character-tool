@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "악마의 유산 (캐릭터 5레벨에 얻는 주문)"
+    },
+    "2024_lucky": {
+      "name": "행운 포인트"
+    },
+    "2024_healing_hands": {
+      "name": "치유의 손길"
+    },
+    "2024_celestial_revelation": {
+      "name": "천상의 현현"
     }
   }
 }

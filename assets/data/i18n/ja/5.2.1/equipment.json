@@ -565,5 +565,17 @@
       "name": "翻弄",
       "description": "ダメージを与えた命中時、次の自分のターン終了までにその相手への次の攻撃ロールに有利を得る。"
     }
+  },
+  "Artisan's Tools": {
+    "name": "職人道具"
+  },
+  "Musical Instrument": {
+    "name": "楽器"
+  },
+  "Gaming Set": {
+    "name": "ゲーム道具"
+  },
+  "Book (philosophy)": {
+    "name": "本 (哲学)"
   }
 }

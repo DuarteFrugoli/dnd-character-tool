@@ -565,5 +565,17 @@
       "name": "Harceler",
       "description": "En touchant et infligeant des dégâts, vous avez l'Avantage sur votre prochain jet d'attaque contre cette créature avant la fin de votre prochain tour."
     }
+  },
+  "Artisan's Tools": {
+    "name": "Outils d’artisan"
+  },
+  "Musical Instrument": {
+    "name": "Instrument de musique"
+  },
+  "Gaming Set": {
+    "name": "Jeu de société"
+  },
+  "Book (philosophy)": {
+    "name": "Livre (philosophie)"
   }
 }

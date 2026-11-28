@@ -10,5 +10,41 @@
   },
   "Soldier": {
     "name": "Солдат"
+  },
+  "Artisan": {
+    "name": "Ремесленник"
+  },
+  "Charlatan": {
+    "name": "Шарлатан"
+  },
+  "Entertainer": {
+    "name": "Артист"
+  },
+  "Farmer": {
+    "name": "Фермер"
+  },
+  "Guard": {
+    "name": "Стражник"
+  },
+  "Guide": {
+    "name": "Проводник"
+  },
+  "Hermit": {
+    "name": "Отшельник"
+  },
+  "Merchant": {
+    "name": "Торговец"
+  },
+  "Noble": {
+    "name": "Благородный"
+  },
+  "Sailor": {
+    "name": "Моряк"
+  },
+  "Scribe": {
+    "name": "Писец"
+  },
+  "Wayfarer": {
+    "name": "Скиталец"
   }
 }

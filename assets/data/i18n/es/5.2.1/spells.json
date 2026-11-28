@@ -2989,5 +2989,423 @@
     "castingTime": "Acción",
     "range": "Personal",
     "duration": "Instantánea"
+  },
+  "Blade Ward": {
+    "name": "Protección contra armas",
+    "description": "Hasta que el conjuro termine, cualquier criatura que haga una tirada de ataque contra ti resta 1d4 de la tirada.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Friends": {
+    "name": "Amistad",
+    "description": "Una criatura que puedas ver hace una tirada de salvación de Sabiduría o tiene el estado Hechizado mientras dure el conjuro. La supera automáticamente si no es un Humanoide, si estás luchando contra ella o si has lanzado este conjuro sobre ella en las últimas 24 horas. El conjuro termina antes si el objetivo recibe daño o si haces una tirada de ataque, infliges daño u obligas a alguien a hacer una tirada de salvación. Cuando el conjuro termina, la criatura sabe que la has Hechizado.",
+    "material": "un poco de maquillaje",
+    "castingTime": "Acción",
+    "range": "10 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Thorn Whip": {
+    "name": "Látigo de espinas",
+    "description": "Una enredadera espinosa azota a una criatura dentro del alcance. Haz un ataque de conjuro cuerpo a cuerpo; si impacta, el objetivo recibe 1d6 de daño Perforante y, si es Grande o más pequeño, puedes atraerlo hasta {{distance:10ft}} hacia ti.\n\nMejora de truco. El daño aumenta en 1d6 en los niveles 5 (2d6), 11 (3d6) y 17 (4d6).",
+    "material": "el tallo de una planta con espinas",
+    "castingTime": "Acción",
+    "range": "30 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Thunderclap": {
+    "name": "Atronar",
+    "description": "Cada criatura en una Emanación de {{distance:5ft}} a tu alrededor hace una tirada de salvación de Constitución y recibe 1d6 de daño de Trueno si la falla. El estruendo se oye hasta a {{distance:100ft}} de distancia.\n\nMejora de truco. El daño aumenta en 1d6 en los niveles 5 (2d6), 11 (3d6) y 17 (4d6).",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Toll the Dead": {
+    "name": "Doblar por los muertos",
+    "description": "Una campana lúgubre dobla por una criatura que puedas ver dentro del alcance. Hace una tirada de salvación de Sabiduría y, si la falla, recibe 1d8 de daño Necrótico, o 1d12 de daño Necrótico si ya le falta algún Punto de Golpe.\n\nMejora de truco. El daño aumenta en un dado en los niveles 5, 11 y 17 (a 2, 3 y 4 dados).",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Word of Radiance": {
+    "name": "Palabra radiante",
+    "description": "Cada criatura de tu elección que puedas ver en una Emanación de {{distance:5ft}} a tu alrededor hace una tirada de salvación de Constitución y recibe 1d6 de daño Radiante si la falla.\n\nMejora de truco. El daño aumenta en 1d6 en los niveles 5 (2d6), 11 (3d6) y 17 (4d6).",
+    "material": "un símbolo solar",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Armor of Agathys": {
+    "name": "Armadura de Agathys",
+    "description": "Obtienes 5 Puntos de Golpe Temporales. Hasta que el conjuro termine, una criatura que te impacte con una tirada de ataque cuerpo a cuerpo recibe 5 de daño de Frío. El conjuro termina antes si no te quedan Puntos de Golpe Temporales.",
+    "higherLevels": "Los Puntos de Golpe Temporales y el daño de Frío aumentan en 5 por cada nivel de espacio de conjuro por encima de 1.",
+    "material": "un fragmento de cristal azul",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "1 hora"
+  },
+  "Compelled Duel": {
+    "name": "Duelo forzado",
+    "description": "Una criatura que puedas ver hace una tirada de salvación de Sabiduría. Si la falla, tiene Desventaja en las tiradas de ataque contra criaturas que no seas tú y no puede moverse voluntariamente a un espacio que esté a más de {{distance:30ft}} de ti. El conjuro termina si atacas o lanzas un conjuro contra otro enemigo, si un aliado tuyo daña al objetivo o si terminas tu turno a más de {{distance:30ft}} de él.",
+    "castingTime": "Acción adicional",
+    "range": "30 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Hail of Thorns": {
+    "name": "Lluvia de espinas",
+    "description": "Cuando tu ataque a distancia impacta, unas espinas brotan del disparo. El objetivo y cada criatura que esté a {{distance:5ft}} o menos de él hacen una tirada de salvación de Destreza; reciben 1d10 de daño Perforante si la fallan, o la mitad del daño si la superan.",
+    "higherLevels": "El daño aumenta en 1d10 por cada nivel de espacio de conjuro por encima de 1.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a una criatura con un arma a distancia",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Thunderous Smite": {
+    "name": "Castigo atronador",
+    "description": "Tu golpe retumba, se oye hasta a {{distance:300ft}} de distancia e inflige 2d6 de daño de Trueno adicional. Si el objetivo es una criatura, hace una tirada de salvación de Fuerza o es empujado {{distance:10ft}} lejos de ti y tiene el estado Derribado.",
+    "higherLevels": "El daño aumenta en 1d6 por cada nivel de espacio de conjuro por encima de 1.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a un objetivo con un arma cuerpo a cuerpo o un golpe sin armas",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Witch Bolt": {
+    "name": "Descarga de bruja",
+    "description": "Un rayo de energía chisporroteante te une a una criatura dentro del alcance. Haz un ataque de conjuro a distancia; si impacta, recibe 2d12 de daño de Relámpago. En cada uno de tus turnos posteriores, puedes realizar una acción adicional para infligirle automáticamente 1d12 de daño de Relámpago, aunque el primer ataque haya fallado. El conjuro termina si el objetivo queda fuera del alcance o tiene cobertura total contra ti.",
+    "higherLevels": "El daño inicial aumenta en 1d12 por cada nivel de espacio de conjuro por encima de 1.",
+    "material": "una ramita alcanzada por un rayo",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Wrathful Smite": {
+    "name": "Castigo iracundo",
+    "description": "Tu golpe inflige 1d6 de daño Necrótico adicional, y el objetivo hace una tirada de salvación de Sabiduría o tiene el estado Asustado hasta que el conjuro termine. Al final de cada uno de sus turnos, el objetivo Asustado repite la tirada de salvación y, si la supera, el conjuro termina para él.",
+    "higherLevels": "El daño aumenta en 1d6 por cada nivel de espacio de conjuro por encima de 1.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a un objetivo con un arma cuerpo a cuerpo o un golpe sin armas",
+    "range": "Personal",
+    "duration": "1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Arcane Vigor": {
+    "name": "Vigor arcano",
+    "description": "Gastas hasta dos de tus Dados de Puntos de Golpe sin gastar, los tiras y recuperas Puntos de Golpe iguales al total más tu modificador de característica para lanzar conjuros.",
+    "higherLevels": "Puedes gastar un Dado de Puntos de Golpe más por cada nivel de espacio de conjuro por encima de 2.",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "Instantánea"
+  },
+  "Cloud of Daggers": {
+    "name": "Nube de dagas",
+    "description": "Unas dagas giratorias llenan un Cubo de {{distance:5ft}} centrado en un punto dentro del alcance. Una criatura recibe 4d4 de daño Cortante cuando el Cubo aparece en su espacio, cuando entra en el Cubo, cuando el Cubo se mueve a su espacio o cuando termina su turno en él; una criatura recibe este daño solo una vez por turno. En tus turnos posteriores, puedes realizar una acción de Magia para mover el Cubo hasta {{distance:30ft}}.",
+    "higherLevels": "El daño aumenta en 2d4 por cada nivel de espacio de conjuro por encima de 2.",
+    "material": "una esquirla de cristal",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Cordon of Arrows": {
+    "name": "Cordón de flechas",
+    "description": "Clavas en el suelo de tu espacio hasta cuatro flechas o virotes no mágicos. Cuando una criatura que no seas tú entra en un espacio que esté a {{distance:30ft}} o menos de la munición por primera vez en un turno o termina su turno allí, una pieza sale volando hacia ella: la criatura hace una tirada de salvación de Destreza o recibe 2d4 de daño Perforante, y esa pieza se destruye. Al lanzar el conjuro, puedes elegir criaturas a las que ignore. El conjuro termina cuando no queda munición.",
+    "higherLevels": "Clavas dos piezas de munición más por cada nivel de espacio de conjuro por encima de 2.",
+    "material": "una trenza ornamental",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "8 horas",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Crown of Madness": {
+    "name": "Corona de locura",
+    "description": "Una criatura que puedas ver hace una tirada de salvación de Sabiduría o tiene el estado Hechizado mientras dure el conjuro; la supera automáticamente si no es un Humanoide. Mientras está Hechizada, en cada uno de sus turnos, antes de moverse, debe realizar una acción para hacer un ataque cuerpo a cuerpo contra una criatura distinta de sí misma que elijas mentalmente. Repite la tirada de salvación al final de cada uno de sus turnos y, si la supera, el conjuro termina para ella. En cada uno de tus turnos posteriores, debes realizar la acción de Magia para mantener el control o el conjuro termina.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Aura of Vitality": {
+    "name": "Aura de vitalidad",
+    "description": "Una energía curativa llena una Emanación de {{distance:30ft}} a tu alrededor. Cuando lanzas el conjuro y al comienzo de cada uno de tus turnos hasta que termine, puedes restaurar 2d6 Puntos de Golpe a una criatura del aura.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Blinding Smite": {
+    "name": "Castigo cegador",
+    "description": "Tu golpe inflige 3d8 de daño Radiante adicional, y el objetivo tiene el estado Cegado hasta que el conjuro termine. Al final de cada uno de sus turnos, el objetivo hace una tirada de salvación de Constitución y, si la supera, el conjuro termina para él.",
+    "higherLevels": "El daño adicional aumenta en 1d8 por cada nivel de espacio de conjuro por encima de 3.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a un objetivo con un arma cuerpo a cuerpo o un golpe sin armas",
+    "range": "Personal",
+    "duration": "1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Conjure Barrage": {
+    "name": "Conjurar descarga",
+    "description": "Blandes el arma y conjuras una tormenta de copias de ella. Cada criatura de tu elección que puedas ver en un Cono de {{distance:60ft}} hace una tirada de salvación de Destreza; recibe 5d8 de daño de Fuerza si la falla, o la mitad del daño si la supera.",
+    "higherLevels": "El daño aumenta en 1d8 por cada nivel de espacio de conjuro por encima de 3.",
+    "material": "un arma cuerpo a cuerpo o a distancia que valga al menos 1 pc",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Elemental Weapon": {
+    "name": "Arma elemental",
+    "description": "Un arma no mágica que toques se convierte en un arma mágica. Elige Ácido, Frío, Fuego, Relámpago o Trueno: hasta que el conjuro termine, el arma tiene un bonificador de +1 a las tiradas de ataque e inflige 1d4 de daño adicional de ese tipo cuando impacta.",
+    "higherLevels": "Con un espacio de conjuro de nivel 5-6, el bonificador es de +2 y el daño adicional de 2d4; con un espacio de nivel 7 o superior, +3 y 3d4.",
+    "castingTime": "Acción",
+    "range": "Toque",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Feign Death": {
+    "name": "Fingir muerte",
+    "description": "Una criatura voluntaria que toques parece muerta a simple vista. Mientras dure el conjuro, tiene los estados Cegado e Incapacitado, su Velocidad es 0, tiene Resistencia a todo el daño excepto al daño Psíquico y tiene Inmunidad al estado Envenenado.",
+    "material": "una pizca de tierra de cementerio",
+    "castingTime": "Acción o ritual",
+    "range": "Toque",
+    "duration": "1 hora"
+  },
+  "Lightning Arrow": {
+    "name": "Flecha relampagueante",
+    "description": "Tu disparo se convierte en un rayo. Si impacta, el objetivo recibe 4d8 de daño de Relámpago en lugar del daño normal del arma; si falla, recibe la mitad de ese daño. Impacte o falle, cada criatura que esté a {{distance:10ft}} o menos del objetivo hace una tirada de salvación de Destreza; recibe 2d8 de daño de Relámpago si la falla, o la mitad del daño si la supera.",
+    "higherLevels": "Ambas tiradas de daño aumentan en 1d8 por cada nivel de espacio de conjuro por encima de 3.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de hacer un ataque con arma a distancia",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Summon Undead": {
+    "name": "Invocar muerto viviente",
+    "description": "Invocas un espíritu Muerto viviente Mediano, Fantasmal, Pútrido o Esquelético, en un espacio desocupado que puedas ver. Es aliado tuyo y de tus compañeros, comparte tu Iniciativa y actúa justo después de ti, y obedece tus órdenes; si no le das ninguna, realiza la acción de Esquivar. Desaparece al quedar a 0 Puntos de Golpe o cuando el conjuro termina.\n\nEspíritu muerto viviente: CA 11 + nivel del conjuro; Puntos de Golpe 30 (Fantasmal o Pútrido) o 20 (Esquelético) + 10 por cada nivel del conjuro por encima de 3; Velocidad {{distance:30ft|short}} (el Fantasmal también vuela {{distance:40ft|short}} y levita). Fue 12, Des 16, Con 15, Int 4, Sab 10, Car 9. Inmune al daño Necrótico y de Veneno y a los estados Agotamiento, Asustado, Paralizado y Envenenado; Visión en la oscuridad {{distance:60ft|short}}. Hace un número de ataques igual a la mitad del nivel del conjuro (redondeando hacia abajo) y usa tu modificador de ataque de conjuro. Fantasmal, Toque mortal: cuerpo a cuerpo, 1d8 + 3 + nivel del conjuro de daño Necrótico, y el objetivo queda Asustado hasta el final de su siguiente turno. Pútrido, Garra putrefacta: cuerpo a cuerpo, 1d6 + 3 + nivel del conjuro de daño Cortante, y un objetivo Envenenado también queda Paralizado hasta el final de su siguiente turno; las criaturas que empiezan su turno a {{distance:5ft}} o menos de él hacen una tirada de salvación de Constitución contra tu CD de salvación de conjuros o quedan Envenenadas hasta el comienzo de su siguiente turno. Esquelético, Descarga sepulcral: a distancia {{distance:150ft|short}}, 2d4 + 3 + nivel del conjuro de daño Necrótico.",
+    "higherLevels": "Usa el nivel del espacio de conjuro como nivel del conjuro en el perfil.",
+    "material": "una calavera dorada que valga 300+ po",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Aura of Purity": {
+    "name": "Aura de pureza",
+    "description": "Tú y tus aliados en una Emanación de {{distance:30ft}} a tu alrededor tenéis Resistencia al daño de Veneno y Ventaja en las tiradas de salvación para evitar o terminar los estados Cegado, Hechizado, Ensordecido, Asustado, Paralizado, Envenenado y Aturdido.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Grasping Vine": {
+    "name": "Enredadera apresadora",
+    "description": "Una enredadera brota en un espacio desocupado que puedas ver dentro del alcance. Cuando lanzas el conjuro, y como acción adicional en tus turnos posteriores, puedes hacer un ataque de conjuro cuerpo a cuerpo contra una criatura que esté a {{distance:30ft}} o menos de la enredadera. Si impacta, recibe 4d8 de daño Contundente y es atraída hasta {{distance:30ft}} hacia la enredadera; un objetivo Enorme o más pequeño también tiene el estado Agarrado (CD para escapar igual a tu CD de salvación de conjuros). La enredadera puede agarrar a una criatura a la vez, y puedes soltarla en cualquier momento.",
+    "higherLevels": "La enredadera puede agarrar a una criatura más por cada nivel de espacio de conjuro por encima de 4.",
+    "castingTime": "Acción adicional",
+    "range": "60 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "attack": {
+        "label": "Ataque"
+      },
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Staggering Smite": {
+    "name": "Castigo abrumador",
+    "description": "Tu golpe inflige 4d6 de daño Psíquico adicional, y el objetivo hace una tirada de salvación de Sabiduría o tiene el estado Aturdido hasta el final de tu siguiente turno.",
+    "higherLevels": "El daño aumenta en 1d6 por cada nivel de espacio de conjuro por encima de 4.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a un objetivo con un arma cuerpo a cuerpo o un golpe sin armas",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Summon Elemental": {
+    "name": "Invocar elemental",
+    "description": "Invocas un espíritu Elemental Mediano de Aire, Tierra, Fuego o Agua en un espacio desocupado que puedas ver. Es aliado tuyo y de tus compañeros, comparte tu Iniciativa y actúa justo después de ti, y obedece tus órdenes; si no le das ninguna, realiza la acción de Esquivar. Desaparece al quedar a 0 Puntos de Golpe o cuando el conjuro termina.\n\nEspíritu elemental: CA 11 + nivel del conjuro; Puntos de Golpe 50 + 10 por cada nivel del conjuro por encima de 4; Velocidad {{distance:40ft|short}}, más excavar {{distance:40ft|short}} (Tierra), volar {{distance:40ft|short}} con levitación (Aire) o nadar {{distance:40ft|short}} (Agua). Fue 18, Des 15, Con 17, Int 4, Sab 10, Car 16. Resistencia al Ácido (Agua), al Relámpago y al Trueno (Aire) o al daño Perforante y Cortante (Tierra); inmune al daño de Veneno, al daño de Fuego (Fuego) y a los estados Agotamiento, Paralizado, Petrificado y Envenenado; Visión en la oscuridad {{distance:60ft|short}}; habla primordial. Los espíritus de Aire, Fuego y Agua pasan por huecos de solo {{distance:1in}}. Hace un número de ataques de Golpe igual a la mitad del nivel del conjuro (redondeando hacia abajo): cuerpo a cuerpo, con tu modificador de ataque de conjuro, 1d10 + 4 + nivel del conjuro de daño de su elemento (Contundente para Tierra, Frío para Agua, Relámpago para Aire, Fuego para Fuego).",
+    "higherLevels": "Usa el nivel del espacio de conjuro como nivel del conjuro en el perfil.",
+    "material": "aire, un guijarro, ceniza y agua dentro de un vial con incrustaciones de oro que valga 400+ po",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Banishing Smite": {
+    "name": "Castigo desterrador",
+    "description": "Tu golpe inflige 5d10 de daño de Fuerza adicional. Si el ataque deja al objetivo con 50 Puntos de Golpe o menos, hace una tirada de salvación de Carisma o es enviado a un semiplano inofensivo, donde tiene el estado Incapacitado, hasta que el conjuro termine. Después regresa al espacio que dejó o al espacio desocupado más cercano.",
+    "castingTime": "Acción adicional, que realizas inmediatamente después de impactar a un objetivo con un arma cuerpo a cuerpo o un golpe sin armas",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Circle of Power": {
+    "name": "Círculo de poder",
+    "description": "Tú y tus aliados en una Emanación de {{distance:30ft}} a tu alrededor tenéis Ventaja en las tiradas de salvación contra conjuros y otros efectos mágicos. Cuando una criatura afectada supera una tirada de salvación contra un conjuro o efecto mágico que inflige la mitad del daño con un éxito, no recibe ningún daño.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Conjure Volley": {
+    "name": "Conjurar lluvia de proyectiles",
+    "description": "Disparas el arma a un punto dentro del alcance y llueven copias de ella. Cada criatura de tu elección que puedas ver en un Cilindro de {{distance:40ft}} de radio y {{distance:20ft}} de altura centrado en ese punto hace una tirada de salvación de Destreza; recibe 8d8 de daño de Fuerza si la falla, o la mitad del daño si la supera.",
+    "material": "un arma cuerpo a cuerpo o a distancia que valga al menos 1 pc",
+    "castingTime": "Acción",
+    "range": "150 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Destructive Wave": {
+    "name": "Ola destructora",
+    "description": "Una energía divina estalla desde ti. Cada criatura que elijas en una Emanación de {{distance:30ft}} hace una tirada de salvación de Constitución. Si la falla, recibe 5d6 de daño de Trueno y 5d6 de daño Radiante o Necrótico (a tu elección) y tiene el estado Derribado. Si la supera, solo recibe la mitad de ese daño.",
+    "castingTime": "Acción",
+    "range": "Personal",
+    "duration": "Instantánea",
+    "rolls": {
+      "thunder": {
+        "label": "Daño de Trueno"
+      },
+      "divine": {
+        "label": "Daño Radiante o Necrótico"
+      }
+    }
+  },
+  "Jallarzi's Storm of Radiance": {
+    "name": "Tormenta radiante de Jallarzi",
+    "description": "Una tormenta de luz centelleante y truenos llena un Cilindro de {{distance:10ft}} de radio y {{distance:40ft}} de altura centrado en un punto que puedas ver dentro del alcance. Mientras están en él, las criaturas tienen los estados Cegado y Ensordecido y no pueden lanzar conjuros con componente verbal. Cuando aparece la tormenta, cada criatura en ella hace una tirada de salvación de Constitución; recibe 2d10 de daño Radiante y 2d10 de daño de Trueno si la falla, o la mitad del daño si la supera. Una criatura también hace esta tirada cuando entra en la zona por primera vez en un turno o termina su turno allí, como máximo una vez por turno.",
+    "higherLevels": "El daño Radiante y el de Trueno aumentan cada uno en 1d10 por cada nivel de espacio de conjuro por encima de 5.",
+    "material": "una pizca de fósforo",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Concentración, hasta 1 minuto",
+    "rolls": {
+      "radiant": {
+        "label": "Daño Radiante"
+      },
+      "thunder": {
+        "label": "Daño de Trueno"
+      }
+    }
+  },
+  "Swift Quiver": {
+    "name": "Carcaj veloz",
+    "description": "Cuando lanzas el conjuro, y como acción adicional en cada uno de tus turnos hasta que termine, puedes hacer dos ataques con un arma que dispare flechas o virotes. El conjuro crea la munición de cada ataque; inflige el daño normal y desaparece tras el ataque.",
+    "material": "un carcaj que valga 1+ po",
+    "castingTime": "Acción adicional",
+    "range": "Personal",
+    "duration": "Concentración, hasta 1 minuto"
+  },
+  "Synaptic Static": {
+    "name": "Estática sináptica",
+    "description": "Una energía psíquica estalla en una Esfera de {{distance:20ft}} de radio centrada en un punto dentro del alcance. Cada criatura en ella hace una tirada de salvación de Inteligencia; recibe 8d6 de daño Psíquico si la falla, o la mitad del daño si la supera. Si la falla, la criatura también queda aturullada durante 1 minuto: resta 1d6 a sus tiradas de ataque, pruebas de característica y tiradas de salvación de Constitución para mantener la Concentración. Repite la tirada de salvación al final de cada uno de sus turnos y, si la supera, el efecto termina para ella.",
+    "castingTime": "Acción",
+    "range": "120 pies",
+    "duration": "Instantánea",
+    "rolls": {
+      "damage": {
+        "label": "Daño"
+      }
+    }
+  },
+  "Arcane Gate": {
+    "name": "Portal arcano",
+    "description": "Creas dos portales de teletransporte conectados en el suelo, en espacios desocupados que puedas ver, cada uno de tamaño Grande: uno a {{distance:10ft}} o menos de ti y otro a {{distance:500ft}} o menos. Cada portal se abre por un lado de tu elección; lo que entre por ese lado aparece en el otro portal. Como acción adicional, puedes girar los lados abiertos.",
+    "castingTime": "Acción",
+    "range": "500 pies",
+    "duration": "Concentración, hasta 10 minutos"
+  },
+  "Summon Fiend": {
+    "name": "Invocar infernal",
+    "description": "Invocas un espíritu Infernal Grande, Demonio, Diablo o Yugoloth, en un espacio desocupado que puedas ver. Es aliado tuyo y de tus compañeros, comparte tu Iniciativa y actúa justo después de ti, y obedece tus órdenes; si no le das ninguna, realiza la acción de Esquivar. Desaparece al quedar a 0 Puntos de Golpe o cuando el conjuro termina.\n\nEspíritu infernal: CA 12 + nivel del conjuro; Puntos de Golpe 50 (Demonio), 40 (Diablo) o 60 (Yugoloth) + 15 por cada nivel del conjuro por encima de 6; Velocidad {{distance:40ft|short}}, más trepar {{distance:40ft|short}} (Demonio) o volar {{distance:60ft|short}} (Diablo). Fue 13, Des 16, Con 15, Int 10, Sab 10, Car 16. Resistencia al daño de Fuego; inmune al daño de Veneno y al estado Envenenado; Visión en la oscuridad {{distance:60ft|short}}; habla abisal e infernal, con telepatía {{distance:60ft|short}}; Ventaja en las tiradas de salvación contra conjuros. Hace un número de ataques igual a la mitad del nivel del conjuro (redondeando hacia abajo) y usa tu modificador de ataque de conjuro. Demonio, Mordisco: cuerpo a cuerpo, 1d12 + 3 + nivel del conjuro de daño Necrótico; cuando queda a 0 Puntos de Golpe o el conjuro termina, explota, y las criaturas a {{distance:10ft}} o menos hacen una tirada de salvación de Destreza contra tu CD de salvación de conjuros; reciben 2d10 + nivel del conjuro de daño de Fuego si la fallan, o la mitad si la superan. Diablo, Golpe ígneo: cuerpo a cuerpo o a distancia {{distance:150ft|short}}, 2d6 + 3 + nivel del conjuro de daño de Fuego. Yugoloth, Garras: cuerpo a cuerpo, 1d8 + 3 + nivel del conjuro de daño Cortante, y luego puede teletransportarse hasta {{distance:30ft}} a un espacio desocupado que pueda ver.",
+    "higherLevels": "Usa el nivel del espacio de conjuro como nivel del conjuro en el perfil.",
+    "material": "un vial ensangrentado que valga 600+ po",
+    "castingTime": "Acción",
+    "range": "90 pies",
+    "duration": "Concentración, hasta 1 hora"
+  },
+  "Tasha's Bubbling Cauldron": {
+    "name": "Caldero burbujeante de Tasha",
+    "description": "Un caldero inamovible aparece en el suelo dentro del alcance, lleno de copias de una poción común o poco común de tu elección. Como acción adicional, tú o un aliado podéis sacar una poción. Contiene un número de pociones igual a tu modificador de característica para lanzar conjuros (mínimo 1), y el conjuro termina cuando se saca la última o cuando acaba la duración. Las pociones que no se hayan bebido desaparecen cuando vuelves a lanzar este conjuro.",
+    "material": "un cucharón dorado que valga 500+ po",
+    "castingTime": "Acción",
+    "range": "5 pies",
+    "duration": "10 minutos"
+  },
+  "Power Word Fortify": {
+    "name": "Palabra de poder fortalecer",
+    "description": "Pronuncias una palabra de poder que otorga 120 Puntos de Golpe Temporales, repartidos como quieras entre hasta seis criaturas que puedas ver dentro del alcance.",
+    "castingTime": "Acción",
+    "range": "60 pies",
+    "duration": "Instantánea"
+  },
+  "Telepathy": {
+    "name": "Telepatía",
+    "description": "Creas un vínculo telepático con una criatura voluntaria que conozcas y que esté en el mismo plano de existencia. Hasta que el conjuro termine, tú y el objetivo podéis compartir al instante palabras, imágenes, sonidos y otros mensajes sensoriales. El conjuro termina si cualquiera de los dos abandona ese plano.",
+    "material": "un par de anillos de plata enlazados",
+    "castingTime": "Acción",
+    "range": "Ilimitado",
+    "duration": "24 horas"
   }
 }

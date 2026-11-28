@@ -44,6 +44,30 @@
       "two_weapon_fighting": {
         "name": "Çift Silah Dövüşü",
         "description": "Hafif özelliğini kullanırken ek saldırının hasarına nitelik değiştiricinizi ekleyin."
+      },
+      "blind_fighting": {
+        "name": "Kör Dövüş",
+        "description": "{{distance:10ft}} menzilli Kör Görüş kazan."
+      },
+      "dueling": {
+        "name": "Düello",
+        "description": "Başka silah tutmazken tek eldeki Yakın Dövüş silahının hasarına +2 kazan."
+      },
+      "interception": {
+        "name": "Araya Girme",
+        "description": "Tepkiyle yakındaki bir müttefikin aldığı hasarı 1d10 + Yetkinlik Bonusu kadar azalt."
+      },
+      "protection": {
+        "name": "Koruma",
+        "description": "Tepki ve Kalkanınla yakındaki bir müttefike karşı saldırılara Dezavantaj ver."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Fırlatma Silahıyla Dövüş",
+        "description": "Fırlatma silahlarıyla yapılan menzilli saldırıların hasarına +2 kazan."
+      },
+      "unarmed_fighting": {
+        "name": "Silahsız Dövüş",
+        "description": "Silahsız Saldırılar 1d6 veya 1d8 + Kuvvet değiştiricisi hasar verir; kavradığın bir yaratığa hasar ver."
       }
     },
     "paladin_fighting_styles_2024": {
@@ -66,6 +90,30 @@
       "blessed_warrior": {
         "name": "Kutsanmış Savaşçı",
         "description": "Sizin için Paladin büyüsü sayılan iki Rahip büyü numarası öğrenin."
+      },
+      "blind_fighting": {
+        "name": "Kör Dövüş",
+        "description": "{{distance:10ft}} menzilli Kör Görüş kazan."
+      },
+      "dueling": {
+        "name": "Düello",
+        "description": "Başka silah tutmazken tek eldeki Yakın Dövüş silahının hasarına +2 kazan."
+      },
+      "interception": {
+        "name": "Araya Girme",
+        "description": "Tepkiyle yakındaki bir müttefikin aldığı hasarı 1d10 + Yetkinlik Bonusu kadar azalt."
+      },
+      "protection": {
+        "name": "Koruma",
+        "description": "Tepki ve Kalkanınla yakındaki bir müttefike karşı saldırılara Dezavantaj ver."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Fırlatma Silahıyla Dövüş",
+        "description": "Fırlatma silahlarıyla yapılan menzilli saldırıların hasarına +2 kazan."
+      },
+      "unarmed_fighting": {
+        "name": "Silahsız Dövüş",
+        "description": "Silahsız Saldırılar 1d6 veya 1d8 + Kuvvet değiştiricisi hasar verir; kavradığın bir yaratığa hasar ver."
       }
     },
     "ranger_fighting_styles_2024": {
@@ -88,6 +136,30 @@
       "druidic_warrior": {
         "name": "Druid Savaşçısı",
         "description": "Sizin için Korucu büyüsü sayılan iki Druid büyü numarası öğrenin."
+      },
+      "blind_fighting": {
+        "name": "Kör Dövüş",
+        "description": "{{distance:10ft}} menzilli Kör Görüş kazan."
+      },
+      "dueling": {
+        "name": "Düello",
+        "description": "Başka silah tutmazken tek eldeki Yakın Dövüş silahının hasarına +2 kazan."
+      },
+      "interception": {
+        "name": "Araya Girme",
+        "description": "Tepkiyle yakındaki bir müttefikin aldığı hasarı 1d10 + Yetkinlik Bonusu kadar azalt."
+      },
+      "protection": {
+        "name": "Koruma",
+        "description": "Tepki ve Kalkanınla yakındaki bir müttefike karşı saldırılara Dezavantaj ver."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Fırlatma Silahıyla Dövüş",
+        "description": "Fırlatma silahlarıyla yapılan menzilli saldırıların hasarına +2 kazan."
+      },
+      "unarmed_fighting": {
+        "name": "Silahsız Dövüş",
+        "description": "Silahsız Saldırılar 1d6 veya 1d8 + Kuvvet değiştiricisi hasar verir; kavradığın bir yaratığa hasar ver."
       }
     },
     "divine_orders": {
@@ -876,6 +948,64 @@
       "witch_sight": {
         "name": "Cadı Görüşü",
         "description": "{{distance:30ft}} menzilli Gerçek Görüş kazanırsınız."
+      }
+    },
+    "crafter_tools_2024": {
+      "carpenter_s_tools": {
+        "name": "Marangoz aletleri"
+      },
+      "leatherworker_s_tools": {
+        "name": "Deri işçisi aletleri"
+      },
+      "mason_s_tools": {
+        "name": "Taş ustası aletleri"
+      },
+      "potter_s_tools": {
+        "name": "Çömlekçi aletleri"
+      },
+      "smith_s_tools": {
+        "name": "Demirci aletleri"
+      },
+      "tinker_s_tools": {
+        "name": "Tamirci aletleri"
+      },
+      "weaver_s_tools": {
+        "name": "Dokumacı aletleri"
+      },
+      "woodcarver_s_tools": {
+        "name": "Ahşap oymacı aletleri"
+      }
+    },
+    "musical_instruments_2024": {
+      "bagpipes": {
+        "name": "Gayda"
+      },
+      "drum": {
+        "name": "Davul"
+      },
+      "dulcimer": {
+        "name": "Santur"
+      },
+      "flute": {
+        "name": "Flüt"
+      },
+      "horn": {
+        "name": "Borazan"
+      },
+      "lute": {
+        "name": "Lavta"
+      },
+      "lyre": {
+        "name": "Lir"
+      },
+      "pan_flute": {
+        "name": "Pan flütü"
+      },
+      "shawm": {
+        "name": "Şavm"
+      },
+      "viol": {
+        "name": "Viyol"
       }
     }
   },

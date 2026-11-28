@@ -66,5 +66,53 @@
   "Boon of Truesight": {
     "name": "Dono della Vista Pura",
     "description": "Aumenta un punteggio di caratteristica di 1, fino a un massimo di 30. Ottieni Vista Pura entro {{distance:60ft}}."
+  },
+  "Crafter": {
+    "name": "Artigiano",
+    "description": "Ottieni competenza con tre diversi strumenti da artigiano della lista di Fabbricazione Rapida. Gli oggetti non magici che acquisti ti costano il 20% in meno. Al termine di un Riposo Lungo, puoi usare uno di questi strumenti per fabbricare un semplice oggetto di equipaggiamento associato, come una scala, una pala o una lampada; si sfalda al termine del tuo prossimo Riposo Lungo."
+  },
+  "Healer": {
+    "name": "Guaritore",
+    "description": "Con una borsa del guaritore, effettua l’azione Utilizzare e consumane un utilizzo per curare una creatura entro {{distance:5ft}}. La creatura può spendere un Dado Vita: lo tiri tu, e recupera Punti Ferita pari al risultato più il tuo Bonus di Competenza. Quando tiri dadi per ripristinare Punti Ferita con un incantesimo o questo talento, puoi ritirare qualsiasi dado con risultato 1 e devi usare il nuovo risultato."
+  },
+  "Lucky": {
+    "name": "Fortunato",
+    "description": "Hai Punti Fortuna pari al tuo Bonus di Competenza e li recuperi tutti al termine di un Riposo Lungo. Spendine uno per avere Vantaggio a un Test di D20 o imporre Svantaggio a un tiro per colpire effettuato contro di te."
+  },
+  "Musician": {
+    "name": "Musicista",
+    "description": "Ottieni competenza con tre strumenti musicali a tua scelta. Al termine di un Riposo Breve o Lungo, puoi suonarne uno e concedere Ispirazione Eroica agli alleati che sentono la musica, fino a un numero pari al tuo Bonus di Competenza."
+  },
+  "Tavern Brawler": {
+    "name": "Lottatore della Taverna",
+    "description": "Il tuo Colpo Senz’Armi può infliggere danni Contundenti pari a 1d4 + il tuo modificatore di Forza. Puoi ritirare un risultato di 1 su quel dado e devi usare il nuovo risultato. Hai competenza con le armi improvvisate. Una volta per turno, quando colpisci una creatura con un Colpo Senz’Armi come parte dell’azione Attacco, puoi anche spingerla di {{distance:5ft}} in linea retta lontano da te."
+  },
+  "Tough": {
+    "name": "Robusto",
+    "description": "Il tuo massimo di Punti Ferita aumenta del doppio del tuo livello del personaggio quando ottieni questo talento e di altri 2 ogni volta che ottieni un ulteriore livello del personaggio."
+  },
+  "Blind Fighting": {
+    "name": "Combattere alla Cieca",
+    "description": "Hai Vista Cieca con una portata di {{distance:10ft}}."
+  },
+  "Dueling": {
+    "name": "Duello",
+    "description": "Mentre impugni un’arma da Mischia in una mano e nessun’altra arma, ottieni un bonus di +2 ai tiri per i danni con quell’arma."
+  },
+  "Interception": {
+    "name": "Intercettazione",
+    "description": "Quando una creatura che puoi vedere colpisce con un tiro per colpire un’altra creatura entro {{distance:5ft}} da te, puoi usare una Reazione per ridurre i danni subiti dal bersaglio di 1d10 + il tuo Bonus di Competenza. Devi impugnare uno Scudo o un’arma Semplice o da Guerra."
+  },
+  "Protection": {
+    "name": "Protezione",
+    "description": "Mentre impugni uno Scudo, quando una creatura che puoi vedere attacca un bersaglio diverso da te entro {{distance:5ft}} da te, puoi usare una Reazione per imporre Svantaggio a quel tiro per colpire e a tutti gli altri tiri per colpire contro il bersaglio fino all’inizio del tuo prossimo turno, purché tu rimanga entro {{distance:5ft}} da esso."
+  },
+  "Thrown Weapon Fighting": {
+    "name": "Combattere con Armi da Lancio",
+    "description": "Quando colpisci con un tiro per colpire a distanza usando un’arma con la proprietà Lancio, ottieni un bonus di +2 al tiro per i danni."
+  },
+  "Unarmed Fighting": {
+    "name": "Combattere Senz’Armi",
+    "description": "Quando colpisci con un Colpo Senz’Armi, puoi infliggere danni Contundenti pari a 1d6 + il tuo modificatore di Forza al posto dei danni normali, oppure 1d8 + il tuo modificatore di Forza se non impugni armi né Scudo mentre attacchi. All’inizio di ciascuno dei tuoi turni, puoi infliggere 1d4 danni Contundenti a una creatura che hai Afferrato."
   }
 }

@@ -565,5 +565,17 @@
       "name": "Acosar",
       "description": "Si impactas e infliges daño, tienes Ventaja en tu próxima tirada de ataque contra esa criatura antes del final de tu siguiente turno."
     }
+  },
+  "Artisan's Tools": {
+    "name": "Herramientas de artesano"
+  },
+  "Musical Instrument": {
+    "name": "Instrumento musical"
+  },
+  "Gaming Set": {
+    "name": "Juego de mesa"
+  },
+  "Book (philosophy)": {
+    "name": "Libro (filosofía)"
   }
 }

@@ -66,5 +66,53 @@
   "Boon of Truesight": {
     "name": "Segen der wahren Sicht",
     "description": "Erhöhe einen Attributswert um 1, bis zu einem Maximum von 30. Du erhältst Wahre Sicht mit einer Reichweite von {{distance:60ft|dat}}."
+  },
+  "Crafter": {
+    "name": "Handwerker",
+    "description": "Du erhältst Übung mit drei verschiedenen Handwerkszeugen aus der Liste für Schnelles Handwerk. Nichtmagische Gegenstände kosten dich beim Kauf 20% weniger. Nach einer Langen Rast kannst du mit einem dieser Werkzeuge ein dazugehöriges einfaches Ausrüstungsstück herstellen, etwa eine Leiter, Schaufel oder Lampe. Es zerfällt am Ende deiner nächsten Langen Rast."
+  },
+  "Healer": {
+    "name": "Heiler",
+    "description": "Mit einer Heilerausrüstung kannst du die Aktion Benutzen ausführen und eine Anwendung verbrauchen, um eine Kreatur innerhalb von {{distance:5ft}} zu versorgen. Sie kann einen Trefferwürfel ausgeben; du würfelst ihn, und sie erhält Trefferpunkte in Höhe des Ergebnisses plus deinem Übungsbonus zurück. Wenn du mit einem Zauber oder diesem Talent Würfel zum Heilen von Trefferpunkten wirfst, darfst du jede gewürfelte 1 neu würfeln und musst das neue Ergebnis verwenden."
+  },
+  "Lucky": {
+    "name": "Glückspilz",
+    "description": "Du hast Glückspunkte in Höhe deines Übungsbonus und erhältst alle nach einer Langen Rast zurück. Gib einen aus, um Vorteil auf einen D20-Test zu erhalten oder einem Angriffswurf gegen dich Nachteil zu geben."
+  },
+  "Musician": {
+    "name": "Musiker",
+    "description": "Du erhältst Übung mit drei Musikinstrumenten deiner Wahl. Am Ende einer Kurzen oder Langen Rast kannst du eines davon spielen und Verbündeten, die das Lied hören, Heldenhafte Inspiration geben. Die Höchstzahl dieser Verbündeten entspricht deinem Übungsbonus."
+  },
+  "Tavern Brawler": {
+    "name": "Tavernenschläger",
+    "description": "Dein Waffenloser Schlag kann Wuchtschaden in Höhe von 1d4 + deinem Stärkemodifikator verursachen. Eine gewürfelte 1 auf diesem Würfel darfst du neu würfeln und musst das neue Ergebnis verwenden. Du bist mit improvisierten Waffen geübt. Einmal pro Zug kannst du eine Kreatur, die du im Rahmen der Angriffsaktion mit einem Waffenlosen Schlag triffst, zusätzlich {{distance:5ft}} geradlinig von dir wegstoßen."
+  },
+  "Tough": {
+    "name": "Zäh",
+    "description": "Dein Trefferpunktemaximum steigt beim Erhalt dieses Talents um das Doppelte deiner Charakterstufe und danach bei jeder weiteren Charakterstufe um 2."
+  },
+  "Blind Fighting": {
+    "name": "Blinder Kampf",
+    "description": "Deine Blindsicht reicht {{distance:10ft}} weit."
+  },
+  "Dueling": {
+    "name": "Duell",
+    "description": "Wenn du eine Nahkampfwaffe in einer Hand und keine andere Waffe hältst, erhältst du +2 auf die Schadenswürfe mit dieser Waffe."
+  },
+  "Interception": {
+    "name": "Abfangen",
+    "description": "Trifft eine Kreatur, die du siehst, mit einem Angriffswurf eine andere Kreatur, die höchstens {{distance:5ft}} von dir entfernt ist, kannst du mit einer Reaktion den Schaden des Ziels um 1d10 + deinen Übungsbonus verringern. Du musst einen Schild, eine einfache Waffe oder eine Kriegswaffe halten."
+  },
+  "Protection": {
+    "name": "Schutz",
+    "description": "Wenn du einen Schild hältst und eine Kreatur, die du siehst, ein anderes Ziel als dich angreift, das höchstens {{distance:5ft}} von dir entfernt ist, kannst du mit einer Reaktion diesem Angriffswurf und allen weiteren Angriffswürfen gegen das Ziel bis zum Beginn deines nächsten Zuges Nachteil geben. Dies gilt nur, solange du höchstens {{distance:5ft}} vom Ziel entfernt bleibst."
+  },
+  "Thrown Weapon Fighting": {
+    "name": "Kampf mit Wurfwaffen",
+    "description": "Triffst du mit einem Fernkampfangriffswurf mit einer Waffe mit der Eigenschaft Wurfwaffe, erhältst du +2 auf den Schadenswurf."
+  },
+  "Unarmed Fighting": {
+    "name": "Waffenloser Kampf",
+    "description": "Triffst du mit einem Waffenlosen Schlag, kannst du statt des normalen Schadens Wuchtschaden in Höhe von 1d6 + deinem Stärkemodifikator verursachen, oder 1d8 + deinem Stärkemodifikator, wenn du beim Angriff weder Waffe noch Schild hältst. Zu Beginn jedes deiner Züge kannst du einer Kreatur, die du gepackt hältst, 1d4 Wuchtschaden zufügen."
   }
 }

@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "魔族の遺産（キャラクター・レベル5で得る呪文）"
+    },
+    "2024_lucky": {
+      "name": "幸運ポイント"
+    },
+    "2024_healing_hands": {
+      "name": "癒しの手"
+    },
+    "2024_celestial_revelation": {
+      "name": "天上の顕現"
     }
   }
 }

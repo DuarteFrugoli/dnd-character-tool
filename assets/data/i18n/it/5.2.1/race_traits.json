@@ -142,5 +142,21 @@
   "Otherworldly Presence": {
     "name": "Presenza Ultraterrena",
     "description": "Conosci il trucchetto Taumaturgia, usando la caratteristica da incantatore scelta per Retaggio Immondo."
+  },
+  "Celestial Resistance": {
+    "name": "Resistenza Celestiale",
+    "description": "Hai Resistenza ai danni Necrotici e Radiosi."
+  },
+  "Healing Hands": {
+    "name": "Mani Guaritrici",
+    "description": "Con un’azione Magia, tocca una creatura e tira un numero di d4 pari al tuo Bonus di Competenza. La creatura recupera Punti Ferita pari al totale. Una volta per Riposo Lungo."
+  },
+  "Light Bearer": {
+    "name": "Portatore di Luce",
+    "description": "Conosci il trucchetto Luce e usi Carisma come caratteristica da incantatore per esso."
+  },
+  "Celestial Revelation": {
+    "name": "Rivelazione Celestiale",
+    "description": "Dal livello del personaggio 3, usa un’Azione Bonus per trasformarti per 1 minuto o finché termini l’effetto, senza usare un’azione. Scegli un’opzione a ogni utilizzo. Durante la trasformazione, una volta in ciascuno dei tuoi turni, puoi infliggere a un bersaglio che danneggi con un attacco o un incantesimo danni aggiuntivi pari al tuo Bonus di Competenza: Necrotici con Sudario Necrotico, Radiosi negli altri casi. Ali Celestiali: ottieni una velocità di volo pari alla tua velocità. Radiosità Interiore: emetti Luce Intensa in un raggio di {{distance:10ft|adj}} e Luce Fioca per altri {{distance:10ft}}; al termine di ciascuno dei tuoi turni, ogni altra creatura entro {{distance:10ft}} subisce danni Radiosi pari al tuo Bonus di Competenza. Sudario Necrotico: quando ti trasformi, le creature entro {{distance:10ft}}, eccetto i tuoi alleati, devono superare un tiro salvezza su Carisma (CD 8 + il tuo modificatore di Carisma + Bonus di Competenza) o sono Spaventate fino alla fine del tuo prossimo turno. Una volta per Riposo Lungo."
   }
 }

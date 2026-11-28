@@ -565,5 +565,17 @@
       "name": "Bedrängen",
       "description": "Bei einem schadenverursachenden Treffer hast du vor Ende deines nächsten Zuges Vorteil auf deinen nächsten Angriffswurf gegen diese Kreatur."
     }
+  },
+  "Artisan's Tools": {
+    "name": "Handwerkszeug"
+  },
+  "Musical Instrument": {
+    "name": "Musikinstrument"
+  },
+  "Gaming Set": {
+    "name": "Spielset"
+  },
+  "Book (philosophy)": {
+    "name": "Buch (Philosophie)"
   }
 }

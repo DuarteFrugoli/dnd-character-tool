@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "邪魔遗产（角色5级获得的法术）"
+    },
+    "2024_lucky": {
+      "name": "幸运点"
+    },
+    "2024_healing_hands": {
+      "name": "治愈之手"
+    },
+    "2024_celestial_revelation": {
+      "name": "天界启示"
     }
   }
 }

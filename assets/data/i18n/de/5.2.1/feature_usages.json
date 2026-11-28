@@ -176,6 +176,15 @@
     },
     "2024_fiendish_legacy_5": {
       "name": "Teuflisches Erbe (Zauber ab Charakterstufe 5)"
+    },
+    "2024_lucky": {
+      "name": "Glückspunkte"
+    },
+    "2024_healing_hands": {
+      "name": "Heilende Hände"
+    },
+    "2024_celestial_revelation": {
+      "name": "Himmlische Offenbarung"
     }
   }
 }

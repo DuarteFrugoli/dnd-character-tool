@@ -66,5 +66,53 @@
   "Boon of Truesight": {
     "name": "Faveur de vision véritable",
     "description": "Augmentez une valeur de caractéristique de 1, jusqu'à un maximum de 30. Vous obtenez la Vision véritable sur une distance de {{distance:60ft}}."
+  },
+  "Crafter": {
+    "name": "Artisan",
+    "description": "Vous maîtrisez trois outils d’artisan différents de la liste de Fabrication rapide. Les objets non magiques que vous achetez vous coûtent 20% de moins. À la fin d’un Repos long, utilisez l’un de ces outils pour fabriquer une pièce d’équipement simple qui lui correspond, comme une échelle, une pelle ou une lampe ; elle se désagrège à la fin de votre prochain Repos long."
+  },
+  "Healer": {
+    "name": "Guérisseur",
+    "description": "Avec une trousse de soins, effectuez l’action Utiliser et dépensez une utilisation de la trousse pour soigner une créature à {{distance:5ft}} ou moins. Elle peut dépenser un Dé de vie ; vous le lancez et elle récupère un nombre de points de vie égal au résultat plus votre bonus de maîtrise. Chaque fois que vous lancez des dés pour rendre des points de vie avec un sort ou ce don, vous pouvez relancer tout dé ayant donné 1 et devez utiliser le nouveau résultat."
+  },
+  "Lucky": {
+    "name": "Chanceux",
+    "description": "Vous avez autant de points de chance que votre bonus de maîtrise et les récupérez tous à la fin d’un Repos long. Dépensez-en un pour avoir l’Avantage à un test de D20 ou imposer le Désavantage à un jet d’attaque effectué contre vous."
+  },
+  "Musician": {
+    "name": "Musicien",
+    "description": "Vous maîtrisez trois instruments de musique de votre choix. À la fin d’un Repos court ou long, vous pouvez jouer de l’un d’eux et accorder l’Inspiration héroïque à des alliés qui entendent la mélodie, jusqu’à un nombre égal à votre bonus de maîtrise."
+  },
+  "Tavern Brawler": {
+    "name": "Bagarreur de taverne",
+    "description": "Votre frappe à mains nues peut infliger des dégâts contondants égaux à 1d4 + votre modificateur de Force. Vous pouvez relancer un résultat de 1 sur ce dé et devez utiliser le nouveau résultat. Vous maîtrisez les armes improvisées. Une fois par tour, lorsque vous touchez une créature avec une frappe à mains nues dans le cadre de l’action Attaquer, vous pouvez aussi la repousser de {{distance:5ft}} en ligne droite à l’opposé de vous."
+  },
+  "Tough": {
+    "name": "Robuste",
+    "description": "Votre maximum de points de vie augmente de deux fois votre niveau de personnage lorsque vous obtenez ce don, puis de 2 chaque fois que vous gagnez ensuite un niveau de personnage."
+  },
+  "Blind Fighting": {
+    "name": "Combat à l’aveugle",
+    "description": "Vous bénéficiez de la Vision aveugle sur {{distance:10ft}}."
+  },
+  "Dueling": {
+    "name": "Duel",
+    "description": "Tant que vous tenez une arme de corps à corps dans une main et aucune autre arme, vous gagnez un bonus de +2 aux jets de dégâts de cette arme."
+  },
+  "Interception": {
+    "name": "Interception",
+    "description": "Quand une créature que vous voyez touche par un jet d’attaque une autre créature située à {{distance:5ft}} ou moins de vous, vous pouvez utiliser une Réaction pour réduire les dégâts subis par la cible de 1d10 + votre bonus de maîtrise. Vous devez tenir un Bouclier ou une arme courante ou de guerre."
+  },
+  "Protection": {
+    "name": "Protection",
+    "description": "Tant que vous tenez un Bouclier, quand une créature que vous voyez attaque une cible autre que vous à {{distance:5ft}} ou moins de vous, vous pouvez utiliser une Réaction pour imposer le Désavantage à ce jet d’attaque et à tous les autres jets d’attaque contre cette cible jusqu’au début de votre prochain tour, à condition de rester à {{distance:5ft}} ou moins d’elle."
+  },
+  "Thrown Weapon Fighting": {
+    "name": "Combat avec arme de lancer",
+    "description": "Lorsque vous touchez avec un jet d’attaque à distance utilisant une arme dotée de la propriété Lancer, vous gagnez un bonus de +2 au jet de dégâts."
+  },
+  "Unarmed Fighting": {
+    "name": "Combat à mains nues",
+    "description": "Quand vous touchez avec une frappe à mains nues, vous pouvez infliger des dégâts contondants égaux à 1d6 + votre modificateur de Force à la place des dégâts normaux, ou 1d8 + votre modificateur de Force si vous ne tenez ni arme ni Bouclier lors de l’attaque. Au début de chacun de vos tours, vous pouvez infliger 1d4 dégâts contondants à une créature que vous Agrippez."
   }
 }

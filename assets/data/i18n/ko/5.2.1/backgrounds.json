@@ -10,5 +10,41 @@
   },
   "Soldier": {
     "name": "군인"
+  },
+  "Artisan": {
+    "name": "장인"
+  },
+  "Charlatan": {
+    "name": "사기꾼"
+  },
+  "Entertainer": {
+    "name": "연예인"
+  },
+  "Farmer": {
+    "name": "농부"
+  },
+  "Guard": {
+    "name": "경비병"
+  },
+  "Guide": {
+    "name": "길잡이"
+  },
+  "Hermit": {
+    "name": "은둔자"
+  },
+  "Merchant": {
+    "name": "상인"
+  },
+  "Noble": {
+    "name": "귀족"
+  },
+  "Sailor": {
+    "name": "선원"
+  },
+  "Scribe": {
+    "name": "서기관"
+  },
+  "Wayfarer": {
+    "name": "방랑자"
   }
 }

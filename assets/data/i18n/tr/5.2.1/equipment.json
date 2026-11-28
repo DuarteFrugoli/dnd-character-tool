@@ -565,5 +565,17 @@
       "name": "Zor Duruma Sokma",
       "description": "Hasar veren isabette sonraki turunun bitimine kadar o yaratığa karşı bir sonraki saldırı atışında Avantajın olur."
     }
+  },
+  "Artisan's Tools": {
+    "name": "Zanaatkâr Aletleri"
+  },
+  "Musical Instrument": {
+    "name": "Müzik Aleti"
+  },
+  "Gaming Set": {
+    "name": "Oyun Takımı"
+  },
+  "Book (philosophy)": {
+    "name": "Kitap (felsefe)"
   }
 }

@@ -142,5 +142,21 @@
   "Otherworldly Presence": {
     "name": "Übernatürliche Präsenz",
     "description": "Du kennst den Zaubertrick Thaumaturgie und verwendest dafür das beim Unhold-Erbe gewählte Zauberattribut."
+  },
+  "Celestial Resistance": {
+    "name": "Himmlische Resistenz",
+    "description": "Du hast Resistenz gegen nekrotischen und gleißenden Schaden."
+  },
+  "Healing Hands": {
+    "name": "Heilende Hände",
+    "description": "Berühre mit der Aktion Magie eine Kreatur und würfle so viele W4, wie dein Übungsbonus beträgt. Sie erhält Trefferpunkte in Höhe der Summe zurück. Einmal pro Langer Rast."
+  },
+  "Light Bearer": {
+    "name": "Lichtträger",
+    "description": "Du kennst den Zaubertrick Licht und verwendest Charisma als Zauberattribut dafür."
+  },
+  "Celestial Revelation": {
+    "name": "Himmlische Offenbarung",
+    "description": "Ab Charakterstufe 3 kannst du dich mit einer Bonusaktion für 1 Minute verwandeln oder bis du den Effekt ohne Aktion beendest. Wähle bei jeder Nutzung eine Option. Während der Verwandlung kannst du einmal in jedem deiner Züge einem Ziel, dem du mit einem Angriff oder Zauber Schaden zufügst, zusätzlichen Schaden in Höhe deines Übungsbonus zufügen: nekrotischen bei Nekrotischer Schleier, sonst gleißenden. Himmlische Flügel: Du erhältst eine Flugbewegungsrate in Höhe deiner Bewegungsrate. Inneres Strahlen: Du verbreitest helles Licht in einem {{distance:10ft|adj}}-Radius und dämmriges Licht für weitere {{distance:10ft}}. Am Ende jedes deiner Züge erleiden alle anderen Kreaturen innerhalb von {{distance:10ft}} gleißenden Schaden in Höhe deines Übungsbonus. Nekrotischer Schleier: Bei der Verwandlung müssen Kreaturen außer deinen Verbündeten innerhalb von {{distance:10ft}} einen Charismarettungswurf bestehen (SG 8 + dein Charismamodifikator + Übungsbonus), sonst sind sie bis zum Ende deines nächsten Zuges verängstigt. Einmal pro Langer Rast."
   }
 }

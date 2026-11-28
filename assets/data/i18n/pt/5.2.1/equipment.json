@@ -565,5 +565,17 @@
       "name": "Provocar",
       "description": "Ao acertar e causar dano, você tem Vantagem na próxima jogada de ataque contra essa criatura antes do fim do seu próximo turno."
     }
+  },
+  "Artisan's Tools": {
+    "name": "Ferramentas de Artesão"
+  },
+  "Musical Instrument": {
+    "name": "Instrumento Musical"
+  },
+  "Gaming Set": {
+    "name": "Conjunto de Jogos"
+  },
+  "Book (philosophy)": {
+    "name": "Livro (filosofia)"
   }
 }

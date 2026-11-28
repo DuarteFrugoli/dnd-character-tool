@@ -44,6 +44,30 @@
       "two_weapon_fighting": {
         "name": "Combate com Duas Armas",
         "description": "Adicione seu modificador de atributo ao dano do ataque extra ao usar a propriedade Leve."
+      },
+      "blind_fighting": {
+        "name": "Combate às Cegas",
+        "description": "Ganhe Percepção às Cegas com alcance de {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duelo",
+        "description": "Receba +2 no dano com uma arma Corpo a Corpo empunhada em uma mão enquanto não empunhar outra arma."
+      },
+      "interception": {
+        "name": "Interceptação",
+        "description": "Use uma Reação para reduzir o dano sofrido por um aliado próximo em 1d10 + Bônus de Proficiência."
+      },
+      "protection": {
+        "name": "Proteção",
+        "description": "Use uma Reação e seu Escudo para impor Desvantagem aos ataques contra um aliado próximo."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combate com Armas de Arremesso",
+        "description": "Receba +2 no dano de ataques à distância com armas de Arremesso."
+      },
+      "unarmed_fighting": {
+        "name": "Combate Desarmado",
+        "description": "Golpes Desarmados causam 1d6 ou 1d8 + modificador de Força; cause dano a uma criatura que esteja Agarrando."
       }
     },
     "paladin_fighting_styles_2024": {
@@ -66,6 +90,30 @@
       "blessed_warrior": {
         "name": "Guerreiro Abençoado",
         "description": "Aprenda dois truques de Clérigo que contam como magias de Paladino para você."
+      },
+      "blind_fighting": {
+        "name": "Combate às Cegas",
+        "description": "Ganhe Percepção às Cegas com alcance de {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duelo",
+        "description": "Receba +2 no dano com uma arma Corpo a Corpo empunhada em uma mão enquanto não empunhar outra arma."
+      },
+      "interception": {
+        "name": "Interceptação",
+        "description": "Use uma Reação para reduzir o dano sofrido por um aliado próximo em 1d10 + Bônus de Proficiência."
+      },
+      "protection": {
+        "name": "Proteção",
+        "description": "Use uma Reação e seu Escudo para impor Desvantagem aos ataques contra um aliado próximo."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combate com Armas de Arremesso",
+        "description": "Receba +2 no dano de ataques à distância com armas de Arremesso."
+      },
+      "unarmed_fighting": {
+        "name": "Combate Desarmado",
+        "description": "Golpes Desarmados causam 1d6 ou 1d8 + modificador de Força; cause dano a uma criatura que esteja Agarrando."
       }
     },
     "ranger_fighting_styles_2024": {
@@ -88,6 +136,30 @@
       "druidic_warrior": {
         "name": "Guerreiro Druídico",
         "description": "Aprenda dois truques de Druida que contam como magias de Patrulheiro para você."
+      },
+      "blind_fighting": {
+        "name": "Combate às Cegas",
+        "description": "Ganhe Percepção às Cegas com alcance de {{distance:10ft}}."
+      },
+      "dueling": {
+        "name": "Duelo",
+        "description": "Receba +2 no dano com uma arma Corpo a Corpo empunhada em uma mão enquanto não empunhar outra arma."
+      },
+      "interception": {
+        "name": "Interceptação",
+        "description": "Use uma Reação para reduzir o dano sofrido por um aliado próximo em 1d10 + Bônus de Proficiência."
+      },
+      "protection": {
+        "name": "Proteção",
+        "description": "Use uma Reação e seu Escudo para impor Desvantagem aos ataques contra um aliado próximo."
+      },
+      "thrown_weapon_fighting": {
+        "name": "Combate com Armas de Arremesso",
+        "description": "Receba +2 no dano de ataques à distância com armas de Arremesso."
+      },
+      "unarmed_fighting": {
+        "name": "Combate Desarmado",
+        "description": "Golpes Desarmados causam 1d6 ou 1d8 + modificador de Força; cause dano a uma criatura que esteja Agarrando."
       }
     },
     "divine_orders": {
@@ -876,6 +948,64 @@
       "witch_sight": {
         "name": "Visão de Bruxa",
         "description": "Você tem Visão Verdadeira com alcance de {{distance:30ft}}."
+      }
+    },
+    "crafter_tools_2024": {
+      "carpenter_s_tools": {
+        "name": "Ferramentas de carpinteiro"
+      },
+      "leatherworker_s_tools": {
+        "name": "Ferramentas de coureiro"
+      },
+      "mason_s_tools": {
+        "name": "Ferramentas de pedreiro"
+      },
+      "potter_s_tools": {
+        "name": "Ferramentas de oleiro"
+      },
+      "smith_s_tools": {
+        "name": "Ferramentas de ferreiro"
+      },
+      "tinker_s_tools": {
+        "name": "Ferramentas de funileiro"
+      },
+      "weaver_s_tools": {
+        "name": "Ferramentas de tecelão"
+      },
+      "woodcarver_s_tools": {
+        "name": "Ferramentas de entalhador"
+      }
+    },
+    "musical_instruments_2024": {
+      "bagpipes": {
+        "name": "Gaita de fole"
+      },
+      "drum": {
+        "name": "Tambor"
+      },
+      "dulcimer": {
+        "name": "Dulcimer"
+      },
+      "flute": {
+        "name": "Flauta"
+      },
+      "horn": {
+        "name": "Trompa"
+      },
+      "lute": {
+        "name": "Alaúde"
+      },
+      "lyre": {
+        "name": "Lira"
+      },
+      "pan_flute": {
+        "name": "Flauta de Pã"
+      },
+      "shawm": {
+        "name": "Charamela"
+      },
+      "viol": {
+        "name": "Viola"
       }
     }
   },

@@ -142,5 +142,21 @@
   "Otherworldly Presence": {
     "name": "Présence d'outre-monde",
     "description": "Vous connaissez le sort mineur Thaumaturgie et utilisez la caractéristique d'incantation choisie pour Héritage fiélon."
+  },
+  "Celestial Resistance": {
+    "name": "Résistance céleste",
+    "description": "Vous avez la Résistance aux dégâts nécrotiques et radiants."
+  },
+  "Healing Hands": {
+    "name": "Mains guérisseuses",
+    "description": "Par une action Magie, touchez une créature et lancez un nombre de d4 égal à votre bonus de maîtrise. La créature récupère un nombre de points de vie égal au total. Une fois par Repos long."
+  },
+  "Light Bearer": {
+    "name": "Porteur de lumière",
+    "description": "Vous connaissez le sort mineur Lumière et utilisez le Charisme comme caractéristique d’incantation pour celui-ci."
+  },
+  "Celestial Revelation": {
+    "name": "Révélation céleste",
+    "description": "À partir du niveau 3 de personnage, utilisez une action bonus pour vous transformer pendant 1 minute ou jusqu’à ce que vous mettiez fin à l’effet, sans action. Choisissez une option à chaque utilisation. Pendant la transformation, une fois à chacun de vos tours, vous pouvez infliger à une cible que vous blessez avec une attaque ou un sort des dégâts supplémentaires égaux à votre bonus de maîtrise : nécrotiques avec Linceul nécrotique, radiants avec les autres options. Ailes célestes : vous gagnez une vitesse de vol égale à votre vitesse. Radiance intérieure : vous émettez une Lumière vive dans un rayon de {{distance:10ft|adj}} et une Lumière faible sur {{distance:10ft}} de plus ; à la fin de chacun de vos tours, toutes les autres créatures à {{distance:10ft}} ou moins subissent des dégâts radiants égaux à votre bonus de maîtrise. Linceul nécrotique : lors de votre transformation, les créatures à {{distance:10ft}} ou moins, sauf vos alliés, doivent réussir une sauvegarde de Charisme (DD 8 + votre modificateur de Charisme + bonus de maîtrise) ou sont Effrayées jusqu’à la fin de votre prochain tour. Une fois par Repos long."
   }
 }

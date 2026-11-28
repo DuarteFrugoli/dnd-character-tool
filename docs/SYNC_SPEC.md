@@ -72,11 +72,12 @@ Funcoes auxiliares:
 
 - `has_sync(uid)`: existe `entitlements` com `sync` e `expires_at` nulo ou no
   futuro.
-- `can_read(uid)`: `has_sync(uid)` ou ultima expiracao ha menos de 90 dias.
+- `can_read_sync(uid)`: `has_sync(uid)` ou ultima expiracao ha menos de 90
+  dias (`sync_grace_days()`).
 
 RLS:
 
-- `characters` select: `user_id = auth.uid() and can_read(auth.uid())`.
+- `characters` select: `user_id = auth.uid() and can_read_sync(auth.uid())`.
 - `characters` insert/update/delete direto: bloqueado. Escritas so pela RPC
   `push_character`, que exige `has_sync`.
 - `entitlements` select: `user_id = auth.uid()`. Escrita apenas pelo
@@ -89,7 +90,8 @@ e escrita da tabela.
 ## Estado local de sync
 
 Fica fora do JSON do personagem, para nao vazar em `.dndchar` e backups.
-Um arquivo `sync_state.json` (IndexedDB na web) guarda, por personagem:
+`CharacterSyncStateStore` (SharedPreferences, que funciona em Android, iOS e
+web) guarda, por personagem:
 
 | Campo | Uso |
 | --- | --- |
@@ -100,8 +102,10 @@ Um arquivo `sync_state.json` (IndexedDB na web) guarda, por personagem:
 "Mudou localmente" = hash do payload atual diferente de `baseHash`. Nao e
 preciso interceptar cada gravacao.
 
-Payload enviado: o `Character` serializado sem campos locais
-(`imagePath` e qualquer caminho do aparelho). A foto vai separada pelo hash.
+Payload enviado (`CharacterSyncPayload`): o `Character` serializado sem os
+campos do aparelho: `imagePath`, `isPinned` e `sortOrder` (a organizacao da
+lista e de cada aparelho). Ao baixar, esses campos continuam os do aparelho.
+O hash ignora tambem `updatedAt`. A foto vai separada pelo hash.
 
 ## Estados por personagem
 
@@ -115,6 +119,13 @@ Calculados comparando o local com a linha da nuvem:
 | Divergiu | mudanca local e `revision > baseRevision` | usuario escolhe (abaixo) |
 | So na nuvem | nao existe no aparelho | aparece em "Na nuvem"; baixar e livre |
 | Apagado na nuvem | `deleted_at` preenchido, local existe | aviso; apagar local ou enviar de novo |
+| So no aparelho | nunca enviado, ou apagado da nuvem apos o prazo | envio automatico |
+| Fora da nuvem | usuario excluiu da nuvem | nada |
+| Atualize o app | a nuvem mudou e tem `data_version` maior que o do app | aviso para atualizar |
+
+Uma copia local sem estado salvo, cujo `id` ja existe na nuvem (por exemplo,
+depois de sair e entrar de novo na conta), conta como divergente: o usuario
+escolhe, em vez de uma copia sobrescrever a outra.
 
 Opcoes quando diverge:
 
@@ -147,9 +158,11 @@ nada a fazer: a diferenca de hash ja e a fila.
 Foto: antes do envio, se o `image_hash` mudou, faz upload do arquivo. Fotos
 antigas do mesmo personagem sao removidas depois do envio bem-sucedido.
 
-Apagar: RPC `delete_character(id, base_revision)` grava `data = null`,
-`deleted_at = now()` e remove as fotos. A linha fica como tombstone por 90
-dias para avisar os outros aparelhos.
+Apagar: RPC `delete_character(id, base_revision, device_id, force)` grava
+`data = null` e `deleted_at = now()`, com as mesmas regras de revisao do
+envio; em seguida o app remove as fotos do personagem no storage. A linha
+fica como tombstone por 90 dias para avisar os outros aparelhos (limpeza na
+fase 4).
 
 ## Download
 

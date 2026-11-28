@@ -74,3 +74,6 @@ untranslated.json
 
 # Local analysis output
 /analyze_out.txt
+
+# Sync build configuration (keep the shareable example)
+config/sync.json

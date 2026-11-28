@@ -8,7 +8,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Changed
-- **Atualizacao e backup separados**: a tela de atualizacao passa a oferecer "Fazer backup e compartilhar", que salva localmente e abre o compartilhamento sem alterar as fichas, e "Atualizar todos com backup local", que salva localmente e atualiza sem abrir o compartilhamento. A atualizacao pelas Configuracoes segue o mesmo fluxo direto. Explicacoes e rotulos ajustados nos 11 idiomas; mantidas as tres copias locais e a interrupcao da atualizacao se o backup local falhar.
+- **Atualizacao e backup separados**: a tela de atualizacao passa a oferecer "Salvar backup local e compartilhar", que salva localmente e abre o compartilhamento sem alterar as fichas, e "Salvar backup local e atualizar todos", que salva localmente e atualiza sem abrir o compartilhamento. A atualizacao pelas Configuracoes segue o mesmo fluxo direto. Explicacoes e rotulos ajustados nos 11 idiomas; mantidas as tres copias locais e a interrupcao da atualizacao se o backup local falhar.
 
 ---
 

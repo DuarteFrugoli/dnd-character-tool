@@ -1091,7 +1091,7 @@ abstract class AppLocalizations {
   /// 3.0.0 announcement: one-time character update details.
   ///
   /// In en, this message translates to:
-  /// **'Opening a character may require a one-time update. The app saves a local backup before updating and keeps the three latest copies in Settings. Use Back up and share to share a copy without updating.'**
+  /// **'Opening a character may require a one-time update. The app saves a local backup before updating and keeps the three latest copies in Settings. Use Save local backup and share to share a copy without updating.'**
   String get whatsNew3UpdateBody;
 
   /// Snackbar after successful import.
@@ -5968,7 +5968,7 @@ abstract class AppLocalizations {
   /// Dialog body shown when opening an outdated saved character.
   ///
   /// In en, this message translates to:
-  /// **'You can save a local copy and share it without updating your characters.\n\nUpdating all saves a local backup and then applies the update directly. The three latest local copies are available in Settings.'**
+  /// **'A backup is saved locally before sharing opens. This action does not update your characters.\n\nUpdating all first saves a local backup, then applies the update without opening sharing. The three latest copies are available in Settings.'**
   String get characterUpdateRequiredBody;
 
   /// Action on a directly opened outdated character to show the update dialog.
@@ -5980,13 +5980,13 @@ abstract class AppLocalizations {
   /// Exports a backup without updating characters in the update dialog.
   ///
   /// In en, this message translates to:
-  /// **'Back up and share'**
+  /// **'Save local backup and share'**
   String get characterUpdateBackupAction;
 
   /// Saves a local backup and applies pending migrations to all characters without sharing.
   ///
   /// In en, this message translates to:
-  /// **'Update all with local backup'**
+  /// **'Save local backup and update all'**
   String get characterUpdateAllAction;
 
   /// Progress text while character migrations are being applied.

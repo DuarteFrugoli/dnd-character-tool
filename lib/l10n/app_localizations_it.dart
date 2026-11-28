@@ -603,7 +603,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Aprendo un personaggio potrebbe servire un aggiornamento una tantum. L’app salva prima un backup locale e conserva le tre copie più recenti nelle impostazioni. Usa Crea backup e condividi per condividere senza aggiornare.';
+      'Aprendo un personaggio potrebbe servire un aggiornamento una tantum. L’app salva prima un backup locale e conserva le tre copie più recenti nelle impostazioni. Usa Salva backup locale e condividi per condividere senza aggiornare.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3422,16 +3422,16 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Puoi salvare una copia locale e condividerla senza aggiornare i personaggi.\n\nAggiornando tutti, l’app salva un backup locale e applica direttamente l’aggiornamento. Le tre copie più recenti sono disponibili nelle impostazioni.';
+      'Il backup viene salvato su questo dispositivo prima di aprire la condivisione. Questa azione non aggiorna i personaggi.\n\nAggiornando tutti, viene prima salvato un backup locale e poi applicato l’aggiornamento senza aprire la condivisione. Le tre copie più recenti sono disponibili nelle impostazioni.';
 
   @override
   String get characterUpdateRequiredAction => 'Opzioni di aggiornamento';
 
   @override
-  String get characterUpdateBackupAction => 'Crea backup e condividi';
+  String get characterUpdateBackupAction => 'Salva backup locale e condividi';
 
   @override
-  String get characterUpdateAllAction => 'Aggiorna tutti con backup locale';
+  String get characterUpdateAllAction => 'Salva backup locale e aggiorna tutti';
 
   @override
   String get characterUpdateApplying => 'Aggiornamento dei personaggi...';

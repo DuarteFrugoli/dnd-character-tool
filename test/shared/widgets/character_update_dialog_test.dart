@@ -137,7 +137,7 @@ void main() {
       onClosed: (value) => result = value,
     );
 
-    expect(find.text('Update all with local backup'), findsOneWidget);
+    expect(find.text('Save local backup and update all'), findsOneWidget);
     await tester.tap(find.text('Cancel'));
     await tester.pumpAndSettle();
 
@@ -163,13 +163,13 @@ void main() {
       onClosed: (value) => result = value,
     );
 
-    await tester.tap(find.text('Back up and share'));
+    await tester.tap(find.text('Save local backup and share'));
     await tester.pumpAndSettle();
     expect(repository.backupCalls, 1);
     expect(repository.updateCalls, 0);
-    expect(find.text('Update all with local backup'), findsOneWidget);
+    expect(find.text('Save local backup and update all'), findsOneWidget);
 
-    await tester.tap(find.text('Update all with local backup'));
+    await tester.tap(find.text('Save local backup and update all'));
     await tester.pumpAndSettle();
     expect(repository.backupCalls, 2);
     expect(repository.updateCalls, 1);
@@ -191,7 +191,7 @@ void main() {
       onClosed: (value) => result = value,
     );
 
-    await tester.tap(find.text('Update all with local backup'));
+    await tester.tap(find.text('Save local backup and update all'));
     await tester.pumpAndSettle();
 
     expect(repository.backupCalls, 1);
@@ -215,7 +215,7 @@ void main() {
       },
       onClosed: (_) {},
     );
-    await tester.tap(find.text('Update all with local backup'));
+    await tester.tap(find.text('Save local backup and update all'));
     await tester.pumpAndSettle();
     expect(shareCalls, 0);
     expect(repository.backupCalls, 1);
@@ -241,7 +241,7 @@ void main() {
       },
       onClosed: (_) {},
     );
-    await tester.tap(find.text('Back up and share'));
+    await tester.tap(find.text('Save local backup and share'));
     await tester.pumpAndSettle();
     expect(events, ['local', 'share']);
     expect(repository.backupCalls, 1);
@@ -260,7 +260,7 @@ void main() {
       onClosed: (_) {},
     );
 
-    expect(find.text('Update all with local backup'), findsOneWidget);
+    expect(find.text('Save local backup and update all'), findsOneWidget);
     expect(
       tester.widget<OutlinedButton>(find.byType(OutlinedButton)).onPressed,
       isNull,

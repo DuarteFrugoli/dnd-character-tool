@@ -603,7 +603,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Une mise à jour unique peut être nécessaire à l’ouverture d’un personnage. L’application sauvegarde localement avant la mise à jour et conserve les trois dernières copies dans les paramètres. Utilisez Sauvegarder et partager pour partager sans mettre à jour.';
+      'Une mise à jour unique peut être nécessaire à l’ouverture d’un personnage. L’application sauvegarde localement avant la mise à jour et conserve les trois dernières copies dans les paramètres. Utilisez Sauvegarder localement et partager pour partager sans mettre à jour.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3387,17 +3387,18 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'Vous pouvez enregistrer une copie locale et la partager sans mettre à jour les personnages.\n\nLa mise à jour de tous les personnages enregistre une sauvegarde locale puis applique directement les changements. Les trois copies les plus récentes sont disponibles dans les paramètres.';
+      'La sauvegarde est enregistrée sur cet appareil avant l’ouverture du partage. Cette action ne met pas les personnages à jour.\n\nLa mise à jour de tous les personnages enregistre d’abord une sauvegarde locale, puis applique les changements sans ouvrir le partage. Les trois copies les plus récentes sont disponibles dans les paramètres.';
 
   @override
   String get characterUpdateRequiredAction => 'Options de mise à jour';
 
   @override
-  String get characterUpdateBackupAction => 'Sauvegarder et partager';
+  String get characterUpdateBackupAction =>
+      'Sauvegarder localement et partager';
 
   @override
   String get characterUpdateAllAction =>
-      'Tout mettre à jour avec sauvegarde locale';
+      'Sauvegarder localement et tout mettre à jour';
 
   @override
   String get characterUpdateApplying => 'Mise à jour des personnages...';

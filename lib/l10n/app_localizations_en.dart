@@ -598,7 +598,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get whatsNew3UpdateBody =>
-      'Opening a character may require a one-time update. The app saves a local backup before updating and keeps the three latest copies in Settings. Use Back up and share to share a copy without updating.';
+      'Opening a character may require a one-time update. The app saves a local backup before updating and keeps the three latest copies in Settings. Use Save local backup and share to share a copy without updating.';
 
   @override
   String charListImportedSuccess(String name) {
@@ -3352,16 +3352,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get characterUpdateRequiredBody =>
-      'You can save a local copy and share it without updating your characters.\n\nUpdating all saves a local backup and then applies the update directly. The three latest local copies are available in Settings.';
+      'A backup is saved locally before sharing opens. This action does not update your characters.\n\nUpdating all first saves a local backup, then applies the update without opening sharing. The three latest copies are available in Settings.';
 
   @override
   String get characterUpdateRequiredAction => 'Update options';
 
   @override
-  String get characterUpdateBackupAction => 'Back up and share';
+  String get characterUpdateBackupAction => 'Save local backup and share';
 
   @override
-  String get characterUpdateAllAction => 'Update all with local backup';
+  String get characterUpdateAllAction => 'Save local backup and update all';
 
   @override
   String get characterUpdateApplying => 'Updating characters...';
